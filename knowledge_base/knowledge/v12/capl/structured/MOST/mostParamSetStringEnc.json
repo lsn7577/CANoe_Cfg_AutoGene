@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "mostParamSetStringEnc",
+  "category": "MOST",
+  "title": "mostParamSetStringEnc",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTParamSetStringEnc.htm",
+  "syntax": [
+    "long mostParamSetStringEnc (mostAmsMessage msg, char paramAdr[], long encoding, char asciiStr[])"
+  ],
+  "description": [
+    "Encoding and setting of parameters of the String type (for ASCII-coded strings only) in an AMS message using the parameter name from the XML function catalog. Only ASCII-coded strings are supported.",
+    "The parameter description must go with the message content. The compiler is not able to validate this here. Errors only appear at run time of the CAPL program, if applicable. This function is primarily used to access messages, whose content was previously limited explicitly, e.g. by the declaration. The message must be populated in the order of its parameters particularly for messages with StreamCases. If the parameter is not part of the message or not the expected type, an error message it output in the Write Window and the measurement stops."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message in which the parameter value should be described."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [
+      "-> Message parameter bytes: 00 00 61 00 62 00 63 00 00"
+    ],
+    "code": "mostAmsMessage AmFmTuner.RadioText.Status msg;\nmostParamSetString(msg, \"TextA\", 0x00, \"abc\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

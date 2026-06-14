@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthSetTokenInt",
+  "category": "Obsolete",
+  "title": "EthSetTokenInt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthSetTokenInteger.htm",
+  "syntax": [
+    "long EthSetTokenInt( long packet, char protocolDesignatorl[], char tokenDesignator[], long value ); // form 1"
+  ],
+  "description": [
+    "The function sets the integer value of a token.",
+    "Form 2 with byte offset sets a part of the token data as integer."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "see example of EthInitPacket"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

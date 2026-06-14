@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkConfig_SetCallback",
+  "category": "Test",
+  "title": "ChkConfig_SetCallback",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkConfigSetCallback.htm",
+  "syntax": [
+    "long ChkConfig_SetCallback(dword aCheckId, char [] CaplCallback);",
+    "check.SetCallback(char [] CaplCallback);"
+  ],
+  "description": [
+    "Sets a CAPL callback for the check. An already existing callback will be overwritten.This function can be used if the check itself has no syntax to create/start and to assign a callback."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Must exist"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": "void callback(dword id)\n{\n  // do something\n}\ntestcase TC1()\n{\n  int checkId;\n\n  checkId = ChkCreate_MsgOccurrenceCount(MsgA1, 3);\n\n  testAddCondition(checkId);\n  ChkConfig_SetCallback(checkId, \"callback\");\n  ChkControl_Start(checkId);\n\n  testWaitForTimeout(3000);\n\n  ChkControl_Stop(checkId);\n  testRemoveCondition(checkId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

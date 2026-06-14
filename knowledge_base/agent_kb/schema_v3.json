@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "agent_kb/schema_v3.json",
+  "title": "CANoe Knowledge Base Page Schema (v3 — agent-facing)",
+  "description": "Authoritative schema for a single knowledge base page. Derived from inspection of the corpus. Use this to validate or write new pages. Note: actual corpus has some legacy v2 fields; see _v2_legacy_compat block below.",
+  "type": "object",
+  "required": ["page_type", "name"],
+  "properties": {
+    "page_type": {
+      "type": "string",
+      "enum": ["function", "method", "event", "selector", "concept", "notes"],
+      "description": "One of 6 page types. 'notes' is a legacy catch-all; 'selector' is under-represented in the corpus (see capability_manifest §6 K2)."
+    },
+    "name": {
+      "type": "string",
+      "description": "Title of the page (function name, control name, keyword, etc.)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Optional: full descriptive title. Often equals 'name'."
+    },
+    "category": {
+      "type": "string",
+      "description": "Logical category: e.g. 'CAN', 'J1939', 'SignalAccess', 'Elements' (Panel), 'Glossar' (DBC)."
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Optional: nested category, e.g. 'Functions', 'Selectors', 'SystemVariables'."
+    },
+    "topic": {
+      "type": "string",
+      "enum": ["capl", "panel", "dbc", "xcp", "diagnostics", "team", "extras"],
+      "description": "Top-level topic. Derived from path (knowledge/<version>/<topic>/...)."
+    },
+    "version": {
+      "type": "string",
+      "enum": ["v12", "v15", "v17", "v18", "extras"],
+      "description": "CANoe version. 'extras' for hand-curated team docs."
+    },
+    "source": {
+      "type": "string",
+      "description": "Original HTM file path or 'hand_curated_v1' / 'synthetic_v1' for non-CHM sources."
+    },
+    "syntax": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "List of C/CAPL signature lines. Empty for non-function pages."
+    },
+    "description": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "array", "items": {"type": "string"}}
+      ],
+      "description": "Plain text describing the function/page. May be string or list (legacy)."
+    },
+    "intro": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "For concept pages: paragraphs before the first h2 section."
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {"type": "string"},
+          "type": {"type": ["string", "null"]},
+          "description": {"type": "string"}
+        }
+      },
+      "description": "Function parameters as {name, type, description}. Empty for parameterless functions."
+    },
+    "return": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "array", "items": {"type": "string"}}
+      ],
+      "description": "Return value description. Empty when source doesn't state one. May be missing on legacy pages — fall back to first token of syntax[0]."
+    },
+    "example": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "oneOf": [
+            {"type": "string"},
+            {"type": "array", "items": {"type": "string"}}
+          ]
+        },
+        "code": {"type": "string"}
+      }
+    },
+    "availability": {
+      "type": "array",
+      "items": {"type": "array", "items": {"type": "string"}},
+      "description": "Version matrix: list of rows; first row often product names."
+    },
+    "selectors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "description": {"type": "string"},
+          "type": {"type": "string"},
+          "link": {"type": "string"},
+          "row": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "description": "Selector list (for event pages and dedicated selector pages). Items may use {name, desc} or {row} shapes."
+    },
+    "note": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "array", "items": {"type": "string"}}
+      ]
+    },
+    "complexity": {
+      "type": "string",
+      "description": "O(...) complexity if stated."
+    },
+    "tables": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "description": "For notes/concept pages: tabular content as list-of-rows-of-cells."
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": {"type": "string"},
+          "level": {"type": "integer", "minimum": 1, "maximum": 6},
+          "content": {
+            "type": "object",
+            "properties": {
+              "paragraphs": {"type": "array", "items": {"type": "string"}},
+              "tables": {"type": "array"},
+              "code_blocks": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    },
+    "intro_tables": {"type": "array"},
+    "intro_code_blocks": {"type": "array"},
+    "property_references": {
+      "type": "object",
+      "description": "Panel-only: structured extraction of UI property names / symbol refs / group names.",
+      "properties": {
+        "properties": {"type": "array", "items": {"type": "string"}},
+        "symbols": {"type": "array", "items": {"type": "string"}},
+        "groups": {"type": "array", "items": {"type": "string"}},
+        "syntax_patterns": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  },
+  "_v2_legacy_compat": {
+    "description": "Pages extracted by the v2 pipeline may have these legacy issues. Agents should be tolerant.",
+    "issues": [
+      {"id": "K1", "issue": "v15 pages often mis-tagged as 'notes'; check syntax[0] to disambiguate."},
+      {"id": "K2", "issue": "Selector pages mis-tagged as 'notes'; data is in 'selectors' field."},
+      {"id": "K3", "issue": "v12 parameters may be incomplete; v2 patch brought coverage to 81.3%."},
+      {"id": "K4", "issue": "Panel pages have no code blocks; use property_references instead."},
+      {"id": "K5", "issue": "v15 'return' may be empty; first token of syntax[0] is the return type."},
+      {"id": "K6", "issue": "Some Panel property_references have encoding artifacts; strip non-printable chars."}
+    ]
+  }
+}

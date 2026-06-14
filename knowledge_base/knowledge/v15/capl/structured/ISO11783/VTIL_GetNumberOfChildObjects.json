@@ -1,0 +1,151 @@
+{
+  "page_type": "function",
+  "name": "VTIL_GetNumberOfChildObjects",
+  "category": "ISO11783",
+  "title": "VTIL_GetNumberOfChildObjects",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILGetNumberOfChildObjects.htm",
+  "syntax": [
+    "long VTIL_GetNumberOfChildObjects(dbNode workingSetMaster, dword objectId, dword & numberOfChildObjects); // form 1",
+    "long VTIL_GetNumberOfChildObjects(dword addressWorkingSetMaster, dword objectId, dword & numberOfChildObjects); // form 2",
+    "long VTIL_GetNumberOfChildObjects(dbNode vt, dbNode workingSetMaster, dword objectId, dword & numberOfChildObjects); // form 3",
+    "long VTIL_GetNumberOfChildObjects(dbNode vt, dword addressWorkingSetMaster, dword objectId, dword & numberOfChildObjects); // form 4"
+  ],
+  "description": [
+    "Returns the number of child objects which are contained in an object."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function."
+    },
+    {
+      "name": "workingSetMaster",
+      "type": "",
+      "description": "Working Set Master which provides the Object Pool."
+    },
+    {
+      "name": "addressWorkingSetMaster",
+      "type": "",
+      "description": "Address of the Working Set Master which provides the Object Pool."
+    },
+    {
+      "name": "objectId",
+      "type": "",
+      "description": "Object ID of the parent object."
+    },
+    {
+      "name": "numberOfChildObjects",
+      "type": "",
+      "description": "Returns the number of child objects contained in the parent object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP5: form 1, 3 13.0: form 2, 4",
+      "13.0",
+      "—",
+      "—",
+      "2.2: form 3 5.0: form 4"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 3, 4 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1, 2)",
+      "✔ (form 1, 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 3, 4)",
+      "✔ (form 3, 4)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 3, 4)",
+      "✔ (form 3, 4)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

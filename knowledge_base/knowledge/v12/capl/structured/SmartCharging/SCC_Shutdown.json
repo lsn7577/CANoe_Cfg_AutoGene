@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_Shutdown",
+  "category": "SmartCharging",
+  "title": "SCC_Shutdown",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_Shutdown.htm",
+  "syntax": [
+    "long SCC_Shutdown ( long Terminate )"
+  ],
+  "description": [
+    "Stops the charging session when inside the charge loop, by starting a regular shutdown procedure."
+  ],
+  "parameters": [
+    {
+      "name": "Terminate",
+      "type": "",
+      "description": "If 1, the SessionStopReq is sent with ChargingSession = Terminate, else with ChargingSession = Pause (ISO 15118 only, else this value is ignored)."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

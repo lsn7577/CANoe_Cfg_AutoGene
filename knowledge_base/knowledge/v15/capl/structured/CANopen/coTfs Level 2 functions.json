@@ -1,0 +1,559 @@
+{
+  "page_type": "notes",
+  "name": "coTfs Level 2 functions",
+  "category": "CANopen",
+  "title": "coTfs Level 2 functions",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/CAPLfunctionsCANopenNLTFSLevel2.htm",
+  "syntax": [],
+  "description": [
+    "This section contains a brief listing of all Level 2 functions that are made available by the CANopen Test Feature Set node layer.",
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Quick Access"
+      ],
+      [
+        "EMCY",
+        "Guarding",
+        "Heartbeat"
+      ],
+      [
+        "Monitoring",
+        "NMT",
+        "Object Dictionary"
+      ],
+      [
+        "SDO",
+        "SDO Abort",
+        "SYNC"
+      ],
+      [
+        "TPDO",
+        "LSS"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsEmcySendMessage",
+        "Sends an emergency message."
+      ],
+      [
+        "coTfsEmcyResetList",
+        "Removes all entries (of a node) from the internally-stored list."
+      ],
+      [
+        "coTfsEmcyWaitForMessage",
+        "Waits for an emergency message of a particular node."
+      ],
+      [
+        "coTfsEmcyGetErrorCode",
+        "Returns received emergency messages (of a node)."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsNodeGuarding",
+        "Starts a node guarding test."
+      ],
+      [
+        "coTfsLifeGuarding",
+        "Starts a life guarding test."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsHeartbeatConsumer",
+        "A test is executed for a heartbeat consumer."
+      ],
+      [
+        "coTfsHeartbeatProducer",
+        "The heartbeat producer of a CANopen® device is checked."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsMonitorActivate",
+        "Activates the passive communication monitor."
+      ],
+      [
+        "coTfsMonitorDeactivate",
+        "Deactivates the passive communication monitor."
+      ],
+      [
+        "coTfsMonitorExcludeNodeId",
+        "Excludes a single node-ID from monitoring."
+      ],
+      [
+        "coTfsMonitorExcludeNodeIdRange",
+        "Excludes a range of node-IDs from monitoring."
+      ],
+      [
+        "coTfsMonitorIncludeNodeId",
+        "Includes a single node-ID for monitoring."
+      ],
+      [
+        "coTfsMonitorIncludeNodeIdRang",
+        "Includes a range of node-IDs for monitoring."
+      ],
+      [
+        "coTfsMonitorSetLssTimeout",
+        "Sets the LSS timeout for the passive communication monitor."
+      ],
+      [
+        "coTfsMonitorSetNmtTimeout",
+        "Sets the NMT timeout for the passive communication monitor."
+      ],
+      [
+        "coTfsMonitorSetSdoTimeout",
+        "Sets the SDO timeout for the passive communication monitor."
+      ],
+      [
+        "coTfsCbGetReferenceTime",
+        "Gets the maximum, minimum, and average value of an active monitor."
+      ],
+      [
+        "coTfsCbGetSettings",
+        "Gets parameter of an active monitor."
+      ],
+      [
+        "coTfsConfigureGenericMonitor",
+        "Configures and activates a generic message monitor."
+      ],
+      [
+        "coTfsDeactivateGenericMonitor",
+        "Stops a generic message monitor and evaluate monitoring results."
+      ],
+      [
+        "coTfsCheckAndCompareGenericMonitorMessage",
+        "Checks if the expected message data are received during a generic message monitoring."
+      ],
+      [
+        "coTfsMonitorGetStatistics",
+        "Returns statistics information."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsNMTEnterPreOperational",
+        "The DUT Device Under Test is set to state \"Pre-Operational\"."
+      ],
+      [
+        "coTfsNMTResetCommunication",
+        "The DUT is commanded to execute a \"Reset Communication\"."
+      ],
+      [
+        "coTfsNMTResetNode",
+        "The DUT is commanded to execute a \"Reset Node\"."
+      ],
+      [
+        "coTfsNMTStartNode",
+        "The DUT is set to state \"Operational\"."
+      ],
+      [
+        "coTfsNMTStopNode",
+        "The DUT is set to state \"Stopped\"."
+      ],
+      [
+        "coTfsNmtWaitForBootupMessage",
+        "The DUT waits for a NMT boot-up message."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsODAddEntry",
+        "Adds a single object to the internal list of test objects."
+      ],
+      [
+        "coTfsODAddEntryIndexRange",
+        "Adds a list of object entries to the internal list, which only differ in the given index."
+      ],
+      [
+        "coTfsODAddEntrySubIndexRange",
+        "Adds a list of object entries to the internal list, which only differ in the given sub index."
+      ],
+      [
+        "coTfsODAddOptEntryValueRange",
+        "Expands the allowed value range of the last created object entry."
+      ],
+      [
+        "coTfsODAddOptEntryValue",
+        "Expands the allowed value range of the last created object entry with a given value."
+      ],
+      [
+        "coTfsODChkSingleEntry",
+        "Checks a single object dictionary entry of existence and size via a SDO upload."
+      ],
+      [
+        "coTfsODChkSingleEntryNotExist",
+        "Checks if the given object does not exist in the object dictionary."
+      ],
+      [
+        "coTfsODClearAllEntries",
+        "Deletes all objects of the internal test object list."
+      ],
+      [
+        "coTfsODChkNotExist",
+        "Executes an user defined object dictionary test on hidden objects."
+      ],
+      [
+        "coTfsODChk",
+        "Executes an user defined object dictionary test considering access type, data type and default values."
+      ],
+      [
+        "coTfsODSetErrorHandling",
+        "Controls the abort behavior of the test module."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsSDOBlockDownload",
+        "Executes a complete SDO block download."
+      ],
+      [
+        "coTfsSDOBlockUpload",
+        "Executes a complete SDO block upload."
+      ],
+      [
+        "coTfsSDOUpload",
+        "Executes a SDO upload."
+      ],
+      [
+        "coTfsSDODownload",
+        "Executes a SDO download."
+      ],
+      [
+        "coTfsSDOUploadAndCompare",
+        "Executes a SDO upload. The data received are checked against predefined data."
+      ],
+      [
+        "coTfsSDODownloadUploadAndCompare",
+        "Executes a SDO download, followed by a SDO upload. The data received are checked against predefined data."
+      ],
+      [
+        "coTfsSDOGetUploadData",
+        "Returns the received SDO data of an expedited/segmented/block upload."
+      ],
+      [
+        "coTfsSDOGetUploadSize",
+        "Returns the size of the received SDO data of an expedited/segmented/block upload."
+      ],
+      [
+        "coTfsSDOAbortTest",
+        "Stops a test after a specified number of CAN messages."
+      ],
+      [
+        "coTfsSdoChkEntryExists",
+        "Checks if an object is readable."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsSDOWaitForAbortCode",
+        "Waits for the occurrence of a SDO abort message from a particular node."
+      ],
+      [
+        "coTfsSDOWaitForSpecificAbortCode",
+        "Wait for specific SDO abort codes."
+      ],
+      [
+        "coTfsSDOGetAbortCode",
+        "Returns the received SDO abort code."
+      ],
+      [
+        "coTfsSDOAddAccAbortCode",
+        "Adds a specific abort code to the internal list of accepted abort codes."
+      ],
+      [
+        "coTfsSDOAbortCodeOccured",
+        "Checks for successful execution of a SDO command with a valid SDO abort code."
+      ],
+      [
+        "coTfsSdoChkForUnexpectedAbort",
+        "Checks for unexpected SDO abort codes."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsSyncProducerDetail",
+        "Starts a freely-configurable SYNC producer test. This test requires the existence of the optional sync counter."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsTPDOGetDataBySyncCyclic",
+        "Configures a TPDO as cyclic and starts a virtual sync producer. Checks the transmit performance of the test node."
+      ],
+      [
+        "coTfsTPDOGetDataByEventTimer",
+        "Configures the event timer of the TPDO and check the transmit cycle."
+      ],
+      [
+        "coTfsTPDOGetDataByRTR",
+        "Gets the COB-ID and transmit the TPDO data read with a remote frame."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsLssSendSwitchStateModeGlobalRequest",
+        "Sends a Switch state global LSS mode message."
+      ],
+      [
+        "ccoTfsLssWaitForSwitchStateModeGlobalRequest",
+        "Waits for a Switch state global LSS mode message."
+      ],
+      [
+        "coTfsLssSendSwitchStateSelectiveSequence",
+        "Sends a Switch state selective messages and waits for the response."
+      ],
+      [
+        "coTfsLssWaitforSwitchStateSelectiveSequence",
+        "Waits for a Switch state selective messages and sends the response."
+      ],
+      [
+        "coTfsLssSendConfigureNodeIdRequest",
+        "Sends a Configure LSS node-ID request and waits for the response."
+      ],
+      [
+        "coTfsLssSendConfigureNodeIdResponse",
+        "Sends the LSS Configure node-ID response."
+      ],
+      [
+        "coTfsLssSendConfigureBitTimingRequest",
+        "Sends a Configure LSS bit timing parameters request and waits for the response."
+      ],
+      [
+        "coTfsLssWaitForConfigureBitTimingRequest",
+        "Waits for Configure LSS bit timing parameters request."
+      ],
+      [
+        "coTfsLssSendConfigureBitTimingResponse",
+        "Sends the Configure LSS bit timing parameters response."
+      ],
+      [
+        "coTfsLssSendActivateBitTimingRequest",
+        "Sends an Activate LSS bit timing parameter request."
+      ],
+      [
+        "coTfsLssWaitForActivateBitTimingRequest",
+        "Waits for an Activate LSS bit timing parameter request."
+      ],
+      [
+        "coTfsLssSendStoreConfigurationRequest",
+        "Sends a LSS Store Configuration request and waits for the response."
+      ],
+      [
+        "coTfsLssWaitForStoreConfigurationRequest",
+        "Waits for the LSS store configuration request and sends the response."
+      ],
+      [
+        "coTfsLssSendInquireNodeIdRequest",
+        "Sends an Inquire node-ID request and waits for the response."
+      ],
+      [
+        "coTfsLssWaitForInquireNodeIdRequest",
+        "Waits for the Inquire node-ID request and sends the response."
+      ],
+      [
+        "coTfsLssSendInquireVendorIdRequest",
+        "Sends an Inquire vendor-ID request and waits for the response."
+      ],
+      [
+        "coTfsLssWaitForInquireVendorIdRequest",
+        "Waits for the Inquire vendor-ID request and sends the response."
+      ],
+      [
+        "coTfsLssSendInquireProductCodeRequest",
+        "Sends an Inquire product code request and waits for the response."
+      ],
+      [
+        "coTfsLssWaitForInquireProductCodeRequest",
+        "Waits for the Inquire product code request and sends the response."
+      ],
+      [
+        "coTfsLssSendInquireRevisionNoRequest",
+        "Sends an Inquire revision number request and waits for the response."
+      ],
+      [
+        "coTfsLssWaitForInquireRevisionNoRequest",
+        "Waits for the Inquire revision number request and sends the response."
+      ],
+      [
+        "coTfsLssSendInquireSerialNoRequest",
+        "Sends an Inquire serial number request and waits for the response."
+      ],
+      [
+        "coTfsLssWaitForInquireSerialNoRequest",
+        "Waits for the Inquire serial number request and sends the response"
+      ],
+      [
+        "coTfsLssSendIdentifyRemoteSlaveSequence",
+        "Sends a LSS identify remote slave sequence."
+      ],
+      [
+        "coTfsLssWaitForIdentifyRemoteSlaveSequence",
+        "Waits for a LSS identify remote slave sequence."
+      ],
+      [
+        "coTfsLssSendIdentifySlaveResponse",
+        "Sends an Identify slave protocol response message."
+      ],
+      [
+        "coTfsLssWaitForIdentifySlaveResponse",
+        "Waits for the Identify slave protocol response message."
+      ],
+      [
+        "coTfsLssSendIdentifyNonConfRemoteSlaveRequest",
+        "Sends an Identify non-configured remote slave response."
+      ],
+      [
+        "coTfsLssWaitForIdentifyNonConfRemoteSlaveRequest",
+        "Waits for an Identify non-configured remote slave response."
+      ],
+      [
+        "coTfsLssSendIdentifyNonConfSlaveResponse",
+        "Sends an Identify non-configured remote slave response."
+      ],
+      [
+        "coTfsLssWaitForIdentifyNonConflaveResponse",
+        "Waits for an Identify non-configured slave response."
+      ],
+      [
+        "coTfsLssSendFastScanRequest",
+        "Sends a LSS FastScan protocol request."
+      ],
+      [
+        "coTfsLssWaitForFastScanRequest",
+        "Waits for the FastScan message."
+      ],
+      [
+        "coTfsLssClearMasterResponseList",
+        "Clears the internal list of expected LSS Master requests and answers."
+      ],
+      [
+        "coTfsLssWaitForMasterRequestMessage",
+        "Waits for a configured LSS Master request."
+      ],
+      [
+        "coTfsLssAddMasterResponseSwitchStateSelective",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseSwitchStateGlobal",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseConfigureNodeId",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseConfigureBitTiming",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseActivateBitTiming",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseStoreConfiguration",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseInquireNodeId",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseInquireProductCode",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseInquireRevisionNo",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseInquireSerialNo",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseInquireVendorId",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseIdentifyNonConfRemoteSlv",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssAddMasterResponseIdentifyFastscan",
+        "Adds a LSS Master request wait condition to the internal list."
+      ],
+      [
+        "coTfsLssSetMasterResponseIdentifyRemoteSlaveMask",
+        "Sets the bit masks for using the function coTfsLssAddMasterResponseIdentifyNonConfRemoteSlv."
+      ],
+      [
+        "coTfsLssAddMasterResponseIdentifyNonConfRemoteSlv",
+        "Adds a LSS Master request wait condition to the internal list."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

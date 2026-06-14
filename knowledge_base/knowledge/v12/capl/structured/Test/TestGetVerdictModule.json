@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestGetVerdictModule",
+  "category": "Test",
+  "title": "TestGetVerdictModule",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetVerdictModule.htm",
+  "syntax": [
+    "long TestGetVerdictModule ();"
+  ],
+  "description": [
+    "Returns the current verdict out of the test module."
+  ],
+  "parameters": [],
+  "return": "0: pass",
+  "example": {
+    "description": [],
+    "code": "// gets the verdict of the test module and report it in the Write Window\nvoid MainTest()\n{\n   MyTestCase();\n   if (TestGetVerdictModule() == 1)\n      Write(\"State of Test Module: failed.\");\n   else\n      Write(\"State of Test Module: passed.\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

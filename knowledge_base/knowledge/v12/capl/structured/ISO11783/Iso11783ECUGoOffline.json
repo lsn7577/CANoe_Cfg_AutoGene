@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783ECUGoOffline",
+  "category": "ISO11783",
+  "title": "Iso11783ECUGoOffline",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783ECUGoOffline.htm",
+  "syntax": [
+    "dword Iso11783ECUGoOffline( dword ecuHandle );"
+  ],
+  "description": [
+    "The function switches the state of the node to offline. It does not send a cannot claim address parameter group.",
+    "After calling this function the node cannot send any parameter groups, but it is responding to requests for address claim.",
+    "Use the function Iso11783ECUGoOnline to start the node again."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783ECUGoOffline(ecuHdl);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

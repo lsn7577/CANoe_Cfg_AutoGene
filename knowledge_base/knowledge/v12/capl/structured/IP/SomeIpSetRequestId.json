@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpSetRequestId",
+  "category": "IP",
+  "title": "SomeIpSetRequestId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpSetRequestId.htm",
+  "syntax": [
+    "LONG SomeIpSetRequestId ( dword messageHandle, dword requestId);"
+  ],
+  "description": [
+    "This function sets the request ID in the SOME/IP message header."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the SOME/IP message (e.g. see OnSomeIpMessage)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  DWORD messageId        = 0x12340004; // service ID = 0x1234, method ID = 0x0004\n  DWORD requestId        = 0;          // client ID = 0, session ID = 0\n  DWORD protocolVersion  = 1;\n  DWORD interfaceVersion = 1;\n  DWORD messageType      = 0x2;        // notification message\n  DWORD returnCode       = 0;          // not available\n  DWORD aep              = 0;          // application endpoint handle\n  DWORD messageHandle    = 0;          // handle of the created SOME/IP message\n  BYTE payload[5];                     // the message payload\n  DWORD count            = 0;          // a simple counter\n\n  // initialize the payload\n  count = 0;\n  payload[count++] = 0x11;\n  payload[count++] = 0x22;\n  payload[count++] = 0x33;\n  payload[count++] = 0x44;\n  payload[count++] = 0x55;\n\n  // open application endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create the SOME/IP message itself and set the message payload\n  messageHandle = SomeIpCreateMessage(messageId,requestId,protocolVersion,interfaceVersion,messageType,returnCode);\n  SomeIpSetData(messageHandle,elcount(payload),payload);\n\n  // send five SOME/IP message using different Request IDs\n  for(count = 0; count < 5; count++)\n  {\n    SomeIpSetRequestId(messageHandle,count);\n    SomeIpOutputMessage(aep,0xFFFFFFFF,40001,messageHandle);\n  } // for\n\n  // release the some IP message\n  SomeIpReleaseMessage(messageHandle);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_ConfigureVehicleAnnouncement",
+  "category": "Diagnostics",
+  "title": "DoIP_ConfigureVehicleAnnouncement",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPConfigureVehicleAnnouncement.htm",
+  "syntax": [
+    "void DoIP_ConfigureVehicleAnnouncement(dword toInitial_ms, dword messageCount, dword toInterval_ms);"
+  ],
+  "description": [
+    "Configures when the Vehicle Announcement Messages are sent."
+  ],
+  "parameters": [
+    {
+      "name": "Note This parameter is ignored, if the function DoIP_AnnounceVehicle is used for sending Vehicle Announcement Messages.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Send 5 announcement messages after 200 ms, with 100 ms interval\nDoIP_ConfigureVehicleAnnouncement( 200, 5, 100);\nDoIP_AnnounceVehicle();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

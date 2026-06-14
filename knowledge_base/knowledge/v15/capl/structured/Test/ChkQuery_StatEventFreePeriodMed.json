@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_StatEventFreePeriodMed",
+  "category": "Test",
+  "title": "ChkQuery_StatEventFreePeriodMed",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkQueryStatEventFreePeriodMed.htm",
+  "syntax": [
+    "double ChkQuery_StatEventFreePeriodMed (dword aCheckId);"
+  ],
+  "description": [
+    "Returns the average timely distance between events and check starts/stops."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "—"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "double result;\ndword checkId;\ncheckId = ChkStart_MsgRelCycleTimeViolation(VehicleMotion, 0.9, 1.1);\n// ... execute test sequence\nresult = ChkQuery_StatEventFreePeriodMed(checkId);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0 7.0 SP5: method",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

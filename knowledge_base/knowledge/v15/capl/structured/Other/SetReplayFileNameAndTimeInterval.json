@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "SetReplayFileNameAndTimeInterval",
+  "category": "Other",
+  "title": "SetReplayFileNameAndTimeInterval",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionSetReplayFileNameAndTimeInterval.htm",
+  "syntax": [
+    "dword setReplayFileNameAndTimeInterval(char nameOfReplayBlock[], char fileName[], char fileType[], int64 startTime); // form 1",
+    "dword setReplayFileNameAndTimeInterval(char nameOfReplayBlock[], char fileName[], char fileType[], int64 startTime, int64 endTime); // form 2"
+  ],
+  "description": [
+    "Replaces the source file of an existing Replay Block and allows to set a start and stop time of the recorded events.",
+    "The function call temporarily stops the replay and restarts the Replay Block with the new source file, if replay is active before file change.",
+    "The function call will not modify the configuration of the Reply Block in the Simulation Setup. The new file will not be stored when saving the configuration.",
+    "If you change the source file during measurement in the configuration dialog of the Reply Block, the new file name will be stored in the configuration.",
+    "Note: The behavior depends on the settings of the Replay Block. If the replay should be started via CAPL the function ReplayStart has to be used. If the function is used during an active replay, the loading time of the file leads to a delay"
+  ],
+  "parameters": [
+    {
+      "name": "nameOfReplayBlock",
+      "type": "",
+      "description": "Contents of the Replay name field in the replay configuration dialog."
+    },
+    {
+      "name": "fileName",
+      "type": "",
+      "description": "The new source file (as absolute or relative path to the configuration file)."
+    },
+    {
+      "name": "fileType",
+      "type": "",
+      "description": "The source file type (as string): ASC, BLF For all other source file types that are available in the selection dialog of the CANoe Replay Block, use BLF as fileType parameter."
+    },
+    {
+      "name": "startTime",
+      "type": "",
+      "description": "Start time of the recorded events in the log file in nano seconds. Use ConvertTimestampToNS to convert a timestamp given in days, hours, minutes or seconds."
+    },
+    {
+      "name": "endTime",
+      "type": "",
+      "description": "End time of the recorded events in the log file in nano seconds. Use ConvertTimestampToNS to convert a timestamp given in days, hours, minutes or seconds."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  char  fileNameBlf[50] = \"C:\\\\anyFolder\\\\LogFile.blf\";\n  char  fileNameMf4[50] = \"C:\\\\anyFolder\\\\LogFile.mf4\";\n  char  fileNameAsc[50] = \"C:\\\\anyFolder\\\\LogFile.asc\";\n}\n\non preStart\n{\n  setReplayFileNameAndTimeInterval(\"ReplayBlockBlf\", fileNameBlf, \"blf\", 5000000000, 10000000000);\n  setReplayFileNameAndTimeInterval(\"ReplayBlockMf4\", fileNameMf4, \"blf\", 2000000000, 50000000000);\n  setReplayFileNameAndTimeInterval(\"ReplayBlockAsc\", fileNameAsc, \"asc\", 1000000000, 7000000000);\n}\n\non key 'a'\n{\n  replayStart(\"ReplayBlockBlf\");\n}\n\non key 'b'\n{\n  replayStart(\"ReplayBlockMf4\");\n}\n\non key 'c'\n{\n  replayStart(\"ReplayBlockAsc\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "14",
+      "14",
+      "14",
+      "—",
+      "14",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "Not in standalone mode",
+      "Not in standalone mode",
+      "—",
+      "—",
+      "Not in standalone mode",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

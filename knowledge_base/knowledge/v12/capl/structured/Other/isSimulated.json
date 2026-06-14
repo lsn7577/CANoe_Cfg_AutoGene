@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "isSimulated",
+  "category": "Other",
+  "title": "isSimulated",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionIsSimulated.htm",
+  "syntax": [
+    "long isSimulated()"
+  ],
+  "description": [
+    "This function is used to get the information if CANoe is in simulated mode."
+  ],
+  "parameters": [],
+  "return": "1: True, CANoe is in simulated mode.",
+  "example": {
+    "description": [
+      "This example checks if CANoe is in simulated mode. Then the test is not executed."
+    ],
+    "code": "// do not activate test when running in simulated mode\nif (isSimulated())\n{\nWrite(\"Test cannot run in simulated mode!\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

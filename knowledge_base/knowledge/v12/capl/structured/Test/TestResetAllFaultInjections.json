@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestResetAllFaultInjections",
+  "category": "Test",
+  "title": "TestResetAllFaultInjections",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestResetAllFaultInjections.htm",
+  "syntax": [
+    "long TestResetAllFaultInjections (dbNode aNode);"
+  ],
+  "description": [
+    "Reset all fault injections setting of a node.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "Node which fault injection settings should be reset."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": "// set some FaultInjections and reset them all\nTestDisableMsg(MsgToManipulate1);\nTestSetMsgCycleTime(MsgToManipulate2, 200);\n\nTestWaitForTimeout(2000)\n\nTestResetAllFaultInjections(NodeToManipulate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

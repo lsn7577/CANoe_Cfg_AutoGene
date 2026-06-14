@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939ILControlStop",
+  "category": "J1939",
+  "title": "J1939ILControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILControlStop.htm",
+  "syntax": [
+    "long J1939ILControlStop(); // form 1"
+  ],
+  "description": [
+    "Deactivates the IL and stops sending cyclic messages.",
+    "A Cannot Claim Address message is sent, if the NMT is activated and the message is not suppressed with the parameter option set to 1."
+  ],
+  "parameters": [
+    {
+      "name": "options",
+      "type": "",
+      "description": "options1: suppress sending Cannot Claim Address message"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n J1939ILControlStop(1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

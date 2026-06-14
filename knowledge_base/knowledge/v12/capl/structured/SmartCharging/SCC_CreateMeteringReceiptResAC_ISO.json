@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateMeteringReceiptResAC_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateMeteringReceiptResAC_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateMeteringReceiptResAC_Iso.htm",
+  "syntax": [
+    "long SCC_CreateMeteringReceiptResAC_ISO ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, byte StatusFlags[], char Notification[] )"
+  ],
+  "description": [
+    "Creates a Metering Receipt Response message for sending, using the AC syntax."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

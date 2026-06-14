@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linSetScopeTrigger",
+  "category": "Obsolete",
+  "title": "linSetScopeTrigger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSetScopeTrigger.htm",
+  "syntax": [
+    "long linSetScopeTrigger (long ID, long Position)"
+  ],
+  "description": [
+    "With these functions it is possible to define trigger conditions for an oscilloscope. If the trigger conditions are satisfied, the LIN hardware will send an impulse on the sync cable.",
+    "The first function defines a single trigger condition for a valid frame or an error in a response.",
+    "The second function defines a set of trigger conditions.",
+    "If this function is called from on preStart part of the CAPL program, then this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "ID",
+      "type": "",
+      "description": "Identifier of the frame to be triggered on. The parameter is only evaluated for trigger conditions after the ID field."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\nlong lresp;\nlong position=0;\n\n// The fourth parameter is a Byte Array (8 Bytes).\n// -> 64 Bits for the setting of 64 Ids.\n\nbyte idmask[8] = {0,0,0,0,0,0,0,0};\nbyte identifier = 0x30;\n\n// Byte Position: 6         // Bit Position: 0 \nidmask[identifier / 8] |= 1 << (identifier % 8);\n\nlresp = linSetScopeTrigger (0x30, position);\nlresp = linSetScopTrigger (1, 1, 1, idmaks);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDGetLastErrorText",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDGetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDGetLastErrorText.htm",
+  "syntax": [
+    "long Iso11783IL_PDDGetLastErrorText( dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "This function returns as a string the error description of the function of this node layer most recently executed."
+  ],
+  "parameters": [
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "size of the buffer into which the error text is copied"
+    }
+  ],
+  "return": "number of characters copied",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterCount",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterCount.htm",
+  "syntax": [
+    "dword IpGetAdapterCount();"
+  ],
+  "description": [
+    "The function returns the number of network interfaces for the local computer, not including the loopback interface.",
+    "All adapter addresses including the local loopback address are taken into account in the stack of the operating system. The order depends on how the operating system lists the adapters.All assigned addresses including the VLAN addresses are taken into account in the CANoe stack."
+  ],
+  "parameters": [],
+  "return": "The number of network interfaces.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

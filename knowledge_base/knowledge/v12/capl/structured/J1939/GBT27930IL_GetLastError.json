@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_GetLastError",
+  "category": "J1939",
+  "title": "GBT27930IL_GetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILGetLastError.htm",
+  "syntax": [
+    "long GBT27930IL_GetLastError(); // form 1"
+  ],
+  "description": [
+    "Gets the return value of the last called GBT27930 IL function."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  BYTE date = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 };\n  GBT27930IL_SetSignalRaw( EEC1::EngSpeed, 6, data );\n  write( \"Errorcode = %d\", GBT27930IL_GetLastError() );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "frResetStatistics",
+  "category": "FlexRay",
+  "title": "frResetStatistics",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRResetStatistics.htm",
+  "syntax": [
+    "void frResetStatistics();"
+  ],
+  "description": [
+    "Resets FlexRay cluster statistics. Both A and B channels are concerned.",
+    "There are two ways to call this function:"
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "FlexRay cluster number (1-based)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key 'r' \n{ \n   // reset statistics for A and B channels in cluster 1\n   frResetStatistics(1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

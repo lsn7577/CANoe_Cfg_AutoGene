@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "GNSSGetAbsFilePath",
+  "category": "J1939",
+  "title": "GNSSGetAbsFilePath",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSGetAbsFilePath.htm",
+  "syntax": [
+    "long GNSSGetAbsFilePath( char file [], char fileNameWithAbsPath[], long absPathLen )"
+  ],
+  "description": [
+    "This function gets the absolute path of a file.",
+    "Functionality"
+  ],
+  "parameters": [
+    {
+      "name": "file",
+      "type": "",
+      "description": "The file can be defined: with the file name only with the file name and relative path to the current configuration with the absolute path"
+    },
+    {
+      "name": "fileNameWithAbsPath",
+      "type": "",
+      "description": "buffer to which the full path name should be copied"
+    },
+    {
+      "name": "absPathLen",
+      "type": "",
+      "description": "size of the buffer in bytes for the full path name."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "on key 'x'\n{\n  char absPath[256];\n\n  GNSSGetAbsFilePath(\"Test.can\", absPath, 256);\n  write (\"absPath 1: %s \", absPath);\n\n  GNSSGetAbsFilePath(\"Nodes\\\\Test.can\", absPath, 256);\n  write (\"absPath 1: %s \", absPath);\n\n  GNSSGetAbsFilePath(\"C:\\\\Nodes\\\\Test.can\", absPath, 256);\n  write (\"absPath 1: %s \", absPath);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.6 SP3",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 ISO11783",
+      "J1939 ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

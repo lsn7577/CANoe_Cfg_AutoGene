@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPChangeSize",
+  "category": "ISO11783",
+  "title": "Iso11783OPChangeSize",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPChangeSize.htm",
+  "syntax": [
+    "long Iso11783OPChangeSize( dword ecuHandle, dword objectID, dword width, dword height );"
+  ],
+  "description": [
+    "The function changes the size of an object. A Change Size command to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPChangeSize( \r\n handle, 1200, 80, 40 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

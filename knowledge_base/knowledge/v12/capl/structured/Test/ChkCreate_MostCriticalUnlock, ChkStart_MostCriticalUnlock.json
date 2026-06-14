@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_MostCriticalUnlock, ChkStart_MostCriticalUnlock",
+  "category": "Test",
+  "title": "ChkCreate_MostCriticalUnlock, ChkStart_MostCriticalUnlock",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateMostCriticalUnlock.htm",
+  "syntax": [
+    "dword ChkCreate_MostCriticalUnlock();"
+  ],
+  "description": [
+    "The check function monitors the occurrence of \"CriticalUnlock\" events.",
+    "A \"CriticalUnlock\" event is generated as soon an unlock occurs after a \"Stable Lock\" condition, which is longer than tUnlock (70 ms), or several unlocks occur successively, which together are longer than tUnlock (see MOST specification for more information).",
+    "This check always works on events. Therefore, it will not detect a current \"CriticalUnlock\" state, if this state has been entered before the check’s activation.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aCallback",
+      "type": "",
+      "description": "Name of the callback function, which should be called as soon as a \"CriticalUnlock\" event occurs."
+    }
+  ],
+  "return": "0: Check could not be created and must not be referenced",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

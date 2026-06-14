@@ -1,0 +1,171 @@
+{
+  "page_type": "function",
+  "name": "TCIL_GetDeviceParameters",
+  "category": "ISO11783",
+  "title": "TCIL_GetDeviceParameters",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILGetDeviceParameters.htm",
+  "syntax": [
+    "long TCIL_GetDeviceParameters(byte addressClient, char designator[], char version[], byte deviceName[], char serialNumber[], byte structureLabel[], dword& lengthOfStructureLabel, byte localizationLabel[])); // form 1",
+    "long TCIL_GetDeviceParameters(dbNode tc, byte addressClient, char designator[], char version[], byte deviceName[], char serialNumber[], byte structureLabel[], dword& lengthOfStructureLabel, byte localizationLabel); // form 2"
+  ],
+  "description": [
+    "Returns parameters of the client device which are contained in the Device XML element (DVC) of the device description."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function."
+    },
+    {
+      "name": "addressClient",
+      "type": "",
+      "description": "Address of the TC client node the data entity belongs to."
+    },
+    {
+      "name": "designator",
+      "type": "",
+      "description": "Returns the device designator of the client device (as a NULL-terminated string)."
+    },
+    {
+      "name": "version",
+      "type": "",
+      "description": "Returns the software version of the client device (as a NULL-terminated string)."
+    },
+    {
+      "name": "deviceName",
+      "type": "",
+      "description": "Returns the NAME of the client device (as a byte array)."
+    },
+    {
+      "name": "serialNumber",
+      "type": "",
+      "description": "Returns the serial number of the client device (as a NULL-terminated string)."
+    },
+    {
+      "name": "structureLabel",
+      "type": "",
+      "description": "Returns the label of device descriptor structure (as a byte array)."
+    },
+    {
+      "name": "lengthOfStructureLabel",
+      "type": "",
+      "description": "Returns the length of the structureLabel."
+    },
+    {
+      "name": "localizationLabel",
+      "type": "",
+      "description": "Returns the label of the device descriptor localization (as a byte array)."
+    }
+  ],
+  "return": "Returns the device designator of the client",
+  "example": {
+    "description": [
+      "Example (Form 2, applicable in a test node)"
+    ],
+    "code": "long result;\nchar designator[33];\nchar version[33];\nbyte deviceName[8];\nchar serialNumber[33];\nbyte structureLabel[33];\ndword lengthOfStructureLabel;\nbyte localizationLabel[7];\n\nresult = TCIL_GetDeviceParameters(TC, clientAddress, designator, version, deviceName, serialNumber, structureLabel, lengthOfStructureLabel, localizationLabel);\nif (result < 0)\n{\n  write(\"TCIL_GetDeviceParameters failed with error %i\", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14.0 SP2",
+      "13.0",
+      "—",
+      "—",
+      "5.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 2 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

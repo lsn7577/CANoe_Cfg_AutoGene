@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "output (J1939)",
+  "category": "J1939",
+  "title": "output (J1939)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/Functions/CAPLfunctionJ1939Output.htm",
+  "syntax": [
+    "output(pg pg_variable);"
+  ],
+  "description": [
+    "Outputs a parameter group onto the CAN bus."
+  ],
+  "parameters": [
+    {
+      "name": "pg_variable",
+      "type": "",
+      "description": "Variable of the type \"pg\"."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables {\npg 0xFEE1 pg_1 = { // Definition of a parameter group\n};\n}\non key F1 {\noutput (pg_1); // Output parameter group\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

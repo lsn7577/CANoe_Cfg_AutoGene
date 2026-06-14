@@ -1,0 +1,141 @@
+{
+  "page_type": "function",
+  "name": "TestAddTriggerTesterAction",
+  "category": "Test",
+  "title": "TestAddTriggerTesterAction",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestAddTriggerTesterAction.htm",
+  "syntax": [
+    "long TestAddTriggerTesterAction(long handle, Signal callbackTrigger);",
+    "long TestAddTriggerTesterAction(long handle, sysVar callbackTrigger);",
+    "long TestAddTriggerTesterAction(long handle, EnvVarName callbackTrigger);",
+    "long TestAddTriggerTesterAction(long handle, long callbackCycle);"
+  ],
+  "description": [
+    "Adds a trigger to a tester action previously created with TestCreateTesterAction. Every trigger triggers the call of the CAPL callback of its tester action cyclically or when the value of the signal, system variable, environment variable updates."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "The handle of the tester action to add the trigger."
+    },
+    {
+      "name": "callbackTrigger",
+      "type": "",
+      "description": "The trigger when the condition has to be checked. It will always be checked when the value of the signal, system variable or environment variable updates."
+    },
+    {
+      "name": "callbackCycle",
+      "type": "",
+      "description": "Cycle time to check the condition."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "int CallbackTesterAction(int trigger)\n{\n  if (trigger == gTriggerCycle)\n  {\n    testStep(\"\", \"Triggered by cycle time”);\n  }\n  else if (trigger == gTriggerSig)\n  {\n    testStep(\"\", \"Triggered by signal”);\n  }\n  else if (trigger == gTriggerSV)\n  {\n    testStep(\"\", \"Triggered by system variable”);\n  }\n  else if (trigger == gTriggerEV)\n  {\n    testStep(\"\", \"Triggered by environment variable”);\n  }\n  else\n  {\n    testStep(\"\", \"Triggered before opening dialog or before closing dialog after timeout”);\n  }\n  if(@sysVarEngineStarted == 1)\n    return 1;\n\n  return 0;\n}\n\ntestcase TCTesterAction()\n  {\n  long handle;\n\n  handle = TestCreateTesterAction(\"This is the tester action text\", \"Tester action heading\", \"Resource.jpg\", \"Resource Caption\", \"CallbackTesterAction\");\n\n  gTriggerCycle = TestAddTriggerTesterAction(handle, 1000);\n  gTriggerSig = TestAddTriggerTesterAction(handle, SigSigned16);\n  gTriggerSV = TestAddTriggerTesterAction(handle, sysvar::sysInt);\n  gTriggerEV = TestAddTriggerTesterAction(handle, EnvInt);\n\n  TestValidateTesterAction(handle, 10000, 3);\n  }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP3",
+      "13.0",
+      "—",
+      "14",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

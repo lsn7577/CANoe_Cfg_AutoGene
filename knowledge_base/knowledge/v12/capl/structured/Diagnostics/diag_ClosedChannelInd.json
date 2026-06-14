@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diag_ClosedChannelInd",
+  "category": "Diagnostics",
+  "title": "diag_ClosedChannelInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagClosedChannelInd.htm",
+  "syntax": [
+    "long diag_ClosedChannelInd (); // form 1"
+  ],
+  "description": [
+    "This function communicates to CANoe that the communication channel is not longer available, e.g. the tester closed the channel or a non reparable error occurred.",
+    "The CAPL program first has to call diag_SetupChannelCon before further data can be sent."
+  ],
+  "parameters": [
+    {
+      "name": "target",
+      "type": "",
+      "description": "The qualifier of the ECU whose channel has been closed."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "// This callback shall be called by an example TP layer\n\tTPLayer_ClosedChannel( long connectionHandle)\n{\n   char ecuQualifier[20];\n  TPLayerGetECUQualifierForHandle(connectionHandle, ecuQualifier);\n  diag_ClosedChannelInd(ecuQualifier);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

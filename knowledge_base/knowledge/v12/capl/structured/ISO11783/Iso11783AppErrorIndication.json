@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783AppErrorIndication",
+  "category": "ISO11783",
+  "title": "Iso11783AppErrorIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783AppErrorIndication.htm",
+  "syntax": [
+    "dword Iso11783AppErrorIndication( long ecuHandle, long errorClass, long errorNumber, long addCode );"
+  ],
+  "description": [
+    "Indicates that errors have occurred during a transfer or else during the initialization of ECUs (for example timeout during the transport protocol). If an Address Claiming procedure has failed, that will also be reported by means of this function."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword Iso11783AppErrorIndication( \r\n LONG ecuHdl, LONG errClass, LONG errNum, LONG addCode )\n{\n  /* user code */\n  return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

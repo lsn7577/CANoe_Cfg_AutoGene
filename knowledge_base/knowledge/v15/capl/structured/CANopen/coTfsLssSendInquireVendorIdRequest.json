@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendInquireVendorIdRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendInquireVendorIdRequest",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendInquireVendorIdReq.htm",
+  "syntax": [
+    "long coTfsLssSendInquireVendorIdRequest( dword[] pVendorId );"
+  ],
+  "description": [
+    "The function sends an Inquire vendor-ID request and waits for the response."
+  ],
+  "parameters": [
+    {
+      "name": "pVendorId",
+      "type": "",
+      "description": "Vendor-ID part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword pVendorId[1];\n\n/* send LSS inquire vendor ID request */\n\nif (coTfsLssSendInquireVendorIdRequest( pVendorId ) == 1) {\n  /* sent LSS inquire vendor ID request and received response */\n  /* received value can be found in pVendorId[0] */\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

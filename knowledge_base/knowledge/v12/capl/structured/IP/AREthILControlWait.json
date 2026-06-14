@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "AREthILControlWait",
+  "category": "IP",
+  "title": "AREthILControlWait",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthILControlWait.htm",
+  "syntax": [
+    "long AREthILControlWait();"
+  ],
+  "description": [
+    "Stops sending cyclic messages.",
+    "Application Endpoints and Provided Services are not deleted, Service Discovery continues to run. Messages continue to be received by AUTOSAR Eth IL and can be evaluated.",
+    "Use AREthILControlResume to send cyclic messages again."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 'w'\n{\n  // stop sending messages\n  AREthILControlWait();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

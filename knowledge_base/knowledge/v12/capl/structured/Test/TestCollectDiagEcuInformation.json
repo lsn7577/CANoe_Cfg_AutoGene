@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestCollectDiagEcuInformation",
+  "category": "Test",
+  "title": "TestCollectDiagEcuInformation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCollectDiagEcuInformation.htm",
+  "syntax": [
+    "TestCollectDiagEcuInformation(char class[]);"
+  ],
+  "description": [
+    "Sends diagnostic requests to the currently selected diagnostic target or the given ECU and writes the responses to the report file. It considers all requests below a diagnostic class that have constant parameters only."
+  ],
+  "parameters": [
+    {
+      "name": "class",
+      "type": "",
+      "description": "The qualifier of the diagnostic class."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "testcase IdentifyAllEcus()\n{\n  char ecuQual[200];\n  long i;\n  i = diagGetTargetCount();\n  while( i-- > 0)\n  {\n    long class;\n    long status;\n    if( 0 >= diagGetTargetQualifier( i, ecuQual, elcount( ecuQual)))\n    {\n      TestStepFail( \"\", \"Cannot retrieve qualifier of ECU target %d\", i);\n      continue;\n    }\n    write( \"Collecting information from target %s\", ecuQual);\n    status = TestCollectDiagEcuInformation( ecuQual, \"Identification\");\n    if( status == 0)\n      TestStepPass( \"ECU information collected successfully\");\n    else\n      TestStepFail( \"\", \"Error %d collecting information from ECU %s\", status, ecuQual);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

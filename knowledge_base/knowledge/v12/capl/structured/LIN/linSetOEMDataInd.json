@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetOEMDataInd",
+  "category": "LIN",
+  "title": "linSetOEMDataInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetOEMDataInd.htm",
+  "syntax": [
+    "long linSetOEMDataInd(long active)"
+  ],
+  "description": [
+    "Sets/resets the data indication bit for a calling slave node."
+  ],
+  "parameters": [
+    {
+      "name": "active",
+      "type": "",
+      "description": "0: set1: reset"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "PDU",
+  "category": "Other",
+  "title": "PDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Objects/CAPLfunctionPDU.htm",
+  "syntax": [
+    "PDU short <AUTOSAR short header ID> <PDU var>"
+  ],
+  "description": [
+    "Can be used to create a PDU object. The object data can be manipulated via the object's selectors. Additional object properties can be read from the selectors.",
+    "A PDU object can be sent using the TriggerPDU function."
+  ],
+  "parameters": [
+    {
+      "name": "<PDU var>",
+      "type": "",
+      "description": "String that specifies the variable name of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on PDU CAN_1::SOMEPDU1\n{\n  PDU CAN_2::SOMEPDU1 mypdu2;\n  mypdu2.Payload = this.Payload;\n  triggerPDU(mypdu2);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "Bus type",
+      "link": "../../../Shared/CAPL/General/EnumerationTypes.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

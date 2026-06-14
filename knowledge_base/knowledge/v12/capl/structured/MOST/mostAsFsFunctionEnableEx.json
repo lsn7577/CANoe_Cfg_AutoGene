@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "mostAsFsFunctionEnableEx",
+  "category": "MOST",
+  "title": "mostAsFsFunctionEnableEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsFsFunctionEnableEx.htm",
+  "syntax": [
+    "long mostAsFsFunctionEnableEx(long fblockId, long instId, long functionId, long opTypes)"
+  ],
+  "description": [
+    "mostAsFsFunctionEnableEx() registers a function and its operations with the function service. The service must have been previously enabled for the function block with mostAsFsEnableEx.",
+    "The second option registers a function with the notification service simultaneously. For this to be achieved, the function must be of the \"Property\" type and the notification service of the function block must have been previously enabled with mostAsNtfEnableEx.",
+    "Database support:",
+    "The special value functionID=-1 triggers the execution of the CAPL function for all MOST functions and operations of the function block from the function catalog."
+  ],
+  "parameters": [
+    {
+      "name": "fblockId",
+      "type": "",
+      "description": "Function block ID"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

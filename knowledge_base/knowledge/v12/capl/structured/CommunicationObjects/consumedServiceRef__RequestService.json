@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedServiceRef::RequestService",
+  "category": "CommunicationObjects",
+  "title": "consumedServiceRef::RequestService",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedServiceRefRequestService.htm",
+  "syntax": [
+    "int consumedServiceRef::RequestService()"
+  ],
+  "description": [
+    "Requests the usage of a specific service: for the specified consumer from the specified provider. If the service is requested, a (logical) connection to the provider will be created as soon as the provider is available for the consumer."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "MirrorAdjustment.consumerSide[CANoe,LeftMirror].RequestService();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

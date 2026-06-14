@@ -1,0 +1,32 @@
+{
+  "page_type": "event",
+  "name": "on a429worderror",
+  "category": "A429",
+  "title": "on a429worderror",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/EventProcedures/CAPLfunctionA429OnA429WordError.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure on a429worderror is called on every event, related to an ARINC word error. The error type is available in the selector error.",
+    "Note that there are errors without any valid label information. This is especially the gap violation error. The ARINC word causing that error triggers a on a429word procedure. For this reason it makes sense to catch all errors in a single channel related handler.",
+    "ARINC word errors are also monitored with statistics system variables."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "a429word",
+      "link": "../CAPLfunctionsA429DefineARINCword.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

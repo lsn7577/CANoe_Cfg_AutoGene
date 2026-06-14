@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "setStartdelay",
+  "category": "Other",
+  "title": "setStartdelay",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetstartdelay.htm",
+  "syntax": [
+    "void setStartdelay(int delay)"
+  ],
+  "description": [
+    "Sets the value of the Start Delay for this network node. This function can only be called in the preStart event procedure. Afterwards the value of the Start Delay cannot be changed any more."
+  ],
+  "parameters": [
+    {
+      "name": "delayText",
+      "type": "",
+      "description": "Integer for the Start Delay ms. This value may lie between 0 and 99999. If the value is greater or less than the limits of this range a warning appears in the Write Window."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "...\non preStart\n{\n// Set Start Delay to 10 seconds\nsetStartdelay(10000);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

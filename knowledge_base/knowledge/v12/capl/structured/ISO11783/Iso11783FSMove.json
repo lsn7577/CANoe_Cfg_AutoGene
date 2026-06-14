@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSMove",
+  "category": "ISO11783",
+  "title": "Iso11783FSMove",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fsmove.htm",
+  "syntax": [
+    "long Iso11783FSMove( char sourcePath[], char destPath[], dword movemode );"
+  ],
+  "description": [
+    "The function moves, copies or deletes a file or directory."
+  ],
+  "parameters": [
+    {
+      "name": "sourcePath",
+      "type": "",
+      "description": "Absolute file or directory source path"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "// Move\nIso11783FSMove( \"\\TEST.TXT\", \"\\DIR1\\TEST.TXT\", 0x00 \r\n );\n\n// Copy & Rename\nIso11783FSMove( \"\\TEST.TXT\", \"\\DIR1\\TEST2.TXT\", 0x01 \r\n );\n\n// Delete (even, if \"TEST.TXT\" \r\n is read-only)\nIso11783FSMove( \"\\TEST.TXT\", 0, 0x06 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

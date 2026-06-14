@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILSetOperationMode",
+  "category": "AUTOSARpduIL",
+  "title": "ARILSetOperationMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILSetOperationMode.htm",
+  "syntax": [
+    "long ARILSetOperationMode (long mode, long param);"
+  ],
+  "description": [
+    "Influences the behavior of the update bits and counters. The function without a signal or a signal group parameter has potentially impact on all possible signals and signal groups."
+  ],
+  "parameters": [
+    {
+      "name": "dbSignal",
+      "type": "",
+      "description": "The symbolic name of an (UB) signal in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

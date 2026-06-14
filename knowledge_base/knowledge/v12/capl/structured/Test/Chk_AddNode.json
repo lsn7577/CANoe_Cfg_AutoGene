@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Chk_AddNode",
+  "category": "Test",
+  "title": "Chk_AddNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkAddNode.htm",
+  "syntax": [
+    "dword Chk_AddNode (dword aCheckId, Node aNode, dword aAddress, dword aac, dword ig, dword sys, dword sysi, dword fct, dword fcti, dword ecui, dword mc, dword in);"
+  ],
+  "description": [
+    "Adds a J1939 node to an existing check."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Check Id of an existing check."
+    }
+  ],
+  "return": "0: Check could not be created and must not be referenced.",
+  "example": {
+    "description": [],
+    "code": "// checks the address claim violation of node N1\ncheckId = ChkCreate_J1939AddressClaimViolation ( N1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 200, 0x01);\n\n// add node N2 to the check\nChk_AddNode (checkId, N2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);\nTestAddCondition(checkId);\n\n// Start check\nChkControl_Start(checkId);\n\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

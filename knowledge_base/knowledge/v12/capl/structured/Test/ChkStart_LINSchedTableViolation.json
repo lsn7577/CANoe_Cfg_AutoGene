@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINSchedTableViolation",
+  "category": "Test",
+  "title": "ChkStart_LINSchedTableViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinSchedTableViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINSchedTableViolation (dword TableIndex, duration Jitter);"
+  ],
+  "description": [
+    "Checks a certain LIN schedule table for correspondence with the database definition.",
+    "An event will be generated, if",
+    "The check has to be started only when the specified schedule table is already running. That is to allow run-time synchronization, which may take maximum one schedule cycle time.",
+    "This is not an appropriate function to check diagnostic schedule tables because dependent on the application silent slots can occur.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "TableIndex",
+      "type": "",
+      "description": "Zero based index of schedule table to be checked."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\nChkConfig_SetPrecision(6); // switch to µs precision\n// Create and start the check for LIN schedule table with index 0\ncheckId = ChkStart_LINSchedTableViolation(0, \"LINSchedTableCallback\"); \nChkConfig_SetPrecision(3); // switch to ms precision (default)\n...\n// CAPL callback for violation notification\nvoid LINSchedTableCallback (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

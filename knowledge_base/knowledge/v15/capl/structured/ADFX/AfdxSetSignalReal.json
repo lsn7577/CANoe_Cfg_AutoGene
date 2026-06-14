@@ -1,0 +1,154 @@
+{
+  "page_type": "function",
+  "name": "AfdxSetSignalReal",
+  "category": "ADFX",
+  "title": "AfdxSetSignalReal",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionAfdxSetSignalReal.htm",
+  "syntax": [
+    "long AfdxSetSignalReal( long packet, char signalName[], float value, long fdsStatus ); // form 1",
+    "long AfdxSetSignalReal( long packet, long offset, long isDouble, float value ); // form 2"
+  ],
+  "description": [
+    "This function sets the value of a 32-bit or 64-bit float signal (IEEE 754)."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message"
+    },
+    {
+      "name": "signalName",
+      "type": "",
+      "description": "name of the signal Note: The signal and its message need to be defined in the assigned DBC file."
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "The offset value points to the float signal in the AFDX payload area."
+    },
+    {
+      "name": "isDouble",
+      "type": "",
+      "description": "0: set 32-bit float value 1: set 64-bit float value"
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "new float value"
+    },
+    {
+      "name": "fdsStatus",
+      "type": "",
+      "description": "255: The status is not updated valid status enumeration: The functional status is updated with this value."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0 SP3",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

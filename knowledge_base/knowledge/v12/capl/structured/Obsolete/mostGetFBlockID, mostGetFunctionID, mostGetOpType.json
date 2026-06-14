@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostGetFBlockID, mostGetFunctionID, mostGetOpType",
+  "category": "Obsolete",
+  "title": "mostGetFBlockID, mostGetFunctionID, mostGetOpType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMOSTGet.htm",
+  "syntax": [
+    "long mostGetFBlockID(mostMessage msg)"
+  ],
+  "description": [
+    "These functions return the FBlockID, FunctionID or OpType of the message."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message variable of type mostMessage or mostAMSMessage"
+    }
+  ],
+  "return": "FblockId, FunctionId, OpType\nNote\nThese values are determined independent of the message type and if applicable independent of the TelId. The Values are only valid if the message is out of the function catalog.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

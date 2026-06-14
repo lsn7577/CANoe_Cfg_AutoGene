@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestFRILCalculateChecksum",
+  "category": "Test",
+  "title": "TestFRILCalculateChecksum",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestFRILCalculateChecksum.htm",
+  "syntax": [
+    "long TestFRILCalculateChecksum (char pduNamme[], long type, BYTE payload[], long payloadLength, BYTE crc []);"
+  ],
+  "description": [
+    "Calculates the corresponding CRC checksum based on the payload. The correct offset is calculated from the database using the PDU name.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "pduName",
+      "type": "",
+      "description": "Name of the PDU."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

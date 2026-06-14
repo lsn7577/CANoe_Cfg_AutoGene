@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_Atten_Char_Rsp",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_Atten_Char_Rsp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_Atten_Char_Rsp.htm",
+  "syntax": [
+    "void SCC_CreateCM_Atten_Char_Rsp ( byte RunId[], byte SourceMac[], byte TargetMac[], byte SourceAddress[] )"
+  ],
+  "description": [
+    "Creates a CM_Atten_Char.Rsp message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "RunId",
+      "type": "",
+      "description": "Random Run Identifier of sender (8 byte)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_ControlResume",
+  "category": "ISO11783",
+  "title": "Iso11783IL_ControlResume",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILControlResume.htm",
+  "syntax": [
+    "long Iso11783IL_ControlResume();"
+  ],
+  "description": [
+    "After suspending the ISO11783 IL with Iso11783IL_ControlWait, this function restarts the IL. The ISO11783 IL starts sending cyclic messages again."
+  ],
+  "parameters": [],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "on key 'r'\n{\n Iso11783IL_ControlResume();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

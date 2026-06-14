@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetP1ECU",
+  "category": "KLine",
+  "title": "KLine_SetP1ECU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetP1ECU.htm",
+  "syntax": [
+    "long KLine_SetP1ECU(dword P1_us)"
+  ],
+  "description": [
+    "Sets the interbyte time of a response."
+  ],
+  "parameters": [
+    {
+      "name": "P1_us",
+      "type": "",
+      "description": "P1 in usValue range: 0 – 650000."
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n   KLine_SetP1ECU(10000); // P1 == 10 ms\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

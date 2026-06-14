@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForTesterConfirmation",
+  "category": "Test",
+  "title": "TestWaitForTesterConfirmation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForTesterConfirmation.htm",
+  "syntax": [
+    "long TestWaitForTesterConfirmation(char text[]);"
+  ],
+  "description": [
+    "Creates a popup window that presents the given string to the tester. The tester can acknowledge the window with Yes or No.",
+    "The window contains a field for entering a comment that is automatically adopted into the test report.",
+    "The function is not allowed in CANoe standalone mode. Errors are reported as error in test system or fail in case of 2-valued verdict concept.",
+    "Even when this function is called by different test modules maximum only one of these popup windows is active.",
+    "The 1st wait function has no timeout so it waits for the confirmation of the tester.The 2nd wait function has a timeout, i.e. the dialog is automatically terminated after the timeout expires.The 3rd wait function has a timeout and can show a resource, i.e. the dialog can show additional information."
+  ],
+  "parameters": [
+    {
+      "name": "text",
+      "type": "",
+      "description": "This is shown in the popup window. The maximum length of the string is limited (4096 characters)."
+    }
+  ],
+  "return": "0: Timeout occurred.",
+  "example": {
+    "description": [],
+    "code": "// waits for the answer of the user\nlong result;\nresult = TestWaitForTesterConfirmation(\"Any text or question\", 10000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

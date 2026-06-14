@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "mostSetTxLightPower",
+  "category": "MOST",
+  "title": "mostSetTxLightPower",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTSetTxLightPower.htm",
+  "syntax": [
+    "long mostSetTxLightPower(long channel, long power);"
+  ],
+  "description": [
+    "Sets the intensity of the light at the Fiber Optical Transmitter (FOT).",
+    "The result is reported by means of the callback function OnMostStress()."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the interface to be driven"
+    },
+    {
+      "name": "50",
+      "type": "",
+      "description": "3db attenuated to normal intensity"
+    },
+    {
+      "name": "100",
+      "type": "",
+      "description": "normal intensity"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.1",
+      "5.1",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST150 Not in StopMeasurement",
+      "MOST25 MOST150 Not in StopMeasurement",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

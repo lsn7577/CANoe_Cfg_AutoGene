@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_atoi64",
+  "category": "Other",
+  "title": "_atoi64",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionatoi64.htm",
+  "syntax": [
+    "int64 _atoi64(char s[]);"
+  ],
+  "description": [
+    "Converts the string s to a 64bit integer. The number base is decimal."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "String to be converted."
+    }
+  ],
+  "return": "The converted number.\nThe return value is 0 if the string can’t be converted to a number. It is the largest positive/negative number in case of overflow.",
+  "example": {
+    "description": [],
+    "code": "int64 i;\ni = _atoi64(\"12345678901\")"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

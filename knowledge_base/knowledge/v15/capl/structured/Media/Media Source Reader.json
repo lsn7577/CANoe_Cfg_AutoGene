@@ -1,0 +1,33 @@
+{
+  "page_type": "notes",
+  "name": "Media Source Reader",
+  "category": "Media",
+  "title": "Media Source Reader",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Media/CAPLfunctionsMediaSouceReader.htm",
+  "syntax": [],
+  "description": [
+    "Internally, the source reader references a media source. A media source is an object that generates media data from an external source, such as a media file or video capture device. The source reader manages all of the method calls to the media source.",
+    "If the media source delivers compressed data, you can use the source reader to decode the data. In that case, the source reader will load the correct decoder and manage the data flow between the media source and the decoder. The following image illustrates this process.",
+    "The source reader does not send the data to a destination; it is up to the application to consume the data. For example, the source reader can read a video file, but it will not render the video to the screen.",
+    "Consider using the source reader when:",
+    "The source reader is not recommended in the following situations:",
+    "Media Concepts | Media Formats | Sink Writer"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

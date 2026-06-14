@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSetSignal",
+  "category": "Car2x",
+  "title": "C2xSetSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSetSignal.htm",
+  "syntax": [
+    "long C2xSetSignal( char *signalPath, int64 value);"
+  ],
+  "description": [
+    "Sets a signal in a database defined packet."
+  ],
+  "parameters": [
+    {
+      "name": "signalPath",
+      "type": "",
+      "description": "Path to the signal value to be set in the packet."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "MediaCreateAudioRenderer",
+  "category": "Media",
+  "title": "MediaCreateAudioRenderer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaCreateAudioRenderer.htm",
+  "syntax": [
+    "dword MediaCreateAudioRenderer();"
+  ],
+  "description": [
+    "Creates the streaming audio renderer (SAR) which is a media sink that renders audio in an output device, e.g. a headphone or speaker. Each instance of the SAR renders a single audio stream. To render multiple streams, use multiple instances of the SAR.",
+    "The SAR can receive uncompressed audio in either PCM or IEEE floating-point format."
+  ],
+  "parameters": [],
+  "return": "0: The function failed. Call MediaGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

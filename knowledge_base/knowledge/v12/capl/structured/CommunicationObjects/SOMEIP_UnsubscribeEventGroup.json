@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SOMEIP_UnsubscribeEventGroup",
+  "category": "CommunicationObjects",
+  "title": "SOMEIP_UnsubscribeEventGroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSOMEIPUnsubscribeEventGroup.htm",
+  "syntax": [
+    "long SOMEIP_UnsubscribeEventGroup(consumedEventGroupRef * eventGroup)"
+  ],
+  "description": [
+    "Unsubscribes for a service event group if SOME/IP binding is used. Note that this is more low-level; usually its more convenient to call consumedEventGroupRef::SOMEIPReleaseEventGroup on the event group."
+  ],
+  "parameters": [
+    {
+      "name": "eventGroup",
+      "type": "",
+      "description": "Event group which shall be unsubscribed."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "SOMEIP_UnsubscribeEventGroup(MirrorAdjustment.consumerSide[0,0].AllEvents);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

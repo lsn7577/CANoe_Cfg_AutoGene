@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IP_Address::MatchesAddress",
+  "category": "IP",
+  "title": "IP_Address::MatchesAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionMatchesAddress.htm",
+  "syntax": [
+    "long IP_Address::MatchesAddress (IP_Address ipAddr); // form 1"
+  ],
+  "description": [
+    "Compares two addresses whereas wildcards matches always. If no address type is set or the address is set to 0.0.0.0 (IPv4) or ::0 (IPv6) this is considered as wildcard.",
+    "With form 2 only the network address of the IP address will be considered."
+  ],
+  "parameters": [
+    {
+      "name": "ipAddr",
+      "type": "",
+      "description": "An IP_Address object which may contain wildcards."
+    }
+  ],
+  "return": "0: No match",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Address 192.168.1.1 addr1;\n  IP_Address 192.168.1.2 addr2;\n  if (addr1 == addr2)\n  {\n    write( \"Addresses are equal!\" );\n  }\n  else\n  {\n    write( \"Addresses are not equal!\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

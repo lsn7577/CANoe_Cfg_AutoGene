@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnUdpSendTo",
+  "category": "TCPIPAPI",
+  "title": "OnUdpSendTo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/EventProcedures/CAPLfunctionTCPIPOnUdpSendTo.htm",
+  "syntax": [
+    "void OnUdpSendTo( dword socket, long result, char buffer[], dword size);"
+  ],
+  "description": [
+    "If the CAPL program implements this callback it is called when an asynchronous send operation on an UDP socket completes."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

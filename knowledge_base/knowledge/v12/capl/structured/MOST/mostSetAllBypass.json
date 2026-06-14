@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostSetAllBypass",
+  "category": "MOST",
+  "title": "mostSetAllBypass",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetAllBypass.htm",
+  "syntax": [
+    "long mostSetAllBypass(long channel, long bypassmode)"
+  ],
+  "description": [
+    "This command can be used to close the MOST hardware bypass (bypassmode=1) or open it (bypassmode=0). If the bypass is closed the MOST device is invisible to other devices in the ring.",
+    "For the functionality of the AllBypass see also the description for the /ABY bit in the Transceiver Control Register of the OS8104."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface"
+    }
+  ],
+  "return": "<0: See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

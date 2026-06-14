@@ -1,0 +1,140 @@
+# Key Combinations
+
+> Category: `DBC` | Subcategory: `Help` | Type: `concept`
+
+| Key(s) | Action (Command) |
+|---|---|
+| <Ctrl>+<N> | New (Menu File) |
+| <Ctrl>+<O> | Open (Menu File ) |
+| <Ctrl>+<S> | Save (Menu File) |
+| <Ctrl>+<X> | Cut (Menu Edit) |
+| <Shift>+<DELETE> | Cut (Menu Edit) |
+| <Ctrl>+<C> | Copy (Menu Edit) |
+| <Ctrl>+<INSERT> | Copy (Menu Edit) |
+| <Ctrl>+<V> | Paste (Menu Edit) |
+| <Shift>+<INSERT> | Paste (Menu Edit) |
+| <DELETE> | Delete (Menu Edit) |
+| <Ctrl>+<Z> | Undo Object Attributes (Menu Edit) |
+| <Alt>+<BACK> | Undo Object Attributes (Menu Edit) |
+| <F8> | Correct Attributes (Menu Edit) |
+| <Ctrl>+<F> | Find In Output Window (Menu View) |
+| <Ctrl>+<F2> | Edit List (Menu Database) |
+| <F3> | Find Next (Menu View) |
+| <F4> | Compare Database (Menu Check) |
+| <F5> | Check EDS (Menu Check) |
+| <F7> | Edit Database Definitions (Menu Check) |
+| <F9> | Scan (Menu Network) |
+| <F2> | Edit signal (Signal list) |
+| <F6> | Next window of object dictionary page (Control menu) |
+| <Shift>+<F6> | Previous window of object dictionary page (Control menu) |
+| <F1> | Call online help |
+| <TAB> | Switch to next input control or window |
+| <Shift>+<TAB> | Switch to previous input control or window |
+| <Ctrl>+<Page Down> | Switch to next page in the main window |
+| <Ctrl>+<Page Up> | Switch to previous page in the main window |
+
+### Key(s)
+
+### Action (Command)
+
+<Ctrl>+<N>
+
+New (Menu File)
+
+<Ctrl>+<O>
+
+Open (Menu File )
+
+<Ctrl>+<S>
+
+Save (Menu File)
+
+<Ctrl>+<X>
+
+Cut (Menu Edit)
+
+<Shift>+<DELETE>
+
+<Ctrl>+<C>
+
+Copy (Menu Edit)
+
+<Ctrl>+<INSERT>
+
+<Ctrl>+<V>
+
+Paste (Menu Edit)
+
+<Shift>+<INSERT>
+
+<DELETE>
+
+Delete (Menu Edit)
+
+<Ctrl>+<Z>
+
+Undo Object Attributes (Menu Edit)
+
+<Alt>+<BACK>
+
+<F8>
+
+Correct Attributes (Menu Edit)
+
+<Ctrl>+<F>
+
+Find In Output Window (Menu View)
+
+<Ctrl>+<F2>
+
+Edit List (Menu Database)
+
+<F3>
+
+Find Next (Menu View)
+
+<F4>
+
+Compare Database (Menu Check)
+
+<F5>
+
+Check EDS (Menu Check)
+
+<F7>
+
+Edit Database Definitions (Menu Check)
+
+<F9>
+
+Scan (Menu Network)
+
+<F2>
+
+<F6>
+
+Next window of object dictionary page (Control menu)
+
+<Shift>+<F6>
+
+Previous window of object dictionary page (Control menu)
+
+<F1>
+
+Call online help
+
+<TAB>
+
+Switch to next input control or window
+
+<Shift>+<TAB>
+
+Switch to previous input control or window
+
+<Ctrl>+<Page Down>
+
+Switch to next page in the main window
+
+<Ctrl>+<Page Up>
+
+Switch to previous page in the main window

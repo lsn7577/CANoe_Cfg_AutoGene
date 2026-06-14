@@ -1,0 +1,147 @@
+{
+  "page_type": "function",
+  "name": "mostMsgSet",
+  "category": "MOST",
+  "title": "mostMsgSet",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTMsgSet.htm",
+  "syntax": [
+    "long mostMsgSet(mostAmsMessage * msg, long destAdr, char symbolicMessage[], long instId); // form 1",
+    "long mostMsgSet(mostAmsMessage * msg, char symbolicMessage[], long instId); // form 2",
+    "long mostMsgSet(mostAmsMessage * msg, char symbolicMessage[]); // form 3"
+  ],
+  "description": [
+    "Populating an AMS message using the syntax from the MOST specification and the description in the XML function catalog.",
+    "PosDescription, TelLen and StreamCases are checked in addition to Funktionsblock, FunktionsID and OpType.",
+    "See also Option .MOST: Symbolic Identification of Messages"
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message to be populated"
+    },
+    {
+      "name": "destAdr",
+      "type": "",
+      "description": "Destination address"
+    },
+    {
+      "name": "symbolicMessage",
+      "type": "",
+      "description": "Description of the message content in the following formats: FBlock.InstanceId.Function.OpType(Parameterlist) FBlock.InstanceId.Function.OpType FBlock.Function.OpType(Parameterlist) FBlock.Function.OpType"
+    },
+    {
+      "name": "InstId",
+      "type": "",
+      "description": "InstanceID of the function block"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST50 MOST150",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "EthGetLastErrorText",
+  "category": "Obsolete",
+  "title": "EthGetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetLastErrortext.htm",
+  "syntax": [
+    "long EthGetLastErrorText( dword bufferSize, char[] buffer );"
+  ],
+  "description": [
+    "Gets the error code description of the last called Eth... function."
+  ],
+  "parameters": [
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "size of buffer in which the description text is copied"
+    }
+  ],
+  "return": "number of copied bytes",
+  "example": {
+    "description": [],
+    "code": "CHAR error[100];\nLONG value;\nLONG packetHandle;\n\nvalue = EthGetTokenInt( packetHandle, \"eth\", \"type\" );\nif (EthGetLastError() == 0)\n{\n  write(\"Ethernet Type is 0x%x\", value );\n}\nelse\n{\n  EthGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "canDisturbanceFrameTrigger::SetMessage",
+  "category": "CANDisturbance",
+  "title": "canDisturbanceFrameTrigger::SetMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANDisturbance/Functions/CAPLfunctionCanDisturbanceFrameTriggerSetMessage.htm",
+  "syntax": [
+    "long canDisturbanceFrameTrigger::SetMessage(message msg, dword deviceID, dword validityMask);"
+  ],
+  "description": [
+    "Sets the frame for the trigger condition. The mask is filled automatically with the data of the frame. The used data can be configured with the validity mask."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "The frame data that should be used for the frame trigger."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

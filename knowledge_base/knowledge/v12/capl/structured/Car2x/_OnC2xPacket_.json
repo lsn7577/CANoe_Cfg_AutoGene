@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "<OnC2xPacket>",
+  "category": "Car2x",
+  "title": "<OnC2xPacket>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Callbacks/CAPLfunctionC2xOnC2xPacket.htm",
+  "syntax": [
+    "void <OnC2xPacket>( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet );"
+  ],
+  "description": [
+    "This callback is called when a registered WLAN packet is received.",
+    "Within this callback the following functions can be used to retrieve the received packet data:",
+    "This functions access the payload of the highest interpretable protocol. Offset 0 starts at the beginning of the payload."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "WLAN channel on which the packet was received"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  C2xReceivePacket( \"OnC2xPacket\");\n}\nvoid <OnC2xPacket>( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  byte rx_data[100];\n  long rx_length;\n  // get the payload of the packet\n  rx_length = C2xGetThisData( 0, elCount(rx_data), rx_data );\n  // do something with rx_data\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

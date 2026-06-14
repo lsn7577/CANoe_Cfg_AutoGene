@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_VehicleConnectedInd",
+  "category": "Diagnostics",
+  "title": "_DoIP_VehicleConnectedInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPVehicleConnectedIndn.htm",
+  "syntax": [
+    "void _DoIP_VehicleConnectedInd();"
+  ],
+  "description": [
+    "The TCP communications channel to the vehicle has been established successfully, i.e. diagnostic messages can be exchanged without further delays."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void _DoIP_VehicleConnectedInd()\n{\n  write( \"Vehicle connected.\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

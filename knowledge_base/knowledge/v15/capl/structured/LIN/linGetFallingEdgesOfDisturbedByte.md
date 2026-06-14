@@ -1,0 +1,40 @@
+# linGetFallingEdgesOfDisturbedByte
+
+> Category: `LIN` | Type: `function`
+
+## Syntax
+
+```c
+dword linGetFallingEdgesOfDisturbedByte(int64 fallingEdges[]);
+```
+
+## Description
+
+With this function it is possible to retrieve time stamps of all falling edges in the disturbed byte or in the pseudo-byte caused by the last bit inversion.
+
+Note, that prior to calling this function the measurement of the falling edges has to be activated and the bit inversion has to be executed (see linInvertRespBit, linInvertHeaderBit)
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| fallingEdges | An array which will receive the measured time stamps [in nanoseconds]. The array size is 6. Unused time stamps will be set to 0 (i.e. in case of less than 6 falling edges). |
+
+## Return Values
+
+On successful request returns 1, otherwise 0.
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 7.1 SP4 | — | — | — | 1.0 |
+| Restricted To | — | LIN Real bus mode | — | — | — | LIN Real bus mode |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | — | — | N/A |

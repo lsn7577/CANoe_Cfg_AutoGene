@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_OnTxMessage",
+  "category": "J1939",
+  "title": "GBT27930IL_OnTxMessage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILOnTxMessage.htm",
+  "syntax": [
+    "void GBT27930IL_OnTxMessage( pg * txPG )"
+  ],
+  "description": [
+    "This callback function is called from the GBT27930 IL if a message was sent successfully."
+  ],
+  "parameters": [
+    {
+      "name": "txPG",
+      "type": "",
+      "description": "message which was sent"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "//report about the sending of  a CRM message (PGN = 0x100)\n//with 0xAA in the first byte (BMS is recognized)\nvoid GBT27930IL_OnTxMessage( pg * txPG )\n{\n  switch( txPG.PGN )\n\n{\n  case 0x600:\n    if(txPG.byte(0) == 0xAA)\n      writeEx(-3, 3, “CRM (BMS is recognized) is sent”);\n    break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 and Smart Charging",
+      "J1939 and Smart Charging",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

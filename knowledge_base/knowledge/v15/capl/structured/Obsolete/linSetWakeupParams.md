@@ -1,0 +1,18 @@
+# linSetWakeupParams
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function Replaced by linSetwakeupCondition |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long linSetWakeupParams (long wakeupDelimiter, long numberOfWakeupFrames) |  |  |  |
+| Function | This command determines the conditions under which the LIN hardware can be reactivated (leaves the Sleep mode). Default wake-up delimiter depends on the hardware settings (see Hardware Configuration: LIN) while the number of expected wake-up frames is 1. Main use case for this function is to simulate slow Master, which does not wake-up until an expected Wakeup frame burst. Note When LIN hardware is not in Master mode calling this function will have no effect. | Note When LIN hardware is not in Master mode calling this function will have no effect. |  |  |
+| Note When LIN hardware is not in Master mode calling this function will have no effect. |  |  |  |  |
+| Parameters | WakeupDelimiter This parameter specifies the wake-up delimiter length, i.e. the time between the end of wake-up frame and the first sent header. Units of this parameter as well as default value depend on the hardware settings (see Hardware Configuration: LIN).Value range:: 3..255 (ms or bit times) |  |  |  |
+| NumberOfWakeupFrames This parameter specifies the number of wake-up frames, after that the LIN hardware is reactivated. If the value 0 is set, the LIN hardware will never leave the Sleep mode.Value range: 0 .. 31Default value: 1 |  |  |  |  |
+| Return Values | On success, a value unequal to zero, otherwise zero. |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 8.2 SP4 | LIN | — | • |  |
+| Example // simulate LIN 2.0 'slow' Master...// configure LIN hardware to wake-up after 3 wake-up frames and to send first header// 100 ms after wakeuplinSetWakeupParams(100, 3);// send wake-up frame 3 times with 150 ms delay between 2 consecutive frameslinSendWakeup(150, 3);... |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

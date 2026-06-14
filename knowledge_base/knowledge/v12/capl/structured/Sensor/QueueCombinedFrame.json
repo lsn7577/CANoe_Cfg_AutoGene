@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "QueueCombinedFrame",
+  "category": "Sensor",
+  "title": "QueueCombinedFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionQueueCombinedFrame.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueCombinedFrame(byte[] writeBuffer, dword writeBufferCount, dword readByteCount);"
+  ],
+  "description": [
+    "This method is intended to be used for I2C master simulation. It queues a frame to write and then read the given number of bytes from the given slave."
+  ],
+  "parameters": [
+    {
+      "name": "writeBuffer",
+      "type": "",
+      "description": "Buffer containing the bytes to be sent to the slave."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Byte array to be sent to the slave\nbyte sendData[2] = {0x42, 0x21};\n\n// Send the prepared byte array to the slave, then read 4 bytes from the slave\nsysvar::SENSOR::I2C::ExampleChannel::ExampleSlave.QueueCombinedFrame (sendData, 2, 4);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

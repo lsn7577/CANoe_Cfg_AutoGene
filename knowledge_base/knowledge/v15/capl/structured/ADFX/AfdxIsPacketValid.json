@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "AfdxIsPacketValid",
+  "category": "ADFX",
+  "title": "AfdxIsPacketValid",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionAfdxIsPacketValid.htm",
+  "syntax": [
+    "long AfdxIsPacketValid( long packet );"
+  ],
+  "description": [
+    "This function checks, if a received packet has a protocol error. Packets with a protocol error are marked with an error icon in the Trace Window."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the message that should be checked."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  AfdxRegisterReceiveCallback ( \"OnAfdxPacket\");\n}\nvoid OnAfdxPacket( long dir, long line, int64 time, long bag, long afdxFlags, long packet )\n{\n  if (AfdxIsPacketValid(handle) != 0)\n  {\n    write( \"Receive packet with protocol error\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

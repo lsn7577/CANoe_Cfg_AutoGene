@@ -1,0 +1,64 @@
+# SomeIpEstablishTCPConnection
+
+> Category: `IP` | Type: `function`
+
+## Syntax
+
+```c
+dword SomeIpEstablishTCPConnection (); // form 1
+```
+
+## Description
+
+Establishes one or multiple database defined TCP connection(s).
+
+A TCP connection can be closed using the SomeIpCloseEstablishedTCPConnection function.
+
+## Return Values
+
+0: The function was successfully executed
+
+## Example
+
+```c
+variables
+{
+  dword aep; // application Endpoint handle
+  dword tcp = 6;
+  dword clientIP; // numerical representation of client IP
+  dword clientPort = 40000; // TCP client port
+  dword serverIP; // numerical representation of server IP
+  dword serverPort = 50000; // TCP server port
+}
+
+on start
+{
+  clientIP = ipGetAddressAsNumber("192.168.1.1");
+  serverIP = ipGetAddressAsNumber("192.168.1.2");
+  // handle has to have a valid database application endpoint description
+  aep = SomeIpOpenLocalApplicationEndpoint(tcp, clientPort, clientIP);
+}
+
+on key 'o'
+{ 
+  // opens connection to specific endpoint
+  if (SomeIpEstablishTCPConnection(aep, serverIP, serverPort) != 0)
+  {
+    write("connection not established");
+  }
+}
+
+on key 'c'
+{
+  // close all connections within node context
+  if (SomeIpCloseEstablishedTCPConnection () == 0)
+  {
+    write("connection(s) closed");
+  }
+}
+```
+
+## Availability
+
+| Since Version |
+|---|

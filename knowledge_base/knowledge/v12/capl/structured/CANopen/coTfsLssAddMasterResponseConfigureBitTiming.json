@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssAddMasterResponseConfigureBitTiming",
+  "category": "CANopen",
+  "title": "coTfsLssAddMasterResponseConfigureBitTiming",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssAddMasterResponseConfigureBitTiming.htm",
+  "syntax": [
+    "long coTfsLssAddMasterResponseConfigureBitTiming( dword tableSelector, dword tableSelectorMask, dword tableIndex, dword tableIndexMask, dword errCode, dword specError );"
+  ],
+  "description": [
+    "This function adds a single LSS Master request wait condition to the internal list of LSS Master request wait conditions and sends a response if a request is received."
+  ],
+  "parameters": [
+    {
+      "name": "tableSelector",
+      "type": "",
+      "description": "Selects which bit timing parameter table shall be used."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\nwrite(\"Clear list failed\");\nreturn;\n} \n\n/* add one or more test functions */\nif (coTfsLssAddMasterResponseConfigureBitTiming( ) {\nwrite(\"could not add request\");\nreturn;\n} \n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\nwrite(\"no event received\");\n} \nelse {\nwrite(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

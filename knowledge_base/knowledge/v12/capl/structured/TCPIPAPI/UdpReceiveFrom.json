@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "UdpReceiveFrom",
+  "category": "TCPIPAPI",
+  "title": "UdpReceiveFrom",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionUDPReceiveFrom.htm",
+  "syntax": [
+    "long UdpReceiveFrom( dword socket, char buffer[], dword size);",
+    "socket.ReceiveFrom( char buffer[], dword size);"
+  ],
+  "description": [
+    "The function receives data into the specified buffer. If the receive operation does not complete immediately the operation is performed asynchronously and the function will return SOCKET_ERROR (-1). Use IpGetLastSocketError to get a more specific error code. If the specific error code is WSA_IO_PENDING (997) the CAPL callback OnUdpReceiveFrom will be called on completion (successful or not), provided it is implemented in the same CAPL program."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

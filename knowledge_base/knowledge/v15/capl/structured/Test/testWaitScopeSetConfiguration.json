@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeSetConfiguration",
+  "category": "Test",
+  "title": "testWaitScopeSetConfiguration",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctiontestWaitScopeSetConfiguration.htm",
+  "syntax": [
+    "long testWaitScopeSetConfiguration (char deviceName[], char configurationName[]);"
+  ],
+  "description": [
+    "Configures the appropriate oscilloscope with the specified configuration.",
+    "Hint: The possible device names and configurations names can be requested with the function testWaitScopeGetConfigurationInformation"
+  ],
+  "parameters": [
+    {
+      "name": "deviceName",
+      "type": "",
+      "description": "The name of the scope device."
+    },
+    {
+      "name": "configurationNames",
+      "type": "",
+      "description": "The specific configuration should be used for the scope device."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void SetScopeConfiguration()\n{\n  long res;\n\n  res = testWaitScopeSetConfiguration(“Scope_1”, “MyConfiguration”);\n\n  if (res != 1)\n  {\n    testStepFail(\"SetConfiguration\",\"Set configuration MyConfiguration of Scope_1 was not possible. Result = %d\", res);\n  }\n\n  else\n\n  {\n    testStepPass(\"SetConfiguration\", \"Configuration of Scope_1 is set to MyConfiguration”);\n  }\n\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "—",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Scope",
+      "Scope",
+      "—",
+      "—",
+      "Scope"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

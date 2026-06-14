@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_RemoveLocalIPaddress",
+  "category": "Diagnostics",
+  "title": "DoIP_RemoveLocalIPaddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPRemoveLocalIPaddress.htm",
+  "syntax": [
+    "long DoIP_RemoveLocalIPaddress(char ipAddress[]);"
+  ],
+  "description": [
+    "Removes an IP address the vehicle will no longer listen at."
+  ],
+  "parameters": [
+    {
+      "name": "ipAddress",
+      "type": "",
+      "description": "Textual representation of the numeric IP address, e.g. 192.168.123.45 for an IPv4 address, or 2001::7654 for an IPv6 address."
+    }
+  ],
+  "return": "0: OK< 0: ErrorOthers: reserved",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

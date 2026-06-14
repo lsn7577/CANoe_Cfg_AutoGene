@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "SCC_TCPConnectInd",
+  "category": "SmartCharging",
+  "title": "SCC_TCPConnectInd",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Callbacks/CAPLfunctionSCC_TCPConnectInd.htm",
+  "syntax": [
+    "void SCC_TCPConnectInd ( dword Port, long IsInitiator )"
+  ],
+  "description": [
+    "The callback is called when a TCP connection is opened."
+  ],
+  "parameters": [
+    {
+      "name": "Port",
+      "type": "",
+      "description": "Port number of the TCP connection."
+    },
+    {
+      "name": "IsInitiator",
+      "type": "",
+      "description": "1 if the node layer initiated the connection (client case). 0 if the node layer received the connection request (server case)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

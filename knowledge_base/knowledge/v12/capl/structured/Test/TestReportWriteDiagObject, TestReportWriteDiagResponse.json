@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestReportWriteDiagObject, TestReportWriteDiagResponse",
+  "category": "Test",
+  "title": "TestReportWriteDiagObject, TestReportWriteDiagResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestReportWriteDiagObjectTestReportWriteDiagResponse.htm",
+  "syntax": [
+    "TestReportWriteDiagObject (diagRequest req);"
+  ],
+  "description": [
+    "TestReportWriteDiagObject writes a test step with a textual interpretation of the specified request or response object into the test report.",
+    "TestReportWriteDiagResponse writes a test step with a textual interpretation of the received response for the specified request object into the test report.",
+    "These test steps are subject to the common test step report filtering as configured in the Test Module Configuration dialog."
+  ],
+  "parameters": [
+    {
+      "name": "req",
+      "type": "",
+      "description": "Request"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

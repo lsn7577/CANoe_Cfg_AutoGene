@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "diagGenerateKeyFromSeed",
+  "category": "Diagnostics",
+  "title": "diagGenerateKeyFromSeed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGenerateKeyFromSeed.htm",
+  "syntax": [
+    "long diagGenerateKeyFromSeed ( byte seedArray[], dword seedArraySize, dword securityLevel, char variant[], char ipOption[], byte keyArray[], dword maxKeyArraySize, dword& keyActualSizeOut); // form 1"
+  ],
+  "description": [
+    "Creates a key to execute secured diagnostic functions within devices.",
+    "The key will be defined with the Seed of the device.If the computation takes more than 1 ms, diagStartGenerateKeyFromSeed in combination with the callback _Diag_GenerateKeyResult should be used."
+  ],
+  "parameters": [
+    {
+      "name": "seedArray",
+      "type": "",
+      "description": "Seed for the definition of the key."
+    }
+  ],
+  "return": "At success 0 will be returned, otherwise an error code will be returned.\nFor further error analysis you can use the callback function _diag_GetError.",
+  "example": {
+    "description": [
+      "This example shows schematically the use of DiagGenerateKeyFromSeed and the Callback function in a CAPL test module."
+    ],
+    "code": "Variables\n{\n  ...\n  //actual size of Seed and Key Arrays depend on ECU\n  byte gSeedArray[2];\n  int gSeedArraySize    = 2;\n  int gSecurityLevel    = 0x20;\n  char gVariant[200]    = \"Variant1\";\n  char gOption[200]     = \"option\";\n  byte gKeyArray[255];\n  int  gMaxKeyArraySize = 255;\n  dword gActualSizeOut     = 0;\n  char gDebugBuffer[2000];\n  diagRequest SecurityAccess::SecuritySeed::Request gSeedReq;\n  diagResponse SecurityAccess::SecuritySeed::Request gSeedResp;\n  diagRequest SecurityAccess::SecurityKey::Send gKeyReq;\n  ...\n}\n\n//Unlock ECU by calling customer specific SeedKey DLL (e.g. in a CAPL test module)\n{\n  ...\n  //Request seed from ECU\n  diagSendRequest(gSeedReq);\n  //Wait until request has been sent completely\n  testWaitForDiagRequestSent(gSeedReq, 1000);\n  //Wait for response and write seed from response parameter to array\n  testWaitForDiagResponse(gSeedReq, 1000);\n  diagGetLastResponse (gSeedReq, gSeedResp);\n  diagGetParameterRaw (gSeedResp, \"Seed\", gSeedArray, elcount(gSeedArray));\n  //Calculate key\n  // _Diag_GetError is called when an error occurs\n  if( 0 == diagGenerateKeyFromSeed (gSeedArray, gSeedArraySize, gSecurityLevel, gVariant, gOption, gKeyArray, gMaxKeyArraySize, gActualSizeOut))\n  {\n    //Write result to diagnostic request\n    diagSetParameterRaw(gKeyReq, \"Key\", gKeyArray, gActualSizeOut);\n    //Send Key to unlock ECU\n    testWaitForDiagRequestSent(gKeyReq, 1000);\n  }\n\n//Callback function for error handling (optional)\n_diag_GetError (char buffer[])\n{\n  //called if error in diagGenerateKeyFromSeed occurs\n  snprintf(gDebugBuffer,elcount(gDebugBuffer),\"%s\", buffer);\n  write(\"CALLBACK %s\", gDebugBuffer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

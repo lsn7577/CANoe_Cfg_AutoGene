@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendIdentifySlaveResponse",
+  "category": "CANopen",
+  "title": "coTfsLssSendIdentifySlaveResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendIdentifySlaveResp.htm",
+  "syntax": [
+    "long coTfsLssSendIdentifySlaveResponse( void );"
+  ],
+  "description": [
+    "This function sends an Identify slave protocol response message."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* sends LSS identify slave protocol response message */\n\nif (coTfsLssSendIdentifySlaveResponse() == 1) {\n  /* message sent */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

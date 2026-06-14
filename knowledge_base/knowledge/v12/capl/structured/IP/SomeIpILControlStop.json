@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "SomeIpILControlStop",
+  "category": "IP",
+  "title": "SomeIpILControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpILControlStop.htm",
+  "syntax": [
+    "long SomeIpILControlStop();"
+  ],
+  "description": [
+    "Stops the SOME/IP IL.",
+    "Disables sending and receiving SOME/IP messages and Service Discovery. Application-Endpoints and Provided Services will be closed.",
+    "The SOME/IP IL can be started again using the SomeIpILControlStart function."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key '2 '\n{\n  // stop IL manually\n  SomeIpILControlStop();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

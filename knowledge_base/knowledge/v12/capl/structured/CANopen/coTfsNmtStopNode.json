@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsNmtStopNode",
+  "category": "CANopen",
+  "title": "coTfsNmtStopNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsNmtStopNode.htm",
+  "syntax": [
+    "long coTfsNmtStopNode( void );"
+  ],
+  "description": [
+    "This call triggers a NMT message that sets the in DUT Device Under Test to the stopped state. The new state is not checked because SDO transfers are not allowed in stopped mode."
+  ],
+  "parameters": [
+    {
+      "name": "broadcastFlag",
+      "type": "",
+      "description": "!=0: NMT message is sent to all nodes (broadcast)"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if ( coTfsNmtStopNode() != 1) {\n  write(\"stop node failed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

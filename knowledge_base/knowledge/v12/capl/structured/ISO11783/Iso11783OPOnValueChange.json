@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPOnValueChange",
+  "category": "ISO11783",
+  "title": "Iso11783OPOnValueChange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPOnValueChange.htm",
+  "syntax": [
+    "void Iso11783OPOnValueChange( dword ecuHandle, dword objectID );"
+  ],
+  "description": [
+    "The function is called by the node layer, if the value of an object is changed (with the command Change String Value or Change Numeric Value). The functions Iso11783OPGetStringValue and Iso11783OPGetNumericValue can be used to get the new value of the object."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783OPOnValueChange( dword handle, dword objectID )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

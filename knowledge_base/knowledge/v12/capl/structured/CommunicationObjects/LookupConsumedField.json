@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupConsumedField",
+  "category": "CommunicationObjects",
+  "title": "LookupConsumedField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupConsumedField.htm",
+  "syntax": [
+    "consumedFieldRef * LookupConsumedField(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified consumed field. The path must be complete including namespaces and both endpoints: (Namespace::)+Service.consumerSide[consumer,provider].Field.",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the consumed field."
+    }
+  ],
+  "return": "The consumed field. An uninitialized object if the field is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "consumedFieldRef MirrorAdjustment.Position positionField;\nchar path[200];\nchar service[50] = \"Mirrors::MirrorAdjustment\";\nchar consumer[20] = \"CANoe\";\nchar provider[20] = \"LeftMirror\";\nchar field[20] = \"Position\";\n\nsnprintf(path, elcount(path), \"%s.consumerSide[%s,%s].%s\", service, consumer, provider, field);\npositionField = (consumedFieldRef MirrorAdjustment.Position) lookupConsumedField(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

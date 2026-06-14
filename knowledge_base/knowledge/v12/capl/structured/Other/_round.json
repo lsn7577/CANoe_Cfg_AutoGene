@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_round",
+  "category": "Other",
+  "title": "_round",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionRound.htm",
+  "syntax": [
+    "long _round(double x);"
+  ],
+  "description": [
+    "Rounds x to the nearest integral number. The rounding method used is symmetric arithmetic rounding."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "Number to be rounded"
+    }
+  ],
+  "return": "Nearest integral number.\nFor very large numbers, you should use _round64, which returns a 64 bit integer.",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = _round(2.4); // result == 2\nresult = _round(2.5); // result == 3\nresult = _round(-3.5); // result == -4"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

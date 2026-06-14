@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "diagCheckValidPrimitive",
+  "category": "Diagnostics",
+  "title": "diagCheckValidPrimitive",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagCheckValidPrimitive.htm",
+  "syntax": [
+    "long diagCheckValidPrimitive( diagRequest obj);",
+    "long diagCheckValidPrimitive( diagRequest obj, dword reasonOut[]);",
+    "long diagCheckValidPrimitive( diagResponse obj);",
+    "long diagCheckValidPrimitive( diagResponse obj, dword reasonOut[]);",
+    "long diagCheckValidPrimitive( diagResponse obj, char primitiveQualifier[]);",
+    "long diagCheckValidPrimitive( diagResponse obj, char primitiveQualifier[], dword reasonOut[]);"
+  ],
+  "description": [
+    "Checks if the given object matches its specification in the diagnostic description.",
+    "If a primitive qualifier is given, the definition of that primitive at the object's service is used as specification."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object to check."
+    },
+    {
+      "name": "reasonOut",
+      "type": "",
+      "description": "Optional output parameter field for fail reason."
+    },
+    {
+      "name": "primitiveQualifier",
+      "type": "",
+      "description": "Qualifier of the service primitive that should be used as specification."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long ConformsToKnownPrimitives( diagResponse * response)\n{\n   if( 1 == response.CheckValidPrimitive( \"ServiDefauD\")\n      || 1 == response.CheckValidPrimitive( \"ServiEcu1PR\"))\n      return 1;\n   return 0;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2 7.1 SP3: form 5 and 6 7.0 SP5: methods",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Online mode Not for basic diagnostics",
+      "—",
+      "—",
+      "—",
+      "Online mode Not for basic diagnostics"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔ (since 9.0)",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsGetVersion",
+  "category": "CANopen",
+  "title": "coTfsGetVersion",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsGetVersion.htm",
+  "syntax": [
+    "dword coTfsGetVersion( void );"
+  ],
+  "description": [
+    "This function returns the internal version number of this CANopen Test Feature Set node layer."
+  ],
+  "parameters": [],
+  "return": "Version number",
+  "example": {
+    "description": [],
+    "code": "dword majorVersion;\ndword minorVersion;\n\nminorVersion = coTfsGetVersion();\nmajorVersion = (minorVersion >> 8) & 0xFF;\nminorVersion = minorVersion & 0xFF;\n\nwrite(\"coTfs node layer version = %d.%d\",majorVersion, minorVersion);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestIso11783IL_OPSetStringValue",
+  "category": "Test",
+  "title": "TestIso11783IL_OPSetStringValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestIso11783ILOPSetStringValue.htm",
+  "syntax": [
+    "long TestIso11783IL_OPSetStringValue( dbNode node, dword objectID, char stringValue[] );"
+  ],
+  "description": [
+    "The functions set the string value of an object in the object pool. The object must exist in the object pool and must support a string value. If the Object Pool API is active, a Change String Value command is sent to the Virtual Terminal. This can be suppressed with Bit 0 in options.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "runError",
+  "category": "Other",
+  "title": "runError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionRunError.htm",
+  "syntax": [
+    "void runError(long err, long);"
+  ],
+  "description": [
+    "Triggers a run error. Outputs the error number to the Write Window indicating the error number and the passed number, and then terminates the measurement."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "...\nif(rpm < 0) runError(1001,1);\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANopenUploadGetData",
+  "category": "CANopen",
+  "title": "CANopenUploadGetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/CANopenBasic/Functions/CAPLfunctionsCANopenUploadGetData.htm",
+  "syntax": [
+    "void CANopenUploadGetData( char[] buffer, dword bufferSize, dword errCode[] ); //form 1"
+  ],
+  "description": [
+    "Returns the data of a CANopen upload in a callback function as char or byte array."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Char (form 1) or byte (form 2) array buffer for the data."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nCANopenUpload ( 1, 0x2000, 0x00, 0, errCode );\nif (errCode[0] == 0)\n{\n  write( \"SDO Upload successfully initiated\" );\n}\n\nvoid OnCANopenUploadResponse ( dword nodeId, dword index, dword subIndex, dword size )\n{\n  dword errCode[1];\n  char value[100];\n  CANopenUploadGetData ( value, elcount(value), errCode );\n  write( \"Upload response data: %s\", value );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

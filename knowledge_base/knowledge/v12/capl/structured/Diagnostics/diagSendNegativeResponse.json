@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagSendNegativeResponse",
+  "category": "Diagnostics",
+  "title": "diagSendNegativeResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSendNegativeResponse.htm",
+  "syntax": [
+    "long diagSendNegativeResponse (diagResponse obj, DWORD code)"
+  ],
+  "description": [
+    "Sends a negative response to the tester, whereby the specified value is transmitted as error code."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "on diagRequest FaultMemory::FaultMemory::ReportByStatusMask\n{\n  // Send neg response with code 0x78 (requestCorrectlyReceived-ResponsePending)\n  DiagSendNegativeResponse(this, 0x78);\n  // Optionally set a timer to respond with a positive response later\n  setTimer(posReq, 1);\n  // pos resp after 1s\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

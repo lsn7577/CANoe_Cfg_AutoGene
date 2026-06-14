@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "scopeConnect",
+  "category": "Scope",
+  "title": "scopeConnect",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Scope/Functions/CAPLfunctionScopeConnect.htm",
+  "syntax": [
+    "long scopeConnect()"
+  ],
+  "description": [
+    "Performs Connect Scope action for Scope Window. This action is equivalent to connecting Scope via the GUI. The Scope Window will be opened automatically if not yet opened.",
+    "The completion of this action is reported with an internal event which can be awaited via TFS-function testWaitForScopeEvent() in CAPL programs for test modules."
+  ],
+  "parameters": [],
+  "return": "2 (success): Connection is already established. This might be a case when connection has been established by a previous CAPL call or manually.",
+  "example": {
+    "description": [],
+    "code": "long res;\n\nres = scopeConnect();\nif (res < 0 || res > 2)\n{\n   testStepFail(\"Initialization\",\" Call to scopeConnect() failed. Return code =%d\", res);\n   return;\n}\nelse if (res == 1)\n{ // wait till action done\n   if (testWaitForScopeEvent(eScopeConnected, 8000) != 1)\n   {\n      testStepFail(\"Initialization \",\"Scope event eScopeConnected was not received\");\n      return;\n   }\n}\ntestStep(\"Initialization\",\"USB connection with the scope hardware is established\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventSignalValue",
+  "category": "Test",
+  "title": "ChkQuery_EventSignalValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventSignalValue.htm",
+  "syntax": [
+    "long ChkQuery_EventSignalValue (dword checkId, double pValue[]); // form 1",
+    "check.QueryEventSignalValue (double pValue[]); // form 1"
+  ],
+  "description": [
+    "This function enables access to the signal value which was last reported by a check as invalid.",
+    "The signature of the function with the same name without the pValue parameter enables access only to positive signal values.",
+    "This function enables access to signal values in any directory."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "<= 0: Refers the query error codes in this chapter",
+  "example": {
+    "description": [],
+    "code": "CallbackOnSignalXyzViolation(dword aCheckId)\n{\n   double lBadValue[1]; // use an array to allow \"call-by-reference\"; length: 1 element\n   ChkQuery_EventSignalValue(aCheckId, lBadValue);\n   write(\"Last bad signal value=%g\", lBadValue[0]);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetTLSEnabled",
+  "category": "SmartCharging",
+  "title": "SCC_SetTLSEnabled",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetTLSEnabled.htm",
+  "syntax": [
+    "void SCC_SetTLSEnabled ( long Enabled )"
+  ],
+  "description": [
+    "Specifies if TLS is used. As native TLS is not supported, this only affects the Security flag in the SECC Discovery Request message. By calling this function, the configuration parameter <UseTLS> is overwritten."
+  ],
+  "parameters": [
+    {
+      "name": "Enabled",
+      "type": "",
+      "description": "1 to enable TLS support, 0 to disable TLS support"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

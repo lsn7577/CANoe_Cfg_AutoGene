@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedMethodRef::CallAsync",
+  "category": "CommunicationObjects",
+  "title": "consumedMethodRef::CallAsync",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedMethodRefCallAsync.htm",
+  "syntax": [
+    "callcontext <MethodType> consumedMethodRef::CallAsync(params ...); // form 1"
+  ],
+  "description": [
+    "Calls the method from the specified consumer at the specified provider. The function call is made asynchronously, i.e. the call does not wait for the function to be called and the return to be received. In test procedures, you can wait for the answer with TestWaitForAnswer; in simulation programs, you can use the handler on fctReturned. In form 2, the callback function is called when the return is received."
+  ],
+  "parameters": [],
+  "return": "Form 1: A call context object for the call. You can e.g. use it to wait for the return or to retrieve a unique request ID which you can match in a on fctReturned handler.",
+  "example": {
+    "description": [],
+    "code": "callContext MirrorAdjustment.Adjust cco;\nint waitResult;\ncco = MirrorAdjustment.consumerSide[CANoe,LeftMirror].Adjust.CallAsync(50, 0);\nwaitResult = testWaitForAnswer(cco, 500);\nif (waitResult == 1 && cco.Result == Mirrors::AdjustResult::OK)\n{\n  testStepPass(\"AdjustCall\", \"Call returned with OK\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

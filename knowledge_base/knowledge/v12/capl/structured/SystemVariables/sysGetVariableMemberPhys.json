@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableMemberPhys",
+  "category": "SystemVariables",
+  "title": "sysGetVariableMemberPhys",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableMemberPhys.htm",
+  "syntax": [
+    "long sysGetVariableMemberPhys(char namespace[], char variableAndMemberName[], double& value); // form 1"
+  ],
+  "description": [
+    "Retrieves the physical value of a specific element of a variable of type struct or generic array.",
+    "Direct access to values from system variables"
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "0: no error, function successful",
+  "example": {
+    "description": [],
+    "code": "double val;\nsysGetVariableMemberPhys(sysvarMember::XCP::ECU_2::KL2.Curve2[0], val);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

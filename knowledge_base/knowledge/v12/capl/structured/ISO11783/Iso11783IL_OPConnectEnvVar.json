@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPConnectEnvVar",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPConnectEnvVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPConnectEnvVar.htm",
+  "syntax": [
+    "long Iso11783IL_OPConnectEnvVar( char envVarName[], dword objectId );"
+  ],
+  "description": [
+    "Connects an object (variable, value or string) from the object pool to an environment variable.",
+    "If an object is changed, the new value is put the environment variable. And vice versa, if the value of an environment variable is changed, the new value is also written to the connected object. Additionally a Change String or Change Numeric Value command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "envVarName",
+      "type": "",
+      "description": "Name of the environment variable"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPConnectEnvVar( \"EnvSprayer_AppRate\", 1040 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

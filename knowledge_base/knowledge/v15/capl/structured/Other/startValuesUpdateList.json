@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "startValuesUpdateList",
+  "category": "Other",
+  "title": "startValuesUpdateList",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionStartValuesUpdateList.htm",
+  "syntax": [
+    "void startValuesUpdateList(); // form 1",
+    "void startValuesUpdateList(char groupName[]); // form 2",
+    "void startValuesUpdateList(char groupName[], long onlyActiveStartValues); // form 3"
+  ],
+  "description": [
+    "Sets the start values of variables/signals in the CANoeStart Value Window to the currently measured values."
+  ],
+  "parameters": [
+    {
+      "name": "groupName",
+      "type": "",
+      "description": "Name of a group containing start values. If groupName is defined, then only the active start values contained in this group get the currently measured values. If groupName is not defined or is equal to \"\", then only the active start values of all groups get the currently measured values."
+    },
+    {
+      "name": "onlyActiveStartValues",
+      "type": "",
+      "description": "Determines if active start values get the currently measured values or not. If missing, then only the active start values are considered. 1 : Only the active start values get the currently measured values. 0: All start values (active and inactive) get the currently measured values."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Example 1",
+      "Example 2"
+    ],
+    "code": "on key '1'\n{\n  startValuesUpdateList(\"Start values group1\");\n}\n\non key '2'\n{\n  startValuesUpdateList();\n}\n\non key '3'\n{\n  startValuesUpdateList(\"\"); // corresponds to startValuesUpdateList();\n}\n\non key '4'\n{\n  startValuesUpdateList(\"Start values group1\", 1);\n}\n\non stopMeasurement\n{\n  startValuesUpdateList();\n}\nvariables\n{\n  msTimer t;\n}\non timer t\n{\n  startValuesUpdateList();\n}\non key '5'\n{\n  @myVariable = 123;\n\n  //startValuesUpdateList();    // this call would not save the value 123 of myVariable\n  //because the variable is set later than the function call is executed.\n\n\n  setTimer(t, 0);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0: form 1-2 10.0 SP3: form 3",
+      "10.0: form 1-2 10.0 SP3: form 3",
+      "13.0",
+      "—",
+      "14",
+      "2.2: form 1-2 2.2 SP2: form 3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

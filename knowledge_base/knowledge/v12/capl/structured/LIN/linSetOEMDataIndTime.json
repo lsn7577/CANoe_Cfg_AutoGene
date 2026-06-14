@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetOEMDataIndTime",
+  "category": "LIN",
+  "title": "linSetOEMDataIndTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetOEMDataIndTime.htm",
+  "syntax": [
+    "long linSetOEMDataIndTime(long timeInMS)"
+  ],
+  "description": [
+    "Sets the time in milliseconds after which a simulated slave automatically sets its data indication bit."
+  ],
+  "parameters": [
+    {
+      "name": "timeInMS",
+      "type": "",
+      "description": "Time value.Unit: milliseconds"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

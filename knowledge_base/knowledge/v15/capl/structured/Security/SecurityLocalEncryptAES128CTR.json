@@ -1,0 +1,163 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalEncryptAES128CTR",
+  "category": "Security",
+  "title": "SecurityLocalEncryptAES128CTR",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/Functions/CAPLfunctionSecurityLocalEncryptAES128CTR.htm",
+  "syntax": [
+    "long SecurityLocalEncryptAES128CTR(byte key[], dword keyLength, byte data[], dword dataLength, byte initVector[], dword initVectorLength, byte cipheredData[], dword cipheredDataLength)"
+  ],
+  "description": [
+    "Encrypts data with a given key and initialization vector using AES128 (CTR), Padding Mode is not required."
+  ],
+  "parameters": [
+    {
+      "name": "byte key[]",
+      "type": "",
+      "description": "The key to be used for AES (128 bit)."
+    },
+    {
+      "name": "dword keyLength",
+      "type": "",
+      "description": "16 (bytes)."
+    },
+    {
+      "name": "byte data[]",
+      "type": "",
+      "description": "The data to encrypt."
+    },
+    {
+      "name": "dword dataLength",
+      "type": "",
+      "description": "The length of the data to encrypt."
+    },
+    {
+      "name": "byte initVector[]",
+      "type": "",
+      "description": "The init vector to be used."
+    },
+    {
+      "name": "dword initVectorLength",
+      "type": "",
+      "description": "16 (bytes)."
+    },
+    {
+      "name": "byte cipheredData [] [Out]",
+      "type": "",
+      "description": "The buffer in which the ciphered data is stored."
+    },
+    {
+      "name": "dword cipheredDataLength [In/Out]",
+      "type": "",
+      "description": "The length of the buffer. Typically this buffer should have the same length as the data to encrypt."
+    }
+  ],
+  "return": "The key to be used for",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP4",
+      "11.0 SP4",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN, CAN FD, FR, ETH",
+      "CAN, CAN FD, FR, ETH",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

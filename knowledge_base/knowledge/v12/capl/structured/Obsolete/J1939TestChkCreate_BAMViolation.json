@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkCreate_BAMViolation",
+  "category": "Obsolete",
+  "title": "J1939TestChkCreate_BAMViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionJ1939TestChkCreateBAMViolation.htm",
+  "syntax": [
+    "long J1939TestChkCreate_BAMViolation(dword min, dword max, dword options);"
+  ],
+  "description": [
+    "Observes the BAM transport protocol. It is possible to observer all BAM transmissions or only the transmission of a specific send node."
+  ],
+  "parameters": [
+    {
+      "name": "sender",
+      "type": "",
+      "description": "send node from database, optional"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long bamCheck;\nbamCheck = J1939TestChkCreate_BAMViolation( EMS, 50, 200, 0x00 );\n\nJ1939TestChkControl_Start(bamCheck);\nTestAddConstraint(bamCheck);"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

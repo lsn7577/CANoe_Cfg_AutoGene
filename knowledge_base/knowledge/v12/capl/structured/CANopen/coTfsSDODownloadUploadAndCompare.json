@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDODownloadUploadAndCompare",
+  "category": "CANopen",
+  "title": "coTfsSDODownloadUploadAndCompare",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoDownloadUploadAndCompare.htm",
+  "syntax": [
+    "long coTfsSDODownloadUploadAndCompare( dword index, dword subIndex, dword size, qword downloadValue ); // form 1"
+  ],
+  "description": [
+    "This function executes a complete SDO download to write the object value and after that a SDO upload to read the written value. Depending on the number of data, this is either an expedited upload (up to 4 bytes) or a segmented transfer. Afterwards the received data is compared against the data supplied.",
+    "It is not possible to fetch the received data using coTfsGetSdoUploadData after this function was called.",
+    "(2) can be used for maximum 4 byte objects only."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Object index"
+    }
+  ],
+  "return": "error code or",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

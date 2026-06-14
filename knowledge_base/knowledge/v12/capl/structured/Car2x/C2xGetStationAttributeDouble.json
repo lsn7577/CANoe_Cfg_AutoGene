@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetStationAttributeDouble",
+  "category": "Car2x",
+  "title": "C2xGetStationAttributeDouble",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetStationAttributeDouble.htm",
+  "syntax": [
+    "float C2xGetStationAttributeDouble(char[] attributeName); // form 1"
+  ],
+  "description": [
+    "This function return the actual value of the floating point typed scenario attribute. Form1 of the function returns values of an attributes of the calling (current) station. Form2 allows to get values of all attributes of any station in the scenario, even if the scenario station does not have an assigned databasis node."
+  ],
+  "parameters": [
+    {
+      "name": "stationName",
+      "type": "",
+      "description": "Scenario station name"
+    }
+  ],
+  "return": "The floating point value of the attribute at the time of function call.",
+  "example": {
+    "description": [],
+    "code": "void OnStartScenario()\n{\n  write(\"OnStartScenario - Station Speed = %f\",   C2xGetStationAttributeDouble(\"Speed\"));\n}\n\nvoid OnStationAttributeTrigger(char attrName[])\n{\nif (strncmp(attrName,\"Speed\",strlen(attrName)) == 0)\n{\n      write(\"%f sec : Speed = %f\",\n        TimeNowNS()/1e9 ,\n        C2xGetStationAttributeDouble(\"Speed\"));\n    }\n}\n\non key 'c'\n{\nwrite(\"OnStartScenario - Station Latitude = %f\", C2xGetStationAttributeDouble(\"Latitude\"));\nwrite(\"OnStartScenario - Station Longitude = %f\", C2xGetStationAttributeDouble(\"Longitude\"));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

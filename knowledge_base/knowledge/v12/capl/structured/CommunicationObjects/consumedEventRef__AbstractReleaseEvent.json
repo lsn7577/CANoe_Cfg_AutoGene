@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedEventRef::AbstractReleaseEvent",
+  "category": "CommunicationObjects",
+  "title": "consumedEventRef::AbstractReleaseEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedEventRefAbstractReleaseEvent.htm",
+  "syntax": [
+    "int consumedEventRef::AbstractReleaseEvent()"
+  ],
+  "description": [
+    "Releases the subscription of a specific service event if abstract binding is used: for the specified consumer from the specified provider. If the event is released, it will be unsubscribed and not automatically re-subscribed."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "MirrorAdjustment.consumerSide[CANoe,LeftMirror].CurrentPosition.AbstractReleaseEvent();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

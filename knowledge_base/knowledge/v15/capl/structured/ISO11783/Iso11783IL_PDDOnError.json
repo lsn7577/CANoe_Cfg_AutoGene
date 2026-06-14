@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDOnError",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDOnError",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDOnError.htm",
+  "syntax": [
+    "void Iso11783IL_PDDOnError( long errorCode, dword param );"
+  ],
+  "description": [
+    "This function can be implemented in the CAPL program. The function is called up by the interaction layer when an error occurs."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "error code"
+    },
+    {
+      "name": "param",
+      "type": "",
+      "description": "additional parameter, dependent on the error code"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_PDDOnError( LONG errorCode, LONG addParam )\n{\n  char buffer[256];\n  Iso11783IL_PDDGetLastErrorText ( elCount(buffer), buffer);\n  write( \"ERROR: %s\", buffer );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

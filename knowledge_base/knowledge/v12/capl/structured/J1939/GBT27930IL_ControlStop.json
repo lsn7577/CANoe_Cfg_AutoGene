@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_ControlStop",
+  "category": "J1939",
+  "title": "GBT27930IL_ControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILControlStop.htm",
+  "syntax": [
+    "long GBT27930IL_ControlStop(); // form 1"
+  ],
+  "description": [
+    "Deactivates the IL and stops sending cyclic messages."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n GBT27930IL_ControlStop(1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

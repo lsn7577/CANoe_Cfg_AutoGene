@@ -1,0 +1,47 @@
+# GNSSSetJitterAlt
+
+> Category: `J1939` | Type: `function`
+
+## Syntax
+
+```c
+dword GNSSSetJitterAlt( double jitter )
+```
+
+## Description
+
+This function sets the jitter by which the altitude deviates from its nominal value. The unit of the parameter depends on the system of measurement units selected with the GNSSSetUnits function.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| jitter | magnitude of the jitter (in m or yd) |
+
+## Return Values
+
+error code
+
+## Example
+
+```c
+double jitter = 0.7;
+GNSSSetUnits( 1 );
+GNSSSetJitterAlt( jitter ); // 0,7 
+ yard
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.2 | 13.0 | — | — | — |
+| Restricted To | — | J1939 ISO11783 | J1939 ISO11783 | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | — | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | — | — | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

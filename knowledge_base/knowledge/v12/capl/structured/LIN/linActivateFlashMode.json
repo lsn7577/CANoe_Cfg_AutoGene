@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linActivateFlashMode",
+  "category": "LIN",
+  "title": "linActivateFlashMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINActivateFlashMode.htm",
+  "syntax": [
+    "dword linActivateFlashMode(byte activate)"
+  ],
+  "description": [
+    "This function activates flash mode on high-speed capable transceivers. Note that in flash mode such a transceiver will use faster rising and falling edges and will disregard the EMC limitations of the LIN network. Note also, that the activation of the flash mode cannot be done while the channel is transmitting or the scheduler is running."
+  ],
+  "parameters": [
+    {
+      "name": "activate",
+      "type": "",
+      "description": "1 will activate the flash mode, 0 will deactivated it."
+    }
+  ],
+  "return": "On successful request returns 1, otherwise 0.",
+  "example": {
+    "description": [],
+    "code": "// test case for disturbing parts of a bit\n// note, that test cases can only be used in the context of test module nodes\n\ntestcase tcDisturbPartialBit()\n{\n   dword flashModeActive;\n\n   flashModeActive = 0;\n\n   do\n   {\n      if (!linActivateFlashMode(1)) // request activation of flash mode\n      {\n         break; // if the request has been denied, either the cab/piggy is incapable of\n                // flash mode or the scheduler is still running\n      }\n      testWaitForTimeout(10); // give the hardware time to activate the flash mode\n      flashModeActive = linIsFlashModeActive(); // check if flash mode has been\n                                                // activated successfully\n   } while (!flashModeActive);\n\n   if (!flashModeActive)\n   {\n      testStepFail(“tcDisturbPartialBit”, “Flash mode could not be activated because of active scheduler or because the cab/piggy does not support flash mode.”);\n      return;\n   }\n\n   linInvertRespBitEx(0, 0, 8, 4, 8, 0); // invert the middle part of the stop bit of the\n   // first byte of the response to id 0\n\n...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

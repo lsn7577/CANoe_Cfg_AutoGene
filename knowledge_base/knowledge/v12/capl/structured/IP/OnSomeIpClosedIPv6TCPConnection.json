@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnSomeIpClosedIPv6TCPConnection",
+  "category": "IP",
+  "title": "OnSomeIpClosedIPv6TCPConnection",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionOnSomeIpClosedIPv6TCPConnection.htm",
+  "syntax": [
+    "void OnSomeIpClosedIPv6TCPConnection(byte localIPv6Address[], dword localPort, byte remoteIPv6Address[], dword remotePort);"
+  ],
+  "description": [
+    "This callback will be called after a IL’s TCP connection has been closed."
+  ],
+  "parameters": [
+    {
+      "name": "localIPv6Address",
+      "type": "",
+      "description": "Local IPv6 address"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "void OnSomeIpClosedIPv6TCPConnection(byte localIPv6Address[], dword localPort, byte remoteIPv6Address[], dword remotePort)\n{\n  char localAddrStr[128], remoteAddrStr[128];\n\n  ipGetAddressAsString(localIPv6Address, localAddrStr, elcoun (localAddrStr));\n  ipGetAddressAsString(remoteIPv6Address, remoteAddrStr, elcount(remoteAddrStr));\n\n  write(\"Closed connection: [%s]:%d  <-> [%s]:%d\", localAddrStr, localPort, remoteAddrStr, remotePort);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

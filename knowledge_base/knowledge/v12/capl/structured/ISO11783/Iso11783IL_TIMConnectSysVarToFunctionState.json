@@ -1,0 +1,91 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMConnectSysVarToFunctionState",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMConnectSysVarToFunctionState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimConnectSysVarToFunctionState.htm",
+  "syntax": [
+    "long Iso11783IL_TIMConnectSysVarToFunctionState(dword functionID, char[] sysVarNameWithPath); // form 1"
+  ],
+  "description": [
+    "Connects the automation state of a TIM function to a system variable.",
+    "0",
+    "Automation unavailable",
+    "1",
+    "Automation not ready",
+    "2",
+    "Automation ready to enable",
+    "3",
+    "Automation enabled",
+    "4",
+    "Automation pending",
+    "5",
+    "Active, not limited",
+    "6",
+    "Active, limited high",
+    "7",
+    "Active, limited low",
+    "14",
+    "Non-recoverable fault",
+    "15",
+    "Not available (parameter not supported or not configured for TIM)",
+    "If this function is used by a TIM client the system variable only changes if the TIM function is assigned by the client.",
+    "To release connection between the system variable and the function, just call the same method again, but with the empty string instead of the name of system variable.",
+    "You can also use the callback function Iso11783IL_TIMOnFunctionStateChanged if you are interested in the state of a function."
+  ],
+  "parameters": [
+    {
+      "name": "Function ID",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1-32 (1h-20h)",
+      "type": "",
+      "description": "Auxiliary Value 1 – 32"
+    },
+    {
+      "name": "64 (40h)",
+      "type": "",
+      "description": "Front PTO"
+    },
+    {
+      "name": "65 (41h)",
+      "type": "",
+      "description": "Rear PTO"
+    },
+    {
+      "name": "66 (42h)",
+      "type": "",
+      "description": "Front hitch"
+    },
+    {
+      "name": "67 (43h)",
+      "type": "",
+      "description": "Rear hitch"
+    },
+    {
+      "name": "68 (44h)",
+      "type": "",
+      "description": "Vehicle speed"
+    },
+    {
+      "name": "70 (46h)",
+      "type": "",
+      "description": "External guidance"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_TIMConnectSysVarToFunctionState(0, \"sysvarAuxValve1State\"); "
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

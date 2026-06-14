@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestJoinJ1939DTCEvent",
+  "category": "Test",
+  "title": "TestJoinJ1939DTCEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinJ1939DTCEvent.htm",
+  "syntax": [
+    "long TestJoinJ1939DTCEvent (dword sourceAddress, Message message, dword spn); // form 1"
+  ],
+  "description": [
+    "Completes the current set of joined events with the additional Diagnostic Trouble Code (DTC) event – transmitted with one of the J1939 diagnostic messages. This function does not wait.",
+    "The affected message (specified by the Parameter Group number pgn or the database object message) must be able to contain a DTC, so only this parameter groups are allowed: DM1, DM2, DM4, DM6, DM12, DM23, DM24, DM27, DM28, DM31, DM35 and DM41-DM54.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "message",
+      "type": "",
+      "description": "Message containing the specified DTC. Must be a J1939 Parameter Group."
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": "testcase tcWaitForOneOfDTCs(dword sourceAddress)\n{\n  long eventIndex;\n  dword sa = 0x1;\n\n  //All DTCs are transmitted with the message DM12 (pgn = 0xFED4).\n  dword pgnDM12 = 0xFED4;\n\n  //DTC Condition 1: spn = 111, fmi = 12, oc to be ignored\n  TestJoinJ1939DTCEvent (sourceAddress, pgnDM12, 111, 12, 0xFFFF);\n\n  //DTC Condition 2: spn = 222, fmi to be ignored, oc = 5\n  TestJoinJ1939DTCEvent (sourceAddress, pgnDM12, 222, 0xFFFF, 5);\n\n  //DTC Condition 3: spn = 333, fmi and oc to be ignored\n  TestJoinJ1939DTCEvent (sourceAddress, pgnDM12, 333, 0xFFFF, 0xFFFF);\n\n  eventIndex = testWaitForAnyJoinedEvent(5000);\n  switch (eventIndex)\n  {\n\n    case 1:\n      testStepPass(\"Validation\", \"DTC with spn=111 and fmi=12 occurred\");\n      break;\n\n    case 2:\n      testStepPass(\"Validation\", \"DTC with spn=222 and oc=5 occurred\");\n      break;\n\n    case 3:\n      testStepPass(\"Validation\", \"DTC with spn=333 occurred\");\n      break;\n\n    default:\n      testStepFail(\"Validation\", \"Unexpected event or timeout (return code %d)\", eventIndex);\n      break;\n\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

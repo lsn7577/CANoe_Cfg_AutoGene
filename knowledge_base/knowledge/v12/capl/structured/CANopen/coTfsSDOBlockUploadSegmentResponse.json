@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOBlockUploadSegmentResponse",
+  "category": "CANopen",
+  "title": "coTfsSDOBlockUploadSegmentResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoBlockUploadSegmentResponse.htm",
+  "syntax": [
+    "long coTfsSDOBlockUploadSegmentResponse( dword ccs, dword cs, dword ackSeq, dword blkSize, dword expMsgNumber, dword startSeqNumber );"
+  ],
+  "description": [
+    "This function waits for a SDO segmented upload request and sends the corresponding response. Before the call of this function, no time-delay functions should be inserted in order to prevent a loss of the request message."
+  ],
+  "parameters": [
+    {
+      "name": "ccs (client command specifier)",
+      "type": "",
+      "description": "5: block upload"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "see example of coTfsSDOBlockInit"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TCIL_ControlStop",
+  "category": "ISO11783",
+  "title": "TCIL_ControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILControlStop.htm",
+  "syntax": [
+    "long TCIL_ControlStop(); // form 1"
+  ],
+  "description": [
+    "Deactivates the Task Controller and stops sending cyclic messages. A Cannot Claim Address message is sent, if the NMT is activated and the message is not suppressed with the parameter option set to 1.",
+    "Removes all device descriptor object pools (DDOPs) too."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void SetDataMaskSize(dword newSize)\n{\n  // data mask size can only be changed if TC is stopped\n  TCIL_ControlStop(TC, 1);\n  // wait until Working Sets have detected that TC is offline\n  TestWaitForTimeout(3500);\n  // change size and restart TC\n  TCIL_SetNodeProperty(TC,\"dataMaskSize\", newSize);\n  TCIL_ControlStart(TC);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

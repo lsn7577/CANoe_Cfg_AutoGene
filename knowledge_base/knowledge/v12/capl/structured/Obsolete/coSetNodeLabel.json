@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coSetNodeLabel",
+  "category": "Obsolete",
+  "title": "coSetNodeLabel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoSetNodeLabel.htm",
+  "syntax": [
+    "void coSetNodeLabel( char nodeLabel[], dword errCode[] );"
+  ],
+  "description": [
+    "Usually the node label is build automatically from the nodes name and its node-ID specified within the assigned CAN database. For test nodes it is not possible to assign a node from a CAN database within the configuration dialog of the test node. Furthermore the user maybe wants to determine the name of a node by itself. This function can be used to determine the node label manually. If the user wants to reset the manually specified label this function has to be called with an empty node label (\"\"). Afterwards the automatically build node label is used."
+  ],
+  "parameters": [
+    {
+      "name": "nodeLabel",
+      "type": "",
+      "description": "New node label to be used for reports within the write window and the logging file"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1]\n\ncoSetNodeLabel (\"mySimulatedNode\", errCode );\nif (errCode[0] == 0) {\n  write( \"New node label successfully set\");\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

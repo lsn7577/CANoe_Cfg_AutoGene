@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsODAddOptEntryValueRange",
+  "category": "CANopen",
+  "title": "coTfsODAddOptEntryValueRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdAddOptEntryValueRange.htm",
+  "syntax": [
+    "long coTfsODAddOptEntryValueRange( byte inMinValueBuf[], dword minValueBufSize, byte inMaxValueBuf[], dword maxValueBufSize );"
+  ],
+  "description": [
+    "The function expands the allowed value range of the last created object entry with the given value. The call of this function without coTfsODAddEntry is not allowed!",
+    "For the description of single values the function coTfsODAddOptEntryValue can be used."
+  ],
+  "parameters": [
+    {
+      "name": "inMinValueBuf[]",
+      "type": "",
+      "description": "Minimum value of the range, size must be the same as minValueBufSize at least."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "long retValFunc = kTestStepPassed; /* to store the return value of function */\nlong nodeId = 112;                 /* Node-Id of DUT */\n\ndword index = 0x1400;\ndword subIndex = 0x1;\ndword accessType = kAccessType_ReadWrite;\ndword entrySize = 4; /* object size in bytes */\nbyte inMaskBuf[4] = {0xFF, 0xFF, 0xFF, 0x1F}; /* check only the COB-ID value */\ndword maskBufSize = 4;\nbyte inValueBuf[4] = {0x0, 0x0, 0x0, 0x0};\ndword valueBufSize = 4;\nbyte inMinValueBuf[4] = {0x1, 0x2, 0x0, 0x0};  /* Generic pre-defined connection set for RPDO - Node 1 */\ndword minValueBufSize = 4;\nbyte inMaxValueBuf[4] = {0x7F, 0x2, 0x0, 0x0}; /* Generic pre-defined connection set for RPDO - Node 2 */\ndword maxValueBufSize = 2;\nchar msg[100]; /* message */\n\n/*\n* Purpose:\n* Check if the COB-ID of the RPDO1 is equal to Zero or it is in the range between 0x201 and 0x27F\n*/\n\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* call test function : clear test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODClearAllEntries\", elCount(msg));\n  retValFunc = coTfsODClearAllEntries();\n} /* if */\ncoTfsSetReportBehaviour(0xFFFFFFFF);\n\n/* call test function : add entry to test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODAddEntry\", elCount(msg));\n  retValFunc = coTfsODAddEntry( index /*dword index*/, subIndex /*dword subIndex*/, accessType /*dword accessType*/, entrySize /*dword entrySize*/, inMaskBuf /*byte inMaskBuf[]*/, maskBufSize /*dword maskBufSize*/, inValueBuf /*byte inValueBuf[]*/, valueBufSize /*dword valueBufSize*/ );\n} /* if */\n\n/* call test function : add entry value range */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODAddOptEntryValueRange\", elCount(msg));\n  retValFunc = coTfsODAddOptEntryValueRange( inMinValueBuf /*byte inMinValueBuf[]*/, minValueBufSize /*dword minValueBufSize*/, inMaxValueBuf /*byte inMaxValueBuf[]*/, maxValueBufSize /*dword maxValueBufSize*/ );\n} /* if */\n\n/* call test function : write objects in test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODChk\", elCount(msg));\n  retValFunc = coTfsODChk();\n} /* if */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

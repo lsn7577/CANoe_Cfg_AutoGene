@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "SCC_AuthorizationRes",
+  "category": "SmartCharging",
+  "title": "SCC_AuthorizationRes",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Callbacks/CAPLfunctionSCC_AuthorizationRes.htm",
+  "syntax": [
+    "void SCC_AuthorizationRes ( byte SessionID[], long ResponseCode)"
+  ],
+  "description": [
+    "The callback is called as soon as a Authorization Response is received.",
+    "Further details that are transmitted in this response can be queried with the following functions:"
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "ResponseCode",
+      "type": "",
+      "description": "1 if OK, 0 if FAILED"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

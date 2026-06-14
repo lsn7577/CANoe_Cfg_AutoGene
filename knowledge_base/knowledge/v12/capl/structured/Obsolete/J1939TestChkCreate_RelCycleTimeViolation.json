@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkCreate_RelCycleTimeViolation",
+  "category": "Obsolete",
+  "title": "J1939TestChkCreate_RelCycleTimeViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionJ1939TestChkCreateRelCycleTimeViolation.htm",
+  "syntax": [
+    "long J1939TestChkCreate_RelCycleTimeViolation(dword sourceAddr, dword destAddr, dbMessage dbMsg, double minCycleTime, double maxCycleTime, [char callback[]] )"
+  ],
+  "description": [
+    "Cycle time check for a J1939 parameter group. The message attribute GenMsgCycleTime must be defined for the message. The minimum and maximum cycle time is a relative factor to the cycle time from the database."
+  ],
+  "parameters": [
+    {
+      "name": "sourceAddr",
+      "type": "",
+      "description": "sender address"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long check;\ncheck = J1939TestChkCreate_RelCycleTimeViolation( EMS, EEC1, 0.95, 1.05 );\nJ1939TestChkControl_Start( check );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

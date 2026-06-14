@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopePerformEyeDiagramAnalysis",
+  "category": "Test",
+  "title": "testWaitScopePerformEyeDiagramAnalysis",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLFunctionTestWaitScopePerformEyeDiagramAnalysis.htm",
+  "syntax": [
+    "long testWaitScopePerformEyeDiagramAnalysis(message frame, dword flags, dword groupNumber, ScopeSinglePolygonBitMask bitMask, ScopeAnalyseHandle handle); // form 1"
+  ],
+  "description": [
+    "Perform a bit analysis for the eye diagram."
+  ],
+  "parameters": [
+    {
+      "name": "frame",
+      "type": "",
+      "description": "The CAN, LIN or FlexRay frame should be analysed."
+    }
+  ],
+  "return": "1 = Successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

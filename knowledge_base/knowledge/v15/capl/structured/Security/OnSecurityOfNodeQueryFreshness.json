@@ -1,0 +1,191 @@
+{
+  "page_type": "function",
+  "name": "OnSecurityOfNodeQueryFreshness",
+  "category": "Security",
+  "title": "OnSecurityOfNodeQueryFreshness",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/CallbackHandler/CAPLfunctionOnSecurityOfNodeQueryFreshness.htm",
+  "syntax": [
+    "long OnSecurityOfNodeQueryFreshness(char nodeName[], char nameName[], dword context, char pduName[], dword dataId, dword freshnessValueId, dword attemptNr, byte payload[], dword payloadLength, qword& freshness, dword& freshnessLength, qword truncatedRxFreshness, dword truncatedRxFreshnessBitLength)"
+  ],
+  "description": [
+    "This callback is called for every secured PDU of the specified node on the specified network for which a CMAC has to be calculated of verified.",
+    "The callback is triggered before the CMAC calculation starts.",
+    "The callback provides the possibility the calculate a freshness value in CAPL and force the Security Manager to use this freshness value for the next CMAC calculation / verification.",
+    "You have to call SecurityLocalStartControlSimulationNode before this callback is called."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node."
+    },
+    {
+      "name": "char networkName[]",
+      "type": "",
+      "description": "The name of the network the node is on."
+    },
+    {
+      "name": "dword context",
+      "type": "",
+      "description": "1: PDU is received (CMAC verification) 0: PDU is transmitted (CMAC calculation)"
+    },
+    {
+      "name": "char pduName[]",
+      "type": "",
+      "description": "The name of the PDU."
+    },
+    {
+      "name": "dword dataId",
+      "type": "",
+      "description": "The data ID of the PDU."
+    },
+    {
+      "name": "dword freshnessValueId",
+      "type": "",
+      "description": "The freshness value ID of the PDU."
+    },
+    {
+      "name": "dword attemptNr",
+      "type": "",
+      "description": "The number of the attempted verification."
+    },
+    {
+      "name": "byte payload[]",
+      "type": "",
+      "description": "The payload of the PDU."
+    },
+    {
+      "name": "dword payloadLength",
+      "type": "",
+      "description": "The payload length of the PDU in bytes."
+    },
+    {
+      "name": "qword& freshness [Out]",
+      "type": "",
+      "description": "The freshness the CAPL code provides."
+    },
+    {
+      "name": "dword& freshnessLength [Out]",
+      "type": "",
+      "description": "The freshness length of the freshness the CAPL code provides in bits."
+    },
+    {
+      "name": "qword truncatedRxFreshness",
+      "type": "",
+      "description": "The received freshness (only in case context is 1)."
+    },
+    {
+      "name": "dword truncatedRxFreshnessBitLength",
+      "type": "",
+      "description": "The received freshness length in bits (only in case context is 1)."
+    }
+  ],
+  "return": "qword& freshness [Out]The freshness the CAPL code provides.\ndword& freshnessLength [Out]The freshness length of the freshness the CAPL code provides in bits.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "Version"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN CAN FD FR ETH",
+      "—",
+      "—",
+      "—",
+      "e.g. CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

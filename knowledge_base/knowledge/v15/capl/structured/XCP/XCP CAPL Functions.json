@@ -1,0 +1,131 @@
+{
+  "page_type": "notes",
+  "name": "XCP CAPL Functions",
+  "category": "XCP",
+  "title": "XCP CAPL Functions",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/XCP/CAPLfunctionsXCPOverview.htm",
+  "syntax": [],
+  "description": [
+    "Option .AMD/XCP"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "XCP Only available with option .AMD/XCP. The functions can be used for XCP and CCP devices."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "OnXcpConnect",
+        "Is called after establishing the connection with xcpConnect and before start of the DAQ measurement."
+      ],
+      [
+        "OnXcpDisconnect",
+        "Is called after the ECU acknowledged the disconnect command."
+      ],
+      [
+        "OnXcpError",
+        "Is called whenever the XCP slaves answers with a negative response."
+      ],
+      [
+        "OnXcpEvent",
+        "Provides access to data that is sent from an XCP or CCP slave in an Event packet."
+      ],
+      [
+        "OnXcpGetCalPage",
+        "Is called to get the currently active calibration data page of an ECU."
+      ],
+      [
+        "OnXcpSendRaw",
+        "Is called with the response to a raw XCP command sent by xcpSendRaw."
+      ],
+      [
+        "OnXcpSetCalPage",
+        "Is called when the ECU switched the calibration data page."
+      ],
+      [
+        "OnXcpUpload",
+        "Is called after finishing of the upload with xcpUpload to indicate the upload status."
+      ],
+      [
+        "OnXcpUserCommand",
+        "Is called for a response of a user command."
+      ],
+      [
+        "xcpActivate",
+        "Activates an a2l parameter for upload and DAQ measurement."
+      ],
+      [
+        "xcpActivateMeasurementGroup",
+        "Changes the measurement group that will be used for the next connection to the XCP/CCP device."
+      ],
+      [
+        "xcpConnect",
+        "Establishes a connection to the XCP/CCP device and starts the configured DAQ measurement."
+      ],
+      [
+        "xcpDeactivate",
+        "Upload and DAQ measurement will be deactivated."
+      ],
+      [
+        "xcpDeactivateAll",
+        "Deactivates auto read of all configured parameters of the active measurement group."
+      ],
+      [
+        "xcpDisconnect",
+        "Disconnects from a XCP/CCP device."
+      ],
+      [
+        "xcpGetCalPage",
+        "If the XCP slave device supports calibration data page switching, this command gets the currently active page and access mode."
+      ],
+      [
+        "xcpGetPollingCycle",
+        "Returns the cycle time of a parameter, if the read mode of the parameter is set to polling."
+      ],
+      [
+        "xcpIsConnected",
+        "Returns the connection status of a XCP/CCP device."
+      ],
+      [
+        "xcpSendRaw",
+        "Sends any data as control command to an XCP/CCP device."
+      ],
+      [
+        "xcpSetCalPage",
+        "If the XCP slave device supports calibration data page switching, this command sets the current page and access mode."
+      ],
+      [
+        "xcpSetPollingCycle",
+        "Sets the cycle time of a parameter, if the read mode of the parameter is set to polling."
+      ],
+      [
+        "xcpUpload",
+        "Upload of the parameter and update of the system variable."
+      ],
+      [
+        "xcpUserCommand",
+        "Sends user-defined data to the XCP slave."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

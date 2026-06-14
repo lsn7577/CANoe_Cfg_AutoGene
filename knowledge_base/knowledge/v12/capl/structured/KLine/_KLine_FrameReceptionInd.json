@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_KLine_FrameReceptionInd",
+  "category": "KLine",
+  "title": "_KLine_FrameReceptionInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineFrameReceptionInd.htm",
+  "syntax": [
+    "_KLine_FrameReceptionInd(BYTE data[], int64 timestamps[])"
+  ],
+  "description": [
+    "Is called when a frame has been received."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Received data buffer of the frame."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_KLine_FrameReceptionInd(BYTE data[], int64 timestamps[])\n{\n   int i;\n   int64 p1Time;\n   dword systemBaudRate;\n   int64 byteLength_ns;\n   systemBaudRate  = 10400;\n   byteLength_ns = ((1.0/systemBaudRate) * 10) * 1000000000; // 10 bit times in ns\n   // Calculate P1 Times\n   for (i = 0; i < elcount(data)-1; ++i)\n   {\n      p1Time = (timestamps[i+1] - byteLength_ns) - timestamps[i];\n      write(\"P1 time between byte no.: %d; Value: %x and byte no.: %d; Value: %x == [%.6f]\\n \", i, data[i], i+1,    data[i+1], \n      1Time/1000000000.0);\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

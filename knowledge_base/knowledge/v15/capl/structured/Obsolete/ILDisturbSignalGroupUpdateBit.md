@@ -1,0 +1,36 @@
+# ILDisturbSignalGroupUpdateBit
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+Identifies the disturbance mode:
+
+This value is used in combination with the disturbanceMode.
+
+-1: General error
+
+| Deprecated Function This function is deprecated and has been replaced by ILNodeDisturbSignalGroupUpdateBit |  |  |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|---|
+| Note This function is not available for all OEM packages — depends on the CANoeIL. This function can be used in a global node outside the node context of the IL. |  |  |  |  |  |  |  |  |  |
+| Function Syntax | long ILDisturbSignalGroupUpdateBit(dbMsg aMessage, char aSigGroupName[], long disturbanceMode, long disturbanceCount, long disturbanceValue); |  |  |  |  |  |  |  |  |
+| Function | Modifies the update bit of a signal group. Different fault injections are possible.This function influences a simulation node with an assigned CANoe interaction layer |  |  |  |  |  |  |  |  |
+| Parameters | aMessage The symbolic name of message in the database containing the signal group. |  |  |  |  |  |  |  |  |
+| aSigGroupName Name of the signal group using an update bit. |  |  |  |  |  |  |  |  |  |
+| disturbanceMode Identifies the disturbance mode: 0 Value The disturbance uses the value in disturbanceValue as counter. 1 Freeze The current counter value is transmitted. 2 Random A random value is transmitted as counter. | 0 | Value | The disturbance uses the value in disturbanceValue as counter. | 1 | Freeze | The current counter value is transmitted. | 2 | Random | A random value is transmitted as counter. |
+| 0 | Value | The disturbance uses the value in disturbanceValue as counter. |  |  |  |  |  |  |  |
+| 1 | Freeze | The current counter value is transmitted. |  |  |  |  |  |  |  |
+| 2 | Random | A random value is transmitted as counter. |  |  |  |  |  |  |  |
+| disturbanceCount -1 Infinite. 0 Stops the disturbance, e.g.a infinite disturbance. n Number of disturbances. | -1 | Infinite. | 0 | Stops the disturbance, e.g.a infinite disturbance. | n | Number of disturbances. |  |  |  |
+| -1 | Infinite. |  |  |  |  |  |  |  |  |
+| 0 | Stops the disturbance, e.g.a infinite disturbance. |  |  |  |  |  |  |  |  |
+| n | Number of disturbances. |  |  |  |  |  |  |  |  |
+| disturbanceValue This value is used in combination with the disturbanceMode. |  |  |  |  |  |  |  |  |  |
+| Return Values | 0: No error |  |  |  |  |  |  |  |  |
+| -1: General error |  |  |  |  |  |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |  |  |  |  |  |
+| 8.1 SP2 - 8.2 SP3 | CAN Simulation nodes | — | • |  |  |  |  |  |  |
+| Example // Sets the Signal Group Update Bit to 0variables { long disturbanceMode = 0; // The disturbance uses the value in disturbanceValue as Update Bit. int disturbanceCount = 100; long disturbanceValue = 0;}on key 'a'{ ILDisturbSignalGroupUpdateBit(Message_A, "SignalGroup_A", disturbanceMode, disturbanceCount, disturbanceValue);} |  |  |  |  |  |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

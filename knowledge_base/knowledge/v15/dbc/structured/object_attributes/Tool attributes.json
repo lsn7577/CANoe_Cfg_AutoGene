@@ -1,0 +1,52 @@
+{
+  "page_type": "concept",
+  "name": "Tool attributes",
+  "category": "DBC",
+  "subcategory": "object_attributes",
+  "title": "Tool attributes",
+  "source": "chm_extract_v15/CANeds/Topics/object_attributes/HIDD_FV_TOOLOBJ.htm",
+  "intro": [
+    "To allow the denotation of a device specific tool already by the device manufacturer the EDS may contain a description, which tools are to be used. On creating a DCF from that EDS, this tool description will be copied. For more information see CiA405.",
+    "Attribute",
+    "Description",
+    "Name",
+    "Symbolic name of the tool",
+    "Command",
+    "Concrete command with command line parameters",
+    "Make",
+    "This switch indicates that the tool has to be called on project changes where some kind of a recompile is required. For example, this Make may be necessary to recompile PLC programs in the event of changes to variable addresses or names.",
+    "Wait",
+    "This switch indicates whether the calling tool should wait for until the called tool is closed before it permits further user actions. For example, this is necessary if the called tool accesses DCF files and might change them!"
+  ],
+  "intro_tables": [
+    [
+      [
+        "Attribute",
+        "Description"
+      ],
+      [
+        "Name",
+        "Symbolic name of the tool"
+      ],
+      [
+        "Command",
+        "Concrete command with command line parameters"
+      ],
+      [
+        "Make",
+        "This switch indicates that the tool has to be called on project changes where some kind of a recompile is required. For example, this Make may be necessary to recompile PLC programs in the event of changes to variable addresses or names."
+      ],
+      [
+        "Wait",
+        "This switch indicates whether the calling tool should wait for until the called tool is closed before it permits further user actions. For example, this is necessary if the called tool accesses DCF files and might change them!"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ],
+  "intro_code_blocks": [],
+  "sections": []
+}

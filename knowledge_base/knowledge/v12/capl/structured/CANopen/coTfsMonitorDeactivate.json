@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsMonitorDeactivate",
+  "category": "CANopen",
+  "title": "coTfsMonitorDeactivate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsMonitorDeactivate.htm",
+  "syntax": [
+    "long coTfsMonitorDeactivate( void );"
+  ],
+  "description": [
+    "This function deactivates the passive communication monitor that has been activated with coTfsMonitorActivate ands adds the timings statistics to the report."
+  ],
+  "parameters": [],
+  "return": "0 - at least one time violation has occurred1 - all values have been received in time",
+  "example": {
+    "description": [],
+    "code": "// configure node-IDs for monitoring: monitor nodes 1..14, 21..24, 26..64 and 127\ncoTfsMonitorIncludeNodeIdRange( 1, 64);\ncoTfsMonitorExcludeNodeIdRange( 15, 20);\ncoTfsMonitorExcludeNodeId   ( 25);\ncoTfsMonitorIncludeNodeId   (127);\n\ncoTfsMonitorSetSdoTimeout( 100 ); // set SDO timeout to 100 ms\ncoTfsMonitorSetNmtTimeout( 2000 ); // set NMT timeout for boot-up message to 2 s\n\ncoTfsMonitorActivate();      // activate monitoring\nTestWaitForTimeout(30000);     // monitor CANopen traffic for 60 seconds ...\nif (coTfsMonitorDeactivate() != 1) { // deactivate monitoring and add results to report, check for errors\n  TestStepFail(\"Monitoring\", \"At least one monitored response was not received in time\");\n}\nelse {\n  TestStepPass(\"Monitoring\", \"All monitored responses were received in time\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

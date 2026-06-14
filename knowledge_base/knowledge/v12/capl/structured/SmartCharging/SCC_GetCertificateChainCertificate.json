@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetCertificateChainCertificate",
+  "category": "SmartCharging",
+  "title": "SCC_GetCertificateChainCertificate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetCertificateChainCertificate.htm",
+  "syntax": [
+    "void SCC_GetCertificateChainCertificate ( long Target, long Index, char Certificate[] )"
+  ],
+  "description": [],
+  "parameters": [
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Index of the target certificate, where 0 denoted the parent certificate, and 1..4 denote sub-certificates"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

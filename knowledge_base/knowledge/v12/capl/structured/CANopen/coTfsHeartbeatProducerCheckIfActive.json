@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsHeartbeatProducerCheckIfActive",
+  "category": "CANopen",
+  "title": "coTfsHeartbeatProducerCheckIfActive",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsHeartbeatProducerCheckIfActive.htm",
+  "syntax": [
+    "long coTfsHeartbeatProducerCheckIfActive( dword duration, dword producerTime, dword tolerance );"
+  ],
+  "description": [
+    "This function tests whether the heartbeat producer on the selected DUT Device Under Test is active. If heartbeat messages are detected by the DUT, then the regularity is tested across a pre-defined time.",
+    "The test fails if the heartbeat producer is not active or works outside of the set tolerance.",
+    "This test works passively, no SDO accesses are executed on the DUT."
+  ],
+  "parameters": [
+    {
+      "name": "duration",
+      "type": "",
+      "description": "Test duration in milliseconds, how long the regularity of the heartbeat producer should be tested."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "long retValFunc = kTestStepPassed; /* to store the return value of function */\nlong nodeId = 112;                 /* Node-Id of DUT */\n\ndword duration = 3000;\ndword producerTime = 0x1F4;\ndword tolerance = 50;\n\nchar msg[100]; /* message */\n\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* call test function */\nif (retValFunc == kTestStepPassed)\n{\n  /*\n  * Tip:\n  * Enable the SYNC producer with : coTfsSDODownload(0x1017, 0, 2, 0x1F4);\n  * Disable the SYNC producer with : coTfsSDODownload(0x1017, 0, 2, 0);\n  */\n  strncpy(msg,\"coTfsHeartbeatProducerCheckIfActive\", elCount(msg));\n  retValFunc = coTfsHeartbeatProducerCheckIfActive( duration, producerTime, tolerance );\n} /* if */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_KLine_ErrorInd",
+  "category": "KLine",
+  "title": "_KLine_ErrorInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineErrorInd.htm",
+  "syntax": [
+    "_KLine_ErrorInd(dword errType)"
+  ],
+  "description": [
+    "Called when a protocol error occurred."
+  ],
+  "parameters": [
+    {
+      "name": "dword errType",
+      "type": "",
+      "description": "Type of the received error."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_KLine_ErrorInd( dword error)\n{\n   const cKLineErrorOffset = 100;\n   char cKLineErrorText[18][76] =\n   {\n   \"The connection is closed, thus no data processing possible\",\n   \"Tx confirmation not received, i.e. the message was not sent in time\",\n   \"Inter byte time (P1Min) violation from Ecu\",\n   \"Inter byte time (P1Max) violation from Ecu\",\n   \"P2Min time violation caused with an early Ecu response\",\n   \"P2Max time violation caused with a late Ecu response\",\n   \"P3Min time violation caused with an early tester request\",\n   \"P3Max time violation caused with a late tester request\",\n   \"Inter byte time (P4Min) violation from tester, so the processing is aborted\",\n   \"Inter byte time (P4Max) violation from tester, so the processing is aborted\",\n   \"Unexpected byte received, so the processing is aborted\",\n   \"Invalid header format\",\n   \"Wrong checksum received\",\n   \"Frame length not matching with the header\",\n   \"K-Line message with 0 data length\",\n   \"Only Tx and Rx directions are supported\",\n   \"Data was manipulated by PreSend and may not be K-Line conform\",\n   // Sentinel - print when no other text matches\n   \"(no additional information)\"\n   };\n   long textIndex;\n   textIndex = error - cKLineErrorOffset;\n   if( textIndex <0 || textIndex >= elcount( cKLineErrorText))\n   textIndex = elcount( cKLineErrorText) - 1;\n   write(\"ErrorInd(%d) - %s\", error, cKLineErrorText[textIndex]);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

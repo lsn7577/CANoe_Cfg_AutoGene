@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SD_Disconnect",
+  "category": "CommunicationObjects",
+  "title": "SD_Disconnect",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSDDisconnect.htm",
+  "syntax": [
+    "void SD_Disconnect(providedServiceRef * providedService)"
+  ],
+  "description": [
+    "Disconnects a service provider and consumer. You can call the function from both the provider and the consumer side.",
+    "Note that you need this function only when you implement service discovery yourself. In most cases, there’s an internal CANoe model for simulated endpoints which handles the protocol."
+  ],
+  "parameters": [
+    {
+      "name": "providedService",
+      "type": "",
+      "description": "Endpoints, from provider side."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "SD_Disconnect(consumedService);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

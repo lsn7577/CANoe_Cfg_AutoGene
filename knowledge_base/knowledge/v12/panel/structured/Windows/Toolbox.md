@@ -1,0 +1,202 @@
+# Toolbox
+
+> Category: `Panel` | Subcategory: `Windows` | Type: `concept`
+
+The Panel Designer toolbox displays the available controls.
+
+The controls can be assigned to an open panel directly from the toolbox:
+
+Once a control has been assigned, the marker in the toolbox will automatically turn into a pointer. You can then configure the controls on the panel exactly as you wish.
+
+On the Data Types of Assigned Symbols page you can find an overview about all data types of symbols that can be assigned to the controls.
+
+Pointer
+
+Marker tool
+
+CANoe/CANalyzer
+
+Analog Gauge
+
+For displaying a user-defined value range.
+
+Button
+
+For triggering actions.
+
+CANoe/CANalyzer pro/CANalyzer exp
+
+CAPL Output View
+
+For displaying text continuously
+
+CANoe/CANalyzer pro
+
+Check Box
+
+For selecting or displaying options.
+
+In CANoe run and CANalyzer fun it can only be configured as a display element.
+
+Clinometer
+
+For displaying the transverse and longitudinal slopes.
+
+.
+
+Clock Control
+
+For time display time or use it as stop watch
+
+For CANalyzer fun only time can be displayed; stop watch is not available.
+
+Combo Box
+
+For displaying or selecting symbolic values from database value tables
+
+Compass
+
+For displaying the cardinal points and the speed.
+
+Group Box
+
+For grouping panel controls and associated options.
+
+Hex/Text Editor
+
+For entering and displaying large data volumes (in hexadecimal/text format)
+
+Input/Output Box
+
+For entering or displaying text.
+
+LCD Control
+
+For displaying floating-point numbers.
+
+LED Band
+
+For highlighting defined panel areas.
+
+LED Control
+
+For selecting and displaying of two defined states.
+
+Media Player
+
+For playing media files.
+
+Media Stream Control
+
+For playing streaming media.
+
+Meter
+
+Method Call Control
+
+For calling a function/method.
+
+Only available if the Panel Designer was opened from CANoe/CANalyzer and a configuration with communication objects is loaded there.
+
+MOST Send Button
+
+For triggering MOST messages.
+
+NM Control
+
+For displaying and editing values of the network management.
+
+CANoe
+
+Numeric Up/Down
+
+For setting a value within a defined value range.
+
+Panel Control Button
+
+For opening panels during the measurement.
+
+File Button
+
+For calling any text file while in measuring mode.
+
+Path Dialog
+
+For selecting files and folders interactively. Example applications: Specifying configuration or logging files.
+
+Picture Box
+
+Picture used purely for the purpose of designing a panel.
+
+Progress Bar
+
+For displaying a value within a defined value range.
+
+Radio Button
+
+For selecting or displaying mutually exclusive options.
+
+Start Stop Control
+
+Starts and stops a measurement.
+
+Static Text
+
+For entering text. Used purely for the purpose of labeling items on the panel. Can only be modified in Panel Designer.
+
+Switch/Indicator
+
+For selecting and displaying defined states.
+
+Tab Control
+
+For placing controls on several tabs of a single control.
+
+In CANoe run and CANalyzer fun on the tabs only display element can be configured.
+
+Track Bar
+
+Note
+
+Please note availability in CANoe and CANalyzer. A restricted mode applies in the case of CANalyzer fun and CANoe run.
+
+Control and Display Elements | Transparency Color
+
+| Icon | Name | Description | Available in |
+|---|---|---|---|
+| Pointer | Marker tool | CANoe/CANalyzer |  |
+| Analog Gauge | For displaying a user-defined value range. | CANoe/CANalyzer |  |
+| Button | For triggering actions. | CANoe/CANalyzer pro/CANalyzer exp |  |
+| CAPL Output View | For displaying text continuously | CANoe/CANalyzer pro |  |
+| Check Box | For selecting or displaying options. | CANoe/CANalyzer In CANoe run and CANalyzer fun it can only be configured as a display element. |  |
+| Clinometer | For displaying the transverse and longitudinal slopes. | CANoe/CANalyzer |  |
+| . | Clock Control | For time display time or use it as stop watch | CANoe/CANalyzer For CANalyzer fun only time can be displayed; stop watch is not available. |
+| Combo Box | For displaying or selecting symbolic values from database value tables | CANoe/CANalyzer In CANoe run and CANalyzer fun it can only be configured as a display element. |  |
+| Compass | For displaying the cardinal points and the speed. | CANoe/CANalyzer |  |
+| Group Box | For grouping panel controls and associated options. | CANoe/CANalyzer |  |
+| Hex/Text Editor | For entering and displaying large data volumes (in hexadecimal/text format) | CANoe/CANalyzer In CANoe run and CANalyzer fun it can only be configured as a display element. |  |
+| Input/Output Box | For entering or displaying text. | CANoe/CANalyzer In CANoe run and CANalyzer fun it can only be configured as a display element. |  |
+| LCD Control | For displaying floating-point numbers. | CANoe/CANalyzer pro/CANalyzer exp |  |
+| LED Band | For highlighting defined panel areas. | CANoe/CANalyzer |  |
+| LED Control | For selecting and displaying of two defined states. | CANoe/CANalyzer |  |
+| Media Player | For playing media files. | CANoe/CANalyzer pro/CANalyzer exp |  |
+| Media Stream Control | For playing streaming media. | CANoe/CANalyzer pro/CANalyzer exp |  |
+| Meter | For displaying a user-defined value range. | CANoe/CANalyzer |  |
+| Method Call Control | For calling a function/method. Only available if the Panel Designer was opened from CANoe/CANalyzer and a configuration with communication objects is loaded there. | CANoe/CANalyzer |  |
+| MOST Send Button | For triggering MOST messages. | CANoe/CANalyzer |  |
+| NM Control | For displaying and editing values of the network management. | CANoe |  |
+| Numeric Up/Down | For setting a value within a defined value range. | CANoe/CANalyzer pro/CANalyzer exp |  |
+| Panel Control Button | For opening panels during the measurement. | CANoe/CANalyzer pro/CANalyzer exp |  |
+| File Button | For calling any text file while in measuring mode. | CANoe/CANalyzer pro/CANalyzer exp |  |
+| Path Dialog | For selecting files and folders interactively. Example applications: Specifying configuration or logging files. | CANoe/CANalyzer pro/CANalyzer exp |  |
+| Picture Box | Picture used purely for the purpose of designing a panel. | CANoe/CANalyzer |  |
+| Progress Bar | For displaying a value within a defined value range. | CANoe/CANalyzer |  |
+| Radio Button | For selecting or displaying mutually exclusive options. | CANoe/CANalyzer In CANoe run and CANalyzer fun it can only be configured as a display element. |  |
+| Start Stop Control | Starts and stops a measurement. | CANoe/CANalyzer |  |
+| Static Text | For entering text. Used purely for the purpose of labeling items on the panel. Can only be modified in Panel Designer. | CANoe/CANalyzer |  |
+| Switch/Indicator | For selecting and displaying defined states. | CANoe/CANalyzer In CANoe run and CANalyzer fun it can only be configured as a display element. |  |
+| Tab Control | For placing controls on several tabs of a single control. | In CANoe run and CANalyzer fun on the tabs only display element can be configured. |  |
+| Track Bar | For setting a value within a defined value range. | CANoe/CANalyzer In CANoe run and CANalyzer fun it can only be configured as a display element. |  |
+
+| Note Please note availability in CANoe and CANalyzer. A restricted mode applies in the case of CANalyzer fun and CANoe run. |
+|---|

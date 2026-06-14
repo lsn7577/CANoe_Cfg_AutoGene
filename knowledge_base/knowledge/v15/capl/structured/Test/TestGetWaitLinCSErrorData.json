@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitLinCSErrorData",
+  "category": "Test",
+  "title": "TestGetWaitLinCSErrorData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestGetWaitLinCsErrData.htm",
+  "syntax": [
+    "long TestGetWaitLinCSErrorData (linCSError apEvent); // form 1",
+    "long TestGetWaitLinCSErrorData (dword index, linCSError apEvent); // form 2"
+  ],
+  "description": [
+    "Retrieves the data of a checksum error triggered by the last wait instruction.The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "apEvent",
+      "type": "",
+      "description": "Data structure with the checksum error data."
+    },
+    {
+      "name": "index",
+      "type": "",
+      "description": "Number of the \"joined event\" corresponds with the return value of \"testJoin...\"."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linCSError ()\n{\n   linCSError linCSErrorData;\n   if (testWaitForLinCSError(5000) == 1)\n   {\n      if (testGetWaitLinCSErrorData(linCSErrorData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN CS Error event occurred for FrameId=0x%X\", linCSErrorData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0: form 1 6.0: form 2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

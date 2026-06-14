@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_FSMove",
+  "category": "ISO11783",
+  "title": "Iso11783IL_FSMove",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILfsmove.htm",
+  "syntax": [
+    "long Iso11783IL_FSMove( char sourcePath[], char destPath[], dword movemode );"
+  ],
+  "description": [
+    "The function moves, copies or deletes a file or directory."
+  ],
+  "parameters": [
+    {
+      "name": "sourcePath",
+      "type": "",
+      "description": "Absolute file or directory source path"
+    },
+    {
+      "name": "destPath",
+      "type": "",
+      "description": "Absolute file or directory destination path or 0 to delete the file or directory specified in sourcePath"
+    },
+    {
+      "name": "Bit",
+      "type": "Value",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "01",
+      "description": "Action: copyAction: move"
+    },
+    {
+      "name": "1",
+      "type": "1",
+      "description": "delete option: force"
+    },
+    {
+      "name": "2",
+      "type": "1",
+      "description": "delete option: recursive"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// Move\nIso11783IL_FSMove( \"\\TEST.TXT\", \"\\DIR1\\TEST.TXT\", 0x00 \r\n );\n\n// Copy & Rename\nIso11783IL_FSMove( \"\\TEST.TXT\", \"\\DIR1\\TEST2.TXT\", 0x01 \r\n );\n\n// Delete (even, if \"TEST.TXT\" \r\n is read-only)\nIso11783IL_FSMove( \"\\TEST.TXT\", 0, 0x06 );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

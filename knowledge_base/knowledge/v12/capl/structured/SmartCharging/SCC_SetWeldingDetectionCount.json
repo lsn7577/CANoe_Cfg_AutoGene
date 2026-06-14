@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetWeldingDetectionCount",
+  "category": "SmartCharging",
+  "title": "SCC_SetWeldingDetectionCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetWeldingDetectionCount.htm",
+  "syntax": [
+    "long SCC_SetWeldingDetectionCount ( dword Count )"
+  ],
+  "description": [
+    "Sets the number of WeldingDetection requests for the next welding detection phase."
+  ],
+  "parameters": [
+    {
+      "name": "Count",
+      "type": "",
+      "description": "Number of WeldingDetection messages, may be zero."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

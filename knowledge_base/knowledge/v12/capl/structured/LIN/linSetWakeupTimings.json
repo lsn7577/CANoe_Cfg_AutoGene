@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetWakeupTimings",
+  "category": "LIN",
+  "title": "linSetWakeupTimings",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetWakeupTimings.htm",
+  "syntax": [
+    "linSetWakeupTimings(long ttobrk, long wakeupSignalcount, dword widthInMicSec);"
+  ],
+  "description": [
+    "Configures wake-up timings. Wake-up timings can be configured per node for nodes defined in a LIN database."
+  ],
+  "parameters": [
+    {
+      "name": "ttobrk",
+      "type": "",
+      "description": "This parameter specifies the time difference between the transmissions of two consecutive Wakeup frames, i.e. the time between end of one wakeup frame and start of the next one. Units of this parameter as well as default value depend on the hardware settings (see Hardware Configuration: LIN)."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "// Configures the wake up timings for the database node \"LINMaster\".\nlinSetWakeupTimings(150, 3, 250, “LINMaster”)\n\n// send a wakeup signal via a keyboard event within the CAPL programe of the node \n// \"LINMaster\". The configured timings will be used.\non key 'w'\n{\n  linWakeup();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

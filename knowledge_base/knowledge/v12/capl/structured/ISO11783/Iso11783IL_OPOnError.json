@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPOnError",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPOnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOpOnError.htm",
+  "syntax": [
+    "void Iso11783IL_OPOnError( long error, dword vtFunction );"
+  ],
+  "description": [
+    "The function is called by the node layer, when the object pool detects an error."
+  ],
+  "parameters": [
+    {
+      "name": "error",
+      "type": "",
+      "description": "Error code"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_OPOnError( LONG error, dword vtFunction )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

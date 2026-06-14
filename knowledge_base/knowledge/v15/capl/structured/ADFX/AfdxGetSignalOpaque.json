@@ -1,0 +1,158 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetSignalOpaque",
+  "category": "ADFX",
+  "title": "AfdxGetSignalOpaque",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionAfdxGetSignalOpaque.htm",
+  "syntax": [
+    "long AfdxGetSignalOpaque( long packet, char signalName[], long bufSize, byte buffer[] ); // form 1",
+    "long AfdxGetSignalOpaque( long packet, long offset, long bufSize, byte buffer[] ); // form 2",
+    "long AfdxGetSignalOpaque( long packet, long offset, long length, long bufSize, byte buffer[] ); // form 3"
+  ],
+  "description": [
+    "This function copies the content of an opaque data to the specified buffer. There are two different opaque data types available in AFDX:",
+    "Since the opaque type is not detectable from the payload stream it must be described explicitly by the network designer."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the message."
+    },
+    {
+      "name": "signalName",
+      "type": "",
+      "description": "Name of the signal. Note: The signal, the signal’s data type and the message need to be defined in the assigned DBC file."
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "The offset value points to the starting byte of the opaque signal in the AFDX payload area."
+    },
+    {
+      "name": "bufSize",
+      "type": "",
+      "description": "Size of available buffer area."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "This is the number of bytes to be copied from the fixed size opaque signal to the specified buffer."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer containing the read data. Make sure that the size of the buffer is at least length bytes."
+    }
+  ],
+  "return": "Number of copied data bytes.\nIf this value is > bufSize an error occurred.",
+  "example": {
+    "description": [
+      "Analyze signals from an incoming AFDX packet using DBC information"
+    ],
+    "code": "on preStart\n{\n  AfdxRegisterReceiveCallback(\"OnPacket\");\n}\nvoid OnPacket( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet )\n{\n  long lVal=0; // integer signal\n  long eVal=0; // enumeration signal\n  long bVal=0; // boolean signal\n  double rVal = 0.0; // float signal\n  char sVal[16]; // string signal\n  byte oVal[16]; // opaque signal\n  long len, status, err;\n  long msgID;\n  char msgName[256];\n\n  // get message ID of this message\n  msgID = AfdxGetMessageId( packet );\n\n  // get message name of this message\n  err = AfdxGetMessageName( packet, 256, msgName );\n\n  // get signal status\n  status = AfdxGetSignalStatus( packet, \"VFG_OIL_TEMP_A_34\" );\n\n  // get integer signal\n  lVal = AfdxGetSignalInt( packet, \"VFG_OIL_TEMP_A_34\" );\n\n  // get float-signal 2\n  rVal = AfdxGetSignalReal( packet, \"VFG_OIL_TEMP_AB_32\" );\n\n  // get boolean signal 3\n  bVal = AfdxGetSignalBool( packet, \"VFG_OIL_TEMP_A_ON\" );\n\n  // get enumeration signal 4\n  eVal = AfdxGetSignalInt( packet, “FLIGHT_GROUND_COND_3\" );\n\n  // get string signal 6\n  len = AfdxGetSignalString( packet, “TEST_STRING14_CITY\", 16, sVal );\n\n  // get opaque signal 7\n  len = AfdxGetSignalOpaque( packet, “TEST_OPAQUE14_IDENT\", 16, oVal );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0 SP3",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

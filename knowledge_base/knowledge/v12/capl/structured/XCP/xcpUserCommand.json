@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "xcpUserCommand",
+  "category": "XCP",
+  "title": "xcpUserCommand",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionXCPUserCommand.htm",
+  "syntax": [
+    "void xcpUserCommand(char ecuQualifier[], byte data[], long dataSize);"
+  ],
+  "description": [
+    "Sends user-defined data to the XCP slave.",
+    "The callback returns the response on the user command."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Name of the device, configured within the CANoe XCP/CCP Window."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "In the following example the use of user commands for XCP with xcpSet/GetCalPage is shown."
+    ],
+    "code": "variables\n{\n   long mMode;\n   long mSegmentNr;\n   byte mUsrCmdResponse = 0;\n}\n\nvoid OnXcpConnect(char ecuName[])\n{\n   mMode = 255;\n   mSegmentNr = 0;\n   write(\"Connect callback! ECU: %s\", ecuName);\n   XcpGetCalPage(ecuName, mMode, mSegmentNr);\n}\n\nvoid OnXcpGetCalPage(char ecu[], long reserved1, long reserved2, long pageNumber)\n{\n   Write(\"OnXcpGetCalPage callback! ECU: %s. Current PageNumber: %d\", ecu, pageNumber);\n   if (pageNumber == 0)\n   {\n      pageNumber = 1;\n   }\n   else\n   {\n      pageNumber = 0;\n   }\n   XcpSetCalPage(ecu, mMode, mSegmentNr, pageNumber);\n}\n\nvoid OnXcpSetCalPage(char ecu[])\n{\n   Write(\"OnXcpSetCalPage callback! ECU: %s\", ecu);\n   ProcessUserCmd();\n}\n\nvoid ProcessUserCmd()\n{\n   byte adata[12] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C };\n   XCPUserCommand(\"XcpSim\", adata, 12);\n}\n\nvoid OnXcpUserCommand(char ecu[],byte data[], long dataSize)\n{\n   mUsrCmdResponse = data[0];\n   Write(\"OnXcpUserCommandResponse callback! ECU: %s. Data: %d. Data size: %d\", ecu, data[0], dataSize);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeAnalyseSignal",
+  "category": "Test",
+  "title": "testWaitScopeAnalyseSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopeAnalyseSignal.htm",
+  "syntax": [
+    "long testWaitScopeAnalyseSignal (message aMessage, dword flags, dword msgFieldStart, dword msgFieldEnd, ScopeBitMaskPolygon bitMaskPolygon, long domVoltageThreshold , long recVoltageThreshold, ScopeAnalyseHandle handle); // form 1"
+  ],
+  "description": [
+    "Form 1: Checks the bits of a CAN message against the defined bit mask.",
+    "Form 2: Checks the bits of FlexRay frames which are transmitted by one node against the defined bit mask."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The CAN message to be analyzed."
+    }
+  ],
+  "return": "Form 1:",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

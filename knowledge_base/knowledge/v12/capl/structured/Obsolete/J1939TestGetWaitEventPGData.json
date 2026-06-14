@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestGetWaitEventPGData",
+  "category": "Obsolete",
+  "title": "J1939TestGetWaitEventPGData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionJ1939TestGetWaitEventPGData.htm",
+  "syntax": [
+    "dword J1939TestGetWaitEventPGData( pg pgBuffer, dword pgBufferSize );"
+  ],
+  "description": [
+    "If a message event is the last event that triggers a wait instruction, the message content can be called up with this function."
+  ],
+  "parameters": [
+    {
+      "name": "pgBuffer",
+      "type": "",
+      "description": "buffer variable that should be filled in with this function"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long lret;\npg EngineParameter engParam;\n\nlret = J1939TestWaitForPG(10, 0xFF, 0xF123, 500 );\nswitch(lret) {\ncase 1:\n  if (J1939TestGetWaitEventPGData(engParam, elcount(engParam) ) == 0) {\n    gValue = engParam.engineSpeed;\n  }\n  break;\ndefault:\n  // error, timeout or constraint violation\n  break;\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

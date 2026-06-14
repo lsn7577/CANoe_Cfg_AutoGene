@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPSelectInput",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPSelectInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPSelectInput.htm",
+  "syntax": [
+    "long Iso11783IL_OPSelectInput( dword objectID, dword select ); // form 1"
+  ],
+  "description": [
+    "The function selects an input object. A Select Input command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "object ID of an input object"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPSelectInput( 1200, 1 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

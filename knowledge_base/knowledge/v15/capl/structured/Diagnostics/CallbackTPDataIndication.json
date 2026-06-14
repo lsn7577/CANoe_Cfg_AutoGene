@@ -1,0 +1,161 @@
+{
+  "page_type": "function",
+  "name": "CallbackTPDataIndication",
+  "category": "Diagnostics",
+  "title": "CallbackTPDataIndication",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionCallbackTPDataIndication.htm",
+  "syntax": [
+    "long CallbackTPDataIndication( dword timeStart, dword timeFinish, WORD channel, dword CanIdTx, dword additionalTx, dword CanIdRx, BYTE data[], char source[], char target[])",
+    "long CallbackTPDataIndication( dword timeStart, dword timeFinish, WORD channel, dword CanIdTx, dword additionalTx, dword CanIdRx, BYTE data[])"
+  ],
+  "description": [
+    "Indicates the transmission of an ISO TP data packet on a CAN channel where the ISO TP Observer is configured to supervise the communication."
+  ],
+  "parameters": [
+    {
+      "name": "timeStart, timeFinish",
+      "type": "",
+      "description": "Start and end of data transmission (resolution: 10µs)."
+    },
+    {
+      "name": "channel",
+      "type": "",
+      "description": "CAN channel the transmission took place on."
+    },
+    {
+      "name": "CanIdTx",
+      "type": "",
+      "description": "CAN id used by the sending node."
+    },
+    {
+      "name": "additionalTx",
+      "type": "",
+      "description": "Address extension, if used."
+    },
+    {
+      "name": "CanIdRx",
+      "type": "",
+      "description": "CAN id configured for FlowControl frames for this transmission."
+    },
+    {
+      "name": "data",
+      "type": "",
+      "description": "The data transferred."
+    },
+    {
+      "name": "source, target",
+      "type": "",
+      "description": "Names of the source and target nodes, also displayed in the Trace Window events."
+    }
+  ],
+  "return": "Start and end of data",
+  "example": {
+    "description": [
+      "See Filter Diagnostic Objects using CAPL Filter in the Measurement Setup"
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

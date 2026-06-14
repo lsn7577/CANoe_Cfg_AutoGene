@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getMessageName",
+  "category": "CAN",
+  "title": "getMessageName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionGetMessageName.htm",
+  "syntax": [
+    "dword getMessageName( dword id, dword context, char buffer[], dword size)"
+  ],
+  "description": [
+    "Finds out the message name."
+  ],
+  "parameters": [
+    {
+      "name": "id",
+      "type": "",
+      "description": "Id of the message for which the message name should be found."
+    }
+  ],
+  "return": "If successful unequal 0, otherwise 0.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\ndword contextCAN = 0x00010000;\ndword contextLIN = 0x00050000;\ndword contextMOST = 0x00060000;\ndword contextFLEXRAY = 0x00070000;\ndword contextBEAN = 0x00080000;\ndword contextJ1708 = 0x00090000;\n}\non message *\n{\nchar buffer[64];\nif ( getMessageName( this.ID, contextCAN | this.CAN, buffer, elcount( buffer)))\n{\nwrite( \"Message: %s\", buffer);\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

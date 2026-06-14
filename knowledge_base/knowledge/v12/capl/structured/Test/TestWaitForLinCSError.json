@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForLinCSError",
+  "category": "Test",
+  "title": "TestWaitForLinCSError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForLinCsError.htm",
+  "syntax": [
+    "long TestWaitForLinCSError(dword aTimeout);"
+  ],
+  "description": [
+    "Waits for a checksum error for the specified amount of time.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Timeout in milliseconds"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linCSError ()\n{\n   linCSError linCSErrorData;\n   if (testWaitForLinCSError(5000) == 1)\n   {\n      if (testGetWaitLinCSErrorData(linCSErrorData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN CS Error event occurred for FrameId=0x%X\", linCSErrorData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,122 @@
+{
+  "page_type": "method",
+  "name": "distObjEventRef::Trigger",
+  "category": "DistributedObjects",
+  "title": "distObjEventRef::Trigger",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Methods/CAPLfunctiondistObjEventRefTrigger.htm",
+  "syntax": [
+    "void distObjEventRef::Trigger();"
+  ],
+  "description": [
+    "Triggers an update event on the member value. This method is only available for event members with type void."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  ExampleObject.ExampleEvent.Trigger();\n}\n\non value_update ExampleObject.ExampleEvent\n{\n  write(\"Update\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "13.0",
+      "15",
+      "13.0",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

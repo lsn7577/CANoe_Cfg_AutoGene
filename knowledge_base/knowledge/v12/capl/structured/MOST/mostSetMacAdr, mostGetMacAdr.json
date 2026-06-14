@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostSetMacAdr, mostGetMacAdr",
+  "category": "MOST",
+  "title": "mostSetMacAdr, mostGetMacAdr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetGetMacAdr.htm",
+  "syntax": [
+    "long mostSetMacAdr(long channel, int64 macAdr)"
+  ],
+  "description": [
+    "The functions set and retrieve the 48 bit MAC address of the network interface controller. The MAC address identifies the network node during Ethernet-over-MOST150 communication (see OnMostEthPkt, outputMostEthPkt)."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface"
+    }
+  ],
+  "return": "mostSetMacAdr: See error codes",
+  "example": {
+    "description": [],
+    "code": "// Set MAC address on channel MOST 1 to 01:02:03:04:05:06\nmostSetMacAdr(1, 0x010203040506LL);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OnCA",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OnCA",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOnCA.htm",
+  "syntax": [
+    "long Iso11783IL_OnCA(long newAddress);"
+  ],
+  "description": [
+    "This callback function is called from the ISO11783 IL when a Command Address message is received.",
+    "The assignment of the new address can be suppressed."
+  ],
+  "parameters": [
+    {
+      "name": "newAddress",
+      "type": "",
+      "description": "0..253: new address that ECU can accept 254: ECU has to go offline"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long Iso11783IL_OnCA(long address)\n{\n  if(address == 2)\n    return 0; //don’t accept the address ‘2’\n  else\n    return 1;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

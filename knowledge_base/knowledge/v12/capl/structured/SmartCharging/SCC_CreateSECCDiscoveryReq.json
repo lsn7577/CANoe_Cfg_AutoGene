@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateSECCDiscoveryReq",
+  "category": "SmartCharging",
+  "title": "SCC_CreateSECCDiscoveryReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateSECCDiscoveryReq.htm",
+  "syntax": [
+    "long SCC_CreateSECCDiscoveryReq ( dword Security )"
+  ],
+  "description": [
+    "Creates a SECC Discovery Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "Security",
+      "type": "",
+      "description": "1 for TLS, 0 for no transport layer security"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

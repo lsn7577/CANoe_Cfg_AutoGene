@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "ExtendedRemoteFrameCount",
+  "category": "CAN",
+  "title": "ExtendedRemoteFrameCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionExtendedRemoteFrameCount.htm",
+  "syntax": [
+    "long ExtendedRemoteFrameCount ()",
+    "CANx.ExtendedRemoteFrameCount"
+  ],
+  "description": [
+    "Returns the number of extended remote CAN messages on channel x since start of measurement.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Number of extended remote CAN messages on channel x since start of measurement.",
+  "example": {
+    "description": [],
+    "code": "write (\"Number of extended remote messages on CAN1 = %d\", CAN1.ExtendedRemoteFrameCount);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

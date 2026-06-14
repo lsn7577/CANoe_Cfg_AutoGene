@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestStmControl_Reset",
+  "category": "J1939",
+  "title": "J1939TestStmControl_Reset",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestStmControlReset.htm",
+  "syntax": [
+    "long J1939TestStmControl_Reset( long stimulusId );"
+  ],
+  "description": [
+    "Resets the value of the Stimulus Parameter Group. The Stimulus starts from the beginning."
+  ],
+  "parameters": [
+    {
+      "name": "stimulusId",
+      "type": "",
+      "description": "identifier of the Stimulus to reset"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long toggleStm;\npg MyPG myPG;\n\nmyPG.SA = 1;\nmyPG.DA = 2;\n\ntoggleStm = J1939TestStmCreate_Toggle( myPG, MyPg::SignalA, 100, 10, 20 );\n\nJ1939TestStmControl_Start( toggleStm );\n//...\nJ1939TestStmControl_Reset( toggleStm );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

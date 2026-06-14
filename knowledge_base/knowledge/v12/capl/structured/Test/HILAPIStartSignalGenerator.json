@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "HILAPIStartSignalGenerator",
+  "category": "Test",
+  "title": "HILAPIStartSignalGenerator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionHILAPIStartSignalGenerator.htm",
+  "syntax": [
+    "dword HILAPIStartSignalGenerator(dword handle);"
+  ],
+  "description": [
+    "Starts or resumes a Signal Generator."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "The handle of the Signal Generator."
+    }
+  ],
+  "return": "0: The handle of the Signal Generator is not valid",
+  "example": {
+    "description": [
+      "Starts or resumes the Signal Generator:"
+    ],
+    "code": "HILAPIStartSignalGenerator( hGenerator);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

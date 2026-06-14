@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "Iso11783GetLastError",
+  "category": "ISO11783",
+  "title": "Iso11783GetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783Getlasterror.htm",
+  "syntax": [
+    "dword Iso11783GetLastError( void );"
+  ],
+  "description": [
+    "This function returns the last error code."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword errCode;\nerrCode = Iso11783GetLastError();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

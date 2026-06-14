@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableArrayLength",
+  "category": "SystemVariables",
+  "title": "sysGetVariableArrayLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableArrayLength.htm",
+  "syntax": [
+    "dword sysGetVariableArrayLength(char namespace[], char variable[]); // form 1"
+  ],
+  "description": [
+    "Returns the length of the array of the system variable."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "For system variables of type data, returns the current size (in bytes) of the value.\nFor system variables of type long or float array, returns the number of elements in the array.\nFor system variables of type string, returns the length of the string, excluding the terminating 0 character.\nFor system variables of type long or float, returns 1.",
+  "example": {
+    "description": [],
+    "code": "// calculate the norm of a vector\ndword length, i;\ndouble element, sum, norm;\nsum = 0.0;\nlength = sysGetVariableArrayLength(sysvar::MyVariables::MyVector);\nfor (i = 0; i < length; ++i) \n{\n   element = @sysvar::MyVariables::MyVector[i];\n   sum += element * element;\n}\nnorm = sqrt(sum);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "J1939ILSetMsgEvent",
+  "category": "J1939",
+  "title": "J1939ILSetMsgEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILSetMsgEvent.htm",
+  "syntax": [
+    "long J1939ILSetMsgEvent( dbMsg msg ); // form 1",
+    "long J1939ILSetMsgEvent(dbNode node, dbMsg msg ); // form 2"
+  ],
+  "description": [
+    "The message is send immediately, the send type is ignored. The J1939 IL must be in state active and the message must be assigned to the node as Tx message.",
+    "To modify signal values prior to message transmission the CAPL functions J1939ILSetSignal or J1939ILSetSignalRaw can be used."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "message name from database The message must be a Tx message of the node."
+    },
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\nJ1939ILSetMsgEvent( EC1 );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2: form 1 12.0: form 2",
+      "13.0",
+      "—",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "form 2 J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetComputerName",
+  "category": "Other",
+  "title": "GetComputerName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetComputerName.htm",
+  "syntax": [
+    "long GetComputerName(char buffer[], dword bufferSize)"
+  ],
+  "description": [
+    "Retrieves the fully qualified name of the computer."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Space for the returned name."
+    }
+  ],
+  "return": "0 if the function completed successfully, else unequal 0.",
+  "example": {
+    "description": [],
+    "code": "char buffer[50];\nGetComputerName(buffer, elcount(buffer));\nwrite(\"Computer name: %s\", buffer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

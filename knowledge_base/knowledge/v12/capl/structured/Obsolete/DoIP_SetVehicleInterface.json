@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetVehicleInterface",
+  "category": "Obsolete",
+  "title": "DoIP_SetVehicleInterface",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionDoIPSetVehicleInterface.htm",
+  "syntax": [
+    "void DoIP_SetVehicleInterface( char interface[])"
+  ],
+  "description": [
+    "Sets the network interface to be used by the DoIP layer. This function must be called in on preStart."
+  ],
+  "parameters": [
+    {
+      "name": "interface",
+      "type": "",
+      "description": "The name of the network interface."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Set the network interface\nchar buffer[256];\nDiagGetCommParameter( \"DoIP.VEHICLE_Interface\",\n                      0, buffer, elcount( buffer));\nDoIP_SetVehicleInterface( buffer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMConnectToServer",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMConnectToServer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimConnectToServer.htm",
+  "syntax": [
+    "long Iso11783IL_TIMConnectToServer(dbNode server); // form 1"
+  ],
+  "description": [
+    "Starts a TIM connection to a TIM server.",
+    "Starts initialization with a server by switching to state Automaton unavailable and waits for the status message of the server."
+  ],
+  "parameters": [
+    {
+      "name": "server",
+      "type": "",
+      "description": "The client connects to the TIM server specified by this node."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForIdentifyNonConfRemoteSlaveRequest",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForIdentifyNonConfRemoteSlaveRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForIdentifyNonConfRemoteSlaveReq.htm",
+  "syntax": [
+    "long coTfsLssWaitForIdentifyNonConfRemoteSlaveRequest( void );"
+  ],
+  "description": [
+    "This function waits for an Identify non-configured remote slave response."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* waits for a LSS identify non configured remote slave request */\nif (coTfsLssWaitForIdentifyNonConfRemoteSlaveRequest() == 1) {\n  /* request received */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

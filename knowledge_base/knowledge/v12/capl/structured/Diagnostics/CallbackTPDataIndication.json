@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CallbackTPDataIndication",
+  "category": "Diagnostics",
+  "title": "CallbackTPDataIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionCallbackTPDataIndication.htm",
+  "syntax": [
+    "long CallbackTPDataIndication( dword timeStart, dword timeFinish, WORD channel, dword CanIdTx, dword additionalTx, dword CanIdRx, BYTE data[], char source[], char target[])"
+  ],
+  "description": [
+    "Indicates the transmission of an ISO TP data packet on a CAN channel where the ISO TP Observer is configured to supervise the communication."
+  ],
+  "parameters": [
+    {
+      "name": "timeStart, timeFinish",
+      "type": "",
+      "description": "Start and end of data transmission (resolution: 10µs)."
+    }
+  ],
+  "return": "1: Forward the event further down the measurement branch.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

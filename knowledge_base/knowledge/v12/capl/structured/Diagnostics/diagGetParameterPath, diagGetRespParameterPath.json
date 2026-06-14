@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetParameterPath, diagGetRespParameterPath",
+  "category": "Diagnostics",
+  "title": "diagGetParameterPath, diagGetRespParameterPath",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetParameterPath.htm",
+  "syntax": [
+    "long diagGetParameterPath( diagResponse object, dword paramNo, char[] buffer, dword bufferSize)"
+  ],
+  "description": [
+    "Returns the full qualifier path of the parameter at the given position in the primitive. Only leaf parameters that have a simple value are counted, i.e. structural parameters like container lists are NOT returned."
+  ],
+  "parameters": [
+    {
+      "name": "object",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Length of path written to buffer, may be truncated.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

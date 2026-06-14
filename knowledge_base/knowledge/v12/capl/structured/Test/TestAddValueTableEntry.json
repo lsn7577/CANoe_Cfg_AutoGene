@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestAddValueTableEntry",
+  "category": "Test",
+  "title": "TestAddValueTableEntry",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestAddValueTableEntry.htm",
+  "syntax": [
+    "TestAddStringTableEntry(long handle, char[] value);"
+  ],
+  "description": [
+    "This functions adds a new value table entry."
+  ],
+  "parameters": [
+    {
+      "name": "Handle",
+      "type": "",
+      "description": "The handle of the dialog."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "handle = TestCreateStringInputTable(\"Test Text\", \"Test Caption\", \"Test String Input Table Timeout\");\nTestAddStringTableEntry(handle, \"Test Entry\");\nTestWaitForInput(handle, 5000);\nTestGetStringInput(resultStr, elcount(resultStr));\n\nhandle = TestCreateValueInputTable(\"Test Text\", \"Test Caption\", \"Test Value Input Table Timeout\");\nTestAddValueTableEntry(handle, 9);\nTestWaitForInput(handle, 5000);\nwrite(\"Result: %f\", TestGetValueInput());"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,203 @@
+{
+  "page_type": "function",
+  "name": "canDisturbanceTriggerEnable",
+  "category": "CANDisturbance",
+  "title": "canDisturbanceTriggerEnable",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANDisturbance/Functions/CAPLfunctionCanDisturbanceTriggerEnable.htm",
+  "syntax": [
+    "long canDisturbanceTriggerEnable(long deviceID, canStressNGErrorFrameTrigger trigger, canStressNGFrameSequence sequence); //form 1",
+    "long canDisturbanceTriggerEnable(long deviceID, canDisturbanceErrorFrameTrigger trigger, canDisturbanceFrameSequence sequence, canStressNGTriggerRepetitions repetitions); //form 2",
+    "long canDisturbanceTriggerEnable(long deviceID, canDisturbanceErrorFrameTrigger trigger, canDisturbanceFrameSequence sequence, canDisturbanceTriggerRepetitions repetitions, dword flags); // form 3"
+  ],
+  "description": [
+    "Configures an error frame trigger and a user-defined frame-based output sequence on a CAN Disturbance Interface.",
+    "If the trigger condition is fulfilled, the frame based sequence is sent on the bus.",
+    "It is possible to configure the trigger for the error flag or the error delimiter.",
+    "The position within the error flag or delimiter is configurable.",
+    "A typical use case is to start sending a frame after the error delimiter."
+  ],
+  "parameters": [
+    {
+      "name": "deviceID",
+      "type": "",
+      "description": "The unique device ID that is configured via the Network Hardware Configuration dialog for a CAN channel."
+    },
+    {
+      "name": "trigger",
+      "type": "",
+      "description": "The frame trigger condition for the CAN Disturbance Interface to output the sequence."
+    },
+    {
+      "name": "sequence",
+      "type": "",
+      "description": "The user-defined frame based sequence that is sent, if the external trigger is fulfilled."
+    },
+    {
+      "name": "repetitions",
+      "type": "",
+      "description": "The trigger repetitions. If the trigger repetitions are not defined, the CAN Disturbance Interface uses default values."
+    },
+    {
+      "name": "Value",
+      "type": "Trigger Enable",
+      "description": "Description"
+    },
+    {
+      "name": "0x0",
+      "type": "Disabled",
+      "description": "No digital input (DIN) is used as trigger enable for the trigger condition."
+    },
+    {
+      "name": "0x1",
+      "type": "DIN0 Active_Low",
+      "description": "If DIN0 is 0, the trigger is enabled"
+    },
+    {
+      "name": "0x2",
+      "type": "DIN0 Active_High",
+      "description": "If DIN0 is 1, the trigger is enabled"
+    },
+    {
+      "name": "0x4",
+      "type": "DIN1 Active_Low",
+      "description": "If DIN1 is 0, the trigger is enabled"
+    },
+    {
+      "name": "0x8",
+      "type": "DIN1 Active_High",
+      "description": "If DIN1 is 1, the trigger is enabled"
+    },
+    {
+      "name": "0x10",
+      "type": "Inverted Trigger",
+      "description": "0: Inverted trigger is disabled 1: Inverted trigger is enabled"
+    },
+    {
+      "name": "0x20",
+      "type": "Rx Direction*",
+      "description": "0: Direction trigger is disabled 1: Direction trigger is enabled"
+    },
+    {
+      "name": "0x40",
+      "type": "Tx Direction*",
+      "description": "0: Direction trigger is disabled 1: Direction trigger is enabled"
+    },
+    {
+      "name": "0x80",
+      "type": "Missing Bit Trigger",
+      "description": "Trigger also, trigger position is not included within frame."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example for form 1",
+      "Example for form 2",
+      "Example for form 3"
+    ],
+    "code": "CanDisturbanceErrorFrameTrigger   errFrameTrigger;\nCanDisturbanceFrameSequence       frameSequence;\nmessage 0x100                     msgFrameSeq;\nlong                              result;\n\n//create the frame sequence based on a message\nframeSequence.SetMessage(deviceID, msgFrameSeq);\n\nerrFrameTrigger.ErrorFramePhase = @sysvar::CanDisturbance::Enums::ErrorFramePhase::ErrorFlag;\nerrFrameTrigger.Offset = 10;\n\nresult = canDisturbanceTriggerEnable(deviceID, errFrameTrigger, frameSequence);\n\nif(result == 1)\n{\n  write(\"Error frame trigger configured.\");\n}\nelse\n{\n  write(\"Error by configuration of error frame trigger %d\", result);\n}\nCanDisturbanceErrorFrameTrigger    errFrameTrigger;\nCanDisturbanceFrameSequence        frameSequence;\nCanDisturbanceTriggerRepetitions   repetitions;\nmessage 0x100                      msgFrameSeq;\nlong                               result;\n\n//create the frame sequence based on a message\nframeSequence.SetMessage(deviceID, msgFrameSeq);\n\nerrFrameTrigger.ErrorFramePhase = @sysvar::CanDisturbance::Enums::ErrorFramePhase::ErrorFlag;\nerrFrameTrigger.Offset = 10;\n\n//Define two repetitions and one cycle with a 1 ms hold off time\nrepetitions.Cycles = 1;\nrepetitions.HoldOffCycles = 1;\nrepetitions.HoldOffRepetitions = 1;\nrepetitions.Repetitions = 2;\n\nresult = canDisturbanceTriggerEnable(deviceID, errFrameTrigger, frameSequence, repetitions);\n\nif(result == 1)\n{\n  write(\"Error frame trigger configured.\");\n}\nelse\n{\n  write(\"Error by configuration of error frame trigger %d\", result);\n}\nCanDisturbanceErrorFrameTrigger    errFrameTrigger;\nCanDisturbanceFrameSequence        frameSequence;\nCanDisturbanceTriggerRepetitions   repetitions;\nmessage 0x100                      msgFrameSeq;\nlong                               flags;\nlong                               result;\n\n//create the frame sequence based on a message\nframeSequence.SetMessage(deviceID, msgFrameSeq);\n\nerrFrameTrigger.ErrorFramePhase = @sysvar::CanDisturbance::Enums::ErrorFramePhase::ErrorFlag;\nerrFrameTrigger.Offset = 10;\n\n//Define two repetitions and one cycle with a 1 ms hold off time\nrepetitions.Cycles = 1;\nrepetitions.HoldOffCycles = 1;\nrepetitions.HoldOffRepetitions = 1;\nrepetitions.Repetitions = 2;\n\n//define trigger enable, if DIO0 is active high the trigger could be trigger\nflags = @sysvar::CanDisturbance::Enums::TriggerEnable::DIN0ActiveHigh;\nresult = canDisturbanceTriggerEnable(deviceID, errFrameTrigger, frameSequence, repetitions, flags);\n\nif(result == 1)\n{\n  write(\"Error frame trigger configured.\");\n}\nelse\n{\n  write(\"Error by configuration of error frame trigger %d\", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 10.0 SP3 recommended",
+      "—",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN CAN Disturbance Interface",
+      "—",
+      "—",
+      "—",
+      "CAN CAN Disturbance Interface"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

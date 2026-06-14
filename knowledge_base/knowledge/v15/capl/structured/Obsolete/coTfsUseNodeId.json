@@ -1,0 +1,53 @@
+{
+  "page_type": "notes",
+  "name": "coTfsUseNodeId",
+  "category": "Obsolete",
+  "title": "coTfsUseNodeId",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoTfsUseNodeId.htm",
+  "syntax": [],
+  "description": [
+    "No replacement.",
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Obsolete Function No replacement."
+      ],
+      [
+        "Function Syntax",
+        "long coTfsUseNodeId( void );"
+      ],
+      [
+        "Function",
+        "This function instructs the node layer, for functions which accept both the node-ID and the CAN-ID as parameter, to use the node-ID. This setting is active automatically on measurement start."
+      ],
+      [
+        "Parameters",
+        "—"
+      ],
+      [
+        "Return Values",
+        "Error code"
+      ],
+      [
+        "Example coTfsUseNodeId();// uses node-ID for simplified functions// …coTfsUseCANid();// uses can identifier for simplified functions// …"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

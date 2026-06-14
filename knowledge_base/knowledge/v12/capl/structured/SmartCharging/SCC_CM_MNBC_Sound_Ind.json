@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_CM_MNBC_Sound_Ind",
+  "category": "SmartCharging",
+  "title": "SCC_CM_MNBC_Sound_Ind",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_CM_MNBC_Sound_Ind.htm",
+  "syntax": [
+    "void SCC_CM_MNBC_Sound_Ind ( byte RunId[], byte SourceMacAddress[], dword Count )"
+  ],
+  "description": [
+    "The callback is called as soon as a CM_MNBC_Sound.Ind message is received.",
+    "Further details that are transmitted in this request can be queried with"
+  ],
+  "parameters": [
+    {
+      "name": "RunId",
+      "type": "",
+      "description": "Random Run Identifier of sender (8 byte)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxReleasePacket",
+  "category": "ADFX",
+  "title": "AfdxReleasePacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxReleasePacket.htm",
+  "syntax": [
+    "long AfdxReleasePacket( long packet );"
+  ],
+  "description": [
+    "This function deletes a packet created with AfdxInitPacket. The handle can not be used any longer."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message to delete"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

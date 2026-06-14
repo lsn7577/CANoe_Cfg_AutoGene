@@ -1,0 +1,671 @@
+{
+  "category": "DistributedObjects",
+  "function_count": 95,
+  "functions": [
+    {
+      "name": "attributable",
+      "file": "CAPLfunctionAttributable.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\attributable.json",
+      "md": "structured\\DistributedObjects\\attributable.md"
+    },
+    {
+      "name": "attribute",
+      "file": "CAPLfunctionAttribute.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\attribute.json",
+      "md": "structured\\DistributedObjects\\attribute.md"
+    },
+    {
+      "name": "Binding",
+      "file": "CAPLfunctionBinding.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\Binding.json",
+      "md": "structured\\DistributedObjects\\Binding.md"
+    },
+    {
+      "name": "Binding::AnnouncementStateReceived",
+      "file": "CAPLfunctionBindingAnnouncementStateReceived.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\Binding__AnnouncementStateReceived.json",
+      "md": "structured\\DistributedObjects\\Binding__AnnouncementStateReceived.md"
+    },
+    {
+      "name": "Binding::CallReceived",
+      "file": "CAPLfunctionBindingCallReceived.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\Binding__CallReceived.json",
+      "md": "structured\\DistributedObjects\\Binding__CallReceived.md"
+    },
+    {
+      "name": "Binding::CreateCallContext",
+      "file": "CAPLfunctionBindingCreateCallContext.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\Binding__CreateCallContext.json",
+      "md": "structured\\DistributedObjects\\Binding__CreateCallContext.md"
+    },
+    {
+      "name": "Binding::ReturnReceived",
+      "file": "CAPLfunctionBindingReturnReceived.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\Binding__ReturnReceived.json",
+      "md": "structured\\DistributedObjects\\Binding__ReturnReceived.md"
+    },
+    {
+      "name": "Binding::SetInParameter",
+      "file": "CAPLfunctionBindingSetInParameter.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\Binding__SetInParameter.json",
+      "md": "structured\\DistributedObjects\\Binding__SetInParameter.md"
+    },
+    {
+      "name": "Binding::SubscriptionStateReceived",
+      "file": "CAPLfunctionBindingSubscriptionStateReceived.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\Binding__SubscriptionStateReceived.json",
+      "md": "structured\\DistributedObjects\\Binding__SubscriptionStateReceived.md"
+    },
+    {
+      "name": "Binding::ValueReceived",
+      "file": "CAPLfunctionBindingValueReceived.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\Binding__ValueReceived.json",
+      "md": "structured\\DistributedObjects\\Binding__ValueReceived.md"
+    },
+    {
+      "name": "bytes",
+      "file": "CAPLfunctionBytes.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\bytes.json",
+      "md": "structured\\DistributedObjects\\bytes.md"
+    },
+    {
+      "name": "distObjBlueprint",
+      "file": "CAPLfunctiondistObjBlueprint.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjBlueprint.json",
+      "md": "structured\\DistributedObjects\\distObjBlueprint.md"
+    },
+    {
+      "name": "distObjBlueprint::AddVirtualNetwork",
+      "file": "CAPLfunctiondistObjBlueprintAddVirtualNetwork.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjBlueprint__AddVirtualNetwork.json",
+      "md": "structured\\DistributedObjects\\distObjBlueprint__AddVirtualNetwork.md"
+    },
+    {
+      "name": "distObjBlueprint::Clear",
+      "file": "CAPLfunctiondistObjBlueprintClear.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjBlueprint__Clear.json",
+      "md": "structured\\DistributedObjects\\distObjBlueprint__Clear.md"
+    },
+    {
+      "name": "distObjBlueprint::CopyFromObject",
+      "file": "CAPLfunctiondistObjBlueprintCopyFromObject.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjBlueprint__CopyFromObject.json",
+      "md": "structured\\DistributedObjects\\distObjBlueprint__CopyFromObject.md"
+    },
+    {
+      "name": "distObjBlueprint::CreateObject",
+      "file": "CAPLfunctiondistObjBlueprintCreateObject.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjBlueprint__CreateObject.json",
+      "md": "structured\\DistributedObjects\\distObjBlueprint__CreateObject.md"
+    },
+    {
+      "name": "distObjBlueprint::GetAttribute",
+      "file": "CAPLfunctiondistObjBlueprintGetAttribute.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjBlueprint__GetAttribute.json",
+      "md": "structured\\DistributedObjects\\distObjBlueprint__GetAttribute.md"
+    },
+    {
+      "name": "distObjBlueprint::RemoveAttribute",
+      "file": "CAPLfunctiondistObjBlueprintRemoveAttribute.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjBlueprint__RemoveAttribute.json",
+      "md": "structured\\DistributedObjects\\distObjBlueprint__RemoveAttribute.md"
+    },
+    {
+      "name": "distObjBlueprint::RemoveVirtualNetwork",
+      "file": "CAPLfunctiondistObjBlueprintRemoveVirtualNetwork.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjBlueprint__RemoveVirtualNetwork.json",
+      "md": "structured\\DistributedObjects\\distObjBlueprint__RemoveVirtualNetwork.md"
+    },
+    {
+      "name": "distObjBlueprint::SetAttribute",
+      "file": "CAPLfunctiondistObjBlueprintSetAttribute.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjBlueprint__SetAttribute.json",
+      "md": "structured\\DistributedObjects\\distObjBlueprint__SetAttribute.md"
+    },
+    {
+      "name": "distObjContainerRef",
+      "file": "CAPLfunctiondistObjContainerRef.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjContainerRef.json",
+      "md": "structured\\DistributedObjects\\distObjContainerRef.md"
+    },
+    {
+      "name": "distObjContainerRef::Create",
+      "file": "CAPLfunctiondistObjContainerRefCreate.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjContainerRef__Create.json",
+      "md": "structured\\DistributedObjects\\distObjContainerRef__Create.md"
+    },
+    {
+      "name": "distObjContainerRef::Erase",
+      "file": "CAPLfunctiondistObjContainerRefErase.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjContainerRef__Erase.json",
+      "md": "structured\\DistributedObjects\\distObjContainerRef__Erase.md"
+    },
+    {
+      "name": "distObjContainerRef::PopBack",
+      "file": "CAPLfunctiondistObjContainerRefPopBack.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjContainerRef__PopBack.json",
+      "md": "structured\\DistributedObjects\\distObjContainerRef__PopBack.md"
+    },
+    {
+      "name": "distObjContainerRef::PushBack",
+      "file": "CAPLfunctiondistObjContainerRefPushBack.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjContainerRef__PushBack.json",
+      "md": "structured\\DistributedObjects\\distObjContainerRef__PushBack.md"
+    },
+    {
+      "name": "distObjContainerRef::Resize",
+      "file": "CAPLfunctiondistObjContainerRefResize.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjContainerRef__Resize.json",
+      "md": "structured\\DistributedObjects\\distObjContainerRef__Resize.md"
+    },
+    {
+      "name": "distObjDataRef",
+      "file": "CAPLfunctiondistObjDataRef.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjDataRef.json",
+      "md": "structured\\DistributedObjects\\distObjDataRef.md"
+    },
+    {
+      "name": "distObjEventRef",
+      "file": "CAPLfunctiondistObjEventRef.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjEventRef.json",
+      "md": "structured\\DistributedObjects\\distObjEventRef.md"
+    },
+    {
+      "name": "distObjEventRef::Trigger",
+      "file": "CAPLfunctiondistObjEventRefTrigger.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjEventRef__Trigger.json",
+      "md": "structured\\DistributedObjects\\distObjEventRef__Trigger.md"
+    },
+    {
+      "name": "distObjFieldRef",
+      "file": "CAPLfunctiondistObjFieldRef.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjFieldRef.json",
+      "md": "structured\\DistributedObjects\\distObjFieldRef.md"
+    },
+    {
+      "name": "distObjInterface",
+      "file": "CAPLfunctiondistObjInterface.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjInterface.json",
+      "md": "structured\\DistributedObjects\\distObjInterface.md"
+    },
+    {
+      "name": "distObjInterface::CreateObject",
+      "file": "CAPLfunctiondistObjInterfaceCreateObject.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjInterface__CreateObject.json",
+      "md": "structured\\DistributedObjects\\distObjInterface__CreateObject.md"
+    },
+    {
+      "name": "distObjInterface::CreateObjectBlueprint",
+      "file": "CAPLfunctiondistObjInterfaceCreateObjectBlueprint.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjInterface__CreateObjectBlueprint.json",
+      "md": "structured\\DistributedObjects\\distObjInterface__CreateObjectBlueprint.md"
+    },
+    {
+      "name": "distObjInterface::CreateObjectBlueprint",
+      "file": "CAPLfunctiondistObjInterfaceCreateReverseObjectBlueprint.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjInterface__CreateObjectBlueprint.json",
+      "md": "structured\\DistributedObjects\\distObjInterface__CreateObjectBlueprint.md"
+    },
+    {
+      "name": "distObjInterface::DestroyObject",
+      "file": "CAPLfunctiondistObjInterfaceDestroyObject.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjInterface__DestroyObject.json",
+      "md": "structured\\DistributedObjects\\distObjInterface__DestroyObject.md"
+    },
+    {
+      "name": "distObjInterfaceMember",
+      "file": "CAPLfunctiondistObjInterfaceMember.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjInterfaceMember.json",
+      "md": "structured\\DistributedObjects\\distObjInterfaceMember.md"
+    },
+    {
+      "name": "distObjMemberBlueprint",
+      "file": "CAPLfunctiondistObjMemberBlueprint.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjMemberBlueprint.json",
+      "md": "structured\\DistributedObjects\\distObjMemberBlueprint.md"
+    },
+    {
+      "name": "distObjMemberBlueprint::GetAttribute",
+      "file": "CAPLfunctiondistObjMemberBlueprintGetAttribute.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMemberBlueprint__GetAttribute.json",
+      "md": "structured\\DistributedObjects\\distObjMemberBlueprint__GetAttribute.md"
+    },
+    {
+      "name": "distObjMemberBlueprint::RemoveAttribute",
+      "file": "CAPLfunctiondistObjMemberBlueprintRemoveAttribute.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMemberBlueprint__RemoveAttribute.json",
+      "md": "structured\\DistributedObjects\\distObjMemberBlueprint__RemoveAttribute.md"
+    },
+    {
+      "name": "distObjMemberBlueprint::RemoveVirtualNetwork",
+      "file": "CAPLfunctiondistObjMemberBlueprintRemoveVirtualNetwork.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMemberBlueprint__RemoveVirtualNetwork.json",
+      "md": "structured\\DistributedObjects\\distObjMemberBlueprint__RemoveVirtualNetwork.md"
+    },
+    {
+      "name": "distObjMemberBlueprint::SetAttribute",
+      "file": "CAPLfunctiondistObjMemberBlueprintSetAttribute.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMemberBlueprint__SetAttribute.json",
+      "md": "structured\\DistributedObjects\\distObjMemberBlueprint__SetAttribute.md"
+    },
+    {
+      "name": "distObjMemberBlueprint::SetVirtualNetwork",
+      "file": "CAPLfunctiondistObjMemberBlueprintSetVirtualNetwork.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMemberBlueprint__SetVirtualNetwork.json",
+      "md": "structured\\DistributedObjects\\distObjMemberBlueprint__SetVirtualNetwork.md"
+    },
+    {
+      "name": "distObjMemberRef",
+      "file": "CAPLfunctiondistObjMemberRef.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjMemberRef.json",
+      "md": "structured\\DistributedObjects\\distObjMemberRef.md"
+    },
+    {
+      "name": "distObjMemberRef::Announce",
+      "file": "CAPLfunctiondistObjMemberRefAnnounce.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMemberRef__Announce.json",
+      "md": "structured\\DistributedObjects\\distObjMemberRef__Announce.md"
+    },
+    {
+      "name": "distObjMemberRef::Subscribe",
+      "file": "CAPLfunctiondistObjMemberRefSubscribe.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMemberRef__Subscribe.json",
+      "md": "structured\\DistributedObjects\\distObjMemberRef__Subscribe.md"
+    },
+    {
+      "name": "distObjMemberRef::Unannounce",
+      "file": "CAPLfunctiondistObjMemberRefUnannounce.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMemberRef__Unannounce.json",
+      "md": "structured\\DistributedObjects\\distObjMemberRef__Unannounce.md"
+    },
+    {
+      "name": "distObjMemberRef::Unsubscribe",
+      "file": "CAPLfunctiondistObjMemberRefUnsubscribe.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMemberRef__Unsubscribe.json",
+      "md": "structured\\DistributedObjects\\distObjMemberRef__Unsubscribe.md"
+    },
+    {
+      "name": "distObjMethodRef",
+      "file": "CAPLfunctiondistObjMethodRef.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjMethodRef.json",
+      "md": "structured\\DistributedObjects\\distObjMethodRef.md"
+    },
+    {
+      "name": "distObjMethodRef::Call",
+      "file": "CAPLfunctiondistObjMethodRefCall.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMethodRef__Call.json",
+      "md": "structured\\DistributedObjects\\distObjMethodRef__Call.md"
+    },
+    {
+      "name": "distObjMethodRef::Call_Phys",
+      "file": "CAPLfunctiondistObjMethodRefCallPhys.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMethodRef__Call_Phys.json",
+      "md": "structured\\DistributedObjects\\distObjMethodRef__Call_Phys.md"
+    },
+    {
+      "name": "distObjMethodRef::CallAsync",
+      "file": "CAPLfunctiondistObjMethodRefCallAsync.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMethodRef__CallAsync.json",
+      "md": "structured\\DistributedObjects\\distObjMethodRef__CallAsync.md"
+    },
+    {
+      "name": "distObjMethodRef::CallAsync_Phys",
+      "file": "CAPLfunctiondistObjMethodRefCallAsyncPhys.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjMethodRef__CallAsync_Phys.json",
+      "md": "structured\\DistributedObjects\\distObjMethodRef__CallAsync_Phys.md"
+    },
+    {
+      "name": "distObjRef",
+      "file": "CAPLfunctiondistObjRef.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjRef.json",
+      "md": "structured\\DistributedObjects\\distObjRef.md"
+    },
+    {
+      "name": "distObjRef::AnnounceAll",
+      "file": "CAPLfunctiondistObjRefAnnounceAll.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__AnnounceAll.json",
+      "md": "structured\\DistributedObjects\\distObjRef__AnnounceAll.md"
+    },
+    {
+      "name": "distObjRef::Connect",
+      "file": "CAPLfunctiondistObjRefConnect.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__Connect.json",
+      "md": "structured\\DistributedObjects\\distObjRef__Connect.md"
+    },
+    {
+      "name": "distObjRef::ConnectTo",
+      "file": "CAPLfunctiondistObjRefConnectTo.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__ConnectTo.json",
+      "md": "structured\\DistributedObjects\\distObjRef__ConnectTo.md"
+    },
+    {
+      "name": "distObjRef::Disconnect",
+      "file": "CAPLfunctiondistObjRefDisconnect.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__Disconnect.json",
+      "md": "structured\\DistributedObjects\\distObjRef__Disconnect.md"
+    },
+    {
+      "name": "distObjRef::DisconnectFrom",
+      "file": "CAPLfunctiondistObjRefDisconnectFrom.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__DisconnectFrom.json",
+      "md": "structured\\DistributedObjects\\distObjRef__DisconnectFrom.md"
+    },
+    {
+      "name": "distObjRef::IsConnected",
+      "file": "CAPLfunctiondistObjRefIsConnected.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__IsConnected.json",
+      "md": "structured\\DistributedObjects\\distObjRef__IsConnected.md"
+    },
+    {
+      "name": "distObjRef::IsConnectedTo",
+      "file": "CAPLfunctiondistObjRefIsConnectedTo.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__IsConnectedTo.json",
+      "md": "structured\\DistributedObjects\\distObjRef__IsConnectedTo.md"
+    },
+    {
+      "name": "distObjRef::SubscribeAll",
+      "file": "CAPLfunctiondistObjRefSubscribeAll.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__SubscribeAll.json",
+      "md": "structured\\DistributedObjects\\distObjRef__SubscribeAll.md"
+    },
+    {
+      "name": "distObjRef::UnannounceAll",
+      "file": "CAPLfunctiondistObjRefUnannounceAll.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__UnannounceAll.json",
+      "md": "structured\\DistributedObjects\\distObjRef__UnannounceAll.md"
+    },
+    {
+      "name": "distObjRef::UnsubscribeAll",
+      "file": "CAPLfunctiondistObjRefUnsubscribeAll.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjRef__UnsubscribeAll.json",
+      "md": "structured\\DistributedObjects\\distObjRef__UnsubscribeAll.md"
+    },
+    {
+      "name": "distObjReferenceRef",
+      "file": "CAPLfunctiondistObjReferenceRef.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\distObjReferenceRef.json",
+      "md": "structured\\DistributedObjects\\distObjReferenceRef.md"
+    },
+    {
+      "name": "distObjReferenceRef::ResetTarget",
+      "file": "CAPLfunctiondistObjReferenceRefResetTarget.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjReferenceRef__ResetTarget.json",
+      "md": "structured\\DistributedObjects\\distObjReferenceRef__ResetTarget.md"
+    },
+    {
+      "name": "distObjReferenceRef::SetTarget",
+      "file": "CAPLfunctiondistObjReferenceRefSetTarget.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjReferenceRef__SetTarget.json",
+      "md": "structured\\DistributedObjects\\distObjReferenceRef__SetTarget.md"
+    },
+    {
+      "name": "distObjReferenceRef::SetTargetByPath",
+      "file": "CAPLfunctiondistObjReferenceRefSetTargetByPath.htm",
+      "page_type": "method",
+      "json": "structured\\DistributedObjects\\distObjReferenceRef__SetTargetByPath.json",
+      "md": "structured\\DistributedObjects\\distObjReferenceRef__SetTargetByPath.md"
+    },
+    {
+      "name": "Distributed Objects CAPL Functions",
+      "file": "CAPLfunctionsDOOverview.htm",
+      "page_type": "notes",
+      "json": "structured\\DistributedObjects\\Distributed Objects CAPL Functions.json",
+      "md": "structured\\DistributedObjects\\Distributed Objects CAPL Functions.md"
+    },
+    {
+      "name": "getAttribute",
+      "file": "CAPLfunctionGetAttribute.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\getAttribute.json",
+      "md": "structured\\DistributedObjects\\getAttribute.md"
+    },
+    {
+      "name": "lookupDistObj",
+      "file": "CAPLfunctionLookupDistObj.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\lookupDistObj.json",
+      "md": "structured\\DistributedObjects\\lookupDistObj.md"
+    },
+    {
+      "name": "lookupDistObjContainer",
+      "file": "CAPLfunctionLookupDistObjContainer.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\lookupDistObjContainer.json",
+      "md": "structured\\DistributedObjects\\lookupDistObjContainer.md"
+    },
+    {
+      "name": "lookupDistObjReference",
+      "file": "CAPLfunctionLookupDistObjReference.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\lookupDistObjReference.json",
+      "md": "structured\\DistributedObjects\\lookupDistObjReference.md"
+    },
+    {
+      "name": "lookupVirtNet",
+      "file": "CAPLfunctionLookupVirtNet.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\lookupVirtNet.json",
+      "md": "structured\\DistributedObjects\\lookupVirtNet.md"
+    },
+    {
+      "name": "on any_fct_called",
+      "file": "CAPLfunctionOnAnyFctCalled.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on any_fct_called.json",
+      "md": "structured\\DistributedObjects\\on any_fct_called.md"
+    },
+    {
+      "name": "on any_fct_calling",
+      "file": "CAPLfunctionOnAnyFctCalling.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on any_fct_calling.json",
+      "md": "structured\\DistributedObjects\\on any_fct_calling.md"
+    },
+    {
+      "name": "on any_fct_retured",
+      "file": "CAPLfunctionOnAnyFctRetured.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on any_fct_retured.json",
+      "md": "structured\\DistributedObjects\\on any_fct_retured.md"
+    },
+    {
+      "name": "on any_fct_returning",
+      "file": "CAPLfunctionOnAnyFctReturning.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on any_fct_returning.json",
+      "md": "structured\\DistributedObjects\\on any_fct_returning.md"
+    },
+    {
+      "name": "on any_value_change",
+      "file": "CAPLfunctionOnAnyValueChange.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on any_value_change.json",
+      "md": "structured\\DistributedObjects\\on any_value_change.md"
+    },
+    {
+      "name": "on any_value_update",
+      "file": "CAPLfunctionOnAnyValueUpdate.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on any_value_update.json",
+      "md": "structured\\DistributedObjects\\on any_value_update.md"
+    },
+    {
+      "name": "on transmit_announce",
+      "file": "CAPLfunctionOnTransmitAnnounce.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_announce.json",
+      "md": "structured\\DistributedObjects\\on transmit_announce.md"
+    },
+    {
+      "name": "on transmit_any_announce",
+      "file": "CAPLfunctionOnTransmitAnyAnnounce.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_any_announce.json",
+      "md": "structured\\DistributedObjects\\on transmit_any_announce.md"
+    },
+    {
+      "name": "on transmit_any_call",
+      "file": "CAPLfunctionOnTransmitAnyCall.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_any_call.json",
+      "md": "structured\\DistributedObjects\\on transmit_any_call.md"
+    },
+    {
+      "name": "on transmit_any_return",
+      "file": "CAPLfunctionOnTransmitAnyReturn.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_any_return.json",
+      "md": "structured\\DistributedObjects\\on transmit_any_return.md"
+    },
+    {
+      "name": "on transmit_any_subscribe",
+      "file": "CAPLfunctionOnTransmitAnySubscribe.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_any_subscribe.json",
+      "md": "structured\\DistributedObjects\\on transmit_any_subscribe.md"
+    },
+    {
+      "name": "on transmit_any_unannounce",
+      "file": "CAPLfunctionOnTransmitAnyUnannounce.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_any_unannounce.json",
+      "md": "structured\\DistributedObjects\\on transmit_any_unannounce.md"
+    },
+    {
+      "name": "on transmit_any_unsubscribe",
+      "file": "CAPLfunctionOnTransmitAnyUnsubscribe.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_any_unsubscribe.json",
+      "md": "structured\\DistributedObjects\\on transmit_any_unsubscribe.md"
+    },
+    {
+      "name": "on transmit_any_value",
+      "file": "CAPLfunctionOnTransmitAnyValue.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_any_value.json",
+      "md": "structured\\DistributedObjects\\on transmit_any_value.md"
+    },
+    {
+      "name": "on transmit_call",
+      "file": "CAPLfunctionOnTransmitCall.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_call.json",
+      "md": "structured\\DistributedObjects\\on transmit_call.md"
+    },
+    {
+      "name": "on transmit_return",
+      "file": "CAPLfunctionOnTransmitReturn.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_return.json",
+      "md": "structured\\DistributedObjects\\on transmit_return.md"
+    },
+    {
+      "name": "on transmit_subscribe",
+      "file": "CAPLfunctionOnTransmitSubscribe.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_subscribe.json",
+      "md": "structured\\DistributedObjects\\on transmit_subscribe.md"
+    },
+    {
+      "name": "on transmit_unannounce",
+      "file": "CAPLfunctionOnTransmitUnannounce.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_unannounce.json",
+      "md": "structured\\DistributedObjects\\on transmit_unannounce.md"
+    },
+    {
+      "name": "on transmit_unsubscribe",
+      "file": "CAPLfunctionOnTransmitUnsubscribe.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_unsubscribe.json",
+      "md": "structured\\DistributedObjects\\on transmit_unsubscribe.md"
+    },
+    {
+      "name": "on transmit_value",
+      "file": "CAPLfunctionOnTransmitValue.htm",
+      "page_type": "event",
+      "json": "structured\\DistributedObjects\\on transmit_value.json",
+      "md": "structured\\DistributedObjects\\on transmit_value.md"
+    },
+    {
+      "name": "setAttribute",
+      "file": "CAPLfunctionSetAttribute.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\setAttribute.json",
+      "md": "structured\\DistributedObjects\\setAttribute.md"
+    },
+    {
+      "name": "virtNet",
+      "file": "CAPLfunctionvirtNet.htm",
+      "page_type": "function",
+      "json": "structured\\DistributedObjects\\virtNet.json",
+      "md": "structured\\DistributedObjects\\virtNet.md"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "diagInitialize",
+  "category": "Diagnostics",
+  "title": "diagInitialize",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagInitialize.htm",
+  "syntax": [
+    "long diagInitialize( diagResponse object, char serviceQualifier[]); // form 1"
+  ],
+  "description": [
+    "Reinitializes the object for the given service or primitive. Diagnostics request will be initialized with the default request parameters of the service, while diagnostic responses will be initialized with the default parameters of the first or specified primitive of the service. If the service is not defined, or the primitive is not defined at the given service, nothing happens and an error code is returned.",
+    "The data contained in the primitive is overwritten by a successful call of this function!",
+    "Please refer to diagnostic descriptions with overloaded responses for details on services defining more than one response."
+  ],
+  "parameters": [
+    {
+      "name": "object",
+      "type": "",
+      "description": "Diagnostics object to re-initialize"
+    }
+  ],
+  "return": "0: No error, OK",
+  "example": {
+    "description": [
+      "In an ECU simulation, initialize a response object with a specific primitive before sending it."
+    ],
+    "code": "on diagRequest Servi \n{\n   diagResponse this response; // will be initialized with first primitive \n   response.Initialize( \"Servi\", \"ServiEcu1PR\"); // Force initialization with specific primitive \n   response.SetParameter( \"Voltage\", 28.0); // Access primitive specific parameter \n   response.SendResponse();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

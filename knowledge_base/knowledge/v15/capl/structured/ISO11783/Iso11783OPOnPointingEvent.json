@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPOnPointingEvent",
+  "category": "ISO11783",
+  "title": "Iso11783OPOnPointingEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPOnPointingEvent.htm",
+  "syntax": [
+    "void Iso11783OPOnPointingEvent( dword ecuHandle, long x, long y, dword state );"
+  ],
+  "description": [
+    "The function is called by the node layer, if the user clicks into the data mask."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    },
+    {
+      "name": "x",
+      "type": "",
+      "description": "X position [pixel]"
+    },
+    {
+      "name": "y",
+      "type": "",
+      "description": "Y position [pixel]"
+    },
+    {
+      "name": "state",
+      "type": "",
+      "description": "0: Released (Version >= 3) 1: Pressed (pressed) 2: Held (Version >= 3)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783OPOnPointingEvent( dword handle, LONG x, LONG y, dword touchState )\n{\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

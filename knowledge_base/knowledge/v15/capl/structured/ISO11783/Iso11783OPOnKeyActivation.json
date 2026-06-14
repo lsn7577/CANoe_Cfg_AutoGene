@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPOnKeyActivation",
+  "category": "ISO11783",
+  "title": "Iso11783OPOnKeyActivation",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPOnKeyActivation.htm",
+  "syntax": [
+    "void Iso11783OPOnKeyActivation( dword ecuHandle, dword objectID, dword parentID, dword keyCode, dword activation );"
+  ],
+  "description": [
+    "The function is called by the node layer, if the user presses a soft key or button."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    },
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "Object ID of a soft key or button object"
+    },
+    {
+      "name": "parentID",
+      "type": "",
+      "description": "Object ID of the mask object"
+    },
+    {
+      "name": "keyCode",
+      "type": "",
+      "description": "Code of the soft key or button"
+    },
+    {
+      "name": "activation",
+      "type": "",
+      "description": "Activation code 0: Key is release 1: Key is pressed 2: Key is held 3: Press is canceled"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783OPOnKeyActivation( dword handle, dword object ID, dword parentID, dword keyCode, \r\n dword activation )\n{\n  if (activation == 1) {\n    switch(keyCode) {\n    case 1: DoSometing1(); break;\n    case 2: DoSometing2(); break;\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetP3max",
+  "category": "KLine",
+  "title": "KLine_SetP3max",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetP3max.htm",
+  "syntax": [
+    "long KLine_SetP3max(dword P3max_us)"
+  ],
+  "description": [
+    "Sets the maximum time between the end of the server (ECU) response and start of a new client (tester) request. If no request is sent in this interval, the ECU can assume that the tester is no longer present."
+  ],
+  "parameters": [
+    {
+      "name": "P3max_us",
+      "type": "",
+      "description": "P3max in usValue range: 0 – 10000000 (10 s)."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n   KLine_SetP3Max(3000000); // P3max == 3 s\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

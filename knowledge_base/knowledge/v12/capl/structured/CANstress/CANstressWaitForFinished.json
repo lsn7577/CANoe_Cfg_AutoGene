@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressWaitForFinished",
+  "category": "CANstress",
+  "title": "CANstressWaitForFinished",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressWaitForFinished.htm",
+  "syntax": [
+    "long CANstressWaitForFinished( dword timeout );"
+  ],
+  "description": [
+    "Waits until the CANstress hardware is in the state Finished."
+  ],
+  "parameters": [
+    {
+      "name": "Note With timeout = 0 an infinite time is waited until the state Finished occurs. Thus the additional test procedure is blocked if the state Finished is not reached.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: If successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

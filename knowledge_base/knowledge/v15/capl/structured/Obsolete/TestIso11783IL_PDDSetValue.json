@@ -1,0 +1,84 @@
+{
+  "page_type": "notes",
+  "name": "TestIso11783IL_PDDSetValue",
+  "category": "Obsolete",
+  "title": "TestIso11783IL_PDDSetValue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/TestISO11783il/CAPLfunctionTestIso11783ILPDDSetValue.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by: Iso11783IL_PDDSetValue"
+      ],
+      [
+        "Function Syntax",
+        "long TestIso11783IL_PDDSetValue( dbNode node, dbSignal signal, dword elementNumber, float value );"
+      ],
+      [
+        "long TestIso11783IL_PDDSetValue( dbNode node, dword ddi, dword elementNumber, float value );"
+      ],
+      [
+        "Function",
+        "Sets the value of a process variable. Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment.",
+        "Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment."
+      ],
+      [
+        "Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment."
+      ],
+      [
+        "Parameters",
+        "node Simulation node to apply the function."
+      ],
+      [
+        "signal signal from the database The attribute ddi must have been defined for the signal. The signal must be defined in the same database as the node!"
+      ],
+      [
+        "ddi Data Dictionary Identifier, 0x0000.0xFFFF"
+      ],
+      [
+        "elementNumber element number, 0x000.0xFFF"
+      ],
+      [
+        "value new value of the process variable"
+      ],
+      [
+        "Return Values",
+        "0: function has been executed successfully <0: an error has occurred"
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.5",
+        "ISO11783 Test nodes",
+        "—",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

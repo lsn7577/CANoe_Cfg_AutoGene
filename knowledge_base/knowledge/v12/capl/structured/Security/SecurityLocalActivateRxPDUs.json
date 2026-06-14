@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalActivateRxPDUs",
+  "category": "Security",
+  "title": "SecurityLocalActivateRxPDUs",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityLocalActivateRxPDUs.htm",
+  "syntax": [
+    "long SecurityLocalActivateRxPDUs(char nodeName[])"
+  ],
+  "description": [
+    "Allows a node (e.g. gateway) to validate Rx secured PDUs of another node. The calling node registers to all Rx PDUs of the specified node.",
+    "You have to set the bus context before you call this method.",
+    "This method has to be executed in Pre Start callback of CAPL."
+  ],
+  "parameters": [
+    {
+      "name": "char NodeName []",
+      "type": "",
+      "description": "Name of the other node"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

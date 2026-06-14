@@ -1,0 +1,173 @@
+{
+  "page_type": "notes",
+  "name": "J1939: Define Parameter Groups",
+  "category": "J1939",
+  "title": "J1939: Define Parameter Groups",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/CAPLfunctionsJ1939DefinePG.htm",
+  "syntax": [],
+  "description": [
+    "The key word pg is used to define parameter group object. This object can be used in two ways:",
+    "There are several ways to create a pg object:",
+    "// Variant 1 pg * myPG; // Variant 2 pg 0x100 myPG_PDU1; pg 0xFA02 myPG_PDU2; // Variant 3 pg RQST myPGFromDBC;",
+    "In this way you create a pg object where all bits of the CAN ID are set to 1 and DLC is set to 0.",
+    "This variant is useful if you want to use the pg object as a data container which should receive data of a message. However, payload of this message must not be bigger than 12 byte. If the payload is bigger than 12 bytes then you have to create a sufficiently large pg object right away (see chapter Define the Size of a Parameter Group).",
+    "It is also possible to send the created pg object from CAPL directly. All parts of the CAN ID must be set here (in CAPL the CAN ID is represented as a 32 bit value). In particular, the three most significant bits of the first most significant byte of the CAN ID must be set to 100b (see also the description of the attribute selector Characteristics).",
+    "This is how you create a pg object with a specific PGN. Other components of the CAN ID are set to the following values (referring to the example above):",
+    "This variant is useful if you want to send the pg object. However, you must first define DLC, whereby the upper limit of 12 bytes remains the same here.",
+    "on pg RQST{ //declare pg pg ACKM myACKM; //define SA and DA myACKM.SA = 0x1; // my address myACKM.DA = this.SA; // address of the request's originator //define single signals myACKM.ControlByte = 0; //ACK myACKM.AddressAcknowledged = this.SA; myACKM.ParameterGroupNumber = this.ParameterGroupNumber; //send acknowledge output(myACKM);}",
+    "For pg objects created using variant 1 or variant 2, the maximum payload size (DLC) is limited to 12 bytes. For variant 3, the maximum payload size is also limited to the size defined in the database for the respective message. However, sometimes it is necessary to process larger messages in a CAPL program. This is also possible, you only have to specify the maximum required message payload size in the line where the pg object is created:",
+    "// Variant 1 pg * myPG = {DLC = 31}; // Variant 2 pg 0x100 myPG_PDU1 = {DLC = 32}; pg 0xFA02 myPG_PDU2 = {DLC = 33}; // Variant 3 pg RQST myPGFromDBC = {DLC = 34};",
+    "DLC can be changed several times later with one restriction: DLC must never be greater than the value defined when the pg object was created.",
+    "The same syntax can be used to define additional attribute selectors, e.g:",
+    "pg 0x100 pg_tc1 = {SA = 0x34, DA = 0x24}; output(pg_tc1);",
+    "In this case you would define and send the parameter group with PGN = 0x100 (TC1) from the node with address 0x34 to node with address 0x24.",
+    "A PDU2 pg does not actually need a destination address because it is broadcast. However, there is one exception: a PDU2 pg longer than 8 bytes is transmitted using the J1939 transport protocol. A J1939 transport protocol transmission also allows a destination address. This makes it possible to send a PDU2 pg to a specific address instead of broadcast. You can define this concrete address by setting the attribute selector DA_TP.",
+    "The selector DA_TP determines the receiver of the parameter group if transport protocol is used.",
+    "If selector DA is set then selector DA_TP gets the same value. However changing selector DA_TP doesn't influence selector DA (to avoid modification of the PGN).",
+    "In an on pg procedure, in case of a PDU1 message, both selectors provide always the same value. For PDU2 messages only the selector DA_TP provides the address of the receiver, while the selector DA provides the group extension of the PGN.",
+    "Message Selectors"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Attribute Selector",
+        "Value for myPG_PDU1",
+        "Value for myPG_PDU2"
+      ],
+      [
+        "PGN",
+        "0x100 (as defined)",
+        "0xxFA02 (as defined)"
+      ],
+      [
+        "SA",
+        "0xFE",
+        "0xFE"
+      ],
+      [
+        "DA / PS",
+        "0xFE",
+        "0x02 (part of PGN)"
+      ],
+      [
+        "PF",
+        "0x1 (part of PGN)",
+        "0xFA (part of PGN)"
+      ],
+      [
+        "DA_TP",
+        "0xFE",
+        "0xFF"
+      ],
+      [
+        "Prio",
+        "0",
+        "0"
+      ],
+      [
+        "Characteristics",
+        "0x80",
+        "0x80"
+      ]
+    ],
+    [
+      [
+        "Attribute Selector",
+        "Description",
+        "Type"
+      ],
+      [
+        "SA",
+        "Sender of the parameter group",
+        "byte"
+      ],
+      [
+        "DAPS",
+        "Both attribute selectors PS (PDU Specific) and DA (Destination Address) access the same field of CAN ID, namely PDU Specific, and provide the following information: PDU1 message: destination address of the parameter group PDU2 message: group extension of the parameter group",
+        "byte"
+      ],
+      [
+        "DA_TP",
+        "Receiver of the parameter group Initially it has the same value as selector DA (in case of PDU1 message) or 255 (in case of PDU2 message). DA_TP can be used to transmit a PDU2 message with DLC > 8 to some specific address or to identify the destination address in on pg procedure.",
+        "byte"
+      ],
+      [
+        "PF",
+        "PDU format",
+        "byte"
+      ],
+      [
+        "PGN",
+        "Parameter Group Number",
+        "byte"
+      ],
+      [
+        "Characteristic",
+        "Most significant byte of CAN ID (in CAPL the CAN ID is represented as a 32-bit value). The three most significant bits should have the value 100b if CAN ID is to be a valid Extended CAN Identifier. The five least significant bits represent priority, extended data page (EDP) and data page (DP) of the CAN ID. Bit 7 Bit 6 Bit 5 Bit 4 Bit 3 Bit 2 Bit 1 Bit 0 1 0 0 Priority EDP DP",
+        "Bit 7",
+        "Bit 6",
+        "Bit 5",
+        "Bit 4",
+        "Bit 3",
+        "Bit 2",
+        "Bit 1",
+        "Bit 0",
+        "1",
+        "0",
+        "0",
+        "Priority",
+        "EDP",
+        "DP",
+        "byte"
+      ],
+      [
+        "Bit 7",
+        "Bit 6",
+        "Bit 5",
+        "Bit 4",
+        "Bit 3",
+        "Bit 2",
+        "Bit 1",
+        "Bit 0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "Priority",
+        "EDP",
+        "DP"
+      ],
+      [
+        "PRIO",
+        "Priority of the parameter group",
+        "byte"
+      ],
+      [
+        "DP",
+        "Data page of the parameter group",
+        "byte"
+      ],
+      [
+        "EDP",
+        "Extended Data page of the parameter group",
+        "byte"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

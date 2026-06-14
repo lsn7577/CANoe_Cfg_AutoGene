@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "setBtr",
+  "category": "CAN",
+  "title": "setBtr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionSetBtr.htm",
+  "syntax": [
+    "long setBtr(long channel, byte btr0, byte btr1);"
+  ],
+  "description": [
+    "Sets another baud rate. The values do not become active until the next call of the function resetCan.",
+    "It should be noted that these values depend on the CAN controller used."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "All controllers"
+    },
+    {
+      "name": "1 - 32",
+      "type": "",
+      "description": "channel 1 - 32"
+    }
+  ],
+  "return": "Always 1",
+  "example": {
+    "description": [],
+    "code": "...\nsetBtr(0, 0x00, 0x3a); // 500 kBaud for 82C200\nresetCan(); // activate\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

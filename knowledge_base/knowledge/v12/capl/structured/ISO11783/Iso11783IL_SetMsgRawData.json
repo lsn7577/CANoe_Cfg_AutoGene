@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_SetMsgRawData",
+  "category": "ISO11783",
+  "title": "Iso11783IL_SetMsgRawData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILSetMsgRawData.htm",
+  "syntax": [
+    "long Iso11783IL_SetMsgRawData( dbMessage msg, long dataSize, byte data[] );"
+  ],
+  "description": [
+    "Sets the data bytes of the message. The length of the parameter group is adjusted to size of parameter dataSize."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "message name from database, must be assigned to the node as Tx message"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  char data[10] = \"TPMS*V1.0*\";\n Iso11783IL_SetMsgRawData( ECUID, elCount(data), data );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

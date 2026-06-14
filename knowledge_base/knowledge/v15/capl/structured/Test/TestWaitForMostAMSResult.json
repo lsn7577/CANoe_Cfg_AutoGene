@@ -1,0 +1,161 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMostAMSResult",
+  "category": "Test",
+  "title": "TestWaitForMostAMSResult",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForMostAmsResult.htm",
+  "syntax": [
+    "long TestWaitForMostAMSResult(long aDestinationAddress, char aSymbolicMessage[], long aInstanceID, dword aTimeoutMaxDuration, dword aTimeoutWaitForProcessing1, dword aTimeoutWaitForProcessing2);",
+    "long TestWaitForMostAMSResult(long aDestinationAddress, char aSymbolicMessage[], long aInstanceID, dword aTimeoutMaxDuration);",
+    "long TestWaitForMostAMSResult(char aSymbolicMessage[], long aInstanceID, dword aTimeoutMaxDuration);",
+    "long TestWaitForMostAMSResult(char aSymbolicMessage[], dword aTimeoutMaxDuration);",
+    "long TestWaitForMostAMSResult(char aSymbolicMessage[], long aInstanceID, dword aTimeoutMaxDuration, dword aTimeoutWaitForProcessing1, dword aTimeoutWaitForProcessing2);",
+    "long TestWaitForMostAMSResult(char aSymbolicMessage[],dword aTimeoutMaxDuration, dword aTimeoutWaitForProcessing1, dword aTimeoutWaitForProcessing2);"
+  ],
+  "description": [
+    "The function immediately sends a symbolically defined MOST message with OpType 'StartResult' or 'StartResultAck' and waits for the reception of the appropriate 'Result' or 'ResultAck' message from the receiver.",
+    "In contrast to the functionality provided by TestWaitForMostAMSResponse, this function checks the correct reception of intermediate ‘Processing’ or ‘ProcessingAck’ as well as the final ‘Result’ or ‘ResultAck’ messages using the provided timeouts for tWaitForProcessing1 and tWaitForProcessing2. Signatures without these timeout parameters use the default values specified in the MOST Specification (tWaitForProcessing1 = 250ms and tWaitForProcessing2. = 200ms).",
+    "Additionally, in case of the 'StartResultAck' optype, the SenderHandle parameter is constantly checked for each report message received. Messages having a different SenderHandle than specified in the function call are ignored, since they must belong to a different request for that method.",
+    "As soon as a report message doesn’t arrive within the specified timeouts of tWaitForProcessing1 or tWaitForProcessing2, the function resumes and reports a timeout for that parameter."
+  ],
+  "parameters": [
+    {
+      "name": "Note If -1 is given, the address handler (if active) searches for the correct node address based on the functional address {FBlockID, InstID} from the Bus Registry. If no node address is found the message is sent to 0xFFFF. This is also the standard for not explicit set values.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "aSymbolicMessage",
+      "type": "",
+      "description": "Symbolic MOST message definition in one of the following formats: FBlock.Instance.Function.StartResult(parameter list) FBlock.Instance.Function.StartResult FBlock.Function.StartResult(parameter list) FBlock.Function.StartResult FBlock.Instance.Function.StartResultAck(SenderHandle, parameter list) FBlock.Instance.Function.StartResultAck(SenderHandle) FBlock.Function.StartResultAck(SenderHandle, parameter list) FBlock.Function.StartResultAck(SenderHandle)"
+    },
+    {
+      "name": "Note If -1 is given, the corresponding field can get any value. This is also the standard for not explicit set values.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "aTimeoutMaxDuration",
+      "type": "",
+      "description": "Maximum time [ms] to wait for the reception of a 'Result' ('ResultAck') message."
+    },
+    {
+      "name": "aTimeoutWaitForProcessing1",
+      "type": "",
+      "description": "Maximum time [ms] to wait for the reception of the first 'Processing' ('ProcessingAck') or immediate 'Result' ('ResultAck') message (tWait-ForProcessing1)."
+    },
+    {
+      "name": "aTimeoutWaitForProcessing2",
+      "type": "",
+      "description": "Maximum time [ms] to wait for the reception of the following 'Processing' ('ProcessingAck') or 'Result' ('ResultAck') message (tWaitFor-Processing2)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.0",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "MOST25, MOST50, MOST150",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,53 @@
+# mostSyncDealloc
+
+> Category: `MOST` | Type: `function`
+
+## Syntax
+
+```c
+long mostSyncDealloc(long label);
+Callback: void OnMostSyncDeallocResult(long deallocResult, long label);
+```
+
+## Description
+
+MOST25:
+
+This function releases reserved bandwidth for synchronous channels by sending a Dealloc system message to the TimingMaster.
+
+The result is reported by means of the callback function OnMostSyncDeallocResult. This requires defining OnMostSyncDeallocResult in the CAPL program using the following signature: OnMostSyncDeallocResult(long deallocResult, long label)
+
+Most150:
+
+Deallocates synchronous bandwidth on MOST150.
+
+Callback:
+
+This function is called on completion of the deallocation of channels triggered by the call of the function.
+
+Whether the deallocation was successful and if so, which channels were deallocated, is indicated in the parameters described below.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| label | Channel label. MOST25: content of channels[0] in OnMostSyncAllocResult, see mostSyncAlloc. Value 0x7F (=DeallocAll) releases all synchronous channels.MOST150: Label number (see mostAllocTableGetCL)Value 0xFFF releases all synchronous channels previously reserved with mostSyncAlloc (VN2640 only). |
+
+## Return Values
+
+See error codes
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 6.0 | — | — | — | —✔ |
+| Restricted To | — | MOST25 MOST150 After measurement start Not in Stopmeasurement | — | — | — | —✔ |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | — |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | —✔ |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | —✔ |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | —✔ |
+| 32-Bit | — | ✔ | — | N/A | — | —✔ |
+| 64-Bit | — | ✔ | — | — | — | —✔ |

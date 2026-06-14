@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::GetProtocolErrorText",
+  "category": "IP",
+  "title": "ethernetPacket::GetProtocolErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionGetProtocolErrorText.htm",
+  "syntax": [
+    "word ethernetPacket.GetProtocolErrorText( char buffer[] );"
+  ],
+  "description": [
+    "Copies an error text to the buffer for invalid Ethernet packets. For valid Ethernet packets an empty string is returned."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Char buffer where the error string is copied to."
+    }
+  ],
+  "return": "Number of characters copied to buffer.",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if (this.HasProtocolError())\n  {\n    char text[100]\n    pkt.GetProtocolError( text );\n    write( \"Protocol error on Eth %d: %s\", this.msgChannel, text );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

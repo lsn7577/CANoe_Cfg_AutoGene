@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagConnectChannel",
+  "category": "Diagnostics",
+  "title": "diagConnectChannel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagConnectChannel.htm",
+  "syntax": [
+    "long diagConnectChannel(); // form 1"
+  ],
+  "description": [
+    "Connects a channel. State of the channel is Connected afterwards.",
+    "The channel the function refers to is set with the last call of diagSetTarget."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description."
+    }
+  ],
+  "return": "On success 0, otherwise error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

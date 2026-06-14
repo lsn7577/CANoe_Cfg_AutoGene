@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetProtocol",
+  "category": "IP",
+  "title": "SomeIpGetProtocol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetProtocol.htm",
+  "syntax": [
+    "dword SomeIpGetProtocol ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the protocol (UDP/TCP) the SOME/IP message was transmitted with."
+  ],
+  "parameters": [
+    {
+      "name": "Note This function can only be called within the OnSomeIpMessage callback function.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "protocol",
+  "example": {
+    "description": [],
+    "code": "void OnSomeIpMessage( DWORD messageHandle )\n{\n  DWORD protocol      = 0;\n  LONG  errorCode     = 0;\n  LONG  errorOccured  = 0;\n\n  // get data from SOME/IP message\n  if((protocol = SomeIpGetProtocol(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = SomeIpGetLastError()) != 0)\n    {\n      write(\"SOME/IP IL error occured: Error code: %d\", errorCode);\n      errorOccured = 1;\n    } // if\n  } // if\n\n  if(errorOccured == 0)\n  {\n    write(\"SOME/IP message with Protocol Type 0x%x (%d) received\",protocol,protocol);\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILEnableTimingImmed",
+  "category": "CANoeIL",
+  "title": "ILEnableTimingImmed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILEnableTimingImmed.htm",
+  "syntax": [
+    "long ILEnableTimingImmed (char pduName[], int enable);"
+  ],
+  "description": [
+    "Controls the immediate timing of PDUs. The immediate timing can be enabled/disabled.This function influences a simulation node with an assigned CANoe interaction layer."
+  ],
+  "parameters": [
+    {
+      "name": "aPDUName",
+      "type": "",
+      "description": "Name of the PDU that should be modified."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": "// Disables the PDU Timing for 2000 ms\n\nvariables {\n  int enable = 0;\n  msTimer WaitTimer;\n}\n\non key 'a'{\n  enable = 0;\n  ILEnableTimingImmed (\"PDU_A\", enable);\n  SetTimer(WaitTimer,2000);\n}\n\non Timer WaitTimer {\n  enable = 1;\n  ILEnableTimingImmed (\"PDU_A\", enable);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

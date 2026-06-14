@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "setFilePath",
+  "category": "Other",
+  "title": "setFilePath",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionSetFilePath.htm",
+  "syntax": [
+    "void setFilePath (char Path[],dword mode);"
+  ],
+  "description": [
+    "This function sets the read and write path to the directory. The path can be given as absolute or relative to the currently active configuration."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Sets path for read functions"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Sets path for write functions (same as setWritePath)"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Sets path for both types of functions"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "//set directory for reading\nsetFilePath(\"C:\\\\Windows\\\\TEMP\", 0);\n//set directory for writing\nsetFilePath(\"D:\\\\TEMP\", 1);\n//set directory for writing and reading\nsetFilePath(\"C:\\\\TEMP\", 2);\n\non key 'i'\n{\nint defaultPara1;\nint returnParaInt;\nint counter;\ndouble defaultPara2;\ndouble returnParaFloat;\nchar buffer [256];\n//define symbolic values for read/write access mode\ndword FILE_PATH_R   = 0;\ndword FILE_PATH_W   = 1;\ndword FILE_PATH_RW  = 2;\ndefaultPara1 = -1;\ndefaultPara2 = -1;\n//set absolute file path for writing\nsetFilePath(\"C:\\\\TEMP\" , FILE_PATH_W);\n// Write different values into the section \"Parameter\" of the INI file \"Test.INI\"\n// If no file path is specified, the path from previous setFilePath command is used\nwriteProfileString (\"Parameter\",\"String\",\"TestString\",\"Test.INI\");\nwriteProfileFloat (\"Parameter\",\"Float\", 1.7845,\"Test.INI\");\nwriteProfileInt (\"Parameter\", \"Integer\", 8, \"Test.INI\");\n// Read different values from the Section \"Parameter\" of the INI file \"C:\\\\temp\\\\Test.INI\"\n// And display the values in the Write Window\n//if an absolute path is to be used, this can be coded in the parameter <filename> directly\nreturnParaInt = getProfileInt(\"Parameter\",\"Integer\",defaultPara1,\"C:\\\\TEMP\\\\Test.INI\");\nreturnParaFloat = getProFileFloat(\"Parameter\",\"Float\",defaultPara2,\"C:\\\\TEMP\\\\Test.INI\");\ngetProFileString(\"Parameter\",\"String\",\"Default String\", buffer, elcount(buffer), \"C:\\\\TEMP\\\\Test.INI\");\nwrite(\"Integer: %d\", returnParaInt);\nwrite(\"Float: %f\", returnParaFloat);\nwrite(\"String: %s\", buffer);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "4.1",
+      "4.1",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

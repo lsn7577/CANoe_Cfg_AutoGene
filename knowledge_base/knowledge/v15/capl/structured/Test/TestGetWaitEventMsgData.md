@@ -1,0 +1,54 @@
+# TestGetWaitEventMsgData
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+long TestGetWaitEventMsgData (message aMessage);
+long TestGetWaitEventMsgData (dword index, message aMessage);
+long TestGetWaitEventMsgData (linFrame aMessage);
+long TestGetWaitEventMsgData (dword index, linFrame aMessage);
+long TestGetWaitEventMsgData (gmLanMessage aMessage);
+long TestGetWaitEventMsgData (dword index, gmLanMessage aMessage);
+long TestGetWaitEventMsgData (a429word aMessage);
+long TestGetWaitEventMsgData (dword index, a429word aMessage);
+```
+
+## Description
+
+If a message event is the last event that triggers a wait instruction, the message content can be called up with the first function.The second function can only be used for "joined events". The number of the "joined event" (return value of "testJoin...") is here being used as an index.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| aMessage | Message variable that should be filled in with this function. |
+| index | Number of the "joined event" corresponds with the return value of "testJoin...". |
+
+## Example
+
+```c
+// add msg event to the current set of “joined events” and fill the msg data to message ‘eventMessage’
+dword index = 0;
+TestJoinMessageEvent(VehicleMotion);
+// ... other join events
+index = TestWaitForAnyJoinedEvent(2000);
+
+TestGetWaitEventMsgData(index, eventMessage);
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.0 6.0: extended 8.5 SP4: extended | 13.0 | — | — | 1.0 |
+| Restricted To | — | A429 (since 8.5 SP4) | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | — | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

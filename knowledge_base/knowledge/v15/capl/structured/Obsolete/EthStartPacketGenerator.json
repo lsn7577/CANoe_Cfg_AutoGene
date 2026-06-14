@@ -1,0 +1,72 @@
+{
+  "page_type": "notes",
+  "name": "EthStartPacketGenerator",
+  "category": "Obsolete",
+  "title": "EthStartPacketGenerator",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/EthernetIL/CAPLfunctionEthStartPacketGenerator_.htm",
+  "syntax": [],
+  "description": [
+    "long EthStartPacketGenerator( dword numberOfFrames );",
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by: ethStartPacketGenerator"
+      ],
+      [
+        "Note This feature is only available with Vector Ethernet hardware (e.g. VN5610, VN5610A, VN5640 and VN7640)."
+      ],
+      [
+        "Function Syntax",
+        "long EthStartPacketGenerator( );"
+      ],
+      [
+        "long EthStartPacketGenerator( dword numberOfFrames );"
+      ],
+      [
+        "Function",
+        "This function starts the Ethernet packet generator that sends continuously the configured packets. If you do not specify a number of Frames the generator sends until you call EthStopPacketGenerator. To configure packets call EthConfigurePacketGenerator."
+      ],
+      [
+        "Parameters",
+        "numberOfFrames The number of Frames that should be transmitted overall. Range: [0x1 ... 0xFFFFFFFE]"
+      ],
+      [
+        "Return Values",
+        "0 or error code"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.1 SP3-12.0",
+        "Ethernet",
+        "—",
+        "•"
+      ],
+      [
+        "Example on start{ LONG packetHandle; char error[255]; // create packet and start packet generator packetHandle = EthInitPacket(\"udp\"); if (EthGetLastError() == 0) { // set protocol fields EthSetTokenInt( packetHandle, \"ipv4\", \"source\", 0xC0A80001 ); // 192.168.0.1 EthSetTokenInt( packetHandle, \"ipv4\", \"destination\", 0xFFFFFFFF ); // 255.255.255.255 EthSetTokenInt( packetHandle, \"udp\", \"source\", 23 ); EthSetTokenInt( packetHandle, \"udp\", \"destination\", 23 ); // set UDP payload EthResizeToken( packetHandle, \"udp\", \"data\", 12*8 ); /*8 byte text, 4 byte counter*/ EthSetTokenData( packetHandle, \"udp\", \"data\", 5, \"Counter \" ); // complete EthCompletePacket( packetHandle ); // configure generator EthConfigurePacketGenerator(packetHandle, 10000, 38); //10000 fps // release packet EthReleasePacket( packetHandle ); } else { EthGetLastErrorText( elCount(error), error ); write(\"Error: %s\", error ); }}on key '1'{ // start generator EthStartPacketGenerator(1000000); //one million packets, should run about 100s}on key '2'{ // stop generator before it is finished EthStopPacketGenerator();}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

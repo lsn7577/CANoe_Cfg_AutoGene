@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_EnableNameManagement",
+  "category": "ISO11783",
+  "title": "FSIL_EnableNameManagement",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILEnableNameManagement.htm",
+  "syntax": [
+    "dword FSIL_EnableNameManagement(dword enable ); // form 1"
+  ],
+  "description": [
+    "Activates the name management of a node. Not until the name management is activated another node can change the device name of this node by sending a name management message."
+  ],
+  "parameters": [
+    {
+      "name": "fs",
+      "type": "",
+      "description": "FS simulation node to apply the function"
+    }
+  ],
+  "return": "0 on success or FS IL Error Code",
+  "example": {
+    "description": [],
+    "code": "//allow every component to be changed except arbitrary address capable flag\nFSIL_EnableNameManagement(1, 0xFE);\r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

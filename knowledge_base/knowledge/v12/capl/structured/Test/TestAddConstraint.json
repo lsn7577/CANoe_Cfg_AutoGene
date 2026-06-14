@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestAddConstraint",
+  "category": "Test",
+  "title": "TestAddConstraint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestAddConstraint.htm",
+  "syntax": [
+    "long TestAddConstraint (dword aAuxHandle);"
+  ],
+  "description": [
+    "Adds an event object or an event text as a constraint. Checks from the Test Service Library are suitable as event objects.",
+    "This function can be used within a test case and also on the main test level."
+  ],
+  "parameters": [
+    {
+      "name": "aAuxHandle",
+      "type": "",
+      "description": "Event object, for example a check from the TestService Library. Specified is the handle that is returned when a check is created."
+    }
+  ],
+  "return": "0: Constraint was added successfully",
+  "example": {
+    "description": [
+      "Add check as constraint"
+    ],
+    "code": "dword checkId;\ndword numCheckEvents;\n\n// start the Error Frame observation\ncheckId = ChkStart_ErrorFramesOccured();\n// Add check as constraint,\n// that means that check violations are reported and\n// the verdict of the test case is set to \"failed\"\nTestAddConstraint(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\n// Remove check as constrait\nTestRemoveConstraint(checkId);\n\n// stop the check\nChkControl_Stop(checkId);\n// reset stored values of the check\nChkControl_Reset(checkId);\n\n// start the check again without adding as constraint,\n// that means that Error Frames are observed, but violations\n// are not reported and do not set the test case verdict to \"failed\"\nChkControl_Start(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\n// stop the check\nChkControl_Stop(checkId);\n\n// analysis of check\nnumCheckEvents = ChkQuery_NumEvents(checkId);\nif (numCheckEvents > 0)\nTestStepFail(\"Error Frame occurred!\");\n\n// destroy check\nChkControl_Destroy(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

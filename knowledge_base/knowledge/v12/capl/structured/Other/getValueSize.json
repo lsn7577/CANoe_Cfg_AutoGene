@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getValueSize",
+  "category": "Other",
+  "title": "getValueSize",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetValueSize.htm",
+  "syntax": [
+    "int getValueSize(EnvVarName);"
+  ],
+  "description": [
+    "Returns the size of the environment variable value in bytes."
+  ],
+  "parameters": [
+    {
+      "name": "EnvVarName",
+      "type": "",
+      "description": "Environment variable name.Must exist in the database."
+    }
+  ],
+  "return": "Size of the data in bytes.",
+  "example": {
+    "description": [],
+    "code": "int vSize;\n...\n// Size of the data of an environment variable of type integer\nvSize = getValueSize(switch);\n// Buffersize of an environment variable of type string\n// (with terminating Null character)\nvSize = getValueSize(nodename);\n// Size of the data byffer of an environment variable of type data\nvSize = getValueSize(DiagData);\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

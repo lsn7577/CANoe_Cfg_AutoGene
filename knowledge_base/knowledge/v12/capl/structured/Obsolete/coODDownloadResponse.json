@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coODDownloadResponse",
+  "category": "Obsolete",
+  "title": "coODDownloadResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdDownloadResponse.htm",
+  "syntax": [
+    "void coODDownloadResponse( dword errCode[] );"
+  ],
+  "description": [
+    "The function confirms a SDO download transfer, which was initiated on an object with access type 7. It can be used, e.g. in the event function coOnDownloadIndication. If the transfer should be aborted, then coODAbortTransfer must be used."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnDownloadIndication (dword index, dword subIndex, dword size, dword dataValid){\n  dword errCode[1]; \n\n  if (index == 0x2000) {\ncoODDownloadResponse( errCode );\n    if(errCode[0] == 0) {\n      write(\"SDO download successfully confirmed\");\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

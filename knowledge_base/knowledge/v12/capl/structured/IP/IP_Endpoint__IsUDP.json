@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "IP_Endpoint::IsUDP",
+  "category": "IP",
+  "title": "IP_Endpoint::IsUDP",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionIsUDP.htm",
+  "syntax": [
+    "long IP_Endpoint::IsUDP();"
+  ],
+  "description": [
+    "Checks if the current transport protocol of this endpoint is UDP."
+  ],
+  "parameters": [],
+  "return": "Returns 1 if the current transport protocol of this endpoint is UDP.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Endpoint UDP:192.168.1.1:4000 addr;\n  if (addr.IsUDP())\n  {\n    write( \"Is UDP endpoint\" );\n  }\n  else if (addr.IsTCP())\n  {\n    write( \"Is TCP endpoint\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

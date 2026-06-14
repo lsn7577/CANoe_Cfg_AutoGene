@@ -1,0 +1,34 @@
+# TestWaitForReplay
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+long TestWaitForReplay(char file[]);
+```
+
+## Description
+
+Starts playing the replay file with the name file and waits until the execution has been finished.
+
+This function replays events of the following types:
+
+In particular, replay of LIN, FlexRay and MOST events using this function is not possible.
+
+All events are replayed on the same channel as they are recorded in the replay file. Events targeted to non-configured channels are discarded.
+
+The first event in the replay file is replayed immediately, disregarding it's time stamp.
+
+The start of replay is timely decoupled from calling this function, so replay will actually start a short but indeterminate time span after this function returns.
+
+The function is not allowed in CANoe standalone mode. Errors are reported as error in test system or fail in case of 2-valued verdict concept.
+
+## Return Values
+
+-1: Invalid path or unable to load replay file.
+
+## Availability
+
+| Since Version |
+|---|

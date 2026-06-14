@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "ClockControlReset",
+  "category": "Other",
+  "title": "ClockControlReset",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionClockControlReset.htm",
+  "syntax": [
+    "void ClockControlReset(char[] panel, char[] control);"
+  ],
+  "description": [
+    "Resets the Clock Control designed as stop watch with the Panel Designer (setting Mode = StopWatch).",
+    "The displayed time is reset to 00:00:00 or 00:00 depending on the Panel Designer setting Display Seconds.",
+    "The stop watch cannot be reset when it is already running.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Reset the clock control designed as stop watch.\non key 'a'\n{\nClockControlReset(\"ClockControl\", \"StoppWatch\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

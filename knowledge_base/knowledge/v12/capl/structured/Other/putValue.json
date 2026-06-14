@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "putValue",
+  "category": "Other",
+  "title": "putValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionPutValue.htm",
+  "syntax": [
+    "void putValue(EnvVarName, int val); // form 1"
+  ],
+  "description": [
+    "Assigns the value val to the environment variable with identifier EnvVarName/name. Integers are assigned to discrete environment variables (form 1 and 6), floating point numbers are assigned to continuous environment variables (form 2 and 7). The contents of a character string is assigned to character string environment variables (form 3 and 8). For data byte environment variables (form 4, 5, 9 and 10) the bytes of the data buffer are copied into the environment variable."
+  ],
+  "parameters": [
+    {
+      "name": "EnvVarName",
+      "type": "",
+      "description": "Environment variable name (form 1-5).Must exist in the database."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "byte dataBuf[64];\n...\n// Assign the value 0 to environment variable Switch\nputValue(Switch, 0);\n// Assign the value 22.5 to environment variable Temperature\nputValue(Temperature, 22.5);\n// Assign the value Master to environment variable NodeName\nputValue(NodeName, \"Master\");\n// Copy 64 bytes of the data buffer into the environment variable DiagData\nputValue(DiagData, dataBuf, 64);\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coThisGetData",
+  "category": "Obsolete",
+  "title": "coThisGetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoThisGetData.htm",
+  "syntax": [
+    "void coThisGetData( char buffer[], dword bufferSize, dword errCode[] );"
+  ],
+  "description": [
+    "The function returns the data of an object in the event functions coOnUploadResponse or coOnDownloadIndication. The call is only allowed in these event functions. The size of the data can be determined with coThisGetSize."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer for the read data"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nbyte buffer[128];\n\ncoThisGetData( buffer, elCount(buffer), errCode );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

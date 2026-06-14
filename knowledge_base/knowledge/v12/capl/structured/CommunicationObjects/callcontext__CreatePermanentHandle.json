@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "callcontext::CreatePermanentHandle",
+  "category": "CommunicationObjects",
+  "title": "callcontext::CreatePermanentHandle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionCallcontextCreatePermanentHandle.htm",
+  "syntax": [
+    "long callContext::CreatePermanentHandle"
+  ],
+  "description": [
+    "Creates a permanent handle for a call context. You need a permanent handle if you want to keep a call alive for a longer time, e.g. if you wish to store several call contexts in a (associative) array. You also need a permanent handle if you want to pass the call context e.g. to a CAPL DLL.",
+    "You need to call callcontext::ReleaseHandle if you do not need the call context any more so that its resources are freed."
+  ],
+  "parameters": [],
+  "return": "A permanent handle for the call context.",
+  "example": {
+    "description": [],
+    "code": "on fctCalled MirrorAdjustment.providerSide[all,LeftMirror].Adjust\n{\n  // return the call always only after 2 other calls have been received\n  const dword nrOfCalls = 3;\n  long ccHandles[nrOfCalls];\n  dword nextCallSlot = 0;\n  dword nrOfCallsReceived = 0;\n\n  this.Result = Mirrors::AdjustResult::OK;\n  this.DeferAnswer();\n  ccHandles[nextCallSlot] = this.CreatePermanentHandle();\n  nextCallSlot = (nextCallSlot + 1) % nrOfCalls;\n\n  if (++nrOfCallsReceived >= nrOfCalls)\n  {\n    callContext * cco;\n    dword returnSlot;\n    returnSlot = nrOfCallsReceived % nrOfCalls;\n    cco = cco::FromHandle(ccHandles[returnSlot]);\n    cco.ReturnCall();\n    cco::ReleaseHandle(ccHandles[returnSlot]);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

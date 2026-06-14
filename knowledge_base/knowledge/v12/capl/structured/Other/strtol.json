@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "strtol",
+  "category": "Other",
+  "title": "strtol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStrtol.htm",
+  "syntax": [
+    "int strtol(char s[], long& result);"
+  ],
+  "description": [
+    "Converts the string s to a 32bit integer.The number base is",
+    "Whitespace (spaces or tabs) at the start of the string is ignored."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "String to be converted."
+    }
+  ],
+  "return": "-2: If s is empty or startIndex is larger than strlen(s).",
+  "example": {
+    "description": [],
+    "code": "char s[20] = \"123 0xFF\";\nlong number1, number2;\nint res;\nres = strtol(s, number1);\nwrite(\"number1: %d, res: %d\", number1, res); // output: number1: 123, res: 3\nres = strtol(s, res, number2);\nwrite(\"number2: %d, res: %d\", number2, res); // output: number2: 255, res: 8"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

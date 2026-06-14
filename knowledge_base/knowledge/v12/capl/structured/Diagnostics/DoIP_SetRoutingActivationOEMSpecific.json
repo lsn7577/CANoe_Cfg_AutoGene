@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetRoutingActivationOEMSpecific",
+  "category": "Diagnostics",
+  "title": "DoIP_SetRoutingActivationOEMSpecific",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetRoutingActivationOEMSpecific.htm",
+  "syntax": [
+    "void DoIP_SetRoutingActivationOEMSpecific(long sendOEMSpecific, dword OEMspecific);"
+  ],
+  "description": [
+    "Sets the OEM-specific parameters in the Routing Activation Request Message."
+  ],
+  "parameters": [
+    {
+      "name": "sendOEMSpecific",
+      "type": "",
+      "description": "0: Do not send the OEM specific field (default)1: Send the given value in the OEM specific field"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The message can also be configured from the DoIP.INI file"
+    ],
+    "code": "// Send a constant in the RAR message\nDoIP_SetRoutingActivationOEMSpecific( 1, 0x31425927);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

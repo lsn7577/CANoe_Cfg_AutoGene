@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "CompleteStop",
+  "category": "Other",
+  "title": "CompleteStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionCompleteStop.htm",
+  "syntax": [
+    "void CompleteStop ()"
+  ],
+  "description": [
+    "Indicates completion of pre-stop actions carried out in a certain node after a measurement stop has been deferred by DeferStop."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on preStop\n{\n   message ShutdownReq m;\n\n   output(m);\n   DeferStop(1000);  // measurement is stopped if ACK has not\n// yet been received after one second\n}\non message ShutdownAck\n{\n   CompleteStop();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

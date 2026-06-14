@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetMaskViolation",
+  "category": "Test",
+  "title": "testWaitScopeGetMaskViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopeGetMaskViolation.htm",
+  "syntax": [
+    "long testWaitScopeGetMaskViolation (ScopeAnalyseHandle handle, long errorIndex, ScopeMaskViolationData maskViolationData); // form 1"
+  ],
+  "description": [
+    "Retrieve the data of the bit mask violations found with testWaitScopeAnalyseSignal."
+  ],
+  "parameters": [
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    }
+  ],
+  "return": "1 = Success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

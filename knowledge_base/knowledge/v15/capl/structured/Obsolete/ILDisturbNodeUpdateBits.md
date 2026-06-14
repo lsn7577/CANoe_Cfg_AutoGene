@@ -1,0 +1,31 @@
+# ILDisturbNodeUpdateBits
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function This function is deprecated and has been replaced by ILNodeDisturbAllUpdateBits |  |  |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|---|
+| Note This function is not available for all OEM packages — depends on the CANoeIL. This function can be used in a global node outside the node context of the IL. |  |  |  |  |  |  |  |  |  |
+| Function Syntax | long ILDisturbNodeUpdateBits (dbNode aNode, long flags, long disturbanceMode, long disturbanceCount, long disturbanceValue); |  |  |  |  |  |  |  |  |
+| Function | Modifies all update bits of signals/signal groups of a node. Different fault injections are possible.This function influences a simulation node with an assigned CANoe interaction layer. |  |  |  |  |  |  |  |  |
+| Parameters | aNode The symbolic name of a node in the database, whose update bits will be disturbed. |  |  |  |  |  |  |  |  |
+| flags The lowest two bits of this parameter are evaluated: 0 Update bits of signals and signal groups are disturbed. 1 Only signal update bits are disturbed. 2 Only signal group update bits are disturbed. | 0 | Update bits of signals and signal groups are disturbed. | 1 | Only signal update bits are disturbed. | 2 | Only signal group update bits are disturbed. |  |  |  |
+| 0 | Update bits of signals and signal groups are disturbed. |  |  |  |  |  |  |  |  |
+| 1 | Only signal update bits are disturbed. |  |  |  |  |  |  |  |  |
+| 2 | Only signal group update bits are disturbed. |  |  |  |  |  |  |  |  |
+| disturbanceMode Identifies the disturbance mode: 0 Value The disturbance uses the value in disturbanceValue as counter. 1 Freeze The current counter value is transmitted. 2 Random A random value is transmitted as counter. | 0 | Value | The disturbance uses the value in disturbanceValue as counter. | 1 | Freeze | The current counter value is transmitted. | 2 | Random | A random value is transmitted as counter. |
+| 0 | Value | The disturbance uses the value in disturbanceValue as counter. |  |  |  |  |  |  |  |
+| 1 | Freeze | The current counter value is transmitted. |  |  |  |  |  |  |  |
+| 2 | Random | A random value is transmitted as counter. |  |  |  |  |  |  |  |
+| disturbanceCount -1 Infinite. 0 Stops the disturbance, e.g.a infinite disturbance. n Number of disturbances. | -1 | Infinite. | 0 | Stops the disturbance, e.g.a infinite disturbance. | n | Number of disturbances. |  |  |  |
+| -1 | Infinite. |  |  |  |  |  |  |  |  |
+| 0 | Stops the disturbance, e.g.a infinite disturbance. |  |  |  |  |  |  |  |  |
+| n | Number of disturbances. |  |  |  |  |  |  |  |  |
+| disturbanceValue This value is used in combination with the disturbanceMode. |  |  |  |  |  |  |  |  |  |
+| Return Values | 0: No error |  |  |  |  |  |  |  |  |
+| -1: General error |  |  |  |  |  |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |  |  |  |  |  |
+| 8.1 SP2 - 8.2 SP3 | CAN Simulation nodes | — | • |  |  |  |  |  |  |
+| Example — |  |  |  |  |  |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

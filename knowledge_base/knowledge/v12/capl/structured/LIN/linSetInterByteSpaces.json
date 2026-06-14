@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linSetInterByteSpaces",
+  "category": "LIN",
+  "title": "linSetInterByteSpaces",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetInterByteSpaces.htm",
+  "syntax": [
+    "dword linSetInterByteSpaces(dword arrayOfSixteenthBits[])"
+  ],
+  "description": [
+    "With the first function it is possible to set the inter-byte spaces [in bit times] for all data byte fields of all published frames (except for diagnostic frame 0x3D) of the calling LIN Slave node.",
+    "With the second function it is possible to set the inter-byte spaces [in bit times] for all data byte fields of a specified frame.",
+    "Inter-byte space is the period between the end of the stop bit of the preceding byte and the start bit of the following byte.",
+    "By default the inter-byte space between all byte fields is 0."
+  ],
+  "parameters": [
+    {
+      "name": "frameID",
+      "type": "",
+      "description": "LIN frame identifier whose inter-byte space should be changed"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\nint index;\ndword arrayOfSixteenthBits[9];\nlinFrame MotorControl frameMotorControl;\nfor (index=0; index < 9; ++index)\n{\nif (index <= frameMotorControl.DLC+1) {\n// for all valid data bytes and checksum byte set \r\n inter-byte space to 2 bit times\narrayOfSixteenthBits[index] = 32; \n}\nelse {\n// initialize unused array elements\narrayOfSixteenthBits[index] = 0;\n}\n}\nif (linSetInterByteSpaces(0x33, arrayOfSixteenthBits) \r\n != 0) {\n// the inter-byte spaces successfully set\n...\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

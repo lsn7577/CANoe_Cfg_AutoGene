@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "strtoul",
+  "category": "Other",
+  "title": "strtoul",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStrtoul.htm",
+  "syntax": [
+    "int strtoul(char s[], dword& result);"
+  ],
+  "description": [
+    "Converts the string s to an unsigned 32bit integer.The number base is",
+    "Whitespace (spaces or tabs) at the start of the string is ignored."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "String to be converted."
+    }
+  ],
+  "return": "-2: If s is empty or startIndex is larger than strlen(s).",
+  "example": {
+    "description": [],
+    "code": "char s[20] = \"123 0xFF\";\ndword number1, number2;\nint res;\nres = strtoul(s, number1);\nwrite(\"number1: %u, res: %d\", number1, res); // output: number1: 123, res: 3\nres = strtoul(s, res, number2);\nwrite(\"number2: %u, res: %d\", number2, res); // output: number2: 255, res: 8"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,117 @@
+{
+  "page_type": "method",
+  "name": "X509Verifier_VerifySigningRequest",
+  "category": "Security",
+  "title": "X509Verifier_VerifySigningRequest",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/Functions/CAPLfunctionX509Verifier_VerifySigningRequest.htm",
+  "syntax": [
+    "dword X509Verifier_VerifySigningRequest(qword objectHandle, qword csrHandle, dword& verificationResult)"
+  ],
+  "description": [
+    "Verification function for PKCS#10 Certificate Signing Requests (CSR). This function verifies that the proof of possession is valid for the claimed public key in this CSR. The function will fail in case of syntactically or structural invalid CSR. For this function, no trusted certificate is requried and not all content fields of the certificate are validated."
+  ],
+  "parameters": [
+    {
+      "name": "objectHandle",
+      "type": "",
+      "description": "(in) Handle with type 'X509Verifier'. The function will be called in context of this handle."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  qword objectFactory;\n  // Object handles\n  qword pkiAccess, decoder, encoder, verifier, signer, rootCert, ecuCert, subject;\n  // Result of certificate chain verification\n  dword verificationResult;\n  \n  // Buffers\n  byte keyBuffer[1000];\n  byte byteBuffer[1000];\n  char strBuffer[1000];\n  dword keyBufferLen;\n  dword byteBufferLen;\n  dword strBufferLen;\n}\n\nvoid X509_Modify_Sign_And_Verify() {\n\n  // X509 Object factory is the entry point for X.509 features. It is used to create object handles\nobjectFactory = GetX509ObjectFactory();\n  // Create handles for PkiAccess, Decoder, Encoder, Verifier\n  X509ObjectFactory_createX509Decoder(objectFactory, decoder);\n  X509ObjectFactory_createX509Encoder(objectFactory, encoder);\n  X509ObjectFactory_createX509Verifier(objectFactory, verifier);\n  X509ObjectFactory_createX509PkiAccess(objectFactory, pkiAccess);\n\n    // Note: This sample code does not contain the required crypto material.\n    // The required format is DER encoded X.509 certificate / private key as hexadecimal string, e.g. 112233AABBDD\n    // Please use your existing (hex encoded) key and certificates or use an example value included in Security Manager Configurator\n\n  // Decode the binary root certificate, lead certificate and root private key.\n  keyBufferLen = 1000;\n  X509ObjectFactory_BytesFromHexString(objectFactory, \" *** YOUR HEX ENCODED SIGNER PRIVATE KEY *** \", keyBuffer, keyBufferLen);\n\n  byteBufferLen = 1000;\n  X509ObjectFactory_BytesFromHexString(objectFactory, \" *** YOUR HEX ENCODED ECU CERTIFICATE *** \", byteBuffer, byteBufferLen);\n  X509Decoder_DecodeCertificate(decoder, ecuCert, byteBuffer, byteBufferLen);\n\n  byteBufferLen = 1000;\n  X509ObjectFactory_BytesFromHexString(objectFactory, \" *** YOUR HEX ENCODED SIGNER CERTIFICATE *** \", byteBuffer, byteBufferLen);\n  X509PkiAccess_CreateSigner(pkiAccess, keyBuffer, keyBufferLen, byteBuffer, byteBufferLen, \"SHA-256\", signer);\n\n  // Load the signer certificate handle\n  X509Signer_GetSignerCertificate(signer, rootCert);\n\n  // Now add the root certificates to the truststore of the verifier. These will be used for chain verification\n  X509Verifier_AddTrustedCertificate(verifier, rootCert);\n\n  // Verify the certificate against the truststore -> It is unchanged and must be valid\n  verificationResult = 0;\n  X509Verifier_VerifyCertificateChain(verifier, ecuCert, verificationResult);\n  write(\"Verification result: %d\", verificationResult);\n\n  // Update the root certificates validity dates\n  X509Certificate_SetValidFrom(rootCert, \"20000101000000Z\");\n  X509Certificate_SetValidTo(rootCert, \"20300101000000Z\");\n  X509Signer_UpdateAndSignCertificate(signer, rootCert);\n\n  // Verify the certificate against the truststore -> Root certificate is re-signed and must be valid\n  verificationResult = 0;\n  X509Verifier_VerifyCertificateChain(verifier, ecuCert, verificationResult);\n  write(\"Verification result: %d\", verificationResult);\n\n  // Get the subject DN from the certificate\n  X509Certificate_GetSubjectDN(ecuCert, subject);\n\n  // Update the ecu certificates validity dates\n  X509Certificate_SetValidFrom(ecuCert, \"20000101000000Z\");\n  X509Certificate_SetValidTo(ecuCert, \"20300101000000Z\");\n  X509DN_SetValueForAttribute(subject, \"2.5.4.3\", \"TESTTEST\"); // Update CN\n  X509DN_SetValueForAttribute(subject, \"1.2.3.4\", \"ANOTHER_TESTTEST\"); // Add custom Attribute\n\n  // Now update the signature and all relevant fields (Issuer, Auth Key Identifier, SignatureAlgorithm)\n  X509Signer_UpdateAndSignCertificate(signer, ecuCert);\n\n  // Again verify the certificate against the truststore -> It received a fresh signature and must be invalid\n  verificationResult = 0;\n  X509Verifier_VerifyCertificateChain(verifier, ecuCert, verificationResult);\n  write(\"Verification result: %d\", verificationResult);\n\n  // Utility to print the byte buffer into a hex string for printing\n  write(\"Generated certificates:\");\n  write(\"Root:\");\n  byteBufferLen = 1000;\n  X509Encoder_EncodeCertificate(encoder, rootCert, byteBuffer, byteBufferLen); // (DER-) encode the certificate structure into a byte buffer\n  strBufferLen = 1000;\n  X509ObjectFactory_BytesToHexString(objectFactory, byteBuffer, byteBufferLen, strBuffer, strBufferLen);\n  write(\"Hex:\\n%s\", strBuffer);\n  strBufferLen = 1000;\n  X509Certificate_ToString(rootCert, strBuffer, strBufferLen);\n  write(\"Textual:\\n%s\", strBuffer);\n  write(\"Child:\");\n  byteBufferLen = 1000;\n  X509Encoder_EncodeCertificate(encoder, ecuCert, byteBuffer, byteBufferLen); // (DER-) encode the certificate structure into a byte buffer\n  strBufferLen = 1000;\n  X509ObjectFactory_BytesToHexString(objectFactory, byteBuffer, byteBufferLen, strBuffer, strBufferLen);\n  write(\"Hex:\\n%s\", strBuffer);\n  strBufferLen = 1000;\n  X509Certificate_ToString(ecuCert, strBuffer, strBufferLen);\n  write(\"Textual:\\n%s\", strBuffer);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP4",
+      "11.0 SP4",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

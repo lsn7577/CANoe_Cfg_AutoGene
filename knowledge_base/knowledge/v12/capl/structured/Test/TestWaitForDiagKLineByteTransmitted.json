@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDiagKLineByteTransmitted",
+  "category": "Test",
+  "title": "TestWaitForDiagKLineByteTransmitted",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDiagKLineByteTransmitted.htm",
+  "syntax": [
+    "long TestWaitForDiagKLineByteTransmitted(dword timeout_ms); // form 1"
+  ],
+  "description": [
+    "Waits for the occurrence of a transmitted byte. Should the byte not occur before the expiration of the time timeout_ms, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "timeout_ms",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

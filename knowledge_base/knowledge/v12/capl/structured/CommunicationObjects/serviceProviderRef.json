@@ -1,0 +1,73 @@
+{
+  "page_type": "function",
+  "name": "serviceProviderRef",
+  "category": "CommunicationObjects",
+  "title": "serviceProviderRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionServiceProviderRef.htm",
+  "syntax": [
+    "serviceProviderRef * <var>"
+  ],
+  "description": [
+    "References a service provider endpoint."
+  ],
+  "parameters": [
+    {
+      "name": "Service",
+      "type": "",
+      "description": "Service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "serviceProviderRef MirrorAdjustment svc1;\nsvc1 = MirrorAdjustment.providerSide[LeftMirror];\nsvc1.ProvideService();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the provider endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the provider endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Address Generalized address of the endpoint. Can be used with binding-specific API like Abstract_GetDisplayName to retrieve information.",
+        "AddressHandle",
+        "Read only"
+      ]
+    },
+    {
+      "name": "Abstract_GetDisplayName",
+      "link": "../Functions/CAPLfunctionAbstractGetDisplayName.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

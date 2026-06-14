@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_GetState",
+  "category": "ISO11783",
+  "title": "TCIL_GetState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILGetState.htm",
+  "syntax": [
+    "long TCIL_GetState(); // form 1"
+  ],
+  "description": [
+    "Returns the current state of the TC IL."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function"
+    }
+  ],
+  "return": "0: Initialized",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  long state;\n  state = TCIL_GetState();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

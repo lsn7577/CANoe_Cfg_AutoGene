@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateWeldingDetectionRes_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreateWeldingDetectionRes_DIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateWeldingDetectionRes_Din.htm",
+  "syntax": [
+    "long SCC_CreateWeldingDetectionRes_DIN ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, char StatusCode[], char Notification[], float PresentVoltage )"
+  ],
+  "description": [
+    "Creates a Welding Detection Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

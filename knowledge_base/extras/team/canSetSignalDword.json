@@ -1,0 +1,44 @@
+{
+  "page_type": "function",
+  "name": "setSignalDword",
+  "syntax": [
+    "void setSignalDword(signal sg, dword value);"
+  ],
+  "description": [
+    "Team-internal wrapper around setSignal() that accepts a dword value and",
+    "writes it to a typed signal handle. Validates value range against the",
+    "signal min/max before issuing the write. Logs the operation to the",
+    "central telemetry bus for offline replay."
+  ],
+  "parameters": [
+    {
+      "name": "sg",
+      "type": "signal",
+      "description": "Target signal handle"
+    },
+    {
+      "name": "value",
+      "type": "dword",
+      "description": "Unsigned 32-bit value"
+    }
+  ],
+  "return": [
+    "void"
+  ],
+  "example": {
+    "description": [
+      "Set the EngineSpeed signal to 1500 rpm from a CAN Rx handler."
+    ],
+    "code": "on message EngineMsg {\n  setSignalDword(EngineSpeed, 1500);\n}"
+  },
+  "availability": [
+    [
+      "Since CANoe 12.0"
+    ],
+    [
+      "Internal wrapper available since 2025-Q3"
+    ]
+  ],
+  "selectors": [],
+  "note": "For internal use only. Do not call from test modules."
+}

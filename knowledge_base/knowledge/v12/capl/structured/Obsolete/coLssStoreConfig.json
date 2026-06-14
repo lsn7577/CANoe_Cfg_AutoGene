@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coLssStoreConfig",
+  "category": "Obsolete",
+  "title": "coLssStoreConfig",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssStoreConfig.htm",
+  "syntax": [
+    "void coLssStoreConfig( dword errCode[] );"
+  ],
+  "description": [
+    "The configured parameters are written into non-volatile memory with this service. Only one LSS slave may be in configuration mode."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoLssStoreConfig( errCode );\nif (errCode[0] == 0) {\n  write( \"LSS store configuration commanded\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "IP_Address::IsIPv4Address",
+  "category": "IP",
+  "title": "IP_Address::IsIPv4Address",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionIsIPv4Address.htm",
+  "syntax": [
+    "long IP_Address::IsIPv4Address();"
+  ],
+  "description": [
+    "Checks if the current address is an IPv4 address."
+  ],
+  "parameters": [],
+  "return": "Returns 1 if the object currently represents an IPv4 address.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  DoSomething( IP_Address(192.168.1.2) );\n}\n\nvoid DoSomething( IP_Address addr )\n{\n  if (addr.IsIPv4Address())\n  {\n    // ...\n  }\n  else if (addr.IsIPv6Address())\n  {\n    // ...\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

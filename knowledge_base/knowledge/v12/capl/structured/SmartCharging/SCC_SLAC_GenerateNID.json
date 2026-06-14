@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GenerateNID",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GenerateNID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GenerateNID.htm",
+  "syntax": [
+    "void SCC_SLAC_GenerateNID ( byte NMK[], byte NID_out[] )"
+  ],
+  "description": [
+    "Generates a matching NID to a given NMK, using the specified algorithm, to the output buffer. Doesn't affect the internal state."
+  ],
+  "parameters": [
+    {
+      "name": "NMK",
+      "type": "",
+      "description": "Network Membership Key (16 byte)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

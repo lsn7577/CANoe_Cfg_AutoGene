@@ -1,0 +1,67 @@
+{
+  "page_type": "concept",
+  "name": "Common CAPL Gotchas",
+  "category": "team",
+  "subcategory": "gotchas",
+  "title": "Common CAPL Pitfalls and Gotchas (EQ07 Project)",
+  "source": "hand_curated_v1",
+  "intro": [
+    "Hard-won lessons from EQ07. Each gotcha includes symptom, root cause, fix. Append-only."
+  ],
+  "sections": [
+    {
+      "heading": "1. on timer fires even when measurement is paused",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "SYMPTOM: Timer callback fires after Pause Measurement.",
+          "ROOT CAUSE: Timers are independent of measurement state.",
+          "FIX: Cancel in on stop, check isMeasurementRunning() in handler."
+        ],
+        "tables": [],
+        "code_blocks": [
+          "on timer g_tPeriodic {\n  if (!isMeasurementRunning()) {\n    cancelTimer(this);\n    return;\n  }\n  // do work\n}"
+        ]
+      }
+    },
+    {
+      "heading": "2. output() uses wrong channel",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "SYMPTOM: output(msg) sends on different channel, causing cross-talk.",
+          "ROOT CAUSE: output() uses channel of most recent RX message.",
+          "FIX: Always specify channel: output(msg, CAN_CHANNEL_1);"
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "3. setSignal with wrong type silently fails",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "SYMPTOM: Signal value doesnt change, no error.",
+          "ROOT CAUSE: setSignal() is type-strict. long vs dword may compile but fail at runtime.",
+          "FIX: Use project wrappers (setSignalDword, setSignalLong) for explicit checks."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "4. DiagSendRequest is async",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "SYMPTOM: Diagnostic test fails intermittently; tester sees old response.",
+          "ROOT CAUSE: DiagSendRequest returns immediately; code after assumes response available.",
+          "FIX: Use Diag_GetResponse callback or DiagSendRequestAndWaitForResponse."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    }
+  ]
+}

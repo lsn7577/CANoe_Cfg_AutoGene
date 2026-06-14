@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagGetIterationCount, diagGetRespIterationCount",
+  "category": "Diagnostics",
+  "title": "diagGetIterationCount, diagGetRespIterationCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetIterationCount.htm",
+  "syntax": [
+    "long diagGetIterationCount( diagRequest obj, char complexParamQualifier[]);",
+    "long diagRequest::GetIterationCount( char complexParamQualifier[]);"
+  ],
+  "description": [
+    "Returns the number of sub-parameter iterations the complex parameter holds."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostic object."
+    }
+  ],
+  "return": "If >= 0 the number of iterations, otherwise an error code.",
+  "example": {
+    "description": [],
+    "code": "testcase TC_ReadFaultMemory()\n{\n  diagRequest FaultMemory_ReadAllIdentified req;\n  long count;\n  req.SendRequest();\n  TestWaitForDiagResponse( req, 1000);\n\n  count = req.GetRespIterationCount( \"ListOfDTC\");\n  while( count -- > 0)\n  write( \"DTC%d = %06x\", count, req.GetComplexRespParameter( \"ListOfDTC\", count, \"DTC\"));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

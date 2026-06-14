@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_diag_SendFunctional",
+  "category": "Diagnostics",
+  "title": "_diag_SendFunctional",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSendFunctionalCallback.htm",
+  "syntax": [
+    "void _diag_SendFunctional (BYTE data[]);"
+  ],
+  "description": [
+    "With this CAPL callback function CANoe triggers the CAPL program to send a functional diagnostic request."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "The data of the diagnostic primitive (request) that should be transmitted on the bus."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_Diag_SendFunctional( BYTE data[])\n{\n  // Send data on the functional TP connection created earlier\n  CanTpSendData( gHandleFunctional, data, elcount( data));\n  write(\"_Diag_SendFunctional data[0]=%d\", data[0]);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

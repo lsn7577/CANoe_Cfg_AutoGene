@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendInquireSerialNoRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendInquireSerialNoRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendInquireSerialNoReq.htm",
+  "syntax": [
+    "long coTfsLssSendInquireSerialNoRequest( dword[] pSerialNo );"
+  ],
+  "description": [
+    "This function sends an Inquire serial number request and waits for the response."
+  ],
+  "parameters": [
+    {
+      "name": "pSerialNo",
+      "type": "",
+      "description": "Serial number part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword pSerialNo[1];\n\n/* send LSS inquire serial number request */\n\nif (coTfsLssSendInquireSerialNoRequest( pSerialNo ) == 1) {\n  /* sent LSS inquire serial number request and received response */\n  /* received value can be found in pSerialNo */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

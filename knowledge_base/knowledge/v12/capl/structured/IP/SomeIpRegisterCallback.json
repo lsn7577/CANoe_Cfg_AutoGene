@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpRegisterCallback",
+  "category": "IP",
+  "title": "SomeIpRegisterCallback",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpRegisterCallback.htm",
+  "syntax": [
+    "LONG SomeIpRegisterCallback( dword objHandle, char callbackName[] );"
+  ],
+  "description": [
+    "Enables to register/unregister a CAPL callback function for an object which has been created separately."
+  ],
+  "parameters": [
+    {
+      "name": "objHandle",
+      "type": "",
+      "description": "Handle of an already existing SOME/IP IL object for which a new CAPL callback function should be registered/unregistered . The following objects and their corresponding callbacks are supported:"
+    }
+  ],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

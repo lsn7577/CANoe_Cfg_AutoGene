@@ -1,0 +1,163 @@
+{
+  "page_type": "function",
+  "name": "testILSetMessageProperty",
+  "category": "Test",
+  "title": "testILSetMessageProperty",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestILSetMessageProperty.htm",
+  "syntax": [
+    "long testILSetMessageProperty( dbNode node, dbMsg msg, char propertyName[], long propertyValue);"
+  ],
+  "description": [
+    "Sets the internal property of a message, assigned to the node."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Node name as defined in the database."
+    },
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message name as defined in the database."
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "MessageCounterToContinue",
+      "type": "",
+      "description": "Defines the next value of the intern message counter that will be sent. Applicable for the PGNs 0, 1024, 2816, 61469 and 61483 only (see Message Checksum and Message Counter). Valid values for propertyValue are 0 to 7 (PGN = 0) or 0 to 15 (all other applicable PGNs)."
+    },
+    {
+      "name": "DA",
+      "type": "",
+      "description": "Sets the message destination address."
+    },
+    {
+      "name": "Priority",
+      "type": "",
+      "description": "Sets the message priority."
+    },
+    {
+      "name": "DelayTime",
+      "type": "",
+      "description": "Sets the message delay time in ms."
+    },
+    {
+      "name": "propertyValue",
+      "type": "",
+      "description": "New value to be set for the property."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if (testILSetMessageProperty(EBS, TSC1, \"MessageCounterToContinue\", 12) < 0)\n{\n  write(\"Can’t set message property ‘MessageCounterToContinue‘\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.5",
+      "13.0",
+      "—",
+      "—",
+      "2.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

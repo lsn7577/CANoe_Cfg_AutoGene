@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_SetNodeProperty",
+  "category": "ISO11783",
+  "title": "VTIL_SetNodeProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILSetNodeProperty.htm",
+  "syntax": [
+    "long VTIL_SetNodeProperty( char propertyName[], long propertyValue); // form 1"
+  ],
+  "description": [
+    "Changes an internal property of the node."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": "void SetNodeProperties()\n{\n  //Set language to English\n  VTIL_SetNodeProperty(VT, \"languageCode\", 0x656E);\n  // Object Pools have to be stored in the subdirectory \"OP_VT1\"\n  VTIL_SetNodeProperty(VT, \"locationOfStoredObjectPools\", \"OP_VT1\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GetCMSetKeyCnfData",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GetCMSetKeyCnfData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GetCMSetKeyCnfData.htm",
+  "syntax": [
+    "void SLAC_GetCMSetKeyCnfData ( dword& MyNonce, dword& YourNonce, dword& PID, dword& PRN, dword& PMN, dword& CCOCapability )"
+  ],
+  "description": [
+    "Queries the additional parameters of a CM_Set_Key.Cnf message, all at once, via references."
+  ],
+  "parameters": [
+    {
+      "name": "MyNonce",
+      "type": "",
+      "description": "Random number that will be used to verify next message (usually 0)"
+    }
+  ],
+  "return": "Data and length of the reserved field.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

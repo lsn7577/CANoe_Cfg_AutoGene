@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AfdxCompletePacket",
+  "category": "ADFX",
+  "title": "AfdxCompletePacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxCompletePacket.htm",
+  "syntax": [
+    "long AfdxCompletePacket( long packet );"
+  ],
+  "description": [
+    "This function completes a packet before sending it with AfdxOutputPacket. It calculates the fields that are marked with CompleteProtocol in the protocol overview, e.g. check sum, lengths, etc.",
+    "A frame needs to be completed prior to transmission. This is the case when one of the header fields is changed in an existing frame or the payload size is changed afterwards. With this function the check sum and length fields in the UDP and IPv4 header are calculated and filled in."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

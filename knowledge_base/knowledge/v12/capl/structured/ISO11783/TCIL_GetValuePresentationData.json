@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TCIL_GetValuePresentationData",
+  "category": "ISO11783",
+  "title": "TCIL_GetValuePresentationData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILGetValuePresentationData.htm",
+  "syntax": [
+    "long TCIL_GetValuePresentationData(dbNode client, dword ddi, dword elementNumber,dword idOfDVP, long offset, float scale, dword numberOfDecimals, dword designatorBufferSize, char designatorBuffer[]); // form 1"
+  ],
+  "description": [
+    "Returns all properties (id, offset, scale, numberDecimals, designator) of the ValuePresentation object referenced by the DeviceProcessData (DPD) or DeviceProperty (DPT) object defined by DDI/elementNumber.",
+    "Form 2 applicable in test module / test unit only."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nchar designator[256];\ndword idOfDVP, numOfDecimals;\nlong offset;\nfloat scale;\n// Retrieve all properties of the DVP object used by the DPD with DDI=17 and elementNumber=3\n// from DDOP uploaded by Sprayer to TC\nresult = TCIL_GetValuePresentationData(TC, Sprayer, 17, 3, idOfDVP, offset, scale, numOfDecimals, 256, designator);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

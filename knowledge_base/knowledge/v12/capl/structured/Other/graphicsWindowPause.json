@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "graphicsWindowPause",
+  "category": "Other",
+  "title": "graphicsWindowPause",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGraphicsWindowPause.htm",
+  "syntax": [
+    "void graphicsWindowPause(char[] windowName, byte active);"
+  ],
+  "description": [
+    "Pauses and resumes a CANoe Graphics Window."
+  ],
+  "parameters": [
+    {
+      "name": "windowName",
+      "type": "",
+      "description": "The name of the Graphics Window."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "//Pause the Graphics Window\ngraphicsWindowPause(\"Graphics\", 1);\n\n//Fit the y axis so that all values are visible\ngraphicsWindowFit(\"Graphics\", 2);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

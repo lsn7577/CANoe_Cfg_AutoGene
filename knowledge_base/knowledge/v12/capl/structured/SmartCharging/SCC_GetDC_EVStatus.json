@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetDC_EVStatus",
+  "category": "SmartCharging",
+  "title": "SCC_GetDC_EVStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetDC_EVStatus.htm",
+  "syntax": [
+    "void SCC_GetDC_EVStatus ( long& EVReady, long& EVCabinConditioning, long& EVRESSConditioning, char EVErrorCode[], long& EVRESSSOC) // form 1"
+  ],
+  "description": [
+    "Gets the elements of DC_EVStatus (DIN/ISO) of a received DC message."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Returns the DC status bits of the vehicle and its error code, if contained in the message.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

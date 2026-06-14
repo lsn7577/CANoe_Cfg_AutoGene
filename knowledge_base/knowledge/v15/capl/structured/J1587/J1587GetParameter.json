@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "J1587GetParameter",
+  "category": "J1587",
+  "title": "J1587GetParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1587/Functions/CAPLfunctionJ1587GetParameter.htm",
+  "syntax": [
+    "byte J1587GetParameter(J1587Message msg /*in*/, J1587Param param /*out*/, word index /*in*/)"
+  ],
+  "description": [
+    "Gets a J1587 parameter inside a J1708 message at a given index."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "J1708 message"
+    },
+    {
+      "name": "param",
+      "type": "",
+      "description": "returned parameter at the given index"
+    },
+    {
+      "name": "index",
+      "type": "",
+      "description": "index of parameter to retrieve"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "on J1587Message 50 // 50 is Sender MID, can be dbNode name or MID\n{\n  dword count, i;\n  J1587Param param;\n  count = GetParameterCount(this);\n\n  for (i = 0; i < count; i++) \n  {\n    if (J1587GetParameter(this, param, i) == 0) \n    {\n      write (\"Parameter with PID %d received: %d\", param.J1587_PID);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.0",
+      "7.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "J1587",
+      "J1587",
+      "J1587",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,20 @@
+{
+  "page_type": "concept",
+  "name": "Diagnostic Event Handlers in Analysis Branch",
+  "category": "Diagnostics",
+  "title": "Diagnostic Event Handlers in Analysis Branch",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/CAPLfunctionsDiagnosticsEventHandlerAnalysisBranch.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "On diagResponse Sessions::*\n{\n  char line[200];\n  char ecu[100];\n  long i;\n  long firstCall = 1;\n  if( this.IsPositiveResponse() == 1)\n    write( \"Positive response\");\n  else\n    write( \"Negative response\");\n\n  diagGetCurrentEcu( ecu, elcount(ecu));\n  DiagGetObjectPath( this, line, elcount( line));\n\n  write( \"on diagResponse Sessions::*: %s from %s\", line, ecu);\n  i = 0;\n  while( DiagGetParameterPath( this, i, line, elcount(line)) > 0)\n  {\n    char symbol[200];\n    this.GetParameter( line, symbol, elcount(symbol));\n    write( \"%4d %-40s = %s\", i++, line, symbol);\n  }\n\n  if( firstCall)\n  {\n    firstCall = 0;\n    line[0] = 0;\n    diagGetDescriptionInformation( \"\", line, elcount(line));\n    write( line);\n\n    line[0] = 0;\n    i = diagGetActiveVariant( line, elcount(line));\n    write( \"  diagGetActiveVariant (no target) returns %d and '%s'\", i, line);\n\n    line[0] = 0;\n    i = diagGetConfiguredVariant( line, elcount(line));\n    write( \"  diagGetConfiguredVariant (no target) returns %d and '%s'\", i, line);\n  }\noutput(this);\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

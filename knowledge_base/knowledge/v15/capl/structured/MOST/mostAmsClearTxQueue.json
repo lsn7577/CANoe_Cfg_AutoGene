@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "mostAmsClearTxQueue",
+  "category": "MOST",
+  "title": "mostAmsClearTxQueue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTAmsClearTxQueue.htm",
+  "syntax": [
+    "long mostAmsClearTxQueue(long channel);"
+  ],
+  "description": [
+    "Clears all entries in the AMS send buffer.",
+    "This command can be used to stop further sending of AMS messages in case of errors (e.g. critical unlock or light off) or if the system state changes to \"NotOk\"."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.0",
+      "6.0",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST50 MOST150",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

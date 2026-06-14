@@ -1,0 +1,145 @@
+{
+  "page_type": "function",
+  "name": "mostGenerateBusloadEthPkt",
+  "category": "MOST",
+  "title": "mostGenerateBusloadEthPkt",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTGenerateBusloadEthPkt.htm",
+  "syntax": [
+    "long mostGenerateBusloadEthPkt(long channel, long pkts);"
+  ],
+  "description": [
+    "The function sends cyclical packets on the Ethernet channel. Use the mostConfigureBusloadEthPkt function to specify the send parameters and payload pattern."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Stops the busload generation"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Sends the given number of packets"
+    },
+    {
+      "name": "-1",
+      "type": "",
+      "description": "Sends continual packets"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [
+      "Configure and start bus load stress on keyboard event."
+    ],
+    "code": "on key 's'\n{\n   long i, channel, rate, countertype, counterpos, datalen;\n   int64 srcadr, destadr;\n   byte data[1506];\n\n   channel     = 1;\n   srcadr      = -1LL; // use own MAC address as source\n   destadr     = 0x010203040506LL;\n   rate        = 50;   // packets per second\n   countertype = 4;    // 4 byte counter\n   counterpos  = 9;    // counter in byte6..byte9\n   datalen     =300;\n\n   // fill payload of stress packet\n   for(i = 0; i < datalen; ++i)\n      data[i] = (byte)i;\n\n   // configure stress pattern\n   mostConfigureBusloadEthPkt(channel, rate, countertype, counterpos, srcadr, destadr, datalen, data);\n\n   // start generation of 500 packets\n   mostGenerateBusloadEthPkt(channel, 500);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5 SP2",
+      "7.5 SP2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST150",
+      "MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPActivate",
+  "category": "ISO11783",
+  "title": "Iso11783OPActivate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPActivate.htm",
+  "syntax": [
+    "long Iso11783OPActivate( dword ecuHandle);"
+  ],
+  "description": [
+    "The function activates the Object Pool API. The initialization procedure with the Virtual Terminal is performed and the object pool is transmitted to the Virtual Terminal.",
+    "During the initialization procedure some information from the Virtual Terminal is requested. This can be suppressed with the options parameter. The requested information can be get with the function Iso11783OPGetVTInfo."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "dword handle = 0;\nhandle = Iso11783CreateECU( gECUName );\n\nIso11783OPLoad( handle, \"ObjectPool.iop\", \r\n \"pool001\" );\nIso11783OPActivate( handle );\nIso11783ECUGoOnline(handle, gECUAddress );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "C2xSetSendParameters",
+  "category": "Car2x",
+  "title": "C2xSetSendParameters",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSetSendParameters.htm",
+  "syntax": [
+    "C2xSetSendParameters(LONG appChannel, LONG txPower, LONG antenna, LONG dataRate, LONG expiry)"
+  ],
+  "description": [
+    "Set transmission relevant send parameters.",
+    "This method allows to redefine some or all transmission related parameters on the fly; for all following transmissions on a specific VN4610 channel those new default values will be used.",
+    "In fact the method overwrites the corresponding internal configuration settings provided by the setup-dialog.",
+    "To set just a subset of the parameters the value <-1> can be used for antenna, dataRate and expiry to leave the corresponding parameters of the configuration unchanged.",
+    "Note: This method can only be used with VN4610 hardware."
+  ],
+  "parameters": [
+    {
+      "name": "appChannel",
+      "type": "",
+      "description": "Channel to apply settings to (1 .. n), n = available hardware channels (1=Ath1, 2=Ath2,…)"
+    }
+  ],
+  "return": "0 or error code as in C2xConfigureChannel.",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  Write(\"Set SendParameters for Ch1 to -10dBm  Ant2, 9Mbps; don’t change expiry \");\n  C2xSetSendParameters(1, -10, 2, 9, -1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

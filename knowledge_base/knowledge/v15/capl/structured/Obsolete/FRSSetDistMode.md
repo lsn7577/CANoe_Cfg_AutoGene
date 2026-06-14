@@ -1,0 +1,19 @@
+# FRSSetDistMode
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function |  |  |  |  |
+|---|---|---|---|---|
+| Note The function is only supported with an installed FRstress. The function must be called before FRSStart. |  |  |  |  |
+| Function Syntax | long FRSSetDistMode (int triggerCondition, int mode); |  |  |  |
+| Function | Sets the disturbance type. A bitstream disturbance generates the disturbance sequence after the trigger is detected. The frame disturbance changes individual bits within a frame with bit accuracy. |  |  |  |
+| Parameters | triggerCondition Values: 1-4 |  |  |  |
+| mode Values: 1=Bitstream disturbance (analog & digital mode), the disturbance is configured using FRSSetBitstreamDist.2=Frame disturbance (only digital mode), the disturbance is configured using FRSSetDistElem, FRSSetDist and FRSSetDistPayload. |  |  |  |  |
+| Return Values | 0: successful |  |  |  |
+| -1: in case of error |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 7.6 SP4 | FlexRay Digital, analog mode Test nodes | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

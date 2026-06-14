@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_MsgDistViolation, ChkStart_MsgDistViolation",
+  "category": "Test",
+  "title": "ChkCreate_MsgDistViolation, ChkStart_MsgDistViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateMsgDistViolation.htm",
+  "syntax": [
+    "dword ChkCreate_MsgDistViolation (Message aReferenceMessage, Message aObservedMessage, duration aMinDistance, duration aMaxDistance, Callback aCallback);"
+  ],
+  "description": [
+    "Event is generated if the time interval that starts on receipt of the reference message and ends with the receipt of the observed message is smaller than aMinDistance or is larger than aMaxDistance.",
+    "The numeric constructors with the parameter 'slotID1/2' can only be applied to a FlexRay bus.",
+    "For FlexRay only valid data frames and PDUs are recognized as communication, Null Frames and Erroneous frames are ignored.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aReferenceMessage",
+      "type": "",
+      "description": "Must exist in DB"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks the distance between two messages\ncheckId = ChkStart_MsgDistViolation (ReferenceMsg, MsgToObserve, 90, 110);\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

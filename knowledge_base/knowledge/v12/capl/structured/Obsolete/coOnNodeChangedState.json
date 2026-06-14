@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coOnNodeChangedState",
+  "category": "Obsolete",
+  "title": "coOnNodeChangedState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOnNodeChangedState.htm",
+  "syntax": [
+    "void coOnNodeChangedState( dword newState );"
+  ],
+  "description": [
+    "This function is called if the state of the node changes. This can be triggered by the functions coSetLocalState, coStartUp, coShutDown or via the network."
+  ],
+  "parameters": [
+    {
+      "name": "newState",
+      "type": "",
+      "description": "New state of the node:4 - stopped5 - operational6 - reset node7 - reset communication127 - pre-operational"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnNodeChangedState( dword newState ){\n  write( \"New state %d\", newState );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

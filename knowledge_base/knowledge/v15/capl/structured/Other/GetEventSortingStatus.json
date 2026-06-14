@@ -1,0 +1,151 @@
+{
+  "page_type": "function",
+  "name": "GetEventSortingStatus",
+  "category": "Other",
+  "title": "GetEventSortingStatus",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionGetEventSortingStatus.htm",
+  "syntax": [
+    "int GetEventSortingStatus(message msg);",
+    "int GetEventSortingStatus(pg msg);",
+    "int GetEventSortingStatus(gmLanMessage msg);",
+    "int GetEventSortingStatus(linFrame msg);",
+    "int GetEventSortingStatus(mostMessage msg);",
+    "int GetEventSortingStatus(mostAmsMessage msg);",
+    "int GetEventSortingStatus(mostRawMessage msg);",
+    "int GetEventSortingStatus(j1587Param msg);",
+    "int GetEventSortingStatus(linBaudrateEvent event);",
+    "int GetEventSortingStatus(linCsError event);",
+    "int GetEventSortingStatus(linDlcinfo event);",
+    "int GetEventSortingStatus(linReceiveError event);",
+    "int GetEventSortingStatus(linSchedulerModeChange event);",
+    "int GetEventSortingStatus(linSlaveTimeout event);",
+    "int GetEventSortingStatus(linSleepModeEvent event);",
+    "int GetEventSortingStatus(linSyncError event);",
+    "int GetEventSortingStatus(linTransmError event);",
+    "int GetEventSortingStatus(linWakeupFrame event);",
+    "int GetEventSortingStatus(beanError event);",
+    "int GetEventSortingStatus(mostLightLockError event);",
+    "int GetEventSortingStatus(FRSlot event);",
+    "int GetEventSortingStatus(FRFrame msg);",
+    "int GetEventSortingStatus(FrStartCycle event);"
+  ],
+  "description": [
+    "Determines the Event Sorting state.",
+    "With active Event Sorting the return value indicates if the given event in the Simulation Setup of CANoe was processed in correct time sequence."
+  ],
+  "parameters": [
+    {
+      "name": "Message event variable of type",
+      "type": "",
+      "description": "\"message\", \"pg\", \"gmLanMessage\", \"linFrame\", \"mostMessage\", \"mostAmsMessage\", \"mostRawMessage\", \"j1587Param\", \"linBaudrateEvent\", \"linCsError\", \"linDlcinfo\", \"linReceiveError\", \"linSchedulerModeChange\", \"linSlaveTimeout\", \"linSleepModeEvent\", \"linSyncError\", \"linTransmError\", \"linWakeupFrame\", \"beanError\", \"mostLightLockError\", \"FRSlot\", \"FRFrame\" or \"FrStartCycle\"."
+    }
+  ],
+  "return": "The Event Sorting is inactive or it concerns a program internal event that will never be",
+  "example": {
+    "description": [],
+    "code": "on message *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linSlaveTimeout\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linTransmError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linCsError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linReceiveError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linSyncError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non pg *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non gmLanMessage *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}  \n}\non linFrame *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non mostMessage *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non mostRawMessage\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non mostAMSMessage *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non J1587Param *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event\", (double)this.msgOrigTime/100000 );\n}\n}\non linBaudrateEvent\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linDlcInfo\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linSchedulerModeChange\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linSleepModeEvent\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linWakeupFrame\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non mostLightLockError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non FRSlot *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non FRFrame *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non FRStartCycle *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.0",
+      "6.0",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

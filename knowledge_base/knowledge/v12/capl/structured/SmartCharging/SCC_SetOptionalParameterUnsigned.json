@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetOptionalParameterUnsigned",
+  "category": "SmartCharging",
+  "title": "SCC_SetOptionalParameterUnsigned",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetOptionalParameterUnsigned.htm",
+  "syntax": [
+    "long SCC_SetOptionalParameterUnsigned ( dword Parameter, dword ParameterValue )"
+  ],
+  "description": [
+    "Sets an optional parameter using a DWORD value after creating a message."
+  ],
+  "parameters": [
+    {
+      "name": "Parameter",
+      "type": "",
+      "description": "ID number of the parameter, as denoted in the lists of optional parameters below each Create-function"
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

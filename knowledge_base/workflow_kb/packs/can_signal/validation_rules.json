@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1.0",
+  "rules": [
+    {
+      "id": "can_steps_require_dbc",
+      "severity": "error",
+      "message": "CAN message/signal steps must resolve a DBC path from project config or channel config."
+    },
+    {
+      "id": "can_steps_require_channel",
+      "severity": "error",
+      "message": "CAN operations must declare an operation channel."
+    }
+  ]
+}
+

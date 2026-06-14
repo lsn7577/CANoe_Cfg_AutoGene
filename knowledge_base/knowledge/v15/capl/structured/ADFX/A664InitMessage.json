@@ -1,0 +1,158 @@
+{
+  "page_type": "function",
+  "name": "A664InitMessage",
+  "category": "ADFX",
+  "title": "A664InitMessage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionA664InitMessage.htm",
+  "syntax": [
+    "long A664InitMessage (a664Message aMessage, dword srcIP, dword dstIP, word srcUDP, word dstUDP, word VLid, word payloadSize)"
+  ],
+  "description": [
+    "The complete Ethernet, IP- and UDP headers for an AFDX message are consistently set based on the given parameters. The payload area is initialized with 0."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The message object to be initialized."
+    },
+    {
+      "name": "srcIP",
+      "type": "",
+      "description": "Source IP address to be used for the Eth and IP headers."
+    },
+    {
+      "name": "dstIP",
+      "type": "",
+      "description": "Destination IP address to be used for the IP headers."
+    },
+    {
+      "name": "srcUDP",
+      "type": "",
+      "description": "Source UDP port for the UDP header."
+    },
+    {
+      "name": "dstUDP",
+      "type": "",
+      "description": "Destination UDP port for the UDP header."
+    },
+    {
+      "name": "VLid",
+      "type": "",
+      "description": "VLId to be used for the destination Eth header (see selector EthVlId)."
+    },
+    {
+      "name": "payloadSize",
+      "type": "",
+      "description": "Size of the message payload after UDP header without counting the sequence number."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "9.0",
+      "9.0",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "AFDX",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

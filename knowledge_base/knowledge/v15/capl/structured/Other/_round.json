@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "_round",
+  "category": "Other",
+  "title": "_round",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionRound.htm",
+  "syntax": [
+    "long _round(double x); // form 1",
+    "int64 _round64(double x); // from 2"
+  ],
+  "description": [
+    "Rounds x to the nearest integral number. The rounding method used is symmetric arithmetic rounding."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "Number to be rounded"
+    }
+  ],
+  "return": "Nearest integral number.\nFor very large numbers, you should use _round64, which returns a 64 bit integer.",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = _round(2.4); // result == 2\nresult = _round(2.5); // result == 3\nresult = _round(-3.5); // result == -4"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.0",
+      "7.0",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

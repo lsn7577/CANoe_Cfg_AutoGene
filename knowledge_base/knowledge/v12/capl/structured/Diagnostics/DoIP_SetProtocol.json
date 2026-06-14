@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetProtocol",
+  "category": "Diagnostics",
+  "title": "DoIP_SetProtocol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetProtocol.htm",
+  "syntax": [
+    "void DoIP_SetProtocol (dword protocolID);"
+  ],
+  "description": [
+    "Sets protocol version used in DoIP PDUs."
+  ],
+  "parameters": [
+    {
+      "name": "protocolID",
+      "type": "",
+      "description": "1: Draft version (2010)2: First released ISO standard 2012 (ISO 13400-2 first edition 2012-06-01)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "This value can also be configured globally on the diagnostics configuration dialog, DoIP Main Settings."
+    ],
+    "code": "// Use early draft version of the protocol\nDoIP_SetProtocol(1);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

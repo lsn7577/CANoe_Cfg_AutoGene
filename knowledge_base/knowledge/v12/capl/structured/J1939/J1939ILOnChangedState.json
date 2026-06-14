@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939ILOnChangedState",
+  "category": "J1939",
+  "title": "J1939ILOnChangedState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILOnChangedState.htm",
+  "syntax": [
+    "void J1939ILOnChangedState( long state )"
+  ],
+  "description": [
+    "This callback function is called from the J1939 IL if it has changed its state."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void J1939ILOnChangedState( LONG state )\n{\n  switch(state) {\n    case 1: // Claiming\n      break;\n    case 2: // Active\n      break;\n    case 3: // Stopped\n      break;\n    case 4: // Suspended\n      break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

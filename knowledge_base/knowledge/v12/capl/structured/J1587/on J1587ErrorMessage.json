@@ -1,0 +1,26 @@
+{
+  "page_type": "event",
+  "name": "on J1587ErrorMessage",
+  "category": "J1587",
+  "title": "on J1587ErrorMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1587/EventHandler/CAPLfunctionOnJ1587ErrorMessage.htm",
+  "syntax": [],
+  "description": [
+    "Defines the event handler for an erroneous J1708 message. The error code is contained in J1587ErrorMessage::J1587_Error.",
+    "For passing this message to other node, output(this) must be called inside the event handler."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on J1587ErrorMessage 50 //50 is Sender MID, can be dbNode name or MID\n{\n  write (“Msg with ErrorCode %d received, MID %d”, this.J1587_MID,\n  this.J1587_Error);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

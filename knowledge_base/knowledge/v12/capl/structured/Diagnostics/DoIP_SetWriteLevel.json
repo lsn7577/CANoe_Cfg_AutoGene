@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetWriteLevel",
+  "category": "Diagnostics",
+  "title": "DoIP_SetWriteLevel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetWriteLevel.htm",
+  "syntax": [
+    "void DoIP_SetWriteLevel(long level);"
+  ],
+  "description": [
+    "Sets the amount of messages written to the CANoe Write Window by the DoIP implementation."
+  ],
+  "parameters": [
+    {
+      "name": "Level",
+      "type": "",
+      "description": "0: no output 1: only errors 2: also warnings Higher values are only relevant during development."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

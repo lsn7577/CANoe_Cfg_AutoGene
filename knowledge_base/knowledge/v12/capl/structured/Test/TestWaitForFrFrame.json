@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForFrFrame",
+  "category": "Test",
+  "title": "TestWaitForFrFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForFrFrame.htm",
+  "syntax": [
+    "long TestWaitForFrFrame (dbFrFrame aFrame, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of the valid specified FlexRay frame. Should the frame not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "When no frame is specified the wait condition is resolved on any valid FlexRay frame.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aFrame",
+      "type": "",
+      "description": "Frame to be awaited as it is defined in the database."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [
+      "The following test program waits for the occurrence of one of two frames.",
+      "It is assumed that the database defines the frames Sync_Message_1_Ch_A and Sync_Message_2_Ch_A on the cluster FlexRay A."
+    ],
+    "code": "variables\n{\n   dword gBusContextFr1;\n   long resTestWaitFor, resTestGetData, resTestJoin;\n   dword timeToWait  = 10; // in ms\n}\nvoid InitBusContext ()\n{\n   gBusContextFr1 = getBusNameContext(\"FlexRay A\");\n   SetBusContext(gBusContextFr1);\n}\ntestcase WaitForJoinedFrFrames_Any()\n{\n   FrFrame Sync_Message_1_Ch_A frTest1;\n   FrFrame Sync_Message_2_Ch_A frTest2;\n   InitBusContext();\n   // join events\n   {\n      TestStepPass(\"Call TFS function\", \"TestJoinFrFrameEvent(Sync_Message_1_Ch_A) for (SlotId=%d, BaseCycle=%d, Repetition=%d)\",\n                    frTest1.FR_SlotID, frTest1.FR_CycleOffset, frTest1.FR_CycleRepetition);\n      resTestJoin = TestJoinFrFrameEvent(Sync_Message_1_Ch_A);\n      if (resTestJoin <= 0)\n      {\n         TestStepFail(\"Join condition\", \"resTestJoin = %d, Failure on joining symbolic event\", resTestJoin);\n         return;\n      }\n      else\n      {\n        TestStepPass(\"Join condition\", \"Joining symbolic event ok. Event number = %d\", resTestJoin);\n      }\n      TestStepPass(\"Call TFS function\", \"TestJoinFrFrameEvent(SlotId=%d, BaseCycle=%d, Repetition=%d,...)\",\n                    frTest2.FR_SlotID, frTest2.FR_CycleOffset, frTest2.FR_CycleRepetition);\n      resTestJoin = TestJoinFrFrameEvent(frTest2.FR_SlotID, frTest2.FR_CycleOffset, \n                                         frTest2.FR_CycleRepetition, frTest2.FR_ChannelMask);\n      if (resTestJoin <= 0)\n      {\n         TestStepFail(\"Join condition\", \"resTestJoin = %d, Failure on joining raw event\", resTestJoin);\n         return;\n      }\n      else\n      {\n         TestStepPass(\"Join condition\", \"Joining raw event ok. Event number = %d\", resTestJoin);\n      }\n   }\n   TestStepPass(\"Call TFS function\", \"TestWaitForAnyJoinedEvent(timeout = %d)\", timeToWait);\n   // wait for any event\n   resTestWaitFor = TestWaitForAnyJoinedEvent(timeToWait);\n   if (resTestWaitFor > 0) // Resume due to event occurred\n   {\n      TestStepPass(\"Call TFS function\", \"TestGetWaitFrFrameData(resTestWaitFor=%d, frTest)\", resTestWaitFor);\n      // extract resume event's data\n      resTestGetData = TestGetWaitFrFrameData(resTestWaitFor, frTest1);\n      if (0 != resTestGetData)\n      {\n         TestStepFail(\"Data extraction\", \"resTestGetData = %d, Data access to data of event %d could not be executed!\", resTestGetData, resTestWaitFor);\n      }\n      else\n      {\n         TestStepPass(\"Data extraction\", \"Data of event %d succefully extracted. SlotId=%d\", resTestWaitFor, frTest1.FR_SlotID);\n      }\n   }\n   else\n   {\n      TestStepFail(\"Wait condition\", \"resTestWaitFor = %d, Waiting for any of joined events during %d [ms] failed!\", resTestWaitFor, timeToWait);\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

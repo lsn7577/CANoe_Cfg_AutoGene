@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "EthIsPacketValid",
+  "category": "Obsolete",
+  "title": "EthIsPacketValid",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthIsPacketValid.htm",
+  "syntax": [
+    "long EthIsPacketValid( long packet );"
+  ],
+  "description": [
+    "The function checks, if a received packet has a protocol error. Packets with a protocol error are marked with an error icon in the Trace Window."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that should be checked"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  EthReceivePacket( \"OnEthPacket\");\n}\nvoid OnEthPacket( LONG channel, LONG dir, LONG packet )\n{\n  if (EthIsPacketValid( packet ) != 0)\n  {\n    write( \"Receive packet with protocol error\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

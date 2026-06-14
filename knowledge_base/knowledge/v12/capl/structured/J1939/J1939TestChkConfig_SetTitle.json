@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkConfig_SetTitle",
+  "category": "J1939",
+  "title": "J1939TestChkConfig_SetTitle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestChkConfigSetTitle.htm",
+  "syntax": [
+    "long J1939TestChkConfig_SetTitle( long aCheckId, char aTitle[] )"
+  ],
+  "description": [
+    "This functions sets the title of a check.",
+    "The check is displayed in the Write Window and the test report with this title."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "identifier of the check"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// set title of the check\ndword checkID;\ncheckID = J1939TestChkCreate_BAMViolation( 50, 200, 0x00 );\n\nJ1939TestChkConfig_SetTitle( checkID, \"This is a BAM violation title\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

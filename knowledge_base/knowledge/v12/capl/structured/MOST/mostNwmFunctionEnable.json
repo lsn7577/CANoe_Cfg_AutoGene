@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostNwmFunctionEnable",
+  "category": "MOST",
+  "title": "mostNwmFunctionEnable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTNwmFunctionEnable.htm",
+  "syntax": [
+    "long mostNwmFunctionEnable(long functionId, long opTypes)"
+  ],
+  "description": [
+    "Registers and unregisters a function and its operations with the NetworkMaster.",
+    "The NetworkMaster will not response to the new registered function and thus an on mostMessage/on mostAMSMessge handler has to be implemented in the CAPL module of the NetworkMaster."
+  ],
+  "parameters": [
+    {
+      "name": "functionId",
+      "type": "",
+      "description": "Function ID."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

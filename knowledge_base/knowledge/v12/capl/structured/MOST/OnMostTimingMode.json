@@ -1,0 +1,40 @@
+{
+  "page_type": "function",
+  "name": "OnMostTimingMode",
+  "category": "MOST",
+  "title": "OnMostTimingMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTTimingMode.htm",
+  "syntax": [
+    "OnMostTimingMode(long mode)"
+  ],
+  "description": [
+    "The OnMostTimingMode() event procedure is called if the timing mode of the MOST hardware has been changed.",
+    "Supplemental information can be called up within this procedure by the mostEventChannel, mostEventTime and mostEventOrigTime functions.",
+    "Controller events are passed through CAPL nodes. Please use the Multibus Filter or MOST Filter to filter these events in node chains."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Timing Slave"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Timing Master"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

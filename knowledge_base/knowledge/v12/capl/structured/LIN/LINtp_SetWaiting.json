@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LINtp_SetWaiting",
+  "category": "LIN",
+  "title": "LINtp_SetWaiting",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINtpSetWaiting.htm",
+  "syntax": [
+    "void LINtp_SetWaiting(long isWaiting);"
+  ],
+  "description": [
+    "Sets ISO TP waiting state for the node. When waiting has been activated the node will send FlowControl.Wait frames instead of ConsecutiveFrames, if sending of FlowControl frames has been activated."
+  ],
+  "parameters": [
+    {
+      "name": "isWaiting",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

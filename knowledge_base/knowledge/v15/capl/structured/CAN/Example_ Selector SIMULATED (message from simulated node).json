@@ -1,0 +1,32 @@
+{
+  "page_type": "selector",
+  "name": "Example: Selector SIMULATED (message from simulated node)",
+  "category": "CAN",
+  "title": "Example: Selector SIMULATED (message from simulated node)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Selectors/CAPLSelectorSIM.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [
+    {
+      "name": "Example Selector SIMULATED (message from simulated node)",
+      "description": [],
+      "code": "on message LightState {\n  if (this.dir == Rx) {\n    if (!this.SIMULATED) {\n      write(\"message LightState received from real system\");\n    }\n    putvalue(Bulb,this.OnOff);\n  }\n  else {\n    // write(\"message LightState received as Tx\");\n  }\n}"
+    },
+    {
+      "name": "Note for CANoe Users",
+      "description": [
+        "Please note the semantics of Rx for CAPL nodes in the Simulation Setup of CANoe."
+      ],
+      "code": ""
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "scenarios": [
+    {
+      "id": "can_message_send_stop_period",
+      "operation_types": ["CAN报文发送", "CAN报文停发", "CAN报文周期调整"],
+      "condition_types": ["接收CAN报文发送", "接收CAN报文超时", "等待固定时间"],
+      "result_types": ["接收CAN报文发送", "接收CAN报文超时"],
+      "required_sources": ["dbc"],
+      "required_kb_symbols": ["output", "setTimer", "cancelTimer", "on message"]
+    },
+    {
+      "id": "can_signal_assignment_and_check",
+      "operation_types": ["CAN信号赋值"],
+      "condition_types": ["CAN信号变化"],
+      "result_types": ["CAN信号变化"],
+      "required_sources": ["dbc"],
+      "required_kb_symbols": ["setSignal", "TestWaitForSignalMatch", "TestWaitForSignalInRange"]
+    }
+  ]
+}
+

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "DoIP_ConnectToVehicle",
+  "category": "Diagnostics",
+  "title": "DoIP_ConnectToVehicle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPConnectToVehicle.htm",
+  "syntax": [
+    "void DoIP_ConnectToVehicle();"
+  ],
+  "description": [
+    "Tries to connect to the configured vehicle. A vehicle identification phase may be started to retrieve the vehicle IP address."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// If key is pressed, connect to vehicle\nOn key 'c'\n{\n  DoIP_ConnectToVehicle();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,155 @@
+{
+  "page_type": "notes",
+  "name": "Removed CAPL Functions",
+  "category": "Obsolete",
+  "title": "Removed CAPL Functions",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CAPLfunctionsObsoleteOverview.htm",
+  "syntax": [],
+  "description": [
+    "RS232Close. No longer available after revision of the RS232 interface.",
+    "Deprecated CAPL Functions"
+  ],
+  "parameters": [],
+  "return": "Some functions were deprecated for a long time and were therefore",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Note Deprecated Function All deprecated functions are marked with . If a function is deprecated you get the CAPL Compiler notification \"Function is deprecated. See help for more information\". In CANoe at measurement start different scenarios are possible: The function has full functionality. The functionality of the function is limited, please see notification in the Write Window. The function no longer has any effect, please see notification in the Write Window. Removed Function Some functions were deprecated for a long time and were therefore removed (obsolete). These functions are neither known to the CAPL compiler nor to CANoe. You get the CAPL Compiler notification \"unknown function\" and in CANoe at measurement start a notification in the Write Window. For the display of the notifications see settings in the Options dialog."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Removed with Version",
+        "Replaced by / Annotation"
+      ],
+      [
+        "FrSendV6Frame",
+        "8.5",
+        "FRUpdateStatFrame or FROutputDynFrame"
+      ],
+      [
+        "FrSendV6Msg",
+        "8.5",
+        "FRUpdateStatFrame or FROutputDynFrame"
+      ],
+      [
+        "FrSetSendV6Frame",
+        "8.5",
+        "FRSetSendFrame"
+      ],
+      [
+        "FrSetSendV6Msg",
+        "8.5",
+        "FRSetSendFrame"
+      ],
+      [
+        "inport",
+        "8.5 SP3",
+        "See information about parallel port For simple control applications you can use the IOpiggy or a simple measurement hardware, e.g. the Meilhaus-RedLab series or an appropriate NI card."
+      ],
+      [
+        "inportLPT",
+        "8.5 SP3"
+      ],
+      [
+        "outport",
+        "8.5 SP3"
+      ],
+      [
+        "outportLPT",
+        "8.5 SP3"
+      ],
+      [
+        "mostSetXorFilter",
+        "9.0",
+        "Optolyzer MOST 25 is no longer supported."
+      ],
+      [
+        "mostGetXorFilter",
+        "9.0",
+        "Optolyzer MOST 25 is no longer supported."
+      ],
+      [
+        "mostSetAndFilter",
+        "9.0",
+        "Optolyzer MOST 25 is no longer supported."
+      ],
+      [
+        "mostGetAndFilter",
+        "9.0",
+        "Optolyzer MOST 25 is no longer supported."
+      ],
+      [
+        "mostSetHWFilter",
+        "9.0",
+        "Optolyzer MOST 25 is no longer supported."
+      ],
+      [
+        "mostGetHWFilter",
+        "9.0",
+        "Optolyzer MOST 25 is no longer supported."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Removed with Version",
+        "Replaced by / Annotation"
+      ],
+      [
+        "RS232CloseHandle",
+        "12.0",
+        "RS232Close. No longer available after revision of the RS232 interface."
+      ],
+      [
+        "RS232EscapeCommExt",
+        "12.0",
+        "RS232SetSignalLine.No longer available after revision of the RS232 interface."
+      ],
+      [
+        "RS232EscapeCommFunc",
+        "12.0",
+        "RS232SetSignalLine.No longer available after revision of the RS232 interface."
+      ],
+      [
+        "RS232SetCommState",
+        "12.0",
+        "RS232Open.No longer available after revision of the RS232 interface."
+      ],
+      [
+        "Rs232SetCommState_Chain",
+        "12.0",
+        "No longer available after revision of the RS232 interface."
+      ],
+      [
+        "Rs232SetHandshakeTimeout",
+        "12.0",
+        "No longer available after revision of the RS232 interface."
+      ],
+      [
+        "RS232WriteBlock",
+        "12.0",
+        "RS232Send. No longer available after revision of the RS232 interface."
+      ],
+      [
+        "RS232WriteByte",
+        "12.0",
+        "RS232Send. No longer available after revision of the RS232 interface."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

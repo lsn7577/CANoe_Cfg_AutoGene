@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783AppNmtIndication",
+  "category": "ISO11783",
+  "title": "Iso11783AppNmtIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783AppNmtIndication.htm",
+  "syntax": [
+    "dword Iso11783AppNmtIndication( long busHandle, long address, long flag );"
+  ],
+  "description": [
+    "This function is called when an ECU claims n address or an ECU loses its address. The function is also called, if no ECU was created yet.",
+    "With Iso11783GetRxData() the device name can be copied to a buffer."
+  ],
+  "parameters": [
+    {
+      "name": "busHandle",
+      "type": "",
+      "description": "Bus handle"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword Iso11783AppNmtIndication( LONG busHandle, LONG address, LONG flag )\n{\n  char deviceName[8];\n  Iso11783GetRxData( elCount(deviceName), deviceName ); \n  /* user code */\n  return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

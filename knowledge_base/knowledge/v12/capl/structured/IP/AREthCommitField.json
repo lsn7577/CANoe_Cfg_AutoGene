@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "AREthCommitField",
+  "category": "IP",
+  "title": "AREthCommitField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthCommitField.htm",
+  "syntax": [
+    "long AREthCommitField( dword pfHandle );"
+  ],
+  "description": [
+    "Applies changes that were performed on a field with the access functions AREthSetValue….",
+    "If the value of the field has been changed, the notification message of the field is sent. An actual value change must exist for this. If the same value previously contained in the field is set, a notification message is not sent."
+  ],
+  "parameters": [
+    {
+      "name": "pfHandle",
+      "type": "",
+      "description": "Handle of the field that was created by AREthAddField."
+    }
+  ],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the utilized field is contained in the FIBEX database that is assigned to the CANoe configuration. The field has the Notification ID 30, the Getter ID 31, and the Setter ID 32. The data type of the field is a standard data type (for example, UINT8)."
+    ],
+    "code": "variables\n{\n  dword gPfld_A; // provided field handle\n}\n\nvoid Initialize()\n{\n  CONST dword FieldNotificationID = 30;\n  CONST dword FieldGetterID       = 31;\n  CONST dword FieldSetterID       = 32;\n\n  dword aep;   // Application Endpoint handle\n  dword psi;   // provided service handle\n  dword peg;   // provided Eventgroup handle\n\n  // open Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = AREthCreateProvidedServiceInstance(aep,12,1);\n\n  // create Eventgroup\n  peg = AREthAddProvidedEventGroup(psi,300);\n\n  // create field and add field to Eventgroup\n  gPfld_A = AREthAddField(psi, FieldNotificationID, FieldGetterID, FieldSetterID);\n  AREthAddFieldToEventGroup(peg,gPfld_A);\n}\n\non key 'n'\n{\n  // set value of field content (field has a common data type so no value path is needed)\n  AREthSetValueDWord(gPfld_A,\"\",100);\n\n  // commit field content ... notification is sent\n  AREthCommitField(gPfld_A);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

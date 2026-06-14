@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "C2xTestWaitForMessage",
+  "category": "Car2x",
+  "title": "C2xTestWaitForMessage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xTestWaitForMessage.htm",
+  "syntax": [
+    "long C2xTestWaitForMessage(char* appMsg, long aTimeout) // form 1",
+    "long C2xTestWaitForMessage(char* appMsg, char* stationName, long aTimeout) // form 2"
+  ],
+  "description": [
+    "Waits for the occurrence of the first Car2x message matching the conditions passed as arguments. Should the message not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "appMsg",
+      "type": "",
+      "description": "Name of application message of the Car2x message that should be awaited."
+    },
+    {
+      "name": "stationName",
+      "type": "",
+      "description": "Name of the sender station of the Car2x message that should be awaited."
+    },
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]. Transmission of 0: no timeout controlling"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long result;\n//Form 1: Wait for occurrence of Car2x message with application message \"CAM\"\nresult = C2xTestWaitForMessage(\"CAM\", 1000);\n\n//Form 2: Wait for occurrence of Car2x message with application message \"CAM\" and sender \"Staion1\"\nresult = C2xTestWaitForMessage(\"CAM\", \"Station1\", 1000);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0: form 1, 2",
+      "—",
+      "—",
+      "—",
+      "5.0: form 1, 2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x, Testnodes: form 1, 2",
+      "—",
+      "—",
+      "—",
+      "Car2x: form 1, 2"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

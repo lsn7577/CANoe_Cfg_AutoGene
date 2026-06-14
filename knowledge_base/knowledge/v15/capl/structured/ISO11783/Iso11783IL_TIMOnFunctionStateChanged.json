@@ -1,0 +1,219 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMOnFunctionStateChanged",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMOnFunctionStateChanged",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimOnFunctionStateChanged.htm",
+  "syntax": [
+    "void Iso11783IL_TIMOnFunctionStateChanged(dword functionID, dword newState)"
+  ],
+  "description": [
+    "This callback function is called if the state of a TIM function has been changed. If this callback function is used by a TIM client the function is only called if the TIM function is assigned by the client.",
+    "You can also use the function Iso11783IL_TIMConnectSysVarToFunctionState if you are interested in the state of a function."
+  ],
+  "parameters": [
+    {
+      "name": "Function ID",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1-32 (1h-20h)",
+      "type": "",
+      "description": "Auxiliary Value 1 – 32"
+    },
+    {
+      "name": "64 (40h)",
+      "type": "",
+      "description": "Front PTO"
+    },
+    {
+      "name": "65 (41h)",
+      "type": "",
+      "description": "Rear PTO"
+    },
+    {
+      "name": "66 (42h)",
+      "type": "",
+      "description": "Front hitch"
+    },
+    {
+      "name": "67 (43h)",
+      "type": "",
+      "description": "Rear hitch"
+    },
+    {
+      "name": "68 (44h)",
+      "type": "",
+      "description": "Vehicle speed"
+    },
+    {
+      "name": "70 (46h)",
+      "type": "",
+      "description": "External guidance"
+    },
+    {
+      "name": "State",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Automation unavailable"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Automation not ready"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Automation ready to enable"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Automation enabled"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Automation pending"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Active, not limited"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "Active, limited high"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "Active, limited low"
+    },
+    {
+      "name": "14",
+      "type": "",
+      "description": "Non-recoverable fault"
+    },
+    {
+      "name": "15",
+      "type": "",
+      "description": "Not available (parameter not supported or not configured for TIM)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

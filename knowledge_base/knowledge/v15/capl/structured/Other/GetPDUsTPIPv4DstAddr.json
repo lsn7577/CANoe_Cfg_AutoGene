@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "GetPDUsTPIPv4DstAddr",
+  "category": "Other",
+  "title": "GetPDUsTPIPv4DstAddr",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionGetPDUsTPIPv4DstAddr.htm",
+  "syntax": [
+    "long GetPDUsTPIPv4DstAddr(this, dword &IPv4DestinationAddress);"
+  ],
+  "description": [
+    "This function can only be used within a on PDU handler. If the PDU was received via IPv4, with this function the IPv4 destination address can be requested."
+  ],
+  "parameters": [
+    {
+      "name": "this",
+      "type": "",
+      "description": "Handle to the currently handled (received) PDU object."
+    },
+    {
+      "name": "destinationIPv4Address",
+      "type": "",
+      "description": "IPv4 destination address in network byte order."
+    }
+  ],
+  "return": "Handle to the currently",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "9.0 SP3",
+      "9.0 SP3",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

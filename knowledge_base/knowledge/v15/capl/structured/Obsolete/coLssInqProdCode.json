@@ -1,0 +1,65 @@
+{
+  "page_type": "notes",
+  "name": "coLssInqProdCode",
+  "category": "Obsolete",
+  "title": "coLssInqProdCode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssInqProdCode.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by CANopen Basic Functions."
+      ],
+      [
+        "Function Syntax",
+        "void coLssInqProdCode( dword errCode[] );"
+      ],
+      [
+        "Function",
+        "This service causes the determination of the product code of a LSS slave. It is available in configuration mode only and there may only be one LSS slave in this mode."
+      ],
+      [
+        "Parameters",
+        "errCode Error code buffer (is entered in index 0 of the field)"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "6.0-9.0 SP6",
+        "CANopen",
+        "—",
+        "•"
+      ],
+      [
+        "Example dword errCode[1];coLssInqProdCode( errCode );if (errCode[0] == 0) { write( \"LSS inquire Product-Code commanded\" );}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

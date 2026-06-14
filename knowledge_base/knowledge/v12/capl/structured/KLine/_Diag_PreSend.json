@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_Diag_PreSend",
+  "category": "KLine",
+  "title": "_Diag_PreSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionDiagPreSend.htm",
+  "syntax": [
+    "_Diag_Presend(BYTE data[], WORD& dataLenInOut, WORD headerLen)"
+  ],
+  "description": [
+    "Is called before a frame is transmitted. Allows manipulating the frame."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Transmitted data buffer of the frame."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_Diag_Presend(BYTE data[], WORD& dataLenInOut, WORD headerLen)\n{\n   if (!gDoPatchInPreSend) // Global variable\n   {\n      return;\n   }\n\n   gDoPatchInPreSend = 0; // deactivate patching\n\n   // Changing the data and the length of the request\n   data[2] = 0x99;\n   data[3] = 0x99;\n   dataLenInOut = 4;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

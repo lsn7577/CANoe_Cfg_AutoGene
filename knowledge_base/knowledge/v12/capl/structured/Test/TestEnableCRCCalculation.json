@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestEnableCRCCalculation",
+  "category": "Test",
+  "title": "TestEnableCRCCalculation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestEnableCRCCalculation.htm",
+  "syntax": [
+    "long TestEnableCRCCalculation (dbMessage aMessage);"
+  ],
+  "description": [
+    "Re-enables the calculation of the CRC, after it has been disabled with TestDisableCRCCalculation.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message that should be reset to default behavior."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": "// resets the CRC calculation of message ‚MsgToManipulate’ to default behaviour after a break of 2000 ms\nTestDisableCRCCalculation(MsgToManipulate);\nTestWaitForTimeout(2000);\nTestEnableCRCCalculation(MsgToManipulate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

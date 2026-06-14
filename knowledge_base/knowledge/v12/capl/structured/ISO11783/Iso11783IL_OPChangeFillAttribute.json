@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPChangeFillAttribute",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPChangeFillAttribute",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPChangeFillAttr.htm",
+  "syntax": [
+    "long Iso11783IL_OPChangeFillAttribute( dword objectID, dword color, dword type, dword patternID );"
+  ],
+  "description": [
+    "The function changes the properties of a fill attribute object. A Change Fill Attribute command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "Object ID of a fill attribute object"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPChangeFillAttribute( 1100, 12, 2, 0xFFFF );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

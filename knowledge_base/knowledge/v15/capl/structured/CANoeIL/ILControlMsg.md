@@ -1,0 +1,36 @@
+# ILControlMsg
+
+> Category: `CANoeIL` | Type: `function`
+
+## Syntax
+
+```c
+ILControlMsg(dbMsg msg, dword control, dword flags, dword param1, dword param2)
+```
+
+## Description
+
+Allows to manipulate the sending behavior of a message.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| msg | Message that should be influenced. |
+| control | Specifies the manner of influencing the message. control = 1: Enables sending of the message (comparable to function ILEnableMsg).Parameter param1, param2 have no meaning. Parameter flags is evaluated bitwise: 0x1: One message is sent immediately if the message would be sent cyclically under the current conditions. 0x2: One message is sent immediately independently from current conditions. This is also true for noncyclic messages. 0x4: The send pattern of cyclic messages is shifted with the time instance of calling the function as new basis. control = 2: Disables sending of the message (comparable to function ILDisableMsg). Parameter flags, param1, param2 have no meaning. |
+| flags, param1, param2 | See parameter control for meaning. |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 10.0 SP2 | 14 | 14 | — | — |
+| Restricted To | — | CAN | CAN | CAN | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | — | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | — | — | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | ✔ | — | N/A |

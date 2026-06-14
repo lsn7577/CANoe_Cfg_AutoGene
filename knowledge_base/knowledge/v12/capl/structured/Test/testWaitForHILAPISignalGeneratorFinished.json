@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitForHILAPISignalGeneratorFinished",
+  "category": "Test",
+  "title": "testWaitForHILAPISignalGeneratorFinished",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForHILAPISignalGeneratorFinished.htm",
+  "syntax": [
+    "long testWaitForHILAPISignalGeneratorFinished(dword handle);"
+  ],
+  "description": [
+    "Waits until a running generator has finished."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "Handle of the signal generator that shall be waited for."
+    }
+  ],
+  "return": "<0: An internal error occurred, e.g. a protocol error or a faulty configuration of the diagnostic layer.",
+  "example": {
+    "description": [],
+    "code": "HILAPIStartSignalGenerator(hGenerator);\ntestWaitForHILAPISignalGeneratorFinished(hGenerator);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

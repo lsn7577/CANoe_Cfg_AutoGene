@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "HILAPICreateSignalGenerator",
+  "category": "Test",
+  "title": "HILAPICreateSignalGenerator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionHILAPICreateSignalGenerator.htm",
+  "syntax": [
+    "dword HILAPICreateSignalGenerator(char filename[]);"
+  ],
+  "description": [
+    "Creates a Signal Generator from an ASAM HILAPI Signal Generator definition file."
+  ],
+  "parameters": [
+    {
+      "name": "filename",
+      "type": "",
+      "description": "The location of the Signal Generator definition file."
+    }
+  ],
+  "return": "0: The Signal Generator could not be created",
+  "example": {
+    "description": [
+      "Creates a ASAM HILAPI Signal Generator:"
+    ],
+    "code": "dword hGenerator;\nhGenerator = HILAPICreateSignalGenerator( “mygenerator.sti”);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

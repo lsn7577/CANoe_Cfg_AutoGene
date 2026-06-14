@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetTokenLengthBit",
+  "category": "Car2x",
+  "title": "C2xGetTokenLengthBit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetTokenLengthBit.htm",
+  "syntax": [
+    "long C2xGetTokenLengthBit( long packet, char protocolDesignator[], char tokenDesignator[] );"
+  ],
+  "description": [
+    "This function returns the length of a token in bit."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    }
+  ],
+  "return": "Length of the token in bit\nWith C2xGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [],
+    "code": "long packet = 0;\nlong len = 0;\nchar error[100];\n\npacket = C2xInitPacket( \"geo_cnh\" );\nlen    = C2xGetTokenLengthBit( packet, \"geo_cnh\", \"header\" ); // = 32\n\nif (C2xGetLastError() == 0)\n{\n  // do something with len\n}\nelse\n{\n  C2xGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

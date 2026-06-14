@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "EthCompletePacket",
+  "category": "Obsolete",
+  "title": "EthCompletePacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthCompletePacket.htm",
+  "syntax": [
+    "long EthCompletePacket( long packet );"
+  ],
+  "description": [
+    "The function completes a packet before sending it with EthOutputPacket. It calculates the fields that are marked with CompleteProtocol in the protocol overview, e.g. checksum, lengths, etc."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "see example of EthInitPacket"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

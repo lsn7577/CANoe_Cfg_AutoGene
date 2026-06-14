@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "AREthILControlResume",
+  "category": "IP",
+  "title": "AREthILControlResume",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthILControlResume.htm",
+  "syntax": [
+    "long AREthILControlResume();"
+  ],
+  "description": [
+    "Start sending cyclic messages again after AREthILControlWait.",
+    "Application Endpoints and Provided Services do not have to be created again."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 'r '\n{\n  // resume sending messages\n  AREthILControlResume();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

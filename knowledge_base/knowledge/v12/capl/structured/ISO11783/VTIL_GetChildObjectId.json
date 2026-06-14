@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "VTIL_GetChildObjectId",
+  "category": "ISO11783",
+  "title": "VTIL_GetChildObjectId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILGetChildObjectId.htm",
+  "syntax": [
+    "long VTIL_GetChildObjectId(dbNode workingSetMaster, dword objectId, dword index, long & childObjectId); // form 1"
+  ],
+  "description": [
+    "Returns the ID of an object which is contained by a parent object.",
+    "You can obtain the number of child objects with method VTIL_GetNumberOfChildObjects."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "dword index, numberOfChildObjects;\nlong childObjectId;\n\n//iterate over all children of the object with objectId = 1000\nif (VTIL_GetNumberOfChildObjects(VT, Loader, 1000, numberOfChildObjects) == 0)\n{\n  for (index = 0; index < numberOfChildObjects; ++index)\n  {\n    if (VTIL_GetChildObjectId(VT, Loader, 1000, index, childObjectId) == 0)\n    {\n      Write(\"ID of child object at index %u is %i\", index, childObjectId);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

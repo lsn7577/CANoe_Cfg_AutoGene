@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestReportAddImage",
+  "category": "Test",
+  "title": "TestReportAddImage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestReportAddImage.htm",
+  "syntax": [
+    "TestReportAddImage (char description[], char filename[]);"
+  ],
+  "description": [
+    "With this function the reference to a file that contains an image can be taken over into the protocol. This command can be used in the context of the test module and also in the context of a test case.",
+    "The existence of the file is not checked.",
+    "A file path or URL can be provided for the image. Relative file paths are based on the folder that contains the XML report. If backslashes are used as separators, a double backslash ('\\\\') must be used to separate directories within the path.",
+    "The second variant of this function allows to set the width and/or height with which the image should be displayed in the report. If width or height is specified, the HTML report will automatically show the picture with a link which opens the picture in full size in a new window. The width and height parameters are transferred to the HTML report, their values can be given as pixels or percentage. See an HTML reference for details."
+  ],
+  "parameters": [
+    {
+      "name": "description",
+      "type": "",
+      "description": "Description text for the picture"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

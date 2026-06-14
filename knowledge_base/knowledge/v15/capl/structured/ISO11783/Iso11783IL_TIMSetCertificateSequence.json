@@ -1,0 +1,170 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetCertificateSequence",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetCertificateSequence",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetCertificateSequence.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetCertificateSequence(dword certificateType1, dword certificateType2, dword certificateType3, dword certificateType4); // form 1",
+    "long Iso11783IL_TIMSetCertificateSequence(dbNode participant, dword certificateType1, dword certificateType2, dword certificateType3, dword certificateType4); // form 2"
+  ],
+  "description": [
+    "Sets the sequence of requested certificates.",
+    "Use this function to change the sequence of requested certificates. By default the following sequence is used:"
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Testlab certificate"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Manufacturer certificate"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Manufacturer series certificate"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Device certificate"
+    },
+    {
+      "name": "certificateType2",
+      "type": "",
+      "description": "Type of second requested certificate. Default value: 2 (Manufacturer certificate)."
+    },
+    {
+      "name": "certificateType3",
+      "type": "",
+      "description": "Type of third requested certificate. Default value: 3 (Manufacturer series certificate)."
+    },
+    {
+      "name": "certificateType4",
+      "type": "",
+      "description": "Type of fourth requested certificate. Default value: 4 (Device certificate)."
+    },
+    {
+      "name": "participant",
+      "type": "",
+      "description": "TIM participant (TIM server or TIM client)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "—",
+      "—",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 2 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

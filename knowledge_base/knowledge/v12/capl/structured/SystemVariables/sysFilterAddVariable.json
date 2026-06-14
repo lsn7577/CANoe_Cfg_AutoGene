@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysFilterAddVariable",
+  "category": "SystemVariables",
+  "title": "sysFilterAddVariable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysFilterAddVariable.htm",
+  "syntax": [
+    "long sysFilterAddVariable(sysVar variable); // form 1"
+  ],
+  "description": [
+    "Adds a variable a variable filter. If no filterName is given, the variable will be added to the default filter."
+  ],
+  "parameters": [
+    {
+      "name": "Note If a struct member is specified, the whole struct will be added.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: No error, function successful.",
+  "example": {
+    "description": [],
+    "code": "long result;\n//create default filter as Stop Filter\nresult = sysCreateVariableFilter(0);\n//add a variable that should be stopped by the filter\nresult = sysFilterAddVariable(sysvar::myNamespace::myVariable);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

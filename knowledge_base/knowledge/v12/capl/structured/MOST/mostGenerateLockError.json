@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostGenerateLockError",
+  "category": "MOST",
+  "title": "mostGenerateLockError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGenerateLockError.htm",
+  "syntax": [
+    "long mostGenerateLockError(long channel, long unmodtime, long modtime, long repeat)"
+  ],
+  "description": [
+    "Starts (repeat > 0) or stops (repeat = 0) generation of Light Unmodulated-Modulated transitions.",
+    "For OptoLyzerOL3150o: The stress network interface controller (NIC) must have its bypass opened (see mostSetStressNodeParameter)."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

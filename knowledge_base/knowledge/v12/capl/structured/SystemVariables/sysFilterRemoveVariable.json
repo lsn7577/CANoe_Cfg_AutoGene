@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysFilterRemoveVariable",
+  "category": "SystemVariables",
+  "title": "sysFilterRemoveVariable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysFilterRemoveVariable.htm",
+  "syntax": [
+    "long sysFilterRemoveVariable(sysVar variable); // form 1"
+  ],
+  "description": [
+    "Removes a variable from a variable filter. If no filterName is given, the variable will be removed from the default filter."
+  ],
+  "parameters": [
+    {
+      "name": "Note If a struct member is specified, the whole struct will be removed.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: No error, function successful.",
+  "example": {
+    "description": [],
+    "code": "long result;\n//remove a variable from the default filter\nresult = sysFilterRemoveVariable(sysvar::myNamespace::myVariable);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

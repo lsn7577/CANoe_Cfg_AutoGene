@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SecurityOfNodeTransmitApplicationProtocol",
+  "category": "Security",
+  "title": "SecurityOfNodeTransmitApplicationProtocol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityOfNodeTransmitApplicationProtocol.htm",
+  "syntax": [
+    "long SecurityOfNodeTransmitApplicationProtocol(char nodeName[], char networkName[], char applicationProtocolUserDefinedId[], byte payload[], dword payloadLength)"
+  ],
+  "description": [
+    "Transmits a special message of sequence of message protocol from the specified node on the specified network, specifically to the active Security Profile on the network.",
+    "The application protocol is specific to the active Security Profile on the network. Please refer to the Security Source specific manual to get more information about if there are application protocols available and their functionality and purpose.",
+    "You have to call SecurityLocalStartControlSimulationNode before this callback is called."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node."
+    }
+  ],
+  "return": "1: SuccessA Value of 1 means that the action was successful. A value less than or equal to 0 means error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

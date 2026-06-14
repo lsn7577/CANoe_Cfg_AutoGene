@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "<OnAfdxError>",
+  "category": "ADFX",
+  "title": "<OnAfdxError>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionOnAfdxError.htm",
+  "syntax": [
+    "void <OnAfdxError> ( int64 timestamp, long channel, long errorType, char[] errorText, char[] errorAttributes );"
+  ],
+  "description": [
+    "This callback is called when an AFDX Error Event is received."
+  ],
+  "parameters": [
+    {
+      "name": "timestamp",
+      "type": "",
+      "description": "time stamp of the error event in ns"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Node System - preStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  AfdxSetErrorHandler( \"OnAfdxError\");\n}\nvoid OnAfdxError( int64 timestamp, long channel, long errorType, char errorText[], char errorAttributes[])\n{\n  if (errorType == AfdxError)\n  {\n    write( \"<%NODE_NAME%> Afdx Error on channel %d: %s\", channel, errorText);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

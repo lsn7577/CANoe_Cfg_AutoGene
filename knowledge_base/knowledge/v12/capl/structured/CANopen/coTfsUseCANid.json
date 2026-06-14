@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsUseCANid",
+  "category": "CANopen",
+  "title": "coTfsUseCANid",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsUseCanId.htm",
+  "syntax": [
+    "long coTfsUseCANid( void );"
+  ],
+  "description": [
+    "This function transmits the internally-stored CAN label to the simplified test functions insofar as it is supported. On measurement start, the system always automatically uses the node-ID."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsUseNodeId();\n// uses node-ID for simplified functions\n// …\n\ncoTfsUseCANid(); \n// uses CAN identifier for simplified functions\n..."
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

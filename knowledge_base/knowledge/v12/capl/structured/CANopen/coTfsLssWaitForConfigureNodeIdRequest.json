@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForConfigureNodeIdRequest",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForConfigureNodeIdRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForConfNodeIdReq.htm",
+  "syntax": [
+    "long coTfsLssWaitForConfigureNodeIdRequest( byte[] pNID );"
+  ],
+  "description": [
+    "The function waits for the configure LSS node id request."
+  ],
+  "parameters": [
+    {
+      "name": "pNID",
+      "type": "",
+      "description": "Node-ID of the device, value range 1..127 and 255."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword pNID[1];\n\n/* waits for LSS configure node ID request */\nif (coTfsLssWaitForConfigureNodeIdRequest( pNID) == 1) {\n  /* received LSS configure node ID request */\n  /* received values can be found in pNID[0] */\n}\nelse {\n  /* no request received */\n  return;\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

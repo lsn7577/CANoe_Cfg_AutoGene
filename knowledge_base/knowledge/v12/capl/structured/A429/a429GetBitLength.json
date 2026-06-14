@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "a429GetBitLength",
+  "category": "A429",
+  "title": "a429GetBitLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429GetBitLength.htm",
+  "syntax": [
+    "long a429GetBitLength( a429worderror myA429word );"
+  ],
+  "description": [
+    "If a Rx error (bit rate too high/low) is detected the bit position as well as the error position in the bit is measured. The length of the erroneous measured bit is returned with this function."
+  ],
+  "parameters": [
+    {
+      "name": "myA429word",
+      "type": "",
+      "description": "ARINC word in on a429Worderror handler"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

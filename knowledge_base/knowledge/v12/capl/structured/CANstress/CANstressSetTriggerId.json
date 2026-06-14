@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressSetTriggerId",
+  "category": "CANstress",
+  "title": "CANstressSetTriggerId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressSetTriggerID.htm",
+  "syntax": [
+    "void CANstressSetTriggerId (dword id);"
+  ],
+  "description": [
+    "Sets the message ID, which will activate the trigger."
+  ],
+  "parameters": [
+    {
+      "name": "Id",
+      "type": "",
+      "description": "Message ID for trigger. Both simple and complex CAN message IDs can be specified. However, the corresponding mode must be set in the basic configuration!"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

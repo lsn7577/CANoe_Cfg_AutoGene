@@ -1,0 +1,154 @@
+{
+  "page_type": "function",
+  "name": "AfdxSetSignalOpaque",
+  "category": "ADFX",
+  "title": "AfdxSetSignalOpaque",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionAfdxSetSignalOpaque.htm",
+  "syntax": [
+    "long AfdxSetSignalOpaque( long packet, char signalName[], long length, byte value[], long fdsStatus ); // form 1",
+    "long AfdxSetSignalOpaque( long packet, long offset, long length, byte value[] ); // form 2"
+  ],
+  "description": [
+    "This function updates an opaque AFDX signal. There are two different opaque data types available in AFDX:"
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the message."
+    },
+    {
+      "name": "signalName",
+      "type": "",
+      "description": "Name of the signal. Note: The signal, the signal’s data type and the message need to be defined in the assigned DBC file."
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "The offset value points to the starting byte of the opaque signal in the AFDX payload area."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "This is the number of bytes, the opaque signal is occupying in the value buffer."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "For form 1 the bytes of the opaque data have to be provided. For form 2 the complete opaque signal is available in the buffer (for variable length the length value belongs to the opaque data)."
+    },
+    {
+      "name": "fdsStatus",
+      "type": "",
+      "description": "255: The status is not updated valid status enumeration: The functional status is updated with this value."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long packet;\nlong msgID = 0x1A112B73;\n\n// create a new AFDX packet as defined in the DBC with this msgID\npacket = AfdxInitPacket( msgID, NULL, 0 );\n\n// set integer signal 1 to 78 degrees, don’t change status byte\nAfdxSetSignalInt( packet, \"VFG_OIL_TEMP_A_34\", 78 );\n\n// set float-signal 2 to 52 degree, set corresponding status to <NO>\nAfdxSetSignalReal( packet, \"VFG_OIL_TEMP_AB_32\", 52, 3 );\n\n// set boolean signal 3 to 1, set corresponding status to <NO>\nAfdxSetSignalBool( packet, \"VFG_OIL_TEMP_A_ON\", 1, 3 );\n\n// set enumeration signal 4 to 5, don’t change status byte\nAfdxSetSignalInt( packet, “FLIGHT_GROUND_COND_3\", 5 );\n\n// set string signal 6 to hello, don’t change status byte\nAfdxSetSignalString( packet, “TEST_STRING14_CITY\", “hello” );\n\n// set opaque signal 7 to 0x31,0x32,0x33, don’t change status byte\nAfdxSetSignalOpaque( packet, “TEST_OPAQUE14_IDENT\", 3, “123” );\n\nAfdxOutputPacket( packet );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0 SP3: form 1, 2",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

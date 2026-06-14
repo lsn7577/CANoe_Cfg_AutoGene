@@ -1,0 +1,65 @@
+{
+  "page_type": "notes",
+  "name": "coLssInqVendorId",
+  "category": "Obsolete",
+  "title": "coLssInqVendorId",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssInqVendorId.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by CANopen Basic Functions."
+      ],
+      [
+        "Function Syntax",
+        "void coLssInqVendorId( dword errCode[] );"
+      ],
+      [
+        "Function",
+        "This service causes the determination of the vendor-ID of a LSS slave. It is available in configuration mode only and there may only be one LSS slave in this mode."
+      ],
+      [
+        "Parameters",
+        "errCode Error code buffer (is entered in index 0 of the field)"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "6.0-9.0 SP6",
+        "CANopen",
+        "—",
+        "•"
+      ],
+      [
+        "Example dword errCode[1];coLssInqVendorId( errCode );if (errCode[0] == 0) { write( \"LSS inquire Vendor-ID commanded\" );}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

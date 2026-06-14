@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendStoreConfigurationRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendStoreConfigurationRequest",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendStoreConfReq.htm",
+  "syntax": [
+    "long coTfsLssSendStoreConfigurationRequest( byte[] pErrorCode, byte[] pSpecificError );"
+  ],
+  "description": [
+    "The function sends a LSS Store Configuration request and waits for the response."
+  ],
+  "parameters": [
+    {
+      "name": "pErrorCode",
+      "type": "",
+      "description": "Error code. 0 - protocol successfully completed1 - store configuration not supported2 - storage media access error255 - implementation specific error occurred"
+    },
+    {
+      "name": "pSpecificError",
+      "type": "",
+      "description": "Manufacturer specific error (used if error code = 255)."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pErrorCode[1];\nbyte pSpecificError[1];\n\n/* send LSS store configuration request */\n\nif (coTfsLssSendStoreConfigurationRequest( pErrorCode, pSpecificError) == 1) {\n  /* sent LSS store configuration request and received response */\n  /* received values can be found in pErrorCode[0], pSpecificError[0] */\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

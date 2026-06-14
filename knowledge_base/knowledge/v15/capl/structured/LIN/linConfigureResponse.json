@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "linConfigureResponse",
+  "category": "LIN",
+  "title": "linConfigureResponse",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINConfigureResponse.htm",
+  "syntax": [
+    "dword linConfigureResponse(dword frameId, dword dlc, byte[] responseData); // form 1",
+    "dword linConfigureResponse(linFrame frame); // form 2"
+  ],
+  "description": [
+    "Configures a response frame of a LIN node if no database is used."
+  ],
+  "parameters": [
+    {
+      "name": "frameId",
+      "type": "",
+      "description": "ID of the LIN frame which will be configured as response. Value range: 0..63"
+    },
+    {
+      "name": "dlc",
+      "type": "",
+      "description": "Number of data bytes contained in the frame (Data Length Code). Value range: 0..8"
+    },
+    {
+      "name": "responseData",
+      "type": "",
+      "description": "An array of bytes which contains the response data to be set."
+    },
+    {
+      "name": "frame",
+      "type": "",
+      "description": "The LIN frame which will be configured as response."
+    }
+  ],
+  "return": "Returns 1 if the configuration of the response succeeded, otherwise 0.",
+  "example": {
+    "description": [],
+    "code": "// Configure the LIN frame with the ID 0x01 as response of the slave and initialize the value of all response bytes to zero.\n\non preStart\n\n{\n  long i;\n  byte responseData [8];\n\n  for(i = 0; i < 8; i++)\n  {\n    responseData [i] = 0;\n  }\n\n  linConfigureResponse(0x01, 8, responseData);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0",
+      "10.0",
+      "13.0",
+      "13.0",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "LIN",
+      "LIN",
+      "LIN",
+      "LIN",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

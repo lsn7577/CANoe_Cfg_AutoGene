@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalGenerateSHA256",
+  "category": "Security",
+  "title": "SecurityLocalGenerateSHA256",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/Functions/CAPLfunctionSecurityLocalGenerateSHA256.htm",
+  "syntax": [
+    "long SecurityLocalGenerateSHA256(byte data[], dword dataLength, byte sha256[], dword sha256Length)"
+  ],
+  "description": [
+    "Generates a SHA256 hash for the given data and using the given key."
+  ],
+  "parameters": [
+    {
+      "name": "byte data[]",
+      "type": "",
+      "description": "The data to encrypt."
+    },
+    {
+      "name": "dword dataLength",
+      "type": "",
+      "description": "The length of the data to encrypt."
+    },
+    {
+      "name": "byte sha256[] [Out]",
+      "type": "",
+      "description": "The generated SHA256 hash."
+    },
+    {
+      "name": "dword sha256Length [In/Out]",
+      "type": "",
+      "description": "The length of the generated SHA256 hash. (32 bytes)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "byte data[3] = { 0x61, 0x62, 0x63 };\nbyte refOutput[32] ={\n0xba, 0x78, 0x16, 0xbf,\n0x8f, 0x01, 0xcf, 0xea,\n0x41, 0x41, 0x40, 0xde,\n0x5d, 0xae, 0x22, 0x23,\n0xb0, 0x03, 0x61, 0xa3,\n0x96, 0x17, 0x7a, 0x9c,\n0xb4, 0x10, 0xff, 0x61,\n0xf2, 0x00, 0x15, 0xad\n};\n\ndword refOutputLength = 32;\nbyte output[32];\ndword outputLength = 32;\ndword result = 255;\ndword counter = 0;\nresult = SecurityLocalGenerateSHA256(data, elCount(data), output, outputLength);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN, CAN FD, FR, ETH",
+      "CAN, CAN FD, FR, ETH",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

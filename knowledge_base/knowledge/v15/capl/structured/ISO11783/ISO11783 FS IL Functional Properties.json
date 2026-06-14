@@ -1,0 +1,109 @@
+{
+  "page_type": "notes",
+  "name": "ISO11783 FS IL Functional Properties",
+  "category": "ISO11783",
+  "title": "ISO11783 FS IL Functional Properties",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayerFS/CAPLfunctionsISOILFSProperties.htm",
+  "syntax": [],
+  "description": [
+    "These properties describe the functional properties of a real File Server that is simulated with the FS IL."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Property Value",
+        "Description",
+        "Value Range",
+        "Initial Value",
+        "IL must be stopped (FSIL_ControlStop)"
+      ],
+      [
+        "fsVersion",
+        "Version of the File Server according to ISO11783-13. 0 Draft edition of the International Standard. 1 Final draft edition of the International Standard. 2 First published edition of the International Standard. 3 Second published edition of the International Standard. 4 Third published edition of the International Standard (AEF Guideline File Server Generation 1.0)",
+        "0",
+        "Draft edition of the International Standard.",
+        "1",
+        "Final draft edition of the International Standard.",
+        "2",
+        "First published edition of the International Standard.",
+        "3",
+        "Second published edition of the International Standard.",
+        "4",
+        "Third published edition of the International Standard (AEF Guideline File Server Generation 1.0)",
+        "0..4",
+        "4",
+        "Yes"
+      ],
+      [
+        "0",
+        "Draft edition of the International Standard."
+      ],
+      [
+        "1",
+        "Final draft edition of the International Standard."
+      ],
+      [
+        "2",
+        "First published edition of the International Standard."
+      ],
+      [
+        "3",
+        "Second published edition of the International Standard."
+      ],
+      [
+        "4",
+        "Third published edition of the International Standard (AEF Guideline File Server Generation 1.0)"
+      ],
+      [
+        "rootDirectory",
+        "Windows folder which is used as root directory by the File Server. Path has to be absolute or relative relating to the folder of the CANoe configuration. If no root directory is specified then the folder FSRootDirectory is created in the configuration directory and used as a root directory.",
+        "—",
+        "—",
+        "Yes"
+      ],
+      [
+        "primaryVolume",
+        "Windows folder which is used as primary volume by the File Server The primary volume must be a sub folder of the root directory or a removable volume. If the specified sub folder does not exist it is created. If no primary volume is specified or primary volume is an empty string, then the first removable volume is used as primary volume.",
+        "—",
+        "—",
+        "Yes"
+      ],
+      [
+        "supportsPhyiscalRemovableDevices",
+        "Enables or disables the support of physical devices (e.g. USB sticks). If physical devices are supported the File Server integrate them as removable volumes.",
+        "0..1",
+        "1",
+        "Yes"
+      ],
+      [
+        "supportsLongFilenames",
+        "Enables or disables the support of long file names for all file server volumes. If long file names are supported then file names may contain a defined set of UTF-8 characters upto a length of 254 characters. If the file server do not support long file names then file names shall follow the 8.3 name and extension notation and shall contain a special set of ASCII characters.",
+        "0..1",
+        "1",
+        "Yes"
+      ],
+      [
+        "autoDeleteRoot",
+        "Enables or disables the automatic delete of the root directory. If value is 1 then the root directory and all sub directories and files are deleted on measurement stop.",
+        "0..1",
+        "0",
+        "No"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForSignalMatch",
+  "category": "Test",
+  "title": "TestWaitForSignalMatch",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForSignalMatch.htm",
+  "syntax": [
+    "long TestWaitForSignalMatch (Signal aSignal, float aCompareValue, dword aTimeout); // form 1"
+  ],
+  "description": [
+    "Checks the given value against the value of the signal, the system variable or the environment variable. The resolution of the signal is considered.",
+    "If this condition is already met when this function is called, it returns immediately without waiting.",
+    "The test step is evaluated as either passed or failed depending on the results."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "-1: General error",
+  "example": {
+    "description": [],
+    "code": "// waits for a specified value of signal ‘Velocity’\nlong result;\nresult = TestWaitForSignalMatch(Node_SUT::Velocity, 80, 1000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

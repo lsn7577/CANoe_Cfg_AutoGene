@@ -1,0 +1,22 @@
+# EthRemoveToken
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by: ethernetPacket::protocol::optional-structure::Clear |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long EthRemoveToken( long packet, char protocolDesignator[], char tokenDesignator[] ); |  |  |  |
+| Function | The function removes a token from a protocol header |  |  |  |
+| Parameters | packet handle of a packet that has been created with EthInitPacket |  |  |  |
+| protocolDesignator name of the protocol, e.g. "dhcpv4" |  |  |  |  |
+| tokenDesignator name of the token, e.g. "option1" |  |  |  |  |
+| Return Values | 0 or error code |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 7.5-12.0 | Ethernet | — | • |  |
+| Example see example of EthAddToken |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

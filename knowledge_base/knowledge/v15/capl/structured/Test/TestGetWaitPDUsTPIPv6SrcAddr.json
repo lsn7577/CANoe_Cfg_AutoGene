@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitPDUsTPIPv6SrcAddr",
+  "category": "Test",
+  "title": "TestGetWaitPDUsTPIPv6SrcAddr",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestGetWaitPDUsTPIPv6SrcAddr.htm",
+  "syntax": [
+    "long TestGetWaitPDUsTPIPv6SrcAddr(byte IPv6SourceAddress[]); //form 1",
+    "long TestGetWaitPDUsTPIPv6SrcAddr(dword explicitJoinIndex, byte IPv6SourceAddress[]); //form 2"
+  ],
+  "description": [
+    "If a PDU was received via IPv6 that triggered the last wait function, with form 1 the IPv64 source address can be requested.",
+    "Form 2 can only be used for joined events. The number of the joined event (return value of TestJoin...) is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "IPv6DestinationAddress",
+      "type": "",
+      "description": "IPv6 source address as 16 byte array."
+    },
+    {
+      "name": "explicitJoinIndex",
+      "type": "",
+      "description": "Number of the joined event corresponds with the return value of TestJoin...."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long IPv6AddressEquals(byte addr1[], byte addr2[])\n{\n  int i;\n\n  if (elcount(addr1)<16 || elcount(addr2)<16)\n    return 0;\n\n  for (i=0; i< 16; ++i)\n    if (addr1[i]!=addr2[i])\n      return 0;\n\n    return 1;\n}\n\ntestcase TC_CheckPDUTPProperties()\n{\n  dword srcPort, dstPort;\n  byte  srcAddr[16], dstAddr[16], expectedSrcAddr[16], expectedDstAddr[16];\n  if (TestWaitForPDU(engineDataPDU, 0, 200)!=1)\n  {\n    TestStepFail(\"PDU not received\");\n  }\n  else\n  {\n    if (TestGetWaitPDUsTPIPv6SrcAddr(srcAddr)==0\n      && TestGetWaitPDUsTPIPv6DstAddr(dstAddr)==0\n      && TestGetWaitPDUsTPUDPSrcPort(srcPort)==0\n      && TestGetWaitPDUsTPUDPDstPort(dstPort)==0)\n    {\n      IpGetAddressAsArray(\"2001::1\", expectedSrcAddr);\n      IpGetAddressAsArray(\"2001::2\", expectedDstAddr);\n\n      if (IPv6AddressEquals(srcAddr, expectedSrcAddr)!=1)\n        TestStepFail(\"source address not matching\");\n      else if (IPv6AddressEquals(dstAddr, expectedDstAddr)!=1)\n        TestStepFail(\"destination address not matching\");\n      else if (srcPort != 1234)\n        TestStepFail(\"source port not matching\");\n      else if (dstPort != 4321)\n        TestStepFail(\"destination port not matching\");\n    }\n    else\n      TestStepFail(\"could not retrieve expected PDU TP properties\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP3",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

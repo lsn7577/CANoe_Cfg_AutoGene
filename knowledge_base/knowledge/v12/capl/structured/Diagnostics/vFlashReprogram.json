@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "vFlashReprogram",
+  "category": "Diagnostics",
+  "title": "vFlashReprogram",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagvFlashReprogram.htm",
+  "syntax": [
+    "void vFlashReprogram();"
+  ],
+  "description": [
+    "Starts the flashing procedure. The progress will be indicated by calls to the optional callback vFlashProgramProgressCallback. The procedure has finished when CAPL callback vFlashReprogramCompleted is called.",
+    "Note: This event-driven API is only needed outside of test modules or test units."
+  ],
+  "parameters": [],
+  "return": "1: Flashing was started",
+  "example": {
+    "description": [],
+    "code": "  FlashReprogram();\n}\nvoid vFlashProgramProgressCallback(dword progressInPercent, dword remainingTimeInS)\n{\n  // Do not print on every progress callback, but only in 10% steps\n  DWORD sProgress = 0;\n  if (progressInPercent < sProgress)\n    sProgress = 0; // reset progress stored\n  if (progressInPercent < 100 && (progressInPercent - sProgress) >= 10)\n  {\n    write(\"Progress: %3u%%, %us remaining\", progressInPercent, remainingTimeInS);\n    sProgress = progressInPercent - (progressInPercent % 10);\n  }\n}\n\nvoid vFlashReprogramCompleted(long status)\n{\n  write(\"Reprogramming completed with status %d\", status);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

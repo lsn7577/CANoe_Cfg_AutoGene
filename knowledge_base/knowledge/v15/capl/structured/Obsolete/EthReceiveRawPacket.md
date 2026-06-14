@@ -1,0 +1,24 @@
+# EthReceiveRawPacket
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by: on ethernetPacket |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long EthReceiveRawPacket( long flags, byte srcMacAddress[6], byte dstMacAddress[6], long ethernetType, char *callback ); |  |  |  |
+| Function | Use this function to register a CAPL function to receive Ethernet packets. The callback function is called, if a packet with the specified MAC addresses and Ethernet type is received. Use the flags to ignore the Ethernet type or the MAC address, e.g. flag = 7 receives all packets. The callback must have the following signature: void <OnEthRawPacket> ( long channel, long dir, long packetLength ) |  |  |  |
+| Parameters | flags bit 1: ignore Source MAC address bit 2: ignore Destination MAC address bit 3: ignore Ethernet type |  |  |  |
+| srcMacAddress source MAC address |  |  |  |  |
+| dstMacAddress destination MAC address |  |  |  |  |
+| ethernetType Ethernet type (16 Bit) |  |  |  |  |
+| callback CAPL callback function name |  |  |  |  |
+| Return Values | 0 or error code |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 7.2-12.0 | Ethernet | — | • |  |
+| Example Node System - PreStart in CAPL Browser on preStart{ BYTE emptyMacAddress[6] = { 0x00,0x00,0x00,0x00,0x00, 0x00}; EthReceiveRawPacket( 0x7, emptyMacAddress, emptyMacAddress, 0x0000, "OnEthRawPacket" );} Node Callback Function in CAPL Browser void OnEthRawPacket( LONG channel, LONG dir, LONG packetLength ){ BYTE rx_data[100]; LONG rx_length; // get the raw data of the receive packet rx_length = EthGetThisData( 0, elCount(rx_data), rx_data ); // do something with rx_data} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "sensorClearQueue",
+  "category": "Sensor",
+  "title": "sensorClearQueue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionSensorClearQueue.htm",
+  "syntax": [
+    "SensorErrorCode sensorClearQueue (char[] sysVarNamespace);"
+  ],
+  "description": [
+    "Clears the send queue of the given sensor system variable."
+  ],
+  "parameters": [
+    {
+      "name": "sysVarNamespace",
+      "type": "",
+      "description": "The namespace of the channel or sensor whose send queue should be cleared."
+    }
+  ],
+  "return": "This function returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Clears the send queue of a simulated PSI5 sensor channel\nsensorClearQueue(\"SENSOR::PSI5::SensorChannel\");\n\n// Clears the send queue of a simulated SENT sensor channel\nsensorClearQueue(\"SENSOR::SENT::SensorChannel\");\n\n// Clears queued read frames in case of I2C slave simulation or clears\n// queued write / combined frames in case of I2C master simulation\nsensorClearQueue(\"SENSOR::I2C::ExampleChannel::Slave1\");\n\n// Clears MOSI send queue in case of SPI master simulation or MISO\n// send queue in case of SPI slave simulation\nsensorClearQueue(\"SENSOR::SPI::ExampleChannel::Slave1\");\n\n// Clears send queue of UART channel\nsensorClearQueue(\"SENSOR::UART::UARTChannel\");\n\n// Clears send queue of LVDS channel\nsensorClearQueue(\"SENSOR::LVDS::LVDSChannel\");\n\n// Clears send queue of RS-485 channel\nsensorClearQueue(\"SENSOR::RS485::RS485Channel\");"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "—",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

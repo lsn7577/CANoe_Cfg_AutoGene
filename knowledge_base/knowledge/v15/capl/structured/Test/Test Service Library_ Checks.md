@@ -1,0 +1,123 @@
+# Test Service Library: Checks
+
+> Category: `Test` | Type: `notes`
+
+## Description
+
+The following check descriptions are available with CANoe:
+
+ChkCreate_J1939_76_FunctionalSafetyCheck
+
+Observes the J1939-76 functional safety communication.
+
+This check is used to observe the Light & Lock condition of the MOST hardware interface.
+
+| Absence of FlexRay Erroneous Frames | Short Description |
+|---|---|
+| TestCheck::CreateFlexRayFrameErrorOccurrenceCount, TestCheck::StartFlexRayFrameErrorOccurrenceCount | Checks the absence of erroneous frames for the specified frame/slot on the bus. |
+| TestCheck::CreateNodeFlexRayFrameErrorsOccurrenceCount, TestCheck::StartNodeFlexRayFrameErrorsOccurrenceCount |  |
+| Absence of FlexRay Null Frames | Short Description |
+| TestCheck::CreateFlexRayNullFrameOccurrenceCount, TestCheck::StartFlexRayNullFrameOccurrenceCount | Checks the absence of Null Frames for the specified frame/slot on the bus. |
+| TestCheck::CreateNodeFlexRayNullFramesOccurrenceCount, TestCheck::StartNodeFlexRayNullFramesOccurrenceCount |  |
+| AUTOSAR CRC Observation | Short Description |
+| ChkCreate_CRCObservationAsrPDU, ChkStart_CRCObservationAsrPDU | This check monitors the CRC of a PDU or a single signal group of a PDU. |
+| AUTOSAR SQC Observation | Short Description |
+| ChkCreate_SQCObservationAsrPDU, ChkStart_SQCObservationAsrPDU | This check monitors the SQC of a PDU or a single signal group of a PDU. |
+| AUTOSAR UB Observation | Short Description |
+| ChkCreate_UBObservationAsrPDU, ChkStart_UBObservationAsrPDU, ChkCreate_UBObservationAsrSignal, ChkStart_UBObservationAsrSignal | This check monitors the UB of a PDU, a single signal group of a PDU or a single signal of a PDU. |
+| Burst Time Limit | Short Description |
+| ChkCreate_BurstTimeLimitViolation, ChkStart_BurstTimeLimitViolation | Checks the maximum burst time on a bus. |
+| Cycle Time | Short Description |
+| ChkCreate_MsgAbsCycleTimeViolation, ChkStart_MsgAbsCycleTimeViolation | This check is useful to supervise a particular range in message cycle time changes. |
+| ChkCreate_MsgRelCycleTimeViolation, ChkStart_MsgRelCycleTimeViolation |  |
+| ChkCreate_NodeMsgsRelCycleTimeViolation, ChkStart_NodeMsgsRelCycleTimeViolation |  |
+| DLC | Short Description |
+| ChkCreate_InconsistentDLC, ChkStart_InconsistentDLC | This check monitors the DLC, respectively payload length of a message. |
+| ChkCreate_InconsistentRxDLC, ChkStart_InconsistentRxDLC |  |
+| ChkCreate_InconsistentTxDLC, ChkStart_InconsistentTxDLC |  |
+| Error Frame Count | Short Description |
+| ChkCreate_ErrorFramesOccured, ChkStart_ErrorFramesOccured | This check is suited to supervise the occurrence of Error Frames on the bus. |
+| J1939-76 Functional Safety Check | Short Description |
+| ChkCreate_J1939_76_FunctionalSafetyCheck | Observes the J1939-76 functional safety communication. |
+| J1939 Address Claiming Check | Short Description |
+| ChkCreate_J1939AddressClaimViolation, ChkStart_J1939AddressClaimViolation | Observes the Address Claiming of a J1939 node. |
+| Chk_AddNode | Adds a J1939 node to an existing check. |
+| J1939 BAM | Short Description |
+| ChkCreate_J1939BAM, ChkStart_J1939BAM | Observes the BAM transport protocol. |
+| J1939 Request Check | Short Description |
+| ChkCreate_J1939Request; ChkStart_J1939Request | Observes the J1939 Requests (EA00h). |
+| J1939 Request2 Check | Short Description |
+| ChkCreate_J1939Request2, ChkStart_J1939Request2 | Observes the J1939 Request2 (C900h). |
+| J1939 RTS/CTS | Short Description |
+| ChkCreate_J1939RTSCTS, ChkStart_J1939RTSCTS | Observes the RTS/CTS transport protocol. |
+| LIN Baud Rate | Short Description |
+| ChkStart_LINMasterBaudrateViolation | Checks the LIN Master baud rate. |
+| LIN Configuration Requests | Short Description |
+| ChkStart_LINReconfRequestFormatViolation | Checks the format of LIN configuration requests. |
+| LIN Diagnostic Delay Times | Short Description |
+| ChkStart_LINDiagDelayTimesViolation | Checks the values of P2_min and ST_min. |
+| LIN Event Triggered Frame Format | Short Description |
+| ChkStart_LINETFViolation | Checks the format LIN Event-triggered frame response. |
+| LIN Header Duration | Short Description |
+| ChkStart_LINHeaderToleranceViolation | Checks the LIN header transmission time. |
+| LIN Master Initialization Time | Short Description |
+| ChkStart_LINMasterInitTimeViolation | Checks an initialization time of LIN Master. |
+| LIN Response Error Flag | Short Description |
+| ChkStart_LINRespErrorSignal | Checks the LIN Response_Error signal. |
+| LIN Schedule Table | Short Description |
+| ChkStart_LINSchedTableViolation | Checks LIN schedule table for correspondence with the database definition. |
+| LIN Sync Break (Dominant Phase) | Short Description |
+| ChkStart_LINSyncBreakTimingViolation | Checks the timing of the synchronization break field (dominant phase) in LIN headers. |
+| LIN Sync Break (Recessive Phase) | Short Description |
+| ChkStart_LINSyncDelTimingViolation | Checks the timing of the synchronization break field (recessive phase) in LIN headers. |
+| LIN Wake-up Request Length | Short Description |
+| ChkStart_LINWakeupReqLengthViolation | Checks the length of LIN Wakeup request. |
+| LIN Wake-up Request Retries | Short Description |
+| ChkStart_LINWakeupRetryViolation | Checks number of LIN Wakeup requests and the time between them. |
+| Message Count Observation (FlexRay only) | Short Description |
+| TestCheck::CreateMsgSendCountViolation, TestCheck::StartMsgSendCountViolation | Check is used to monitor the minimum and/or maximum number for each of the defined messages within a specified cyclic time interval. |
+| TestCheck::CreateNodeMsgSendCountViolation, TestCheck::StartNodeMsgSendCountViolation |  |
+| Message Distance | Short Description |
+| ChkCreate_MsgDistViolation, ChkStart_MsgDistViolation | This check is useful for spontaneous messages where one message depends to another message; e.g. for token-ring initializations for network management. |
+| Messages Known | Short Description |
+| ChkCreate_UndefinedMessageReceived, ChkStart_UndefinedMessageReceived | This check listens to the bus and reports a violation, if a message was received that is not defined in any of the databases that are associated to the current bus. |
+| MOST Error Messages | Short Description |
+| ChkCreate_MostErrorMessage, ChkStart_MostErrorMessage | This check is used to monitor occurrence of MOST error messages. |
+| MOST Light & Lock Observation | Short Description |
+| ChkCreate_MostCriticalUnlock, ChkStart_MostCriticalUnlock | This check is used to observe the Light & Lock condition of the MOST hardware interface. |
+| ChkCreate_MostLightOff, ChkStart_MostLightOff |  |
+| ChkCreate_MostShortUnlock, ChkStart_MostShortUnlock |  |
+| ChkCreate_MostStableLock, ChkStart_MostStableLock |  |
+| MOST NetState Observation | Short Description |
+| ChkCreate_MostNetState, ChkStart_MostNetState | This check is used to monitor the NetState state of the MOST hardware interface. |
+| MOST Property Protocol Observation | Short Description |
+| ChkCreate_MostPropertyProtocolError, ChkStart_MostPropertyProtocolError | This check observes the compliance to the MOST protocol with regard to message sequences and response times for a given property function. |
+| MOST Method Protocol Observation | Short Description |
+| ChkCreate_MostMethodProtocolError, ChkStart_MostMethodProtocolError | This check observes the compliance to the MOST protocol with regard to message sequences and response times for a given method function. |
+| Node Active | Short Description |
+| ChkCreate_AllNodesDead, ChkStart_AllNodesDead | This check reports a problem, if the node has not send any of its Tx messages within a given time-interval. |
+| ChkCreate_NodeDead, ChkStart_NodeDead |  |
+| Node Inactive | Short Description |
+| ChkCreate_AllNodesBabbling, ChkStart_AllNodesBabbling | This check allows the observation of the end of the activity of nodes. |
+| ChkCreate_NodeBabbling, ChkStart_NodeBabbling |  |
+| No Value Change | Short Description |
+| ChkCreate_SignalValueChange, ChkStart_SignalValueChange | The check is useful to observe the constancy of a signal value. |
+| OccurrenceCount | Short Description |
+| ChkCreate_MsgOccurrenceCount, ChkStart_MsgOccurrenceCount | The check is useful to observe the absence of defined messages on the bus. |
+| Occurrence Distance | Short Description |
+| ChkCreate_NodeMsgsAbsDistViolation, ChkStart_ NodeMsgsAbsDistViolation | This check allows the supervision of the minimum send distance of all Tx messages of a node on one bus. |
+| Occurrence of a Message | Short Description |
+| ChkCreate_MsgRelOccurrenceViolation, ChkStart_MsgRelOccurrenceViolation | Checks are used to monitor the sending delay of messages which allow both cyclic and spontaneous transmission. |
+| ChkCreate_NodeMsgsRelOccurrenceViolation, ChkStart_NodeMsgsRelOccurrenceViolation |  |
+| Payload Gaps Observation | Short Description |
+| ChkCreate_PayloadGapsObservation, ChkStart_PayloadGapsObservation | This check monitors the payload gaps and the DLC of a message. |
+| ChkCreate_PayloadGapsObservationRx, ChkStart_PayloadGapsObservationRx |  |
+| ChkCreate_PayloadGapsObservationTx, ChkStart_PayloadGapsObservationTx |  |
+| Timeout | Short Description |
+| ChkCreate_Timeout, ChkStart_Timeout | This checks creates an error event if particular time is expired. |
+| Value Valid | Short Description |
+| ChkCreate_MsgSignalValueInvalid, ChkStart_MsgSignalValueInvalid | This check is useful to supervise the value of signals. |
+| ChkCreate_MsgSignalValueRangeViolation, ChkStart_MsgSignalValueRangeViolation |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

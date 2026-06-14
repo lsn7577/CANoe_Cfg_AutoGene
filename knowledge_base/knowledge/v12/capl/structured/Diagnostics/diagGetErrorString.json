@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetErrorString",
+  "category": "Diagnostics",
+  "title": "diagGetErrorString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetErrorString.htm",
+  "syntax": [
+    "long diagGetErrorString (long errorCode, char bufferOut[], dword bufferLength)"
+  ],
+  "description": [
+    "Retrieves a text describing the error code."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "Numeric error code"
+    }
+  ],
+  "return": "Length of the text in bufferOut.",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  long retValue;\n  char buffer[200];\n  if ( 0 > (retValue=diagSetTarget(\"UDS_Diagnostic_Services\"))) \n  {\n    diagGetErrorString(retValue, buffer, elcount(buffer));\n    write(\"Error: %s\", buffer);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

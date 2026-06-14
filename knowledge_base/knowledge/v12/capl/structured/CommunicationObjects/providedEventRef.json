@@ -1,0 +1,76 @@
+{
+  "page_type": "function",
+  "name": "providedEventRef",
+  "category": "CommunicationObjects",
+  "title": "providedEventRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionProvidedEventRef.htm",
+  "syntax": [
+    "providedEventRef * <var>"
+  ],
+  "description": [
+    "References a provided event endpoint, which means a specific combination of consumer and provider for a service event on provider side."
+  ],
+  "parameters": [
+    {
+      "name": "Event",
+      "type": "",
+      "description": "Event of a service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "providedEventRef long ev1;\nev1 = MirrorAdjustment.providerSide[CANoe,LeftMirror].CurrentPosition;\nev1.Trigger();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the provided endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the provided endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SubscriptionState State of the event subscription: Unavailable: there’s no connection between consumer and provider, the event cannot be subscribed. Available: the event can be subscribed, but currently is not subscribed. Subscribed: the event is subscribed.",
+        "enum",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetEVSEIP",
+  "category": "SmartCharging",
+  "title": "SCC_GetEVSEIP",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetEVSEIP.htm",
+  "syntax": [
+    "void SCC_GetEVSEIP ( byte IpAddress[] )"
+  ],
+  "description": [
+    "Gets the EVSE IP address of a SECCDiscoveryRes message."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "IP (v6) transmitted from the charge point (16 byte, to the output buffer)",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

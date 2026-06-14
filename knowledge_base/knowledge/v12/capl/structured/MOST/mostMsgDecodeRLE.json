@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostMsgDecodeRLE",
+  "category": "MOST",
+  "title": "mostMsgDecodeRLE",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTMsgDecodeRLE.htm",
+  "syntax": [
+    "long mostMsgDecodeRLE(mostAmsMessage * msg, long fktIds[], long buffersize)"
+  ],
+  "description": [
+    "mostMsgDecodeRLE() decodes the data area of a message and saves the function IDs in a list. Run Length Encoding in accordance with MOST Specification 2.4 Para. 2.3.9 is used. This function is suitable for evaluating messages of the FBlock.FktIds.Status type."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message"
+    }
+  ],
+  "return": ">=0: Number of valid function IDs in fktIds[]",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "<ModelName>_setScalarParameter",
+  "category": "Obsolete",
+  "title": "<ModelName>_setScalarParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMODELsetScalarParameter.htm",
+  "syntax": [
+    "long <ModelName>_setScalarParameter( dword index, float value);"
+  ],
+  "description": [
+    "Sets a scalar model parameter to the given value."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Model parameter. You can find the index of the model parameter in the file <ModelName>_M.csv which is located in the destination directory of the code generation, i.e the target directory of the model DLL."
+    }
+  ],
+  "return": "0: Success.",
+  "example": {
+    "description": [
+      "The parameterization functions are deprecated. It is much easier to use the generated System variables directly.",
+      "Some parameters might not be configurable during measurement. This depends on the implementation of a Simulink block. If the <ModelName>_set functions are used in the preStart section of a CAPL program, all parameters will be configurable and will use the new values during measurement.",
+      "Parameterization requires the C-API for data exchange which is available since MATLAB R14.",
+      "<ModelName> = placeholder for Simulink model"
+    ],
+    "code": "@myModel::Subsystem::Frequency = 1.0;\nInstead of\nmyModel_setParamter(index, 1.0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

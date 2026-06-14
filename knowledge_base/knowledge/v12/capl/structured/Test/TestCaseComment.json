@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestCaseComment",
+  "category": "Test",
+  "title": "TestCaseComment",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCaseComment.htm",
+  "syntax": [
+    "TestCaseComment (char aComment[]);"
+  ],
+  "description": [
+    "With this function within a test case a commentary can be taken over into the report. This comment can relate to a message that can also be output in the report.",
+    "The verdict of the test case is not be influenced."
+  ],
+  "parameters": [
+    {
+      "name": "aComment",
+      "type": "",
+      "description": "Commentary to be taken over into the report."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "testcase CheckLockingOnCrash ()\n{\n   TestCaseTitle(\"TC 1.0\", \"Check unlock of central locking system on crash\");\n   TestCaseDescription(\"This test case simulates a crash during drive. The central locking system has to be unlocked on crash!\");\n   // Initialization of signals\n   $CrashDetected = 0;\n   $LockState = Locked;\n   TestWaitForTimeout(200);\n\n   TestCaseComment(\"Initialization of system completed\");\n   ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

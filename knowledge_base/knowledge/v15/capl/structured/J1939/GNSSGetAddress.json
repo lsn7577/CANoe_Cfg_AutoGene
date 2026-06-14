@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "GNSSGetAddress",
+  "category": "J1939",
+  "title": "GNSSGetAddress",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSgetaddress.htm",
+  "syntax": [
+    "dword GNSSGetAddress( dword mask, byte [8] name)"
+  ],
+  "description": [
+    "The function returns a network address with which a control device that is described by the function parameters logged on to the network.",
+    "If no device is found for the described functionality, the NULL address (255) is returned. If the function fails, 0xFFFFFFFF will be returned.",
+    "The mask parameter is used to specify which parts of the name will be taken into consideration. To use the entire name, the value 0x1FF must be used for mask. The values of the following table can be linked with a logical OR to make it possible to consider only parts of the name. If the name applies to multiple nodes on the bus, only the address of the first node is returned."
+  ],
+  "parameters": [
+    {
+      "name": "mask",
+      "type": "",
+      "description": "Bit mask, only the masked bits of the name are used"
+    },
+    {
+      "name": "name",
+      "type": "",
+      "description": "Name of the device"
+    }
+  ],
+  "return": "Address or 0xFFFFFFFF",
+  "example": {
+    "description": [],
+    "code": "dword address;\naddress = GNSSGetAddress( 0x1FF, name );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 ISO11783",
+      "J1939 ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

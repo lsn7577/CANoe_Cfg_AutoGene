@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "xcpDeactivate",
+  "category": "XCP",
+  "title": "xcpDeactivate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionXCPDeactivate.htm",
+  "syntax": [
+    "long xcpDeactivate (char namespace[], char variable[]);"
+  ],
+  "description": [
+    "Upload and DAQ measurement will be deactivated.",
+    "Using system variables structs, the function must be used for the variable valid for the entire struct but not for single members."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Namespace of the corresponding system variable."
+    }
+  ],
+  "return": "0: OK",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

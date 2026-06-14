@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMActivateServer",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMActivateServer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimActivateServer.htm",
+  "syntax": [
+    "long Iso11783IL_TIMActivateServer( ); // form 1"
+  ],
+  "description": [
+    "Activates the TIM server which starts transmitting the cyclic message TIM_ServerStatus_Msg."
+  ],
+  "parameters": [
+    {
+      "name": "server",
+      "type": "",
+      "description": "TIM server node."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

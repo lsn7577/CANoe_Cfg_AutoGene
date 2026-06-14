@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "StandardRemoteFrameCount",
+  "category": "CAN",
+  "title": "StandardRemoteFrameCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionStandardRemoteFrameCount.htm",
+  "syntax": [
+    "long StandardRemoteFrameCount ()",
+    "CANx.StandardRemoteFrameCount"
+  ],
+  "description": [
+    "Returns the number of standard remote CAN frames on channel x since start of measurement.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Number of standard remote CAN frames on channel x since start of measurement.",
+  "example": {
+    "description": [],
+    "code": "write (\"Number of standard remote frames on CAN1 = %d\", CAN1.StandardRemoteFrameCount);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

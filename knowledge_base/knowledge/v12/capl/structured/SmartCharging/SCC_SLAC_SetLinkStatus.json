@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_SetLinkStatus",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_SetLinkStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_SetLinkStatus.htm",
+  "syntax": [
+    "long SCC_SLAC_SetLinkStatus ( long LinkStatus )"
+  ],
+  "description": [
+    "This function overrides the internally stored link status of the QCA7000/7005 chip. This is useful if no hardware is present."
+  ],
+  "parameters": [
+    {
+      "name": "LinkStatus",
+      "type": "",
+      "description": "Value to be set:"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

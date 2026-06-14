@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestGetLastWaitResult",
+  "category": "Test",
+  "title": "TestGetLastWaitResult",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetLastWaitResult.htm",
+  "syntax": [
+    "long TestGetLastWaitResult();"
+  ],
+  "description": [
+    "Makes available the last occurred return value of a TestWait instruction once again."
+  ],
+  "parameters": [],
+  "return": "See TestWait instructions",
+  "example": {
+    "description": [],
+    "code": "TestWaitForTimeout(100);\nWrite(\"Waiting Result = %d\", TestGetLastWaitResult());"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

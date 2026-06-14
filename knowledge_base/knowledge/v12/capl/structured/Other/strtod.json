@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "strtod",
+  "category": "Other",
+  "title": "strtod",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStrtod.htm",
+  "syntax": [
+    "int strtod(char s[], double& result);"
+  ],
+  "description": [
+    "Converts the string s to a floating point number. The string must have the format [whitespace][sign][digits][.digits][{d|D|e|E}[sign]digits].",
+    "Whitespace: may consist of space and tab characters, which are ignoredsign: is either plus (+) or minus (-)digits: are one or more decimal digits.If no digits appear before the radix character, at least one must appear after the radix character. The decimal digits can be followed by an exponent, which consists of an introductory letter (d, D, e, or E) and an optionally signed integer. If neither an exponent part nor a radix character appears, a radix character is assumed to follow the last digit in the string."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "String to be converted."
+    }
+  ],
+  "return": "-2: If s is empty or startIndex is larger than strlen(s).",
+  "example": {
+    "description": [],
+    "code": "char s[20] = \"-1.23 2.4E3\";\ndouble number1, number2;\nint res;\nres = strtod(s, number1);\nwrite(\"number1: %g, res: %d\", number1, res); // output: number1: -1.23, res: 5\nres = strtod(s, res, number2);\nwrite(\"number2: %g, res: %d\", number2, res); // output: number2: 2400, res: 11"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

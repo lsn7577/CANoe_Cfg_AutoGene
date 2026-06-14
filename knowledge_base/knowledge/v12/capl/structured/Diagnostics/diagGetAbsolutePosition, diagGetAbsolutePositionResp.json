@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetAbsolutePosition, diagGetAbsolutePositionResp",
+  "category": "Diagnostics",
+  "title": "diagGetAbsolutePosition, diagGetAbsolutePositionResp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetAbsolutePositionResp.htm",
+  "syntax": [
+    "long DiagGetAbsolutePosition( diagRequest request, char parameterPath[] , dword& bytePosOut, dword& bitPosOut, dword& bitConsumptionOut); // form 1"
+  ],
+  "description": [
+    "Retrieves the position of a parameter in its primitive. The parameter may be located in a specific iteration in the primitive (forms 4-6) or in the response stored for a request (forms 3 and 6)."
+  ],
+  "parameters": [
+    {
+      "name": "request, response",
+      "type": "",
+      "description": "Objekt in which the parameters are located."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "{\n  dword bytePos;\n  dword bitPos;\n  dword bitLen;\n\nif( 0 == this.GetAbsolutePosition( \"SpecialParameter\", bytePos, bitPos, bitLen))\n  write( \"Special parameter is located at [%u:%u], bytePos, bitPos);\nelse\n  write( \"Special parameter is not located in response primitive.\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

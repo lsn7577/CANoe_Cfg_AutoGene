@@ -1,0 +1,22 @@
+# mostSetOptoMode, mostGetOptoMode
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function No replacement. |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|
+| Function Syntax | long mostSetOptoMode(long channel,long optoMode) |  |  |  |  |  |
+| long mostGetOptoMode(long channel) |  |  |  |  |  |  |
+| Function | Sets the operation mode of the OptoLyzer to the specified value. |  |  |  |  |  |
+| Returns the operation mode of the OptoLyzer connected to the given channel. |  |  |  |  |  |  |
+| Parameters | channel Channel of the connected interface |  |  |  |  |  |
+| Refer to the OptoControl helpfile for further explanations of the values for optoMode.This function only works in the "Prestart" Section of the CAPL program. optoMode = 1 Spy Mode optoMode = 4 Slave Mode optoMode = 6 Master Mode | optoMode = 1 | Spy Mode | optoMode = 4 | Slave Mode | optoMode = 6 | Master Mode |
+| optoMode = 1 | Spy Mode |  |  |  |  |  |
+| optoMode = 4 | Slave Mode |  |  |  |  |  |
+| optoMode = 6 | Master Mode |  |  |  |  |  |
+| Return Values | <0: See error codes |  |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |  |  |
+| 3.2 - 5.0 | MOST Prestart section | — | • |  |  |  |
+| Example — |  |  |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

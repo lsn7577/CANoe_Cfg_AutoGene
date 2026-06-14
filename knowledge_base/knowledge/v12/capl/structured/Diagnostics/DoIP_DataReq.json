@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_DataReq",
+  "category": "Diagnostics",
+  "title": "DoIP_DataReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPDataReq.htm",
+  "syntax": [
+    "void DoIP_DataReq( byte buffer[], dword count, dword vehicleAddress, dword testerAddress);"
+  ],
+  "description": [
+    "Request the transfer of the given data to the DoIP peer."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer containing the data to be transmitted."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_Diag_DataRequest( BYTE data[], DWORD count,\n                   long furtherSegments)\n{\n   // send data via DoIP\n   DoIP_DataReq( data, count, gDoIPAddress, 0);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SomeIpCreateEventConsumer",
+  "category": "IP",
+  "title": "SomeIpCreateEventConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpCreateEventConsumer.htm",
+  "syntax": [
+    "dword SomeIpCreateEventConsumer( dword csiHandle, dword eventId, CHAR onEventCallback[]);"
+  ],
+  "description": [
+    "This function adds an Event Consumer to a Consumed Service Instance that was created by SomeIpCreateConsumedServiceInstance.",
+    "When a suitable Event is received, the passed Callback function is called.",
+    "An Event Consumer can be removed again using the SomeIpRemoveEventConsumer function."
+  ],
+  "parameters": [
+    {
+      "name": "csiHandle",
+      "type": "",
+      "description": "Handle of the Consumed Service Instance that was created with SomeIpCreateConsumedServiceInstance."
+    }
+  ],
+  "return": "0: An error occurred. The error can be evaluated using the SomeIpGetLastError function.",
+  "example": {
+    "description": [],
+    "code": "void Initialize()\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD csi; // consumed Service Instance handle\n  DWORD ceg; // consumed Eventgroup handle\n  DWORD cev; // consumed Event handle\n\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,10,1);\n\n  // create Eventgroup\n  ceg = SomeIpAddConsumedEventGroup(csi,1);\n\n  // create Event Consumer\n  cev = SomeIpCreateEventConsumer(csi,32770,\"CallbackEvent1\");\n}\n\nvoid CallbackEvent1(DWORD cevHandle, DWORD messageHandle)\n{\n  // this function is called if the Event was sent. Parameters can\n  // be evaluated here.\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

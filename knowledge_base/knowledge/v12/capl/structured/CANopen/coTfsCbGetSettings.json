@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsCbGetSettings",
+  "category": "CANopen",
+  "title": "coTfsCbGetSettings",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsCbGetSettings.htm",
+  "syntax": [
+    "long coTfsCbGetSettings( dword type, dword nodeId, dword cycleTime[1], dword tolerance[1] );"
+  ],
+  "description": [
+    "This function gets the set parameter of an active monitor."
+  ],
+  "parameters": [
+    {
+      "name": "type",
+      "type": "",
+      "description": "0 - Heartbeat message1 - Sync message2 - Sync PDO message3 - Guarding RTR message for request"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "const kMonitorTypeHeartbeat   = 0;\nconst kMonitorTypeSyncMsg    = 1;\nconst kMonitorTypeSyncPdoMsg   = 2;\nconst kMonitorTypeGuardingRtrMsg = 3;\ndword cycleTime[1];\ndword tolerance[1];\n\n/* assume the selected monitor is active */\n/* get settings of the active monitor */\nif (coTfsCbGetSettings(kMonitorTypeHeartbeat, 112, cycleTime, tolerance) != 1)\n{\n  ; /* failure, monitor not active?, incorrect nodeId? */\n} /* if */\nelse\n{\n  write (\"tolerance = %d ms, cycleTime = %d ms\", tolerance[0], cycleTime[0]);\n} /* else */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

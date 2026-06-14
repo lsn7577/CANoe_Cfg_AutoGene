@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressSetLimitedDisturbanceNumber",
+  "category": "CANstress",
+  "title": "CANstressSetLimitedDisturbanceNumber",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressSetLimitedDisturbanceNumber.htm",
+  "syntax": [
+    "void CANstressSetLimitedDisturbanceNumber (dword cycles, dword distPerCycle, dword cyclePause);"
+  ],
+  "description": [
+    "Sets the Limited number of disturbances disturbance mode. In this mode, the number n of disturbances in a disturbance cycle is limited. n disturbances will be followed by a configurable pause p as long as this is not a single disturbance cycle."
+  ],
+  "parameters": [
+    {
+      "name": "cycles",
+      "type": "",
+      "description": "Defines the number of disturbance cycles. Values from 1 to 65,535 are valid."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "SomeIpSDSetServiceStatus",
+  "category": "IP",
+  "title": "SomeIpSDSetServiceStatus",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpSDSetServiceStatus.htm",
+  "syntax": [
+    "long SomeIpSDSetServiceStatus( dword psiHandle, long up );"
+  ],
+  "description": [
+    "The status of the Provided Service Instance is set at the node (producer)."
+  ],
+  "parameters": [
+    {
+      "name": "psiHandle",
+      "type": "",
+      "description": "Handle of the required Consumed Service Instance (see SomeIpCreateProvidedServiceInstance)."
+    },
+    {
+      "name": "up",
+      "type": "",
+      "description": "1: The status is changed to up. The sending of OfferServices is started. 0: The status is changed to down. A StopOfferService message is sent if the service was previously in up status."
+    }
+  ],
+  "return": "Handle of the required Consumed Service",
+  "example": {
+    "description": [],
+    "code": "dword appEndpointHandle;\ndword serviceHandle;\n\nappEndpointHandle = SomeIpOpenLocalApplicationEndpoint(kUDP, 30501);\nserviceHandle  = SomeIpCreateConsumedServiceInstance(appEndpointHandle, 1 /*serviceId*/, 1 /*instanceId*/);\nSomeIpSDSetServiceStatus(serviceHandle, 0); //do not offer this service"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_ForceLocalTCPSendPort",
+  "category": "Diagnostics",
+  "title": "DoIP_ForceLocalTCPSendPort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPForceLocalTCPSendPort.htm",
+  "syntax": [
+    "long DoIP_ForceLocalTCPSendPort(dword forcedPort);"
+  ],
+  "description": [
+    "Forces local TCP send port to a specific value. According to ISO13400, the local send port for outgoing TCP connections should be dynamically selected. This function allows forcing the local TCP send port to a specific value, typically to 13400 to indicate DoIP. Note that specifying a well-known or system port (1..1023) might not work on most systems."
+  ],
+  "parameters": [
+    {
+      "name": "forcedPort",
+      "type": "",
+      "description": "0: use a dynamically assigned value (default)1..65535: send from this local TCP portother: reserved"
+    }
+  ],
+  "return": "0: success-10: invalid parameterother: reserved",
+  "example": {
+    "description": [],
+    "code": "On preStart\n{\n  // Make sure that tester starts TCP connection from the standard port\n  DoIP_ForceLocalTCPSendPort(13400);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMClearLwATable",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMClearLwATable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimClearLwATable.htm",
+  "syntax": [
+    "long Iso11783IL_TIMClearLwATable( ); // form 1"
+  ],
+  "description": [
+    "Removes all LwA (lightweight authentication) keys of the LwA table of the TIM client/server. LwA keys are created while a full authentication process and act as common secret between a TIM client and a TIM server."
+  ],
+  "parameters": [
+    {
+      "name": "participant",
+      "type": "",
+      "description": "TIM participant (TIM server or TIM client)."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

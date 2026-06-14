@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetFrFrame",
+  "category": "Other",
+  "title": "GetFrFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetFrFrame.htm",
+  "syntax": [
+    "long GetFrFrame(this, FrFrame * frame);"
+  ],
+  "description": [
+    "This function can only be called inside of an on PDU handler. The function will return in its second parameter the FlexRay frame, the PDU was contained."
+  ],
+  "parameters": [
+    {
+      "name": "this",
+      "type": "",
+      "description": "Handle to the currently handled (received) PDU object."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": "on PDU PDU_C\n{\n  FrFrame (1,0,1) aFrFrame_01;\n  long result;\n  result = GetFrFrame(this, aFrFrame_01); // PDU is assumed to be sent on FlexRay\n  if (result == 0)\n  {\n    write(\"Received PDU 'PDU_C' in FlexRay Slot %lu\", aFrFrame_01.FR_SlotID);\n  }\n  else\n  {\n    write(\"Error accessing PDU!\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SCC_LoadV2GConfig",
+  "category": "SmartCharging",
+  "title": "SCC_LoadV2GConfig",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_LoadV2GConfig.htm",
+  "syntax": [
+    "long SCC_LoadV2GConfig ( long ConfigID )"
+  ],
+  "description": [
+    "Loads the section within the XML configuration file designated with configID. If LoadCommunicationConfig has not yet been called when the simulation starts, section 0 is loaded automatically.",
+    "The function SCC_LoadCommunicationConfig loads the configuration globally, i.e. for all connections to be created. This call is only possible when simulation is deactivated.",
+    "The function SCC_LoadV2GConfig loads the configuration for an already active connection, applying only those parameters relevant to an individual connection. This function can only be used within a callback; the configuration is then applied to the connection that has triggered the callback,"
+  ],
+  "parameters": [
+    {
+      "name": "ConfigID",
+      "type": "",
+      "description": "ID of desired configuration section"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

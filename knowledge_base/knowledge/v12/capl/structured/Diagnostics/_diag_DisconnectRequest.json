@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_diag_DisconnectRequest",
+  "category": "Diagnostics",
+  "title": "_diag_DisconnectRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagDisconnectRequest.htm",
+  "syntax": [
+    "void _Diag_DisconnectRequest(char target[]);"
+  ],
+  "description": [
+    "The diagnostic communication channel to the target with the given qualifier shall be closed. For connectionless transport protocols, diag_ClosedChannelInd can be called immediately. Otherwise the completion of the channel closing must be indicated when the TP layer indicates it."
+  ],
+  "parameters": [
+    {
+      "name": "target",
+      "type": "",
+      "description": "Qualifier of the ECU whose communication channel shall be closed."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

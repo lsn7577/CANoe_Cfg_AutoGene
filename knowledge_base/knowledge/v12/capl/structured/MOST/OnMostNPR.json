@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnMostNPR",
+  "category": "MOST",
+  "title": "OnMostNPR",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTNPR.htm",
+  "syntax": [
+    "OnMostNPR(long npr)"
+  ],
+  "description": [
+    "The Node Position Register of the MOST chip, i.e. the position of the device in the MOST ring, has changed. The parameter value contains the new value of the Node Position Register.",
+    "Within this event procedure the functions mostEventChannel, mostEventTime and mostEventOrigTime can be used to call up supplemental information.",
+    "CAPL nodes are transparent to the controller events. Please use the Multibus Filter or MOST Filter, to filter these events in nodal sequences."
+  ],
+  "parameters": [
+    {
+      "name": "npr",
+      "type": "",
+      "description": "New value of the Node Position Register in the MOST chip."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

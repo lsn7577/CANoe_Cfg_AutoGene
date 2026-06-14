@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GPIBQuery",
+  "category": "GPIB",
+  "title": "GPIBQuery",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBQuery.htm",
+  "syntax": [
+    "long GPIBQuery (long deviceDescriptor, char cmdStr[]);"
+  ],
+  "description": [
+    "Query to the device.",
+    "The cmdStr is put to a queue, and then the function returns immediately. When the cmdStr has been sent to the device, and a response has been received, the user-supplied function GPIBResponse is called."
+  ],
+  "parameters": [
+    {
+      "name": "deviceDescriptor",
+      "type": "",
+      "description": "Device ID"
+    }
+  ],
+  "return": "Status",
+  "example": {
+    "description": [],
+    "code": "Query of the voltage: GPIBQuery(myDev, \"V?\")"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

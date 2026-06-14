@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForChange",
+  "category": "CommunicationObjects",
+  "title": "TestWaitForChange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionTestWaitForChange.htm",
+  "syntax": [
+    "long TestWaitForChange(COValue value, dword timeoutMs)"
+  ],
+  "description": [
+    "Waits for the next change of a communication object value. This is equivalent to calling TestWaitForChangeCountGreater (value, value.GetChangeCount(), timeoutMs).",
+    "Note that only changes which occur while the function waits are considered. If you want to wait for changes which may occur earlier, or if you want to wait for several changes, use TestWaitForChangeFlag or TestWaitForChangeCountGreater."
+  ],
+  "parameters": [
+    {
+      "name": "COValue",
+      "type": "",
+      "description": "Value of a communication object."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "long ret;\nconsumedEventRef * anEvent;\nanEvent = lookupConsumedEvent(path);\n// ...\nret = testWaitForChange(anEvent, 200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

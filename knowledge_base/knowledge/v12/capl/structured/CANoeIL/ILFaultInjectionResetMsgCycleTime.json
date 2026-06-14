@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILFaultInjectionResetMsgCycleTime",
+  "category": "CANoeIL",
+  "title": "ILFaultInjectionResetMsgCycleTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILFaultInjectionResetMsgCycleTime.htm",
+  "syntax": [
+    "long ILFaultInjectionResetMsgCycleTime(dbMessage msg)"
+  ],
+  "description": [
+    "Resets the cycle time of the message to the database cycle time, after having manipulated the cycle time with ILFaultInjectionSetMsgCycleTime."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message that should get the database cycle time."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

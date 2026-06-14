@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetDestinationPort",
+  "category": "IP",
+  "title": "SomeIpGetDestinationPort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetDestinationPort.htm",
+  "syntax": [
+    "dword SomeIpGetDestinationPort ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the destination port (UDP/TCP)."
+  ],
+  "parameters": [
+    {
+      "name": "Note This function can only be called within the OnSomeIpMessage callback function.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Destination port.\nIn the Event of an error, the function returns the value 0. The SomeIpGetLastError function can then be used to check whether the value is valid or an error has occurred.",
+  "example": {
+    "description": [],
+    "code": "void OnSomeIpMessage( DWORD messageHandle )\n{\n  DWORD dstPort       = 0;\n  LONG  errorCode     = 0;\n  LONG  errorOccured  = 0;\n\n  // get data from SOME/IP message\n  if((dstPort = SomeIpGetDestinationPort(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = SomeIpGetLastError()) != 0)\n    {\n      write(\"SOME/IP IL error occured: Error code: %d\", errorCode);\n      errorOccured = 1;\n    } // if\n  } // if\n\n  if(errorOccured == 0)\n  {\n    write(\"SOME/IP message received. Destination Port: %d\",dstPort);\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

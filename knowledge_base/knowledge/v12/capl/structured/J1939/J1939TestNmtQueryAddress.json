@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestNmtQueryAddress",
+  "category": "J1939",
+  "title": "J1939TestNmtQueryAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestNmtQueryAddress.htm",
+  "syntax": [
+    "long J1939TestNmtQueryAddress( long ecuHandle );"
+  ],
+  "description": [
+    "The function queries for an ECU address."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "handle of the ECU"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "char deviceName[8];\nJ1939TestNmtRefresh( 250 );\naddress = J1939TestNmtQueryAddress( deviceName, 0x12 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethSetLinkStatus",
+  "category": "IP",
+  "title": "ethSetLinkStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionEthSetLinkStatus.htm",
+  "syntax": [
+    "long ethSetLinkStatus( long channel, long status ); // form 1"
+  ],
+  "description": [
+    "Configures the channel of the Vector hardware to establish or terminate a link."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel number."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on key 'u'\n{\n  ethSetLinkStatus(ethernetPort::MyNetworkName::MyPortName, 1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

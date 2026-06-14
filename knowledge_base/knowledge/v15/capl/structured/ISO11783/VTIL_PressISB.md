@@ -1,0 +1,55 @@
+# VTIL_PressISB
+
+> Category: `ISO11783` | Type: `function`
+
+## Syntax
+
+```c
+long VTIL_PressISB(dword duration); // form 1
+long VTIL_PressISB(dbNode vt, dword duration); // form 2
+```
+
+## Description
+
+The VTIL_PressButton methods simulates pressing the ISOBUS Shortcut Button [ISB] of the Virtual Terminal and the releasing of it after the duration. As a result, the All Implements Stop Operations Switch State Message is sent with the value Stop implement operations until the ISB is released.
+
+Every time the function is called the Number of transitions from Permit to Stop is incremented.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| vt | VT simulation node to apply the function. |
+| duration | Time while the ISB is pressed [ms]. |
+
+## Example
+
+Example for test node
+
+```c
+long result;
+result = VTIL_PressISB(VT,  300);
+switch (result)
+{
+  case 0: TestStepPass(); break;
+  case -2115: TestStepFail("VT works in passive mode therefore you cannot 
+press the ISB button!"); break;
+  case -2121: TestStepFail("ISB Button is not available because property ‚isbServer‘ is not set!"); break;
+  default: TestStepFail("Unexpected error"); break;
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 9.0 SP4 | 13.0 | — | — | 2.1 SP4 |
+| Restricted To | — | ISO11783 | ISO11783 | — | — | form 2 ISO11783 |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ (form 1) | ✔ (form 1) | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ (form 2) | ✔ (form 2) | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ (form 2) | ✔ (form 2) | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

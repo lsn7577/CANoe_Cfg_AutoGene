@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetEID, DoIP_SetGroupIdentification, DoIP_SetVIN",
+  "category": "Diagnostics",
+  "title": "DoIP_SetEID, DoIP_SetGroupIdentification, DoIP_SetVIN",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPSetEID.htm",
+  "syntax": [
+    "void DoIP_SetEID(byte EID[]);",
+    "void DoIP_SetGroupIdentification(byte GID[], dword furtherActionRequired, dword VINGIDsyncStatus);",
+    "void DoIP_SetVIN(byte VIN[]);",
+    "void DoIP_SetVIN(char VIN[]);"
+  ],
+  "description": [
+    "Configures the Vehicle Announcement/Vehicle Identification Response Message sent by a vehicle simulation."
+  ],
+  "parameters": [
+    {
+      "name": "EID",
+      "type": "",
+      "description": "Send this entity ID in the message, e.g. a MAC address."
+    },
+    {
+      "name": "GID",
+      "type": "",
+      "description": "Send this group identity in the message, e.g. a MAC address."
+    },
+    {
+      "name": "furtherActionRequired",
+      "type": "",
+      "description": "0: No further action is required (default)"
+    },
+    {
+      "name": "VINGIDsyncStatus",
+      "type": "",
+      "description": "0: VIN and GID are synchronized (default)0x10: VIN and GID are NOT synchronized; the tester should repeat the Vehicle Identification Request."
+    },
+    {
+      "name": "VIN",
+      "type": "",
+      "description": "Vehicle Identification Number sent in the message."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "These values can also be configured in the DoIP.INI file."
+    ],
+    "code": "// Set the entity and group IDs\nBYTE eid[6] = { 0x20, 0x11, 0x22, 0x33, 0x44, 0x55};\nBYTE gid[6] = { 0x20, 0x11, 0x22, 0x33, 0xFF, 0xFF};\nDoIP_SetEID( eid);\n// Indicate that VIN and GID are not synchronized yet, i.e. the tester shall repeat\n// the Vehicle Identification Request after some time\nDoIP_SetGroupIdentification( gid, 0, 0x10);\nif( gSetVINasBytes)\n{\n  // Alternatively, set the VIN using a raw byte stream\n  BYTE rawVIN[17] = { 0xFF, 0xFF, 0xFF, 0xFF,    0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,    0xFF, 0xFF, 0xFF, 0xFF, 0xFF };\n  DoIP_SetVIN( rawVIN);\n} else\n{\n  // Set the VIN using its textual representation\n  DoIP_SetVIN(\"VECT0RVEH1CLE1234\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP2",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,138 @@
+{
+  "page_type": "method",
+  "name": "ethernetPacket::SetData",
+  "category": "IP",
+  "title": "ethernetPacket::SetData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Methods/CAPLfunctionSetData.htm",
+  "syntax": [
+    "Syntax;"
+  ],
+  "description": [
+    "Copies bytes from a char array, byte array, CAPL struct or system variable struct to the data of an Ethernet packet."
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Byte offset of the data in the ethernetPacket. Offset 0 is the byte directly after the Ethertype."
+    },
+    {
+      "name": "source",
+      "type": "",
+      "description": "Source where the data is copied from."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "Number of bytes to copy."
+    }
+  ],
+  "return": "Number of bytes copied to the ethernetPacket.",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  _align(1) struct MyMsgLayout\n  {\n    word  valueA;\n    dword valueB;\n  };\n\n  ethernetPacket pkt;\n  struct MyMsgLayout myData;\n\n  myData.valueA = 1;\n  myData.valueB = 2;\n\n  pkt.source      = ethGetMacAddressAsNumber( \"20:00:00:00:00:01\" );\n  pkt.destination = ethGetMacAddressAsNumber( \"FF:FF:FF:FF:FF:FF\" );\n  pkt.type        = 0xF123; // proprietary Ethertype\n  pkt.Length      = __size_of(struct MyMsgLayout);\n  pkt.SetData( 0, myData );\n\n  output( pkt );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0",
+      "10.0",
+      "13.0",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

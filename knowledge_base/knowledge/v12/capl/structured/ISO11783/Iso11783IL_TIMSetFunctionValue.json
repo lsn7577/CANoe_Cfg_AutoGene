@@ -1,0 +1,69 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetFunctionValue",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetFunctionValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetFunctionValue.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetFunctionValue(byte functionId, word rawValue); // form 1"
+  ],
+  "description": [
+    "Sets the value of a TIM function.",
+    "This value is transmitted in the status message of the TIM function."
+  ],
+  "parameters": [
+    {
+      "name": "Function ID",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1-32 (1h-20h)",
+      "type": "",
+      "description": "Auxiliary Value 1 – 32"
+    },
+    {
+      "name": "64 (40h)",
+      "type": "",
+      "description": "Front PTO"
+    },
+    {
+      "name": "65 (41h)",
+      "type": "",
+      "description": "Rear PTO"
+    },
+    {
+      "name": "66 (42h)",
+      "type": "",
+      "description": "Front hitch"
+    },
+    {
+      "name": "67 (43h)",
+      "type": "",
+      "description": "Rear hitch"
+    },
+    {
+      "name": "68 (44h)",
+      "type": "",
+      "description": "Vehicle speed"
+    },
+    {
+      "name": "70 (46h)",
+      "type": "",
+      "description": "External guidance"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

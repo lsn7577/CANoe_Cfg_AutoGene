@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDObjectPoolDelete",
+  "category": "ISO11783",
+  "title": "Iso11783PDDObjectPoolDelete",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDObjectPoolDelete.htm",
+  "syntax": [
+    "long Iso11783PDDObjectPoolDelete( dword ecuHandle );"
+  ],
+  "description": [
+    "The function deletes the current device description object pool and sends an Object-pool Delete message to the Task Controller.",
+    "Contrary to Iso11783PDDDelete the connection to the Task Controller is not removed."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783PDDObjectPoolDelete( ecuHandle ) == 0) {\n  write(\"Object pool is deleted and Object-Pool delete message is sent successfully\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

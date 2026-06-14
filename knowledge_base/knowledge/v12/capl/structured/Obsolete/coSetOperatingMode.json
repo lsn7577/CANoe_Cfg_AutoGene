@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "coSetOperatingMode",
+  "category": "Obsolete",
+  "title": "coSetOperatingMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoSetOperatingMode.htm",
+  "syntax": [
+    "void coSetOperatingMode( dword msgTriggered, dword cycleTime, dword errCode[] );"
+  ],
+  "description": [
+    "The function sets the work mode of the node. As default setting the node operates at a cycle time of 5 ms not triggered by messages. This means it is processed in a fixed grid. In extreme cases, 5 ms occur until an SDO request of another node is answered. If the node is set to message-triggered mode using this function now, it reacts as fast as possible to the messages sent to it. The indicated cycle time specifies in which time interval the node is executed. For example, this determines how fast given commands are processed or how occurring events (boot-up of a node) are reported to the application. This function allows the behavior of real ECUs to be better simulated because a fixed cycle time is often used here for the communication section of the software.",
+    "A short cycle time can be used simultaneously with message-triggered mode in order to obtain the fastest possible reaction of the node.",
+    "The real reaction time in message-triggered mode depends on multiple factors, for example, on the number of simulated nodes, the processor load, and the general performance of the PC."
+  ],
+  "parameters": [
+    {
+      "name": "msgTriggered",
+      "type": "",
+      "description": "Specifies whether the node should work in message-triggered mode:0 - deactivate message triggering1 - activate message triggering"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\n// enable faster reaction times for messages\ncoSetOperatingMode( 1, 1, errCode );\nif (errCode[0] == 0) {\n  write( \"Message triggered mode successfully set\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

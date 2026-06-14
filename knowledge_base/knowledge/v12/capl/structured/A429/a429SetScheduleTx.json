@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "a429SetScheduleTx",
+  "category": "A429",
+  "title": "a429SetScheduleTx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429SetScheduleTx.htm",
+  "syntax": [
+    "dword a429SetScheduleTx( a429word myA429word, dword myCycle );"
+  ],
+  "description": [
+    "Prepare an ARINC word to be transmitted cyclically by means of the hardware scheduling support. Calling this function modifies the selectors TxCycle and TxCtrl.",
+    "Note: This modifies the ARINC word attributes only. For transmission call the function output."
+  ],
+  "parameters": [
+    {
+      "name": "myA429word",
+      "type": "",
+      "description": "ARINC word"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

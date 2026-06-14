@@ -1,0 +1,55 @@
+{
+  "page_type": "function",
+  "name": "diagGetP2Timeout",
+  "category": "Diagnostics",
+  "title": "diagGetP2Timeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetP2Timeout.htm",
+  "syntax": [
+    "long diagGetP2Timeout (); // form 1: deprecated. Is equivalent to form 2 with source value 2."
+  ],
+  "description": [
+    "Returns the time P2 in milliseconds, from the given source. If an ECU qualifier is given, the build-in communications channel for this target is accessed.",
+    "P2: Time between sending of the request and the start of the arrival of the first response.",
+    "The function will return different values for client (i.e. in a tester) and server (i.e. in an ECU simulation)."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Currently active value, i.e. the value originally set or last set from CAPL"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Value stored at the selected interface in the description's document"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Value configured in the configuration dialog for the description"
+    },
+    {
+      "name": "other",
+      "type": "",
+      "description": "reserved"
+    }
+  ],
+  "return": "Error code or time in ms.",
+  "example": {
+    "description": [],
+    "code": "diagSetTarget( \"ECU1\");\nwrite( \"Current P2 = %d\", diagGetP2Timeout(0));\nwrite( \"Configured P2 = %d\", diagGetP2Timeout(2));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

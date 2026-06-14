@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "frSetSendGroup",
+  "category": "FlexRay",
+  "title": "frSetSendGroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRSetSendGroup.htm",
+  "syntax": [
+    "void frSetSendGroup (int slotId, int channelMask, int groupNo, int cycleStart, int cycleRepetition, long flags, int channel);"
+  ],
+  "description": [
+    "Grouped frames, which are transmitted in a CAPL handler (e.g., on frFrame, on timer, etc.), are not written to the CC send buffer until it has been ensured that frames with a payload that has not yet been modified and frames with a modified payload have not been mixed together during a FlexRay cycle.",
+    "In other words, all frames in the group are sent in the current cycle, or all frames are not sent until the next possible cycle.",
+    "Restrictions The number of frames per group is restricted to four per FlexRay channel (A, B)."
+  ],
+  "parameters": [
+    {
+      "name": "slotId",
+      "type": "",
+      "description": "Slot number of the frame used"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The frames in slots 8 and 40 are registered as a group. The frames are sent in on frFrame (10, 0, 1).",
+      "The frame in slot 40 was able to be sent in the current CC cycle, but not the other frame. Therefore, the Tx buffers of all frames of the group are not written until slot 40 has been expired."
+    ],
+    "code": "variables\n{\n   frFrame MsgChannel1.( 8, 0, 1) gSta1Msg;\n   frFrame MsgChannel1.(40, 0, 1) gSta2Msg;\n   int flags            = 16; // event-driven\n   int channelMask      = \r\n 1;\n   int payloadlength    = \r\n 4;\n\n   int groupNo          = 66;\n   int Cnt              = 0;\n}\non preStart\n{\n   // register frame 1:\n   gSta1Msg.FR_Channelmask = channelMask;\n   gSta1Msg.FR_Flags = flags;\n   frSetPayloadLengthInByte(gSta1Msg, payloadlength);\n   frSetSendFrame( gSta1Msg );\n   // add to send group:\n   frSetSendGroup( gSta1Msg.FR_SlotID,\n                  gSta1Msg.FR_ChannelMask,\n                  groupNo,\n                  gSta1Msg.FR_CycleOffset,\n                  gSta1Msg.FR_CycleRepetition,\n                  0 );\n   // register frame 2:\n   gSta2Msg.FR_Channelmask = channelMask;\n   gSta2Msg.FR_Flags = flags;\n   frSetPayloadLengthInByte(gSta2Msg, payloadlength);\n   frSetSendFrame( gSta2Msg );\n   // add to send group:\n   frSetSendGroup( gSta2Msg.FR_SlotID,\n                  gSta2Msg.FR_ChannelMask,\n                  groupNo,\n                  gSta2Msg.FR_CycleOffset,\n                  gSta2Msg.FR_CycleRepetition,\n                  0 );\n}\non frFrame (10, 0, 1)\n{\n   // we assume that we receive at least a message\n   // in slot 10 in cycle 0 on channel A:\n   if ((this.FR_Cycle == 0) && (this.FR_ChannelMask == 1))\n   {\n      // Update is done in cycle 0 only:\n      gSta1Msg.byte(0) = Cnt;\n      gSta2Msg.byte(0) = Cnt;\n      frUpdateStatFrame(gSta1Msg);\n      frUpdateStatFrame(gSta2Msg);\n      Write(„Update of Frames in cycle %d with data %d.“, this.FR_Cycle, Cnt);\n      if (++Cnt > 255) Cnt = 0;\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939AppAddrClaimed",
+  "category": "J1939",
+  "title": "J1939AppAddrClaimed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939AppAddrClaimed.htm",
+  "syntax": [
+    "dword J1939AppAddrClaimed( long ecuHandle );"
+  ],
+  "description": [
+    "Indicates that Address Claiming was performed successfully, which means that the control device is permitted to communicate on the CAN bus."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword J1939AppAddrClaimed( LONG ecuHandle )\n{\n  /* user code */\n  return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsDeactivateHeartbeatMonitor",
+  "category": "CANopen",
+  "title": "coTfsDeactivateHeartbeatMonitor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsDeactivateHeartbeatMonitor.htm",
+  "syntax": [
+    "long coTfsDeactivateHeartbeatMonitor( dword nodeId );"
+  ],
+  "description": [
+    "This function switches off the calling of the heartbeat callbacks if these are switched on.",
+    "The callbacks can be switched on with coTfsActivateHeartbeatMonitor."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Identifier of the node for which the heartbeat callbacks are to deactivate."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsActivateHeartbeatMonitor(0x1,100.20);\nTestWaitForTimeout(2000);\ncoTfsDeactivateHeartbeatMonitor(0x1);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

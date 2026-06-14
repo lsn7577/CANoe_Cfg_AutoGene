@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "J1939ILGetState",
+  "category": "J1939",
+  "title": "J1939ILGetState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILGetState.htm",
+  "syntax": [
+    "long J1939ILGetState(); // form 1"
+  ],
+  "description": [],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  LONG state;\n  state = J1939ILGetState();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

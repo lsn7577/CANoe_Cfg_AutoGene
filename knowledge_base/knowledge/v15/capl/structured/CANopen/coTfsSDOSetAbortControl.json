@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOSetAbortControl",
+  "category": "CANopen",
+  "title": "coTfsSDOSetAbortControl",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoSetAbortControl.htm",
+  "syntax": [
+    "long coTfsSDOSetAbortControl( dword controlValue);"
+  ],
+  "description": [
+    "The function defines which values are allowed for successful test completion."
+  ],
+  "parameters": [
+    {
+      "name": "controlValue",
+      "type": "",
+      "description": "1: correct response or accepted SDO abort code (see coTfsSDOAddAccAbortCode) is allowed for successful test completion, default 2: correct response or any SDO abort code is allowed 3: correct response is not allowed 4: correct response is not allowed but any SDO abort code"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* Accept correct answer or all SDO abort codes, which are in the list of accepted SDO abort codes to pass a test. */\nconst kSetAbortControlDefault = 1;\n\n/* Accept correct answer or any SDO abort code to pass a test. */\nconst kSetAbortControlAllSDOAborts = 2;\n\n/* Accept all SDO abort codes, which are in the list of accepted SDO abort codes to pass a test. The correct answer is not valid. */\nconst kSetAbortControlOnlySdoAbort = 3;\n\n/* Accept any SDO abort codes to pass a test. The correct answer is not valid. */\nconst kSetAbortControlOnlyAnySdoAbort = 4;\n\n/* Set internal handling of correct answers and SDO abort codes for level 2 SDO test functions.*/\nif (coTfsSDOSetAbortControl(kSetAbortControlDefault) != 1)\n{\n  /* command failed */\n} /* if */\n\n/* now run any SDO level 2 function like coTfsSDOUpload(), ... */"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

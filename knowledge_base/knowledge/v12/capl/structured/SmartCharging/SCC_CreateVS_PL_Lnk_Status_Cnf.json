@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateVS_PL_Lnk_Status_Cnf",
+  "category": "SmartCharging",
+  "title": "SCC_CreateVS_PL_Lnk_Status_Cnf",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateVS_PL_Lnk_Status_Cnf.htm",
+  "syntax": [
+    "void SCC_CreateVS_PL_Lnk_Status_Cnf ( byte SourceMac[], byte TargetMac[], dword MStatus, dword LinkStatus )"
+  ],
+  "description": [
+    "Creates a VS_PL_Lnk_Status.Cnf message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SourceMac",
+      "type": "",
+      "description": "Source address of the Ethernet frame"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

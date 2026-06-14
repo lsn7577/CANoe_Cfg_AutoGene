@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "resetFlexRayCC",
+  "category": "FlexRay",
+  "title": "resetFlexRayCC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionResetFlexrayCC.htm",
+  "syntax": [
+    "void resetFlexRayCC (int channel);"
+  ],
+  "description": [
+    "This function initializes the FlexRay Communication Controller (CC) and begins a new start-up phase for the cluster or a new integrations phase in the cluster - depending on whether a start-up frame is to be sent or not."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "FlexRay channel (cluster number)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The following program resets the FlexRay interface of the attached channel, when <R>key is pressed."
+    ],
+    "code": "on key 'r'\n{\n   resetFlexRayCC(%CHANNEL%);\n   Write(\"Reset FlexRay CC on channel %d.\", %CHANNEL%);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

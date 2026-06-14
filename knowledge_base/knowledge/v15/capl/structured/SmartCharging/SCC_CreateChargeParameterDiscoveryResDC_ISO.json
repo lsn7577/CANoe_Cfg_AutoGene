@@ -1,0 +1,193 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateChargeParameterDiscoveryResDC_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateChargeParameterDiscoveryResDC_ISO",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateChargeParameterDiscoveryResDC_Iso.htm",
+  "syntax": [
+    "long SCC_CreateChargeParameterDiscoveryResDC_ISO ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, char StatusCode[], char Notification[], long EVSEProcessing, float CurrentAndVoltageLimits[], float PeakCurrentRipple)"
+  ],
+  "description": [
+    "Creates a Charge Parameter Discovery Response message for sending, using the DC syntax."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "ResponseCode",
+      "type": "",
+      "description": "Acknowledgement status of the message."
+    },
+    {
+      "name": "NotificationMaxDelay",
+      "type": "",
+      "description": "Time until the vehicle is expected to react on the notification (for DC_EVSEStatus)."
+    },
+    {
+      "name": "StatusCode",
+      "type": "",
+      "description": "Internal state of the EVSE (for DC_EVSEStatus)."
+    },
+    {
+      "name": "Notification",
+      "type": "",
+      "description": "Notification about an action that the charge point wants the vehicle to perform (for DC_EVSEStatus)."
+    },
+    {
+      "name": "EVSEProcessing",
+      "type": "",
+      "description": "0 if Finished 1 if Ongoing 2 if Ongoing_WaitingForCustomerInteraction (ISO 15118)"
+    },
+    {
+      "name": "CurrentAndVoltageLimits",
+      "type": "",
+      "description": "Electrical limit values: CurrentAndVoltageLimits[0] = EVSEMaximumCurrentLimit CurrentAndVoltageLimits[1] = EVSEMaximumVoltageLimit CurrentAndVoltageLimits[2] = EVSEMinimumCurrentLimit CurrentAndVoltageLimits[3] = EVSEMinimumVoltageLimit Only for ISO 15118 CurrentAndVoltageLimits[4] = EVSEMaximumPowerLimit"
+    },
+    {
+      "name": "PeakCurrentRipple",
+      "type": "",
+      "description": "Peak-to-peak magnitude of the current ripple."
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "MaxPower float EVSEMaximumPowerLimit"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "CurrentRegulation- Tolerance float Absolute magnitude of the regulation tolerance."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "EnergyToBeDelivered float Amount of energy to be delivered in Wh."
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "SAScheduleList long Schedule / tariff list from secondary actor."
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "EVSEIsolationStatus char[] Indicates the isolation condition."
+    }
+  ],
+  "return": "Time until the vehicle is expected to react \r\non the",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

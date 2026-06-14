@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "canSetChannelOutput",
+  "category": "CAN",
+  "title": "canSetChannelOutput",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Functions/CAPLfunctionCanSetChannelOutput.htm",
+  "syntax": [
+    "long canSetChannelOutput(long channel, long silent);"
+  ],
+  "description": [
+    "Defines the response of the CAN controller to the bus traffic and sets the ACK bit.The CAN transmitter of the channel is switched off. So CANoe does not generate an Ack bit here, and messages can no longer be sent. It is still possible to receive messages."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "CAN channel"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "silent"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "normal"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n   long channel =2;\n      long silent =0;\n   canSetChannelOutput(channel,silent);\n   Write(\"silent set to %d\",silent);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.0",
+      "5.0",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "CAN",
+      "CAN",
+      "CAN",
+      "—",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

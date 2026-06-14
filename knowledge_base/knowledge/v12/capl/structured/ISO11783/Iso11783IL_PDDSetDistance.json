@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDSetDistance",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDSetDistance",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILpddsetdistance.htm",
+  "syntax": [
+    "long Iso11783IL_PDDSetDistance( dword distance ); // form 1"
+  ],
+  "description": [
+    "The distance covered is set with this function. The value is needed for the distance trigger and should be updated cyclically."
+  ],
+  "parameters": [
+    {
+      "name": "distance",
+      "type": "",
+      "description": "distance covered in [m]"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void ReceiveGBSDFromTractor( \r\n pg GroundBasesSpeedPG thisPG ){\n Iso11783IL_PDDSetDistance( thisPG.GroundBasedDistance.phys );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

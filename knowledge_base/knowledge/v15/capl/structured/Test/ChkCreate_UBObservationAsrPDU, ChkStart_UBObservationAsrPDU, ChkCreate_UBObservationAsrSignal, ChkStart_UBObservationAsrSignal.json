@@ -1,0 +1,161 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_UBObservationAsrPDU, ChkStart_UBObservationAsrPDU, ChkCreate_UBObservationAsrSignal, ChkStart_UBObservationAsrSignal",
+  "category": "Test",
+  "title": "ChkCreate_UBObservationAsrPDU, ChkStart_UBObservationAsrPDU, ChkCreate_UBObservationAsrSignal, ChkStart_UBObservationAsrSignal",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkCreateUBObservationAsrPDUAsrSignal.htm",
+  "syntax": [
+    "dword ChkCreate_UBObservationAsrPDU(PDU aPDU, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkStart_UBObservationAsrPDU(PDU aPDU, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkCreate_UBObservationAsrPDU(PDU aPDU, char [] signalGroup, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkStart_UBObservationAsrPDU(PDU aPDU, char [] signalGroup, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkCreate_UBObservationAsrPDU(long aHeaderId, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkStart_UBObservationAsrPDU(long aHeaderId, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkCreate_UBObservationAsrPDU(long aHeaderId, char [] signalGroup, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkStart_UBObservationAsrPDU(long aHeaderId, char [] signalGroup, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkCreate_UBObservationAsrSignal(long aHeaderId, char [] signalName, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkStart_UBObservationAsrSignal(long aHeaderId, char [] signalName, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkCreate_UBObservationAsrSignal(PDU aPDU, char [] signalName, dword maxNoOfConsUnchangedDataWithSetUB);",
+    "dword ChkStart_UBObservationAsrSignal(PDU aPDU, char [] signalName, dword maxNoOfConsUnchangedDataWithSetUB);"
+  ],
+  "description": [
+    "Monitors the UB of a PDU, a single signal group of a PDU or a single signal of a PDU. The check condition is violated if the UB of an signal is set and the matching signal is not changed in the PDU or signal group. The check can be set up for a single PDU, a single signal group within a PDU or a single signal with a PDU.",
+    "The functions/constructors without the parameter signalGroup monitors all specified UB's within the given PDU.",
+    "The numeric functions/constructors with the parameter aHeaderId cannot be used for FlexRay."
+  ],
+  "parameters": [
+    {
+      "name": "aPDU",
+      "type": "",
+      "description": "Must exist in DB"
+    },
+    {
+      "name": "aHeaderId",
+      "type": "",
+      "description": "PDU header ID to be observed. The corresponding PDU shall be defined in the database."
+    },
+    {
+      "name": "signalGroup",
+      "type": "",
+      "description": "Signal group with SQC to be observed."
+    },
+    {
+      "name": "signalName",
+      "type": "",
+      "description": "Signal with UB to be observed."
+    },
+    {
+      "name": "maxNoOfConsUnchangedDataWithSetUB",
+      "type": "",
+      "description": "> 0: Maximal number of constant unchanged data with set UB= 0: Unchanged data with set UB not allowed-1: Unchanged data with set UB allowed infinite"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks the payload gaps of the message\ncheckId = ChkStart_UBObservationAsrPDU (PDUToObserve, “signalGroup1”);\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP2",
+      "13.0",
+      "—",
+      "14",
+      "3.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "PDU network",
+      "PDU network",
+      "—",
+      "PDU network",
+      "PDU network"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

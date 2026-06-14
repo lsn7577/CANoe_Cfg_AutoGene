@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "getStartdelay",
+  "category": "Other",
+  "title": "getStartdelay",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetStartDelay.htm",
+  "syntax": [
+    "int getStartdelay()"
+  ],
+  "description": [
+    "Determines the value of the start delay configured for this network node in the Simulation Setup."
+  ],
+  "parameters": [],
+  "return": "Start delay in ms. If no start delay was set the function returns the value zero.",
+  "example": {
+    "description": [],
+    "code": "int val;\n...\n// Assign to val the value of the start delay\nval = getStartdelay();\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

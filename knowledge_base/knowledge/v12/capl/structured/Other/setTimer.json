@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "setTimer",
+  "category": "Other",
+  "title": "setTimer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetTimer.htm",
+  "syntax": [
+    "void setTimer(msTimer t, long duration); // form 1"
+  ],
+  "description": [
+    "Sets a timer."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables {\n  msTimer t1;\n  Timer t23;\n}\n\non key F1 {\n  setTimer(t1, 200); // set timer t1 to 200 ms\n}\n\non key F2 {\n  setTimer (t23, 2); // set timer t23 to 2 sec\n}\n\non key F3 {\n  setTimer (t23, 0, 1250*1000 ); // set timer t23 to 1.250 milliseconds\n}\n\non timer t1 {\n  write(\"F1 was pressed 200ms ago\");\n}\n\non timer t23 {\n  write(\"F2 was pressed 2 sec ago or F3 1250000 nsec ago\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "diagCheckValidPrimitive",
+  "category": "Diagnostics",
+  "title": "diagCheckValidPrimitive",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagCheckValidPrimitive.htm",
+  "syntax": [
+    "long diagCheckValidPrimitive( diagRequest obj);"
+  ],
+  "description": [
+    "Returns 1 if the response received for the request matches its specification in the diagnostic description. If a primitive qualifier is given, the definition of that primitive at the object's service is used as specification.",
+    "If the primitive is not valid, 0 is returned and the optional parameter reasonOut[0] is set to the precise reason why the check failed (see below).",
+    "If a primitive is specified, it must be defined for the service the response currently refers to! Please refer to diagnostic descriptions with overloaded responses for details."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object to check."
+    }
+  ],
+  "return": "1: Primitive matches the specification in the diagnostic description.",
+  "example": {
+    "description": [],
+    "code": "long ConformsToKnownPrimitives( diagResponse * response)\n{\n   if( 1 == response.CheckValidPrimitive( \"ServiDefauD\")\n      || 1 == response.CheckValidPrimitive( \"ServiEcu1PR\"))\n      return 1;\n   return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

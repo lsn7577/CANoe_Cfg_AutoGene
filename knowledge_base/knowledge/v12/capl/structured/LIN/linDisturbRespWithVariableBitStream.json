@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linDisturbRespWithVariableBitStream",
+  "category": "LIN",
+  "title": "linDisturbRespWithVariableBitStream",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINDisturbRespWithVariableBitStream.htm",
+  "syntax": [
+    "dword linDisturbRespWithVariableBitStream(long disturbedFrameId, dword byteIndex, dword bitIndex, byte bitStream[], dword numberOfBits, dword timeoutPrevention);"
+  ],
+  "description": [
+    "Configures the LIN hardware to disturb the specified response with a variable bit stream."
+  ],
+  "parameters": [
+    {
+      "name": "disturbedFrameID",
+      "type": "",
+      "description": "ID of the bus event to be disturbed."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

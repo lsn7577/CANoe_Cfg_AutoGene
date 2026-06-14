@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IP_Endpoint::PrintEndpointToString",
+  "category": "IP",
+  "title": "IP_Endpoint::PrintEndpointToString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionPrintEndpointToString.htm",
+  "syntax": [
+    "long IP_Endpoint::PrintEndpointToString(char endpoint[]);"
+  ],
+  "description": [
+    "Converts the endpoint to a character string."
+  ],
+  "parameters": [
+    {
+      "name": "endpoint",
+      "type": "",
+      "description": "A character string representing an IP endpoint."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "void OnReceiveFrom( UdpSocket socket, long result, IP_Endpoint senderEndpoint, byte buffer[], dword size)\n{\n  char endpointText[60];\n  senderEndpoint.PrintEndpointToString(endpointText);\n  write(\"packet from %s received\", endpointText );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

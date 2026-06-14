@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "toUpper",
+  "category": "Other",
+  "title": "toUpper",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionToUpper.htm",
+  "syntax": [
+    "char toUpper(char c); // form 1"
+  ],
+  "description": [
+    "Transforms a character or string to upper case. Only characters a-z and A-Z are supported."
+  ],
+  "parameters": [
+    {
+      "name": "c",
+      "type": "",
+      "description": "Character to be transformed."
+    }
+  ],
+  "return": "Upper case of the character (form 1).",
+  "example": {
+    "description": [],
+    "code": "char buffer[20];\ntoUpper(buffer, \"Vector\", elcount(buffer)); // buffer contains \"VECTOR\""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

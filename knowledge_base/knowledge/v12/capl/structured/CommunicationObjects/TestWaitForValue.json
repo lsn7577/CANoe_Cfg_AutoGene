@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForValue",
+  "category": "CommunicationObjects",
+  "title": "TestWaitForValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionTestWaitForValue.htm",
+  "syntax": [
+    "long TestWaitForValue(COValue value, ValueType awaitedValue, dword timeoutMs)"
+  ],
+  "description": [
+    "Waits for a communication object value to reach a certain value. This function can only be used for communication object values with a complex data type (array or struct). It cannot be used for system variables or bus system signals."
+  ],
+  "parameters": [
+    {
+      "name": "awaitedValue",
+      "type": "",
+      "description": "Value which is awaited."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "struct Mirrors::Position pos;\nlong ret;\npos.x = 100;\npos.y = 50;\nret = testWaitForValue(MirrorAdjustment.consumerSide[0,0].CurrentPosition, pos, 200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

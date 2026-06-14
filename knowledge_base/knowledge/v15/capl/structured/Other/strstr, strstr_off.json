@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "strstr, strstr_off",
+  "category": "Other",
+  "title": "strstr, strstr_off",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionStrStr.htm",
+  "syntax": [
+    "long strstr(char s1[], char s2[]);",
+    "long strstr_off(char s1[], long offset, char s2[]);"
+  ],
+  "description": [
+    "Searches in s1 for s2."
+  ],
+  "parameters": [
+    {
+      "name": "s1",
+      "type": "",
+      "description": "First string"
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Offset in s1 in bytes at which the search shall be started"
+    },
+    {
+      "name": "s2",
+      "type": "",
+      "description": "Second string"
+    }
+  ],
+  "return": "First position in bytes of s2 in s1, or -1 if s2 is not found in s1.",
+  "example": {
+    "description": [],
+    "code": "long pos;\nchar s1[18] = \"Vector Informatik\";\nchar s2[11] = \"Informatik\";\npos = strstr(s1, s2); // pos = 7"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.0",
+      "7.0",
+      "13.0",
+      "13.0",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

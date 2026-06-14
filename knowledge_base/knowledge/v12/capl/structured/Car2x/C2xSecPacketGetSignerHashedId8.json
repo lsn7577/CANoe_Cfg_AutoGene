@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSecPacketGetSignerHashedId8",
+  "category": "Car2x",
+  "title": "C2xSecPacketGetSignerHashedId8",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSecPacketGetSignerHashedId8.htm",
+  "syntax": [
+    "long C2xSecPacketGetSignerHashedId8( long packetHandle, byte signerHashedId8[] );"
+  ],
+  "description": [
+    "Gets the HashedId8 digest of the certificate which was used to sign the packet."
+  ],
+  "parameters": [
+    {
+      "name": "packetHandle",
+      "type": "",
+      "description": "Handle of the packet"
+    }
+  ],
+  "return": "Number of bytes copied",
+  "example": {
+    "description": [],
+    "code": "void OnC2xPacket( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long rxPacketHandle )\n{\n  byte hashedId8[8];\n  C2xSecPacketGetHashedId8(rxPacketHandle, hashedId8);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

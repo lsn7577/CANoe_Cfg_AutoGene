@@ -1,0 +1,155 @@
+{
+  "page_type": "function",
+  "name": "GNSSAddWpRect",
+  "category": "J1939",
+  "title": "GNSSAddWpRect",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSaddwprect.htm",
+  "syntax": [
+    "dword GNSSAddWpRect( double latitudeRef, double longitudeRef, double altitudeRef, double width, double height, double radius );"
+  ],
+  "description": [
+    "This function can be used to describe a rectangle with rounded off corners. To do this, the points that describe the rectangle are inserted at the end of the waypoint list. The unit of the parameters depends on the system of measurement units selected with the GNSSSetUnits function.",
+    "The following illustrations describe the effect of the prefixed sign on the values for height and width (assuming that radius = 0). The thicker point identifies the reference point.",
+    "Special case: If the height and width are both identical to one half the radius, the result is a circle."
+  ],
+  "parameters": [
+    {
+      "name": "latitudeRef",
+      "type": "",
+      "description": "latitude of the reference point (in degrees)"
+    },
+    {
+      "name": "longitudeRef",
+      "type": "",
+      "description": "longitude of the reference point (in degrees)"
+    },
+    {
+      "name": "altitudeRef",
+      "type": "",
+      "description": "altitude of the reference point (in m or ft)"
+    },
+    {
+      "name": "width",
+      "type": "",
+      "description": "width (w) of the rectangle (in m or yd)"
+    },
+    {
+      "name": "height",
+      "type": "",
+      "description": "height (h) of the rectangle (in m or yd)"
+    },
+    {
+      "name": "radius",
+      "type": "",
+      "description": "radius (r) of the rounded off corners of the rectangle (in m or yd)"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "// slotted hole with width of 400 yd and \r\n height of 200 yd\nGNSSSetUnits( 1 );\nGNSSAddWpRect( 48.46, 9.11, 225, 400, 200, 100 \r\n );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 ISO11783",
+      "J1939 ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

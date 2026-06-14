@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "J1939ILOnRequest",
+  "category": "J1939",
+  "title": "J1939ILOnRequest",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILOnRequest.htm",
+  "syntax": [
+    "long J1939ILOnRequest( long rqPGN, long sourceAddr )",
+    "long J1939ILOnRequest( long rqPGN, long sourceAddr, long destinationAddress )"
+  ],
+  "description": [
+    "This callback function is called from the J1939 IL if a request (0xEA00) is received."
+  ],
+  "parameters": [
+    {
+      "name": "rqPGN",
+      "type": "",
+      "description": "requested PGN"
+    },
+    {
+      "name": "sourceAddr",
+      "type": "",
+      "description": "source address from which the request was sent"
+    },
+    {
+      "name": "destinationAddress",
+      "type": "",
+      "description": "destination address on which the request was sent"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "LONG J1939ILOnRequest( LONG rqPGN, LONG sourceAddr )\n{\n  switch( rqPGN ) {\n  case 0xFF02:\n    return 2; // send NACK\n  }\n  return 1;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

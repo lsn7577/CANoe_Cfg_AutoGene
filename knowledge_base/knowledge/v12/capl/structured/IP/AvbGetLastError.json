@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "AvbGetLastError",
+  "category": "IP",
+  "title": "AvbGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbGetLastError.htm",
+  "syntax": [
+    "dword AvbGetLastError( );"
+  ],
+  "description": [
+    "This function can be used to check whether the last called function of AVB IL has been successfully executed. The call of this function does not reset the saved error.",
+    "In the Event of an error, a detailed error description can be read out using the AvbGetLastErrorText function."
+  ],
+  "parameters": [],
+  "return": "0: The last called function was successfully executed.",
+  "example": {
+    "description": [],
+    "code": "dword retVal;\ndword listenerHandle;\n\n// open a listener\nlistenerHandle = AvbOpenListener();\n\n// check if last function was successfully executed\nif ((retVal = AvbGetLastError()) != 0)\n{\n  write(\"AVB IL error occured: Error code: %d\", retVal);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

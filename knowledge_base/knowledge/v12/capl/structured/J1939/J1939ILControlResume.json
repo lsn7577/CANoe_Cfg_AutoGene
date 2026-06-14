@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939ILControlResume",
+  "category": "J1939",
+  "title": "J1939ILControlResume",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILControlResume.htm",
+  "syntax": [
+    "long J1939ILControlResume(); // form 1"
+  ],
+  "description": [
+    "After suspending the J1939 IL with J1939ILControlWait, this function restarts the IL. The J1939 IL starts sending cyclic messages again."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "on key 'r'\n{\n J1939ILControlResume();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

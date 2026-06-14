@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestJoinLinETFSingleResponseEvent",
+  "category": "Test",
+  "title": "TestJoinLinETFSingleResponseEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinLinEtfSingleResponseEvent.htm",
+  "syntax": [
+    "long TestJoinLinETFSingleResponseEvent (dword aETFFrameId, dword aAssocFrameId)"
+  ],
+  "description": [
+    "Adds an event of type LIN Event-triggered Frame Single Response to the set of joined events. This is a non-blocking function.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aETFFrameId",
+      "type": "",
+      "description": "Frame identifier of LIN event-triggered frame to be awaited."
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_waitForLinETFSingleResponse(int etfFrameId)\n{\n   long eventIndex;\n   testJoinLinETFSingleResponseEvent(etfFrameId, linGetProtectedID(0x36));\n   testJoinLinETFSingleResponseEvent(etfFrameId, linGetProtectedID(0x34));\n\n   eventIndex = testWaitForAnyJoinedEvent(5000);\n   switch (eventIndex)\n   {\n      case 1:\n         testStepPass(\"Validation\", \"ETF single frame response occurred. FrameId=0x36\");\n      break;\n\n      case 2:\n         testStepPass(\"Validation\", \"ETF single frame response occurred. FrameId=0x34\");\n      break;\n\n      default:\n         testStepFail(\"Validation\", \"ETF single frame response not occurred\");\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

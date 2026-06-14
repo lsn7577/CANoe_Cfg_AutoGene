@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_ResetResponseContent",
+  "category": "ISO11783",
+  "title": "TCIL_ResetResponseContent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILResetResponseContent.htm",
+  "syntax": [
+    "long TCIL_ResetResponseContent(dbNode client, dword command, dword subcommand); // form 1"
+  ],
+  "description": [
+    "The function resets the modification of TCIL_SetResponseContent. The TC IL returns to the default response behaviour."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = TCIL_ResetResponseContent(TC, Sprayer, 168);\nif (result < 0)\n{\n  TestStepFail(\"Failed to reset fault injection\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

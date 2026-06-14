@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "strncmp_off",
+  "category": "Other",
+  "title": "strncmp_off",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStrnCmpOff.htm",
+  "syntax": [
+    "long strncmp_off(char s1[], long s1offset, char s2[], long s2offset, long len);"
+  ],
+  "description": [
+    "This function compares s1 with s2 for a maximum of len bytes.",
+    "If they are identical the functional result is 0. If s1 is less than s2 the result is -1, else +1. Comparison starts in s1 at s1offset and in s2 at s2offset.",
+    "A character may need several bytes depending on the string encoding, e.g. Japanese characters in Windows ANSI (932) encoding or any special characters in UTF-8 encoding. In that case, you should use mbstrncmp_off instead."
+  ],
+  "parameters": [
+    {
+      "name": "s1",
+      "type": "",
+      "description": "First string"
+    }
+  ],
+  "return": "-1 if s1 is less than s2.",
+  "example": {
+    "description": [],
+    "code": "char s1[18] = \"Vector Informatik\";\nchar s2[11] = \"Informatik\";\nif (strncmp_off(s1, 7, s2, 0, strlen(s2)) == 0)\n   write(\"Equal!\");\nelse\n   write(\"Unequal!\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

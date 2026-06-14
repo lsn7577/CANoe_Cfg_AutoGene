@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linIsBitStreamBusy",
+  "category": "LIN",
+  "title": "linIsBitStreamBusy",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINisBitStreamBusy.htm",
+  "syntax": [
+    "dword linIsBitStreamBusy(); // form 1"
+  ],
+  "description": [
+    "Queries the current LIN bit stream sending status."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "The LIN channel number which will be queried."
+    }
+  ],
+  "return": "Returns 1 if a bit stream is currently being sent, otherwise 0.",
+  "example": {
+    "description": [],
+    "code": "// Make sure that there is no bit stream sending active before a new transmission is started\n\nif (linIsBitStreamBusy() == 0)\n\n{\n  linSendBitStream(data, numberOfBits);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

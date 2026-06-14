@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "ILCalculateChecksum",
+  "category": "CANoeIL",
+  "title": "ILCalculateChecksum",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANoeIL/Functions/CAPLfunctionILCalculateChecksum.htm",
+  "syntax": [
+    "long ILCalculateChecksum (char pduNamme[], long type, BYTE payload[], long payloadLength, BYTE crc [])"
+  ],
+  "description": [
+    "Calculates the corresponding CRC checksum based on the payload. The correct offset is calculated from the database using the PDU name."
+  ],
+  "parameters": [
+    {
+      "name": "pduName",
+      "type": "",
+      "description": "Name of the PDU."
+    },
+    {
+      "name": "type",
+      "type": "",
+      "description": "type = 0 : CRCtype = 1 : CHK"
+    },
+    {
+      "name": "payload",
+      "type": "",
+      "description": "Payload for which the checksum is to be calculated."
+    },
+    {
+      "name": "payloadLength",
+      "type": "",
+      "description": "Number of data bytes in payload."
+    },
+    {
+      "name": "crc",
+      "type": "",
+      "description": "The calculated checksum."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0 SP5",
+      "14",
+      "14",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "FlexRay Simulation nodes",
+      "FlexRay Simulation nodes",
+      "FlexRay Simulation nodes",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

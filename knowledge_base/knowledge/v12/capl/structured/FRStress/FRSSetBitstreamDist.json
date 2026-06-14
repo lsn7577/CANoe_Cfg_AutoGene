@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FRSSetBitstreamDist",
+  "category": "FRStress",
+  "title": "FRSSetBitstreamDist",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/Functions/CAPLfunctionFRSSetBitstreamDist.htm",
+  "syntax": [
+    "long FRSSetBitstreamDist (int triggerCondition, char disturbanceSequence[], int disturbanceLength, int delayAfterTrigger, int autoincrement);"
+  ],
+  "description": [
+    "Generates a bit sequence that is applied to the bus as a disturbance after the trigger is detected. In addition, a delay between the trigger and disturbance can be set. The autoincrement value increases the delay by the specified amount at each additional trigger."
+  ],
+  "parameters": [
+    {
+      "name": "triggerCondition",
+      "type": "",
+      "description": "Values: 1…4"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

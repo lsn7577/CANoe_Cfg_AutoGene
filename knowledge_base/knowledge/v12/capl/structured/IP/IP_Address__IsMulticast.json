@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "IP_Address::IsMulticast",
+  "category": "IP",
+  "title": "IP_Address::IsMulticast",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionIsMulticast.htm",
+  "syntax": [
+    "long IP_Address::IsMulticast();"
+  ],
+  "description": [
+    "Checks if the current address is a multicast address."
+  ],
+  "parameters": [],
+  "return": "Returns 1 if the object’s address value is a multicast address.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  DoSomething( IP_Address(239.0.0.1) );\n}\n\nvoid DoSomething( IP_Address addr )\n{\n  if (addr.IsMulticast())\n  {\n    // ...\n  }\n  else if (addr.IsBroadcast())\n  {\n    // ...\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

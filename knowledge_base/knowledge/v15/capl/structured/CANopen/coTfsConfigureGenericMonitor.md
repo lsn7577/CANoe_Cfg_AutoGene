@@ -1,0 +1,54 @@
+# coTfsConfigureGenericMonitor
+
+> Category: `CANopen` | Type: `function`
+
+## Syntax
+
+```c
+long coTfsConfigureGenericMonitor( dword canId, dword isRTR, dword dlc, dword msgData, qword msgMask, dword minOcc, dword maxOcc, char comment[], dword varContent );
+```
+
+## Description
+
+This function configures and activates a generic message monitor. With the monitor you can check the occurrence count of a defined CAN message in the period between configuration and coTfsDeactivateGenericMonitor. The evaluation is done in the coTfsDeactivateGenericMonitor function.
+
+Between the two functions any other test functions can be used.
+
+The monitored message needn't sent and received cyclically, no time check is executed.
+
+Each received message with the correct CAN-ID and DLC and that fits to the mask, is stored (independent of the given mask) and can be compared with compare data (in function coTfsCheckAndCompareGenericMonitorMessage) at runtime or after a coTfsDeactivateGenericMonitor command.
+
+The user can specify a descriptive comment for the monitored message. This comment is written to the test report and provides a better overview.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| canId | CAN-ID of the monitored message. |
+| isRTR | 0: Message is a data frame1: Message is a remote frame |
+| dlc | Message length in byte, [0..8]. |
+| msgData | If data frame: expected message data. |
+| msgMask | If data frame: message data mask; set bits are compared and the message is presumed to be valid if the bits match with the data. |
+| minOcc | Defines how often the expected message must be received at least. |
+| maxOcc | Defines how often the expected message is allowed to be received at a maximum. |
+| comment[] | User defined comment that is written to the report (max. 200 characters). |
+| varContent | 0: The same messages is expected always1: The most significant bit of byte 0 of msgData is toggled after each successful reception of a message, the initial value is set by the value of the bit in msgData.Other values: Reserved |
+
+## Return Values
+
+Error code
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 8.2 | 13.0 | — | — | 2.1 SP3 |
+| Restricted To | — | CANopen | CANopen | — | — | CANopen |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

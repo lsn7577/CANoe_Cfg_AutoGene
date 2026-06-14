@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterChannel",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterChannel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterChannel.htm",
+  "syntax": [
+    "long IpGetAdapterChannel( dword ifIndex);"
+  ],
+  "description": [
+    "The function returns the number of the Ethernet channel (1 for Eth 1) to which the network adapter with the given index is attached."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "The Ethernet channel number or 0 if the given ifIndex was invalid.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  dword adapterCount;\n  dword ifIndex;\n  long channel;\n  adapterCount = ipGetAdapterCount();\n\n  for(ifIndex = 1; ifIndex <= adapterCount; ifIndex++)\n  {\n    channel = IpGetAdapterChannel (ifIndex);\n    if(channel != 0)\n    {\n      write(\"Adapter %d is attached to channel %d\", ifIndex, channel);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

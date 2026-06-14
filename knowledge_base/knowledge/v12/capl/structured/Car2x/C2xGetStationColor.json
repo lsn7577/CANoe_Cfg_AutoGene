@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetStationColor",
+  "category": "Car2x",
+  "title": "C2xGetStationColor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetStationColor.htm",
+  "syntax": [
+    "long C2xGetStationColor(long stationHandle);"
+  ],
+  "description": [
+    "Retrieve the color associated with the ITS Station in the Station Manager. The ITS Station can be identified by its handle or by the name of the associated node in the database."
+  ],
+  "parameters": [
+    {
+      "name": "stationHandle",
+      "type": "",
+      "description": "Handle of the ITS station"
+    }
+  ],
+  "return": "The station color encoded as RGB Value (0xBBGGRR).",
+  "example": {
+    "description": [],
+    "code": "on key 'c'\n{\n  long stationColor;\n  stationColor = C2xGetStationColor(\"%NODE_NAME%\");\n  write (\"Station %NODE_NAME% color : 0x%X\", stationColor);\n}\n\nvoid OnC2xPacket (LONG channel, LONG dir, LONG radioChannel, \nLONG signalStrength, LONG sigQuality, LONG packet)\n{\n  long rxStationHdl;\n  long stationColor;\n\n  rxStationHdl = C2xGetStationHandle(packet);\n  stationColor = C2xGetStationColor(rxStationHdl);\n  stationColor = C2xGetStationColor(\"DUT\");\n  stationColor = C2xGetStationColor(\"%NODE_NAME%\");\n  write (\"Station color: 0x%X\", stationColor);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

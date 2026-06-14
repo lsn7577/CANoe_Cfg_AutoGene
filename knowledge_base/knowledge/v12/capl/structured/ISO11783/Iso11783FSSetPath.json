@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSSetPath",
+  "category": "ISO11783",
+  "title": "Iso11783FSSetPath",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fssetpath.htm",
+  "syntax": [
+    "long Iso11783FSSetPath( char path[] );"
+  ],
+  "description": [
+    "This function sets the root directory for the FS file functions of the node layer."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Root directory for all FS file functionsThe directory must exist. The path can be absolute or relative to the configuration file."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783FSSetPath( \r\n \"FSRoot\" );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

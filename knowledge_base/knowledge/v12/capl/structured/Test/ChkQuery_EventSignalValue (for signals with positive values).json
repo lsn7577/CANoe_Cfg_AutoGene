@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventSignalValue (for signals with positive values)",
+  "category": "Test",
+  "title": "ChkQuery_EventSignalValue (for signals with positive values)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventSignalValuePositive.htm",
+  "syntax": [
+    "double ChkQuery_EventSignalValue (dword checkId);",
+    "check.QueryEventSignalValue();"
+  ],
+  "description": [
+    "This function enables access to the signal value which was last reported by a check as invalid.",
+    "This function enables access only to positive signal values."
+  ],
+  "parameters": [
+    {
+      "name": "checkId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "< 0: Refers the query error codes in this chapter",
+  "example": {
+    "description": [],
+    "code": "double result;\ndword checkId;\ncheckId = ChkStart_MsgSignalValueInvalid(Velocity, 80, 100);\n// ... execute test sequence\nresult = ChkQuery_EventSignalValue(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

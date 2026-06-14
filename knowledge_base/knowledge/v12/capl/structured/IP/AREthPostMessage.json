@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "AREthPostMessage",
+  "category": "IP",
+  "title": "AREthPostMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthPostMessage.htm",
+  "syntax": [
+    "long AREthPostMessage( dword aepHandle, dword remoteIPv4Address, dword remotePort, dword messageHandle );"
+  ],
+  "description": [
+    "This function is used to buffer a SOME/IP message.",
+    "All buffered messages are sent after the current CAPL function is exited. If the AREthPostMessage function is called multiple times in a CAPL function, the SOME/IP messages are collected and sent together (provided they have the same source and the same destination).",
+    "The call of AREthOutputMessage also triggers the sending of the buffered messages."
+  ],
+  "parameters": [
+    {
+      "name": "aepHandle",
+      "type": "",
+      "description": "Handle of the local Application Endpoint over which the message should be sent."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  dword messageId = 0x12340004; // service ID = 0x1234, method ID = 0x0004\n  dword requestId = 0; // client ID = 0, session ID = 0\n  dword protocolVersion = 1;\n  dword interfaceVersion = 1;\n  dword messageType = 0x2; // notification message\n  dword returnCode = 0; // not available\n  dword aep;                    // application endpoint handle\n  dword messageHandle = 0; // handle of the created SOME/IP message\n  BYTE payload[5]; // the message payload\n  dword count; // a simple counter\n\n  // initialize the payload\n  count = 0;\n  payload[count++] = 0x11;\n  payload[count++] = 0x22;\n  payload[count++] = 0x33;\n  payload[count++] = 0x44;\n  payload[count++] = 0x55;\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create the SOME/IP message itself\n  messageHandle = AREthCreateMessage(messageId,requestId,protocolVersion,interfaceVersion,messageType,returnCode);\n\n  // set message payload\n  AREthSetData(messageHandle,elcount(payload),payload);\n\n  // post two messages\n  AREthPostMessage(aep,0xFFFFFFFF,40002,messageHandle);\n  AREthPostMessage(aep,0xFFFFFFFF,40001,messageHandle);\n\n  // if CAPL function is left, the two posted messages are send\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

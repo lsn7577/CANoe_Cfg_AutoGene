@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetAddressAsNumber",
+  "category": "TCPIPAPI",
+  "title": "IpGetAddressAsNumber",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAddressAsNumber.htm",
+  "syntax": [
+    "dword IpGetAddressAsNumber( char address[]);"
+  ],
+  "description": [
+    "The function converts an IPv4 address string in dot notation to it's numerical value in network-byte order."
+  ],
+  "parameters": [
+    {
+      "name": "address",
+      "type": "",
+      "description": "The numerical IPv4 address to be converted."
+    }
+  ],
+  "return": "4294967295 (0xFFFFFFF, the equivalent of \"255.255.255.255\"): The specified address string was invalid.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  const dword IPV4_STR_SIZE = 16;    // IPv4 string size\n  char ipv4AddrStr[IPV4_STR_SIZE] = \"129.168.111.222\";\n\n  write(\"Converting IPv4 Address %s to numerical value => 0x%x\", ipv4AddrStr, IpGetAddressAsNumber(ipv4AddrStr));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

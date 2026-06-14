@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "strncmp",
+  "category": "Other",
+  "title": "strncmp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStrnCmp.htm",
+  "syntax": [
+    "long strncmp(char s1[], char s2[], long len);"
+  ],
+  "description": [
+    "This function compares s1 with s2 for a maximum of len bytes.",
+    "If they are identical the functional result is 0. If s1 is less than s2 the result is -1, else +1.",
+    "Form 2 starts the comparison in s2 at the specified offset.",
+    "A character may need several bytes depending on the string encoding, e.g. Japanese characters in Windows ANSI (932) encoding or any special characters in UTF-8 encoding. In that case, you should use mbstrncmp instead."
+  ],
+  "parameters": [
+    {
+      "name": "s1",
+      "type": "",
+      "description": "First string"
+    }
+  ],
+  "return": "-1 if s1 is less than s2.",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\nchar s1[7] = \"Vector\";\nchar s2[7] = \"Vector\";\nif(strncmp(s1,s2,strlen(s1)))\nwrite(\"not equal\");\nelse\nwrite(\"equal\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

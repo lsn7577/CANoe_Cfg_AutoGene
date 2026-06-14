@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitLinTransmErrData",
+  "category": "Test",
+  "title": "TestGetWaitLinTransmErrData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitLinTransmErrData.htm",
+  "syntax": [
+    "long TestGetWaitLinTransmErrData (linTransmError apEvent);"
+  ],
+  "description": [
+    "If LIN Transmission Error event is the last event that triggers a wait instruction, the error content can be called up with the first function.The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "apEvent",
+      "type": "",
+      "description": "Event variable that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linNoResponseEvent ()\n{\n   linTransmError linTransmErrorData;\n   if (testWaitForLinTransmError(5000) == 1)\n   {\n      if (testGetWaitLinTransmErrData(linTransmErrorData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN No-Response event occurred for FrameId=0x%X\", linTransmErrorData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

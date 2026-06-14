@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linGetOEMWakeupInd",
+  "category": "LIN",
+  "title": "linGetOEMWakeupInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGetOEMWakeupInd.htm",
+  "syntax": [
+    "long linGetOEMWakeupInd()"
+  ],
+  "description": [
+    "With this function it's possible to query the wake-up indication bit of a Slave node.",
+    "Without parameter, the wake-up indication bit of the calling slave is returned or zero if the caller is not a slave node."
+  ],
+  "parameters": [
+    {
+      "name": "slaveName",
+      "type": "",
+      "description": "Name of the queried Slave node as specified in the database."
+    }
+  ],
+  "return": "-1: Function call not allowed, execution failed or invalid slave name given.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

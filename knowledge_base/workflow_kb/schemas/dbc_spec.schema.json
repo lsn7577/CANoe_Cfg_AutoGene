@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "workflow_kb/schemas/dbc_spec.schema.json",
+  "title": "DBC Generation Specification",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "network_name",
+    "nodes",
+    "messages"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "network_name": {
+      "type": "string"
+    },
+    "baudrate": {
+      "type": "integer"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "id",
+          "dlc",
+          "transmitter",
+          "signals"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "dlc": {
+            "type": "integer"
+          },
+          "transmitter": {
+            "type": "string"
+          },
+          "signals": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+

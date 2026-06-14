@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForFastScanRequest",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForFastScanRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForFastScanReq.htm",
+  "syntax": [
+    "long coTfsLssWaitForFastScanRequest( dword[] pId, byte[] pBitCheck, byte[] pSub, byte[] pNext );"
+  ],
+  "description": [
+    "This function waits for the Fast Scan message."
+  ],
+  "parameters": [
+    {
+      "name": "pId",
+      "type": "",
+      "description": "FastScan ID"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword pId[1];\nbyte  pBitCheck[1];\nbyte  pSub[1];\nbyte  pNext[1];\n\n/* waits for the fast scan request */\nif (coTfsLssWaitForFastScanRequest( pId, pBitCheck, pSub, pNext ) == 1) {\n  /* request received */\n  /* received values can be found in pId, pBitCheck, pSub, pNext */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

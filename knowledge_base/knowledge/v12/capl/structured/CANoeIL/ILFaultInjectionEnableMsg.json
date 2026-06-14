@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILFaultInjectionEnableMsg",
+  "category": "CANoeIL",
+  "title": "ILFaultInjectionEnableMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILFaultInjectionEnableMsg.htm",
+  "syntax": [
+    "long ILFaultInjectionEnableMsg (dbMessage msg)"
+  ],
+  "description": [
+    "Enables the sending of the message."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message that should be re-enabled after having disabled it with ILFaultInjectionDisableMsg."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

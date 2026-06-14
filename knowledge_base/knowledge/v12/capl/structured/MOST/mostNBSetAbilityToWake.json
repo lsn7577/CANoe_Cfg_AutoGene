@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostNBSetAbilityToWake",
+  "category": "MOST",
+  "title": "mostNBSetAbilityToWake",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTNBSetAbilityToWake.htm",
+  "syntax": [
+    "mostNBSetAbilityToWake(long wakestatus)"
+  ],
+  "description": [
+    "Sets the AbilityToWake flags in NetBlock.",
+    "If this flag is set to \"Off\", the connected MOST interface must not wake-up the ring."
+  ],
+  "parameters": [
+    {
+      "name": "wakestatus",
+      "type": "",
+      "description": "0: Off1: On2: Critical"
+    }
+  ],
+  "return": "<0: See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

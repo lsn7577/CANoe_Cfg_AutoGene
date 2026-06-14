@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetPDUsTPIPv6DstAddr",
+  "category": "Other",
+  "title": "GetPDUsTPIPv6DstAddr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetPDUsTPIPv6DstAddr.htm",
+  "syntax": [
+    "long GetPDUsTPIPv6DstAddr(this, byte IPv6DestinationAddress[]);"
+  ],
+  "description": [
+    "This function can only be used within a on PDU handler. If the PDU was received via IPv6, with this function the IPv6 destination address can be requested."
+  ],
+  "parameters": [
+    {
+      "name": "this",
+      "type": "",
+      "description": "Handle to the currently handled (received) PDU object."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": "on PDU engineDataPDU\n{\n  dword srcPort, dstPort;\n  byte srcAddr[16], dstAddr[16];\n  char srcAddrAsString[40], dstAddrAsString[40];\n\n  if (GetPDUsTPIPv6SrcAddr(this, srcAddr)==0\n    && GetPDUsTPIPv6DstAddr(this, dstAddr)==0)\n  {\n    IpGetAddressAsString(srcAddr, srcAddrAsString, elcount(srcAddrAsString));\n    IpGetAddressAsString(dstAddr, dstAddrAsString, elcount(dstAddrAsString));\n\n    if(GetPDUsTPUDPSrcPort(this, srcPort)==0\n      && GetPDUsTPUDPDstPort(this, dstPort)==0)\n    {\n      write(\"PDU received by UDP from %s:%u to %s:%u\", srcAddrAsString, srcPort, dstAddrAsString, dstPort);\n    }\n\n    if (GetPDUsTPTCPSrcPort(this, srcPort)==0\n      && GetPDUsTPTCPDstPort(this, dstPort)==0)\n    {\n      write(\"PDU received by TCP from %s:%u to %s:%u\", srcAddrAsString, srcPort, dstAddrAsString, dstPort);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

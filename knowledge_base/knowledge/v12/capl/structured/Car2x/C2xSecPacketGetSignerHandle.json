@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSecPacketGetSignerHandle",
+  "category": "Car2x",
+  "title": "C2xSecPacketGetSignerHandle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSecPacketGetSignerHandle.htm",
+  "syntax": [
+    "long C2xSecPacketGetSignerHandle( long packetHandle );"
+  ],
+  "description": [
+    "Gets the handle of the certificate used by the signer of the packet."
+  ],
+  "parameters": [
+    {
+      "name": "packetHandle",
+      "type": "",
+      "description": "Handle of the packet"
+    }
+  ],
+  "return": "Handle of the used certificate or 0 on failure",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

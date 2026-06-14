@@ -1,0 +1,141 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForLinScheduleChange",
+  "category": "Test",
+  "title": "TestWaitForLinScheduleChange",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForLinScheduleChange.htm",
+  "syntax": [
+    "long TestWaitForLinScheduleChange(dword aTimeout); // form 1",
+    "long TestWaitForLinScheduleChange(long aScheduleTable, dword aTimeout); // form 2",
+    "long TestWaitForLinScheduleChange(long aScheduleTable, long aScheduleSlot, dword aTimeout); // form 3"
+  ],
+  "description": [
+    "Waits until the LIN scheduler reaches the specified table and slot index. If no indices are specified, the function will resume on the next change of the current table or slot index.",
+    "Should the event not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "aScheduleTable",
+      "type": "",
+      "description": "Zero-based index of the schedule table which should be awaited."
+    },
+    {
+      "name": "Note Waiting for a specific schedule table slot is not supported by hardware interfaces of the XL family. Thus the parameter aScheduleSlot must not be used for these interfaces.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]. (Transmission of 0: no timeout controlling)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "testcase tc_WaitForLinScheduleChange()\n\n{\n  long result;\n\n  // Waits until the scheduler reaches slot 1 of schedule table 1\n  result = TestWaitForLinScheduleChange(1, 1, 5000);\n\n  if (result != 1)\n  {\n    testStepFail(\"TestWaitForLinScheduleChange failed!\");\n    testCaseFail();\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0",
+      "13.0",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN",
+      "LIN",
+      "—",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

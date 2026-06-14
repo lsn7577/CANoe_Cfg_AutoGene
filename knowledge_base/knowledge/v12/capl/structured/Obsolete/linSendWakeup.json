@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linSendWakeup",
+  "category": "Obsolete",
+  "title": "linSendWakeup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSendWakeup.htm",
+  "syntax": [
+    "long linSendWakeup()"
+  ],
+  "description": [
+    "This command is used to send Wakeup frames. Wakeup frames can only be sent while the LIN hardware is in Sleep mode. If no parameters are given, the default values of the parameters are used.",
+    "When LIN hardware is not in Sleep mode calling this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "ttobrk",
+      "type": "",
+      "description": "This parameter specifies the time difference between the transmissions of two consecutive Wakeup frames, i.e. the time between end of one wake-up frame and start of the next one."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "Send wake-up frame on keyboard event"
+    ],
+    "code": "on key 'w'\n{\nlinSendWakeup(); \n}\nor\n// simulate LIN 2.0 “slow” Master\n...\n// configure LIN hardware to wake-up after 3 wake-up frames and to send first header\n// 100 ms after wake-up \nlinSetWakeupParams(100, 3);\n// send wake-up frame 3 times with 150 ms delay between 2 consecutive frames\nlinSendWakeup(150, 3);\n..."
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

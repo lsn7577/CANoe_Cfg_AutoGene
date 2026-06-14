@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetSalesTariffData",
+  "category": "SmartCharging",
+  "title": "SCC_GetSalesTariffData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetSalesTariffData.htm",
+  "syntax": [
+    "void SCC_GetSalesTariffData ( long Index, char IdAttr[], long& SalesTariffId, char Description, long& NumEPriceLevels )"
+  ],
+  "description": [
+    "Gets various elements of the Sales Tariff within the SAScheduleTuple with the selected index."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "ID attribute, SalesTariffId, Description and number of distinct price levels of the SalesTariff within the SAScheduleTuple with the selected index. If no SalesTariff is present, SalesTariffId is set to -1. This can be used to check the present of a SalesTariff in a SAScheduleTuple.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

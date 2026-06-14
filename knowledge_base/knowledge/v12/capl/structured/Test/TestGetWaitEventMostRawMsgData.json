@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitEventMostRawMsgData",
+  "category": "Test",
+  "title": "TestGetWaitEventMostRawMsgData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitEventMostRawMsgData.htm",
+  "syntax": [
+    "long TestGetWaitEventMostRawMsgData(mostRawMessage aRawMsg);"
+  ],
+  "description": [
+    "If the last (single) wait condition was resolved by a MOST control message, the function copies the data of that message into the provided CAPL variable.",
+    "The second signature can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index.",
+    "If the wait condition was resolved by a control message having function catalog format, it is recommended to use TestGetWaitEventMostMsgData instead."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message variable that should be filled with this function."
+    }
+  ],
+  "return": "0: Successful data access",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_PowerModeInformationResponse",
+  "category": "Diagnostics",
+  "title": "_DoIP_PowerModeInformationResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPPowerModeInformationResponse.htm",
+  "syntax": [
+    "void _DoIP_PowerModeInformationResponse(char IPaddress[], BYTE value);"
+  ],
+  "description": [
+    "The tester received a response for a Power Mode Information Request. The vehicle's IP address is given as first argument, in text form."
+  ],
+  "parameters": [
+    {
+      "name": "IPaddress",
+      "type": "",
+      "description": "Address in text form, e.g. “169.254.32.1” (IPv4) or “2001::1” (IPv6)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

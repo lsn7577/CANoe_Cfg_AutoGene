@@ -1,0 +1,68 @@
+{
+  "page_type": "notes",
+  "name": "coSetNodeLabel",
+  "category": "Obsolete",
+  "title": "coSetNodeLabel",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoSetNodeLabel.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by CANopen Basic Functions."
+      ],
+      [
+        "Function Syntax",
+        "void coSetNodeLabel( char nodeLabel[], dword errCode[] );"
+      ],
+      [
+        "Function",
+        "Usually the node label is build automatically from the nodes name and its node-ID specified within the assigned CAN database. For test nodes it is not possible to assign a node from a CAN database within the configuration dialog of the test node. Furthermore the user maybe wants to determine the name of a node by itself. This function can be used to determine the node label manually. If the user wants to reset the manually specified label this function has to be called with an empty node label (\"\"). Afterwards the automatically build node label is used."
+      ],
+      [
+        "Parameters",
+        "nodeLabel New node label to be used for reports within the write window and the logging file"
+      ],
+      [
+        "errCode Error code buffer (is entered in index 0 of the field)"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "7.1-9.0 SP6",
+        "CANopen",
+        "—",
+        "•"
+      ],
+      [
+        "Example dword errCode[1]coSetNodeLabel (\"mySimulatedNode\", errCode );if (errCode[0] == 0) { write( \"New node label successfully set\");}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

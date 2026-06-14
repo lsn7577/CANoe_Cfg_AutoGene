@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "mostNwmFiSetParameter, mostNwmFiGetParameter",
+  "category": "MOST",
+  "title": "mostNwmFiSetParameter, mostNwmFiGetParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTNwmFiSetGetParameter.htm",
+  "syntax": [
+    "long mostNwmFiSetParameter(long paramID, long value)"
+  ],
+  "description": [
+    "In order to modify timing parameters the functions mostNwmFiSetParameter and mostNwmFiGetParameter provide access to the timing parameters of CANoe’s NetworkMaster implementation.",
+    "Use the function with care since the state machine of the NetworkMaster is not guaranteed to work properly afterwards.",
+    "Refer to the MOST specification for a detailed description of the timing parameters and the NetworkMaster state machine.",
+    "The function is available for CAPL programs assigned to the NetworkMaster block in the Simulation Setup."
+  ],
+  "parameters": [
+    {
+      "name": "paramID",
+      "type": "",
+      "description": "-1: set default for all parameter values1: timer value tWaitBeforeScan (value range: 1…20000 ms)2: timer value tWaitAfterNCE (value range: 1…20000 ms)3: timer value tWaitForAnswer (value range: 1…20000 ms)4: timer value tDelayCfgRequest1 (value range: 1…200000 ms)5: timer value tDelayCfgRequest2 (value range: 1…200000 ms)"
+    }
+  ],
+  "return": "mostNwmFiSetParameter\nSee error codes",
+  "example": {
+    "description": [],
+    "code": "// set the timer value for tDelayCfgRequest2 to 15 s\nmostNwmFiSetParameter(5, 15000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

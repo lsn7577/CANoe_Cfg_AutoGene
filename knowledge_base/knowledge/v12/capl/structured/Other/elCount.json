@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "elCount",
+  "category": "Other",
+  "title": "elCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionElCount.htm",
+  "syntax": [
+    "long elcount(...) // if used with arrays which are function parameters"
+  ],
+  "description": [
+    "Determines the number of elements of an array."
+  ],
+  "parameters": [],
+  "return": "Number of elements.",
+  "example": {
+    "description": [],
+    "code": "void bsp(int ar[]) {\nint i;\nfor(i=0; i < elCount(ar); i++)\n...\n}\n\nvoid bsp2(byte ar[][]) {\nint i, j;\nfor(j=0; j < elCount(ar); j++ )\nfor(i=0; i<= elCount(ar[j]); i++ )\n...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

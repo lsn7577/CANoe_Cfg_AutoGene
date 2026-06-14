@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "GPIBGetError",
+  "category": "GPIB",
+  "title": "GPIBGetError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBGetError.htm",
+  "syntax": [
+    "long GPIBGetError (void);"
+  ],
+  "description": [
+    "Returns the error variable. It is meaningful only when the ERR bit in the status word is set"
+  ],
+  "parameters": [],
+  "return": "Current error status",
+  "example": {
+    "description": [],
+    "code": "// “40” is not a valid GPIB address\nGPIBDevChangePrimAddr(devDescr, 40);\nif ( ( 1 << 15) & GPIBGetStatus() )\n{\n   write(\"ERR bit set in status word\");\n   if ( 4 == GPIBGetError() )\n   {\n      write(\"error is EARG: Invalid argument to function call\");\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

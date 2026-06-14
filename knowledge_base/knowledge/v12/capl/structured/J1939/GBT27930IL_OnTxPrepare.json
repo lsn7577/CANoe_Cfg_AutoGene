@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_OnTxPrepare",
+  "category": "J1939",
+  "title": "GBT27930IL_OnTxPrepare",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILOnTxPrepare.htm",
+  "syntax": [
+    "long GBT27930IL_OnTxPrepare( pg * txPG )"
+  ],
+  "description": [
+    "This callback function is called from the GBT27930 IL before a parameter group is sent. The signal value can be updated in the callback or sending of the message can be suppressed."
+  ],
+  "parameters": [
+    {
+      "name": "txPG",
+      "type": "",
+      "description": "message which should be sent"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "//Block the CRM message (PGN = 0x0100) if the first byte is 0x00\n//Modify the BCL message (PGN = 0x1000):\n//  switch the charging mode from \"constant current\" to \"constant voltage\"\nlong GBT27930IL_OnTxPrepare( pg * txPG )\n{\n  int retValue = 1;\n  switch( txPG.PGN )\n  {\n    case 0x0100:\n      if(txPG.byte(0) == 0x9)\n        retValue = 0;\n      break;\n    case 0x1000:\n      if(txPG.byte(4) == 0x2)\n          txPG.byte(4) = 0x1;\n      break;\n  }\n  return retValue;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linChangeWakeupSettings",
+  "category": "Obsolete",
+  "title": "linChangeWakeupSettings",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINChangeWakeupSettings.htm",
+  "syntax": [
+    "dword linChangeWakeupSettings(byte restartScheduler, long wakeupIdentifier)"
+  ],
+  "description": [
+    "This function changes the wake-up setting.",
+    "When LIN hardware is not in Sleep mode calling this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "restartScheduler",
+      "type": "",
+      "description": "0: After wake-up the current schedule table is started with the slot before entering sleep mode."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "Change wake-up settings on getting Sleep mode event"
+    ],
+    "code": "on linSleepModeEvent\n{\nlinChangeWakeupSettings(0, 0x1); // do not restart scheduler, use 0x1 as wake-up identifier\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,76 @@
+{
+  "page_type": "function",
+  "name": "consumedEventRef",
+  "category": "CommunicationObjects",
+  "title": "consumedEventRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionConsumedEventRef.htm",
+  "syntax": [
+    "consumedEventRef * <var>"
+  ],
+  "description": [
+    "References a consumed event endpoint, which means a specific combination of consumer and provider for a service event on consumer side."
+  ],
+  "parameters": [
+    {
+      "name": "Event",
+      "type": "",
+      "description": "Event of a service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "consumedEventRef long ev1;\nev1 = MirrorAdjustment.consumerSide[CANoe,LeftMirror].CurrentPosition;\nev1.AbstractRequestEvent();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the consumed endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the consumed endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SubscriptionState State of the event subscription: Unavailable: there’s no connection between consumer and provider, the event cannot be subscribed. Available: the event can be subscribed, but currently is not subscribed. Subscribed: the event is subscribed.",
+        "enum",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

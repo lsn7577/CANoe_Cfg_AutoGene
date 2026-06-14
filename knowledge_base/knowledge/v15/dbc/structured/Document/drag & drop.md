@@ -1,0 +1,11 @@
+# drag & drop
+
+> Category: `DBC` | Subcategory: `Document` | Type: `concept`
+
+With drag & drop it is possible to move objects to another location in the same or another tree view. To drag objects, select them, click the objects and, while holding down the mouse button, move them to the new location. Release the mouse button to drop the objects. A list of child tree objects can be expanded or collapsed while this operation by holding the mouse pointer of the parent tree object.
+
+Performing this operation with the left mouse button copies the selected objects to the new location. Using the right mouse button moves the objects and delete them in their old location. Objects of the database window are always copied.
+
+Drag sources are EDS and database objects. Drop targets are several tree objects in the EDS tree view.
+
+If an object with the same index already exists, a dialog to select the further procedure appears at the end of the drag & drop operation.

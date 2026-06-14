@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "TestEnableUpdateBit",
+  "category": "Test",
+  "title": "TestEnableUpdateBit",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestEnableUpdateBit.htm",
+  "syntax": [
+    "long TestEnableUpdateBit (dbSignal aSignal);"
+  ],
+  "description": [
+    "Re-enables the standard behaviour of the update bit, after it has been disabled with TestDisableUpdateBit.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer."
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "Signal that should be reset to update bit standard behavior."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// disables the update bit of signal ‘DoorStatus_UB’ for 1000 ms\nTestDisableUpdateBit(DoorStatus_UB, 0);\nTestWaitForTimeout(1000);\nTestEnableUpdateBit(DoorStatus_UB);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

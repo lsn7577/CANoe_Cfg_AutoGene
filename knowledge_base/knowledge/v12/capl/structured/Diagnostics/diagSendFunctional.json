@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "diagSendFunctional",
+  "category": "Diagnostics",
+  "title": "diagSendFunctional",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSendFunctional.htm",
+  "syntax": [
+    "long diagSendFunctional( diagRequest request)"
+  ],
+  "description": [
+    "Send a request to the functional group defined for the current target. The configuration of the functional transport protocol settings in the description configuration dialog must be present and consistent.",
+    "When used together with the built-in K-Line diagnostic channel, also the channel will be initialized to use functional addressing i.e. a functional startCommunication service will be put on the K-Line (Bit 6 & 7 of format byte set to 1) when the first request is sent. All subsequent requests sent with this function to the same target ECU will also carry the use functional addressing information.",
+    "In order to switch back to physical addressing, you have to call diagCloseChannel(ECU_Qualifier) and then DiagSetTarget(ECU_Qualifier) to prepare the re-opening of the channel upon the next request."
+  ],
+  "parameters": [
+    {
+      "name": "request",
+      "type": "",
+      "description": "The request to be sent."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "on key 'f'\n{\n  diagRequest Serial_Number_Read req;\n  long ret;\n  if (0 != (ret=diagSetTarget(\"ECU1\"))) write(\"diagSetTarget() failed with error code %ld!\", ret);\n  // Send request on functional channel\n  if (0 != (ret=diagSendFunctional(req))) write(\"diagSendFunctional() failed with error code %ld!\", ret);\n}\n\non key 'p'\n{\n  diagRequest Serial_Number_Read req;\n  long ret;\n  // reset functional to physical addressing, if necessary\n  if (0 != (ret=diagSetTarget(\"ECU1\"))) write(\"diagSetTarget() failed with error code %ld!\", ret);\n  // Send request on physical channel\n  if (0 != (ret=diagSendRequest(req))) write(\"diagSendRequest() failed with error code %ld!\", ret);\n}\n\non diagResponse Serial_Number_Read\n{\n  char ser_no[30];\n  diagGetParameter(this, \"Serial_Number\", ser_no, elcount(ser_no));\n  write(\"Response from serial no.: %s\",ser_no);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

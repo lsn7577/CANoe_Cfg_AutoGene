@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetLength",
+  "category": "IP",
+  "title": "SomeIpGetLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetLength.htm",
+  "syntax": [
+    "dword SomeIpGetLength ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the length in bytes that is in the SOME/IP message header."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the SOME/IP message (e.g. see OnSomeIpMessage)"
+    }
+  ],
+  "return": "Length of the SOME/IP message (without Message ID and length field)\nIn the Event of an error, the function returns the value 0. The SomeIpGetLastError function can then be used to check whether the value is valid or an error has occurred.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

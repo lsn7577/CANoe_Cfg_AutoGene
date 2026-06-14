@@ -1,0 +1,130 @@
+{
+  "page_type": "method",
+  "name": "ethernetPacket::RemoveVlan",
+  "category": "IP",
+  "title": "ethernetPacket::RemoveVlan",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Methods/CAPLfunctionRemoveVlan.htm",
+  "syntax": [
+    "long ethernetPacket.RemoveVlan(); // form 1",
+    "long ethernetPacket.RemoveVlan(dword vlanIndex); // form 2"
+  ],
+  "description": [
+    "Removes a VLAN tag from an Ethernet packet.",
+    "To remove a specific VLAN tag from a double-tagged packet form 2 can be used."
+  ],
+  "parameters": [
+    {
+      "name": "vlanIndex",
+      "type": "",
+      "description": "Index of the VLAN tag for double-tagged VLANs. Index 0 is the inner VLAN, index 1 the outer VLAN.Range 0..2"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if ((this.hasVlan()) && (this.msgChannel == 1))\n  {\n    ethernetPacket forwardPkt;\n\n    forwardPkt = this;\n    forwardPkt.msgChannel = 2;\n    forwardPkt.RemoveVlan();\n\n    output( forwardPkt );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0",
+      "10.0",
+      "13.0",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

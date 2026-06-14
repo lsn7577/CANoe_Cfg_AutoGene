@@ -1,0 +1,170 @@
+{
+  "page_type": "function",
+  "name": "MediaRead",
+  "category": "Media",
+  "title": "MediaRead",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Media/Functions/CAPLfunctionMediaRead.htm",
+  "syntax": [
+    "long MediaRead(dword sourceReaderHandle, dword streamIndex, byte buffer[], dword length, char onReadCallback[]);",
+    "long MediaRead(dword sourceReaderHandle, dword streamIndex, int buffer[], dword length, char onReadCallback[]);",
+    "long MediaRead(dword sourceReaderHandle, dword streamIndex, long buffer[], dword length, char onReadCallback[]);"
+  ],
+  "description": [
+    "Reads sample data from the media source."
+  ],
+  "parameters": [
+    {
+      "name": "sourceReaderHandle",
+      "type": "",
+      "description": "The source reader handle."
+    },
+    {
+      "name": "Name",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0–0xFFFFFFFB",
+      "type": "",
+      "description": "The zero-based index of a stream."
+    },
+    {
+      "name": "SOURCE_READER_FIRST_VIDEO_STREAM 0xFFFFFFFC",
+      "type": "",
+      "description": "The first video stream."
+    },
+    {
+      "name": "SOURCE_READER_FIRST_AUDIO_STREAM 0xFFFFFFFD",
+      "type": "",
+      "description": "The first audio stream."
+    },
+    {
+      "name": "SOURCE_READER_ANY_STREAM 0xFFFFFFFE",
+      "type": "",
+      "description": "Get the next available sample, regardless of which stream."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "The buffer used to store the incoming data."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "The length of the data buffer."
+    },
+    {
+      "name": "onReadCallback",
+      "type": "",
+      "description": "The name of the CAPL callback function (see OnMediaRead)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.5",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "—"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "frOutputDynFrame",
+  "category": "FlexRay",
+  "title": "frOutputDynFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFROutputDynFrame.htm",
+  "syntax": [
+    "int ret = frOutputDynFrame( <frame var> );"
+  ],
+  "description": [
+    "This function updates the FlexRay Communication Controller's (CC) send buffer with the current data from the send object. This corresponds to a request to send.",
+    "Only frames in the dynamic segment can be sent using this function!"
+  ],
+  "parameters": [
+    {
+      "name": "<frame var>",
+      "type": "",
+      "description": "Name of the variable referenced by the frame object. The variable name was defined when the object was created using frFrame."
+    }
+  ],
+  "return": "0: Ok, the request to send the frame is forwarded to the interface. This does not guarantee that the frame is really been sent. Refer to the FlexRay protocol rules.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

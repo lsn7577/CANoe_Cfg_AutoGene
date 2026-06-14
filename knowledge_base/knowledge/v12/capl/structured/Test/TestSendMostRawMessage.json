@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestSendMostRawMessage",
+  "category": "Test",
+  "title": "TestSendMostRawMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestSendMostRawMessage.htm",
+  "syntax": [
+    "long TestSendMostRawMessage(long aDestinationAddress, long aRType, BYTE aMsgData[], dword aMsgDataLength, dword aTimeout);"
+  ],
+  "description": [
+    "This function immediately sends a MOST raw control message with the specified data and waits for the associated Tx acknowledgment from the recipient. The AckNack bit is evaluated and the return value specifies whether the creation and sending of the message was successful or not.",
+    "The first signature specifies the message data by a byte array, the second uses a string to describe the data bytes as a hex dump."
+  ],
+  "parameters": [
+    {
+      "name": "aDestinationAddress",
+      "type": "",
+      "description": "Target address"
+    }
+  ],
+  "return": "-6: Parse Error; on specification of a message data description string that contains other characters than hexadecimal digits",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "CAPLfunctionCanResetStatistics",
+  "category": "CAN",
+  "title": "CAPLfunctionCanResetStatistics",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionCanResetStatistics.htm",
+  "syntax": [
+    "void canResetStatistics();"
+  ],
+  "description": [
+    "Resets CAN channel statistics.",
+    "There are two ways to call this function:"
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "CAN channel (1-based)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key 'r' \n{ \n   // reset statistics on CAN 1\n   canResetStatistics(1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

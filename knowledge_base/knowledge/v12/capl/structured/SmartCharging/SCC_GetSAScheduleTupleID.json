@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetSAScheduleTupleID",
+  "category": "SmartCharging",
+  "title": "SCC_GetSAScheduleTupleID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetSAScheduleTupleID.htm",
+  "syntax": [
+    "long SCC_GetSAScheduleTupleID ( long Index )"
+  ],
+  "description": [
+    "Gets the ID of an SAScheduleTuple entry within a ChargeParameterDiscoveryRes message."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "ID of the SAScheduleTuple with the selected list index < TariffCount.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

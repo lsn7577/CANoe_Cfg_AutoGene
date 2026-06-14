@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "AvbILControlStart",
+  "category": "IP",
+  "title": "AvbILControlStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbILControlStart.htm",
+  "syntax": [
+    "dword AvbILControlStart();"
+  ],
+  "description": [
+    "Starts the AVB IL.",
+    "Enables sending and receiving of AVB/TSN related messages. After the start of the AVB IL, the time aware end station (PTP clock instance) starts up and Talkers and/or Listeners can be created.",
+    "The AVB IL can be stopped using the AvbILControlStop function."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

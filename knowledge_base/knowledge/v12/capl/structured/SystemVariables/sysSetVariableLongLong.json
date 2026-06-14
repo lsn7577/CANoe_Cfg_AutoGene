@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "sysSetVariableLongLong",
+  "category": "SystemVariables",
+  "title": "sysSetVariableLongLong",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysSetVariableLongLong.htm",
+  "syntax": [
+    "long sysSetVariableLongLong(char namespace[], char variable[], int64 value); // form 1"
+  ],
+  "description": [
+    "Sets the value of a variable of a 64 bit integer type.",
+    "The function can also be used for variables of type unsigned 64bit integer. You can simply cast the value to int64."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "0: no error, function successful",
+  "example": {
+    "description": [],
+    "code": "int64 llVar;\n...\nsysSetVariableLongLong(sysvar::MyNamespace::Int64Var, llVar);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

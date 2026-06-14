@@ -1,0 +1,82 @@
+{
+  "page_type": "notes",
+  "name": "coThisGetData",
+  "category": "Obsolete",
+  "title": "coThisGetData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoThisGetData.htm",
+  "syntax": [],
+  "description": [
+    "These function should be used for string and domain objects as well as objects larger than 32 bits. In principle, however, they can be applied to all objects.",
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by CANopen Basic Functions."
+      ],
+      [
+        "Note These function should be used for string and domain objects as well as objects larger than 32 bits. In principle, however, they can be applied to all objects."
+      ],
+      [
+        "Function Syntax",
+        "void coThisGetData( char buffer[], dword bufferSize, dword errCode[] );"
+      ],
+      [
+        "void coThisGetData( byte buffer[], dword bufferSize, dword errCode[] );"
+      ],
+      [
+        "Function",
+        "The function returns the data of an object in the event functions coOnUploadResponse or coOnDownloadIndication. The call is only allowed in these event functions. The size of the data can be determined with coThisGetSize."
+      ],
+      [
+        "Parameters",
+        "buffer Buffer for the read data"
+      ],
+      [
+        "bufferSize Size of the buffer in bytes Note The buffer for the data must always be one byte larger than the value that the function coThisGetSize returns. This is required in order to ensure that a string is terminated with a null in each case.",
+        "Note The buffer for the data must always be one byte larger than the value that the function coThisGetSize returns. This is required in order to ensure that a string is terminated with a null in each case."
+      ],
+      [
+        "Note The buffer for the data must always be one byte larger than the value that the function coThisGetSize returns. This is required in order to ensure that a string is terminated with a null in each case."
+      ],
+      [
+        "errCode Error code buffer (is entered in index 0 of the field)"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "6.0-9.0 SP6",
+        "CANopen",
+        "—",
+        "•"
+      ],
+      [
+        "Example dword errCode[1];byte buffer[128];coThisGetData( buffer, elCount(buffer), errCode );"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

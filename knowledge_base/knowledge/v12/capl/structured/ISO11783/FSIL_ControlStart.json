@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "FSIL_ControlStart",
+  "category": "ISO11783",
+  "title": "FSIL_ControlStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILControlStart.htm",
+  "syntax": [
+    "long FSIL_ControlStart(); // form 1"
+  ],
+  "description": [
+    "Activates node to start Address Claiming.",
+    "The File Server starts Address Claiming (if NMT is activated). If the Address Claiming was successful, cyclic messages are sent."
+  ],
+  "parameters": [
+    {
+      "name": "fs",
+      "type": "",
+      "description": "FS simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

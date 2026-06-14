@@ -1,0 +1,75 @@
+{
+  "page_type": "function",
+  "name": "rxPDURef",
+  "category": "CommunicationObjects",
+  "title": "rxPDURef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionRxPDURef.htm",
+  "syntax": [
+    "rxPDURef * <var>"
+  ],
+  "description": [
+    "References an rx PDU endpoint (where the PDU is received)."
+  ],
+  "parameters": [
+    {
+      "name": "PDU",
+      "type": "",
+      "description": "PDU (in the new communication concept, but not in a service)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "rxPduRef StatusPdu pdu1;\npdu1 = StatusPdu.receiverSide[CANoe];\ncurrentValue = $pdu1.StatusSignal;"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SenderIndex Index of the sender (only if the PDU is not a broadcast PDU). Note that the index may change if senders are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ReceiverIndex Index of the receiver. Note that the index may change if receivers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<SignalName> Accesses the specified signal on the PDU.",
+        "<Data type of the signal>"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

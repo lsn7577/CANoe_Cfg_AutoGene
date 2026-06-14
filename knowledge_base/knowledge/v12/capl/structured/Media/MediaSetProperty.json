@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "MediaSetProperty",
+  "category": "Media",
+  "title": "MediaSetProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaSetProperty.htm",
+  "syntax": [
+    "long MediaSetProperty(dword objHandle, char propertyName[], dword value); // form 1"
+  ],
+  "description": [
+    "The behavior of an object can be configured using properties.",
+    "Properties can be set on an object specific basis for a media type object (e.g. returned by MediaGetMediaType)."
+  ],
+  "parameters": [
+    {
+      "name": "propertyName",
+      "type": "",
+      "description": "Name of the property to be set."
+    }
+  ],
+  "return": "0: The function succeeded.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

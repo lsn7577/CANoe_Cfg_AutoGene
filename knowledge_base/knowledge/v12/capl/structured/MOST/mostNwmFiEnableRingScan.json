@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostNwmFiEnableRingScan",
+  "category": "MOST",
+  "title": "mostNwmFiEnableRingScan",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTNwmFiEnableRingScan.htm",
+  "syntax": [
+    "long mostNwmFiEnableRingScan(long mode)"
+  ],
+  "description": [
+    "Can be called to change the ring scan behavior of CANoe’s NetworkMaster.",
+    "The function is available for CAPL programs assigned to the NetworkMaster block in the Simulation Setup."
+  ],
+  "parameters": [
+    {
+      "name": "mode",
+      "type": "",
+      "description": "0: disable network scan1: enable normal network scan behaviour2: terminate currently running network scan3: trigger network scan once"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

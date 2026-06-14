@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coGetNodeId",
+  "category": "Obsolete",
+  "title": "coGetNodeId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoGetNodeId.htm",
+  "syntax": [
+    "dword coGetNodeId( dword errCode[] );"
+  ],
+  "description": [
+    "The function returns the node-ID. If the function coStartUp was not executed yet, the function returns 0."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "Node-ID",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\ndword nodeId;\n\nnodeId = coGetNodeId( errCode );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

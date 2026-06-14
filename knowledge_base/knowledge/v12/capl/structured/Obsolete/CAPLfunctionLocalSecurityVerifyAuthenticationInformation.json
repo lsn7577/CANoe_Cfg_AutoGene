@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CAPLfunctionLocalSecurityVerifyAuthenticationInformation",
+  "category": "Obsolete",
+  "title": "CAPLfunctionLocalSecurityVerifyAuthenticationInformation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLocalSecurityVerifyAuthenticationInformation.htm",
+  "syntax": [
+    "long LocalSecurityVerifyAuthenticationInformation (dword DATAID, byte[] Payload, dword PayloadLength, qword TruncatedAuthenticator, dword TruncatedAuthenticatorBitLength, qword RxFreshnessh, dword RxFreshnessBitLength, qword currentFreshness, dword FreshnessValueBitLength dword ValidationResult)"
+  ],
+  "description": [
+    "Verifies the specified authentication information (CMAC and freshness) of the PDU. The payload is also an input parameter to the verification logic."
+  ],
+  "parameters": [
+    {
+      "name": "DATAID",
+      "type": "",
+      "description": "Id to lookup the desired key in the security source."
+    }
+  ],
+  "return": "A value <= 0 means error\nValue 1 means action was successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

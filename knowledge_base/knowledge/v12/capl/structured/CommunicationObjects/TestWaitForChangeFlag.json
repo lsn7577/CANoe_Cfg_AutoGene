@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForChangeFlag",
+  "category": "CommunicationObjects",
+  "title": "TestWaitForChangeFlag",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionTestWaitForChangeFlag.htm",
+  "syntax": [
+    "long TestWaitForChangeFlag(COValue value, dword timeoutMs)"
+  ],
+  "description": [
+    "Waits for the change flag of a communication object value to be set. Each CO value has a change flag which is set when the value changes and reset through an explicit call to valueEntity::ClearChangeFlag or valueEntity::ResetValueState.",
+    "Use this function instead of TestWaitForChange if an undetermined number of changes may occur between a point where you reset the flag and a point where at least one change must have occurred."
+  ],
+  "parameters": [
+    {
+      "name": "COValue",
+      "type": "",
+      "description": "Value of a communication object."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "long ret;\nconsumedEventRef * anEvent;\nanEvent = lookupConsumedEvent(path);\nanEvent.ClearChangeFlag();\n// ...\nret = testWaitForChangeFlag(anEvent, 200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

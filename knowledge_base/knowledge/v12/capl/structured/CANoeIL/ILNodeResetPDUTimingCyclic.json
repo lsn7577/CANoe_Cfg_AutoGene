@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILNodeResetPDUTimingCyclic",
+  "category": "CANoeIL",
+  "title": "ILNodeResetPDUTimingCyclic",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILNodeResetPDUTimingCyclic.htm",
+  "syntax": [
+    "long ILNodeResetPDUTimingCyclic (dbMessage, long TrueOrFalse)"
+  ],
+  "description": [
+    "Resets the cyclic-timing to the values from the database. Possibly two timings (False and True) exist in parallel and are selected upon the current transmission mode of the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

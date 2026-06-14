@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestCommandedAddress",
+  "category": "J1939",
+  "title": "J1939TestCommandedAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestCommandedAddress.htm",
+  "syntax": [
+    "long J1939TestCommandedAddress( dbNode aclNode, dword caSA, dword newAddress, dword timeout, dword options )"
+  ],
+  "description": [
+    "A commanded address message (0xFED8) is sent. The addressed node must send the ACL message (0xEE00) within the timeout from the new address."
+  ],
+  "parameters": [
+    {
+      "name": "caSA",
+      "type": "",
+      "description": "send CA message with this source address"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = J1939TestCommandedAddress( 0xf2, EMS, 1, 250, 0x00 );\n\nif (result == 1) {\n  // OK\n}\nelse if (result == 0) {\n  TestStepFail( “Timeout, ACL message not received” );\n}\nelse {\n  TestStepFail( “Error during Request for ACL test“);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

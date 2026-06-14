@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSecCertificateGetStatus",
+  "category": "Car2x",
+  "title": "C2xSecCertificateGetStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSecCertificateGetStatus.htm",
+  "syntax": [
+    "long C2xSecCertificateGetStatus( long certificateHandle );"
+  ],
+  "description": [
+    "Gets validity status of a certificate."
+  ],
+  "parameters": [
+    {
+      "name": "certificateHandle",
+      "type": "",
+      "description": "Handle of the certificate"
+    }
+  ],
+  "return": "The validity status consists of 3 bit fields which are combined using a binary OR operation\nStatus examples:",
+  "example": {
+    "description": [],
+    "code": "long certificateHandle;\ncertificateHandle = C2xSecCertificateGetHandle( \"MyCert\" );\nswitch (C2xSecCertificateGetStatus(certificateHandle) & 0xF000)\n{\n  case 0x1000: // unknown\n    break;\n  case 0x2000: // invalid\n    break;\n  case 0x3000: // valid\n    break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

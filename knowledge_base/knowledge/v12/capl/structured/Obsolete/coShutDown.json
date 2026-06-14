@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coShutDown",
+  "category": "Obsolete",
+  "title": "coShutDown",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoShutdown.htm",
+  "syntax": [
+    "void coShutDown( dword deleteOD, dword errCode[] );"
+  ],
+  "description": [
+    "Stops the CANopen® communication of the node."
+  ],
+  "parameters": [
+    {
+      "name": "deleteOD",
+      "type": "",
+      "description": "Specifies whether the object dictionary should be deleted"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoShutDown( 1, errCode );\nif (errCode[0] == 0) {\n  write( \"Shut down node with clearing object dictionary successfully\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

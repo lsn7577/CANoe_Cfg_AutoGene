@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "canSetChannelOutput",
+  "category": "CAN",
+  "title": "canSetChannelOutput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionCanSetChannelOutput.htm",
+  "syntax": [
+    "long canSetChannelOutput(long channel, long silent);"
+  ],
+  "description": [
+    "Defines the response of the CAN controller to the bus traffic and sets the ACK bit.The CAN transmitter of the channel is switched off. So CANoe does not generate an Ack bit here, and messages can no longer be sent. It is still possible to receive messages."
+  ],
+  "parameters": [],
+  "return": "0: ok",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n   long channel =2;\n      long silent =0;\n   canSetChannelOutput(channel,silent);\n   Write(\"silent set to %d\",silent);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

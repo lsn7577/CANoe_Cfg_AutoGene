@@ -1,0 +1,43 @@
+{
+  "page_type": "function",
+  "name": "TestReportAddExtendedInfo",
+  "category": "Test",
+  "title": "TestReportAddExtendedInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestReportAddExtendedInfo.htm",
+  "syntax": [
+    "TestReportAddExtendedInfo (char type[], char text[], ...);"
+  ],
+  "description": [
+    "With this function, it is possible to take over information into the protocol that is not subject to processing by CANoe. This way, for example, any HTML code can be copied directly into the protocol. A corresponding type specification specifies the type of information (e.g. HTML)."
+  ],
+  "parameters": [
+    {
+      "name": "html",
+      "type": "",
+      "description": "HTML code"
+    },
+    {
+      "name": "text",
+      "type": "",
+      "description": "Plain text without formatting instructions"
+    },
+    {
+      "name": "other",
+      "type": "",
+      "description": "other Text, taken over into the XML report, but not shown in the HTML report."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

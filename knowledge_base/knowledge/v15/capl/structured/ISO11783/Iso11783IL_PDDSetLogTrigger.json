@@ -1,0 +1,164 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDSetLogTrigger",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDSetLogTrigger",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDSetLogTrigger.htm",
+  "syntax": [
+    "long Iso11783IL_PDDSetLogTrigger( dword command, ulong ddi, ulong elNum, ulong value ); // form 1",
+    "long Iso11783IL_PDDSetLogTrigger( dbNode implement, dword command, ulong ddi, ulong elNum, ulong value ); // form 2"
+  ],
+  "description": [
+    "A measurement command can be executed with this function. It can be used in the callback function Iso11783IL_PDDOnDefaultLogRequest to activate the default logging."
+  ],
+  "parameters": [
+    {
+      "name": "command",
+      "type": "",
+      "description": "measurement command: 4: Time Interval 5: Distance Interval 6: Minimum within Threshold 7: Maximum within Threshold 8: Change Threshold"
+    },
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "Data Dictionary Identifier, 0x0000..0xFFFF"
+    },
+    {
+      "name": "elNum",
+      "type": "",
+      "description": "element number, 0x000..0xFFF"
+    },
+    {
+      "name": "Command",
+      "type": "",
+      "description": "Value"
+    },
+    {
+      "name": "Time Interval",
+      "type": "",
+      "description": "time in ms"
+    },
+    {
+      "name": "Distance Interval",
+      "type": "",
+      "description": "distance in mm"
+    },
+    {
+      "name": "Minimum within ThresholdMaximum within ThresholdChange Threshold",
+      "type": "",
+      "description": "value of the process variable"
+    },
+    {
+      "name": "implement",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_PDDOnDefaultLogRequest ( )\n{\nIso11783IL_PDDSetLogTrigger( 4, 0x0100, 0, 1000 );\nIso11783IL_PDDSetLogTrigger( 4, 0x0101, 0, 1000 );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0: form 1 9.0: form 2",
+      "13.0",
+      "—",
+      "—",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 2 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

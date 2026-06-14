@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_GetAddress",
+  "category": "ISO11783",
+  "title": "TCIL_GetAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILGetAddress.htm",
+  "syntax": [
+    "long TCIL_GetAddress(); // form 1"
+  ],
+  "description": [
+    "Returns the address that is used by the TC IL."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function"
+    }
+  ],
+  "return": ">=0: Address of the TC IL",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n  long addr;\n  addr = TCIL_GetAddress();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

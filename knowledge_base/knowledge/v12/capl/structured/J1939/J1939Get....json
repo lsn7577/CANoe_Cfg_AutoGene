@@ -1,0 +1,41 @@
+{
+  "page_type": "function",
+  "name": "J1939Get...",
+  "category": "J1939",
+  "title": "J1939Get...",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939Get.htm",
+  "syntax": [
+    "long J1939GetAAC( char[] deviceName )",
+    "long J1939GetIG( char[] deviceName )",
+    "long J1939GetVS( char[] deviceName )",
+    "long J1939GetVSInstance( char[] deviceName )",
+    "long J1939GetFct( char[] deviceName )",
+    "long J1939GetFctInstance( char[] deviceName )",
+    "long J1939GetECUInstance( char[] deviceName )",
+    "long J1939GetMC( char[] deviceName )",
+    "long J1939GetIN( char[] deviceName )"
+  ],
+  "description": [
+    "This function reads a part of the device name."
+  ],
+  "parameters": [
+    {
+      "name": "deviceName",
+      "type": "",
+      "description": "buffer for read part of the device name, minimum size of 8 bytes required"
+    }
+  ],
+  "return": "value of the device name part",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

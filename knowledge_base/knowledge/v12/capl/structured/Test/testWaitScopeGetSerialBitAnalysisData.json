@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetSerialBitAnalysisData",
+  "category": "Test",
+  "title": "testWaitScopeGetSerialBitAnalysisData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopeGetSerialBitAnalysisData.htm",
+  "syntax": [
+    "long testWaitScopeGetSerialBitAnalysisData (ScopeAnalyseHandle handle, dword msgField, dword bitNo, ScopeDutyCycleDefinition dutyCycle, ScopeBitDataDutyCycle data);"
+  ],
+  "description": [
+    "Returns the serial bit analysis data and duty cycle data for the defined bit."
+  ],
+  "parameters": [
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    }
+  ],
+  "return": "1 = Success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "callcontext::SetTimeToAnswer",
+  "category": "CommunicationObjects",
+  "title": "callcontext::SetTimeToAnswer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionCallcontextSetTimeToAnswer.htm",
+  "syntax": [
+    "long callContext::SetTimeToAnswer(dword timeMs)"
+  ],
+  "description": [
+    "Tells the simulation when it shall return the answer for the call. The answer will be returned after the given time.",
+    "Note that you can also use the AutoAnswerTimeNS property of a method provider endpoint to set the answer delay for all following calls."
+  ],
+  "parameters": [
+    {
+      "name": "timeMs",
+      "type": "",
+      "description": "Relative time in milliseconds after which the call shall be returned."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on fctCalled MirrorAdjustment.providerSide[all,LeftMirror].Adjust\n{\n  this.Result = Mirrors::AdjustResult::OK;\n  // return the call after 10 ms\n  this.SetTimeToAnswer(10);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

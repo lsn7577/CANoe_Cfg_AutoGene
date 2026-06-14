@@ -1,0 +1,68 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetProperty",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetProperty.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetProperty(char propertyName[], long value); // form 1"
+  ],
+  "description": [
+    "Sets a property of the TIM server/client."
+  ],
+  "parameters": [
+    {
+      "name": "Properties",
+      "type": "",
+      "description": "Value Range Default value server Default value client Description"
+    },
+    {
+      "name": "isServerMaster",
+      "type": "",
+      "description": "0..1 0 — 1: TIM server is TIM server master 0: TIM server is no TIM server master"
+    },
+    {
+      "name": "bootTime",
+      "type": "",
+      "description": "0..255 [seconds] 1 — Boot time which is reported in the TIM_ServerVersionResponse message."
+    },
+    {
+      "name": "minimumVersion",
+      "type": "",
+      "description": "0..255 0 0 Minimum TIM version number of the TIM client/server"
+    },
+    {
+      "name": "implementedVersion",
+      "type": "",
+      "description": "0..255 0 0 Implemented TIM version number of the TIM client/server"
+    },
+    {
+      "name": "deactivateCertificateValidation",
+      "type": "",
+      "description": "0..FFh 0 0 Bit 0 = 1: Validation of Conformance Certification information against device certificate is deactivated. The parameter group ‘ISOBUS Compliance Certification’ is not requested. Bit 1 = 1: Validation of ISOBUS device name (NAME) against device certificate is deactivated. Bit 2 = 1: Validation of function capabilities against the certificates is deactivated. Bit 3 = 1: Check for revoked certificates is deactivated. Bit 4 = 1: Check for certificate type (client or server certificate) is deactivated."
+    },
+    {
+      "name": "enableDemoMode",
+      "type": "",
+      "description": "0..1 0 0 1: Demo mode is enabled. Therefore no certificates and keys are validated 0: Demo mode is disabled"
+    },
+    {
+      "name": "useRequestCounter",
+      "type": "",
+      "description": "0..1 0 0 1: Increment request counter (starting with 0) in function request messages 0: Request counter is not used when function request messages are sent"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

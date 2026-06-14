@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FRSSetDistMode",
+  "category": "Obsolete",
+  "title": "FRSSetDistMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionFRSSetDistMode.htm",
+  "syntax": [
+    "long FRSSetDistMode (int triggerCondition, int mode);"
+  ],
+  "description": [
+    "Sets the disturbance type. A bitstream disturbance generates the disturbance sequence after the trigger is detected. The frame disturbance changes individual bits within a frame with bit accuracy."
+  ],
+  "parameters": [
+    {
+      "name": "triggerCondition",
+      "type": "",
+      "description": "Values: 1-4"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

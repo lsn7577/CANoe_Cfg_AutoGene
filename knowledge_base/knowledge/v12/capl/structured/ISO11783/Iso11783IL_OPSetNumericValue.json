@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPSetNumericValue",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPSetNumericValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPSetNumericValue.htm",
+  "syntax": [
+    "long Iso11783IL_OPSetNumericValue( dword objectID, long numericValue ); // form 1"
+  ],
+  "description": [
+    "The function sets the numerical value of an object. The object must exist in the object pool and must support a numerical value. If the Object Pool API is active, a Change Numeric Value command is sent to the Virtual Terminal. This can be suppress with Bit 0 in options."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "object ID of the object that has an updated value"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPSetNumericValue( 1000, 100 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

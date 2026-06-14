@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetEVSENotification",
+  "category": "SmartCharging",
+  "title": "SCC_GetEVSENotification",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetEVSENotification.htm",
+  "syntax": [
+    "void SCC_GetEVSENotification ( char EVSENotification, long& NotificationMaxDelay )"
+  ],
+  "description": [
+    "Returns the EVSENotification and its maximum delay, if present, from the EVSE status."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "EVSENotification and its maximum delay, if present, from DC_EVSEStatus",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

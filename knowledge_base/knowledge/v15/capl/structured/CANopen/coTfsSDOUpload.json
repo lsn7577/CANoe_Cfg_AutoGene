@@ -1,0 +1,162 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOUpload",
+  "category": "CANopen",
+  "title": "coTfsSDOUpload",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoUpload.htm",
+  "syntax": [
+    "long coTfsSDOUpload( dword index, dword subIndex ); // form 1",
+    "long coTfsSDOUpload( dword index, dword subIndex, dword outSize[1], byte outValueBuf[], dword valueBufSize ); // form 2",
+    "long coTfsSDOUpload( dword index, dword subIndex, dword outSize, qword outValueBuf); // form 3"
+  ],
+  "description": [
+    "This function executes a complete SDO upload. Depending on the number of data, this is either an expedited upload (up to 4 bytes) or a segmented transfer. After a successful upload, the data received can be called up with the command coTfsGetSdoUploadData. (form 1)",
+    "Alternatively the function can return the received data automatically. (form 2)",
+    "This function syntax can only be used for expedited uploads. (form 3)"
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Object index"
+    },
+    {
+      "name": "subIndex",
+      "type": "",
+      "description": "Object sub index"
+    },
+    {
+      "name": "outSize[1]",
+      "type": "",
+      "description": "Data length pointer"
+    },
+    {
+      "name": "outValueBuf[]",
+      "type": "",
+      "description": "Received data pointer"
+    },
+    {
+      "name": "valueBufSize",
+      "type": "",
+      "description": "Buffer size in byte of outValueBuf."
+    },
+    {
+      "name": "outSize",
+      "type": "",
+      "description": "Size of the data to be transmitted."
+    },
+    {
+      "name": "outValueBuf",
+      "type": "",
+      "description": "Data to be transmitted."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword dataLength, i;\nbyte pReceiveData[2048];\n\nif ( coTfsSDOUpload(0x2000, 2) != 1) {\n  write(\"SDO upload failed\");\n  return;\n} // if\n\nif ((dataLength = coTfsSDOGetUploadData( pReceiveData, 2048)) > 0) {\n  write(\"datalength = %d\",dataLength);\n  for (i = 0; i< dataLength; i++) {\n    write(\"data %i = 0x%X\",i,pReceiveData[i]);\n  } // for\n} // if\nelse {\n  write(\"no data available\");\n} // else"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

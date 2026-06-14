@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnAREthProcessTxARPDU",
+  "category": "IP",
+  "title": "OnAREthProcessTxARPDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthProcessTxARPDU.htm",
+  "syntax": [
+    "long OnAREthProcessTxARPDU(dword sourceAddress, dword sourcePort, dword destinationAddress, dword destinationPort, dword length, char buffer[], dword headerID );"
+  ],
+  "description": [
+    "This callback is called before the interaction layer wants to send an AUTOSAR PDU. This makes it possible to suppress the transmission."
+  ],
+  "parameters": [
+    {
+      "name": "sourceAddress",
+      "type": "",
+      "description": "IPv4 address of the local application endpoint."
+    }
+  ],
+  "return": "The AUTOSAR PDU is sent by the interaction layer, if the callback sends back 1. Otherwise the transmission is suppressed.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetParameterName",
+  "category": "Diagnostics",
+  "title": "diagGetParameterName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetParameterName.htm",
+  "syntax": [
+    "long diagGetParameterName (diagResponse obj, dword paramNo, char buffer[], dword buffersize)"
+  ],
+  "description": [
+    "Writes the qualifier (without parent path) of the diagnostic parameter into the given field. Structural parameters are counted too."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Number of chars written to buffer or error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

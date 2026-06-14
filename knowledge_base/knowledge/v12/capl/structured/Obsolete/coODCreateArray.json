@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coODCreateArray",
+  "category": "Obsolete",
+  "title": "coODCreateArray",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdCreateArray.htm",
+  "syntax": [
+    "void coODCreateArray( dword index, dword dataType, dword accessSub0, dword access, dword elementCount, dword errCode[] );"
+  ],
+  "description": [
+    "Generates a new field object in the local object dictionary. If the object already exists, then it is replaced by the new object."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the object, value range 1..65.535"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoODCreateArray( 0x1f81, 0x7, 0, 1, 127, errCode );\nif (errCode[0] == 0) {\n  write( \"Array [0x1f81] created\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

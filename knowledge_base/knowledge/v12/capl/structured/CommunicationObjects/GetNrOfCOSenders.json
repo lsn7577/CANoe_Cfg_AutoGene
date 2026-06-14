@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetNrOfCOSenders",
+  "category": "CommunicationObjects",
+  "title": "GetNrOfCOSenders",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionGetNrOfCOSenders.htm",
+  "syntax": [
+    "dword GetNrOfCOSenders(communicationObject co)"
+  ],
+  "description": [
+    "Returns the current number of sender endpoints at a signal or PDU communication object. Note the number of endpoints may vary over time for some objects. The function is particularly useful to iterate over all senders."
+  ],
+  "parameters": [
+    {
+      "name": "co",
+      "type": "",
+      "description": "Communication object"
+    }
+  ],
+  "return": "The current number of sender endpoints.",
+  "example": {
+    "description": [],
+    "code": "for (i = 0; i < GetNrOfCOSenders(MirrorState); ++i)\n{\n  MirrorState.senderSide[i].ResetValueState();\n  // ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

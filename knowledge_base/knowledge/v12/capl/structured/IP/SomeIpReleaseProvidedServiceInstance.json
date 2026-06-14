@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SomeIpReleaseProvidedServiceInstance",
+  "category": "IP",
+  "title": "SomeIpReleaseProvidedServiceInstance",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpReleaseProvidedServiceInstance.htm",
+  "syntax": [
+    "long SomeIpReleaseProvidedServiceInstance( dword psiHandle );"
+  ],
+  "description": [
+    "Deletes a Provided Service Instance that was created by SomeIpCreateProvidedServiceInstance.",
+    "All objects (Eventgroups, Events, Fields, and Methods) are also closed when the Service Instance is closed. If the Service Instance is newly created, all objects must also be newly created."
+  ],
+  "parameters": [
+    {
+      "name": "psiHandle",
+      "type": "",
+      "description": "Handle of the Provided Service Instance to be deleted (see SomeIpCreateProvidedServiceInstance)."
+    }
+  ],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD psi; // provided service handle\n\n  // open an Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create service\n  psi = SomeIpCreateProvidedServiceInstance(aep,10,1);\n\n  // ... do something here\n\n  // close the provided Service Instance\n  SomeIpReleaseProvidedServiceInstance(psi);\n\n  // ... Application Endpoint can still be used here\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

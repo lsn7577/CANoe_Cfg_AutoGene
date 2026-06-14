@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_WeldingDetectionRes",
+  "category": "SmartCharging",
+  "title": "SCC_WeldingDetectionRes",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_WeldingDetectionRes.htm",
+  "syntax": [
+    "void SCC_WeldingDetectionRes ( byte SessionID[], long ResponseCode, float EVSEPresentVoltage )"
+  ],
+  "description": [
+    "The callback is called as soon as a Welding Detection Response is received. Further details that are transmitted in this request can be queried with:"
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

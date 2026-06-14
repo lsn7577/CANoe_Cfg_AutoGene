@@ -1,0 +1,40 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINMasterBaudrateViolation",
+  "category": "Test",
+  "title": "ChkStart_LINMasterBaudrateViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinMasterBaudrateViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINMasterBaudrateViolation (float ClockTolerance);"
+  ],
+  "description": [
+    "Checks the LIN Master baud rate, by analyzing frame headers.",
+    "An event will be generated, if the measured baud rate is outside of the specified range. The expected baud rate is taken from DB.",
+    "For a LIN 2.0 compliance the Master clock tolerance has to be in the range:",
+    "[-0.5 .. 0.5] %.",
+    "The actual baud rate is done in Synch Field with the sample rate of 1 second.",
+    "This check works only when LIN hardware is not in Master mode, i.e. when an external Master is used.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "ClockTolerance",
+      "type": "",
+      "description": "Allowed Master clock tolerance. Measured baud rate expected to be in the range:"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\n// Create and start the check for LIN Master baud rate violation\ncheckId = ChkStart_LINMasterBaudrateViolation(0.5, \"LINMasterBaudrateCallback\"); \n...\n// CAPL callback for violation notification\nvoid LINMasterBaudrateCallback (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

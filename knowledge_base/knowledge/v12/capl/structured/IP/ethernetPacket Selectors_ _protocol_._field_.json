@@ -1,0 +1,35 @@
+{
+  "page_type": "concept",
+  "name": "ethernetPacket Selectors: <protocol>.<field>",
+  "category": "IP",
+  "title": "ethernetPacket Selectors: <protocol>.<field>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Selectors/CAPLfunctionProtocolField.htm",
+  "syntax": [],
+  "description": [
+    "Read or write access to protocol fields.",
+    "See protocol overview for protocol and field designators.",
+    "If <protocol> or <field> is not contained in the packet, the measurement is stopped with a runtime error. ethernetPacket::<protocol>::IsAvailable and ethernetPacket::<protocol>::<field>::IsAvailable can be used to find out if the field is available.",
+    "The data type depends on the protocol field. The bit length is rounded up to next larger CAPL data type, i.e. a 4-bit protocol field will use byte and a 12 bit protocol field will use word.",
+    "This selector is available for protocol field of type integer. For protocol fields, which are not of type integer, the method GetData and SetData can be used."
+  ],
+  "parameters": [],
+  "return": "Value of the protocol field.",
+  "example": {
+    "description": [],
+    "code": "ethernetPacket pkt;\n\n// initialize packet with IPv4 and UDP protocols\npkt.udp.Init();\n\n// set IPv4 addresses\npkt.ipv4.source.ParseAddress( \"192.168.1.1\" );\npkt.ipv4.destination.ParseAddress ( \"192.168.1.255\" );\n\n// set UDP ports\npkt.udp.source      = 40001;\npkt.udp.destination = 40002;\n\n// set UDP payload\npkt.udp.SetData( 0, \"Hello\", 5 );\n\n// calculate UDP and IPv4 checksum and send Ethernet packet\npkt.CompletePacket();\noutput( pkt );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "ethernetPacket",
+      "link": "../Objects/CAPLfunctionEthernetPacket.htm"
+    }
+  ],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

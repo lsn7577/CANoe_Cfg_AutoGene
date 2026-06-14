@@ -1,0 +1,41 @@
+# ISO11783 VT IL Properties
+
+> Category: `ISO11783` | Type: `notes`
+
+## Description
+
+Yes
+
+No
+
+| Property Value | Description | Value Range | Initial Value | IL must be stopped (VTIL_ControlStop) |
+|---|---|---|---|---|
+| vtVersion | Version of the Virtual Terminal according to ISO11783-6. | 0..6 | 5 | Yes |
+| transmitPointingEvent | Transmit Pointing event at a click in the data mask. | 0..1 | 1 | Yes |
+| reportDragOperation | Cyclic transmission of Pointing event while dragging. | 0..1 | 0 | Yes |
+| intermediateDragCoordinates | Transmit Pointing event with the current coordinates while dragging. If value is 0 only the start coordinates of the dragging process are transmitted. | 0..1 | 0 | Yes |
+| simultaneousKeyActivation | Simultaneous activation of physical Soft Keys. | 0..1 | 0 | Yes |
+| bootTime | Maximum number of seconds from a power cycle to transmission of first VT status message (this value is only used in the Get Hardware response). | 0..255 | 255 | Yes |
+| availableMemory | If the object pool size in a Get Memory message of an implement is bigger than this value then the Get Memory response of the Virtual Terminal contains the status value 1 (There is not enough memory available). Otherwise the status value is 0 (There can be enough memory). | 0.. 4294967295 | 4294967295 | No |
+| colors | Number of colors which are supported. | 2,16,256 | 256 | Yes |
+| dataMaskSize | Width and height of the square data mask in pixel. | 200..2000 | 400 | Yes |
+| softKeyMaskWidth | Width of a soft key in pixel. | 10..255 | 80 | Yes |
+| softKeyMaskHeight | Height of a soft key in pixel. | 10..255 | 80 | Yes |
+| numberOfPhysicalSoftKeys | Number of physical Keys per Soft Key Mask. | 1..64 | 10 | Yes |
+| numberOfVirtualSoftKeys | Number of virtual Soft Keys per Soft Key Mask. Since VT version 4 the number of virtual Soft Keys is always 64 and cannot be modified | 6..64 | 64 | Yes |
+| numberOfUserLayoutDataMasks | Number of User-Layout data masks. This setting is only available with Virtual Terminal version 4 or higher. | 0..10 | 0 | Yes |
+| numberOfUserLayoutSoftKeyMasks | Number of User-Layout soft keys. This setting is only available with Virtual Terminal version 4 or higher. | Yes |  |  |
+| textFontData | Supported font properties according to message Get Text Font Data Response (PGN). | 0x000000.. 0xFFFFFF | 0xFFFFFF | Yes |
+| languageCode | Language code according to byte 1-2 of message Language command (PGN 65039). | 0..0xFFFF | 0x656E ("en") | No |
+| formatNumberDataUnit | Supported number, data and unit format according to byte 3-6 of message Language command (PGN 65039). | 0..0xFFFFFFFF | 0x40000000 | No |
+| enableSound | Enables or disables ouput of acoustic signals of the Virtual Terminal. | 0..1 | 1 | No |
+| enablePassiveMode | Enables or disables the passive mode of the Virtual Terminal. If property enableAutoDetection is not set then the Virtual Terminal is monitored that has the same node address as defined in the database. | 0..1 | 0 | Yes |
+| enableAutoDetection | Enables or disables the auto detection of the Virtual Terminal address. If enabled then the Virtual Terminal that registers first on the bus with an Address Claimed message is monitored. This property has only impact if passive mode is enabled. | 0..1 | 0 | Yes |
+| autoDetectionFunctionInstance | If value is not -1 the auto detected Virtual Terminal must have this Function Instance. This property has only impact if passive mode is enabled and property enableAutoDetection is set. | 0..31, -1 | -1 | Yes |
+| enableOperatorInputInPassiveMode | If value is 0 no operator input is possible in the passive mode. All functions of section 'VT - Handling' will fail and the VT IL does not send any message. If value is 1 then operator input (e.g. pressing buttons or editing values via the VT IL) is possible. Please notice that in this case the VT IL sends messages from the same address like the real VT and therefore this can influence the real Virtual Terminal. | 0..1 | 0 | No |
+| enableWorkingSetSynchronization | Enables or disables the synchronization of the active Working Set if the passive mode is enabled. This functionality is useful for fault injection to simulate the communication between a Virtual Terminal and a not-active implement. After the property is set to 0, the call of VTIL_ActivateWorkingSet and following VTIL_PressButton or any other VT-Handling method result in the communication between the Virtual Terminal and a not active working set. | 0..1 | 1 | No |
+| isbServer | The ISB server support is switched on. The Virtual Terminal cyclically sends the message All Implements Stop Operations Switch State, which can be observed by ISB clients. The CAPL function VTIL_PressISB, can be called. | 0..1 | 0 | Yes |
+| locationOfStoredObjectPools | The VT IL uses this folder for keeping of object pools, i.e. as a storage location for Store version message and Load version message. On the each measurement stop, the folder is cleared. If you use more than one VT IL and have to avoid the VT ILs overwrite the object pools of each other, you can specify an own folder for every VT IL with this property. | Any valid path relative to <%Temp%\CANoeVTILDataTmp> | <%Temp%\CANoeVTILDataTmp\VTData> | No |
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,67 @@
+{
+  "page_type": "notes",
+  "name": "Access Types of the Object Dictionary",
+  "category": "Obsolete",
+  "title": "Access Types of the Object Dictionary",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/CAPLfunctionsCANopenNLAccessTypes.htm",
+  "syntax": [],
+  "description": [
+    "The permissible access types are coded as follows:",
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Code",
+        "Description"
+      ],
+      [
+        "0",
+        "Only read"
+      ],
+      [
+        "1",
+        "Read and write"
+      ],
+      [
+        "2",
+        "Only write"
+      ],
+      [
+        "3",
+        "Read and write - can only be mapped in a RPDO"
+      ],
+      [
+        "4",
+        "Read and write - can only be mapped in a TPDO"
+      ],
+      [
+        "5",
+        "Only read - can only be mapped in a TPDO"
+      ],
+      [
+        "6",
+        "Only write - can only be mapped in a RPDO"
+      ],
+      [
+        "7",
+        "Is handled in the application"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

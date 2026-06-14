@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CheckSignalMatch",
+  "category": "Test",
+  "title": "CheckSignalMatch",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionCheckSignalMatch.htm",
+  "syntax": [
+    "long CheckSignalMatch(Signal aSignal, float aCompareValue); // form 1"
+  ],
+  "description": [
+    "Checks the given value against the value of signal, the system or the environment variable. The resolution of the signal is considered."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "1: If the condition is TRUE",
+  "example": {
+    "description": [],
+    "code": "// checks if the value of the signal matches a specified value\nlong result;\nresult = CheckSignalMatch(Node_SUT::Velocity, 80);\nif (result != 1)\nTestStepFail(\"Value of signal matches not the value ‘80’!\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,43 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINMasterInitTimeViolation",
+  "category": "Test",
+  "title": "ChkStart_LINMasterInitTimeViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinMasterInitTimeViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINMasterInitTimeViolation (duration MinTime, duration MaxTime);"
+  ],
+  "description": [
+    "Checks an initialization time of LIN Master. The initialization state is entered on switching on and on waking up.",
+    "An event will be generated, if the initialization time is out of the specified range.",
+    "This function verifies the initialization time on waking up only, i.e. a time between getting Wakeup signal and the first header transmitted by the Master.",
+    "For a LIN 2.0 compliance the initialization time has to be in the range [100 .. 150] ms.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Minimum time shall not be checked"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Minimum allowed initialization time"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\n// Create and start the check for LIN Master initialization time violation\ncheckId = ChkStart_LINMasterInitTimeViolation(100, 150, \"LINMasterInitTimeCallback\"); \n...\n// CAPL callback for violation notification\nvoid LINMasterInitTimeViolation (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

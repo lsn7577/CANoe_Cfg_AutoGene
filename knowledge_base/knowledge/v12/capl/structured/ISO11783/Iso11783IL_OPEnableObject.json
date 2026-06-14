@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPEnableObject",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPEnableObject",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPEnableObject.htm",
+  "syntax": [
+    "long Iso11783IL_OPEnableObject( dword objectID, dword enable ); // form 1"
+  ],
+  "description": [
+    "The function activates or deactivates an input object. A Enable Object command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "object ID of an input object"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPEnableObject( \r\n 1200, 1 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

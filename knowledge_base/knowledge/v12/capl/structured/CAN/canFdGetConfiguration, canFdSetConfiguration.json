@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "canFdGetConfiguration, canFdSetConfiguration",
+  "category": "CAN",
+  "title": "canFdGetConfiguration, canFdSetConfiguration",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionCanFdSetConfiguration.htm",
+  "syntax": [
+    "long canFdSetConfiguration(long channel, canSettings abrSettings, canSettings dbrSettings);"
+  ],
+  "description": [
+    "The CAN controller parameters for arbitration and data phase can be set or read",
+    "canFdSetConfiguration performs an automatic reset of the CAN controller."
+  ],
+  "parameters": [
+    {
+      "name": "Channel",
+      "type": "",
+      "description": "The CAN channel."
+    }
+  ],
+  "return": "1 = success0 = error",
+  "example": {
+    "description": [],
+    "code": "int ret;\nint channel = 1;\nCANsettings abrSettings;\n\nCANsettings dbrSettings;\n\nabrSettings.baudrate = 1000000;\nabrSettings.tseg1=5;\nabrSettings.tseg2=2;\nabrSettings.sjw=2;\nabrSettings.sam=1;\nabrSettings.flags = 0;\n\ndbrSettings.baudrate = 4000000;\ndbrSettings.tseg1=6;\ndbrSettings.tseg2=3;\ndbrSettings.sjw=2;\ndbrSettings.sam=1;\ndbrSettings.flags = 0;\n\nwrite(\"Set 1 MB\");\nret = canFdSetConfiguration(channel, abrSettings, dbrSettings);\n\nif (ret)\n{\nwrite(\"Arbitration settings: baud= %f, tseg1 = %d, tseg2= %d, sjw = %d, sam = %d, flags = 0x%x\",abrSettings.baudrate, abrSettings.tseg1, abrSettings.tseg2, abrSettings.sjw, abrSettings.sam, abrSettings.flags);\nwrite(\"Data settings: baud= %f, tseg1 = %d, tseg2= %d, sjw = %d, sam = %d, flags = 0x%x\",dbrSettings.baudrate, dbrSettings.tseg1, dbrSettings.tseg2, dbrSettings.sjw, dbrSettings.sam, dbrSettings.flags);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

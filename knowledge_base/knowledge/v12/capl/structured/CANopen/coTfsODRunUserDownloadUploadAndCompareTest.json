@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsODRunUserDownloadUploadAndCompareTest",
+  "category": "CANopen",
+  "title": "coTfsODRunUserDownloadUploadAndCompareTest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdRunUserDownloadUploadAndCompareTest.htm",
+  "syntax": [
+    "long coTfsODRunUserDownloadUploadAndCompareTest( void );"
+  ],
+  "description": [
+    "This function executes a SDO Download and a SDO Upload for all objects that are defined in the internal list of test objects (see coTfsODAddEntry). It checks if the written data are conform to the stored data as well as the read data."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "see example of coTfsODAddEntryIndexRange"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

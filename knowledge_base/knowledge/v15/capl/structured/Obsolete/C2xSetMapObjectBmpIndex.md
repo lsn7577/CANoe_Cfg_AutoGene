@@ -1,0 +1,21 @@
+# C2xSetMapObjectBmpIndex
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by SetMapObjectBmpIndex. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long C2xSetMapObjectBmpIndex( long handle, long bitmapIndex ); |  |  |  |
+| Function | Sets the index of a bitmap in a multi bitmap file for a map object of the type bitmap which must be shown. |  |  |  |
+| Parameters | handle Reference of the map object |  |  |  |
+| bitmapIndex Index of the to be displayed bitmap in a multi bitmap file (default: 0) |  |  |  |  |
+| Return Values | 0 if success, else the set went wrong |  |  |  |
+| Availability | Since Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 8.1 | Car2x | — | • |  |
+| Example See example of C2xSetMapObjectBmpFilePath. |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

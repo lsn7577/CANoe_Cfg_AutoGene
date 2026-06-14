@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "AfdxOutputPacketRaw",
+  "category": "ADFX",
+  "title": "AfdxOutputPacketRaw",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionAfdxOutputPacketRaw.htm",
+  "syntax": [
+    "long AfdxOutputPacketRaw( long packet );"
+  ],
+  "description": [
+    "The specified AFDX message is transmitted without considering the internal AFDX software stack.",
+    "This call is equivalent to AfdxOutputPacket( packet, SingleShot, NoIPFragmentation, NoAFDXVLScheduling, NoAFDXSeqNoManagement, MACIFRelated )."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message to send that has been created with AfdxInitPacket."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "includes\n{\n  #include \"AFDX/Utils.cin\"\n}\non preStart\n{\n  long result;\n  result=AfdxRegisterReceiveCallback(\"OnAfdxRawPacket\", BothDirections, NotDropped, EveryFrameAndPacket);\n}\nvoid OnAfdxRawPacket( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet )\n{\n  long packetHandle;\n\n  if (afdxFlags & packetIsReassembled)\n  {\n    write( \"<%NODE_NAME%> OnAfdxRawPacket  packet is JumboPacket --> skip\" );\n    return; // don't transfer Jumbo-frames\n  }\n\n  if (getBusContext() == gContextAfdx1)\n  {\n    setBusContext( gContextAfdx2 );\n  }\n  else\n  {\n    setBusContext( gContextAfdx1 );\n  }\n\n  packetHandle  = AfdxInitPacket( packet);\n  if( packetHandle == 0) {\n    write( \"<%NODE_NAME%> AfdxInitPacket failed\" );\n    return;\n  }\n\n  // modify signals only if not a fragment\n  if (!(packetIsFragmented & afdxFlags ))\n  {\n    // TBD\n  }\n  else\n  {\n    // must use direct byte access to manipulate\n  }\n\n  AfdxOutputPacketRaw( packetHandle );\n  AfdxReleasePacket( packetHandle );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

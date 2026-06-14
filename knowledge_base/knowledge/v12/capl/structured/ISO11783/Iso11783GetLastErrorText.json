@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783GetLastErrorText",
+  "category": "ISO11783",
+  "title": "Iso11783GetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783Getlasterrortext.htm",
+  "syntax": [
+    "dword Iso11783GetLastErrorText( dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "This function gets the description of the last occurred error."
+  ],
+  "parameters": [
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Size of buffer for error description"
+    }
+  ],
+  "return": "Number of characters that are copied to buffer",
+  "example": {
+    "description": [],
+    "code": "dword size = 100;\nchar errText[size];\n\nIso11783GetLastErrorText( size, errText );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

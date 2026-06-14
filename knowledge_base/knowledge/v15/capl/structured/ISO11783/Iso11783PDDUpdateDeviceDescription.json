@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDUpdateDeviceDescription",
+  "category": "ISO11783",
+  "title": "Iso11783PDDUpdateDeviceDescription",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDUpdateDeviceDescription.htm",
+  "syntax": [
+    "long Iso11783PDDUpdateDeviceDescription( dword ecuHandle, char deviceCfgPath [] );"
+  ],
+  "description": [
+    "The function updates the current device description object pool at runtime.",
+    "Only the device object and objects of type DeviceValuePresentation of the specified file are transmitted."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU. The handle must be created with Iso11783CreateECU beforehand or ZERO for general parameters."
+    },
+    {
+      "name": "deviceCfgPath",
+      "type": "",
+      "description": "File name of the device configuration file. The file must be located in the directory of the CANoe configuration."
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783PDDUpdateDeviceDescription( ecuHandle, \"Sprayer01.XML\" ) == 0) {\n  // after  the device value presentation has changed to English\n  // the designators are changed too\n  Iso11783PDDChangeDesignator ( ecuHandle, 1, \"Tank volume\" );\n  Iso11783PDDChangeDesignator ( ecuHandle, 2, \"App rate per area\" );\n}\nelse {\n  write( \"Error while update file\" );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

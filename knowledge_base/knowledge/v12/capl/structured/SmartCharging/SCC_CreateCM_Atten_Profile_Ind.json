@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_Atten_Profile_Ind",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_Atten_Profile_Ind",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_Atten_Profile_Ind.htm",
+  "syntax": [
+    "void SCC_CreateCM_Atten_Profile_Ind ( byte SourceMac[], byte TargetMac[], byte PEVMAC[], dword NumGroups, byte AAG[] )"
+  ],
+  "description": [
+    "Creates a CM_Atten_Profile.Ind message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SourceMac",
+      "type": "",
+      "description": "Source address of the Ethernet frame"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

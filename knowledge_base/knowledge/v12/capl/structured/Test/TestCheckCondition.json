@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestCheckCondition",
+  "category": "Test",
+  "title": "TestCheckCondition",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCheckCondition.htm",
+  "syntax": [
+    "long TestCheckCondition (dword aAuxHandle);"
+  ],
+  "description": [
+    "Checks whether the specified condition was already injured.",
+    "This function can be used both within a test case and also on test module level."
+  ],
+  "parameters": [
+    {
+      "name": "aAuxHandle",
+      "type": "",
+      "description": "Event object, for example a check from the TestService Library. Specified is the handle that is returned on creation of a check. This function can be used both within a test case and also on the test module level."
+    }
+  ],
+  "return": "1: Condition was already injured at least once",
+  "example": {
+    "description": [
+      "Add check as condition"
+    ],
+    "code": "// checks the maximum duration of a sequence of actions\ncheckId = ChkStart_Timeout (1000);\nTestAddCondition(checkId);\nTestWaitForTimeout(1500);\nresult = TestCheckCondition(checkId);\nif (result == 1)\n   TestStepFail(\"Timeout already occurred after 1500 ms.\");\n// sequence of different actions and waiting conditions\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

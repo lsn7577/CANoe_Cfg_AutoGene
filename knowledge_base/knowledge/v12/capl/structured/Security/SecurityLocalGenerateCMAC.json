@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalGenerateCMAC",
+  "category": "Security",
+  "title": "SecurityLocalGenerateCMAC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityLocalGenerateCMAC.htm",
+  "syntax": [
+    "long SecurityLocalGenerateCMAC(byte key[], dword keyLength, byte data[], dword dataLength, byte cmac[], dword cmacLength)"
+  ],
+  "description": [
+    "Generates a hash for the given data and key. The generated hash is a CMAC."
+  ],
+  "parameters": [
+    {
+      "name": "byte key[]",
+      "type": "",
+      "description": "The key to be used."
+    }
+  ],
+  "return": "1: SuccessA Value of 1 means that the action was successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "<ModelName>_init",
+  "category": "MATLAB",
+  "title": "<ModelName>_init",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MATLAB/Functions/CAPLfunctionMODELinit.htm",
+  "syntax": [
+    "long <ModelName>_init( dword enableTimer, dword enableEvents);"
+  ],
+  "description": [
+    "Initializes the CANoe runtime environment for the generated model DLL. This effectively overrides the default execution settings which were compiled into the DLL."
+  ],
+  "parameters": [
+    {
+      "name": "enableTimer",
+      "type": "",
+      "description": "Enables or disables the internal model execution timer."
+    }
+  ],
+  "return": "On success 0, otherwise a value unequal to zero.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\nmodelTimer.SetCyclic(myTimeStep);\nmyControllerMdl_init(0,1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

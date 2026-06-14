@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "a429GetConfiguration",
+  "category": "A429",
+  "title": "a429GetConfiguration",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429GetConfiguration.htm",
+  "syntax": [
+    "long a429GetConfiguration( long channel, a429settings mySettings );"
+  ],
+  "description": [
+    "This function returns the actual channel configuration settings."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "valid channel number"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 'c'\n{\n  long channel;\n  a429settings mySettings;\n\n  channel = RxChannel;\n  if (a429GetConfiguration(channel, mySettings)) {\n    write (\"parameters of channel '%d', bitrate '%d' (%d .. %d), parity = '%s', flags = '%s'\", channel, mySettings.Bitrate, mySettings.RxMinBitrate, mySettings.RxMaxBitrate, ((enum Ea429ParityCtrl)mySettings.Parity).name(), ((enum Ea429SettingsFlags)mySettings.Flags).name());\n  }\n  else {\n    write(\" parameters for '%d' not available\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateContractAuthenticationReq_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreateContractAuthenticationReq_DIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateContractAuthenticationReq_Din.htm",
+  "syntax": [
+    "long SCC_CreateContractAuthenticationReq_DIN ( byte SessionID[] )"
+  ],
+  "description": [
+    "Creates a Contract Authentication Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

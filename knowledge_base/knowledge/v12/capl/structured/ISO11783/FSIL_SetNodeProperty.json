@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_SetNodeProperty",
+  "category": "ISO11783",
+  "title": "FSIL_SetNodeProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILSetNodeProperty.htm",
+  "syntax": [
+    "long FSIL_SetNodeProperty( char propertyName[], long propertyValue); // form 1"
+  ],
+  "description": [
+    "Changes an internal property of the File Server node."
+  ],
+  "parameters": [
+    {
+      "name": "fs",
+      "type": "",
+      "description": "File Server simulation node to apply the function."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": "void SetNodeProperties()\n{\n  // Set File Server version 3\n  FSIL_SetNodeProperty(FS, \"fsVersion\", 3);\n  // Set root directory for file server volumes\n  FSIL_SetNodeProperty (FS, \"rootDirectory\", \"ISOBUS_FSRootDir\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

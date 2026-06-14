@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ResetVTStatus",
+  "category": "ISO11783",
+  "title": "VTIL_ResetVTStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILResetVTStatus.htm",
+  "syntax": [
+    "long VTIL_ResetVTStatus( ); // form 1"
+  ],
+  "description": [
+    "This function reverts changes made by SetVTStatus and turn back to the default behavior of the Virtual Terminal IL."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "if (VTIL_ResetVTStatus(VT) < 0)\n{\n  TestStepFail(\"Failed to reset VT Status message\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "linGetMasterResistorState",
+  "category": "LIN",
+  "title": "linGetMasterResistorState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGetMasterResistorState.htm",
+  "syntax": [
+    "long linGetMasterResistorState();"
+  ],
+  "description": [
+    "Returns the internal master resistor’s current state of the LIN interface hardware.",
+    "This function only works with LIN core network interfaces."
+  ],
+  "parameters": [],
+  "return": "State of the master resistor:\n1: Resistor is on0: Resistor is off",
+  "example": {
+    "description": [],
+    "code": "// on pressing key ‘c’ switch on the master resistor\n...\non key 'c'\n{\n  long ret;\n  ret = linGetMasterResistorState();\n  write(\"Resistor State: %d\", ret);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagSetRespPrimitiveByte",
+  "category": "Diagnostics",
+  "title": "diagSetRespPrimitiveByte",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSetRespPrimitiveByte.htm",
+  "syntax": [
+    "long diagSetRespPrimitiveByte( diagRequest request, DWORD bytePos, DWORD newValue);"
+  ],
+  "description": [
+    "Writes one byte of the response stored for the request."
+  ],
+  "parameters": [
+    {
+      "name": "request",
+      "type": "",
+      "description": "Request"
+    }
+  ],
+  "return": ">= 0: Requested value or \"no error\"",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

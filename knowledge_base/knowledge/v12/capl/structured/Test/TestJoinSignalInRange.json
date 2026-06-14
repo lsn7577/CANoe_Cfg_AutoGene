@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestJoinSignalInRange",
+  "category": "Test",
+  "title": "TestJoinSignalInRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinSignalInRange.htm",
+  "syntax": [
+    "long TestJoinSignalInRange (Signal aSignal, float aLowLimit, float aHighLimit); // form 1"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait.",
+    "By default this condition will be checked immediately when the set of joined events is evaluated by TestWaitForAllJoinedEvents or TestWaitForAnyJoinedEvent and may not wait for a value change. It is also possible to delay the checking of the condition until the next message with the given signal arrives."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "-3: Join error.",
+  "example": {
+    "description": [],
+    "code": "// waits until the value of signal ‚Velocity’ is in the given range\nlong result;\ndword index = 0;\nresult = TestJoinSignalInRange(Velocity, 30, 50);\n// ... other join events\nTestJoinEnvVarEvent(MyEnvVar);\nTestJoinTextEvent(\"ErrorFrame occurred!\");\n\nindex = TestWaitForAnyJoinedEvent(2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

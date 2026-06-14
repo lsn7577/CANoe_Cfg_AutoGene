@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "vtsSetIntegrationTime",
+  "category": "VTSystem",
+  "title": "vtsSetIntegrationTime",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetIntegrationTime.htm",
+  "syntax": [
+    "long vtsSetIntegrationTime (char Target[], double IntTime);"
+  ],
+  "description": [
+    "Mean and RMS values are calculated in a moving measurement time window.The length of the time window can be set with this function."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    },
+    {
+      "name": "IntTime",
+      "type": "",
+      "description": "Measurement time window in seconds.VT1004/VT1104: The only permissible time settings are 128 µs (= 0.000128; mean value only), 1 ms (mean value only), 10 ms, 100 ms, and 1 s.VT2516/VT7001: The permissible time settings depend on the concrete measurement values and are similar to the possible settings in the VT System configuration dialog.If an invalid value is specified, the call will fail."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "This example demonstrates how to change the integration time of a VT System system variable during the measurement. The integration time is set to 1s to cancel out noise in the sensor readings. It is assumed that the sensor to be read is connected to a channel called TempSensor of the VT1004 module."
+    ],
+    "code": "SetIntegrationTime ()\n{\n   // Set integration time to 1 second\n   vtsSetIntegrationTime(\"VTS::TempSensor::Avg\", 1.0);\n\n   // Output sensor readings to the Write Window every second\n   while(1)\n   {\n      write(\"Average sensor value: %fV\", @sysvar::VTS::TempSensor::Avg);\n      TestWaitForTimeOut(1000);\n   }\n}\npublic void SetIntegrationTime()\n   {\n      // Get VTS interface and temperature sensor channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT1004Channel tempSensor = vts.GetChannel(\"TempSensor\") as IVT1004Channel;\n      // Set integration time to 1 second\n      tempSensor.Avg.IntegrationTime = 1.0;\n      // Output sensor readings to the Write Window every second\n      while (true)\n      {\n         Vector.Tools.Output.WriteLine(\"Average sensor value: \" + tempSensor.Avg.Value.ToString() + \"V\");\n         Vector.CANoe.Threading.Execution.Wait(1000);\n      }\n   }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.5 SP2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

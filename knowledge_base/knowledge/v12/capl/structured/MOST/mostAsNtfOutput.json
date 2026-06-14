@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "mostAsNtfOutput",
+  "category": "MOST",
+  "title": "mostAsNtfOutput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsNTFOutput.htm",
+  "syntax": [
+    "long mostAsNtfOutput(long destAdr, mostMessage msg)"
+  ],
+  "description": [
+    "destAdr != 0xFFFF:",
+    "The command sends the message to the stated address.",
+    "destAdr == 0xFFFF:",
+    "The message is sent to the address of all notification clients. The FBlockID, InstID and FunctionID values, which are needed to read the addresses from the notification matrix, are extracted from the message variable (msg)."
+  ],
+  "parameters": [
+    {
+      "name": "destAdr",
+      "type": "",
+      "description": "Message destination address or 0xFFFF to send to all notification clients."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

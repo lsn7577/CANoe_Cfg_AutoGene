@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetDefaultMacId",
+  "category": "Car2x",
+  "title": "C2xGetDefaultMacId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetDefaultMacId.htm",
+  "syntax": [
+    "long C2xGetDefaultMacId( byte macId[] );"
+  ],
+  "description": [
+    "This function reads the MAC-ID of a WLAN interface."
+  ],
+  "parameters": [
+    {
+      "name": "macId",
+      "type": "",
+      "description": "Destination array for the read MAC-ID with six elements-"
+    }
+  ],
+  "return": "0 or error code.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  byte macId[6];\n  if (C2xGetDefaultMacId( macId ) == 0)\n  {\n    write( \"MAC ID is %.2X:%.2X:%.2X:%.2X:%.2X:%.2X:\", macId[0], macId[1], macId[2], macId[3], macId[4], macId[5] );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

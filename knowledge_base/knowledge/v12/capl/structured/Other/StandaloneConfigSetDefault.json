@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "StandaloneConfigSetDefault",
+  "category": "Other",
+  "title": "StandaloneConfigSetDefault",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStandaloneConfigSetDefault.htm",
+  "syntax": [
+    "dword StandaloneConfigSetDefault(CHAR rtcfgFileName[])"
+  ],
+  "description": [
+    "Changes the default configuration file, i.e. the standalone configuration to be loaded when standalone mode is activated or the runtime kernel is started after reboot. Thus, it results in a persistent change on the VN8900."
+  ],
+  "parameters": [
+    {
+      "name": "rtcfgFileName",
+      "type": "",
+      "description": "Name of the standalone configuration file (without path) to be set as default configuration file."
+    }
+  ],
+  "return": "The function returns an error code with 0 representing successful operation.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

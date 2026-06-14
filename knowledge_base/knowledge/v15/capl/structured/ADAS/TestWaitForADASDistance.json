@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForADASDistance",
+  "category": "ADAS",
+  "title": "TestWaitForADASDistance",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADAS/CAPLfunctionADASTestWaitForDistance.htm",
+  "syntax": [
+    "long TestWaitForADASDistance (long overUnder, float threshold, long aTimeout)"
+  ],
+  "description": [
+    "Waits for the occurrence of the first Detected Object matching the distance conditions passed as arguments. Should the Detected Object not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "overUnder",
+      "type": "",
+      "description": "Specifies if the distance should be over or under the specified value."
+    },
+    {
+      "name": "threshold",
+      "type": "",
+      "description": "Specified value that determines the maximum or minimum distance."
+    },
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]. Transmission of 0: no timeout controlling."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "enum VWaitThreshold\n{\n  kUnderThreshold = 0,\n  kOverThreshold = 1\n};\nif(TestWaitForADASDistance(kUnderThreshold, 30, 3000)) //Wait for Detected Object under 30m distance for 3 seconds\n{\n  //Detected Object below distance of 30 m detected\n}\nelse\n{\n  //Timeout\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "15",
+      "15",
+      "15",
+      "—",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Test",
+      "Test",
+      "Test",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

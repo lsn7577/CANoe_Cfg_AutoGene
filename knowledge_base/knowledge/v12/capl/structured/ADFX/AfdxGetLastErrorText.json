@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetLastErrorText",
+  "category": "ADFX",
+  "title": "AfdxGetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxGetLastErrorText.htm",
+  "syntax": [
+    "long AfdxGetLastErrorText( dword bufSize, char[] buffer );"
+  ],
+  "description": [
+    "Gets the error code description of the last called Afdx... function."
+  ],
+  "parameters": [
+    {
+      "name": "bufSize",
+      "type": "",
+      "description": "size of buffer in which the description text is copied"
+    }
+  ],
+  "return": "number of copied bytes",
+  "example": {
+    "description": [],
+    "code": "char error[100];\nlong value;\nlong packetHandle;\n\nvalue = AfdxGetTokenInt( packetHandle, \"eth\", \"type\" );\nif (AfdxGetLastError() == 0)\n{\n  write(\"Ethernet Type is 0x%x\", value );\n}\nelse\n{\n AfdxGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

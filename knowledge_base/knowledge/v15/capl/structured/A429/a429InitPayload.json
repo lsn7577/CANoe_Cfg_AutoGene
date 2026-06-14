@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "a429InitPayload",
+  "category": "A429",
+  "title": "a429InitPayload",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/A429/Functions/CAPLfunctionA429InitPayload.htm",
+  "syntax": [
+    "long a429InitPayload (a429Word myA429word)"
+  ],
+  "description": [
+    "Initialize the payload of an existing a429word using the current values of corresponding signals from SignalServer.",
+    "This can be used to initialize a message from scratch to the StartValues of the StartValue-table in the Init-section, or to assign the current signal values to the payload during any time of measurement."
+  ],
+  "parameters": [
+    {
+      "name": "myA429Word",
+      "type": "",
+      "description": "message which should be initialized with current signal values"
+    }
+  ],
+  "return": "message not valid or corresponding",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  a429Word *msg = { msgChannel = 1};\n}\non key '1'\n{\n  a429InitPayload(msg);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0",
+      "10.0",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "A429",
+      "A429",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

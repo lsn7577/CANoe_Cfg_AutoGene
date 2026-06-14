@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "mostNwmFiSetConfigState",
+  "category": "MOST",
+  "title": "mostNwmFiSetConfigState",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTNwmFiSetConfigState.htm",
+  "syntax": [
+    "long mostNwmFiSetConfigState(long state, long sendConfigStatusMsg);"
+  ],
+  "description": [
+    "Forces the network configuration status to be set in CANoe’s NetworkMaster.",
+    "Use the function with care since the state machine of the NetworkMaster is not guaranteed to work properly afterwards. (A shutdown of the network will reset the NetworkMaster’s state machine.)",
+    "The function is available for CAPL programs assigned to the NetworkMaster block in the Simulation Setup."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": "0: ConfigNotOk 1: ConfigOK"
+    },
+    {
+      "name": "sendConfigStatusMsg",
+      "type": "",
+      "description": "0: set the configuration status without sending a message 1: set configuration status and broadcast NetworkMaster.Configuration.Status"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

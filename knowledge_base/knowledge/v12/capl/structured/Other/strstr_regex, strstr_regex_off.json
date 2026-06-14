@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "strstr_regex, strstr_regex_off",
+  "category": "Other",
+  "title": "strstr_regex, strstr_regex_off",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStrstrRegex.htm",
+  "syntax": [
+    "long strstr_regex(char s[], char pattern[])"
+  ],
+  "description": [
+    "Searches for a regular expression pattern in a string."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "String to be searched."
+    }
+  ],
+  "return": "The position in s where the pattern was found, or -1 if it wasn’t found.",
+  "example": {
+    "description": [],
+    "code": "char buffer[70] = \"Vector Informatik\";\nlong res;\nres = strstr_regex(buffer, \"Inf[a-z]*\"); // 7\nres = strstr_regex_off(buffer, res + 1, \"Inf[a-z]*\"); // -1"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

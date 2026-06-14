@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDSetValue",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDSetValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILpddsetvalue.htm",
+  "syntax": [
+    "long Iso11783IL_PDDSetValue( dbSignal signal, dword elementNumber, float value ); // form 1"
+  ],
+  "description": [
+    "Sets the value of a process variable."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "signal from the database"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_PDDSetValue( 0x200. 3, value );\nIso11783IL_PDDSetValue( 0x200. 4, value );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

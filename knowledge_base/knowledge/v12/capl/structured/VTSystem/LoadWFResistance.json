@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LoadWFResistance",
+  "category": "VTSystem",
+  "title": "LoadWFResistance",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSLoadWFResistance.htm",
+  "syntax": [
+    "long SysVarNamespace.LoadWFResistance (char filepath[]);"
+  ],
+  "description": [
+    "This function loads a resistance curve for a VT2004 channel from the specified file."
+  ],
+  "parameters": [
+    {
+      "name": "filepath",
+      "type": "",
+      "description": "Path of the file containing the resistance curve. The path can be given absolute or relative to the CANoe configuration."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

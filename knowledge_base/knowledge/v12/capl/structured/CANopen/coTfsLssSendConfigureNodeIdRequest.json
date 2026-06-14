@@ -1,0 +1,21 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendConfigureNodeIdRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendConfigureNodeIdRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendConfNodeIdReq.htm",
+  "syntax": [
+    "long coTfsLssSendConfigureNodeIdRequest( dword NID, byte[] pErrorCode, byte[] pSpecificError );"
+  ],
+  "description": [],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pErrorCode[1];\nbyte pSpecificError[1];\n\n/* send LSS configure nodeID request and wait for response */\n\nif (coTfsLssSendConfigureNodeIdRequest( 112 , pErrorCode, pSpecificError) == 1) {\n  /* request sent and DUT replied with correct response. Response values can be found in pErrorCode, pSpecificError */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxSetTokenString",
+  "category": "ADFX",
+  "title": "AfdxSetTokenString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxSetTokenString.htm",
+  "syntax": [
+    "long AfdxSetTokenString( long packet, long protocolDesignator[], long tokenDesignator[], long offset, char data[] );"
+  ],
+  "description": [
+    "This function copies the string value to the token without terminating \"\\0\"."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long packetHandle;\n\n// create packet\npacketHandle = AfdxInitPacket( \"afdx\" );\n\n// set afdx payload\nAfdxResizeToken( packetHandle, \"afdx\", \"data\", 5*8 /*bits*/ );\nAfdxSetTokenString( packetHandle, \"afdx\", \"data\", \"Hello\" );\n\n// Complete and send packet\nAfdxCompletePacket( packetHandle );\nAfdxOutputPacket( packetHandle );\n\n// release packet\nAfdxReleasePacket( packetHandle );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

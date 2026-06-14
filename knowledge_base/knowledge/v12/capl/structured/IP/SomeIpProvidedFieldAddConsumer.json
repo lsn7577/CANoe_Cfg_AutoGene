@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpProvidedFieldAddConsumer",
+  "category": "IP",
+  "title": "SomeIpProvidedFieldAddConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpProvidedFieldAddConsumer.htm",
+  "syntax": [
+    "long SomeIpProvidedFieldAddConsumer(dword pfHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort);"
+  ],
+  "description": [
+    "Adds a consumer to a provided field. Afterwards the field notifications will be sent to this consumer."
+  ],
+  "parameters": [
+    {
+      "name": "pfHandle",
+      "type": "",
+      "description": "Provided field handle (may be retrieved by SomeIpGetProvidedObjectHandle)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

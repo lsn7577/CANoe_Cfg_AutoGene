@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_TCPShutdownInd",
+  "category": "SmartCharging",
+  "title": "SCC_TCPShutdownInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_TCPShutdownInd.htm",
+  "syntax": [
+    "void SCC_TCPShutdownInd ( dword Port, long IsInitiator )"
+  ],
+  "description": [
+    "The callback is called when a TCP connection is closed."
+  ],
+  "parameters": [
+    {
+      "name": "Port",
+      "type": "",
+      "description": "Port number of the TCP connection."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

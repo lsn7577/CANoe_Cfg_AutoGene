@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "stopLogging",
+  "category": "Other",
+  "title": "stopLogging",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionStopLogging.htm",
+  "syntax": [
+    "void stopLogging(); // from 1",
+    "void stopLogging(char strLoggingBlockName[]); // from 2",
+    "void stopLogging(char strLoggingBlockName[], long postTriggerTime); // from 3"
+  ],
+  "description": [
+    "Stops all Logging Blocks immediately bypassing all logging trigger settings.",
+    "Stops a Logging Block with name strLoggingBlockName immediately bypassing all logging trigger settings.",
+    "Stops a Logging Block with name strLoggingBlockName bypassing all logging trigger settings.",
+    "Functions also sets a post-trigger time to a value of the postTriggerTime."
+  ],
+  "parameters": [
+    {
+      "name": "Note If you use the function in standalone mode and if you activated logging and Trigger Block in the standalone mode configuration settings you can address the (single) Logging Block available in this case by passing an empty string as parameter.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "postTriggerTime",
+      "type": "",
+      "description": "Post-trigger time interval in ms."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "startLogging();\n// starts all Logging Blocks\nstopLogging();\n// stops all Logging Blocks\nstartLogging( \"Logging 1\");\n// starts the Logging Block \"Logging 1\"\nstopLogging( \"Logging 1\");\n// stops the Logging Block \"Logging 1\"\nstartLogging( \"Logging 1\", 2000);\n// starts the Logging Block \"Logging 1\" with pre-trigger time 2000 milliseconds.\nstopLogging( \"Logging 1\", 1000);\n// stops the Logging Block \"Logging 1\" with post-trigger time 1000 milliseconds."
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "4.1",
+      "4.1",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

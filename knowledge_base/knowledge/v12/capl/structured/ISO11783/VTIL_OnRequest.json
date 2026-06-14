@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_OnRequest",
+  "category": "ISO11783",
+  "title": "VTIL_OnRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILOnRequest.htm",
+  "syntax": [
+    "long VTIL_OnRequest( long rqPGN, long sourceAddr );"
+  ],
+  "description": [
+    "This callback function is called from the VT IL if a request (0xEA00) is received."
+  ],
+  "parameters": [
+    {
+      "name": "rqPGN",
+      "type": "",
+      "description": "Requested PGN"
+    }
+  ],
+  "return": "0: Do not respond to the request",
+  "example": {
+    "description": [],
+    "code": "long VTIL_OnRequest( long rqPGN, long sourceAddr )\n{\n  switch( rqPGN ) {\n  case 0xFF02:\n    return 2; // send NACK\n  }\n  return 1;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

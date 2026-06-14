@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "InterfaceStatus",
+  "category": "Other",
+  "title": "InterfaceStatus",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionInterfaceStatus.htm",
+  "syntax": [
+    "void InterfaceStatus(long time, long channel, long status);"
+  ],
+  "description": [
+    "The callback can be inserted in the sections callback function or function.",
+    "The callback occurs when the status of the connection to the interface hardware is changed (e.g. when Windows reports a lost connection to a CAN/WLAN gateway or to a WLAN interface hardware for Car2x communication)."
+  ],
+  "parameters": [
+    {
+      "name": "time",
+      "type": "",
+      "description": "Time, resolution 10us"
+    },
+    {
+      "name": "channel",
+      "type": "",
+      "description": "The channel number"
+    },
+    {
+      "name": "status",
+      "type": "",
+      "description": "Status of the channel Values:3015: The connection is lost"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void InterfaceStatus(long time, long channel, long status)\n{\n   if(status == 3015)\n   {\n      write(\"Time %f s, channel %d: The connection to the interface is lost!\", ((float)time)/100000.0, channel);\n   }\n   else\n   {\n      //other status is not yet supported\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.6",
+      "7.6",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

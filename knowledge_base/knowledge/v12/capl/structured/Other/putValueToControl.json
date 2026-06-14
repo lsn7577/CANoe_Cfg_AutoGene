@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "putValueToControl",
+  "category": "Other",
+  "title": "putValueToControl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionPutValueToControl.htm",
+  "syntax": [
+    "notation. putValueToControl(\"TestPanel\",\"ControlOutput1\", \"\\nSignal raw\\n\");",
+    "putValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg.Signal1.phys);",
+    "paragraph. putValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg.Signal1.phys, 1);"
+  ],
+  "description": [
+    "Assigns the value val to the Panel Designer Multi Display Control or the CAPL Output View with the name control. The Multi Display Control/ CAPL Output View is located on the panel with the title panel.",
+    "Different contents are displayed with the Multi Display Control/CAPL Output View. In addition to numbers (float and integer) and texts (char[]), in particular different messages (CAN, LIN, ... and J1939 PGNs) can also be displayed.",
+    "Using a Multi Display Control/CAPL Output View, no environment variable is necessary."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Name of the panel, restricted to 128 characters."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n...message MyMessage TestMsg;\n}\n\n}on key 'c'\n{\n//Output of a signal (physical) without additional parameter settings.\n//In this case parameters have default settings;\n//they are 'no new paragraph' and display signal in 'decimal' notation.\nputValueToControl(\"TestPanel\",\"ControlOutput1\", \"\\nSignal raw\\n\");\nputValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg.Signal1.phys);\n\n//Output of a signal (physical), each time in a new paragraph.\nputValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg.Signal1.phys, 1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_example"
+}

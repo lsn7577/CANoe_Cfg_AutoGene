@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "GNSSSetCOGSOGVal",
+  "category": "J1939",
+  "title": "GNSSSetCOGSOGVal",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSSetCOGSOGVal.htm",
+  "syntax": [
+    "dword GNSSSetCOGSOGVal ( dword fixSID, dword cogReference}"
+  ],
+  "description": [
+    "This function can be used to change values of the parameter group \"COG & SOG, Rapid Update\" (PGN 129026) which are not modified by the simulation automatically."
+  ],
+  "parameters": [
+    {
+      "name": "fixSID",
+      "type": "",
+      "description": "1 if fix sequence ID (255) has to be used, else 0"
+    },
+    {
+      "name": "cogReference",
+      "type": "",
+      "description": "Course Over Ground (COG) reference possible values: 0: true 1: magnetic 2: error 3: null"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "GNSSSetCOGSOGVal ( 0, 1 );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.5",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 ISO11783",
+      "J1939 ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

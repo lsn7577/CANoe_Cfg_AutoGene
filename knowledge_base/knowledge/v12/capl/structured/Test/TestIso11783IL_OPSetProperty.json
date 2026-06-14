@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestIso11783IL_OPSetProperty",
+  "category": "Test",
+  "title": "TestIso11783IL_OPSetProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestIso11783ILOPSetProperty.htm",
+  "syntax": [
+    "long TestIso11783IL_OPSetProperty( dbNode node, char propertyName[], long newValue );"
+  ],
+  "description": [
+    "The function sets a property of the Object Pool API, i.e. the supported Virtual Terminal version.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "0: Unction has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

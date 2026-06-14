@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "linSetInterruptingHeaderTransmits",
+  "category": "LIN",
+  "title": "linSetInterruptingHeaderTransmits",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetInterruptingHeaderTransmits.htm",
+  "syntax": [
+    "long linSetInterruptingHeaderTransmits (long enable)"
+  ],
+  "description": [
+    "By calling this function, the channel specified by the current bus context will be switched to interrupting mode.",
+    "In default mode, requests to transmit headers will be queued until a network idle condition occurs. This means that the networks level has to be recessive for a short period of time. Headers will only start to be transmitted on the network after this condition is met.",
+    "Calling linSetInterruptingHeaderTransmits(1) disables the network idle verification. Headers transmitted by CAPL function calls, or by other means in CANoe, will now be transmitted immediately. This will interrupt ongoing transmissions of slave responses if a collision occurs.",
+    "This option will affect all headers sent by the LIN hardware.",
+    "This function can only be called in CAPL on prestart handlers."
+  ],
+  "parameters": [
+    {
+      "name": "enable",
+      "type": "",
+      "description": "This parameter specifies whether interrupting headers mode on the LIN channel will be enabled or disabled."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on prestart {\nlinSetInterruptingHeaderTransmits (1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

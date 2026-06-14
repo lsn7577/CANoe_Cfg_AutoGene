@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "A664ResizeMessage",
+  "category": "ADFX",
+  "title": "A664ResizeMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664ResizeMessage.htm",
+  "syntax": [
+    "long A664ResizeMessage (a664Message aMessage, word newSize)"
+  ],
+  "description": [
+    "The message object’s payload area is resized to match the new payload size.",
+    "This affects the selectors Length and AfdxLength. If the current aMessage headers are valid (see AFDX packet validation rules), the corresponding header content is adapted as well (IP and UDP headers)."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "message object to be resized"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

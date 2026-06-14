@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostAsNtfFunctionEnableEx, mostAsNtfFunctionDisableEx, mostAsNtfFunctionIsEnabledEx",
+  "category": "MOST",
+  "title": "mostAsNtfFunctionEnableEx, mostAsNtfFunctionDisableEx, mostAsNtfFunctionIsEnabledEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsNTFFunctionEnableEx.htm",
+  "syntax": [
+    "long mostAsNtfFunctionEnableEx(long fblockID, long instID, long functionID, char cbSendStatus[])"
+  ],
+  "description": [
+    "The behavior corresponds to the functions mostAsNtfFunctionEnable, mostAsNtfFunctionDisable, mostAsNtfFunctionIsEnabled. The functions ending with 'Ex' can also be used, if the CAPL node is not assigned to a function block exclusively."
+  ],
+  "parameters": [
+    {
+      "name": "fblockID",
+      "type": "",
+      "description": "Function block ID"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

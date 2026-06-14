@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "EthRemoveToken",
+  "category": "Obsolete",
+  "title": "EthRemoveToken",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthRemoveToken.htm",
+  "syntax": [
+    "long EthRemoveToken( long packet, char protocolDesignator[], char tokenDesignator[] );"
+  ],
+  "description": [
+    "The function removes a token from a protocol header"
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "see example of EthAddToken"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

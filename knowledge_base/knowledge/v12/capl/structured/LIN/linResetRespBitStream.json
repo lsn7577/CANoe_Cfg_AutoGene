@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linResetRespBitStream",
+  "category": "LIN",
+  "title": "linResetRespBitStream",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINResetRespBitStream.htm",
+  "syntax": [
+    "long linResetRespBitStream (long frameId)"
+  ],
+  "description": [
+    "Deactivates the bit stream response of the specified frame."
+  ],
+  "parameters": [
+    {
+      "name": "frameId",
+      "type": "",
+      "description": "LIN frame identifier in the range 0 .. 63"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

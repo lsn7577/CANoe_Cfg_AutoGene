@@ -1,0 +1,58 @@
+{
+  "page_type": "function",
+  "name": "beep",
+  "category": "Obsolete",
+  "title": "beep",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionBeep.htm",
+  "syntax": [
+    "void beep(int freq, int duration);"
+  ],
+  "description": [
+    "Tone output. In the Windows Version the parameter duration has no effect."
+  ],
+  "parameters": [
+    {
+      "name": "freq",
+      "type": "",
+      "description": "0x0000 (SystemDefault)"
+    },
+    {
+      "name": "freq",
+      "type": "",
+      "description": "0x0010 (SystemHand)"
+    },
+    {
+      "name": "freq",
+      "type": "",
+      "description": "0x0020 (SystemQuestion)"
+    },
+    {
+      "name": "freq",
+      "type": "",
+      "description": "0x0030 (SystemExclamation)"
+    },
+    {
+      "name": "freq",
+      "type": "",
+      "description": "0x0040 (SystemAsterisk)"
+    },
+    {
+      "name": "freq",
+      "type": "",
+      "description": "0xFFFF Standard Beep"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void sound() {\n// with sound card: 400 Hz tone / 500ms long\n// without sound card: Default signal tone\nbeep (400,500);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

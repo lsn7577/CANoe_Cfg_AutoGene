@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetParameterSizeCoded",
+  "category": "Diagnostics",
+  "title": "diagGetParameterSizeCoded",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetParameterSizeCoded.htm",
+  "syntax": [
+    "long diagGetParameterSizeCoded(diagRequest obj, char parameterName[])"
+  ],
+  "description": [
+    "Returns the length of the coded parameter in bits."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "If > 0 the number of bits, otherwise an error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

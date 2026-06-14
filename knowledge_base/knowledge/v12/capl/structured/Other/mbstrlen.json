@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mbstrlen",
+  "category": "Other",
+  "title": "mbstrlen",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMbStrLen.htm",
+  "syntax": [
+    "long mbstrlen(char s[]);"
+  ],
+  "description": [
+    "The functional result is the length of the string s in characters."
+  ],
+  "parameters": [
+    {
+      "name": "string",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Length of the string in characters.",
+  "example": {
+    "description": [],
+    "code": "long length;\nchar s1[10] = \"door\";\nchar s2[10] = \"Tür\";\nwrite(\"%d %d\", mbstrlen(s1), strlen(s1)); // 4 4\nwrite(\"%d %d\", mbstrlen(s2), strlen(s2)); // 3 [3 or 4 depending on file encoding]"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

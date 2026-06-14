@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetParameterUnit",
+  "category": "Diagnostics",
+  "title": "diagGetParameterUnit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetParameterUnit.htm",
+  "syntax": [
+    "long diagGetParameterUnit (diagResponse obj, char parameterName[], char buffer[], DWORD buffersize)"
+  ],
+  "description": [
+    "Writes the unit of the parameter in the transmitted field."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Number of chars written to buffer or error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetAppProtocolData",
+  "category": "SmartCharging",
+  "title": "SCC_GetAppProtocolData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetAppProtocolData.htm",
+  "syntax": [
+    "void SCC_GetAppProtocolData ( long Index, char ProtocolNamespace[], long& VersionMajor, long& VersionMinor, long& SchemaID, long& Priority )"
+  ],
+  "description": [
+    "Gets the content of an AppProtocol element of a SupportedAppProtocolReq message."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Protocol namespace string (100 characters) and all other parameters contained in the AppProtocol element with the specified list index.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

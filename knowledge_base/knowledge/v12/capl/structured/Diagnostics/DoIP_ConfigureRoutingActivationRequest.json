@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "DoIP_ConfigureRoutingActivationRequest",
+  "category": "Diagnostics",
+  "title": "DoIP_ConfigureRoutingActivationRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPConfigureRoutingActivationRequest.htm",
+  "syntax": [
+    "void DoIP_ConfigureRoutingActivationRequest(long mode, dword activationType, dword valueReserved);"
+  ],
+  "description": [
+    "Configures the Routing Activation Request Message sent by a tester."
+  ],
+  "parameters": [
+    {
+      "name": "mode",
+      "type": "",
+      "description": "0: Do not send a routing activation type1: Send 1 byte activation type, value must be <= 0xFF (default)2: Send 2 byte activation type, value must be <= 0xFFFF"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "You can also configure these values in the DoIP.INI file."
+    ],
+    "code": "// Send the 2 byte activation type 0x1234, and set the reserved field\nDoIP_ConfigureRoutingActivationRequest( 2, 0x1234, 0x76543210);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

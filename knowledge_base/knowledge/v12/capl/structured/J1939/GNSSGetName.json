@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GNSSGetName",
+  "category": "J1939",
+  "title": "GNSSGetName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSgetname.htm",
+  "syntax": [
+    "dword GNSSGetName( dword addr, byte name[] );"
+  ],
+  "description": [
+    "The function returns the J1939 device name of a control device that was logged on to the network with addr. The function works with a global table containing all node names and addresses logged on to the network."
+  ],
+  "parameters": [
+    {
+      "name": "addr",
+      "type": "",
+      "description": "Address of the device"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "char name[8];\nGNSSGetName( 10, name );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

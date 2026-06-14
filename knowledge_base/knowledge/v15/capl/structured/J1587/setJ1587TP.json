@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "setJ1587TP",
+  "category": "J1587",
+  "title": "setJ1587TP",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1587/Functions/CAPLfunctionJ1587SetJ1587TP.htm",
+  "syntax": [
+    "void setJ1587TP( j1587Param param, dword mode );"
+  ],
+  "description": [
+    "Selects the setting for the transport protocol to use when sending a J1587 parameter via the output function."
+  ],
+  "parameters": [
+    {
+      "name": "param",
+      "type": "",
+      "description": "J1587 parameter for which the setting is used"
+    },
+    {
+      "name": "0 (default)",
+      "type": "",
+      "description": "select the transport protocol by means of the receiver (selector J1587_ReceiverMID) MID 127: Multisection other MID: CMP/CDP"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "disable use of any transport protocol"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "use Multisection"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "use CMP/CDP"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.0",
+      "6.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "J1587",
+      "J1587",
+      "J1587",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

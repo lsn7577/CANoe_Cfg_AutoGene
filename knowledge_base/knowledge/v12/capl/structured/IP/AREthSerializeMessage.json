@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AREthSerializeMessage",
+  "category": "IP",
+  "title": "AREthSerializeMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSerializeMessage.htm",
+  "syntax": [
+    "dword AREthSerializeMessage( dword messageHandle, dword bufferLength, CHAR buffer[] );"
+  ],
+  "description": [
+    "Serializes a SOME/IP message into a data buffer. Both the SOME/IP header and the payload are serialized.",
+    "If the configuration of the SOME/IP message is invalid (for example, incorrect value in length field or invalid content of payload), the message is not corrected when serialized. The message is passed unchanged."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the message that was created with AREthCreateMessage, for example."
+    }
+  ],
+  "return": "Number of copied bytes.\nIn the Event of an error, the function returns the value 0. The AREthGetLastError function can then be used to check whether the value is valid or an error has occurred.",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  dword messageId = 0x12340004; // service ID = 0x1234, method ID = 0x0004\n  dword requestId = 0;          // client ID = 0, session ID = 0\n  dword protocolVersion = 1;\n  dword interfaceVersion = 1;\n  dword messageType = 0x2;      // notification message\n  dword returnCode = 0;         // not available\n  dword aep;                    // application endpoint handle\n  dword messageHandle = 0;      // handle of the created SOME/IP message\n  BYTE payload[5];              // the message payload\n  dword count;                  // a simple counter\n  BYTE buffer[21];             // serialization buffer\n\n  // initialize the payload\n  count = 0;\n  payload[count++] = 0x11;\n  payload[count++] = 0x22;\n  payload[count++] = 0x33;\n  payload[count++] = 0x44;\n  payload[count++] = 0x55;\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create the SOME/IP message itself\n  messageHandle = AREthCreateMessage(messageId,requestId,protocolVersion,interfaceVersion,messageType,returnCode);\n\n  // set message payload\n  AREthSetData(messageHandle,elcount(payload),payload);\n\n  // serialize message to data buffer\n  AREthSerializeMessage(messageHandle,elcount(buffer),buffer);\n\n  // The serialized message can now be added to a pure Ethernet frame using the function „EthSetTokenData“.\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

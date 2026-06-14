@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_ErrorStateInd",
+  "category": "SmartCharging",
+  "title": "SCC_ErrorStateInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_ErrorStateInd.htm",
+  "syntax": [
+    "void SCC_ErrorStateInd ( byte SessionID[], long ErrorState )"
+  ],
+  "description": [
+    "The callback is called as soon as the node enters or exits the error state."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

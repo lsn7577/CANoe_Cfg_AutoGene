@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostReadReg",
+  "category": "MOST",
+  "title": "mostReadReg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTReadReg.htm",
+  "syntax": [
+    "long mostReadReg(long channel, long chip, dword offset, long regdatalen)"
+  ],
+  "description": [
+    "Initiates read-out of the registers of a MOST hardware chip."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel to which the hardware is connected."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

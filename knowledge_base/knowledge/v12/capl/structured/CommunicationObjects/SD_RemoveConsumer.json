@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SD_RemoveConsumer",
+  "category": "CommunicationObjects",
+  "title": "SD_RemoveConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSDRemoveConsumer.htm",
+  "syntax": [
+    "void SD_RemoveConsumer(serviceConsumerRef * consumer)"
+  ],
+  "description": [
+    "Removes a consumer endpoint from a service. You may call this to react to timeouts, or unannouncements from a real consumer, or to remove a simulated consumer endpoint."
+  ],
+  "parameters": [
+    {
+      "name": "consumer",
+      "type": "",
+      "description": "Consumer endpoint."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "SD_RemoveConsumer(newConsumer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939AppTxIndication",
+  "category": "J1939",
+  "title": "J1939AppTxIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939AppTxIndication.htm",
+  "syntax": [
+    "dword J1939AppTxIndication( long ecuHandle, long txPG, long source, long dest );"
+  ],
+  "description": [
+    "Indicates that a PG has been sent successfully. The function for determining the actual sending time can be useful, especially in the case of a fragmented transfer or higher bus load. Use the function J1939GetRxData() to get the data bytes of the parameter group."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword J1939AppTxIndication( LONG ecuHdl, LONG txPG, LONG source, LONG dest )\n{\n  char data[50];\n  J1939GetRxData( elCount(data), data );\n  /* user code */\n  return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

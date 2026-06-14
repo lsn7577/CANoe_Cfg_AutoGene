@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitPDUsFrameData",
+  "category": "Test",
+  "title": "TestGetWaitPDUsFrameData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitPDUsFrameData.htm",
+  "syntax": [
+    "long TestGetWaitPDUsFrameData (message * msg); // form 1"
+  ],
+  "description": [
+    "If a valid PDU is the last event that triggers a wait instruction, the message’s, packet’s or frame’s content that contained the PDU can be called up with form 1-3.",
+    "Form 4-6 can only be used for joined events. The number of the joined event (return value of TestJoin...) is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "frame",
+      "type": "",
+      "description": "Message variable of type CAN message, Ethernet Packet or FlexRay frame that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": "testcase Test_01()\n{\n  long ret;\n  PDU PDU_A aPDU_01;\n  message * aMsg_01;\n\n  ret = TestWaitForPDU(dbPDU::PDU_A, 0, 250);\n\n  if(ret != 1)\n  {\n    TestStepFail(\"Error: PDU not received\");\n  }\n  else\n  {\n    ret = TestGetWaitPDUsFrameData(aMsg_01); // PDU is assumed to be sent on CAN\n    if(ret != 0)\n    {\n      TestStepFail(\"Error: Can not access PDU\");\n    }\n    else\n    {\n      TestStepPass(\"OK\", \"Received PDU in message with CAN ID %lu\", aMsg_01.ID);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

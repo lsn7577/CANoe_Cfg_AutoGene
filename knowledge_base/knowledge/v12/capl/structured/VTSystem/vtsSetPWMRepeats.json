@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "vtsSetPWMRepeats",
+  "category": "VTSystem",
+  "title": "vtsSetPWMRepeats",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetPWMRepeats.htm",
+  "syntax": [
+    "long vtsSetPWMRepeats (char Target[], dword numOfRepeats);"
+  ],
+  "description": [
+    "This function sets the number of stimulated PWM periods after the start of stimulation. If the number of cycles output is not limited, numOfRepeats must be set to 0."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

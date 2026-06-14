@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsGetApplProfile",
+  "category": "CANopen",
+  "title": "coTfsGetApplProfile",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCotfsgetapplprofile.htm",
+  "syntax": [
+    "dword coTfsGetApplProfile( void );"
+  ],
+  "description": [
+    "The function reads the currently set application profile."
+  ],
+  "parameters": [],
+  "return": "Used application profile, 301 if not supported profile is used.",
+  "example": {
+    "description": [],
+    "code": "dword appProfile;\r\n                                \nappProfile = coTfsGetApplProfile();\r"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

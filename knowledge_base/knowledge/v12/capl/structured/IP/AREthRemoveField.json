@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AREthRemoveField",
+  "category": "IP",
+  "title": "AREthRemoveField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthRemoveField.htm",
+  "syntax": [
+    "long AREthRemoveField( dword pfHandle );"
+  ],
+  "description": [
+    "This function removes a field from a Provided Service Instance.",
+    "The notification callback registered with AREthAddField is no longer called after this function is called. The field notification is no longer sent by the AUTOSAR Eth IL, and the AUTOSAR Eth IL will no longer respond to Field Setter and Field Getter methods."
+  ],
+  "parameters": [
+    {
+      "name": "pfHandle",
+      "type": "",
+      "description": "Handle of the field that was created by AREthAddField."
+    }
+  ],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD gPfld_A; // provided field handle\n}\n\non start()\n{\n  CONST DWORD FieldNotificationID = 30;\n  CONST DWORD FieldGetterID = 31;\n  CONST DWORD FieldSetterID = 32;\n\n  DWORD aep; // Application Endpoint handle\n  DWORD psi; // provided service handle\n  DWORD peg; // provided Eventgroup handle\n\n  // open Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  psi = AREthCreateProvidedServiceInstance(aep,12,1);\n  // create Eventgroup\n  peg = AREthAddProvidedEventGroup(psi,300);\n  // create field and add field to Eventgroup\n  gPfld_A = AREthAddField(psi, FieldNotificationID, FieldGetterID, FieldSetterID);\n  AREthAddFieldToEventGroup(peg,gPfld_A);\n}\n\non key 'r'\n{\n  AREthRemoveField (gPfld_A);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

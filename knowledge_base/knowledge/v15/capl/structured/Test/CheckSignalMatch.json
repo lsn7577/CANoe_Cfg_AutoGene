@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "CheckSignalMatch",
+  "category": "Test",
+  "title": "CheckSignalMatch",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionCheckSignalMatch.htm",
+  "syntax": [
+    "long CheckSignalMatch(Signal aSignal, float aCompareValue); // form 1",
+    "long CheckSignalMatch(dbEnvVar aEnvVar, float aCompareValue); // form 2",
+    "long CheckSignalMatch(sysvar aSysVar, float aCompareValue); // form 3",
+    "long CheckSignalMatch(sysvar aSysVar, int64 aCompareValue); // form 4",
+    "long CheckSignalMatch(ServiceSignalNumber aSignal, float aCompareValue); // form 5"
+  ],
+  "description": [
+    "Checks the given value against the value of signal, the system or the environment variable. The resolution of the signal is considered."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1",
+      "Example 2"
+    ],
+    "code": "// checks if the value of the signal matches a specified value\nlong result;\nresult = CheckSignalMatch(Node_SUT::Velocity, 80);\nif (result != 1)\nTestStepFail(\"Value of signal matches not the value ‘80’!\");\ntestfunction SignalCheck(signal * sig, float compareValue)\n{\n// checks if the value of the signal matches a specified value\nlong result;\nresult = CheckSignalMatch(sig, compareValue);\nif (result != 1)\nTestStepFail(\"Value of signal matches not the value\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.2: form 1 7.5: form 2, 3 8.5 SP3: form 4",
+      "13.0",
+      "—",
+      "14",
+      "1.0: form 1-3 2.0 SP2: form 4 2.1 SP4: form 5"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "form 3, 4",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

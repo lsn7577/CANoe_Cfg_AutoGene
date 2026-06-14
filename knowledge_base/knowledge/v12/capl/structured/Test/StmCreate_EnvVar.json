@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "StmCreate_EnvVar",
+  "category": "Test",
+  "title": "StmCreate_EnvVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionStmCreateEnvVar.htm",
+  "syntax": [
+    "dword StmCreate_EnvVar(message aMessage, dbsignal aDBSignal, dbEnvVar aEnvVar, dword CycleTime);"
+  ],
+  "description": [
+    "Creates the stimulus with environment variables as data source."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Must exist in DB"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "To stimulate signals:",
+      "To stimulate signals with the Interaction Layer:"
+    ],
+    "code": "mId = StmCreate_EnvVar(MsgBuf, Msg::Sig, EnvVar, CycleTime);\nmId = StmCreate_EnvVar(Msg::Sig, EnvVar, CycleTime);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

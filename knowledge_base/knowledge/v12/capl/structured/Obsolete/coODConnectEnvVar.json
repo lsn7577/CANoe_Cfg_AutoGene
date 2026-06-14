@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coODConnectEnvVar",
+  "category": "Obsolete",
+  "title": "coODConnectEnvVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdConnectEnvvar.htm",
+  "syntax": [
+    "void coODConnectEnvVar( dword index, dword subIndex, char envVar[], dword errCode[] );"
+  ],
+  "description": [
+    "Connects an object from the local object dictionary with an environment variable."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the object, value range 1..65535"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nchar errBuffer[128];\n\ncoODConnectEnvVar( 0x6000, 0x1, \"MyEnvVar\", errCode );\nif(errCode[0] != 0) {\n  coGetLastError(errBuffer, elCount(errBuffer));\n  write( \"coODConnectEnvVar failed with code: %x - %s\", errCode[0], errBuffer);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

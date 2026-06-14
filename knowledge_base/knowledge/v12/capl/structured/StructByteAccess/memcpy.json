@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "memcpy",
+  "category": "StructByteAccess",
+  "title": "memcpy",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/StructByteAccess/Functions/CAPLfunctionMemCpy.htm",
+  "syntax": [
+    "void memcpy(byte dest[], struct source); // form 1"
+  ],
+  "description": [
+    "Copies bytes from a source to a destination. In form 5, both structs must have the same type. In other forms with structs, the arrays must be large enough to contain the struct data. In form 17 and 18, the payload size and the struct size must be identical."
+  ],
+  "parameters": [
+    {
+      "name": "source",
+      "type": "",
+      "description": "(form 1, 2, 5): Struct whose bytes shall be copied."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "byte data[4];\nstruct WrapDword\n{\n   dword dw;\n} dwordWrapper;\n\nint i;\nfor (i = 0; i < elcount(data); ++i)\n   data[i] = i;\nmemcpy(dwordWrapper, data);\nwrite(\"Bytes as dword: %0#10lx\", dwordWrapper.dw);\ndwordWrapper.dw = 0x12345678;\nmemcpy(data, dwordWrapper);\nwrite(\"dword as bytes: %#lx %#lx %#lx %#lx\", data[0], data[1], data[2], data[3]);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbGetAafBitDepth",
+  "category": "Obsolete",
+  "title": "AvbGetAafBitDepth",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionAvbGetAafBitDepth.htm",
+  "syntax": [
+    "dword AvbGetAafBitDepth(dword listenerOrTalkerHandle, dword& retBitDepth);"
+  ],
+  "description": [
+    "The function retrieves the bit depth of an AAF sample in the stream received by the Listener or originated by the Talker."
+  ],
+  "parameters": [
+    {
+      "name": "listenerOrTalkerHandle",
+      "type": "",
+      "description": "The handle of the Listener or Talker."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

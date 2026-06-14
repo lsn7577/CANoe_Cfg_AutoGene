@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysFilterAddNamespace",
+  "category": "SystemVariables",
+  "title": "sysFilterAddNamespace",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysFilterAddNamespace.htm",
+  "syntax": [
+    "long sysFilterAddNamespace(char namespace[]); // form 1"
+  ],
+  "description": [
+    "Adds a namespace to the variable filter. If no filterName is given, the namespace is added to the default filter."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "The namespace to add. The existence of the namespace is not checked, and adding a namespace that is not defined is not an error. If the namespace gets defined after it is added to the filter, it is affected by the filter normally."
+    }
+  ],
+  "return": "0: No error, function successful.",
+  "example": {
+    "description": [],
+    "code": "long result;\n//create the default filter as a Stop Filter\nresult = sysCreateVariableFilter(0);\n//add a namespace to the filter.\nresult = sysFilterAddNamespace(“myNamespace”);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

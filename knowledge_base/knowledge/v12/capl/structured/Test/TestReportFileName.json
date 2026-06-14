@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestReportFileName",
+  "category": "Test",
+  "title": "TestReportFileName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestReportFileName.htm",
+  "syntax": [
+    "TestReportFileName (char data name[]);"
+  ],
+  "description": [
+    "Sets the name and path of a report file.In the CANoe GUI the name and path of a report file can be set. With this function these settings can be overwritten."
+  ],
+  "parameters": [
+    {
+      "name": "data name",
+      "type": "",
+      "description": "Name and path of the report file."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void MainTest()\n{\n   // report is written in a file with the name ‚DynamicName’ beside the configuration\n   TestReportFileName(\"DynamicName\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

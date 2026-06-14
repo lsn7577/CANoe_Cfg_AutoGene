@@ -1,0 +1,41 @@
+{
+  "page_type": "function",
+  "name": "J1939Set...",
+  "category": "J1939",
+  "title": "J1939Set...",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939Set.htm",
+  "syntax": [
+    "long J1939SetAAC( char[] deviceName, long aac)",
+    "long J1939SetIG( char[] deviceName, long ig)",
+    "long J1939SetVS( char[] deviceName, long vs)",
+    "long J1939SetVSInstance( char[] deviceName, long vsi)",
+    "long J1939SetFct( char[] deviceName, long fct)",
+    "long J1939SetFctInstance( char[] deviceName, long fct )",
+    "long J1939SetECUInstance( char[] deviceName, long ecui )",
+    "long J1939SetMC( char[] deviceName, long mc)",
+    "long J1939SetIN( char[] deviceName, long in)"
+  ],
+  "description": [
+    "The function modifies a part of the device name."
+  ],
+  "parameters": [
+    {
+      "name": "deviceName",
+      "type": "",
+      "description": "buffer containing the modified part of the device name, size of 8 bytes required"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

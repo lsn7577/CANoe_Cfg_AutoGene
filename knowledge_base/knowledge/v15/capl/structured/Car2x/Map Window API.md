@@ -1,0 +1,33 @@
+# Map Window API
+
+> Category: `Car2x` | Type: `notes`
+
+## Description
+
+Initially the object type is defined by means of C2xCreateMapObject. In general the following functions are available independent of the object type:
+
+In addition to this dependent on the object type the following functions can be used:
+
+variables{ enum mapObjectType { Square = 1, Rectangle = 2, Ellipse = 3, Cross = 4, Triangle = 5, Line = 6, Bitmap = 7, Text = 8 }; long gHandle;}on start{ // init object gHandle = C2xCreateMapObject( Rectangle ); // set position: Ingersheimer Straße 24, D-70499 Stuttgart C2xSetMapObjectPosition(gHandle, 48.824892, 9.094265); // optional settings C2xSetMapObjectHeading(gHandle, 359); C2xSetMapObjectSize(gHandle, 2, 4.5); C2xSetMapObjectFillColor(gHandle, makeRGB(183, 0, 50)); C2xSetMapObjectLineColor(gHandle, makeRGB(76, 76, 76)); C2xSetMapObjectPenStyle(gHandle, 2); C2xSetMapObjectPenWidth(gHandle, 3); // draw object C2xDrawMapObject(gHandle);}on key 'd'{ // delete object C2xDeleteMapObject(gHandle);}
+
+Option .Car2x
+
+| Function | Object Type |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|
+| Square | Rectangle | Ellipse | Cross | Triangle | Line | Bitmap | Text |  |
+| C2xSetMapObjectBmpCount | — | — | — | — | — | — | • | — |
+| C2xSetMapObjectBmpFilePath | — | — | — | — | — | — | • | — |
+| C2xSetMapObjectBmpIndex | — | — | — | — | — | — | • | — |
+| C2xSetMapObjectFillColor | • | • | • | — | • | — | — | • |
+| C2xSetMapObjectHeading | • | • | • | • | • | — | • | — |
+| C2xSetMapObjectLineColor | • | • | • | • | • | • | — | — |
+| C2xSetMapObjectPenStyle | • | • | • | • | • | • | — | — |
+| C2xSetMapObjectPenWidth | • | • | • | • | • | • | — | — |
+| C2xSetMapObjectSize | • | • | • | • | • | — | • | • |
+| C2xSetMapObjectText | — | — | — | — | — | — | — | • |
+
+| Example variables{ enum mapObjectType { Square = 1, Rectangle = 2, Ellipse = 3, Cross = 4, Triangle = 5, Line = 6, Bitmap = 7, Text = 8 }; long gHandle;}on start{ // init object gHandle = C2xCreateMapObject( Rectangle ); // set position: Ingersheimer Straße 24, D-70499 Stuttgart C2xSetMapObjectPosition(gHandle, 48.824892, 9.094265); // optional settings C2xSetMapObjectHeading(gHandle, 359); C2xSetMapObjectSize(gHandle, 2, 4.5); C2xSetMapObjectFillColor(gHandle, makeRGB(183, 0, 50)); C2xSetMapObjectLineColor(gHandle, makeRGB(76, 76, 76)); C2xSetMapObjectPenStyle(gHandle, 2); C2xSetMapObjectPenWidth(gHandle, 3); // draw object C2xDrawMapObject(gHandle);}on key 'd'{ // delete object C2xDeleteMapObject(gHandle);} |
+|---|
+
+| Version 15© Vector Informatik GmbH |
+|---|

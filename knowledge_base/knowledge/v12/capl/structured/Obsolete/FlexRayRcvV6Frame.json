@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FlexRayRcvV6Frame",
+  "category": "Obsolete",
+  "title": "FlexRayRcvV6Frame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionFlexrayRcvV6Frame.htm",
+  "syntax": [
+    "FlexRayRcvV6Frame( long msgTime, word channel, word frameID, byte cycle, byte len, byte data[], int sync, int NMIndication, int ReservedFlag, word headerCRC, word status, int rcv )"
+  ],
+  "description": [
+    "A function defined in CAPL with this signature receives all FlexRay frames."
+  ],
+  "parameters": [
+    {
+      "name": "msgTime",
+      "type": "",
+      "description": "Time stamp of the FlexRay frame."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

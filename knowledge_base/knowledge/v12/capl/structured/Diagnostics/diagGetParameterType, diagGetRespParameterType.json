@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetParameterType, diagGetRespParameterType",
+  "category": "Diagnostics",
+  "title": "diagGetParameterType, diagGetRespParameterType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetParameterType.htm",
+  "syntax": [
+    "long diagGetParameterType(diagResponse object, char[] qualifier, char[] buffer, DWORD bufferSize)"
+  ],
+  "description": [
+    "Retrieve the qualifier of the parameter's type."
+  ],
+  "parameters": [
+    {
+      "name": "object",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Length of qualifier written to buffer, may be truncated.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

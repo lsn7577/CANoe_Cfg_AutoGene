@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDConnectEnvVar",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDConnectEnvVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILpddconnectenvvar.htm",
+  "syntax": [
+    "long Iso11783IL_PDDConnectEnvVar( dbSignal signal, dword elementNumber, char envVarName[] );"
+  ],
+  "description": [
+    "The function connects a process variable with an environment variable."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "signal from the database"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783IL_PDDLoadDeviceDescription( \"Sprayer.XML\" ) == 0) {\n Iso11783IL_PDDConnectEnvVar( 0x0060, 1, \"EvSprayer_TankVolume\" );\n Iso11783IL_PDDConnectEnvVar( 0x0048, 2, \"EvSprayer_AppRatePerArea\" );\n}\nelse {\n  write( \"Error while load task file\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "AREthRemoveMethodCall",
+  "category": "IP",
+  "title": "AREthRemoveMethodCall",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthRemoveMethodCall.htm",
+  "syntax": [
+    "LONG AREthRemoveMethodCall( dword methodHandle );"
+  ],
+  "description": [
+    "Removes a method call of the Consumed Service Instance. The method was previously added by AREthCreateMethodCall.",
+    "Afterwards the method handle is no longer valid and cannot be used anymore with AREthCallMethod."
+  ],
+  "parameters": [
+    {
+      "name": "methodHandle",
+      "type": "",
+      "description": "Handle of the method."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the created method is contained in the FIBEX database that is assigned to the CANoe configuration. The method has the Method ID 31, two input parameters Member_value1 and Member_value2, and a return parameter Result."
+    ],
+    "code": "variables\n{\n  dword gMc; // global method call handle\n}\n\non key 'e'\n{\n  dword csi; // consumed Service Instance handle\n  dword mc;  // method call\n\n  // open Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(0x11, 50002);\n   csi = AREthCreateConsumedServiceInstance(aep,11,1);\n\n  // create method call\n  gMc = AREthCreateMethodCall(csi,31,\"OnMethodResponse\");\n\n  // set the two input parameters of the method and call the method\n  AREthSetValueDWord(gMc,\"Member_value1\",11);\n  AREthSetValueDWord(gMc,\"Member_value2\",22);\n  AREthCallMethod(gMc);\n}\n\non key 'r'\n{\n  // remove method call\n  AREthRemoveMethodCall(gMc);\n}\n\nvoid OnMethodResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  dword res; // value of return parameter\n\n  // get the returned parameter values\n  res = AREthGetValueDWord(messageResponseHandle,\"Result\");\n\n  write(\"The method call returned value: %d\",res);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

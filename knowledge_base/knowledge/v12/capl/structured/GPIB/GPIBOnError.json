@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GPIBOnError",
+  "category": "GPIB",
+  "title": "GPIBOnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBOnError.htm",
+  "syntax": [
+    "GPIBOnError (long deviceDescriptor, char query[], char response[], long status, long error);"
+  ],
+  "description": [
+    "This optional function is called if a query or a write operation (GPIBWriteStr or GPIBWriteNum) raised an error condition.",
+    "Users may implement this function and then receive the original query string or the data to be written, respectively. The result string, if any, is also returned, as well as the GPIB status word, the error code and the device descriptor."
+  ],
+  "parameters": [
+    {
+      "name": "deviceDescriptor",
+      "type": "",
+      "description": "The descriptor of the device that transmitted the response."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

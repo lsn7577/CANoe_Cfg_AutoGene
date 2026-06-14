@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ActivateWorkingSet",
+  "category": "ISO11783",
+  "title": "VTIL_ActivateWorkingSet",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILActivateWorkingSet.htm",
+  "syntax": [
+    "long VTIL_ActivateWorkingSet(dbNode workingSetMaster); // form 1"
+  ],
+  "description": [
+    "Activates a corresponding Working Set in the Virtual Terminal: As a result, the VT Status message is sent with the source address of newly activated Working Set as well as its active Data/Alarm and Soft Key Mask."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_ActivateWorkingSet(VT, Sprayer);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2109: TestStepFail (\"Working Set 'Sprayer' is not available!\"); break;\n  case -2110: TestStepFail (\"Failed to activate Working Set 'Sprayer'!\"); break;\n  default:    TestStepFail (\"Unexpected error\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

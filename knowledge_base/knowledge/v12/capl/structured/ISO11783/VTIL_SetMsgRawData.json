@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_SetMsgRawData",
+  "category": "ISO11783",
+  "title": "VTIL_SetMsgRawData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILSetMsgRawData.htm",
+  "syntax": [
+    "long VTIL_SetMsgRawData( dbMessage msg, long dataSize, byte data[] );"
+  ],
+  "description": [
+    "Sets the data bytes of the message. The length of the parameter group is adjusted to size of parameter dataSize."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "message name from database, must be assigned to the node as Tx message"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void SendPointingEvent(word x, word y, byte touchState)\n{\n  char buf[8];\n  buf[0] = 0x02; // Pointing Event\n  buf[1] = x & 0xFF;\n  buf[2] = (x >> 8) & 0xFF;\n  buf[3] = y & 0xFF;\n  buf[4] = (y >> 8) & 0xFF;\n  buf[5] = touchState;\n  buf[6] = 0xFF;\n  buf[7] = 0xFF;\n  VTIL_SetMsgRawData(VT12_VT, elCount(buf), buf);\n  VTIL_SetMsgEvent(VT12_VT);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

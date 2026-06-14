@@ -1,0 +1,38 @@
+# TestWaitForMostAMSResult
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+long TestWaitForMostAMSResult(long aDestinationAddress, char aSymbolicMessage[], long aInstanceID, dword aTimeoutMaxDuration, dword aTimeoutWaitForProcessing1, dword aTimeoutWaitForProcessing2);
+```
+
+## Description
+
+The function immediately sends a symbolically defined MOST message with OpType 'StartResult' or 'StartResultAck' and waits for the reception of the appropriate 'Result' or 'ResultAck' message from the receiver.
+
+In contrast to the functionality provided by TestWaitForMostAMSResponse, this function checks the correct reception of intermediate ‘Processing’ or ‘ProcessingAck’ as well as the final ‘Result’ or ‘ResultAck’ messages using the provided timeouts for tWaitForProcessing1 and tWaitForProcessing2. Signatures without these timeout parameters use the default values specified in the MOST Specification (tWaitForProcessing1 = 250ms and tWaitForProcessing2. = 200ms).
+
+Additionally, in case of the 'StartResultAck' optype, the SenderHandle parameter is constantly checked for each report message received. Messages having a different SenderHandle than specified in the function call are ignored, since they must belong to a different request for that method.
+
+As soon as a report message doesn’t arrive within the specified timeouts of tWaitForProcessing1 or tWaitForProcessing2, the function resumes and reports a timeout for that parameter.
+
+Consider to set always the appropriate bus context in a multibus environment before the function is called.
+
+Further information on site MultiBus Environment.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| Note If -1 is given, the address handler (if active) searches for the correct node address based on the functional address {FBlockID, InstID} from the Bus Registry. If no node address is found the message is sent to 0xFFFF. This is also the standard for not explicit set values. |  |
+
+## Return Values
+
+1: Message was sent successfully and the appropriate response received
+
+## Availability
+
+| Since Version |
+|---|

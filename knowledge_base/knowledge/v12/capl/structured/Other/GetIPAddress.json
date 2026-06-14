@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetIPAddress",
+  "category": "Other",
+  "title": "GetIPAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetIPAddress.htm",
+  "syntax": [
+    "long GetIPAddress(char buffer[], dword bufferSize)"
+  ],
+  "description": [
+    "Retrieves the default (first) IP address of the computer as a string."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Space for the returned address."
+    }
+  ],
+  "return": "0 if the function completed successfully, else unequal 0.",
+  "example": {
+    "description": [],
+    "code": "char buffer[50];\nGetIPAddress(buffer, elcount(buffer));\nwrite(\"IP Address: %s\", buffer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

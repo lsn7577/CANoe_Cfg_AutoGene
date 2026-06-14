@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AREthRemoveEventConsumer",
+  "category": "IP",
+  "title": "AREthRemoveEventConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthRemoveEventConsumer.htm",
+  "syntax": [
+    "dword AREthRemoveEventConsumer( dword cevHandle );"
+  ],
+  "description": [
+    "Removes an Event from a Consumed Service Instance. The Event was previously added by AREthCreateEventConsumer.",
+    "Afterwards, the callback registered with AREthCreateEventConsumer is no longer called."
+  ],
+  "parameters": [
+    {
+      "name": "cevHandle",
+      "type": "",
+      "description": "Handle of the Event to be removed (see AREthCreateEventConsumer)."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 'c'\n{\n  dword aep; // Application Endpoint handle\n  dword csi; // consumed Service Instance handle\n  dword ceg; // consumed Eventgroup handle\n  dword cev; // consumed Event handle\n\n  // open an Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  csi = AREthCreateConsumedServiceInstance(aep,10,1);\n\n  // create Eventgroup\n  ceg = AREthAddConsumedEventGroup(csi,1);\n\n  // create Event Consumer\n  cev = AREthCreateEventConsumer(csi,1,\"CallbackEventA1\");\n\n  // ... do something here\n\n  // release the consumed Service Instance\n  AREthRemoveEventConsumer(cev);\n\n  // ... Application Endpoint, provided Service Instance and consumed Eventgroup can still be used here\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MakeRGB",
+  "category": "Other",
+  "title": "MakeRGB",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMakeRGB.htm",
+  "syntax": [
+    "long MakeRGB(long Red, long Green, long Blue);"
+  ],
+  "description": [
+    "Calculates the color value from the three primary color components."
+  ],
+  "parameters": [
+    {
+      "name": "Red",
+      "type": "",
+      "description": "Red color component (0 - 255)"
+    }
+  ],
+  "return": "Color value (type: long)",
+  "example": {
+    "description": [],
+    "code": "MakeRGB(0, 255, 149);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

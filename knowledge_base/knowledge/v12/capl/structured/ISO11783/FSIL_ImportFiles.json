@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "FSIL_ImportFiles",
+  "category": "ISO11783",
+  "title": "FSIL_ImportFiles",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILImportFiles.htm",
+  "syntax": [
+    "long FSIL_ImportFiles( char targetPath[], char sourcePath[]); // form 1"
+  ],
+  "description": [
+    "Imports files into the File Server.",
+    "Adds a file or the content of a local directory to the File Server. Existing directories and files are replaced if they are not write protected."
+  ],
+  "parameters": [
+    {
+      "name": "fs",
+      "type": "",
+      "description": "FS simulation node to apply the function"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": "FSIL_ImportFiles(“Volume1\\MSM1861\\VT1”, “VT1_Pools”);\n\nFSIL_ImportFiles(“Volume1\\MSM1861\\VT1”, “VT1_Pools\\2FB3AAE801840CA0_SprayV0.iop”);\n\nFSIL_ImportFiles(“”, “Volume1\\MSM1861\\VT1\\VT1_Pools”);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

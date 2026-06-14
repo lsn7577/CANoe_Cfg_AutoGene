@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783GetBusName",
+  "category": "ISO11783",
+  "title": "Iso11783GetBusName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783getbusname.htm",
+  "syntax": [
+    "dword Iso11783GetBusName( dword busHandle, dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "Gets a bus name."
+  ],
+  "parameters": [
+    {
+      "name": "busHandle",
+      "type": "",
+      "description": "Bus handle, see also Iso11783GetBus"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "char busName[32];\nIso11783GetBusName( busHandle, \r\n elCount(busName), busName );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

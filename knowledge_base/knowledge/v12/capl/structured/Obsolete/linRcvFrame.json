@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linRcvFrame",
+  "category": "Obsolete",
+  "title": "linRcvFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINRcvFrame.htm",
+  "syntax": [
+    "void linRcvFrame (long syncTimeStamp, long origTimeStamp, int msgId, int frameDlc, int frameDir, int bytecount, byte data[])"
+  ],
+  "description": [
+    "A function defined in CAPL with the exact signature shown above receives all LIN frames that are occurring on the bus and are not filtered out by a global message filter."
+  ],
+  "parameters": [
+    {
+      "name": "syncTimeStamp",
+      "type": "",
+      "description": "Time stamp of the LIN frame that was synchronized with the global time basis in the PC (CAN hardware or PC system clock)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

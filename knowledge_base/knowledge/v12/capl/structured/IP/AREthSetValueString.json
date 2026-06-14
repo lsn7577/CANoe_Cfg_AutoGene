@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "AREthSetValueString",
+  "category": "IP",
+  "title": "AREthSetValueString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSetValueString.htm",
+  "syntax": [
+    "long AREthSetValueString( dword objectHandle, char valuePath[], char value[] );"
+  ],
+  "description": [
+    "This function can be used to set a string in the object specified in the objectHandle parameter.",
+    "Enum data types can be set with one of their symbolic values using this function."
+  ],
+  "parameters": [
+    {
+      "name": "objectHandle",
+      "type": "",
+      "description": "Handle to a AUTOSAR Eth IL object, which must be completely described in the AUTOSAR database.The following objects are supported:"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [
+      "In this example, it is assumed that a service with ID 10 (instance ID 1) is contained in the FIBEX database that is assigned to the CANoe configuration. The service provides an Event that transfers in the structured parameter param 1 the date Error_Message."
+    ],
+    "code": "void Initialize()\n{\n  dword aep; // application endpoint handle\n  dword psi; // provided service handle\n  dword peg; // provided eventgroup handle\n  dword pev; // provided event handle\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create service instance\n  psi = AREthCreateProvidedServiceInstance(aep,10,1);\n\n  // create eventgroup\n  peg = AREthAddProvidedEventGroup(psi,1);\n\n  // create event and add event to eventgroup\n  pev = AREthAddEvent(psi, 1, \"OnPrepareEvent1\");\n  AREthAddEventToEventgroup(peg, pev);\n\n  // ensure that event is sent cyclically\n  AREthSetProperty(pev,\"CycleTimeMs\",1000);\n  }\n\nvoid OnPrepareEvent1(dword eventHandle, dword messageHandle)\n{\n  // this function is called before the event is sent. Parameters can be specified here.\n\n  // set parameter \"Error_Message\" of struct \"param1\"\n  AREthSetValueString(messageHandle,\"param1.Error_Message\",\"Error Text\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

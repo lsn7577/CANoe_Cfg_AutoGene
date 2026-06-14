@@ -1,0 +1,33 @@
+# coDownloadExpedited
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+Writing of an entry into the object dictionary of another node.
+
+The function triggers a SDO download. The response of the node is returned in the event function coOnDownloadResponse or coOnError.
+
+(2) If it is used with the float parameter value, this function always initiates a transfer with the length 4 bytes. This corresponds to the data type Real32. Since CAPL only supports 8 byte floating point numbers, it must be noted that the value range must not be left when writing to a REAL32 object.
+
+See Also
+
+| Deprecated Function Replaced by CANopen Basic Functions. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | void coDownloadExpedited( dword nodeId, dword index, dword subIndex, dword value, dword valueSize, dword flags, dword errCode[] ); |  |  |  |
+| void coDownloadExpedited( dword nodeId, dword index, dword subIndex, float value, dword flags, dword errCode[] ); // form 2 |  |  |  |  |
+| Function | Writing of an entry into the object dictionary of another node. The function triggers a SDO download. The response of the node is returned in the event function coOnDownloadResponse or coOnError. (2) If it is used with the float parameter value, this function always initiates a transfer with the length 4 bytes. This corresponds to the data type Real32. Since CAPL only supports 8 byte floating point numbers, it must be noted that the value range must not be left when writing to a REAL32 object. |  |  |  |
+| Parameters | nodeId Node-ID, value range 1..127 |  |  |  |
+| index Index of the object, value range 1..65.535 |  |  |  |  |
+| subIndex Sub index of the object, value range 0..255 |  |  |  |  |
+| value Value of the object |  |  |  |  |
+| valueSize Size of the value, value range 1..4 |  |  |  |  |
+| flags Bit field for future expansions, reserved |  |  |  |  |
+| errCode Error code buffer (is entered in index 0 of the field) |  |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 6.0-9.0 SP6 | CANopen | — | • |  |
+| Example dword errCode[1];coDownloadExpedited( 1, 0x2000, 0x00, 0x1234, 2, 0, errCode );if (errCode[0] == 0) { write( "SDO Download successfully initiated" ); } |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

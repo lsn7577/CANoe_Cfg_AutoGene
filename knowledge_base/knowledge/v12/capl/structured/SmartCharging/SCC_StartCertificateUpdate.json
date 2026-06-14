@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_StartCertificateUpdate",
+  "category": "SmartCharging",
+  "title": "SCC_StartCertificateUpdate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_StartCertificateUpdate.htm",
+  "syntax": [
+    "long SCC_StartCertificateUpdate ( )"
+  ],
+  "description": [
+    "Schedules a CertificateUpdateReq message to be sent after the ServiceAndPaymentSelectioReq. This is only possible when in ISO 15118 PnC mode."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

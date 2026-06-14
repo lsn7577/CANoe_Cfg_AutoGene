@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "MediaGetLastError",
+  "category": "Media",
+  "title": "MediaGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaGetLastError.htm",
+  "syntax": [
+    "dword MediaGetLastError();"
+  ],
+  "description": [
+    "Retrieves the calling CAPL program’s last-error code value of the Media API. This code represents a Windows HRESUL value typically in the value ranges reserved for the Windows Media Foundation (see error codes)."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword retVal;\ndword listenerHandle;\n// open a listener\nlistenerHandle = AvbOpenListener();\n\n// check if last function was successfully executed\nif ((retVal = AvbGetLastError()) != 0)\n{\n  write(\"AVB IL error occured: Error code: %d\", retVal);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

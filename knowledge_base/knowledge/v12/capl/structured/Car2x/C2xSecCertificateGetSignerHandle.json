@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSecCertificateGetSignerHandle",
+  "category": "Car2x",
+  "title": "C2xSecCertificateGetSignerHandle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSecCertificateGetSignerHandle.htm",
+  "syntax": [
+    "long C2xSecCertificateGetSignerHandle( long certificateHandle );"
+  ],
+  "description": [
+    "Gets the signer (parent) certificate of a certificate."
+  ],
+  "parameters": [
+    {
+      "name": "certificateHandle",
+      "type": "",
+      "description": "Handle of the certificate"
+    }
+  ],
+  "return": "Handle of the signer (parent) certificate or 0",
+  "example": {
+    "description": [],
+    "code": "long certificateHandle;\nlong signerHandle;\ncertificateHandle = C2xSecCertificateGetHandle( \"MyCert\" );\nif (certificateHandle != 0)\n{\n  signerHandle = C2xSecCertificateGetSignerHandle(certificateHandle);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

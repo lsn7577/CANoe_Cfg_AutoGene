@@ -1,0 +1,48 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDSetParameter",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDSetParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDSetParameter.htm",
+  "syntax": [
+    "long Iso11783IL_PDDSetParameter( char paramName[], float paramValue ); // form 1"
+  ],
+  "description": [
+    "Changes an internal parameter of the PDD API."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "debug",
+      "type": "",
+      "description": "activates debug outputs in the Write Window 1: on 0: off"
+    },
+    {
+      "name": "autoUpdateVariable",
+      "type": "",
+      "description": "process variable is updated if value command is received 1: auto update 0: process variable have to be updated manually by Iso11783IL_PDDSetValue e.g. in callback function Iso11783IL_PDDOnDataChanged"
+    },
+    {
+      "name": "Note Using version the version value obtained from the database (node attribute ISO11783PDDVersion) is overwritten.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783IL_PDDSetParameter( \"debug\", 1 ) == 0) {\n  write( \"Debug mode activated\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

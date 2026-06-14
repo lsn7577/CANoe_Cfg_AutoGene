@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "AREthCreateMethodCall",
+  "category": "IP",
+  "title": "AREthCreateMethodCall",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthCreateMethodCall.htm",
+  "syntax": [
+    "dword AREthCreateMethodCall( dword csiHandle, dword methodId, char OnAREthMethodResponse [] ); // form 1"
+  ],
+  "description": [
+    "This function creates a method call for the consumer. By means of the return value of the function, the method parameters can be set using AREthSetValue.... The method is then called using AREthCallMethod.",
+    "If the function is called with the syntax specified in form 1, the method call takes place asynchronously. At the same time, the client is not blocked after the method call until the corresponding response. A synchronous method call is not supported by AUTOSAR Eth IL.",
+    "The syntax specified in form 2 must be used if the fireAndForget parameter was used when the method was created for the provider (see also AREthAddMethod).",
+    "The method call can be removed again using the AREthRemoveMethodCall function."
+  ],
+  "parameters": [
+    {
+      "name": "csiHandle",
+      "type": "",
+      "description": "Handle of the Consumed Service Instance that was created by AREthCreateConsumedServiceInstance."
+    }
+  ],
+  "return": "0: An error occurred. The error can be evaluated using the AREthGetLastError function.",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the created method is contained in the FIBEX database that is assigned to the CANoe configuration. The method has the Method ID 31, two input parameters Member_value1 and Member_value2, and a return parameter Result."
+    ],
+    "code": "variables\n{\n  dword gMc; // global method call handle\n}\n\nvoid Initialize()\n{\n  dword aep; // Application Endpoint handle\n  dword csi; // consumed Service Instance handle\n\n  // open Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(0x11, 50002);\n\n  // cretae Service Instance\n  csi = AREthCreateConsumedServiceInstance(aep,11,1);\n\n  // create method call\n  gMc = AREthCreateMethodCall(csi,31,\"OnMethodResponse\");\n}\n\non key 's'\n{\n  // if this key is pressed the method should be called\n\n  // set the two input parameters of the method\n  AREthSetValueDWord(gMc,\"Member_value1\",11);\n  AREthSetValueDWord(gMc,\"Member_value2\",22);\n\n  // call the method\n  AREthCallMethod(gMc);\n}\n\nvoid OnMethodResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  dword res; // value of return parameter\n\n  // get the returned parameter values\n  res = AREthGetValueDWord(messageResponseHandle,\"Result\");\n\n  write(\"The method call returned value: %d\",res);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

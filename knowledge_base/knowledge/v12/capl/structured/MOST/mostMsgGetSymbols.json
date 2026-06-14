@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostMsgGetSymbols",
+  "category": "MOST",
+  "title": "mostMsgGetSymbols",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTMsgGetSymbols.htm",
+  "syntax": [
+    "long mostMsgGetSymbols(mostAmsMessage * msg, char[] fblock, char[] function, char[] optype, long bufferSize)"
+  ],
+  "description": [
+    "Determining the symbolic Names of the function block, the function and the Optype from an AMS or control message using the XML function catalog."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message from which the symbolic names are determined."
+    }
+  ],
+  "return": "0: None of the three symbolic names could be determined.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

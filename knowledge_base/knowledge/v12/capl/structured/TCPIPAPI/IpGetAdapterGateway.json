@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterGateway",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterGateway",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterGateway.htm",
+  "syntax": [
+    "long IpGetAdapterGateway( dword ifIndex, dword& ipv4address); // form 1"
+  ],
+  "description": [
+    "The function retrieves the default gateway address associated with the specified network interface.",
+    "Gateway information is not yet available before the start of the measurement (on pre-start). Rather it is first available at the start of the measurement (on start) as soon as the stack has been completely initialized."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  long ifIdx;\n  for( ifIdx = 1; ifIdx <= ipGetAdapterCount(); ifIdx++)\n  {\n    ip_Address gatewayAddress;\n    if (ipGetAdapterGateway( ifIdx, 0, gatewayAddress ) == 0)\n    {\n      char gatewayStr[30];\n      gatewayAddress.PrintAddressToString( gatewayStr );\n      write( \"%d. Adapter Gateway Address: %s\", ifIdx, gatewayStr );\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

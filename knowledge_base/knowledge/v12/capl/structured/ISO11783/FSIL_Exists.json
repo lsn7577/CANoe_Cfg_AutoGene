@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_Exists",
+  "category": "ISO11783",
+  "title": "FSIL_Exists",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILExists.htm",
+  "syntax": [
+    "long FSIL_Exists( char path[]); // form 1"
+  ],
+  "description": [
+    "Checks if a file or directory does exist."
+  ],
+  "parameters": [
+    {
+      "name": "fs",
+      "type": "",
+      "description": "FS simulation node to apply the function"
+    }
+  ],
+  "return": "1: File exits",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

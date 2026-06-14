@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSaveLwATable",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSaveLwATable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSaveLwATable.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSaveLwATable(char iniFilePath); // form 1"
+  ],
+  "description": [
+    "Stores the table with lightweight authentication (LwA) keys in a file.",
+    "You can load the stored LwA table with function Iso11783IL_TIMLoadLwATable."
+  ],
+  "parameters": [
+    {
+      "name": "iniFilePath",
+      "type": "",
+      "description": "Path of a file (INI file format) which stores the LwA key table of the TIM client/server. path has to be absolute or relative relating to the folder of the CANoe configuration."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

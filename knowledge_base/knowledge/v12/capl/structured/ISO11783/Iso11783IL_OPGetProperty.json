@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPGetProperty",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPGetProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPGetProperty.htm",
+  "syntax": [
+    "long Iso11783IL_OPGetProperty( char propertyName[] ); // form 1"
+  ],
+  "description": [
+    "Returns a property of the Object Pool API, e.g. the supported VT version."
+  ],
+  "parameters": [
+    {
+      "name": "propertyName",
+      "type": "",
+      "description": "Key of the information:"
+    }
+  ],
+  "return": ">= 0: Value",
+  "example": {
+    "description": [],
+    "code": "LONG version;\nversion = Iso11783IL_OPGetProperty( \"Version\" );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

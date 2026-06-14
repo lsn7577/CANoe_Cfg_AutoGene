@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_InitAsCharger",
+  "category": "J1939",
+  "title": "GBT27930IL_InitAsCharger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILInitAsCharger.htm",
+  "syntax": [
+    "long GBT27930IL_InitAsCharger( ); // form 1"
+  ],
+  "description": [
+    "Inits simulated node as a charger. This function may be called at the earliest in on start, then it is verified whether all necessary messages are entered into the Tx list. Info about all missing messages will be displayed in the Write Window."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "—"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

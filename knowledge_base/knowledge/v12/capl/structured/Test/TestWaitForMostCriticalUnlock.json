@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMostCriticalUnlock",
+  "category": "Test",
+  "title": "TestWaitForMostCriticalUnlock",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForMostCriticalUnlock.htm",
+  "syntax": [
+    "long TestWaitForMostCriticalUnlock(dword aTimeout);"
+  ],
+  "description": [
+    "The function waits until the expiration of the time aTimout for the occurrence of a LightLock event indicating \"critical unlock\" state.",
+    "A LightLock event with a \"critical unlock\" state is generated, when a single \"Light & no Lock\" state occurs after a \"stable lock\" state and lasts longer than tUnlock (see MOST specification), or several \"light, no lock\" states occur successively and add up to a duration longer than tUnlock.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum wait time [ms] (Specification of 0: no timeout controlling)"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

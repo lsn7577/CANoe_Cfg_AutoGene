@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coODGetUnsigned",
+  "category": "Obsolete",
+  "title": "coODGetUnsigned",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdGetUnsigned.htm",
+  "syntax": [
+    "dwordcoODGetUnsigned( dword index, dword subIndex, dword errCode[] );"
+  ],
+  "description": [
+    "Returns the value of an object in the local object dictionary without a leading sign. This function can be applied to all objects with a length up to 32 bits. Exceptions are the data type 0x8, 0x9, 0xA, 0xF, and 0x11.",
+    "For the use of this function, a note on handling should be considered."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the object, value range 1..65.535"
+    }
+  ],
+  "return": "Value of the object",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\ndword value;\n\nvalue = coODGetUnsigned( 0x2000, 0x0, errCode );\nif (errCode[0] == 0) {\n  write( \"Read value %d\", value);\n} "
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

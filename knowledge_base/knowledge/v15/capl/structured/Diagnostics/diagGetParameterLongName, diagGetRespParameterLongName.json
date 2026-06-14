@@ -1,0 +1,154 @@
+{
+  "page_type": "function",
+  "name": "diagGetParameterLongName, diagGetRespParameterLongName",
+  "category": "Diagnostics",
+  "title": "diagGetParameterLongName, diagGetRespParameterLongName",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctiondiagGetParameterLongName.htm",
+  "syntax": [
+    "long diagGetParameterLongName (diagResponse obj, dword paramNo, char buffer[], dword buffersize);",
+    "long diagGetParameterLongName (diagRequest obj, dword paramNo, char buffer[], dword buffersize);",
+    "long diagGetRespParameterLongName (diagRequest obj, dword paramNo, char buffer[], dword buffersize);",
+    "long diagGetParameterLongName (diagResponse obj, char paramPath[], char buffer[], dword buffersize);",
+    "long diagGetParameterLongName (diagRequest obj, char paramPath[], char buffer[], dword buffersize);",
+    "long diagGetRespParameterLongName (diagRequest obj, char paramPath[], char buffer[], dword buffersize);"
+  ],
+  "description": [
+    "Copies the long name of a diagnostic parameter into the buffer, honoring the character encoding configured in the diagnostic description. The text is converted into the encoding used in the CAPL program.",
+    "There are two ways to identify the parameter:"
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostic object."
+    },
+    {
+      "name": "paramNo",
+      "type": "",
+      "description": "Which parameter in the object, beginning with 0."
+    },
+    {
+      "name": "paramPath",
+      "type": "",
+      "description": "Parameter in the object, identified by its qualifier (path)."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Output buffer. Character encoding of the CAPL file will be honored."
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Buffer size."
+    }
+  ],
+  "return": "Length of path written to buffer, may be truncated.\nError code",
+  "example": {
+    "description": [],
+    "code": "// Write the parameter paths, names and symbolic values of a response object to the Write Window\nDumpResponseParameterPaths( DiagResponse * resp)\n{\n  WORD i;\n  char path[100];\n\n  resp.GetObjectPath( path, elcount( path));\n  write( \"Object: %s\", path);\n\n  i = 0;\n  while( resp.GetParameterPath( i, path, elcount( path)) > 0)\n  {\n    char parameterSymbol[200];\n    char name[200];\n    resp.GetParameter( path, parameterSymbol, elcount( parameterSymbol));\n    DiagGetParameterLongName( resp, path, name, elcount(name));\n    write( \"%2i %-50s %-20s = %s\", i, path, name, parameterSymbol);\n    ++i;\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0 SP3",
+      "10.0 SP3",
+      "—",
+      "—",
+      "—",
+      "2.2 SP2"
+    ],
+    [
+      "Restricted To",
+      "Online mode",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

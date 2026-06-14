@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPGetState",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPGetState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPGetState.htm",
+  "syntax": [
+    "long Iso11783IL_OPGetState( ); // form 1"
+  ],
+  "description": [
+    "Returns the state of the Object Pool API."
+  ],
+  "parameters": [
+    {
+      "name": "implement",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "0: Not active",
+  "example": {
+    "description": [],
+    "code": "state = Iso11783IL_OPGetState( );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateChargingStatusRes_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreateChargingStatusRes_DIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateChargingStatusRes_Din.htm",
+  "syntax": [
+    "long SCC_CreateChargingStatusRes_DIN ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, byte StatusFlags[], char Notification[], char EVSEID[], long SAScheduleTupleId, long ReceiptRequired )"
+  ],
+  "description": [
+    "Creates a Charging Status Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

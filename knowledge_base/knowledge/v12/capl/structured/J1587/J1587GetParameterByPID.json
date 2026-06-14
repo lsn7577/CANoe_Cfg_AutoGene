@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1587GetParameterByPID",
+  "category": "J1587",
+  "title": "J1587GetParameterByPID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1587/Functions/CAPLfunctionJ1587GetParameterByPID.htm",
+  "syntax": [
+    "byte J1587GetParameterByPID(J1587Message msg /*in*/, J1587Param param /*out*/, dword dbPID /*in*/)"
+  ],
+  "description": [
+    "Gets a J1587 parameter inside a J1708 message given a specific PID.",
+    "The function returns an error if a parameter with the specified dbPID is not found inside the J1708 message."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "J1708 message"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "on J1587Message 50 // 50 is Sender MID, can be dbNode name or MID\n{\n  dword count, i;\n  J1587Param param;\n\n  if (J1587GetParameterByPID(this, param, 80) == 0)\n  {\n    write (\"Parameter with PID 80 received.\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

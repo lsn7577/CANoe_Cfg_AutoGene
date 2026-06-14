@@ -1,0 +1,128 @@
+{
+  "page_type": "method",
+  "name": "QueueSentFrame",
+  "category": "Sensor",
+  "title": "QueueSentFrame",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionQueueSentFrame.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueSentFrame(SentSensorFrameStruct frame);"
+  ],
+  "description": [
+    "Inserts the given frame into the send queue of the given channel."
+  ],
+  "parameters": [
+    {
+      "name": "frame",
+      "type": "",
+      "description": "Specifies the details of the frame that shall be inserted into the send queue."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "SentSensorFrameStruct frame;\n\n// Use automatic CRC calculation\nframe.CrcMode = eSentAutoCrc;\n\n// Fill the frame with data\nframe.StatusBits = 0;\nframe.DataBits = 7;\nframe.CrcBits = 0; // Will be set automatically\n\n// Queue the frame for sending\nsysvar::SENSOR::SENT::ExampleChannel.QueueSentFrame(frame);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP3",
+      "—",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

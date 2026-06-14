@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "strncpy",
+  "category": "Other",
+  "title": "strncpy",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionStrnCpy.htm",
+  "syntax": [
+    "void strncpy(char dest[], char src[], long max);"
+  ],
+  "description": [
+    "This function copies src to dest. max indicates the size of dest in bytes. The function ensures that there is a terminating '\\0'. Thus, a maximum of max-1 bytes are copied."
+  ],
+  "parameters": [
+    {
+      "name": "dest",
+      "type": "",
+      "description": "Destination buffer"
+    },
+    {
+      "name": "src",
+      "type": "",
+      "description": "Source string"
+    },
+    {
+      "name": "max",
+      "type": "",
+      "description": "Is used to determine the maximum number of copied bytes.Must not be larger than the size of dest. A maximum of max-1 bytes are copied. If src is shorter than that, bytes are only copied until a terminating '\\0' is encountered."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables {\n   char s1[7] = \"Vector\";\n   char s2 [32];\n}\non key 'z'\n{                                 Output to the Write-Window:\n   strncpy (s2,s1,elcount(s2));\n   write (\"Result: %s\",s2);       Result: Vector\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "All",
+      "All",
+      "13.0",
+      "13.0",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

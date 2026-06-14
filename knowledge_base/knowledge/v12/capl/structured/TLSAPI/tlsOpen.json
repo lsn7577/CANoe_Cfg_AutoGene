@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "tlsOpen",
+  "category": "TLSAPI",
+  "title": "tlsOpen",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TLSAPI/Functions/CAPLfunctiontlsOpen.htm",
+  "syntax": [
+    "dword tlsOpen(dword socket);"
+  ],
+  "description": [
+    "Opens a TLS socket. An existing socket handle is used to create a new TLS connection."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "INVALID_SOCKET (~0): The function failed. Call tlsGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": "void OnTcpConnect( dword socket, long result)\n{\n  if (result == 0)\n  {\n    socket = tlsOpen(socket);\n    tlsAuthenticateAsClient(socket, \"\");\n\n    if ((tlsGetLastError(socket) != 0) &&\n    (tlsGetLastError(socket) != 997))\n    {\n      // an error occurred\n      return;\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

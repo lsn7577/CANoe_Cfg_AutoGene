@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "VTIL_OnTxPrepare",
+  "category": "ISO11783",
+  "title": "VTIL_OnTxPrepare",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILOnTxPrepare.htm",
+  "syntax": [
+    "long VTIL_OnTxPrepare( pg * txPG );"
+  ],
+  "description": [
+    "This callback function is called from the VT IL before a parameter group is sent. The signal value can be updated in the callback or sending of the message can be suppressed.",
+    "Using this method you can suppress the AddressClaim or CannotClaimAddress messages as well. Please notify that in this case the corresponding node will switch to the next state (Active, Stopped or Initialized) even though the AddressClaim or CannotClaimAddress message has been not sent.",
+    "You can use this method for the delaying of the AddressClaim message. Just suppress the AddressClaim message by the ISO11783 IL and send it some milliseconds later by the CAPL program."
+  ],
+  "parameters": [
+    {
+      "name": "txPG",
+      "type": "",
+      "description": "Message which should be sent"
+    }
+  ],
+  "return": "1: Send message",
+  "example": {
+    "description": [],
+    "code": "long VTIL_OnTxPrepare( pg * txPG )\n{\n  switch( txPG.PGN ) {\n  case 0xFF01:\n    txPG.BYTE(0) = 10; // update first byte\n    break;\n  }\n  return 1;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

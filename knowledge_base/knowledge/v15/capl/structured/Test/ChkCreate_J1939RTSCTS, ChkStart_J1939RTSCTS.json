@@ -1,0 +1,178 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_J1939RTSCTS, ChkStart_J1939RTSCTS",
+  "category": "Test",
+  "title": "ChkCreate_J1939RTSCTS, ChkStart_J1939RTSCTS",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkCreateJ1939RTSCTS.htm",
+  "syntax": [
+    "dword ChkCreate_J1939RTSCTS(dword t1, dword t2, dword t3, dword t4, char[] callback1);",
+    "dword ChkCreate_J1939RTSCTS(dword senderAddress, dword responderAddress, dword t1, dword t2, dword t3, dword t4, char[] callback1);",
+    "dword ChkCreate_J1939RTSCTS(Node origninatorNode, Node responderNode, dword t1, dword t2, dword t3, dword t4, char[] callback1);",
+    "dword ChkStart_J1939RTSCTS(dword t1, dword t2, dword t3, dword t4, char[] callback1);",
+    "dword ChkStart_J1939RTSCTS(dword orginatorAddress, dword responderAddress, dword t1, dword t2, dword t3, dword t4, char[] callback1);",
+    "dword ChkStart_J1939RTSCTS(Node origninatorNode, Node responderNode, dword t1, dword t2, dword t3, dword t4, char[] callback1);"
+  ],
+  "description": [
+    "Observes the RTS/CTS transport protocol. It is possible to observe all RTS/CTS transmissions or only the transmission of a specific send node."
+  ],
+  "parameters": [
+    {
+      "name": "originatorNode",
+      "type": "",
+      "description": "Originator node from database."
+    },
+    {
+      "name": "responderNode",
+      "type": "",
+      "description": "Responder node from database."
+    },
+    {
+      "name": "originatorAddress",
+      "type": "",
+      "description": "Originator address Possible values: 0 – 253: Observe originator node with this address254, -1 (or 0xFFFFFFFF): Observe all originator nodes"
+    },
+    {
+      "name": "responderAddress",
+      "type": "",
+      "description": "Responder address Possible values: 0 – 253, 255: Observe responder node with this address 254, -1 (or 0xFFFFFFFF): Observe all responder nodes"
+    },
+    {
+      "name": "t1",
+      "type": "",
+      "description": "Timeout T1 [ms] (Default 750ms)"
+    },
+    {
+      "name": "t2",
+      "type": "",
+      "description": "Timeout T2 [ms] (Default 1250ms)"
+    },
+    {
+      "name": "t3",
+      "type": "",
+      "description": "Timeout T3 [ms] (Default 1250ms)"
+    },
+    {
+      "name": "t4",
+      "type": "",
+      "description": "Timeout T4 [ms] (Default 1050ms)"
+    },
+    {
+      "name": "callback1",
+      "type": "",
+      "description": "This parameter is optional. Name of the callback which is called when the check fails. Signature: void Callback( dword checkId )"
+    },
+    {
+      "name": "callback2",
+      "type": "",
+      "description": "This parameter is optional. Name of the callback which is called when the check fails. Signature: void Callback( TestCheck check )"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks the RTS/CTS transport protocol between node N1 and node N2\ncheckId = ChkStart_J1939RTSCTS(N1, N2, 750, 1250, 1250, 1050);\nTestAddCondition(checkId);\n\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.5",
+      "13.0",
+      "—",
+      "—",
+      "2.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

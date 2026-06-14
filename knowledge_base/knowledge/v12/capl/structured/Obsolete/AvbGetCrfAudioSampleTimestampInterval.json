@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbGetCrfAudioSampleTimestampInterval",
+  "category": "Obsolete",
+  "title": "AvbGetCrfAudioSampleTimestampInterval",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionAvbGetCrfAudioSampleTimestampInterval.htm",
+  "syntax": [
+    "dword AvbGetCrfAudioSampleTimestampInterval(dword listenerOrTalkerHandle, dword& retTimestampInterval);"
+  ],
+  "description": [
+    "The function retrieves the interval between each Audio Sample Timestamp in the CRF stream received by the Listener or originated by the Talker."
+  ],
+  "parameters": [
+    {
+      "name": "listenerOrTalkerHandle",
+      "type": "",
+      "description": "The handle of the Listener or Talker."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "<OnSomeIpPrepareEvent>",
+  "category": "IP",
+  "title": "<OnSomeIpPrepareEvent>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionOnSomeIpPrepareEvent.htm",
+  "syntax": [
+    "void <OnSomeIpPrepareEvent>( dword pevHandle, dword messageHandle );"
+  ],
+  "description": [
+    "A callback function with this signature must be passed to the CAPL function SomeIpAddEvent.",
+    "The callback is called before sending. The values of the SOME/IP message can be changed or updated before sending."
+  ],
+  "parameters": [
+    {
+      "name": "pevHandle",
+      "type": "",
+      "description": "Handle of the Event that triggered the callback."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD psi; // provided service handle\n  DWORD peg; // provided Eventgroup handle\n  DWORD pev; // provided Event handle\n}\n\non start()\n{\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  psi = SomeIpCreateProvidedServiceInstance(aep,10,1);\n  // create Eventgroup\n  peg = SomeIpAddProvidedEventGroup(psi,1);\n  // create Event and add Event to Eventgroup\n  pev = SomeIpAddEvent(psi, 1, \"OnPrepareEvent1 \");\n  SomeIpAddEventToEventgroup(peg, pev);\n  // ensure that Event is sent cyclically\n  SomeIpSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1 (DWORD eventHandle, DWORD messageHandle)\n{\n  // this function is called before the Event is sent. Parameters can be specified here.\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

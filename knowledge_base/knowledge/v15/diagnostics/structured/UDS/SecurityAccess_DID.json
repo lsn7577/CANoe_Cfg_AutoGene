@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "DiagRequestSeed",
+  "syntax": [
+    "long DiagRequestSeed(byte level);"
+  ],
+  "description": [
+    "Sends a SecurityAccess requestSeed sub-function to start the seed&key exchange.",
+    "Receives a seed via Diag_Response callback; tester must compute the key and send via DiagSendKey."
+  ],
+  "parameters": [
+    {"name": "level", "type": "byte", "description": "SecurityAccess level (0x01-0x7E odd=requestSeed, +1=sendKey)"}
+  ],
+  "return": [
+    "0 if request was sent successfully, <0 on error"
+  ],
+  "example": {
+    "description": [
+      "Request seed for level 1 security access."
+    ],
+    "code": "DiagRequestSeed(0x01);"
+  },
+  "availability": [
+    ["Since CANoe 8.0"]
+  ],
+  "selectors": [],
+  "note": [
+    "Must be in a non-default diagnostic session (e.g. Extended 0x03) for level 1+."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetEntityStatusInformation",
+  "category": "Diagnostics",
+  "title": "DoIP_SetEntityStatusInformation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetEntityStatusInformation.htm",
+  "syntax": [
+    "void DoIP_SetEntityStatusInformation(long nodeType, dword maxRequestSize);"
+  ],
+  "description": [
+    "Configures the response sent for an entity status request."
+  ],
+  "parameters": [
+    {
+      "name": "nodeType",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// The ECU simulation will return type \"node\" and a maximum length supported\n// by this protocol implementation\nDoIP_SetEntityStatusInformation( 1, 0xFFFFFFFF);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

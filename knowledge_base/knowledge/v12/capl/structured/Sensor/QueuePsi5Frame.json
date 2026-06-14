@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "QueuePsi5Frame",
+  "category": "Sensor",
+  "title": "QueuePsi5Frame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionQueuePsi5Frame.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueuePsi5Frame(Psi5SensorFrameStruct frame);"
+  ],
+  "description": [
+    "Inserts the given frame into the send queue of the given channel."
+  ],
+  "parameters": [
+    {
+      "name": "frame",
+      "type": "",
+      "description": "Specifies the details of the frame that shall be inserted into the send queue."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "Psi5SensorFrameStruct frame;\n\n// Set bit 1 -> this frame will be the only frame sent in this cycle\nframe.Frametype = (1 << 1);\n\n// The frame will be sent 30µs after the sync pulse\nframe.StartDelayUs = 30;\n\n// Use automatic CRC calculation\nframe.CrcMode = ePsi5AutoCrc;\n\n// Fill the frame with data\nframe.StartBits = 3; // Binary 11\nframe.StartBitsCount = 2;\nframe.DataRegionABits = 250;\nframe.DataRegionABitsCount = 10;\nframe.CrcBits = 0; // Will be set automatically\nframe.CrcBitsCount = 3;\n\n// Queue the frame for sending\nsysvar::SENSOR::PSI5::ExampleChannel.QueuePsi5Frame(frame);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

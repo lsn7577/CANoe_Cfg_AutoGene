@@ -1,0 +1,843 @@
+{
+  "page_type": "notes",
+  "name": "MOST Selectors",
+  "category": "MOST",
+  "title": "MOST Selectors",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Selectors/CAPLfunctionMOSTSelectors.htm",
+  "syntax": [],
+  "description": [
+    "obsolete!",
+    "These selectors are only valid for mostAMSMessage",
+    "These selectors are only valid for mostMessage"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [
+    {
+      "name": "ACK",
+      "description": "Acknowledgment information",
+      "type": "0...0xFF"
+    },
+    {
+      "name": "read only",
+      "description": "Arbitration",
+      "type": "Bus arbitration bytes"
+    },
+    {
+      "name": "0...0xFFFFFFFF",
+      "description": "read only, Spy",
+      "type": "DA"
+    },
+    {
+      "name": "Destination address",
+      "description": "0...0xFFFF"
+    },
+    {
+      "name": "DIR",
+      "description": "Direction of transmission",
+      "type": "Tx, Rx, TxRequest"
+    },
+    {
+      "name": "FBlockID",
+      "description": "Function block identifier",
+      "type": "0...0xFF"
+    },
+    {
+      "name": "FunctionID",
+      "description": "Function identifier",
+      "type": "0...0xFFF"
+    },
+    {
+      "name": "ID",
+      "description": "Message ID (CANdb lookup key)(see Database Support)",
+      "type": "0...0xFFFFFF"
+    },
+    {
+      "name": "InstanceID",
+      "description": "Most_InstanceID",
+      "type": "Instance identifier"
+    },
+    {
+      "name": "0...0xFF",
+      "type": "SA"
+    },
+    {
+      "name": "Source address",
+      "description": "0...0xFFFF"
+    },
+    {
+      "name": "OpType",
+      "description": "Operation type",
+      "type": "0...0xF"
+    },
+    {
+      "name": "PIndex",
+      "description": "PIndex is a node-based counter (1 byte) which increments per message sent. All low-level retries of a message have the same PIndex.",
+      "type": "0..0xFF"
+    },
+    {
+      "name": "read only, Spy",
+      "description": "MsgChannel",
+      "type": "Transmission channel"
+    },
+    {
+      "name": "1...16",
+      "type": "MsgOrigTime"
+    },
+    {
+      "name": "Unsynchronized hardware time stamp(unit: 10 s)",
+      "type": "read only"
+    },
+    {
+      "name": "Most_IsSpy",
+      "description": "Message was received by:1: Spy 0: Node",
+      "type": "0, 1"
+    },
+    {
+      "name": "read only",
+      "description": "Most_RType",
+      "type": "Message types:"
+    },
+    {
+      "name": "0...0x5",
+      "type": "Most_State"
+    },
+    {
+      "name": "0...0xFF",
+      "description": "read only",
+      "type": "Most_TelID"
+    },
+    {
+      "name": "TelID",
+      "description": "0...0xF"
+    },
+    {
+      "name": "Time",
+      "description": "Synchronized time(unit: 10 s)"
+    },
+    {
+      "name": "read only",
+      "description": "BYTE(idx)",
+      "type": "Provides access to the databytes of the complex MOST message."
+    },
+    {
+      "name": "(BYTE(0) is the first parameter byte)",
+      "description": "0 <= idx <= 65534",
+      "type": "0..0xFF"
+    },
+    {
+      "name": "DLC",
+      "description": "Data length code(Number of user data bytes for mostAMSMessages)",
+      "type": "0..65535"
+    },
+    {
+      "name": "Arbitration",
+      "description": "Bus arbitration bytes",
+      "type": "0...0xFFFFFFFF"
+    },
+    {
+      "name": "read only, Spy",
+      "description": "BYTE(idx)",
+      "type": "Provides access to the databytes of the MOST frame."
+    },
+    {
+      "name": "(BYTE(0) is the first byte behind the TelLen)",
+      "description": "0 ≤ idx ≤ 11",
+      "type": "0...0xFF"
+    },
+    {
+      "name": "read only, Spy, MOST150 only",
+      "description": "0x00: No Response0x01: CRC error0x04: OK",
+      "type": "DLC"
+    },
+    {
+      "name": "Data length code (TelLen)",
+      "description": "0...45"
+    },
+    {
+      "name": "Most_TelID",
+      "description": "TelID",
+      "type": "0...0xF"
+    },
+    {
+      "name": "MsgCRC",
+      "description": "CRC code",
+      "type": "0...0xFFFF"
+    },
+    {
+      "name": "read only, Spy",
+      "description": "Most_RType",
+      "type": "Message types:"
+    },
+    {
+      "name": "0...0x5",
+      "description": "MOST25 only",
+      "type": "read only, Spy, MOST150 only"
+    },
+    {
+      "name": "0x00: No Response0x01: Buffer full0x04: OK",
+      "description": "PIndex",
+      "type": "PIndex is a node-based counter (1 byte) which increments per message sent. All low-level retries of a message have the same PIndex."
+    },
+    {
+      "name": "0..0xFF",
+      "description": "read only, Spy, MOST150 only"
+    },
+    {
+      "name": "ACK",
+      "description": "Acknowledgment information",
+      "type": "0...0xFF"
+    },
+    {
+      "name": "read only, Spy",
+      "description": "Arbitration",
+      "type": "Bus arbitration bytes"
+    },
+    {
+      "name": "0...0xFFFFFFFF",
+      "description": "read only, Spy",
+      "type": "BYTE(idx)"
+    },
+    {
+      "name": "Provides the access to the databytes of the MOST frame.0 ≤ idx ≤ 16",
+      "description": "0...0xFF"
+    },
+    {
+      "name": "DA",
+      "description": "Destination address",
+      "type": "0...0xFFFF"
+    },
+    {
+      "name": "DIR",
+      "description": "Direction of transmission",
+      "type": "Tx, Rx, TxRequest"
+    },
+    {
+      "name": "MsgChannel",
+      "description": "Transmission channel",
+      "type": "1...16"
+    },
+    {
+      "name": "MsgCRC",
+      "description": "CRC code",
+      "type": "0...0xFFFF"
+    },
+    {
+      "name": "read only, Spy",
+      "description": "MsgOrigTime",
+      "type": "Unsynchronized hardware time stamp (unit: 10s)"
+    },
+    {
+      "name": "read only",
+      "description": "Most_IsSpy",
+      "type": "Message was received by:1: Spy 0: Node"
+    },
+    {
+      "name": "0, 1",
+      "description": "read only",
+      "type": "Most_RType"
+    },
+    {
+      "name": "Message type(Normal, RemRead, RemWrite,Alloc, Dealloc, GetSource)",
+      "description": "0...5"
+    },
+    {
+      "name": "Most_State",
+      "description": "Status information",
+      "type": "0...0xFF"
+    },
+    {
+      "name": "read only",
+      "description": "SA",
+      "type": "Source address"
+    },
+    {
+      "name": "0...0xFFFF",
+      "type": "Time"
+    },
+    {
+      "name": "Synchronized time(unit: 10s)",
+      "type": "read only"
+    },
+    {
+      "name": "0",
+      "description": "rsvd"
+    },
+    {
+      "name": "rsvd"
+    },
+    {
+      "name": "1",
+      "description": "MAP"
+    },
+    {
+      "name": "Request",
+      "description": "CL"
+    },
+    {
+      "name": "2",
+      "description": "rsvd",
+      "type": "LENGTH"
+    },
+    {
+      "name": "rsvd"
+    },
+    {
+      "name": "3",
+      "description": "D0"
+    },
+    {
+      "name": "Answer1",
+      "type": "rsvd"
+    },
+    {
+      "name": "4",
+      "description": "D1"
+    },
+    {
+      "name": "Answer2",
+      "description": "0x0",
+      "type": "rsvd"
+    },
+    {
+      "name": "5",
+      "description": "D2"
+    },
+    {
+      "name": "P0",
+      "description": "rsvd"
+    },
+    {
+      "name": "6",
+      "description": "D3"
+    },
+    {
+      "name": "P1",
+      "description": "rsvd",
+      "type": "NPR"
+    },
+    {
+      "name": "7",
+      "description": "D4"
+    },
+    {
+      "name": "P2",
+      "description": "rsvd"
+    },
+    {
+      "name": "8",
+      "description": "D5"
+    },
+    {
+      "name": "P3",
+      "description": "rsvd",
+      "type": "GA"
+    },
+    {
+      "name": "9",
+      "description": "D6"
+    },
+    {
+      "name": "P4",
+      "description": "rsvd",
+      "type": "NAH"
+    },
+    {
+      "name": "10",
+      "description": "D7"
+    },
+    {
+      "name": "P5",
+      "description": "rsvd",
+      "type": "NAL"
+    },
+    {
+      "name": "11",
+      "description": "rsvd"
+    },
+    {
+      "name": "P6",
+      "description": "rsvd"
+    },
+    {
+      "name": "12",
+      "description": "rsvd"
+    },
+    {
+      "name": "P7",
+      "description": "rsvd"
+    },
+    {
+      "name": "13 ... 16",
+      "description": "rsvd"
+    },
+    {
+      "name": "rsvd"
+    },
+    {
+      "name": "Most_Light",
+      "description": "Light state of controller",
+      "type": "0, 1"
+    },
+    {
+      "name": "read only, mostLightLockError",
+      "description": "Most_Lock",
+      "type": "Lock state of controller"
+    },
+    {
+      "name": "0, 1",
+      "description": "read only, mostLightLockError",
+      "type": "Most_Error"
+    },
+    {
+      "name": "0: as long as lock exists 1: as soon as lock does not exists",
+      "description": "0, 1",
+      "type": "read only, mostLightLockError"
+    },
+    {
+      "name": "Time",
+      "description": "Synchronized time(unit: 10s)"
+    },
+    {
+      "name": "read only",
+      "description": "MsgOrigTime",
+      "type": "Unsynchronized hardware time stamp(unit: 10s)"
+    }
+  ],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Keyword",
+        "Description",
+        "Range/Valid Values",
+        "Access Limitations"
+      ],
+      [
+        "ACK",
+        "Acknowledgment information",
+        "0...0xFF",
+        "read only"
+      ],
+      [
+        "Arbitration",
+        "Bus arbitration bytes",
+        "0...0xFFFFFFFF",
+        "read only, Spy"
+      ],
+      [
+        "DA",
+        "Destination address",
+        "0...0xFFFF"
+      ],
+      [
+        "DIR",
+        "Direction of transmission",
+        "Tx, Rx, TxRequest"
+      ],
+      [
+        "FBlockID",
+        "Function block identifier",
+        "0...0xFF"
+      ],
+      [
+        "FunctionID",
+        "Function identifier",
+        "0...0xFFF"
+      ],
+      [
+        "ID",
+        "Message ID (CANdb lookup key)(see Database Support)",
+        "0...0xFFFFFF",
+        "obsolete!"
+      ],
+      [
+        "InstanceID Most_InstanceID",
+        "Instance identifier",
+        "0...0xFF"
+      ],
+      [
+        "SA",
+        "Source address",
+        "0...0xFFFF"
+      ],
+      [
+        "OpType",
+        "Operation type",
+        "0...0xF"
+      ],
+      [
+        "PIndex",
+        "PIndex is a node-based counter (1 byte) which increments per message sent. All low-level retries of a message have the same PIndex.",
+        "0..0xFF",
+        "read only, Spy"
+      ],
+      [
+        "MsgChannel",
+        "Transmission channel",
+        "1...16"
+      ],
+      [
+        "MsgOrigTime",
+        "Unsynchronized hardware time stamp(unit: 10 µs)",
+        "read only"
+      ],
+      [
+        "Most_IsSpy",
+        "Message was received by:1: Spy 0: Node",
+        "0, 1",
+        "read only"
+      ],
+      [
+        "Most_RType",
+        "Message types: When receiving always Normal, other message types are received with mostRawMessage. When applying a mostMessage variable the type can be set to Normal, RemRead, RemWrite, Alloc, Dealloc or GetSource.",
+        "0...0x5"
+      ],
+      [
+        "Most_State",
+        "Status information",
+        "0...0xFF",
+        "read only"
+      ],
+      [
+        "Most_TelID",
+        "TelID",
+        "0...0xF"
+      ],
+      [
+        "Time",
+        "Synchronized time(unit: 10 µs)",
+        "read only"
+      ]
+    ],
+    [
+      [
+        "Keyword",
+        "Description",
+        "Range/Valid Values",
+        "Access Limitations"
+      ],
+      [
+        "BYTE(idx)",
+        "Provides access to the databytes of the complex MOST message. (BYTE(0) is the first parameter byte)",
+        "0 <= idx <= 65534 0..0xFF"
+      ],
+      [
+        "DLC",
+        "Data length code(Number of user data bytes for mostAMSMessages)",
+        "0..65535"
+      ]
+    ],
+    [
+      [
+        "Keyword",
+        "Description",
+        "Range/Valid Values",
+        "Access Limitations"
+      ],
+      [
+        "Arbitration",
+        "Bus arbitration bytes",
+        "0...0xFFFFFFFF",
+        "read only, Spy"
+      ],
+      [
+        "BYTE(idx)",
+        "Provides access to the databytes of the MOST frame. (BYTE(0) is the first byte behind the TelLen)",
+        "0 ≤ idx ≤ 11 0...0xFF"
+      ],
+      [
+        "CAck",
+        "Returns the CRC acknowledge code",
+        "0...0xFF",
+        "read only, Spy, MOST150 only 0x00: No Response0x01: CRC error0x04: OK"
+      ],
+      [
+        "DLC",
+        "Data length code (TelLen)",
+        "0...45"
+      ],
+      [
+        "Most_TelID",
+        "TelID",
+        "0...0xF"
+      ],
+      [
+        "MsgCRC",
+        "CRC code",
+        "0...0xFFFF",
+        "read only, Spy"
+      ],
+      [
+        "Most_RType",
+        "Message types: When receiving always Normal, other message types are received with mostRawMessage. When applying a mostMessage variable the type can be set to Normal, RemRead, RemWrite,Alloc, Dealloc or GetSource.",
+        "0...0x5",
+        "MOST25 only"
+      ],
+      [
+        "PAck",
+        "Returns the preemptive acknowledge code",
+        "0...0xFF",
+        "read only, Spy, MOST150 only 0x00: No Response0x01: Buffer full0x04: OK"
+      ],
+      [
+        "PIndex",
+        "PIndex is a node-based counter (1 byte) which increments per message sent. All low-level retries of a message have the same PIndex.",
+        "0..0xFF",
+        "read only, Spy, MOST150 only"
+      ]
+    ],
+    [
+      [
+        "Example Press <Ctrl>+<W> or select Signal insertion from MOST function catalog... from the shortcut menu to open a selection dialog listing all messages and their parameters from the function catalog for selection. This includes all non-nested parameters in the user data with constant width and constant position. In this context, the parameter name is inserted into the program text as a selector."
+      ]
+    ],
+    [
+      [
+        "Keyword",
+        "Description",
+        "Range/Valid Values",
+        "Access Limitations"
+      ],
+      [
+        "ACK",
+        "Acknowledgment information",
+        "0...0xFF",
+        "read only, Spy"
+      ],
+      [
+        "Arbitration",
+        "Bus arbitration bytes",
+        "0...0xFFFFFFFF",
+        "read only, Spy"
+      ],
+      [
+        "BYTE(idx)",
+        "Provides the access to the databytes of the MOST frame.0 ≤ idx ≤ 16",
+        "0...0xFF"
+      ],
+      [
+        "DA",
+        "Destination address",
+        "0...0xFFFF"
+      ],
+      [
+        "DIR",
+        "Direction of transmission",
+        "Tx, Rx, TxRequest"
+      ],
+      [
+        "MsgChannel",
+        "Transmission channel",
+        "1...16"
+      ],
+      [
+        "MsgCRC",
+        "CRC code",
+        "0...0xFFFF",
+        "read only, Spy"
+      ],
+      [
+        "MsgOrigTime",
+        "Unsynchronized hardware time stamp (unit: 10µs)",
+        "read only"
+      ],
+      [
+        "Most_IsSpy",
+        "Message was received by:1: Spy 0: Node",
+        "0, 1",
+        "read only"
+      ],
+      [
+        "Most_RType",
+        "Message type(Normal, RemRead, RemWrite,Alloc, Dealloc, GetSource)",
+        "0...5"
+      ],
+      [
+        "Most_State",
+        "Status information",
+        "0...0xFF",
+        "read only"
+      ],
+      [
+        "SA",
+        "Source address",
+        "0...0xFFFF"
+      ],
+      [
+        "Time",
+        "Synchronized time(unit: 10µs)",
+        "read only"
+      ]
+    ],
+    [
+      [
+        "Byte",
+        "RemoteReadRType=1",
+        "RemoteWriteRType=2",
+        "AllocRType=3",
+        "DeallocRType=4",
+        "GetSourceRType=5"
+      ],
+      [
+        "0",
+        "rsvd",
+        "rsvd",
+        "rsvd",
+        "rsvd",
+        "rsvd"
+      ],
+      [
+        "1",
+        "MAP",
+        "MAP",
+        "Request",
+        "CL",
+        "CL"
+      ],
+      [
+        "2",
+        "rsvd",
+        "LENGTH",
+        "rsvd",
+        "rsvd",
+        "rsvd"
+      ],
+      [
+        "3",
+        "D0",
+        "D0",
+        "Answer1",
+        "Answer1",
+        "rsvd"
+      ],
+      [
+        "4",
+        "D1",
+        "D1",
+        "Answer2",
+        "0x0",
+        "rsvd"
+      ],
+      [
+        "5",
+        "D2",
+        "D2",
+        "P0",
+        "rsvd",
+        "rsvd"
+      ],
+      [
+        "6",
+        "D3",
+        "D3",
+        "P1",
+        "rsvd",
+        "NPR"
+      ],
+      [
+        "7",
+        "D4",
+        "D4",
+        "P2",
+        "rsvd",
+        "rsvd"
+      ],
+      [
+        "8",
+        "D5",
+        "D5",
+        "P3",
+        "rsvd",
+        "GA"
+      ],
+      [
+        "9",
+        "D6",
+        "D6",
+        "P4",
+        "rsvd",
+        "NAH"
+      ],
+      [
+        "10",
+        "D7",
+        "D7",
+        "P5",
+        "rsvd",
+        "NAL"
+      ],
+      [
+        "11",
+        "rsvd",
+        "rsvd",
+        "P6",
+        "rsvd",
+        "rsvd"
+      ],
+      [
+        "12",
+        "rsvd",
+        "rsvd",
+        "P7",
+        "rsvd",
+        "rsvd"
+      ],
+      [
+        "13 ... 16",
+        "rsvd",
+        "rsvd",
+        "rsvd",
+        "rsvd",
+        "rsvd"
+      ]
+    ],
+    [
+      [
+        "Keyword",
+        "Description",
+        "Range/Valid Values",
+        "Access Limitations"
+      ],
+      [
+        "Most_Light",
+        "Light state of controller",
+        "0, 1",
+        "read only, mostLightLockError"
+      ],
+      [
+        "Most_Lock",
+        "Lock state of controller",
+        "0, 1",
+        "read only, mostLightLockError"
+      ],
+      [
+        "Most_Error",
+        "0: as long as lock exists 1: as soon as lock does not exists",
+        "0, 1",
+        "read only, mostLightLockError"
+      ],
+      [
+        "Time",
+        "Synchronized time(unit: 10µs)",
+        "read only"
+      ],
+      [
+        "MsgOrigTime",
+        "Unsynchronized hardware time stamp(unit: 10µs)",
+        "read only"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

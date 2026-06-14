@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOBlockDownload",
+  "category": "CANopen",
+  "title": "coTfsSDOBlockDownload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoBlockDownload.htm",
+  "syntax": [
+    "long coTfsSDOBlockDownload( dword index, dword subIndex, dword size, dword useCrc, byte inValueBuf[], dword valueBufSize, dword outCrcUsed[] );"
+  ],
+  "description": [
+    "This function executes a complete SDO block download. This function can be used to exchange simple larger quantities of data with a CANopen® device insofar as it supports the block transfer. A fallback to segmented transfer is not supported.",
+    "The parameter useCrc reports if a CRC check was executed during transmission."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "object index"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pData[50];\ndword outCrc[1];\n\n// ... copy data to pData ...\n\nif (coTfsSDOBlockDownload(0x2000, 0, 32, 1, pData, 50, outCrc) != 1) {\n  TestStepFail(\"SDO block download test failed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

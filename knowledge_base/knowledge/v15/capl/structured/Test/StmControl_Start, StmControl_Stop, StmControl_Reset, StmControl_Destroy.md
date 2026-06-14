@@ -1,0 +1,39 @@
+# StmControl_Start, StmControl_Stop, StmControl_Reset, StmControl_Destroy
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+long StmControl_Start(Stimulus::TstimulusId); // form 1
+long StmControl_Stop(Stimulus::TstimulusId); // form 2
+long StmControl_Reset(Stimulus::TstimulusId); // form 3
+long StmControl_Destroy(Stimulus::TstimulusId); // form 4
+long StmControl_Start(Stimulus::TstimulusId, dword duration); // form 5
+```
+
+## Description
+
+The four control functions have the same Parameter. They only need an ID that refers to the specific stimulus.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| Stimulus::TStimulusId | The ID that is returned when a stimulus is created. |
+| duration | Run-time of stimulus |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.0: form 1-4 7.0 SP5: method 1-3 8.5: form 5, method4 | 13.0 | — | 14 | 1.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | — | ✔ | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | ✔ | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | ✔ | N/A |
+| 64-Bit | — | ✔ | ✔ | — | ✔ | N/A |

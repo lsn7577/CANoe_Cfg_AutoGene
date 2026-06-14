@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "valOfId",
+  "category": "CAN",
+  "title": "valOfId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionValOfId.htm",
+  "syntax": [
+    "long valOfId(dword id);"
+  ],
+  "description": [
+    "Returns the value of a message identifier independent of its type.",
+    "Identifier as long value."
+  ],
+  "parameters": [],
+  "return": "Identifier as long value.",
+  "example": {
+    "description": [],
+    "code": "on message *\n{\nlong x;\nx = valOfId(this);\nwrite(\"Received Identifier: %d\",x);\noutput(this);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

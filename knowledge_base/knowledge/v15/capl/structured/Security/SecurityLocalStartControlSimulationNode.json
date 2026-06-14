@@ -1,0 +1,158 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalStartControlSimulationNode",
+  "category": "Security",
+  "title": "SecurityLocalStartControlSimulationNode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/Functions/CAPLfunctionSecurityLocalStartControlSimulationNode.htm",
+  "syntax": [
+    "long SecurityLocalStartControlSimulationNode(char nodeName[], char networkName[], dword orderNumber) // form 1",
+    "long SecurityLocalStartControlSimulationNode(char nodeId[], dword nodeIdType, char networkName[], dword orderNumber) // form 2"
+  ],
+  "description": [
+    "Registers the calling node to a node in the simulation setup. Both nodes require the SecMgrCANoeClient Nodelayer.",
+    "After a successful registration, the calling node can use all SecurityOfNode…() Functions to control the simulation node.",
+    "The calling node receives all OnSecurityOfNode… callbacks from the specified node on the specified network.",
+    "You have to call SecurityLocalStopControlSimulationNode to unregister.",
+    "Form 2 allows to control non-database simulation nodes."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node to control. This refers to the name declared in the database. (Form 1)"
+    },
+    {
+      "name": "char nodeId[]",
+      "type": "",
+      "description": "The name or title of the node to control. Use either the node name of a network node declared in the database or the node title declared in the Simulation Setup of CANoe and set parameter nodeIdType accordingly. (Form 2) (see Simulation Setup: Network Node Configuration for further details on the difference between node title and node name)"
+    },
+    {
+      "name": "dword nodeIdType",
+      "type": "",
+      "description": "Configure how the parameter nodeId shall be interpreted. Possible Values: 1: nodeId refers to node name of a network node declared in the database 2: nodeId refers to node title declared in the Simulation Setup of CANoe (If Network Node is set to <<default>>) (Form 2) (see Simulation Setup: Network Node Configuration for further details on the difference between node title and node name)"
+    },
+    {
+      "name": "dword nodeIdType",
+      "type": "",
+      "description": "Configure how the parameter nodeId shall be interpreted. Possible Values: 1: nodeId refers to node name of a network node declared in the database 2: nodeId refers to node title declared in the Simulation Setup of CANoe (If Network Node is set to <<default>>) (Form 2) (see Simulation Setup: Network Node Configuration for further details on the difference between node title and node name)"
+    },
+    {
+      "name": "char networkName[]",
+      "type": "",
+      "description": "The name of the network the node to control is on."
+    },
+    {
+      "name": "dword orderNumber",
+      "type": "",
+      "description": "Defines the position in the ordered list, in which the callbacks are executed. Order number 1 is reserved for the simulation node itself. Order number 2 means that the callback is triggered directly after the simulation node (number 1), but before any other node who may have registered to a higher order number. Only one node can register to an order number. If the order number is already used, the registration fails."
+    }
+  ],
+  "return": "A Value of 1 means that the action was successful. A value less than or equal to 0 means error. A value larger than 1 means warning.",
+  "example": {
+    "description": [],
+    "code": "//form 1\non start\n{\n  dword result = 0;\n  result = SecurityLocalStartControlSimulationNode(\"DatabaseNode\", \"CAN\", 2);\n  Write(\"SecurityLocalStartControlSimulationNode for network node with name DatabaseNode returned %i\", result);\n}\n\non stopMeasurement\n{\n  dword result = 0;\n  result = SecurityLocalStopControlSimulationNode(\"DatabaseNode\", \"CAN\");\n  Write(\"SecurityLocalStopControlSimulationNode for network node with name DatabaseNode returned %i\", result);\n}\n\n//form 2\non start\n{\n  dword result = 0;\n  result = SecurityLocalStartControlSimulationNode(\"MyNode\", 2, \"CAN\", 2); //Use the node title, if the node is not declared in the database (Network Node is set to <<default>>)\n  Write(\"SecurityLocalStartControlSimulationNode for node with title MyNode returned %i\", result);\n}\n\non stopMeasurement\n{\n  dword result = 0;\n  result = SecurityLocalStopControlSimulationNode(\"MyNode\", 2, \"CAN\"); //Use the node title, if the node is not declared in the database (Network Node is set to <<default>>)\n  Write(\"SecurityLocalStopControlSimulationNode for node with title MyNode returned %i\", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3: form 1 13.0: form 2",
+      "11.0 SP3: form 1 13.0: form 2",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN CAN FD FlexRay Ethernet",
+      "CAN CAN FD FlexRay Ethernet",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

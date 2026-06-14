@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "LINtp_InitAsMaster",
+  "category": "LIN",
+  "title": "LINtp_InitAsMaster",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINtpInitAsMaster.htm",
+  "syntax": [
+    "void LINtp_InitAsMaster();"
+  ],
+  "description": [
+    "Can only be called in on prestart.",
+    "Normally the LINtp implementation will detect whether it runs in the LIN master node automatically. But if the LINtp.DLL shall be able to send diagnostics request from a node that is not the master, e.g. a test module, this is not the case. The automatic detection would assume the slave role.",
+    "Calling this function in the on prestart phase will initialize the transport protocol in master role, i.e. sending of diagnostics requests on TP level is possible."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  if( cIsTester)\n  LINtp_InitAsMaster();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "StandaloneConfigOpen",
+  "category": "Other",
+  "title": "StandaloneConfigOpen",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStandaloneConfigOpen.htm",
+  "syntax": [
+    "dword StandaloneConfigOpen(CHAR rtcfgFileName[], dword stopCurrentMeasurement, dword startNewMeasurement, dword returnToActiveConfig)"
+  ],
+  "description": [
+    "Opens the RTCFG file with the given name as standalone configuration."
+  ],
+  "parameters": [
+    {
+      "name": "rtcfgFileName",
+      "type": "",
+      "description": "Name of the standalone configuration file (without path) to be set as default file."
+    }
+  ],
+  "return": "The function returns an error code with 0 representing successful operation.",
+  "example": {
+    "description": [],
+    "code": "// \"Config1.RTCFG\" (master config.) contains following CAPL code:\n\non key F2\n{\n   StandaloneConfigOpen(\"Config2.RTCFG\", 1, 1, 1);\n}\non key F3\n{\n   StandaloneConfigOpen(\"Config3.RTCFG\", 1, 0, 1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

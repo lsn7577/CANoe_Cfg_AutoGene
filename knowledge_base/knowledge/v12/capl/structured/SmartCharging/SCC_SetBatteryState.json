@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetBatteryState",
+  "category": "SmartCharging",
+  "title": "SCC_SetBatteryState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetBatteryState.htm",
+  "syntax": [
+    "void SCC_SetBatteryState ( float BatteryState )"
+  ],
+  "description": [
+    "Sets the charging state of the battery, either in [Wh] with the first function or in [%] with the second.",
+    "Note: The configured battery capacity cannot be overwritten."
+  ],
+  "parameters": [
+    {
+      "name": "BatteryState",
+      "type": "",
+      "description": "Desired charging state in Wh or percent."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

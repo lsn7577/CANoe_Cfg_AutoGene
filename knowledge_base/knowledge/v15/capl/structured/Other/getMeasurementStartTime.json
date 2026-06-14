@@ -1,0 +1,168 @@
+{
+  "page_type": "function",
+  "name": "getMeasurementStartTime",
+  "category": "Other",
+  "title": "getMeasurementStartTime",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionGetMeasurementStartTime.htm",
+  "syntax": [
+    "long getMeasurementStartTime(long time[]);"
+  ],
+  "description": [
+    "Returns details about the absolute time the measurement was started."
+  ],
+  "parameters": [
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Information"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Milliseconds (0 - 999)"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Seconds (0 - 59)"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Minutes (0 - 59)"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Hours (0 - 23)"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Day of month (1 - 31)"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Month (0 - 11)"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "Year (0 - xxx, offset of 1900, e.g. 117 = 2017)"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "Day of week (0 - 6, Sunday is 0)"
+    }
+  ],
+  "return": "1 if successful, 0 if not (e.g. array to small).",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0 SP3",
+      "10.0 SP3",
+      "13.0",
+      "—",
+      "14",
+      "2.2 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

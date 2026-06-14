@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "consumedFieldRef",
+  "category": "CommunicationObjects",
+  "title": "consumedFieldRef",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CommunicationObjects/Objects/CAPLfunctionConsumedFieldRef.htm",
+  "syntax": [
+    "consumedFieldRef * <var>; // form 1",
+    "consumedFieldRef <Field> <var>; // form 2",
+    "consumedFieldRef <Datatype> <var>; // form 3"
+  ],
+  "description": [
+    "References a consumed field endpoint, which means a specific combination of consumer and provider for a service field on consumer side."
+  ],
+  "parameters": [
+    {
+      "name": "Field",
+      "type": "",
+      "description": "Field of a service, determining the data type of the object."
+    },
+    {
+      "name": "DataType",
+      "type": "",
+      "description": "Data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "consumedFieldRef long field1;\nfield1 = MirrorAdjustment.consumerSide[CANoe,LeftMirror].CurrentPosition;\nfield1.AbstractRequestField();"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "15",
+      "14",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

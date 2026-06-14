@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSetSDOScan",
+  "category": "CANopen",
+  "title": "coTfsSetSDOScan",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSetsDosCan.htm",
+  "syntax": [
+    "long coTfsSetSDOScan( byte outBufDetected[], dword outBufSize );"
+  ],
+  "description": [
+    "This functions performs a SDO upload of the mandatory object 0x1000 to detect if a CANopen® device is available. The available devices will be added to the test report. For each found node the value of outBufDetected[node-ID-1] is set to 1, else to 0. Thus the size of the buffer should match the number of available node-IDs of the device profile at a minimum."
+  ],
+  "parameters": [
+    {
+      "name": "outBufDetected",
+      "type": "",
+      "description": "Buffer for registering the found nodes."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword outBufSize = 127;\nbyte outBufDetected[outBufSize];\n\nif (coTfsSetSDOScan( outBufDetected, outBufSize ) == 1) {\n  write (\"SDO scan successfully performed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,146 @@
+{
+  "page_type": "function",
+  "name": "setLogFileName",
+  "category": "Other",
+  "title": "setLogFileName",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionSetLogFileName.htm",
+  "syntax": [
+    "setLogFileName(char fileName[]); // form 1",
+    "setLogFileName(char strLoggingBlockName[], char fileName[]); // form 2"
+  ],
+  "description": [
+    "Sets the name of the logging file. If a valid extension is given it also changes the file type."
+  ],
+  "parameters": [
+    {
+      "name": "Note Since CANoe 8.5 the file name can also contain field codes. If the old file name contains only field codes of the auto increment field code type, for downward compatibility new file names will be expanded with the field code of the old file name. The auto increment field codes will be added to the file names as usual. Example field codes: ...setLogFileName( \"logFile_M{IncMeasurement}.blf\" );...// Sets the name of the logging file to logFile_MX.blf with X = current measurement index....setLogFileName( \"logFile_ {Date}.blf\" );...// Sets the name of the logging file to logFile_YYYY-MM-DD.blf with YYYY-MM-DD = current system date.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Note Within a string literal a second backslash has to be set (see example).",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Note The name set with the setLogFileName function will not be saved when saving the configuration. Only the name set in the configuration dialog of the logging file will be taken over.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "strLoggingBlockName",
+      "type": "",
+      "description": "Name of the Logging Block."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Example File Type"
+    ],
+    "code": "...\nsetLogFileName(\"Logging1\", \"newlog\");\n...\nSets the name of the logging file to \"newlog\" in the directory of the current configuration.\n...\nsetLogFileName(\"Logging1\", \"c:\\\\canw\\\\demo\\\\automot\\\\newlog\");\n...\nSets the absolute path of the logging file.\n...\nsetLogFileName(\"Logging1\", \"..\\\\Logging\\\\newlog\");\n...\nSets the relative path of the logging file.\n...\nsetLogFileName( \"newlog.blf\" );\n...\nSets the name of the logging file to newlog and the file type  blf\n...\n...\nsetLogFileName( \"newlog.notSupportedExtension\" );\n...\nDoes nothing //file extension not valid"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "All: form 1 7.6 SP3: form 2",
+      "All: form 1 7.6 SP3: form 2",
+      "13.0",
+      "13.0: form 1",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

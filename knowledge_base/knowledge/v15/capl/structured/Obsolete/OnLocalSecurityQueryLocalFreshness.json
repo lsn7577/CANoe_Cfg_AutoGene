@@ -1,0 +1,98 @@
+{
+  "page_type": "notes",
+  "name": "OnLocalSecurityQueryLocalFreshness",
+  "category": "Obsolete",
+  "title": "OnLocalSecurityQueryLocalFreshness",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/OnLocalSecurityQueryLocalFreshness.htm",
+  "syntax": [],
+  "description": [
+    "Replaced by OnSecurityLocalQueryFreshness.",
+    "This callback handler is called when a node receives a secured PDU and when a node transmits a secured PDU.",
+    "It provides the possibility to build a CAPL based freshness. This freshness value is preferred to the internal Freshness Manager in the Vector Security Manager.",
+    "The internal freshness value is used if this callback is not implemented or returns an invalid value."
+  ],
+  "parameters": [],
+  "return": "dword",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by OnSecurityLocalQueryFreshness."
+      ],
+      [
+        "Function Syntax",
+        "dword OnLocalSecurityQueryLocalFreshness(dword context, char pduName[], dword dataId, dword freshnessValueId, dword attemptNr, byte payload[], dword payloadLength, qword& freshness, dword& freshnessLength, qword truncatedRxFreshness, dword truncatedRxFreshnessBitLength)"
+      ],
+      [
+        "Function",
+        "This callback handler is called when a node receives a secured PDU and when a node transmits a secured PDU. It provides the possibility to build a CAPL based freshness. This freshness value is preferred to the internal Freshness Manager in the Vector Security Manager. The internal freshness value is used if this callback is not implemented or returns an invalid value."
+      ],
+      [
+        "Parameters",
+        "context 0: Transmit (CMAC creation) 1: Receive ( validation)"
+      ],
+      [
+        "pduName PDU name."
+      ],
+      [
+        "dataId Used DataID."
+      ],
+      [
+        "freshnessValueId AUTOSAR Freshness Value ID."
+      ],
+      [
+        "attemptNr Number of validation attempt."
+      ],
+      [
+        "payload Byte array with the payload to be transmitted."
+      ],
+      [
+        "payloadLength Length of the payload array in byte."
+      ],
+      [
+        "freshness Freshness to be used."
+      ],
+      [
+        "freshnessLength Length of the Freshness in bit."
+      ],
+      [
+        "truncatedRxFreshness truncated Rx freshness value."
+      ],
+      [
+        "truncatedRxFreshnessBitLength truncated Rx Length of the truncated Rx freshness."
+      ],
+      [
+        "Return Values",
+        "<=0: The query call is not successful; the value of the Freshness Manager is used. >0: The query call is successful and the arguments freshness and FreshnessLength are used for the MAC calculation / validation."
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "11.0 SP2",
+        "CAN CAN FD FlexRay Ethernet",
+        "—",
+        "•"
+      ],
+      [
+        "Example /// This callback can be used to get provide a USER based freshness value/// This callback is called BEFORE the cmac is calculated./// The freshness value is used to calculate the CMAC internally./// It is possible to specify an older or newer freshness value, the CMAC will be \"correct\" but the freshness is \"wrong\" (compared to the freshness of the system)dword OnLocalSecurityQueryLocalFreshness(dword context, char pduName[], dword dataId, dword freshnessValueId, dword attemptNr, byte payload[], dword payloadLength, qword& freshness, dword& freshnessLength, qword truncatedRxFreshness, dword truncatedRxFreshnessBitLength){ if ((dataId == 1) && (context == 0)) // check for PDU with data ID and context [(0 = tx) (1 = rx)] to specify a freshness for { freshness = 7; // new Freshness Value freshnessLength = 64; // new freshness length return 1; // use my values } return 0; // for all others use internal calculated freshness values}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

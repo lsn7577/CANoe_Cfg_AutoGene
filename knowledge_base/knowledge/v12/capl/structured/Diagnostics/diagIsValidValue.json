@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagIsValidValue",
+  "category": "Diagnostics",
+  "title": "diagIsValidValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagIsValidValue.htm",
+  "syntax": [
+    "long diagIsValidValue( diagResponse response, char[] parameterQualifier, long[] errorLevelOut);"
+  ],
+  "description": [
+    "Returns 1 if the parameter in the response object is valid, otherwise 0 is returned and the level of the problem (error or warning) is set in the output parameter field."
+  ],
+  "parameters": [
+    {
+      "name": "response",
+      "type": "",
+      "description": "The response object where the parameter is searched"
+    }
+  ],
+  "return": "1: Parameter value is valid, errorLevelOut[0] is set to 0.",
+  "example": {
+    "description": [],
+    "code": "on diagResponse Example_Service\n{\n   long errorLevelOut[1];\n   long status;\n   status = diagIsValidValue( this, \"MyParameter\", errorLevelOut);\n   if( status == 1)\n   {\n      write( \"Parameter value OK\");\n   } else if( status == 0)\n   {\n      if( errorLevelOut[0] == 1)\n         write( \"Warning.\");\n      else if( errorLevelOut[0] == 2)\n         write( \"ERROR!\");\n   } else\n   {\n      write( \"Error %d checking parameter value!\", status);\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

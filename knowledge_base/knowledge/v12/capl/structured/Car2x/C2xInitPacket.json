@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "C2xInitPacket",
+  "category": "Car2x",
+  "title": "C2xInitPacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xInitPacket.htm",
+  "syntax": [
+    "long C2xInitPacket( void );"
+  ],
+  "description": [
+    "This function creates a new WLAN packet. Other functions can access to the newly created packet with the returned handle.",
+    "Protocol fields that are marked as InitProtocol in the protocol description are initialized."
+  ],
+  "parameters": [
+    {
+      "name": "protocolDesignator",
+      "type": "",
+      "description": "Designator of the protocol, which should be used for initialization"
+    }
+  ],
+  "return": "Handle of the created packet or 0\nWith C2xGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [],
+    "code": "long packetHandle;\nchar error[100];\nbyte macAddress[6] = { 0x20, 0x00, 0x00, 0x00, 0x00, 0x01 };\n\n// create packet\npacketHandle = C2xInitPacket(\"geo_cnh\");\nif (C2xGetLastError() == 0)\n{\n  // set protocol fields\n  C2xSetTokenData( packetHandle, \"wlan\", \"address2\", 6, macAddress );\n  C2xSetTokenData( packetHandle, \"eth\", \"source\", 6, macAddress );\n\n  // set CNH values\n  C2xSetTokenInt( packetHandle, \"geo_cnh\", \"lpvSpeed\", 100 );\n  C2xSetTokenInt( packetHandle, \"geo_cnh\", \"lpvHeading\", 1800 );\n  C2xSetTokenInt( packetHandle, \"geo_cnh\", \"lpvAltitude\", 0 );\n\n  // Complete and send packet\n  C2xCompletePacket( packetHandle );\n  C2xOutputPacket( packetHandle );\n\n  // release packet\n  C2xReleasePacket( packetHandle );\n}\nelse\n{\n  C2xGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkControl_Destroy",
+  "category": "J1939",
+  "title": "J1939TestChkControl_Destroy",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestChkControlDestroy.htm",
+  "syntax": [
+    "long J1939TestChkControl_Destroy_Destroy( long checkId );"
+  ],
+  "description": [
+    "The check is destroyed and cannot be accessed anymore. Its resources are freed and may be reused."
+  ],
+  "parameters": [
+    {
+      "name": "checkId",
+      "type": "",
+      "description": "identifier of the check to destroy"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long cycleCheck;\ncycleCheck = J1939TestChkCreate_AbsCycleTimeViolation( 1, 2, 0xf123, 0.8, 1.2, \"CycleCallback\" );\n\nJ1939TestChkControl_Start( cycleCheck );\n//...\nJ1939TestChkControl_Destroy_Destroy( cycleCheck );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

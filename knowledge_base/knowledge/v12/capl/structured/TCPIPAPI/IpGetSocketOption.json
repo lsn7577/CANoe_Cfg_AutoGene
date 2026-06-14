@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "IpGetSocketOption",
+  "category": "TCPIPAPI",
+  "title": "IpGetSocketOption",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIpGetSocketOption.htm",
+  "syntax": [
+    "long IpGetSocketOption( dword socket, char level[], char name[], long &value);",
+    "socket.GetSocketOption(char level[], char name[], long &value);"
+  ],
+  "description": [
+    "The function reads the value of the given socket option.",
+    "The function is dependent on the selected stack."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  char errorMessage[255];\n  long socket;\n  long result;\n  long value;\n\n  // open a udp socket\n  socket = udpOpen(0,0);\n  if( socket == ~0 )\n  {\n    write(\"open udp socket failed. Last error was %d\", ipGetLastError());\n  }\n  \n  // get the socket type (UDP = 2, TCP = 1)\n  result = ipGetSocketOption(socket, \"SOL_SOCKET\", \"SO_TYPE\", value);\n  if( result != 0 )\n  {\n    ipGetLastSocketErrorAsString(socket, errorMessage, elcount(errorMessage));\n    write(\"Failed to get socket option SO_TYPE. Error: %s\", errorMessage);\n  }\n  else\n  {\n    write(\"The socket type is %d\", value);\n  }\n  result = ipGetSocketOption(socket, \"IPPROTO_IP\", \"IP_TTL\", value);\n  if( result != 0 )\n  {\n    ipGetLastSocketErrorAsString(socket, errorMessage, elcount(errorMessage));\n    write(\"Failed to get socket option IP_TTL. Error: %s\", errorMessage);\n  }\n  else\n  {\n    write(\"The IP TTL of this socket is %d\", value);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,169 @@
+{
+  "page_type": "function",
+  "name": "TestCaseReportMeasuredValue",
+  "category": "Test",
+  "title": "TestCaseReportMeasuredValue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestCaseReportMeasuredValue.htm",
+  "syntax": [
+    "void TestCaseReportMeasuredValue(char semanticName[], float value);",
+    "void TestCaseReportMeasuredValue(char semanticName[], float value, char unit[]);",
+    "void TestCaseReportMeasuredValue(char semanticName[], long value);",
+    "void TestCaseReportMeasuredValue(char semanticName[], long value, char unit[]);",
+    "void TestCaseReportMeasuredValue(char semanticName[], char text[]);",
+    "void TestCaseReportMeasuredValue(char semanticName[], char text, char unit[]);",
+    "void TestCaseReportMeasuredValue(char semanticName[], signal sig);",
+    "void TestCaseReportMeasuredValue(char semanticName[], signal sig, char unit[]);",
+    "void TestCaseReportMeasuredValue(char semanticName[], sysvar aSysVar);",
+    "void TestCaseReportMeasuredValue(char semanticName[], sysvar aSysVar, char unit[]);",
+    "void TestCaseReportMeasuredValue(char semanticName[], dbEnvVar aEnvVar);",
+    "void TestCaseReportMeasuredValue(char semanticName[], dbEnvVar aEnvVar, char unit[]);"
+  ],
+  "description": [
+    "Adds a report entry in the measured values table for the given parameter at the test case level. Accepted parameters are: user defined values, signals, system variables and environment variables."
+  ],
+  "parameters": [
+    {
+      "name": "semanticName",
+      "type": "",
+      "description": "Semantic name for one reported value."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "Numerical value to be displayed in the measured values table."
+    },
+    {
+      "name": "text",
+      "type": "",
+      "description": "String value to be displayed in the measured values table."
+    },
+    {
+      "name": "sig",
+      "type": "",
+      "description": "Value of a signal to be reported in the measured values table."
+    },
+    {
+      "name": "aSysVar",
+      "type": "",
+      "description": "Value of a system variable to be reported in the measured values table. Currently supported types for system variables are: integer, float and string."
+    },
+    {
+      "name": "aEnvVar",
+      "type": "",
+      "description": "Value of an environment variable to be reported in the measured values table. Currently supported types for environment variables are: integer, float and string."
+    },
+    {
+      "name": "unit",
+      "type": "",
+      "description": "Optional. User defined unit text to be displayed in the measured value. If omitted the default unit will be displayed."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "testcase TestMeasuredValues()\n{\n  double acc;\n  TestCaseTitle(\"\", \"Report Measured Values\");\n\n  TestCaseReportMeasuredValue(\"Version\", \"1.0\");\n  TestCaseReportMeasuredValue(\"Start time\", 210, \"ms\");\n\n  TestCaseReportMeasuredValue(\"Crash\", VehicleMotion::CrashDetected);\n  TestCaseReportMeasuredValue(\"Acceleration\", sysvar::SystemUnderTest::Accelerate);\n\n  TestStep(\"\", \"Value Conversion\");\n  acc = @sysvar::SystemUnderTest::Accelerate * 1000.0 / 3600.0;\n  TestCaseReportMeasuredValue(\"Acceleration\", acc, \"mp/s2\");\n\n  TestWaitForTimeout(2000);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2 SP3",
+      "13.0",
+      "—",
+      "14",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

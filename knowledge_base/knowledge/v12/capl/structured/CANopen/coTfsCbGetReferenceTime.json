@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsCbGetReferenceTime",
+  "category": "CANopen",
+  "title": "coTfsCbGetReferenceTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsCbGetReferenceTime.htm",
+  "syntax": [
+    "long coTfsCbGetReferenceTime( dword type, dword nodeId, dword refTime[1], dword minTime[1], dword minOccTime[1], dword maxTime[1], dword maxOccTime[1], dword averageTime[1] );"
+  ],
+  "description": [
+    "This function gets the maximum, minimum, and average value of an active monitor."
+  ],
+  "parameters": [
+    {
+      "name": "type",
+      "type": "",
+      "description": "0 - Heartbeat message1 - Sync message2 - Sync PDO message3 - Guarding RTR message for request"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "const kMonitorTypeHeartbeat   = 0;\nconst kMonitorTypeSyncMsg    = 1;\nconst kMonitorTypeSyncPdoMsg   = 2;\nconst kMonitorTypeGuardingRtrMsg = 3;\ndword refTime[1];\ndword minTime[1];\ndword minOccTime[1];\ndword maxTime[1];\ndword maxOccTime[1];\ndword averageTime[1];\n\n/* assume the selected monitor is active */\n/* get reference time of the active monitor */\nif (coTfsCbGetReferenceTime(kMonitorTypeHeartbeat, 112, refTime, minTime, minOccTime, maxTime, maxOccTime, averageTime) != 1)\n{\n  ; /* failure, monitor not active?, incorrect nodeId? */\n} /* if */\nelse\n{\n  write (\"last message monitored = %d ms, average time = %d ms\", refTime[0], averageTime[0]);\n  write (\"minimum time = %d ms, time stamp of that event = %d ms\", minTime[0], minOccTime[0]);\n  write (\"maximum time = %d ms, time stamp of that event = %d ms\", maxTime[0], maxOccTime[0]);\n} /* else */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

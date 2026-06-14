@@ -1,0 +1,122 @@
+{
+  "page_type": "method",
+  "name": "fieldProviderRef::GetNrOfSubscribedConsumers",
+  "category": "CommunicationObjects",
+  "title": "fieldProviderRef::GetNrOfSubscribedConsumers",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CommunicationObjects/Methods/CAPLfunctionfieldProviderRefGetNrOfSubscribedConsumers.htm",
+  "syntax": [
+    "dword fieldProviderRef::GetNrOfSubscribedConsumers();"
+  ],
+  "description": [
+    "Returns the number of currently subscribed consumers for the service field."
+  ],
+  "parameters": [],
+  "return": "The number of currently subscribed consumers.",
+  "example": {
+    "description": [],
+    "code": "// output all subscribed consumers\r\n                                \ndword i, nrOfConsumers;\nserviceConsumerRef * consumer;\nfieldProviderRef * provider;\n\nprovider = MirrorAdjustment.providerSide[LeftMirror].CurrentPosition;\nnrOfConsumers = provider.GetNrOfSubscribedConsumers();\nwrite(\"Nr of consumers is %d\", nrOfConsumers);\nfor (i = 0; i < nrOfConsumers; ++i)\n{\n  consumer = provider.GetSubscribedConsumer(i);\n  write(\"Consumer %d is %s\", i, consumer.Name);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "15",
+      "14",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

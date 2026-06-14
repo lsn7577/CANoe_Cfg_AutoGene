@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForByteInput",
+  "category": "Test",
+  "title": "TestWaitForByteInput",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForByteInput.htm",
+  "syntax": [
+    "long TestWaitForByteInput(char text[], char caption[], char info[]); // form 1",
+    "long TestWaitForByteInput(char text[], char caption[], char info[], dword timeout); // form 2"
+  ],
+  "description": [
+    "This function opens a dialog for byte array input. Optionally you can set some timeout in ms. Afterwards the dialog will be closed. You can optionally define some default input for the dialog."
+  ],
+  "parameters": [
+    {
+      "name": "Text",
+      "type": "",
+      "description": "Text to be displayed in the entry dialog."
+    },
+    {
+      "name": "Caption",
+      "type": "",
+      "description": "The title of the dialog."
+    },
+    {
+      "name": "Info",
+      "type": "",
+      "description": "Further information to be shown"
+    },
+    {
+      "name": "Timeout",
+      "type": "",
+      "description": "Optional timeout for the dialog in ms."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "return = TestWaitForByteInput(\"Test Text\", \"Test Caption\", \"Test Byte Input\", 0);\nTestGetByteInput(resultByte, elcount(resultByte));\n\nreturn = TestWaitForByteInput(\"Test Text\", \"Test Caption\", \"Test Byte Input Timeout\", 5000);\nTestGetByteInput(resultByte, elcount(resultByte));"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "—",
+      "14",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

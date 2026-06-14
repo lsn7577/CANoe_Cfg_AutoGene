@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "LINtp_FCPreTransmit",
+  "category": "LIN",
+  "title": "LINtp_FCPreTransmit",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINtpFCPreTransmit.htm",
+  "syntax": [
+    "void LINtp_FCPreTransmit(byte fcData);"
+  ],
+  "description": [
+    "When the usage of FlowControl frames has been activated with LINtp_ActivateFCTransmission, each FlowControl frame is forwarded to this callback function before it is sent."
+  ],
+  "parameters": [
+    {
+      "name": "fcData",
+      "type": "",
+      "description": "Data of the FC frame."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void LINtp_FCPreTransmit( BYTE fcData[])\n{\n  write( \"FlowControl to be sent: %02x %02x %02x %02x (%d byte)\"\n  , fcData[0] , fcData[1] , fcData[2] , fcData[3], elcount(fcdata));\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.5",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN Real bus mode",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

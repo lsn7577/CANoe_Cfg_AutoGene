@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPLoad",
+  "category": "ISO11783",
+  "title": "Iso11783OPLoad",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPLoad.htm",
+  "syntax": [
+    "long Iso11783OPLoad( dword ecuHandle, char filename[] );"
+  ],
+  "description": [
+    "The function loads an object pool file (*.iop). All other object pool access functions can only be used, if an object pool is loaded.",
+    "If the activation of the object pool was already done, the object pool is transmitted to the Virtual Terminal immediately. If not, this happens when the activation is done with Iso11783OPActivate.",
+    "Optional a version designator for the object pool can be specified. The node layer tries to load the version with the Load Version command. If this is successful the object pool must not be transmitted to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "dword handle = 0;\nhandle = Iso11783CreateECU( gECUName );\n\nIso11783OPLoad( handle, \"ObjectPool.iop\", \"pool001\"  );\nISo11783OPActivate( handle);\nIso11783ECUGoOnline(handle, gECUAddress );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

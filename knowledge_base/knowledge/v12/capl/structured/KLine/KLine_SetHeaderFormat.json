@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetHeaderFormat",
+  "category": "KLine",
+  "title": "KLine_SetHeaderFormat",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetHeaderFormat.htm",
+  "syntax": [
+    "long KLine_SetHeaderFormat(long useAddresses, long forceLengthByte)"
+  ],
+  "description": [
+    "Configures the used header format."
+  ],
+  "parameters": [
+    {
+      "name": "useAddresses",
+      "type": "",
+      "description": "0: Address bytes are not used.1: Address bytes are used."
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": "KLine_SetHeaderFormat(0, 0); // A one byte header will be sent.\nKLine_SetHeaderFormat(0, 1); // A two byte header will be sent.\nKLine_SetHeaderFormat(1, 0); // A three byte header will be sent.\nKLine_SetHeaderFormat(1, 1); // A four byte header will be sent."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

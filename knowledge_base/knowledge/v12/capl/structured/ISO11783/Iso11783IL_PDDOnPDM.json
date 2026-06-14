@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDOnPDM",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDOnPDM",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDOnPDM.htm",
+  "syntax": [
+    "long Iso11783IL_PDDOnPDM( long command, long parameter, long senderAddress, long pddStatus );"
+  ],
+  "description": [
+    "The callback method is called from the ISO11783 Interaction Layer if the ISO11783 Interaction Layer receives the Process Data Message parameter group (PDM pg)."
+  ],
+  "parameters": [
+    {
+      "name": "command",
+      "type": "",
+      "description": "first nibble of the first byte of the received PDM pg; usually represents the received command"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following example is to be used in the environment, where more than one Task Controller is available and determines, that the current node has to communicate with the Task Controller with the address: 246:"
+    ],
+    "code": "LONG Iso11783IL_PDDOnPDM (long command, long parameter, long senderAddress, long pddStatus)\n{\n  if (command != 0x0e)\n    return 1; //isn't a TC status\n  if (pddStatus != 3)\n    return 1; //node isn't in a state 'WaitForStatus'\n  if (senderAddress == 247)\n    return 1;\n  else\n    return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

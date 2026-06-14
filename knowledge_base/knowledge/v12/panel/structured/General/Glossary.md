@@ -1,0 +1,143 @@
+# Glossary
+
+> Category: `Panel` | Subcategory: `General` | Type: `concept`
+
+## Symbols
+
+Definition Symbols
+
+In CANoe/CANalyzer symbols are system variables, environment variables, signals, diagnostics parameter and communication objects. With symbols values can be displayed or actions can be triggered.
+
+Linking of symbols to panel controls is done directly in the Panel Designer.
+
+The following symbols are available in the Panel Designer:
+
+Environment variables represents the connection between a specific control on the panel and the associated CAPL program. In the CAPL program a change in the value of the environment variables causes a reaction, thereby triggering a specific action.
+
+Note
+
+Environment variables are only supported for panels used in CANoe.
+
+Because of the association of signals, signal values can also be set with the controls. This requires the availability of an Interaction Layer.
+
+If a signal value is changed by a control, the control is initially shown with red hatch marks. This red hatching indicates that the value shown by the control is not synchronous to the bus, i.e. the new value was not yet sent on the bus. As soon as a message has been transmitted on the bus with the relevant signal, the red hatching disappears, since the control is now in a bus-synchronous state.
+
+CANoe/CANalyzer system variables are similar to environment variables, but instead of the database, they are defined in the respective context.
+
+System variables are categorized and can store values of type character string (string), integers (int), or floating points (float). It is also possible to specify a standard value to be used if the variables cannot be set.
+
+In CANalyzer fun system variables are not supported.
+
+Diagnostic parameters can be displayed via controls by assigning the parameters. The value of a diagnostic parameter is only displayed and cannot be modified via the control. There are different types of diagnostic parameters for storing different value types: string values, integer values, float values and numerical values. In the case of numerical values, a symbolic textual representation of the value can also be stored.
+
+In contrast to diagnostics parameters, diagnostic DTC parameters relate to a dedicated DTC only. The position of the DTC in the response holding the fault memory contents is irrelevant. Note that diagnostic DTC parameters only hold valid parameter values if a diagnostic response with the fault memory contents was received and the respective DTC was reported as fault in this diagnostic response. The value of a diagnostic DTC parameter is only displayed and cannot be modified via the control element.
+
+Communication objects (CO) are the key element of the CANoe communication concept. They are the central configuration point of communication. Only communication objects will be displayed, whose endpoints were added to the CANoe configuration in the Endpoint Selection dialog.
+
+| Definition Symbols In CANoe/CANalyzer symbols are system variables, environment variables, signals, diagnostics parameter and communication objects. With symbols values can be displayed or actions can be triggered. |
+|---|
+
+| Note Environment variables are only supported for panels used in CANoe. |
+|---|
+
+| Note If you have assigned a SOME/IP Service Signal that contains at least one array, the desired index of the array can be specified in the Properties Window (property Array Index Qualifier, Symbol category). Select the input box with the mouse, and specify the desired index inside square brackets. In CANalyzer the changing of signal value is not possible. |
+|---|
+
+| Note In CANalyzer fun system variables are not supported. |
+|---|
+
+## Supported symbols in CANoe/CANalyzer program variants
+
+CANoe pex/pro
+
+SignalsDiagnostic parameters
+
+Diagnostic DTC parametersSystem variablesEnvironment variables
+
+SignalsSystem variablesEnvironment variables
+
+CANoe run
+
+—
+
+CANalyzer pro/exp
+
+Diagnostic DTC parametersSystem variables
+
+System variables
+
+CANalyzer fun
+
+Signals
+
+See also: Assigning Symbols | Restricted Mode | Data Types of Assigned Symbols
+
+| Programs | Display elements | Control elements |
+|---|---|---|
+| CANoe pex/pro | SignalsDiagnostic parameters Diagnostic DTC parametersSystem variablesEnvironment variables | SignalsSystem variablesEnvironment variables |
+| CANoe run | SignalsDiagnostic parameters Diagnostic DTC parametersSystem variablesEnvironment variables | — |
+| CANalyzer pro/exp | SignalsDiagnostic parameters Diagnostic DTC parametersSystem variables | System variables |
+| CANalyzer fun | Signals | — |
+
+## Symbol Value
+
+Value of the symbol (see above Symbols), e.g. raw value, physical value or symbolic value
+
+## Raw Value / Physical Value / Implementation Value / Symbolic Value
+
+The raw value of a symbol is the value as it is transmitted in the network.
+
+The physical value of a symbol is the value of the physical quantity (e.g. speed, rpm, temperature) that represents the symbol.
+
+The implementation value is the value used for calculation in the CANoe model.
+
+The symbolic value of a symbol is the symbolic description (text) of a number or sequence of numbers.
+
+Example
+
+Signal
+
+100
+
+150
+
+[Physical value] = ( [Raw value] * [Factor] ) + [Offset]
+
+km/h
+
+—
+
+(Raw Value / Physical Value / Implementation Value)
+
+0
+
+OFF
+
+1
+
+ON
+
+| Example Symbol Raw Value Physical Value Unit Symbolic Value Signal 100 150 [Physical value] = ( [Raw value] * [Factor] ) + [Offset] km/h — Signal Value Table Numeric Value (Raw Value / Physical Value / Implementation Value) Symbolic Value 0 OFF 1 ON | Symbol | Raw Value | Physical Value | Unit | Symbolic Value | Signal | 100 | 150 [Physical value] = ( [Raw value] * [Factor] ) + [Offset] | km/h | — | Signal | Value Table Numeric Value (Raw Value / Physical Value / Implementation Value) Symbolic Value 0 OFF 1 ON | Value Table | Numeric Value (Raw Value / Physical Value / Implementation Value) | Symbolic Value | 0 | OFF | 1 | ON |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Symbol | Raw Value | Physical Value | Unit | Symbolic Value |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Signal | 100 | 150 [Physical value] = ( [Raw value] * [Factor] ) + [Offset] | km/h | — |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Signal | Value Table Numeric Value (Raw Value / Physical Value / Implementation Value) Symbolic Value 0 OFF 1 ON | Value Table | Numeric Value (Raw Value / Physical Value / Implementation Value) | Symbolic Value | 0 | OFF | 1 | ON |  |  |  |  |  |  |  |  |  |  |  |
+| Value Table |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Numeric Value (Raw Value / Physical Value / Implementation Value) | Symbolic Value |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| 0 | OFF |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| 1 | ON |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+
+| Symbol | Raw Value | Physical Value | Unit | Symbolic Value |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|
+| Signal | 100 | 150 [Physical value] = ( [Raw value] * [Factor] ) + [Offset] | km/h | — |  |  |  |  |
+| Signal | Value Table Numeric Value (Raw Value / Physical Value / Implementation Value) Symbolic Value 0 OFF 1 ON | Value Table | Numeric Value (Raw Value / Physical Value / Implementation Value) | Symbolic Value | 0 | OFF | 1 | ON |
+| Value Table |  |  |  |  |  |  |  |  |
+| Numeric Value (Raw Value / Physical Value / Implementation Value) | Symbolic Value |  |  |  |  |  |  |  |
+| 0 | OFF |  |  |  |  |  |  |  |
+| 1 | ON |  |  |  |  |  |  |  |
+
+| Value Table |  |
+|---|---|
+| Numeric Value (Raw Value / Physical Value / Implementation Value) | Symbolic Value |
+| 0 | OFF |
+| 1 | ON |

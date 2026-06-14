@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SignatureVerificationInd",
+  "category": "SmartCharging",
+  "title": "SCC_SignatureVerificationInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_SignatureVerificationInd.htm",
+  "syntax": [
+    "void SCC_SignatureVerificationInd ( dword MessageID, dword SignatureValid )"
+  ],
+  "description": [
+    "The callback is called when a signed V2G message is verified with the ECDSA algorithm."
+  ],
+  "parameters": [
+    {
+      "name": "MessageID",
+      "type": "",
+      "description": "Type of the received message (see section 9.1)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

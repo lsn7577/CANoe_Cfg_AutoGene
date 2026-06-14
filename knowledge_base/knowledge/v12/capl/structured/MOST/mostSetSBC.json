@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "mostSetSBC",
+  "category": "MOST",
+  "title": "mostSetSBC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetSBC.htm",
+  "syntax": [
+    "long mostSetSBC (long channel, long sbcvalue)"
+  ],
+  "description": [
+    "This function sets the \"Synchronous Bandwidth Control (SBC) Register\" of the MOST hardware chip to the given value.",
+    "The function is only practically applicable if the hardware connected to the channel is in master mode.",
+    "The newly set value is only accepted once a \"DeAllocate\" message re-releases all synchronous channel assignments."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected MOST hardware"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

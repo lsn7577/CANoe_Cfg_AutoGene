@@ -1,0 +1,56 @@
+{
+  "page_type": "concept",
+  "name": "Output Window",
+  "category": "Panel",
+  "subcategory": "Windows",
+  "title": "Output Window",
+  "source": "chm_extract/PanelDesigner/Topics/Windows/PanelDesignerWindowsOutput.htm",
+  "intro": [
+    "You can see information and error messages relating to the currently active panel in the Output Window.",
+    "A check is carried out to determine if all controls are linked with symbols (if possible) and if all these symbols are present in the current database when loading a panel. If a control has no symbol link or a symbol is not found in the database, the Output Window is opened automatically with a corresponding message. Additional missing symbol links are added line-by-line."
+  ],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Selecting a message",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "If you select a message in the Output Window, the corresponding control is also selected in the panel."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Deleting the messages in the Output Window",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Select the Delete All menu command in the context menu of the Output Window to delete all messages in the Output Window"
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Updating the Output Window",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The Output Window is updated when a panel is loaded and when a symbol check is selected.",
+          "In the case of a database or panel change, the Output Window is not updated automatically."
+        ],
+        "tables": [
+          [
+            [
+              "Version 12.0© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "SomeIpRemoveFieldFromEventgroup",
+  "category": "IP",
+  "title": "SomeIpRemoveFieldFromEventgroup",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpRemoveFieldFromEventgroup.htm",
+  "syntax": [
+    "long SomeIpRemoveFieldFromEventgroup( dword pevgHandle, dword pfHandle );"
+  ],
+  "description": [
+    "Removes a field created by SomeIpAddField from an Event Group which was created by SomeIpAddProvidedEventGroup. The field itself is not deleted."
+  ],
+  "parameters": [
+    {
+      "name": "pevgHandle",
+      "type": "",
+      "description": "Handle of the Event Group from which a field should be removed (see SomeIpAddProvidedEventGroup)."
+    },
+    {
+      "name": "pfHandle",
+      "type": "",
+      "description": "Handle of the field that should be removed from the Event Group (see SomeIpAddField)."
+    }
+  ],
+  "return": "Handle of the Event Group from which a field should be",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD psi; // provided service handle\n  DWORD peg; // provided Eventgroup handle\n  DWORD pev; // provided Event handle\n}\n\non start()\n{\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  psi = SomeIpCreateProvidedServiceInstance(aep,10,1);\n  // create Eventgroup\n  peg = SomeIpAddProvidedEventGroup(psi,1);\n  // create Event and add Event to Eventgroup\n  pev = SomeIpAddEvent(psi, 1, \"OnPrepareEvent1\");\n  SomeIpAddEventToEventgroup(peg, pev);\n  // ensure that Event is sent cyclically\n  SomeIpSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1(DWORD eventHandle, DWORD messageHandle)\n{\n  // this function is called before the Event is sent. Parameters can be specified here.\n}\n\non key 'r'\n{\n  SomeIpRemoveFieldFromEventGroup (peg, pev);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP2",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

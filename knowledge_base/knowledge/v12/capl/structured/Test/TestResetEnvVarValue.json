@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestResetEnvVarValue",
+  "category": "Test",
+  "title": "TestResetEnvVarValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestResetEnvVarValue.htm",
+  "syntax": [
+    "long TestResetEnvVarValue (dbEnvVar aEnvVar);"
+  ],
+  "description": [
+    "Resets the environment variable to initial value. If no initial value is available, the environment variable is set to 0 or \"\"."
+  ],
+  "parameters": [
+    {
+      "name": "aEnvVar",
+      "type": "",
+      "description": "Environment variable that should be reset."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": "// check reaction of signal “LockState” after crash\n@EnvErrorCrashDetected = 1;\nTestWaitForTimeout(100);\nif ($LockState !=  Unlocked)\n    TestStepFail(“Doors are locked after crash is detected!”);\n\n// reset the crash environment variable\nTestResetEnvVarValue(EnvErrorCrashDetected);\nTestWaitForTimeout(200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

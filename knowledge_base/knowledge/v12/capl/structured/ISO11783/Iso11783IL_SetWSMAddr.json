@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_SetWSMAddr",
+  "category": "ISO11783",
+  "title": "Iso11783IL_SetWSMAddr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILSetWSMAAddr.htm",
+  "syntax": [
+    "dword Iso11783IL_SetWSMAddr(dword wsmAddress);"
+  ],
+  "description": [
+    "Use this function to set the address of the Working Set Master, if this ECU is a member of a working set. All parameter groups which are addressed to the Working Set Master are also received by an ECU which calls this function."
+  ],
+  "parameters": [
+    {
+      "name": "wsmAddress",
+      "type": "",
+      "description": "Address of the Working Set Master for this ECU."
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_SetWSMAddr(0x06 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

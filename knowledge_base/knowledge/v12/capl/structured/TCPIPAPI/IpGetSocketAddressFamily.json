@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetSocketAddressFamily",
+  "category": "TCPIPAPI",
+  "title": "IpGetSocketAddressFamily",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIpGetSocketAddressFamily.htm",
+  "syntax": [
+    "long IpGetSocketAddressFamily( dword socket);"
+  ],
+  "description": [
+    "The function returns the address family of the given socket."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "AF_INET (2): The socket belongs to the IPv4 address family.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  const dword INVALID_SOCKET = ~0; // invalid socket constant\n  dword socket = INVALID_SOCKET;   // a socket\n  char errMsg[255];                // error message buffer.\n  byte ipv6Addr[16];\n  dword port = 12345;\n  long result;                     // function result\n\n  // just create an socket.\n  socket = UdpOpen(0 , port );\n  result = IpGetSocketAddressFamily(socket);\n  if (result != -1)\n  {\n    writeLineEx(1, 3, \"IpGetSocketAddressFamily returned %d.\", result);\n  }\n  else\n  {\n    writeLineEx(1, 3, \"IpGetSocketAddressFamily: Invalid socket handle.\");\n  }\n\n  // close the socket.\n  UdpClose(socket);\n\n  // ... and for IPv6 ...\n  IpGetAddressAsArray(“::”, ipv6Addr); // get an IPv6 “zero” address\n  socket = UdpOpen(ipv6Addr, 0);\n  result = IpGetSocketAddressFamily(socket);\n  if (result != -1)\n  {\n    writeLineEx(1, 3, \"IpGetSocketAddressFamily returned %d.\", result);\n  }\n  else\n  {\n    writeLineEx(1, 3, \"IpGetSocketAddressFamily: Invalid socket handle.\");\n  }\n  // close the socket.\n  UdpClose(socket);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

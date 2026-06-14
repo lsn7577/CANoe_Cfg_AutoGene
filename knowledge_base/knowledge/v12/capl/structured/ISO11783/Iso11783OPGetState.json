@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPGetState",
+  "category": "ISO11783",
+  "title": "Iso11783OPGetState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPGetState.htm",
+  "syntax": [
+    "long Iso11783OPGetState( dword ecuHandle );"
+  ],
+  "description": [
+    "Returns the state of the Object Pool API."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "state = Iso11783OPGetState( handle );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

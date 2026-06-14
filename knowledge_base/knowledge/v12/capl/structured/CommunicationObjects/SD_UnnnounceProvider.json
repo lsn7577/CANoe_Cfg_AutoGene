@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SD_UnnnounceProvider",
+  "category": "CommunicationObjects",
+  "title": "SD_UnnnounceProvider",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSDUnnnounceProvider.htm",
+  "syntax": [
+    "long SD_UnannounceProvider(serviceProviderRef * provider)"
+  ],
+  "description": [
+    "Announces over the network that a service provider is no longer running. This may be necessary for some bindings where a central service registry is used.",
+    "Note that the service provider will be unannounced automatically if you call ReleaseService on the endpoint."
+  ],
+  "parameters": [
+    {
+      "name": "provider",
+      "type": "",
+      "description": "Provider endpoint."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "SD_UnnnounceProvider(myProvider);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

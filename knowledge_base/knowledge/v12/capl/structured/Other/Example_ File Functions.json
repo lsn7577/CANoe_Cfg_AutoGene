@@ -1,0 +1,20 @@
+{
+  "page_type": "concept",
+  "name": "Example: File Functions",
+  "category": "Other",
+  "title": "Example: File Functions",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionsExapmleFileFunctions.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  msTimer writeTimer;\n  long glbPeriod = 250;\n\n  dword glbHandle = 0;\n  struct Data\n  {\n    long value;\n  }\n  glbData;\n}\n\non Start\n{\n  byte buffer[4];\n  long ret;\n\n  //\n  // Opens the file in binary mode for read access.\n  //\n  // To determine the absolute path, the search procedure will be used.\n  // The file must be located in the directory of the databases or the\n  // configuration directory.\n  //\n  glbHandle = OpenFileRead (\"Data.Bin\",1);\n\n  if ( glbHandle!=0 )\n  {\n    //\n    // got to end of file ...\n    //\n    while ( fileGetBinaryBlock(buffer,elcount(buffer),glbHandle)!=0 ) {};\n    //\n    // Get the last parameters\n    // (saved on disk after the end of the last measurement)\n    //\n    memcpy(glbData, buffer);\n    write (\"Last value %d.\",glbData.value);\n    fileClose (glbHandle);\n  }\n  else\n  {\n    write (\"File 'Data.Bin' was not opened for read access.\");\n  }\n  //\n  // Open the file in binary mode for write access.\n  //\n  // The write path was not set using the function setWritePath(), so\n  // the configuration directory will be used instead. This is the\n  // default behavior.\n  //\n  glbHandle = OpenFileWrite (\"Data.Bin\",3);\n\n  if ( glbHandle!=0 )\n  {\n    setTimer (writeTimer,glbPeriod);\n  }\n  else\n  {\n    write (\"File 'Data.Bin' was not opened for write access.\");\n  }\n}\n\non timer writeTimer\n{\n  struct Data randomValue;\n  byte buffer [4];\n\n  if ( glbHandle!=0 )\n  {\n    randomValue.value = random (32767);\n    memcpy(buffer, randomValue);\n    fileWriteBinaryBlock (buffer, elcount(buffer),glbHandle);\n    write(\"Last value written: %d\", randomValue.value);\n    setTimer (writeTimer,glbPeriod);\n  }\n  else\n  {\n    write (\"Error, invalid file handle.\");\n  }\n}\n\non StopMeasurement\n{\n  fileClose (glbHandle);\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

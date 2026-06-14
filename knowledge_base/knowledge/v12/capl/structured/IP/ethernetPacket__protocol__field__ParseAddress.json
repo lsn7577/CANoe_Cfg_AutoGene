@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::protocol::field::ParseAddress",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::field::ParseAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionProtocolFieldParseAddress.htm",
+  "syntax": [
+    "long ethernetPacket.<protocol>.<field>.ParseAddress( char addressAsString[] );"
+  ],
+  "description": [
+    "Sets the protocol field, which has type IPv4 or IPv6 address.",
+    "The address must be given in",
+    "The method is only available for IPv4 or IPv6 address fields."
+  ],
+  "parameters": [
+    {
+      "name": "addressAsString",
+      "type": "",
+      "description": "Address in text form of format IPv4 or IPv6."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "ethernetPacket pkt;\n\npkt.udp.Init();\n\npkt.ipv4.source.ParseAddress( \"192.168.1.1\" );\npkt.ipv4.destination.ParseAddress( \"255.255.255.255\" );\nethernetPacket pkt;\n\npkt.ipv6.Init();\npkt.udp.Init();\n\npkt.ipv6.source.ParseAddress( \"FC01::1\" );\npkt.ipv6.destination.ParseAddress( \"FF00::1\" );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

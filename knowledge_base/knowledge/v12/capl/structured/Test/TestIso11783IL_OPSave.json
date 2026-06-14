@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestIso11783IL_OPSave",
+  "category": "Test",
+  "title": "TestIso11783IL_OPSave",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestIso11783ILOPSave.htm",
+  "syntax": [
+    "long TestIso11783IL_OPSave( dbNode node, char filename[] );"
+  ],
+  "description": [
+    "The function saves an object pool file (*.iop).",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

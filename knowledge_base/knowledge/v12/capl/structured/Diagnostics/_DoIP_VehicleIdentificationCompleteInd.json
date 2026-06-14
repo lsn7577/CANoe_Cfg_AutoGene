@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_VehicleIdentificationCompleteInd",
+  "category": "Diagnostics",
+  "title": "_DoIP_VehicleIdentificationCompleteInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPVehicleIdentificationCompleteInd.htm",
+  "syntax": [
+    "void _DoIP_VehicleIdentificationCompleteInd();"
+  ],
+  "description": [
+    "The vehicle identification phase has completed, i.e. the tester is about to select the vehicle to communicate with. This is called when the timeout A_DoIP_Ctrl (standard: 2 s) expires after a Vehicle Identification Request (VIR) Message has been sent. It is also called when the vehicle responds that is targeted by the VIR message, i.e. before communication with this vehicle is initiated."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void _DoIP_VehicleIdentificationCompleteInd()\n{\n  write( \"[%.3f] _DoIP_VehicleIdentificationCompleteInd, %d vehicles found\", timenow()/100000.0, gVehiclesFound);\n  if(gVehiclesFound > 1)\n  {\n    // Select the second vehicle that has responded\n    DoIP_SelectVehicle(gVehicleAnswered[gVehiclesFound – 2]);\n  }\n  // else: a single vehicle will be selected automatically\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

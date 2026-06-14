@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "FRSSetTrigPayload",
+  "category": "FRStress",
+  "title": "FRSSetTrigPayload",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FRStress/Functions/CAPLfunctionFRSSetTrigPayload.htm",
+  "syntax": [
+    "long FRSSetTrigPayload(long triggerCondition, long triggerPayloadElement, long byteIndex, char triggerValue[]);"
+  ],
+  "description": [
+    "Adds a bit sequence to the respective trigger condition as a trigger value. A complex trigger condition can be created through multiple calls."
+  ],
+  "parameters": [
+    {
+      "name": "triggerCondition",
+      "type": "",
+      "description": "Values: 1–4"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Payload Byte"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "BSS"
+    },
+    {
+      "name": "byteIndex",
+      "type": "",
+      "description": "Values: 0–254 start index in the payload"
+    },
+    {
+      "name": "triggerValue",
+      "type": "",
+      "description": "Bit sequence of the respective Payload byte. The possible elements of the sequence are 0, 1, x (don’t care)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.2",
+      "—",
+      "—",
+      "—",
+      "1.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "FlexRay Digital, analog, Scope mode",
+      "—",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

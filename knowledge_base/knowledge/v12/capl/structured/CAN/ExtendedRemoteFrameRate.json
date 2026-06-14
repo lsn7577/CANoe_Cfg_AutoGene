@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "ExtendedRemoteFrameRate",
+  "category": "CAN",
+  "title": "ExtendedRemoteFrameRate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionExtendedRemoteFrameRate.htm",
+  "syntax": [
+    "long ExtendedRemoteFrameRate ()",
+    "CANx.ExtendedRemoteFrameRate"
+  ],
+  "description": [
+    "Returns the current rate of extended remote CAN messages on channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Current rate of extended remote CAN messages on channel x in frames per second.",
+  "example": {
+    "description": [],
+    "code": "write (\"Rate of extended remote messages on CAN1 = %d\", CAN1.ExtendedRemoteFrameRate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,108 @@
+{
+  "page_type": "function",
+  "name": "providedMethodRef",
+  "category": "CommunicationObjects",
+  "title": "providedMethodRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionProvidedMethodRef.htm",
+  "syntax": [
+    "providedMethodRef * <var>"
+  ],
+  "description": [
+    "References a provided method endpoint, which means a specific combination of consumer and provider for a service function on provider side."
+  ],
+  "parameters": [
+    {
+      "name": "Method",
+      "type": "",
+      "description": "Method, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "providedMethodRef MirrorAdjustment.Adjust method1;\nmethod1 = MirrorAdjustment.providerSide[CANoe,LeftMirror].Adjust;\n$method1.AutoAnswerTimeNS = ADJUST_DEFAULT_ANSWER_TIME;"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the provided endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the provided endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "LatestCall Information about the latest call received at this endpoint.",
+        "struct",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "LatestReturn Information about the latest return sent from this endpoint.",
+        "struct",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ParamDefaults Default values for automatic return of the function for the out parameters.",
+        "struct",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "DefaultResult Default value for automatic return of the function for the return value.",
+        "<Data Type of the function return value>"
+      ]
+    },
+    {
+      "row": [
+        "AutoAnswerMode Mode for automatic answering function calls: Auto: calls are answered with the default values OffOrManual: calls are not automatically answered Discard: calls are discarded and will not be answered AutoField: only for field getters and setters; use the field value to answer the call.",
+        "enum"
+      ]
+    },
+    {
+      "row": [
+        "AutoAnswerTimeNS Time in nonoseconds until the call is answered if the AutoAnswerMode is Auto or AutoField.",
+        "int64"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

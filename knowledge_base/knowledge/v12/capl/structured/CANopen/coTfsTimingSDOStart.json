@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsTimingSDOStart",
+  "category": "CANopen",
+  "title": "coTfsTimingSDOStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsTimingSdoStart.htm",
+  "syntax": [
+    "long coTfsTimingSDOStart( dword nodeId );"
+  ],
+  "description": [
+    "The function starts the monitoring of SDO response times. The new values are added to the already saved values. The monitoring can be stopped or paused with coTfsTimingSDOStop.",
+    "The monitoring is deactivated for all nodes on measurement start."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsTimingSDOStart( 0 ); // start SDO time recording for all nodes"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

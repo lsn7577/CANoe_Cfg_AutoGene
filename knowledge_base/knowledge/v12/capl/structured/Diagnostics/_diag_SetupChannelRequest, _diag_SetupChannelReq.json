@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_diag_SetupChannelRequest, _diag_SetupChannelReq",
+  "category": "Diagnostics",
+  "title": "_diag_SetupChannelRequest, _diag_SetupChannelReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSetupChannelRequest.htm",
+  "syntax": [
+    "void _diag_SetupChannelReq (); // form 1"
+  ],
+  "description": [
+    "With this function the CAPL program of a tester implementation will be requested to open a channel to the ECU. After opening the channel the CAPL program can call the function diag_SetupChannelCon."
+  ],
+  "parameters": [
+    {
+      "name": "target",
+      "type": "",
+      "description": "Qualifier of the ECU to open a channel to."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_Diag_SetupChannelRequest(char target[])\n{\n  Diag_SetupChannelCon(); // On CAN there is no need to wait for the communication channel to be established\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

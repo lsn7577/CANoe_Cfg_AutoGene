@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.1.0",
+  "id": "capl_simulation_node",
+  "artifact_kind": "capl_simulation_node",
+  "output_extension": ".can",
+  "state_inputs": ["project_spec", "evidence_bundle"],
+  "required_sections": ["header", "variables", "event handlers"],
+  "evidence_requirements": ["event handlers", "message output APIs"]
+}
+

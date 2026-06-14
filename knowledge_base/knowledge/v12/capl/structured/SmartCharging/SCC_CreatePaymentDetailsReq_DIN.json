@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreatePaymentDetailsReq_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreatePaymentDetailsReq_DIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreatePaymentDetailsReq_Din.htm",
+  "syntax": [
+    "SCC_CreatePaymentDetailsReq_DIN(SessionID);"
+  ],
+  "description": [
+    "Creates a Payment Details Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_parameters"
+}

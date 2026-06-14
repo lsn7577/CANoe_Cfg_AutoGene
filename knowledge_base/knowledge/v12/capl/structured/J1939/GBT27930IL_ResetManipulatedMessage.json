@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_ResetManipulatedMessage",
+  "category": "J1939",
+  "title": "GBT27930IL_ResetManipulatedMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILResetManipulatedMessage.htm",
+  "syntax": [
+    "long GBT27930IL_ResetManipulatedMessage( dword pgn, dword destinationAddress, qword filterMask, qword filterValue ); // form 1"
+  ],
+  "description": [
+    "Resets the change of a single GBT27930IL_ManipulateMessage call. The corresponding message is specified by PGN, destination address and a part of the first eight data bytes."
+  ],
+  "parameters": [
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "Use same value as in GBT27930IL_ManipulateMessage to stop manipulation of the message."
+    }
+  ],
+  "return": "-1: There is no matching entry made by GBT27930IL_ManipulateMessage",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_SLAC_Parm_Req",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_SLAC_Parm_Req",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_SLAC_Parm_Req.htm",
+  "syntax": [
+    "void SCC_CreateCM_SLAC_Parm_Req ( byte RunId[], byte SourceMac[], byte TargetMac[]"
+  ],
+  "description": [
+    "Creates a CM_Slac_Parm.Req message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "RunId",
+      "type": "",
+      "description": "Random Run Identifier of sender (8 byte)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

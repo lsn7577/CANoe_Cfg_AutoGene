@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagIsRespParameterDefault",
+  "category": "Diagnostics",
+  "title": "diagIsRespParameterDefault",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagIsRespParameterDefault.htm",
+  "syntax": [
+    "long diagIsRespParameterDefault (diagRequest obj, char parameterName[])"
+  ],
+  "description": [
+    "Access/check a response parameter for a given request. It is not necessary to declare the response and retrieve the response explicitly e.g. via diagGetLastReponse(diagRequest) to make a check with diagResponse.IsParameterDefault(\"MyParamName\").",
+    "Returns <> 0 if the parameter in the response has its default value."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics request"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "testfunction MainTest()\n{\n   diagRequest DefaultSession_Start req;\n   diagSetTarget(\"Door\");\n   diagSendRequest(req);\n   testWaitForDiagResponse(req, 2000);\n   write(\"IsDefault(P3) = %d\", diagIsRespParameterDefault(req, \"P3\"));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

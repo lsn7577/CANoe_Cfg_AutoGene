@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ActivateWorkingSet",
+  "category": "ISO11783",
+  "title": "VTIL_ActivateWorkingSet",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILActivateWorkingSet.htm",
+  "syntax": [
+    "long VTIL_ActivateWorkingSet(dbNode workingSetMaster); // form 1",
+    "long VTIL_ActivateWorkingSet(byte workingSetMasterAddress); // form 2",
+    "long VTIL_ActivateWorkingSet(dbNode vt, dbNode workingSetMaster); // form 3",
+    "long VTIL_ActivateWorkingSet(dbNode vt, byte workingSetMasterAddress); // form 4"
+  ],
+  "description": [
+    "Activates a corresponding Working Set in the Virtual Terminal: As a result, the VT Status message is sent with the source address of newly activated Working Set as well as its active Data/Alarm and Soft Key Mask."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    },
+    {
+      "name": "workingSetMaster",
+      "type": "",
+      "description": "Working Set Master node"
+    },
+    {
+      "name": "workingSetMasterAddress",
+      "type": "",
+      "description": "Address of the Working Set Master"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example for test node"
+    ],
+    "code": "long result;\nresult = VTIL_ActivateWorkingSet(VT, Sprayer);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2109: TestStepFail (\"Working Set 'Sprayer' is not available!\"); break;\n  case -2110: TestStepFail (\"Failed to activate Working Set 'Sprayer'!\"); break;\n  default:    TestStepFail (\"Unexpected error\"); break;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0",
+      "13.0",
+      "—",
+      "—",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 3, 4 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1, 2)",
+      "✔ (form 1, 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 3, 4)",
+      "✔ (form 3, 4)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 3, 4)",
+      "✔ (form 3, 4)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "mostReadReg",
+  "category": "MOST",
+  "title": "mostReadReg",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTReadReg.htm",
+  "syntax": [
+    "long mostReadReg(long channel, long chip, dword offset, long regdatalen);"
+  ],
+  "description": [
+    "Initiates read-out of the registers of a MOST hardware chip."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel to which the hardware is connected."
+    },
+    {
+      "name": "chip",
+      "type": "",
+      "description": "Number of the chip in the MOST hardware (1 = OS8104; other chips cannot be accessed yet)."
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Address of the first register."
+    },
+    {
+      "name": "regdatalen",
+      "type": "",
+      "description": "Number of registers to be read (1 <= regdatalen <= 16)."
+    }
+  ],
+  "return": "See error codes\nA read request by mostReadReg() causes the CAPL event procedure OnMostReg to be called.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.0",
+      "5.0",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 After measurement start Not in Stopmeasurement",
+      "MOST25 After measurement start Not in Stopmeasurement",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

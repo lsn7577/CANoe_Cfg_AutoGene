@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMOperatorAcknowledge",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMOperatorAcknowledge",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimOperatorAcknowledge.htm",
+  "syntax": [
+    "long Iso11783IL_TIMOperatorAcknowledge( ); // form 1"
+  ],
+  "description": [
+    "This function performs an operator acknowledgement.",
+    "It sends a TIM_ServerStatus_Msg message with the Acknowledge indication for 3 times in a row",
+    "It changes the automation status of a TIM function to Automation Pending in case this TIM function is allowed for the operator acknowledgement."
+  ],
+  "parameters": [
+    {
+      "name": "server",
+      "type": "",
+      "description": "TIM server node."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_ TIMOperatorAcknowledge ();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "J1939TestWaitForDMWithoutSPN",
+  "category": "J1939",
+  "title": "J1939TestWaitForDMWithoutSPN",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestWaitForDMWithoutSPN.htm",
+  "syntax": [
+    "long J1939TestWaitForDMWithoutSPN( dword sourceAddr, dword pgn, dword spn, dword timeout )"
+  ],
+  "description": [
+    "The function waits until a defined Suspect Parameter Number (SPN) is not longer transmitted with the parameter group or a timeout occurred.",
+    "The parameter group must be able to contain a SPN, so only this parameter groups are allowed: DM1, DM2, DM6, DM12, DM23, DM27, DM28 and DM41-DM52."
+  ],
+  "parameters": [
+    {
+      "name": "sourceAddr",
+      "type": "",
+      "description": "source address of the PG or null address (0xFE) to ignore the source address"
+    },
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "parameter group number that is waited for"
+    },
+    {
+      "name": "spn",
+      "type": "",
+      "description": "suspect parameter number on which disappearance it is waited for"
+    },
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "timeout in [ms] or 0 to deactivate the timeout"
+    }
+  ],
+  "return": "source address of the PG or null",
+  "example": {
+    "description": [],
+    "code": "long lret;\nlret = J1939TestWaitForDMWithoutSPN(10, 0xF123, 110, 500 );\n\nswitch (lret) {\n  case 1:\n    break;\n  default: // error, timeout or constraint violation\n    break;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.1",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

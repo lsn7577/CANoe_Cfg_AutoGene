@@ -1,0 +1,104 @@
+{
+  "page_type": "function",
+  "name": "callContext",
+  "category": "CommunicationObjects",
+  "title": "callContext",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionCallContext.htm",
+  "syntax": [
+    "callContext * <var>"
+  ],
+  "description": [
+    "Contains data of a function call, in particular the parameter values."
+  ],
+  "parameters": [
+    {
+      "name": "Method",
+      "type": "",
+      "description": "Method of a service, determining the data type of the call"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  callContext MirrorAdjustment.Adjust deferredAnswer;\n}\n\non fctCalling MirrorAdjustment[all, LeftMirror].Adjust\n{\n  this.DeferAnswer();\n  deferredAnswer = this;\n}\n\non sysvar Panels::ReturnAnswer\n{\n  deferredAnswer.ReturnCall(Mirrors::AdjustResult::OK);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "State State of the call: eCALLSTATE_INITIAL: the call has not yet reached the provider eCALLSTATE_CALLED: the call has reached the provider, but the return has not yet reached the consumer eCALLSTATE_RETURNED: the return has reached the consumer eCALLSTATE_DISCARDED: the call context is invalid",
+        "enumeration",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Side Shows where the call is currently being handled: eCOSIDE_CONSUMER: consumer side eCOSIDE_PROVIDER: provider side",
+        "enumeration",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Consumer Name of the consumer which started the call.",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Provider Name of the provider which is called.",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "CallTime Point of time (in simulation time, in nanoseconds) when the call was started (on consumer side) or the call reached the provider (on provider side).",
+        "int64",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ReturnTime Point of time (in simulation time, in nanoseconds) when the call was returned to the consumer (on provider side) or the return reached the consumer (on consumer side).",
+        "int64",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ReqID A request ID which identifies the call. Can be used to match replies to calls if several calls are waiting for a reply. The request ID is internal and not necessarily transmitted on the network.",
+        "int64",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<Parameter Name> Value of the named parameter. Note that parameters are not accessible or read-only depending on the side and state of the call, e.g. you cannot access out-parameters in state Initial and cannot change in-parameters in state Returned.",
+        "<data type of the parameter>",
+        "<depends on side and state>"
+      ]
+    },
+    {
+      "row": [
+        "Result Return value of the function (if the function return type is not void).",
+        "<data type of the return value>",
+        "<depends on side and state>"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

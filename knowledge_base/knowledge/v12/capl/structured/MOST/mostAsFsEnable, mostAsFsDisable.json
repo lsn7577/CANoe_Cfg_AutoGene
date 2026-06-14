@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "mostAsFsEnable, mostAsFsDisable",
+  "category": "MOST",
+  "title": "mostAsFsEnable, mostAsFsDisable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsFsEnableMOSTAsFsDisable.htm",
+  "syntax": [
+    "long mostAsFsEnable()"
+  ],
+  "description": [
+    "mostAsFsEnable() makes the function service available for the function block. The function block must be assigned to the CAPL program via mostApRegister(fblockID, instIDDefault) or the database. Furthermore mostAsFsEnable() enables the functions <FktIDs>, <Notification> and <NotificationCheck> of the function block for the notification service.",
+    "mostAsFsDisable() disables the function service."
+  ],
+  "parameters": [],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

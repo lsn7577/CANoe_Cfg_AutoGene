@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDSetDistance",
+  "category": "ISO11783",
+  "title": "Iso11783PDDSetDistance",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDsetdistance.htm",
+  "syntax": [
+    "long Iso11783PDDSetDistance( dword ecuHandle, dword distance );"
+  ],
+  "description": [
+    "The distance covered is set with this function. The value is needed for the distance trigger and should be updated cyclically."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "void ReceiveGBSDFromTractor( \r\n pg GroundBasesSpeedPG thisPG ){\n Iso11783PDDSetDistance( ecuHandle, thisPG.GroundBasedDistance.phys );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

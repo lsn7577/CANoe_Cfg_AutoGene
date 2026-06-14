@@ -1,0 +1,155 @@
+{
+  "page_type": "function",
+  "name": "SecurityOfNodeGetFreshness",
+  "category": "Security",
+  "title": "SecurityOfNodeGetFreshness",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/Functions/CAPLfunctionSecurityOfNodeGetFreshness.htm",
+  "syntax": [
+    "long SecurityOfNodeGetFreshness(char nodeName[], char networkName[], char freshnessIdentifierString[], dword freshnessValueId, byte freshnessData[], dword freshnessDataLength)"
+  ],
+  "description": [
+    "Gets the freshness value of the specified node on the specified network for the specified Id.",
+    "As freshness values differs from Security Source to Security Source you have to refer to the Security Source specific manual to get more information about which values you have to specify as parameters.",
+    "You have to call SecurityLocalStartControlSimulationNode before this callback is called."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node."
+    },
+    {
+      "name": "char networkName[]",
+      "type": "",
+      "description": "The name of the network the node is on."
+    },
+    {
+      "name": "char freshnessIdentifierString[]",
+      "type": "",
+      "description": "A string as an identifier for the freshness to get."
+    },
+    {
+      "name": "dword freshnessValueId",
+      "type": "",
+      "description": "A numerical Id for the freshness to get."
+    },
+    {
+      "name": "byte freshnessData[] [In/Out]",
+      "type": "",
+      "description": "The buffer for the freshness to get."
+    },
+    {
+      "name": "dword freshnessDataLength [In/Out]",
+      "type": "",
+      "description": "The length of the buffer for the freshness to get in bytes."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN CAN FD FlexRay Ethernet",
+      "CAN CAN FD FlexRay Ethernet",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostSetTxLightPower",
+  "category": "MOST",
+  "title": "mostSetTxLightPower",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetTxLightPower.htm",
+  "syntax": [
+    "long mostSetTxLightPower(long channel, long power)"
+  ],
+  "description": [
+    "Sets the intensity of the light at the Fiber Optical Transmitter (FOT).",
+    "The result is reported by means of the callback function OnMostStress()."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the interface to be driven"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

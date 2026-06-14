@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "VTIL_EditStringValue, VTIL_ChangeStringValueMsg",
+  "category": "ISO11783",
+  "title": "VTIL_EditStringValue, VTIL_ChangeStringValueMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILEditStringValue.htm",
+  "syntax": [
+    "long VTIL_EditStringValue(dword objectId, char value[], dword duration); // form 1"
+  ],
+  "description": [
+    "Editing of an Input String object.",
+    "The VTIL_EditStringValue methods simulate the selection, opening, value modification and closing of the Input String object. The corresponding VT messages are sent. If the object is already selected or opened for input, then the steps Select, Open and Close are skipped.",
+    "The VTIL_ChangeStringValueMsg methods send only the VT Change String Value message (without influencing any button or input object and without triggering any event in the Virtual Terminal)."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_EditStringValue (VT, 301, \"text\", 2000);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2102: TestStepFail(\"Invalid object!\"); break;\n  case -2104: TestStepFail(\"Currently there is no active Working Set!\"); break;\n  case -2106: TestStepFail(\"Currently there is no active Data or Alarm mask!\"); break;\n  case -2115: TestStepFail(\"VT works in passiv mode therefore you cannot select objects!\"); break;\n  case -2117: TestStepFail(\"Failed to open object for editing!\"); break;\n  case -2118: TestStepFail(\"Object is no Input String object!\"); break;\n  case -2120: TestStepFail(\"Failed to edit object because it is disabled!\"); break;\n  case -2121: TestStepFail(\"Button is not available in the current  context!\"); break;\n  default: TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

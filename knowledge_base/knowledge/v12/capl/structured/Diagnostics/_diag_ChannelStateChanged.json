@@ -1,0 +1,58 @@
+{
+  "page_type": "function",
+  "name": "_diag_ChannelStateChanged",
+  "category": "Diagnostics",
+  "title": "_diag_ChannelStateChanged",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagChannelStateChanged.htm",
+  "syntax": [
+    "_diag_ChannelStateChanged(long newState)"
+  ],
+  "description": [
+    "Indicates the state of the diagnostic channel."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "ClosedChannel not opened yet or already closed."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "OpenedChannel opened but no request successfully send yet or the attempt to send a request failed."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "ConnectedRequest successfully send, no response received yet or expected response missed."
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "OnlineRequest and response successfully send and received."
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "ClosePendingClose requested but still pending, state Closed will follow."
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "ConnectPendingStartCommunication requested but still pending, if succeed state Connected will follow, otherwise state Opened."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_diag_ChannelStateChanged(long newState)\n{\n   gCurrentChannelState = newState;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

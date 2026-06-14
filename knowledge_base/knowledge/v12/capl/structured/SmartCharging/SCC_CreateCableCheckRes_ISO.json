@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCableCheckRes_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCableCheckRes_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCableCheckRes_Iso.htm",
+  "syntax": [
+    "long SCC_CreateCableCheckRes_ISO ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, char StatusCode[], char Notification[], long EVSEProcessing )"
+  ],
+  "description": [
+    "Creates a Cable Check Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

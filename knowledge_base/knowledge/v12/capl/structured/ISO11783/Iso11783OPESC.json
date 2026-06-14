@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPESC",
+  "category": "ISO11783",
+  "title": "Iso11783OPESC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPESC.htm",
+  "syntax": [
+    "long Iso11783OPESC( dword ecuHandle );"
+  ],
+  "description": [
+    "The function aborts user input on the Virtual Terminal. A ESC command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPESC( \r\n ecuHandle );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

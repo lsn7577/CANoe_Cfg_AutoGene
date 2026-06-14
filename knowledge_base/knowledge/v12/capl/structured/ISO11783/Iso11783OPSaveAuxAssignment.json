@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPSaveAuxAssignment",
+  "category": "ISO11783",
+  "title": "Iso11783OPSaveAuxAssignment",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPSaveAuxAssignment.htm",
+  "syntax": [
+    "long Iso11783OPSaveAuxAssignment( dword ecuHandle, char filename[] );"
+  ],
+  "description": [
+    "The function saves the current auxiliary input assignment as \"Preferred Auxiliary Input Assignment\" in an ini file.",
+    "With the function Iso11783OPLoadAuxAssignment the \"Preferred Assignment\" can be load and used again."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "dword handle = 0;\nhandle = Iso11783CreateECU( gECUName );\n[...]\nIso11783OPSaveAuxAssignment( handle, \"Sprayer.INI\");\n[...]"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

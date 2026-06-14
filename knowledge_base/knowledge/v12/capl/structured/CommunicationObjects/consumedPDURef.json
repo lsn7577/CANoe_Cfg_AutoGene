@@ -1,0 +1,82 @@
+{
+  "page_type": "function",
+  "name": "consumedPDURef",
+  "category": "CommunicationObjects",
+  "title": "consumedPDURef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionConsumedPDURef.htm",
+  "syntax": [
+    "consumedPDURef * <var>"
+  ],
+  "description": [
+    "References a consumed PDU endpoint, which means a specific combination of consumer and provider for a service PDU on consumer side."
+  ],
+  "parameters": [
+    {
+      "name": "PDU",
+      "type": "",
+      "description": "PDU of a service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "consumedPDURef MirrorAdjustment.StatusPDU pdu1;\npdu1 = MirrorAdjustment.consumerSide[CANoe,LeftMirror].StatusPDU;\npdu1.AbstractRequestPDU();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the consumed endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the consumed endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SubscriptionState State of the PDU subscription: Unavailable: there’s no connection between consumer and provider, the PDU cannot be subscribed. Available: the PDU can be subscribed, but currently is not subscribed. Subscribed: the PDU is subscribed.",
+        "enum",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<SignalName> Accesses the specified signal on the PDU.",
+        "<Data type of the signal>"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

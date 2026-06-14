@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "A664GetFunctionalStatus",
+  "category": "ADFX",
+  "title": "A664GetFunctionalStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664GetFunctionalStatus.htm",
+  "syntax": [
+    "BYTE A664GetFunctionalStatus (PDU aPDU)"
+  ],
+  "description": [
+    "This function returns the Functional Status (FS) of a AFDX-PDU (FDS) if the FDS-mode is used. In frameMode use FS-signals instead.",
+    "Note: This function is only available in PDU-mode."
+  ],
+  "parameters": [
+    {
+      "name": "aPDU",
+      "type": "",
+      "description": "the AFDX-PDU (FDS) of which the status is to be retrieved"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Examine the Functional Status of any received FDS:"
+    ],
+    "code": "on PDU * {\n{\n  int fs = 0;\n  fs = a664GetFunctionalStatus(this);\n  writeEx(-3,1, \"FS of received PDU %s: %d\", this.name, fs);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

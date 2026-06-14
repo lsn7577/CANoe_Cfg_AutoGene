@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetServiceParameterSetData",
+  "category": "SmartCharging",
+  "title": "SCC_GetServiceParameterSetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetServiceParameterSetData.htm",
+  "syntax": [
+    "void SCC_GetServiceParameterSetData ( long Index, long& ParameterSetID, long& ParameterCount )"
+  ],
+  "description": [
+    "Gets the ParameterSetID with the specified list index < ParameterSetCount."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "ParameterSetID and number of parameters of the parameter set with the specified list index < ParameterSetCount (via reference).",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

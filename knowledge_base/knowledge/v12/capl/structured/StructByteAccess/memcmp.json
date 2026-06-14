@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "memcmp",
+  "category": "StructByteAccess",
+  "title": "memcmp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/StructByteAccess/Functions/CAPLfunctionMemCmp.htm",
+  "syntax": [
+    "int memcmp(struct s, byte buffer[]); // form 1"
+  ],
+  "description": [
+    "Compares the bytes of the parameters. In form 3, both structs must have the same type."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "A struct"
+    }
+  ],
+  "return": "0 if the bytes are equal; a value different from 0 if they are unequal",
+  "example": {
+    "description": [],
+    "code": "byte data[4];\nstruct WrapDword\n{\n   dword dw;\n} dwordWrapper;\n\nint i;\nfor (i = 0; i < elcount(data); ++i)\n   data[i] = i;\ndwordWrapper.dw = 0x03020100;\nif (memcmp(dwordWrapper, data) == 0)\nwrite(\"Data represents the number: Little Endian is used.\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

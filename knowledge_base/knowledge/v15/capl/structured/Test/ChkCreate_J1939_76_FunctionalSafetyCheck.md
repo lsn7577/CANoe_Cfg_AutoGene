@@ -1,0 +1,57 @@
+# ChkCreate_J1939_76_FunctionalSafetyCheck
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+dword ChkCreate_J1939_76_FunctionalSafetyCheck(Node producerNode, char[] callback1);
+dword ChkCreate_J1939_76_FunctionalSafetyCheck(unsigned long producerAddress, char[] callback1);
+dword ChkStart_J1939_76_FunctionalSafetyCheck(Node producerNode, char[] callback1);
+dword ChkStart_J1939_76_FunctionalSafetyCheck(unsigned long producerAddress, char[] callback1);
+```
+
+## Description
+
+Observes the J1939-76 functional safety communication according J1939-76. It is possible to observe all nodes or only a specific node.
+
+During the check, the following verifications are made:
+
+A SHM is always recognized by the unique PGN 3584 (0E00h). After a SHM has been received, the check recognizes the associated SDM by means of the CAN ID (without priority) contained in the payload of the SHM and can then perform the validation.
+
+The database attribute FsJ1939NeedsSHM is used to check for a missing SHM. For each PG where the attribute has the value True, a SHM must have preceded.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| producerNode | Producer node from database. |
+| producerAddress | Address of the producer ECU. Possible values: 0 – 253: Observe the J1939-76 communication of the ECU with this address 254, -1 (or 0xFFFFFFFF): Observe the J1939-76 communication of all ECUs |
+| callback1 | This parameter is optional. Name of the callback which is called when the check fails. Signature: void Callback( dword checkId ) |
+| callback2 | This parameter is optional. Name of the callback which is called when the check fails. Signature: void Callback( TestCheck check ) |
+
+## Example
+
+```c
+dword checkId;
+checkId = ChkStart_J1939_76_FunctionalSafetyCheck(N1);
+TestAddCondition(checkId);
+// sequence of different actions and waiting conditions
+TestWaitForTimeout(1000);
+TestRemoveCondition(checkId);
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 15 | 15 | — | — | 6 |
+| Restricted To | — | J1939 | J1939 | — | — | J1939 |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | — | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

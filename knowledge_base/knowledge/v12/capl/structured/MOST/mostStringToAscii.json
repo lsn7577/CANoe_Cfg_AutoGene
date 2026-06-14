@@ -1,0 +1,42 @@
+{
+  "page_type": "function",
+  "name": "mostStringToAscii",
+  "category": "MOST",
+  "title": "mostStringToAscii",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTStringToAscii.htm",
+  "syntax": [
+    "long mostStringToAscii(byte sourceData[], long sourceDatalen, char buffer[], long buffersize)"
+  ],
+  "description": [
+    "Convert MOST string to ASCII string. Unsupported characters in the input data are ignored.",
+    "Supported encodings:",
+    "0x00",
+    "Unicode, UTF16",
+    "0x01",
+    "ISO 8859/15 8 bit",
+    "0x02",
+    "Unicode, UTF8"
+  ],
+  "parameters": [
+    {
+      "name": "sourceData",
+      "type": "",
+      "description": "A buffer containing the MOST string to be decoded."
+    }
+  ],
+  "return": ">=0: number of converted characters",
+  "example": {
+    "description": [
+      "Output: ASCII: abc"
+    ],
+    "code": "byte data[9] = {0x00,0x00,0x61,0x00,0x62,0x00,0x63,0x00,0x00);\nchar buffer[200];\nif(0 < mostStringToAscii(data, elcount(data), buffer, elcount(buffer)))\n  write(\"ASCII: %s\", buffer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

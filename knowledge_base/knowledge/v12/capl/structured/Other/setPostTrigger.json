@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "setPostTrigger",
+  "category": "Other",
+  "title": "setPostTrigger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetPostTrigger.htm",
+  "syntax": [
+    "setPostTrigger(long PostTriggerTime);"
+  ],
+  "description": [
+    "Sets the posttrigger of the logging. The posttrigger set with this function is valid until the end of the measurement or until the next call of this function.",
+    "Note: The function stopLogging() does not consider the setting with function ‘setPostTrigger’, use the CAPL function trigger() instead."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  SetPreTrigger(5000);\n   SetPostTrigger(5000);\n}\n\non key 'x'\n{\n  //start and stop of all CAPL trigger/Logging blocks with pre and post trigger settings\n   trigger();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

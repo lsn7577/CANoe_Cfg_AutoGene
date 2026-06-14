@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestResetSysVarValue",
+  "category": "Test",
+  "title": "TestResetSysVarValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestResetSysVarValue.htm",
+  "syntax": [
+    "long TestResetSysVarValue (sysvar aSysVar);"
+  ],
+  "description": [
+    "Resets the system variable to initial value. If no initial value is defined, the system variable is not set."
+  ],
+  "parameters": [
+    {
+      "name": "aSysVar",
+      "type": "",
+      "description": "System variable that should be reset."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": "// check reaction of signal “LockState” after crash\n@sysvar::Error::SysVarCrashDetected = 1;\nTestWaitForTimeout(100);\nif ($LockState !=  Unlocked)\n    TestStepFail(“Doors are locked after crash is detected!”);\n\n// reset the crash system variable\nTestResetSysVarValue(sysvar::Error::SysVarCrashDetected);\nTestWaitForTimeout(200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

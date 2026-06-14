@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMRestartAuthentication",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMRestartAuthentication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimRestartAuthentication.htm",
+  "syntax": [
+    "long Iso11783IL_TIMRestartAuthentication(dbNode server); // form 1"
+  ],
+  "description": [
+    "This function restarts the authentication process of a client/server communication.",
+    "The client restarts the authentication by setting the (Re)Start authentication status bit of the Auth_ClientAuthenticationStatusClient message.",
+    "This function only succeeds if the authentication process is currently active (especially if current state is Authentication error)."
+  ],
+  "parameters": [
+    {
+      "name": "server",
+      "type": "",
+      "description": "The CAPL function restarts authentication for the connection to this server."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

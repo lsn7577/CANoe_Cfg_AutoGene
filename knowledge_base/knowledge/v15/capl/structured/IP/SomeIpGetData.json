@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetData",
+  "category": "IP",
+  "title": "SomeIpGetData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetData.htm",
+  "syntax": [
+    "dword SomeIpGetData( dword messageHandle, dword bufferLength, char buffer[] ); // form 1",
+    "dword SomeIpGetData( dword messageHandle, dword bufferLength, byte buffer[] ); // form 2",
+    "dword SomeIpGetData( dword messageHandle, dword bufferLength, struct buffer[] ); // form 3"
+  ],
+  "description": [
+    "This function can be used to query the raw data of a SOME/IP message."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the received SOME/IP message (see OnSomeIpMessage)"
+    },
+    {
+      "name": "bufferLength",
+      "type": "",
+      "description": "Size of the buffer in bytes"
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Data are copied to this buffer"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void OnSomeIpMessage( DWORD messageHandle )\n{\n  BYTE buffer[200];\n  BYTE bufferMsg[200];\n  DWORD count;\n  DWORD size;\n  CHAR dest[200];\n\n  count = 0;\n\n  // Check if message is a non Service Discovery message\n  if(SomeIpGetMessageId(messageHandle) != 0xFFFF8100)\n  {\n    // Check if message is a Notification message\n    if(SomeIpGetMessageType(messageHandle) == 0x2)\n    {\n      write(\"SOME/IP Notification message reveived!\\n\");\n\n      // write whole message data (including header and payload) to write window\n      size = SomeIpSerializeMessage(messageHandle,elcount(bufferMsg),bufferMsg);\n      write(\"Message size: %d\",size);\n      snprintf(dest, elcount(dest), \"%s\",\"\");\n      for(count = 0; count < size; count++)\n      {\n        snprintf(dest, elcount(dest), \"%s %02x\",dest,bufferMsg[count]);\n      }\n      write(\"Serialized Message: %s\",dest);\n\n      // write only message payload to write window\n      size = SomeIpGetData(messageHandle,elcount(buffer),buffer);\n      write(\"Payload size: %d\",size);\n      snprintf(dest, elcount(dest), \"%s\",\"\");\n      for(count = 0; count < size; count++)\n      {\n        snprintf(dest, elcount(dest), \"%s %02x\",dest,buffer[count]);\n      }\n      write(\"Serialized Payload: %s\\n\",dest);\n    } // if\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

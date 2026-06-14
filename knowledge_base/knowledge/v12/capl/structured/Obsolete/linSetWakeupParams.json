@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linSetWakeupParams",
+  "category": "Obsolete",
+  "title": "linSetWakeupParams",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSetWakeupParams.htm",
+  "syntax": [
+    "long linSetWakeupParams (long wakeupDelimiter, long numberOfWakeupFrames)"
+  ],
+  "description": [
+    "This command determines the conditions under which the LIN hardware can be reactivated (leaves the Sleep mode).",
+    "Default wake-up delimiter depends on the hardware settings (see Hardware Configuration: LIN) while the number of expected wake-up frames is 1.",
+    "Main use case for this function is to simulate slow Master, which does not wake-up until an expected Wakeup frame burst.",
+    "When LIN hardware is not in Master mode calling this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "WakeupDelimiter",
+      "type": "",
+      "description": "This parameter specifies the wake-up delimiter length, i.e. the time between the end of wake-up frame and the first sent header."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "// simulate LIN 2.0 'slow' Master\n...\n// configure LIN hardware to wake-up after 3 wake-up frames and to send first header\n// 100 ms after wakeup\nlinSetWakeupParams(100, 3);\n// send wake-up frame 3 times with 150 ms delay between 2 consecutive frames\nlinSendWakeup(150, 3);\n..."
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

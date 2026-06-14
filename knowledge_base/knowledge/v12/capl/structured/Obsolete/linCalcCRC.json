@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linCalcCRC",
+  "category": "Obsolete",
+  "title": "linCalcCRC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINCalcCRC.htm",
+  "syntax": [
+    "unsigned int linCalcCRC(unsigned long numberOfDataBytes, unsigned char dataBytes[]);"
+  ],
+  "description": [
+    "Calculates the correct checksum for the passed data."
+  ],
+  "parameters": [
+    {
+      "name": "numberOfDataBytes",
+      "type": "",
+      "description": "Number of valid bytes to be considered in the data field that follows."
+    }
+  ],
+  "return": "Calculated checksum.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

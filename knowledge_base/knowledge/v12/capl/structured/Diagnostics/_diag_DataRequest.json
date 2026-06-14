@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_diag_DataRequest",
+  "category": "Diagnostics",
+  "title": "_diag_DataRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagDataRequest.htm",
+  "syntax": [
+    "void _diag_DataRequest (BYTE data[], dword count, long furtherSegments);"
+  ],
+  "description": [
+    "With this function CANoe triggers the CAPL interface to transmit data."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "The data of the diagnostic primitive (byte stream of request or response) that the node should transmit on the bus. This may be several hundred or thousand bytes, therefore a suitable transport protocol has to be used here to forward the data."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnLocalSecurityPDUPreTx",
+  "category": "Obsolete",
+  "title": "OnLocalSecurityPDUPreTx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/OnLocalSecurityPDUPreTx.htm",
+  "syntax": [
+    "void OnLocalSecurityPDUPreTx(char pduName[], dword dataId, byte payload[], dword payloadLength, qword& authInfo, dword authInfoBitLength, qword& freshness, dword freshnessBitLength)"
+  ],
+  "description": [
+    "This callback handler is called, after all data updates and the automatic Authenticator (CMAC) calculation has be done. Payload, AuthInfo and freshness can be modified in this handler before the transmission starts. Fault injection and evaluation of new algorithm are typical examples."
+  ],
+  "parameters": [
+    {
+      "name": "pduName",
+      "type": "",
+      "description": "PDU name"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "/// This callback can be used to inject faults.\n/// This callback is called after the CMAC is calculated for a PDU to send\n/// You can change the truncated freshness, the truncated calculated authenticator or the payload - the values which are part of the Secured-I-PDU\nvoid OnLocalSecurityPDUPreTx(char pduName[], dword dataId, byte payload[], dword payloadLength, qword& truncatedAuthInfo, dword truncatedAuthInfoBitLength, qword& truncatedFreshness, dword truncatedFreshnessBitLength)\n{\n  if (dataId == 1)\n  {\n    truncatedAuthInfo = 0x123456; // change cmac\n    // truncatedFreshness = 0x02; // change freshness\n    // payload[0] = 0xFF; // change payload;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

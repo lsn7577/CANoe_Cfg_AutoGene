@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxInitProtocol",
+  "category": "ADFX",
+  "title": "AfdxInitProtocol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxInitProtocol.htm",
+  "syntax": [
+    "long AfdxInitProtocol( long packet, char protocolDesignator[] ); // form 1"
+  ],
+  "description": [
+    "This function initializes the protocol for a packet. If necessary further needed lower protocols are initialized, e.g. IPv4. Already initialized higher protocols are deleted."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "testfunction Packet_InitProtocolICMP( long expectError, char expectErrorText[] )\n{\n  //\n  // Create AFDX gPacket\n  //\n  gPacket_Result = AfdxInitProtocol( gPacket[gPacketSelect], \"afdx\", \"icmp\" );\n\n  if (expectError == 0)\n  {\n    if (gPacket_Result != 0)\n    {\n      snprintf( gPacket_Text, elcount(gPacket_Text), \"AfdxInitProtocol failed, result %d\", gPacket_Result );\n      TestStepFail( gPacket_Text );\n      Packet_ReportLastError();\n      return;\n    }\n    else\n    {\n      TestStepPass();\n    }\n  }\n  else\n  {\n    if (Packet_CheckExpectError( \"AfdxInitProtocol\", expectError, expectErrorText ))\n    {\n      TestStepPass();\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

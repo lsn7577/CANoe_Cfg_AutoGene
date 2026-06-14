@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapter",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapter.htm",
+  "syntax": [
+    "dword IpGetAdapter( long channel);"
+  ],
+  "description": [
+    "The function returns the index of the adapter which is attached to the given channel. For a VLAN adapter the channel and the vlanId has to be given."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "The 1-based Ethernet channel index."
+    }
+  ],
+  "return": "The adapter index or 0 if there is no adapter for the given channel or VLAN available.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\nconst long kMAX_CHANNEL = 64;\nconst word kMAX_VLAN = 4094;\n}\n\non start\n{\n  long channel;\n  word vlanId;\n  word prio;\n  dword ifIndex;\n\n  for(channel = 1; channel <= kMAX_CHANNEL; channel++)\n  {\n    ifIndex = IpGetAdapter(channel);\n    if(ifIndex > 0)\n    {\n      write(\"Index of channel %d adapter: %d\", channel, ifIndex);\n      for(vlanId = 1; vlanId <= kMAX_VLAN; vlanId++)\n      {\n        ifIndex = IpGetAdapter(channel, vlanId);\n        if(ifIndex > 0)\n        {\n          write(\"Index of vlan %d = %d\", vlanId, ifIndex );\n        }\n      }\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

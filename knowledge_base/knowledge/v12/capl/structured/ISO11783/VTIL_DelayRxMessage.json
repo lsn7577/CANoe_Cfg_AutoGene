@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "VTIL_DelayRxMessage",
+  "category": "ISO11783",
+  "title": "VTIL_DelayRxMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILDelayRxMessage.htm",
+  "syntax": [
+    "long VTIL_DelayRxMessage(dword pgn, dword sourceAddress, qword filterMask, qword filterValue, dword delay); // form 1"
+  ],
+  "description": [
+    "A message described in the function is only forwarded to the simulation node after the defined delay. As a result, the simulated node reacts to the message only after this delay.",
+    "You can also define a system variable which is set if the specified message is received.",
+    "To revert this command you can use VTIL_ResetDelayedRxMessage or VTIL_ResetAllDelayedRxMessage."
+  ],
+  "parameters": [
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "Parameter Group Number (with data page) of the message to be delayed."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "—"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

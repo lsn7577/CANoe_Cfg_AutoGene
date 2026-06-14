@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForNextCall",
+  "category": "CommunicationObjects",
+  "title": "TestWaitForNextCall",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CommunicationObjects/Functions/CAPLfunctionTestWaitForNextCall.htm",
+  "syntax": [
+    "long TestWaitForNextCall(providedMethodRef * method, dword timeoutMs); // form 1",
+    "long TestWaitForNextCall(distObjMethodRef * method, dword timeoutMs); // form 2"
+  ],
+  "description": [
+    "Waits for the next call of the method at the simulated provider. You may use a specific endpoint combination to wait for the call of a specific consumer or the combination [all,<provider>] to wait for a call of any consumer.",
+    "You can get information about the call with the CurrentCCO property or through the LatestCall value (both at the method endpoint)."
+  ],
+  "parameters": [
+    {
+      "name": "method",
+      "type": "",
+      "description": "Method provider where the call is awaited."
+    },
+    {
+      "name": "timeoutMS",
+      "type": "",
+      "description": "Timeout in milliseconds."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long ret;\nprovidedMethodRef MirrorAdjustment.Adjust method;\n\nmethod = MirrorAdjustment.providerSide[all,LeftMirror].Adjust;\nret = TestWaitForNextCall(method, 200);\nif (ret == 1)\n{\n  int x;\n  x = method.CurrentCCO.deltaX;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "15",
+      "14",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

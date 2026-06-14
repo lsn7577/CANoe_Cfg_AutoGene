@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "writeTextColor",
+  "category": "Other",
+  "title": "writeTextColor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWriteTextColor.htm",
+  "syntax": [
+    "void writeTextColor(dword sink,dword red, dword green, dword blue)"
+  ],
+  "description": [
+    "Sets the color for text of the specified page in the Write Window.",
+    "You can use the following constants for the target identifier:",
+    "In addition you can use one of the target identifiers returned by the function writeCreate.",
+    "The color settings have also an effect on the All tab of the Write Window."
+  ],
+  "parameters": [
+    {
+      "name": "sink",
+      "type": "",
+      "description": "The target identifier of the page on which the color settings should have an effect."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "WriteTextColor(0,255,0,0);\nWriteLineEx(0,1,\"This is red text\");\nWriteTextBkgColor(0,0,255,0);\nWriteLineEx(0,1,\"This is red text with green background\");\nWriteTextColor(0,0,0,0);\nWriteTextBkgColor(0,255,255,255);\nWriteLineEx(0,1,\"This is black text with white background\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

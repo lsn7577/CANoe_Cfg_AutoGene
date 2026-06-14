@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForIdentifySlaveResponse",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForIdentifySlaveResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForIdentifySlaveResp.htm",
+  "syntax": [
+    "long coTfsLssWaitForIdentifySlaveResponse( void );"
+  ],
+  "description": [
+    "This function waits for the Identify slave protocol response message."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* waits for identify slave protocol response message */\nif (coTfsLssWaitForIdentifySlaveResponse() == 1) {\n  /* waits for LSS identify slave protocol response message */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

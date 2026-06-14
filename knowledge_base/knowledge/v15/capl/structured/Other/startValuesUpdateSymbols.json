@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "startValuesUpdateSymbols",
+  "category": "Other",
+  "title": "startValuesUpdateSymbols",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionStartValuesUpdateSymbols.htm",
+  "syntax": [
+    "void startValuesUpdateSymbols(char groupName[]);"
+  ],
+  "description": [
+    "Sets the variables/signals contained in a specific group to their individual start values in the CANoeStart Value Window."
+  ],
+  "parameters": [
+    {
+      "name": "groupName",
+      "type": "",
+      "description": "Name of a group containing variables/signals that are set to their individual start values. If groupName is equal to \"\", then all variables/signals contained in the Start Values Window are set to their individual start values."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key '3'\n{\nstartValuesUpdateSymbols(\"Start values group2\");\n}\n\non key '4'\n{\nstartValuesUpdateSymbols(\"\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0",
+      "10.0",
+      "13.0",
+      "—",
+      "14",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

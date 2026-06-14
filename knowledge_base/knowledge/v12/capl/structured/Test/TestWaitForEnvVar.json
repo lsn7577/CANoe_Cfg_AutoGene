@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForEnvVar",
+  "category": "Test",
+  "title": "TestWaitForEnvVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForEnvVar.htm",
+  "syntax": [
+    "long TestWaitForEnvVar(dbEnvVar aEnvVar, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the description of the specified environment variable (aEnvVar or with the name aEnvVarName). Should the event not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "aEnvVar",
+      "type": "",
+      "description": "Environment variable that should be awaited"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "// waiting point is discontinued immediately\nlong result;\nputValue (evMyEnvVar, 1);\nresult = TestWaitForEnvVar (evMyEnvVar, 1000); // Does not wait, is immediately discontinued by an environment variable change!"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

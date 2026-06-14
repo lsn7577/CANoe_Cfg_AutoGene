@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbCloseTalker",
+  "category": "IP",
+  "title": "AvbCloseTalker",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbCloseTalker.htm",
+  "syntax": [
+    "dword AvbCloseTalker(dword talkerHandle);"
+  ],
+  "description": [
+    "The function closes the Talker. Upon successful completion the Talker refer-enced by the passed handle is no longer valid."
+  ],
+  "parameters": [
+    {
+      "name": "talkerHandle",
+      "type": "",
+      "description": "The handle of the Talker to be closed."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

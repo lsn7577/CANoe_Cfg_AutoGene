@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOSetSdoAbortOnError",
+  "category": "CANopen",
+  "title": "coTfsSDOSetSdoAbortOnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoSetSdoAbortOnError.htm",
+  "syntax": [
+    "long coTfsSDOSetSdoAbortOnError( dword setSdoAbort );"
+  ],
+  "description": [
+    "This function enables/disables sending a SDO abort code by the test module if a SDO access by SDO Level 2 functions or other test functions, that implicitly uses the SDO functionality, has failed. The setting is used until a new call of this function. For this the node-ID of the test module and the SDO abort code 0x8000 0000 (general error) is used."
+  ],
+  "parameters": [
+    {
+      "name": "setSdoAbort",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsSDOSetSdoAbortOnError (1); /* if a SDO error is encountered, the SDO abort message will be sent from now */\n\ncoTfsSdoUpload(0x1000,0);\n\n/* set default value – disable automatic sending of SDO abort messages by the test module */\ncoTfsSDOSetSdoAbortOnError (0);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

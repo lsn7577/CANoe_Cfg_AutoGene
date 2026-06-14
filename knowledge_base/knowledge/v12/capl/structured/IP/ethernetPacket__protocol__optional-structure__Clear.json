@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::protocol::optional-structure::Clear",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::optional-structure::Clear",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionProtocolOptionalStructureClear.htm",
+  "syntax": [
+    "long ethernetPacket.<protocol>.<optional-structure>.Clear();"
+  ],
+  "description": [
+    "Removes a protocol option from the Ethernet packet."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket msgChannel1.*\n{\n  if (this.ipv6.fragment.IsAvailable()\n  {\n    ethernetPacket pkt;\n\n    // copy packet\n    pkt            = this;\n    pkt.msgChannel = 2;\n\n    // remove option fragment\n    pkt.ipv6.fragment.Clear();\n\n    // recalculate checksums and output packet\n    pkt.CompletePacket();\n    output( pkt )\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

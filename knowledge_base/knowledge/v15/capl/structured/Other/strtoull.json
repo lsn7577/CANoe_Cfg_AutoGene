@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "strtoull",
+  "category": "Other",
+  "title": "strtoull",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionStrtoull.htm",
+  "syntax": [
+    "int strtoull(char s[], qword& result); // from 1",
+    "int strtoull(char s[], dword startIndex, qword& result); // from 2"
+  ],
+  "description": [
+    "Converts the string s to an unsigned 64bit integer.The number base is",
+    "Whitespace (spaces or tabs) at the start of the string is ignored."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "String to be converted."
+    },
+    {
+      "name": "result",
+      "type": "",
+      "description": "Contains the converted value after the call. The value is 0 if the string can’t be converted to a number. It is the largest possible positive/negative number in case of overflow."
+    },
+    {
+      "name": "startIndex",
+      "type": "",
+      "description": "Position in s where the conversion shall begin."
+    }
+  ],
+  "return": "Otherwise, returns the index of the first character after the number.",
+  "example": {
+    "description": [],
+    "code": "char s[20] = \"123 0xFF\";\nqword number1, number2;\nint res;\nres = strtoull(s, number1);\nwrite(\"number1: %I64u, res: %d\", number1, res); // output: number1: 123, res: 3\nres = strtoull(s, res, number2);\nwrite(\"number2: %I64u, res: %d\", number2, res); // output: number2: 255, res: 8"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.2",
+      "8.2",
+      "13.0",
+      "13.0",
+      "14",
+      "1.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

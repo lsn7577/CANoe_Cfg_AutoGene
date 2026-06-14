@@ -1,0 +1,10 @@
+# LIN: Notes to the Way initial NAD is determined
+
+> Category: `LIN` | Type: `notes`
+
+## Description
+
+If initial NAD is not explicitly specified in the associated database some heuristic is used to determine it. By default, the configured NAD (an attribute defined in the associated database) is taken. If there are schedule tables defined they are searched for corresponding AsssignNAD command and initial NAD is extracted from the parameters of that command.
+
+| Version 15© Vector Informatik GmbH |
+|---|

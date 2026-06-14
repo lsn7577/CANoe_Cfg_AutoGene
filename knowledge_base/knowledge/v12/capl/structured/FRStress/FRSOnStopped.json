@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FRSOnStopped",
+  "category": "FRStress",
+  "title": "FRSOnStopped",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/EventProcedures/CAPLfunctionFRSOnStopped.htm",
+  "syntax": [
+    "long FRSOnStopped(char CallbackName[])"
+  ],
+  "description": [
+    "Registers a callback. The callback will be executed when the session ends. The callback function must be added in the CAPL section callback."
+  ],
+  "parameters": [
+    {
+      "name": "CallbackName",
+      "type": "",
+      "description": "Any desired name can be used as name of the callback function."
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

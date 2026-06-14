@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestValidateTesterConfirmation",
+  "category": "Test",
+  "title": "TestValidateTesterConfirmation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestValidateTesterConfirmation.htm",
+  "syntax": [
+    "long TestValidateTesterConfirmation(char question[], char heading[], long passedButton); // form 1"
+  ],
+  "description": [
+    "Creates a popup window that presents the given string to the tester. The tester can acknowledge the window with Yes, No or Unclear (form (3)).",
+    "The window contains a field for entering a comment that is automatically adopted into the test report.",
+    "The result of the command is reported.",
+    "The function is not allowed in CANoe standalone mode. Errors are reported as error in test system or fail in case of 2-valued verdict concept."
+  ],
+  "parameters": [
+    {
+      "name": "question",
+      "type": "",
+      "description": "Text in the message box."
+    }
+  ],
+  "return": "0: Timeout occurred.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

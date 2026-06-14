@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "mostSetTxLight",
+  "category": "MOST",
+  "title": "mostSetTxLight",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTSetTxLight.htm",
+  "syntax": [
+    "long mostSetTxLight(long channel, long txlight);"
+  ],
+  "description": [
+    "Sets the Light Status at the Fiber Optical Transmitter (FOT)."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the interface to be queried"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "disable FOT: Tx light off"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "enable FOT: TimingMaster: Modulated light on TimingSlave/Bypass: Tx light = Rx light"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "enable FOT: Constant light on (only available for VN2600/VN2610/VN2640/OptoLyzerOL3150o) For OptoLyzerOL3150o:The stress network interface controller (NIC) must have its bypass opened ( see mostSetStressNodeParameter )."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.1",
+      "5.1",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25, MOST50, MOST150 Not in StopMeasurement",
+      "MOST25, MOST50, MOST150 Not in StopMeasurement",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

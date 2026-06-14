@@ -1,0 +1,21 @@
+{
+  "page_type": "notes",
+  "name": "Example: Sequencial File Access",
+  "category": "Other",
+  "title": "Example: Sequencial File Access",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionsExampleSequentialFileAccess.htm",
+  "syntax": [],
+  "description": [
+    "// In this CAPL program, the test file test.dat will be// opened on start of measurement. After pressing the key// ‘a’, the data will be copied bytewise to the message// 100 and is transmitted in blocks of 8 data bytes every// 10 ms. Pressing the key ‘r’ rewinds the data file to// the beginning and then restarts the transmission.variables {message 100 msg = {DLC=8};char filename[50] = \"test.dat\";long handle;msTimer ReadNextBlock;}// open data file on start of measurementon start {handle = seqFileLoad(filename);if (handle <= 0) {write (\"error opening file\");write(\"Handle = %d\", handle);}else {write (\"file %s opened\",filename);write (\"Press key ‘a’ to start reading the file\");}}// close data file on stop of measurementon stopMeasurement{ if (handle > 0) { if (seqFileClose(handle) == 0) { write (\"file closed\"); }else { write (\"error closing file\"); }}}// start file transmissionon key 'a'{setTimer(ReadNextBlock,10);}// reset file transmissionon key 'r'{seqFileRewind(handle);setTimer(ReadNextBlock,10);}// transmit data file in blocks of 8 byteson timer ReadNextBlock{int n;char buffer[8]= \" \";n = seqFileGetBlock(buffer,8,handle);msg.byte(0)= buffer[0];msg.byte(1)= buffer[1];msg.byte(2)= buffer[2];msg.byte(3)= buffer[3];msg.byte(4)= buffer[4];msg.byte(5)= buffer[5];msg.byte(6)= buffer[6];msg.byte(7)= buffer[7];output(msg);if (n >= 0) { setTimer(ReadNextBlock,10); }else { write(\"No character read\"); }}"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

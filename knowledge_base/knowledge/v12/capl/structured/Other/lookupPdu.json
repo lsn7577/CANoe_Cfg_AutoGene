@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "lookupPdu",
+  "category": "Other",
+  "title": "lookupPdu",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionlookupPdu.htm",
+  "syntax": [
+    "dbPDU * lookupPDU(char pduName[]);"
+  ],
+  "description": [
+    "Searches for a PDU definition in the database(s). If the PDU is not found or if the name is not unique, test modules/units report an error in test system while simulation/analysis nodes write a warning into the Write Window, and the function returns an invalid dbPDU.",
+    "It is recommended to use this function only in special cases or during measurement start, since searching for the database definition may impact realtime performance."
+  ],
+  "parameters": [
+    {
+      "name": "pduName",
+      "type": "",
+      "description": "The qualified name of the PDU. The syntax is [NetworkName::][NodeName::]PDUName, i.e., both network name and node name are optional."
+    }
+  ],
+  "return": "The found unique PDU definition or an invalid object.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

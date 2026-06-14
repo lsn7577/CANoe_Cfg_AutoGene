@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "PeakLoad",
+  "category": "CAN",
+  "title": "PeakLoad",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionPeakLoad.htm",
+  "syntax": [
+    "long PeakLoad ()",
+    "CANx.PeakLoad"
+  ],
+  "description": [
+    "Returns the peakload of channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Peakload of channel x in percent.",
+  "example": {
+    "description": [],
+    "code": "write (\"CAN1 peakload = %d\", CAN1.PeakLoad);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

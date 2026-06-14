@@ -1,0 +1,78 @@
+{
+  "page_type": "concept",
+  "name": "Compatibility",
+  "category": "Panel",
+  "subcategory": "General",
+  "title": "Compatibility",
+  "source": "chm_extract/PanelDesigner/Topics/General/PanelDesignerCompatibility.htm",
+  "intro": [],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Loading panel files in CANoe/CANalyzer",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Note"
+        ],
+        "tables": [
+          [
+            [
+              "Note CANalyzer pro/CANalyzer exp supports: Display elements with assigned signals and system variables Control elements with assigned system variables CANalyzer fun supports only display elements with assigned signals System variables are not supported by CANalyzer fun. In CANalyzer all control and display elements with assigned environment variables will automatically be deactivated, due to the fact that environment variables are not supported in CANalyzer."
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Loading panel files from newer versions",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Note",
+          "Only functions of this version are supported. Functions of the newer version will automatically be deactivated.",
+          "If you save a loaded panel file with this version, all functions of the new version will get lost.",
+          "Solution:",
+          "Install the current Service Pack for version 7.0. You can find this on www.vector.com"
+        ],
+        "tables": [
+          [
+            [
+              "Note Only functions of this version are supported. Functions of the newer version will automatically be deactivated. If you save a loaded panel file with this version, all functions of the new version will get lost."
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Loading panel files in Panel Designer and Panel Editor",
+      "level": 2,
+      "content": {
+        "paragraphs": [],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Convert panels into Panel Designer panels",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Panel Editor panels (*.cnp) and Remote Control panels (*.oci) can be converted into Panel Designer panels using the Import function.",
+          "Restricted Mode | Panel Desiger / Panel Editor"
+        ],
+        "tables": [
+          [
+            [
+              "Version 12.0© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetDHPublicKey",
+  "category": "SmartCharging",
+  "title": "SCC_GetDHPublicKey",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetDHPublicKey.htm",
+  "syntax": [
+    "void SCC_GetDHPublicKey ( byte Key[], char IdAttr[] )"
+  ],
+  "description": [
+    "Reads the Diffie-Hellman parameter (public key) from a Certificate Installation/Update Response or a Certificate Installation/Update Request (the latter only for versions other than ISO 15118)."
+  ],
+  "parameters": [
+    {
+      "name": "Key",
+      "type": "",
+      "description": "Value of element DHPublicKey (ISO 15118) resp. DHParams (other versions)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

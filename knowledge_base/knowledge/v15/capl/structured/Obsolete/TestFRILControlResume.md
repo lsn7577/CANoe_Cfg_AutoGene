@@ -1,0 +1,24 @@
+# TestFRILControlResume
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+-1: General error.
+
+OEM Package based Fault Injection Functions
+
+| Deprecated Function This function is deprecated and has been replaced by ILNodeControlResume |  |  |  |  |
+|---|---|---|---|---|
+| Note This function is not available for all OEM packages - depends on the CANoeIL. |  |  |  |  |
+| Function Syntax | long TestFRILControlResume (char aNodeName[]) |  |  |  |
+| Function | Restarts the Interaction Layer of the selected simulation node. This function influences a simulation node with an assigned CANoe Interaction Layer. |  |  |  |
+| Parameters | aNodeName Name of the node that should restart its the Interaction Layer. |  |  |  |
+| Return Values | 0: No error. |  |  |  |
+| -1: General error. |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 7.6 SP3 - 8.2 SP2 | FlexRay Test nodes | — | • |  |
+| Example // stops the interaction layer of ECU A for 2000ms.TestFRILControlWait (“ECU_A”);TestWaitForTimeout(2000);TestFRILControlResume ((“ECU_A”); |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

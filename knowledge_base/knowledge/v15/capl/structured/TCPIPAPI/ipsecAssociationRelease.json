@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "ipsecAssociationRelease",
+  "category": "TCPIPAPI",
+  "title": "ipsecAssociationRelease",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIpsecAssociationRelease.htm",
+  "syntax": [
+    "long ipsecAssociationRelease(long association);"
+  ],
+  "description": [
+    "Release a security association record object. The association handle is invalid after calling this function.",
+    "A security association record can be created with ipsecAssociationInit or with ipsecAssociationDatabaseGetSpi."
+  ],
+  "parameters": [
+    {
+      "name": "association",
+      "type": "",
+      "description": "Handle to an association object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  long association;\n\n  // create and init a security association record\n  association = ipsecAssociationInit(ip_Endpoint(192.168.1.1), ip_Endpoint(192.168.1.10), \"ah\", \"any\", 30000);\n\n  // ... do something with the association ...\n  // release the association object when it isn't needed anymore\n  ipsecAssociationRelease(association);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "—",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

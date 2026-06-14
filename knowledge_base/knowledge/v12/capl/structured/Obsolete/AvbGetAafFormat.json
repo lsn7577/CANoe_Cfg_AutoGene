@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbGetAafFormat",
+  "category": "Obsolete",
+  "title": "AvbGetAafFormat",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionAvbGetAafFormat.htm",
+  "syntax": [
+    "dword AvbGetAafFormat(dword listenerOrTalkerHandle, dword& retFormat);"
+  ],
+  "description": [
+    "The function retrieves the format of the AAF samples in the stream received by the Listener or originated by the Talker."
+  ],
+  "parameters": [
+    {
+      "name": "listenerOrTalkerHandle",
+      "type": "",
+      "description": "The handle of the Listener or Talker."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

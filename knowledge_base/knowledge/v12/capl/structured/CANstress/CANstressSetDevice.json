@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressSetDevice",
+  "category": "CANstress",
+  "title": "CANstressSetDevice",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressSetDevice.htm",
+  "syntax": [
+    "long CANstressSetDevice (dword deviceId);"
+  ],
+  "description": [
+    "Defines the active device for further functions."
+  ],
+  "parameters": [
+    {
+      "name": "deviceId",
+      "type": "",
+      "description": "Handle for the CANstress device on which further functions are to run. This handle is sent back by the CANstressCreateServer function."
+    }
+  ],
+  "return": "0: If successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

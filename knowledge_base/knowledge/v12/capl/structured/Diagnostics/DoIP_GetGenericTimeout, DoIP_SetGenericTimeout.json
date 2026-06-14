@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetGenericTimeout, DoIP_SetGenericTimeout",
+  "category": "Diagnostics",
+  "title": "DoIP_GetGenericTimeout, DoIP_SetGenericTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetSetGenericTimeout.htm",
+  "syntax": [
+    "void DoIP_SetGenericTimeout( dword toGeneric_ms)"
+  ],
+  "description": [
+    "Sets or returns the generic timeout. The generic timeout specifies the maximum time of inactivity of the TCP connection before the connection is automatically closed."
+  ],
+  "parameters": [
+    {
+      "name": "toGeneric_ms",
+      "type": "",
+      "description": "The timeout parameter in milliseconds."
+    }
+  ],
+  "return": "Form 1: —Form 2: Timeout waiting for a diagnostic message positive or negative acknowledgment",
+  "example": {
+    "description": [
+      "This value can also be configured in the DoIP.INI file."
+    ],
+    "code": "// Set T_TCP_Generic_Inactivity to 30s\nDoIP_SetGenericTimeout( 30000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

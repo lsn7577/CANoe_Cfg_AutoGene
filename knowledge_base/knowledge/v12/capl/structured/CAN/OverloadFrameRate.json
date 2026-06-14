@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "OverloadFrameRate",
+  "category": "CAN",
+  "title": "OverloadFrameRate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionOverloadFrameRate.htm",
+  "syntax": [
+    "long OverloadFrameRate ()",
+    "CANx.OverloadFrameRate"
+  ],
+  "description": [
+    "Returns the current rate of CAN overload frames on channel x.",
+    "Valid x values: 1 ... 32"
+  ],
+  "parameters": [],
+  "return": "Current rate of CAN overload frames on channel x in messages per second.",
+  "example": {
+    "description": [],
+    "code": "write (\"Rate of overload frames on CAN1 = %d\", CAN1.OverloadFrameRate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

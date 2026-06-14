@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "TestReportWriteDiagObject, TestReportWriteDiagResponse",
+  "category": "Test",
+  "title": "TestReportWriteDiagObject, TestReportWriteDiagResponse",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestReportWriteDiagObjectTestReportWriteDiagResponse.htm",
+  "syntax": [
+    "TestReportWriteDiagObject (diagRequest req);",
+    "TestReportWriteDiagObject (diagResponse resp);",
+    "TestReportWriteDiagResponse (diagRequest req);"
+  ],
+  "description": [
+    "TestReportWriteDiagObject writes a test step with a textual interpretation of the specified request or response object into the test report.",
+    "TestReportWriteDiagResponse writes a test step with a textual interpretation of the received response for the specified request object into the test report.",
+    "These test steps are subject to the common test step report filtering as configured in the Test Module Configuration dialog."
+  ],
+  "parameters": [
+    {
+      "name": "req",
+      "type": "",
+      "description": "Request"
+    },
+    {
+      "name": "resp",
+      "type": "",
+      "description": "Response"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [
+      "Using Diagnostics Functions in Test Cases"
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

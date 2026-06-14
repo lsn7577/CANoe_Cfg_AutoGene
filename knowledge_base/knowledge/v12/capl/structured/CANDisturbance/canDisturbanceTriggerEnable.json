@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "canDisturbanceTriggerEnable",
+  "category": "CANDisturbance",
+  "title": "canDisturbanceTriggerEnable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANDisturbance/Functions/CAPLfunctionCanDisturbanceTriggerEnable.htm",
+  "syntax": [
+    "long canDisturbanceTriggerEnable (long deviceID, canDisturbanceFrameTrigger trigger, canDisturbanceSequence sequence); // form 1"
+  ],
+  "description": [
+    "Configures a frame trigger and a user-defined output sequence on a CAN Disturbance Interface.",
+    "When the trigger condition is fulfilled, the CAN Disturbance Interface starts sending the given sequence on the bus. The starting point of the sequence can be configured by the canDisturbanceFrameTrigger parameter.",
+    "A typical use case for this function is to send a sequence within a CAN frame, to disturb a single bit or a range of bits.",
+    "Constraints",
+    "If the level of the trigger bit must be a specific level (dominant or recessive), the value of the bit is measured at the sample point. If the margin sync time (MST) between sample point and the start of the next bit is smaller than the delay time (DT) that is needed to send the sequence on the bus, the sequence is not synchronized to the start of the next bit."
+  ],
+  "parameters": [
+    {
+      "name": "deviceID",
+      "type": "",
+      "description": "The unique device ID that is configured via the Network Hardware Configuration dialog for a CAN channel."
+    }
+  ],
+  "return": "1: Success",
+  "example": {
+    "description": [],
+    "code": "CanDisturbanceFrameTrigger         frameTrigger;\nCanDisturbanceSequence             sequence;\nCanDisturbanceTriggerRepetitions   repetitions;\nlong                               result;\nlong                               validityMask;\nmessage 0x100x                     triggerMessage;\ndword                              flags;\n\n//clear the sequence\nsequence.Clear();\n//configure the message should be triggered\n\n//ID must extended ID and a CAN message must on the bus\nvalidityMask = @sysvar::CanDisturbance::Enums::ValidityMaskFlags::IDBase\n               | @sysvar::CanDisturbance::Enums::ValidityMaskFlags::IDExtended\n               | @sysvar::CanDisturbance::Enums::ValidityMaskFlags::IDE\n               | @sysvar::CanDisturbance::Enums::ValidityMaskFlags::FDF;\n\nframeTrigger.SetMessage(triggerMessage, deviceID, validityMask);\n//trigger position is the ACK Slot\nframeTrigger.TriggerFieldType =\n               @sysvar::CanDisturbance::Enums::FieldType::ACKSlot;\nframeTrigger.TriggerFieldOffset = 0;\n\n//configure a sequence 320 FPGA ticks long and send a dominant bit at the Ack Delimiter bit on the bus. A FPGA tick is 6.25 ns long, which leads to a bit time of 2 µs\nresult = sequence.AppendToSequence(320, 'd');\n\n//Define 33 repetitions and one cycle with a 1 ms hold off time\nrepetitions.Cycles = 1;\nrepetitions.HoldOffCycles = 1;\nrepetitions.HoldOffRepetitions = 0;\nrepetitions.Repetitions = 33;\n\n//define trigger enable, if DIO0 is active high the trigger could be trigger\nflags = @sysvar::CanDisturbance::Enums::TriggerEnable::DIN0ActiveHigh;\n\n//Configure the frame trigger and the sequence to the CAN Disturbance Interface\nif(result == 1)\n{\n  result = canDisturbanceTriggerEnable(deviceID, frameTrigger,\n  sequence, repetitions, flags);\n  if(result == 1)\n  {\n    write(\"Trigger is enabled\");\n  }\n  else\n  {\n    write(\"Enable trigger error Result =%d\", result);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

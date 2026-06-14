@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "AREthCreateProvidedServiceInstance",
+  "category": "IP",
+  "title": "AREthCreateProvidedServiceInstance",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthCreateProvidedServiceInstance.htm",
+  "syntax": [
+    "dword AREthCreateProvidedServiceInstance( dword aepHandle, dword serviceId, dword instanceId );"
+  ],
+  "description": [
+    "This function creates a Provided Service Instance and adds it to an Application Endpoint which was created by AREthReleaseProvidedServiceInstance.",
+    "Objects can be assigned to the Service Instance as follows:",
+    "The Service Instance can be deleted again with AREthReleaseProvidedServiceInstance."
+  ],
+  "parameters": [
+    {
+      "name": "aepHandle",
+      "type": "",
+      "description": "Handle of the Application Endpoint (see AREthOpenLocalApplicationEndpoint)"
+    },
+    {
+      "name": "serviceId",
+      "type": "",
+      "description": "Service identifier"
+    },
+    {
+      "name": "instanceId",
+      "type": "",
+      "description": "Instance identifier"
+    }
+  ],
+  "return": "Handle of the Application",
+  "example": {
+    "description": [],
+    "code": "void Initialize()\n{\n  dword aep; // Application Endpoint handle\n  dword psi; // provided service handle\n  dword peg; // provided Eventgroup handle\n  dword pev; // provided Event handle\n\n  // open Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = AREthCreateProvidedServiceInstance(aep,10,1);\n\n  // create Eventgroup\n  peg = AREthAddProvidedEventGroup(psi,1);\n\n  // create Event and add Event to Eventgroup\n  pev = AREthAddEvent(psi, 1, \"OnPrepareEvent1\");\n  AREthAddEventToEventgroup(peg, pev);\n\n  // ensure that Event is sent cyclically\n  AREthSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1(dword eventHandle, dword messageHandle)\n{\n  // this function is called before the Event is sent. Parameters can be specified here.\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

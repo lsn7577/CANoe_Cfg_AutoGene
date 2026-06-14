@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitForScopeEvent",
+  "category": "Test",
+  "title": "testWaitForScopeEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForScopeEvent.htm",
+  "syntax": [
+    "long testWaitForScopeEvent(dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of CANoe Scope event. Should the event not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Timeout in milliseconds"
+    }
+  ],
+  "return": "1: Resume due to event occurred",
+  "example": {
+    "description": [],
+    "code": "long res;\n\nres = scopeTriggerNow();\nif (res != 1)\n{\n   testStepFail(\"Initialization\",\"Call to scopeTriggerNow() failed. Return code =%d\", res);\n   return;\n}\n\n// wait till action done\nif (testWaitForScopeEvent(eScopeTriggered, 8000) != 1)\n{\n   testStepFail(\"Initialization \",\"Scope event eScopeTriggered was not received\");\n   return;\n}\ntestStep(\"Initialization\",\"Scope hardware triggered successefully\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

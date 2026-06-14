@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetParameterCoded, diagSetParameterCoded",
+  "category": "Diagnostics",
+  "title": "diagGetParameterCoded, diagSetParameterCoded",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetParameterCoded.htm",
+  "syntax": [
+    "long diagGetParameterCoded(diagResponse obj, char parameterName[], byte* buffer, dword bufferSize)"
+  ],
+  "description": [
+    "Sets or specifies the value of a parameter directly via coded data bytes."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "0 if bytes were copied, otherwise <0 for an error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

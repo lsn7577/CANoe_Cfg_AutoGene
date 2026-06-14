@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitForScopeAnalyseBitSegments",
+  "category": "Test",
+  "title": "testWaitForScopeAnalyseBitSegments",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForScopeAnalyseBitSegments.htm",
+  "syntax": [
+    "long testWaitForScopeAnalyseBitSegments(message aMessage, ScopeAnalyseBitSegment bitSegments[], dword noOfSegments, dword referenceVoltagePoint, dword flags, dword msgFieldStart, dword msgFieldEnd);"
+  ],
+  "description": [
+    "Starts an analysis for the defined bit segments for each bit, which is within the defined range. The result of the analysis can be requested with the function testWaitScopeGetAnalysedBitSegments."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The message where the bits should be analyzed."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

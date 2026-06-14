@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "frPDU",
+  "category": "FlexRay",
+  "title": "frPDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Objects/CAPLfunctionFrPDU.htm",
+  "syntax": [
+    "frPDU <FIBEX PDU name> <PDU var>;"
+  ],
+  "description": [
+    "This can be used to create a FlexRay PDU object. The object data can be manipulated via the object's selectors. Additional object properties can be read from the selectors.",
+    "The object is then registered using the frSetSendPDU and transmitted using the frUpdatePDU functions."
+  ],
+  "parameters": [
+    {
+      "name": "<FIBEX PDU name>",
+      "type": "",
+      "description": "String that corresponds to a PDU name in the database."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "This is an example for using the PDU object in arrays.",
+      "All objects of an array must be initialized with an appropriate PDU definition!"
+    ],
+    "code": "variables\n{\n  frPDU EngineData pdu1;\n\n  // All objects are equal:\n   frPDU EngineData frPDUArray1[10];\n\n  // All objects may be different:\n  frPDU * frPDUArray2[2] = { EngineStatus, pdu1 };\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

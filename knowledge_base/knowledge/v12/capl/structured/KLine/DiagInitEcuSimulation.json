@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "DiagInitEcuSimulation",
+  "category": "KLine",
+  "title": "DiagInitEcuSimulation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionDiagInitEcuSimulation.htm",
+  "syntax": [
+    "long DiagInitEcuSimulation(char ecuQualifier[])"
+  ],
+  "description": [
+    "Initialize CAPL node to represent a diagnostics ECU simulation. From now on the ECU can interpret and use all diagnostic objects in the CAPL code of this node as defined by the respective diagnostic description.",
+    "CANoe will initialize the CAPL callback interface for diagnostics during the call."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU as set in the diagnostic configuration dialog for the respective diagnostic description."
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n   char ecuQual[10] = \"KLineECU\";\n   write( \"DiagInitEcuSimulation( %s): %d\", ecuQual, DiagInitEcuSimulation(ecuQual));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "snprintf",
+  "category": "Other",
+  "title": "snprintf",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSnPrintf.htm",
+  "syntax": [
+    "long snprintf(char dest[], long len, char format[], ...);"
+  ],
+  "description": [
+    "This function corresponds to the C function sprintf. Supplementally, the parameter len indicates the maximum length of the array dest.",
+    "The format string has the same meaning as with the function write and is described there.",
+    "CAPL supports a function call with maximum 64 parameters."
+  ],
+  "parameters": [
+    {
+      "name": "dest",
+      "type": "",
+      "description": "Character buffer to print to."
+    }
+  ],
+  "return": "The number of characters written.",
+  "example": {
+    "description": [],
+    "code": "char buffer[100], str[7] = \"Vector\";\nlong i;\ni = snprintf(buffer,elcount(buffer),\"String: %s\\n\", str);\nwrite(\"Output:\\n%s : Character count = %d\\n\", buffer, i);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

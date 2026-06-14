@@ -1,0 +1,40 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeShowMask",
+  "category": "Test",
+  "title": "testWaitScopeShowMask",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopeShowMask.htm",
+  "syntax": [
+    "long testWaitScopeShowMask (ScopeAnalyseHandle handle, dword msgFieldStart, long startBitNo, long bitCount); // form 1"
+  ],
+  "description": [
+    "The defined frame cutout of the previously analyzed frame together with the bit mask is shown in the scope's Diagram view. The enlarged area is automatically scaled in time direction. Only the differential signal will be displayed.",
+    "Form 1: Can only be used for CAN bit mask analysis.",
+    "Form 2: Can only be used for FlexRay bit mask analysis."
+  ],
+  "parameters": [
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    }
+  ],
+  "return": "1 = Success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

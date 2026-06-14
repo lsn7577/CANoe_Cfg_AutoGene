@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "canDisturbanceSequence::AppendToSequence",
+  "category": "CANDisturbance",
+  "title": "canDisturbanceSequence::AppendToSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANDisturbance/Functions/CAPLfunctionCanDisturbanceSequenceAppendToSequence.htm",
+  "syntax": [
+    "void canDisturbanceSequence::AppendToSequence(word segmentLength, char segmentValue);"
+  ],
+  "description": [
+    "Adds a segment to a sequence. If the maximum number of segments is reached, the function always returns 0.",
+    "Maximum number of segments: 4096"
+  ],
+  "parameters": [
+    {
+      "name": "segmentLength",
+      "type": "",
+      "description": "The segment length in FPGA ticks"
+    }
+  ],
+  "return": "1: Segment is added to the sequence",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

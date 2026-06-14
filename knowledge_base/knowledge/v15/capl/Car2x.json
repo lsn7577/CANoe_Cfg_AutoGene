@@ -1,0 +1,790 @@
+{
+  "category": "Car2x",
+  "function_count": 112,
+  "functions": [
+    {
+      "name": "<OnC2xPacket>",
+      "file": "CAPLfunctionC2xOnC2xPacket.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\_OnC2xPacket_.json",
+      "md": "structured\\Car2x\\_OnC2xPacket_.md"
+    },
+    {
+      "name": "<OnC2xTransmitPacket>",
+      "file": "CAPLfunctionC2xOnC2xTransmitPacket.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\_OnC2xTransmitPacket_.json",
+      "md": "structured\\Car2x\\_OnC2xTransmitPacket_.md"
+    },
+    {
+      "name": "C2xAddGeoPos",
+      "file": "CAPLfunctionC2xAddGeoPos.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xAddGeoPos.json",
+      "md": "structured\\Car2x\\C2xAddGeoPos.md"
+    },
+    {
+      "name": "C2xAddToken",
+      "file": "CAPLfunctionC2xAddToken.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xAddToken.json",
+      "md": "structured\\Car2x\\C2xAddToken.md"
+    },
+    {
+      "name": "C2xApplyPathHistory",
+      "file": "CAPLfunctionC2xApplyPathHistory.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xApplyPathHistory.json",
+      "md": "structured\\Car2x\\C2xApplyPathHistory.md"
+    },
+    {
+      "name": "C2xCompletePacket",
+      "file": "CAPLfunctionC2xCompletePacket.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xCompletePacket.json",
+      "md": "structured\\Car2x\\C2xCompletePacket.md"
+    },
+    {
+      "name": "C2xConfigureChannel",
+      "file": "CAPLfunctionC2xConfigureChannel.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xConfigureChannel.json",
+      "md": "structured\\Car2x\\C2xConfigureChannel.md"
+    },
+    {
+      "name": "C2xConvertMod32TsToUTC",
+      "file": "CAPLFunctionC2xConvertMod32TsToUTC.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xConvertMod32TsToUTC.json",
+      "md": "structured\\Car2x\\C2xConvertMod32TsToUTC.md"
+    },
+    {
+      "name": "C2xConvertTimeFromMSSinceUTC",
+      "file": "CAPLfunctionC2xConvertTimeFromMSSinceUTC.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xConvertTimeFromMSSinceUTC.json",
+      "md": "structured\\Car2x\\C2xConvertTimeFromMSSinceUTC.md"
+    },
+    {
+      "name": "C2xConvertTimeToMSSinceUTC",
+      "file": "CAPLfunctionC2xConvertTimeToMSSinceUTC.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xConvertTimeToMSSinceUTC.json",
+      "md": "structured\\Car2x\\C2xConvertTimeToMSSinceUTC.md"
+    },
+    {
+      "name": "C2xDisableMsg",
+      "file": "CAPLfunctionC2xDisableMsg.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xDisableMsg.json",
+      "md": "structured\\Car2x\\C2xDisableMsg.md"
+    },
+    {
+      "name": "C2xDispatchPacket",
+      "file": "CAPLfunctionC2xDispatchPacket.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xDispatchPacket.json",
+      "md": "structured\\Car2x\\C2xDispatchPacket.md"
+    },
+    {
+      "name": "C2xEnableCV2xMode",
+      "file": "CAPLfunctionC2xEnableCV2xMode.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xEnableCV2xMode.json",
+      "md": "structured\\Car2x\\C2xEnableCV2xMode.md"
+    },
+    {
+      "name": "C2xEnableMsg",
+      "file": "CAPLfunctionC2xEnableMsg.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xEnableMsg.json",
+      "md": "structured\\Car2x\\C2xEnableMsg.md"
+    },
+    {
+      "name": "C2xGetChannelConfiguration",
+      "file": "CAPLfunctionC2xGetChannelConfiguration.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetChannelConfiguration.json",
+      "md": "structured\\Car2x\\C2xGetChannelConfiguration.md"
+    },
+    {
+      "name": "C2xGetCycleTime",
+      "file": "CAPLfunctionC2xGetCycleTime.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetCycleTime.json",
+      "md": "structured\\Car2x\\C2xGetCycleTime.md"
+    },
+    {
+      "name": "C2xGetDefaultMacId",
+      "file": "CAPLfunctionC2xGetDefaultMacId.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetDefaultMacId.json",
+      "md": "structured\\Car2x\\C2xGetDefaultMacId.md"
+    },
+    {
+      "name": "C2xGetITSTimeStamp",
+      "file": "CAPLfunctionC2xGetITSTimeStamp.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetITSTimeStamp.json",
+      "md": "structured\\Car2x\\C2xGetITSTimeStamp.md"
+    },
+    {
+      "name": "C2xGetLastError",
+      "file": "CAPLfunctionC2xGetLastError.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetLastError.json",
+      "md": "structured\\Car2x\\C2xGetLastError.md"
+    },
+    {
+      "name": "C2xGetLastErrorText",
+      "file": "CAPLfunctionC2xGetLastErrorText.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetLastErrorText.json",
+      "md": "structured\\Car2x\\C2xGetLastErrorText.md"
+    },
+    {
+      "name": "C2xGetMessageHandle",
+      "file": "CAPLfunctionC2xGetMessageHandle.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetMessageHandle.json",
+      "md": "structured\\Car2x\\C2xGetMessageHandle.md"
+    },
+    {
+      "name": "C2xGetMessageName",
+      "file": "CAPLfunctionC2xGetMessageName.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetMessageName.json",
+      "md": "structured\\Car2x\\C2xGetMessageName.md"
+    },
+    {
+      "name": "C2xGetNodeName",
+      "file": "CAPLfunctionC2xGetNodeName.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetNodeName.json",
+      "md": "structured\\Car2x\\C2xGetNodeName.md"
+    },
+    {
+      "name": "C2xGetStationAttributeDouble",
+      "file": "CAPLfunctionC2xGetStationAttributeDouble.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetStationAttributeDouble.json",
+      "md": "structured\\Car2x\\C2xGetStationAttributeDouble.md"
+    },
+    {
+      "name": "C2xGetStationAttributeInt64",
+      "file": "CAPLfunctionC2xGetStationAttributeInt64.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetStationAttributeInt64.json",
+      "md": "structured\\Car2x\\C2xGetStationAttributeInt64.md"
+    },
+    {
+      "name": "C2xGetStationColor",
+      "file": "CAPLfunctionC2xGetStationColor.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetStationColor.json",
+      "md": "structured\\Car2x\\C2xGetStationColor.md"
+    },
+    {
+      "name": "C2xGetStationHandle",
+      "file": "CAPLfunctionC2xGetStationHandle.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetStationHandle.json",
+      "md": "structured\\Car2x\\C2xGetStationHandle.md"
+    },
+    {
+      "name": "C2xGetStationName",
+      "file": "CAPLfunctionC2xGetStationName.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetStationName.json",
+      "md": "structured\\Car2x\\C2xGetStationName.md"
+    },
+    {
+      "name": "C2xGetStationSubAttributeDouble",
+      "file": "CAPLfunctionC2xGetStationSubAttributeDouble.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetStationSubAttributeDouble.json",
+      "md": "structured\\Car2x\\C2xGetStationSubAttributeDouble.md"
+    },
+    {
+      "name": "C2xGetStationSubAttributeInt64",
+      "file": "CAPLfunctionC2xGetStationSubAttributeInt64.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetStationSubAttributeInt64.json",
+      "md": "structured\\Car2x\\C2xGetStationSubAttributeInt64.md"
+    },
+    {
+      "name": "C2xGetThisData",
+      "file": "CAPLfunctionC2xGetThisData.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetThisData.json",
+      "md": "structured\\Car2x\\C2xGetThisData.md"
+    },
+    {
+      "name": "C2xGetThisMotorolaValue16",
+      "file": "CAPLfunctionC2xGetThisMotorolaValue16.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetThisMotorolaValue16.json",
+      "md": "structured\\Car2x\\C2xGetThisMotorolaValue16.md"
+    },
+    {
+      "name": "C2xGetThisMotorolaValue32",
+      "file": "CAPLfunctionC2xGetThisMotorolaValue32.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetThisMotorolaValue32.json",
+      "md": "structured\\Car2x\\C2xGetThisMotorolaValue32.md"
+    },
+    {
+      "name": "C2xGetThisMotorolaValue64",
+      "file": "CAPLfunctionC2xGetThisMotorolaValue64.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetThisMotorolaValue64.json",
+      "md": "structured\\Car2x\\C2xGetThisMotorolaValue64.md"
+    },
+    {
+      "name": "C2xGetThisTimeNS",
+      "file": "CAPLfunctionC2xGetThisTimeNS.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetThisTimeNS.json",
+      "md": "structured\\Car2x\\C2xGetThisTimeNS.md"
+    },
+    {
+      "name": "C2xGetThisValue16",
+      "file": "CAPLfunctionC2xGetThisValue16.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetThisValue16.json",
+      "md": "structured\\Car2x\\C2xGetThisValue16.md"
+    },
+    {
+      "name": "C2xGetThisValue32",
+      "file": "CAPLfunctionC2xGetThisValue32.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetThisValue32.json",
+      "md": "structured\\Car2x\\C2xGetThisValue32.md"
+    },
+    {
+      "name": "C2xGetThisValue64",
+      "file": "CAPLfunctionC2xGetThisValue64.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetThisValue64.json",
+      "md": "structured\\Car2x\\C2xGetThisValue64.md"
+    },
+    {
+      "name": "C2xGetThisValue8",
+      "file": "CAPLfunctionC2xGetThisValue8.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetThisValue8.json",
+      "md": "structured\\Car2x\\C2xGetThisValue8.md"
+    },
+    {
+      "name": "C2xGetTokenBitOfBitString",
+      "file": "CAPLfunctionC2xGetTokenBitOfBitString.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetTokenBitOfBitString.json",
+      "md": "structured\\Car2x\\C2xGetTokenBitOfBitString.md"
+    },
+    {
+      "name": "C2xGetTokenBitString",
+      "file": "CAPLfunctionC2xGetTokenBitString.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetTokenBitString.json",
+      "md": "structured\\Car2x\\C2xGetTokenBitString.md"
+    },
+    {
+      "name": "C2xGetTokenData",
+      "file": "CAPLfunctionC2xGetTokenData.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetTokenData.json",
+      "md": "structured\\Car2x\\C2xGetTokenData.md"
+    },
+    {
+      "name": "C2xGetTokenInt",
+      "file": "CAPLfunctionC2xGetTokenInt.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetTokenInt.json",
+      "md": "structured\\Car2x\\C2xGetTokenInt.md"
+    },
+    {
+      "name": "C2xGetTokenInt64",
+      "file": "CAPLfunctionC2xGetTokenInt64.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetTokenInt64.json",
+      "md": "structured\\Car2x\\C2xGetTokenInt64.md"
+    },
+    {
+      "name": "C2xGetTokenLengthBit",
+      "file": "CAPLfunctionC2xGetTokenLengthBit.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetTokenLengthBit.json",
+      "md": "structured\\Car2x\\C2xGetTokenLengthBit.md"
+    },
+    {
+      "name": "C2xGetTokenPhys",
+      "file": "CAPLfunctionC2xGetTokenPhys.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetTokenPhys.json",
+      "md": "structured\\Car2x\\C2xGetTokenPhys.md"
+    },
+    {
+      "name": "C2xGetTokenString",
+      "file": "CAPLfunctionC2xGetTokenString.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetTokenString.json",
+      "md": "structured\\Car2x\\C2xGetTokenString.md"
+    },
+    {
+      "name": "C2xGetTokenSubString",
+      "file": "CAPLfunctionC2xGetTokenSubString.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xGetTokenSubString.json",
+      "md": "structured\\Car2x\\C2xGetTokenSubString.md"
+    },
+    {
+      "name": "C2xInitPacket",
+      "file": "CAPLfunctionC2xInitPacket.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xInitPacket.json",
+      "md": "structured\\Car2x\\C2xInitPacket.md"
+    },
+    {
+      "name": "C2xInitProtocol",
+      "file": "CAPLfunctionC2xInitProtocol.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xInitProtocol.json",
+      "md": "structured\\Car2x\\C2xInitProtocol.md"
+    },
+    {
+      "name": "C2xIsMsgEnabled",
+      "file": "CAPLfunctionC2xIsMsgEnabled.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xIsMsgEnabled.json",
+      "md": "structured\\Car2x\\C2xIsMsgEnabled.md"
+    },
+    {
+      "name": "C2xIsPacketValid",
+      "file": "CAPLfunctionC2xIsPacketValid.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xIsPacketValid.json",
+      "md": "structured\\Car2x\\C2xIsPacketValid.md"
+    },
+    {
+      "name": "C2xIsScenarioStarted",
+      "file": "CAPLfunctionC2xIsScenarioStarted.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xIsScenarioStarted.json",
+      "md": "structured\\Car2x\\C2xIsScenarioStarted.md"
+    },
+    {
+      "name": "C2xIsTokenAvailable",
+      "file": "CAPLfunctionC2xIsTokenAvailable.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xIsTokenAvailable.json",
+      "md": "structured\\Car2x\\C2xIsTokenAvailable.md"
+    },
+    {
+      "name": "C2xLoadScenario",
+      "file": "CAPLfunctionC2xLoadScenario.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xLoadScenario.json",
+      "md": "structured\\Car2x\\C2xLoadScenario.md"
+    },
+    {
+      "name": "C2xOutputPacket",
+      "file": "CAPLfunctionC2xOutputPacket.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xOutputPacket.json",
+      "md": "structured\\Car2x\\C2xOutputPacket.md"
+    },
+    {
+      "name": "C2xParsePacket",
+      "file": "CAPLfunctionC2xParsePacket.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xParsePacket.json",
+      "md": "structured\\Car2x\\C2xParsePacket.md"
+    },
+    {
+      "name": "C2xReceivePacket",
+      "file": "CAPLfunctionC2xReceivePacket.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xReceivePacket.json",
+      "md": "structured\\Car2x\\C2xReceivePacket.md"
+    },
+    {
+      "name": "C2xRegisterCallback",
+      "file": "CAPLfunctionC2xRegisterCallback.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xRegisterCallback.json",
+      "md": "structured\\Car2x\\C2xRegisterCallback.md"
+    },
+    {
+      "name": "C2xReleasePacket",
+      "file": "CAPLfunctionC2xReleasePacket.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xReleasePacket.json",
+      "md": "structured\\Car2x\\C2xReleasePacket.md"
+    },
+    {
+      "name": "C2xRemoveToken",
+      "file": "CAPLfunctionC2xRemoveToken.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xRemoveToken.json",
+      "md": "structured\\Car2x\\C2xRemoveToken.md"
+    },
+    {
+      "name": "C2xResetPathHistory",
+      "file": "CAPLfunctionC2xResetPathHistory.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xResetPathHistory.json",
+      "md": "structured\\Car2x\\C2xResetPathHistory.md"
+    },
+    {
+      "name": "C2xResizeToken",
+      "file": "CAPLfunctionC2xResizeToken.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xResizeToken.json",
+      "md": "structured\\Car2x\\C2xResizeToken.md"
+    },
+    {
+      "name": "C2xSecCertificateCreate",
+      "file": "CAPLfunctionC2xSecCertificateCreate.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecCertificateCreate.json",
+      "md": "structured\\Car2x\\C2xSecCertificateCreate.md"
+    },
+    {
+      "name": "C2xSecCertificateGetHandle",
+      "file": "CAPLfunctionC2xSecCertificateGetHandle.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecCertificateGetHandle.json",
+      "md": "structured\\Car2x\\C2xSecCertificateGetHandle.md"
+    },
+    {
+      "name": "C2xSecCertificateGetHashedId8",
+      "file": "CAPLfunctionC2xSecCertificateGetHashedId8.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecCertificateGetHashedId8.json",
+      "md": "structured\\Car2x\\C2xSecCertificateGetHashedId8.md"
+    },
+    {
+      "name": "C2xSecCertificateGetName",
+      "file": "CAPLfunctionC2xSecCertificateGetName.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecCertificateGetName.json",
+      "md": "structured\\Car2x\\C2xSecCertificateGetName.md"
+    },
+    {
+      "name": "C2xSecCertificateGetSignerHandle",
+      "file": "CAPLfunctionC2xSecCertificateGetSignerHandle.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecCertificateGetSignerHandle.json",
+      "md": "structured\\Car2x\\C2xSecCertificateGetSignerHandle.md"
+    },
+    {
+      "name": "C2xSecCertificateGetSignerHashedId8",
+      "file": "CAPLfunctionC2xSecCertificateGetSignerHashedId8.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecCertificateGetSignerHashedId8.json",
+      "md": "structured\\Car2x\\C2xSecCertificateGetSignerHashedId8.md"
+    },
+    {
+      "name": "C2xSecCertificateGetStatus",
+      "file": "CAPLfunctionC2xSecCertificateGetStatus.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecCertificateGetStatus.json",
+      "md": "structured\\Car2x\\C2xSecCertificateGetStatus.md"
+    },
+    {
+      "name": "C2xSecCertificateValidAppSspBitmap",
+      "file": "CAPLfunctionC2xSecCertificateValidAppSspBitmap.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecCertificateValidAppSspBitmap.json",
+      "md": "structured\\Car2x\\C2xSecCertificateValidAppSspBitmap.md"
+    },
+    {
+      "name": "C2xSecCertificateValidIdentifiedRegion",
+      "file": "CAPLfunctionC2xSecCertificateValidIdentifiedRegion.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecCertificateValidIdentifiedRegion.json",
+      "md": "structured\\Car2x\\C2xSecCertificateValidIdentifiedRegion.md"
+    },
+    {
+      "name": "C2xSecPacketGetSignerHandle",
+      "file": "CAPLfunctionC2xSecPacketGetSignerHandle.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecPacketGetSignerHandle.json",
+      "md": "structured\\Car2x\\C2xSecPacketGetSignerHandle.md"
+    },
+    {
+      "name": "C2xSecPacketGetSignerHashedId8",
+      "file": "CAPLfunctionC2xSecPacketGetSignerHashedId8.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecPacketGetSignerHashedId8.json",
+      "md": "structured\\Car2x\\C2xSecPacketGetSignerHashedId8.md"
+    },
+    {
+      "name": "C2xSecPacketGetSignerType",
+      "file": "CAPLfunctionC2xSecPacketGetSignerType.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecPacketGetSignerType.json",
+      "md": "structured\\Car2x\\C2xSecPacketGetSignerType.md"
+    },
+    {
+      "name": "C2xSecPacketGetStatus",
+      "file": "CAPLfunctionC2xSecPacketGetStatus.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecPacketGetStatus.json",
+      "md": "structured\\Car2x\\C2xSecPacketGetStatus.md"
+    },
+    {
+      "name": "C2xSecPacketIsSecured",
+      "file": "CAPLfunctionC2xSecPacketIsSecured.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecPacketIsSecured.json",
+      "md": "structured\\Car2x\\C2xSecPacketIsSecured.md"
+    },
+    {
+      "name": "C2xSecPacketSetSignerHandle",
+      "file": "CAPLfunctionC2xSecPacketSetSignerHandle.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecPacketSetSignerHandle.json",
+      "md": "structured\\Car2x\\C2xSecPacketSetSignerHandle.md"
+    },
+    {
+      "name": "C2xSecPacketSetSignerType",
+      "file": "CAPLfunctionC2xSecPacketSetSignerType.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSecPacketSetSignerType.json",
+      "md": "structured\\Car2x\\C2xSecPacketSetSignerType.md"
+    },
+    {
+      "name": "C2xSendMsg",
+      "file": "CAPLfunctionC2xSendMsg.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSendMsg.json",
+      "md": "structured\\Car2x\\C2xSendMsg.md"
+    },
+    {
+      "name": "C2xSetCycleTime",
+      "file": "CAPLfunctionC2xSetCycleTime.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetCycleTime.json",
+      "md": "structured\\Car2x\\C2xSetCycleTime.md"
+    },
+    {
+      "name": "C2xSetSendParameters",
+      "file": "CAPLfunctionC2xSetSendParameters.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetSendParameters.json",
+      "md": "structured\\Car2x\\C2xSetSendParameters.md"
+    },
+    {
+      "name": "C2xSetSignal",
+      "file": "CAPLfunctionC2xSetSignal.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetSignal.json",
+      "md": "structured\\Car2x\\C2xSetSignal.md"
+    },
+    {
+      "name": "C2xSetStationAttributeDouble",
+      "file": "CAPLfunctionC2xSetStationAttributeDouble.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetStationAttributeDouble.json",
+      "md": "structured\\Car2x\\C2xSetStationAttributeDouble.md"
+    },
+    {
+      "name": "C2xSetStationAttributeInt64",
+      "file": "CAPLfunctionC2xSetStationAttributeInt64.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetStationAttributeInt64.json",
+      "md": "structured\\Car2x\\C2xSetStationAttributeInt64.md"
+    },
+    {
+      "name": "C2xSetTokenBitOfBitString",
+      "file": "CAPLfunctionC2xSetTokenBitOfBitString.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetTokenBitOfBitString.json",
+      "md": "structured\\Car2x\\C2xSetTokenBitOfBitString.md"
+    },
+    {
+      "name": "C2xSetTokenBitString",
+      "file": "CAPLfunctionC2xSetTokenBitString.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetTokenBitString.json",
+      "md": "structured\\Car2x\\C2xSetTokenBitString.md"
+    },
+    {
+      "name": "C2xSetTokenData",
+      "file": "CAPLfunctionC2xSetTokenData.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetTokenData.json",
+      "md": "structured\\Car2x\\C2xSetTokenData.md"
+    },
+    {
+      "name": "C2xSetTokenInt",
+      "file": "CAPLfunctionC2xSetTokenInt.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetTokenInt.json",
+      "md": "structured\\Car2x\\C2xSetTokenInt.md"
+    },
+    {
+      "name": "C2xSetTokenInt64",
+      "file": "CAPLfunctionC2xSetTokenInt64.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetTokenInt64.json",
+      "md": "structured\\Car2x\\C2xSetTokenInt64.md"
+    },
+    {
+      "name": "C2xSetTokenPhys",
+      "file": "CAPLfunctionC2xSetTokenPhys.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetTokenPhys.json",
+      "md": "structured\\Car2x\\C2xSetTokenPhys.md"
+    },
+    {
+      "name": "C2xSetTokenString",
+      "file": "CAPLfunctionC2xSetTokenString.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetTokenString.json",
+      "md": "structured\\Car2x\\C2xSetTokenString.md"
+    },
+    {
+      "name": "C2xSetVerbosity",
+      "file": "CAPLfunctionC2xSetVerbosity.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xSetVerbosity.json",
+      "md": "structured\\Car2x\\C2xSetVerbosity.md"
+    },
+    {
+      "name": "C2xStartNode",
+      "file": "CAPLfunctionC2xStartNode.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xStartNode.json",
+      "md": "structured\\Car2x\\C2xStartNode.md"
+    },
+    {
+      "name": "C2xStartScenario",
+      "file": "CAPLfunctionC2xStartScenario.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xStartScenario.json",
+      "md": "structured\\Car2x\\C2xStartScenario.md"
+    },
+    {
+      "name": "C2xStopNode",
+      "file": "CAPLfunctionC2xStopNode.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xStopNode.json",
+      "md": "structured\\Car2x\\C2xStopNode.md"
+    },
+    {
+      "name": "C2xStopScenario",
+      "file": "CAPLfunctionC2xStopScenario.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xStopScenario.json",
+      "md": "structured\\Car2x\\C2xStopScenario.md"
+    },
+    {
+      "name": "C2xTestGetWaitForMessage",
+      "file": "CAPLfunctionC2xTestGetWaitForMessage.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xTestGetWaitForMessage.json",
+      "md": "structured\\Car2x\\C2xTestGetWaitForMessage.md"
+    },
+    {
+      "name": "C2xTestJoinMessage",
+      "file": "CAPLfunctionC2xTestJoinMessage.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xTestJoinMessage.json",
+      "md": "structured\\Car2x\\C2xTestJoinMessage.md"
+    },
+    {
+      "name": "C2xTestJoinSignalInRange",
+      "file": "CAPLfunctionC2xTestJoinSignalInRange.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xTestJoinSignalInRange.json",
+      "md": "structured\\Car2x\\C2xTestJoinSignalInRange.md"
+    },
+    {
+      "name": "C2xTestJoinSignalMatch",
+      "file": "CAPLfunctionC2xTestJoinSignalMatch.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xTestJoinSignalMatch.json",
+      "md": "structured\\Car2x\\C2xTestJoinSignalMatch.md"
+    },
+    {
+      "name": "C2xTestWaitForMessage",
+      "file": "CAPLfunctionC2xTestWaitForMessage.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xTestWaitForMessage.json",
+      "md": "structured\\Car2x\\C2xTestWaitForMessage.md"
+    },
+    {
+      "name": "C2xTestWaitForSignalInRange",
+      "file": "CAPLfunctionC2xTestWaitForSignalInRange.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xTestWaitForSignalInRange.json",
+      "md": "structured\\Car2x\\C2xTestWaitForSignalInRange.md"
+    },
+    {
+      "name": "C2xTestWaitForSignalMatch",
+      "file": "CAPLfunctionC2xTestWaitForSignalMatch.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\C2xTestWaitForSignalMatch.json",
+      "md": "structured\\Car2x\\C2xTestWaitForSignalMatch.md"
+    },
+    {
+      "name": "Car2x CAPL Functions",
+      "file": "CAPLfunctionsCar2xOverview.htm",
+      "page_type": "notes",
+      "json": "structured\\Car2x\\Car2x CAPL Functions.json",
+      "md": "structured\\Car2x\\Car2x CAPL Functions.md"
+    },
+    {
+      "name": "Car2x Error Codes",
+      "file": "CAPLfunctionsCar2xErrorCodes.htm",
+      "page_type": "notes",
+      "json": "structured\\Car2x\\Car2x Error Codes.json",
+      "md": "structured\\Car2x\\Car2x Error Codes.md"
+    },
+    {
+      "name": "Car2x Test Service Library",
+      "file": "CAPLfunctionCar2xTestServiceLibrary.htm",
+      "page_type": "notes",
+      "json": "structured\\Car2x\\Car2x Test Service Library.json",
+      "md": "structured\\Car2x\\Car2x Test Service Library.md"
+    },
+    {
+      "name": "Map Window API",
+      "file": "CAPLfunctionsCar2xMapWindowAPI.htm",
+      "page_type": "notes",
+      "json": "structured\\Car2x\\Map Window API.json",
+      "md": "structured\\Car2x\\Map Window API.md"
+    },
+    {
+      "name": "OnScenarioStateChanged",
+      "file": "CAPLfunctionC2xOnScenarioStateChanged.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\OnScenarioStateChanged.json",
+      "md": "structured\\Car2x\\OnScenarioStateChanged.md"
+    },
+    {
+      "name": "OnStartScenario",
+      "file": "CAPLfunctionC2xOnStartScenario.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\OnStartScenario.json",
+      "md": "structured\\Car2x\\OnStartScenario.md"
+    },
+    {
+      "name": "OnStationAttributeTrigger",
+      "file": "CAPLfunctionC2xOnStationAttributeTrigger.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\OnStationAttributeTrigger.json",
+      "md": "structured\\Car2x\\OnStationAttributeTrigger.md"
+    },
+    {
+      "name": "OnStationAttributeTriggerAll",
+      "file": "CAPLfunctionC2xOnStationAttributeTriggerAll.htm",
+      "page_type": "function",
+      "json": "structured\\Car2x\\OnStationAttributeTriggerAll.json",
+      "md": "structured\\Car2x\\OnStationAttributeTriggerAll.md"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsMonitorGetStatistics",
+  "category": "CANopen",
+  "title": "coTfsMonitorGetStatistics",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsMonitorGetStatistics.htm",
+  "syntax": [
+    "long coTfsMonitorGetStatistics( dword nodeId, dword requestType, dword minValue[1], dword maxValue[1], dword averageValue[1], dword passedCounter[1] , dword failedCounter[1]);"
+  ],
+  "description": [
+    "This function returns the statistics information that are monitored between coTfsMonitorActivate and coTfsMonitorDeactivate."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID [1..127]"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

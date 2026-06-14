@@ -1,0 +1,22 @@
+{
+  "page_type": "concept",
+  "name": "Differences between Functions and Methods",
+  "category": "VTSystem",
+  "title": "Differences between Functions and Methods",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/CAPLfunctionsVTSystemAlternativeFunctions.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [
+      "In this example one channel of a VT1004 module is configured for PWM measurement."
+    ],
+    "code": "ConfigurePWMMeasurement()\n{\n   // Configure channel for PWM measurement\n   sysvar::VTS::RPMSensor.SetPWMMeasurementDuration(0.1); // 100ms\n   sysvar::VTS::RPMSensor.SetPWMThreshold(2.5);           // 2.5V\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

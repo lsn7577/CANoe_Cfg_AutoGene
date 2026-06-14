@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "<OnSomeIpEventReceived>",
+  "category": "IP",
+  "title": "<OnSomeIpEventReceived>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionOnSomeIpEventReceived.htm",
+  "syntax": [
+    "void <OnSomeIpEventReceived>( dword cevHandle, dword messageHandle );"
+  ],
+  "description": [
+    "This callback function is called by SOME/IP IL when a notification message has been received for the Event specified in the cevHandle parameter.",
+    "A callback function with this signature must be passed to the CAPL function SomeIpCreateEventConsumer."
+  ],
+  "parameters": [
+    {
+      "name": "cevHandle",
+      "type": "",
+      "description": "Handle of the Event that triggered the callback, see SomeIpCreateEventConsumer."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD csi; // consumed Service Instance handle\n  DWORD ceg; // consumed Eventgroup handle\n  DWORD cev; // consumed Event handle\n}\n\non start()\n{\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,10,1);\n  // create Eventgroup\n  ceg = SomeIpAddConsumedEventGroup(csi,1);\n  // create Event Consumer\n  cev = SomeIpCreateEventConsumer(csi,32770,\"CallbackEvent1 \");\n}\n\nvoid CallbackEvent1 (DWORD cevHandle, DWORD messageHandle)\n{\n  // this function is called if the Event was sent. Parameters can be evaluated here.\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,40 @@
+{
+  "page_type": "concept",
+  "name": "OBD-II Overview",
+  "category": "diagnostics",
+  "subcategory": "OBD",
+  "title": "On-Board Diagnostics II (OBD-II / EOBD) Overview",
+  "source": "synthetic_v1",
+  "intro": [
+    "OBD-II (US, 1996+) / EOBD (EU, 2001+) is a regulatory diagnostic interface for emission-related components.",
+    "OBD-II defines PIDs (Parameter IDs) for live data, Mode 03 for stored DTCs, Mode 04 for clearing, Mode 06 for test results, Mode 07 for pending DTCs, Mode 09 for vehicle info."
+  ],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Standard OBD-II Modes",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "All OBD-II compliant ECUs must support the standard PIDs in each mode."
+        ],
+        "tables": [
+          [
+            ["Mode", "Name", "Example PIDs"],
+            ["01", "LiveData", "0x0C = Engine RPM, 0x0D = Vehicle Speed, 0x0F = Intake Air Temp"],
+            ["03", "ReadDTC", "Returns stored DTCs (e.g. P0301 = Cyl 1 Misfire)"],
+            ["04", "ClearDTC", "Clears DTCs and freeze frames; also resets readiness monitors"],
+            ["06", "TestResults", "Non-continuous monitor test results"],
+            ["09", "VehicleInfo", "0x02 = VIN, 0x04 = ECU name, 0x0A = ECU serial"]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ],
+  "property_references": {
+    "modes": ["01 LiveData", "03 ReadDTC", "04 ClearDTC", "06 TestResults", "09 VehicleInfo"],
+    "pids_01": ["0x04 Calculated engine load", "0x05 Coolant temp", "0x0C Engine RPM", "0x0D Vehicle speed", "0x0F Intake air temp", "0x10 MAF air flow rate", "0x11 Throttle position", "0x2F Fuel level"]
+  }
+}

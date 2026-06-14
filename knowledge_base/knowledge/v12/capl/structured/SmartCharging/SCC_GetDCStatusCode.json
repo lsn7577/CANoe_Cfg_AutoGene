@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetDCStatusCode",
+  "category": "SmartCharging",
+  "title": "SCC_GetDCStatusCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetDCStatusCode.htm",
+  "syntax": [
+    "void SCC_GetDCStatusCode ( byte SessionID[], char StatusCode[] ) // form 1"
+  ],
+  "description": [
+    "Outputs the DC status in string form."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

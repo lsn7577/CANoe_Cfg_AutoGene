@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressSetDisturbanceSequence",
+  "category": "CANstress",
+  "title": "CANstressSetDisturbanceSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressSetDisturbanceSequence.htm",
+  "syntax": [
+    "void CANstressSetDisturbanceSequence (char sequence[], dword resolution);"
+  ],
+  "description": [
+    "Sets the disturbance sequence."
+  ],
+  "parameters": [
+    {
+      "name": "sequence",
+      "type": "",
+      "description": "Describes the sequence as a string of 0, 1, a, and u characters, whereby 0 stands for dominant, 1 for recessive, a for an analog disturbance and u for undisturbed. A disturbance sequence can contain up to 2048 characters."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "CANstressSetDisturbanceSequence(“uuuu1111“, 0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "vtsSetPWMMeasurementDuration",
+  "category": "VTSystem",
+  "title": "vtsSetPWMMeasurementDuration",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetPWMMeasurementDuration.htm",
+  "syntax": [
+    "long vtsSetPWMMeasurementDuration (char Target[], double Duration);"
+  ],
+  "description": [
+    "During measurement of PMW Parameters with the Modules VT1004/VT1104, VT2516 or VT2848 a Duty Cicle of 0 or 100% is shown, if during the defined time no edge was recognized. This time is set with vtsSetPWMMeasurementDuration (SetPWMMeasurementDuration). Usefully, the set time should be greater than the period of the lowest frequency to be measured.So that 0% or 100% duty cycle could be identified as quickly as possible, the time should not be set to too high, because in the meantime the old values are still displayed."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "This example demonstrates how to do a PWM measurement on a channel of a VT1004 module. In this example the channel is called RPMSensor and assumed to be connected to a sensor which generates a PWM signal. Every second the measured frequency and duty cycle are written to CANoe's Write Window / once to the test report."
+    ],
+    "code": "PerformPWMMeasurement ()\n{\n   // Declare variables to hold measured data\n   float frequency;\n   float dutyCycle;\n\n   // Configure channel for PWM measurement\n   vtsSetPWMMeasurementDuration(\"VTS::RPMSensor\", 0.1); // 100ms\n   vtsSetPWMThreshold(\"VTS::RPMSensor\", 2.5);           // 2.5V\n\n   // Print measurement results to Write Window every second\n   while(1)\n   {\n      // Get measured values from VT System system variables\n      frequency = @sysvar::VTS::RPMSensor::PWMFreq;\n      dutyCycle = @sysvar::VTS::RPMSensor::PWMDC;\n\n      write(\"Frequency: %0.2fHz, Duty Cycle: %0.2f%%.\", frequency, dutyCycle);\n      TestWaitForTimeOut(1000);\n   }\n}\npublic void PerformPWMMeasurement()\n   {\n      // Get VTS interface and VT1004 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT1004Channel rpmSensor = vts.GetChannel(\"RPMSensor\") as IVT1004Channel;\n\n      // Configure channel for PWM measurement\n      rpmSensor.PWMMeasurementDuration.Value = 0.1; // 100ms\n      rpmSensor.PWMThreshold.Value = 2.5; // 2.5V\n\n      // Print measurement results to Write Window every second\n      while (true)\n      {\n         Vector.Tools.Output.WriteLine(\"Frequency: \" + rpmSensor.PWMFreq.Value + \"Hz\");\n         Vector.Tools.Output.WriteLine(\"DutyCycle: \" + rpmSensor.PWMDC.Value + \"%\");\n         Vector.CANoe.Threading.Execution.Wait(1000);\n      }\n   }\n<testcase title=\"PerformPWMMeasurement\" ident=\"\">\n      <vtsystem_configure title=\"Configure PWM measurement\">\n         <pwm_measurement_duration channel=\"VTS::RPMSensor\">0.1</pwm_measurement_duration>\n         <pwm_threshold channel=\"VTS::RPMSensor\">2.5</pwm_threshold>\n      </vtsystem_configure>\n      <wait time=\"100\" title=\"Wait 100ms\" />\n      <valuecomment>\n         <description>RPM sensor duty cycle</description>\n         <sysvar name=\"VTS::RPMSensor::PWMDC\"></sysvar>\n      </valuecomment>\n      <valuecomment>\n         <description>RPM sensor frequency</description>\n         <sysvar name=\"VTS::RPMSensor::PWMFreq\"></sysvar>\n      </valuecomment>\n   </testcase>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

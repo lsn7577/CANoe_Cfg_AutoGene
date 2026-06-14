@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPGetAttribute",
+  "category": "ISO11783",
+  "title": "Iso11783OPGetAttribute",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPGetAttribute.htm",
+  "syntax": [
+    "long Iso11783OPGetAttribute( dword ecuHandle, dword objectID, dword attributeID );"
+  ],
+  "description": [
+    "The function returns a value of an object attribute from the local object pool. A Get Attribute command is not sent to the Virtual Terminal. The object must exist in the object pool and support the attribute ID."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "Integer value of the object.\nIf a value of 0 is returned, you can check with the function Iso11783GetLastError if the function succeeded.",
+  "example": {
+    "description": [],
+    "code": "LONG objType;\nobjType = Iso11783OPGetAttribute( handle, 1000, 0 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

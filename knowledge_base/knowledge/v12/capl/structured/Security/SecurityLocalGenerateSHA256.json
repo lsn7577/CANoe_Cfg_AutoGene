@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalGenerateSHA256",
+  "category": "Security",
+  "title": "SecurityLocalGenerateSHA256",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityLocalGenerateSHA256.htm",
+  "syntax": [
+    "long SecurityLocalGenerateSHA256(byte data[], dword dataLength, byte sha256[], dword sha256Length)"
+  ],
+  "description": [
+    "Generates a SHA256 hash for the given data and key. The generated hash is a SipHash."
+  ],
+  "parameters": [
+    {
+      "name": "byte data[]",
+      "type": "",
+      "description": "The data to encrypt."
+    }
+  ],
+  "return": "1: SuccessA Value of 1 means that the action was successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

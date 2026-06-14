@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "vtsSerialSend",
+  "category": "VTSystem",
+  "title": "vtsSerialSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSerialSend.htm",
+  "syntax": [
+    "long vtsSerialSend (char Target[],byte buffer[], dword number);"
+  ],
+  "description": [
+    "Sends a block of bytes to the serial port of the specified VT7001 channel"
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsArrToQ",
+  "category": "CANopen",
+  "title": "coTfsArrToQ",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsArrToQ.htm",
+  "syntax": [
+    "qword coTfsArrToQ( byte inByteArray[], dword arraysize );"
+  ],
+  "description": [
+    "The function converts the content of a byte array into a qword value."
+  ],
+  "parameters": [
+    {
+      "name": "inByteArray[]",
+      "type": "",
+      "description": "Array containing the bytes to be converted, recommended array size: 8 byte."
+    }
+  ],
+  "return": "Converted value or 0 if parameters are invalid.",
+  "example": {
+    "description": [],
+    "code": "/* converts data from a byte array to a qword */\nByte inDataArr[8] = {8,7,6,5,4,3,2,1};\nqword outValue;\n\noutValue = coTfsArrToQ(inDataArr, 8);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

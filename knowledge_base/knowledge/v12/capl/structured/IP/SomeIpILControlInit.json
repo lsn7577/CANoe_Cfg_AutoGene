@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "SomeIpILControlInit",
+  "category": "IP",
+  "title": "SomeIpILControlInit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpILControlInit.htm",
+  "syntax": [
+    "long SomeIpILControlInit();"
+  ],
+  "description": [
+    "Initialization of SOME/IP IL.",
+    "Prevents the SOME/IP IL from starting automatically. If this function is used, the SOME/IP IL must then be started with the SomeIpILControlStart function.",
+    "This function may only be used in on preStart."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  // prevent auto start\n  SomeIpILControlInit();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

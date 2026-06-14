@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitEventKLineByte",
+  "category": "Test",
+  "title": "TestGetWaitEventKLineByte",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitEventKLineByte.htm",
+  "syntax": [
+    "long TestGetKLineByte();"
+  ],
+  "description": [
+    "If a byte is the last event that triggers a wait instruction, the content can be called up with the first function.",
+    "The second function allows to call the content and the end of byte time stamp."
+  ],
+  "parameters": [
+    {
+      "name": "timeStampOut",
+      "type": "",
+      "description": "End of byte time stamp."
+    }
+  ],
+  "return": "Value of the byte",
+  "example": {
+    "description": [],
+    "code": "DiagRequest EcuIdentification_Read req;\nint64 timeStamps;\nByte byteValue;\n\nDiagSetTarget(“DUT”);\nreq.SendRequest();\n\n   if (1 == TestWaitForDiagKLinebyteTransmitted(5000))\n   {\n      TestStepPass(\"Transmitted KLine frame.\");\n      byteValue =  TestGetWaitEventKLineByte( timeStamp) ;\n      write( \"TRANSMITTED BYTE VALUE: 0x%x. TIMESTAMP [%.3f]\", byteValue, timeStamp/1000000000.0);\n   }\n   else\n   {\n   TestStepFail(\"No confirmation of transmitted K-Line byte.\");\n   }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

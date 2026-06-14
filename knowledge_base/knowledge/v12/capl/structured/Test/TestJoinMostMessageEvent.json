@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestJoinMostMessageEvent",
+  "category": "Test",
+  "title": "TestJoinMostMessageEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinMostMessageEvent.htm",
+  "syntax": [
+    "long TestJoinMostMessageEvent (dbMessage aDBMsg, int aInstanceId)"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event, a MOST message (MOST control message or MOST spy message). This function does not wait.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "Note For parameters aSourceAddress, aDestinationAddress, aFBlockId, aInstanceId, aFunctionId and aOpType the following applies: If -1 is given, the corresponding field can get any value. This is also the standard for not explicit set values.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "-6: Parse Error; on specification of a symbolic message definition that cannot be resolved with the available XML function catalog or that is flawed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

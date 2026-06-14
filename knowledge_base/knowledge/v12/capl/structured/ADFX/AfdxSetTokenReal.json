@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxSetTokenReal",
+  "category": "ADFX",
+  "title": "AfdxSetTokenReal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxSetTokenReal.htm",
+  "syntax": [
+    "long AfdxSetTokenReal( long packet, char protocolDesignator[], char tokenDesignator[], long offset, long length, float value );"
+  ],
+  "description": [
+    "This function sets the specified token‘s data as a float value."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "{\n  // have  a packet handle <packet> created already\n  long err = 0;\n  err = AfdxSetTokenReal( packet, \"udp\", \"data\", 8, 8, 1.234);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

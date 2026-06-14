@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IPRouteDeleteGateway",
+  "category": "TCPIPAPI",
+  "title": "IPRouteDeleteGateway",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPRouteDeleteGateway.htm",
+  "syntax": [
+    "long IPRouteDeleteGateway( dword dest, dword mask ); // form 1"
+  ],
+  "description": [
+    "With this function it is possible to delete a gateway route from the routing table in the tcp/ip stack. Depending on the given mask (IPv4) or prefix (IPv6) a route to a single host or to a network is deleted (see example)."
+  ],
+  "parameters": [
+    {
+      "name": "destination",
+      "type": "",
+      "description": "The IPv4 or IPv6 destination address of the route."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket gSocket;\n}\n\non start\n{\n  ipRouteAddGateway( IP_Address(192.168.1.0), 24, IP_Address(192.168.0.200) );\n  gSocket = UdpSocket::Open( IP_Endpoint(192.168.0.19:40019) );\n\n  // because the destination address of the following send request\n  // is in an other sub-net, the UDP packet will be sent to the\n  // MAC address of the gateway which was configured above.\n  gSocket.SendTo( IP_Endpoint(192.168.1.123:40123), \"Hello\", 5 );\n}\n\non preStop\n{\n  ipRouteDeleteGateway( IP_Address(192.168.1.0), 24 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

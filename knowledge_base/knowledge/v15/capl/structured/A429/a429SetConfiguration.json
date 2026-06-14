@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "a429SetConfiguration",
+  "category": "A429",
+  "title": "a429SetConfiguration",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/A429/Functions/CAPLfunctionA429SetConfiguration.htm",
+  "syntax": [
+    "long a429SetConfiguration( long channel, a429settings mySettings );"
+  ],
+  "description": [
+    "This function sets the actual channel configuration. Internally the function a429ResetEx is called to apply the changes"
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "valid channel number"
+    },
+    {
+      "name": "mySettings",
+      "type": "",
+      "description": "variable to provide channel parameters"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  long RxChannel = 5;\n  long TxChannel = 1;\n\n  a429Settings ValidSetTx[2] = {\n    { Bitrate = 100000, // default high-speed\n    RxMinBitrate = 10500,\n    RxMaxBitrate = 120000,\n    MinGap = 32,\n    Parity = a429OddParity,\n    Flags = a429FlagsTx\n    },\n    { Bitrate = 12500, // default low-speed\n    RxMinBitrate = 10500,\n    RxMaxBitrate = 120000,\n    MinGap = 32,\n    Parity = a429OddParity,\n    Flags = a429FlagsTx\n    }\n  };\n\n  a429Settings ValidSetRx[2] = {\n    { Bitrate      = 100000, // default high-speed\n    RxMinBitrate = 97560,\n    RxMaxBitrate = 102400,\n    MinGap       = 32,\n    Parity       = a429OddParity,\n    Flags        = a429FlagsRx\n    },\n    { Bitrate = 12500, // default low-speed\n    RxMinBitrate = 12188,\n    RxMaxBitrate = 12810,\n    MinGap = 32,\n    Parity = a429OddParity,\n    Flag = a429FlagsRx\n    }\n  };\n}\n\n// set channels to low speed\non key 'l'\n{\n  if (a429SetConfiguration(TxChannel, ValidSetTx[1])) {\n    write(\"channel '%d' configured: OK\", TxChannel);\n  }\n  else {\n    write(\"channel '%d' not configured: FAILED\", TxChannel);\n  }\n  if (a429SetConfiguration(RxChannel, ValidSetRx[1])) {\n    write(\"channel '%d' configured: OK\", RxChannel);\n  }\n  else {\n    write(\"channel '%d' not configured: FAILED\", RxChannel);\n  }\n}\n\n// set channels to high speed\non key 'h'\n{\n  if (a429SetConfiguration(TxChannel, ValidSetTx[0])) {\n    write(\"channel '%d' configured: OK\", TxChannel);\n  }\n  else {\n    write (\"channel '%d' not configured: FAILED\", TxChannel);\n  }\n  if (a429SetConfiguration(RxChannel, ValidSetRx[0])) {\n    write(\"channel '%d' configured: OK\", RxChannel);\n  }\n  else {\n    write(\"channel '%d' not configured: FAILED\", RxChannel);\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5",
+      "8.5",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "A429",
+      "A429",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

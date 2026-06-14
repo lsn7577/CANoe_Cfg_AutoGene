@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GPIBQueryEx",
+  "category": "GPIB",
+  "title": "GPIBQueryEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBQueryEx.htm",
+  "syntax": [
+    "long GPIBQueryEx (long deviceDescriptor, char cmdStr[], long size);"
+  ],
+  "description": [
+    "Query to the device.",
+    "The cmdStr is put to a queue, and then the function returns immediately. When the cmdStr has been sent to the device, and a response has been received, the user-supplied function GPIBResponse is called."
+  ],
+  "parameters": [
+    {
+      "name": "deviceDescriptor",
+      "type": "",
+      "description": "Device ID"
+    }
+  ],
+  "return": "Status",
+  "example": {
+    "description": [],
+    "code": "Query after wave form: GPIBQuery(myDev, \"WAVF?\", 1024)"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

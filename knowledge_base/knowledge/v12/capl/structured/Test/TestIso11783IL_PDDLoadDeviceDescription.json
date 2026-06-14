@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestIso11783IL_PDDLoadDeviceDescription",
+  "category": "Test",
+  "title": "TestIso11783IL_PDDLoadDeviceDescription",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestIso11783ILPDDLoadDeviceDescription.htm",
+  "syntax": [
+    "long TestIso11783IL_PDDLoadDeviceDescription( dbNode node, char deviceCfgPath[] );"
+  ],
+  "description": [
+    "The function creates a process data dictionary from a machine configuration file (XML).",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

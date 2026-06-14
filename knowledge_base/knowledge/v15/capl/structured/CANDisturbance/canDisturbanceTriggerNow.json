@@ -1,0 +1,148 @@
+{
+  "page_type": "method",
+  "name": "canDisturbanceTriggerNow",
+  "category": "CANDisturbance",
+  "title": "canDisturbanceTriggerNow",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANDisturbance/Functions/CAPLfunctionCanDisturbanceTriggerNow.htm",
+  "syntax": [
+    "long canDisturbanceTriggerNow(long deviceID, canDisturbanceSequence); // form 1",
+    "long canDisturbanceTriggerNow(long deviceID, canDisturbanceSequence, canDisturbanceTriggerRepetitions repetitions);// form 2",
+    "long canDisturbanceTriggerNow(long deviceID, canDisturbanceFrameSequence sequence); // form 3",
+    "long canDisturbanceTriggerNow(long deviceID, canDisturbanceFrameSequence sequence, canDisturbanceTriggerRepetitions repetitions); // form 4"
+  ],
+  "description": [
+    "Sends a user-defined sequence or a frame-based sequence on the bus with the CAN Disturbance Interface.",
+    "The sequence or frame-based sequence sends directly on the bus. If a frame is currently sent by another interface, this frame will be disturbed.",
+    "A typical use case is to send a sequence or a frame based sequence on the bus without any trigger conditions."
+  ],
+  "parameters": [
+    {
+      "name": "deviceID",
+      "type": "",
+      "description": "The unique device ID configured via the Network Hardware Configuration dialog for a CAN channel."
+    },
+    {
+      "name": "sequence",
+      "type": "",
+      "description": "The user-defined sequence or frame based sequence."
+    },
+    {
+      "name": "repetitions",
+      "type": "",
+      "description": "The repetitions of the output sequence."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example for form 1",
+      "Example for form 2",
+      "Example for form 3",
+      "Example for form 4"
+    ],
+    "code": "CanDisturbanceSequence   sequence;\nlong                     result;\n\n//Clear sequence\nsequence.Clear();\n\n//configure a sequence one bit long and send a dominant bit\nresult = sequence.AppendToSequence(320, 'd');\n\nif(result == 1)\n{\n  result= canDisturbanceTriggerNow(deviceID, sequence);\n\n  if(result == 1)\n  {\n    write(\"Trigger now is configured.\");\n  }\n  else\n  {\n    write(\"Error by configuration of trigger now %d\", result);\n  }\n}\nCanDisturbanceSequence             sequence;\nCanDisturbanceTriggerRepetitions   repetitions;\nlong                               result;\n\n//Clear sequence\nsequence.Clear();\n\n//configure a sequence one bit long and send a dominant bit\nresult = sequence.AppendToSequence(320, 'd');\n\nif(result == 1)\n{\n  //Define two repetitions and one cycle with a 1 ms hold off time\n  repetitions.Cycles = 1;\n  repetitions.HoldOffCycles = 1;\n  repetitions.HoldOffRepetitions = 1;\n  repetitions.Repetitions = 2;\n\n  result= canDisturbanceTriggerNow(deviceID, sequence, repetitions);\n\n  if(result == 1)\n  {\n    write(\"Trigger now is configured.\");\n  }\n  else\n  {\n    write(\"Error by configuration of trigger now %d\", result);\n  }\n}\ncanDisturbanceFrameSequence   frameSequence;\nmessage 0x100                 msgFrameSeq;\nlong                          result;\n\n//set message to sequence\nframeSequence.SetMessage(deviceID, msgFrameSeq);\nresult = canDisturbanceTriggerNow(deviceID, frameSequence);\n\nif(result == 1)\n{\n  write(\"Trigger now is configured.\");\n}\nelse\n{\n  write(\"Error by configuration of trigger now %d\", result);\n}\ncanDisturbanceFrameSequence        frameSequence;\ncanDisturbanceTriggerRepetitions   repetitions;\nmessage 0x100                      msgFrameSeq;\nlong                               result;\n\n//set message to sequence\nframeSequence.SetMessage(deviceID, msgFrameSeq);\n\n//Define two repetitions and one cycle with a 1 ms hold off time\nrepetitions.Cycles = 1;\nrepetitions.HoldOffCycles = 1;\nrepetitions.HoldOffRepetitions = 1;\nrepetitions.Repetitions = 2;\n\n//output the sequence twice\nresult = canDisturbanceTriggerNow(deviceID, frameSequence, repetitions);\n\nif(result == 1)\n{\n  write(\"Trigger now is configured.\");\n}\nelse\n{\n  write(\"Error by configuration of trigger now %d\", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 10.0 SP3 recommended",
+      "—",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN CAN Disturbance Interface",
+      "—",
+      "—",
+      "—",
+      "CAN CAN Disturbance Interface"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "canGetOverloadCount",
+  "category": "Obsolete",
+  "title": "canGetOverloadCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionCanGetOverloadCount.htm",
+  "syntax": [
+    "long canGetOverloadCount (long channel)"
+  ],
+  "description": [
+    "Returns the number of CAN overload frames on the specified channel since start of measurement."
+  ],
+  "parameters": [
+    {
+      "name": "Vector API driver",
+      "type": "",
+      "description": "Values 1 ... 32"
+    },
+    {
+      "name": "Softing API driver",
+      "type": "",
+      "description": "Values 1, 2"
+    }
+  ],
+  "return": "Number of CAN overload frames on the specified channel since start of measurement.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "getMessageAttrInt",
+  "category": "CAN",
+  "title": "getMessageAttrInt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionGetMessageAttrInt.htm",
+  "syntax": [
+    "long GetMessageAttrInt(message canMessage, char attributeName[]);"
+  ],
+  "description": [
+    "Gets the value of a message attribute from the database.",
+    "A user-defined attribute with the name specified in the parameter, and of the Integer type, must be defined in the database. If no such attribute is defined, the function returns 0. If no attribute value is assigned to the message in the database, the default value of the attribute definition is returned."
+  ],
+  "parameters": [
+    {
+      "name": "canMessage",
+      "type": "",
+      "description": "Message variable"
+    }
+  ],
+  "return": "Value of the attribute (or default value) from the database.",
+  "example": {
+    "description": [
+      "This example outputs the value of the message attribute GenMsgCycleTime in the Write Window when the message is received.",
+      "The attribute name must be written as defined in the database. You can find the attribute name in the attribute window of the database."
+    ],
+    "code": "on message *\n{\nlong cycleTimeValue1;\nlong cycleTimeValue2;\ncycleTimeValue1 = getMessageAttrInt(this, \"GenMsgCycleTime\");\nwrite(\"CycleTime of message id %x = %d\", this.id, cycleTimeValue1);\nmessage EngineData gMsgEngineData;\ncycleTimeValue2 = getMessageAttrInt(gMsgEngineData, \"GenMsgCycleTime\");\nwrite(\"CycleTime of message id %x = %d\", this.id, cycleTimeValue2);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

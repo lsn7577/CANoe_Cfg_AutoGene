@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "A664CloseProxyPort",
+  "category": "ADFX",
+  "title": "A664CloseProxyPort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664CloseProxyPort.htm",
+  "syntax": [
+    "long a664CloseProxyPort (WORD channel, DWORD outMsgId)"
+  ],
+  "description": [
+    "Method to close a specific socket port, which was generated using a664InitProxyPort.",
+    "This call is only required, if an existing message-pair or UDP-port combination needs to be modified.",
+    "On measurement end all existing proxy-ports are closed automatically."
+  ],
+  "parameters": [
+    {
+      "name": "<channel>",
+      "type": "",
+      "description": "AFDX-channel (1 to 16) to which socket packets should be mapped to (sent and observed)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

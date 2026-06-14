@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnIpReceivePrepare",
+  "category": "TCPIPAPI",
+  "title": "OnIpReceivePrepare",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/EventProcedures/CAPLfunctionTCPIPOnIpReceivePrepare.htm",
+  "syntax": [
+    "long OnIpReceivePrepare(ethernetPacket * packet);"
+  ],
+  "description": [
+    "If the CAPL program implements this callback it is called right before a received packet will be dispatched to the TCP/IP stack.",
+    "It is possible to manipulate the content of the packet or to block the receiving of the package from the bus.",
+    "The callback is only available for simulation nodes using the individual TCP/IP stack instance. Check this setting in the TCP/IP Stack configuration dialog."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "The received Ethernet packet."
+    }
+  ],
+  "return": "0: Block the Ethernet packet.",
+  "example": {
+    "description": [],
+    "code": "long OnIpReceivePrepare(ethernetPacket * packet)\n{\n  // block all packets with a broadcast destination MAC id\n  if(packet.destination == 0xFFFFFFFFFFFFLL)\n  {\n    write(\"packet blocked\");\n    return 0;\n  }\n  write(\"packet passed to tcp/ip stack\");\n  return 1;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

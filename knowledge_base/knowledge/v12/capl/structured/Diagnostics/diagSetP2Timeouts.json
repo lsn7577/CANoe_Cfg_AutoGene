@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "diagSetP2Timeouts",
+  "category": "Diagnostics",
+  "title": "diagSetP2Timeouts",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSetP2Timeouts.htm",
+  "syntax": [
+    "long diagSetP2Timeouts( dword newP2timeout_ms, dword newP2exTimeout_ms); // form 1"
+  ],
+  "description": [
+    "Changes the P2 and P2ex timeout values at the built-in diagnostic channel.",
+    "Use this function only for the built-in diagnostic channel. In combination with the CAPL Callback Interface use diagSetTimeout.",
+    "It is recommended to define the times P2 Timeout and P2 Extended as short as possible and just as long as necessary. In particular you should mind that these times have to have a smaller value than the application timeout (VDSRequestApplicationTimeout in CAN.ini). The application timeout makes sure that waiting for a final response will be aborted if an ECU continuously responds \"response pending\" to a request."
+  ],
+  "parameters": [
+    {
+      "name": "newP2timeout_ms",
+      "type": "",
+      "description": "The built-in diagnostic channel will use this P2 timeout (in milliseconds) from now on."
+    }
+  ],
+  "return": "-1 for failed or error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

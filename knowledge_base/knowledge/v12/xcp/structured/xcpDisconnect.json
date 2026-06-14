@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "xcpDisconnect",
+  "category": "XCP",
+  "title": "xcpDisconnect",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionXCPDisconnect.htm",
+  "syntax": [
+    "long xcpDisconnect(char ecuQualifier[]);"
+  ],
+  "description": [
+    "Disconnects from a XCP/CCP device.",
+    "Use xcpIsConnected to be aware of the disconnection.",
+    "The callback function OnXcpDisconnect is called after the ECU acknowledged the disconnect command."
+  ],
+  "parameters": [],
+  "return": "0: OK",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

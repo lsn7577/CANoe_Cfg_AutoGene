@@ -1,0 +1,30 @@
+# Ethernet
+
+> Category: `IP` | Type: `notes`
+
+## Description
+
+The CAPL Socket API provides access to TCP/IP networking features. It is implemented on top of the native Winsock 2 API of the Windows operating system.
+
+SOME/IP Interaction Layer
+
+The SOME/IP Interaction Layer extends the functionality of a simulated node with additional SOME/IP specific CAPL functions. With these you can send and receive SOME/IP packets.
+
+The AVB Interaction Layer extends the functionality of a simulated node with additional AVB specific CAPL functions. With these you can create endpoints (AVTP Talkers & Listeners) to produce and consume time sensitive streams.
+
+Test Feature Set CAPL Functions
+
+| ETHERNET Only available with option .Ethernet. |
+|---|
+
+| Functions Ethernet CAPL Functions IP/Ethernet Error Codes TCP/IP The CAPL Socket API provides access to TCP/IP networking features. It is implemented on top of the native Winsock 2 API of the Windows operating system. TCP/IP CAPL Functions | Functions | Ethernet CAPL Functions IP/Ethernet Error Codes | TCP/IP | The CAPL Socket API provides access to TCP/IP networking features. It is implemented on top of the native Winsock 2 API of the Windows operating system. TCP/IP CAPL Functions | Interaction Layer SOME/IP Interaction Layer The SOME/IP Interaction Layer extends the functionality of a simulated node with additional SOME/IP specific CAPL functions. With these you can send and receive SOME/IP packets. CAPL Functions Error Codes AVB Interaction Layer The AVB Interaction Layer extends the functionality of a simulated node with additional AVB specific CAPL functions. With these you can create endpoints (AVTP Talkers & Listeners) to produce and consume time sensitive streams. CAPL Functions Error Codes Media CAPL Functions AUTOSAR Ethernet Interaction Layer CAPL Functions Error Codes | Interaction Layer | SOME/IP Interaction Layer The SOME/IP Interaction Layer extends the functionality of a simulated node with additional SOME/IP specific CAPL functions. With these you can send and receive SOME/IP packets. CAPL Functions Error Codes AVB Interaction Layer The AVB Interaction Layer extends the functionality of a simulated node with additional AVB specific CAPL functions. With these you can create endpoints (AVTP Talkers & Listeners) to produce and consume time sensitive streams. CAPL Functions Error Codes Media CAPL Functions AUTOSAR Ethernet Interaction Layer CAPL Functions Error Codes |
+|---|---|---|---|---|---|---|---|
+| Functions |  |  |  |  |  |  |  |
+| Ethernet CAPL Functions IP/Ethernet Error Codes |  |  |  |  |  |  |  |
+| TCP/IP |  |  |  |  |  |  |  |
+| The CAPL Socket API provides access to TCP/IP networking features. It is implemented on top of the native Winsock 2 API of the Windows operating system. TCP/IP CAPL Functions |  |  |  |  |  |  |  |
+| Interaction Layer |  |  |  |  |  |  |  |
+| SOME/IP Interaction Layer The SOME/IP Interaction Layer extends the functionality of a simulated node with additional SOME/IP specific CAPL functions. With these you can send and receive SOME/IP packets. CAPL Functions Error Codes AVB Interaction Layer The AVB Interaction Layer extends the functionality of a simulated node with additional AVB specific CAPL functions. With these you can create endpoints (AVTP Talkers & Listeners) to produce and consume time sensitive streams. CAPL Functions Error Codes Media CAPL Functions AUTOSAR Ethernet Interaction Layer CAPL Functions Error Codes |  |  |  |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

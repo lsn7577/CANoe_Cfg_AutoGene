@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939SetEnvInt",
+  "category": "J1939",
+  "title": "J1939SetEnvInt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939SetEnvInt.htm",
+  "syntax": [
+    "dword J1939SetEnvInt( char envVar[], dword index, dword value );"
+  ],
+  "description": [
+    "This function sets the value of an environment variable."
+  ],
+  "parameters": [
+    {
+      "name": "envVar",
+      "type": "",
+      "description": "name of the environment variable"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "J1939SetEnvInt( „EvFrictionForce“, 1, 3 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

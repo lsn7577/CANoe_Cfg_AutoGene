@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitFrFrameData",
+  "category": "Test",
+  "title": "TestGetWaitFrFrameData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitFrFrameData.htm",
+  "syntax": [
+    "long TestGetWaitFrFrameData (frFrame aFrame);"
+  ],
+  "description": [
+    "If a valid FlexRay frame is the last event that triggers a wait instruction, the frame’s content can be called up with the first function.",
+    "The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "aFrame",
+      "type": "",
+      "description": "A FrFrame variable that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

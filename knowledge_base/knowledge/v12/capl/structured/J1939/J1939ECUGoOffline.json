@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "J1939ECUGoOffline",
+  "category": "J1939",
+  "title": "J1939ECUGoOffline",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939ECUGoOffline.htm",
+  "syntax": [
+    "dword J1939ECUGoOffline( dword ecuHandle );"
+  ],
+  "description": [
+    "The function switches the state of the node to offline. It does not send a cannot claim address parameter group.",
+    "After calling this function the node cannot send any parameter groups, but it is responding to requests for address claim.",
+    "Use the function J1939ECUGoOnline to start the node again."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "J1939ECUGoOffline(ecuHdl);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

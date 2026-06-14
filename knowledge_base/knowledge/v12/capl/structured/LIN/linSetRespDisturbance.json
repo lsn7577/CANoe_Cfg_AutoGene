@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linSetRespDisturbance",
+  "category": "LIN",
+  "title": "linSetRespDisturbance",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetRespDisturbance.htm",
+  "syntax": [
+    "long linSetRespDisturbance (long frameId, long lengthInBits, long level, long offsetInSixteenthBits)"
+  ],
+  "description": [
+    "Activates a disturbance in the response space of the specified LIN frame. A normal response by a simulated slave will be deactivated as long as the disturbance is active.",
+    "The disturbance starts with the next occurrence of the specified frame. To stop the disturbance the functions linResetRespDisturbance() shall be used."
+  ],
+  "parameters": [
+    {
+      "name": "frameId",
+      "type": "",
+      "description": "LIN frame identifier in the range 0 .. 63."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "On pressing 'c' key start corrupting the response space and the first databyte of the response for LIN frame Motor1State_Cycl."
+    ],
+    "code": "on key 'c'\n{\nlinFrame Motor1State_Cycl mMotor1State_Cycl;\nif (0!=linSetRespDisturbance (mMotor1State_Cycl.id, \r\n 1, 0, 20))\n{\n// for the next the first bit of the response space \r\n or of the first databyte\n// (if the response space is zero) is inverted from recessive to \ndominant\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

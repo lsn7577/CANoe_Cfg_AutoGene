@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetOptionalParameter",
+  "category": "SmartCharging",
+  "title": "SCC_SetOptionalParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetOptionalParameter.htm",
+  "syntax": [
+    "long SCC_SetOptionalParameter ( dword Parameter, long ParameterValue ) // form 1"
+  ],
+  "description": [
+    "Sets an optional parameter after creating a message."
+  ],
+  "parameters": [
+    {
+      "name": "Parameter",
+      "type": "",
+      "description": "ID number of the parameter, as denoted in the lists of optional parameters below each Create-function"
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

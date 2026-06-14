@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SECCDiscoveryReq",
+  "category": "SmartCharging",
+  "title": "SCC_SECCDiscoveryReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_SECCDiscoveryReq.htm",
+  "syntax": [
+    "void SCC_SECCDiscoveryReq ( dword Security, dword TransportProtocol )"
+  ],
+  "description": [
+    "The callback is called as soon as a SECC Discovery Request is received."
+  ],
+  "parameters": [
+    {
+      "name": "TLSEnabled",
+      "type": "",
+      "description": "1 for TLS, 0 for no transport layer security"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

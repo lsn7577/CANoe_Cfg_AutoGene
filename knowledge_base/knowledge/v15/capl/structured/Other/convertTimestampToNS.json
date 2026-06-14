@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "convertTimestampToNS",
+  "category": "Other",
+  "title": "convertTimestampToNS",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionConvertTimestampToNS.htm",
+  "syntax": [
+    "Int64 convertTimestampToNS ( dword days, dword hours, dword minutes, dword seconds );"
+  ],
+  "description": [
+    "Converts a time stamp given in days, hours, minutes and seconds into a nanosecond time stamp."
+  ],
+  "parameters": [
+    {
+      "name": "days",
+      "type": "",
+      "description": "Number of days of the time stamp."
+    },
+    {
+      "name": "hours",
+      "type": "",
+      "description": "Number of hours of the time stamp."
+    },
+    {
+      "name": "minutes",
+      "type": "",
+      "description": "Number of minutes of the time stamp."
+    },
+    {
+      "name": "seconds",
+      "type": "",
+      "description": "Number of seconds of the time stamp."
+    }
+  ],
+  "return": "Time stamp in nanoseconds.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  dword days    = 432;\n  dword hours   = 125;\n  dword minutes = 102;\n  dword seconds = 146;\n}\n\non start\n{\n  write (\"1 second = %I64d ns\", ConvertTimestampToNS ( 0, 0, 0, 1 ));\n  write (\"1 minute = %I64d ns\", ConvertTimestampToNS ( 0, 0, 1, 0 ));\n  write (\"1 hour   = %I64d ns\", ConvertTimestampToNS ( 0, 1, 0, 0 ));\n  write (\"1 day    = %I64d ns\", ConvertTimestampToNS ( 1, 0, 0, 0 ));\n\n  write (\"Sum of %d days %d hours %d minutes %d seconds = %I64d ns\", days, hours, minutes, seconds, ConvertTimestampToNS ( days, hours, minutes, seconds ));\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "14",
+      "14",
+      "14",
+      "—",
+      "14",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

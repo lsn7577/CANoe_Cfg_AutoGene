@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOAbortCodeOccurred",
+  "category": "CANopen",
+  "title": "coTfsSDOAbortCodeOccurred",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoAbortCodeOccured.htm",
+  "syntax": [
+    "long coTfsSDOAbortCodeOccurred( dword resetAbortList );"
+  ],
+  "description": [
+    "This function checks if a previously executed coTfsSDO… command can be finished with a received and accepted SDO abort code."
+  ],
+  "parameters": [
+    {
+      "name": "resetAbortList",
+      "type": "",
+      "description": "!=0: resets the list with received and accepted SDO abort codes (see coTfsSDOResetAbortList)"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear list with received SDO abort codes first */\ncoTfsSDOResetAbortList();\n\n/* Try to read a non-existing object. The DUT will answer with an SDO abort code */\ncoTfsSdoUpload(0x999,0);\n\n/* perform other SDO accesses ... */\n/* did any SDO abort code occur ? */\nif (coTfsSDOAbortCodeOccurred(1) != 1)\n{\n  /*\n   * no SDO abort code occurred\n   * object exists or device is not connected ?\n  */\n} /* if */"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

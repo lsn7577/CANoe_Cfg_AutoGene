@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getProfileInt",
+  "category": "Other",
+  "title": "getProfileInt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetProFileInt.htm",
+  "syntax": [
+    "long getProfileInt(char section[], char entry[], long def, char filename[]); // form 1"
+  ],
+  "description": [
+    "Searches the file filename under section section for the variable entry. If its value is a number, this number is returned as the functional result. If the file or entry is not found, or if entry does not contain a valid number, the default value def is returned as the functional result."
+  ],
+  "parameters": [
+    {
+      "name": "section",
+      "type": "",
+      "description": "Section of the file as a string."
+    }
+  ],
+  "return": "Integer that was read in.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

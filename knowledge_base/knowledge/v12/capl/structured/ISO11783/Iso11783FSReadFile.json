@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSReadFile",
+  "category": "ISO11783",
+  "title": "Iso11783FSReadFile",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fsreadfile.htm",
+  "syntax": [
+    "long Iso11783FSReadFile( dword fileHandle, dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "The function reads data from an open file and directory entries from an open directory respectively.",
+    "Whenever reading directory entries, ensure that handle consists of at least (n * 22 + 2) bytes (n = the number of directory entries to read passed in size. 22 bytes is a maximum length directory entry when the file name length is 12 characters (subject to the 8.3 naming convention). Two bytes are used for the word in buffer[0] and buffer[1] with the number of directory entries actually read)."
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "File or directory handle, see also Iso11783FSOpenFile"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// Read data from file\nLONG handle;\nchar data[200];\n\nhandle = Iso11783FSOpenFile( \"\\test.TXT\", 0x00 );\nif (handle > 0) {\n Iso11783FSReadFile( handle, elCount(data), data );\n  Iso11783FSCloseFile( handle );\n} \n\r\n                        \n// Read directory entries:\nLONG handle;\nchar data[200];\n\nhandle = Iso11783FSOpenFile( \"\\DIR1\", 0x03 );\nif (handle > 0) {\n Iso11783FSReadFile( handle, (elCount(data)-2)/22, data );\n  Iso11783FSCloseFile( handle );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

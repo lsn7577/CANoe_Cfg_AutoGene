@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1587AppendParameter",
+  "category": "J1587",
+  "title": "J1587AppendParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1587/Functions/CAPLfunctionJ1587AppendParameter.htm",
+  "syntax": [
+    "byte J1587AppendParameter(J1587Message msg /*in/out*/, J1587Param param /*in*/)"
+  ],
+  "description": [
+    "Appends a J1587 parameter to a J1708 message."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "J1708 message"
+    }
+  ],
+  "return": "Value\nDescription\n0\nno error\n0x1\n0x2\nThe parameter to append is of a different page than the first parameter (if yet any = DLC > 0) of the J1708 message.\n0x3\nThe parameter to append is of a different type (parameter, proprietary parameter, PCMD data) than the first parameter (if yet any = DLC > 0) of the J1708 message.\n0x4\nThe DLC of the resulting J1708 message would exceed 3825 bytes (limit for the TP!).\n0x5\nThe receiver of the parameter to append to the message is different from the receiver of the message. A (proprietary) J1708 message can only have one receiver.\n0x6\nThe data content of the J1708 message is invalid. This can be due to a mismatch between the DLC and the actual content of the message or due to a message content, from which valid parameter data cannot be deduced. Therefore it is impossible to evaluate if the append operation is possible at all and if yes to find the position for appending an additional parameter to the message.\n0xFF\ngeneral error",
+  "example": {
+    "description": [],
+    "code": "J1587Message 50 txMsg;\nJ1587Param EngineSpeed txEngSpeed;\nJ1587Param EngineCoolantTemp txEngCool;\n\nJ1587AppendParameter(txMsg, txEngSpeed);\nJ1587AppendParameter(txMsg, txEngCool);\n\noutput(txMsg);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

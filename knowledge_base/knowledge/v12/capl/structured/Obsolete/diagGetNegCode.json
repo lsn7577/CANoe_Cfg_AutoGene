@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetNegCode",
+  "category": "Obsolete",
+  "title": "diagGetNegCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionDiagGetNegCode.htm",
+  "syntax": [
+    "long diagGetNegCode (char mnemonic[])"
+  ],
+  "description": [
+    "Returns the error code for a KWP2000 mnemonic, e.g. 0x10 for \"GR\" (\"General Reject\")."
+  ],
+  "parameters": [
+    {
+      "name": "mnemonic",
+      "type": "",
+      "description": "Abbreviation for the error code."
+    }
+  ],
+  "return": "Diagnostics/KWP2000 error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

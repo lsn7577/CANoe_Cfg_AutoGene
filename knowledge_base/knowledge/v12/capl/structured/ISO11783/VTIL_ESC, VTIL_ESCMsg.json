@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ESC, VTIL_ESCMsg",
+  "category": "ISO11783",
+  "title": "VTIL_ESC, VTIL_ESCMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILESC.htm",
+  "syntax": [
+    "long VTIL_ESC( ); // form 1"
+  ],
+  "description": [
+    "The VTIL_ESC methods simulate the press of the ESC means of the Virtual Terminal. As a result, the VT ESC message with the Object ID, where input was aborted, is sent.",
+    "The VTIL_ESCMsg methods send the VT ESC message (without triggering any event in the Virtual Terminal)."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

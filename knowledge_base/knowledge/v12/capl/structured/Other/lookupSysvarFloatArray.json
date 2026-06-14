@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "lookupSysvarFloatArray",
+  "category": "Other",
+  "title": "lookupSysvarFloatArray",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionlookupSysvarFloatArray.htm",
+  "syntax": [
+    "sysvarFloatArray * lookupSysvarFloatArray(char sysvarPath[]); // form 1"
+  ],
+  "description": [
+    "Searches for a system variable definition. If the system variable is not found or has a wrong type, test modules/units report an error in test system while simulation/analysis nodes write a warning into the Write Window, and the function returns an invalid sysvar.",
+    "It is recommended to use this function only in special cases or during measurement start, since searching for the database definition may impact real-time performance."
+  ],
+  "parameters": [
+    {
+      "name": "sysvarPath",
+      "type": "",
+      "description": "Fully qualified name of the variable (including namespaces)"
+    }
+  ],
+  "return": "The found system variable or an invalid object.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

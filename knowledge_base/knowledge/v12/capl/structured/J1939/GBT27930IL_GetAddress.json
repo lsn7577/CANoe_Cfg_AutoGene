@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_GetAddress",
+  "category": "J1939",
+  "title": "GBT27930IL_GetAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILGetAddress.htm",
+  "syntax": [
+    "long GBT27930IL_GetAddress(); // form 1"
+  ],
+  "description": [
+    "Returns the address that is used by the GBT27930 IL."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n  LONG addr;\n  addr = GBT27930IL_GetAddress();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

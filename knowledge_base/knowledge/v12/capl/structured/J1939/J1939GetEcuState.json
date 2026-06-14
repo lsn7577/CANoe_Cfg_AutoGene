@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetEcuState",
+  "category": "J1939",
+  "title": "J1939GetEcuState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939GetEcuState.htm",
+  "syntax": [
+    "dword J1939J1939GetEcuState(dword ecuHandle);"
+  ],
+  "description": [
+    "Returns the current state of the ECU."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if (J1939GetEcuState( handle ) == 2) {\n  write( \"ECU is online\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

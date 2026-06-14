@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostAsNtfFunctionCheck",
+  "category": "MOST",
+  "title": "mostAsNtfFunctionCheck",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsNTFFunctionCheck.htm",
+  "syntax": [
+    "long mostAsNtfFunctionCheck(long deviceID, long fblockID, long instID, long functionID)"
+  ],
+  "description": [
+    "Checks whether a notification client (deviceID) is registered in the notification matrix for a function."
+  ],
+  "parameters": [
+    {
+      "name": "deviceID",
+      "type": "",
+      "description": "Addess of the notification client"
+    }
+  ],
+  "return": "0: deviceID is not registered",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

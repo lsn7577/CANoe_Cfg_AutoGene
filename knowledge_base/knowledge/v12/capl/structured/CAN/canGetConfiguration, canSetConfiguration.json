@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "canGetConfiguration, canSetConfiguration",
+  "category": "CAN",
+  "title": "canGetConfiguration, canSetConfiguration",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionCanGetSetConfiguration.htm",
+  "syntax": [
+    "long canGetConfiguration(long channel, canSettings settings);"
+  ],
+  "description": [
+    "The CAN controller parameters can be set or read.",
+    "canSetConfiguration performs an automatic reset of the CAN controller."
+  ],
+  "parameters": [
+    {
+      "name": "Channel",
+      "type": "",
+      "description": "The CAN channel."
+    }
+  ],
+  "return": "1 = success0 = error",
+  "example": {
+    "description": [],
+    "code": "int ret;\nint channel = 1;\ncanSettings settings;\nsettings.baudrate = 1000000;\nsettings.tseg1=5;\nsettings.tseg2=2;\nsettings.sjw=2;\nsettings.sam=1;\nsettings.flags = 0;\n\nwrite(\"Set 1 MB\");\nret = canSetConfiguration(channel, settings);\n\nret = canGetConfiguration(channel, settings);\nif (ret)\n{\n   write(\"Settings: baud= %f, tseg1 = %d, tseg2= %d, sjw = %d, sam = %d, flags = 0x%x\",\n             settings.baudrate, settings.tseg1, settings.tseg2, settings.sjw, settings.sam, settings.flags);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

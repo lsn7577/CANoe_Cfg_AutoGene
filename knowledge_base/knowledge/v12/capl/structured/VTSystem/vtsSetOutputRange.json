@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "vtsSetOutputRange",
+  "category": "VTSystem",
+  "title": "vtsSetOutputRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetOutputRange.htm",
+  "syntax": [
+    "long vtsSetOutputRange (char Target[], eVTSOutputRange Range);"
+  ],
+  "description": [
+    "Sets the range that is used for analog output on output channels of VT2816 modules."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": "vtsSetOutputRange (\"VTS::TempSensor”, eVTSOutputRangePlusMinus10V);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

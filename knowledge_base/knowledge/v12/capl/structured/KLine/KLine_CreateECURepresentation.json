@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "KLine_CreateECURepresentation",
+  "category": "KLine",
+  "title": "KLine_CreateECURepresentation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineCreateECURepresentation.htm",
+  "syntax": [
+    "long KLine_CreateECURepresentation(dword channel)"
+  ],
+  "description": [
+    "Initialize K-Line ECU communication on given channel.",
+    "Must be called in on preStart handler."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Number of the hardware channel."
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n   long klineHandle;\n   long channelNo;\n\n   channelNo = DiagGetCommParameter( \"CANoe.ChannelNumber\");\n   klineHandle = KLine_CreateECURepresentation( channelNo);\n   write( \"KLine_CreateECURepresentation at K-Line%d returns %d\", channelNo, klineHandle);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

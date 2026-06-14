@@ -1,0 +1,69 @@
+{
+  "page_type": "function",
+  "name": "ethernetErrorPacket",
+  "category": "IP",
+  "title": "ethernetErrorPacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Objects/CAPLfunctionEthernetErrorPacket.htm",
+  "syntax": [
+    "ethernetErrorPacket <errorPacket var>;"
+  ],
+  "description": [
+    "Can be use in on ethernetErrorPacket handler to access packet data."
+  ],
+  "parameters": [
+    {
+      "name": "packet var",
+      "type": "",
+      "description": "Character string defining the object’s variable name."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on ethernetErrorPacket *\n{\n  write(\"Received Ethernet error packet on Eth%d\", this.msgChannel );\n  output( this ); // only required in CAPL node in measurement setup!\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "time_ns Point in time, units: nanoseconds",
+        "int64",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "dir",
+        "byte",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "msgChannel Application channel, i.e. Eth 1.",
+        "word",
+        "—"
+      ]
+    },
+    {
+      "row": [
+        "hwChannel Hardware channel. If not supported by network interface, value is 1.",
+        "word",
+        "Only with Vector Interfaces, i.e. VN5640, with operation mode with more than 1 hardware channel."
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

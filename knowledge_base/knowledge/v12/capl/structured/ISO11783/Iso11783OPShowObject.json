@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPShowObject",
+  "category": "ISO11783",
+  "title": "Iso11783OPShowObject",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPShowObject.htm",
+  "syntax": [
+    "long Iso11783OPShowObject( dword ecuHandle, dword objectID, dword show );"
+  ],
+  "description": [
+    "The function shows or hides an object. The Show Object command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPShowObject( \r\n handle, 1200, 1 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,123 @@
+{
+  "page_type": "notes",
+  "name": "setPortBits - Lowspeed and CANcab 1041",
+  "category": "Obsolete",
+  "title": "setPortBits - Lowspeed and CANcab 1041",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionSetPortBitsLowspeed.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by setCanCabsMod."
+      ],
+      [
+        "Note For transceiver: 252 1041 1053 1054 opto variations"
+      ],
+      [
+        "Function Syntax",
+        "void setPortBits (byte Mode);"
+      ],
+      [
+        "Function",
+        "To enable the different CAN bus tranceiver modes Normal Mode (standard at start) or Sleep Mode. For this function you have to take care that the channel number is the logical one which is used by CANalyzer / CANoe according to the assignment in CAN Driver Configuration."
+      ],
+      [
+        "Parameters",
+        "8 bit parameter with the following, lowspeed CANcab specific meaning: Bit 0 and 1 Linemode of channel 1 CANcabs Bit 2 and 3 Linemode of channel 2 CANcabs Bit 4 – 7 Reserved and must be set to \"0\" To enable one mode, the parameter has to contain one of the following bit combinations: Channel 1/Channel 2 Bit 1/ Bit 3 Bit 0/ Bit 2 Normal Mode 0 1 Sleep Mode 1 0 No change 1 1 No change 0 0",
+        "Bit 0 and 1",
+        "Linemode of channel 1 CANcabs",
+        "Bit 2 and 3",
+        "Linemode of channel 2 CANcabs",
+        "Bit 4 – 7",
+        "Reserved and must be set to \"0\"",
+        "Channel 1/Channel 2",
+        "Bit 1/ Bit 3",
+        "Bit 0/ Bit 2",
+        "Normal Mode",
+        "0",
+        "1",
+        "Sleep Mode",
+        "1",
+        "0",
+        "No change",
+        "1",
+        "1",
+        "No change",
+        "0",
+        "0"
+      ],
+      [
+        "Bit 0 and 1",
+        "Linemode of channel 1 CANcabs"
+      ],
+      [
+        "Bit 2 and 3",
+        "Linemode of channel 2 CANcabs"
+      ],
+      [
+        "Bit 4 – 7",
+        "Reserved and must be set to \"0\""
+      ],
+      [
+        "Channel 1/Channel 2",
+        "Bit 1/ Bit 3",
+        "Bit 0/ Bit 2"
+      ],
+      [
+        "Normal Mode",
+        "0",
+        "1"
+      ],
+      [
+        "Sleep Mode",
+        "1",
+        "0"
+      ],
+      [
+        "No change",
+        "1",
+        "1"
+      ],
+      [
+        "No change",
+        "0",
+        "0"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "—",
+        "•",
+        "•"
+      ],
+      [
+        "Example Changing the mode of two lowspeed CANcabs: variables {}on key '1'{write (\"CAN1 Lowspeed: Normal Mode\");setPortBits (0x01);}on key '2'{write (\"CAN1 Lowspeed: Sleep Mode\");setPortBits (0x02);}on key '3'{write (\"CAN2 Lowspeed: Normal Mode\");setPortBits (0x04);}on key '4'{write (\"CAN2 Lowspeed: Sleep Mode\");setPortBits (0x08);}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

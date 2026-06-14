@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "memcpy_n2h",
+  "category": "StructByteAccess",
+  "title": "memcpy_n2h",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/StructByteAccess/Functions/CAPLfunctionMemCpyN2h.htm",
+  "syntax": [
+    "void memcpy_n2h(struct dest, byte source[]); // form 1"
+  ],
+  "description": [
+    "Fills the struct with bytes from the array, and translates the byte order of the elements from big-endian to little-endian (n2h stands for \"network to host\")."
+  ],
+  "parameters": [
+    {
+      "name": "source",
+      "type": "",
+      "description": "Array whose bytes shall be copied"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

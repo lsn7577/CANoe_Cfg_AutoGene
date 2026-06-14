@@ -1,0 +1,54 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetCertificateSequence",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetCertificateSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetCertificateSequence.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetCertificateSequence(dword certificateType1, dword certificateType2, dword certificateType3, dword certificateType4); // form 1"
+  ],
+  "description": [
+    "Sets the sequence of requested certificates.",
+    "Use this function to change the sequence of requested certificates. By default the following sequence is used:"
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Testlab certificate"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Manufacturer certificate"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Manufacturer series certificate"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Device certificate"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

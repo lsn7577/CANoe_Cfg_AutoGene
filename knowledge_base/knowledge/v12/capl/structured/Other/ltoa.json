@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ltoa",
+  "category": "Other",
+  "title": "ltoa",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionltoa.htm",
+  "syntax": [
+    "void ltoa(long val, char s[], long base);"
+  ],
+  "description": [
+    "The number val is converted to a string s. In this case, base indicates a number base between 2 and 36. s must be large enough to accept the converted number!"
+  ],
+  "parameters": [
+    {
+      "name": "val",
+      "type": "",
+      "description": "Number to be converted."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Result:"
+    ],
+    "code": "char s1[9];\nchar s2[9];\nltoa(z,s1,2);\nltoa(z,s2,10);\nwrite(\"z: %d s1= %s\",z, s1);\nwrite(\"z: %d s2= %s\",z, s2);\n...\nz: 255 s1= 11111111\nz: 255 s2= 255"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

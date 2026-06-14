@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSlSimulate",
+  "category": "Obsolete",
+  "title": "linSlSimulate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSlSimulate.htm",
+  "syntax": [
+    "void linSlSimulate(unsigned int slaveId);"
+  ],
+  "description": [
+    "Activates the Slave with the passed identifier for simulation. This function must be called before the Slave is further configured."
+  ],
+  "parameters": [
+    {
+      "name": "slaveId",
+      "type": "",
+      "description": "User selectable identifier for a Slave or a Finite State Machine (FSM).Valid Slave identifiers run from 0 to 63."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

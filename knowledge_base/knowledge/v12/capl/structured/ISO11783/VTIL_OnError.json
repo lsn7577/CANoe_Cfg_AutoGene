@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_OnError",
+  "category": "ISO11783",
+  "title": "VTIL_OnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILOnError.htm",
+  "syntax": [
+    "void VTIL_OnError( long errorCode, long param );"
+  ],
+  "description": [
+    "This callback function is called from the VT IL if an error occurred."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "VT IL Error Code"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void VTIL_OnError( long errorCode, long param )\n{\n  write( \"Error %d, parameter %d\", errorCode, param );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

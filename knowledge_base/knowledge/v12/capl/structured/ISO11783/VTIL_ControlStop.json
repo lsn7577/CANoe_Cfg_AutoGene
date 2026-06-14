@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ControlStop",
+  "category": "ISO11783",
+  "title": "VTIL_ControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILControlStop.htm",
+  "syntax": [
+    "long VTIL_ControlStop(); // form 1"
+  ],
+  "description": [
+    "Deactivates the Virtual Terminal and stops sending cyclic messages. A Cannot Claim Address message is sent, if the NMT is activated and the message is not suppressed with the parameter option set to 1."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void SetDataMaskSize(dword newSize)\n{\n  // data mask size can only be changed if VT is stopped\n  VTIL_ControlStop(VT, 1);\n  // wait until Working Sets have detected that VT is offline\n  TestWaitForTimeout(3500);\n  // change size and restart VT\n  VTIL_SetNodeProperty(VT,\"dataMaskSize\", newSize);\n  VTIL_ControlStart(VT);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

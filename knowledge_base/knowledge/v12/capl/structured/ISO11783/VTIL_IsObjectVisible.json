@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_IsObjectVisible",
+  "category": "ISO11783",
+  "title": "VTIL_IsObjectVisible",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILIsObjectVisible.htm",
+  "syntax": [
+    "long VTIL_IsObjectVisible(dbNode workingSetMaster, dword typeOfActiveMask, dword objectId, dword & isVisible); // form 1"
+  ],
+  "description": [
+    "Checks if an object is visible in the current Data Mask or Soft Key Mask."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

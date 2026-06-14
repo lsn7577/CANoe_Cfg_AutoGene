@@ -1,0 +1,617 @@
+{
+  "page_type": "notes",
+  "name": "AUTOSAR Ethernet Interaction Layer",
+  "category": "IP",
+  "title": "AUTOSAR Ethernet Interaction Layer",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/CAPLfunctionsAREthILOverview.htm",
+  "syntax": [],
+  "description": [
+    "Callback Functions",
+    "Client-Side API",
+    "Control API",
+    "Endpoints",
+    "General Functions",
+    "Low-level API",
+    "Raw Data Access",
+    "Server-Side API",
+    "Service Discovery",
+    "Static Configuration",
+    "Symbolic Database Access",
+    "TCP Handling",
+    "Value Access",
+    "<OnAREthMethodError>",
+    "OnAREthClosedIPv6TCPConnection",
+    "OnAREthEstablishedIPv6TCPConnection",
+    "Returns current status of AUTOSAR Eth IL.",
+    "Returns the Security-Validation-State of a received SOME/IP message.",
+    "AREthProvidedEventGroupAddConsumer",
+    "Adds a consumer to a provided event group",
+    "AREthProvidedEventGroupRemoveConsumer",
+    "Removes a consumer from a provided event group",
+    "AREthProvidedEventsAndFieldsAddConsumer",
+    "Adds a consumer to a provided service instance",
+    "AREthProvidedEventsAndFieldsRemoveConsumer",
+    "Removes a consumer from a provided service instance",
+    "AREthProvidedEventAddConsumer",
+    "Adds a consumer to a provided event",
+    "AREthProvidedEventRemoveConsumer",
+    "Removes a consumer from a provided event",
+    "AREthProvidedFieldAddConsumer",
+    "Adds a consumer to a provided field",
+    "AREthProvidedFieldRemoveConsumer",
+    "Removes a consumer from a provided field",
+    "AREthSetMulticastReceiverEndpoints",
+    "Sets the multicast endpoint of a consumed event group",
+    "AREthSetProviderEndpoints",
+    "Sets the remote endpoints of a consumed service instance",
+    "AREthTCPListen",
+    "Listen on application endpoint"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "ETHERNET Only available with option .Ethernet. To use the CAPL functions the CANoeILNL_AUTOSAR_ETH.dll must be included."
+      ]
+    ],
+    [
+      [
+        "Callback Functions Client-Side API Control API Endpoints General Functions",
+        "Low-level API Raw Data Access Server-Side API Service Discovery",
+        "Static Configuration Symbolic Database Access TCP Handling Value Access"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "<OnAREthEventReceived>",
+        "CAPL handler to receive events."
+      ],
+      [
+        "<OnAREthFieldNotification>",
+        "CAPL handler to receive field change notifications."
+      ],
+      [
+        "<OnAREthMethodError>",
+        "A callback function with this signature must be passed to the CAPL function AREthCreateMethodCall."
+      ],
+      [
+        "<OnAREthMethodRequest>",
+        "CAPL handler to request a method."
+      ],
+      [
+        "<OnAREthMethodResponse>",
+        "CAPL handler to response a method."
+      ],
+      [
+        "<OnAREthPrepareEvent>",
+        "CAPL handler to prepare an event before sending."
+      ],
+      [
+        "OnAREthClosedIPv6TCPConnection",
+        "CAPL handler to be called after a IL’s TCP connection has been closed."
+      ],
+      [
+        "OnAREthEstablishedIPv6TCPConnection",
+        "CAPL handler to be called after an incoming or outgoing TCP connection."
+      ],
+      [
+        "OnAREthMessage",
+        "CAPL handler to receive SOME/IP messages."
+      ],
+      [
+        "OnAREthProcessRxMessage",
+        "CAPL handler to be called when the IL has received a SOME/IP message."
+      ],
+      [
+        "OnAREthProcessTxARPDU",
+        "Is called by the interaction layer before sending an AUTOSAR PDU."
+      ],
+      [
+        "OnAREthProcessTxMessage",
+        "CAPL handler to be called when the IL wants to send a SOME/IP message."
+      ],
+      [
+        "OnAREthSDClientEventGroupStatusChanged",
+        "CAPL handler to be called when the status of an Event Group changes."
+      ],
+      [
+        "OnAREthSDClientServiceStatusChanged",
+        "CAPL handler to be called when the status of a service changes."
+      ],
+      [
+        "OnAREthSDServerEventGroupStatusChanged",
+        "CAPL handler to be called when a Client executes the Require Service or Release Service."
+      ],
+      [
+        "OnAREthSDServerEventGroupStatusChangedIPv6",
+        "CAPL handler to be called when a Client executes the Require Service or Release Service."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthAddConsumedEventGroup",
+        "Adds an Event Group to a Consumed Service Instance"
+      ],
+      [
+        "AREthCallMethod",
+        "Sends a request to the server."
+      ],
+      [
+        "AREthCreateConsumedServiceInstance",
+        "Creates a Consumed Service Instance."
+      ],
+      [
+        "AREthCreateEventConsumer",
+        "Adds an Event Consumer to a Consumed Service Instance."
+      ],
+      [
+        "AREthCreateFieldConsumer",
+        "Adds a Field Consumer to a Consumed Service Instance."
+      ],
+      [
+        "AREthCreateMethodCall",
+        "Creates a method call."
+      ],
+      [
+        "AREthReleaseConsumedServiceInstance",
+        "Deletes a Consumed Service Instance."
+      ],
+      [
+        "AREthRemoveConsumedEventGroup",
+        "Removes an Event Group."
+      ],
+      [
+        "AREthRemoveEventConsumer",
+        "Deletes an Event Consumer."
+      ],
+      [
+        "AREthRemoveFieldConsumer",
+        "Deletes a Field Consumer."
+      ],
+      [
+        "AREthRemoveMethodCall",
+        "Deletes a method call."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthILControlGetStatus",
+        "Returns current status of AUTOSAR Eth IL."
+      ],
+      [
+        "AREthILControlInit",
+        "Initializes the AUTOSAR Eth IL."
+      ],
+      [
+        "AREthILControlResume",
+        "Starts to send periodic messages"
+      ],
+      [
+        "AREthILControlStart",
+        "Starts the AUTOSAR Eth IL."
+      ],
+      [
+        "AREthILControlStop",
+        "Stops the AUTOSAR Eth IL."
+      ],
+      [
+        "AREthILControlWait",
+        "Stops sending cyclic messages."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthCloseLocalApplicationEndpoint",
+        "Closes an application endpoint."
+      ],
+      [
+        "AREthOpenLocalApplicationEndpoint",
+        "Opens an application endpoint."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthGetLastError",
+        "Interface to retrieve the last error which occurs in the AUTOSAR Eth IL."
+      ],
+      [
+        "AREthGetLastErrorText",
+        "Interface to retrieve the last error that occurred in the AUTOSAR Eth IL as string."
+      ],
+      [
+        "AREthGetSecurityValidationState",
+        "Returns the Security-Validation-State of a received SOME/IP message."
+      ],
+      [
+        "AREthSetProperty",
+        "Sets a property of the AUTOSAR Eth IL."
+      ],
+      [
+        "AREthSetVerbosity",
+        "Sets the verbosity level of the AUTOSAR Eth IL."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthCreateMessage",
+        "Creates a SOME/IP message."
+      ],
+      [
+        "AREthOutputMessage",
+        "Sends a SOME/IP message."
+      ],
+      [
+        "AREthPostMessage",
+        "Posts a SOME/IP message."
+      ],
+      [
+        "AREthReleaseMessage",
+        "Deletes a SOME/IP message."
+      ],
+      [
+        "AREthSendARPDUTo",
+        "Sends data as AUTOSAR PDU via a connection."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthGetData",
+        "Queries the raw data of a SOME/IP message."
+      ],
+      [
+        "AREthSerializeMessage",
+        "Serializes the SOME/IP message including the header into a buffer."
+      ],
+      [
+        "AREthSetData",
+        "Sets the raw data of a SOME/IP message."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthAddEvent",
+        "Adds an event to a Provided Service Instance."
+      ],
+      [
+        "AREthAddEventToEventgroup",
+        "Assigns an event to an Event Group."
+      ],
+      [
+        "AREthAddField",
+        "Adds a Field to a Provided Service Instance."
+      ],
+      [
+        "AREthAddFieldToEventgroup",
+        "Assigns a Field to an Event Group."
+      ],
+      [
+        "AREthAddMethod",
+        "Adds a method to a Provided Service Instance."
+      ],
+      [
+        "AREthAddProvidedEventGroup",
+        "Adds an Event Group to a Provided Service Instance."
+      ],
+      [
+        "AREthCommitField",
+        "Commit field changes and send a field notification."
+      ],
+      [
+        "AREthCreateProvidedServiceInstance",
+        "Creates a Provided Service Instance."
+      ],
+      [
+        "AREthReleaseProvidedServiceInstance",
+        "Deletes a Provided Service Instance."
+      ],
+      [
+        "AREthRemoveEvent",
+        "Removes an event from a Provided Service Instance."
+      ],
+      [
+        "AREthRemoveEventFromEventgroup",
+        "Removes an event from an Event Group."
+      ],
+      [
+        "AREthRemoveField",
+        "Removes a field from a Provided Service Instance."
+      ],
+      [
+        "AREthRemoveFieldFromEventgroup",
+        "Removes a Field from an Event Group."
+      ],
+      [
+        "AREthRemoveMethod",
+        "Removes a method from a Provided Service Instance."
+      ],
+      [
+        "AREthRemoveProvidedEventGroup",
+        "Removes an Event Group from a Provided Service Instance."
+      ],
+      [
+        "AREthTriggerEvent",
+        "Triggers sending of an event."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthSDDesubscribeEventGroup",
+        "Informs the Remote-SD that Event Group is no longer needed."
+      ],
+      [
+        "AREthSDReleaseService",
+        "Informs the local SD that the Remote Service is no longer needed."
+      ],
+      [
+        "AREthSDRequireService",
+        "Informs the local SD that the Remote Service is needed."
+      ],
+      [
+        "AREthSDSetServiceStatus",
+        "Informs the Service Discovery of the current status of a provided Service Instance."
+      ],
+      [
+        "AREthSDSubscribeEventGroup",
+        "Sends a Subscribe message."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthProvidedEventGroupAddConsumer",
+        "Adds a consumer to a provided event group"
+      ],
+      [
+        "AREthProvidedEventGroupRemoveConsumer",
+        "Removes a consumer from a provided event group"
+      ],
+      [
+        "AREthProvidedEventsAndFieldsAddConsumer",
+        "Adds a consumer to a provided service instance"
+      ],
+      [
+        "AREthProvidedEventsAndFieldsRemoveConsumer",
+        "Removes a consumer from a provided service instance"
+      ],
+      [
+        "AREthProvidedEventAddConsumer",
+        "Adds a consumer to a provided event"
+      ],
+      [
+        "AREthProvidedEventRemoveConsumer",
+        "Removes a consumer from a provided event"
+      ],
+      [
+        "AREthProvidedFieldAddConsumer",
+        "Adds a consumer to a provided field"
+      ],
+      [
+        "AREthProvidedFieldRemoveConsumer",
+        "Removes a consumer from a provided field"
+      ],
+      [
+        "AREthSetMulticastReceiverEndpoints",
+        "Sets the multicast endpoint of a consumed event group"
+      ],
+      [
+        "AREthSetProviderEndpoints",
+        "Sets the remote endpoints of a consumed service instance"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthGetConsumedObjectHandle",
+        "Enables to search for a consumed object which has been created separately."
+      ],
+      [
+        "AREthGetProvidedObjectHandle",
+        "Enables to search for a provided object which has been created separately."
+      ],
+      [
+        "AREthRegisterCallback",
+        "Enables to register/unregister a CAPL callback function for an object which has been created separately."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthCloseEstablishedTCPConnection",
+        "Closes on eor multiple database defined TCP connection(s)."
+      ],
+      [
+        "AREthEstablishTCPConnection",
+        "Establishes one or multiple database defined TCP connection(s)."
+      ],
+      [
+        "AREthTCPListen",
+        "Listen on application endpoint"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AREthGetDestinationAddress",
+        "Returns the IPv4 destination address."
+      ],
+      [
+        "AREthGetDestinationPort",
+        "Returns the destination port (UDP/TCP)."
+      ],
+      [
+        "AREthGetInterfaceVersion",
+        "Returns the Interface Version from the SOME/IP header."
+      ],
+      [
+        "AREthGetLength",
+        "Returns the length in bytes that is in the SOME/IP header."
+      ],
+      [
+        "AREthGetMessageId",
+        "Returns the Message ID from the SOME/IP header."
+      ],
+      [
+        "AREthGetMessageType",
+        "Returns the Message Type from the SOME/IP header."
+      ],
+      [
+        "AREthGetProtocol",
+        "Returns the protocol (UDP/TCP) the SOME/IP message was transmitted with."
+      ],
+      [
+        "AREthGetProtocolVersion",
+        "Returns the Protocol Version from the SOME/IP header."
+      ],
+      [
+        "AREthGetRequestId",
+        "Returns the Request ID from the SOME/IP header."
+      ],
+      [
+        "AREthGetReturnCode",
+        "Returns the Return Code from the SOME/IP header."
+      ],
+      [
+        "AREthGetSourceAddress",
+        "Returns the IPv4 sender address."
+      ],
+      [
+        "AREthGetSourcePort",
+        "Returns the Source Port (UDP/TCP)."
+      ],
+      [
+        "AREthGetValueDWord",
+        "Gets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthGetValueFloat",
+        "Gets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthGetValueInt64",
+        "Gets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthGetValueLong",
+        "Gets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthGetValuePhys",
+        "Gets the physical parameters of a SOME/IP message."
+      ],
+      [
+        "AREthGetValueQWord",
+        "Gets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthGetValueString",
+        "Gets the string parameters of a SOME/IP message."
+      ],
+      [
+        "AREthIsOptional",
+        "Reads out if a parameter or member of the object is optional or mandatory."
+      ],
+      [
+        "AREthRemoveValue",
+        "Removes the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthSetRequestId",
+        "Sets the Request ID."
+      ],
+      [
+        "AREthSetReturnCode",
+        "Sets the return code."
+      ],
+      [
+        "AREthSetValueDWord",
+        "Sets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthSetValueFloat",
+        "Sets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthSetValueInt64",
+        "Sets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthSetValueLong",
+        "Sets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthSetValuePhys",
+        "Sets the physical parameters of a SOME/IP message."
+      ],
+      [
+        "AREthSetValueQWord",
+        "Sets the parameters of a SOME/IP message."
+      ],
+      [
+        "AREthSetValueString",
+        "Sets the string parameters of a SOME/IP message."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

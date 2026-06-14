@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssAddMasterResponseConfigureNodeId",
+  "category": "CANopen",
+  "title": "coTfsLssAddMasterResponseConfigureNodeId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssAddMasterResponseConfigureNodeId.htm",
+  "syntax": [
+    "long coTfsLssAddMasterResponseConfigureNodeId( dword nodeId, dword nodeIdMask, dword errCode, dword specError );"
+  ],
+  "description": [
+    "This function adds a single LSS Master request wait condition to the internal list of LSS Master request wait conditions and sends a response if a request is received."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\nwrite(\"Clear list failed\");\nreturn;\n} \n\n/* add one or more test functions */\nif (coTfsLssAddMasterResponseConfigureNodeId( 112, 0xFFFFFFFF, 0, 0 ) {\nwrite(\"could not add request\");\nreturn;\n} \n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\nwrite(\"no event received\");\n} \nelse {\nwrite(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,122 @@
+{
+  "page_type": "event",
+  "name": "on transmit_unsubscribe",
+  "category": "DistributedObjects",
+  "title": "on transmit_unsubscribe",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/EventProcedures/CAPLfunctionOnTransmitUnsubscribe.htm",
+  "syntax": [],
+  "description": [
+    "This handler is called whenever a consumed data, event, or field member transmits an unsubscribe via the CAPL binding.",
+    "If the member does not use the CAPL binding, the handler is ignored.",
+    "If there are multiple handlers for the same member, the measurement will be aborted."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// Transmit a subscription request via CAN.\n//\n// This example requires a CAN message \"SomeData_Request\" with a\n// signal \"Request\" and a CAN message \"SomeData_Answer\" with a\n// signal \"Answer\".\n\n// example.vcdl\nversion 1.3;\nnamespace SomeNamespace {\n  interface Example {\n    [Binding=\"CAPL\", AutoSubscribe=false]\n    consumed data int32 SomeData;\n  }\n  object Consumer : Example {}\n  object Provider : reverse<Example> {}\n}\n\n// consumer.can\nvariables {\n  using namespace _SystemDataTypes::SDStates;\n}\non key 'a' {\n  // toggle subscription state\n  if ($Consumer.SomeData.SubscriptionState == DOMemberSubscription::Unsubscribed)\n    Consumer.SomeData.Subscribe();\n  else\n    Consumer.SomeData.Unsubscribe();\n}\n\n// consumer_binding.can\nvariables {\n  using namespace _SystemDataTypes::SDStates;\n}\non transmit_subscribe Consumer.SomeData {\n  message SomeData_Request msg;\n  Binding::SubscriptionStateReceived(Consumer.SomeData, DOMemberSubscription::Requested);\n  msg.Request = DOMemberSubscription::Requested;\n  output(msg);\n}\non transmit_unsubscribe Consumer.SomeData {\n  message SomeData_Request msg;\n  msg.Request = DOMemberSubscription::Unsubscribed;\n  output(msg);\n}\non message SomeData_Answer {\n  Binding::SubscriptionStateReceived(Consumer.SomeData, this.Answer);\n}\n\n// provider.can\non key 'b' {\n  $Provider.SomeData++;\n}\n\n// provider_binding.can\nvariables {\n  using namespace _SystemDataTypes::SDStates;\n  enum DOMemberSubscription consumerState;\n}\non message SomeData_Request {\n  message SomeData_Answer msg;\n  consumerState = this.Request == DOMemberSubscription::Requested ?\n  DOMemberSubscription::Subscribed :\n  DOMemberSubscription::Unsubscribed;\n  msg.Answer = consumerState;\n  output(msg);\n}\non transmit_value Provider.SomeData {\n  // value not transmitted via CAN, just set it directly\n  if (consumerState == DOMemberSubscription::Subscribed)\n  Binding::ValueReceived(Consumer.SomeData, $this);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "14",
+      "15",
+      "15",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

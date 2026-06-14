@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "MediaSetPropertySize",
+  "category": "Media",
+  "title": "MediaSetPropertySize",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Media/Functions/CAPLfunctionMediaSetPropertySize.htm",
+  "syntax": [
+    "long MediaSetPropertySize(dword objHandle, char propertyName[], dword width, dword height);"
+  ],
+  "description": [
+    "Sets width and height as a single 64-bit property value. Properties can be set on an object specific basis for a media type object (e.g. returned by MediaGetMediaType)."
+  ],
+  "parameters": [
+    {
+      "name": "propertyName",
+      "type": "",
+      "description": "Name of the property to be retrieved. For a list of properties that can be set by this function see Media Properties and Major Media Types / Subtypes."
+    },
+    {
+      "name": "objHandle",
+      "type": "",
+      "description": "Media type handle."
+    },
+    {
+      "name": "width",
+      "type": "",
+      "description": "Receives the width."
+    },
+    {
+      "name": "hight",
+      "type": "",
+      "description": "Receives the height."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "—"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

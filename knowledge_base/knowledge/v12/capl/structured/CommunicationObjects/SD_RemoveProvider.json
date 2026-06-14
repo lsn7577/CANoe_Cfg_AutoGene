@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SD_RemoveProvider",
+  "category": "CommunicationObjects",
+  "title": "SD_RemoveProvider",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSDRemoveProvider.htm",
+  "syntax": [
+    "void SD_RemoveProvider(serviceProviderRef * provider)"
+  ],
+  "description": [
+    "Removes a provider endpoint from a service. You may call this to react to timeouts, or unannouncements from a real provider, or to remove a simulated provider endpoint."
+  ],
+  "parameters": [
+    {
+      "name": "provider",
+      "type": "",
+      "description": "Provider endpoint."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "SD_RemoveProvider(newProvider);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

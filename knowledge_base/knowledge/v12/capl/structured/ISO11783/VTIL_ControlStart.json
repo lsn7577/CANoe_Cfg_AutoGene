@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ControlStart",
+  "category": "ISO11783",
+  "title": "VTIL_ControlStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILControlStart.htm",
+  "syntax": [
+    "long VTIL_ControlStart(); // form 1"
+  ],
+  "description": [
+    "The Virtual Terminal starts Address Claiming (if NMT is activated). If the Address Claiming was successful, cyclic messages are sent."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

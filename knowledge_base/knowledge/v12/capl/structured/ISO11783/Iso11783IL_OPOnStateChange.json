@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPOnStateChange",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPOnStateChange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPOnStateChange.htm",
+  "syntax": [
+    "void Iso11783IL_OPOnStateChange( dword state );"
+  ],
+  "description": [
+    "The function is called by the node layer, if the state of the Object Pool API has changed."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": "State of the Object Pool API"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_OPOnStateChange( dword state )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

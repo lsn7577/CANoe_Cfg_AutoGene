@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "lookupSignal",
+  "category": "Other",
+  "title": "lookupSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionlookupSignal.htm",
+  "syntax": [
+    "signal * lookupSignal(char signalName[]);"
+  ],
+  "description": [
+    "Searches for a signal in the database(s). If the signal is not found or if the name is not unique, test modules/units report an error in test system while simulation/analysis nodes write a warning into the Write Window, and the function returns an invalid signal.",
+    "It is recommended to use this function only in special cases or during measurement start, since searching for the database definition may impact real-time performance."
+  ],
+  "parameters": [
+    {
+      "name": "signalName",
+      "type": "",
+      "description": "The qualified name of the signal. The syntax is [Channel::][Database name (alias)::][Node::][Message::]Signa; the order and completeness of the objects from right to left is important."
+    }
+  ],
+  "return": "The found unique signal or an invalid object.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

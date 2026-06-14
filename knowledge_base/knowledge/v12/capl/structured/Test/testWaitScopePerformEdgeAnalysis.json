@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopePerformEdgeAnalysis",
+  "category": "Test",
+  "title": "testWaitScopePerformEdgeAnalysis",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopePerformEdgeAnalysis.htm",
+  "syntax": [
+    "long testWaitScopePerformEdgeAnalysis(message frame, ScopeAnalyseRange analyseRange, dword flags, long thresholdStart long thresholdEnd, ScopeEdgeAnalyseResult parameter[], dword parameterCount, ScopeAnalyseHandle handle) //Form 1"
+  ],
+  "description": [
+    "Perform an edge analysis for falling/rising edges of a specific frame or a complete node."
+  ],
+  "parameters": [
+    {
+      "name": "frame //Form 1,2,3",
+      "type": "",
+      "description": "The CAN, LIN or FlexRay frame should be analyzed."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

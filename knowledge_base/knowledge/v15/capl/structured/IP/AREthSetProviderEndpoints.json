@@ -1,0 +1,155 @@
+{
+  "page_type": "function",
+  "name": "AREthSetProviderEndpoints",
+  "category": "IP",
+  "title": "AREthSetProviderEndpoints",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSetProviderEndpoints.htm",
+  "syntax": [
+    "long AREthSetProviderEndpoints(dword csiHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort) // form 1",
+    "long AREthSetProviderEndpoints(dword csiHandle, byte remoteIPv6Address[], dword remoteUDPPort, dword remoteTCPPort) // form 2",
+    "long AREthSetProviderEndpoints(dword csiHandle, IP_Endpoint remoteIPEndpoint); // form 3"
+  ],
+  "description": [
+    "Sets the UDP and TCP endpoint that is used for the consumed service instance to reach the corresponding provided service instance."
+  ],
+  "parameters": [
+    {
+      "name": "csiHandle",
+      "type": "",
+      "description": "Consumed service instance handle (may be retrieved by AREthGetConsumedObjectHandle)."
+    },
+    {
+      "name": "remoteIPv4Address",
+      "type": "",
+      "description": "IPv4 address of the provider. In network byte order."
+    },
+    {
+      "name": "remoteIPv6Address",
+      "type": "",
+      "description": "IPv6 address of the provider."
+    },
+    {
+      "name": "remoteUDPPort",
+      "type": "",
+      "description": "An UDP port number of the provider or zero if there is none."
+    },
+    {
+      "name": "remoteTCPPort",
+      "type": "",
+      "description": "A TCP port number of the provider or zero if there is none."
+    },
+    {
+      "name": "remoteIPEndpoint",
+      "type": "",
+      "description": "Object of type IP_Endpoint that contains the address/port of the provider. An IP_Endpoint with port number zero may be passed to delete a previously set IP_Endpoint."
+    }
+  ],
+  "return": "Consumed service instance",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3: form 1-2 12.0 SP2: form 3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3: form 1-2 4.0 SP2: form 3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

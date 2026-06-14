@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_AddCombinedPDU",
+  "category": "Diagnostics",
+  "title": "DoIP_AddCombinedPDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPAddCombinedPDU.htm",
+  "syntax": [
+    "long DoIP_AddCombinedPDU(dword payloadType, byte payload[], dword payloadLen);"
+  ],
+  "description": [
+    "Append another well-formed PDU to the PDU combination buffer for later sending with DoIP_SendPDUCombination. The currently configured protocol version byte will be used for the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "payloadType",
+      "type": "",
+      "description": "[0; 0xFFFF] type to send, i.e. this can be any value."
+    }
+  ],
+  "return": "-10: Invalid parameter: the payload type or PDU given is too large.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupRxSignal",
+  "category": "CommunicationObjects",
+  "title": "LookupRxSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupRxSignal.htm",
+  "syntax": [
+    "rxSignalRef * LookupRxSignal(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified rx signal. The path must be complete including namespaces and endpoint(s):",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the Rx signal."
+    }
+  ],
+  "return": "The rx signal. An uninitialized object if the signal is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "rxSignalRef long errorSignal;\nchar path[200];\nchar signalName[50] = \"Mirrors::ErrorSignal\";\nchar receiver[20] = \"CANoe\";\n\nsnprintf(path, elcount(path), \"%s[%s]\", signalName, receiver);\nerrorSignal = (rxSignalRef long) lookupRxSignal(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

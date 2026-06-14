@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SetSubscriptionStateIsolated",
+  "category": "CommunicationObjects",
+  "title": "SetSubscriptionStateIsolated",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSetSubscriptionStateIsolated.htm",
+  "syntax": [
+    "void SetSubscriptionStateIsolated(providedEventRef * event, dword subscribed)"
+  ],
+  "description": [
+    "Sets the subscription state for an object, for a specific consumer – provider combination, independent of network communication. Normally, the subscription state will be set by the CANoe simulation depending on the observed communication. You can override the behavior if you for example want to test reaction to specific faulty behavior."
+  ],
+  "parameters": [
+    {
+      "name": "event",
+      "type": "",
+      "description": "Event and endpoints for which the state shall be set."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "SetSubscriptionStateIsolated(field1, 0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

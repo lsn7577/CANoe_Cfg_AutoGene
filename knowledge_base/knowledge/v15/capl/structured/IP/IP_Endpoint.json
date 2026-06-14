@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "IP_Endpoint",
+  "category": "IP",
+  "title": "IP_Endpoint",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Objects/CAPLfunctionIPEndpoint.htm",
+  "syntax": [
+    "IP_Endpoint(192.168.1.2:4001);"
+  ],
+  "description": [
+    "Initializes a variable of type IP_Endpoint with a concrete IP endpoint (form 1) or without an IP endpoint (form 2)."
+  ],
+  "parameters": [
+    {
+      "name": "endpoint",
+      "type": "",
+      "description": "An IPv4 or IPv6 address and port number separated by a colon."
+    },
+    {
+      "name": "var name",
+      "type": "",
+      "description": "Character string defining the object's variable name."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  IP_Endpoint TCP:192.168.1.1:4000 ipEndpoint1;\n  IP_Endpoint 192.168.1.2:4001     ipEndpoint2;\n  IP_Endpoint 192.168.1.2          ipEndpoint3;\n  IP_Endpoint UDP:[ff::1]:6000     ipEndpoint4;\n  IP_Endpoint [ff::1]:6001         ipEndpoint5;\n  IP_Endpoint ff::1                ipEndpoint6;\n}\non start\n{\n  IP_Endpoint ep;\n  ep = IP_Endpoint(192.168.1.2:4001);\n  // ... do something with ep\n}\non start\n{\n  DoSomething( IP_Address(FC00::0001) );\n}\n\nvoid DoSomething( IP_Address addr )\n{\n  if (addr.IsIPv4Address())\n  {\n    // ...\n  }\n  else if (addr.IsIPv6Address())\n  {\n    // ...\n  }\n}\non start\n{\n  IP_Endpoint 192.168.1.1:4000 ep1;\n  IP_Endpoint 192.168.1.1:4000 ep2;\n  if (ep1 == ep2)\n  {\n    write( \"Endpoints are equal!\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "12.0",
+      "12.0",
+      "13.0",
+      "—",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_example"
+}

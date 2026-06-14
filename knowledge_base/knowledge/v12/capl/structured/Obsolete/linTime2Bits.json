@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linTime2Bits",
+  "category": "Obsolete",
+  "title": "linTime2Bits",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINTime2Bits.htm",
+  "syntax": [
+    "dword linTime2Bits(dword time)"
+  ],
+  "description": [
+    "This function converts specified system times to bit times. The conversion is done using the current baud rate on the channel determined by the CAPL program context.",
+    "Calling this function with the explicit channel is only possible from a CAPL program defined in the Measurement Setup of CANoe."
+  ],
+  "parameters": [
+    {
+      "name": "time",
+      "type": "",
+      "description": "System time to be converted [in units of 10 µsec]."
+    }
+  ],
+  "return": "Resulting bit time.",
+  "example": {
+    "description": [
+      "Extract sync break length of LIN frames"
+    ],
+    "code": "on linFrame *\n{\ndword sysTimeSyncBreak; // time in 10µs units\ndword bitTimeSyncBreak; // time in bit time units\nsysTimeSyncBreak = linGetSyncBreakLength(this);\nbitTimeSyncBreak = linTime2Bits(sysTimeSyncBreak);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitLinSpikeData",
+  "category": "Test",
+  "title": "TestGetWaitLinSpikeData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitLinSpikeData.htm",
+  "syntax": [
+    "long TestGetWaitLinSpikeData (linSpikeEvent apEvent);"
+  ],
+  "description": [
+    "If LIN Spike is the last event that triggers a wait instruction, the frame content can be called up with the first function.",
+    "The second function can only be used for joined events. The number of the joined event (return value of testJoin...) is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "apEvent",
+      "type": "",
+      "description": "Event variable that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linSpikeEvent ()\n{\n   linSpikeEvent linSpikeEventData;\n   if (testWaitForLinSpike (5000) == 1)\n   {\n   if (testGetWaitLinSpikeData(linSpikeEventData) == 0)\n      {\n      testStep(\"Evaluation\", \"LIN Spike event occurred. Signal length is %d ns\", linSpikeEventData.length_ns);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

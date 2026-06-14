@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "gmLanId",
+  "category": "Other",
+  "title": "gmLanId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGMLanID.htm",
+  "syntax": [
+    "dword gmLanId (dbMessage aMessage, dword aSourceId)"
+  ],
+  "description": [
+    "This function can be used to create a message ID for a GMLAN message. In addition to the message, you must specify the transmission node or its source ID.",
+    "The message ID returned can be used, for example, to wait for a specific GMLAN message with the TestWaitForMessage function."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "GMLAN message for which a message ID is to be created."
+    }
+  ],
+  "return": "If the message is a GMLAN message, a GMLAN message ID will be returned containing the correct source address and priority. Otherwise, the message ID will be returned.",
+  "example": {
+    "description": [],
+    "code": "dword gmID = 0;\nlong result = 0;\ngmID = gmLanId(Comfort::Console_1, 48);\nwaitResult = TestWaitForMessage(gmID, 5000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

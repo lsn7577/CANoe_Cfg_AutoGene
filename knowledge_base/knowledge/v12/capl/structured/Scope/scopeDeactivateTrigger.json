@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "scopeDeactivateTrigger",
+  "category": "Scope",
+  "title": "scopeDeactivateTrigger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Scope/Functions/CAPLfunctionScopeDeactivateTrigger.htm",
+  "syntax": [
+    "long scopeDeactivateTrigger()"
+  ],
+  "description": [
+    "Performs Deactivate Trigger action for Scope Window. This action is equivalent to deactivating the trigger via the GUI.",
+    "The completion of this action is reported with an internal event which can be awaited via TFS-function testWaitForScopeEvent() in CAPL programs for test modules."
+  ],
+  "parameters": [],
+  "return": "2 (success): Trigger is already inactive. This might be a case when the trigger has been deactivated by a previous CAPL call or manually.",
+  "example": {
+    "description": [],
+    "code": "long res;\n\nres = scopeDeactivateTrigger();\nif (res <= 0 || res > 2)\n{\n   testStepFail(\"Initialization\",\"Call to scopeDeactivateTrigger() failed. Return code =%d\", res);\n   return;\n}\nelse if (res == 1)\n{ // wait till action done\n   if (testWaitForScopeEvent(eScopeTriggerDeactivated, 8000) != 1)\n   {\n      testStepFail(\"Initialization \",\"Scope event eScopeTriggerDeactivated was not received\");\n      return;\n   }\n}\ntestStep(\"Initialization\",\"Scope trigger deactivation succeeded\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SD_SetAddress",
+  "category": "CommunicationObjects",
+  "title": "SD_SetAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSDSetAddress.htm",
+  "syntax": [
+    "long SD_SetAddress(serviceConsumerRef * consumer, addressHandle address, serviceConsumerRef * simulatedEndpoint)"
+  ],
+  "description": [
+    "Sets the address for an endpoint, normally after it has been added dynamically to a service. The address can be created with binding specific functions. The third parameter is the simulated endpoint where the new endpoint has been discovered and where the address for the new endpoint is now known."
+  ],
+  "parameters": [
+    {
+      "name": "consumer",
+      "type": "",
+      "description": "Consumer endpoint of which the address shall be set."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "SD_SetAddress(newProvider, Abstract_CreateAddress(MirrorAdjustment, \"RearMirror\"), MirrorAdjustment[CANoe]);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

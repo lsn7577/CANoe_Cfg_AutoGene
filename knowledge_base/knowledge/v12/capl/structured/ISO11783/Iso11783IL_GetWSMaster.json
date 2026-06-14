@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_GetWSMaster",
+  "category": "ISO11783",
+  "title": "Iso11783IL_GetWSMaster",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILGetWSMaster.htm",
+  "syntax": [
+    "dword Iso11783IL_GetWSMaster(dword ecuAddress);"
+  ],
+  "description": [
+    "This function returns the address of the Working Set Master, which is assigned to an ECU with the address ecuAddress."
+  ],
+  "parameters": [
+    {
+      "name": "ecuAddress",
+      "type": "",
+      "description": "address of an ECU"
+    }
+  ],
+  "return": "address of the Working Set Master",
+  "example": {
+    "description": [],
+    "code": "wsmAddr = Iso11783IL_GetWSMaster( 10 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

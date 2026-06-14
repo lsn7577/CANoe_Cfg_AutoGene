@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "FlexRayRcvStatusEvent",
+  "category": "FlexRay",
+  "title": "FlexRayRcvStatusEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRRCVStatusEvent.htm",
+  "syntax": [
+    "FlexRayRcvStatusEvent (long msgTime, int channel, long statusType, long infomask1, long infomask2, long infomask3);"
+  ],
+  "description": [
+    "This function is a callback and is called by the tool!",
+    "The callback occurs when the FlexRay Communication Controller (CC) has synchronized with the bus or the synchronization fails."
+  ],
+  "parameters": [
+    {
+      "name": "msgTime",
+      "type": "",
+      "description": "Event time stamp."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n   int busIsSynchronized = 0;\n}\nFlexRayRcvStatusEvent (long msgTime, int channel, long statusType, long infomask1, long infomask2, long infomask3)\n{\n   if (statusType & 0x00000001)\n   {\n      if (infomask1 & 0x00000001)\n      {\n         busIsSynchronized = 1;\n         Write(\"FR StatusEvent: Bus (channel %d) is synchronized.\", channel);\n      }\n      else\n      {\n         Write(\"FR StatusEvent: Bus (channel %d) lost synchronization.\", channel);\n         if (busIsSynchronized == 1) ResetFlexRayCC(channel);\n         busIsSynchronized = 0;\n      }\n    }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

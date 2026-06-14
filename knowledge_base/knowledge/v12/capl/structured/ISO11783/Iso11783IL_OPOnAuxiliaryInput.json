@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPOnAuxiliaryInput",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPOnAuxiliaryInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPOnAuxiliaryInput.htm",
+  "syntax": [
+    "void Iso11783IL_OPOnAuxiliaryInput( dword objectID, dword value1, dword value2 );"
+  ],
+  "description": [
+    "The function is called by the node layer, if an Auxiliary Input Status is received and a Auxiliary Function in the object pool is assigned."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "Object identifier of the auxiliary function object"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_OPOnAuxiliaryInput( dword objectID, dword value1, dword value2 )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

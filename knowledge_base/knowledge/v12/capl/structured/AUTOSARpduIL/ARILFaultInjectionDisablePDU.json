@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILFaultInjectionDisablePDU",
+  "category": "AUTOSARpduIL",
+  "title": "ARILFaultInjectionDisablePDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILFaultInjectionDisablePDU.htm",
+  "syntax": [
+    "long ARILFaultInjectionDisablePDU (dbMessage);"
+  ],
+  "description": [
+    "Disables the sending of the PDU except by calling the function ARILSetPDUEvent."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

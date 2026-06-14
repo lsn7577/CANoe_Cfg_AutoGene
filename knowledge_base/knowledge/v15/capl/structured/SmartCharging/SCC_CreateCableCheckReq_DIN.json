@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCableCheckReq_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCableCheckReq_DIN",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCableCheckReq_Din.htm",
+  "syntax": [
+    "long SCC_CreateCableCheckReq_DIN ( byte SessionID[], byte StatusFlags[], char ErrorCode[] )"
+  ],
+  "description": [
+    "Creates a Cable Check Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "StatusFlags",
+      "type": "",
+      "description": "Flags for DC_EVStatus: StatusFlags[0] = EVReady StatusFlags[1] = EVCabinConditioning StatusFlags[2] = EVRESSConditioning StatusFlags[3] = EVRESSSOC"
+    },
+    {
+      "name": "ErrorCode",
+      "type": "",
+      "description": "EVErrorCode for DC_EVStatus."
+    }
+  ],
+  "return": "1 if successful\n0 else (message cannot be sent)",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

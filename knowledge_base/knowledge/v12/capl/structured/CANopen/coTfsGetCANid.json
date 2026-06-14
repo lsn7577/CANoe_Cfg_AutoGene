@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsGetCANid",
+  "category": "CANopen",
+  "title": "coTfsGetCANid",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsGetCanId.htm",
+  "syntax": [
+    "dword coTfsGetCANid( void );"
+  ],
+  "description": [
+    "This function returns the internally-stored CAN-ID that is used for the simplified test functions."
+  ],
+  "parameters": [],
+  "return": "CAN-ID",
+  "example": {
+    "description": [],
+    "code": "dword canID;\ncanID = coTfsGetCANid();"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

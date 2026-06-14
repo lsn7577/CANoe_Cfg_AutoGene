@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssAddMasterResponseInquireSerialNo",
+  "category": "CANopen",
+  "title": "coTfsLssAddMasterResponseInquireSerialNo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssAddMasterResponseInquireSerialNo.htm",
+  "syntax": [
+    "long coTfsLssAddMasterResponseInquireSerialNo( dword serialNo );"
+  ],
+  "description": [
+    "This function adds a single LSS Master request wait condition to the internal list of LSS Master request wait conditions and sends a response if a request is received."
+  ],
+  "parameters": [
+    {
+      "name": "serialNo",
+      "type": "",
+      "description": "Serial number part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\n  write(\"Clear list failed\");\n  return;\n} \n\n/* add one or more test functions */\nif (coTfsLssAddMasterResponseInquireSerialNo( 0x12345678 ) {\n  write(\"could not add request\");\n  return;\n} \n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\n  write(\"no event received\");\n} \nelse {\n  write(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

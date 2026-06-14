@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_EnableNameManagement",
+  "category": "ISO11783",
+  "title": "TCIL_EnableNameManagement",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILEnableNameManagement.htm",
+  "syntax": [
+    "dword TCIL_EnableNameManagement(dword enable ); // form 1"
+  ],
+  "description": [
+    "This function activates the name management of a node. Not until the name management is activated another node can change the device name of this node by sending a name management message."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function"
+    }
+  ],
+  "return": "0 on success or TC IL Error Code",
+  "example": {
+    "description": [],
+    "code": "//allow every component to be changed except arbitrary address capable flag\nTCIL_EnableNameManagement(1, 0xFE);\r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

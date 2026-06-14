@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SelectVehicle",
+  "category": "Diagnostics",
+  "title": "DoIP_SelectVehicle",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPSelectVehicle.htm",
+  "syntax": [
+    "long DoIP_SelectVehicle(byte EID[6]);",
+    "long DoIP_SelectVehicle(char VIN[]);"
+  ],
+  "description": [
+    "Specify which vehicle the tester shall target, i.e. indicate in the Vehicle Identification Request Message, or select one of the responding vehicles for communication.",
+    "To set the VIN and EID in an ECU simulation use the DoIP.DLL functions DoIP_SetEID and DoIP_SetVIN."
+  ],
+  "parameters": [
+    {
+      "name": "EID",
+      "type": "",
+      "description": "(6 bytes) entity ID, typically an Ethernet MAC address."
+    },
+    {
+      "name": "VIN",
+      "type": "",
+      "description": "The vehicle identification number (17 characters). If an empty string is given, VIR messages without parameter are sent."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "TestCase TC_AccessVehicle1\n{\n  diagRequest ReadEcuInfo req;\n\n  DiagSetTarget( \"ECU1\"); // a DoIP description\n\n  // --- start VIR targeting a specific vehicle via its VIN\n\n  DoIP_SelectVehicle( \"VECT0RVEH1CLE0123\");\n\n  req.SendRequest();\n  // A VIR with VIN should be responded quite fast\n  TestWaitForDiagResponse( req, 1000);\n\n  diagCloseChannel(); // make sure that another VIR will be sent\n\n  // --- send VIR without indicating a vehicle\n\n  DoIP_SelectVehicle( \"\"); // no-parameter-VIR-message\n\n  req.SendRequest();\n  // A VIR without parameter may take a long time, including repeats\n  TestWaitForDiagResponse( req, 9000);\n\n  diagCloseChannel();\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP2",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,137 @@
+{
+  "page_type": "function",
+  "name": "GNSSAddWpFile",
+  "category": "J1939",
+  "title": "GNSSAddWpFile",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSaddwpfile.htm",
+  "syntax": [
+    "dword GNSSAddWpFile( byte filepath[], dword useTimeInfo )"
+  ],
+  "description": [
+    "The function deletes all waypoints in the waypoint list and then inserts the GNSS positions of a file into the list.",
+    "useTimeInfo = 0:",
+    "The waypoints are inserted without speed information (according to the GNSSAddWp function). The speed of the receiver is controlled by GNSSSetSpeed. The value kWaypoint must be used as a simulation mode in GNSSStartSimulation.",
+    "useTimeInfo = 1:",
+    "The speed is controlled by the file. Only GNSS positions from the file are used to which a time > 0 is assigned. The speed is calculated by means of the difference in time and space between two successive positions. The value kFile must be used as a simulation mode in GNSSStartSimulation."
+  ],
+  "parameters": [
+    {
+      "name": "filepath",
+      "type": "",
+      "description": "path of the file with position information"
+    },
+    {
+      "name": "useTimeInfo",
+      "type": "",
+      "description": "0: if the position information is used only 1: if position and time information are used"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "char filePath[255] = “C:\\log.pos”;\nGNSSAddWpFile( \r\n filePath, 1 );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 ISO11783",
+      "J1939 ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

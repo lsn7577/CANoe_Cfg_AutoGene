@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbOpenTalker",
+  "category": "IP",
+  "title": "AvbOpenTalker",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbOpenTalker.htm",
+  "syntax": [
+    "dword AvbOpenTalker( );"
+  ],
+  "description": [
+    "The function creates a Talker for use in connection-based, message-oriented communications."
+  ],
+  "parameters": [
+    {
+      "name": "streamUniqueId",
+      "type": "",
+      "description": "The stream’s unique identifier."
+    }
+  ],
+  "return": "0: The function failed. Call AvbGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

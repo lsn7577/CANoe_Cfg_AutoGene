@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FRSSetTrigElem",
+  "category": "FRStress",
+  "title": "FRSSetTrigElem",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/Functions/CAPLfunctionFRSSetTrigElem.htm",
+  "syntax": [
+    "long FRSSetTrigElem( int triggerCondition, int triggerElement, int triggerValue);"
+  ],
+  "description": [
+    "Adds a numerical trigger value to the respective trigger condition. A complex trigger condition can be created through multiple calls."
+  ],
+  "parameters": [
+    {
+      "name": "triggerCondition",
+      "type": "",
+      "description": "Values: 1-4"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableSVType",
+  "category": "SystemVariables",
+  "title": "sysGetVariableSVType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionsysGetVariableSVType.htm",
+  "syntax": [
+    "long sysGetVariableSVType(sysvar);"
+  ],
+  "description": [
+    "Gets the type of a system variable encoded as a long integer."
+  ],
+  "parameters": [
+    {
+      "name": "sysvar",
+      "type": "",
+      "description": "A value of type system variable."
+    }
+  ],
+  "return": "0: Invalid",
+  "example": {
+    "description": [],
+    "code": "long t1, t2;\nt1 = sysGetVariableSVType(lookupSysvar(\"mysysvar\"));\nt2 = sysGetVariableSVType(sysvar::mysysvar);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

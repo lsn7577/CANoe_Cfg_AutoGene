@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForFrNullFrame",
+  "category": "Test",
+  "title": "TestWaitForFrNullFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForFrNullFrame.htm",
+  "syntax": [
+    "long TestWaitForFrNullFrame (dbFrFrame aFrame, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of the specified FlexRay Null Frame. Should the event not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "When no Null Frame is specified the wait condition is resolved on any FlexRay Null Frame.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aFrame",
+      "type": "",
+      "description": "Frame to be awaited as it is defined in the database."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

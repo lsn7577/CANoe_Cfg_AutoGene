@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "GNSSSetUnits",
+  "category": "J1939",
+  "title": "GNSSSetUnits",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSsetunits.htm",
+  "syntax": [
+    "dword GNSSSetUnits( dword unitType )"
+  ],
+  "description": [
+    "This function determines the system of units of measure that will be used by the various other functions.",
+    "Units of measure:",
+    "When the node is set up, the metric system for units of measures is set."
+  ],
+  "parameters": [
+    {
+      "name": "unitType",
+      "type": "",
+      "description": "units of measure"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "// set nautic system\nGNSSSetUnits( 2 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

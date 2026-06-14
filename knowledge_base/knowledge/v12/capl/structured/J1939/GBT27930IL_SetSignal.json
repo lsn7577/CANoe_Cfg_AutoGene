@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_SetSignal",
+  "category": "J1939",
+  "title": "GBT27930IL_SetSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILSetSignal.htm",
+  "syntax": [
+    "long GBT27930IL_SetSignal(dbSignal signal, double value ); // form 1"
+  ],
+  "description": [
+    "Sets the signal to the specified physical value. The message of the signal is sent according the configured send type."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "signal name from databaseThe signal must be assigned to the node as Tx signal."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n GBT27930IL_SetSignal( EEC1::EngSpeed, 1200.0 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

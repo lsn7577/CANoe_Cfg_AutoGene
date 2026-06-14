@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SchemaSelectionInd",
+  "category": "SmartCharging",
+  "title": "SCC_SchemaSelectionInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_SchemaSelectionInd.htm",
+  "syntax": [
+    "void SCC_SchemaSelectionInd ( char Namespace[], dword VersionMajor, dword VersionMinor )"
+  ],
+  "description": [
+    "Indicates that a schema has been chosen via the SupportedAppProtoco handshake.",
+    "(The EVSE simulation automatically chooses a protocol from the vehicle’s list based on the priority.)"
+  ],
+  "parameters": [
+    {
+      "name": "Namespace",
+      "type": "",
+      "description": "Namespace string of the selected schema"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

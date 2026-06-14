@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalDecryptAES128ECB",
+  "category": "Security",
+  "title": "SecurityLocalDecryptAES128ECB",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityLocalDecryptAES128ECB.htm",
+  "syntax": [
+    "long SecurityLocalDecryptAES128ECB(byte key[], dword keyLength, byte cipheredData[], dword cipheredDataLength, byte plainData[], dword plainDataLength)"
+  ],
+  "description": [
+    "Decrypts ciphered data with a given key using AES128 (ECB), Padding Mode PKCS5."
+  ],
+  "parameters": [
+    {
+      "name": "byte key[]",
+      "type": "",
+      "description": "The key to be used for AES (128 bit)."
+    }
+  ],
+  "return": "1: Success. A Value of 1 means that the action was successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SendPowerModeInformationRequest",
+  "category": "Diagnostics",
+  "title": "DoIP_SendPowerModeInformationRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSendPowerModeInformationRequest.htm",
+  "syntax": [
+    "void DoIP_SendPowerModeInformationRequest();"
+  ],
+  "description": [
+    "Sends power mode information request as limited broadcast or to the given address."
+  ],
+  "parameters": [
+    {
+      "name": "IPaddress",
+      "type": "",
+      "description": "Address to send to, i.e. not a limited broadcast. May be a directed broadcast address."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void _DoIP_PowerModeInformationResponse( char IPaddress[], BYTE value)\n{\n  write( \"DoIP_PowerModeInformationResponse from '%s': %d\", IPaddress, value);\n  testSupplyTextEvent( cTE_PowerModeRespInd);\n}\n// Send a power mode information request and wait for the first response\nTestcase TC_PowerMode()\n{\n  DoIP_SendPowerModeInformationRequest();\n  testWaitForTextEvent( cTE_PowerModeRespInd, 500);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

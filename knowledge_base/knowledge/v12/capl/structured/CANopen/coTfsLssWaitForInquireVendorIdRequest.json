@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForInquireVendorIdRequest",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForInquireVendorIdRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForInquireVendorIdReq.htm",
+  "syntax": [
+    "long coTfsLssWaitForInquireVendorIdRequest( dword vendorId );"
+  ],
+  "description": [
+    "This function waits for the Inquire vendor-ID request and sends the response."
+  ],
+  "parameters": [
+    {
+      "name": "vendorId",
+      "type": "",
+      "description": "Vendor-ID part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* waits for LSS inquire vendor ID request */\nif (coTfsLssWaitForInquireVendorIdRequest( 0x12345678) == 1) {\n  /* received LSS inquire vendor ID request, sent response with vendorId */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

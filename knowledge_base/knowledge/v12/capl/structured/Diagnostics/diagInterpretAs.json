@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "diagInterpretAs",
+  "category": "Diagnostics",
+  "title": "diagInterpretAs",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagInterpretAs.htm",
+  "syntax": [
+    "long diagInterpretAs( diagResponse response, char primitiveQualifier[]);"
+  ],
+  "description": [
+    "Treats the data of the response object as the specified primitive. This will cause a reinterpretation of the data, but the data will not be changed.",
+    "The specified primitive must be defined for the service the response currently refers to! Please refer to diagnostic descriptions with overloaded responses for details."
+  ],
+  "parameters": [
+    {
+      "name": "response",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "0: No error, OK",
+  "example": {
+    "description": [
+      "This function determines the actual response primitive by trying to set the interpretation of the argument to the defined variations. 0 is returned if interpretation is possible."
+    ],
+    "code": "long FindCorrectInterpretation( diagResponse * response)\n{\n   if( !response.InterpretAs( \"ServiPR\"))\n      return 0; // no error -> interpretation OK\n   if( !response.InterpretAs( \"ServiEcu1PR\"))\n      return 0; // no error -> interpretation OK\n   if( !response.InterpretAs( \"ServiDefauD\"))\n      return 0; // no error -> interpretation OK\n   // None of the known primitives matches, so return failure\n   return -1; // not found\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

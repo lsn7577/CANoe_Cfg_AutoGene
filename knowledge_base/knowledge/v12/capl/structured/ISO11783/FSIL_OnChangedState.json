@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_OnChangedState",
+  "category": "ISO11783",
+  "title": "FSIL_OnChangedState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILOnChangedState.htm",
+  "syntax": [
+    "void FSIL_OnChangedState( long state );"
+  ],
+  "description": [
+    "Is called from the FS IL if it has changed its state."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void FSIL_OnChangedState( long state )\n{\n  switch(state) {\n    case 1: // Claiming\n      break;\n    case 2: // Active\n      break;\n    case 3: // Stopped\n      break;\n    case 4: // Suspended\n      break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

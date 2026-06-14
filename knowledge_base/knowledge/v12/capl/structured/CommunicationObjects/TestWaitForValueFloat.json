@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForValueFloat",
+  "category": "CommunicationObjects",
+  "title": "TestWaitForValueFloat",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionTestWaitForValueFloat.htm",
+  "syntax": [
+    "long TestWaitForValueFloat(COValue value, float awaitedValue, dword timeoutMs)"
+  ],
+  "description": [
+    "Waits for a communication object value to reach a certain value. This function can only be used for communication object values with a floating point data type. It cannot be used for system variables or bus system signals."
+  ],
+  "parameters": [
+    {
+      "name": "awaitedValue",
+      "type": "",
+      "description": "Value which is awaited."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "long ret;\nret = testWaitForValueFloat(MirrorStatus[CANoe].Temperature, 20.0, 200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

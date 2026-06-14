@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "mostAmsSetSizePrefixed",
+  "category": "MOST",
+  "title": "mostAmsSetSizePrefixed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAmsSetSizePrefixed.htm",
+  "syntax": [
+    "long mostAmsSetSizePrefixed(long channel, long minlength);"
+  ],
+  "description": [
+    "Configures the minimum length of an AMS message above which an initiating message with TelID==4 is sent."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected hardware interface."
+    }
+  ],
+  "return": "0: OK",
+  "example": {
+    "description": [
+      "Activate special size prefix length for exactly one AMS message.",
+      "Activate special size prefix length for AMS messages with more than 200 bytes payload."
+    ],
+    "code": "mostAmsSetSizePrefixed(1, 46);\nmostAmsOutput(1, \"Telephone.List.Status(0,1,2,3,4,5,6,7)\");\nmostAmsSetSizePrefixed(1, -1);\nmostAmsSetSizePrefixed(1, 200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,66 @@
+{
+  "page_type": "concept",
+  "name": "CANoe CI Pipeline Reference",
+  "category": "team",
+  "subcategory": "ci",
+  "title": "Internal CANoe CI/CD Pipeline (Jenkins + vTESTstudio)",
+  "source": "hand_curated_v1",
+  "intro": [
+    "EQ07 uses Jenkins to run vTESTstudio test modules headlessly on every PR. Captures canonical pipeline, setup, and common failures."
+  ],
+  "sections": [
+    {
+      "heading": "Pipeline Stages",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Stage 1: compile - vTESTstudio CLI builds all .vtt modules.",
+          "Stage 2: smoke - 5-minute regression covering 80% of common paths.",
+          "Stage 3: full - 4-6 hour full regression, nightly.",
+          "Stage 4: report - HTML report with verdict, failed cases, timing."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Common Failure Modes",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Quick reference table:"
+        ],
+        "tables": [
+          [
+            [
+              "Symptom",
+              "Likely Cause",
+              "Fix"
+            ],
+            [
+              "Compile: undefined symbol",
+              "Missing include or DBC out of sync",
+              "Regenerate DBC, re-add include path"
+            ],
+            [
+              "Test hangs at start",
+              "Measurement not auto-started",
+              "Add on preStart: setStartdelay(0)"
+            ],
+            [
+              "Flaky bus-off tests",
+              "Network not idle when test begins",
+              "Add 1s settle delay in test preamble"
+            ],
+            [
+              "Smoke 100% but Full 80%",
+              "Timing-dependent tests",
+              "Mark with @flaky tag, quarantine"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

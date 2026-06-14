@@ -1,0 +1,22 @@
+# canGetChipState
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function Replaced by ChipState. |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Function Syntax | long canGetChipState (long channel) |  |  |  |  |  |  |  |  |  |  |  |  |
+| Function | Returns the current chip state of the specified CAN controller. |  |  |  |  |  |  |  |  |  |  |  |  |
+| Parameters | channel CAN channel. |  |  |  |  |  |  |  |  |  |  |  |  |
+| Return Values | Chip state of the specified CAN controller. See the following table for a description of the return values. 0 Value not available 1 Simulated 3 Error Active 4 Warning Level 5 Error Passive 6 Bus Off | 0 | Value not available | 1 | Simulated | 3 | Error Active | 4 | Warning Level | 5 | Error Passive | 6 | Bus Off |
+| 0 | Value not available |  |  |  |  |  |  |  |  |  |  |  |  |
+| 1 | Simulated |  |  |  |  |  |  |  |  |  |  |  |  |
+| 3 | Error Active |  |  |  |  |  |  |  |  |  |  |  |  |
+| 4 | Warning Level |  |  |  |  |  |  |  |  |  |  |  |  |
+| 5 | Error Passive |  |  |  |  |  |  |  |  |  |  |  |  |
+| 6 | Bus Off |  |  |  |  |  |  |  |  |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |  |  |  |  |  |  |  |  |  |
+| 7.0 | CAN | • | • |  |  |  |  |  |  |  |  |  |  |
+| Example — |  |  |  |  |  |  |  |  |  |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

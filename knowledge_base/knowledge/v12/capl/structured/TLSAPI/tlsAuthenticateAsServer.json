@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "tlsAuthenticateAsServer",
+  "category": "TLSAPI",
+  "title": "tlsAuthenticateAsServer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TLSAPI/Functions/CAPLfunctiontlsAuthenticateAsServer.htm",
+  "syntax": [
+    "long tlsAuthenticateAsServer(dword socket, char certificate[]);"
+  ],
+  "description": [
+    "Starts the authentication handshake as server."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "void OnTcpListen( dword socket, long result)\n{\n  DWORD clientHandle;\n  // Accept the connection\n  clientHandle = TcpAccept( socket );\n\n  tlsOpen(clientHandle);\n  tlsAuthenticateAsServer(clientHandle, \"Server1\");\n\n  if ((tlsGetLastError(clientHandle) != 0) &&\n  (tlsGetLastError(clientHandle) != 997))\n  {\n    // an error occurred\n    return;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

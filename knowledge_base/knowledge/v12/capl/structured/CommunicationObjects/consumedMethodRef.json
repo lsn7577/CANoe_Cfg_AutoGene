@@ -1,0 +1,83 @@
+{
+  "page_type": "function",
+  "name": "consumedMethodRef",
+  "category": "CommunicationObjects",
+  "title": "consumedMethodRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionConsumedMethodRef.htm",
+  "syntax": [
+    "consumedMethodRef * <var>"
+  ],
+  "description": [
+    "References a consumed method endpoint, which means a specific combination of consumer and provider for a service function on consumer side."
+  ],
+  "parameters": [
+    {
+      "name": "Method",
+      "type": "",
+      "description": "Method, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "consumedMethodRef MirrorAdjustment.Adjust method;\nmethod = MirrorAdjustment.consumerSide[CANoe,LeftMirror].Adjust;\nmethod.CallAsync(-50, 0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the consumed endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the consumed endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "LatestCall Information about the latest call started at this endpoint.",
+        "struct",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "LatestReturn Information about the latest return received at this endpoint.",
+        "struct",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

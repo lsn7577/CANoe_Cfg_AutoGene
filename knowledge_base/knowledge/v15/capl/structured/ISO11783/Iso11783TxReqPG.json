@@ -1,0 +1,154 @@
+{
+  "page_type": "function",
+  "name": "Iso11783TxReqPG",
+  "category": "ISO11783",
+  "title": "Iso11783TxReqPG",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783TxReqPG.htm",
+  "syntax": [
+    "dword Iso11783TxReqPG( dword ecuHandle, dword pgn, dword destination, dword priority, dword dlc, char data[] );",
+    "dword Iso11783TxReqPG( dword ecuHandle, dword pgn, dword destination, dword priority, dword dlc, byte data[] );"
+  ],
+  "description": [
+    "Sends any PG. The node layer handles fragmenting automatically. As soon as the PG has been transferred, Iso11783AppTxIndication() is called. This gives the application the possibility of protocol monitoring, especially in the case of fragmented PGs."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    },
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "PGN which should be sent"
+    },
+    {
+      "name": "destination",
+      "type": "",
+      "description": "Destination address or global address (255)"
+    },
+    {
+      "name": "priority",
+      "type": "",
+      "description": "Priority"
+    },
+    {
+      "name": "dlc",
+      "type": "",
+      "description": "Number of data bytes"
+    },
+    {
+      "name": "data",
+      "type": "",
+      "description": "Data"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "char data[14];\n\n// global parameter group\nres = Iso11783TxReqPG(ecuHdl, \r\n 0xFE45, 0xFF, 4, 14, data);\n\n// specific \r\n parameter group:\nres = Iso11783TxReqPG(ecuHdl, 0xE600, 0x09, 4, \r\n 14, data);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Iso11783",
+      "Iso11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

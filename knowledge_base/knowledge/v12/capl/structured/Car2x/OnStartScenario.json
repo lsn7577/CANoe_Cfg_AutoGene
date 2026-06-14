@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "OnStartScenario",
+  "category": "Car2x",
+  "title": "OnStartScenario",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Callbacks/CAPLfunctionC2xOnStartScenario.htm",
+  "syntax": [
+    "void OnStartScenario();"
+  ],
+  "description": [
+    "This callback is called at the time when the scenario start was triggered:"
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnStartScenario()\n{\n  write(\"Station '%NODE_NAME%': %f sec - OnStartScenario was called\" , TimeNowNS()/1e9);\n  write(\"Station '%NODE_NAME%': OnStartScenario - Station Speed = %f\", C2xGetStationAttributeDouble(\"Speed\"));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

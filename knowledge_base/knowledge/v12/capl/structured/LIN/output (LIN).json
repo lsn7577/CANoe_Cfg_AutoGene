@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "output (LIN)",
+  "category": "LIN",
+  "title": "output (LIN)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINOutput.htm",
+  "syntax": [
+    "void output(linFrame msg)"
+  ],
+  "description": [
+    "This function can be used for two purposes:",
+    "When LIN hardware is not in Master mode calling this function will have no effect.",
+    "If working without a database it is necessary to configure a message in the handler on preStart. The configuration is done via the output function."
+  ],
+  "parameters": [
+    {
+      "name": "Msgext",
+      "type": "",
+      "description": "Variable of type linFrame. List of available selectors for this type of objects can be found under linFrame selectors."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "linFrame MotorControl frameMotorControl;\n...\n// Reconfigure response of the frame defined in database \r\n   linFrame MotorControl frameMotorControl;\nframeMotorControl.RTR = 0;\nframeMotorControl.byte(0)=0xDF;\nframeMotorControl.byte(1)=0x20;\noutput(frameMotorControl);\n...\n// Send the frame header\nframeMotorControl.RTR = 1;\noutput(frameMotorControl);\n...\n// Function to set response on channel 2 for any frame.\n// The specified frame might not be defined in database.\nvoid SetFrameResponse(byte frameID, byte frameSize)\n{\nint index;\nlinFrame 0x0 frame = {msgChannel=2}; // define frame object on channel 2\n// Setting frame size in run-time possible only with this function\nlinChangeDLC(frameID, frameSize);\nframe.ID = frameID;           // set specified frame ID\n// initialize data byte fields\nfor (index=0; index < frameSize; ++index)\n{\nframe.byte(index) = 0xFF;\n}\n// issue request to update the configured response\nframe.RTR = 0;\noutput(frame);\nlinSetRespCounter(frameID, -1); // enable unlimited number of responses\n}\n...\n// Configuring a message in on preStart when \r\n working without database.\nlinFrame 0x20 aLinMsg;\noutput(aLinMsg);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

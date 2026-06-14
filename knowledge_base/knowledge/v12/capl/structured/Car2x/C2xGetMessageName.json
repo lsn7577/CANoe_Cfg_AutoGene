@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetMessageName",
+  "category": "Car2x",
+  "title": "C2xGetMessageName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetMessageName.htm",
+  "syntax": [
+    "long C2xGetMessageName(long packetHandle, long bufferSize, char buffer[])"
+  ],
+  "description": [
+    "Get the application layer (topmost interpreted layer) name of a received message."
+  ],
+  "parameters": [
+    {
+      "name": "packetHandle",
+      "type": "",
+      "description": "Handle of a packet."
+    }
+  ],
+  "return": "0 or error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

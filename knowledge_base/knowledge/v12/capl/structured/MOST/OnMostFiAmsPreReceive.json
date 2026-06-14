@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnMostFiAmsPreReceive",
+  "category": "MOST",
+  "title": "OnMostFiAmsPreReceive",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTFiAmsPreReceive.htm",
+  "syntax": [
+    "OnMostFiAmsPreReceive(mostAmsMessage * msg);"
+  ],
+  "description": [
+    "When fault injection is active, this function is called before the simulation node (CAPL program or node layer module) receives the AMS message. This allows incoming messages to be manipulated in order to emulate faulty application behavior.",
+    "The message can be suppressed (return value 0), forwarded (return value 1), or forwarded as an altered message (use of mostFiAmsReceive)."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "This variable contains the AMS message of the simulation node to be received."
+    }
+  ],
+  "return": "The return value can be used to control whether or not the message is to be received by the simulation node.\n0: Original message is not received.1: Original message is received without alteration",
+  "example": {
+    "description": [],
+    "code": "// change all Set operations to SetGet operations\n// before the simulation node receives the message\nlong OnMostFiAmsPreReceive(mostAmsMessage * msg)\n{\n   // The following if statement prevents this code from being called recursively\n   // e.g. by ignoring the Tx acknowledgments\n   if((msg.OpType == 0x0) && (msg.dir == Rx)) // Set message\n   {\n      // make a copy\n      mostAmsMessage * modMsg = {DLC = 1000}; // buffer for 1000 data bytes\n      modMsg = msg; // at most 1000 data bytes are copied here\n\n      // modify OpType\n      modMsg.OpType = 0x2;\n      // forward modified message to simulation node\n      mostFiAmsReceive(modMsg);\n\n      // do not forward the original message\n      return 0;\n   }\n   else\n   {\n      // forward the original message\n      return 1;\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_example"
+}

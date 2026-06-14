@@ -1,0 +1,74 @@
+{
+  "page_type": "notes",
+  "name": "<OnEthRawPacket>",
+  "category": "Obsolete",
+  "title": "<OnEthRawPacket>",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/EthernetIL/CAPLfunctionOnEthRawPacket.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by: on ethernetPacket"
+      ],
+      [
+        "Note This callback function must be implemented in the CAPL program by the user to use the function EthReceiveRawPacket."
+      ],
+      [
+        "Function Syntax",
+        "void <OnEthRawPacket>( long channel, long dir, long packetLength );"
+      ],
+      [
+        "Function",
+        "The function is called when a registered raw Ethernet packet is received. Within this callback function the following functions can be used to retrieve the received packet data: EthGetThisData EthGetThisTimeNS EthGetThisValue8 EthGetThisValue16 EthGetThisValue32 EthGetThisValue64 EthGetThisMotorolaValue16 EthGetThisMotorolaValue32 EthGetThisMotorolaValue64 The functions access the raw Ethernet data. Offset 0 starts at the beginning of the Ethernet header."
+      ],
+      [
+        "Parameters",
+        "channel Ethernet channel on which the packet was received"
+      ],
+      [
+        "dir direction of the packet 0: Rx 1: Tx"
+      ],
+      [
+        "packetLength number of bytes of the received packet (see Packet Length)"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "7.2-12.0",
+        "Ethernet",
+        "—",
+        "•"
+      ],
+      [
+        "Example see example of EthReceiveRawPacket"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

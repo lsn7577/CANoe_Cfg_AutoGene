@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IpGetLastSocketErrorAsString",
+  "category": "TCPIPAPI",
+  "title": "IpGetLastSocketErrorAsString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetLastSocketErrorAsString.htm",
+  "syntax": [
+    "long IpGetLastSocketErrorAsString( dword socket, char text[], dword count);",
+    "socket.GetLastSocketErrorAsString( char text[], dword count);"
+  ],
+  "description": [
+    "The function retrieves the error message of the last operation that failed on the specified socket (see Winsock 2 error code)."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The error message was written into the text buffer. In case of an invalid error code, the error message has the format \"Unknown error: x\" assuming the last error code x for the specified socket.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  const dword INVALID_SOCKET = ~0; // invalid socket constant\n  dword socket = INVALID_SOCKET;   // a socket\n  char errMsg[255];                // error message buffer.\n\n  // just create an unspecified socket.\n  socket = UdpOpen( 0, 1 );\n\n  // produce an error e.g. using invalid parameters to UdpSendTo\n  if (UdpSendTo(socket, 0, 0, \"a\", 1) == -1)\n  {\n    IpGetLastSocketErrorAsString( socket, errMsg, elcount(errMsg) );\n    writeLineEx(1, 3, \"IpGetLastSocketErrorAsString: %s\", errMsg);\n  }\n\n  // close the socket.\n  UdpClose(socket);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

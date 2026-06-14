@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "UdpOpen",
+  "category": "TCPIPAPI",
+  "title": "UdpOpen",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionUDPOpen.htm",
+  "syntax": [
+    "dword UdpOpen( dword ipv4Address, dword port); // form 1"
+  ],
+  "description": [
+    "Depending on the address type, the function creates either an IPv4 or IPv6 UDP socket for use in connectionless, datagramm-oriented communications. All parameters may be zero. If the port parameter is non-zero, the socket is implicitly bound to the given port. Otherwise the socket can be bound later on with IpBind or it will be automatically bound to a free port with UdpSendTo.",
+    "Note:",
+    "If an address is given but the port is zero, no implicit bind is performed. Please use IpBind after opening the socket in this case."
+  ],
+  "parameters": [
+    {
+      "name": "ipv4Address",
+      "type": "",
+      "description": "The numerical local IPv4 address to be used with the socket."
+    }
+  ],
+  "return": "INVALID_SOCKET (~0): The function failed. Call IpGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket gSocket;\n  char      gRxBuffer[1000];\n}\n\non start\n{\n  gSocket = UdpSocket::Open( IP_Endpoint(0.0.0.0:40001) );\n  gSocket.SendTo( IP_Endpoint(192.168.0.2:40002), \"Hello\", 5 );\n  gSocket.ReceiveFrom( gRxBuffer, elcount( gRxBuffer) );\n}\n\nOnUdpReceiveFrom( UdpSocket socket, long result, IP_Endpoint remoteEndpoint, char buffer[], dword size)\n{\n  if (result == 0)\n  {\n    write( \"Received: %s\", buffer );\n    gSocket.ReceiveFrom( gRxBuffer, elcount( gRxBuffer) );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

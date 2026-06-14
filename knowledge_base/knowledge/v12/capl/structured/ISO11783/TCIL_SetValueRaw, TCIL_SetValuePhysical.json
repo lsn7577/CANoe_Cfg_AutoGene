@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_SetValueRaw, TCIL_SetValuePhysical",
+  "category": "ISO11783",
+  "title": "TCIL_SetValueRaw, TCIL_SetValuePhysical",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILSetValueRawPhysical.htm",
+  "syntax": [
+    "long TCIL_SetValueRaw(dbNode client, dword ddi, dword elementNumber, long value); // form 1"
+  ],
+  "description": [
+    "These functions set the value of a data entity without sending any command."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "Task Controller simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void SetSetpointMassPerAreaApplicationRate(double value)\n{\n  long result;\n  result = TCIL_SetValuePhysical(TC, Sprayer, 6, 1, value);\n  switch (result)\n  {\n    case     0: TestStepPass(); break;\n    case -2202: TestStepFail(\"Function is not available in passive mode of the TC IL!\"); break;\n    case -2204: TestStepFail(\"Node 'Sprayer' is no client device!\"); break;\n    default:    TestStepFail(\"Unexpected error\"); break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

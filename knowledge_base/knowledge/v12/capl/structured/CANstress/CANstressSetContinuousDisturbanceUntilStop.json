@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressSetContinuousDisturbanceUntilStop",
+  "category": "CANstress",
+  "title": "CANstressSetContinuousDisturbanceUntilStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressSetContinuousDisturbanceUntilstop.htm",
+  "syntax": [
+    "void CANstressSetContinuousDisturbanceUntilStop (dword type);"
+  ],
+  "description": [
+    "Sets the Continuous disturbance (until stop) mode. Once the trigger has been activated, the continuous disturbance will prevail until the CANstress device is deactivated (e.g. by means of the CANstressStop function) and/or the measurement or test module is terminated."
+  ],
+  "parameters": [
+    {
+      "name": "type",
+      "type": "",
+      "description": "Defines the type of continuous disturbance. The disturbance can be associated with dominant or recessive bits or it can be an analog disturbance. 2 indicates a dominant disturbance, 3 a recessive disturbance and 4 an analog disturbance (only in conjunction with CANstress DR)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetResponseCode",
+  "category": "SmartCharging",
+  "title": "SCC_SetResponseCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetResponseCode.htm",
+  "syntax": [
+    "long SCC_SetResponseCode ( char ResponseCode[] )"
+  ],
+  "description": [
+    "Sets the return code of the next message to be sent."
+  ],
+  "parameters": [
+    {
+      "name": "ResponseCode",
+      "type": "",
+      "description": "Response code string, which must match a valid enum value."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

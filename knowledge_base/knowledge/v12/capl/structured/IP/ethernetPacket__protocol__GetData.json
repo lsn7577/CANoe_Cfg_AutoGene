@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::protocol::GetData",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::GetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionProtocolGetData.htm",
+  "syntax": [
+    "word ethernetPacket.<protocol>.GetData( word offset, char[] dest, word length );"
+  ],
+  "description": [
+    "Gets payload data of a protocol within an Ethernet packet.",
+    "The data is copied to a destination buffer of the specified type. If the buffer is too small, the data is truncated.",
+    "If specified length is greater than available data, only the available data is copied to dest and the number of copied bytes is returned.",
+    "If <protocol> is not available in the packet, 0 is returned."
+  ],
+  "parameters": [
+    {
+      "name": "dest",
+      "type": "",
+      "description": "buffer where the data is copied to."
+    }
+  ],
+  "return": "Number of bytes copied to destination.",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  _align(1) struct MyData\n  {\n    long value1;\n    long value2;\n  } buffer;\n\n  if ((this.udp.IsAvailable()) && (this.udp.destination == 0xF123))\n  {\n    if (this.GetData( 0, buffer, bufferLength  ) == > 0)\n    {\n      write( \"Value1=%d, Value2=%d\", buffer.value1, buffer.value2 );\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

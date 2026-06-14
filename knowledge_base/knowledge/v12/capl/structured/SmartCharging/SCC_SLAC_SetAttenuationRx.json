@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_SetAttenuationRx",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_SetAttenuationRx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_SetAttenuationRx.htm",
+  "syntax": [
+    "long SCC_SLAC_SetAttenuationRx ( float AttenuationRx )"
+  ],
+  "description": [
+    "Sets the attenuation of the Rx path, which is subtracted from the AAG values. This is can also be used to influence the calculation of attenuation values when a real chip is used, i.e. the attenuation may be artificially raised or lowered."
+  ],
+  "parameters": [
+    {
+      "name": "AttenuationRx",
+      "type": "",
+      "description": "Attenuation value"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

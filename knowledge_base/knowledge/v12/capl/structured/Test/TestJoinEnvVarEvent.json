@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestJoinEnvVarEvent",
+  "category": "Test",
+  "title": "TestJoinEnvVarEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinEnvVarEvent.htm",
+  "syntax": [
+    "long TestJoinEnvVarEvent(dbEnvVar aEnvVar)"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait."
+  ],
+  "parameters": [
+    {
+      "name": "aEnvVar",
+      "type": "",
+      "description": "Environment variable that should be awaited."
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": "putValue (evMyEnvVar, 1);\nTestJoinEnvVarEvent (evMyEnvVar);\nTestWaitForAnyJoinedEvent (1000); // Does not wait, is immediately discontinued by an environment variable change!"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

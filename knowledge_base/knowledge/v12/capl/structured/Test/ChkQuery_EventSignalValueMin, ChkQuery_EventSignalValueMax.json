@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventSignalValueMin, ChkQuery_EventSignalValueMax",
+  "category": "Test",
+  "title": "ChkQuery_EventSignalValueMin, ChkQuery_EventSignalValueMax",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventSignalValueMinMax.htm",
+  "syntax": [
+    "long ChkQuery_EventSignalValueMin(dword checkId, int64& value);",
+    "check.QueryEventSignalValueMin(int64& value);"
+  ],
+  "description": [
+    "Enables access to the minimal and maximal measured values within a check."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "<= 0: Refers the query error codes in this chapter",
+  "example": {
+    "description": [],
+    "code": "double maxValue;\nint checkId;\n\ncheckId = ChkStart_MsgSignalValueInvalid (singalToObserve, 5.5, 10.5);    TestAddCondition(checkId)\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nChkQuery_EventSignalValueMax(checkID, maxValue);\n\nwrite(\"Max signal value=%f\", maxValue);\n\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

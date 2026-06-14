@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitLinHdrData",
+  "category": "Test",
+  "title": "TestGetWaitLinHdrData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitLinHdrData.htm",
+  "syntax": [
+    "long TestGetWaitLinHdrData (linheader aHeader);"
+  ],
+  "description": [
+    "If LIN Header event is the last event that triggers a wait instruction, the header content can be called up with the first function.The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "aHeader",
+      "type": "",
+      "description": "Header variable that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linHdrEvent ()\n{\n   linheader  linHeaderData;\n   if (testWaitForLinHeader(5000) == 1)\n   {\n      if (TestGetWaitLinHdrData(linHeaderData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN Header event occurred for FrameId=0x%X\", linHeaderData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

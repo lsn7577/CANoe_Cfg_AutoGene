@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalGetNodeLayerVersion",
+  "category": "Security",
+  "title": "SecurityLocalGetNodeLayerVersion",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/Functions/CAPLfunctionSecurityLocalGetNodeLayerVersion.htm",
+  "syntax": [
+    "long SecurityLocalGetNodeLayerVersion(long versionMajor, long versionMinor, long versionPatch)"
+  ],
+  "description": [
+    "Get NodeLayer version."
+  ],
+  "parameters": [
+    {
+      "name": "long versionMajor [Out]",
+      "type": "",
+      "description": "Major version number."
+    },
+    {
+      "name": "long versionMinor [Out]",
+      "type": "",
+      "description": "Minor version number."
+    },
+    {
+      "name": "long versionPatch [Out]",
+      "type": "",
+      "description": "Number of the patch."
+    }
+  ],
+  "return": "A value less than or equal to 0 means error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN, CAN FD, FR, ETH",
+      "CAN, CAN FD, FR, ETH",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

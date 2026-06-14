@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "GNSSGetCurLat",
+  "category": "J1939",
+  "title": "GNSSGetCurLat",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSgetcurlat.htm",
+  "syntax": [
+    "double GNSSGetCurLat();"
+  ],
+  "description": [
+    "The function returns the current latitude at which the receiver is located. If a value of 0.0 is returned, the GNSSGetLastError function must be used to check whether the value is valid (see error codes)."
+  ],
+  "parameters": [],
+  "return": "current latitude (in degrees)",
+  "example": {
+    "description": [],
+    "code": "double lat;\nlat = GNSSGetCurLat();\n\nif (lat == 0 && GNSSGetLastError() != 0 ) {\n  write(“Error: Invalid current latitude”);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

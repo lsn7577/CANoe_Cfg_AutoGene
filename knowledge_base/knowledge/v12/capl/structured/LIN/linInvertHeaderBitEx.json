@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linInvertHeaderBitEx",
+  "category": "LIN",
+  "title": "linInvertHeaderBitEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINInvertHeaderBitEx.htm",
+  "syntax": [
+    "dword linInvertHeaderBitEx(dword byteIndex, dword bitIndex, dword bitOffsetInSixteenthBits, dword distLengthInSixteenthBits, dword level)"
+  ],
+  "description": [
+    "Inverts the specified number of 1/16th bits at the specified position in the next LIN header.",
+    "Partial bit disturbances require the activation of the flash mode in order to get the edges of the disturbance fast enough. Call linActivateFlashMode for that purpose."
+  ],
+  "parameters": [
+    {
+      "name": "byteIndex",
+      "type": "",
+      "description": "Index of the byte."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "on key 'i'\n{\n   if (0!=linInvertHeaderBitEx(0, 0, 8, 8, 0))\n   {\n   // for the next LIN header invert the second half of the first bit (it’s the recessive one) of the Sync byte\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

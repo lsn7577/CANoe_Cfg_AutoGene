@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "atol",
+  "category": "Other",
+  "title": "atol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionAtol.htm",
+  "syntax": [
+    "long atol(char s[]);"
+  ],
+  "description": [
+    "This function converts the string s to a LONG number. The number base is decimal. Starting with string 0x, base 16 is used. Leading blanks are not read."
+  ],
+  "parameters": [],
+  "return": "long integer",
+  "example": {
+    "description": [
+      "Result:"
+    ],
+    "code": "...\nlong z1;\nlong z2;\nz1 = atol(\"200\");\nz2 = atol(\"0xFF\");\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

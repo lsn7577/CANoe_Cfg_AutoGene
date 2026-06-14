@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsHeartbeatProducer",
+  "category": "CANopen",
+  "title": "coTfsHeartbeatProducer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsHeartbeatProducer.htm",
+  "syntax": [
+    "long coTfsHeartbeatProducer( dword duration, dword producerTime, dword tolerance );"
+  ],
+  "description": [
+    "This function activates the heartbeat producer of the DUT Device Under Test. For this the object 0x1017 with producerTime is described via a SDO write access. After this, the regularity of the heartbeat message is checked and then the heartbeat producer is switched off again (0x1017 = 0). The test duration must be greater than the permitted time deviation.",
+    "At least two heartbeat messages of the DUT are awaited, even if the test duration is set shorter."
+  ],
+  "parameters": [
+    {
+      "name": "duration",
+      "type": "",
+      "description": "Test duration in ms, how long the regularity of the heartbeat producer should be tested."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if (coTfsHeartbeatProducer( 3000, 500, 10) != 1) { // duration, producerTime, tolerance\n  write(\"heartbeat producer test failed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

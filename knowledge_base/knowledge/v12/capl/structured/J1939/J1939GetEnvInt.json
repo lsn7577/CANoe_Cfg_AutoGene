@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetEnvInt",
+  "category": "J1939",
+  "title": "J1939GetEnvInt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939GetEnvInt.htm",
+  "syntax": [
+    "long J1939GetEnvInt( char[] envVar, dword index );"
+  ],
+  "description": [
+    "This function gets the value of an environment variable."
+  ],
+  "parameters": [
+    {
+      "name": "envVar",
+      "type": "",
+      "description": "name of the environment variable"
+    }
+  ],
+  "return": "value of the environment variable or 0 if it does not exist",
+  "example": {
+    "description": [],
+    "code": "value = J1939GetEnvInt( \"EvFrictionForce\", \r\n 1 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "GetRawSignal",
+  "category": "Test",
+  "title": "GetRawSignal",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionGetRawSignal.htm",
+  "syntax": [
+    "Int64 GetRawSignal(char name[]); // form 3",
+    "long GetRawSignal(char name[], byte data[], dword dataLength); // form 4"
+  ],
+  "description": [
+    "Retrieves the current raw value of a signal. These functions can be used for signals with more than 32 bits length. If the signal name is statically known, you can also use $<signal>.raw64 since 7.5 Service Pack 2."
+  ],
+  "parameters": [
+    {
+      "name": "name",
+      "type": "",
+      "description": "Name of the signal. Signal Ambiguity You have to use further objects to identify the signal uniquely. They are: channel, database name (alias), node name and message name. The exact qualification syntax is: [Channel::][Database name (alias)::][Node::][Message::]Signal The order and completeness of the objects from right to left is important (see example for getSignal)"
+    },
+    {
+      "name": "dbSignal",
+      "type": "",
+      "description": "The signal."
+    },
+    {
+      "name": "data",
+      "type": "",
+      "description": "Receives the data bytes of the signal."
+    },
+    {
+      "name": "dataLength",
+      "type": "",
+      "description": "Length of the data buffer."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.5",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

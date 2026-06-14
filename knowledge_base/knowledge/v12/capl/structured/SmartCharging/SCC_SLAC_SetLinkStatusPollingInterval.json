@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_SetLinkStatusPollingInterval",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_SetLinkStatusPollingInterval",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_SetLinkStatusPollingInterval.htm",
+  "syntax": [
+    "long SCC_SLAC_SetLinkStatusPollingInterval ( long Interval )"
+  ],
+  "description": [
+    "This function changes the polling interval for sending VS_PL_Lnk_Status or VS_Nw_Info requests to the chip. Set the interval to 0 to disable polling."
+  ],
+  "parameters": [
+    {
+      "name": "Interval",
+      "type": "",
+      "description": "Desired time interval in milliseconds"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

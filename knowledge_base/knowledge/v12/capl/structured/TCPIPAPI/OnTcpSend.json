@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnTcpSend",
+  "category": "TCPIPAPI",
+  "title": "OnTcpSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/EventProcedures/CAPLfunctionTCPIPOnTcpSend.htm",
+  "syntax": [
+    "void OnTcpSend( dword socket, long result, char buffer[], dword size);"
+  ],
+  "description": [
+    "If the CAPL program implements this callback it is called when the data from the stack have been processed but not yet placed on the bus. The information is first displayed in the CANoe Trace Window when it has physically been sent."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// ---------------------------------------------------\n// When asynchronous TcpSend is complete...\n// ---------------------------------------------------\nvoid OnTcpSend( dword socket, long result, char buffer[], dword size)\n{\n  if (socket != ~0)\n  {\n    // sending data complete.\n    If (result != 0)\n    {\n      writeLineEx(1, 3, “OnTcpSend error: %d”, result);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

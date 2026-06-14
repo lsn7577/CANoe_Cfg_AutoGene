@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783EnableNameManagement",
+  "category": "ISO11783",
+  "title": "Iso11783EnableNameManagement",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783EnableNameManagement.htm",
+  "syntax": [
+    "dword Iso11783EnableNameManagement( dword ecuHandle, dword enable );"
+  ],
+  "description": [
+    "This function activates the name management of a node.",
+    "Not until the name management is activated another node can change the device name of this node by sending a name management message."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "LONG busHandle;\nLONG ecuAddress;\nLONG ecuHandle;\nchar deviceName[8]; // device name of the node\n\nbusHandle  = Iso11783GetBus( \"ISO11783\" );\necuAddress = dbNode.NmStationAddress; // dbNode must be configured in database\n\nIso11783MakeName(\n  deviceName, dbNode.NmIso11783AAC,\n  dbNode.NmIso11783IndustryGroup,\n  dbNode.NmIso11783SystemInstance,\n  dbNode.NmIso11783System,\n  dbNode.NmIso11783Function,\n  dbNode.NmIso11783FunctionInstance,\n  dbNode.NmIso11783ECUInstance,\n  dbNode.NmIso11783ManufacturerCode,\n  dbNode.NmIso11783IdentityNumber );\necuHandle = Iso11783CreateECU( busHandle, deviceName );\n\nif (ecuHandle != 0)\n{\n  /* allow every component to be changed except arbitrary address capable flag */\n   Iso11783EnableNameManagement(ecuHandle, 1, 0xFE);\n   Iso11783ECUGoOnline( ecuHandle, ecuAddress );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

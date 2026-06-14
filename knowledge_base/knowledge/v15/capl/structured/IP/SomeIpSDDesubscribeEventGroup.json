@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "SomeIpSDDesubscribeEventGroup",
+  "category": "IP",
+  "title": "SomeIpSDDesubscribeEventGroup",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpSDDesubscribeEventGroup.htm",
+  "syntax": [
+    "long SomeIpSDDesubscribeEventGroup( dword cevgHandle );"
+  ],
+  "description": [
+    "The Event Group is unregistered at the node (consumer). The existing subscription is terminated (Stop Subscribe Eventgroup is sent). The associated Service Discovery message (Subscribe Eventgroup) is then no longer sent by the node.",
+    "The Event Group and all assigned Events, fields, and methods are not deleted when unregistered."
+  ],
+  "parameters": [
+    {
+      "name": "cevgHandle",
+      "type": "",
+      "description": "Handle of the Consumed Event Group (see SomeIpAddConsumedEventGroup)."
+    }
+  ],
+  "return": "Handle of the Consumed Event",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD aep; // application endpoint handle\n  DWORD csi; // consumed Service Instance handle\n  DWORD ceg; // consumed Eventgroup handle\n  DWORD cev; // consumed Event handle\n}\n\non start()\n{\n  // open application endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,10,1);\n  // create Eventgroup\n  ceg = SomeIpAddConsumedEventGroup(csi,1);\n // create Event Consumer\n  cev = SomeIpCreateEventConsumer(csi,32770,\"CallbackEvent1\");\n}\n\nvoid CallbackEvent1(DWORD cevHandle, DWORD messageHandle)\n{\n  // this function is called if the Event was sent. Parameters can be evaluated here.\n}\n\non key 'd'\n{\n  SomeIpSDDesubscribeEventGroup (ceg);\n  write(\"Event Group is no longer subscribed\");\n}\n\non key 's'\n{\n  SomeIpSDSubscribeEventgroup(ceg,1);\n  write(\"Event Group will now be subscribed again\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

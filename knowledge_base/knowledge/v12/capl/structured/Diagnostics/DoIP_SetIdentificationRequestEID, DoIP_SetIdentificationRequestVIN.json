@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetIdentificationRequestEID, DoIP_SetIdentificationRequestVIN",
+  "category": "Diagnostics",
+  "title": "DoIP_SetIdentificationRequestEID, DoIP_SetIdentificationRequestVIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetIdentificationRequestEIDVIN.htm",
+  "syntax": [
+    "void DoIP_SetIdentificationRequestEID(byte EID[]);"
+  ],
+  "description": [
+    "Configures the Vehicle Identification Request Message sent by a tester."
+  ],
+  "parameters": [
+    {
+      "name": "EID",
+      "type": "",
+      "description": "Send an entity ID in the message, e.g. a MAC address."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The message can also be configured from the DoIP.INI file."
+    ],
+    "code": "// Send the MAC address 20:11:22:33:44:55 in the VIR message\nBYTE eid[6] = { 0x20, 0x11, 0x22, 0x33, 0x44, 0x55};\nDoIP_SetIdentificationRequestEID( eid);\n\n// Send a VIN in the VIR message\nDoIP_SetIdentificationRequestVIN( \"VECT0RVEH1CLE1234\");\n\n// Do not address a specific vehicle, i.e. all vehicles shall respond\nDoIP_SetIdentificationRequestVIN( \"\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

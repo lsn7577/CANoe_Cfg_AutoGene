@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILSetCANFDParam",
+  "category": "CANoeIL",
+  "title": "ILSetCANFDParam",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILSetCANFDParam.htm",
+  "syntax": [
+    "long ILSetCANFDParam(dword ID, int FDF, int BRS, int DLC)"
+  ],
+  "description": [
+    "The function allows setting of CAN FD parameters for a specific message."
+  ],
+  "parameters": [
+    {
+      "name": "ID",
+      "type": "",
+      "description": "CAN-ID of message that should be modified."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

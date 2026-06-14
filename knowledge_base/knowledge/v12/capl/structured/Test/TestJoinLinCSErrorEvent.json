@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestJoinLinCSErrorEvent",
+  "category": "Test",
+  "title": "TestJoinLinCSErrorEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinLinCsErrorEvent.htm",
+  "syntax": [
+    "long TestJoinLinCSErrorEvent()"
+  ],
+  "description": [
+    "Adds an event of type checksum error to the set of joined events. This is a non-blocking function.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "apDBMsg",
+      "type": "",
+      "description": "Symbolic message"
+    }
+  ],
+  "return": "-3: Error while adding the specified event to the set of joined events",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_waitForLINResponse(int frameId)\n{\n   long eventIndex;\n\n   testJoinMessageEvent(frameId);\n   testJoinLinReceiveErrorEvent(frameId);\n   testJoinLinCSErrorEvent(frameId);\n   testJoinLinTransmErrorEvent(frameId);\n\n   eventIndex = testWaitForAnyJoinedEvent(5000);\n   switch (eventIndex)\n   {\n      case 1: // valid frame\n         testStepPass(\"Validation\", \"IUT has responded correctly\");\n      break;\n\n      case 2:  // receive error\n         testStepFail(\"Validation\", \"IUT has responded with wrong number of data bytes\");\n      break;\n\n      case 3: // checksum error\n         testStepFail(\"Validation\", \"IUT has responded with wrong checksum\");\n      break;\n\n      case 4: // transmission error\n         testStepFail(\"Validation\", \"IUT has not responded\");\n      break;\n\n      default:\n      testStepFail(\"Validation\", \"Internal error! Unexpected event (return code %d) on waiting for response\", eventIndex);\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

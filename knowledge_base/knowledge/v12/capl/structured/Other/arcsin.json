@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "arcsin",
+  "category": "Other",
+  "title": "arcsin",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionarcsin.htm",
+  "syntax": [
+    "double arcsin(double x);"
+  ],
+  "description": [
+    "Calculates arcsine of x."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "Value between –1 and 1 whose arcsine is to be calculated. Values outside this range cause a CAPL runtime error."
+    }
+  ],
+  "return": "Arcus Sine of x.",
+  "example": {
+    "description": [],
+    "code": "double x;\nx = arcsin(1); // result PI/2\nx = arcsin(0); // result 0"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

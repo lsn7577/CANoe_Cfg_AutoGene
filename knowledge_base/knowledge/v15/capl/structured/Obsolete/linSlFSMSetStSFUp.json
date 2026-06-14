@@ -1,0 +1,81 @@
+{
+  "page_type": "notes",
+  "name": "linSlFSMSetStSFUp",
+  "category": "Obsolete",
+  "title": "linSlFSMSetStSFUp",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionLINSlFSMSetStSFUp.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function No replacement."
+      ],
+      [
+        "Function Syntax",
+        "long linSlFSMSetStSFUp (unsigned int slaveId, unsigned int stateId, unsigned int requestId, unsigned long dlc, unsigned char dataBytes[], unsigned char checksum, unsigned int followUpState);"
+      ],
+      [
+        "Function",
+        "Causes the Slave with identifier slaveId that is in the specified state stateId to respond to the transmit request for the message with identifier requestId. This involves using the data specified in dataBytes and the checksum. If no DLC has been set by the data base, the DLC will be set by the dlc parameter of the function. If the DLC already has been set by the data base, this value must be handover correctly on every call of this function. DLC value range: 0 ... 8 (bytes) The functionality to set the DLC is only available with LIN specification 1.2 (or above)! LIN specification 1.1 presets the DLC of an identifier."
+      ],
+      [
+        "Parameters",
+        "slaveId Identifier of the relevant Slave. Corresponds to the slaveId, that was defined with linSlSimulate."
+      ],
+      [
+        "stateId Identifier of the relevant state of the Finite State Machine (FSM). Lies in the range defined by linSlFSMSetGlobal."
+      ],
+      [
+        "requestId Condition: If this transmit identifier was placed on the bus by the Master, the action described here triggers."
+      ],
+      [
+        "dlc DLC of the message"
+      ],
+      [
+        "dataBytes Data bytes to be sent as a response to requestId"
+      ],
+      [
+        "checksum Checksum that should be used in the response. It should be noted that the CRC might also be incorrect! In this case a checksum error is generated."
+      ],
+      [
+        "followUpState State to be switched to after the action has occurred. This could be the same as the current state."
+      ],
+      [
+        "Return Values",
+        "Nonzero if the action was configured, else 0. During a measurement the following data can be modified for an action already configured in the on preStart event procedure: Transmission data Checksum Resulting state"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "3.1 - 5.1",
+        "LIN",
+        "—",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

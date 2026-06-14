@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDOnDefaultLogRequest",
+  "category": "ISO11783",
+  "title": "Iso11783PDDOnDefaultLogRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDOnDefaultLogRequest.htm",
+  "syntax": [
+    "void Iso11783PDDOnDefaultLogRequest( dword ecuHandle );"
+  ],
+  "description": [
+    "This function can be implemented in the CAPL program. The function is called up by the node layer if default logging is requested by the Task Controller. Default logging can then be started with the CAPL function Iso11783PDDSetLogTrigger."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783PDDOnDefaultLogRequest( dword ecuHandle )\n{\n  Iso11783PDDSetLogTrigger ( ecuHandle, 4, 0x0100, 0, 1000 );\n  Iso11783PDDSetLogTrigger ( ecuHandle, 4, 0x0101, 0, 1000 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

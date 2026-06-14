@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitFrStartCycleData",
+  "category": "Test",
+  "title": "TestGetWaitFrStartCycleData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitFrStartCycleData.htm",
+  "syntax": [
+    "long TestGetWaitFrStartCycleData (frStartCycle aFrStartCycle);"
+  ],
+  "description": [
+    "If a FlexRay start cycle is the last event that triggers a wait instruction, the event’s content can be called up with the first function.",
+    "The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "aFrStartCycleText",
+      "type": "",
+      "description": "Flexray Start Cycle variable that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

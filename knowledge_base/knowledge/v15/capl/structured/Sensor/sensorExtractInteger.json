@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "sensorExtractInteger",
+  "category": "Sensor",
+  "title": "sensorExtractInteger",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionSensorExtractInteger.htm",
+  "syntax": [
+    "dword sensorExtractInteger(byte sourceBuffer[], dword bufferByteCount, dword& signalValue, dword bitOffset, dword bitCount, dword msbFirst);"
+  ],
+  "description": [
+    "Extracts an integer value from the given byte array."
+  ],
+  "parameters": [
+    {
+      "name": "sourceBuffer",
+      "type": "",
+      "description": "The array from which the given value shall be extracted."
+    },
+    {
+      "name": "bufferByteCount",
+      "type": "",
+      "description": "The length of the source array in bytes."
+    },
+    {
+      "name": "signalValue",
+      "type": "",
+      "description": "The variable the extracted signal value will be written to."
+    },
+    {
+      "name": "bitOffset",
+      "type": "",
+      "description": "The offset in bits at which the integer value shall be extracted from the byte array."
+    },
+    {
+      "name": "bitCount",
+      "type": "",
+      "description": "The length of the value in bits (max. 32 is allowed)."
+    },
+    {
+      "name": "msbFirst",
+      "type": "",
+      "description": "This parameter controls in which order the bits are extracted from the array. 1: the bits will be extracted from MSB to LSB. 0: the bits will be extracted from LSB to MSB."
+    }
+  ],
+  "return": "This function returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "  dword value;\n\n  // This data could have been received via SPI\n  byte receivedData[2] = {0xE9, 0x40};\n\n  // Extract a 10 bit value from the data (offset 0, MSB first)\n  sensorExtractInteger(receivedData, 2, value, 0, 10, 1);\n\n  // value is now 933"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0",
+      "—",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

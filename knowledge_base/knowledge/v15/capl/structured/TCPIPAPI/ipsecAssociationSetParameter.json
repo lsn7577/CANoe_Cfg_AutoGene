@@ -1,0 +1,217 @@
+{
+  "page_type": "function",
+  "name": "ipsecAssociationSetParameter",
+  "category": "TCPIPAPI",
+  "title": "ipsecAssociationSetParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIpsecAssociationSetParameter.htm",
+  "syntax": [
+    "long ipsecAssociationSetParameter(long association, char[] parameter, char[] value); // form 1",
+    "long ipsecAssociationSetParameter(long association, char[] parameter, byte[] value); // form 2",
+    "long ipsecAssociationSetParameter(long association, char[] parameter, IP_Endpoint value); // form 3",
+    "long ipsecAssociationSetParameter(long association, char[] parameter, dword value); // form 4"
+  ],
+  "description": [
+    "Set the value of a parameter in a IPsec security association record. To modify the security association database it is necessary to call ipsecAssociationDatabaseUpdate.",
+    "A security association record can be created with ipsecAssociationInit or with ipsecAssociationDatabaseGetSpi."
+  ],
+  "parameters": [
+    {
+      "name": "association",
+      "type": "",
+      "description": "Handle to an association object."
+    },
+    {
+      "name": "source",
+      "type": "",
+      "description": "Source endpoint of the security association."
+    },
+    {
+      "name": "destination",
+      "type": "",
+      "description": "Destination endpoint of the security association."
+    },
+    {
+      "name": "UNSPEC",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "ESP",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "AH",
+      "type": "",
+      "description": "2"
+    },
+    {
+      "name": "ANY",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "TRANSPORT",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "TUNNEL",
+      "type": "",
+      "description": "2"
+    },
+    {
+      "name": "spi",
+      "type": "",
+      "description": "Returns the security parameter index of the security association"
+    },
+    {
+      "name": "espalgorithm",
+      "type": "",
+      "description": "Returns the used esp algorithm. Possible values are: NONE AES AES128 AES192 AES256"
+    },
+    {
+      "name": "espkey",
+      "type": "",
+      "description": "Returns the key of the esp algorithm"
+    },
+    {
+      "name": "ahalgorithm",
+      "type": "",
+      "description": "Returns the used esp algorithm. Possible values are: NULL SHA2_512 SHA512 AES192GMAC AES128GMAC SHA256 SHA2_256 SHA2_384 SHA384 SHA SHA1 AES256GMAC AESCMAC SHA1_160 NONE"
+    },
+    {
+      "name": "ahkey",
+      "type": "",
+      "description": "Returns the key of the esp algorithm"
+    },
+    {
+      "name": "windowSize",
+      "type": "",
+      "description": "replay window size in byte"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "extended sequence number disabled"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "extended sequence number enabled"
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "The value to set in the security association record."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n  {\n  dword socket;\n  long association;\n  dword addressCount;\n  ip_Address adapterAddress[1];\n  ip_Endpoint localEndpoint;\n\n  // add a policy\n  IpSecPolicyDatabaseAdd(ip_Endpoint(0.0.0.0:0), 0, ip_Endpoint(192.168.1.10:0), 24, \"any\", \"out ipsec ah/transport//require\");\n\n  // create a security associaton in the database from the current node to the node 192.168.1.10\n  ipGetAdapterAddress(1, adapterAddress, addressCount);\n  localEndpoint.Address = adapterAddress[0];\n  association = ipsecAssociationDatabaseGetSpi(localEndpoint, ip_Endpoint(192.168.1.10), \"ah\", \"any\");\n\n  // set the ah algorithm and key\n  ipsecAssociationSetParameter(association, \"ahalgorithm\", \"sha\");\n  ipsecAssociationSetParameter(association, \"ahkey\", \"0123456789ABCDEF\");\n\n  // update the security association in the database\n  ipsecAssociationDatabaseUpdate(association);\n\n  // release the association object when it isn't needed anymore\n  ipsecAssociationRelease(association);\n\n  // send data which maches the policy\n  socket = udpOpen(ip_Endpoint(0.0.0.0:0));\n  udpSendTo(socket, ip_Endpoint(192.168.1.10:23), \"hello world\", 11);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "—",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

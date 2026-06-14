@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetJ1939Address",
+  "category": "Test",
+  "title": "GetJ1939Address",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionGetJ1939Address.htm",
+  "syntax": [
+    "long GetJ1939Address (Node aNode);"
+  ],
+  "description": [
+    "Gets the current address of a J1939 node even the address has been changed by the J1939 network management."
+  ],
+  "parameters": [
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "The function returns the address of this node."
+    }
+  ],
+  "return": "Current address of the node",
+  "example": {
+    "description": [],
+    "code": "dword address;\naddress = GetJ1939Address (N1);\nWrite(\"Address of node N1 is = %d\", address );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

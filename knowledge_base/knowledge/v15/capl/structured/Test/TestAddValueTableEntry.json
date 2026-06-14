@@ -1,0 +1,141 @@
+{
+  "page_type": "function",
+  "name": "TestAddValueTableEntry",
+  "category": "Test",
+  "title": "TestAddValueTableEntry",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestAddValueTableEntry.htm",
+  "syntax": [
+    "TestAddStringTableEntry(long handle, char[] value);",
+    "TestAddStringTableEntry(long handle, char[] value, dword isDefaultIndex);",
+    "TestAddValueTableEntry(long handle, double value);",
+    "TestAddValueTableEntry(long handle, double value, dword isDefaultIndex);"
+  ],
+  "description": [
+    "This functions adds a new value table entry."
+  ],
+  "parameters": [
+    {
+      "name": "Handle",
+      "type": "",
+      "description": "The handle of the dialog."
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "The value should be added to the dialog table."
+    },
+    {
+      "name": "IsDefaultIndex",
+      "type": "",
+      "description": "If isDefaultIndex = 0 this Entry will be set as default."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "handle = TestCreateStringInputTable(\"Test Text\", \"Test Caption\", \"Test String Input Table Timeout\");\nTestAddStringTableEntry(handle, \"Test Entry\");\nTestWaitForInput(handle, 5000);\nTestGetStringInput(resultStr, elcount(resultStr));\n\nhandle = TestCreateValueInputTable(\"Test Text\", \"Test Caption\", \"Test Value Input Table Timeout\");\nTestAddValueTableEntry(handle, 9);\nTestWaitForInput(handle, 5000);\nwrite(\"Result: %f\", TestGetValueInput());"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "—",
+      "14",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

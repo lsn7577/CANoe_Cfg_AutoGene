@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_GetDisplayName",
+  "category": "CommunicationObjects",
+  "title": "Abstract_GetDisplayName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractGetDisplayName.htm",
+  "syntax": [
+    "long Abstract_GetDisplayName(addressHandle address, char[] buffer)"
+  ],
+  "description": [
+    "Retrieves an display name for an endpoint with an abstract binding pseudo address. The name may have been set with Abstract_CreateAddress."
+  ],
+  "parameters": [
+    {
+      "name": "address",
+      "type": "",
+      "description": "Address of the endpoint."
+    }
+  ],
+  "return": "0: success",
+  "example": {
+    "description": [],
+    "code": "ret = Abstract_GetDisplayName(newProvider.Address, buffer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

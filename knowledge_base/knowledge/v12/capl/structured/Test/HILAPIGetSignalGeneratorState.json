@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "HILAPIGetSignalGeneratorState",
+  "category": "Test",
+  "title": "HILAPIGetSignalGeneratorState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionHILAPIGetSignalGeneratorState.htm",
+  "syntax": [
+    "dword HILAPIGetSignalGeneratorState(dword handle);"
+  ],
+  "description": [
+    "Returns the state of a Signal Generator."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "The handle of the Signal Generator."
+    }
+  ],
+  "return": "0: The handle of the Signal Generator is not valid",
+  "example": {
+    "description": [
+      "Gets the state of the Signal Generator:"
+    ],
+    "code": "dword state;\nstate = HILAPIGetSignalGeneratorState( hGenerator);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDChangeDesignator",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDChangeDesignator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDChangeDesignator.htm",
+  "syntax": [
+    "long Iso11783IL_PDDChangeDesignator( word objectID, char asciiDesignator[] ); // form 1"
+  ],
+  "description": [
+    "The function sends a Change Designator message with a new object designator to the Task Controller.",
+    "The first variant converts the ASCII designator string to an UTF-8 string if the supported version is 2 or higher.",
+    "In the second variant you can specify if the designator string shall encoded to UTF-8 or not."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "ID of the object"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783IL_PDDChangeDesignator (1, \"myNewDesignator\" ) == 0) {\n  write( \"Change Designator command is sent successfully\" );\n}\nchar euroSign[255];\neuroSign.byte(0) = 0xE2;\neuroSign.byte(1) = 0x82;\neuroSign.byte(2) = 0xAC;\neuroSign.byte(3) = 0;\n\nif (Iso11783IL_PDDChangeDesignator ( 1, euroSign, 0 ) == 0) {\n  write( \"Command to change designator to '€' is sent successfully\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

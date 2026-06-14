@@ -1,0 +1,203 @@
+{
+  "page_type": "function",
+  "name": "<OnAfdxPacket>",
+  "category": "ADFX",
+  "title": "<OnAfdxPacket>",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/EventProcedures/CAPLfunctionOnAfdxPacket.htm",
+  "syntax": [
+    "void <OnAfdxPacket>( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet );"
+  ],
+  "description": [
+    "This callback is called when a registered AFDX packet is received."
+  ],
+  "parameters": [
+    {
+      "name": "dir",
+      "type": "",
+      "description": "Direction of the packet or fragment. 0: Rx 1: Tx"
+    },
+    {
+      "name": "line",
+      "type": "",
+      "description": "Line of the packet or fragment. 0: LineUndefined (e.g. for reassembled packets) 1: LineA 2: LineB 3: LineAB"
+    },
+    {
+      "name": "timestamp",
+      "type": "",
+      "description": "Time stamp of the packet or fragment in ns."
+    },
+    {
+      "name": "bag",
+      "type": "",
+      "description": "Time difference since last packet of this Virtual Link in ms."
+    },
+    {
+      "name": "status info",
+      "type": "bit 0",
+      "description": "This packet was received from Line-B."
+    },
+    {
+      "name": "bit 1",
+      "type": "",
+      "description": "This packet is redundant."
+    },
+    {
+      "name": "bit 2",
+      "type": "",
+      "description": "This packet is fragmented."
+    },
+    {
+      "name": "bit 3",
+      "type": "",
+      "description": "This packet is from a SAP port."
+    },
+    {
+      "name": "error info",
+      "type": "bit 4",
+      "description": "Packet was received in wrong interface (Line-A versus Line-B)."
+    },
+    {
+      "name": "bit 5",
+      "type": "",
+      "description": "Packet has an invalid Ethernet frame content."
+    },
+    {
+      "name": "bit 6",
+      "type": "",
+      "description": "Packet has an invalid sequence number."
+    },
+    {
+      "name": "bit 7",
+      "type": "",
+      "description": "Packet has a time-out on redundancy reception."
+    },
+    {
+      "name": "bit 8",
+      "type": "",
+      "description": "Packet has encountered a fragmentation error."
+    },
+    {
+      "name": "bit 9",
+      "type": "",
+      "description": "Packet has protocol errors on higher protocol level."
+    },
+    {
+      "name": "bit 10",
+      "type": "",
+      "description": "Packet has been reassembled."
+    },
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the received packet or fragment."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  long result;\n  // register a callback to receive AFDX packets in general\n  result = AfdxRegisterReceiveCallback(\"OnAfdxPacket\");\n}\nvoid OnAfdxPacket(long dir, long line, int64 time, long bag, long afdxFlags, long packet )\n{\n  // check if the packet has been sent by the node\n  if (dir == TX)\n  {\n    sysSetVariableInt(sysvar::NodeA::TxPacketCount,(SysGetVariableInt(sysvar::NodeA::TxPacketCount) + 1));\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

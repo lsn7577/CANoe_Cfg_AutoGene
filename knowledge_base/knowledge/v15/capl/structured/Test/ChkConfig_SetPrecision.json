@@ -1,0 +1,159 @@
+{
+  "page_type": "function",
+  "name": "ChkConfig_SetPrecision",
+  "category": "Test",
+  "title": "ChkConfig_SetPrecision",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkConfigSetPrecision.htm",
+  "syntax": [
+    "long ChkConfig_SetPrecision(unsigned int aPrecision);"
+  ],
+  "description": [
+    "This function configures the TSL time basis for the current node. The time basis (precision) affects all future times that are passed when creating checks (see check descriptions), and it affects the time basis for queries (status report functions).",
+    "This function allows you to configure the time basis for new checks to be created.The time bases of checks that have already been created are not changed by this function. They can be polled by a special query."
+  ],
+  "parameters": [
+    {
+      "name": "3",
+      "type": "",
+      "description": "10 –3 seconds = ms (default)"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "10 –4 seconds"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "10 –5 seconds = 10 us: e.g. used in trace export"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "10 –6 seconds = us"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "10 –7 seconds"
+    },
+    {
+      "name": "8",
+      "type": "",
+      "description": "10 –8 seconds"
+    },
+    {
+      "name": "9",
+      "type": "",
+      "description": "10 –9 seconds = ns"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// precision of the test is set to us\nchkConfig_SetPrecision(6);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

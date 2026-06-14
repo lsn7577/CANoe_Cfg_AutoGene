@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "SomeIpIsOptional",
+  "category": "IP",
+  "title": "SomeIpIsOptional",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpIsOptional.htm",
+  "syntax": [
+    "dword SomeIpIsOptional( dword objectHandle, char memberPath[] );"
+  ],
+  "description": [
+    "This function can be used to read out if a parameter or member of the object, specified in the objectHandle parameter, is optional or mandatory.",
+    "The value is accessed in this case via symbolic access paths."
+  ],
+  "parameters": [
+    {
+      "name": "objectHandle",
+      "type": "",
+      "description": "Handle to an SOME/IP IL object, which must be completely described in the FIBEX database. The following objects are supported. Messages Fields Method calls: Handle to a method call that was created with SomeIpCreateMethodCall."
+    },
+    {
+      "name": "memberPath",
+      "type": "",
+      "description": "Access path of the parameter or member to be read out."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void Initialize()\n{\n  dword aep; // application endpoint handle\n  dword psi; // provided service handle\n  dword peg; // provided eventgroup handle\n  dword pev; // provided event handle\n\n  // open application endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create service instance\n  psi = SomeIpCreateProvidedServiceInstance(aep,10,1);\n\n  // create eventgroup\n  peg = SomeIpAddProvidedEventGroup(psi,1);\n\n  // create event and add event to eventgroup\n  pev = SomeIpAddEvent(psi, 1, \"OnPrepareEvent1\");\n  SomeIpAddEventToEventgroup(peg, pev);\n\n  // ensure that event is sent cyclically\n  SomeIpSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1(dword eventHandle, dword messageHandle)\n{\n  WORD isOpt; // return value if parameter or member is optional\n  // this function is called before the event is sent. Parameters\n  // can be specified here.\n  // set parameter \"value1\" of struct \"param1\" only if it is mandatory\n\n  // get if member is optional or mandatory\n  isOpt = SomeIpIsOptional(messageHandle,\"param1.value1\");\n\n  if(isOpt == 0)\n  {\n    SomeIpSetValueDWord(messageHandle,\"param1.value1\",7);\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "—",
+      "—",
+      "—",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

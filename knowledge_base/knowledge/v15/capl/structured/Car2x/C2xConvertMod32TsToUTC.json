@@ -1,0 +1,183 @@
+{
+  "page_type": "function",
+  "name": "C2xConvertMod32TsToUTC",
+  "category": "Car2x",
+  "title": "C2xConvertMod32TsToUTC",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLFunctionC2xConvertMod32TsToUTC.htm",
+  "syntax": [
+    "long C2xConvertMod32TsToUTC( int64 mod32Ts, long refTime, long buffersize, long time[] )"
+  ],
+  "description": [
+    "This function converts a mod32 time stamp in milliseconds since a reference time into a UTC time stamp as array of type long with separate values for year, month, day, and so on."
+  ],
+  "parameters": [
+    {
+      "name": "mod32Ts",
+      "type": "",
+      "description": "Time stamp in milliseconds since the reference time."
+    },
+    {
+      "name": "refTime",
+      "type": "",
+      "description": "The following reference times can be set: 0: 2004-01-01 (2004-01-01T00:00:00,000 UTC) 1: 2010-01-01 (2010-01-01T00:00:00,000 UTC)."
+    },
+    {
+      "name": "buffersize",
+      "type": "",
+      "description": "Size of the buffer to be filled with the UTC time stamp ."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "milliseconds (0..999)"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "seconds (0..60)"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "minutes (0..60)"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "hours (0..24)"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "day of month (1..31)"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "month (0..11)"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "year (starting with 1900)"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "day of week (0..7)"
+    },
+    {
+      "name": "8",
+      "type": "",
+      "description": "day of year (0..365)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "enum enumRefTime{en2004 = 0, en2010 = 1};\nlong utcTime[9];\n\n// milliseconds from 01.01.2004 00:00:00 UTC to 01.04.2019 00:00:00 UTC\nint64 msSince2004 = 481161600000LL;\n\nif (C2xConvertMod32TsToUTC(msSince2004, en2004, elCount(utcTime), utcTime) == 0)\n{\n  // output (leap seconds are considered): Date 2019-03-31 Time 23:59:55.000 UTC\n  write(\"Date %d-%02d-%02d Time %02d:%02d:%02d.%03d UTC\", 1900+utcTime[6], utcTime[5]+1, utcTime[4], utcTime[3], utcTime[2], utcTime[1], utcTime[0]);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12 SP2",
+      "—",
+      "—",
+      "—",
+      "4.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

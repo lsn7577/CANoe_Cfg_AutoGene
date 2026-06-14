@@ -1,0 +1,84 @@
+{
+  "page_type": "function",
+  "name": "measuredServicePDURef",
+  "category": "CommunicationObjects",
+  "title": "measuredServicePDURef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionMeasuredServicePDURef.htm",
+  "syntax": [
+    "measuredServicePDURef * <var>"
+  ],
+  "description": [
+    "References a service PDU measurement point, which means measuring a specific connection between consumer and provider for a service PDU.",
+    "Not used for PDUs outside services, the data type of these is measuredPDURef."
+  ],
+  "parameters": [
+    {
+      "name": "PDU",
+      "type": "",
+      "description": "PDU, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "measuredServicePDURef MirrorAdjustment.StatusPDU pdu1;\npdu1 = MirrorAdjustment.measure[CANoe,LeftMirror].StatusPDU;\nwrite(\"Latest x: %d\", $pdu1.Position.x);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the measurement endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the measurement endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "measuredService The measurement point at the service.",
+        "measuredServiceRef *",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SubscriptionState State of the PDU subscription: Unknown: the PDUsubscription was not observed yet Unsubscribed: the PDU is not subscribed Subscribed: the PDU is subscribed",
+        "enum",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

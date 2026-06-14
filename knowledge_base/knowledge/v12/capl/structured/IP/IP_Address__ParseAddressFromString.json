@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IP_Address::ParseAddressFromString",
+  "category": "IP",
+  "title": "IP_Address::ParseAddressFromString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionParseAddressFromString.htm",
+  "syntax": [
+    "long IP_Address::ParseAddressFromString(char ipAddr[]);"
+  ],
+  "description": [
+    "Converts the character string to an IPv4 or IPv6 address and sets this address to the IP address value."
+  ],
+  "parameters": [
+    {
+      "name": "ipAddr",
+      "type": "",
+      "description": "A character string representing an IPv4 or IPv6 address."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Address addr;\n  if (addr.ParseAddressFromString( \"192.168.1.1\" ) == 0)\n  {\n    // do something with addr\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

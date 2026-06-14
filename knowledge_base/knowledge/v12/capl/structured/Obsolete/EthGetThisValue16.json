@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthGetThisValue16",
+  "category": "Obsolete",
+  "title": "EthGetThisValue16",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetThisValue16.htm",
+  "syntax": [
+    "long EthGetThisValue16( long offset );"
+  ],
+  "description": [
+    "This function reads the data of a received packet in Intel format.",
+    "It is only usable in a CAPL callback function that had been registered with EthReceiveRawPacket or EthReceivePacket. It depends on the callback function, which part of the packet data is accessed by the function:"
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "byte offset relative to the beginning of a data packet or the payload (see description above)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void OnEthRawPacket( LONG channel, LONG dir, LONG packetLength )\r\n  \n{\r\n\n  WORD value;\r\n\r\n    \n  value = EthGetThisValue16( 14 );\r\n\n  write( \"Value %d\", value );\r\n  \n}\r"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,76 @@
+{
+  "page_type": "concept",
+  "name": "Import Panels... (Panel Conversion)",
+  "category": "Panel",
+  "subcategory": "Ribbon",
+  "title": "Import Panels... (Panel Conversion)",
+  "source": "chm_extract/PanelDesigner/Topics/Ribbon/File/PanelDesignerMenuFileImportPanels.htm",
+  "intro": [
+    "Using this menu path, opens the Open dialog. In this dialog, you can select and import an existing panel file. The selected panel file is converted to the current Panel Designer format (*.xvp) and opened in the Panel Designer. The target file automatically obtains the same name as the source file.",
+    "Following panel source files can be converted:",
+    "Note",
+    "Check the converted panels. It is possible that some panel settings could not be converted completely and would therefore not be carried over or were reset to their default values."
+  ],
+  "intro_tables": [
+    [
+      [
+        "Note Check the converted panels. It is possible that some panel settings could not be converted completely and would therefore not be carried over or were reset to their default values."
+      ]
+    ]
+  ],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Information on Converting from the CNP Format to the XVP Format",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "If the conversion is unsuccessful or only partially successful, it may be caused by the following:",
+          "FAQ: The panel was saved with a very old version of the Panel Editor.",
+          "The panel must have a certain internal version so that it can be handled by the panel converter. The version number in the panel is issued when saving with the Panel Editor."
+        ],
+        "tables": [
+          [
+            [
+              "FAQ: The panel was saved with a very old version of the Panel Editor. The panel must have a certain internal version so that it can be handled by the panel converter. The version number in the panel is issued when saving with the Panel Editor. Possible Solution A better conversion result can be achieved by first saving the panel in the current version of the Panel Editor and then restarting the conversion. Proceed as follows if you have already added a converted panel to the CANoe/CANalyzerconfiguration in CANoe. Remove the converted panel (XVP) from the CANoe configuration using the CANoe panel configuration dialog. The XVP file remains in the panel directory. Move - for a subsequent conversion comparison- or delete the affected XVP file in the panel directory.Panel conversion only starts if there is no XVP file in the panel directory for the respective CNP file. Open the desired CNP file in the Panel Editor of the current CANoe version and save it again.A message will be displayed stating that the panel was saved with an older version of the Panel Editor and will now be overwritten. Confirm overwriting with [OK]. Open the Panel Designer and import the CNP file via the File ribbon tab|Import.Check the results, if necessary by comparing them with the created XVP file from the first conversion. If the panel matches the first conversion result and is still not complete or cannot be converted, the panel contains invalid data that cannot be converted. After successful conversion, add the panel with to the configuration opened in CANoe."
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Possible Solution",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "A better conversion result can be achieved by first saving the panel in the current version of the Panel Editor and then restarting the conversion.",
+          "Proceed as follows if you have already added a converted panel to the CANoe/CANalyzerconfiguration in CANoe.",
+          "FAQ: The panel contains elements not supported by the Panel Designer.",
+          "The missing elements must be replaced manually.",
+          "FAQ: The panel contains invalid data.",
+          "The missing elements must be supplemented manually.",
+          "Notes on Panel Conversion of single Controls"
+        ],
+        "tables": [
+          [
+            [
+              "FAQ: The panel contains elements not supported by the Panel Designer. The missing elements must be replaced manually."
+            ]
+          ],
+          [
+            [
+              "FAQ: The panel contains invalid data. The missing elements must be supplemented manually."
+            ]
+          ],
+          [
+            [
+              "Version 12.0© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linGetByteEndTime",
+  "category": "Obsolete",
+  "title": "linGetByteEndTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINGetByteEndTime.htm",
+  "syntax": [
+    "dword linGetByteEndTime(linFrame busEvent, long index)"
+  ],
+  "description": [
+    "This function can be used to retrieve a data byte time stamp of a certain LIN bus event. The resulting time stamp is a time elapsed since measurement start [in units of 10 µsec].",
+    "The time returned by this function corresponds to the end of the data byte field as detected by an UART. For the XL-hardware, this includes 9/16 of the stop bit. To calculate the theoretical end of data byte field including the stop bit, 7/16 of a bit time should be added. Similarly to calculate the start of the data byte field, 9 and 9/16 bit times should be subtracted."
+  ],
+  "parameters": [
+    {
+      "name": "busEvent",
+      "type": "",
+      "description": "LIN bus event of type frame, checksum error or receive error."
+    }
+  ],
+  "return": "Returns the retrieved time stamp [in units of 10 µsec] or 0 on failure.",
+  "example": {
+    "description": [
+      "Retrieve time stamps of each data byte on analyzing a receive error event"
+    ],
+    "code": "on linReceiveError\n{\nlong byteIndex;\ndword byteTimestamp;\nif (0 == this.lin_ShortError)  // \r\n .DLC selector only valid when .lin_ShortError is not set\n{\nfor (byteIndex=1; byteIndex <= this.DLC; ++byteIndex) \r\n \n{\nbyteTimestamp = linGetByteEndTime(this, byteIndex);\n...\n}\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

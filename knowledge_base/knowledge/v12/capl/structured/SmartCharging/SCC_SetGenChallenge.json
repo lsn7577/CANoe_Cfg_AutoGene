@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetGenChallenge",
+  "category": "SmartCharging",
+  "title": "SCC_SetGenChallenge",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetGenChallenge.htm",
+  "syntax": [
+    "long SCC_SetGenChallenge ( byte GenChallenge[] )"
+  ],
+  "description": [
+    "Sets the challenge for the PaymentDetailsRes message, which is randomly generated otherwise."
+  ],
+  "parameters": [
+    {
+      "name": "GenChallenge",
+      "type": "",
+      "description": "Value to be set. Array length must be 16 byte."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

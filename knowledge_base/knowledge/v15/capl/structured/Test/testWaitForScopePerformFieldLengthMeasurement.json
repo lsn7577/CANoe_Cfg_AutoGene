@@ -1,0 +1,163 @@
+{
+  "page_type": "function",
+  "name": "testWaitForScopePerformFieldLengthMeasurement",
+  "category": "Test",
+  "title": "testWaitForScopePerformFieldLengthMeasurement",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForScopePerformFieldLengthMeasurement.htm",
+  "syntax": [
+    "long testWaitForScopePerformFieldLengthMeasurement (frFrame msg, dword msgFieldStart, dword msgFieldEnd, dword bitStartNo, dword bitEndNo, qword fieldLength ScopeAnalyseHandle handle);"
+  ],
+  "description": [
+    "Returns the number of bits are contained within the defined range and the length of this range."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "The message where the field length should be measured."
+    },
+    {
+      "name": "msgFieldStart",
+      "type": "",
+      "description": "Defines the start of the measurement range."
+    },
+    {
+      "name": "msgFieldEnd",
+      "type": "",
+      "description": "Defines the end of the measurement range."
+    },
+    {
+      "name": "bitStartNo",
+      "type": "",
+      "description": "The bit within the start field where the measurement starts."
+    },
+    {
+      "name": "bitEndNo",
+      "type": "",
+      "description": "The bit within the end field where the measurement ends."
+    },
+    {
+      "name": "fieldLength",
+      "type": "",
+      "description": "Returns the length of the defined range."
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "—",
+      "—",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN Scope",
+      "LIN Scope",
+      "—",
+      "—",
+      "LIN Scope"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

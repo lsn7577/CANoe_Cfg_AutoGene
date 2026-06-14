@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "EthGetTokenLengthBit",
+  "category": "Obsolete",
+  "title": "EthGetTokenLengthBit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetTokenLengthBit.htm",
+  "syntax": [
+    "long EthGetTokenLengthBit( long packet, char protocolDesignator[], char tokenDesignator[] );"
+  ],
+  "description": [
+    "The function returns the length of a token in bit."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "length of the token in bit\nWith EthGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [],
+    "code": "LONG packet = 0;\nLONG len = 0;\nCHAR error[100];\n\npacket = EthInitPacket( \"udp\" );\nlen    = EthGetTokenLengthBit( packet, \"udp\", \"source\" ); // = 32\n\nif (EthGetLastError() == 0)\n{\n  // do something with len\n}\nelse\n{\n  EthGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

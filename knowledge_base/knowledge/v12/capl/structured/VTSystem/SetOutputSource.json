@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SetOutputSource",
+  "category": "VTSystem",
+  "title": "SetOutputSource",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSetOutputSource.htm",
+  "syntax": [
+    "long SysVarNamespace.SetOutputSource (eVTSOutputSourceGroup Group, eVTSOutputSource Source);"
+  ],
+  "description": [
+    "Sets the source for the high voltage level for output. This settings can only be set for groups of channels."
+  ],
+  "parameters": [
+    {
+      "name": "Group",
+      "type": "",
+      "description": "Values see eVTSOutputSourceGroup"
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,69 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetSystemOperationState",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetSystemOperationState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetSystemOperationState.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetSystemOperationState(dword state) // form 1"
+  ],
+  "description": [
+    "Sets the current system operation state of a TIM Server.",
+    "This state is transmitted in the TIM_ServerStatus_Msg message. But it does not influence the functionality of the TIM server."
+  ],
+  "parameters": [
+    {
+      "name": "State",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Requirements for TIM operation are not fulfilled"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Requirements for normal operation are fulfilled"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Requirements for standstill operation are fulfilled"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Requirements for stationary operation are fulfilled"
+    },
+    {
+      "name": "4-13",
+      "type": "",
+      "description": "Reserved"
+    },
+    {
+      "name": "14",
+      "type": "",
+      "description": "Error"
+    },
+    {
+      "name": "15",
+      "type": "",
+      "description": "Not available"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

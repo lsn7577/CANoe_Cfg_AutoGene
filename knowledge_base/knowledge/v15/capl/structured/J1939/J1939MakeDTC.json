@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "J1939MakeDTC",
+  "category": "J1939",
+  "title": "J1939MakeDTC",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/Functions/CAPLfunctionJ1939MakeDTC.htm",
+  "syntax": [
+    "long J1939MakeDTC(dword spn, byte fmi, byte oc, dword &dtcValue)"
+  ],
+  "description": [
+    "Function generates a DTC from the defined SPN, FMI and OC."
+  ],
+  "parameters": [
+    {
+      "name": "spn",
+      "type": "",
+      "description": "Suspect Parameter Number of the specified DTC. Valid value range: 0x0 – 0x7FFFF."
+    },
+    {
+      "name": "fmi",
+      "type": "",
+      "description": "Failure Mode Identifier of the specified DTC. Valid value range: 0x0 – 0x1F."
+    },
+    {
+      "name": "oc",
+      "type": "",
+      "description": "Occurrence Counter of the specified DTC . Valid value range: 0x0 – 0x7F."
+    },
+    {
+      "name": "dtcValue",
+      "type": "",
+      "description": "The value of the generated DTC block."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "//Fill DM1 with two DTCs and send it\n\n  pg DM1 myDM1 = {DLC=10, SA=1};\n  dword dtc;\n\n  //Activate Protect Lamp (permanent lighting)\n  myDM1.word(0) = 0xFF01;\n\n  //Make first DTC (SPN=67890, FMI=16, OC=101)\n  J1939MakeDTC(67890, 16, 101, dtc);\n  myDM1.dword(2) = dtc;\n\n  //Make second DTC (SPN=123, FMI=11, OC=5)\n  J1939MakeDTC(123, 11, 5, dtc);\n  myDM1.dword(6) = dtc;\n\n  //Send DM1 message\n  output(myDM1);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "12.0",
+      "12.0",
+      "13.0",
+      "—",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "J1939",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetEyeDiagramAnalysis",
+  "category": "Test",
+  "title": "testWaitScopeGetEyeDiagramAnalysis",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopeGetEyeDiagramAnalysis.htm",
+  "syntax": [
+    "long testWaitScopeGetEyeDiagramAnalysis(ScopeAnalyseHandle handle, message frame, long errorNo, ScopeSerialBitAnalysisViolationData data); // form 1"
+  ],
+  "description": [
+    "Returns the violation data of the eye diagram analysis for the error number."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "A unique ID. The same handle must be used as for the eye diagram analysis call with the function testWaitScopePerformEyeDiagramAnalysis"
+    }
+  ],
+  "return": "1 = Successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

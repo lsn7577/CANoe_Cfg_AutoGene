@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSecPacketGetSignerType",
+  "category": "Car2x",
+  "title": "C2xSecPacketGetSignerType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSecPacketGetSignerType.htm",
+  "syntax": [
+    "long C2xSecPacketGetSignerType(long packetHandle);"
+  ],
+  "description": [
+    "Retrieves how the message signer information is included in the message. The information can be transmitted as digest (HashedId8), certificate or certificate chain."
+  ],
+  "parameters": [
+    {
+      "name": "packetHandle",
+      "type": "",
+      "description": "Handle of the signed packet"
+    }
+  ],
+  "return": "0: unsecured",
+  "example": {
+    "description": [],
+    "code": "switch (C2xSecPacketGetSignerType(packetHandle))\n{\ncase 0: // unsecured\n  // ...\n  break;\ncase 1: // digest\n  // ...\n  break;\ncase 2: // certificate\n  // ...\n  break;\ncase 3: // certificate chain\n  // ...\n  break;\ndefault: // error\n  // ...\n  break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

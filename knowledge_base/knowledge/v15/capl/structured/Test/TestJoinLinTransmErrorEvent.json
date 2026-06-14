@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "TestJoinLinTransmErrorEvent",
+  "category": "Test",
+  "title": "TestJoinLinTransmErrorEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestJoinLinTransmErrorEvent.htm",
+  "syntax": [
+    "long TestJoinLinTransmErrorEvent (dword aFrameId)",
+    "long TestJoinLinTransmErrorEvent ()"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait."
+  ],
+  "parameters": [
+    {
+      "name": "aFrameId",
+      "type": "",
+      "description": "Numeric ID of a frame whose Transmission Error should be awaited. Default value: wait for any ID."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_waitForLINResponse(int frameId)\n{\n   long eventIndex;\n\n   testJoinMessageEvent(frameId);\n   testJoinLinReceiveErrorEvent(frameId);\n   testJoinLinCSErrorEvent(frameId);\n   testJoinLinTransmErrorEvent(frameId);\n\n   eventIndex = testWaitForAnyJoinedEvent(5000);\n   switch (eventIndex)\n   {\n      case 1: // valid frame\n         testStepPass(\"Validation\", \"IUT has responded correctly\");\n      break;\n\n      case 2:  // receive error\n         testStepFail(\"Validation\", \"IUT has responded with wrong number of data bytes\");\n      break;\n\n      case 3: // checksum error\n         testStepFail(\"Validation\", \"IUT has responded with wrong checksum\");\n      break;\n\n      case 4: // transmission error\n         testStepFail(\"Validation\", \"IUT has not responded\");\n      break;\n\n      default:\n         testStepFail(\"Validation\", \"Internal error! Unexpected event (return code %d) on waiting for response\", eventIndex);\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN",
+      "LIN",
+      "—",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

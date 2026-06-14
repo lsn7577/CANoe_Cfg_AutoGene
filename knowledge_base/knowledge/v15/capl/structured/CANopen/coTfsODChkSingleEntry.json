@@ -1,0 +1,165 @@
+{
+  "page_type": "function",
+  "name": "coTfsODChkSingleEntry",
+  "category": "CANopen",
+  "title": "coTfsODChkSingleEntry",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdChkSingleEntry.htm",
+  "syntax": [
+    "long coTfsODChkSingleEntry( dword index, dword subIndex, dword accessType, dword entrySize, byte inMaskBuf[], dword maskBufSize, byte inValueBuf[], dword valueBufSize );"
+  ],
+  "description": [
+    "The function checks a single object dictionary entry of existence and size via a SDO upload. Additionally the value is compared with the given value. The compare mask defines which data bits are compared and musts be identical. The test is only executed if the access type of the object is not writeOnly.",
+    "The test was successful if the values of a mandatory object are correct. On an optional object, the SDO abort codes (0x08000000, 0x06020000 and 0x06090011) are accepted also.",
+    "On a positive comparison and access type readWrite, the read value is written."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Checked object index."
+    },
+    {
+      "name": "subIndex",
+      "type": "",
+      "description": "Checked object sub index."
+    },
+    {
+      "name": "accessType",
+      "type": "",
+      "description": "1 - readWrite 2 - readOnly 3 - writeOnly 4 - constant"
+    },
+    {
+      "name": "entrySize",
+      "type": "",
+      "description": "Data size of object in bytes."
+    },
+    {
+      "name": "inMaskBuf[]",
+      "type": "",
+      "description": "Mask for data comparison, the size must be at least same as maskBufSize. 0 - don't care 1 - execute comparison"
+    },
+    {
+      "name": "maskBufSize",
+      "type": "",
+      "description": "Size of buffer."
+    },
+    {
+      "name": "inValueBuf[]",
+      "type": "",
+      "description": "Data for comparison, the size must be at least same as size of valueBufSize."
+    },
+    {
+      "name": "valueBufSize",
+      "type": "",
+      "description": "Size of buffer."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "long retValFunc = kTestStepPassed; /* to store the return value of function */\nlong nodeId = 112;                 /* Node-Id of DUT */\n\ndword index = 0x1000; /* device type */\ndword subIndex = 0x0; /* sub-index */\ndword accessType = kAccessType_ReadOnly;\ndword entrySize = 4;\nbyte inMaskBuf[4] = {0xFF, 0xFF, 0xFF, 0xFF};\ndword maskBufSize = 4;\nbyte inValueBuf[4] = {0x0, 0x0, 0x0, 0x0};\ndword valueBufSize = 4;\nchar msg[100]; /* message */\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* call test function */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODChkSingleEntry\", elCount(msg));\n  retValFunc = coTfsODChkSingleEntry( index /*dword index*/, subIndex /*dword subIndex*/, accessType /*dword accessType*/, entrySize /*dword entrySize*/, inMaskBuf /*byte inMaskBuf[]*/, maskBufSize /*dword maskBufSize*/, inValueBuf /*byte inValueBuf[]*/, valueBufSize /*dword valueBufSize*/ );\n} /* if */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

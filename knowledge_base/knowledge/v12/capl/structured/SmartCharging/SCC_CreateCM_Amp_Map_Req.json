@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_Amp_Map_Req",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_Amp_Map_Req",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_Amp_Map_Req.htm",
+  "syntax": [
+    "void SCC_CreateCM_Amp_Map_Req ( byte SourceMac[], byte TargetMac[], dword AmLen, byte AmData[] )"
+  ],
+  "description": [
+    "Creates a CM_Amp_Map.Req message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SourceMac",
+      "type": "",
+      "description": "Source address of the Ethernet frame"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

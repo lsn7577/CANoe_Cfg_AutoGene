@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetSupportedFacility",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetSupportedFacility",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetSupportedFacility.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetSupportedFacility(char functionFacilityName[], long value); // form 1"
+  ],
+  "description": [
+    "The function sets a facility of a TIM function in a TIM server.",
+    "By means of this function you can define all possible TIM functions supported by the TIM server.",
+    "If least one facility of a function is set then the function is listed in the TIM_FunctionsSupportResponse message. By default the other facilities of the function are set to value 3 (not available).",
+    "You can use Iso11783IL_TIMResetAllSupportedFunctions to remove all functions and all of their facilities. Then they are no longer listed in the TIM_FunctionsSupportResponse message."
+  ],
+  "parameters": [
+    {
+      "name": "functionFacilityName",
+      "type": "",
+      "description": "Name if the function facility."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

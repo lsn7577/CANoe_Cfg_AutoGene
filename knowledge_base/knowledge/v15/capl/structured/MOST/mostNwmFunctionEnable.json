@@ -1,0 +1,208 @@
+{
+  "page_type": "function",
+  "name": "mostNwmFunctionEnable",
+  "category": "MOST",
+  "title": "mostNwmFunctionEnable",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTNwmFunctionEnable.htm",
+  "syntax": [
+    "long mostNwmFunctionEnable(long functionId, long opTypes);"
+  ],
+  "description": [
+    "Registers and unregisters a function and its operations with the NetworkMaster."
+  ],
+  "parameters": [
+    {
+      "name": "functionId",
+      "type": "",
+      "description": "Function ID."
+    },
+    {
+      "name": "Bit 0",
+      "type": "",
+      "description": "OpType = 0x0 (Set/Start)"
+    },
+    {
+      "name": "Bit 1",
+      "type": "",
+      "description": "OpType = 0x1 (Get/Abort)"
+    },
+    {
+      "name": "Bit 2",
+      "type": "",
+      "description": "OpType = 0x2 (SetGet/StartResult)"
+    },
+    {
+      "name": "Bit 3",
+      "type": "",
+      "description": "OpType = 0x3 (Increment/-)"
+    },
+    {
+      "name": "Bit 4",
+      "type": "",
+      "description": "OpType = 0x4 (Decrement/-)"
+    },
+    {
+      "name": "Bit 5",
+      "type": "",
+      "description": "OpType = 0x5 (GetInterface/GetInterface)"
+    },
+    {
+      "name": "Bit 6",
+      "type": "",
+      "description": "OpType = 0x6 (-/StartResultAck)"
+    },
+    {
+      "name": "Bit 7",
+      "type": "",
+      "description": "OpType = 0x7 (-/AbortAck)"
+    },
+    {
+      "name": "Bit 8",
+      "type": "",
+      "description": "OpType = 0x8 (-/StartAck)"
+    },
+    {
+      "name": "Bit 9",
+      "type": "",
+      "description": "OpType = 0x9 (-/ErrorAck)"
+    },
+    {
+      "name": "Bit 10",
+      "type": "",
+      "description": "OpType = 0xA (-/ProcessingAck)"
+    },
+    {
+      "name": "Bit 11",
+      "type": "",
+      "description": "OpType = 0xB (-/Processing)"
+    },
+    {
+      "name": "Bit 12",
+      "type": "",
+      "description": "OpType = 0xC (Status/Result)"
+    },
+    {
+      "name": "Bit 13",
+      "type": "",
+      "description": "OpType = 0xD (-/ResultAck)"
+    },
+    {
+      "name": "Bit 14",
+      "type": "",
+      "description": "OpType = 0xE (Interface/Interface)"
+    },
+    {
+      "name": "Bit 15",
+      "type": "",
+      "description": "OpType = 0xF (Error)"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

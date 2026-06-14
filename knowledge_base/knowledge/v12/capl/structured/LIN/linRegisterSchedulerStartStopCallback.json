@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linRegisterSchedulerStartStopCallback",
+  "category": "LIN",
+  "title": "linRegisterSchedulerStartStopCallback",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINRegisterSchedulerStartStopCallback.htm",
+  "syntax": [
+    "dword linRegisterSchedulerStartStopCallback (char[] callbackName)"
+  ],
+  "description": [
+    "Registers a callback function which is invoked if a LIN scheduler is either started or stopped.",
+    "This function may only be called in the event procedure on preStart."
+  ],
+  "parameters": [
+    {
+      "name": "callbackName",
+      "type": "",
+      "description": "The name of the callback function which should be registered. The callback must have the following signature: void func (dword channel, dword started, int64 eventTime)"
+    }
+  ],
+  "return": "Returns 1 if the registration succeeded, otherwise 0.",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  linRegisterSchedulerStartStopCallback(\"OnSchedulerStartStop\");\n}\n\nvoid OnSchedulerStartStop (dword channel, dword started, int64 eventTime)\n{\n  if (started)\n  {\n    write(\"Scheduler on LIN channel %ld started at: %lld\", channel, eventTime);\n  }\n  else\n  {\n    write(\"Scheduler on LIN channel %ld stopped at: %lld\", channel, eventTime);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

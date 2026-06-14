@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linSetRespError",
+  "category": "LIN",
+  "title": "linSetRespError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetRespError.htm",
+  "syntax": [
+    "long linSetRespError(long activate)"
+  ],
+  "description": [
+    "Sets/resets the response error flag for a calling slave node.",
+    "This function has no effect with LIN 1.x."
+  ],
+  "parameters": [
+    {
+      "name": "activate",
+      "type": "",
+      "description": "0: reset1: set"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForSwitchStateModeGlobalRequest",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForSwitchStateModeGlobalRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForSwitchStateModeGlobalMsgReq.htm",
+  "syntax": [
+    "long coTfsLssWaitForSwitchStateModeGlobalRequest( byte[] pMode );"
+  ],
+  "description": [
+    "This function waits for a LSS switch state global mode request."
+  ],
+  "parameters": [
+    {
+      "name": "pMode",
+      "type": "",
+      "description": "0 - waiting mode1 - configuration mode"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pMode[1];\n\n/* waits for LSS switch state global request */\nif (coTfsLssWaitForSwitchStateModeGlobalRequest() == 1) {\n  /* received LSS switch state global request */\n  /* value in pMode[0] */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

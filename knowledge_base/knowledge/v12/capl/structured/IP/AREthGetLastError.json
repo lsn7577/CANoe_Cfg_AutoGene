@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "AREthGetLastError",
+  "category": "IP",
+  "title": "AREthGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthGetLastError.htm",
+  "syntax": [
+    "long AREthGetLastError();"
+  ],
+  "description": [
+    "This function can be used to check whether the last called function of AUTOSAR Eth IL has been successfully executed. The call of this function does not reset the saved error.",
+    "In the Event of an error, a detailed error description can be read out using the AREthGetLastErrorText function."
+  ],
+  "parameters": [],
+  "return": "0: The last called function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "long retVal;\n\n// resume sending messages\nAREthILControlResume();\n\n// check if last function was executed correct\nif((retVal = AREthGetLastError()) != 0)\n{\n  write(\"AUTOSAR Eth IL error occured: Error code: %d\", retVal);\n} // if"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "measuredEventRef",
+  "category": "CommunicationObjects",
+  "title": "measuredEventRef",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CommunicationObjects/Objects/CAPLfunctionMeasuredEventRef.htm",
+  "syntax": [
+    "measuredEventRef * <var>; // form 1",
+    "measuredEventRef <Event> <var>; // form 2",
+    "measuredEventRef <Datatype> <var>; // form 3"
+  ],
+  "description": [
+    "References an event measurement point, which means measuring a specific connection between consumer and provider for a service event."
+  ],
+  "parameters": [
+    {
+      "name": "Event",
+      "type": "",
+      "description": "Event, determining the data type of the object."
+    },
+    {
+      "name": "Datatype",
+      "type": "",
+      "description": "Data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "measuredEventRef MirrorAdjustment.Position event;\nevent = MirrorAdjustment.measure[CANoe,LeftMirror].Position;\nwrite(\"Latest x: %d\", $event.x);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "15",
+      "14",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

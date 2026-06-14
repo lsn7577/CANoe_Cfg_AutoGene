@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "TestStep, TestStepPass, TestStepFail, TestStepWarning, TestStepInconclusive, TestStepErrorInTestSystem",
+  "category": "Test",
+  "title": "TestStep, TestStepPass, TestStepFail, TestStepWarning, TestStepInconclusive, TestStepErrorInTestSystem",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestStep.htm",
+  "syntax": [
+    "TestStep (dword LevelOfDetail, char Identifier[], char Description[], ...); // form 1"
+  ],
+  "description": [
+    "With these functions, test steps can be reported within a test case.",
+    "TestStep reports a test step without influence on the result.",
+    "TestStepPass reports a test step that was executed as expected. This is displayed accordingly in the test report.",
+    "TestStepFail describes a test step that causes an error. Also this is displayed accordingly in the test report. The verdict of the test case is hereby set automatically to fail.",
+    "TestStepWarning describes a test case that was executed without errors but whose result could contribute to a problem later on. This is represented appropriately in the test report.",
+    "TestStepInconclusive describes a test step which can not clearly marked as passed or failed . Also this is displayed accordingly in the test report. The verdict of the test case is hereby set automatically to inconclusive.",
+    "TestStepErrorInTestSystem describes a test step that causes an error in test system. Also this is displayed accordingly in the test report. The verdict of the test case is hereby set automatically to error in test system."
+  ],
+  "parameters": [
+    {
+      "name": "LevelOfDetail",
+      "type": "",
+      "description": "It is possible to identify with a number how important this test step is. In the test report, it is possible that only test steps up to a certain importance will be displayed. 0 means \"very important\", higher numbers indicate lower degrees of importance."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "TestStepPass(\"10.2\", \"Output voltage ok (Uout =  %d  volts)\", voltage);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

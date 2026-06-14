@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSendDominantSignal",
+  "category": "LIN",
+  "title": "linSendDominantSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSendDominantSignal.htm",
+  "syntax": [
+    "dword linSendDominantSignal(dword lengthInMicroseconds);"
+  ],
+  "description": [
+    "Sends a dominant signal of the specified length."
+  ],
+  "parameters": [
+    {
+      "name": "lengthInMicroseconds",
+      "type": "",
+      "description": "The length of the dominant signal in microseconds."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

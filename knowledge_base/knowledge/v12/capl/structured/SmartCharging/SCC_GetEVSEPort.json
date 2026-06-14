@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetEVSEPort",
+  "category": "SmartCharging",
+  "title": "SCC_GetEVSEPort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetEVSEPort.htm",
+  "syntax": [
+    "void SCC_GetEVSENotification ( char EVSENotification, long& NotificationMayDelay )"
+  ],
+  "description": [
+    "Gets the EVSE port of a SECCDiscoveryRes message."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "TCP port transmitted from the charge point.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

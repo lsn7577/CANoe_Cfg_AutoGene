@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "vtsSetTriggerParams",
+  "category": "VTSystem",
+  "title": "vtsSetTriggerParams",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetTriggerParams.htm",
+  "syntax": [
+    "long vtsSetTriggerParams (char Target[], eVTSTrigger Trigger, eVTSTriggerSourceChannel SourceChannel, eVTSTriggerEdgeType EdgeType);"
+  ],
+  "description": [
+    "The function configures basic parameters for triggers. Further parameters can be set with the function vtsSetTriggerParamsEx.",
+    "You can find additional information about VT System triggers on the page Triggers."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Specifies which trigger is configured: Values see eVTSTrigger"
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "The following example shows how triggers can be used to measure the width of a pulse, that is the distance between the rising and falling edge of a pulse."
+    ],
+    "code": "variables\n{\n   int64 gRiseTime = 0;\n   int64 gFallTime = 0;\n}\n\nvoid MainTest ()\n{\n   MeasurePulseLength();\n}\n\nvoid MeasurePulseLength()\n{\n   dword trigger1EventCount = 0;\n   dword trigger2EventCount = 0;\n   int64 pulseWidth = 0;\n\n   enum eVTSTrigger trigger = eVTSTrigger1;\n   enum eVTSTriggerSourceChannel sourceChannel = eVTSTriggerSourceChannel1;\n   enum eVTSTriggerEdgeType edgeType = eVTSTriggerEdgeTypeRising;\n   dword preTriggers = 0;\n\n   double minPulseWidth = 0.0;\n\n   // configure two triggers (one for the rising and one for the falling edge)\n   trigger = eVTSTrigger1;\n   sourceChannel = eVTSTriggerSourceChannel1;\n   edgeType = 0; // rising edge\n   preTriggers = 0; // no other trigger as precondition\n   minPulseWidth = 0.002; // pulse must have a width of at at least 2ms\n\n   vtsSetTriggerParams( \"VTS::IgnitionChannels\", trigger, sourceChannel, edgeType);\n   vtsSetTriggerParamsEx( \"VTS::IgnitionChannels\",  trigger, minPulseWidth, 0.0, preTriggers, 0, 0, eVTSTriggerTypeEdge);\n\n   trigger = eVTSTrigger2;\n   sourceChannel = eVTSTriggerSourceChannel1;\n   edgeType = eVTSTriggerEdgeTypeFalling; // falling edge\n   preTriggers = 1; // first bit set: trigger 1 must be activated as a precondition\n\n   vtsSetTriggerParams( \"VTS::IgnitionChannels\",  trigger, sourceChannel, edgeType);\n   vtsSetTriggerParamsEx( \"VTS::IgnitionChannels\",  trigger, 0.0, 0.0, preTriggers, 0, 0, eVTSTriggerTypeEdge);\n\n   TestWaitForTimeout( 50); // wait some time to make sure the settings are transferred\n\n   // start triggers\n   trigger = eVTSTrigger1;\n   vtsStartTrigger( \"VTS::IgnitionChannels\", trigger);\n   trigger = eVTSTrigger2;\n   vtsStartTrigger( \"VTS::IgnitionChannels\", trigger);\n\n   // wait some time until a pulse has occurred\n   TestWaitForTimeout( 1000);\n\n   // check if pulse was detected and output pulse width\n   trigger1EventCount = @sysvar::VTS::IgnitionChannels::Trigger1EventCount;\n   trigger2EventCount = @sysvar::VTS::IgnitionChannels::Trigger2EventCount;\n\n   if (trigger1EventCount > 0 && trigger2EventCount > 0)\n   {\n      pulseWidth = gFallTime - gRiseTime;\n      Write( \"Pulse width: %.3f µs\", (pulseWidth/1000.0));\n   }\n   else\n   {\n      Write(\"No pulse detected!\");\n   }\n}\n\non sysvar_update sysvar::VTS::IgnitionChannels::Trigger1Event\n{\n   // save time stamp of rising edge when event occurs\n   gRiseTime = sysGetVariableTimeNS( this);\n}\n\non sysvar_update sysvar::VTS::IgnitionChannels::Trigger2Event\n{\n   // save time stamp of falling edge when event occurs\n   gFallTime = sysGetVariableTimeNS( this);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

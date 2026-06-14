@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetTokenString",
+  "category": "ADFX",
+  "title": "AfdxGetTokenString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxGetTokenString.htm",
+  "syntax": [
+    "long AfdxGetTokenString( long packet, char protocolDesignator[], char tokenDesignator[], long offset, long bufSize, char buffer[] );"
+  ],
+  "description": [
+    "This function copies characters from the token and adds a terminating \"\\0\"."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "number of copied characters or 0\nWith AfdxGetLastError you have to check if the function has been processed successfully.",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  AfdxRegisterReceiveCallback ( \"OnAfdxPacket\");\n}\nvoid OnAfdxPacket( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet )\n{\n  char rx_str[100];\n  char error[100];\n\n  // get a string value located in FDS1\n  long offset = 8; // FDS1 + 2 byte length info\n  long status  = 0;\n  long len = 0;\n\n  len = AfdxGetTokenInt( packet, \"udp\", \"data\", offset, 2, 1 );\n\n  if (AfdxGetLastError() == 0)\n  {\n    AfdxGetTokenString( packet, \"udp\", \"data\", offset+2,  len, rx_str );\n    if (AfdxGetLastError() == 0)\n    {\n      write(rx_str);\n    }\n  }\n  else\n  {\n    AfdxGetLastErrorText( elCount(error), error );\n    write(\"Error: %s\", error );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

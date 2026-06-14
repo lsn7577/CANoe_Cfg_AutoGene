@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "title": "DBC File Field Reference (Vector CANoe 12.0)",
+    "description": "Comprehensive reference of all DBC file keywords, attributes, object types, and their usage.",
+    "version": "12.0",
+    "source": "Vector CANdb++ Help (CANoe 12.0)"
+  },
+  "syntax_keywords": [
+    {
+      "name": "VERSION",
+      "category": "File Header",
+      "required": true,
+      "syntax": "VERSION \"<version_string>\"",
+      "description": "DBC file format version. The canonical value is an empty string."
+    },
+    {
+      "name": "NS_",
+      "category": "File Header",
+      "required": true,
+      "syntax": "NS_ : NS_DESC_ CM_ BA_DEF_ BA_ VAL_TABLE_ ...",
+      "description": "New Symbols declaration. Lists all reserved identifier names."
+    },
+    {
+      "name": "BS_",
+      "category": "Bus Configuration",
+      "required": false,
+      "syntax": "BS_: <bus_speed>",
+      "description": "Bus Speed. v12 commonly uses BS_ for CAN, optional for CAN FD."
+    },
+    {
+      "name": "BU_",
+      "category": "Network Nodes",
+      "required": true,
+      "syntax": "BU_: <Node1> <Node2> ...",
+      "description": "Bus nodes (ECUs)."
+    },
+    {
+      "name": "VAL_TABLE_",
+      "category": "Value Tables",
+      "required": false,
+      "syntax": "VAL_TABLE_ <Name> <Value1> <Text1> ... ;",
+      "description": "Value table definition."
+    },
+    {
+      "name": "BO_",
+      "category": "Message Definition",
+      "required": true,
+      "syntax": "BO_ <MsgId> <MsgName>: <MsgLen> <Transmitter>",
+      "description": "Message definition."
+    },
+    {
+      "name": "SG_",
+      "category": "Signal Definition",
+      "required": true,
+      "syntax": "SG_ <SigName> : <StartBit>|<Length>@<Endian><Signed> (<Factor>,<Offset>) [<Min>|<Max>] \"<Unit>\" <Receivers>",
+      "description": "Signal definition. v12 supports multiplexed signals."
+    },
+    {
+      "name": "EV_",
+      "category": "Environment Variable",
+      "required": false,
+      "syntax": "EV_ <VarName>: <DataType> [Unit] [Min|Max] [AccessType] [AccessNodes];",
+      "description": "Environment variable."
+    },
+    {
+      "name": "CM_",
+      "category": "Comment",
+      "required": false,
+      "syntax": "CM_ [<BU_>|BO_ <MsgId>|SG_ ...] \"<comment>\";",
+      "description": "Comment."
+    },
+    {
+      "name": "BA_DEF_",
+      "category": "Attribute Definition",
+      "required": false,
+      "syntax": "BA_DEF_ <ObjectType> \"<AttrName>\" <AttrType> [<DefaultValue>];",
+      "description": "Attribute definition."
+    },
+    {
+      "name": "BA_",
+      "category": "Attribute Value",
+      "required": false,
+      "syntax": "BA_ \"<AttrName>\" <ObjectType> <ObjectId> <Value>;",
+      "description": "Attribute value assignment."
+    },
+    {
+      "name": "VAL_",
+      "category": "Value Description",
+      "required": false,
+      "syntax": "VAL_ <MsgId> <SigName> <Value1> \"<Text1>\" ... ;",
+      "description": "Value description for a signal."
+    },
+    {
+      "name": "BA_DEF_SG_",
+      "category": "Signal Attribute",
+      "required": false,
+      "syntax": "BA_DEF_SG_ \"<AttrName>\" <Type> [<Default>];",
+      "description": "Signal-group specific attribute definition."
+    },
+    {
+      "name": "SIG_GROUP_",
+      "category": "Signal Group",
+      "required": false,
+      "syntax": "SIG_GROUP_ <GroupName> <MsgId> : <Sig1> <Sig2> ... ;",
+      "description": "Signal group definition."
+    },
+    {
+      "name": "RX_BU_",
+      "category": "Receiver Relation (v12 standard)",
+      "required": false,
+      "syntax": "RX_BU_ <MsgId> <SigName> : <Receiver1> <Receiver2> ... ;",
+      "description": "Receiver relation (v12 standard). Still commonly used in v12."
+    }
+  ],
+  "object_types": [
+    {
+      "name": "BU_ (Node)",
+      "description": "Network node (ECU)"
+    },
+    {
+      "name": "BO_ (Message)",
+      "description": "CAN message"
+    },
+    {
+      "name": "SG_ (Signal)",
+      "description": "CAN signal within a message"
+    },
+    {
+      "name": "EV_ (Environment Variable)",
+      "description": "Non-bus variable"
+    },
+    {
+      "name": "SIG_GROUP_ (Signal Group)",
+      "description": "Group of related signals"
+    },
+    {
+      "name": "MUX (Multiplexor)",
+      "description": "Multiplexed signal"
+    }
+  ],
+  "attribute_types": [
+    {
+      "name": "ENUM",
+      "description": "Enumeration of allowed string values"
+    },
+    {
+      "name": "FLOAT",
+      "description": "IEEE 754 single precision (32-bit)"
+    },
+    {
+      "name": "HEX",
+      "description": "Hexadecimal integer"
+    },
+    {
+      "name": "INT",
+      "description": "Signed integer"
+    },
+    {
+      "name": "UINT",
+      "description": "Unsigned integer"
+    },
+    {
+      "name": "STRING",
+      "description": "ASCII string"
+    }
+  ]
+}

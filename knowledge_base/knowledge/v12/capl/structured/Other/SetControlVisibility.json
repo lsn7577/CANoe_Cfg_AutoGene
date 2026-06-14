@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SetControlVisibility",
+  "category": "Other",
+  "title": "SetControlVisibility",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetControlVisibility.htm",
+  "syntax": [
+    "void SetControlVisibility(char[] panel, char[] control, long visible);"
+  ],
+  "description": [
+    "Sets the visibility of panel elements.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer/Panel Editor."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Set the visibility for a specific control of a panel\nSetControlVisibility(\"motor\", \"PedalPos\", 1);\n// All controls of the panel are set to not visible\nSetControlVisibility(\"motor\", \"\", 0);\n// All controls of all panels are set to visible\nSetControlVisibility(\"\", \"\", 1);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

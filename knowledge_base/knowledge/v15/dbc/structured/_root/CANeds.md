@@ -1,0 +1,47 @@
+# CANeds
+
+> Category: `DBC` | Type: `concept`
+
+CANeds for CANopen is a powerful tool for generating and modifying CANopen Electronic Data Sheets (EDS) and Device Configuration Files (DCF). Furthermore CANopen Device Descriptions (XDD and XDC) can be created and modified, but not all possibilities of the device description can be used with CANeds. It saves device manufacturers and system integrators from the hard and error-prone job of writing EDS files manually.
+
+An intrinsic knowledge of all standard objects and their possible attributes makes it very easy to build-up an EDS, DCF, XDD or XDC. CANeds displays the structure of one of these files as an hierarchical tree (mid pane in the main window). It represents the CANopen object attributes like object type or data type symbolically. The cumbersome translation of the numerous types to their numerical values needed in these files is done automatically. The same is true for setting up the links between the sections of the file.
+
+New Features (CANopen)
+
+Glossary | File Name Extensions | Copyright/Contact | Typographical Conventions
+
+| CANeds for CANopen is a powerful tool for generating and modifying CANopen Electronic Data Sheets (EDS) and Device Configuration Files (DCF). Furthermore CANopen Device Descriptions (XDD and XDC) can be created and modified, but not all possibilities of the device description can be used with CANeds. It saves device manufacturers and system integrators from the hard and error-prone job of writing EDS files manually. An intrinsic knowledge of all standard objects and their possible attributes makes it very easy to build-up an EDS, DCF, XDD or XDC. CANeds displays the structure of one of these files as an hierarchical tree (mid pane in the main window). It represents the CANopen object attributes like object type or data type symbolically. The cumbersome translation of the numerous types to their numerical values needed in these files is done automatically. The same is true for setting up the links between the sections of the file. |
+|---|
+
+| Quick Access New Features (CANopen) Use Cases Create a New EDS Create new Objects Check EDS and DCF Files Scan a Physical Device Create Signal Lists | Quick Access | New Features (CANopen) | Use Cases | Create a New EDS Create new Objects Check EDS and DCF Files Scan a Physical Device Create Signal Lists | Windows - Menus - Key Combinations CANeds Main Window Object Dictionary Database Window EDS Window Attribute Window Key Combinations Tips & Tricks Floating of the Output Window Optimize the column width in the objects overview | Windows - Menus - Key Combinations | CANeds Main Window Object Dictionary Database Window EDS Window Attribute Window Key Combinations | Tips & Tricks | Floating of the Output Window Optimize the column width in the objects overview | Functions Read and write EDS, DCF, XDD and XDC files Modification of EDS and DCF files Check of EDS and DCF files Limited modification of XDD and XDC files Check of XDD and XDC files to the CANopen XML schema Scanning devices with semi-automatic creation of EDS files Notifications: errors, warnings, status | Functions | Read and write EDS, DCF, XDD and XDC files Modification of EDS and DCF files Check of EDS and DCF files Limited modification of XDD and XDC files Check of XDD and XDC files to the CANopen XML schema Scanning devices with semi-automatic creation of EDS files Notifications: errors, warnings, status |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Quick Access |  |  |  |  |  |  |  |  |  |  |  |  |
+| New Features (CANopen) |  |  |  |  |  |  |  |  |  |  |  |  |
+| Use Cases |  |  |  |  |  |  |  |  |  |  |  |  |
+| Create a New EDS Create new Objects Check EDS and DCF Files Scan a Physical Device Create Signal Lists |  |  |  |  |  |  |  |  |  |  |  |  |
+| Windows - Menus - Key Combinations |  |  |  |  |  |  |  |  |  |  |  |  |
+| CANeds Main Window Object Dictionary Database Window EDS Window Attribute Window Key Combinations |  |  |  |  |  |  |  |  |  |  |  |  |
+| Tips & Tricks |  |  |  |  |  |  |  |  |  |  |  |  |
+| Floating of the Output Window Optimize the column width in the objects overview |  |  |  |  |  |  |  |  |  |  |  |  |
+| Functions |  |  |  |  |  |  |  |  |  |  |  |  |
+| Read and write EDS, DCF, XDD and XDC files Modification of EDS and DCF files Check of EDS and DCF files Limited modification of XDD and XDC files Check of XDD and XDC files to the CANopen XML schema Scanning devices with semi-automatic creation of EDS files Notifications: errors, warnings, status |  |  |  |  |  |  |  |  |  |  |  |  |
+
+| Quick Access |
+|---|
+| New Features (CANopen) |
+
+| Use Cases |
+|---|
+| Create a New EDS Create new Objects Check EDS and DCF Files Scan a Physical Device Create Signal Lists |
+
+| Windows - Menus - Key Combinations |
+|---|
+| CANeds Main Window Object Dictionary Database Window EDS Window Attribute Window Key Combinations |
+
+| Tips & Tricks |
+|---|
+| Floating of the Output Window Optimize the column width in the objects overview |
+
+| Functions |
+|---|
+| Read and write EDS, DCF, XDD and XDC files Modification of EDS and DCF files Check of EDS and DCF files Limited modification of XDD and XDC files Check of XDD and XDC files to the CANopen XML schema Scanning devices with semi-automatic creation of EDS files Notifications: errors, warnings, status |

@@ -1,0 +1,124 @@
+{
+  "page_type": "event",
+  "name": "on diagRequestSent",
+  "category": "Diagnostics",
+  "title": "on diagRequestSent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/EventProcedures/CAPLfunctionOndiagRequestSent.htm",
+  "syntax": [],
+  "description": [
+    "The procedure is sub-divided into the following events; the first matching event procedure (top-down) is called:"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1",
+      "Example 2",
+      "For event handlers, it is also possible to specify an ECU qualifier to filter specific events. And all services that belong to the same diagnostic class can be processed in one handler."
+    ],
+    "code": "on diagRequestSent *\n{\n   // A request was sent, therefore on LIN the schedule has to be changed\n   linChangeSchedTable( cSchedulingTableForDiagResponse);\n}\n\non diagRequestSent ECU_SoftReset\n{\n   // The ECU will perform a reset for some time, so inform the rest of the CAPL program\n   gECUisResetting = 1;\n}\n// process all diagnostic requests from ECU1 without better match here\nOn diagResponse ECU1.*\n{\n  // access the response using 'this'\n}\n\n// Only Service1 responses from ECU1 will be reported here\nOn diagResponse ECU1.Service1\n{\n}\n\nOn diagRequestSent ECU2.*\n{\n  // ECU2 is using a transport protocol with confirmations\nWrite( \"ECU2 has confirmed reception of event\");\n}\n\nOn diagResponse ECU1.Class1::*\n{\n  write( \"A response for a service of Class1 was received\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5",
+      "7.5",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

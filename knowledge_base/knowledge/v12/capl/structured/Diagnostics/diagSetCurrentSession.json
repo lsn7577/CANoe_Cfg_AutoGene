@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagSetCurrentSession",
+  "category": "Diagnostics",
+  "title": "diagSetCurrentSession",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSetCurrentSession.htm",
+  "syntax": [
+    "long diagSetCurrentSession(long sessionId); // form 1"
+  ],
+  "description": [
+    "Sets the diagnostics session currently active in the ECU. This value may be used as optional argument for the computation of a key value from a seed, if configured."
+  ],
+  "parameters": [
+    {
+      "name": "sessionId",
+      "type": "",
+      "description": "The numeric representation of the session, e.g. 1 for default session."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "Testfunction ComputeKeyInExtendedSession( BYTE seed[], BYTE key[])\n{\n  DWORD keyLenOut;\n  keyLenOut = 0;\n  DiagSetCurrentSession( 0x03); // extended session\n  // The key computation may use the current session as optional argument\n  TestWaitForGenerateKeyFromSeed( seed, elcount( seed), 1, key, elcount(key), keyLenOut, 1000);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

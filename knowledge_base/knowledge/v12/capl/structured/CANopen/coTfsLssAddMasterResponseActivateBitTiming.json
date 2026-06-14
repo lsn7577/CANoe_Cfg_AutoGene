@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssAddMasterResponseActivateBitTiming",
+  "category": "CANopen",
+  "title": "coTfsLssAddMasterResponseActivateBitTiming",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssAddMasterResponseActivateBitTiming.htm",
+  "syntax": [
+    "long coTfsLssAddMasterResponseActivateBitTiming( dword switchDelay, dword switchDelayMask );"
+  ],
+  "description": [
+    "This function adds a single LSS Master request wait condition to the internal list of LSS Master request wait conditions."
+  ],
+  "parameters": [
+    {
+      "name": "switchDelay",
+      "type": "",
+      "description": "Duration (in ms) of the two periods of time to wait until the bit timing parameters switch is done (first period) and before transmitting any CAN message with the new bit timing parameters after performing the switch (second period)."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\nwrite(\"Clear list failed\");\nreturn;\n} \n\n/* add one or more test functions */\nif (coTfsLssAddMasterResponseActivateBitTiming( 1000, 0xFFFFFFFF ) {\nwrite(\"could not add request\");\nreturn;\n} \n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\nwrite(\"no event received\");\n} \nelse {\nwrite(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

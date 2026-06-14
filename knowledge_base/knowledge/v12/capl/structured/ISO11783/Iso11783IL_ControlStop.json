@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_ControlStop",
+  "category": "ISO11783",
+  "title": "Iso11783IL_ControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILControlStop.htm",
+  "syntax": [
+    "long Iso11783IL_ControlStop();"
+  ],
+  "description": [
+    "Deactivates the IL and stops sending cyclic messages. A Cannot Claim Address message is sent, if the NMT is activated and the message is not suppressed with the parameter option set to 1."
+  ],
+  "parameters": [
+    {
+      "name": "option",
+      "type": "",
+      "description": "Options1: Suppress sending Cannot Claim Address message"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n Iso11783IL_ControlStop(1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,23 @@
+# coODDownloadResponse
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+This function is only available in the event functions (callbacks).
+
+See Also
+
+| Deprecated Function Replaced by CANopen Basic Functions. |  |  |  |  |
+|---|---|---|---|---|
+| Note This function is only available in the event functions (callbacks). |  |  |  |  |
+| Function Syntax | void coODDownloadResponse( dword errCode[] ); |  |  |  |
+| Function | The function confirms a SDO download transfer, which was initiated on an object with access type 7. It can be used, e.g. in the event function coOnDownloadIndication. If the transfer should be aborted, then coODAbortTransfer must be used. |  |  |  |
+| Parameters | errCode Error code buffer (is entered in index 0 of the field) |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 6.0-9.0 SP6 | CANopen | — | • |  |
+| Example void coOnDownloadIndication (dword index, dword subIndex, dword size, dword dataValid){ dword errCode[1]; if (index == 0x2000) {coODDownloadResponse( errCode ); if(errCode[0] == 0) { write("SDO download successfully confirmed"); } }} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

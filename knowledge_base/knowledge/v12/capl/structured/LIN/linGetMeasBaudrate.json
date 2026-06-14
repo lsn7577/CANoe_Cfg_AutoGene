@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "linGetMeasBaudrate",
+  "category": "LIN",
+  "title": "linGetMeasBaudrate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGetMeasBaudrate.htm",
+  "syntax": [
+    "float linGetMeasBaudrate()"
+  ],
+  "description": [
+    "With this function it is possible to retrieve results of a last baud rate measurement, which is done by calling linMeasHeaderBaudrate() or linMeasRespBaudrate() functions."
+  ],
+  "parameters": [],
+  "return": "Returns the last measured baud rate [in bit/sec] or -1 on failure.",
+  "example": {
+    "description": [
+      "Test case for measuring baud rate using certain data byte of a LIN frame."
+    ],
+    "code": "testcase tcMeasureDatabyteBaudrate (int byteIndex)\n{\nlong waitResult, measBaudrate;\n// set request to measure baud rate using the specified \r\n byte of a frame with ID=0x33\nlinMeasRespBaudrate(0x33, byteIndex);\n// wait maximum 1000 [ms] for a frame with ID=0x33\nwaitResult = TestWaitForMessage(0x33, 1000);\n// declare failure if Wait has resumed not due to expected event\nif (1 != waitResult) {\nTestStepFail(\"Test 1.1\",\"Expected frame has not occurred during 1000 ms!\");\n}\n// retrieve measured baudrate\nmeasBaudrate = linGetMeasBaudrate();\nif (-1 == measBaudrate)\n{\nTestStepFail(\"Test 1.1\", \"Failed to measure response baudrate!\");\n}\nTestStepPass(\"Test 1.1\", \"Response baudrate measurement done...\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

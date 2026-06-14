@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_PreSendInd",
+  "category": "SmartCharging",
+  "title": "SCC_PreSendInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_PreSendInd.htm",
+  "syntax": [
+    "void SCC_PreSendInd ( byte SessionID[], dword MessageID, char ResponseCode[] )"
+  ],
+  "description": [
+    "The callback is called in active mode before a response message is sent. It enables checking the message’s response code and, if desired, overwriting it with another value. Additionally, overwriting the following parameters is supported:"
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

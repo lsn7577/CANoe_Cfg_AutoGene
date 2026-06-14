@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "FSIL_BlockRxMessage",
+  "category": "ISO11783",
+  "title": "FSIL_BlockRxMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILBlockRxMessage.htm",
+  "syntax": [
+    "long FSIL_BlockRxMessage(dword pgn, dword sourceAddress, qword filterMask, qword filterValue); // form 1"
+  ],
+  "description": [
+    "Prevents processing of a received message by the interaction layer.",
+    "The message to block is specified by PGN, destination source address and a part of the first eight data bytes.",
+    "To revert this command you can use FSIL_ResetBlockedRxMessage or FSIL_ResetAllBlockedRxMessages."
+  ],
+  "parameters": [
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "The message with this PGN shall be blocked."
+    }
+  ],
+  "return": "0: Manipulation is set successfully",
+  "example": {
+    "description": [],
+    "code": "—"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

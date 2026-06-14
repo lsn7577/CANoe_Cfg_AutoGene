@@ -1,0 +1,41 @@
+# distObjMethodRef::CallAsync_Phys
+
+> Category: `DistributedObjects` | Type: `method`
+
+## Syntax
+
+```c
+callContext <Method> distObjMethodRef::CallAsync_Phys(params ...); // form 1;
+void distObjMethodRef::CallAsync_Phys(params ..., Callback); // form 2
+```
+
+## Description
+
+Asynchronous call to a method member, i.e. the call does not wait for the function to be called and the return to be received. In test procedures, you can wait for the answer with TestWaitForAnswer; in simulation programs, you can use the handler on fct_Returned. In form 2, the callback function is called when the return is received.
+
+## Example
+
+```c
+on start
+{
+  distObjRef ExampleInterface object = ExampleObject;
+  object.ExampleMethod.CallAsync_Phys(1.0, 2.0, delegate (callContext ExampleObject.SomeMethod cco) {
+  write("Result = %f", cco.Result);
+});
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 13.0 | 13.0 | 15 | 14 | 5.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | ✔ | N/A |
+| 64-Bit | — | ✔ | ✔ | ✔ | ✔ | N/A |

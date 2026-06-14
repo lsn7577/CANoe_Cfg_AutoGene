@@ -1,0 +1,29 @@
+{
+  "page_type": "event",
+  "name": "on mostAMSMessage",
+  "category": "MOST",
+  "title": "on mostAMSMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTAMSMessage.htm",
+  "syntax": [
+    "on mostAMSMessage"
+  ],
+  "description": [
+    "The event procedure on mostAMSMessage is called when a message is received from the Application Message Service (AMS).",
+    "The key word this and the message selectors are available within event procedures to permit access to the data of the message just received. The output(this) command serves to pass the message in a nodal sequence.",
+    "The same modes of the event procedure as for on mostMessage may be used to prefilter messages."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

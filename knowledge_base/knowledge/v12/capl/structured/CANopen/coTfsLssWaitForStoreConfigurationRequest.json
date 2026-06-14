@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForStoreConfigurationRequest",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForStoreConfigurationRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForStoreConfReq.htm",
+  "syntax": [
+    "long coTfsLssWaitForStoreConfigurationRequest( dword errorCode, dword specificError );"
+  ],
+  "description": [
+    "This function waits for the LSS store configuration request and sends the response."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "Error code."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* waits for LSS store configuration request */\nif (coTfsLssWaitForStoreConfigurationRequest( 0, 0) == 1) {\n  /* received LSS store configuration request, sent response with error code and specific error = 0 */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

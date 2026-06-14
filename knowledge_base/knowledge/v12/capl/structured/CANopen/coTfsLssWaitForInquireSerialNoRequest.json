@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForInquireSerialNoRequest",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForInquireSerialNoRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForInquireSerialNoReq.htm",
+  "syntax": [
+    "long coTfsLssWaitForInquireSerialNoRequest( dword serialNo );"
+  ],
+  "description": [
+    "This function waits for the Inquire serial number request and sends the response."
+  ],
+  "parameters": [
+    {
+      "name": "serialNo",
+      "type": "",
+      "description": "Serial number part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* waits for LSS inquire serial number request */\nif (coTfsLssWaitForInquireSerialNoRequest( 0x12345678 ) == 1) {\n  /* received LSS inquire serial number request, sent response with serial number */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

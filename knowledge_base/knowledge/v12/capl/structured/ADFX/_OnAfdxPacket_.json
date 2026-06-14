@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "<OnAfdxPacket>",
+  "category": "ADFX",
+  "title": "<OnAfdxPacket>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionOnAfdxPacket.htm",
+  "syntax": [
+    "void <OnAfdxPacket>( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet );"
+  ],
+  "description": [
+    "This callback is called when a registered AFDX packet is received."
+  ],
+  "parameters": [
+    {
+      "name": "dir",
+      "type": "",
+      "description": "direction of the packet or fragment"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Node System - preStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  long result;\n  // register a callback to receive AFDX packets in general\n  result = AfdxRegisterReceiveCallback(\"OnAfdxPacket\");\n}\nvoid OnAfdxPacket(long dir, long line, int64 time, long bag, long afdxFlags, long packet )\n{\n  // check if the packet has been sent by the node\n  if (dir == TX)\n  {\n    sysSetVariableInt(sysvar::NodeA::TxPacketCount,(SysGetVariableInt(sysvar::NodeA::TxPacketCount) + 1));\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

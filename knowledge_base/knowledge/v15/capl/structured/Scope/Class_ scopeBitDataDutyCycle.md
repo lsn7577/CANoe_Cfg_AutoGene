@@ -1,0 +1,34 @@
+# Class: scopeBitDataDutyCycle
+
+> Category: `Scope` | Type: `notes`
+
+## Description
+
+This structure contains all relevant values to measure a duty cycle within a frame. The following figure shows the parameters are needed to measure the duty cycle.
+
+For measure the duty cycle a dominant->recessive->dominant or recessive->dominant->recessive bit pattern is needed. Only in this case it is possible to measure the needed time values for the duty cycle. The different thresholds (THRec(max), THDom(max),THRec(min),THDom(min)) can be defined with the structure ScopeDutyCycleDefinition.
+
+The calculation of the duty cycle for a bus system can be differ. For e.g. LIN the minimal duty cycle is defined as DutyCycleMin = tBusMin / 2*tBit and the maximum duty cycle is defined as DutyCycleMax = tBusMax / 2 * tBit for a recessive bit. The interpretation of the calculated values depends on the physical layer specification.
+
+—
+
+testWaitScopePerformSerialBitAnalysis | testWaitScopeGetSerialBitAnalysisData | Class: scopeDutyCycleDefinition
+
+| Keyword | Description | Type | Access Limitations |
+|---|---|---|---|
+| BitField | The bit field e.g. LIN Sync Byte Field, of the bit used for the duty cycle measurement. | long | Read-only |
+| BitNo | The bit number within the field (starts with 0). | dword | Read-only |
+| BitStartTime | The time the bit started in ns. | int64 | Read-only |
+| BitLevel | 0: Dominant 1: Recessive | byte | Read-only |
+| SamplePointVoltage | The voltage of the bit at the sample point. | long | Read-only |
+| TDomMinOffset | Relative time in ns to BitStartTime where the voltage equals to THDomMin. | long | Read-only |
+| TDomMaxOffset | Relative time in ns to BitStartTime where the voltage equals to THDomMax. | long | Read-only |
+| TRecMinOffset | Relative time in ns to BitStartTime where the voltage equals to THRecMin. | long | Read-only |
+| TRecMaxOffset | Relative time in ns to BitStartTime where the voltage equals to THRecMax. | long | Read-only |
+| TBusMax | The maximal time of the bit. | long | Read-only |
+| TBusMin | The minimal time of the bit. | long | Read-only |
+| ScopeSamplePeriod | The sample period of the scope in [ns]. | float | Read-only |
+| ScopeVoltageTolerance | The voltage tolerance of the scope measurement probe [mV]. | float | Read-only |
+
+| Version 15© Vector Informatik GmbH |
+|---|

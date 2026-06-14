@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "TcpGetRemoteEndpoint",
+  "category": "TCPIPAPI",
+  "title": "TcpGetRemoteEndpoint",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionTCPGetRemoteEndpoint.htm",
+  "syntax": [
+    "TcpGetRemoteEndpoint( dword socket, IP_Endpoint remoteEndpoint );"
+  ],
+  "description": [
+    "The function retrieves the remote endpoint of the specified connected socket."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    },
+    {
+      "name": "remoteEndpoint",
+      "type": "",
+      "description": "IP_Endpoint which returns the IP endpoint."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  TcpSocket gListenSocket;\n  TcpSocket gConnectionSocket;\n  char gRxBuffer[1000];\n}\n\non start\n{\n  gListenSocket = TcpSocket::Open( IP_Endpoint(0.0.0.0:40004) );\n\n  gListenSocket.Listen();\n}\n\nOnTcpListen( TcpSocket socket, long result)\n{\n  if (result == 0)\n  {\n    gConnectionSocket = TcpSocket::Accept( gListenSocket );\n\n    {\n      IP_Endpoint localEndpoint;\n      IP_Endpoint remoteEndpoint;\n      char localAddrStr[100];\n      char remoteAddrStr[100];\n\n      gConnectionSocket.GetSocketName( localEndpoint );\n      gConnectionSocket.GetRemoteEndpoint( remoteEndpoint );\n\n      localEndpoint.PrintEndpointToString( localAddrStr );\n      remoteEndpoint.PrintEndpointToString( remoteAddrStr );\n      write( \"Accepted local %s, remote %s\", localAddrStr, remoteAddrStr );\n    }\n\n    gConnectionSocket.Receive( gRxBuffer, elcount( gRxBuffer) );\n  }\n}\n\nOnTcpReceive( TcpSocket socket, long result, IP_Endpoint remoteEndpoint, char buffer[], dword size )\n{\n  if (result == 0)\n  {\n    write( \"Received: %s\", buffer );\n\n    gConnectionSocket.Send( \"Response\", 8 );\n\n    gConnectionSocket.Receive( gRxBuffer, elcount( gRxBuffer) );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "12.0",
+      "12.0",
+      "13.0",
+      "13.0",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

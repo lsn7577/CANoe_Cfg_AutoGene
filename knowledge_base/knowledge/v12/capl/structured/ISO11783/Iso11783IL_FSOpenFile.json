@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_FSOpenFile",
+  "category": "ISO11783",
+  "title": "Iso11783IL_FSOpenFile",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILFSOpenFile.htm",
+  "syntax": [
+    "long Iso11783IL_FSOpenFile( char path[], dword flags );"
+  ],
+  "description": [
+    "This function opens a file or directory."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Absolute path of the file"
+    }
+  ],
+  "return": ">0: File handle",
+  "example": {
+    "description": [],
+    "code": "LONG handle;\nchar data[200];\n\nhandle = Iso11783IL_FSOpenFile( \r\n \"\\test.TXT\", 0x00 );\nif (handle > 0) \r\n {\n  Iso11783IL_FSReadData( \r\n handle, elCount(data), data );\n  Iso11783IL_FSCloseFile( \r\n handle );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

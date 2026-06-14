@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "ExtendedFrameCount",
+  "category": "CAN",
+  "title": "ExtendedFrameCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionExtendedFrameCount.htm",
+  "syntax": [
+    "long ExtendedFrameCount ()",
+    "CANx.ExtendedFrameCount"
+  ],
+  "description": [
+    "Returns the number of extended CAN messages on channel x since start of measurement.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Number of extended CAN messages on channel x since start of measurement",
+  "example": {
+    "description": [],
+    "code": "write (\"Number of extended frames on CAN1 = \r\n %d\", CAN1.ExtendedFrameCount);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

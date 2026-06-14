@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_StartCertificateInstallation",
+  "category": "SmartCharging",
+  "title": "SCC_StartCertificateInstallation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_StartCertificateInstallation.htm",
+  "syntax": [
+    "long SCC_Shutdown ( long Terminate )"
+  ],
+  "description": [
+    "Schedules a CertificateInstallationReq message to be sent after the ServiceAndPaymentSelectionReq. This is only possible when in ISO 15118 PnC mode."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

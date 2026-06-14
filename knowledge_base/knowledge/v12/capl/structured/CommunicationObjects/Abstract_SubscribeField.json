@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_SubscribeField",
+  "category": "CommunicationObjects",
+  "title": "Abstract_SubscribeField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractSubscribeField.htm",
+  "syntax": [
+    "long Abstract_SubscribeField(consumedFieldRef * field)"
+  ],
+  "description": [
+    "Subscribes for a service field if abstract binding is used. Note that this is more low-level; usually its more convenient to call consumedFieldRef::AbstractRequestField on the field."
+  ],
+  "parameters": [
+    {
+      "name": "field",
+      "type": "",
+      "description": "Field which shall be subscribed."
+    }
+  ],
+  "return": "0 : Success",
+  "example": {
+    "description": [],
+    "code": "Abstract_SubscribeField(MirrorAdjustment.consumerSide[0,0].CurrentPosition);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

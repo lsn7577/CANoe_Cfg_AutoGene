@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetDiagnosticMessageTimeout, DoIP_SetDiagnosticMessageTimeout",
+  "category": "Diagnostics",
+  "title": "DoIP_GetDiagnosticMessageTimeout, DoIP_SetDiagnosticMessageTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetSetDiagnosticMessageTimeout.htm",
+  "syntax": [
+    "void DoIP_SetDiagnosticMessageTimeout(dword toDiagnosticMessage);"
+  ],
+  "description": [
+    "Sets or returns the timeout waiting for a diagnostic message positive or negative acknowledgment."
+  ],
+  "parameters": [
+    {
+      "name": "toDiagnosticMessage",
+      "type": "",
+      "description": "An ACK is expected within this amount of milliseconds [ms]."
+    }
+  ],
+  "return": "Form 1: —Form 2: Timeout waiting for a diagnostic message positive or negative acknowledgment",
+  "example": {
+    "description": [
+      "This value can also be configured in the DoIP.INI file."
+    ],
+    "code": "// Expect an ACK within 1 second\nDoIP_SetDiagnosticMessageTimeout(1000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

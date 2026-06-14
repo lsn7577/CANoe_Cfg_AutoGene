@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linSetRespBitStream",
+  "category": "LIN",
+  "title": "linSetRespBitStream",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetRespBitStream.htm",
+  "syntax": [
+    "long linSetRespBitStream (long frameId, byte bitStream[], long numberOfBits)"
+  ],
+  "description": [
+    "Sets up a bit stream as the response to the specified frame."
+  ],
+  "parameters": [
+    {
+      "name": "frameId",
+      "type": "",
+      "description": "LIN frame identifier in the range 0 .. 63"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "Send LIN response for the frame MotorControl as a bit stream."
+    ],
+    "code": "// The response consists of 8 data bytes and checksum \r\n byte. There are no interbyte spaces.\n// Response: [D0=0x1, D1=0x2, D2=0x4, D3=0x8, D4=0x10, D5=0x20, D6=0x40, D7=0x80, CS=0x52]\non key 'r'\n{\nlinFrame MotorControl mMotorControl;\nbyte bitStream[12];\nlong numberOfBits;\n// binary stream = 0100000001 0010000001 0001000001 0000100001 0000010001\n// binary stream (continue) = 0000001001 0000000101 0000000011 0010010101\nbitStream[0] = 0x2;\nbitStream[1] = 0x12;\nbitStream[2] = 0x88;\nbitStream[3] = 0x20;\nbitStream[4] = 0x84;\nbitStream[5] = 0x20;\nbitStream[6] = 0x2;\nbitStream[7] = 0x9;\nbitStream[8] = 0x28;\nbitStream[9] = 0xC0;\nbitStream[10] = 0xA4;\nbitStream[11] = 0x2;\nnumberOfBits = 90; // Each byte requires 10 bits (start bit + data bits + stop bit)\nif (0!=linSetRespBitStream(mMotorControl.id, bitStream, numberOfBits))\n{\n// for the next response of frame \"MotorControl\" is as specified\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_SetLinkStatusPollingType",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_SetLinkStatusPollingType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_SetLinkStatusPollingType.htm",
+  "syntax": [
+    "long SCC_SLAC_SetLinkStatusPollingType ( dword Type )"
+  ],
+  "description": [
+    "Changes the message(s) used for querying the link status (if activated). This overwrites the configuration parameter <SLAC_LinkStatusPollingType>."
+  ],
+  "parameters": [
+    {
+      "name": "Type",
+      "type": "",
+      "description": "Desired message configuration, where"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

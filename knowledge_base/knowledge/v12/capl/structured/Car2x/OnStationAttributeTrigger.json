@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "OnStationAttributeTrigger",
+  "category": "Car2x",
+  "title": "OnStationAttributeTrigger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Callbacks/CAPLfunctionC2xOnStationAttributeTrigger.htm",
+  "syntax": [
+    "void OnStationAttributeTrigger(char attributeName[]);"
+  ],
+  "description": [
+    "This callback is called when the following three conditions are met:",
+    "This callback is intended to define a reaction on triggerable attributes of a scenario station assigned to the calling CAPL node only. If you want only react on a attribute triggering of all stations in the scenario, please use OnStationAttributeTriggerAll callback function instead."
+  ],
+  "parameters": [
+    {
+      "name": "attributeName",
+      "type": "",
+      "description": "Name of the scenario station attribute"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnStationAttributeTrigger(char attrName[])\n{\n  long stationHandle;\n  char stationName[200];\n  stationHandle = C2xGetStationHandle(\"%NODE_NAME%\");\n  if (stationHandle != 0 && C2xGetStationName(stationHandle, elCount(stationName), stationName) == 0)\n  {\n    // For all attributes of this station\n    write(\"CAPL Node '%NODE_NAME%', Car2x/V2x station '%s', %f sec : OnStationAttributeTrigger called - Attribute '%s' = %f\" ,\n      stationName,\n       TimeNowNS()/1e9 ,\n      attrName,\n      C2xGetStationAttributeDouble(attrName));\n\n    // For concrete attribute of this station\n    if (strncmp(attrName,\"Speed\",strlen(attrName)) == 0)\n    {\n      write(\"Car2x/V2x Station '%s', %f sec : OnStationAttributeTrigger called - Station Speed = %f\",\n        stationName,\n        TimeNowNS()/1e9 ,\n        C2xGetStationAttributeDouble(\"Speed\"));\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,176 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForGenerateKeyFromSeed",
+  "category": "Test",
+  "title": "TestWaitForGenerateKeyFromSeed",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForGenerateKeyFromSeed.htm",
+  "syntax": [
+    "long TestWaitForGenerateKeyFromSeed(byte seedArray[], dword seedArraySize, dword securityLevel, byte keyArray[], dword maxKeyArraySize, dword& keyArraySizeOut, dword appTimeout_ms); // form 1",
+    "long TestWaitForGenerateKeyFromSeed(byte seedArray[], dword seedArraySize, dword securityLevel, char variant[], char option[], byte keyArray[], dword maxKeyArraySize, dword& keyArraySizeOut, dword appTimeout_ms); // form 2",
+    "long TestWaitForGenerateKeyFromSeed(char ecuQualifier[], byte seedArray[], dword seedArraySize, dword securityLevel, byte keyArray[], dword maxKeyArraySize, dword& keyArraySizeOut, dword appTimeout_ms); // form 3",
+    "long TestWaitForGenerateKeyFromSeed(char ecuQualifier[], byte seedArray[], dword seedArraySize, dword securityLevel, char variant[], char option[], byte keyArray[], dword maxKeyArraySize, dword& keyArraySizeOut, dword appTimeout_ms); // form 4"
+  ],
+  "description": [
+    "Generates the security key from the seed using the configured Seed and Key DLL. The call into the DLL may need more time, therefore a test module may want to wait for the result in order not to disturb the real-time execution of the test."
+  ],
+  "parameters": [
+    {
+      "name": "seedArray",
+      "type": "",
+      "description": "Seed as returned from the ECU."
+    },
+    {
+      "name": "seedArraySize",
+      "type": "",
+      "description": "Length of the seed returned from the ECU."
+    },
+    {
+      "name": "securityLevel",
+      "type": "",
+      "description": "Which security level shall be unlocked?"
+    },
+    {
+      "name": "variant",
+      "type": "",
+      "description": "Optional argument indicating the current ECU variant. In the first form this value does not have to be provided by the CAPL program, but it is taken from the diagnostic description configuration."
+    },
+    {
+      "name": "option",
+      "type": "",
+      "description": "Optional argument giving additional information influencing the key computation, e.g. the diagnostics session currently active. In the first form this value does not have to be provided by the CAPL program, but it is taken from the current ECU status, if configured and set."
+    },
+    {
+      "name": "keyArray",
+      "type": "",
+      "description": "The result of the computation is written into this array."
+    },
+    {
+      "name": "maxKeyArraySize",
+      "type": "",
+      "description": "Maximum key length allowed."
+    },
+    {
+      "name": "keyArraySizeOut",
+      "type": "",
+      "description": "Actual size of the key returned by the DLL."
+    },
+    {
+      "name": "appTimeout_ms",
+      "type": "",
+      "description": "Maximum time (in ms) the function waits for the computation function in the DLL to return. If the DLL needs longer than this, a timeout is reported."
+    },
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "Testfunction ComputeKeyInExtendedSession( BYTE seed[], BYTE key[])\n{\n  DWORD keyLenOut;\n  keyLenOut = 0;\n  DiagSetCurrentSession( 0x03); // extended session\n  // The key computation may use the current session as optional argument\n  TestWaitForGenerateKeyFromSeed( seed, elcount( seed), 1, key, elcount(key), keyLenOut, 1000);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2: form 1, 2 9.0 SP3: form 3, 4",
+      "—",
+      "—",
+      "—",
+      "1.1: from 1, 2 2.1 SP3: from 3, 4"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

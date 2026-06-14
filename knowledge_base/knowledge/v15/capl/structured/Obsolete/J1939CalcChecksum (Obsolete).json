@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "J1939CalcChecksum (Obsolete)",
+  "category": "Obsolete",
+  "title": "J1939CalcChecksum (Obsolete)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionJ1939CalcChecksumObsolete.htm",
+  "syntax": [
+    "dword J1939CalcChecksum (Obsolete)( pg * parameterGroup );"
+  ],
+  "description": [
+    "This function calculates the checksum of a parameter group.",
+    "PGNs, for which the checksum should be calculated, as well as the computational method are defined in the J1939/71 specification.",
+    "This function can be used for sending a message (to calculate the checksum) and for receiving a message (to validate the transmitted checksum)."
+  ],
+  "parameters": [
+    {
+      "name": "parameterGroup",
+      "type": "",
+      "description": "Parameter group for which the checksum should be calculated. Per the J1939/71 specification, the function is only used for the following PGNs: 1024 (External Brake Request) 61469 (Steering Angle Sensor Information) 61483 (Crash Notification) PGN 2816 (Advanced Emergency Braking System 2) 0 (Torque/Speed Control 1)"
+    }
+  ],
+  "return": "The calculated checksum, if a computational method is defined (see J1939/71 specification), else \"-1\".\nRange of valid values:",
+  "example": {
+    "description": [
+      "Calculation for sending",
+      "Validation for receiving"
+    ],
+    "code": "on start\n{\n  pg TSC1 tsc1;\n  setTimer(Timer1, 1000);\n  tsc1.MessageCounter = 0x0;\n  nextSeqCounterForTSC1 = 0x1;\n}\n\nvoid SendMyMessage()\n{\n  pg TSC1 tsc1;\n\n  tsc1.SA = 0;\n  tsc1.DA = 33;\n\n  // set values for signals that represent sequence counter and checksum\n  if(tsc1.MessageCounter == 0x7)\n    tsc1.MessageCounter = 0;\n  else if(tsc1.MessageCounter < 0x7)\n    tsc1.MessageCounter += 1;\n\n  tsc1.MessageChecksum = J1939CalcChecksum(tsc1);\n\n  output( tsc1 );\n}\nvariables\n{\n  long lastSeqCounterForTSC1 = 0; //start value\n}\n\non pg TSC1\n{\n  int expectedChecksum, expectedCounter;\n\n  //Check message counter\n  if(this.MessageCounter == 0xF) //MessageCounter isn't used at all\n    expectedCounter = 0xF;\n  else\n    expectedCounter = nextSeqCounterForTSC1;\n\n  if (this.MessageCounter != nextSeqCounterForTSC1)\n  {\n    // Error handling\n    write(\"TSC1: wrong message counter (expected: %d, observed: %d)\",\n    expectedCounter, this.MessageCounter);\n  }\n\n  //calculate next value for the message counter\n  if(this.MessageCounter == 0x7)\n    nextSeqCounterForTSC1 = 0;\n  else if(this.MessageCounter < 0x7)\n    nextSeqCounterForTSC1 = this.MessageCounter + 1;\n\n  //Check message checksum\n  expectedChecksum = J1939CalcChecksum(this);\n  if (this.MessageChecksum != expectedChecksum)\n  {\n    // Error handling\n    write(\"TSC1: wrong message checksum (expected: %d, observed: %d)\",\n    expectedChecksum, this.MessageChecksum);\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.1",
+      "8.1",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "J1939",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

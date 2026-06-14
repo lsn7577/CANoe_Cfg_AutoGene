@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestJoinPGEvent",
+  "category": "Obsolete",
+  "title": "J1939TestJoinPGEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionJ1939TestJoinPGEvent.htm",
+  "syntax": [
+    "long J1939TestJoinPGEvent( dword sourceAddr, dword destAddr, dword pgn, )"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait."
+  ],
+  "parameters": [
+    {
+      "name": "sourceAddr",
+      "type": "",
+      "description": "source address of the PG or Null address (0xFE) for wildcard"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long lret;\n\nJ1939TestJoinPGEvent(20, 0xFF, 0xF123);\nJ1939TestJoinPGEvent(10, 0xFF, 0xF123);\n\nlret = J1939TestWaitForAnyJoinedEvent ( 500 );\n\nswitch(lret) {\ncase 1:\n  // first PG received\n  break;\ncase 2:\n  // second PG received\n  break;\ndefault:\n  // error, timeout or constrain violation\n  break;\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

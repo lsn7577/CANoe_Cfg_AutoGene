@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestWaitForPG",
+  "category": "Obsolete",
+  "title": "J1939TestWaitForPG",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionJ1939TestWaitForPG.htm",
+  "syntax": [
+    "long J1939TestWaitForPG( dword sourceAddr, dword destAddr, dword pgn, dword timeout )"
+  ],
+  "description": [
+    "Wait until the specified parameter group is received."
+  ],
+  "parameters": [
+    {
+      "name": "sourceAddr",
+      "type": "",
+      "description": "source address of the PG or Null Address (0xFE) for wildcard"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long lret;\nlret = J1939TestWaitForPG(10, 0xFF, 0xF123, 500 );\n\nswitch(lret) {\n  case 1:\n    break;\n  default:\n    // error, timeout or constrain violation\n    break;\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

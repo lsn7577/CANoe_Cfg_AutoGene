@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestMostRegGetData",
+  "category": "Test",
+  "title": "TestMostRegGetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestMostRegGetData.htm",
+  "syntax": [
+    "long TestMostRegGetData(BYTE aBuffer[], long aBufferSize);"
+  ],
+  "description": [
+    "The TestMostRegGetData() function is used together with the TestMostReadReg and TestMostWriteReg functions.",
+    "After initiating one of these two functions, the resulting register value can be copied into a byte buffer. Ensure that the buffer size is as specified. A maximum of 16 bytes are transported with the MostReg result.",
+    "Note that the register values are only held ready for call-up until the next wait condition in the test program."
+  ],
+  "parameters": [
+    {
+      "name": "aBuffer[]",
+      "type": "",
+      "description": "Data buffer in which the register values are written"
+    }
+  ],
+  "return": "-2: Resume based on Constraint Violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

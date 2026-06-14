@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linSendAsSporadic",
+  "category": "LIN",
+  "title": "linSendAsSporadic",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSendAsSporadic.htm",
+  "syntax": [
+    "long linSendAsSporadic (long frameID)"
+  ],
+  "description": [
+    "This function can be used to configure an associated frame as being ready for transmission. At the next time slot, corresponding to its sporadic frame, the associated frame will be sent once.",
+    "If LIN hardware is not in Master mode or there is no schedule table with corresponding sporadic frame defined then calling this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "frameID",
+      "type": "",
+      "description": "Identifier of the associated LIN frame to be transmitted in the next time slot of a corresponding sporadic frame."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

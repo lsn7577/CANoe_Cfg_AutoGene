@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linGetDominantTimeout",
+  "category": "LIN",
+  "title": "linGetDominantTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGetDominantTimeout.htm",
+  "syntax": [
+    "int64 linGetDominantTimeout();"
+  ],
+  "description": [
+    "Returns the dominant timeout of the current channel’s transceiver in nanoseconds. If zero, the transceiver does not have any dominant timeout."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Returns the dominant timeout of the LINcab/LINpiggy or zero, if the transceiver does not have any dominant timeout.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

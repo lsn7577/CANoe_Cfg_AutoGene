@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetProcessing",
+  "category": "SmartCharging",
+  "title": "SCC_SetProcessing",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetProcessing.htm",
+  "syntax": [
+    "long SCC_SetProcessing ( long Processing )"
+  ],
+  "description": [
+    "Sets the processing status of the charge point. This status is used for controlling various message loops, where the vehicle will continue sending the same request until EVSEProcessing is set to Finished within the response message.",
+    "The charge point will never send EVSEProcessing = Ongoing unless this function is called. The special value Ongoing_WaitingForCustomerInteraction of ISO IS will automatically be applied according to [V2G2-854] if EVSEProcessing was set to 1."
+  ],
+  "parameters": [
+    {
+      "name": "EVSEProcessing",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

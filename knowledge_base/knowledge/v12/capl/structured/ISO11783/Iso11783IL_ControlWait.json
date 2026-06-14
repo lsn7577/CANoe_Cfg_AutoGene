@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_ControlWait",
+  "category": "ISO11783",
+  "title": "Iso11783IL_ControlWait",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILControlWait.htm",
+  "syntax": [
+    "long Iso11783IL_ControlWait();"
+  ],
+  "description": [
+    "Sending messages is suspended. Setting of signal is not possible.",
+    "Call Iso11783IL_ControlResume to activate sending again."
+  ],
+  "parameters": [],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "on key 'w'\n{\n Iso11783IL_ControlWait();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

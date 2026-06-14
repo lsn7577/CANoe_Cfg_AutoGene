@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestOutputBAM",
+  "category": "J1939",
+  "title": "J1939TestOutputBAM",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestOutputBAM.htm",
+  "syntax": [
+    "long J1939TestOutputBAM( pg txMsg, dword seqNum, dword seqCount, dword delay, [dword options], [dword optionArg] )"
+  ],
+  "description": [
+    "With this function the transmission of a message with the BAM transport protocol is influenced. It can created errors during transmission, i.e. violate time distances or wrong sequence numbers."
+  ],
+  "parameters": [
+    {
+      "name": "txMsg",
+      "type": "",
+      "description": "send this parameter group with BAM"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "pg EC1 txMsg = { DLC=38 };\n\n// send BAM and first Data message\nJ1939TestOutputBAM( txMsg, 0, 2, 50 );\n\n// send Data message, Seq. 2\nJ1939TestOutputBAM( txMsg, 2, 1, 350 );\n\n// the DUT should detect, that the time between Seq 2 and Seq 3 is more than 200ms \n// send Data message, Seq. 3 to 6\nJ1939TestOutputBAM( txMsg, 3, 4, 50 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

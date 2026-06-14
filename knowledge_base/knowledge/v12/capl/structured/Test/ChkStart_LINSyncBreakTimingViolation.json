@@ -1,0 +1,41 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINSyncBreakTimingViolation",
+  "category": "Test",
+  "title": "ChkStart_LINSyncBreakTimingViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinSyncBreakTimingViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINSyncBreakTimingViolation (float MinBreakLen, float MaxBreakLen);"
+  ],
+  "description": [
+    "Checks the timing of the synchronization break field in LIN headers.",
+    "An event will be generated, if the measured length [in bit times] of break low phase is outside of the specified range.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Minimum length of break low phase shall not be checked"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Minimum allowed length of break low phase"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\nChkConfig_SetPrecision(9); // switch to ns precision\n// Create and start the check for LIN break low phase violation\ncheckId = ChkStart_LINSyncBreakTimingViolation(13, 20, \"LINSyncBreakCallback\"); \nChkConfig_SetPrecision(3); // switch to ms precision (default)\n...\n// CAPL callback for violation notification\nvoid LINSyncBreakCallback (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

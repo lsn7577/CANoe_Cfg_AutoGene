@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xIsMsgEnabled",
+  "category": "Car2x",
+  "title": "C2xIsMsgEnabled",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xIsMsgEnabled.htm",
+  "syntax": [
+    "long C2xIsMsgEnabled (char* dbMessage);"
+  ],
+  "description": [
+    "Check if a message is enabled for cyclic sending."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "Name of the message to check"
+    }
+  ],
+  "return": "0 = true",
+  "example": {
+    "description": [],
+    "code": "LONG result = 0;\nresult = C2xIsMsgEnabled(\"CAM\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

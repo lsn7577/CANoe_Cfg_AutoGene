@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "diag_DataCon",
+  "category": "Diagnostics",
+  "title": "diag_DataCon",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagDataCon.htm",
+  "syntax": [
+    "void diag_DataCon (long count); // form 1"
+  ],
+  "description": [
+    "Tells the diagnostic layer, via the count parameter, how many bytes of data were transmitted successfully.",
+    "This function is typically called within a transport layer callback. Once the diagnostic layer has initiated the transmission of a message via _diag_DataRequest and the transport layer has sent this message in its entirety, using several message segments if needed, the diagnostic layer transport layer uses this function to indicate that the message was sent successfully."
+  ],
+  "parameters": [
+    {
+      "name": "count",
+      "type": "",
+      "description": "Number of bytes transmitted successfully."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [
+      "See DoIP_DataCon"
+    ],
+    "code": "// This callback shall be called by an example TP layer\nTPLayer_SendConfirmation( long connectionHandle, long count)\n{\n  char ecuQualifier[20];\n  TPLayerGetECUQualifierForHandle(connectionHandle, ecuQualifier);\n  diag_DataCon(ecuQualifier, count);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

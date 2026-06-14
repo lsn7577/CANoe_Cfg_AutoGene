@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "TestAddRange",
+  "category": "Test",
+  "title": "TestAddRange",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestAddRange.htm",
+  "syntax": [
+    "TestAddRange(long handle, double minValue, double maxValue);"
+  ],
+  "description": [
+    "This function adds a new range that is allowed for dialog input. This can be a minimum/ maximum for a numerical value or a minimum/ maximum length of a string or byte array."
+  ],
+  "parameters": [
+    {
+      "name": "Handle",
+      "type": "",
+      "description": "The handle of the dialog."
+    },
+    {
+      "name": "minValue",
+      "type": "",
+      "description": "The minimum of the input."
+    },
+    {
+      "name": "maxValue",
+      "type": "",
+      "description": "The maximum of the input."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "handle = TestCreateValueInputRange(\"Test Text\", \"Test Caption\", \"Test Value Input Range Timeout\");\nTestAddRange(handle, 0, 5);\nTestWaitForInput(handle, 5000);\nwrite(\"Result: %f\", TestGetValueInput());"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "—",
+      "14",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Test nodes",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

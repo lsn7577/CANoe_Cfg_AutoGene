@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "TestCheck::CreateMsgSendCountViolation, TestCheck::StartMsgSendCountViolation, TestCheck::CreateNodeMsgSendCountViolation, TestCheck::StartNodeMsgSendCountViolation",
+  "category": "Test",
+  "title": "TestCheck::CreateMsgSendCountViolation, TestCheck::StartMsgSendCountViolation, TestCheck::CreateNodeMsgSendCountViolation, TestCheck::StartNodeMsgSendCountViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCheckCreateMsgSendCountViolation.htm",
+  "syntax": [
+    "TestCheck::CreateMsgSendCountViolation, TestCheck::StartMsgSendCountViolation, TestCheck::CreateNodeMsgSendCountViolation, TestCheck::StartNodeMsgSendCountViolation(slotID);"
+  ],
+  "description": [
+    "Monitors the bus and reports if at least aMinCount and at most aMaxCountfor each of the defined messages occurred within a specified time interval aInterval.",
+    "If a DB node is used as reference, then all its Tx frames are observed.",
+    "For FlexRay only valid data frames and PDUs are recognized as communication, Null Frames and Erroneous frames are ignored.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "slotID",
+      "type": "",
+      "description": "This number designates a specific FlexRay slot."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  const dword cTesttime = 640; // [ms] per check\n\n  // Frames that are sent by node Controller_Node_1:\n  FrFrame MsgChannel1.Sync_Message_1_Ch_A      frame2;\n  FrFrame MsgChannel1.Sync_Message_1_Ch_B      frame2b;\n  FrFrame MsgChannel1.TimeSync_Message_1_Ch_A  frame15;\n\n  const dword cFrFlagTT      = 0x00;\n  const dword cFrFlagET      = 0x10;\n  const dword cFrFlagStop    = 0x80;\n}\n\ntestcase GoodCheckNodeMsgSendCountViolation_1 ()\n{\n  TestCheck c;\n  dword cMinCount = 1;\n  dword cMaxCount = 0; // ignore\n  dword cInterval = 320; // [ms]\n\n  // Assure check to succeed:\n  frame2.FR_Flags = cFrFlagTT; // start sending the frame\r\n  \n  FRUpdateStatFrame(frame2);\n  frame2b.FR_Flags = cFrFlagTT; // start sending the frame\r\n  \n  FRUpdateStatFrame(frame2b);\n  frame15.FR_Flags = cFrFlagTT; // start sending the frame\r\n  \n  FRUpdateStatFrame(frame15);\n  TestWaitForTimeout(330);\n\n  c = TestCheck::CreateNodeMsgSendCountViolation( Controller_Node_1, cMinCount, cMaxCount, cInterval );\n\n  TestAddCondition(c);\n\n  c.start();\n  TestWaitForTimeout(cTesttime);\n\n  TestRemoveCondition(c);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_parameters"
+}

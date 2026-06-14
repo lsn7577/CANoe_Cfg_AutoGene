@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSlFSMSetState",
+  "category": "Obsolete",
+  "title": "linSlFSMSetState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSlFSMSetState.htm",
+  "syntax": [
+    "void linSlFSMSetState(unsigned int slaveId, unsigned int stateId);"
+  ],
+  "description": [
+    "Switches the Slave with identifier slaveId to the state stateId."
+  ],
+  "parameters": [
+    {
+      "name": "slaveId",
+      "type": "",
+      "description": "Identifier of the relevant Slave. Corresponds to the slaveId, that was defined with linSlSimulate."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

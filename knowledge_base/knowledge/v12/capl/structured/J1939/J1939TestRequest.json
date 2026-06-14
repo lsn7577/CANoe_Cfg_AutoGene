@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "J1939TestRequest",
+  "category": "J1939",
+  "title": "J1939TestRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestRequest.htm",
+  "syntax": [
+    "long J1939TestRequest( dword rqPGN, dword reqSA, dword respSA, dword timeout, dword options )"
+  ],
+  "description": [
+    "Sends a request from the address reqSA, then wait until the response is received. Within the time interval (timeout) the response or an acknowledgment must be received.",
+    "If the requested parameter group is received, the data is copied into the buffer (msgBuffer). The test module can verify the values in this buffer.",
+    "If a response is sent with the RTS/CTS transport protocol, with Bit 2 in options sending of CTS and EoMA can be activated"
+  ],
+  "parameters": [
+    {
+      "name": "rqPGN",
+      "type": "",
+      "description": "request this PGN"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "pg EC1 rxPG;\n\nif (J1939TestRequest( EC1, Tester, EMS, 250, 0x00 ) != 0) {\n  testFail( “EC1 not received after request” );\n}\n\nif (J1939TestRequest( rxPG, Tester, EMS, 250, 0x00 ) == 0) {\n  if (rxPG.AnyValue.phys > 100.0) {\n    testStepFail( “EC1.AnyValue hast wrong value” );\n  }\n}\nelse {  \n  testStepFail( “EC1 not received after request” );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

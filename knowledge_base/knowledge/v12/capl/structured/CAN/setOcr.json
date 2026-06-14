@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "setOcr",
+  "category": "CAN",
+  "title": "setOcr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionSetOcr.htm",
+  "syntax": [
+    "setOcr(long channel, byte ocr);"
+  ],
+  "description": [
+    "Sets the Output Control Register. The values do not become active until the next call of the function resetCan().",
+    "It should be noted that these values depend on the CAN platform used."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "all channels"
+    },
+    {
+      "name": "> 0",
+      "type": "",
+      "description": "only the given channel"
+    }
+  ],
+  "return": "1: success",
+  "example": {
+    "description": [],
+    "code": "...\nsetOcr(0, 0x02); // set\nresetCan(); // activate\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

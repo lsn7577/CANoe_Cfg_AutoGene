@@ -1,0 +1,24 @@
+{
+  "page_type": "function",
+  "name": "coTfsODChkStdEntries",
+  "category": "CANopen",
+  "title": "coTfsODChkStdEntries",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdChkStdEntries.htm",
+  "syntax": [
+    "long coTfsODChkStdEntries( void );"
+  ],
+  "description": [
+    "The function executes a standard test of the object dictionary.",
+    "For a description of the object check, see coTfsODChkSingleEntry."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if (coTfsODChkStdEntries() != 1) {\n  write(\"std object dictionary check failed\");\n} \nelse {\n  write(\"std object dictionary check passed\");\n} "
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

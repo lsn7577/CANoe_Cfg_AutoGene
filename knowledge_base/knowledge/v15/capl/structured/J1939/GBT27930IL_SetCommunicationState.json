@@ -1,0 +1,259 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_SetCommunicationState",
+  "category": "J1939",
+  "title": "GBT27930IL_SetCommunicationState",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILSetCommunicationState.htm",
+  "syntax": [
+    "long GBT27930IL_SetCommunicationState(double newState); // form 1",
+    "long GBT27930IL_SetCommunicationState(dbNode node, double newState); // form 2"
+  ],
+  "description": [
+    "Defines the new state of charging communication."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "Meaning for the Charger node",
+      "description": "Meaning for the BMS node"
+    },
+    {
+      "name": "0",
+      "type": "Waiting for start of charging",
+      "description": "Waiting for start of charging"
+    },
+    {
+      "name": "20",
+      "type": "",
+      "description": "Delayed start of CHM is initiated"
+    },
+    {
+      "name": "1",
+      "type": "Sending of CHM",
+      "description": "Waiting for the first CHM"
+    },
+    {
+      "name": "2",
+      "type": "Sending of CHM; delayed start of CRM (BMS is not recognized) is initiated",
+      "description": "Delayed start of BHM is initiated"
+    },
+    {
+      "name": "3",
+      "type": "Sending of CRM (BMS is not recognized)",
+      "description": "Sending of BHM"
+    },
+    {
+      "name": "4",
+      "type": "Sending of CRM (BMS is not recognized); delayed start of CRM (BMS is recognized) is initiated",
+      "description": "Sending of BHM; delayed start of BRM is initiated"
+    },
+    {
+      "name": "5",
+      "type": "Sending of CRM (BMS is recognized)",
+      "description": "Sending of BRM"
+    },
+    {
+      "name": "6",
+      "type": "Sending of CRM (BMS is recognized); delayed start of CML is initiated",
+      "description": "Sending of BRM; delayed start of BCP is initiated"
+    },
+    {
+      "name": "7",
+      "type": "Sending of CML",
+      "description": "Sending of BCP"
+    },
+    {
+      "name": "8",
+      "type": "Sending of CML; delayed start of CRO (Not ready for charging) is initiated",
+      "description": "Sending of BCP; delayed start of BRO (Not ready for charging) is initiated"
+    },
+    {
+      "name": "9",
+      "type": "Sending of CRO (Not ready for charging); delayed start of CRO (Ready for charging) is initiated",
+      "description": "Sending of BRO (Not ready for charging); delayed start of BRO (Ready for charging) is initiated"
+    },
+    {
+      "name": "10",
+      "type": "Sending of CRO (Ready for charging)",
+      "description": "Sending of BRO (Ready for charging)"
+    },
+    {
+      "name": "11",
+      "type": "Sending of CRO (Ready for charging); delayed start of CCS is initiated",
+      "description": "Sending of BRO (Ready for charging); delayed start of BCL is initiated"
+    },
+    {
+      "name": "30",
+      "type": "",
+      "description": "Sending of BCL"
+    },
+    {
+      "name": "31",
+      "type": "",
+      "description": "Sending of BCL; delayed start of BCS is initiated"
+    },
+    {
+      "name": "12",
+      "type": "Sending of CCS",
+      "description": "Sending of BCL and BCS"
+    },
+    {
+      "name": "13",
+      "type": "Sending of CCS; delayed start of CST is initiated. Is skipped when BMS initializes the end of charging.",
+      "description": "Sending of BCL and BCS, delayed start of BSM is initiated"
+    },
+    {
+      "name": "14",
+      "type": "Sending of CST",
+      "description": "Sending of BCL, BCS and BSM"
+    },
+    {
+      "name": "15",
+      "type": "Sending of CST; delayed start of CSD is initiated",
+      "description": "Sending of BCL, BCS and BSM; delayed start of BST is initiated. Is used when Charger initializes the end of charging."
+    },
+    {
+      "name": "16",
+      "type": "Sending of CSD; delayed stop of CSD is initiated",
+      "description": "Sending of BST. Is used when BMS initiates the end of charging."
+    },
+    {
+      "name": "17",
+      "type": "End of charging",
+      "description": "Sending of BST; delayed start of BSD is initiated"
+    },
+    {
+      "name": "18",
+      "type": "—",
+      "description": "Sending of BSD; delayed stop of BSD is initiated"
+    },
+    {
+      "name": "19",
+      "type": "—",
+      "description": "End of charging"
+    },
+    {
+      "name": "20",
+      "type": "—",
+      "description": "—"
+    },
+    {
+      "name": "50",
+      "type": "Sending of CEM",
+      "description": "Sending of CEM"
+    },
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "—",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 and Smart Charging",
+      "J1939 and Smart Charging",
+      "—",
+      "—",
+      "form 2 J1939 and Smart Charging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetSecurityValidationState",
+  "category": "IP",
+  "title": "SomeIpGetSecurityValidationState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetSecurityValidationState.htm",
+  "syntax": [
+    "long SomeIpGetSecurityValidationState ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the Security-Validation-State of a received SOME/IP message."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of a received SOME/IP message (e.g. see OnSomeIpMessage)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,161 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterAddress",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterAddress",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterAddress.htm",
+  "syntax": [
+    "long IpGetAdapterAddress( dword ifIndex, dword ipv4address[],dword ipv4AddressSize); // form 1",
+    "long IpGetAdapterAddress( dword ifIndex, byte ipv6Addresses[][], dword ipv6AddressesSize); // form 2",
+    "long IpGetAdapterAddress( dword ifIndex, IP_Address addresses[], dword &count ); // form 3"
+  ],
+  "description": [
+    "The function retrieves the addresses associated with a network interface. The interface is specified by it's 1-based index in the list of network interfaces, i.e. the first interface has index 1.",
+    "All adapter addresses including the local loopback address are taken into account in the stack of the operating system. The order depends on how the operating system lists the adapters.All assigned addresses including the VLAN addresses are taken into account in the CANoe stack."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    },
+    {
+      "name": "ipv4address",
+      "type": "",
+      "description": "The array used to store the numerical IPv4 addresses."
+    },
+    {
+      "name": "ipv6Addresses",
+      "type": "",
+      "description": "The array used to store the IPv6 addresses as 16 byte arrays."
+    },
+    {
+      "name": "ipv4AddressSize",
+      "type": "",
+      "description": "The size of the address array."
+    },
+    {
+      "name": "ipv6AddressSize",
+      "type": "",
+      "description": "The size of the address array."
+    },
+    {
+      "name": "count",
+      "type": "",
+      "description": "Number of IP address, which were copied to addresses."
+    },
+    {
+      "name": "addresses",
+      "type": "",
+      "description": "Array of IP_Address elements, which is filled with the configured IP addresses of the specified interface."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Address addresses[10];\n  dword addressesCount;\n  IP_Address addrMasks[10];\n  dword addrMasksCount;\n  long addrIdx;\n  long ifIdx;\n\n  write( \"IP Configuration\" );\n\n  for( ifIdx = 1; ifIdx <= ipGetAdapterCount(); ifIdx++)\n  {\n    ipGetAdapterAddress( ifIdx, addresses, addressesCount );\n    ipGetAdapterMask( ifIdx, addrMasks, addrMasksCount );\n    for( addrIdx = 0; addrIdx < addressesCount; addrIdx++ )\n    {\n      char addrStr[30];\n      char maskStr[30];\n      addresses[addrIdx].PrintAddressToString( addrStr );\n      addrMasks[addrIdx].PrintAddressToString( maskStr );\n\n      write( \"  %d. %s | %s\", addrIdx+1, addrStr, maskStr );\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5: form 1-2 12.0: form 3",
+      "7.0: form 1-2 12.0: form 3",
+      "13.0",
+      "13.0: form 3",
+      "—",
+      "2.0 SP2: form 1-2 4.0: form 3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

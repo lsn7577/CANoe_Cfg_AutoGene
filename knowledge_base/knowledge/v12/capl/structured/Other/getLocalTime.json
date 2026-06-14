@@ -1,0 +1,78 @@
+{
+  "page_type": "function",
+  "name": "getLocalTime",
+  "category": "Other",
+  "title": "getLocalTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetLocalTime.htm",
+  "syntax": [
+    "void getLocalTime(long time[]);"
+  ],
+  "description": [
+    "Returns details to the current date and time in an array of type long."
+  ],
+  "parameters": [
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Information"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Seconds (0 - 59)"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Minutes (0 - 59)"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Hours (0 - 23)"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Day of month (1 - 31)"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Month (0 - 11)"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Year (0 - xxx, offset of 1900, e.g. 117 = 2017)"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "Day of week (0 - 6, sunday is 0)"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "Day of Year (0 - 365)"
+    },
+    {
+      "name": "8",
+      "type": "",
+      "description": "Flag for daylight saving time (0 - 1, 1 = daylight saving time)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "...\nlong tm[9];\ngetLocalTime(tm);\n// now tm contains the following entries:\n// tm[0] = 3; (seconds)\n// tm[1] = 51; (minutes)\n// tm[2] = 16; (hours)\n// tm[3] = 21; (day of month)\n// tm[4] = 7; (month stating with 0)\n// tm[5] = 98; (year)\n// tm[6] = 5; (weekday)\n// tm[7] = 232;(day of year)\n// tm[8] = 1; (Summer time)\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

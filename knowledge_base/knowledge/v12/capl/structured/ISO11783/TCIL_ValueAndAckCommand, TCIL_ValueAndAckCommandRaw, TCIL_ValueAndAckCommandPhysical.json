@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TCIL_ValueAndAckCommand, TCIL_ValueAndAckCommandRaw, TCIL_ValueAndAckCommandPhysical",
+  "category": "ISO11783",
+  "title": "TCIL_ValueAndAckCommand, TCIL_ValueAndAckCommandRaw, TCIL_ValueAndAckCommandPhysical",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILValueAndAckCommandRawPhysical.htm",
+  "syntax": [
+    "long TCIL_ValueAndAckCommand(dbNode client, dword ddi, dword elementNumber); // form 1"
+  ],
+  "description": [
+    "Form (1) and (2) send the current value of the specified data entity to the client with Set Value and Acknowledge command. It can be used to send to the client the previously set Compressed State DDIs DDIs (using TCIL_SetValueRaw or TCIL_SetValuePhysical).",
+    "Form (3)-(6) set the value to the specified data entity and send the value to the client with Set Value and Acknowledge command.",
+    "Form (3)-(6) set the value to the specified data entity (if exists) and sends the value to the client with Value command."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "Task Controller simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void SendSetpointMassPerAreaApplicationRate(double value)\n{\n  long result;\n  result = TCIL_ValueAndAckCommandPhysical(TC, Sprayer, 6, 1, value);\n  switch (result)\n  {\n    case     0: TestStepPass(); break;\n    case -2202: TestStepFail(\"Function is not available in passive mode of the TC IL!\"); break;\n    case -2204: TestStepFail(\"Node 'Sprayer' is no client device!\"); break;\n    case -2210: TestStepFail(\"Failed to send Value command!\"); break;\n    default:    TestStepFail(\"Unexpected error\"); break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

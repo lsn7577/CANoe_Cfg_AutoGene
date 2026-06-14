@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getMessageID",
+  "category": "CAN",
+  "title": "getMessageID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionGetMessageID.htm",
+  "syntax": [
+    "dword getMessageID(char messageName[]); // form 1"
+  ],
+  "description": [
+    "Finds out the message ID"
+  ],
+  "parameters": [
+    {
+      "name": "messageName",
+      "type": "",
+      "description": "Name of the message."
+    }
+  ],
+  "return": "Message ID, or (dword)-1 if the message is not found",
+  "example": {
+    "description": [],
+    "code": "dword id;\nid = GetMessageID(\"LightState\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

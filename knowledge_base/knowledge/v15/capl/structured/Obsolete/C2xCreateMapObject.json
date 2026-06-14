@@ -1,0 +1,65 @@
+{
+  "page_type": "notes",
+  "name": "C2xCreateMapObject",
+  "category": "Obsolete",
+  "title": "C2xCreateMapObject",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionC2xCreateMapObject.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by CreateMapObject."
+      ],
+      [
+        "Function Syntax",
+        "long C2xCreateMapObject( long objectType );"
+      ],
+      [
+        "Function",
+        "Initializes a map object to be drawn in the Map Window."
+      ],
+      [
+        "Parameters",
+        "objectType Figure to be drawn in the Map Window: 1: Square 2: Rectangle 3: Ellipse 4: Cross 5: Triangle 6: Line 7: Bitmap 8: Text"
+      ],
+      [
+        "Return Values",
+        "Handle of the created map object."
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.1",
+        "Car2x",
+        "—",
+        "•"
+      ],
+      [
+        "Example See Map Window API example"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "canFlushTxQueue",
+  "category": "CAN",
+  "title": "canFlushTxQueue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionCanFlushTxQueue.htm",
+  "syntax": [
+    "long canFlushTxQueue(long channel);"
+  ],
+  "description": [
+    "Flushes the Tx queue for the defined channel."
+  ],
+  "parameters": [
+    {
+      "name": "Channel",
+      "type": "",
+      "description": "The CAN channel."
+    }
+  ],
+  "return": "0: Interface doesn’t support flush of Tx queue",
+  "example": {
+    "description": [],
+    "code": "on key 'f'\n{\n  int result;\n  //flush Tx queue for CAN channel 1\n\n  result = canFlushTxQueue(1);\n  if(result == 1)\n    write(\"Tx queue flushed \");\n  else\n    write(\"Tx queue flush failed Result =%d \", result);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

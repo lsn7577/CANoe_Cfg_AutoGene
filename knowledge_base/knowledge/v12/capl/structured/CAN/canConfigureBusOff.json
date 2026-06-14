@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "canConfigureBusOff",
+  "category": "CAN",
+  "title": "canConfigureBusOff",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionCanConfigureBusOff.htm",
+  "syntax": [
+    "long canConfigureBusOff(long channel, long canId, long flags);"
+  ],
+  "description": [
+    "Uses the defined ID of a message to set the bus state to BusOff.",
+    "This function requires minimum a Vector driver 9.6 and a network interface with ISO CAN FD support."
+  ],
+  "parameters": [
+    {
+      "name": "Channel",
+      "type": "",
+      "description": "The CAN channel."
+    }
+  ],
+  "return": "1 = The disturbance for the defined ID was switched on successfully.0 = The disturbance for the defined ID could not switched on.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

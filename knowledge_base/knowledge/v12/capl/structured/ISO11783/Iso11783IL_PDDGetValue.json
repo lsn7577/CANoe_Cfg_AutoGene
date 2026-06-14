@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDGetValue",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDGetValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDGetValue.htm",
+  "syntax": [
+    "float Iso11783IL_PDDGetValue( dbSignal signal, dword elementNumber ); // form 1"
+  ],
+  "description": [
+    "The function returns the value of a process variable."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "signal from the database"
+    }
+  ],
+  "return": "value of the process variable, 0 if the variable is not defined",
+  "example": {
+    "description": [],
+    "code": "char text[256];\nvalue = Iso11783IL_PDDGetValue( PD::AppRateSignal, 0 );\nif (Iso11783IL_PDDGetLastError \r\n () != 0) {\n  Iso11783IL_PDDGetLastErrorText \r\n ( elCount(text), text );\n  write( \r\n \"ERROR: %s\", text);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

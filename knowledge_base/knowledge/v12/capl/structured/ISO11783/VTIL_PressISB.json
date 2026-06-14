@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "VTIL_PressISB",
+  "category": "ISO11783",
+  "title": "VTIL_PressISB",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILPressISB.htm",
+  "syntax": [
+    "long VTIL_PressISB(dword duration); // form 1"
+  ],
+  "description": [
+    "The VTIL_PressButton methods simulates pressing the ISOBUS Shortcut Button [ISB] of the Virtual Terminal and the releasing of it after the duration. As a result, the All Implements Stop Operations Switch State Message is sent with the value Stop implement operations until the ISB is released.",
+    "Every time the function is called the Number of transitions from Permit to Stop is incremented."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_PressISB(VT,  300);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2115: TestStepFail(\"VT works in passive mode therefore you cannot \npress the ISB button!\"); break;\n  case -2121: TestStepFail(\"ISB Button is not available because property ‚isbServer‘ is not set!\"); break;\n  default: TestStepFail(\"Unexpected error\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

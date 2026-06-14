@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbAccept",
+  "category": "IP",
+  "title": "AvbAccept",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbAccept.htm",
+  "syntax": [
+    "dword AvbAccept(dword listenerHandle);"
+  ],
+  "description": [
+    "The function accepts an incoming connection request on the specified Listener resulting in a new Listener. If the operation fails, the function will return 0."
+  ],
+  "parameters": [
+    {
+      "name": "listenerHandle",
+      "type": "",
+      "description": "The Listener handle."
+    }
+  ],
+  "return": "0: The function failed. Call AvbGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

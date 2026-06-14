@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "BusLoad",
+  "category": "CAN",
+  "title": "BusLoad",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionBusLoad.htm",
+  "syntax": [
+    "long BusLoad ()",
+    "CANx.BusLoad"
+  ],
+  "description": [
+    "Returns the current busload of channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Current busload of channel x in percent.",
+  "example": {
+    "description": [],
+    "code": "write (\"CAN1 busload = %d\", CAN1.BusLoad);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

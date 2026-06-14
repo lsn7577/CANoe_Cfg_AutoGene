@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_SaveAsImage",
+  "category": "ISO11783",
+  "title": "VTIL_SaveAsImage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILSaveAsImage.htm",
+  "syntax": [
+    "long VTIL_SaveAsImage(dbNode workingSetMaster, dword maskOrSoftkey, char imagePath[]); // form 1"
+  ],
+  "description": [
+    "Saves the current Data/Alarm Mask or one of the current Soft Keys as an image. An existing file is overwritten."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_SaveAsImage(VT, Loader, 0, \"BMP\\\\DataMask.bmp\");\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2113: TestStepFail(\"Invalid parameter!\"); break;\n  case -2122: TestStepFail(\"Failed to save active Data Mask to file!\"); break;\n  default: TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

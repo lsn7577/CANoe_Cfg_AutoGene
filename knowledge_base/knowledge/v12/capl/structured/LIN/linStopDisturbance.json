@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "linStopDisturbance",
+  "category": "LIN",
+  "title": "linStopDisturbance",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINStopDisturbance.htm",
+  "syntax": [
+    "long linStopDisturbance()"
+  ],
+  "description": [
+    "Stops the disturbance on the bus which is started with linStartDisturbance().",
+    "Note that disturbances shorter than 64 bit times cannot be stopped."
+  ],
+  "parameters": [],
+  "return": "On success a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

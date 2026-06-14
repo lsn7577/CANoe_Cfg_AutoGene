@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "getDrift",
+  "category": "Other",
+  "title": "getDrift",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetDrift.htm",
+  "syntax": [
+    "int getDrift()"
+  ],
+  "description": [
+    "Determines the constant deviation when Drift is set."
+  ],
+  "parameters": [],
+  "return": "Drift in parts per thousand.",
+  "example": {
+    "description": [],
+    "code": "int val;\n...\n// Assign to val the Drift value\nval = getDrift();\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

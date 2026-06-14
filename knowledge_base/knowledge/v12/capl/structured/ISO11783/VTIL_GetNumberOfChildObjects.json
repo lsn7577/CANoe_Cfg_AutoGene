@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_GetNumberOfChildObjects",
+  "category": "ISO11783",
+  "title": "VTIL_GetNumberOfChildObjects",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILGetNumberOfChildObjects.htm",
+  "syntax": [
+    "long VTIL_GetNumberOfChildObjects(dbNode workingSetMaster, dword objectId, dword & numberOfChildObjects); // form 1"
+  ],
+  "description": [
+    "Returns the number of child objects which are contained in an object."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

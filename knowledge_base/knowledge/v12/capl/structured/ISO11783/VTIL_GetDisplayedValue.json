@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "VTIL_GetDisplayedValue",
+  "category": "ISO11783",
+  "title": "VTIL_GetDisplayedValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILGetDisplayedValue.htm",
+  "syntax": [
+    "long VTIL_GetDisplayedValue(dbNode workingSetMaster, dword objectId, double & value); // form 1"
+  ],
+  "description": [
+    "Returns the displayed value of an object.",
+    "If the object supports scaling/offset then the displayed value is",
+    "displayed value = (value + offset) * scaling factor",
+    "If the object uses a variable reference then the value of this reference is used to calculate the displayed value.",
+    "For Input String and Output String objects you can use form 3 and 4."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\ndouble value;\nresult = VTIL_GetDisplayedValue(VT, 206, value);\nswitch (result)\n{\n  case 0:\n    write(\"Displayed value of object 206 is '%f'\", value);\n    TestStepPass();\n    break;\n  case -2102: TestStepFail(\"Invalid object!\"); break;\n  case -2104: TestStepFail(\"Currently there is no active Working Set!\"); break;\n  case -2108: TestStepFail(\"Invalid variable reference!\"); break;\n  default:    TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

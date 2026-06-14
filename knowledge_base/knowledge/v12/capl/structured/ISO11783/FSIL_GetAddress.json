@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_GetAddress",
+  "category": "ISO11783",
+  "title": "FSIL_GetAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILGetAddress.htm",
+  "syntax": [
+    "long FSIL_GetAddress(); // form 1"
+  ],
+  "description": [
+    "Returns the address that is used by the FS IL."
+  ],
+  "parameters": [
+    {
+      "name": "fs",
+      "type": "",
+      "description": "FS simulation node to apply the function"
+    }
+  ],
+  "return": ">=0: Address of the FS IL",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n  long addr;\n  addr = FSIL_GetAddress();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

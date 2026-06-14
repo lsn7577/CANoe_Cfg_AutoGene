@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linSetMasterResistor",
+  "category": "LIN",
+  "title": "linSetMasterResistor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetMasterResistor.htm",
+  "syntax": [
+    "long linSetMasterResistor (long onOff)"
+  ],
+  "description": [
+    "Enables or disables the internal master resistor of the LIN hardware interface.",
+    "This function only works with LIN core network interfaces."
+  ],
+  "parameters": [
+    {
+      "name": "onOff",
+      "type": "",
+      "description": "1: Switch the resistor on0: Switch the resistor off"
+    }
+  ],
+  "return": "If successful a value unequal to zero.",
+  "example": {
+    "description": [],
+    "code": "// on pressing key ‘c’ switch on the master resisitor\n...\non key 'c'\n{\n  linSetMasterResisitor (1);\n  write(\"Turn Resistor On\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

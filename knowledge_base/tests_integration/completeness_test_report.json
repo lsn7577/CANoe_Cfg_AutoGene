@@ -1,0 +1,193 @@
+{
+  "metadata": {
+    "title": "Knowledge Base Completeness Test Report",
+    "generated": "2026/06/01",
+    "total": 36,
+    "pass": 36,
+    "warn": 0,
+    "fail": 0,
+    "overall": "PASS"
+  },
+  "results": [
+    {
+      "test": "T001 directory structure",
+      "status": "PASS",
+      "message": "All directories present"
+    },
+    {
+      "test": "T002 v12 all files present",
+      "status": "PASS",
+      "message": "All 8 v12 files present"
+    },
+    {
+      "test": "T003 v15 all files present",
+      "status": "PASS",
+      "message": "All 8 v15 files present"
+    },
+    {
+      "test": "T004 L1_latest matches v15",
+      "status": "PASS",
+      "message": "L1_latest junction has 4 topics with 8 overview files"
+    },
+    {
+      "test": "T005 L3_diffs all diffs present",
+      "status": "PASS",
+      "message": "All 5 diff files present"
+    },
+    {
+      "test": "T006 v12 CAPL categories",
+      "status": "PASS",
+      "message": "v12 CAPL: 41 categories, 4559 functions"
+    },
+    {
+      "test": "T007 v15 CAPL categories",
+      "status": "PASS",
+      "message": "v15 CAPL: 44 categories, 5025 functions"
+    },
+    {
+      "test": "T008 v12 Panel elements",
+      "status": "PASS",
+      "message": "v12 Panel: 37 elements"
+    },
+    {
+      "test": "T009 v15 Panel elements",
+      "status": "PASS",
+      "message": "v15 Panel: 33 elements"
+    },
+    {
+      "test": "T010 v12 DBC keywords",
+      "status": "PASS",
+      "message": "v12 DBC: 15 keywords"
+    },
+    {
+      "test": "T011 v15 DBC keywords",
+      "status": "PASS",
+      "message": "v15 DBC: 20 keywords (incl. v15-new)"
+    },
+    {
+      "test": "T012 CANoe Config attributes",
+      "status": "PASS",
+      "message": "Both versions have channel assignment + baud rate attributes"
+    },
+    {
+      "test": "T013 File sizes non-empty",
+      "status": "PASS",
+      "message": "All files are reasonably sized"
+    },
+    {
+      "test": "T014 CAPL diff valid",
+      "status": "PASS",
+      "message": "CAPL diff: v12=4553, v15=5017 funcs"
+    },
+    {
+      "test": "T015 Panel diff valid",
+      "status": "PASS",
+      "message": "Panel diff: v12=37, v15=33 elements"
+    },
+    {
+      "test": "T016 Manifests present",
+      "status": "PASS",
+      "message": "Both manifests present"
+    },
+    {
+      "test": "T017 KB overview README",
+      "status": "PASS",
+      "message": "README.md present"
+    },
+    {
+      "test": "T018 L1 is junction (not copy)",
+      "status": "PASS",
+      "message": "latest view uses knowledge/v15 directly"
+    },
+    {
+      "test": "T019 capl/ split structure valid",
+      "status": "PASS",
+      "message": "capl/ split + structured/ valid for v12 and v15"
+    },
+    {
+      "test": "T020 v15 structured per-function output",
+      "status": "PASS",
+      "message": "v15 structured: 44 categories, sample BusLoad has all fields"
+    },
+    {
+      "test": "T021 v12 structured per-function output",
+      "status": "PASS",
+      "message": "v12 structured: 41 categories, sample BusLoad has all fields"
+    },
+    {
+      "test": "T022 v15 page-type distribution",
+      "status": "PASS",
+      "message": "v15 page types: {'function': 3783, 'method': 381, 'event': 99, 'selector': 9}"
+    },
+    {
+      "test": "T023 capl per-category files have type info",
+      "status": "PASS",
+      "message": "Per-category files have proper function entries with type info"
+    },
+    {
+      "test": "T024 structured function MD renders correctly",
+      "status": "PASS",
+      "message": "BusLoad.md has all sections and code blocks"
+    },
+    {
+      "test": "T025 knowledge/ directory exists",
+      "status": "PASS",
+      "message": "knowledge/ with v12 + v15 present"
+    },
+    {
+      "test": "T026 knowledge/ top index",
+      "status": "PASS",
+      "message": "knowledge/_index.json valid, latest=v15"
+    },
+    {
+      "test": "T027 knowledge/ topic layout",
+      "status": "PASS",
+      "message": "All 4 topics x 2 versions have structured/"
+    },
+    {
+      "test": "T028 v15 capl pages in knowledge",
+      "status": "PASS",
+      "message": "v15/capl/structured: 5018 pages"
+    },
+    {
+      "test": "T029 v15 panel pages in knowledge",
+      "status": "PASS",
+      "message": "v15/panel/structured: 69 pages"
+    },
+    {
+      "test": "T030 v15 dbc pages in knowledge",
+      "status": "PASS",
+      "message": "v15/dbc/structured: 150 pages"
+    },
+    {
+      "test": "T031 v15 xcp pages in knowledge",
+      "status": "PASS",
+      "message": "v15/xcp/structured: 17 pages"
+    },
+    {
+      "test": "T032 L1_latest junction to knowledge/v15",
+      "status": "PASS",
+      "message": "latest view uses knowledge/v15 directly"
+    },
+    {
+      "test": "T033 panel MD renders",
+      "status": "PASS",
+      "message": "Sample Button.md renders (10886 chars)"
+    },
+    {
+      "test": "T034 dbc MD renders",
+      "status": "PASS",
+      "message": "Check EDS and DCF Files.md renders (1084 chars)"
+    },
+    {
+      "test": "T035 xcp MD renders",
+      "status": "PASS",
+      "message": "OnXcpError.md renders (1293 chars)"
+    },
+    {
+      "test": "T036 knowledge/README.md present",
+      "status": "PASS",
+      "message": "knowledge/README.md present"
+    }
+  ]
+}

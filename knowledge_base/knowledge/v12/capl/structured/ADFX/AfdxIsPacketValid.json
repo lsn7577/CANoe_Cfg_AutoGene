@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "AfdxIsPacketValid",
+  "category": "ADFX",
+  "title": "AfdxIsPacketValid",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxIsPacketValid.htm",
+  "syntax": [
+    "long AfdxIsPacketValid( long packet );"
+  ],
+  "description": [
+    "This function checks, if a received packet has a protocol error. Packets with a protocol error are marked with an error icon in the Trace Window."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that should be checked"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  AfdxRegisterReceiveCallback ( \"OnAfdxPacket\");\n}\nvoid OnAfdxPacket( long dir, long line, int64 time, long bag, long afdxFlags, long packet )\n{\n  if (AfdxIsPacketValid(handle) != 0)\n  {\n    write( \"Receive packet with protocol error\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

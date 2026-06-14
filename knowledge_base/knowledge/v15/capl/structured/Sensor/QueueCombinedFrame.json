@@ -1,0 +1,144 @@
+{
+  "page_type": "method",
+  "name": "QueueCombinedFrame",
+  "category": "Sensor",
+  "title": "QueueCombinedFrame",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionQueueCombinedFrame.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueCombinedFrame(byte[] writeBuffer, dword writeBufferCount, dword readByteCount); // from 1",
+    "SensorErrorCode SysVarNamespace.QueueCombinedFrame(byte[] writeBuffer, dword writeBufferCount, dword readByteCount, dword startDelayNs); // from 2"
+  ],
+  "description": [
+    "This method is intended to be used for I2C master simulation. It queues a frame to write and then read the given number of bytes from the given slave."
+  ],
+  "parameters": [
+    {
+      "name": "writeBuffer",
+      "type": "",
+      "description": "Buffer containing the bytes to be sent to the slave."
+    },
+    {
+      "name": "writeByteCount",
+      "type": "",
+      "description": "Length of the write buffer in bytes."
+    },
+    {
+      "name": "readByteCount",
+      "type": "",
+      "description": "The number of bytes to read from the slave."
+    },
+    {
+      "name": "startDelayNs",
+      "type": "",
+      "description": "Delay in ns before the frame is actually sent to the slave."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Byte array to be sent to the slave\nbyte sendData[2] = {0x42, 0x21};\n\n// Send the prepared byte array to the slave, then read 4 bytes from the slave\nsysvar::SENSOR::I2C::ExampleChannel::ExampleSlave.QueueCombinedFrame (sendData, 2, 4);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

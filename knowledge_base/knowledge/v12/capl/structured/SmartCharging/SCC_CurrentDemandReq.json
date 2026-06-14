@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CurrentDemandReq",
+  "category": "SmartCharging",
+  "title": "SCC_CurrentDemandReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_CurrentDemandReq.htm",
+  "syntax": [
+    "void SCC_CurrentDemandReq ( byte SessionID[], float TargetVoltage, float TargetCurrent)"
+  ],
+  "description": [
+    "The callback is called as soon as a Current Demand Request is received. Further details that are transmitted in this request can be queried with"
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

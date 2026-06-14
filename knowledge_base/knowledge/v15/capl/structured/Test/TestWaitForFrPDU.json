@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForFrPDU",
+  "category": "Test",
+  "title": "TestWaitForFrPDU",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForFrPDU.htm",
+  "syntax": [
+    "long TestWaitForFrPDU (dbFrPDU aPDU, dword aTimeout);",
+    "long TestWaitForFrPDU (char aPDUName[], dword aTimeout);",
+    "long TestWaitForFrPDU (dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of the specified FlexRay PDU. Should the PDU not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "When no PDU is specified the wait condition is resolved on any FlexRay PDU."
+  ],
+  "parameters": [
+    {
+      "name": "aPDU",
+      "type": "",
+      "description": "PDU to be awaited as it is defined in the database."
+    },
+    {
+      "name": "aPDUName",
+      "type": "",
+      "description": "Name of a PDU to be awaited as it is defined in the database."
+    },
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms] (Transmission of 0: no timeout controlling)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following test program waits for the occurrence of one of two PDUs.",
+      "It is assumed that the database defines the PDUs PDU_NMF_NODE_C and PDU_IN_CYCLE_REPETITION on the cluster FlexRay PDU."
+    ],
+    "code": "variables\n{\n   dword gBusContextFr;\n   long resTestWaitFor, resTestGetData, resTestJoin;\n   dword timeToWait  = 10; // in ms\n}\nvoid InitBusContext ()\n{\n   gBusContextFr = getBusNameContext(\"FlexRay_PDU\");\n   SetBusContext(gBusContextFr);\n}\ntestcase WaitForJoinedFrPDUs_Any()\n{\n   FrPDU frTest;\n   TestStepPass(\"Library: WaitForFrPDU.can\", \"Testcase: WaitForJoinedFrPDUs_Any\");\n   InitBusContext();\n   // join events\n   {\n      TestStepPass(\"Call TFS function\", \"TestJoinFrPDUEvent(name=PDU_IN_CYCLE_REPETITION)\");\n      resTestJoin = TestJoinFrPDUEvent(PDU_IN_CYCLE_REPETITION);\n      if (resTestJoin <= 0)\n      {\n         TestStepFail(\"Join condition\", \"resTestJoin = %d, Failure on joining symbolic event\", resTestJoin);\n         return;\n      }\n      else\n      {\n         TestStepPass(\"Join condition\", \"Joining symbolic event ok. Event number = %d\", resTestJoin);\n      }\n      TestStepPass(\"Call TFS function\", \"TestJoinFrPDUEvent(name=PDU_NMF_NODE_C)\");\n      resTestJoin = TestJoinFrPDUEvent(PDU_NMF_NODE_C);\n      if (resTestJoin <= 0)\n      {\n         TestStepFail(\"Join condition\", \"resTestJoin = %d, Failure on joining raw event\", resTestJoin);\n         return;\n      }\n      else\n      {\n         TestStepPass(\"Join condition\", \"Joining raw event ok. Event number = %d\", resTestJoin);\n      }\n   }\n   // wait for all events\n   TestStepPass(\"Call TFS function\", \"TestWaitForAnyJoinedEvent(timeout=%d)\", timeToWait);\n   resTestWaitFor = TestWaitForAnyJoinedEvent(timeToWait);\n   if (resTestWaitFor > 0) // Resume due to event occurred\n   {\n      TestStepPass(\"Wait condition\", \"Waiting for any event is ok. Resume event number = %d\", resTestWaitFor);\n      TestStepPass(\"Call TFS function\", \"TestGetWaitFrPDUData(index=%d)\", resTestWaitFor);\n      \n      // extract resume event's data\n      resTestGetData = TestGetWaitFrPDUData(resTestWaitFor, frTest);\n      if (0 != resTestGetData)\n      {\n         TestStepFail(\"Data extraction\", \"resTestGetData = %d, Data access to data of event %d could not be executed!\", resTestGetData, resTestWaitFor);\n      }\n      else\n      {\n         TestStepPass(\"Data extraction\", \"Data of event %d successfully extracted. SlotId=%d\", resTestWaitFor, frTest.FR_SlotID);\n      }\n   }\n   else\n   {\n      TestStepFail(\"Wait condition\", \"resTestWaitFor = %d, Waiting for any of joined events failed!\", resTestWaitFor);\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.0 SP4",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

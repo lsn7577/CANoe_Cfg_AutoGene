@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MediaRead",
+  "category": "Media",
+  "title": "MediaRead",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaRead.htm",
+  "syntax": [
+    "long MediaRead(dword sourceReaderHandle, dword streamIndex, byte buffer[], dword length, char onReadCallback[]);"
+  ],
+  "description": [
+    "Reads sample data from the media source."
+  ],
+  "parameters": [
+    {
+      "name": "sourceReaderHandle",
+      "type": "",
+      "description": "The source reader handle."
+    }
+  ],
+  "return": "0: The function succeeded.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

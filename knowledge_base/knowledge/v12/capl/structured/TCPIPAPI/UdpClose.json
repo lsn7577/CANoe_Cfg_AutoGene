@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "UdpClose",
+  "category": "TCPIPAPI",
+  "title": "UdpClose",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionUDPClose.htm",
+  "syntax": [
+    "long UdpClose( dword socket);"
+  ],
+  "description": [
+    "The function closes the UDP socket. Upon successful completion the passed socket is no longer valid."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket to be closed."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

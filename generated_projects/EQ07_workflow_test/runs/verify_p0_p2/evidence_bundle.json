@@ -1,0 +1,400 @@
+{
+  "schema_version": "0.1.0",
+  "status": "complete",
+  "target_canoe_version": "v15",
+  "required_symbols_by_case": {
+    "TC_001": [
+      "CheckSignalMatch",
+      "TestWaitForMessage",
+      "TestWaitForSignalInRange",
+      "TestWaitForSignalMatch",
+      "TestWaitForTimeout",
+      "on message",
+      "output (CAN)",
+      "setSignal",
+      "setTimer",
+      "v15::capl::Test::SetSignal"
+    ],
+    "TC_002": [
+      "CheckSignalMatch",
+      "TestWaitForSignalInRange",
+      "TestWaitForSignalMatch",
+      "xcpActivate",
+      "xcpConnect",
+      "xcpSetCalPage"
+    ],
+    "TC_003": [
+      "diagGetParameter",
+      "diagSendRequest",
+      "diagSetParameter",
+      "diagSetTarget"
+    ],
+    "TC_004": [
+      "CheckSignalMatch",
+      "TestCaseComment",
+      "TestCaseFail",
+      "TestWaitForSignalMatch"
+    ]
+  },
+  "pages": [
+    {
+      "symbol": "CheckSignalMatch",
+      "page_id": "v15::capl::Test::CheckSignalMatch",
+      "name": "CheckSignalMatch",
+      "page_type": "function",
+      "syntax": [
+        "long CheckSignalMatch(Signal aSignal, float aCompareValue); // form 1",
+        "long CheckSignalMatch(dbEnvVar aEnvVar, float aCompareValue); // form 2",
+        "long CheckSignalMatch(sysvar aSysVar, float aCompareValue); // form 3",
+        "long CheckSignalMatch(sysvar aSysVar, int64 aCompareValue); // form 4",
+        "long CheckSignalMatch(ServiceSignalNumber aSignal, float aCompareValue); // form 5"
+      ],
+      "description": "Checks the given value against the value of signal, the system or the environment variable. The resolution of the signal is considered.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionCheckSignalMatch.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "TestCaseComment",
+      "page_id": "v15::capl::Test::TestCaseComment",
+      "name": "TestCaseComment",
+      "page_type": "function",
+      "syntax": [
+        "TestCaseComment (char aComment[]);",
+        "TestCaseComment (char aComment[], message aMsg);",
+        "TestCaseComment (char aComment[], mostMessage aMsg);",
+        "TestCaseComment (char aComment[], mostAmsMessage aMsg);",
+        "TestCaseComment (char aComment[], mostRawMessage aMsg);",
+        "TestCaseComment (char aComment[], linFrame aMsg);",
+        "TestCaseComment (char aComment[], char aRawString[]);",
+        "TestCaseComment (char aComment[], gmLanMsg aMsg);"
+      ],
+      "description": "With this function within a test case a commentary can be taken over into the report. This comment can relate to a message that can also be output in the report.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestCaseComment.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "TestCaseFail",
+      "page_id": "v15::capl::Test::TestCaseFail",
+      "name": "TestCaseFail",
+      "page_type": "function",
+      "syntax": [
+        "TestCaseFail ();"
+      ],
+      "description": "You can set the verdict of the current test case to fail. This function can only be used within a test case. It is not possible to set the verdict of this test case back to pass.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestCaseFail.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "TestWaitForMessage",
+      "page_id": "v15::capl::Test::TestWaitForMessage",
+      "name": "TestWaitForMessage",
+      "page_type": "function",
+      "syntax": [
+        "long TestWaitForMessage(dbMsg aMessage, dword aTimeout);",
+        "long TestWaitForMessage(dword aMessageId, dword aTimeout);",
+        "long TestWaitForMessage(dword aTimeout);"
+      ],
+      "description": "Waits for the occurrence of the specified message aMessage. Should the message not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForMessage.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "TestWaitForSignalInRange",
+      "page_id": "v15::capl::Test::TestWaitForSignalInRange",
+      "name": "TestWaitForSignalInRange",
+      "page_type": "function",
+      "syntax": [
+        "long TestWaitForSignalInRange (sysvar aSysVar, float aLowLimit, float aHighLimit, dword aTimeout); // form 1",
+        "long TestWaitForSignalInRange (dbEnvVar aEnvVar float aLowLimit, float aHighLimit, dword aTimeout); // form 2",
+        "long TestWaitForSignalInRange (Signal aSignal, float aLowLimit, float aHighLimit, dword aTimeout); // form 3",
+        "long TestWaitForSignalInRange (sysvar aSysVar, int64 aLowLimit, int64 aHighLimit, dword aTimeout); // form 4",
+        "long TestWaitForSignalInRange (ServiceSignalNumber aSignal, float aLowLimit, float aHighLimit, dword aTimeout); // form 5"
+      ],
+      "description": "Checks the value of the signal, the system or the environment variable against the condition:",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForSignalInRange.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "TestWaitForSignalMatch",
+      "page_id": "v15::capl::Test::TestWaitForSignalMatch",
+      "name": "TestWaitForSignalMatch",
+      "page_type": "function",
+      "syntax": [
+        "long TestWaitForSignalMatch (Signal aSignal, float aCompareValue, dword aTimeout); // form 1",
+        "long TestWaitForSignalMatch (dbEnvVar aEnvVar, float aCompareValue, dword aTimeout); // form 2",
+        "long TestWaitForSignalMatch (sysvar aSysVar, float aCompareValue, dword aTimeout); // form 3",
+        "long TestWaitForSignalMatch (sysvar aSysVar, int64 aCompareValue, dword aTimeout); // form 4",
+        "long TestWaitForSignalMatch (ServiceSignalNumber aSignal, float aCompareValue, dword aTimeout); // form 5"
+      ],
+      "description": "Checks the given value against the value of the signal, the system variable or the environment variable. The resolution of the signal is considered.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForSignalMatch.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "TestWaitForTimeout",
+      "page_id": "v15::capl::Test::TestWaitForTimeout",
+      "name": "TestWaitForTimeout",
+      "page_type": "function",
+      "syntax": [
+        "long TestWaitForTimeout(dword aTimeout);"
+      ],
+      "description": "Waits until the expiration of the specified timeout time.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForTimeout.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "diagGetParameter",
+      "page_id": "v15::capl::Diagnostics::diagGetParameter",
+      "name": "diagGetParameter",
+      "page_type": "function",
+      "syntax": [
+        "double diagGetParameter (diagResponse obj, char parameterName[])",
+        "double diagGetParameter (diagRequest obj, char parameterName[])"
+      ],
+      "description": "Retrieves numeric parameter directly.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetParameter.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "diagSendRequest",
+      "page_id": "v15::capl::Diagnostics::diagSendRequest",
+      "name": "diagSendRequest",
+      "page_type": "function",
+      "syntax": [
+        "long diagSendRequest (diagRequest obj)"
+      ],
+      "description": "Sends the request object to the ECU.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagSendRequest.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "diagSetParameter",
+      "page_id": "v15::capl::Diagnostics::diagSetParameter",
+      "name": "diagSetParameter",
+      "page_type": "function",
+      "syntax": [
+        "long diagSetParameter (diagResponse obj, char parameterName[], char newValue[])",
+        "long diagSetParameter (diagRequest obj, char parameterName[], char newValue[])"
+      ],
+      "description": "Sets a parameter to the symbolically-specified value. This is possible for all parameters, also numeric ones.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagSetParameter.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "diagSetTarget",
+      "page_id": "v15::capl::Diagnostics::diagSetTarget",
+      "name": "diagSetTarget",
+      "page_type": "function",
+      "syntax": [
+        "long diagSetTarget (char ecuName[])"
+      ],
+      "description": "Sets the target ECU with which the tester shall communicate from now on and configures/establishes the communication channel to that ECU.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagSetTarget.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "on message",
+      "page_id": "v15::capl::CAN::on message",
+      "name": "on message",
+      "page_type": "event",
+      "syntax": [],
+      "description": "The event procedure on message is called on the receipt of a valid CAN message.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/EventProcedures/CAPLfunctionOnMessage.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "output (CAN)",
+      "page_id": "v15::capl::CAN::output (CAN)",
+      "name": "output (CAN)",
+      "page_type": "function",
+      "syntax": [
+        "void output(message msg); // form 1",
+        "void output(errorFrame); // form 2"
+      ],
+      "description": "Outputs a message (form 1) or an Error Frame (form 2) from the program block.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Functions/CAPLfunctionOutput.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "setSignal",
+      "page_id": "v15::capl::CommunicationObjects::SetSignal",
+      "name": "SetSignal",
+      "page_type": "method",
+      "syntax": [
+        "long txSignalRef::SetSignal(Signal signal);",
+        "long rxSignalRef::SetSignal(Signal signal);"
+      ],
+      "description": "Sets the referred signal object for the CO reference.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CommunicationObjects/Methods/CAPLfunctionSetSignal.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "setTimer",
+      "page_id": "v15::capl::Other::setTimer",
+      "name": "setTimer",
+      "page_type": "function",
+      "syntax": [
+        "void setTimer(msTimer t, long duration); // form 1",
+        "void setTimer(timer t, long duration); // form 2",
+        "void setTimer(timer t, long durationSec, long durationNanoSec); // form 3"
+      ],
+      "description": "Sets a timer.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionSetTimer.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "v15::capl::Test::SetSignal",
+      "page_id": "v15::capl::Test::SetSignal",
+      "name": "SetSignal",
+      "page_type": "function",
+      "syntax": [
+        "long setSignal(char signalName[], double aValue); // form 2"
+      ],
+      "description": "Sets the transmitted signal aSignal to the accompanying value.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionSetSignal.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "xcpActivate",
+      "page_id": "v15::capl::XCP::xcpActivate",
+      "name": "xcpActivate",
+      "page_type": "function",
+      "syntax": [
+        "long xcpActivate (char namespace[], char variable[]); // form 1",
+        "long xcpActivate (sysvar sysvar);"
+      ],
+      "description": "Activates an a2l parameter for upload and DAQ measurement.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/XCP/Functions/CAPLfunctionXCPActivate.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "xcpConnect",
+      "page_id": "v15::capl::XCP::xcpConnect",
+      "name": "xcpConnect",
+      "page_type": "function",
+      "syntax": [
+        "void OnXcpConnect(char ecuQualifier[]);"
+      ],
+      "description": "Establishes a connection to the XCP/CCP device and starts the configured DAQ measurement.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/XCP/Functions/CAPLfunctionXCPConnect.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "xcpSetCalPage",
+      "page_id": "v15::capl::XCP::xcpSetCalPage",
+      "name": "xcpSetCalPage",
+      "page_type": "function",
+      "syntax": [
+        "void OnXcpSetCalPage(char ecuQualifier[]);"
+      ],
+      "description": "If the XCP slave device supports calibration data page switching, this command sets the current page and access mode.",
+      "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/XCP/Functions/CAPLfunctionXCPSetCalPage.htm",
+      "confidence": "exact",
+      "used_for": [
+        "capl_generation",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "team::CAPL_Internal_Coding_Standards",
+      "page_id": "extras::team::_root::CAPL_Internal_Coding_Standards",
+      "name": "Internal CAPL Coding Standards",
+      "page_type": "concept",
+      "syntax": [],
+      "description": "",
+      "source": "F:\\Canoe_Gene\\knowledge_base\\extras\\team\\CAPL_Internal_Coding_Standards.json",
+      "confidence": "team_override",
+      "used_for": [
+        "team_style",
+        "validation"
+      ]
+    },
+    {
+      "symbol": "team::Common_Gotchas",
+      "page_id": "extras::team::_root::Common_Gotchas",
+      "name": "Common CAPL Gotchas",
+      "page_type": "concept",
+      "syntax": [],
+      "description": "",
+      "source": "F:\\Canoe_Gene\\knowledge_base\\extras\\team\\Common_Gotchas.json",
+      "confidence": "team_override",
+      "used_for": [
+        "team_style",
+        "validation"
+      ]
+    }
+  ],
+  "gaps": []
+}

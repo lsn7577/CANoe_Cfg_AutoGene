@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetRequiredFacility",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetRequiredFacility",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetRequiredFacility.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetRequiredFacility(char facilityName[], long value); // form 1"
+  ],
+  "description": [
+    "Specifies if a TIM function facility is required by the TIM client or not.",
+    "After receiving the Functions Support Response message of the server the client checks if all defined required function facilities are supported by the server. If there are facilities that are not supported, the TIM Client terminates the automation.",
+    "You can use Iso11783IL_TIMResetAllRequiredFunctions to empty the list of necessary facilities."
+  ],
+  "parameters": [
+    {
+      "name": "facilityName",
+      "type": "",
+      "description": "Name if the TIM function facility."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_SetMessageProperty",
+  "category": "ISO11783",
+  "title": "Iso11783IL_SetMessageProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILSetMessageProperty.htm",
+  "syntax": [
+    "long Iso11783IL_SetMessageProperty( dbMessage msg, char propertyName[], long propertyValue);"
+  ],
+  "description": [
+    "This function sets the internal property of a message."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message name as defined in the database"
+    }
+  ],
+  "return": "0: Success (property has been set successfully)",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783IL_SetMessageProperty(TSC1, \"MessageCounterToContinue\", 12) < 0)\n{\n  write(\"Can’t set message property ‘MessageCounterToContinue‘\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,332 @@
+{
+  "page_type": "notes",
+  "name": "J1939 Test Service Library",
+  "category": "J1939",
+  "title": "J1939 Test Service Library",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939TestServiceLibrary/CAPLfunctionsJ1939TSLOverview.htm",
+  "syntax": [],
+  "description": [
+    "Check Functions",
+    "Device Name Functions",
+    "Network Management",
+    "Other Functions",
+    "Stimulus Functions",
+    "Test Pattern",
+    "Wait Functions",
+    "Error Codes"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "J1939 Only available with J1939. To use the CAPL functions the J1939TestServiceLibraryNL.dll must be included."
+      ]
+    ],
+    [
+      [
+        "Check Functions Device Name Functions Network Management Other Functions",
+        "Stimulus Functions Test Pattern Wait Functions"
+      ]
+    ],
+    [
+      [
+        "Function",
+        "Short Description"
+      ],
+      [
+        "J1939TestChkControl_Destroy",
+        "Destroys the check."
+      ],
+      [
+        "J1939TestChkControl_Reset",
+        "The status of the check is initialized."
+      ],
+      [
+        "J1939TestChkControl_Start",
+        "Starts or continues checking the event condition."
+      ],
+      [
+        "J1939TestChkControl_Stop",
+        "Stops checking of the event condition."
+      ],
+      [
+        "J1939TestChkCreate_PGDistanceViolation",
+        "Checks for time interval violations."
+      ],
+      [
+        "J1939TestChkCreate_RequestViolation",
+        "Check, if a response is sent after a request."
+      ],
+      [
+        "J1939TestChkCreate_SignalRangeViolation",
+        "Checks the value of a signal."
+      ],
+      [
+        "J1939TestChkQuery_Count",
+        "Returns the number of measured values."
+      ],
+      [
+        "J1939TestChkQuery_Last",
+        "Returns the last measured value."
+      ],
+      [
+        "J1939TestChkQuery_NumEvents",
+        "Returns the number of generated events from a check."
+      ],
+      [
+        "J1939TestChkQuery_StatAvg",
+        "Returns the average value of a checked condition."
+      ],
+      [
+        "J1939TestChkQuery_StatMax",
+        "Returns the maximum value of a checked condition."
+      ],
+      [
+        "J1939TestChkQuery_StatMin",
+        "Returns the minimum value of a checked condition."
+      ]
+    ],
+    [
+      [
+        "Function",
+        "Short Description"
+      ],
+      [
+        "J1939TestGetAAC",
+        "Returns the arbitrary address capable part of the device name."
+      ],
+      [
+        "J1939TestGetECUInstance",
+        "Returns the ECU instance part of the device name."
+      ],
+      [
+        "J1939TestGetFct",
+        "Returns the function part of the device name."
+      ],
+      [
+        "J1939TestGetFctInstance",
+        "Returns the function instance part of the device name."
+      ],
+      [
+        "J1939TestGetIG",
+        "Returns the industry group of the device name."
+      ],
+      [
+        "J1939TestGetIN",
+        "Returns the identity number part of the device name."
+      ],
+      [
+        "J1939TestGetMC",
+        "Returns the manufacturer code part of the device name."
+      ],
+      [
+        "J1939TestGetVS",
+        "Returns the vehicle system part of the device name."
+      ],
+      [
+        "J1939TestGetVSInstance",
+        "Returns the vehicle system instance part of the device name."
+      ],
+      [
+        "J1939TestMakeName",
+        "Creates a device name."
+      ],
+      [
+        "J1939TestSetAAC",
+        "Sets the arbitrary address capable part of the device name."
+      ],
+      [
+        "J1939TestSetECUInstance",
+        "Sets the ECU instance part of the device name."
+      ],
+      [
+        "J1939TestSetFct",
+        "Sets the function part of the device name."
+      ],
+      [
+        "J1939TestSetFctInstance",
+        "Sets the function instance part of the device name."
+      ],
+      [
+        "J1939TestSetIG",
+        "Set the industry group for the device name."
+      ],
+      [
+        "J1939TestSetIN",
+        "Sets the identity number part of the device name."
+      ],
+      [
+        "J1939TestSetMC",
+        "Sets the manufacturer code part of the device name."
+      ],
+      [
+        "J1939TestSetVS",
+        "Sets the vehicle system part of the device name."
+      ],
+      [
+        "J1939TestSetVSInstance",
+        "Sets the vehicle system instance part of the device name."
+      ]
+    ],
+    [
+      [
+        "Function",
+        "Short Description"
+      ],
+      [
+        "Callback J1939TestOnNMTChange",
+        "Is called if the NMT table changes."
+      ],
+      [
+        "J1939TestNmtDump",
+        "The current state of the network table is copied into a buffer."
+      ],
+      [
+        "J1939TestNmtQueryAddress",
+        "Queries for an ECU address."
+      ],
+      [
+        "J1939TestNmtQueryDeviceName",
+        "Queries for an ECU device name."
+      ],
+      [
+        "J1939TestNmtQueryDeviceNameForAddress",
+        "Queries for an ECU device name."
+      ],
+      [
+        "J1939TestNmtQueryECU",
+        "Queries for an ECU handle."
+      ],
+      [
+        "J1939TestNmtRefresh",
+        "Sends a Request for Address Claim from Null Address (0xFE) and updates the NMT table."
+      ]
+    ],
+    [
+      [
+        "Function",
+        "Short Description"
+      ],
+      [
+        "J1939TestCaseComment",
+        "Writes a comment to the test protocol."
+      ],
+      [
+        "J1939TestChkConfig_SetTitle",
+        "Sets the title of a check."
+      ]
+    ],
+    [
+      [
+        "Function",
+        "Short Description"
+      ],
+      [
+        "J1939TestStmControl_Destroy",
+        "The stimulus is destroyed and not longer accessible."
+      ],
+      [
+        "J1939TestStmControl_Reset",
+        "Resets the value of the stimulus parameter group."
+      ],
+      [
+        "J1939TestStmControl_Start",
+        "Start or continue sending a stimulus parameter group."
+      ],
+      [
+        "J1939TestStmControl_Stop",
+        "Turns off the sending of a stimulus parameter group."
+      ],
+      [
+        "J1939TestStmCreate_CSV",
+        "Creates a csv stimulus."
+      ],
+      [
+        "J1939TestStmCreate_Toggle",
+        "Creates a toggle stimulus."
+      ]
+    ],
+    [
+      [
+        "Function",
+        "Short Description"
+      ],
+      [
+        "J1939TestCommand",
+        "Sends a command message from the test module."
+      ],
+      [
+        "J1939TestCommandedAddress",
+        "Sends a commanded address and waits for the response for a specified time."
+      ],
+      [
+        "J1939TestConflictACL",
+        "Provokes an Address Claiming conflict."
+      ],
+      [
+        "J1939TestOutputBAM",
+        "Influences the transmission of a message with the BAM transport protocol."
+      ],
+      [
+        "J1939TestOutputTPCM",
+        "Influences the transmission of a message with the RTS/CTS transport protocol."
+      ],
+      [
+        "J1939TestReceiveTPCM",
+        "Influences the reception of a message with the RTS/CTS transport protocol."
+      ],
+      [
+        "J1939TestRequest",
+        "Sends a request and waits for the response."
+      ],
+      [
+        "J1939TestRequestACL",
+        "Requests Address Claiming."
+      ]
+    ],
+    [
+      [
+        "Function",
+        "Short Description"
+      ],
+      [
+        "J1939TestJoinDMWithoutSPNEvent",
+        "Adds a new diagnostic message without SPN event to the 'joined events'."
+      ],
+      [
+        "J1939TestJoinDMWithSPNEvent",
+        "Adds a new SPN event to the 'joined events'."
+      ],
+      [
+        "J1939TestWaitForAllJoinedEvents",
+        "Waits for the actual set of \"joined events\"."
+      ],
+      [
+        "J1939TestWaitForAnyJoinedEvent",
+        "Waits for the actual set of \"joined events\"."
+      ],
+      [
+        "J1939TestWaitForDMWithoutSPN",
+        "Waits until a defined Suspect Parameter Number (SPN) is not longer transmitted with the parameter group or a timeout occurred."
+      ],
+      [
+        "J1939TestWaitForDMWithSPN",
+        "Waits for a defined parameter group and a defined Suspect Parameter Number (SPN)."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

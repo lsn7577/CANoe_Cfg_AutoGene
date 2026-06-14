@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedPduRef::AbstractIsPduRequested",
+  "category": "CommunicationObjects",
+  "title": "consumedPduRef::AbstractIsPduRequested",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedPduRefAbstractIsPduRequested.htm",
+  "syntax": [
+    "dword consumedPDURef::AbstractIsPDURequested()"
+  ],
+  "description": [
+    "Returns whether the specified service PDU is currently requested (if abstract binding is used)."
+  ],
+  "parameters": [],
+  "return": "0: PDU is not currently requested",
+  "example": {
+    "description": [],
+    "code": "val = MirrorAdjustment.consumerSide[CANoe,LeftMirror].StatusPDU.AbstractIsPDURequested();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

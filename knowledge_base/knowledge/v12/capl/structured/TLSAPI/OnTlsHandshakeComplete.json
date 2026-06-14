@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnTlsHandshakeComplete",
+  "category": "TLSAPI",
+  "title": "OnTlsHandshakeComplete",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TLSAPI/EventProcedures/CAPLfunctionOnTlsHandshakeComplete.htm",
+  "syntax": [
+    "void OnTlsHandshakeComplete(dword socket, long result);"
+  ],
+  "description": [
+    "If the CAPL program implements this callback it is called when a TLS handshake is completed."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The TLS socket handle. If the handle is valid (not equal to ~0), it corresponds to the socket that was used for tlsOpen."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnTlsHandshakeComplete(dword socket, int result)\n{\n  LONG retVal;\n  if (result == 0)\n  {\n    gConnectionSecured = 1;\n\n    //\n    // Send first message\n    //\n    retVal = TcpSend( socket, \"The TLS connection is up\", 25 );\n    \nif (retVal != 0)\n    {\n      // an error occurred\n      return;\n    }\n\n    //\n    // Receive\n    //\n    TcpReceive( socket, gRecBuffer, elcount(gRecBuffer) );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

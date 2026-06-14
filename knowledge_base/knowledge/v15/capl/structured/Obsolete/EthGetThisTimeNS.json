@@ -1,0 +1,65 @@
+{
+  "page_type": "notes",
+  "name": "EthGetThisTimeNS",
+  "category": "Obsolete",
+  "title": "EthGetThisTimeNS",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/EthernetIL/CAPLfunctionEthGetThisTimeNs.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "qword",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by: ethernetPacket.time"
+      ],
+      [
+        "Function Syntax",
+        "qword EthGetThisTimeNS();"
+      ],
+      [
+        "Function",
+        "The function returns the time stamp of an received Ethernet packet in nanoseconds. It is only usable in a CAPL callback function that had been registered with EthReceiveRawPacket or EthReceivePacket. It depends on the callback function, which part of the packet data is accessed by the function: Callback of EthReceiveRawPacket: The function handles the raw Ethernet packet data. The offset 0 is the beginning of the Ethernet packet. Callback of EthReceivePacket: The function handles the payload data of the highest interpretable protocol, i.e. in an UDP packet the functions handles the payload data of the UDP protocol."
+      ],
+      [
+        "Parameters",
+        "—"
+      ],
+      [
+        "Return Values",
+        "time stamp in nanoseconds"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "7.2-12.0",
+        "Ethernet",
+        "—",
+        "•"
+      ],
+      [
+        "Example Node System - PreStart in CAPL Browser on preStart{ EthReceiveRawPacket( \"OnEthRawPacket\");} Node Callback Function in CAPL Browser void OnEthRawPacket( LONG channel, LONG dir, LONG packetLength ){ float t; t = (float)EthGetThisTimeNS(); write(\"Received packet at %f [sec]”, t );}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

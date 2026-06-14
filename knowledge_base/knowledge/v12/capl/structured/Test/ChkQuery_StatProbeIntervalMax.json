@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_StatProbeIntervalMax",
+  "category": "Test",
+  "title": "ChkQuery_StatProbeIntervalMax",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryStatProbeIntervalMax.htm",
+  "syntax": [
+    "double ChkQuery_StatProbeIntervalMax (dword aCheckId);",
+    "check.QueryStatProbeIntervalMax();"
+  ],
+  "description": [
+    "Returns the maximum timely distance between 2 consumed message events.",
+    "Among other things with this function this function the maximum occurred cycle time of a cyclic message can be queried."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "< 0: Refers the query error codes\nNote\nThere is a meaningful value available and a positive return value is supplied even if the check has not generated any event.",
+  "example": {
+    "description": [],
+    "code": "double result;\ndword checkId;\ncheckId = ChkStart_MsgRelCycleTimeViolation(VehicleMotion, 0.9, 1.1);\n// ... execute test sequence\nresult = ChkQuery_StatProbeIntervalMax(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

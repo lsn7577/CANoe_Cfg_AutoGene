@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "EthGetTokenSignalValue",
+  "category": "Obsolete",
+  "title": "EthGetTokenSignalValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetTokenSignalValue.htm",
+  "syntax": [
+    "double EthGetTokenSignalValue( long packet, dbSignal signal ); // form 1"
+  ],
+  "description": [
+    "Both functions assume that the packet’s payload is described in the database. They read the signal’s value of the packet’s payload.",
+    "Form 2 assumes the passed signal is the first element of an array. The value will be read from the element’s position.",
+    "The caller must check itself if the packet’s payload is described by the signal’s database frame."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "Physical value",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  EthReceivePacket( \"OnEthPacket\");\n}\nvoid OnEthPacket( LONG channel, LONG dir, LONG packet )\n{\n  DOUBLE coolantTemperature;\n\n  if (EthGetTokenInt( packet, \"udp\", \"destination\" ) == 23) \n  //this example assumes that a udp payload with destination port 23 is described by the database frame EngineInfo\n  {\n    coolantTemperature = EthGetTokenSignalValue( packet, EngineInfo::CoolantTemperature );\n\n    if (EthGetLastError() == 0)\n    {\n      write(\"CoolantTemperature is %f\", coolantTemperature);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

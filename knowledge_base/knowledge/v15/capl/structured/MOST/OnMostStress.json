@@ -1,0 +1,188 @@
+{
+  "page_type": "function",
+  "name": "OnMostStress",
+  "category": "MOST",
+  "title": "OnMostStress",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/EventProcedures/CAPLfunctionOnMOSTStress.htm",
+  "syntax": [
+    "OnMostStress(long mode, long state);"
+  ],
+  "description": [
+    "The event procedure OnMostStress() will be called before the beginning and after the end of the stress generation."
+  ],
+  "parameters": [
+    {
+      "name": "1",
+      "type": "",
+      "description": "Stress generation with mostGenerateLightError"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Stress generation with mostGenerateLockError"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Stress generation with mostGenerateBusloadCtrl"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Stress generation with mostGenerateBusloadAsync"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Stress generation with mostSetRxBufferCtrl"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "Stress generation with mostSetTxLightPower"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "mostGenerateBypassToggle"
+    },
+    {
+      "name": "8",
+      "type": "",
+      "description": "mostSetSystemLockFlagUsage"
+    },
+    {
+      "name": "9",
+      "type": "",
+      "description": "mostSetShutDownFlagUsage"
+    },
+    {
+      "name": "10",
+      "type": "",
+      "description": "mostGenerateBusloadEthPkt"
+    },
+    {
+      "name": "11",
+      "type": "",
+      "description": "mostSetRxBufferAsync"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Stress mode is stopped Note: mode = 5: Rx buffer enabled mode = 6: normal light intensity"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Stress mode is started Note: mode = 5: Rx buffer disabled mode = 6: 3db attenuation"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST50 MOST150",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

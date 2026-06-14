@@ -1,0 +1,25 @@
+# EthGetTokenSubString
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by: ethernetPacket::protocol::field::GetData |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long EthGetTokenSubString( long packet, char protocolDesignator[], char tokenDesignator[], long byteOffset, long length, char buffer[] ); |  |  |  |
+| Function | The function copies a specified number of characters from a given position inside the token and adds a terminating "\0". |  |  |  |
+| Parameters | packet handle of a packet that has been created with EthInitPacket |  |  |  |
+| protocolDesignator name of the protocol, e.g. "udp" |  |  |  |  |
+| tokenDesignator name of the token, e.g. "data" |  |  |  |  |
+| byteOffset offset from the beginning of the token in byte |  |  |  |  |
+| length number of characters to be copied |  |  |  |  |
+| buffer buffer in which the characters are copied The function adds a terminating "\0". Thus, the size of the buffer must be at least one byte larger than length. |  |  |  |  |
+| Return Values | number of copied characters or 0 With EthGetLastError you can check if the function has been processed successfully. |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 7.5-12.0 | Ethernet | — | • |  |
+| Example Node System - PreStart in CAPL Browser on preStart{ EthReceivePacket("OnEthPacket");} Node Callback Function in CAPL Browser void OnEthPacket( LONG channel, LONG dir, LONG packetHandle ){ CHAR rx_str[100]; CHAR error[100]; // get the payload of the packet EthGetTokenSubString( packetHandle, "ipv4", "data", 8, elCount(rx_str), rx_str ); // would access payload of an udp packet if (EthGetLastError() == 0) { write(rx_str); } else { EthGetLastErrorText( elCount(error), error ); write("Error: %s", error ); }} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

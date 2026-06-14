@@ -1,0 +1,22 @@
+{
+  "page_type": "concept",
+  "name": "Example: Selector TIME_NS (time stamp of message in units of 10 microseconds)",
+  "category": "CAN",
+  "title": "Example: Selector TIME_NS (time stamp of message in units of 10 microseconds)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Selectors/CAPLSelectorTIMENS.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [
+      "Typ int64 (signed 64 bit integer) – only readable."
+    ],
+    "code": "On message CAN1.100 {\n  Write(\"CAN – Frame with time %I64d received\", this.time_ns);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

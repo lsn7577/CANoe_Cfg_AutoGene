@@ -1,0 +1,80 @@
+{
+  "page_type": "notes",
+  "name": "EthSetTokenString",
+  "category": "Obsolete",
+  "title": "EthSetTokenString",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/EthernetIL/CAPLfunctionEthSetTokenString.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by: ethernetPacket::protocol::SetData"
+      ],
+      [
+        "Function Syntax",
+        "long EthSetTokenString( long packet, char protocolDesignator[], char tokenDesignator[], char data[] );"
+      ],
+      [
+        "long EthSetTokenString( long packet, char protocolDesignator[], char tokenDesignator[], long byteOffset, char data[] );"
+      ],
+      [
+        "Function",
+        "The function copies the string value to the token without terminating \"\\0\"."
+      ],
+      [
+        "Parameters",
+        "packet handle of a packet that has been created with EthInitPacket"
+      ],
+      [
+        "protocolDesignator name of the protocol, e.g. \"udp\""
+      ],
+      [
+        "tokenDesignator name of the token, e.g. \"data\""
+      ],
+      [
+        "byteOffset offset from the beginning of the token in byte"
+      ],
+      [
+        "data data as string"
+      ],
+      [
+        "Return Values",
+        "0 or error code"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "7.2-12.0",
+        "Ethernet",
+        "•",
+        "•"
+      ],
+      [
+        "Example LONG packetHandle;// create packetpacketHandle = EthInitPacket( \"udp\" );// set protocol fieldsEthSetTokenInt( packetHandle, \"ipv4\", \"source\", 0xC0A80001 ); // 192.168.0.1EthSetTokenInt( packetHandle, \"ipv4\", \"destination\", 0xFFFFFFFF ); // 255.255.255.255EthSetTokenInt( packetHandle, \"udp\", \"source\", 23 );EthSetTokenInt( packetHandle, \"udp\", \"destination\", 23 );// set UDP payloadEthResizeToken( packetHandle, \"udp\", \"data\", 5*8 /*bits*/ );EthSetTokenString( packetHandle, \"udp\", \"data\", \"Hello\" );// Complete and send packetEthCompletePacket( packetHandle );EthOutputPacket( packetHandle );// release packetEthReleasePacket( packetHandle );"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

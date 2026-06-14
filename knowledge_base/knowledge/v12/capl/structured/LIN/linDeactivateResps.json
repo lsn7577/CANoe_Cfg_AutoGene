@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linDeactivateResps",
+  "category": "LIN",
+  "title": "linDeactivateResps",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINDeactivateResps.htm",
+  "syntax": [
+    "long linDeactivateResps(); // form 1"
+  ],
+  "description": [
+    "This function deactivates frame responses for all frames published by the calling Slave node. The frame responses can be deactivated individually using the function linSetRespCounter().",
+    "With form 2 you can deactivate the Slave responses of the selected Slave node (nodeName). If the parameter nodeName is not set or an empty string is given, the Slave responses of the node invoking this function will be deactivated.",
+    "If the configurable_frames list for the targeted Slave node is not complete, the function will not work correctly."
+  ],
+  "parameters": [
+    {
+      "name": "nodeName",
+      "type": "",
+      "description": "Slave node"
+    }
+  ],
+  "return": "Number of deactivated frame responses or -1 on failure.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

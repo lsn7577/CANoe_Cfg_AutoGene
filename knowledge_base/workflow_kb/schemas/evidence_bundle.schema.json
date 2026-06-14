@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "workflow_kb/schemas/evidence_bundle.schema.json",
+  "title": "Workflow Evidence Bundle",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "knowledge_snapshot_id",
+    "pages"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "failed"
+      ]
+    },
+    "knowledge_snapshot_id": {
+      "type": "string"
+    },
+    "retrieval_plan_id": {
+      "type": "string"
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "path",
+          "used_for"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "used_for": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "loaded_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "exact",
+              "scenario_primary",
+              "scenario_related",
+              "search_candidate",
+              "assumption"
+            ]
+          }
+        }
+      }
+    },
+    "symbols": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+

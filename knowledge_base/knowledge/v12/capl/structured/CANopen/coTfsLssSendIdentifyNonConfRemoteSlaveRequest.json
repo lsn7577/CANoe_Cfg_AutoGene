@@ -1,0 +1,24 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendIdentifyNonConfRemoteSlaveRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendIdentifyNonConfRemoteSlaveRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendIdentifyNonConfRemoteSlaveReq.htm",
+  "syntax": [
+    "coTfsLssSendIdentifyNonConfRemoteSlaveRequest() == 1);"
+  ],
+  "description": [
+    "This function sends an Identify non-configured remote slave response."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* send LSS identify non configured remote slave request */\n\nif (coTfsLssSendIdentifyNonConfRemoteSlaveRequest() == 1) {\n  /* request sent */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_example"
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetReceiptRequired",
+  "category": "SmartCharging",
+  "title": "SCC_SetReceiptRequired",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetReceiptRequired.htm",
+  "syntax": [
+    "long SCC_SetReceiptRequired ( long ReceiptRequired )"
+  ],
+  "description": [
+    "Sets the flag ReceiptRequired, and adapts the simulation state to await a MeteringReceiptReq next. Although MeteringReceipt is a specific message for PnC mode, this is also possible when using EIM mode."
+  ],
+  "parameters": [
+    {
+      "name": "ReceiptRequired",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

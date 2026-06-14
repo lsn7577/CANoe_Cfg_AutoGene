@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetThisMotorolaValue16",
+  "category": "Car2x",
+  "title": "C2xGetThisMotorolaValue16",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetThisMotorolaValue16.htm",
+  "syntax": [
+    "long C2xGetThisMotorolaValue16( long offset );"
+  ],
+  "description": [
+    "This function reads the data of a received packet in Motorola format."
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Byte offset relative to the beginning of a data packet or the payload (see description above)."
+    }
+  ],
+  "return": "Read value.",
+  "example": {
+    "description": [],
+    "code": "void OnC2xPacket( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  WORD value16;\n  value16 = C2xGetThisMotorolaValue16( 0 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

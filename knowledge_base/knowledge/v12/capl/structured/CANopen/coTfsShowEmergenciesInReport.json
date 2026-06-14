@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsShowEmergenciesInReport",
+  "category": "CANopen",
+  "title": "coTfsShowEmergenciesInReport",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsShoweMergenciesInReport.htm",
+  "syntax": [
+    "long coTfsShowEmergenciesInReport( dword enable );"
+  ],
+  "description": [
+    "Allows the report of emergency code in the test protocol. If the function is activated in the test module (default), each recognized emergency code is added to the test report."
+  ],
+  "parameters": [
+    {
+      "name": "enable",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsShowEmergenciesInReport(1); // enable writing emergency codes to test report"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

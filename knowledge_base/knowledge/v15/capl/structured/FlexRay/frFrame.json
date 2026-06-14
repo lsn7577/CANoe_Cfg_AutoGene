@@ -1,0 +1,168 @@
+{
+  "page_type": "function",
+  "name": "frFrame",
+  "category": "FlexRay",
+  "title": "frFrame",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Objects/CAPLfunctionFRFrame.htm",
+  "syntax": [
+    "frFrame <frame name> <frame var>; // form 1",
+    "frFrame MsgChannel<num>.<frame name> <frame var>; // form 2",
+    "frFrame (<slot ID>, <base cycle>, <cycle repetition>) <frame var>; // form 3",
+    "frFrame MsgChannel<num>.(<slot ID>, <base cycle>, <cycle repetition>) <frame var>; // form 4"
+  ],
+  "description": [
+    "Can be used to create a FlexRay send object. The object data can be manipulated by selectors associated with this object. Other object characteristics can be read out from selectors.",
+    "Objects are then registered using the frSetSendFrame and are sent using the frUpdateStatFrame or frOutputDynFrame functions."
+  ],
+  "parameters": [
+    {
+      "name": "MsgChannel<num>",
+      "type": "",
+      "description": "Defines the send channel/cluster. <num> must be an integer (e.g. 1, 2, 3, etc.) defining the channel number of the corresponding FlexRay interface."
+    },
+    {
+      "name": "<frame name>",
+      "type": "",
+      "description": "Character string corresponding to a frame name from the database. The required parameters (<slot ID>, <base cycle>, <cycle repetition> and <channel mask>) are taken from the corresponding frame definition in the database."
+    },
+    {
+      "name": "<frame var>",
+      "type": "",
+      "description": "Character string defining the object’s variable name."
+    },
+    {
+      "name": "<slot ID>",
+      "type": "",
+      "description": "This number designates a specific slot. Its value must be between 1 and 2047."
+    },
+    {
+      "name": "<base cycle>",
+      "type": "",
+      "description": "This number designates the base cycle. This value must be smaller than the repetition factor and lies in the range between 0 and 63. This value, together with the repetition factor, determines the \"Cycle Multiplexing\"."
+    },
+    {
+      "name": "<cycle repetition>",
+      "type": "",
+      "description": "This number designates the cycle repetition factor. The value must be between 1 and 64 and be a multiple of 2 (e.g. 1, 2, 4, 8, 16, 32 or 64). This value, together with the base cycle, determines the \"Cycle Multiplexing\"."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1",
+      "For an example see function frUpdateStatFrame.",
+      "Example 2",
+      "This is an example for forwarding the payload to other functions.",
+      "Example 3",
+      "This is an example for using the frame object as a function parameter.",
+      "Example 4",
+      "This is an example for using the Frame object in arrays.",
+      "Caution!",
+      "All objects of an array must be initialized with an appropriate frame definition!"
+    ],
+    "code": "variables\n{\n  const dword cFrTTFlag = 0x00;\n  const dword cFrETFlag = 0x10;\n  const dword cFrPPFlag = 0x20;\n  const dword cFrStopFlag = 0x80; // only for VN\n  const dword cFrNullFlag = 0x400; // only for VN\n}\n\nvoid foo (byte data[], int bytecount)\n{\n  // evaluate or set the contents of the data array\n}\n\nvoid example ()\n{\n  frFrame (1,0,1) myFrame  = { FR_Flags = cFrTTFlag | cFrPPFlag, FR_ChannelMask = 1, FR_PayloadLength = 2 };\n  foo (myFrame.FR_Payload, myFrame.FR_PayloadLength * 2);\n}\nvariables\n{\n  const dword cFrTTFlag = 0x00;\n  const dword cFrETFlag = 0x10;\n  const dword cFrPPFlag = 0x20;\n  const dword cFrStopFlag = 0x80; // only for VN\n  const dword cFrNullFlag = 0x400; // only for VN\n\n  frFrame (1,0,1) myFrame  = { FR_Flags = cFrTTFlag | cFrPPFlag, FR_ChannelMask = 1, FR_PayloadLength = 2 };\n}\n\nvoid foo (frFrame * frame)\n{\n  // evaluate or set the contents of the frame object\n}\n\nvoid example ()\n{\n  foo (myFrame);\n}\nvariables\n{\n  frFrame (1,0,1) frm1;\n\n  // All objects are equal:\n   frFrame (2,0,1) frArray1[10];\n\n  // All objects may be different:\n  frFrame * frArray2[3] = { (3,0,1), <FrameNameFromDB>, frm1 };\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.1 7.5: enhanced for usage in arrays and as function parameter",
+      "6.1 7.5: enhanced for usage in arrays and as function parameter",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetRootCertificateID",
+  "category": "SmartCharging",
+  "title": "SCC_GetRootCertificateID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetRootCertificateID.htm",
+  "syntax": [
+    "void SCC_GetRootCertificateID ( long Index, char IdOrIssuer [], byte SerialNumber[], long& SerialNumberLength )"
+  ],
+  "description": [
+    "Gets the content of the RootCertificateID element with the specified index."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "The content of the RootCertificateID element with the specified index < GetNumberOfRootCertificateIDs().\nFor ISO 15118:\nThe X509IssuerName to the buffer IdOrIssuer\nThe X509SerialNumber to the buffer SerialNumber\nThe byte length of X509SerialNumber via the referenceo SerialNumberLength\nElse:\nTheRootCertificateId string to the buffer IdOrIssuer, while the other parameters are unused",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

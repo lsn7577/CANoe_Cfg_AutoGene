@@ -1,0 +1,145 @@
+{
+  "page_type": "function",
+  "name": "diagStartAuth, diagStartAuthGeneric, _Diag_AuthResult",
+  "category": "Diagnostics",
+  "title": "diagStartAuth, diagStartAuthGeneric, _Diag_AuthResult",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctiondiagStartAuthGenericResult.htm",
+  "syntax": [
+    "long diagStartAuth(char ecuQualifier[], char jobQualifier[]); // form 1",
+    "long diagStartAuthGeneric(char ecuQualifier[], char genericString[]); // form 2",
+    "void _Diag_AuthResult(long result); // form 3"
+  ],
+  "description": [
+    "Starts the diagnostics authentication process. The result is indicated to the callback function _Diag_AuthResult."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description."
+    },
+    {
+      "name": "genericString",
+      "type": "",
+      "description": "Generic parameters to select and configure the security source runtime implementation."
+    },
+    {
+      "name": "jobQualifier",
+      "type": "",
+      "description": "Diagnostic job to be executed. Should be defined in the diagnostic description."
+    },
+    {
+      "name": "result",
+      "type": "",
+      "description": "Result of the authentication process - see error code."
+    }
+  ],
+  "return": "0 on success otherwise error code",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n  result = diagStartAuth(\"Ecu\", \"Developer\");\n  write(\"Start 'diagStartAuth' for %s with result = %ld\", gEcu, result);\n}\n\nvoid _Diag_AuthResult(long result)\n{\n  write(\"On '_Diag_AuthResult' for %s with result = %d\", gEcu, result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "11.0 SP2",
+      "11.0 SP2",
+      "—",
+      "—",
+      "—",
+      "3.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "Online mode",
+      "Online mode Simulation Nodes",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

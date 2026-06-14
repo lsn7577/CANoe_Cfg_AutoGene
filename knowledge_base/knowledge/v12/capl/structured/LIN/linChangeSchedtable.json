@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linChangeSchedtable",
+  "category": "LIN",
+  "title": "linChangeSchedtable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINChangeSchedtable.htm",
+  "syntax": [
+    "long linChangeSchedTable(dword tableIndex)"
+  ],
+  "description": [
+    "This function switches from the current schedule table to another one.",
+    "By calling this function in the event procedure on preStart, it is possible to specify in which schedule table the measurement should start."
+  ],
+  "parameters": [
+    {
+      "name": "tableIndex",
+      "type": "",
+      "description": "Index of the schedule table to be changed to."
+    }
+  ],
+  "return": "Index of the current schedule table or -1 if no active schedule table exists and on failure.",
+  "example": {
+    "description": [
+      "Change to schedule table with index 1 on pressing 'c' key"
+    ],
+    "code": "...\non key 'c'\n{\nlinChangeSchedTable(1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

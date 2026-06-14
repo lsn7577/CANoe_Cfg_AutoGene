@@ -1,0 +1,26 @@
+# TestJoinFrFrameErrorEvent
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+long TestJoinFrFrameErrorEvent (dbFrFrame aFrame)
+```
+
+## Description
+
+Completes the current set of "joined events" with the transmitted event. This function does not wait.
+
+Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.
+
+Further information on site MultiBus Environment.
+
+## Return Values
+
+-3: Join error
+
+## Availability
+
+| Since Version |
+|---|

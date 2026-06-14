@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_ServiceDiscoveryReq",
+  "category": "SmartCharging",
+  "title": "SCC_ServiceDiscoveryReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_ServiceDiscoveryReq.htm",
+  "syntax": [
+    "void SCC_ServiceDiscoveryReq ( byte SessionId[], char ServiceScope[], char ServiceCategory[] )"
+  ],
+  "description": [
+    "The callback is called as soon as a Service Discovery Request is received."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetEnergyToBeDelivered",
+  "category": "SmartCharging",
+  "title": "SCC_SetEnergyToBeDelivered",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetEnergyToBeDelivered.htm",
+  "syntax": [
+    "long SCC_SetEnergyToBeDelivered ( float EnergyToBeDelivered )"
+  ],
+  "description": [
+    "Sets the target energy value, which is sent in the ChargeParameterDiscoveryRes message."
+  ],
+  "parameters": [
+    {
+      "name": "EnergyToBeDelivered",
+      "type": "",
+      "description": "Value to be set."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linGetStartOfFrame",
+  "category": "Obsolete",
+  "title": "linGetStartOfFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINGetStartOfFrame.htm",
+  "syntax": [
+    "dword linGetStartOfFrame(linFrame busEvent)"
+  ],
+  "description": [
+    "This function can be used to retrieve a start time stamp of a LIN bus event. The resulting time stamp is a time elapsed since the measurement start [in units of 10 µsec]."
+  ],
+  "parameters": [
+    {
+      "name": "busEvent",
+      "type": "",
+      "description": "LIN bus event of type frame, checksum error, receive error, transmission error, synchronization error or wakeup signal."
+    }
+  ],
+  "return": "Returns the retrieved time stamp [in units of 10 µsec] or 0 on failure.",
+  "example": {
+    "description": [
+      "Calculate header length [in bit times] for each received LIN frame"
+    ],
+    "code": "on linFrame *\n{\ndword startOfFrame, endOfHeader, headerLength;\nif (this.dir != RX)\n{\nreturn; // ignore transmitted frames\n}\nstartOfFrame = linGetStartOfFrame(this); // retrieve frame start time \nendOfHeader = linGetEndOfHeader(this); // retrieve header end time\nheaderLength = linTime2Bits(endOfHeader - startOfFrame); // calculate header length in bit times\n// display the result in Write window\nwriteLineEx(0,0, \"Header length for LIN frame \r\n with identifier 0x%x is %d bit times\", this.ID, headerLength);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

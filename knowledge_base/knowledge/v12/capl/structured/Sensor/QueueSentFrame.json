@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "QueueSentFrame",
+  "category": "Sensor",
+  "title": "QueueSentFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionQueueSentFrame.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueSentFrame(SentSensorFrameStruct frame);"
+  ],
+  "description": [
+    "Inserts the given frame into the send queue of the given channel."
+  ],
+  "parameters": [
+    {
+      "name": "frame",
+      "type": "",
+      "description": "Specifies the details of the frame that shall be inserted into the send queue."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "SentSensorFrameStruct frame;\n\n// Use automatic CRC calculation\nframe.CrcMode = eSentAutoCrc;\n\n// Fill the frame with data\nframe.StatusBits = 0;\nframe.DataBits = 7;\nframe.CrcBits = 0; // Will be set automatically\n\n// Queue the frame for sending\nsysvar::SENSOR::SENT::ExampleChannel.QueueSentFrame(frame);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

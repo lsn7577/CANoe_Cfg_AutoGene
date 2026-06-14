@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "StopVideoRecording",
+  "category": "Other",
+  "title": "StopVideoRecording",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStopVideoRecording.htm",
+  "syntax": [
+    "StopVideoRecording(char windowName[]);"
+  ],
+  "description": [
+    "Stops/suspends the recording for a CANoe Video Window."
+  ],
+  "parameters": [
+    {
+      "name": "windowName",
+      "type": "",
+      "description": "The name of the Video Window."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// stop/suspend the recording for \"VideoWindow\"\nStopVideoRecording(\"VideoWindow\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

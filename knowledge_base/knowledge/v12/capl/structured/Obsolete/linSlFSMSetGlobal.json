@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linSlFSMSetGlobal",
+  "category": "Obsolete",
+  "title": "linSlFSMSetGlobal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSlFSMSetGlobal.htm",
+  "syntax": [
+    "void linSlFSMSetGlobal(unsigned int slaveId, unsigned int numberOfStates);"
+  ],
+  "description": [
+    "Sets the number of states given in numberOfStates for the Slave with identifier slaveId.",
+    "This function must be called before the Slave's states are configured."
+  ],
+  "parameters": [
+    {
+      "name": "slaveId",
+      "type": "",
+      "description": "Identifier of the relevant Slave. Corresponds to the slaveId, that was defined with linSlSimulate."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linWakeupFrame",
+  "category": "Obsolete",
+  "title": "linWakeupFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINWakeupFrame.htm",
+  "syntax": [
+    "void linWakeupFrame(long syncTimeStamp, long origTimeStamp, byte signal, int external)"
+  ],
+  "description": [
+    "Is called whenever a Wakeup frame is recognized. The time stamps are the same as by LINRcvFrame."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "The actually received byte (0x00, 0x80 or 0xC0) when the baud rate is correct. Signals (Wakeup frames) with different byte values will not be recognized.The bytes 0x00 and 0xC0 are the result of a deviation in their baud rate (caused by Sleep mode)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

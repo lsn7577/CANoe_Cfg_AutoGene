@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitForScopeShowEyeDiagram",
+  "category": "Test",
+  "title": "testWaitForScopeShowEyeDiagram",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForScopeShowEyeDiagram.htm",
+  "syntax": [
+    "long testWaitForScopeShowEyeDiagram(message frame, dword groupNumber, ScopeAnalyseHandle handle); // form 1"
+  ],
+  "description": [
+    "Show the eye diagram for a single frame or a node without analysis."
+  ],
+  "parameters": [
+    {
+      "name": "frame",
+      "type": "",
+      "description": "The used CAN, LIN or FlexRay frame for the eye diagram."
+    }
+  ],
+  "return": "1 = Successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

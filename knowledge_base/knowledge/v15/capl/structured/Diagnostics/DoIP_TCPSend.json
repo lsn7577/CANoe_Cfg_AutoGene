@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "DoIP_TCPSend",
+  "category": "Diagnostics",
+  "title": "DoIP_TCPSend",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPTCPSend.htm",
+  "syntax": [
+    "long DoIP_TCPSend(dword payloadType, byte payload[], dword payloadLen);",
+    "long DoIP_TCPSend(dword protocolID, dword payloadType, byte payload[], dword payloadLen);"
+  ],
+  "description": [
+    "Sends a DoIP PDU with valid layout on the open TCP connection."
+  ],
+  "parameters": [
+    {
+      "name": "protocolD",
+      "type": "",
+      "description": "If given, this will replace the configured protocol version in the DoIP PDU.[0; 255]"
+    },
+    {
+      "name": "payloadType",
+      "type": "",
+      "description": "Type to send, i.e. this can be any value.[0; 0xFFFF]"
+    },
+    {
+      "name": "payload",
+      "type": "",
+      "description": "The data following the generic DoIP header."
+    },
+    {
+      "name": "payloadLen",
+      "type": "",
+      "description": "Length of the data following the header."
+    }
+  ],
+  "return": "Error code, e.g. connection not established yet.",
+  "example": {
+    "description": [],
+    "code": "// When a vehicle is connected, send a non-standard frame to the peer\nOn key '1'\n{\n  BYTE payload[3] = { 0x11, 0x22, 0x33 };\n  // the frame type 0xF222 is manufacturer-specific\n  DoIP_TCPSend( 0xF222, payload, elcount( payload));\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP4",
+      "—",
+      "—",
+      "—",
+      "1.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,51 @@
+{
+  "page_type": "function",
+  "name": "TestJoinFrSymbolEvent",
+  "category": "Test",
+  "title": "TestJoinFrSymbolEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinFrSymbolEvent.htm",
+  "syntax": [
+    "long TestJoinFrSymbol ()"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the FlexRay symbol event.",
+    "This function does not wait.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "unknown"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "CAS"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "MTS"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Wakeup"
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitLinSyncErrorData",
+  "category": "Test",
+  "title": "TestGetWaitLinSyncErrorData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestGetWaitLinSyncErrorData.htm",
+  "syntax": [
+    "long TestGetWaitLinSyncErrorData (LinSyncError apEvent); // form 1",
+    "long TestGetWaitLinSyncErrorData (dword index, LinSyncError apEvent); // form 2"
+  ],
+  "description": [
+    "Retrieves the data of a synchronisation error that triggered the last wait instruction.The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "apEvent",
+      "type": "",
+      "description": "Data structure that will be filled with the synchronisation error data."
+    },
+    {
+      "name": "index",
+      "type": "",
+      "description": "Number of the \"joined event\" corresponds with the return value of \"testJoin...\"."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linSyncErrorEvent ()\n{\n   linSyncError linSyncErrorData;\n   if (testWaitForLinSyncError(5000) == 1)\n   {\n      if (testGetWaitLinSyncErrorData(linSyncErrorData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN Sync Error event occurred. SyncBreak=%d ns; SyncDel=%d ns\", linSyncErrorData.breaklen, linSyncErrorData.delimiterlen);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2: form 1 6.0: form 2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

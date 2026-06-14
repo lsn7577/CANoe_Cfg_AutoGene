@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "title": "Common CANoe Test Scenarios → Required Knowledge",
+    "description": "Mapping of common test scenarios to the exact knowledge base pages an agent should consult. Designed to be the first lookup for a test-generation agent.",
+    "generated_at": "2026-06-10",
+    "schema_version": "3.0"
+  },
+  "scenarios": [
+    {
+      "id": "send_can_frame",
+      "title": "Send a CAN frame in CAPL",
+      "intent_triggers": ["send CAN", "transmit CAN", "output message", "发 CAN 帧", "发送报文"],
+      "primary_pages": [
+        "v15::capl::CAN::output (CAN)"
+      ],
+      "related_pages": [
+        "v15::capl::CAN::CAN CAPL Functions",
+        "v15::capl::CAN::on message"
+      ],
+      "context": "Use `output(msg)` to send. Channels: msg.CAN, msg.CHANNEL. For periodic send use setTimer/CAPL Test Module."
+    },
+    {
+      "id": "set_signal_value",
+      "title": "Set a signal value (test, simulation, or panel-binding)",
+      "intent_triggers": ["set signal", "write signal", "setSignal", "test signal value", "设置信号值"],
+      "primary_pages": [
+        "v15::capl::Test::SetSignal",
+        "v15::capl::CommunicationObjects::SetSignal"
+      ],
+      "related_pages": [
+        "extras::team::_root::canSetSignalDword",
+        "v15::capl::Test::CheckSignalMatch",
+        "v15::capl::Test::TestWaitForSignalMatch"
+      ],
+      "context": "In v15 the typed setSignal{Int,Float,Byte,...} family was removed - there is only setSignal(name, value) which auto-converts based on the signal's database type. The CommunicationObjects::SetSignal is a method for CO references. extras/team/setSignalDword is the project's wrapper that adds range validation + telemetry logging."
+    },
+    {
+      "id": "wait_for_signal_condition",
+      "title": "Wait for a signal to meet a condition (test module)",
+      "intent_triggers": ["wait for signal", "test wait signal", "signal match", "TestWaitForSignal"],
+      "primary_pages": [
+        "v15::capl::Test::TestWaitForSignalMatch",
+        "v15::capl::Test::TestWaitForSignalInRange"
+      ],
+      "related_pages": [
+        "v15::capl::Test::CheckSignalMatch",
+        "v15::capl::Test::ChkControl_Start"
+      ],
+      "context": "Use TestWaitForXxx in test modules; use ChkCreate_Xxx in network monitoring checks. Test functions return test verdicts."
+    },
+    {
+      "id": "uds_diag_session",
+      "title": "Open a UDS diagnostic session and run services",
+      "intent_triggers": ["UDS", "DiagSetSession", "0x10", "0x27", "SecurityAccess", "诊断会话", "diagSendRequest"],
+      "primary_pages": [
+        "v15::diagnostics::UDS::UDS_Overview",
+        "v15::diagnostics::UDS::SecurityAccess_DID",
+        "v15::capl::Diagnostics::diagSendRequest"
+      ],
+      "related_pages": [
+        "v15::capl::Diagnostics::diagSendFunctional",
+        "v15::capl::Diagnostics::diagSetParameter",
+        "v15::capl::Diagnostics::diagSetTarget",
+        "v15::capl::Obsolete::diagSetCurrentSession",
+        "extras::team::_root::CAPL_Internal_Coding_Standards"
+      ],
+      "context": "UDS pattern (v15): diagSetTarget(ecu) → build diagRequest/Response objects → diagSendRequest(req) → DiagGenerateKeyFromSeed (for 0x27) → DiagSendPositiveResponse (for test). NOTE: diagSetCurrentSession is OBSOLETE in v15 - use the option parameter on DiagGenerateKeyFromSeed / diagStartGenerateKeyFromSeed (form 2 and 4) and TestWaitForGenerateKeyFromSeed. See UDS_Overview for full SID table."
+    },
+    {
+      "id": "read_dtc",
+      "title": "Read DTCs (fault codes)",
+      "intent_triggers": ["DTC", "故障码", "read DTC", "0x19", "ReadDTCInformation"],
+      "primary_pages": [
+        "v15::diagnostics::Common::DiagGetDTC"
+      ],
+      "related_pages": [
+        "v15::capl::Diagnostics::diagSetParameter",
+        "v15::capl::Diagnostics::diagSendRequest"
+      ],
+      "context": "UDS 0x19 subfunctions: 0x01 byStatusMask, 0x02 byDTCNumber, 0x04 snapshot, 0x06 extendedData. The DiagGetDTC helper in diagnostics/Common is a hand-curated overview; for real usage build a diagRequest with the 0x19 SID + subfunction, then diagSendRequest and parse with diagGetParameter."
+    },
+    {
+      "id": "panel_button_binding",
+      "title": "Bind a CAPL symbol to a Panel Button control",
+      "intent_triggers": ["Panel Button", "panel control", "button 配置", "xvp", "绑定符号"],
+      "primary_pages": [
+        "v15::panel::Elements::Button",
+        "v15::panel::General::Access Panels using CAPL Functions",
+        "v15::panel::Procedures::Displaying assigned Symbols"
+      ],
+      "related_pages": [
+        "v15::panel::Elements::Switch_Indicator",
+        "extras::team::_root::panelGauges"
+      ],
+      "context": "Button has Pressed/Released properties → symbol gets value. Use setControlProperty to change at runtime."
+    },
+    {
+      "id": "dbc_attribute",
+      "title": "Add / use a DBC attribute (e.g. BusType, GenSigStartValue)",
+      "intent_triggers": ["DBC attribute", "BA_DEF_", "GenSig", "节点属性"],
+      "primary_pages": [
+        "v15::dbc::Glossar::Glossary"
+      ],
+      "related_pages": [
+        "L3_diffs/diff_dbc_v12_to_v15.json"
+      ],
+      "context": "v15 added: BO_TX_BU_, CAT_, CAT_DEF_, FILTER, SIG_VALTYPE_. See diff_dbc_v12_to_v15.json. For Object Attributes reference, see DBC menus section."
+    },
+    {
+      "id": "test_module_setup",
+      "title": "Write a vTESTstudio test module (CAPL test)",
+      "intent_triggers": ["test module", "vTESTstudio", ".vtt", "test case", "TestSet", "TestCase", "TestCaseTitle"],
+      "primary_pages": [
+        "v15::capl::Test::TestCaseTitle",
+        "v15::capl::Test::TestCaseDescription",
+        "v15::capl::Test::TestCaseFail",
+        "v15::capl::Test::TestGroupBegin"
+      ],
+      "related_pages": [
+        "v15::capl::VTSystem::Enumeration (VT Sytem)",
+        "extras::team::_root::CI_Pipeline_Reference",
+        "extras::team::_root::CAPL_Internal_Coding_Standards"
+      ],
+      "context": "vTESTstudio modules use TestCaseTitle/TestCaseDescription/TestGroupBegin-TestGroupEnd as structural markers. TestCase/TestSet/TestGroup themselves are the vTESTstudio editor concepts (not CAPL functions). Check CI_Pipeline_Reference for build/run patterns."
+    },
+    {
+      "id": "xcp_calibration",
+      "title": "XCP calibration: read/write a2l parameter",
+      "intent_triggers": ["XCP", "calibration", "a2l", "xcpActivate", "xcpConnect"],
+      "primary_pages": [
+        "v15::capl::XCP::xcpConnect",
+        "v15::capl::XCP::xcpActivate",
+        "v15::capl::XCP::xcpGetCalPage"
+      ],
+      "related_pages": [
+        "v15::capl::XCP::OnXcpEvent",
+        "v15::capl::XCP::OnXcpError"
+      ],
+      "context": "XCP works on top of CAN/Ethernet. Connect → Activate → Read/Write → Disconnect."
+    },
+    {
+      "id": "timer_handler",
+      "title": "Use timers in CAPL (on timer / setTimer / cancelTimer)",
+      "intent_triggers": ["timer", "on timer", "setTimer", "cancelTimer", "定时器"],
+      "primary_pages": [
+        "v15::capl::Other::on timer",
+        "v15::capl::Other::setTimer",
+        "v15::capl::Other::cancelTimer"
+      ],
+      "related_pages": [
+        "extras::team::_root::Common_Gotchas"
+      ],
+      "context": "Common_Gotchas: timers fire even when measurement is paused - cancel in on stop + check isMeasurementRunning() in handler."
+    }
+  ],
+  "usage": {
+    "for_agents": "Match the user's intent to one or more scenarios, then load the listed primary_pages. Cross-reference with extras::team::_root::Common_Gotchas for known pitfalls.",
+    "extending": "Add new scenarios by appending to this file. Run agent_kb/build_manifest.py to regenerate derived indexes."
+  }
+}

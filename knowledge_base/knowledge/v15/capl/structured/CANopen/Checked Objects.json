@@ -1,0 +1,215 @@
+{
+  "page_type": "notes",
+  "name": "Checked Objects",
+  "category": "CANopen",
+  "title": "Checked Objects",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/CAPLfunctionsCANopenNLTFSCoTfsOdChkStdEntriesObjects.htm",
+  "syntax": [],
+  "description": [
+    "The following object entries are checked during the object dictionary test with coTfsODChkStdEntries:",
+    "CANopen Test Feature Set Node Layer | CANopen Test Feature Set Level 1 functions | CANopen Test Feature Set Level 2 functions | CANopen Test Feature Set Level 3 functions | Test control functions | See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Index",
+        "Subindex",
+        "Access Type",
+        "Data Size",
+        "Default Value",
+        "Mandatory Entry"
+      ],
+      [
+        "0x1000",
+        "0x0",
+        "readOnly",
+        "uint32",
+        "high word: don't carelow word: 0 or 400..499",
+        "yes"
+      ],
+      [
+        "0x1003",
+        "0x0",
+        "readWrite",
+        "uint8",
+        "0",
+        "no"
+      ],
+      [
+        "0x1005",
+        "0x0",
+        "readWrite",
+        "uint32",
+        "0x80 or 0x800000080",
+        "no"
+      ],
+      [
+        "0x1006",
+        "0x0",
+        "readWrite",
+        "uint32",
+        "0",
+        "no"
+      ],
+      [
+        "0x1007",
+        "0x0",
+        "readWrite",
+        "uint32",
+        "0",
+        "no"
+      ],
+      [
+        "0x100C",
+        "0x0",
+        "readOnly",
+        "uint16",
+        "0",
+        "no"
+      ],
+      [
+        "0x100D",
+        "0x0",
+        "readWrite",
+        "uint8",
+        "0",
+        "no"
+      ],
+      [
+        "0x1012",
+        "0x0",
+        "readWrite",
+        "uint32",
+        "100",
+        "no"
+      ],
+      [
+        "0x1013",
+        "0x0",
+        "readWrite",
+        "uint32",
+        "0",
+        "no"
+      ],
+      [
+        "0x1014",
+        "0x0",
+        "readOnly",
+        "uint32",
+        "0x80 + nodeId",
+        "no"
+      ],
+      [
+        "0x1015",
+        "0x0",
+        "readWrite",
+        "uint16",
+        "0",
+        "no"
+      ],
+      [
+        "0x1016",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0",
+        "no"
+      ],
+      [
+        "0x1200",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0x600 + nodeId",
+        "no"
+      ],
+      [
+        "0x1200",
+        "0x2",
+        "readWrite",
+        "uint32",
+        "0x580 + nodeId",
+        "no"
+      ],
+      [
+        "0x1400",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0x200 + nodeId",
+        "no"
+      ],
+      [
+        "0x1401",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0x300 + nodeId",
+        "no"
+      ],
+      [
+        "0x1402",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0x400 + nodeId",
+        "no"
+      ],
+      [
+        "0x1403",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0x500 + nodeId",
+        "no"
+      ],
+      [
+        "0x1800",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0x180 + nodeId",
+        "no"
+      ],
+      [
+        "0x1801",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0x280 + nodeId",
+        "no"
+      ],
+      [
+        "0x1802",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0x380 + nodeId",
+        "no"
+      ],
+      [
+        "0x1804",
+        "0x1",
+        "readWrite",
+        "uint32",
+        "0x480 + nodeId",
+        "no"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPSelectColorMap",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPSelectColorMap",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPSelectColorMap.htm",
+  "syntax": [
+    "long Iso11783IL_OPSelectColorMap( dword colorMapID ); // form 1"
+  ],
+  "description": [
+    "The function selects a color map object. A Select Color Map command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "colorMapID",
+      "type": "",
+      "description": "object ID of the color map objects"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPSelectColorMap( 1400 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

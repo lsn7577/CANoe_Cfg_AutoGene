@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetSerialBitAnalysisData",
+  "category": "Test",
+  "title": "testWaitScopeGetSerialBitAnalysisData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitScopeGetSerialBitAnalysisData.htm",
+  "syntax": [
+    "long testWaitScopeGetSerialBitAnalysisData (ScopeAnalyseHandle handle, dword msgField, dword bitNo, ScopeDutyCycleDefinition dutyCycle, ScopeBitDataDutyCycle data);"
+  ],
+  "description": [
+    "Returns the serial bit analysis data and duty cycle data for the defined bit."
+  ],
+  "parameters": [
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    },
+    {
+      "name": "msgField",
+      "type": "",
+      "description": "The field within the message. See ScopeBitAnalyse.cin."
+    },
+    {
+      "name": "bitNo",
+      "type": "",
+      "description": "The bit number within the msg field."
+    },
+    {
+      "name": "dutyCycle",
+      "type": "",
+      "description": "The duty cycle measurement parameters. See ScopeDutyCycleDefintion."
+    },
+    {
+      "name": "data",
+      "type": "",
+      "description": "The duty cycle data for the defined bit. See ScopeBitDataDutyCycle."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "—",
+      "—",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN Scope",
+      "LIN Scope",
+      "—",
+      "—",
+      "LIN Scope"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

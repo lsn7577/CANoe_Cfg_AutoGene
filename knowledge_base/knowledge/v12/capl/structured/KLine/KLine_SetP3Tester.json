@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetP3Tester",
+  "category": "KLine",
+  "title": "KLine_SetP3Tester",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetP3Tester.htm",
+  "syntax": [
+    "long KLine_SetP3Tester(dword P3_us)"
+  ],
+  "description": [
+    "Sets the P3 time which the tester waits until transmitting a further request."
+  ],
+  "parameters": [
+    {
+      "name": "P3_us",
+      "type": "",
+      "description": "P3 time in us. Value range: 0 – 10000000"
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

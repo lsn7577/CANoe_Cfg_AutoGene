@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_J1939BAM, ChkStart_J1939BAM",
+  "category": "Test",
+  "title": "ChkCreate_J1939BAM, ChkStart_J1939BAM",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateJ1939BAM.htm",
+  "syntax": [
+    "dword ChkCreate_J1939BAM(dword min, dword max, char[] callback1);"
+  ],
+  "description": [
+    "Observes the BAM transport protocol. It is possible to observe all BAM transmissions or only the transmission of a specific originator node.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "originatorNode",
+      "type": "",
+      "description": "Originator node from database"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks the BAM transport protocol of node N1\ncheckId = ChkStart_J1939BAM(N1, 100, 200);\nTestAddCondition(checkId);\n\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

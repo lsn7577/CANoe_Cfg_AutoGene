@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "IP_Endpoint::SetTransportProtocolToUnknown",
+  "category": "IP",
+  "title": "IP_Endpoint::SetTransportProtocolToUnknown",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionSetTransportProtocolToUnknown.htm",
+  "syntax": [
+    "long IP_Endpoint::SetTransportProtocolToUnknown();"
+  ],
+  "description": [
+    "Invalidates the transport protocol."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Endpoint UDP:192.168.1.1:4000 addr;\n  addr.SetTransportProtocolToUnknown();\n  if (addr.IsTCP())\n  {\n    write( \"Is TCP endpoint\" );\n  }\n  else if (addr.IsUDP())\n  {\n    write( \"Is UDP endpoint\" );\n  }\n  else\n  {\n    write( \"No transport protocol specified for endpoint\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

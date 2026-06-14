@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostAsNtfFunctionClear",
+  "category": "MOST",
+  "title": "mostAsNtfFunctionClear",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsNTFFunctionClear.htm",
+  "syntax": [
+    "long mostAsNtfFunctionClear(long deviceID, long fblockID, long instID, long functionID)"
+  ],
+  "description": [
+    "Clears a notification client entry from the notification matrix. Functionality is similar to command message FBlock.Notification.Set(Clear, deviceID, functionID).",
+    "The notification matrix can be written with the function without sending a respective message."
+  ],
+  "parameters": [
+    {
+      "name": "deviceID",
+      "type": "",
+      "description": "Addess of the notification client"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

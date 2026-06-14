@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ExportObjectPool",
+  "category": "ISO11783",
+  "title": "VTIL_ExportObjectPool",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILExportObjectPool.htm",
+  "syntax": [
+    "long VTIL_ExportObjectPool(dbNode workingSetMaster, char objectPoolFilePath[]); // form 1"
+  ],
+  "description": [
+    "Exports the current object pool of the Working Set Master into a file (*.iop). An existing file is overwritten."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_ExportObjectPool(VT, Loader, \"c:\\\\temp\\\\Loader.iop\");\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2113: TestStepFail(\"Invalid parameter!\"); break;\n  case -2122: TestStepFail(\"Failed to export object pool to file!\"); break;\n  default: TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

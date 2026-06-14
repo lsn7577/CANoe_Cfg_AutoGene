@@ -1,0 +1,72 @@
+# putValue
+
+> Category: `Other` | Type: `function`
+
+## Syntax
+
+```c
+void putValue(EnvVarName, int val); // form 1
+void putValue(EnvVarName, float val); // form 2
+void putValue(EnvVarName, char val[]); // form 3
+void putValue(EnvVarName, byte val[]); // form 4
+void putValue(EnvVarName, byte val[], long vSize); // form 5
+void putValue(char name[], int val); // form 6
+void putValue(char name[], float val); // form 7
+void putValue(char name[], char val[]); // form 8
+void putValue(char name[], byte val[]); // form 9
+void putValue(char name[], byte val[], long vSize); // form 10
+```
+
+## Description
+
+Assigns the value val to the environment variable with identifier EnvVarName/name. Integers are assigned to discrete environment variables (form 1 and 6), floating point numbers are assigned to continuous environment variables (form 2 and 7). The contents of a character string is assigned to character string environment variables (form 3 and 8). For data byte environment variables (form 4, 5, 9 and 10) the bytes of the data buffer are copied into the environment variable.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| EnvVarName | Environment variable name (form 1-5).Must exist in the database. |
+| name | Environment variable name (form 6-10) |
+| val | New value of environment variable (form 1, 2, 6, 7) or buffer with new data (form 3, 4, 5, 8, 9, 10) and for form 5 and 10 the number of bytes to be copied. |
+
+## Return Values
+
+—
+
+## Example
+
+Example for form 1-5
+
+Example for form 6
+
+```c
+byte dataBuf[64];
+...
+// Assign the value 0 to environment variable Switch
+putValue(Switch, 0);
+// Assign the value 22.5 to environment variable Temperature
+putValue(Temperature, 22.5);
+// Assign the value Master to environment variable NodeName
+putValue(NodeName, "Master");
+// Copy 64 bytes of the data buffer into the environment variable DiagData
+putValue(DiagData, dataBuf, 64);
+...
+...
+// Assign the value 0 to environment variable Switch
+putValue("Switch", 0);
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | All | 13.0 | — | — | 1.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | ✔ | ✔ | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

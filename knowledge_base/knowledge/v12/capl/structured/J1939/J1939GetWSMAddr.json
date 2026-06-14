@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetWSMAddr",
+  "category": "J1939",
+  "title": "J1939GetWSMAddr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939GetWSMAddr.htm",
+  "syntax": [
+    "dword J1939GetWSMAddr( dword ecuHandle );"
+  ],
+  "description": [
+    "This function returns the address of the Working Set Master, which is assigned to this ECU."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "address of the Working Set Master for this ECU or the Null-Address (0xFE)",
+  "example": {
+    "description": [],
+    "code": "addr = J1939GetWSMAddr( ecuHdl );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

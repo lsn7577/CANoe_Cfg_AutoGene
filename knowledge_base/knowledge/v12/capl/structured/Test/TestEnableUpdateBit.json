@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestEnableUpdateBit",
+  "category": "Test",
+  "title": "TestEnableUpdateBit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestEnableUpdateBit.htm",
+  "syntax": [
+    "long TestEnableUpdateBit (dbSignal aSignal);"
+  ],
+  "description": [
+    "Re-enables the standard behaviour of the update bit, after it has been disabled with TestDisableUpdateBit.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "Signal that should be reset to update bit standard behavior."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": "// disables the update bit of signal ‘DoorStatus_UB’ for 1000 ms\nTestDisableUpdateBit(DoorStatus_UB, 0);\nTestWaitForTimeout(1000);\nTestEnableUpdateBit(DoorStatus_UB);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

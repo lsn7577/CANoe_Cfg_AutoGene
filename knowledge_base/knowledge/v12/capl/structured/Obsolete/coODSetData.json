@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coODSetData",
+  "category": "Obsolete",
+  "title": "coODSetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdSetData.htm",
+  "syntax": [
+    "void coODSetData( dword index, dword subIndex, char data[], dword dataSize, dword errCode[] );"
+  ],
+  "description": [
+    "Sets the data of an object in the local object dictionary. This function can be applied to all objects. For objects with a size up to 32 bits or floating point objects, however, the functions coODSetSigned, coODSetUnsigned, and coODSetFloat are recommended.",
+    "For the use of this function, a note on handling should be considered."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the object, value range 1..65.535"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nchar data[6] = { 1, 2, 3, 4, 5, 6 };\n\ncoODSetData( 0x2000, 0x0, data, elCount(data), errCode );\nif (errCode[0] == 0) {\n  write( \"Object data successfully written\");\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

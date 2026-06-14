@@ -1,0 +1,31 @@
+{
+  "page_type": "event",
+  "name": "on linSpikeEvent",
+  "category": "LIN",
+  "title": "on linSpikeEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/EventProcedures/CAPLfunctionOnLINSpikeEvent.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure on linSpikeEvent is called when the LIN hardware detects a spike on the bus (i.e. a short dominant signal that is too short to be a valid wake-up frame or to be accepted as a start bit and be reported by the UART).",
+    "The keyword this and the selectors can be used to access the data of the event that has just been received."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "linSpikeEvent",
+      "link": "../Selectors/CAPLfunctionLINSpikeEvent.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

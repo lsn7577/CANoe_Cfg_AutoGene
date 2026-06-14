@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "_KLine_DataInd",
+  "category": "KLine",
+  "title": "_KLine_DataInd",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/KLine/Functions/CAPLfunctionKLineDataInd.htm",
+  "syntax": [
+    "_KLine_DataInd(byte data[])"
+  ],
+  "description": [
+    "Called for a received K-Line request."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Data buffer."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n   BYTE cKLine_HandleStartCommunication = 0;\n   BYTE cKLine_HandleStopCommunication = 1;\n}\n\n_KLine_DataInd( byte data[]) // Receive a request\n{\n   if (cKLine_HandleStartCommunication && data[0] == 0x81)\n   {\n   BYTE StartCommunicationResp_raw[3] = { 0xC1, 0xEF, 0x8F };\n   _Diag_DataRequest( StartCommunicationResp_raw, elcount( StartCommunicationResp_raw), 0);\n   }\n   else if (cKLine_HandleStopCommunication && data[0] == 0x82)\n   {\n   BYTE StopCommunicationResp_raw[1] = { 0xC2 };\n   _Diag_DataRequest( StopCommunicationResp_raw, elcount( StopCommunicationResp_raw), 0);\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0 SP4",
+      "—",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "K-Line Real bus mode Online mode ECU simulation",
+      "—",
+      "—",
+      "—",
+      "K-Line Real bus mode Online mode ECU simulation"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

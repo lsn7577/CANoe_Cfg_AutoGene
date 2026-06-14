@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_UDPInd",
+  "category": "Diagnostics",
+  "title": "_DoIP_UDPInd",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPUDPInd.htm",
+  "syntax": [
+    "long _DoIP_UDPInd( char IPaddress[], WORD port, BYTE data[]);"
+  ],
+  "description": [
+    "An UDP packet was received. All packets are forwarded to this callback function, and it can decide whether processing of the packet stops, or is continued.",
+    "The sender IP address and source port is given as first arguments."
+  ],
+  "parameters": [
+    {
+      "name": "IPaddress",
+      "type": "",
+      "description": "Address in text form, e.g. “169.254.32.1” (IPv4) or “2001::1” (IPv6)."
+    },
+    {
+      "name": "port",
+      "type": "",
+      "description": "IP source port of the packet at the sender."
+    },
+    {
+      "name": "data",
+      "type": "",
+      "description": "The raw data received, including complete header, if present."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// If packet with payload type 0xF000 is received, answer with a 0xF001 packet\n// and stop processing. Otherwise process the packet normally.\nlong _DoIP_UDPInd( char IPaddress[], WORD port, BYTE data[])\n{\n  WORD payloadType;\n  BYTE response[2] = { 0x12, 0x34 };\n  if( elcount(data) < 8)\n    return 0;\n  payloadType = (data[2] << 8) + data[3];\n  if( payloadType != 0xF000)\n    return 0;\n\n  DoIP_UDPSendPort( IPaddress, port, 0xF001, response, elcount( response));\n  return -1; // we process this frame\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0",
+      "—",
+      "—",
+      "—",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

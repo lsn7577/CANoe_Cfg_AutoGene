@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "getAbsFilePath",
+  "category": "Other",
+  "title": "getAbsFilePath",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetAbsFilePath.htm",
+  "syntax": [
+    "long getAbsFilePath(char relPath[], char absPath[], long absPathLen)"
+  ],
+  "description": [
+    "Gets the absolute path of a file.",
+    "As parameter the file should be defined with the relative path to the current configuration."
+  ],
+  "parameters": [
+    {
+      "name": "relPath",
+      "type": "",
+      "description": "A path (with or without a file name) defined relative to the current configuration. If this parameter is empty, then the full path of the current configuration will simply be returned."
+    }
+  ],
+  "return": "On success this function returns length of the full path name, otherwise -1.",
+  "example": {
+    "description": [],
+    "code": "on key 'x'\n{\n   char absPath[256];\n   getAbsFilePath(\"Nodes\\\\Test.can\", absPath, 256);\n   write (\"absPath: %s \", absPath);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

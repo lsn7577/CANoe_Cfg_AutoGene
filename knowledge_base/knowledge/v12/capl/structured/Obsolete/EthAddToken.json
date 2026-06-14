@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "EthAddToken",
+  "category": "Obsolete",
+  "title": "EthAddToken",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthAddToken.htm",
+  "syntax": [
+    "long EthAddToken( long packet, char protocolDesignator[], char tokenDesignator[] );"
+  ],
+  "description": [
+    "The function adds an additional token at the end of a protocol header or at a specific position (for details see protocol help)."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "LONG packetHandle;\nBYTE snameSize = 64;\nBYTE fileSize  = 128;\nBYTE data[4];\n\n// create packet\npacketHandle = EthInitPacket( \"ipv4\" );\n\n// init dhcpv4 protocol\nEthInitProtocol( packetHandle, \"dhcpv4\" );\n\n// add tokens\nEthAddToken( packetHandle, \"dhcpv4\", \"serverName\" );\nEthAddToken( packetHandle, \"dhcpv4\", \"file\" );\nEthAddToken( packetHandle, \"dhcpv4\", \"magicCookie\" );\nEthAddToken(packetHandle, \"dhcpv4\", \"option53\" ) ;\nEthAddToken( packetHandle, \"dhcpv4\", \"option55\" ) ;\nEthAddToken( packetHandle, \"dhcpv4\", \"option50\" ) ;\nEthAddToken( packetHandle, \"dhcpv4\", \"option0\" ) ;\n\n// set value of option 53\ndata[0] = 3;\nEthSetTokenData( packetHandle, \"dhcpv4\", \"option55.data\", 1, data );\n\n// set IP address of option 55\ndata[0] = 10;\ndata[1] = 15;\ndata[2] = 16;\ndata[3] = 17;\nEthSetTokenData( packetHandle, \"dhcpv4\", \"option50.data\", 4, data );\n\n// complete and send packet\nEthCompletePacket( packetHandle );\nEthOutputPacket( packetHandle );\n\n// remove a token\nEthRemoveToken( packetHandle, \"dhcpv4\", \"option50\" ) ;\n\n// complete and send packet again\nEthCompletePacket( packetHandle );\nEthOutputPacket( packetHandle );\n\n// release packet\nEthReleasePacket( packetHandle );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

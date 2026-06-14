@@ -1,0 +1,132 @@
+{
+  "page_type": "event",
+  "name": "on diagRequest",
+  "category": "Diagnostics",
+  "title": "on diagRequest",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/EventProcedures/CAPLfunctionOnDiagRequest.htm",
+  "syntax": [],
+  "description": [
+    "In case Additional Diagnostic Descriptions are configured for the ECU, the first description with a matching definition for the PDU is searched in the interpretation order. Otherwise the diagnostic description assigned to the simulation is used immediately. Then the first matching event procedure (top-down) is called.",
+    "_______________________",
+    "(1) While the CANdela process knows the concept of a \"diagnostic instance\", ODX does not. Starting with CANoe 7.0 it is possible to use new unique service qualifiers, while CAPL programs for earlier CANoe versions might indicate the equivalent long qualifier path.",
+    "It is not recommended to mix these forms of declaration!"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1 Simulation Setup",
+      "Example 2 Measurement Setup",
+      "Example 3",
+      "Starting with CANoe 9.0 SP3 The CAPL compiler supports diagnostic objects that are declared with an ECU qualifier or target (like a functional group). This allows the compiler to check if the diagnostic service used to initialize the object is defined in the diagnostic description of the ECU/target. If not, a compile error will be reported.",
+      "Example 4",
+      "Specifying a target in the declaration of a diagnostic object has the benefit that it is NOT necessary to call DiagSetTarget, and it is possible to communicate with several targets in parallel.",
+      "Example 5",
+      "Also, mixing diagnostic requests from a master description and any of its additional descriptions is possible without setting a target."
+    ],
+    "code": "on diagRequest FaultMemory_ReadAllIdentified\n{\n   diagResponse this resp;\n\n   // Set the number of bytes needed to transfer the response with 2 DTCs (in this example: overall 11 bytes)\ndiagResize( resp, 11); // 3 Bytes Header (SID, Subfunction, AvailabilityMask) + 2 * 4 Bytes for DTCs = 11 bytes\n   // Set the value of the DTCs\n   diagSetComplexParameter ( resp, \"ListOfDTC\", 0, \"DTC\", 0x000001 );\n   diagSetComplexParameter ( resp, \"ListOfDTC\", 0, \"DtcStatusbyte\", 0xF1 );\n   diagSetComplexParameter ( resp, \"ListOfDTC\", 1, \"DTC\", 0x000002 );\n   diagSetComplexParameter ( resp, \"ListOfDTC\", 1, \"DtcStatusbyte\", 0xF3 );\n\n   diagSendResponse ( resp );\n}\n// Indicate all requests in the write window\ndiagRequest *\n{\n  char objectPath[200];\n  char currentEcu[100];\n  this.GetObjectPath(objectPath, elcount(objectPath));\n  DiagGetCurrentEcu(currentEcu, elcount(currentEcu));\n\n  write( \"Request %s to ECU %s\", objectPath, currentEcu);\n  output(this); // forward down the measurment branch\n}\nOn start\n{\n  DiagRequest ECU1.Service1 req1;\t\t\t// OK since Service1 is defined for ECU1\n  DiagRequest ECU1.NotExisting req2;\t\t// compile error since service unknown\n}\nParallelCommunication()\n{\n  DiagRequest ECU1.Service1 req1;\n  DiagRequest ECU2.Service2 req2;\n\n  // DiagSetTarget is NOT necessary!\n\n  // Put the requests in the send queues of the integrated channels\n  req1.SendRequest();\n  req2.SendRequest();\n\n  {\n    // Since the order in which the responses will be received is not known,\n    // join the response events to wait for them to arrive in any order\n    long cond1;\n    long cond2;\n    long status;\n    cond1 = testJoinDiagResponseFromEcu( \"ECU1\");\n    cond2 = testJoinDiagResponseFromEcu( \"ECU2\");\n\n    status = testWaitForAllJoinedEvents( 1000);\n    if( cond1 == status || cond2 == status)\n      testStepPass(\"Joined events received.\");\n    else\n      testStepFail( \"\", \"Waiting for all joined events returns %d\", status);\n  }\n}\nGetSomeInfo()\n{\n  DiagRequest ECU1.Service1 req1;\n  DiagRequest ECU1.Additional1.ServiceA req2;\n\n  // DiagSetTarget is NOT necessary!\n\n  // Put both requests in the send queue of the integrated channel\n  req1.SendRequest();\n  req2.SendRequest();\n\n  // Wait for the responses that must arrive in sending order since\n  // the requests are sent on the same channel\n  TestWaitForDiagResponse( req1, 1000);\n  TestWaitForDiagResponse( req2, 1000);\n\n  // ... access responses via the requests\n  write( \"Service1: %f\", req1.GetRespParameter( \"Param1\");\n  write( \"ServiceA: %f\", req2.GetRespParameter( \"ParamA\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.0 SP3",
+      "7.0 SP3",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔ (since 9.0)",
+      "✔ (since 9.0)",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

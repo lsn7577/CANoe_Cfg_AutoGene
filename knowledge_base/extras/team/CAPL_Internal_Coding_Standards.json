@@ -1,0 +1,69 @@
+{
+  "page_type": "concept",
+  "name": "Internal CAPL Coding Standards",
+  "category": "team",
+  "subcategory": "standards",
+  "title": "Internal CAPL Coding Standards (EQ07 Project)",
+  "source": "hand_curated_v1",
+  "intro": [
+    "Team-internal coding conventions for CAPL on EQ07 (BMS) project. Supplements Vector official CAPL documentation with project-specific patterns.",
+    "These rules are enforced via PR review. They reflect 2+ years of EQ07 development lessons."
+  ],
+  "sections": [
+    {
+      "heading": "Naming Conventions",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Variables: camelCase, prefix indicates scope.",
+          "Functions: PascalCase for project-specific, camelCase for wrappers of Vector APIs.",
+          "Constants: UPPER_SNAKE_CASE, group by subsystem prefix."
+        ],
+        "tables": [
+          [
+            [
+              "Pattern",
+              "Example",
+              "Use Case"
+            ],
+            [
+              "g_*",
+              "g_vehicleSpeed",
+              "Global state (use sparingly)"
+            ],
+            [
+              "l_*",
+              "l_idx",
+              "Loop counter / local helper"
+            ],
+            [
+              "m_*",
+              "m_lastBusOffTime",
+              "Module-private state"
+            ],
+            [
+              "UDS_*",
+              "UDS_DIAG_BASE_ADDR",
+              "Diagnostic constants"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Timer Discipline",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Every timer MUST be cancelled in on stop handler to prevent leakage.",
+          "Use named constants for timer periods."
+        ],
+        "tables": [],
+        "code_blocks": [
+          "msTimer g_tDiagnosticPoll;\n\nvoid StartDiagLoop() {\n  setTimer(g_tDiagnosticPoll, BMS_POLL_PERIOD_MS);\n}\n\non stop {\n  cancelTimer(g_tDiagnosticPoll);  // ALWAYS cancel\n}"
+        ]
+      }
+    }
+  ]
+}

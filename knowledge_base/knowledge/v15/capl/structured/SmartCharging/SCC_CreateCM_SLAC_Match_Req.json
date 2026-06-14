@@ -1,0 +1,183 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_SLAC_Match_Req",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_SLAC_Match_Req",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_SLAC_Match_Req.htm",
+  "syntax": [
+    "void SCC_CreateCM_SLAC_Match_Req ( byte RunId[], byte SourceMac[], byte TargetMac[], byte PEVMacAddress[], byte EVSEMacAddress[] )"
+  ],
+  "description": [
+    "Creates a CM_SLAC_Match.Req message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "RunId",
+      "type": "",
+      "description": "Random Run Identifier of sender (8 byte)."
+    },
+    {
+      "name": "SourceMac",
+      "type": "",
+      "description": "Source address of the Ethernet frame."
+    },
+    {
+      "name": "TargetMac",
+      "type": "",
+      "description": "Destination address of the Ethernet frame."
+    },
+    {
+      "name": "PEVMacAddress",
+      "type": "",
+      "description": "MAC Address of the PEV."
+    },
+    {
+      "name": "EVSEMacAddress",
+      "type": "",
+      "description": "MAC Address of the EVSE."
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "ApplicationType dword 0x00 = PEV-EVSE Association 0x01-0xFF = Reserved"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "SecurityType dword 0x00 = No Security 0x01 = Public Key Signature 0x02-0xFF = Reserved"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "MVFLength dword Length of the match variable field."
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "PEVID byte[] 17 byte ID"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "EVSEID byte[] 17 byte ID"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Reserved field byte[] 8 byte"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

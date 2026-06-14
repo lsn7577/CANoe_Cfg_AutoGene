@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSetSdoCANid",
+  "category": "CANopen",
+  "title": "coTfsSetSdoCANid",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSetsDocAnId.htm",
+  "syntax": [
+    "long coTfsSetSdoCANid( dword sdoClnRxId, dword sdoClnTxId );"
+  ],
+  "description": [
+    "With this function the internal the CAN identifiers to be used for the SDO tests are set. All test functions, which uses SDO access, will use the specified identifiers. This setting will override the application profile specific SDO id settings."
+  ],
+  "parameters": [
+    {
+      "name": "sdoClnRxId",
+      "type": "",
+      "description": "CAN-ID for receive SDOs."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsSetSdoCANid(0x580, 0x602); // set internal CAN-ID for Rx SDOs to 0x580 and for Tx SDOs to 0x602"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

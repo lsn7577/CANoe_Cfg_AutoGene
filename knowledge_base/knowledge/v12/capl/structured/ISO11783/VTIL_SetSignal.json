@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_SetSignal",
+  "category": "ISO11783",
+  "title": "VTIL_SetSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILSetSignal.htm",
+  "syntax": [
+    "long VTIL_SetSignal( dbSignal signal, double value );"
+  ],
+  "description": [
+    "Sets the signal to the specified physical value. The message of the signal is sent according the configured send type."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "Signal name from database.The signal must be assigned to the node as Tx signal."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void SendLanguageCommand_English()\n{\n  VTIL_SetSignal( LC_VT::LanguageCodeCmd, 0x6E65 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

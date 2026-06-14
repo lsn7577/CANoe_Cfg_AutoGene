@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "OnIpsecSadbAcquire",
+  "category": "TCPIPAPI",
+  "title": "OnIpsecSadbAcquire",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/EventProcedures/CAPLfunctionOnIpsecSadbAcquire.htm",
+  "syntax": [
+    "void OnIpsecSadbAcquire(ip_Endpoint source, ip_Endpoint destination, long policyHandle);"
+  ],
+  "description": [
+    "Get a parameter from a security policy record."
+  ],
+  "parameters": [
+    {
+      "name": "source",
+      "type": "",
+      "description": "Source endpoint for which the security association is acquired."
+    },
+    {
+      "name": "destination",
+      "type": "",
+      "description": "Destination endpoint for which the security association is acquired."
+    },
+    {
+      "name": "policyHandle",
+      "type": "",
+      "description": "Handle to the security policy which caused the acquire callback."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket socket;\n}\n\non start\n{\n  // add a policy\n  IpSecPolicyDatabaseAdd(ip_Endpoint(0.0.0.0:0), 0, ip_Endpoint(192.168.1.0:0), 24, \"any\", \"out ipsec ah/transport//require\");\n\n  // open a udp socket\n  socket = UdpSocket::Open(ip_Endpoint(0.0.0.0:0));\n}\n\non key 's'\n{\n  //try to send data which maches the policy -> the first time will trigger OnIpsecSadbAcquire because there is no security association.\n  // The first packet will be discareded because the policy requires IPsec.\n  socket.SendTo(ip_Endpoint(192.168.1.10:12345), \"hello world\", 11);\n}\n\n// add a security policy in the acquire callback\nvoid OnIpsecSadbAcquire(ip_Endpoint source, ip_Endpoint destination, long policyHandle)\n{\n  char protocol[20];\n  char mode[20];\n  long sa;\n  char sourceEP[50];\n  char remoteEP[50];\n\n  source.PrintEndpointToString( sourceEP );\n  destination.PrintEndpointToString( remoteEP );\n  write(\"acquire a security association from source: %s to destination: %s\", sourceEP, remoteEP);\n\n  ipsecPolicyGetParameter(policyHandle, \"protocol\", protocol);\n  ipsecPolicyGetParameter(policyHandle, \"mode\", mode);\n\n  // create a security associaton in the database\n  sa = IPsecAssociationDatabaseGetSpi(source, destination, protocol, mode);\n\n  // set the ah algorithm and key\n  ipsecAssociationSetParameter(sa, \"ahalgorithm\", \"sha\");\n  ipsecAssociationSetParameter(sa, \"ahkey\", \"0123456789ABCDEF\");\n\n  // update the security association in the database\n  ipsecAssociationDatabaseUpdate(sa);\n\n  // release the association object\n  ipsecAssociationRelease(sa);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "—",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

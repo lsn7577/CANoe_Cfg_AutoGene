@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GetPEVAndEVSEId",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GetPEVAndEVSEId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GetPEVAndEVSEId.htm",
+  "syntax": [
+    "void SCC_SLAC_GetPEVAndEVSEId ( byte PEVID[], byte EVSEID )"
+  ],
+  "description": [
+    "Queries the PEV and EVSE IDs."
+  ],
+  "parameters": [
+    {
+      "name": "PEVID",
+      "type": "",
+      "description": "Buffer to which the PEV ID is written (17 byte)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

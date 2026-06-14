@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressOnFinished",
+  "category": "CANstress",
+  "title": "CANstressOnFinished",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressOnFinished.htm",
+  "syntax": [
+    "long CANstressOnFinished( char fnctCallback[] );"
+  ],
+  "description": [
+    "Registers a CAPL function as callback that is called if CANstress is switched into the state Finished."
+  ],
+  "parameters": [
+    {
+      "name": "Note The callback functions must correspond to the following syntax: long FunctionName ( dword ); Should the CAPL function used as callback not longer be called when CANstress changes into the Finished condition, an empty string must be passed as parameter to CANstressOnPending. // delete or switch off present callback CANstressOnFinished( \" \" );",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: On successful call.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

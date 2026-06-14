@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "RS232OnError",
+  "category": "RS232",
+  "title": "RS232OnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/RS232/Functions/CAPLfunctionRS232OnError.htm",
+  "syntax": [
+    "RS232OnError( dword port, dword errorFlags )"
+  ],
+  "description": [
+    "Callback handler for reception of errors at a serial port.",
+    "Will be called only at the node which issued send/receive operations.",
+    "For repetitive errors (stable error condition) just the first one is returned. That case may happen for reception errors above all, i.e. at configuration mismatches of both connected ends.",
+    "It is possible that in case of configuration mismatches errors may not occur at once, e.g. a configuration of 9600/8/1/no parity at one port and 115200/8/1/no parity at the other end may seem to work (though rubbish is received)."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "RS232OnError(dword port, dword errorFlags)\n{\n   if ( errorFlags & 1 )\n      writeLineEx(0,3,“send failed”);\n   if ( errorFlags & 2 )\n      writeLineEx(0,3,“receive failed”);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

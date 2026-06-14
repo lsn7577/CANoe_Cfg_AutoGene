@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "FRSSetDistElem",
+  "category": "FRStress",
+  "title": "FRSSetDistElem",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/Functions/CAPLfunctionFRSSetDistElem.htm",
+  "syntax": [
+    "long FRSSetDistElem (int triggerCondition, int disturbanceElement, int disturbanceValue);"
+  ],
+  "description": [
+    "Modifies the specified frame element with bit accuracy. A complex disturbance can be configured through multiple calls.",
+    "The associated trigger condition must not overlap with the disturbance.",
+    "If the function is called in analog mode, it has no effect."
+  ],
+  "parameters": [
+    {
+      "name": "triggerCondition",
+      "type": "",
+      "description": "Values: 1-4"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

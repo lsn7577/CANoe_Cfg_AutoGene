@@ -1,0 +1,76 @@
+{
+  "page_type": "notes",
+  "name": "DiagGetParameterSize",
+  "category": "Obsolete",
+  "title": "DiagGetParameterSize",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionDiagGetParameterSize.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function This function should not longer be used, use diagGetParameterSizeCoded and diagGetParameterSizeRaw."
+      ],
+      [
+        "Function Syntax",
+        "long diagGetParameterSize (diagResponse obj, char parameterName[])"
+      ],
+      [
+        "long diagGetParameterSize (diagRequest obj, char parameterName[])"
+      ],
+      [
+        "Method (Dynamic)",
+        "diagResponse::GetParameterSize (char parameterName[])"
+      ],
+      [
+        "diagRequest::GetParameterSize (char parameterName[])"
+      ],
+      [
+        "Function",
+        "Returns the size of a parameter in bits."
+      ],
+      [
+        "Parameters",
+        "obj Diagnostics object"
+      ],
+      [
+        "parameterName Parameter qualifier"
+      ],
+      [
+        "Return Values",
+        "Parameter size in bits or error code."
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "5.0",
+        "—",
+        "—",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

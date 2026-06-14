@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkCreate_SignalRangeViolation",
+  "category": "J1939",
+  "title": "J1939TestChkCreate_SignalRangeViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestChkCreateSignalRangeViolation.htm",
+  "syntax": [
+    "long J1939TestChkCreate_SignalRangeViolation( dword sourceAddr, dword destAddr, dbMessage msg, dbSignal signal, float minSignalValue, float maxSignalValue, char callback[] )"
+  ],
+  "description": [
+    "Checks the value of a signal. The given interval (inclusive the limits) should be never left. An event will be generated, if the physical signal value lies outside the given value interval."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "message from database"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long signalCheck;\nsignalCheck = J1939TestChkCreate_SignalRangeViolation( 1, 2, EngineData, EngineData::Speed, 0.0, 2000.0,\"SignalCallback\" );\nJ1939TestChkControl_Start(signalCheck);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "DeleteControlContent",
+  "category": "Other",
+  "title": "DeleteControlContent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionDeleteControlContent.htm",
+  "syntax": [
+    "void DeleteControlContent(char[] panel, char[] control);"
+  ],
+  "description": [
+    "Deletes the content of the Panel Designer CAPL Output View control.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Deletes the contents of a specific CAPL Output View control in the panel motor\nDeleteControlContent(„motor“, „Outputview“);\n// Deletes the contents of all CAPL Output View controls in the panel motor\nDeleteControlContent(„motor“, „“);\n// Deletes the contents of all CAPL Output View controls in all panels\nDeleteControlContent(„“, „“);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

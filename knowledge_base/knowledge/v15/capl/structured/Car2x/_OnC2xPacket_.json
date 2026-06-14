@@ -1,0 +1,158 @@
+{
+  "page_type": "function",
+  "name": "<OnC2xPacket>",
+  "category": "Car2x",
+  "title": "<OnC2xPacket>",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Callbacks/CAPLfunctionC2xOnC2xPacket.htm",
+  "syntax": [
+    "void <OnC2xPacket>( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet );"
+  ],
+  "description": [
+    "This callback is called when a registered WLAN packet is received.",
+    "Within this callback the following functions can be used to retrieve the received packet data:",
+    "This functions access the payload of the highest interpretable protocol. Offset 0 starts at the beginning of the payload."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "WLAN channel on which the packet was received"
+    },
+    {
+      "name": "dir",
+      "type": "",
+      "description": "Direction of the packet 0: Rx 1: Tx"
+    },
+    {
+      "name": "radioChannel",
+      "type": "",
+      "description": "Radio channel, i.e. 176 or 180"
+    },
+    {
+      "name": "signalStrength",
+      "type": "",
+      "description": "Signal strength of the received packet in [dBm]"
+    },
+    {
+      "name": "signalQuality",
+      "type": "",
+      "description": "Signal quality of the received packet"
+    },
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the received packet"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  C2xReceivePacket( \"OnC2xPacket\");\n}\nvoid <OnC2xPacket>( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  byte rx_data[100];\n  long rx_length;\n  // get the payload of the packet\n  rx_length = C2xGetThisData( 0, elCount(rx_data), rx_data );\n  // do something with rx_data\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.6",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

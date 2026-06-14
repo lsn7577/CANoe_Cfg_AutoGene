@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "callcontext::SetDefaultAnswer",
+  "category": "CommunicationObjects",
+  "title": "callcontext::SetDefaultAnswer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionCallcontextSetDefaultAnswer.htm",
+  "syntax": [
+    "void callContext::SetDefaultAnswer()"
+  ],
+  "description": [
+    "Sets the return value and the out parameters for the call to their defaults.",
+    "The values are set to their defaults on receival of a call if the AutoAnswerMode is set to Auto. You can (re)set them explicitly with this method.",
+    "You can change the defaults with the ParamDefaults and DefaultResult properties at the provider endpoint."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on fctCalled MirrorAdjustment.providerSide[all,LeftMirror].Adjust\n{\n  this.SetDefaultAnswer();\n  this.SetTimeToAnswer(10);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

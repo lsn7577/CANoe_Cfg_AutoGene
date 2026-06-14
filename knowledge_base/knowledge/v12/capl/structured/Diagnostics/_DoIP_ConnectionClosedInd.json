@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_ConnectionClosedInd",
+  "category": "Diagnostics",
+  "title": "_DoIP_ConnectionClosedInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPConnectionClosedInd.htm",
+  "syntax": [
+    "void _DoIP_ConnectionClosedInd( long reason);"
+  ],
+  "description": [
+    "The TCP connection to the peer has been closed, i.e. another exchange of diagnostic messages will require a connection setup. This callback is also called in a vehicle simulation."
+  ],
+  "parameters": [
+    {
+      "name": "reason",
+      "type": "",
+      "description": "0: The connection was closed by the node itself10054: The peer closed the connection Others: Reserved"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void _DoIP_ConnectionClosedInd( long reason)\n{\n  write( \"ConnectionClosedInd( %d)\", reason);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

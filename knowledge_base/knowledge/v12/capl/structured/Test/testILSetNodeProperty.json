@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testILSetNodeProperty",
+  "category": "Test",
+  "title": "testILSetNodeProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestILSetNodeProperty.htm",
+  "syntax": [
+    "long testILSetNodeProperty( dbNode node, char propertyName[], long propertyValue);"
+  ],
+  "description": [
+    "Function field of J1939 NAME"
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Node name as defined in the database."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": "if(testILSetNodeProperty(EBS, \"BAM_DT_Interval\", 100) < 0)\n{\n  write( \"Can’t set node property ‘BAM_DT_Interval‘ \" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

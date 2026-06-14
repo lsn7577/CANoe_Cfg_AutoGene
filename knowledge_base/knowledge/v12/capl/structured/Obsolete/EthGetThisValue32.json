@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "EthGetThisValue32",
+  "category": "Obsolete",
+  "title": "EthGetThisValue32",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetThisValue32.htm",
+  "syntax": [
+    "long EthGetThisValue32( long offset );"
+  ],
+  "description": [
+    "This function reads the data of a received packet in Intel format.",
+    "It is only usable in a CAPL callback function that had been registered with EthReceiveRawPacket or EthReceivePacket. It depends on the callback function, which part of the packet data is accessed by the function:"
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "byte offset relative to the beginning of a data packet or the payload (see description above)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  EthReceiveRawPacket( \"OnEthRawPacket\");\n}\nvoid OnEthRawPacket( LONG channel, LONG dir, LONG packetLength )\n{\n  BYTE rx_data[100];\n  LONG rx_length:\n  LONG val;\n\n  // get the payload of the packet\n  rx_length = EthGetThisData( 0, elCount(rx_data), rx_data );\n\n  // get 32-bit integer value at offset 0 of the payload\n  val = EthGetThisValue32( 0 );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

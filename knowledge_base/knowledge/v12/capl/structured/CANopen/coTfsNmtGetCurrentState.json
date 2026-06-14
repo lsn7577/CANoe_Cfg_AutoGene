@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsNmtGetCurrentState",
+  "category": "CANopen",
+  "title": "coTfsNmtGetCurrentState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsNmtGetCurrentState.htm",
+  "syntax": [
+    "long coTfsNmtGetCurrentState( dword nmtState[1] );"
+  ],
+  "description": [
+    "This function returns the current device status of the DUT Device Under Test. The current state is checked with heartbeat and guarding mechanisms.",
+    "For this, there is first an attempt to configure a heartbeat producer in the DUT (object 0x1017). The heartbeat message contains the current device status. If the DUT should not make a heartbeat producer available, a remote guarding frame is sent to the DUT. The DUT responds with the corresponding guarding response. The procedure is repeated again. The second response is evaluated and contains the device status. The CANopen® specification provides that a CANopen® device supports at least one of the two modes.",
+    "If the heartbeat producer is already active, it will be restored at the end."
+  ],
+  "parameters": [
+    {
+      "name": "nmtState",
+      "type": "",
+      "description": "Current device status (data field)"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "long retValFunc = kTestStepPassed; /* to store the return value of function */\nlong nodeId = 112;                 /* Node-Id of DUT */\n\ndword nmtState[1] = 0;\nchar msg[100]; /* message */\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* call test function */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsNMTGetCurrentState\", elCount(msg));\n  retValFunc = coTfsNmtGetCurrentState( nmtState );\n\n  /* evaluation of returned value */\n  switch(nmtState[0])\n  {\n    case kNMTState_BootUp : /* Initialization/Boot-up */\n    {\n      write( \"DUT is in NMT state Initialization/Boot-up\");\n      break;\n    } /* case */\n    case kNMTState_Stopped : /* Stopped */\n    {\n      write( \"DUT is in NMT state Stopped\");\n      break;\n    } //* case */\n    case kNMTState_Operationa1 : /* Operational */\n    {\n      write( \"DUT is in NMT state Operational\");\n      break;\n    } /* case */\n    case kNMTState_PreOperational : /* Pre-operational */\n    {\n      write( \"DUT is in NMT state Pre-operational\");\n      break;\n    } /* case */\n  } /* switch */\n} /* if */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

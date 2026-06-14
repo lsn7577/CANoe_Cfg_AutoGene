@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_Timeout, ChkStart_Timeout",
+  "category": "Test",
+  "title": "ChkCreate_Timeout, ChkStart_Timeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateTimeout.htm",
+  "syntax": [
+    "dword ChkCreate_Timeout (Duration aTimeout, char [] CaplCallback);"
+  ],
+  "description": [
+    "The check fires an event if the time has expired."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "> 0; default unit [ms], if not changed with ChkConfig_SetPrecision."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks the maximum duration of a sequence of actions\ncheckId = ChkStart_Timeout (2000);\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

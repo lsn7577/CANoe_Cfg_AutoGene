@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MediaGetMediaType",
+  "category": "Media",
+  "title": "MediaGetMediaType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaGetMediaType.htm",
+  "syntax": [
+    "long MediaGetMediaType(dword sourceReaderHandle, dword streamIndex);"
+  ],
+  "description": [
+    "Gets the media type for a source reader."
+  ],
+  "parameters": [
+    {
+      "name": "sourceReaderHandle",
+      "type": "",
+      "description": "The source reader handle."
+    }
+  ],
+  "return": "0: The function failed. Call MediaGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

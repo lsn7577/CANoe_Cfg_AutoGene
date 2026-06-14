@@ -1,0 +1,128 @@
+{
+  "page_type": "method",
+  "name": "SwitchSupplyVoltage",
+  "category": "Sensor",
+  "title": "SwitchSupplyVoltage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionSwitchSupplyVoltage.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.SwitchSupplyVoltage(dword onOff);"
+  ],
+  "description": [
+    "Enables or disables the sensor supply voltage of a simulated ECU."
+  ],
+  "parameters": [
+    {
+      "name": "onOff",
+      "type": "",
+      "description": "1 = Supply voltage on 0 = Supply voltage off"
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Switch off the supply voltage of a simulated PSI5 ECU\nsysvar::SENSOR::PSI5::ECUSIM.SwitchSupplyVoltage(0);\n\n// Switch off the supply voltage of a simulated SENT ECU\nsysvar::SENSOR::SENT::ECUSIM.SwitchSupplyVoltage(0);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14 SP2",
+      "—",
+      "—",
+      "—",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

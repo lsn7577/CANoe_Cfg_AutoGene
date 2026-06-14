@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagGetConfiguredVariant",
+  "category": "Diagnostics",
+  "title": "diagGetConfiguredVariant",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetConfiguredVariant.htm",
+  "syntax": [
+    "long diagGetConfiguredVariant(char configuredVariantOut[], DWORD bufferLen);"
+  ],
+  "description": [
+    "Retrieves the qualifier of the variant that is configured for the current target.",
+    "Retrieve the qualifier of the variant that is configured for the current or given target in the Diagnostics configuration dialog. It is possible to provide this qualifier to the automatic variant identification algorithm."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "ECU the identification algorithm should run for, not the currently selected one. If given, diagSetTarget does not have to be called."
+    }
+  ],
+  "return": "Length of qualifier written to buffer, may be truncated.\n0: No error, OK\n<0: Error code\nEspecially:-94: No target was selected",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,198 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_SLAC_Match_Cnf",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_SLAC_Match_Cnf",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_SLAC_Match_Cnf.htm",
+  "syntax": [
+    "void SCC_CreateCM_SLAC_Match_Cnf ( byte RunId[], byte SourceMac[], byte TargetMac[], byte PEVMAC[], byte EVSEMAC[], byte NID[], byte NMK[] )"
+  ],
+  "description": [
+    "Creates a CM_SLAC_Match.Cnf message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "RunId",
+      "type": "",
+      "description": "Random Run Identifier of sender (8 byte)."
+    },
+    {
+      "name": "SourceMac",
+      "type": "",
+      "description": "Source address of the Ethernet frame."
+    },
+    {
+      "name": "TargetMac",
+      "type": "",
+      "description": "Destination address of the Ethernet frame."
+    },
+    {
+      "name": "PEVMAC",
+      "type": "",
+      "description": "PEV MAC Address."
+    },
+    {
+      "name": "EVSEMAC",
+      "type": "",
+      "description": "EVSE MAC Address."
+    },
+    {
+      "name": "NID",
+      "type": "",
+      "description": "Network ID given by the CCo (EVSE) (7 byte)."
+    },
+    {
+      "name": "NMK",
+      "type": "",
+      "description": "Private NMK of the EVSE (random 16 byte value)."
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "ApplicationType dword 0x00 = PEV-EVSE Association 0x01-0xFF = Reserved"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "SecurityType dword 0x00 = No Security 0x01 = Public Key Signature 0x02-0xFF = Reserved"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "MVFLength dword Length of the match variable field"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "PEVID byte[] 17 byte ID"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "EVSEID byte[] 17 byte ID"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Reserved field byte[] 8 byte"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "Reserved field dword 1 byte"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

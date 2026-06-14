@@ -1,0 +1,131 @@
+{
+  "page_type": "function",
+  "name": "frUpdateStatFrame",
+  "category": "FlexRay",
+  "title": "frUpdateStatFrame",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Functions/CAPLfunctionFRUpdateStatFrame.htm",
+  "syntax": [
+    "int ret = frUpdateStatFrame( <frame var> );"
+  ],
+  "description": [
+    "This function updates the FlexRay Communication Controller's (CC) send buffer with the current data from the send object. This corresponds to a request to send.",
+    "Only frames in the static segment can be sent using this function!"
+  ],
+  "parameters": [
+    {
+      "name": "<frame var>",
+      "type": "",
+      "description": "Name of the variable referenced by the frame object. The variable name was defined when the object was created using frFrame."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following CAPL program sends a start-up/sync frame in slot 60 in every cycle. The calculation of the payload and the Tx buffer update is synchronously executed to every start of a cycle."
+    ],
+    "code": "variables\n{\n  // The gMsg1 message is a start-up/sync message for the static segment\n  // that is sent on both channels.\n\n  frFrame ( 20, 0, 1) gMsg1;\n  const LONG gMsg1Channel  = %CHANNEL%; // send on network the CAPL node is assigned to\n  const LONG gMsg1ChanMask = 3;  // send on FlexRay channel A+B\n  const long gMsg1KeySlotIndex = 1; // use key slot 1\n  const LONG gMsg1KeySlotID = 20; // send in key slot 20 (static segment)\n  const LONG gMsg1KeySlotUsg = 3; // sync and startup\n  BYTE gMsg1Len; // Payload length\n  BYTE gCycle; // remember current FlexRay cycle\n  frConfiguration gFRParams;\n}\n\non preStart\n{\n  // Calculation of Payload length\n  frGetConfiguration(%CHANNEL%, gFRParams);\n  gMsg1Len = gFRParams.gPayloadLengthStatic * 2;\n  // Optionally prepare buffer for message gMsg1:\n  gMsg1.MsgChannel = gMsg1Channel;\n  gMsg1.FR_ChannelMask = gMsg1ChanMask;\n  frSetPayloadLengthInByte(gMsg1, gMsg1Len);\n  frSetKeySlot(gMsg1Channel, gMsg1ChanMask, gMsg1KeySlotIndex, gMsg1KeySlotID, gMsg1KeySlotUsg);\n}\n\nDoFRCalc ()\n{\n  int i;\n  gMsg1.byte(0) = gCycle;\n  // or gMsg1.signame = value; if frame is symbolically declared\n  for (i = 1; i < gMsg1.FR_PayloadLength * 2; ++i)\n  {\n    gMsg1.byte(i) = i;\n  }\n}\n\nDoFRSend ()\n{\n  // Update the message buffer:\n  frUpdateStatFrame(gMsg1); // or FROutputDynFrame(gMsg1);\n}\n\non frStartCycle *\n{\n  gCycle = this.FR_Cycle;\n  DoFRCalc(); // calculate and set message contents\n  DoFRSend(); // commit buffer for sending\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.0",
+      "6.0",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

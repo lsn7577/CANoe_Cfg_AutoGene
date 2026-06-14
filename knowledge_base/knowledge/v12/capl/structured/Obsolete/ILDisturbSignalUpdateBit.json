@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ILDisturbSignalUpdateBit",
+  "category": "Obsolete",
+  "title": "ILDisturbSignalUpdateBit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionILDisturbSignalUpdateBit.htm",
+  "syntax": [
+    "ILDisturbSignalUpdateBit(\"PDU_A\", \"Signal_A\", disturbanceMode, disturbanceCount, disturbanceValue);"
+  ],
+  "description": [
+    "This function modifies the update bit of a signal. Different fault injections are possible.This function influences a simulation node with an assigned CANoe interaction layer."
+  ],
+  "parameters": [
+    {
+      "name": "aPDUName",
+      "type": "",
+      "description": "Name of the PDU that should be modified."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": "// Sets the Signal Update Bit to 0\n\nvariables {\n  long disturbanceMode  = 0; // The disturbance uses the value in disturbanceValue as Update Bit.\n  int disturbanceCount  = 100;\n  long disturbanceValue = 0;\n}\n\non key 'a'{\n  ILDisturbSignalUpdateBit(\"PDU_A\", \"Signal_A\", disturbanceMode, disturbanceCount, disturbanceValue);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_example"
+}

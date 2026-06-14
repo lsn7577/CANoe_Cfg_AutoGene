@@ -1,0 +1,137 @@
+{
+  "page_type": "function",
+  "name": "linSetInterByteSpaces",
+  "category": "LIN",
+  "title": "linSetInterByteSpaces",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINSetInterByteSpaces.htm",
+  "syntax": [
+    "dword linSetInterByteSpaces(dword arrayOfSixteenthBits[]); // form 1",
+    "dword linSetInterByteSpaces(long frameID, dword arrayOfSixteenthBits[]); // form 2"
+  ],
+  "description": [
+    "With the first function it is possible to set the inter-byte spaces [in bit times] for all data byte fields of all published frames (except for diagnostic frame 0x3D) of the calling LIN Slave node.",
+    "With the second function it is possible to set the inter-byte spaces [in bit times] for all data byte fields of a specified frame.",
+    "Inter-byte space is the period between the end of the stop bit of the preceding byte and the start bit of the following byte.",
+    "By default the inter-byte space between all byte fields is 0."
+  ],
+  "parameters": [
+    {
+      "name": "frameID",
+      "type": "",
+      "description": "LIN frame identifier whose inter-byte space should be changed Value range: 0 .. 63"
+    },
+    {
+      "name": "arrayOfSixteenthBits[]",
+      "type": "",
+      "description": "Array of 9 elements for inter-byte space lengths, when the length of the inter-byte space is in units of 1/16th of bit time. The first element specifies the inter-byte space before the first data byte. It continues in the same manner until Checksum byte. All not used elements must be set to 0. Value range for inter-byte lengthes: 0..65535. This corresponds to 0..4095.93 bit times. For a LIN standard compliance: The maximum space between the bytes cannot exceed 40% duration compared to nominal transmission time."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\nint index;\ndword arrayOfSixteenthBits[9];\nlinFrame MotorControl frameMotorControl;\nfor (index=0; index < 9; ++index)\n{\nif (index <= frameMotorControl.DLC+1) {\n// for all valid data bytes and checksum byte set \r\n inter-byte space to 2 bit times\narrayOfSixteenthBits[index] = 32; \n}\nelse {\n// initialize unused array elements\narrayOfSixteenthBits[index] = 0;\n}\n}\nif (linSetInterByteSpaces(0x33, arrayOfSixteenthBits) \r\n != 0) {\n// the inter-byte spaces successfully set\n...\n}\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN Real bus mode",
+      "—",
+      "—",
+      "—",
+      "LIN Real bus mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

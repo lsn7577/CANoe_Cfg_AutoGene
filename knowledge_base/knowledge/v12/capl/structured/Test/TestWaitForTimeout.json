@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForTimeout",
+  "category": "Test",
+  "title": "TestWaitForTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForTimeout.htm",
+  "syntax": [
+    "long TestWaitForTimeout(dword aTimeout);"
+  ],
+  "description": [
+    "Waits until the expiration of the specified timeout time."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "// waits for 3000 ms\nlong result;\nresult = TestWaitForTimeout(3000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

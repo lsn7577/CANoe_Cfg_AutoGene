@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "MediaCreateSourceReaderFromMediaSource",
+  "category": "Media",
+  "title": "MediaCreateSourceReaderFromMediaSource",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaCreateSourceReaderFromMediaSource.htm",
+  "syntax": [
+    "dword MediaCreateSourceReaderFromMediaSource(dword mediaSourceHandle);"
+  ],
+  "description": [
+    "Creates the source reader from a media source.",
+    "For more information regarding the source reader see source reader."
+  ],
+  "parameters": [
+    {
+      "name": "mediaSourceHandle",
+      "type": "",
+      "description": "The media source to create the source reader from."
+    }
+  ],
+  "return": "0: The function failed. Call MediaGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

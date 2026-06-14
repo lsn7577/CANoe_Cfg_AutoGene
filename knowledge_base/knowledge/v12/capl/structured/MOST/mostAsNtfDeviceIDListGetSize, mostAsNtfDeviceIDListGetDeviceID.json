@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostAsNtfDeviceIDListGetSize, mostAsNtfDeviceIDListGetDeviceID",
+  "category": "MOST",
+  "title": "mostAsNtfDeviceIDListGetSize, mostAsNtfDeviceIDListGetDeviceID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsNTFDeviceIDListGetSize.htm",
+  "syntax": [
+    "long mostAsNtfDeviceIDListGetSize(long fblockID, long instID, long functionID)"
+  ],
+  "description": [
+    "The function makes it possible to output the list of all notification clients registered with the function (functionID). Functionality is similar to command message FBlock.Notification.Get(functionID).",
+    "The notification matrix can be read out with the function without sending a respective message."
+  ],
+  "parameters": [
+    {
+      "name": "fblockID",
+      "type": "",
+      "description": "Function block ID"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "TestJoinA429WordEvent",
+  "category": "Test",
+  "title": "TestJoinA429WordEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestJoinA429WordEvent.htm",
+  "syntax": [
+    "long TestJoinA429WordEvent (dbA429Word aWord )",
+    "long TestJoinA429WordEvent (dword aLabel)"
+  ],
+  "description": [
+    "Add an ARINC word to the set of joined events. If ARINC word events are delivered from different buses, the context has to be adjusted correctly (SetBusContext). The function does not wait and handles only incoming and error free ARINC words."
+  ],
+  "parameters": [
+    {
+      "name": "aWord",
+      "type": "",
+      "description": "event connected to ARINC word from an assigned data base."
+    },
+    {
+      "name": "aLabel",
+      "type": "",
+      "description": "event connected to ARINC label [1 .. 255]"
+    }
+  ],
+  "return": "General",
+  "example": {
+    "description": [],
+    "code": "//Example\n//This example creates a join for two messages on different buses and waits for any of them. After successful reception of one the messages, the data of this message is extracted.\nvariables\n{\n  dword a429Ch5Context = 0;\n  dword a429Ch6Context = 0;\n  long resultTestJoin = 0;\n  long resultTestWaitFor = 0;\n  long resultTestGetData = 0;\n  dword timeToWait = 5000; //in ms\n}\n\nMainTest()\n{\n  //save the bus context for later use\n  a429Ch5Context = getBusNameContext (\"A429Ch5\");\n  a429Ch6Context = getBusNameContext (\"A429Ch6\");\n  \n  TestJoinA429WordEvent_Any ();\n}\n\ntestcase TestJoinA429WordEvent_Any ()\n{\n  a429word * myWord;\n  dword index = 0;\n  \n  TestStepPass(\"Library: Test.can\", \"Testcase: TestJoinA429WordEvent_Any\");\n  \n  TestStep (\"Join Condition\", \"Create Join for LBL_075\");\n  //set the bus context to the correct hw bus\n  setBusContext (a429Ch5Context);\n  resultTestJoin = TestJoinA429WordEvent (LBL_075);\n  if( resultTestJoin <= 0)\n  {\n    TestStepFail (\"Join Condition\", \"result = %d, Failure on joining symbolic event: LBL_075\", resultTestJoin);\n  }\n  else\n  {\n    TestStepPass (\"Join Condition\", \"Joining symbolic event is ok\");\n  }\n  \n  TestStep (\"Join Condition\", \"Create Join for LBL_012\");\n  //set the bus context to the correct hw bus\n\n  setBusContext (a429Ch6Context);\n  resultTestJoin = TestJoinA429WordEvent (LBL_012);\n  if( resultTestJoin <= 0)\n  {\n    TestStepFail (\"Join Condition\", \"result = %d, Failure on joining symbolic event: LBL_012\", resultTestJoin);\n  }\n  else\n  {\n    TestStepPass (\"Join Condition\", \"Joining symbolic event is ok\");\n  }\n  \n  // wait for any events that occur\n  TestStep (\"Call TFS function\", \"TestWaitForAnyJoinedEvent(timeout=%d)\", timeToWait);\n  resultTestWaitFor = TestWaitForAnyJoinedEvent (timeToWait);\n  \n  if (resultTestWaitFor > 0) // Resume due to event occurred\n   {\n       TestStepPass(\"Wait condition\", \"Waiting for any event is ok. Resume event number = %d\", resultTestWaitFor);\n      TestStepPass(\"Call TFS function\", \" TestGetWaitEventMsgData (index=%d)\", resultTestWaitFor);\n      \n      // extract resume event's data\n      resultTestGetData = TestGetWaitEventMsgData(resultTestWaitFor, myWord);\n      if (0 != resultTestGetData)\n      {\n         TestStepFail(\"Data extraction\", \"resTestGetData = %d, Data access to data of event %d could not be executed!\", resultTestGetData, resultTestWaitFor);\n      }\n      else\n      {\n         TestStepPass(\"Data extraction\", \"Data of event %d successfully extracted. label=%d\", resultTestWaitFor, myWord.ID);\n      }\n   }\n   else\n   {\n      TestStepFail(\"Wait condition\", \"resTestWaitFor = %d, Waiting for any of joined events failed!\", resultTestWaitFor);\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.5 SP4",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "A429",
+      "A429",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

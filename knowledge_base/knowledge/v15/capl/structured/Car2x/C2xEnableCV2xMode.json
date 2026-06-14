@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "C2xEnableCV2xMode",
+  "category": "Car2x",
+  "title": "C2xEnableCV2xMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xEnableCV2xMode.htm",
+  "syntax": [
+    "long C2xEnableCV2xMode ( long appChannel );"
+  ],
+  "description": [
+    "This function enables the CV2x protocol for a channel. The function has to be called in the event handler on preStart."
+  ],
+  "parameters": [
+    {
+      "name": "appChannel",
+      "type": "",
+      "description": "0 = current Channel 1 = Ath1 2 = Ath2"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on preStart()\n{\n  // enable CV2x for the first channel (Ath1)\n  C2xEnableCV2xMode (1);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "—",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

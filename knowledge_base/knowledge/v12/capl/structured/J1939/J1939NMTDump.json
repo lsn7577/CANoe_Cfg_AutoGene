@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939NMTDump",
+  "category": "J1939",
+  "title": "J1939NMTDump",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939NMTDump.htm",
+  "syntax": [
+    "dword J1939NMTDump(dword bufferSize, char buffer[]);"
+  ],
+  "description": [
+    "The current state of the network table is copied into a buffer."
+  ],
+  "parameters": [
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "size of the buffer"
+    }
+  ],
+  "return": "number of copied bytes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

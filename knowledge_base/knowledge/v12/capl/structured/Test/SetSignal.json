@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SetSignal",
+  "category": "Test",
+  "title": "SetSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionSetSignal.htm",
+  "syntax": [
+    "void setSignal(Signal aSignal, double aValue);"
+  ],
+  "description": [
+    "Sets the transmitted signal aSignal to the accompanying value.",
+    "If no suitable signal driver exists and thus no signal can be stimulated,"
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "Signal to be set."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "setSignal(OnOff, 1.0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

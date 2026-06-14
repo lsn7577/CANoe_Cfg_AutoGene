@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "<OnC2xTransmitPacket>",
+  "category": "Car2x",
+  "title": "<OnC2xTransmitPacket>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Callbacks/CAPLfunctionC2xOnC2xTransmitPacket.htm",
+  "syntax": [
+    "<OnC2xTransmitPacket>(packet);"
+  ],
+  "description": [
+    "This callback is invoked before a database defined packet is transmitted (by this network node).",
+    "Within this callback the Token functions from the Packet API and all Signal functions from the Car2x IL API can be used.",
+    "Modifications are persistent between invocations of the callback.",
+    "When using the form 2 of the callback it is possible to skip the current transmission by returning a 0."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the packet"
+    }
+  ],
+  "return": "Form 1: —",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_parameters"
+}

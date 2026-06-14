@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterVlanDefaultPriority",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterVlanDefaultPriority",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterVlanDefaultPriority.htm",
+  "syntax": [
+    "long IpGetAdapterVlanDefaultPriority( dword ifIndex, word &retVlanDefaultPriority);"
+  ],
+  "description": [
+    "The function returns the VLAN priority of the adapter with the given index. If the adapter is not a VLAN interface it returns the error code WSA_INVALID_PARAMETER (87)."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  dword adapterCount;\n  dword ifIndex;\n  word prio;\n  long result;\n  adapterCount = ipGetAdapterCount();\n\n  for(ifIndex = 1; ifIndex <= adapterCount; ifIndex++)\n  {\n    result = IpGetAdapterVlanDefaultPriority (ifIndex, prio);\n    if(result == 0)\n    {\n      write(\"Adapter %d has VLAN priority %d\", ifIndex, prio);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

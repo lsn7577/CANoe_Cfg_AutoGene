@@ -1,0 +1,43 @@
+{
+  "page_type": "function",
+  "name": "getChipType",
+  "category": "CAN",
+  "title": "getChipType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionGetChipType.htm",
+  "syntax": [
+    "long getChipType(long channel);"
+  ],
+  "description": [
+    "Determines the type of CAN controller used."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "both controller"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Channel 1"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Channel 2"
+    }
+  ],
+  "return": "Type of controller with the following values:\n5\nNEC 72005\n200\nPhilipps PCA82C200\n526\nIntel 82526\n527\nIntel 82527\n1000,1001\nPhilipps SJA1000\nOther types may occur. DEMO versions return the result 0 or simulate one of the existing types. If an attempt is made to access a nonexistent channel (e.g. Channel 2 for CPC/PP) or if the driver used does not support this function, the functional result is 0.",
+  "example": {
+    "description": [],
+    "code": "...\nswitch(getChipType(0)) {\ncase 200: setOcr(0,0x02);\nbreak;\ncase ...\ndefault:\nwrite(\"Unknown CAN-chip %d\", getChipType(0));\nbreak;\n}\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

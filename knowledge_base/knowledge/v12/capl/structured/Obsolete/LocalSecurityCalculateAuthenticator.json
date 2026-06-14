@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LocalSecurityCalculateAuthenticator",
+  "category": "Obsolete",
+  "title": "LocalSecurityCalculateAuthenticator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLocalSecurityCalculateAuthenticator.htm",
+  "syntax": [
+    "long LocalSecurityCalculateAuthenticator (dword DATAID, byte[] Payload, dword PayloadLength, qword TruncatedAuthenticator, dword TruncatedAuthenticatorBitLength, qword Freshness, dword TruncatedFreshnessBitLength, dword FreshnessValueBitLength)"
+  ],
+  "description": [
+    "Calculates the authenticator (CMAC) for the given payload and freshness. This function can be used for testing."
+  ],
+  "parameters": [
+    {
+      "name": "DATAID",
+      "type": "",
+      "description": "Id to lookup the desired key in the security source."
+    }
+  ],
+  "return": "A value <= 0 means error\nValue 1 means action was successful.",
+  "example": {
+    "description": [],
+    "code": "/// The Method LocalSecurityCalculateAuthenticator can be used to calculate the Authenticator on your own with an own maintained freshness value\n/// It is used for testing the local algorithm and to calculate an authanticator with a given freshness, payload and data id\n/// With LocalSecurityVerifyAuthenticationInformation the information generated with LocalSecurityCalculateAuthenticator can be verified.\n/// OnLocalSecurityQueryLocalFreshness in not called.\n/// OnLocalSecurityPDUPreTx is not called.\n/// OnLocalSecurityPDUValidated is not called.\non key 'a'\n{\n  long bytesCopied = 0;\n  qword freshnessCopy;\n  dword dataID;\n  byte payload[8] = {0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08};\n  qword authenticator;\n  dword authenticatorBitLength = 24;\n  qword freshness;\n  dword freshnessLength = 48;\n  dword freshnessTxBitLength = 8;\n  dword freshnessTxMask = 0xF;\n  dword verificationResult;\n  dword result;\n\n  result = LocalSecurityCalculateAuthenticator(dataID, payload, elCount(payload), authenticator, authenticatorBitLength, freshness, freshnessTxBitLength, freshnessLength);\n  Write(\"LocalSecurityCalculateAuthenticator result:%d\", result);\n  result = LocalSecurityVerifyAuthenticationInformation(dataID, payload, elCount(payload), authenticator, authenticatorBitLength, (freshness & freshnessTxMask), freshnessTxBitLength, freshness, freshnessLength, verificationResult);\n  Write(\"LocalSecurityVerifyAuthenticationInformation result:%d, verificationResult:%d\", result, verificationResult); // 1: verification successful, 0: verification failed\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

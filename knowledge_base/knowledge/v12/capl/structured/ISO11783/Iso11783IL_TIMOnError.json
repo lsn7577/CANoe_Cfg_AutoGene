@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMOnError",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMOnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimOnError.htm",
+  "syntax": [
+    "void Iso11783IL_TIMOnError(long errorCode, dword addParam)"
+  ],
+  "description": [
+    "This callback function is called from the ISO11783 IL if an error occurred while TIM nodes are simulated."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "Current error code."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_TIMOnError( long errorCode, dword addParam )\n{\n  char buffer[256];\n  Iso11783IL_GetLastErrorText ( elCount(buffer), buffer);\n  write( \"Iso11783IL_TIMOnError: Error %i (%f): %s\", errorCode,timeNowFloat()/100000.0, buffer );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

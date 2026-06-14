@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linGetSyncDelLength",
+  "category": "Obsolete",
+  "title": "linGetSyncDelLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINGetSyncDelLength.htm",
+  "syntax": [
+    "dword linGetSyncDelLength(linFrame busEvent)"
+  ],
+  "description": [
+    "This function can be used to retrieve the synch delimiter (recessive bits) length of a LIN bus event. The resulting length is in units of 10 µsec (microseconds).To get the result in bit times linTime2Bits() function can be used."
+  ],
+  "parameters": [
+    {
+      "name": "busEvent",
+      "type": "",
+      "description": "LIN bus event of type frame, checksum error, receive error, transmission error, synchronization error or wakeup signal."
+    }
+  ],
+  "return": "Returns the retrieved length [in units of 10 µsec] or 0 on failure.",
+  "example": {
+    "description": [
+      "Analyze receive error event by retrieving length of synch break and sync delimiter"
+    ],
+    "code": "on linReceiveError\n{\ndword timelenBreak,timelenDel;\ndword bitlenBreak,bitlenDel;\ntimelenBreak = linGetSyncBreakLength(this); // retrieve \r\n break length in time units\nbitlenBreak  = linTime2Bits(timelenBreak);  // convert time units to bit times\ntimelenDel   = linGetSyncDelLength(this);   // retrieve delimiter length in time units\nbitlenDel    = linTime2Bits(timelenDel);    // convert time units to bit times\n...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

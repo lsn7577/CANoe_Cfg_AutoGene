@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linSendBitStream",
+  "category": "LIN",
+  "title": "linSendBitStream",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSendBitStream.htm",
+  "syntax": [
+    "long linSendBitStream(byte bitStream[], long numberOfBits)"
+  ],
+  "description": [
+    "Sends an arbitrary bit stream on the LIN bus."
+  ],
+  "parameters": [
+    {
+      "name": "bitStream",
+      "type": "",
+      "description": "The bit stream to be sent.Maximum number of bits: 2^31-1."
+    }
+  ],
+  "return": "On success a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "This function sends LIN header as a bit stream"
+    ],
+    "code": "int SendSpecialHeader(int breakLength, int delimiterLength, byte syncByte, byte idByte)\n{\nbyte data[25];\nint headerLength;\nint currentPosition;\nint i;\n   // Header consists of Break, Sync and PID bytes\nheaderLength = breakLength + delimiterLength + 20;\r\n \nif (headerLength > 200)\n{\nreturn 0; // maximum is exceeded\n}\ncurrentPosition = 0;\nfor (i = 0; i < 25; ++i)\n{\ndata[i] = 0xff; // initialize \n}\nfor (i = breakLength; i > 0;) // set sync break\n{\nif (i >= 8)\n{\ndata[currentPosition >> 3] = 0;\ni -= 8;\ncurrentPosition += 8;\n}\nelse\n{\ndata[currentPosition >> 3] &= ~(1 << \r\n (currentPosition & 0x7));\n--i;\n++currentPosition;\n}\n}\ncurrentPosition += delimiterLength; // set synch delimiter\n   // set sync byte\ndata[currentPosition >> 3] &= ~(1 << (currentPosition & 0x7)); // start bit\n++currentPosition;\nfor (i = 0; i < 8; ++i)\n{\nif ((syncByte & (1 << i)) == 0) // dominant bit in syncByte\n{\ndata[currentPosition >> 3] &= ~(1 << (currentPosition & 0x7));\n}\n++currentPosition;\n}\n++currentPosition; // set recessive stop bit\n   // set protected id\ndata[currentPosition >> 3] &= ~(1 << (currentPosition & 0x7)); // start bit\n++currentPosition;\nfor (i = 0; i < 8; ++i)\n{\nif ((idByte & (1 << i)) == 0) // dominant bit in idByte\n{\ndata[currentPosition >> 3] &= ~(1 << (currentPosition & 0x7));\n}\n++currentPosition;\n}\n++currentPosition; // set recessive stop bit\nlinSendBitStream(data, headerLength); // send created header\nreturn headerLength;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

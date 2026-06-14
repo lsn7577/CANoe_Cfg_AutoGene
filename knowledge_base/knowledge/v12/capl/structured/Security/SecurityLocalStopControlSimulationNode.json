@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalStopControlSimulationNode",
+  "category": "Security",
+  "title": "SecurityLocalStopControlSimulationNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityLocalStopControlSimulationNode.htm",
+  "syntax": [
+    "long SecurityLocalStopControlSimulationNode(char nodeName[], char networkName[])"
+  ],
+  "description": [
+    "Stops controlling (deregistration) the specified simulation node on the specified network.",
+    "After a successful deregistration, you cannot call any SecurityOfNode…() Functions at the previously registered node, neither you will receive any OnSecurityOfNode… callbacks .",
+    "You have to call SecurityLocalStartControlSimulationNode to register."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node to deregister from."
+    }
+  ],
+  "return": "1: SuccessA Value of 1 means that the action was successful. A value less than or equal to 0 means error. A value larger than 1 means warning.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

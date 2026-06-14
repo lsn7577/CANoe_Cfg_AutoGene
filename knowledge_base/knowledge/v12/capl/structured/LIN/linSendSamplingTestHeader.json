@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSendSamplingTestHeader",
+  "category": "LIN",
+  "title": "linSendSamplingTestHeader",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSendSamplingTestHeader.htm",
+  "syntax": [
+    "long linSendSamplingTestHeader(dword startBitLengthInMicSec)"
+  ],
+  "description": [
+    "Sends a slave response header with the start bit of the id byte set to the specified length."
+  ],
+  "parameters": [
+    {
+      "name": "startBitLengthInMicSec",
+      "type": "",
+      "description": "The length of the start bit in microseconds. The first data bit will be adjusted to ensure that the start bit and the first data bit have a total length of two bit times."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

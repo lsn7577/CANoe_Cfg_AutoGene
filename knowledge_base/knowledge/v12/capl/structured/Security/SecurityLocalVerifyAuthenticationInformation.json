@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalVerifyAuthenticationInformation",
+  "category": "Security",
+  "title": "SecurityLocalVerifyAuthenticationInformation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityLocalVerifyAuthenticationInformation.htm",
+  "syntax": [
+    "long SecurityLocalVerifyAuthenticationInformation(dword dataId, byte payload[], dword payloadLength, qword truncatedAuthenticatorHigh, qword truncatedAuthenticator, dword truncatedAuthenticatorBitLength, qword rxFreshness, dword rxFreshnessBitLength, qword currentFreshness, dword freshnessValueLength, dword freshnessValueId, dword verificationResult)"
+  ],
+  "description": [
+    "Verifies the specified authentication information (MAC and freshness) of the PDU. The (complete) current freshness value must be provided in the function call. Other freshness sources will be ignored. The payload is also an input parameter to the verification logic.",
+    "The result of this method depends on the security profile which is mapped on the network."
+  ],
+  "parameters": [
+    {
+      "name": "dword dataId",
+      "type": "",
+      "description": "Id to lookup the desired key in the security source."
+    }
+  ],
+  "return": "dword verificationResult [Out]:",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

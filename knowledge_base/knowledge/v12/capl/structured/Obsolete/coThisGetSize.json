@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coThisGetSize",
+  "category": "Obsolete",
+  "title": "coThisGetSize",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoThisGetSize.htm",
+  "syntax": [
+    "dword coThisGetSize( dword errCode[] );"
+  ],
+  "description": [
+    "The function returns the size of the data of a SDO transfer in the event function coOnUploadResponse or coOnDownloadIndication. The call is only allowed in this event function."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\ndword size;\n\nsize = coThisGetSize( errCode );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressWaitForIdle",
+  "category": "CANstress",
+  "title": "CANstressWaitForIdle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressWaitForIdle.htm",
+  "syntax": [
+    "long CANstressWaitForIdle( dword timeout );"
+  ],
+  "description": [
+    "Waits until the CANstress hardware is in the state Idle."
+  ],
+  "parameters": [
+    {
+      "name": "Note With timeout = 0 an infinite time is waited until the state Idle occurs. Thus the additional test procedure is blocked if the state Idle is not reached.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: If successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

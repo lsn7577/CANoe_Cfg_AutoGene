@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SCC_StartSimulation",
+  "category": "SmartCharging",
+  "title": "SCC_StartSimulation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_StartSimulation.htm",
+  "syntax": [
+    "long SCC_StartSimulation ( ) // form 1"
+  ],
+  "description": [
+    "These functions start the simulation DLL in active mode.",
+    "Until the simulation is started, no messages are sent and the API (except SCC_StartSimulation()) has no effect!",
+    "With the vehicle DLL, the call of SCC_StartSimulation() starts the setup of a connection."
+  ],
+  "parameters": [
+    {
+      "name": "SLACMode",
+      "type": "",
+      "description": "Controls the behavior regarding SLAC, which overrides the parameter <UseSLAC> from the XML configuration:"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AvbGetLastErrorText",
+  "category": "IP",
+  "title": "AvbGetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbGetLastErrorText.htm",
+  "syntax": [
+    "dword AvbGetLastErrorText(dword bufferLength, char buffer[]);"
+  ],
+  "description": [
+    "Function to retrieve the last error which occurs in the AVB IL as string.",
+    "The call of the AvbGetLastErrorText function does not reset the saved error text."
+  ],
+  "parameters": [
+    {
+      "name": "bufferLength",
+      "type": "",
+      "description": "Number of characters."
+    }
+  ],
+  "return": "Number of copied characters.",
+  "example": {
+    "description": [],
+    "code": "char buffer[1024];\ndword listenerHandle;\n\n// open a listener\nlistenerHandle = AvbOpenListener();\n\n// check if last function was executed successfully\nif ((AvbGetLastErrorText(elcount(buffer), buffer)) != 0)\n{\n  write(\"AVB IL error occurred: %s\", buffer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

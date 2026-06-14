@@ -1,0 +1,39 @@
+# sysGetVariableData
+
+> Category: `SystemVariables` | Type: `function`
+
+## Syntax
+
+```c
+long sysGetVariableData(char namespace[], char variable[], byte buffer[], long& copiedBytes); // form 1
+long sysGetVariableData(SysVarName, byte buffer[], long& copiedBytes); // form 2
+```
+
+## Description
+
+Returns the value of a variable of the type data, string, struct or generic array.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| namespace | Name of the name space. |
+| variable | Name of the variable. |
+| buffer | Buffer which takes the value of the variable. |
+| copiedBytes | Receives the number of bytes which were copied into the buffer. If the buffer is too small, no bytes will be copied; else the parameter will contain the current size of the variable. |
+| SysVarName | Name of the fully qualified name of the system variable, including all name spaces, separated by "::". The name must be preceded by "sysVar::". |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | 7.6 | 7.6 | 13.0 | 13.0 | 14 | 1.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | ✔ | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | ✔ | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| 32-Bit | ✔ | ✔ | ✔ | N/A | ✔ | N/A |
+| 64-Bit | ✔ | ✔ | ✔ | ✔ | ✔ | N/A |

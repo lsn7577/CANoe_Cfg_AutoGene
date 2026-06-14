@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthSetTokenInt64",
+  "category": "Obsolete",
+  "title": "EthSetTokenInt64",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthSetTokenInt64.htm",
+  "syntax": [
+    "long EthSetTokenInt64( long packet, char protocolDesignatorl[], char tokenDesignator[], int64 value ); // form 1"
+  ],
+  "description": [
+    "The function sets the integer value of a token.",
+    "Form 2 with byte offset sets a part of the token data as integer."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "long packetHandle;\nchar error[100];\n\nint64 srcMacId = 0x5826C8FD2421LL;\nint64 dstMacId = 0xFFFFFFFFFFFFLL;\n\n// create packet\npacketHandle = EthInitPacket(\"eth\");\n\nif (EthGetLastError() == 0)\n{\n  // set MAC address\n  EthSetTokenInt64( packetHandle, \"eth\", \"source\"     , srcMacId );\n  EthSetTokenInt64( packetHandle, \"eth\", \"destination\", dstMacId );\n\n  if (EthInitProtocol( packetHandle, \"udp\" ) == 0)\n  {\n    // set protocol fields\n    EthSetTokenInt( packetHandle, \"ipv4\", \"source\", 0xC0A80001 ); // 192.168.0.1\n    EthSetTokenInt( packetHandle, \"ipv4\", \"destination\", 0xFFFFFFFF ); // 255.255.255.255\n    EthSetTokenInt( packetHandle, \"udp\", \"source\", 23 );\n    EthSetTokenInt( packetHandle, \"udp\", \"destination\", 23 );\n\n    // set UDP payload\n    EthResizeToken( packetHandle, \"udp\", \"data\", 5*8 /*bits*/ );\n    EthSetTokenData( packetHandle, \"udp\", \"data\", 5, \"Hello\" );\n\n    // Complete and send packet\n    EthCompletePacket( packetHandle );\n    EthOutputPacket( packetHandle );\n    }\n\n  // release packet\n  EthReleasePacket( packetHandle );\n}\nelse\n{\n  EthGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

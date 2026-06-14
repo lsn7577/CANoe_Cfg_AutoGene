@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "AfdxOutputPacketWithSignals",
+  "category": "ADFX",
+  "title": "AfdxOutputPacketWithSignals",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionAfdxOutputPacketWithSignals.htm",
+  "syntax": [
+    "long AfdxOutputPacketWithSignals( long packet );"
+  ],
+  "description": [
+    "Sends a message and automatically updates the payload with the current Tx-signal values of the SignalServer."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "other value",
+      "type": "",
+      "description": "error code"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  long packet;\n}\n\non preStart\n{\n  // initialize the frame header, don’t care for the payload\n  packet  = AfdxInitPacket(0, \"TESTMSG_ALLTYPES\", 0 );\n  if (packet == 0)\n  {\n    write( \"<%NODE_NAME%> AfdxInitPacket failed due to:%s\", errTxt );\n  }\n}\n\non key ‚1‘\n{\n  // update payload with current tx-signal values from\n  // signal server and then send the frame out\n  AfdxOutputPacketWithSignals(packet);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2 SP3",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

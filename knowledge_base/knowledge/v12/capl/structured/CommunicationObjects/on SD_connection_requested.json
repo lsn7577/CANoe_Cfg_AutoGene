@@ -1,0 +1,39 @@
+{
+  "page_type": "event",
+  "name": "on SD_connection_requested",
+  "category": "CommunicationObjects",
+  "title": "on SD_connection_requested",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnSDConnectionRequested.htm",
+  "syntax": [
+    "on SD_connection_requested <ServiceProvider>"
+  ],
+  "description": [
+    "The event procedure is called when a connection is requested by a consumer.",
+    "This is a logical connection which needs not correspond e.g. to a TCP connection."
+  ],
+  "parameters": [
+    {
+      "name": "<ServiceProvider>",
+      "type": "",
+      "description": "Designates the service provider on which the event procedure shall react."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on SD_connection_requested Mirrors::MirrorAdjustment.providerSide[LeftMirror]\n{\n  // react on the request with connection establishment\n  SD_ConnectAsync(MirrorAdjustment.providerSide[this.consumer.ConsumerIndex, LeftMirror]);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "serviceConsumerRef *",
+      "link": "../Objects/CAPLfunctionServiceConsumerRef.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

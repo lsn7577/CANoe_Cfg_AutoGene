@@ -1,0 +1,149 @@
+{
+  "page_type": "function",
+  "name": "J1939AppRequestIndication",
+  "category": "J1939",
+  "title": "J1939AppRequestIndication",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939AppRequestIndication.htm",
+  "syntax": [
+    "dword J1939AppRequestIndication( long ecuHandle, long source, long dest, long page, long pgNum );"
+  ],
+  "description": [
+    "This function indicates to the ECU that the \"OnRequest\" parameter group has been received. The application must respond appropriately (see specification).",
+    "It should be noted that this function is only called once for each logical ECU within a node when global PGs are received."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    },
+    {
+      "name": "source",
+      "type": "",
+      "description": "source address"
+    },
+    {
+      "name": "dest",
+      "type": "",
+      "description": "destination address"
+    },
+    {
+      "name": "page",
+      "type": "",
+      "description": "data page bit"
+    },
+    {
+      "name": "pgNum",
+      "type": "",
+      "description": "requested PGN"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword J1939AppRequestIndication( LONG ecuHdl, LONG source, LONG dest, LONG page, LONG pgNum)\n{\n  /* user code */\n  return 0;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

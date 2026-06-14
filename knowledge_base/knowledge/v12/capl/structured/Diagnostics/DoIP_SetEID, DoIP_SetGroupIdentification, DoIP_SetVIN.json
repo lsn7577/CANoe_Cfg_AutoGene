@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetEID, DoIP_SetGroupIdentification, DoIP_SetVIN",
+  "category": "Diagnostics",
+  "title": "DoIP_SetEID, DoIP_SetGroupIdentification, DoIP_SetVIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetEID.htm",
+  "syntax": [
+    "void DoIP_SetEID(byte EID[]);"
+  ],
+  "description": [
+    "Configures the Vehicle Announcement/Vehicle Identification Response Message sent by a vehicle simulation.",
+    "If these functions are used in combination with DiagInitEcuSimulation, the functions must be called in on prestart. Otherwise the functions have no effect.",
+    "Reason: The DoIP.DLL is initialized in a ECU simulation after on prestart but before on start."
+  ],
+  "parameters": [
+    {
+      "name": "EID",
+      "type": "",
+      "description": "Send this entity ID in the message, e.g. a MAC address."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "These values can also be configured in the DoIP.INI file."
+    ],
+    "code": "// Set the entity and group IDs\nBYTE eid[6] = { 0x20, 0x11, 0x22, 0x33, 0x44, 0x55};\nBYTE gid[6] = { 0x20, 0x11, 0x22, 0x33, 0xFF, 0xFF};\nDoIP_SetEID( eid);\n// Indicate that VIN and GID are not synchronized yet, i.e. the tester shall repeat\n// the Vehicle Identification Request after some time\nDoIP_SetGroupIdentification( gid, 0, 0x10);\nif( gSetVINasBytes)\n{\n  // Alternatively, set the VIN using a raw byte stream\n  BYTE rawVIN[17] = { 0xFF, 0xFF, 0xFF, 0xFF,    0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,    0xFF, 0xFF, 0xFF, 0xFF, 0xFF };\n  DoIP_SetVIN( rawVIN);\n} else\n{\n  // Set the VIN using its textual representation\n  DoIP_SetVIN(\"VECT0RVEH1CLE1234\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

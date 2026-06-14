@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsODAddEntrySubIndexRange",
+  "category": "CANopen",
+  "title": "coTfsODAddEntrySubIndexRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdAddEntrySubIndexRange.htm",
+  "syntax": [
+    "long coTfsODAddEntrySubIndexRange( dword index, dword minSubIndex, dword maxSubIndex, dword accessType, dword entrySize, byte inMaskBuf[], dword maskBufSize, byte inValueBuf[], dword valueBufSize );"
+  ],
+  "description": [
+    "The function adds several object entries to the internal list. The elements only differ in the given sub index. The default value can have a maximum size of 32 bit. The list is used by coTfsODChk and coTfsODChkNotExist."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of object."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "long retValFunc = kTestStepPassed; /* to store the return value of function */\nlong nodeId = 112;                 /* Node-Id of DUT */\n\ndword index = 0x2003;\ndword minSubIndex = 0x1;\ndword maxSubIndex = 0x3;\ndword accessType = kAccessType_ReadWrite;\ndword entrySize = 5; /* object size in bytes */\nbyte inMaskBuf[5] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF};\ndword maskBufSize = 5;\nbyte inValueBuf[5] = {'H', 'a', 'l', 'l', 'o'};\ndword valueBufSize = 5;\nchar msg[100]; /* message */\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* call test function : clear test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODClearAllEntries\", elCount(msg));\n  retValFunc = coTfsODClearAllEntries();\n} /* if */\n\n/* call test function : add entry range to test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODAddEntrySubIndexRange\", elCount(msg));\n  retValFunc = coTfsODAddEntrySubIndexRange( index /*dword index*/, minSubIndex /*dword minSubIndex*/, maxSubIndex /*dword maxSubIndex*/, accessType /*dword accessType*/, entrySize /*dword entrySize*/, inMaskBuf /*byte inMaskBuf[]*/, maskBufSize /*dword maskBufSize*/, inValueBuf /*byte inValueBuf[]*/, valueBufSize /*dword valueBufSize*/ );\n} /* if */\n\n/* call test function : write objects in test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODRunUserDownloadTest\", elCount(msg));\n  retValFunc = coTfsODRunUserDownloadTest();\n} /* if */\n\n/* call test function : check objects in test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODRunUserUploadAndCompareTest\", elCount(msg));\n  retValFunc = coTfsODRunUserUploadAndCompareTest();\n} /* if */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

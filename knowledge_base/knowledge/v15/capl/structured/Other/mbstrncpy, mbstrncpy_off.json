@@ -1,0 +1,145 @@
+{
+  "page_type": "function",
+  "name": "mbstrncpy, mbstrncpy_off",
+  "category": "Other",
+  "title": "mbstrncpy, mbstrncpy_off",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionMbStrnCpy.htm",
+  "syntax": [
+    "void mbstrncpy(char dest[], char src[], long len);",
+    "void mbstrncpy_off(char dest[], long destOffset, char src[], long len);"
+  ],
+  "description": [
+    "mbstrncpy function copies src to dest. len indicates the number of characters that shall be copied; use -1 to indicate that as much shall be copied into dest as will fit (maximum until the end of src). The function ensures that there is a terminating 0 byte; but in contrast to strncpy, that byte is not counted into len.",
+    "mbstrncpy_off overwrites characters in the destination buffer starting at the character offset destOffset."
+  ],
+  "parameters": [
+    {
+      "name": "dest",
+      "type": "",
+      "description": "Destination buffer"
+    },
+    {
+      "name": "src",
+      "type": "",
+      "description": "Source string"
+    },
+    {
+      "name": "len",
+      "type": "",
+      "description": "Number of characters to be copied, or -1 to copy as much as possible"
+    },
+    {
+      "name": "destOffset",
+      "type": "",
+      "description": "Offset in characters into the destination buffer"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "char s1[50] = \"eine grüne \"; // german for 'a green'\nchar s2[10] = \"Türen\"; // german for 'doors'\nmbstrncpy_off(s1, 11, s2, 3);\nwrite(\"%s\", s1); // eine grüne Tür (german for 'a green door')"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "11.0 SP3",
+      "11.0 SP3",
+      "13.0",
+      "—",
+      "14",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

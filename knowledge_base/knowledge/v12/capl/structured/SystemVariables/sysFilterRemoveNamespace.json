@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysFilterRemoveNamespace",
+  "category": "SystemVariables",
+  "title": "sysFilterRemoveNamespace",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysFilterRemoveNamespace.htm",
+  "syntax": [
+    "long sysFilterRemoveNamespace(char namespace[]); // form 1"
+  ],
+  "description": [
+    "Removes a namespace from the variable filter. If no filterName is given, the namespace is removed from the default filter."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "The namespace to remove."
+    }
+  ],
+  "return": "0: No error, function successful.",
+  "example": {
+    "description": [],
+    "code": "long result;\n//remove a namespace from the default filter.\nresult = sysFilterRemoveNamespace(“myNamespace”);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

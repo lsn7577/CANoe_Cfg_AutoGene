@@ -1,0 +1,62 @@
+{
+  "page_type": "event",
+  "name": "on PDU_update",
+  "category": "CommunicationObjects",
+  "title": "on PDU_update",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnPDUUpdate.htm",
+  "syntax": [
+    "on PDU_update <PDU>"
+  ],
+  "description": [
+    "The event procedure is called whenever the specified PDU is updated, regardless of whether its value has changed. You can use the event procedure only for PDUs of the new communication concept of CANoe."
+  ],
+  "parameters": [
+    {
+      "name": "<PDU>",
+      "type": "",
+      "description": "Designates the PDU on which the procedure shall be called."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on PDU_Update Mirrors::MirrorAdjustment.consumerSide[CANoe,LeftMirror].StatusPdu\n{\n  write(\"Status %d at time %I64d\", $this.health, this.ChangeTimeNS);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "ChangeTimeNS Last time the value was changed, in nanoseconds since measurement start.",
+        "int64",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "UpdateTimeNS Last time the value was updated, in nanoseconds since measurement start.",
+        "int64",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<SignalName> Value of the signal. Must be accessed with $this.",
+        "<data type of the signal>",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

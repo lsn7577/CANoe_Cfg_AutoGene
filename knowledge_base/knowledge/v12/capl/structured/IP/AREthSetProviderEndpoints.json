@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthSetProviderEndpoints",
+  "category": "IP",
+  "title": "AREthSetProviderEndpoints",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSetProviderEndpoints.htm",
+  "syntax": [
+    "long AREthSetProviderEndpoints(dword csiHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort)"
+  ],
+  "description": [
+    "Sets the UDP and TCP endpoint that is used for the consumed service instance to reach the corresponding provided service instance."
+  ],
+  "parameters": [
+    {
+      "name": "csiHandle",
+      "type": "",
+      "description": "Consumed service instance handle (may be retrieved by AREthGetConsumedObjectHandle)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

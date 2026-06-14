@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "A664InitMessage",
+  "category": "ADFX",
+  "title": "A664InitMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664InitMessage.htm",
+  "syntax": [
+    "long A664InitMessage (a664Message aMessage, dword srcIP, dword dstIP, word srcUDP, word dstUDP, word VLid, word payloadSize)"
+  ],
+  "description": [
+    "The complete Ethernet, IP- and UDP headers for an AFDX message are consistently set based on the given parameters. The payload area is initialized with 0."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "the message object to be initialized"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

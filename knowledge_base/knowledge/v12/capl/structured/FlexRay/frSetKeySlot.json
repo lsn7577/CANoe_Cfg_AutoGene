@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "frSetKeySlot",
+  "category": "FlexRay",
+  "title": "frSetKeySlot",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFrSetKeySlot.htm",
+  "syntax": [
+    "void frSetKeySlot (long channel, long channelMask, long keySlotIndex, long keySlotId, long keySlotUsage)"
+  ],
+  "description": [
+    "Configures one of two possible key slots that are to be sent for a FlexRay bus.",
+    "The change will be applied with the next reset of the interface hardware (e.g. by resetFlexRayCC or resetFlexRayCCEx)."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel number (or cluster number)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

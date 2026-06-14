@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "RS232SetSignalLine",
+  "category": "RS232",
+  "title": "RS232SetSignalLine",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/RS232/Functions/CAPLfunctionRS232SetSignalLine.htm",
+  "syntax": [
+    "dword RS232SetSignalLine( dword port, dword line, dword state )"
+  ],
+  "description": [
+    "Sets signal lines on serial port.",
+    "If you use hardware handshake, then this function may conflict with the automatic handshaking."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    }
+  ],
+  "return": "0: error\nThe error occurs if",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

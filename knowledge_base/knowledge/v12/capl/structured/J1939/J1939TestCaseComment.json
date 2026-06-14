@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestCaseComment",
+  "category": "J1939",
+  "title": "J1939TestCaseComment",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939Testcasecomment.htm",
+  "syntax": [
+    "long J1939TestCaseComment( char comment[], pg commentPG )"
+  ],
+  "description": [
+    "Writes the data of a parameter group variable as comment to the test protocol."
+  ],
+  "parameters": [
+    {
+      "name": "comment",
+      "type": "",
+      "description": "comment for the test case"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "pg EEC1 aPG;\nJ1939TestCaseComment( \"EEC1:\", aPG );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

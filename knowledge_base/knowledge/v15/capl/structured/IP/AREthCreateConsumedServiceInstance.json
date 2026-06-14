@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "AREthCreateConsumedServiceInstance",
+  "category": "IP",
+  "title": "AREthCreateConsumedServiceInstance",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthCreateConsumedServiceInstance.htm",
+  "syntax": [
+    "dword AREthCreateConsumedServiceInstance( dword aepHandle, dword serviceId, dword instanceId );"
+  ],
+  "description": [
+    "This function creates a Consumed Service Instance and adds it to an Application Endpoint which was created by AREthOpenLocalApplicationEndpoint.",
+    "Objects can be assigned to the Service Instance as follows:",
+    "AREthReleaseConsumedServiceInstance can be used to delete the Service Instance again."
+  ],
+  "parameters": [
+    {
+      "name": "aepHandle",
+      "type": "",
+      "description": "Handle of the Application Endpoint."
+    },
+    {
+      "name": "serviceId",
+      "type": "",
+      "description": "Service identifier"
+    },
+    {
+      "name": "instanceId",
+      "type": "",
+      "description": "Instance identifier"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void Initialize()\n{\n  dword aep; // application endpoint handle\n  dword csi; // consumed Service Instance handle\n  dword ceg; // consumed Eventgroup handle\n  dword cev; // consumed Event handle\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  csi = AREthCreateConsumedServiceInstance(aep,10,1);\n\n  // create Eventgroup\n  ceg = AREthAddConsumedEventGroup(csi,1);\n\n  // create Event Consumer\n  cev = AREthCreateEventConsumer(csi,1,\"CallbackEvent1\");\n}\n\nvoid CallbackEvent1(dword cevHandle, dword messageHandle)\n{\n  // this function is called if the Event was sent. Parameters can\n  // be evaluated here.\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

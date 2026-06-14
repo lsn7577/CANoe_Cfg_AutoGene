@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "canGetOverloadRate",
+  "category": "Obsolete",
+  "title": "canGetOverloadRate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionCanGetOverloadRate.htm",
+  "syntax": [
+    "long canGetOverloadRate (long channel)"
+  ],
+  "description": [
+    "Returns the current rate of CAN overload frames on the specified channel."
+  ],
+  "parameters": [
+    {
+      "name": "Vector API driver",
+      "type": "",
+      "description": "Values 1 ... 32"
+    },
+    {
+      "name": "Softing API driver",
+      "type": "",
+      "description": "Values 1, 2"
+    }
+  ],
+  "return": "Current rate of CAN overload frames on the specified channel in messages per second.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

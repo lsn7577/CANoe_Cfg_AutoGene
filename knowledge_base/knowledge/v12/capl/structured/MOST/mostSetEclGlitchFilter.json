@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostSetEclGlitchFilter",
+  "category": "MOST",
+  "title": "mostSetEclGlitchFilter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetEclGlitchFilter.htm",
+  "syntax": [
+    "long mostSetEclGlitchFilter (long channel, long durationus)"
+  ],
+  "description": [
+    "Configures the timing of the glitch filter for the ECL. For pulses which are shorter than the given time durations the callback <OnMostEcl> will not be called, neither will those pulses appear in a Trace Window."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

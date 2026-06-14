@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783SetEnvDbl",
+  "category": "ISO11783",
+  "title": "Iso11783SetEnvDbl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783SetEnvDbl.htm",
+  "syntax": [
+    "dword Iso11783SetEnvDbl( char envVar[], dword index, float value );"
+  ],
+  "description": [
+    "This function sets the value of an environment variable."
+  ],
+  "parameters": [
+    {
+      "name": "envVar",
+      "type": "",
+      "description": "Name of the environment variable"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783SetEnvDbl( \"EvFrictionForce\", \r\n 1, 33.12 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

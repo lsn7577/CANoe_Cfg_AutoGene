@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForInquireProductCodeRequest",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForInquireProductCodeRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForInquireProductCodeReq.htm",
+  "syntax": [
+    "long coTfsLssWaitForInquireProductCodeRequest( dword productCode );"
+  ],
+  "description": [
+    "This function waits for the Inquire product code request and sends the response."
+  ],
+  "parameters": [
+    {
+      "name": "productCode",
+      "type": "",
+      "description": "Product code part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* waits for LSS inquire product code request */\nif (coTfsLssWaitForInquireProductCodeRequest( 0x12345678) == 1) {\n  /* received LSS inquire vendor ID request, sent response with product code */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINSynchBreakTimingViolation",
+  "category": "Test",
+  "title": "ChkStart_LINSynchBreakTimingViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinSynchBreakTimingViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINSynchBreakTimingViolation (dword MinBreakLen, dword MaxBreakLen);"
+  ],
+  "description": [
+    "Checks the timing of the synchronization break field in LIN headers.",
+    "An event will be generated, if the measured length [in bit times] of break low phase is outside of the specified range."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Minimum length of break low phase shall not be checked"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Minimum allowed length of break low phase"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\nChkConfig_SetPrecision(9); // switch to ns precision\n// Create and start the check for LIN break low phase violation\ncheckId = ChkStart_LINSynchBreakTimingViolation(13, 20, \"LINSynchBreakCallback\"); \nChkConfig_SetPrecision(3); // switch to ms precision (default)\n...\n// CAPL callback for violation notification\nvoid LINSynchBreakCallback (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

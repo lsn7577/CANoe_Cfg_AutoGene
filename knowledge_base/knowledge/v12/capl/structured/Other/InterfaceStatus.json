@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "InterfaceStatus",
+  "category": "Other",
+  "title": "InterfaceStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionInterfaceStatus.htm",
+  "syntax": [
+    "void InterfaceStatus(long time, long channel, long status);"
+  ],
+  "description": [
+    "The callback can be inserted in the sections callback function or function.",
+    "The callback occurs when the status of the connection to the interface hardware is changed (e.g. when Windows reports a lost connection to a CAN/WLAN gateway or to a WLAN interface hardware for Car2x communication)."
+  ],
+  "parameters": [
+    {
+      "name": "time",
+      "type": "",
+      "description": "Time, resolution 10us"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void InterfaceStatus(long time, long channel, long status)\n{\n   if(status == 3015)\n   {\n      write(\"Time %f s, channel %d: The connection to the interface is lost!\", ((float)time)/100000.0, channel);\n   }\n   else\n   {\n      //other status is not yet supported\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

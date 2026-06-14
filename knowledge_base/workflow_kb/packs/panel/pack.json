@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "id": "panel",
+  "name": "Manual Operation And Panel Binding",
+  "version": "0.1.0",
+  "status": "draft",
+  "owner": "workflow",
+  "domains": ["panel", "manual_confirmation"],
+  "compatible_canoe_versions": ["v12", "v15"],
+  "depends_on_packs": ["core", "team_eq07"],
+  "files": {
+    "retrieval_profile": "packs/panel/retrieval_profile.json",
+    "validation_rules": "packs/panel/validation_rules.json"
+  },
+  "provided_capabilities": ["manual checkpoint", "panel binding plan"]
+}
+

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressSetBTR",
+  "category": "CANstress",
+  "title": "CANstressSetBTR",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressSetBTR.htm",
+  "syntax": [
+    "void CANstressSetBTR (dword btr1, dword btr2);"
+  ],
+  "description": [
+    "Sets the value of the Bus Timing Register. This setting affects the baud rate of the CAN bus set in CANstress. The CAN controller data sheet will list valid pairs of values."
+  ],
+  "parameters": [
+    {
+      "name": "btr0",
+      "type": "",
+      "description": "New value for BTR0."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

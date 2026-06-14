@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "C2xSecPacketSetSignerType",
+  "category": "Car2x",
+  "title": "C2xSecPacketSetSignerType",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xSecPacketSetSignerType.htm",
+  "syntax": [
+    "long C2xSecPacketSetSignerType(long packetHandle, long signerType);"
+  ],
+  "description": [
+    "Specifies how the message signer information is included in the message. It is possible to add only a digest (HashedId8), to transmit the signer’s certificate or to transmit the complete certificate chain."
+  ],
+  "parameters": [
+    {
+      "name": "packetHandle",
+      "type": "",
+      "description": "Handle of the packet"
+    },
+    {
+      "name": "signerType",
+      "type": "",
+      "description": "Signer information type 0: unsecured 1: digest 2: certificate 3: certificate chain"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long packetHandle;\nlong certificateHandle;\npacketHandle = C2xInitPacket(\"geo_eh\", \"BEACON | SH\");\ncertificateHandle = C2xSecCertificateGetHandle ( \"MyCert\" );\nC2xSecPacketSetSignerHandle(packetHandle, certificateHandle);\nC2xSecPacketSetSignerType(packetHandle, 2); // send certificate\nC2xCompletePacket(packetHandle);\nC2xOutputPacket(packetHandle);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0",
+      "—",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

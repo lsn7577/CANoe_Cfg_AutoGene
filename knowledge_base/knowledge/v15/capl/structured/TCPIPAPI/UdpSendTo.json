@@ -1,0 +1,172 @@
+{
+  "page_type": "function",
+  "name": "UdpSendTo",
+  "category": "TCPIPAPI",
+  "title": "UdpSendTo",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionUDPSendTo.htm",
+  "syntax": [
+    "long UdpSendTo( dword socket, dword address, dword port, char buffer[], dword size); // form 1",
+    "long UdpSendTo( dword socket, byte ipv6Address[], dword port, char buffer[], dword size); // form 2",
+    "long UdpSendTo( dword socket, dword address, dword port, struct data[], dword size); // form 3",
+    "long UdpSendTo( dword socket, dword address, dword port, byte buffer[], dword size); // form 4",
+    "long UdpSendTo( dword socket, byte ipv6Address[], dword port, struct data[], dword size); // form 5",
+    "long UdpSendTo( dword socket, byte ipv6Address[], dword port, byte buffer[], dword size); // form 6",
+    "long UdpSendTo( dword socket, IP_Endpoint remoteEndpoint, char buffer[], dword size); // form 7",
+    "long UdpSendTo( dword socket, IP_Endpoint remoteEndpoint, byte buffer[], dword size); // form 8",
+    "long UdpSendTo( dword socket, IP_Endpoint remoteEndpoint, struct data[], dword size); // form 9"
+  ],
+  "description": [
+    "The function sends data to the specified location. If the send operation does not complete immediately the operation is performed asynchronously and the function will return SOCKET_ERROR (-1). Use IpGetLastSocketError to get a more specific error code. If the specific error code is WSA_IO_PENDING (997) and the CAPL callback OnUdpSendTo will be called on completion (successful or not), providing that it is implemented in the same CAPL program.",
+    "If the operation has been processed synchronously, the CAPL callback OnUdpSendTo is not called up (see also TcpSend)."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    },
+    {
+      "name": "address",
+      "type": "",
+      "description": "The numerical IPv4 address of the destination in network-byte order."
+    },
+    {
+      "name": "ipv6Address",
+      "type": "",
+      "description": "The destination IPv6 address in a 16 byte array."
+    },
+    {
+      "name": "port",
+      "type": "",
+      "description": "The port of the destination in host-byte order."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "The buffer containing the data to be sent."
+    },
+    {
+      "name": "data",
+      "type": "",
+      "description": "The struct containing the data to be sent."
+    },
+    {
+      "name": "size",
+      "type": "",
+      "description": "The size of the data to be sent."
+    },
+    {
+      "name": "remoteEndpoint",
+      "type": "",
+      "description": "The destination endpoint. IP address and port number must be specified. Example: IP_Endpoint( 192.168.1.1:40001 ) IP_Endpoint( [FC00::0001]:40001 )"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket gSocket;\n  char gRxBuffer[1000];\n}\n\non start\n{\n  gSocket = UdpSocket::Open( IP_Endpoint(0.0.0.0:40001) );\n  gSocket.SendTo( IP_Endpoint(192.168.0.2:40002), \"Hello\", 5 );\n  gSocket.ReceiveFrom( gRxBuffer, elcount( gRxBuffer) );\n}\n\nOnUdpReceiveFrom( UdpSocket socket, long result, IP_Endpoint remoteEndpoint, char buffer[], dword size)\n{\n  if (result == 0)\n  {\n    write( \"Received: %s\", buffer );\n    gSocket.ReceiveFrom( gRxBuffer, elcount( gRxBuffer) );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5: function 1-2 12.0: function/method 7-9",
+      "7.0: function 1-2 7.0 SP5: method 1-2 8.2 SP2: function/method 3-6 12.0: function/method 7-9",
+      "13.0",
+      "13.0: form 7-9",
+      "—",
+      "2.0 SP2: function 1-2 12.0: function/method 7-9"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

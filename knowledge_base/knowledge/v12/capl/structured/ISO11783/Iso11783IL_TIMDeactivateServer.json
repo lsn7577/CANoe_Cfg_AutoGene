@@ -1,0 +1,40 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMDeactivateServer",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMDeactivateServer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimDeactivateServer.htm",
+  "syntax": [
+    "long Iso11783IL_TIMDeactivateServer( ); // form 1"
+  ],
+  "description": [
+    "Deactivates the TIM server.",
+    "For a graceful shutdown the TIM server gracefully releases all TIM functions being in automation. Then it sends three times in a row the Heartbeat counter value Graceful shutdown. And at the end it stops sending any messages (including TIM_ServerStatus_Msg).",
+    "For a none graceful shutdown of the TIM server stops sending any message at once including TIM_ServerStatus_Msg)."
+  ],
+  "parameters": [
+    {
+      "name": "Option",
+      "type": "Value",
+      "description": "Description"
+    },
+    {
+      "name": "Graceful shutdown",
+      "type": "01h",
+      "description": "Server is gracefully shutdown"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

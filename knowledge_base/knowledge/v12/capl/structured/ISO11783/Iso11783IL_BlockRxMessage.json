@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_BlockRxMessage",
+  "category": "ISO11783",
+  "title": "Iso11783IL_BlockRxMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILBlockRxMessage.htm",
+  "syntax": [
+    "long Iso11783IL_BlockRxMessage(dword pgn, dword sourceAddress, qword filterMask, qword filterValue); // form 1"
+  ],
+  "description": [
+    "Prevents processing of a received message by the interaction layer.",
+    "The message to block is specified by PGN, destination source address and a part of the first eight data bytes.",
+    "To revert this command you can use Iso11783IL_ResetBlockedRxMessage or Iso11783IL_ResetAllBlockedRxMessages."
+  ],
+  "parameters": [
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "The message with this PGN shall be blocked."
+    }
+  ],
+  "return": "0: Manipulation is set successfully",
+  "example": {
+    "description": [],
+    "code": "—"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

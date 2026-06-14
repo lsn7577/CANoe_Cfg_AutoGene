@@ -1,0 +1,49 @@
+# _DoIP_UDPDataInd
+
+> Category: `Diagnostics` | Type: `function`
+
+## Syntax
+
+```c
+void _DoIP_UDPDataInd( char IPaddress[], BYTE data[]);
+```
+
+## Description
+
+An UDP packet was received that cannot be interpreted by this DoIP implementation. The senders IP address is given as first argument, in text form.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| IPaddress | Address in text form, e.g. “169.254.32.1” (IPv4) or “2001::1” (IPv6). |
+| data | The raw data received, including complete header, if present. |
+
+## Return Values
+
+—
+
+## Example
+
+```c
+void _DoIP_UDPDataInd( char IPaddress[], BYTE data[])
+{
+  write( "_DoIP_UDPDataInd( '%s', [%d]<%02x ...>)", IPaddress
+  , elcount( data), elcount(data) > 0 ? data[0] : 0);
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 8.1 SP4 | — | — | — | 1.0 SP2 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | — | — | N/A |

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coODCreateFloat",
+  "category": "Obsolete",
+  "title": "coODCreateFloat",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdCreateFloat.htm",
+  "syntax": [
+    "void coODCreateFloat( dword index, dword subIndex, dword dataType, dword access, float initValue, dword errCode[] );"
+  ],
+  "description": [
+    "Generates a new object in the local object dictionary of the specified type and with a floating point start value. If the size of the object (type 0x8 - 32 bit) is smaller than the length of the start value (64 bits), a conversion is undertaken. This can cause lower precision or value falsification.",
+    "If the object already exists, then it is replaced by the new object."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the object, value range 1..65.535"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoODCreateFloat( 0x2000, 0x0, 0x8, 1, 2.5894, errCode );\nif (errCode[0] == 0) {\n  write( \"Object [0x2000,0] created\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

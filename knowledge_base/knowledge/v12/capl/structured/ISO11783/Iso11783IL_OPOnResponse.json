@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPOnResponse",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPOnResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPOnResponse.htm",
+  "syntax": [
+    "void Iso11783IL_OPOnResponse( pg VTtoECU response );"
+  ],
+  "description": [
+    "The function is called by the node layer, if a response from the Virtual Terminal is received. If a response is not received, the callback function Iso11783IL_OPOnError is called."
+  ],
+  "parameters": [
+    {
+      "name": "response",
+      "type": "",
+      "description": "Parameter group containing the answer of the Virtual Terminal"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_OPOnResponse( pg VTtoECU response )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

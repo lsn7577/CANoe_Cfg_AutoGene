@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coThisGetUnsigned",
+  "category": "Obsolete",
+  "title": "coThisGetUnsigned",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoThisGetUnsigned.htm",
+  "syntax": [
+    "dword coThisGetUnsigned( dword errCode[] );"
+  ],
+  "description": [
+    "The function returns a value with no leading sign of an object in the event functions coOnUploadResponse or coOnDownloadIndication. The call is only allowed in these event functions."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "Value of the object entry",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\ndword value;\n\nvalue = coThisGetUnsigned( errCode );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

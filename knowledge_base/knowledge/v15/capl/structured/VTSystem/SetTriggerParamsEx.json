@@ -1,0 +1,162 @@
+{
+  "page_type": "method",
+  "name": "SetTriggerParamsEx",
+  "category": "VTSystem",
+  "title": "SetTriggerParamsEx",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSSetTriggerParamsEx.htm",
+  "syntax": [
+    "long SysVarNamespace.SetTriggerParamsEx (eVTSTrigger Trigger, double MinPulseWidth, double RestartTime, dword PreTriggers, dword RestartTriggers, dword ThresholdEventCount, dword ExtSettings);"
+  ],
+  "description": [
+    "The function configures additional parameters for VT System triggers. Basic parameters are configured using SetTriggerParams.",
+    "You can find additional information about VT System triggers on the page Triggers."
+  ],
+  "parameters": [
+    {
+      "name": "Trigger",
+      "type": "",
+      "description": "Specifies which trigger is configured. VT1004 module: Values see eVTSTrigger"
+    },
+    {
+      "name": "MinPulseWidth",
+      "type": "",
+      "description": "Specifies that the triggers fires only if no opposite edge or level event occurs within the specified time after the triggering event. This way you can restrict the trigger to pulses that take at least as long as specified with this parameter. E.g. for a trigger that detects rising edges and a MinPulseWidth of 0.01 a rising edge is only detected if no falling edge occurs within 10ms. This parameter is transferred to the VT System with nanosecond resolution. Valid values: 0 (0.0s)..1.0 (1.0s)"
+    },
+    {
+      "name": "RestartTime",
+      "type": "",
+      "description": "Specifies the delay after which a trigger is restarted by another trigger. This parameter is transferred to the VT System with nanosecond resolution. Valid values: 0 (0.0s)..1.0 (1.0s) Example: Trigger 2 is configured as a restart trigger for trigger 1. In this case trigger 1 is restarted after trigger 2 fires, with a delay that is set by this parameter."
+    },
+    {
+      "name": "PreTriggers",
+      "type": "",
+      "description": "This bitfield specifies preconditions for the configured trigger. Every set bit specifies a trigger that must be active before the configured trigger is activated. This setting refers to triggers of the same VT System channel. Bit 0 set: Trigger1 must fire as a precondition Bit 1 set: Trigger2 must fire as a precondition ... VT1004 module: 8 lowermost bits can be used. Example: Set PreTriggers to 5 (= 1 + 4) to use triggers 1 and 3 as preconditions for the configured trigger."
+    },
+    {
+      "name": "RestartTriggers",
+      "type": "",
+      "description": "This bitfield specifies the triggers that restart the configured trigger. After a restart another event can be shown by trigger event system variable of the trigger. However the event counter of the trigger is not reset. This setting refers to triggers of the same VT System channel. Bit 0 set: Trigger1 restarts the configured trigger Bit 1 set: Trigger2 restarts the configured trigger Bit 2 set: Trigger3 restarts the configured trigger ... VT1004 module: 8 lowermost bits can be used. Example: Set RestartTriggers to 10 (= 2 + 8) to set triggers 2 and 4 as restart triggers for the configured trigger."
+    },
+    {
+      "name": "ThresholdEventCount",
+      "type": "",
+      "description": "If this parameter is set to a value k higher than 0, trigger events are only visible and the event counter for the trigger is only incremented when the triggering event has occurred k + 1 times. Valid values: 0..4294967295 Example: If ThresholdEventCount is set to 3 the trigger event system variable is set when the configured event occurs for the 4th time. Also the event counter is incremented every 4th time the configured event occurs."
+    },
+    {
+      "name": "ExtSettings",
+      "type": "",
+      "description": "This bitfield specifies additional settings. Values see eVTSTriggerEdgeType."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following example shows how triggers can be used to measure the width of a pulse that is the distance between the rising and falling edge of a pulse.",
+      "Sample Code CAPL test module"
+    ],
+    "code": "variables\n{\n   int64 gRiseTime = 0;\n   int64 gFallTime = 0;\n}\n\nvoid MainTest ()\n{\n   MeasurePulseLength();\n}\n\nvoid MeasurePulseLength()\n{\n   dword trigger1EventCount = 0;\n   dword trigger2EventCount = 0;\n   int64 pulseWidth = 0;\n\n   enum eVTSTrigger trigger = eVTSTrigger1;\n   enum eVTSTriggerSourceChannel sourceChannel = eVTSTriggerSourceChannel1;\n   enum eVTSTriggerEdgeType edgeType = eVTSTriggerEdgeTypeRising;\n   dword preTriggers = 0;\n\n   double minPulseWidth = 0.0;\n\n   // configure two triggers (one for the rising and one for the falling edge)\n   trigger = eVTSTrigger1;\n   sourceChannel = eVTSTriggerSourceChannel1;\n   edgeType = eVTSTriggerEdgeTypeRising; // rising edge\n   preTriggers = 0; // no other trigger as precondition\n   minPulseWidth = 0.002; // pulse must have a width of at at least 2ms\n\n   sysvar::VTS::IgnitionChannels.SetTriggerParams( trigger, sourceChannel, edgeType);\n   sysvar::VTS::IgnitionChannels.SetTriggerParamsEx( trigger, minPulseWidth, 0.0, preTriggers, 0, 0, eVTSTriggerTypeEdge);\n\n   trigger = eVTSTrigger2;\n   sourceChannel = eVTSTriggerSourceChannel1;\n   edgeType = eVTSTriggerEdgeTypeFalling; // falling edge\n   preTriggers = 1; // first bit set: trigger 1 must be activated as a precondition\n\n   sysvar::VTS::IgnitionChannels.SetTriggerParams( trigger, sourceChannel, edgeType);\n   sysvar::VTS::IgnitionChannels.SetTriggerParamsEx( trigger, 0.0, 0.0, preTriggers, 0, 0, eVTSTriggerTypeEdge);\n\n   TestWaitForTimeout( 50); // wait some time to make sure the settings are transferred\n\n   // start triggers\n   trigger = eVTSTrigger1;\n   sysvar::VTS::IgnitionChannels.StartTrigger( trigger);\n   trigger = eVTSTrigger2;\n   sysvar::VTS::IgnitionChannels.StartTrigger( trigger);\n\n   // wait some time until a pulse has occurred\n   TestWaitForTimeout( 1000);\n\n   // check if pulse was detected and output pulse width\n   trigger1EventCount = @sysvar::VTS::IgnitionChannels::Trigger1EventCount;\n   trigger2EventCount = @sysvar::VTS::IgnitionChannels::Trigger2EventCount;\n\n   if (trigger1EventCount > 0 && trigger2EventCount > 0)\n   {\n      pulseWidth = gFallTime - gRiseTime;\n      Write( \"Pulse width: %.3f µs\", (pulseWidth/1000.0));\n   }\n   else\n   {\n      Write(\"No pulse detected!\");\n   }\n}\n\non sysvar_update sysvar::VTS::IgnitionChannels::Trigger1Event\n{\n   // save time stamp of rising edge when event occurs\n   gRiseTime = sysGetVariableTimeNS( this);\n}\n\non sysvar_update sysvar::VTS::IgnitionChannels::Trigger2Event\n{\n   // save time stamp of falling edge when event occurs\n   gFallTime = sysGetVariableTimeNS( this);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0 SP4",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

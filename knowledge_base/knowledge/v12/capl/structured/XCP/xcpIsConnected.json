@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "xcpIsConnected",
+  "category": "XCP",
+  "title": "xcpIsConnected",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionXCPIsConnected.htm",
+  "syntax": [
+    "long xcpIsConnected (char ecuQualifier[]);"
+  ],
+  "description": [
+    "Returns the current connection status of a XCP/CCP device."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Name of the device – configured within the CANoe XCP/CCP Window."
+    }
+  ],
+  "return": "0: Not connected",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

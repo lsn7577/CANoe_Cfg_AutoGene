@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDO",
+  "category": "CANopen",
+  "title": "coTfsSDO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdo.htm",
+  "syntax": [
+    "long coTfsSDO( dword index, dword subIndex );"
+  ],
+  "description": [
+    "This function executes the following transfers:",
+    "In each case, first a value is written with a download and this value is read back with an upload and checked. The test is destructive, the object in the DUT Device Under Test is overwritten. The object's data is overwritten during the test and not restored. The block transfers are transmitted with a CRC checksum if the CANopen® device supports these.",
+    "The test counts as passed if all 6 data transmissions were completed successfully."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of a domain or string object."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if ( coTfsSDO (0x2000, 0x0) != 1) {\n  write(\"SDO test failed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

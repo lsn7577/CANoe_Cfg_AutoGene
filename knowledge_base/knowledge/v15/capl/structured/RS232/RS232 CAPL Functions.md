@@ -1,0 +1,36 @@
+# RS232 CAPL Functions
+
+> Category: `RS232` | Type: `notes`
+
+## Description
+
+First, open a port, then transmit and receive data, then close it.
+
+byte data[2];int length = 2;data[0] = 1;data[1] = 2;if ( 1==RS232Open(1) ) write(“Port 1 has been opened.”);if ( 1==RS232Send(1,data,length) ) write(“Send bytes to port 1.”);if ( 1==RS232Close(1) ) write(“Port 1 has been closed.”);
+
+Deprecated INI File | RS232 API: Overview
+
+| RS232 |
+|---|
+
+| Functions | Short Description |
+|---|---|
+| RS232Close | Closes a serial port. |
+| RS232Open | Opens serial port. |
+| RS232Configure | Configures serial port (everything besides handshake). |
+| RS232SetHandshake | Configures handshake parameters. |
+| RS232Send | Sends block of data asynchronously on serial port. |
+| RS232Receive | Sets receiver buffer for serial port. |
+| RS232SetSignalLine | Sets signal line on serial port. |
+
+| Functions | Short Description |
+|---|---|
+| RS232OnSend | Handler will be called after completion of request issued with RS232Send. |
+| RS232OnReceive | Handler will be called regularly if data has been received at port. Starts with RS232Receive. |
+| RS232OnError | Handler will be called if an error has occurred. |
+
+| Example byte data[2];int length = 2;data[0] = 1;data[1] = 2;if ( 1==RS232Open(1) ) write(“Port 1 has been opened.”);if ( 1==RS232Send(1,data,length) ) write(“Send bytes to port 1.”);if ( 1==RS232Close(1) ) write(“Port 1 has been closed.”); |
+|---|
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_TCPSend",
+  "category": "Diagnostics",
+  "title": "DoIP_TCPSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPTCPSend.htm",
+  "syntax": [
+    "long DoIP_TCPSend(dword payloadType, byte payload[], dword payloadLen);"
+  ],
+  "description": [
+    "Sends a DoIP PDU with valid layout on the open TCP connection."
+  ],
+  "parameters": [
+    {
+      "name": "protocolD",
+      "type": "",
+      "description": "If given, this will replace the configured protocol version in the DoIP PDU.[0; 255]"
+    }
+  ],
+  "return": "Error code, e.g. connection not established yet.",
+  "example": {
+    "description": [],
+    "code": "// When a vehicle is connected, send a non-standard frame to the peer\nOn key '1'\n{\n  BYTE payload[3] = { 0x11, 0x22, 0x33 };\n  // the frame type 0xF222 is manufacturer-specific\n  DoIP_TCPSend( 0xF222, payload, elcount( payload));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

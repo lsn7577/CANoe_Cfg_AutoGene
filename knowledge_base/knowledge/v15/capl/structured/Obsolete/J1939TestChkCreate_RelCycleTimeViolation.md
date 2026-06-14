@@ -1,0 +1,29 @@
+# J1939TestChkCreate_RelCycleTimeViolation
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by ChkCreate_MsgRelCycleTimeViolation |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long J1939TestChkCreate_RelCycleTimeViolation(dword sourceAddr, dword destAddr, dbMsg dbMsg, double minCycleTime, double maxCycleTime, [char callback[]] ) |  |  |  |
+| long J1939TestChkCreate_RelCycleTimeViolation(dbNode sourceNode, [dbNode destNode,], dbMsg dbMsg, double minCycleTime, double maxCycleTime, [char callback[]] ) |  |  |  |  |
+| Check Name | J1939 Cycle Time |  |  |  |
+| Function | Cycle time check for a J1939 parameter group. The message attribute GenMsgCycleTime must be defined for the message. The minimum and maximum cycle time is a relative factor to the cycle time from the database. |  |  |  |
+| Parameters | sourceAddr sender address |  |  |  |
+| destAddr destination address, optional if the PGN is global or the receiver is defined in the database message |  |  |  |  |
+| dbMsg message from database |  |  |  |  |
+| sourceNode send node for the message |  |  |  |  |
+| destNode receiver node, optional if PGN is global or receiver is defined in the database message |  |  |  |  |
+| minCycleTime minimum cycle time as factor of GenMsgCycleTime |  |  |  |  |
+| maxCycleTime maximum cycle time as factor of GenMsgCycleTime |  |  |  |  |
+| callback optional name of the callback function which is called when a violation of the cycle time is detected or 0, signature: void Callback( long checked ) |  |  |  |  |
+| Return Values | >0: check was created successfully and may be referenced using the returned (handle) value =0: check could not be created and must not be referenced <0: error, see error codes |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 7.1-8.2 SP2 | J1939 | — | • |  |
+| Example long check;check = J1939TestChkCreate_RelCycleTimeViolation( EMS, EEC1, 0.95, 1.05 );J1939TestChkControl_Start( check ); |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

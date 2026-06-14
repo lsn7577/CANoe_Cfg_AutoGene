@@ -1,0 +1,141 @@
+{
+  "page_type": "function",
+  "name": "linSendBitStream",
+  "category": "LIN",
+  "title": "linSendBitStream",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINSendBitStream.htm",
+  "syntax": [
+    "long linSendBitStream(byte bitStream[], long numberOfBits); // form 1",
+    "long linSendBitStream(byte bitStream[], long numberOfBits, long timeoutPrevention); // form 2"
+  ],
+  "description": [
+    "Sends an arbitrary bit stream on the LIN bus."
+  ],
+  "parameters": [
+    {
+      "name": "bitStream",
+      "type": "",
+      "description": "The bit stream to be sent. Maximum number of bits: 2^31-1."
+    },
+    {
+      "name": "numberOfBits",
+      "type": "",
+      "description": "The number of bits in the bitStream-array."
+    },
+    {
+      "name": "timeoutPrevention",
+      "type": "",
+      "description": "0: deactivates the timeout prevention for the 7259-transceiver. 1: activates the timeout prevention for the 7259-transceiver."
+    }
+  ],
+  "return": "On success a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "This function sends LIN header as a bit stream"
+    ],
+    "code": "int SendSpecialHeader(int breakLength, int delimiterLength, byte syncByte, byte idByte)\n{\nbyte data[25];\nint headerLength;\nint currentPosition;\nint i;\n   // Header consists of Break, Sync and PID bytes\nheaderLength = breakLength + delimiterLength + 20;\r\n \nif (headerLength > 200)\n{\nreturn 0; // maximum is exceeded\n}\ncurrentPosition = 0;\nfor (i = 0; i < 25; ++i)\n{\ndata[i] = 0xff; // initialize \n}\nfor (i = breakLength; i > 0;) // set sync break\n{\nif (i >= 8)\n{\ndata[currentPosition >> 3] = 0;\ni -= 8;\ncurrentPosition += 8;\n}\nelse\n{\ndata[currentPosition >> 3] &= ~(1 << \r\n (currentPosition & 0x7));\n--i;\n++currentPosition;\n}\n}\ncurrentPosition += delimiterLength; // set synch delimiter\n   // set sync byte\ndata[currentPosition >> 3] &= ~(1 << (currentPosition & 0x7)); // start bit\n++currentPosition;\nfor (i = 0; i < 8; ++i)\n{\nif ((syncByte & (1 << i)) == 0) // dominant bit in syncByte\n{\ndata[currentPosition >> 3] &= ~(1 << (currentPosition & 0x7));\n}\n++currentPosition;\n}\n++currentPosition; // set recessive stop bit\n   // set protected id\ndata[currentPosition >> 3] &= ~(1 << (currentPosition & 0x7)); // start bit\n++currentPosition;\nfor (i = 0; i < 8; ++i)\n{\nif ((idByte & (1 << i)) == 0) // dominant bit in idByte\n{\ndata[currentPosition >> 3] &= ~(1 << (currentPosition & 0x7));\n}\n++currentPosition;\n}\n++currentPosition; // set recessive stop bit\nlinSendBitStream(data, headerLength); // send created header\nreturn headerLength;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN Real bus mode",
+      "—",
+      "—",
+      "—",
+      "LIN Real bus mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

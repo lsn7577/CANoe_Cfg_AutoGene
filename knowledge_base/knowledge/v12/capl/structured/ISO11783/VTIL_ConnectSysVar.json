@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ConnectSysVar",
+  "category": "ISO11783",
+  "title": "VTIL_ConnectSysVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILConnectSysVar.htm",
+  "syntax": [
+    "long VTIL_ConnectSysVar(dbNode workingSetMaster, dword objectId, char[] sysVarNameWithPath); // form 1"
+  ],
+  "description": [
+    "Connects an object from the object pool to a system variable. Valid objects are variables, objects representing values or string, buttons and soft keys.",
+    "If a variable object or an object representing a values or a string is changed, the new value is put into the system variable.",
+    "To release connection between the system variable and an object, just call the same method again, but with the empty string instead of the name of system variable."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_ConnectSysVar(VT, Sprayer, 221, \"VT::svValueInt32\");\nswitch (result)\n{\n  case 0:\n    write(\"Object 12 is successfully connected with svValueInt32\");\n    TestStepPass();\n    break;\n  case -2109: TestStepFail(\"Working Set is not available!\"); break;\n  case -2113: TestStepFail(\"Invalid Parameter!\"); break;\n  case -2114: TestStepFail(\"Invalid system variable path!\"); break;\n  default:    TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

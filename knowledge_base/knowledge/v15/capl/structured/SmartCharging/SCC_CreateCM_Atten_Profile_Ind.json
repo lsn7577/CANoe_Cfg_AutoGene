@@ -1,0 +1,158 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_Atten_Profile_Ind",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_Atten_Profile_Ind",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_Atten_Profile_Ind.htm",
+  "syntax": [
+    "void SCC_CreateCM_Atten_Profile_Ind ( byte SourceMac[], byte TargetMac[], byte PEVMAC[], dword NumGroups, byte AAG[] )"
+  ],
+  "description": [
+    "Creates a CM_Atten_Profile.Ind message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SourceMac",
+      "type": "",
+      "description": "Source address of the Ethernet frame."
+    },
+    {
+      "name": "TargetMac",
+      "type": "",
+      "description": "Destination address of the Ethernet frame."
+    },
+    {
+      "name": "PEVMAC",
+      "type": "",
+      "description": "PEV MAC Address."
+    },
+    {
+      "name": "NumGroups",
+      "type": "",
+      "description": "Number of attenuation groups."
+    },
+    {
+      "name": "AAG",
+      "type": "",
+      "description": "Average Attenuation Group (array length is indicated by the parameter NumGroups)."
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Reserved field dword 1 byte"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

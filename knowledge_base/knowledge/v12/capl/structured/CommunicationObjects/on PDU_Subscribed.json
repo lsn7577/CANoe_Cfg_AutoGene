@@ -1,0 +1,38 @@
+{
+  "page_type": "event",
+  "name": "on PDU_Subscribed",
+  "category": "CommunicationObjects",
+  "title": "on PDU_Subscribed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnPDUSubscribed.htm",
+  "syntax": [
+    "on PDU_Subscribed <PDU>"
+  ],
+  "description": [
+    "The event procedure is called at the provider when a PDU is subscribed by a consumer."
+  ],
+  "parameters": [
+    {
+      "name": "<PDU>",
+      "type": "",
+      "description": "Designates the PDU on which the event procedure shall react. This must be a provider endpoint."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on PDU_Subscribed Mirrors::MirrorAdjustment[LeftMirror].StatusPdu\n{\n  write(\"PDU subscribed by %s\", this.consumer.Name);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "pduConsumerRef *",
+      "link": "../Objects/CAPLfunctionPDUConsumerRef.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

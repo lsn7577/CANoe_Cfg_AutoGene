@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "ChkConfig_DisablePDULayer",
+  "category": "Test",
+  "title": "ChkConfig_DisablePDULayer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkConfigDisablePDULayer.htm",
+  "syntax": [
+    "long ChkConfig_DisablePDULayer();"
+  ],
+  "description": [
+    "Disables the PDU layer for the current bus context. It affects the next checks that are created after calling this function.",
+    "This function has to be used for PDU networks if a check is setup on network level, i.e:",
+    "Default is enabled for a PDU network."
+  ],
+  "parameters": [],
+  "return": "0: Successful",
+  "example": {
+    "description": [],
+    "code": "TestCheck c1, c2;\ndword bcPduNetwork;\n\n// only needed if the test works on several networks\nbcPduNetwork = getBusNameContext(\"My Pdu Network\");\nsetBusContext(bcPduNetwork);\n\n// always use short header ID\nChkConfig_SetPDUIDFormat(1);\n\n// creates the cycle time check with a PDU header ID\nc1 = TestCheck::CreateMsgAbsCycleTimeViolation(2983504, 8, 12);\n\nChkConfig_DisablePDULayer();\n// creates the cycle time check with a CAN ID\nc2 = TestCheck::CreateMsgAbsCycleTimeViolation(0x3e1, 8, 12);\n\n// reset to default values\nChkConfig_EnablePDULayer();\nChkConfig_SetPDUIDFormat(0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

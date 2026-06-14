@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestDisableMsgAllTx",
+  "category": "Test",
+  "title": "TestDisableMsgAllTx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestDisableMsgAllTx.htm",
+  "syntax": [
+    "long TestDisableMsgAllTx (char [] aNode)"
+  ],
+  "description": [
+    "Disables the sending of all tx messages of the node except the sending with testSetMsgEvent.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "Node, the tx messages should be disabled."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": "// send a message event for a message which is disabled by TestDisableMsgAllTx\nTestDisableMsgAllTx(NodeToManipulate);\nTestWaitForTimeout(5000);\nTestSetMsgEvent(MsgToManipulate);\nTestWaitForTimeout(5000);\nTestEnableMsgAllTx(NodeToManipulate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "getChecksum",
+  "category": "Obsolete",
+  "title": "getChecksum",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionGetChecksum.htm",
+  "syntax": [
+    "int getChecksum(linFrame msg)"
+  ],
+  "description": [
+    "Returns the currently set checksum of a LIN frame or LIN checksum error.",
+    "In the case of a LIN frame, the correct value derived from the message data is returned by default, even after the message data has been modified. The user can, however set a deviating value with setManualChecksum to generate checksum errors on the LIN bus. This value is then constant and will not be affected by changes in the message data. To turn off this behavior for a given message, the user must call resetManualChecksum."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "LIN frame for which the checksum will be queried."
+    }
+  ],
+  "return": "Calculated checksum.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

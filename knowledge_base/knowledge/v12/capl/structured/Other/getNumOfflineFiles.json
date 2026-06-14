@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getNumOfflineFiles",
+  "category": "Other",
+  "title": "getNumOfflineFiles",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetNumOfflineFiles.htm",
+  "syntax": [
+    "long getNumOfflineFiles();"
+  ],
+  "description": [
+    "Returns the number of configured offline source files."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "-1: If error (e.g., not in offline mode)",
+  "example": {
+    "description": [],
+    "code": "long numFiles;\n\nnumFiles = getNumOfflineFiles();\nwrite(\"Number of configured offline source files: %d\", numFiles);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

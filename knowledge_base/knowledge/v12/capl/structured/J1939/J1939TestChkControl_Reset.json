@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkControl_Reset",
+  "category": "J1939",
+  "title": "J1939TestChkControl_Reset",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestChkControlReset.htm",
+  "syntax": [
+    "long J1939TestChkControl_Reset( long checkId );"
+  ],
+  "description": [
+    "The status (stored values) of the check is initialized. The check does not have to be stopped for this function to work."
+  ],
+  "parameters": [
+    {
+      "name": "checkId",
+      "type": "",
+      "description": "identifier of the check to reset"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long cycleCheck;\ncycleCheck = J1939TestChkCreate_AbsCycleTimeViolation( 1, 2, 0xf123, 0.8, 1.2, \"CycleCallback\" );\n\nJ1939TestChkControl_Start( cycleCheck );\n//...\nJ1939TestChkControl_Reset( cycleCheck );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

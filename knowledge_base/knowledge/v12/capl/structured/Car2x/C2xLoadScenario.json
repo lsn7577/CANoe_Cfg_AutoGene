@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xLoadScenario",
+  "category": "Car2x",
+  "title": "C2xLoadScenario",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xLoadScenario.htm",
+  "syntax": [
+    "long C2xLoadScenario(char* scenarioFilePath)"
+  ],
+  "description": [
+    "This function loads the scenario from the file specified by scenarioFilePath parameter. If the current scenario is running, it must be stopped via C2xStopScenario() function call or by stopping scenario in Scenario Manager window before calling C2xLoadScenario function. After C2xLoadScenario function call, the new scenario is not instantly available (scenario file loading takes at least 10 milliseconds time). When scenario loading is completed, the OnScenarioStateChanged callback will be called, with newState parameter equal to zero (0). At this time, the loaded scenario is available for further operations, by example scenario starting. The OnScenarioStateChanged callback will not be called if the scenario load fails."
+  ],
+  "parameters": [
+    {
+      "name": "scenarioFilePath",
+      "type": "",
+      "description": "The path to the scenario file, e.g. c:\\SomeFolder\\NewScenario.scn. The relative file paths are also accepted, with the relation to CANoe configuration folder."
+    }
+  ],
+  "return": "1: Scenario load request successfully accepted. The scenario is now loaded in the background. Once the scenario load is completed, the OnScenarioStateChanged will be called with the parameter 0 (scenario load succeded). In the case, when scenario load fails, the OnScenarioStateChanged callback function will not be called.",
+  "example": {
+    "description": [],
+    "code": "on key ’x’\n{\n    C2xLoadScenario(”c:\\SomeFolder\\NewScenario.scn”);\n    // C2xLoadScenario(”NewScenario2.scn”); // Load from CANoe configuration folder\n}\n\nvoid OnScenarioStateChanged(long newState)\n{\n  if (newState == 0) // new scenario file was loaded\n  {\n    C2xStartScenario();\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

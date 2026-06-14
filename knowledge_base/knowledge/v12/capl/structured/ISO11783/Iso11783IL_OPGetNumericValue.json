@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPGetNumericValue",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPGetNumericValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPGetNumericValue.htm",
+  "syntax": [
+    "long Iso11783IL_OPGetNumericValue( dword objectID ); // form 1"
+  ],
+  "description": [
+    "The function returns a numeric value of an object. The object must exist in the object pool and must support a numeric value."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "object Identifier of the object"
+    }
+  ],
+  "return": "integer value of the object\nIf a value of 0 is returned, you can check with the function Iso11783IL_GetLastError if the function succeeded.",
+  "example": {
+    "description": [],
+    "code": "LONG val;\nval = Iso11783IL_OPGetNumericValue( 1000 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

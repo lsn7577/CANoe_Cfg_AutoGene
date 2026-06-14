@@ -1,0 +1,99 @@
+{
+  "page_type": "notes",
+  "name": "J1939TestWaitForPG",
+  "category": "Obsolete",
+  "title": "J1939TestWaitForPG",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionJ1939TestWaitForPG.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by TestWaitForJ1939PG"
+      ],
+      [
+        "Function Syntax",
+        "long J1939TestWaitForPG( dword sourceAddr, dword destAddr, dword pgn, dword timeout )"
+      ],
+      [
+        "long J1939TestWaitForPG( dword sourceAddr, dword destAddr, dbMsg message, dword timeout )"
+      ],
+      [
+        "long J1939TestWaitForPG( dbNode source, dbNode dest, dword pgn, dword timeout )"
+      ],
+      [
+        "long J1939TestWaitForPG( dbNode source, dword pgn, dword timeout )"
+      ],
+      [
+        "long J1939TestWaitForPG( dword sourceAddr, dword destAddr, pg pgBuffer, dword pgBufferSize, dword timeout )"
+      ],
+      [
+        "Function",
+        "Wait until the specified parameter group is received."
+      ],
+      [
+        "Parameters",
+        "sourceAddr source address of the PG or Null Address (0xFE) for wildcard"
+      ],
+      [
+        "destAddr destination address of the PG or Null Address (0xFE) for wildcard, ignored for broadcast PGs"
+      ],
+      [
+        "pgn parameter group number (PGN) to wait for"
+      ],
+      [
+        "source node from database, see node definition"
+      ],
+      [
+        "dest node from database, see node definition"
+      ],
+      [
+        "message message from database"
+      ],
+      [
+        "pgBuffer parameter group, that is filled with the received data"
+      ],
+      [
+        "pgBufferSize size of parameter group"
+      ],
+      [
+        "timeout timeout in [ms] or 0 for deactivating the timeout"
+      ],
+      [
+        "Return Values",
+        "-2: Resume due to constraint violation -1: General error, for example, functionality is not available 0: Resume due to timeout >0: Resume due to event occurred"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "7.1-8.2 SP2",
+        "J1939",
+        "—",
+        "•"
+      ],
+      [
+        "Example long lret;lret = J1939TestWaitForPG(10, 0xFF, 0xF123, 500 );switch(lret) { case 1: break; default: // error, timeout or constrain violation break;}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

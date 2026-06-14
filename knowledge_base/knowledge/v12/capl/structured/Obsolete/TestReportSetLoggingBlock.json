@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestReportSetLoggingBlock",
+  "category": "Obsolete",
+  "title": "TestReportSetLoggingBlock",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionTestReportSetLoggingBlock.htm",
+  "syntax": [
+    "TestReportSetLoggingBlock (char data name[])"
+  ],
+  "description": [
+    "This function annotates a logging file to a report, e.g. to HTML reports created with extendedNavigation.xslt."
+  ],
+  "parameters": [
+    {
+      "name": "Data name",
+      "type": "",
+      "description": "Path of the logging file.This must always be relative to the XML test report, e.g. \"logfile.asc\" or \"log/logfile.asc\". If a logging file is not displayed correctly, you should check the specified path since it is not automatically checked whether the specified file actually exists."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "writeDbgLevel",
+  "category": "Other",
+  "title": "writeDbgLevel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWriteDbgLevel.htm",
+  "syntax": [
+    "long writeDbgLevel(unsigned int priority, char format1[], char format2[], ...);"
+  ],
+  "description": [
+    "Outputs a message to the Write Window with the specified priority. This function can be used for debugging to vary the output to the Write Window. This function is especially useful if nodelayer-DLL’s are used. In this case the debug output can be controlled using a global priority parameter.",
+    "In the simulation tree the priority level can be set for every network node using the setWriteDbgLevel function."
+  ],
+  "parameters": [
+    {
+      "name": "priority",
+      "type": "",
+      "description": "Output priority from 0 to 15."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "int i = 10;\nint j = 12;\nsetWriteDbgLevel(7);\nwriteDbgLevel (4, \"This is shown: h= %lxh\",j);\n // Output: This is shown: h= 0ch\nwriteDbgLevel (9, \"This is not shown: d= %ld\",i);\n // No output"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

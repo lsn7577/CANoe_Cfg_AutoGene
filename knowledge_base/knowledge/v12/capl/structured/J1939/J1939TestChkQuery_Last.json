@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkQuery_Last",
+  "category": "J1939",
+  "title": "J1939TestChkQuery_Last",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestChkQueryLast.htm",
+  "syntax": [
+    "long J1939TestChkQuery_Last( long checkId );"
+  ],
+  "description": [
+    "The function returns the last measured value."
+  ],
+  "parameters": [
+    {
+      "name": "checkId",
+      "type": "",
+      "description": "identifier of the check to start"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long cycleCheck;\ncycleCheck = J1939TestChkCreate_AbsCycleTimeViolation( 1, 2, 0xf123, 0.8, 1.2, \"CycleCallback\" );\n\nJ1939TestChkControl_Start( cycleCheck );\n//...\nwrite( \"Last measured value=%d\", J1939TestChkQuery_Last(cycleCheck));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

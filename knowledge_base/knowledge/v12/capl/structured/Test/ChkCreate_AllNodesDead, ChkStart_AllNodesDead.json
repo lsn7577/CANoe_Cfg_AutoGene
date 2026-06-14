@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_AllNodesDead, ChkStart_AllNodesDead",
+  "category": "Test",
+  "title": "ChkCreate_AllNodesDead, ChkStart_AllNodesDead",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateAllNodesDead.htm",
+  "syntax": [
+    "dword ChkCreate_AllNodesDead (Duration aMaxQuietTime, char [] CaplCallback);"
+  ],
+  "description": [
+    "All monitored nodes must send at least one of their Tx messages within a specified interval. Otherwise an event will be triggered.",
+    "Each node is checked separately, so a dead node is recognized even if others are alive.",
+    "Gateway nodes require that the bus context corresponds to the network that is being observed.",
+    "For FlexRay only valid data frames and PDUs are recognized as communication, Null Frames and Erroneous frames are ignored.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMaxQuietTime",
+      "type": "",
+      "description": "Upper limit of time interval."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks that at least one message is sent in each 100 ms\ncheckId = ChkStart_AllNodesDead (100);\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

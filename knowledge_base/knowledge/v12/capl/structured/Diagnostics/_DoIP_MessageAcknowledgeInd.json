@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_MessageAcknowledgeInd",
+  "category": "Diagnostics",
+  "title": "_DoIP_MessageAcknowledgeInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPMessageAcknowledgeInd.htm",
+  "syntax": [
+    "void _DoIP_MessageAcknowledgeInd( WORD payloadType, long ackCode, WORD testerAddress, WORD ecuAddress);"
+  ],
+  "description": [
+    "A positive or negative acknowledgment was received in the tester. The code may provide additional information on the reason for a negative acknowledge."
+  ],
+  "parameters": [
+    {
+      "name": "HSFZ",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void _DoIP_MessageAcknowledgeInd( word payloadType, long code, word testerAddress, word ecuAddress)\n{\n  write( \"_DoIP_MessageAcknowledgeInd type %04x, %d, tester=%04x, ecu=%04x\", payloadType, code, testerAddress, ecuAddress);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

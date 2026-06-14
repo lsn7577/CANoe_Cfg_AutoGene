@@ -1,0 +1,19 @@
+# linMrSchedSetSyncT
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function No replacement. |  |  |  |  |
+|---|---|---|---|---|
+| Note This function may only be called in the event procedure on preStart. |  |  |  |  |
+| Function Syntax | void linMrSchedSetSyncT(unsigned int syncBreakLength, unsigned int syncDelimiterLength); |  |  |  |
+| Function | Configures the synchronization timing. |  |  |  |
+| Parameters | syncBreakLength Length of the SyncBreak signal in bit times. Values between 10 and 30 are permitted. The default value is 18. |  |  |  |
+| syncDelimiterLength Length of the next SyncDelimiter in bit times. Values between 1 and 30 are permitted. The default value is 2. |  |  |  |  |
+| To conform to the LIN specification the following conditions must also be satisfied: syncBreakLength >= 13 and syncBreakLength + syncDelimiterLength <= 29. The configured values are only used when the LIN hardware is operating in Master mode. |  |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 3.1 - 5.1 | LIN | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

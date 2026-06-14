@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "OnXcpError",
+  "category": "XCP",
+  "title": "OnXcpError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionOnXcpError.htm",
+  "syntax": [
+    "void OnXcpError (char ecuQualifier[], byte xcpCmd, byte xcpErrorCode);"
+  ],
+  "description": [
+    "Whenever the XCP slaves answers with a negative response (i.e. not 0xFF) the OnXCPError callback function is called."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

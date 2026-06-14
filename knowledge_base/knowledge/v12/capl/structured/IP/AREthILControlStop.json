@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "AREthILControlStop",
+  "category": "IP",
+  "title": "AREthILControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthILControlStop.htm",
+  "syntax": [
+    "long AREthILControlStop();"
+  ],
+  "description": [
+    "Stops the AUTOSAR Eth IL.",
+    "Disables sending and receiving SOME/IP messages and Service Discovery. Application-Endpoints and Provided Services will be closed.",
+    "The AUTOSAR Eth IL can be started again using the AREthILControlStart function."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key '2 '\n{\n  // stop IL manually\n  AREthILControlStop();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

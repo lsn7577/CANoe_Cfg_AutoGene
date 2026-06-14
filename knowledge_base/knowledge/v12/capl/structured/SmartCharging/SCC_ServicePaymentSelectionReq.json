@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_ServicePaymentSelectionReq",
+  "category": "SmartCharging",
+  "title": "SCC_ServicePaymentSelectionReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_ServicePaymentSelectionReq.htm",
+  "syntax": [
+    "void SCC_ServicePaymentSelectionReq ( byte SessionID[], char SelectedPaymentOption[], long ServiceListCount )"
+  ],
+  "description": [
+    "The callback is called as soon as a Service Payment Selection Request is received. The Request contains the selected services and the chosen method of payment. Further details that are transmitted in this request can be queried with"
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

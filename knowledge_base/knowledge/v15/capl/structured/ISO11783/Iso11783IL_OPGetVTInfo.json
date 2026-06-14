@@ -1,0 +1,204 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPGetVTInfo",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPGetVTInfo",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPGetVTInfo.htm",
+  "syntax": [
+    "long Iso11783IL_OPGetVTInfo( char key[] ); // form 1",
+    "long Iso11783IL_OPGetVTInfo( dbNode implement, char key[] ); // form 2"
+  ],
+  "description": [
+    "During initialization phase the Object Pool API request some information about the capabilities from Virtual Terminal. These information can be get with this function."
+  ],
+  "parameters": [
+    {
+      "name": "Key",
+      "type": "Message",
+      "description": "Description"
+    },
+    {
+      "name": "\"VersionNumber“",
+      "type": "Get memory",
+      "description": "Supported VT version."
+    },
+    {
+      "name": "\"NavigationSoftKeyCount\"",
+      "type": "Get number of Soft Keys",
+      "description": "The number of Physical Soft Keys that are used by the VT for navigation among the Virtual Soft Keys."
+    },
+    {
+      "name": "\"SoftKeyWidth\"",
+      "type": "Get number of Soft Keys",
+      "description": "Number of pixels on the x-axis for a Soft Key descriptor."
+    },
+    {
+      "name": "\"SoftKeyHeight\"",
+      "type": "Get number of Soft Keys",
+      "description": "Number of pixels on the y-axis for a Soft Key descriptor."
+    },
+    {
+      "name": "\"VirtualSoftKeyCount\"",
+      "type": "Get number of Soft Keys",
+      "description": "Number of possible virtual Soft Keys in a Soft Key Mask."
+    },
+    {
+      "name": "\"PhysicalSoftKeyCount\"",
+      "type": "Get number of Soft Keys",
+      "description": "Number of Physical Soft Keys."
+    },
+    {
+      "name": "\"SmallFontSizes\"",
+      "type": "Get Text Font Data",
+      "description": "Supported small font sizes."
+    },
+    {
+      "name": "\"LargeFontSizes\"",
+      "type": "Get Text Font Data",
+      "description": "Supported large font sizes."
+    },
+    {
+      "name": "\"FontTypeAttribute\"",
+      "type": "Get Text Font Data",
+      "description": "Supported font styles."
+    },
+    {
+      "name": "\"BootTime\"",
+      "type": "Get Hardware",
+      "description": "Maximum number of seconds from a VT power startup."
+    },
+    {
+      "name": "\"GraphicType\"",
+      "type": "Get Hardware",
+      "description": "Supported graphic modes."
+    },
+    {
+      "name": "\"Hardware\"",
+      "type": "Get Hardware",
+      "description": "Supported hardware features."
+    },
+    {
+      "name": "\"Width\"",
+      "type": "Get Hardware",
+      "description": "Number of divisions on the horizontal axis in the Data Mask Area."
+    },
+    {
+      "name": "\"Height\"",
+      "type": "Get Hardware",
+      "description": "Number of divisions on the vertical axis in the Data Mask Area."
+    },
+    {
+      "name": "implement",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "LONG vtWidth;\nvtWidth = Iso11783IL_OPGetVTInfo( \"Width\" );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0: form 1 9.0: form 2",
+      "13.0",
+      "—",
+      "—",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 2 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

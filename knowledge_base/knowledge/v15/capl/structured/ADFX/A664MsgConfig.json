@@ -1,0 +1,159 @@
+{
+  "page_type": "function",
+  "name": "A664MsgConfig",
+  "category": "ADFX",
+  "title": "A664MsgConfig",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionA664MsgConfig.htm",
+  "syntax": [
+    "long A664MsgConfig (a664Frame aFrame, dword IpFrag, dword Line, dword SubVlId) (1)",
+    "long A664MsgConfig (a664Message aMessage, dword IpFrag, dword Line, dword SubVlId) (2)"
+  ],
+  "description": [
+    "Configure the Tx parameters for a given a664Frame or a664Message."
+  ],
+  "parameters": [
+    {
+      "name": "IpFrag",
+      "type": "",
+      "description": "(this parameter is ignored for a664Frame): 0 no IP fragmentation 1 message may be fragmented"
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Short Name Description Interface_ID updated? Message duplicated?"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "— Line assignment is derived from the VL settings (selector LineSelect) • •"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "ForceA Use line A • —"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "ForceB Use line B • —"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "ForceAB Use both lines • •"
+    },
+    {
+      "name": "SubVlId",
+      "type": "",
+      "description": "Specify the SubVLid, used for this message or frame. The allowed value range is 1 .. 4. The value is not checked against the selector SubVLNr."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "9.0 SP4",
+      "9.0 SP4",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "AFDX",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

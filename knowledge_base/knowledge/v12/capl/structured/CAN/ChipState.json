@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "ChipState",
+  "category": "CAN",
+  "title": "ChipState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionChipState.htm",
+  "syntax": [
+    "long ChipState ()",
+    "CANx.ChipState"
+  ],
+  "description": [
+    "Returns the current chip state of the CAN x controller.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Chip state of the CAN x controller. See the following table for a description of the return values.\n0\nValue not available\n1\nSimulated\n2\nNot used\n3\nError Active\n4\nWarning Level\n5\nError Passive\n6\nBus Off\nA description of the chip states can also be found here: Bus Statistics Window of option CAN.",
+  "example": {
+    "description": [],
+    "code": "write (\"Chip state of CAN1 = %d\", CAN1.ChipState);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

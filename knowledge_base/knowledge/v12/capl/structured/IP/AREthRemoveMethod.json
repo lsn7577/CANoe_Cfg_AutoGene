@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "AREthRemoveMethod",
+  "category": "IP",
+  "title": "AREthRemoveMethod",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthRemoveMethod.htm",
+  "syntax": [
+    "long AREthRemoveMethod( dword methodHandle );"
+  ],
+  "description": [
+    "This function removes a method from a Provided Service Instance.",
+    "Afterwards, the callback registered with AREthAddMethod is no longer called."
+  ],
+  "parameters": [
+    {
+      "name": "methodHandle",
+      "type": "",
+      "description": "Handle of the method (see AREthAddMethod)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the created method is contained in the FIBEX database that is assigned to the CANoe configuration. The method has the Method ID 31, two input parameters Member_value1 and Member_value2, and a return parameter Result."
+    ],
+    "code": "variables\n{\n  dword gPm; // provided method handle\n}\n\nvoid Initialize()\n{\n  dword aep; // Application Endpoint handle\n  dword psi; // provided Service Instance handle\n\n  // open Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = AREthCreateProvidedServiceInstance(aep,11,1);\n\n  // create method\n  gPm = AREthAddMethod(psi,31,\"OnMethodRequest\");\n}\n\non key 'r'\n{\n  // remove method\n  AREthRemoveMethod(gPm);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

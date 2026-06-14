@@ -1,0 +1,67 @@
+# VTIL_PressButton, VTIL_ButtonActivationMsg
+
+> Category: `ISO11783` | Type: `function`
+
+## Syntax
+
+```c
+long VTIL_PressButton(dword objectId, dword duration); // form 1
+long VTIL_PressButton(dword objectId, dword duration, dword maskId); // form 2
+long VTIL_PressButton(dbNode vt, dword objectId, dword duration); // form 3
+long VTIL_PressButton(dbNode vt, dword objectId, dword duration, dword maskId); // form 4
+long VTIL_ButtonActivationMsg(dword objectId, dword maskId, byte keyActivationCode, byte keyNumber); // form 5
+long VTIL_ButtonActivationMsg(dbNode vt, dword objectId, dword maskId, byte keyActivationCode, byte keyNumber); // form 6
+```
+
+## Description
+
+The VTIL_PressButton methods simulate the pressing of a Button and the releasing of it after the duration. As a result, the Button Activation Message is immediately sent with the key activation code = pressed/latched, then every 200 ms with the key activation code = still held and after the duration with the key activation code = released/unlatched.
+
+For form 1 and 3 the button must be part of the active Data/Alarm/Window Mask. Otherwise, the function will return with an error code and no messages will be sent.
+
+In contrast, forms 2, 4, 5 and 6 do not check whether the button belongs to the given Data/Alarm/Window mask or whether the button is active or visible.
+
+The VTIL_ButtonActivationMsg methods send only the Button Activation Message (without triggering any event in the Virtual Terminal).
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| vt | VT simulation node to apply the function |
+| objectId | Object ID of the Button |
+| maskId | Data/Alarm/Window mask ID that is to be sent with the corresponding Button Activation message (without checking if the button really belongs to the given Data/Alarm/Window mask or whether the button is active or visible). |
+| duration | Time while the Button is pressed [ms]. If duration is < 200 ms then only the commands Button has been pressed or latched and Button has been unlatched or released are sent. Else the command Button is still held is sent too. |
+| keyActivationCode | 0: Button has been unlatched or released (state change) 1: Button has been “pressed” or latched (state change) 2: Button is still held (latchable buttons do not repeat) 3: Button press aborted |
+| keyNumber | Overwrites the button key code of the Button object |
+
+## Example
+
+```c
+long result;
+result = VTIL_PressButton(VT, 3000, 400);
+switch (result)
+{
+  case 0: TestStepPass(); break;
+  case -2102: TestStepFail("Invalid object!"); break;
+  case -2104: TestStepFail("Currently there is no active Working Set!"); break;
+  case -2115: TestStepFail("VT works in passive mode therefore you cannot press buttons!"); break;
+  case -2120: TestStepFail("Button is currently disabled!"); break;
+  case -2121: TestStepFail("Button is not available in the current  context!"); break;
+  default:    TestStepFail("Unexpected error"); break;
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 9.0: form 1, 3, 5, 6 10.0 SP4: form 2, 4 | 13.0 | — | — | 2.1: form 3, 6 2.2 SP3: form 4 |
+| Restricted To | — | ISO11783 | ISO11783 | — | — | form 3, 4, 6 ISO11783 |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ (form 1, 2, 5) | ✔ (form 1, 2, 5) | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ (form 3, 4, 6) | ✔ (form 3, 4, 6) | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ (form 3, 4, 6) | ✔ (form 3, 4, 6) | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

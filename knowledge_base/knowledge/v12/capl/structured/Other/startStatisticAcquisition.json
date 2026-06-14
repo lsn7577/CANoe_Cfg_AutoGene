@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "startStatisticAcquisition",
+  "category": "Other",
+  "title": "startStatisticAcquisition",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStartAcqui.htm",
+  "syntax": [
+    "void startStatisticAcquisition()"
+  ],
+  "description": [
+    "A new acquisition range is started with this function. If an acquisition range has already been started, the function has no effect since it cannot influence the currently active range."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [
+      "Statistical Evaluation (StatisticAcquisition)"
+    ],
+    "code": "...\n// Tests for running acquisition range and stops it.\n// If no statistical data acquisition is active a new one is started.\nif(isStatisticAcquisitionRunning())\n{\n// Stops the running acquisition range\nstopStatisticAcquisition();\n}\nelse\n{\n// Starts a new acquisition range\nstartStatisticAcquisition();\n}\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

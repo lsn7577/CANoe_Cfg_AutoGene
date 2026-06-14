@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "QueueSerialMessage",
+  "category": "Sensor",
+  "title": "QueueSerialMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionQueueSerialMessage.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueSerialMessage(dword messageId, dword useLongMessageId);"
+  ],
+  "description": [
+    "Inserts the given serial message into the send queue of the given time slot (PSI5)/channel (SENT).",
+    "Please note that the actual data of the message is not specified in this function call. Instead it will be taken from any signal system variables defined in the Sensor configuration dialog for this serial message ID."
+  ],
+  "parameters": [
+    {
+      "name": "messageId",
+      "type": "",
+      "description": "Specifies the ID of the serial message. If useLongMessageId is set to TRUE, the message ID is 8 bits long. Otherwise the message ID is 4 bits long."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Send serial message with ID 15 (4 bit ID, 16 bit data)\nsysvar::SENSOR::SENT::ExampleChannel.QueueSerialMessage(0x15, 0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

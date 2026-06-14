@@ -1,0 +1,168 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_MNBC_Sound_Ind",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_MNBC_Sound_Ind",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_MNBC_Sound_Ind.htm",
+  "syntax": [
+    "void SCC_CreateCM_MNBC_Sound_Ind ( byte RunId[], byte SourceMac[], byte TargetMac[], dword Count )"
+  ],
+  "description": [
+    "Creates a CM_MNBC_Sound.Ind message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "RunId",
+      "type": "",
+      "description": "Random Run Identifier of sender (8 byte)."
+    },
+    {
+      "name": "SourceMacAddress",
+      "type": "",
+      "description": "MAC address of sender."
+    },
+    {
+      "name": "Count",
+      "type": "",
+      "description": "Countdown counter for number of Sounds remaining."
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "ApplicationType dword 0x00 = PEV-EVSE Association 0x01-0xFF = Reserved"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "SecurityType dword 0x00 = No Security 0x01 = Public Key Signature 0x02-0xFF = Reserved"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "SenderId byte[] 17 byte ID"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Reserved field byte[] 8 byte"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Random number byte[] 16 byte, if not set a random value will be generated."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

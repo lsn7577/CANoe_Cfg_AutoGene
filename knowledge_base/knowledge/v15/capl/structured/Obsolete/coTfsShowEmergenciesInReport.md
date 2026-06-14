@@ -1,0 +1,20 @@
+# coTfsShowEmergenciesInReport
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+This function is replaced by coTfsSetReportBehaviour.
+
+See Also
+
+| Obsolete Function This function is replaced by coTfsSetReportBehaviour. |  |
+|---|---|
+| Function Syntax | long coTfsShowEmergenciesInReport( dword enable ); |
+| Function | Allows the report of emergency code in the test protocol. If the function is activated in the test module (default), each recognized emergency code is added to the test report. |
+| Parameters | enable 0: emergency codes are not written to test report 1: emergency codes are written to test report |
+| Return Values | Error code |
+| Example coTfsShowEmergenciesInReport(1); // enable writing emergency codes to test report |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

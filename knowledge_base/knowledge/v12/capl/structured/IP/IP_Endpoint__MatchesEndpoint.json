@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IP_Endpoint::MatchesEndpoint",
+  "category": "IP",
+  "title": "IP_Endpoint::MatchesEndpoint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionMatchesEndpoint.htm",
+  "syntax": [
+    "long IP_Endpoint::MatchesEndpoint(IP_Endpoint ipEndpoint); // form 1"
+  ],
+  "description": [
+    "Compares two endpoints whereas wildcards matches always. If no transport protocol type is set or the port number is set to 0 this is considered as wildcard. Additionally, the IP address must match according to MatchesAddress.",
+    "With form 2 only the network address of the IP address will be considered."
+  ],
+  "parameters": [
+    {
+      "name": "ipEndpoint",
+      "type": "",
+      "description": "An IP endpoint that may contain wildcards."
+    }
+  ],
+  "return": "0: No match",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Endpoint 192.168.1.1:4000 ep1;\n  IP_Endpoint 192.168.1.1:4000 ep2;\n  if (ep1 == ep2)\n  {\n    write( \"Endpoints are equal!\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

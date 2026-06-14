@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_RequestOpType",
+  "category": "Test",
+  "title": "ChkQuery_RequestOpType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryRequestOpType.htm",
+  "syntax": [
+    "long ChkQuery_RequestOpType(dword aCheckId);",
+    "check.QueryRequestOpType();"
+  ],
+  "description": [
+    "Returns the OpType of the request message, which last led to a protocol violation."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Reference to check context."
+    }
+  ],
+  "return": "< 0: Refers the query error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDiagResponseStart",
+  "category": "Test",
+  "title": "TestWaitForDiagResponseStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDiagResponseStart.htm",
+  "syntax": [
+    "long TestWaitForDiagResponseStart (diagRequest request, dword timeout);"
+  ],
+  "description": [
+    "Waits for the arrival of the response to a sent request, e.g. the so-called \"First Frame\" in ISO TP transmissions. One way this function might be triggered is by Diag_FirstFrameInd() at the CAPL Callback Interface, but only if this has been implemented suitably. When other protocols or interfaces are used this call might be omitted. Then the function rolls back after the response has been fully received."
+  ],
+  "parameters": [
+    {
+      "name": "request",
+      "type": "",
+      "description": "Sent request"
+    }
+  ],
+  "return": "<0: An internal error occurred, e.g. a faulty configuration of the Diagnostic Layer.",
+  "example": {
+    "description": [],
+    "code": "DiagRequest SerialNumber_Read req;\nlong result;\n\nDiagSetTarget(\"Door\");\nreq.SendRequest();\n// waits for the start of the response reception\nif (TestWaitForDiagResponseStart(req, 2000)== 1)\n   TestStepPass(\"Starting response reception!!\");\nelse\n   TestStepFail(\"No response!\");\nTestWaitForDiagResponse(req, 2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

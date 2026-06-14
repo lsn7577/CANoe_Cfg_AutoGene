@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "QueueSerialFrame",
+  "category": "Sensor",
+  "title": "QueueSerialFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionQueueSerialFrame.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueSerialFrame(dword data);"
+  ],
+  "description": [
+    "Queues one frame for the given datum."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "The datum that shall be sent."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Send a single frame with payload \"42\"\nsysvar::SENSOR::UART::ExampleChannel.QueueSerialFrame(42);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

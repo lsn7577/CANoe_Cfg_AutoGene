@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOWaitForAbortCode",
+  "category": "CANopen",
+  "title": "coTfsSDOWaitForAbortCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoWaitForAbortCode.htm",
+  "syntax": [
+    "long coTfsSDOWaitForAbortCode( dword nodeID );"
+  ],
+  "description": [
+    "This function waits until either a SDO abort message was received by the selected DUT Device Under Test or a time-out has occurred. After this, the abort code can be read out with coTfsSDOGetAbortCode."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "Node-ID"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if ( coTfsSDOWaitForAbortCode (2) == 1) {\n  write(\"SDO abort message received, use coTfsSdoGetAbortCode to retrieve its data\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

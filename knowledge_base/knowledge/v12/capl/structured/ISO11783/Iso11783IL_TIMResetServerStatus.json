@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMResetServerStatus",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMResetServerStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimResetServerStatus.htm",
+  "syntax": [
+    "long Iso11783IL_TIMResetServerStatus( ); // form 1"
+  ],
+  "description": [
+    "This function reverts changes made by Iso11783IL_TIMSetServerStatus and turn back to the default behavior of the TIM server."
+  ],
+  "parameters": [
+    {
+      "name": "server",
+      "type": "",
+      "description": "TIM server node."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

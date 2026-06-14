@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "diagGetTargetQualifier",
+  "category": "Diagnostics",
+  "title": "diagGetTargetQualifier",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetTargetQualifier.htm",
+  "syntax": [
+    "long diagGetTargetQualifier( DWORD index, char bufferOut[], DWORD bufferSize);"
+  ],
+  "description": [
+    "Writes the target qualifier for the diagnostic target at given index into the buffer. If successful, the qualifier can be used in DiagSetTarget."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Value in 0 ≤ index ≤ n, where /n/ is the number of possible targets returned by DiagGetTargetCount."
+    },
+    {
+      "name": "bufferOut",
+      "type": "",
+      "description": "Character array for the result."
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Maximum number of characters available in the buffer."
+    }
+  ],
+  "return": "Error code or number of characters copied into the buffer. Note that an error is returned if the buffer is too small for the qualifier.",
+  "example": {
+    "description": [],
+    "code": "long i;\nchar ecuQual[100];\ni = diagGetTargetCount();\nwhile( i-- > 0)\n{\n   diagGetTargetQualifier( i, ecuQual, elcount(ecuQual));\n   write( \"Target %d: %s\", i, ecuQual);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5 SP2",
+      "7.5",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "Online mode",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔ (since 9.0)",
+      "✔ (since 9.0)",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

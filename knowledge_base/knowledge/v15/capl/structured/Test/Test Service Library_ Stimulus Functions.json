@@ -1,0 +1,150 @@
+{
+  "page_type": "notes",
+  "name": "Test Service Library: Stimulus Functions",
+  "category": "Test",
+  "title": "Test Service Library: Stimulus Functions",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/CAPLfunctionsTSLStimulusOverview.htm",
+  "syntax": [],
+  "description": [
+    "Stimulus Generators are part of the Test Service Library. They allow the user to stimulate signals or environment variables - referred to as data sinks in the following - according to a specific time behavior.",
+    "With the exception of StmCreate_CSV (non-cyclic) all Stimulus Generators have a cycle time. This cycle time indicates the cycle at which the value of the data sink is updated.",
+    "With the exception of StmCreate_EnvVar each Stimulus Generator has a period length T after which the values are repeated for the data sink. The program supports user-defined integers up to 32 bit.",
+    "Create a stimulus generator that toggles between two values.",
+    "Create a stimulus generator that creates a ramp.",
+    "Create stimulus generator with CSV file as data source.",
+    "In a CAPL Simulation Node the Test Service Library must be initialized at the beginning. In CAPL or XML test modules this is neither necessary nor even possible."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Stimulus Generator: Toggle Between Two Values",
+        "Short Description"
+      ],
+      [
+        "StmCreate_Toggle(limits taken from database)",
+        "Create a stimulus generator that toggles between two values."
+      ],
+      [
+        "StmCreate_Toggle(limits user-defined)"
+      ],
+      [
+        "Stimulus Generator: Generate a Ramp",
+        "Short Description"
+      ],
+      [
+        "StmCreate_Ramp(limits taken from database)",
+        "Create a stimulus generator that creates a ramp."
+      ],
+      [
+        "StmCreate_Ramp(limits user-defined)"
+      ],
+      [
+        "Stimulus Generator: Environment Variable as Data Source",
+        "Short Description"
+      ],
+      [
+        "StmCreate_EnvVar",
+        "Create the stimulus with environment variables as data source."
+      ],
+      [
+        "Stimulus Generator: CSV File as Data Source",
+        "Short Description"
+      ],
+      [
+        "StmCreate_CSV(non-cyclical)",
+        "Create stimulus generator with CSV file as data source."
+      ],
+      [
+        "StmCreate_CSV(cyclical)"
+      ],
+      [
+        "ASAM XIL API",
+        "Short Description"
+      ],
+      [
+        "HILAPICreateSignalGenerator",
+        "Creates a Signal Generator from an ASAM HILAPI Signal Generator definition file. testWaitForHILAPISignalGeneratorLoaded: Waits until a signal generator is fully loaded and ready to start."
+      ],
+      [
+        "HILAPIDestroySignalGenerator",
+        "Destroys an instance of a Signal Generator."
+      ],
+      [
+        "HILAPIGetSignalGeneratorElapsedTime",
+        "Returns the elapsed time of a Signal Generator."
+      ],
+      [
+        "HILAPIGetSignalGeneratorState",
+        "Returns the state of a Signal Generator."
+      ],
+      [
+        "HILAPIPauseSignalGenerator",
+        "Pauses a Signal Generator."
+      ],
+      [
+        "HILAPIStartSignalGenerator",
+        "Starts or resumes a Signal Generator. testWaitForHILAPISignalGeneratorFinished: Waits until a running generator has finished."
+      ],
+      [
+        "HILAPIStopSignalGenerator",
+        "Stops a Signal Generator."
+      ],
+      [
+        "Data Sink",
+        "Short Description"
+      ],
+      [
+        "Stimulus Generator with a signal as data sink – Signal is sent in CAPL.",
+        "The message is sent onto the bus independent of the Stimulus Generator and sending must be executed separately, e.g. in CAPL using a cyclic timer. If the signal value needs to be set before the first start of the Stimulus Generator it may also be set in CAPL."
+      ],
+      [
+        "Stimulus Generator with a signal as data sink – Signal is sent over Interaction Layer.",
+        "The message is sent out onto the bus independent of the Stimulus Generator, and this is executed automatically via the Interaction Layer. The signal value before the first start of the Stimulus Generator is also set by the Interaction Layer. A precondition is that the Interaction Layer must be loaded as a Nodelayer module in the simulation node and in a conformant database, since sending of the signal depends on the signal type for example."
+      ],
+      [
+        "Stimulus Generator with an environment variable as data sink."
+      ]
+    ],
+    [
+      [
+        "In a CAPL Simulation Node the Test Service Library must be initialized at the beginning. In CAPL or XML test modules this is neither necessary nor even possible."
+      ],
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "ChkConfig_Init",
+        "The Test Service Library must always be initialized at the beginning: Initializing with the user or developer role in CAPL's \"pre-start\"."
+      ],
+      [
+        "StmCreate_xxx",
+        "Creation of Stimulus Generators."
+      ],
+      [
+        "StmControl_Start, StmControl_Stop, StmControl_Reset, StmControl_Destroy",
+        "During the measurement the Generators can be started, stopped, reset or destroyed in CAPL programs with the functions."
+      ]
+    ],
+    [
+      [
+        "Note Once the Stimulus Generator has been destroyed the stimulus can no longer be used.If necessary a new stimulus must be generated by another means. All given signal values are always physical values.Physical value = raw value * factor + offsetThe values for \"factor\" and \"offset\" are defined in the database."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

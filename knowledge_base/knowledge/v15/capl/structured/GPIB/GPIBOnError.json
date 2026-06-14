@@ -1,0 +1,151 @@
+{
+  "page_type": "function",
+  "name": "GPIBOnError",
+  "category": "GPIB",
+  "title": "GPIBOnError",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/GPIB/Functions/CAPLfunctionGPIBOnError.htm",
+  "syntax": [
+    "GPIBOnError (long deviceDescriptor, char query[], char response[], long status, long error);"
+  ],
+  "description": [
+    "This optional function is called if a query or a write operation (GPIBWriteStr or GPIBWriteNum) raised an error condition.",
+    "Users may implement this function and then receive the original query string or the data to be written, respectively. The result string, if any, is also returned, as well as the GPIB status word, the error code and the device descriptor."
+  ],
+  "parameters": [
+    {
+      "name": "deviceDescriptor",
+      "type": "",
+      "description": "The descriptor of the device that transmitted the response."
+    },
+    {
+      "name": "query",
+      "type": "",
+      "description": "The data transmitted in the failed GPIBQuery… or GPIBWrite… call, respectively"
+    },
+    {
+      "name": "response",
+      "type": "",
+      "description": "The data received from the device so far. The empty string if a write operation failure is reported."
+    },
+    {
+      "name": "status",
+      "type": "",
+      "description": "The GPIB status word."
+    },
+    {
+      "name": "error",
+      "type": "",
+      "description": "The GPIB error code."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The GPIBOnError callback function is used very much like GPIBResponse. Refere to it for an example."
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.1 SP4",
+      "—",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "GPIB",
+      "—",
+      "—",
+      "—",
+      "GPIB"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

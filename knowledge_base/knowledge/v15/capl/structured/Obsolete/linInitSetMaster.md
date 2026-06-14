@@ -1,0 +1,18 @@
+# linInitSetMaster
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function No replacement. |  |  |  |  |
+|---|---|---|---|---|
+| Note This function may only be called in the event procedure on preStart. |  |  |  |  |
+| Function Syntax | void linInitSetMaster(long masterMode, long masterResistor) |  |  |  |
+| Function | This function activates or deactivates the Master mode and the terminating resistor on the LIN hardware. It is of particular significance to the LIN hardware whether an internal Master (a Master modeled in the LIN hardware) or an external Master is used, since when an external Master is used the LIN hardware synchronizes to its pulse, but with an internal master it prescribes the pulse itself. The default setting is to deactivate both of these parameters when no Master node is modeled. |  |  |  |
+| Parameters | masterMode This parameter specifies whether Master mode on the LIN hardware has to be enabled or disabled. 0: Disable1: Enable |  |  |  |
+| masterResistor This parameter specifies whether terminating resistor on the LIN hardware has to be enabled or disabled. 0: Disable1: Enable |  |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 3.1 - 5.1 | LIN | — | • |  |
+| Example on linReceiveError{linInitSetMaster(1, 1); // manually activate Master mode on LIN hardware} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDODownload",
+  "category": "CANopen",
+  "title": "coTfsSDODownload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoDownload.htm",
+  "syntax": [
+    "long coTfsSDODownload( dword index, dword subIndex, dword size, byte inValueBuf[], dword valueBufSize ); // form 1"
+  ],
+  "description": [
+    "This function makes available the complete SDO download functionality. It can be used in order to transfer data to the desired CANopen® device easily.",
+    "Form 1: Depending on the data length, either an expedited or segmented download is executed.",
+    "Form 2: This function syntax can only be used for expedited download."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Object index"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsSDODownload ( 0x1017, 0, 2, pdata, 2);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

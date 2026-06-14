@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCertificateInstallationReq_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCertificateInstallationReq_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCertificateInstallationReq_Iso.htm",
+  "syntax": [
+    "long SCC_CreateCertificateInstallationReq_ISO ( byte SessionID[], dword ConfigSection, char MessageID[] )"
+  ],
+  "description": [
+    "Creates a Certificate Installation Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

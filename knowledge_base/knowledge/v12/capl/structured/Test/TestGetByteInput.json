@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetByteInput",
+  "category": "Test",
+  "title": "TestGetByteInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetByteInput.htm",
+  "syntax": [
+    "TestGetByteInput(byte[] result, dword resultSize);"
+  ],
+  "description": [
+    "After a dialog with byte input is closed you can use this function to get the input."
+  ],
+  "parameters": [
+    {
+      "name": "result",
+      "type": "",
+      "description": "Some byte array you can save the input"
+    }
+  ],
+  "return": "resultSize\nSize of the byte array",
+  "example": {
+    "description": [],
+    "code": "handle = TestWaitForByteInput(\"Test Text\", \"Test Caption\", \"Test Byte Input\", 0);\nTestGetByteInput(resultByte, elcount(resultByte));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

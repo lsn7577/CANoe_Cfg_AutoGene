@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetProvidedObjectHandle",
+  "category": "IP",
+  "title": "SomeIpGetProvidedObjectHandle",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetProvidedObjectHandle.htm",
+  "syntax": [
+    "DWORD SomeIpGetProvidedObjectHandle( char objectSymbolicQualifier[] );"
+  ],
+  "description": [
+    "Enables to search for a provided object which has been created separately."
+  ],
+  "parameters": [
+    {
+      "name": "objectSymbolicQualifier",
+      "type": "",
+      "description": "Symbolic qualifier identifying uniquely a FIBEX 4.1 database object. For syntax see Symbolic Database Access by SOME/IP."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  // That the following code works there must be in the FIBEX 4.1\n  // database a node providing under an unreliable endpoint\n  // (UDP socket) the following objects:\n  //  - A service instance named \"Service_Test\"\n  //  - An event group named \"All\" belonging to \"Service_Test\"\n  //  - An event named \"Event_Test\" belonging to \"All\"\n  //  - A field named \"Field_Test\" belonging to \"All\" and having a notifier, a getter and a setter\n  //  - A node consuming the event group \"All\"\n\n  DWORD psi; // provided service instance handle\n  DWORD peg; // provided event group handle\n  DWORD pev; // provided event handle\n  DWORD pfNotifier; // provided field notifier handle\n  DWORD pfGetter; // provided field getter handle\n  DWORD pfSetter; // provided field setter handle\n\n  // Get handle of the provided service instance named \"Service_Test\"\n  psi = SomeIpGetProvidedObjectHandle(\"Service_Test\");\n\n  // Get handle of the provided event group named \"All\"\n  peg = SomeIpGetProvidedObjectHandle (\"Service_Test::All\");\n\n  // Modifiy the unicast/multicast threshold that for one \n  // subscriber the event and field notification are sent\n  // per unicast\n  SomeIpSetProperty(peg,\"UnicastLimit\", 1);\n\n  // Get handle of the provided event \"Event_Test\"\n  pev = SomeIpGetProvidedObjectHandle (\"Event_Test\");\n\n  // Sent the provided event \"Event_Test\" cyclically every 1 s\n  SomeIpSetProperty(pev,\"CycleTimeMs\",1000);\n\n  // Get handle of the provided field notification named \"Field_Test\"\n  pfNotifier = SomeIpGetProvidedObjectHandle (\"Field_Test\");\n\n  // Sent the providedfield notification named \"Field_Test\" cyclically every 2 s\n  SomeIpSetProperty(pfNotifier,\"CycleTimeMs\",2000);\n\n  // Get handle of the provided field getter named \"Field_Test\"\n  pfGetter = SomeIpGetProvidedObjectHandle (\"get_Field_Test\");\n\n  // Register a CAPL callback for this getter request\n  SomeIpRegisterCallback(pfGetter, \"OnSomeIpFieldGetterRequest\");\n\n  // Get handle of the provided field setter named \"Field_Test\"\n  pfSetter = SomeIpGetProvidedObjectHandle (\"set_Field_Test\");\n\n  // Register a CAPL callback for this setter request\n  SomeIpRegisterCallback(pfSetter, \"OnSomeIpFieldSetterRequest\");\n}\n\nvoid OnSomeIpFieldGetterRequest(dword methodHandle,dword messageHandle,dword messageResponseHandle)\n{\n  write (\"Field getter request received\");\n  // do something here\n}\n\nvoid OnSomeIpFieldSetterRequest(dword methodHandle,dword messageHandle,dword messageResponseHandle)\n{\n  write (\"Field setter request received\");\n  // do something here\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2 SP2",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

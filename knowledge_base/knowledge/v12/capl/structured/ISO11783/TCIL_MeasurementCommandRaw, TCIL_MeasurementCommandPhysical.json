@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_MeasurementCommandRaw, TCIL_MeasurementCommandPhysical",
+  "category": "ISO11783",
+  "title": "TCIL_MeasurementCommandRaw, TCIL_MeasurementCommandPhysical",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILMeasurementCommandRawPhysical.htm",
+  "syntax": [
+    "long TCIL_MeasurementCommandRaw(dbNode client, dword ddi, dword elementNumber, char[] logTriggerType, long triggerValue); // form 1"
+  ],
+  "description": [
+    "These functions send a trigger definition to the client."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "Task Controller simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void StopMinWithinThresholdTrigger(dword ddi, dword elementNumber)\n{\n  long result;\n  result = TCIL_MeasurementCommandRaw(TC, Sprayer, ddi, elementNumber, \"min_within_threshold\", 0x7FFFFFFF);\n  switch (result)\n  {\n    case 0 : TestStepPass(); break;\n    default: TestStepFail(\"StopMinWithinThresholdTrigger\", \"Unexpected error (error code %i)\", result); break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

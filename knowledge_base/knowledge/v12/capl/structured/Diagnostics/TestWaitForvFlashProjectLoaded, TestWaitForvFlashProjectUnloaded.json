@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForvFlashProjectLoaded, TestWaitForvFlashProjectUnloaded",
+  "category": "Diagnostics",
+  "title": "TestWaitForvFlashProjectLoaded, TestWaitForvFlashProjectUnloaded",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagvFlashTestWaitForvFlashProjectUnLoaded.htm",
+  "syntax": [
+    "long TestWaitForvFlashProjectLoaded(char projectPath[]);"
+  ],
+  "description": [
+    "Waits until the given packed vFlash project (including flashware) is loaded or unloaded."
+  ],
+  "parameters": [
+    {
+      "name": "projectPath",
+      "type": "",
+      "description": "Path to the packed vFlash project, a vflashpack file typically."
+    }
+  ],
+  "return": "1: Success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

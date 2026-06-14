@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_OnCurrentDirectoryChanged",
+  "category": "ISO11783",
+  "title": "FSIL_OnCurrentDirectoryChanged",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILOnCurrentDirectoryChanged.htm",
+  "syntax": [
+    "void FSIL_OnCurrentDirectoryChanged( dword clientAddress, char currentDirectory[]);"
+  ],
+  "description": [
+    "Is called from the FS IL if a client has changed its current directory."
+  ],
+  "parameters": [
+    {
+      "name": "clientAddress",
+      "type": "",
+      "description": "Address of the File Server client which has changed its current directory."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void FSIL_OnCurrentDirectoryChanged( dword clientAddress, char currentDirectory[])\n{\n  write(\"Client with address %u has changed it current directory to '%s'\", clientAddress, currentDirectory);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,311 @@
+{
+  "page_type": "concept",
+  "name": "Media Player",
+  "category": "Panel",
+  "subcategory": "Elements",
+  "title": "Media Player",
+  "source": "chm_extract_v15/VectorToolsEnvironment/Topics/PanelDesigner/Elements/PanelDesignerControlsMediaPlayer.htm",
+  "intro": [],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Use Cases",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The Media Player is used to play media files (audio files, videos, etc.).",
+          "The following use cases are possible with the Media Player:"
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Configuration",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Note",
+          "The Vector Media Player uses the Windows Media Player. A codec is expected for special files (e.g., AVI). If this is not present, an attempt is made to establish an Internet connection in order to find and install the missing codec. To prevent this, the File|Work Offline setting must be selected in the Windows Media Player.",
+          "If a required codec is not present, the file will be played but an image will not appear or the preset visualization will be shown. The sound is reproduced. An error provider in the Vector Media Player references the missing codec.",
+          "To be certain that the file can be played, you should play it in Windows Media Player in advance.",
+          "You can use the assigned symbol to play, stop, and pause the selected media file. The individual statuses are defined using the Play, Stop, and Pause symbol values.",
+          "Assign a symbol to the control in the Panel Designer.",
+          "You can assign a symbol to the control",
+          "You can configure the control via the ribbon or the Properties Window.",
+          "Depending on the configuration you can also operate the Media Player using a displayed toolbar. This has no effect on the linked symbol.",
+          "The defined symbol value for Play is checked at the measurement start. If the defined value is reached, the selected media file is played. The media file is stopped at the measurement end.",
+          "If a change is made to another desktop, a media file that is currently being played will be stopped automatically."
+        ],
+        "tables": [
+          [
+            [
+              "Note The Vector Media Player uses the Windows Media Player. A codec is expected for special files (e.g., AVI). If this is not present, an attempt is made to establish an Internet connection in order to find and install the missing codec. To prevent this, the File|Work Offline setting must be selected in the Windows Media Player. If a required codec is not present, the file will be played but an image will not appear or the preset visualization will be shown. The sound is reproduced. An error provider in the Vector Media Player references the missing codec. To be certain that the file can be played, you should play it in Windows Media Player in advance."
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Ribbon|Properties Tab / Properties Window",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Here all settings are listed that you can change in the ribbon and/or in the Properties Window.",
+          "General Group",
+          "General",
+          "Name",
+          "Control Name",
+          "Here you change the name of the control. This name and the name of the panel is required for access from CAPL.",
+          "—",
+          "Is Visible At Runtime",
+          "Specifies whether the control is to be displayed during runtime."
+        ],
+        "tables": [
+          [
+            [
+              "Ribbon",
+              "Properties Window",
+              "Description"
+            ],
+            [
+              "General Group",
+              "General"
+            ],
+            [
+              "Name",
+              "Control Name",
+              "Here you change the name of the control. This name and the name of the panel is required for access from CAPL."
+            ],
+            [
+              "—",
+              "Is Visible At Runtime",
+              "Specifies whether the control is to be displayed during runtime. CAPL Access With the function setControlVisibility, you can set, if the control is displayed during runtime or not."
+            ],
+            [
+              "Media File Group",
+              "Settings"
+            ],
+            [
+              "Media File",
+              "Media File",
+              "Here you select the file to be played. CAPL Access With the function setMediaFile, you can exchange the media file during runtime. On the next measurement start, the media file selected in the Panel Designer will be reloaded."
+            ],
+            [
+              "—",
+              "Replay All",
+              "Here you specify whether or not the media file is to be played in a continuous loop."
+            ],
+            [
+              "Appearance Group",
+              "Appearance"
+            ],
+            [
+              "Show Bar",
+              "Show Bar With a click on the symbol you switch on/off the display of a function bar below the display."
+            ],
+            [
+              "Stretch To Fit",
+              "Stretch to Fit With a click on the symbol you activate/deactivate the adaption of the image of the played-back video to the size of the Media Player. Because the proportions are retained, a black border may be visible on the left and right or top and bottom."
+            ],
+            [
+              "—",
+              "Border Style",
+              "Here you change the frame of the control: Fixed 3D3D frame Fixed SingleSingle frame NoneNo frame"
+            ],
+            [
+              "Switch Values Group",
+              "Switch Values"
+            ],
+            [
+              "Play",
+              "Play",
+              "Here you change the symbol value that is used to play the media file. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value. If a media file has been paused, it will be resumed from this point. If the media file has been stopped, it will restart from the beginning. CAPL Access You can use the function putValue to start the Media Player, by applying the here defined value to the symbol assigned to the control."
+            ],
+            [
+              "Pause",
+              "Pause",
+              "Here you change the symbol value that is used to pause a media file that is currently being played. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value. CAPL Access You can use the function putValue to pause the Media Player, by applying the here defined value to the symbol assigned to the control."
+            ],
+            [
+              "Stop",
+              "Stop",
+              "Here you change the symbol value that is used to stop the media file. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value. CAPL Access You can use the function putValue to stop the Media Player, by applying the here defined value to the symbol assigned to the control."
+            ],
+            [
+              "More Group",
+              "—"
+            ],
+            [
+              "—",
+              "Show Properties With a click on the symbol you open the Properties Window."
+            ],
+            [
+              "Group: —",
+              "Layout"
+            ],
+            [
+              "—",
+              "Location/Size",
+              "Here you can enter settings relating to the size and position of the control. Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.",
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ],
+            [
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ],
+            [
+              "Group: —",
+              "Symbol"
+            ],
+            [
+              "—",
+              "Symbol",
+              "You can assign a symbol to the control. With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter. Valid Data Types of Symbols"
+            ],
+            [
+              "—",
+              "Symbol Filter",
+              "Here you select the type of the symbol you want to assign to your control."
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "With the function setControlVisibility, you can set, if the control is displayed during runtime or not.",
+          "Media File Group",
+          "Settings",
+          "Media File",
+          "Here you select the file to be played."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "With the function setMediaFile, you can exchange the media file during runtime. On the next measurement start, the media file selected in the Panel Designer will be reloaded.",
+          "—",
+          "Replay All",
+          "Here you specify whether or not the media file is to be played in a continuous loop.",
+          "Appearance Group",
+          "Appearance",
+          "Show Bar",
+          "With a click on the symbol you switch on/off the display of a function bar below the display.",
+          "Stretch To Fit",
+          "Stretch to Fit",
+          "With a click on the symbol you activate/deactivate the adaption of the image of the played-back video to the size of the Media Player.",
+          "Because the proportions are retained, a black border may be visible on the left and right or top and bottom.",
+          "Border Style",
+          "Here you change the frame of the control:",
+          "Switch Values Group",
+          "Switch Values",
+          "Play",
+          "Here you change the symbol value that is used to play the media file. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value.",
+          "If a media file has been paused, it will be resumed from this point. If the media file has been stopped, it will restart from the beginning."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "You can use the function putValue to start the Media Player, by applying the here defined value to the symbol assigned to the control.",
+          "Pause",
+          "Here you change the symbol value that is used to pause a media file that is currently being played. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "You can use the function putValue to pause the Media Player, by applying the here defined value to the symbol assigned to the control.",
+          "Stop",
+          "Here you change the symbol value that is used to stop the media file. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "You can use the function putValue to stop the Media Player, by applying the here defined value to the symbol assigned to the control.",
+          "More Group",
+          "—",
+          "Show Properties",
+          "With a click on the symbol you open the Properties Window.",
+          "Group: —",
+          "Layout",
+          "Location/Size",
+          "Here you can enter settings relating to the size and position of the control.",
+          "Note",
+          "You can also resize the control by dragging its markers.",
+          "Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.",
+          "Symbol",
+          "You can assign a symbol to the control.",
+          "With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter.",
+          "Valid Data Types of Symbols",
+          "Symbol Filter",
+          "Here you select the type of the symbol you want to assign to your control.",
+          "Assigning Controls"
+        ],
+        "tables": [
+          [
+            [
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ]
+          ],
+          [
+            [
+              "Version 2.0© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ],
+  "property_references": {
+    "properties": [
+      "Control Name",
+      "—",
+      "Is Visible At Runtime",
+      "Replay All",
+      "Show Bar",
+      "Stretch To Fit",
+      "Border Style",
+      "Location/Size",
+      "Symbol Filter"
+    ],
+    "symbols": [],
+    "groups": [
+      "General",
+      "Settings",
+      "Appearance",
+      "Switch Values",
+      "Layout",
+      "Symbol"
+    ],
+    "syntax_patterns": []
+  }
+}

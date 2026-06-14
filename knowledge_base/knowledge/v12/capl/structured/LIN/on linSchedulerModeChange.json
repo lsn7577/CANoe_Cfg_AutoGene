@@ -1,0 +1,31 @@
+{
+  "page_type": "event",
+  "name": "on linSchedulerModeChange",
+  "category": "LIN",
+  "title": "on linSchedulerModeChange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/EventProcedures/CAPLfunctionOnLINSchedulerModeChange.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure on linSchedulerModeChange is called when modeled LIN Master switches from the current schedule table to another one. This only occurs when the LIN hardware is in Master mode.",
+    "The keyword this and the selectors can be used to access the data of the event that has just been received."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "linSchedulerModeChange",
+      "link": "../Selectors/CAPLfunctionLINSchedulerModeChange.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

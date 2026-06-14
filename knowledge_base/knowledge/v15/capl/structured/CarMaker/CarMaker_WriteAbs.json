@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "CarMaker_WriteAbs",
+  "category": "CarMaker",
+  "title": "CarMaker_WriteAbs",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CarMaker/Functions/CAPLfunctionCarMakerWriteAbs.htm",
+  "syntax": [
+    "long CarMaker_WriteAbs(char varName[], double duration_ms, double value);"
+  ],
+  "description": [
+    "Modifies the value of a CarMaker quantity. The CarMaker quantity must support write access."
+  ],
+  "parameters": [
+    {
+      "name": "varName",
+      "type": "",
+      "description": "Absolute name of the CarMaker quantity."
+    },
+    {
+      "name": "duration_ms",
+      "type": "",
+      "description": "Duration for fixing the value."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "The new value to be set."
+    }
+  ],
+  "return": "APO return code",
+  "example": {
+    "description": [],
+    "code": "gErrorState = CarMaker_WriteAbs(\"DM.Brake\", 1000, 1.0);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "—",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CarMaker",
+      "—",
+      "—",
+      "—",
+      "CarMaker"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

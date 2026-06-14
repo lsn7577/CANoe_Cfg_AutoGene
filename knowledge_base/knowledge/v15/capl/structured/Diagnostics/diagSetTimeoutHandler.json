@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "diagSetTimeoutHandler",
+  "category": "Diagnostics",
+  "title": "diagSetTimeoutHandler",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagSetTimeoutHandler.htm",
+  "syntax": [
+    "long diagSetTimeoutHandler (diagRequest obj, char callbackName[])",
+    "long diagSetTimeoutHandler (char callbackName[])"
+  ],
+  "description": [
+    "Sets the timeout callback for a request, or default timeout callback function. This function will be called if no response arrives at the tester within the timeout specified with diagSetTimeout."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    },
+    {
+      "name": "callbackName",
+      "type": "",
+      "description": "Callback name"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  diagSetTimeout (200); // Set timeout to 200 ms\n  diagSetTimeoutHandler(\"Request_Timeout\");\n}\n\non key '1'\n{\n  DiagRequest SimECU.ReadDataByIdentifier_Process req;\n  diagSendRequest(req);\n}\n\nvoid Request_Timeout()\n{\n  write(\"No response received within expected time frame!\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0 7.0 SP3: method",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

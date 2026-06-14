@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "OnXcpEvent",
+  "category": "XCP",
+  "title": "OnXcpEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionOnXcpEvent.htm",
+  "syntax": [
+    "void OnXcpEvent(char ecuQualifier[], byte data[], long dataSize);"
+  ],
+  "description": [
+    "This callback provides access to data that is sent from an XCP or CCP slave in an Event packet. The first data byte contains the type of the Event (named Code in the XCP specification)."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

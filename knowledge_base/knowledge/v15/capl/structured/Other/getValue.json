@@ -1,0 +1,146 @@
+{
+  "page_type": "function",
+  "name": "getValue",
+  "category": "Other",
+  "title": "getValue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionGetValue.htm",
+  "syntax": [
+    "int getValue(EnvVarName); // form 1",
+    "float getValue(EnvVarName); // form 2",
+    "long getValue(EnvVarName, char buffer[]); // form 3",
+    "long getValue(EnvVarName, byte buffer[]); // form 4",
+    "long getValue(EnvVarName, byte buffer[], long offset); // form 5",
+    "float getValue(char name[]); // form 6",
+    "long getValue(char name[], char buffer[]); // form 7",
+    "long getValue(char name[], byte buffer[]); // form 8",
+    "long getValue(char name[], byte buffer[], long offset); // form 9"
+  ],
+  "description": [
+    "Determines the value of the environment variable with identifier EnvVarName/name. The type of the return value is based on the type of environment variable (int for discrete (form 1), float for continuous environment variables (form 2 and 6)). For character string environment variables (form 3 and 7) and environment variables with data bytes (form 4, 5, 8 and 9) the active value is saved to a buffer which you identify in the function call."
+  ],
+  "parameters": [
+    {
+      "name": "EnvVarName",
+      "type": "",
+      "description": "Environment variable name.Must exist in the database."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Return buffer (form 3, 4 and 5)"
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Offset of the first data byte copied (form 5)"
+    }
+  ],
+  "return": "Return",
+  "example": {
+    "description": [],
+    "code": "int val;\nfloat fval;\nchar cBuf[25];\nbyte bBuf[64];\nlong copiedBytes;\n...\n// Assign to val the value of the environment variable Switch\nval = getValue(Switch);\n// Assign to fval the value of the environment variable Temperature\nval = getValue(Temperature);\n// Read the value of environment variable NodeName\ncopiedBytes = getValue(NodeName, cBuf);\n// Read the value of environment variable DiagData\ncopiedBytes = getValue(DiagData, bBuf);\n// Read the value of environment variable DiagData starting at position 32\ncopiedBytes = getValue(DiagData, bBuf, 32);\n..."
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "All",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

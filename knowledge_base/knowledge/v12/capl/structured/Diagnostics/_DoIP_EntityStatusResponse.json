@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_EntityStatusResponse",
+  "category": "Diagnostics",
+  "title": "_DoIP_EntityStatusResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPEntityStatusResponse.htm",
+  "syntax": [
+    "void _DoIP_EntityStatusResponse( char IPaddress[], WORD port, BYTE nodeType, BYTE maxConcurrentTCPsockets, BYTE currentlyOpenTCPsockets, DWORD maxDataSize);"
+  ],
+  "description": [
+    "A response for an entity status request was received."
+  ],
+  "parameters": [
+    {
+      "name": "IPaddress",
+      "type": "",
+      "description": "Address in text form, e.g. “169.254.32.1” (IPv4) or “2001::1” (IPv6)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Process an entity status response\nvoid _DoIP_EntityStatusResponse( char IPaddress[], WORD port, BYTE nodeType, BYTE maxConcurrentTCPsockets, BYTE currentlyOpenTCPsockets, DWORD maxDataSize)\n{\n  write( \"_DoIP_EntityStatusResponse( '%s', %d, %d, %d, %d, %d)\",\n  IPaddress, port, nodeType, maxConcurrentTCPsockets,\n  currentlyOpenTCPsockets, maxDataSize);\n  testSupplyTextEvent( cTE_EntityStatusRespInd);\n}\n\nTestcase TC_EntityStatus()\n{\n  DoIP_SendEntityStatusRequest();\n  testWaitForTextEvent( cTE_EntityStatusRespInd, 500);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

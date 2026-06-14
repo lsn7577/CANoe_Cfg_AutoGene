@@ -1,0 +1,49 @@
+{
+  "page_type": "notes",
+  "name": "Declaration of ARINC Words (A429)",
+  "category": "A429",
+  "title": "Declaration of ARINC Words (A429)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/A429/CAPLfunctionsA429DefineARINCword.htm",
+  "syntax": [],
+  "description": [
+    "ARINC words may be controlled by means of a CAPL program. An ARINC word object is created with the keyword a429word. ARINC words defined in a database may also be used for initialization.",
+    "For more convenience in the programming environment a CAPL include file is provided. The file gives the programmer a number of symbolic constants and some helper routines as a supplement for the CAPL API. Use this statement in the include section of your CAPL code: #include \"A429/A429utils.cin\".",
+    "The members of the ARINC word object are accessed via selectors.",
+    "If there is a valid ARINC word event received, an event procedure is called. Note that ARINC word events may be triggered from a connected hardware channel or even internally from a simulated node or an Interactive Generator.The event procedures",
+    "are available.",
+    "Most of the API functions need an ARINC word as a parameter. Note that in this ARINC word a valid channel needs to be assigned with the selector msgchannel.",
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Example: Create ARINC Word Objects a429word 0x82 myA429msg1; // (1) a429word Label_123 myA429msg2; // (2) a429word * myA429msg3; // (3)"
+      ]
+    ],
+    [
+      [
+        "Example: Transmit an ARINC Word on Request a429word * myA429msg4 = {msgChannel = 1, id = 0x82}; // create ARINC wordmyA429msg4.dword(0) = 0x1234 << 10; // shift behind SDIoutput(myA429msg4); // transmit it"
+      ]
+    ],
+    [
+      [
+        "Note Most of the API functions need an ARINC word as a parameter. Note that in this ARINC word a valid channel needs to be assigned with the selector msgchannel."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

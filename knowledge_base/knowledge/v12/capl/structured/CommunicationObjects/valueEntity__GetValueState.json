@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "valueEntity::GetValueState",
+  "category": "CommunicationObjects",
+  "title": "valueEntity::GetValueState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionValueGetValueState.htm",
+  "syntax": [
+    "dword <value>::GetValueState()"
+  ],
+  "description": [
+    "Returns the state of the value, which tells in particular whether it has already been updated once since the last call to valueEntity::ResetValueState."
+  ],
+  "parameters": [],
+  "return": "State of the value:",
+  "example": {
+    "description": [],
+    "code": "long ret;\nconsumedEventRef * anEvent;\nanEvent = lookupConsumedEvent(path);\nif (anEvent.GetValueState() != 3) // not yet received\n{\n  anEvent.ClearUpdateFlag();\n  ret = testWaitForUpdateFlag(anEvent, 200);\n  // ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

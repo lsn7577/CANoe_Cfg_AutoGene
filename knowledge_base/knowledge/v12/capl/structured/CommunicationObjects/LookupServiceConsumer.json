@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupServiceConsumer",
+  "category": "CommunicationObjects",
+  "title": "LookupServiceConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupServiceConsumer.htm",
+  "syntax": [
+    "serviceConsumerRef * LookupServiceConsumer(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified service consumer. The path must be complete including namespaces and endpoint: (Namespace::)+Service[consumer].",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the service consumer."
+    }
+  ],
+  "return": "The service consumer. An uninitialized object if the service consumer is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "serviceConsumerRef MirrorAdjustment mirrorSvc;\nchar path[200];\nchar service[50] = \"Mirrors::MirrorAdjustment\";\nchar consumer[20] = \"CANoe\";\n\nsnprintf(path, elcount(path), \"%s[%s]\", service, consumer);\nmirrorSvc = (serviceConsumerRef MirrorAdjustment) lookupServiceConsumer(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

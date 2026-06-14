@@ -1,0 +1,129 @@
+{
+  "page_type": "method",
+  "name": "distObjInterface::DestroyObject",
+  "category": "DistributedObjects",
+  "title": "distObjInterface::DestroyObject",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Methods/CAPLfunctiondistObjInterfaceDestroyObject.htm",
+  "syntax": [
+    "long distObjInterface <Interface>::DestroyObject(distObjRef <Interface> object);",
+    "long distObjInterface <Interface>::DestroyObject(distObjRef reverse<<Interface>> object);"
+  ],
+  "description": [
+    "Destroys a dynamic object."
+  ],
+  "parameters": [
+    {
+      "name": "object",
+      "type": "",
+      "description": "Dynamic object to be destroyed."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// vCDL\nversion 1.3;\nnamespace SomeNamespace {\n  interface SomeInterface {}\n}\n\n// CAPL\non key 'a' {\n  distObjRef SomeInterface obj;\n  distObjRef reverse<SomeInterface> rev_obj;\n\n  distObjBlueprint SomeInterface bp;\n  distObjBlueprint reverse<SomeInterface> rev_bp;\n\n  bp = SomeInterface.CreateObjectBlueprint();\n  rev_bp = SomeInterface.CreateReverseBlueprint();\n\n  obj = SomeInteface.CreateObject(bp, \"SomeNamespace::Obj\");\n  rev_obj = SomeInteface.CreateObject(rev_bp, \"SomeNamespace::RevObj\");\n\n  SomeInterface.DestroyObject(obj);\n  SomeInterface.DestroyObject(rev_obj);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "14",
+      "15",
+      "14",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPGetVersion",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPGetVersion",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPGetVersion.htm",
+  "syntax": [
+    "long Iso11783IL_OPGetVersion( ); // form 1"
+  ],
+  "description": [
+    "The function requests the stored object pools from the Virtual Terminal. A Get Version command or a Get Extended Version command is sent to the Virtual Terminal. If a response from the Virtual Terminal is received, the callback function Iso11783IL_OPOnResponse is called."
+  ],
+  "parameters": [
+    {
+      "name": "extendedVersions",
+      "type": "",
+      "description": "kind of versions to query."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPGetVersion( \r\n);\n\n[...]\n\nvoid Iso11783IL_OPOnResponse( dword handle, pg VTtoECU \r\n response ) {\n  switch(response.BYTE(0)) {\n  case 224:\n    // handle GetVersion response here\n    break;\n  case 211:\n    // handle Get Extended Version response here\n    break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

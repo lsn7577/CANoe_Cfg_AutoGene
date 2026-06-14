@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "GNSSOnWpBeforeLastReached",
+  "category": "J1939",
+  "title": "GNSSOnWpBeforeLastReached",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSonwpbeforelastreached.htm",
+  "syntax": [
+    "void GNSSOnWpBeforeLastReached();"
+  ],
+  "description": [
+    "This function is called when the next-to-last waypoint of the waypoint list has been reached. This makes it possible to insert an additional waypoint before the GNSS receiver comes to a stop."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Implementation of a loop\nvoid GNSSOnWpBeforeLastReached()\n{\n  GNSSAddWpRel( 20.0, 0.0, 0.0 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

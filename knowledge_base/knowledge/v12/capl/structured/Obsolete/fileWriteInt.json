@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "fileWriteInt",
+  "category": "Obsolete",
+  "title": "fileWriteInt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionFileWriteInt.htm",
+  "syntax": [
+    "long fileWriteInt(char section[], char entry[], long def, char file[]);"
+  ],
+  "description": [
+    "Analogous to fileWriteString, but writes a long variable to the file instead of a text."
+  ],
+  "parameters": [
+    {
+      "name": "section",
+      "type": "",
+      "description": "Section of file"
+    }
+  ],
+  "return": "0 if an error has occurred else 1",
+  "example": {
+    "description": [],
+    "code": "...\nif(!fileWriteInt(\"DeviceData\",\"DeviceAddr\",2, \"TEST.INI\"))\nwrite(\"file error\");\n...\nThis call writes the following entry in the file TEST.INI:\n[DeviceData]\nDeviceAddr=2"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

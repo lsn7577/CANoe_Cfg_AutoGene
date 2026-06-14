@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitForDiagAuthCompleted, testWaitForDiagAuthGenericCompleted",
+  "category": "Test",
+  "title": "testWaitForDiagAuthCompleted, testWaitForDiagAuthGenericCompleted",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDiagAuthCompleted.htm",
+  "syntax": [
+    "long testWaitForDiagAuthCompleted (char ecuQualifier[], char authenticationCall[]); // form 1"
+  ],
+  "description": [
+    "Initiates the diagnostics authentication process and waits until this process has (generic) completed."
+  ],
+  "parameters": [
+    {
+      "name": "authenticationCall",
+      "type": "",
+      "description": "Call that has to be accepted by the security source runtime implementation."
+    }
+  ],
+  "return": "On success 0, otherwise error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

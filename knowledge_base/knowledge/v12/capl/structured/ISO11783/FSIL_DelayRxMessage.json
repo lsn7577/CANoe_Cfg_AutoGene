@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "FSIL_DelayRxMessage",
+  "category": "ISO11783",
+  "title": "FSIL_DelayRxMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILDelayRxMessage.htm",
+  "syntax": [
+    "long FSIL_DelayRxMessage(dword pgn, dword sourceAddress, qword filterMask, qword filterValue, dword delay); // form 1"
+  ],
+  "description": [
+    "Delays processing of a received message by the interaction layer.",
+    "A message described in the function is only forwarded to the simulation node after the defined delay. As a result, the simulated node reacts to the message only after this delay.",
+    "You can also define a system variable which is set if the specified message is received.",
+    "To revert this command you can use FSIL_ResetDelayedRxMessage or FSIL_ResetAllDelayedRxMessage."
+  ],
+  "parameters": [
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "Parameter Group Number (with data page) of the message to be delayed."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "—"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

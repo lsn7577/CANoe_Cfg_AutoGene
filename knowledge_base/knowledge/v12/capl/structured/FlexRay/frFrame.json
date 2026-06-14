@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "frFrame",
+  "category": "FlexRay",
+  "title": "frFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Objects/CAPLfunctionFRFrame.htm",
+  "syntax": [
+    "frFrame <frame name> <frame var>;"
+  ],
+  "description": [
+    "Can be used to create a FlexRay send object. The object data can be manipulated by selectors associated with this object. Other object characteristics can be read out from selectors.",
+    "Objects are then registered using the frSetSendFrame and are sent using the frUpdateStatFrame or frOutputDynFrame functions."
+  ],
+  "parameters": [
+    {
+      "name": "MsgChannel<num>",
+      "type": "",
+      "description": "Defines the send channel/cluster."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "This is an example for using the Frame object in arrays.",
+      "All objects of an array must be initialized with an appropriate frame definition!"
+    ],
+    "code": "variables\n{\n  frFrame (1,0,1) frm1;\n\n  // All objects are equal:\n   frFrame (2,0,1) frArray1[10];\n\n  // All objects may be different:\n  frFrame * frArray2[3] = { (3,0,1), <FrameNameFromDB>, frm1 };\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

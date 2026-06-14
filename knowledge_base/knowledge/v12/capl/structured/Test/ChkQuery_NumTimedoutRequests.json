@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_NumTimedoutRequests",
+  "category": "Test",
+  "title": "ChkQuery_NumTimedoutRequests",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryNumTimedoutRequests.htm",
+  "syntax": [
+    "long ChkQuery_NumTimedoutRequests (dword aCheckId);",
+    "check.QueryNumTimedoutRequests();"
+  ],
+  "description": [
+    "Returns the number of requests within the current observation period for which no corresponding response message was observed during the specified timeout.",
+    "In the context of a method protocol check, an occurred timeout of tWaitForProcessing1 or tWaitForProcessing2 will also count that request to the number returned by this function, regardless whether the final \"Result\"/\"ResultAck\" or \"Error\"/\"ErrorAck\" response is observed within tMaxDuration or not."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Reference to check context."
+    }
+  ],
+  "return": "< 0: Refer the query error codes.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

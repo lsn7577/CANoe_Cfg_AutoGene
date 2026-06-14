@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "_KLine_DataInd",
+  "category": "KLine",
+  "title": "_KLine_DataInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineDataInd.htm",
+  "syntax": [
+    "_KLine_DataInd(byte data[])"
+  ],
+  "description": [
+    "Called for a received K-Line request.",
+    "This function models a K-Line TP layer which is required for a ECU simulation."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Data buffer."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n   BYTE cKLine_HandleStartCommunication = 0;\n   BYTE cKLine_HandleStopCommunication = 1;\n}\n\n_KLine_DataInd( byte data[]) // Receive a request\n{\n   if (cKLine_HandleStartCommunication && data[0] == 0x81)\n   {\n   BYTE StartCommunicationResp_raw[3] = { 0xC1, 0xEF, 0x8F };\n   _Diag_DataRequest( StartCommunicationResp_raw, elcount( StartCommunicationResp_raw), 0);\n   }\n   else if (cKLine_HandleStopCommunication && data[0] == 0x82)\n   {\n   BYTE StopCommunicationResp_raw[1] = { 0xC2 };\n   _Diag_DataRequest( StopCommunicationResp_raw, elcount( StopCommunicationResp_raw), 0);\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_TCPConnectInd",
+  "category": "SmartCharging",
+  "title": "SCC_TCPConnectInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_TCPConnectInd.htm",
+  "syntax": [
+    "void SCC_TCPConnectInd ( dword Port, long IsInitiator )"
+  ],
+  "description": [
+    "The callback is called when a TCP connection is opened."
+  ],
+  "parameters": [
+    {
+      "name": "Port",
+      "type": "",
+      "description": "Port number of the TCP connection."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

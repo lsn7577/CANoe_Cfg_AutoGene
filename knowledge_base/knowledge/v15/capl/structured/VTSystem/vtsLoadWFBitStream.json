@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "vtsLoadWFBitStream",
+  "category": "VTSystem",
+  "title": "vtsLoadWFBitStream",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSvtsLoadWFBitStream.htm",
+  "syntax": [
+    "long vtsLoadWFBitStream (char Target[], char filepath[]);"
+  ],
+  "description": [
+    "The function loads a bit stream (a sequence of bit values) for the channel from the specified file.The bit stream is used to stimulate the ECU using a digital signal."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    },
+    {
+      "name": "filepath",
+      "type": "",
+      "description": "Path of the file containing the bit stream.The path can be given absolute or relative to the CANoe configuration."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following example demonstrates how to use the bit stream voltage output of a VT2516 channel for digital stimulation. In this example a bit stream is loaded from the file BitStream.TXT and played back on channel DOut. More details for the output of bit streams can be found on CANoe online help topics VT2516: Bit Stream Output and VT2848: Bit Stream Output."
+    ],
+    "code": "// Sample bit stream\n001100110010101100\nBitstreamOutput ()\n{\n   // Choose voltage stimulation and bitstream curve type\n   vtsSetStimulationMode(\"VTS::DOut\", 1);\n   vtsSetCurveType(\"VTS::DOut\", 3);\n\n   // Set high and low state voltages (12V and 0V)\n   vtsSetPWMVoltageHigh(\"VTS::DOut\", 12.0);\n   vtsSetPWMVoltageLow(\"VTS::DOut\", 0.0);\n\n   // Load bitstream (the contents of BitStream.TXT are listed below)\n   vtsLoadWFBitStream(\"VTS::DOut\", \"C:\\\\BitStream.TXT\");\n\n   // Configure bitstream. Parameters:\n   // TimeIncrement (time to hold each sample)       = 10µs\n   // Pause (pause between two waveform repetitions) = 5ms\n   // NumberOfRepeats (number of repetitions)        = 0 (unlimited)\n   vtsSetWFParams(\"VTS::DOut\", 0.0001, 0.005, 0);\n\n   // Output the configured bitstream for 10 seconds\n   vtsStartStimulation(\"VTS::DOut\");\n   TestWaitForTimeout(10000);\n   vtsStopStimulation(\"VTS::DOut\");\n}\npublic void BitstreamOutput()\n   {\n      // Get VTS interface and VT2516 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT2516Channel digiOut = vts.GetChannel(\"DOut\") as IVT2516Channel;\n\n      // Choose voltage stimulation and bitstream curve type\n      digiOut.SetStimulationMode(StimulationMode.Voltage, CurveType.BitStream);\n\n      // Set high and low state voltages (12V and 0V)\n      digiOut.PWMVoltageHigh.Value = 12.0f;\n      digiOut.PWMVoltageLow.Value = 0.0f;\n\n      // Load bitstream (the contents of BitStream.TXT are listed below)\n      digiOut.LoadWFBitStream(\"C:\\\\BitStream.TXT\");\n\n      // Configure bitstream. Parameters:\n      // TimeIncrement (time to hold each sample)       = 10µs\n      // Pause (pause between two waveform repetitions) = 5ms\n      // NumberOfRepeats (number of repetitions)        = 0 (unlimited)\n      digiOut.SetWFParams(0.0001, 0.005, 0);\n\n      // Output the configured bitstream for 10 seconds\n      digiOut.StartStimulation();\n      Vector.CANoe.Threading.Execution.Wait(10000);\n      digiOut.StopStimulation();\n   }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.5 SP2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Main method",
+      "Main method VT offline",
+      "—",
+      "—",
+      "Main method"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

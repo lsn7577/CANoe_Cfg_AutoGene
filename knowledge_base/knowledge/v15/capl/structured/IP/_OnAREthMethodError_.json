@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "<OnAREthMethodError>",
+  "category": "IP",
+  "title": "<OnAREthMethodError>",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthMethodError.htm",
+  "syntax": [
+    "void <OnAREthMethodError>(dword methodCallHandle, dword messageErrorHandle);"
+  ],
+  "description": [
+    "A callback function with this signature must be passed to the CAPL function AREthCreateMethodCall."
+  ],
+  "parameters": [
+    {
+      "name": "methodCallHandle",
+      "type": "",
+      "description": "Handle of the Event that triggered the callback, see AREthAddMethod."
+    },
+    {
+      "name": "messageErrorHandle",
+      "type": "",
+      "description": "Message handle of the SOME/IP error."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the created method is contained in the FIBEX database that is assigned to the CANoe configuration. The method has the Method ID 31, two input parameters (Member_value1 and Member_value2), and a return parameter (Result)."
+    ],
+    "code": "variables\n{\n  dword gMc; // global method call handle\n}\n\nvoid Initialize()\n{\n  dword aep; // application endpoint handle\n  dword csi; // consumed Service Instance handle\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(0x11, 50002);\n\n  // cretae Service Instance\n  csi = AREthCreateConsumedServiceInstance(aep,11,1);\n\n  // create method call\n  gMc = AREthCreateMethodCall(csi,31,\"OnMethodResponse\", ,\"OnMethodError”);\n}\n\non key 's'\n{\n  // if this key is pressed the method should be called\n\n  // set the two input parameters of the method\n  AREthSetValueDWord(gMc,\"Member_value1\",11);\n  AREthSetValueDWord(gMc,\"Member_value2\",22);\n\n  // call the method\n  AREthCallMethod(gMc);\n}\n\nvoid OnMethodResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  dword res; // value of return parameter\n\n  // get the returned parameter values\n  res = AREthGetValueDWord(messageResponseHandle,\"Result\");\n\n  write(\"The method call returned value: %d\",res);\n}\n\nvoid OnMethodError(dword methodCallHandle, dword messageErrorHandle )\n{\n  // do error handling here\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "—",
+      "—",
+      "—",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

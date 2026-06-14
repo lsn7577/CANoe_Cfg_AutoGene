@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetVehicleAddress",
+  "category": "Diagnostics",
+  "title": "DoIP_SetVehicleAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetVehicleAddress.htm",
+  "syntax": [
+    "void DoIP_SetVehicleAddress( char address[]);"
+  ],
+  "description": [
+    "Sets the address to be used by the DoIP layer. If given, the address is used to access the DoIP entity from the tester equipment, i.e. in case an IP address is used, a Vehicle Identification Request is omitted. In a vehicle simulation it will determine the adapter used for communication; in this case this function must be called in on preStart."
+  ],
+  "parameters": [
+    {
+      "name": "address",
+      "type": "",
+      "description": "The address of the DoIP layer. Can be a VIN, IPv4 address, IPv6 address or EID (Entity ID, typically a MAC address)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Set the vehicle ‘address’\nchar buffer[256];\nDiagGetCommParameter( \"DoIP.VEHICLE_Address\",\n                      0, buffer, elcount( buffer));\nDoIP_SetVehicleAddress( buffer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::source::ParseAddress",
+  "category": "IP",
+  "title": "ethernetPacket::source::ParseAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionSourceParseAddress.htm",
+  "syntax": [
+    "long ethernetPacket.source.ParseAddress( char addressAsString[] ); // form 1"
+  ],
+  "description": [
+    "Sets the source or destination MAC address of an Ethernet packet with a string.",
+    "The address must be given in this form: 02:00:00:12:34:AB"
+  ],
+  "parameters": [
+    {
+      "name": "addressAsString",
+      "type": "",
+      "description": "Address in text form of format MAC address."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "ethernetPacket pkt;\n\npkt.source.ParseAddress( \"02:00:00:00:00:01\" );\npkt.destination.ParseAddress( \"FF:FF:FF:FF:FF:FF\" );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

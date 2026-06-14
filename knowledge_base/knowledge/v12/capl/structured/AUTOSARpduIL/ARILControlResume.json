@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILControlResume",
+  "category": "AUTOSARpduIL",
+  "title": "ARILControlResume",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILControlResume.htm",
+  "syntax": [
+    "long ARILControlResume (dword flags)"
+  ],
+  "description": [
+    "Resumes a suspended IL and starts sending PDUs again."
+  ],
+  "parameters": [
+    {
+      "name": "flags",
+      "type": "",
+      "description": "The value defines the desired resume behavior."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

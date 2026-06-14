@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SysSetVariableIntArray",
+  "category": "Obsolete",
+  "title": "SysSetVariableIntArray",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionSysSetVariableIntArray.htm",
+  "syntax": [
+    "long SysSetVariableIntArray(char namespace[], char variable[], int values[], long arraySize); // form 1"
+  ],
+  "description": [
+    "Sets the value of a variable of the int[] type."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space (form 1)"
+    }
+  ],
+  "return": "0: no error, function successful",
+  "example": {
+    "description": [],
+    "code": "long lVarArr[10];\n...\nsysSetVariableIntArray(sysvar::MyNamespace::IntArrayVar, lVarArr, elcount(lVarArr));"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

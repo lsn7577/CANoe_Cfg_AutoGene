@@ -1,0 +1,49 @@
+# getLocalTimeString
+
+> Category: `Other` | Type: `function`
+
+## Syntax
+
+```c
+void getLocalTimeString(char timeBuffer[]);
+```
+
+## Description
+
+Copies a printed representation of the current date and time into the supplied character buffer. The format of the string is ddd mmm dd hh:mm:ss jjjj (e.g. "Fri Aug 21 15:22:24 1998").
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| timeBuffer | The buffer the string will be written in. This buffer must be at least 26 characters long. |
+
+## Return Values
+
+—
+
+## Example
+
+```c
+...
+char timeBuffer[64];
+
+getLocalTimeString(timeBuffer);
+// now timeBuffer contains for example. "Fri Aug 21 15:22:24 1998"
+...
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | All | All | 13.0 | 13.0 | 14 | 1.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | ✔ | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Simulation Setup | N/A | — | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | — | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | — | — | — | — | N/A |
+| 32-Bit | — | — | — | N/A | — | N/A |
+| 64-Bit | ✔ | ✔ | ✔ | ✔ | ✔ | N/A |

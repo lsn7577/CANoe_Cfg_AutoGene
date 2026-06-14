@@ -1,0 +1,128 @@
+/*
+ * Generated for CANoe v15.
+ * Project: EQ07_AutoTest_Project
+ * Generator: CANoe_Gene Burr workflow.
+ * Compile in the target CANoe environment before using as a release artifact.
+*/
+
+variables
+{
+  msTimer tStepTimer;
+  message VehicleCtrl msg_VehicleCtrl;
+}
+
+void CanoeGene_RecordAdapterGap(char text[])
+{
+  TestCaseComment(text);
+}
+
+long CanoeGene_SetXcpCalibration(char name[], char value[])
+{
+  TestCaseComment("Adapter required: XCP calibration write");
+  TestCaseComment(name);
+  TestCaseComment(value);
+  return 0;
+}
+
+long CanoeGene_SendDiagnosticRequest(char serviceName[], char parameters[])
+{
+  TestCaseComment("Adapter required: diagnostic request send");
+  TestCaseComment(serviceName);
+  TestCaseComment(parameters);
+  return 0;
+}
+
+long CanoeGene_CheckMessageReceived(char messageName[], dword timeoutMs)
+{
+  TestCaseComment("Adapter required: CAN message receive check");
+  TestCaseComment(messageName);
+  TestWaitForTimeout(timeoutMs);
+  return 0;
+}
+
+long CanoeGene_ExpectMessageTimeout(char messageName[], dword timeoutMs)
+{
+  TestCaseComment("Adapter required: CAN message timeout verdict");
+  TestCaseComment(messageName);
+  TestWaitForTimeout(timeoutMs);
+  return 0;
+}
+
+long CanoeGene_CheckSignal(char signalName[], char expectedValue[], dword timeoutMs)
+{
+  TestCaseComment("Adapter required: signal check");
+  TestCaseComment(signalName);
+  TestCaseComment(expectedValue);
+  TestWaitForTimeout(timeoutMs);
+  return 0;
+}
+
+long CanoeGene_CheckMeasurement(char measurementName[], char expectedValue[], dword timeoutMs)
+{
+  TestCaseComment("Adapter required: XCP measurement check");
+  TestCaseComment(measurementName);
+  TestCaseComment(expectedValue);
+  TestWaitForTimeout(timeoutMs);
+  return 0;
+}
+
+long CanoeGene_CheckDiagnosticResponse(char serviceName[], char expectedValue[], dword timeoutMs)
+{
+  TestCaseComment("Adapter required: diagnostic response check");
+  TestCaseComment(serviceName);
+  TestCaseComment(expectedValue);
+  TestWaitForTimeout(timeoutMs);
+  return 0;
+}
+
+void MainTest()
+{
+  TC_001();
+  TC_002();
+  TC_003();
+  TC_004();
+}
+
+testcase TC_001()
+{
+  TestCaseTitle("TC_001", "IGN_ON 后 ECU 发送状态报文");
+  TestCaseComment("Step 1: CAN报文发送");
+  msg_VehicleCtrl.IgnitionReq = 1;
+  output(msg_VehicleCtrl);
+  TestWaitForTimeout(1000);
+  TestWaitForTimeout(1000);
+  TestWaitForMessage(ECU_Status, 1000);
+  TestCaseComment("Step 2: CAN信号赋值");
+  setSignal("VehicleCtrl.IgnitionReq", 1);
+  TestWaitForSignalMatch(ECU_Status.Ready, 1, 3000);
+  TestWaitForSignalMatch(ECU_Status.Ready, 1, 3000);
+}
+
+testcase TC_002()
+{
+  TestCaseTitle("TC_002", "修改转速阈值并观察状态");
+  TestCaseComment("Step 1: XCP标定量赋值");
+  CanoeGene_SetXcpCalibration("Cal_RpmThreshold", "1500");
+  CanoeGene_CheckMeasurement("Meas_EngineSpeed", "1500", 5000);
+  CanoeGene_CheckMeasurement("Meas_State", "ThresholdReached", 5000);
+}
+
+testcase TC_003()
+{
+  TestCaseTitle("TC_003", "进入扩展会话后读取 DID");
+  TestCaseComment("Step 1: 诊断服务请求");
+  CanoeGene_SendDiagnosticRequest("DiagnosticSessionControl", "SID=0x10; sub=0x03");
+  CanoeGene_CheckDiagnosticResponse("DiagnosticSessionControl", "PositiveResponse", 3000);
+  CanoeGene_CheckDiagnosticResponse("ReadDataByIdentifier", "DID=F190", 3000);
+}
+
+testcase TC_004()
+{
+  TestCaseTitle("TC_004", "人工切换开关后确认信号变化");
+  TestCaseComment("Step 1: 等待手动操作后确认");
+  TestCaseComment("Manual confirmation required: 手动切换 KL15 开关");
+  TestWaitForTimeout(60000);
+  TestCaseComment("Manual checkpoint: 人工确认");
+  TestWaitForTimeout(60000);
+  TestWaitForSignalMatch(ECU_Status.KL15, 1, 3000);
+}

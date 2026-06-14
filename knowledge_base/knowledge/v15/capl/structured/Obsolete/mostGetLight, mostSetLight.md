@@ -1,0 +1,19 @@
+# mostGetLight, mostSetLight
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function Please use mostSetTxLight and mostGetRxLight instead. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long mostGetLight(long channel) |  |  |  |
+| long mostSetLight(long channel, long mode) |  |  |  |  |
+| Function | Get and set the Ring state. |  |  |  |
+| Parameters | channel Channel of the interface to be requested or to be accessed |  |  |  |
+| Return Values | 1: light on |  |  |  |
+| 0: light out |  |  |  |  |
+| <0: See error codes |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| MOST After measurement start Not in Stop measurement | — | • |  |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,176 @@
+{
+  "page_type": "function",
+  "name": "SomeIpCreateMessage",
+  "category": "IP",
+  "title": "SomeIpCreateMessage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpCreateMessage.htm",
+  "syntax": [
+    "dword SomeIpCreateMessage( dword messageId, dword requestId, dword protocolVersion, dword interfaceVersion, dword messageType, dword returnCode ); // form 1",
+    "dword SomeIpCreateMessage( dword bufferLength, byte buffer[] ); // form 2",
+    "dword SomeIpCreateMessage( dword bufferLength, byte buffer[], dword offset ); // form 3"
+  ],
+  "description": [
+    "This function is used to create a SOME/IP message that can then be sent with SomeIpOutputMessage or SomeIpPostMessage.",
+    "Form 1",
+    "If a FIBEX database is assigned to the CANoe configuration, a check is made to determine whether the message ID (messageId parameter) is contained in this database. If so, the payload is created according to the database description and initialized with 0. The length field in the SOME/IP message header is set automatically. If a corresponding message ID is not found in the database, only the SOME/IP message header is created. In this case, the payload must be created with SomeIpSetData. If no payload is available an empty payload must be specified in SomeIpSetData.",
+    "Form 2",
+    "During creation, the message header length is taken from the data stream specified in the buffer parameter. In so doing, incorrect length values are not corrected.",
+    "If the message is successfully accessed later with a SomeIpGetValue... or SomeIpSetValue... function, the length is adapted in the message, if necessary, if a FIBEX database is assigned to the CANoe configuration and the message ID is contained in the database.",
+    "The created message can be deleted again with SomeIpReleaseMessage."
+  ],
+  "parameters": [
+    {
+      "name": "messageId",
+      "type": "",
+      "description": "The message identifier of the SOME/IP message."
+    },
+    {
+      "name": "requestId",
+      "type": "",
+      "description": "The request identifier of the SOME/IP message header."
+    },
+    {
+      "name": "protocolVersion",
+      "type": "",
+      "description": "The protocol version of the SOME/IP message header."
+    },
+    {
+      "name": "interfaceVersion",
+      "type": "",
+      "description": "The interface version of the SOME/IP message header."
+    },
+    {
+      "name": "messageType",
+      "type": "",
+      "description": "The message type of the SOME/IP message header."
+    },
+    {
+      "name": "returnCode",
+      "type": "",
+      "description": "The return code of the SOME/IP message header."
+    },
+    {
+      "name": "bufferLength",
+      "type": "",
+      "description": "Length of the buffer parameter in bytes."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer that contains the complete SOME/IP message as byte stream."
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "This parameter can be used to specify the start of a SOME/IP message in the byte stream. The specification is in bytes (see example code)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  DWORD messageId = 0x12340004; // service ID = 0x1234, method ID = 0x0004\n  DWORD requestId = 0; // client ID = 0, session ID = 0\n  DWORD protocolVersion = 1;\n  DWORD interfaceVersion = 1;\n  DWORD messageType = 0x2; // notification message\n  DWORD returnCode = 0; // not available\n  DWORD aep = 0;          // application endpoint handle\n  DWORD messageHandle    = 0; // handle of the created SOME/IP message\n  BYTE payload[5]; // the message payload\n  DWORD count            = 0; // a simple counter\n\n  // initialize the payload\n  count = 0;\n  payload[count++] = 0x11;\n  payload[count++] = 0x22;\n  payload[count++] = 0x33;\n  payload[count++] = 0x44;\n  payload[count++] = 0x55;\n\n  // open application endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create the SOME/IP message itself and set the message payload\n  messageHandle = SomeIpCreateMessage(messageId,requestId,protocolVersion,interfaceVersion,messageType,returnCode);\n  SomeIpSetData(messageHandle,elcount(payload),payload);\n\n  // send the SOME/IP message\n  SomeIpOutputMessage(aep,0xFFFFFFFF,40001,messageHandle);\n\n  // release the some IP message\n  SomeIpReleaseMessage(messageHandle);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

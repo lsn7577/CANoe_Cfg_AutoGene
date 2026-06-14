@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LocalSecurityGenerateSHA256",
+  "category": "Obsolete",
+  "title": "LocalSecurityGenerateSHA256",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLocalSecurityGenerateSHA256.htm",
+  "syntax": [
+    "long LocalSecurityGenerateSHA256 (BYTE[] data, dword dataLength, BYTE[] hash, dword hashLength)"
+  ],
+  "description": [
+    "Generates a SHA256 hash for the given data and key. The generated Hash is a SipHash."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "The data"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

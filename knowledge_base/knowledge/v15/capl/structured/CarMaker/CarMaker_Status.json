@@ -1,0 +1,122 @@
+{
+  "page_type": "function",
+  "name": "CarMaker_Status",
+  "category": "CarMaker",
+  "title": "CarMaker_Status",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CarMaker/Functions/CAPLfunctionCarMakerStatus.htm",
+  "syntax": [
+    "long CarMaker_Status( );"
+  ],
+  "description": [
+    "Retrieves the status of the CarMaker connection."
+  ],
+  "parameters": [],
+  "return": "No connection\nConnection is being built up\nConnection established",
+  "example": {
+    "description": [],
+    "code": "// get the current connection status\nconnState = CarMaker_Status();\n\nif (gConnectionState != connState)\n{\n  //get detailed connection Info\n  gConnectionState = connState;\n  CarMaker_StatusText(connTextBuf, elcount(connTextBuf));\n\n  if((gConnectionState & 0x10) != 0) // NOT connected...\n  {\n    msgSeverity = 3; // Error\n  }\n  if((gConnectionState & 0x20) != 0) // connecting...\n  {\n    msgSeverity = 2; // Warning\n  }\n  if((gConnectionState & 0x40) != 0) // connected...\n  {\n    msgSeverity = 1; // Information\n  }\n  writeLineEx(1, msgSeverity, \"CarMaker connection status 0x%lx: \\\"%s\\\"\", gConnectionState, connTextBuf);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "—",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CarMaker",
+      "—",
+      "—",
+      "—",
+      "CarMaker"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

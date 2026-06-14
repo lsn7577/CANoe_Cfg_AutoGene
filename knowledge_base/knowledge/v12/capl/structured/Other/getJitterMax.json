@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "getJitterMax",
+  "category": "Other",
+  "title": "getJitterMax",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetJitterMax.htm",
+  "syntax": [
+    "int getJitterMax()"
+  ],
+  "description": [
+    "Determines the upper limit for the allowable deviation when Jitter is set."
+  ],
+  "parameters": [],
+  "return": "Upper deviation in parts per thousand.",
+  "example": {
+    "description": [],
+    "code": "int val;\n...\n// Assign to val the upper value of the Jitter\nval = getJitterMax();\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

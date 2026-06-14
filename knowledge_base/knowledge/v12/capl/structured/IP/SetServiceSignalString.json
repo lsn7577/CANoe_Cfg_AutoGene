@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "SetServiceSignalString",
+  "category": "IP",
+  "title": "SetServiceSignalString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionSomeIpSetServiceSignalString.htm",
+  "syntax": [
+    "long SetServiceSignalString(serviceSignalString qualifier, char buffer []); // form 1"
+  ],
+  "description": [
+    "Sets the string value of a Service Signal. The function automatically appends the respective byte order mark (BOM) depending on the data type (UTF8 or UTF16)."
+  ],
+  "parameters": [
+    {
+      "name": "qualifier",
+      "type": "",
+      "description": "Qualifier of the Service Signal."
+    }
+  ],
+  "return": "0: no error, function successful.",
+  "example": {
+    "description": [
+      "The example shows access to parameter StringValue, which is contained in Event1 of service Service1 (Major Version 1, Instance ID 2). The service interface is defined in package PACKAGE1::PACKAGE2 of database DemoDatabase.",
+      "The service qualifier is specified without a leading $ sign."
+    ],
+    "code": "on key 's'\n{\nSetServiceSignalString(DemoDatabase::PACKAGE1::PACKAGE2::Service1::1::2::Event1::StringValue,\"Hello World\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

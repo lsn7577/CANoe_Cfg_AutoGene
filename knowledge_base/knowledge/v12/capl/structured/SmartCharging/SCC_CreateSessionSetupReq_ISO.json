@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateSessionSetupReq_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateSessionSetupReq_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateSessionSetupReq_Iso.htm",
+  "syntax": [
+    "long SCC_CreateSessionSetupReq_ISO ( byte SessionID[], byte EVCCID[] )"
+  ],
+  "description": [
+    "Creates a Session Setup Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

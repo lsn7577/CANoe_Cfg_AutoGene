@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendConfigureBitTimingRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendConfigureBitTimingRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendConfBitTimingReq.htm",
+  "syntax": [
+    "long coTfsLssSendConfigureBitTimingRequest( dword tableSelector, dword tableIndex, byte[] pErrorCode, byte[] pSpecificError );"
+  ],
+  "description": [
+    "This function sends a LSS Configure Bit-Timings Parameters request and waits for the response."
+  ],
+  "parameters": [
+    {
+      "name": "tableSelector",
+      "type": "",
+      "description": "Selects which bit timing parameter table shall be used."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pErrorCode[1];\nbyte pSpecificError[1];\n\n/* send LSS configure bit timing request and wait for reponse*/\n\nif (coTfsLssSendConfigureBitTimingRequest( 0, 3, pErrorCode, pSpecificError) == 1) {\n  /* request sent with parameters tableSelector=0 and tableIndex=3 and DUT replied with correct response. Response values can be found in pErrorCode, pSpecificError */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

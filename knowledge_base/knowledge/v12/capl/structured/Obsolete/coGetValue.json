@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coGetValue",
+  "category": "Obsolete",
+  "title": "coGetValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoGetValue.htm",
+  "syntax": [
+    "long coGetValue( char envVar[], dword errCode[] );"
+  ],
+  "description": [
+    "The function returns the current value of an environment variable of the type integer.",
+    "In contrast to the getValue function of CANoe, with this function the name for runtime can be specified via a string and it does not already have to be known at translation time. This means, for example, it can be combined at runtime with the help of string functions."
+  ],
+  "parameters": [
+    {
+      "name": "envVar",
+      "type": "",
+      "description": "Name of the environment variable"
+    }
+  ],
+  "return": "Value of the environment variable",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nlong returnValue ;\n\nreturnValue = coGetValue(\"envVarStart\", errCode);\nif (errCode[0] == 0) {\n  write( \"Value of the environment variable is: %d\", returnValue );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

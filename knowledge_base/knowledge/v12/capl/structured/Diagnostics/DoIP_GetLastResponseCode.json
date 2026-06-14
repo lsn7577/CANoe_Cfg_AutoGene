@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetLastResponseCode",
+  "category": "Diagnostics",
+  "title": "DoIP_GetLastResponseCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetLastResponseCode.htm",
+  "syntax": [
+    "long DoIP_GetLastResponseCode();"
+  ],
+  "description": [
+    "Returns the last negative response code received from the peer."
+  ],
+  "parameters": [],
+  "return": "1: No response code received yet , or this error does not have a specific response code",
+  "example": {
+    "description": [],
+    "code": "void DoIP_ErrorInd( int error)\n{\n  write( \"received error %d with error code %d\", error, DoIP_GetLastResponseCode());\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterVlanId",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterVlanId",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterVlanId.htm",
+  "syntax": [
+    "long IpGetAdapterVlanId( dword ifIndex, word &retVlanId);"
+  ],
+  "description": [
+    "The function returns the VLAN ID of the adapter with the given index. If the adapter is not a VLAN interface it returns the error code WSA_INVALID_PARAMETER (87)."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    },
+    {
+      "name": "retVlanId",
+      "type": "",
+      "description": "The VLAN ID of the adapter."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  dword adapterCount;\n  dword ifIndex;\n  word vlanId;\n  long result;\n  adapterCount = ipGetAdapterCount();\n\n  for(ifIndex = 1; ifIndex <= adapterCount; ifIndex++)\n  {\n    result = ipGetAdapterVlanId(ifIndex, vlanId);\n    if(result == 0)\n    {\n      write(\"Adapter %d has VLAN id %d\", ifIndex, vlanId);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "11.0",
+      "11.0",
+      "13.0",
+      "—",
+      "—",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

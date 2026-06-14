@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MediaEnumAudioCapturers",
+  "category": "Media",
+  "title": "MediaEnumAudioCapturers",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaEnumAudioCapturers.htm",
+  "syntax": [
+    "dword MediaEnumAudioCapturers(dword& count, dword audioCapturerHandles[]);"
+  ],
+  "description": [
+    "Enumerates a list of audio capture devices."
+  ],
+  "parameters": [
+    {
+      "name": "count",
+      "type": "",
+      "description": "Count of elements provided in audioCapturerHandles.Caller: Set to elCount(audioCapturerHandles)."
+    }
+  ],
+  "return": "0: The function succeeded.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

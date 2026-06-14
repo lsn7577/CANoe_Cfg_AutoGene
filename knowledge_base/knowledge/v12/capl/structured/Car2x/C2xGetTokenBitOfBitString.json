@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetTokenBitOfBitString",
+  "category": "Car2x",
+  "title": "C2xGetTokenBitOfBitString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetTokenBitOfBitString.htm",
+  "syntax": [
+    "long C2xGetTokenBitOfBitString( long packet, char protocolDesignator[], char tokenDesignator[], char namedBit[] ); // form 1"
+  ],
+  "description": [
+    "This function gets the value of a bit in a bit string that is specified either by its name (form 1) or by its position (form 2)."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    }
+  ],
+  "return": "Value of the bit.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

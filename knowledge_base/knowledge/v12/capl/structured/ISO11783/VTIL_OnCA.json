@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "VTIL_OnCA",
+  "category": "ISO11783",
+  "title": "VTIL_OnCA",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILOnCA.htm",
+  "syntax": [
+    "long VTIL_OnCA(long newAddress);"
+  ],
+  "description": [
+    "This callback function is called from the VT IL when a Command Address message is received.",
+    "The assignment of the new address can be suppressed."
+  ],
+  "parameters": [
+    {
+      "name": "newAddress",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "1: Accept the new address",
+  "example": {
+    "description": [],
+    "code": "long VTIL_OnCA(long address)\n{\n  if(address == 2)\n    return 0; //don’t accept the address ‘2’\n  else\n    return 1;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

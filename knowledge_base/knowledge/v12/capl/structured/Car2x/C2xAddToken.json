@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xAddToken",
+  "category": "Car2x",
+  "title": "C2xAddToken",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xAddToken.htm",
+  "syntax": [
+    "long C2xAddToken( long packet, char protocolDesignator[], char tokenDesignator[] );"
+  ],
+  "description": [
+    "This function adds an additional token at the end of a protocol header"
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "long packetHandle = 0;\npacketHandle = C2xInitPacket(\"wsmp\");\nC2xAddToken(packetHandle, \"wsmp\", \"transmitPower\");\nC2xAddToken(packetHandle, \"wsmp\", \"dataRate\");\nC2xAddToken(packetHandle, \"wsmp\", \"channelNumber\");\nC2xCompletePacket(packetHandle);\nC2xOutputPacket(packetHandle);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

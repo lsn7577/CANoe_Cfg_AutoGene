@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Abstract_CreateAddress",
+  "category": "CommunicationObjects",
+  "title": "Abstract_CreateAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractCreateAddress.htm",
+  "syntax": [
+    "addressHandle Abstract_CreateAddress(CommunicationObject co, char[] name)"
+  ],
+  "description": [
+    "Creates a pseudo address for a communication object endpoint if abstract binding is used. The address can be attached to an endpoint with SD_SetAddress. For abstract binding, the address of an endpoint actually does not contain more information than a name which can be retrieved again through Abstract_GetDisplayName.",
+    "The address is necessary for implementation of service discovery; e.g. in the handlers on SD_consumer_discovered and on SD_provider_discovered, the address is passed as a selector."
+  ],
+  "parameters": [
+    {
+      "name": "co",
+      "type": "",
+      "description": "Communication object (usually a service) for which the address shall be created."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "SD_SetAddress(newProvider, Abstract_CreateAddress(MirrorAdjustment, \"RearMirror\"), MirrorAdjustment[CANoe]);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

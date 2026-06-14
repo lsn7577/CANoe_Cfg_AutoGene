@@ -1,0 +1,154 @@
+{
+  "page_type": "function",
+  "name": "diagGetComplexRespParameterRaw",
+  "category": "Diagnostics",
+  "title": "diagGetComplexRespParameterRaw",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetComplexRespParameterRaw.htm",
+  "syntax": [
+    "long diagGetComplexRespParameterRaw (diagRequest req, char parameterName[], dword iteration, char subParameter[], byte buffer[], dword bufferLen);"
+  ],
+  "description": [
+    "Reads/sets the complex parameter to the specified raw value.",
+    "This function offers access to parameters contained in a received response object, whereby the function is addressed directly by the request. This eliminates the need to generate a separate response object. If no response is available yet for the request, an error is reported."
+  ],
+  "parameters": [
+    {
+      "name": "req",
+      "type": "",
+      "description": "Request"
+    },
+    {
+      "name": "parameterName",
+      "type": "",
+      "description": "Parameter qualifier"
+    },
+    {
+      "name": "iteration",
+      "type": "",
+      "description": "Iteration (beginning with 0)"
+    },
+    {
+      "name": "subParameter",
+      "type": "",
+      "description": "Sub parameter qualifier"
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Output buffer"
+    },
+    {
+      "name": "bufferLen",
+      "type": "",
+      "description": "Buffer size"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.0",
+      "5.1 7.0 SP5: methods",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "Online mode Not for basic diagnostics",
+      "Online mode Not for basic diagnostics",
+      "—",
+      "—",
+      "—",
+      "Online mode Not for basic diagnostics"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

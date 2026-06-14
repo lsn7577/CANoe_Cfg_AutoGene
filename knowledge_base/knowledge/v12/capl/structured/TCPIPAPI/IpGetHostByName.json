@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetHostByName",
+  "category": "TCPIPAPI",
+  "title": "IpGetHostByName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIpGetHostByName.htm",
+  "syntax": [
+    "long IpGetHostByName(char hostname[],dword ipv4Address[], dword &count); // form 1"
+  ],
+  "description": [
+    "The function dissolves a host name in its IP address. The given host name first is searched in the CANoe Simulation Setup and then in the assigned database. If the name is not defined there it is determined via a DNS request by using the operating system stack. For this the operating system stack must be selected in the CANoe TCP/IP Stack configuration dialog. The result is then given back in the corresponding callback OnIpGetHostByName."
+  ],
+  "parameters": [
+    {
+      "name": "hostname",
+      "type": "",
+      "description": "The name of the host whose address should be determined."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "//\n// This example expects a node with the name ECU 1 in the\n// simulation setup.\n//\n\non start\n{\n  char addrStr[47];\n  long result;\n  dword count;\n  dword loop;\n  dword v4Addrs[10];\n  byte  v6Addrs[10][16];\n\n  //\n  // get IPv4 addresses of node ECU 1\n  //\n  count = elCount(v4Addrs);\n  result = IpGetHostByName(\"ECU 1\", v4Addrs, count);\n  if(result == 0)\n  {\n    write(\"IPv4 Addresses of Node ECU 1:\");\n    for(loop = 0; loop < count; loop++)\n    {\n      ipGetAddressAsString(v4Addrs[loop], addrStr, elcount(addrStr));\n      write(\"%s\", addrStr);\n    }\n  }\n\n  //\n  // get IPv6 addresses of node ECU 1\n  //\n  count = elCount(v6Addrs);\n  result = IpGetHostByName(\"ECU 1\", v6Addrs, count);\n  if(result == 0)\n  {\n    write(\"IPv6 Addresses of Node ECU 1:\");\n    for(loop = 0; loop < count; loop++)\n    {\n      ipGetAddressAsString(v6Addrs[loop], addrStr, elcount(addrStr));\n      write(\"%s\", addrStr);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

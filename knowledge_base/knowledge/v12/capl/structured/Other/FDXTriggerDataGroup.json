@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FDXTriggerDataGroup",
+  "category": "Other",
+  "title": "FDXTriggerDataGroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionFDXTriggerDataGroup.htm",
+  "syntax": [
+    "long FDXTriggerDataGroup (WORD goupID)"
+  ],
+  "description": [
+    "This function triggers the transmission of a data group via CANoe FDX protocol."
+  ],
+  "parameters": [
+    {
+      "name": "groupID",
+      "type": "",
+      "description": "ID of the FDX data group that should be transmitted."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "// CANoe FDX data exchange synchronously to FlexRay cycle\n// Whenever slot 5 of the FlexRay cycle will be reached, the FDX data group 10 is transmitted one time \n\non frSlot 5\n{\n   FDXTriggerDataGroup(10);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

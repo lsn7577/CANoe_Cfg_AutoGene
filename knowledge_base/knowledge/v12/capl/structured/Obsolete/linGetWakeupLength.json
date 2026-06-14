@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linGetWakeupLength",
+  "category": "Obsolete",
+  "title": "linGetWakeupLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINGetWakeupLength.htm",
+  "syntax": [
+    "int linGetWakeupLength (linWakeupFrame wakeupFrame)"
+  ],
+  "description": [
+    "With this function it is possible to retrieve a length of an occurred Wakeup frame."
+  ],
+  "parameters": [
+    {
+      "name": "wakeupFrame",
+      "type": "",
+      "description": "Bus-event of type LIN Wakeup frame."
+    }
+  ],
+  "return": "Returns the retrieved length [in units of 10 µsec] or zero on failure.",
+  "example": {
+    "description": [
+      "Query the length of the wakeup frames"
+    ],
+    "code": "on linWakeupFrame\n{\nwrite(\"Wake-up frame length: %d µs\", linGetWakeupLength(this)*10);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

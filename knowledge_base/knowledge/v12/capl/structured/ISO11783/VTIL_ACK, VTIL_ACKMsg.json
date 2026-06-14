@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ACK, VTIL_ACKMsg",
+  "category": "ISO11783",
+  "title": "VTIL_ACK, VTIL_ACKMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILACKmsg.htm",
+  "syntax": [
+    "long VTIL_ACK(dword duration ); // form 1"
+  ],
+  "description": [
+    "Simulates the press of the ACK means of the Virtual Terminal. As a result, the Soft Key Activation message is immediately sent to the active Working Set with key activation code = pressed, then every 200 ms with the key activation code = still held and after the duration with the key activation code = released.",
+    "The VTIL_ACKMsg methods only send the Soft Key Activation message to the active Working Set (without triggering any event in the Virtual Terminal). In the sent Soft Key Activation messages the object ID of the Key object is always 0xFFFF and the key number is always 0."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

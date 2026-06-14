@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "applPDUILTxPending",
+  "category": "AUTOSARpduIL",
+  "title": "applPDUILTxPending",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionApplPDUilTxPending.htm",
+  "syntax": [
+    "dword applPDUILTxPending (dword busContext, dword longID, dword shortID, char name[], dword & aPayloadLength, byte data[]);"
+  ],
+  "description": [
+    "This callback is optionally being called before the IL sends a PDU to the bus. In this callback it is possible to prevent the sending of the PDU or to change the data of the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "busContext",
+      "type": "",
+      "description": "The context of the simulation bus this PDU will be sent."
+    }
+  ],
+  "return": "0: sending of the PDU with the supplied info is prevented.",
+  "example": {
+    "description": [
+      "Use the new fault injection interface to prevent the sending of a PDU.",
+      "Individual calculation of a checksum and a message counter:"
+    ],
+    "code": "dword applPDUILTxPending (dword busContext, dword longID, dword shortID, char name[], dword & aPayloadLength, byte data[])\n{\n  dword i;\n  byte xor;\n\n  /* PDU “PDU_001” contains a XOR checksum in Byte 0. It will\n  * be calculated from the other data bytes of the PDU.\n  */\n  if(strncmp(name, “PDU_001”, elcount(name)) == 0)\n  {\n    // calculate\n    xor = 0x00;\n    for(i = 1; i < aPayloadLength; ++i) {\n      xor = xor ^ data[i];\n    }\n    // set the new checksum\n    data[0] = xor;\n  }\n\n  /* PDU “PDU_002” contains a 4-Bit message counter in\n   * the first 4 Bits of Byte 0.\n    */\n  if(strncmp(name, “PDU_002”, elcount(name)) == 0)\n  {\n    // get the old value\n    i = data[0] & 0x0F;\n\n    // increment\n    i++;\n    i = i % 16;\n\n    //set the new message counter\n    data[0] = i & 0x0F;\n  }\n  return 1; // don't prevent sending of the PDU\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

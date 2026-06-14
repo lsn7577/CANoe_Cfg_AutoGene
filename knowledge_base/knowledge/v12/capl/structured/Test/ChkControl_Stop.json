@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkControl_Stop",
+  "category": "Test",
+  "title": "ChkControl_Stop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkControlStop.htm",
+  "syntax": [
+    "long ChkControl_Stop(dword aCheckId);",
+    "check.Stop();"
+  ],
+  "description": [
+    "Turns off the checking of the event condition."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Must exist"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": "dword checkId;\ndword numCheckEvents;\n\n// start the Error Frame observation\ncheckId = ChkStart_ErrorFramesOccured();\n// Add check as condition,\n// that means that check violations are reported and\n// the verdict of the test case is set to \"failed\"\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\n// Remove check as condition\nTestRemoveCondition(checkId);\n\n// stop the check\nChkControl_Stop(checkId);\n\n// reset stored values of the check\nChkControl_Reset(checkId);\n\n// start the check again without adding as condition,\n// that means that Error Frames are observed, but violations\n// are not reported and do not set the test case verdict to \"failed\"\nChkControl_Start(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\n// stop the check\nChkControl_Stop(checkId);\n\n// analysis of check\nnumCheckEvents = ChkQuery_NumEvents(checkId);\nif (numCheckEvents > 0)\nTestStepFail(\"Error Frame occurred!\");\n\n// destroy check\nChkControl_Destroy(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

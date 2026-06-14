@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetServiceData",
+  "category": "SmartCharging",
+  "title": "SCC_GetServiceData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetServiceData.htm",
+  "syntax": [
+    "void SCC_GetServiceData ( long Index, long& ServiceID, char ServiceName[], char ServiceType[], char ServiceScope[], long& FreeService )"
+  ],
+  "description": [
+    "Get various elements of a service within a ServiceDiscoveryRes message."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "ServiceName string (64 characters), ID, ServiceType, and ServiceScope string (32 characters) and FreeService flag with the specified list index < ServiceCount. When using a recent protocol version, an index of 0 refers to the element ChargeService.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

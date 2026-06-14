@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "StmQuery_Valid",
+  "category": "Test",
+  "title": "StmQuery_Valid",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionStmQueryValid.htm",
+  "syntax": [
+    "long StmQuery_Valid (Check aStimulusId)",
+    "stimulus.QueryValid()"
+  ],
+  "description": [
+    "Examines whether a stimulus with particular Id is valid."
+  ],
+  "parameters": [],
+  "return": "= 0: Refer the query error codes",
+  "example": {
+    "description": [],
+    "code": "double result;\ndword stmId;\nstmId = StmCreate_Toggle(Velocity, 60, 80, 100);\n// ... execute test sequence\nresult = StmQuery_Valid(stmId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

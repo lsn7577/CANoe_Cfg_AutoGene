@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "mostEventChannel, mostEventTime, mostEventOrigTime, mostEventTimeNs",
+  "category": "MOST",
+  "title": "mostEventChannel, mostEventTime, mostEventOrigTime, mostEventTimeNs",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTEvent.htm",
+  "syntax": [
+    "long mostEventChannel()"
+  ],
+  "description": [
+    "long mostEventChannel() returns the channel over which the event arrived.",
+    "dword mostEventTime() returns the time stamp of the event (Units: 10 µs).",
+    "dword mostEventOrigTime() returns the hardware-generated time stamp of the event (Units: 10 µs).",
+    "float mostEventTimeNs() returns the time stamp of the event (Units: 1 ns)."
+  ],
+  "parameters": [],
+  "return": "Time stamp",
+  "example": {
+    "description": [],
+    "code": "OnMostNodeAdr(long nodeadr)\n{\n   write(\"Node address changed to %04X on channel %d at %fs\",\n      nodeadr,\n      mostEventChannel(),\n      mostEventTime() / 100000.0);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

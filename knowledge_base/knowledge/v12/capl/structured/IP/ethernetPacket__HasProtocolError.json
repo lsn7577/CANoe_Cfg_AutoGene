@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::HasProtocolError",
+  "category": "IP",
+  "title": "ethernetPacket::HasProtocolError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionHasProtocolError.htm",
+  "syntax": [
+    "word ethernetPacket.HasProtocolError();"
+  ],
+  "description": [
+    "Returns 1, if the IP protocols of the Ethernet packet contains protocol errors, like wrong checksum or wrong length field, etc.Use ethernetPacket::GetProtocolErrorText to get a description of the error."
+  ],
+  "parameters": [],
+  "return": "0: No protocol error detected",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if (this.hasProtocolError())\n  {\n    char text[100]\n    pkt.GetProtocolErrorText( text );\n    write( \"Protocol error on Eth %d: %s\", this.msgChannel, text );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

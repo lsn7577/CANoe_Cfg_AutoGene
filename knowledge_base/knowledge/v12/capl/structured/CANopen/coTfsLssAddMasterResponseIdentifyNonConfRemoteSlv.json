@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssAddMasterResponseIdentifyNonConfRemoteSlv",
+  "category": "CANopen",
+  "title": "coTfsLssAddMasterResponseIdentifyNonConfRemoteSlv",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssAddMasterResponseIdentifyNonConfRemoteSlv.htm",
+  "syntax": [
+    "long coTfsLssAddMasterResponseIdentifyNonConfRemoteSlv( void );"
+  ],
+  "description": [
+    "This function adds a single LSS Master request wait condition to the internal list of LSS Master request wait conditions and sends a response if a request is received."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\nwrite(\"Clear list failed\");\nreturn;\n} \n\n/* add one or more test functions */\nif (coTfsLssAddMasterResponseIdentifyNonConfRemoteSlv( ) {\nwrite(\"could not add request\");\nreturn;\n} \n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\nwrite(\"no event received\");\n} \nelse {\nwrite(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

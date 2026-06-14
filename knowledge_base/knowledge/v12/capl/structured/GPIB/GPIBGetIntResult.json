@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GPIBGetIntResult",
+  "category": "GPIB",
+  "title": "GPIBGetIntResult",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBGetIntResult.htm",
+  "syntax": [
+    "long GPIBGetIntResult (char[] buffer);"
+  ],
+  "description": [
+    "Helper functions for extracting numeric values from GPIB response strings."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "The string in buffer, which may have been obtained by the GPIBResponse function, is searched for an integer number: All non-digit characters in the string as well as all digits found after the first comma character or decimal point are ignored, when assembling the integer number."
+    }
+  ],
+  "return": "Extracted integer value",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

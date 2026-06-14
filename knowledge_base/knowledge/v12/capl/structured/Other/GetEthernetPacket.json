@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetEthernetPacket",
+  "category": "Other",
+  "title": "GetEthernetPacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetEthernetPacket.htm",
+  "syntax": [
+    "long GetEthernetPacket(this, ethernetPacket * packet);"
+  ],
+  "description": [
+    "This function can only be called inside of an on PDU handler. The function will return in its second parameter the Ethernet packet, the PDU was contained."
+  ],
+  "parameters": [
+    {
+      "name": "this",
+      "type": "",
+      "description": "Handle to the currently handled (received) PDU object."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": "on PDU PDU_B\n{\n  ethernetPacket * aPacket_01;\n  long result;\n  result = GetEthernetPacket(this, aPacket_01); // PDU is assumed to be sent on ETH\n  if (result == 0)\n  {\n    write(\"Received PDU 'PDU_B' in ETH packet with FCS %lu\", aPacket_01.FCS);\n  }\n  else\n  {\n    write(\"Error accessing PDU!\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

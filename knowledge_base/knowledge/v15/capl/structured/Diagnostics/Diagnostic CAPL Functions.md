@@ -1,0 +1,373 @@
+# Diagnostic CAPL Functions
+
+> Category: `Diagnostics` | Type: `notes`
+
+## Description
+
+Access to One Parameter
+
+Access to the Whole Object
+
+APIs for Controlling a Diagnostic Channel (K-Line)
+
+Communication and Setup
+
+Controlling vFlash
+
+Diagnostics over IP — DoIP
+
+Event Procedures
+
+Further Functions
+
+Generic Diagnostic TP Interface
+
+Security Access
+
+Support Tests
+
+Variant Identification
+
+diagGetAbsolutePosition, diagGetAbsolutePositionResp
+
+diagGetAssignedTargetGroups
+
+diagGetTargetGroupName
+
+diagGetTargetGroupQualifier
+
+Finds the value of a numeric communication parameter of the interface that was selected for the description in the configuration dialog.
+
+The following callback functions are also called when the DoIP.DLL is NOT configured in the CAPL node:
+
+DoIP_EnableTLS
+
+DoIP_ForceLocalTCPSendPort
+
+The procedures are sub-divided into different events; the first matching event procedure (top-down) is called.
+
+To use the CAPL callback interface, you have to implement the following CAPL functions:
+
+Classes and Objects in CAPL | Declaration and Initialization of Diagnostic Objects | DoIP - Diagnostics over IP
+
+| Diagnostics Here you find CAPL functions for Diagnostics. |
+|---|
+
+| Access to One Parameter Access to the Whole Object APIs for Controlling a Diagnostic Channel (K-Line) Communication and Setup Controlling vFlash Diagnostics over IP — DoIP | Event Procedures Further Functions Generic Diagnostic TP Interface Security Access Support Tests Variant Identification |
+|---|---|
+
+| Functions | Short Description |
+|---|---|
+| diagGetAbsolutePosition, diagGetAbsolutePositionResp | Retrieves the position of a parameter in its primitive. |
+| diagGetComplexParameter | The behavior of this CAPL function depends on the used parameters. Retrieve the numeric sub-parameter from a parameter iteration. Retrieve the symbolic value of a complex parameter. |
+| diagGetComplexParameterRaw | Reads/sets the complex parameter to the specified raw value. |
+| diagGetComplexRespParameter | The behavior of this CAPL function depends on the used parameters. Retrieve the value of a numeric complex parameter. Retrieve the symbolic value of a complex parameter. Retrieve the numeric sub-parameter from a parameter iteration directly. |
+| diagGetComplexRespParameterRaw | Read the complex parameter to the specified raw value. |
+| diagGetIterationCount | Returns the number of sub-parameter iterations the complex parameter holds. |
+| diagGetParameter | The behavior of this CAPL function depends on the used parameters. Retrieve the value of the numeric parameter. Retrieve the symbolic value of the parameter. Retrieve the numeric parameter directly. |
+| diagGetParameterCoded | Specifies the value of a parameter directly via coded data bytes. |
+| diagGetParameterLongName | Copies the long name of a diagnostic parameter into the buffer, honoring the character encoding configured in the diagnostic description. |
+| diagGetParameterName | Writes the qualifier (without parent path) of the diagnostic parameter into the given field. |
+| diagGetParameterPath | Returns the full qualifier path of the parameter at the given position in the primitive. |
+| diagGetParameterRaw | Specifies the value of a (complex) parameter directly via uncoded data bytes. |
+| diagGetParameterSizeCoded | Returns the length of the coded parameter. |
+| diagGetParameterSizeRaw | Returns the length of the raw parameter. |
+| diagGetParameterType | Retrieve the qualifier of the parameter's type. |
+| diagGetParameterUnit | Writes the unit of the parameter in the transmitted field. |
+| diagGetRespIterationCount | Returns the number of sub-parameter iterations the complex parameter holds. |
+| diagGetRespParameter | The behavior of this CAPL function depends on the used parameters. Retrieves the value of the numeric parameter. Retrieves the symbolic value of the parameter. Retrieves the numeric parameter directly. |
+| diagGetRespParameterPath | Return the qualifier path of the parameter at the given position in the primitive. |
+| diagGetRespParameterRaw | Offers access to parameters contained in a received response object. |
+| diagGetRespParameterType | Retrieve the qualifier of the parameter's type. |
+| diagIsParameterConstant | Returns 1 if the parameter is declared constant in the diagnostic description. |
+| diagIsParameterDefault | Returns <> 0 if the parameter in the object has its default value. |
+| diagIsRespParameterConstant | Returns 1 if the parameter is declared constant in the diagnostic description. |
+| diagIsRespParameterDefault | Access/check a response parameter for a given request. Returns <> 0 if the parameter in the response has its default value. |
+| diagIsValidValue | Returns if the parameter in the response object is valid. |
+| diagResetParameter | Sets the parameter to its default value. |
+| diagSetComplexParameter | Sets one of the sub-parameters within a complex parameter to the specified (numeric or symbolic) value. |
+| diagSetComplexParameterRaw | Sets the complex parameter to the specified raw value. |
+| diagSetParameter | The behavior of this CAPL function depends on the used parameters. Set the numeric parameter to the specified value. Set a parameter to the symbolically-specified value. |
+| diagSetParameterCoded | Sets the value of a parameter directly via coded data bytes. |
+| diagSetParameterRaw | Sets the value of a (complex) parameter directly via uncoded data bytes. |
+
+| Functions | Short Description |
+|---|---|
+| diagGetAssignedTargetGroups | Returns a bit mask where each bit represents a target group. |
+| diagGetLastResponse | Saves the last response received (for the specified request) in the output object. |
+| diagGetLastResponseCode | Returns the code of the last received response (for the specified request). |
+| diagGetObjectName | Writes the language dependent name of the diagnostic object into the buffer. |
+| diagGetObjectPath | Delivers the qualifier path of the object that must be specified upon generation. |
+| diagGetPrimitiveByte | Reads one byte of a diagnostic object. |
+| diagGetPrimitiveData | Reads the raw data of the complete service primitive. |
+| diagGetPrimitiveSize | Returns the byte length of the object. |
+| diagGetResponseCode | Returns the code of the specified response (for the specified request). |
+| diagGetRespPrimitiveByte | Reads one byte of the response stored for the request. |
+| diagGetRespPrimitiveSize | Returns the byte length of the response stored for the request. |
+| diagGetSuppressResp | Polls the "suppressPosRspMsgIndicationBit" ("suppress positive response message indication bit"). |
+| diagGetTargetGroupName | Returns the name of the diagnostic target group. |
+| diagGetTargetGroupQualifier | Returns the qualifier of the diagnostic target group. |
+| diagInitialize | Reinitializes the object for the given service or primitive. |
+| diagInterpretAs | Treats the data of the response object as the specified primitive. |
+| diagInterpretRespAs | Treats the data of the request's response as the specified primitive. |
+| diagIsNegativeResponse | Returns value <> 0 if the object is a negative response to a request. |
+| diagIsPositiveResponse | Returns value <> 0 if the object is a positive response to a request. |
+| diagIsRaw | Returns if the object is stored as raw data or can be interpreted. |
+| diagIsRawResp | Returns if the response stored for the request is stored as raw data or can be interpreted. |
+| diagResize | Adapt size of a diagnostic object to match specified parameter iterations, or set size of bus message to given number of byte. |
+| diagSetPrimitiveByte | Writes one byte of a diagnostic object. |
+| diagSetPrimitiveData | Sets the raw data of the complete service primitive. |
+| diagSetRespPrimitiveByte | Writes one byte of the response stored for the request. |
+| diagSetSuppressResp | Sets the "suppressPosRspMsgIndicationBit" ("suppress positive response message indication bit"). |
+
+| APIs | Short Description |
+|---|---|
+| _Diag_ChannelStateChanged | Indicates the state of the diagnostic channel. |
+| diagCloseChannel | Closes a channel. |
+| diagConnectChannel | Connects a channel. |
+| diagDisconnectChannel | Disconnects a channel. |
+| diagIsChannelConnected | Checks if a channel is already in state Connected. |
+
+| Functions | Short Description |
+|---|---|
+| diagGetCommParameter | Finds the value of a numeric communication parameter of the interface that was selected for the description in the configuration dialog. |
+| diagGetCommParameter (Only available with Option FlexRay) | Finds the value of a numeric communication parameter of the interface that was selected for the description in the configuration dialog. |
+| diagGetCommunicationErrorString | Returns a description for the given communication error. |
+| diagGetCurrentEcu | Gets the name of the current ECU. |
+| diagGetLastCommunicationError | Returns the error code of the last diagnostic request. |
+| diagGetP2Extended | Returns the P2ex timeout. |
+| diagGetP2Timeout | Returns the time P2 in milliseconds, from the given source. |
+| diagGetP6Extended | Returns the time P6ex from the given source. |
+| diagGetP6Timeout | Returns the time P6 from the given source. |
+| diagGetSendingMode | Delivers information about the send mode of the answer. |
+| diagGetTargetCount | Returns the number of possible diagnostic targets configured. |
+| diagGetTargetQualifier | Writes the target qualifier for the diagnostic target. |
+| diagGetTesterPresentState | Returns the state of autonomous/cyclical Tester Present requests from CANoe to the specified or current ECU. |
+| DiagInitEcuSimulation | Initialize CAPL node to represent a diagnostics ECU simulation. |
+| diagSendFunctional | Send a request to the functional group defined for the current target. |
+| diagSendNegativeResponse | Sends a negative response to the tester, whereby the specified value is transmitted as error code. |
+| diagSendPositiveResponse | Sends the response object back to the tester. Can only be called in the ECU simulation. |
+| diagSendRequest | Sends the request object to the ECU. |
+| diagSendResponse | Sends the response object back to the tester. Can only be called in the ECU simulation. |
+| diagSetP2Extended | Sets the P2ex timeout to the specified value. |
+| diagSetP2Timeouts | Changes the P2 and P2ex timeout values at the built-in diagnostic channel. |
+| diagSetP6Timeouts | Sets the time P6 and P6ex from the given source. |
+| diagSetTarget | Sets the ECU with which the tester should communicate from now on. May not be called in an ECU simulation node. |
+| diagSetTimeout | Specifies the request timeout. |
+| diagSetTimeoutHandler | Sets the timeout callback for a request, or default timeout callback function. |
+| diagStartTesterPresent | Starts sending autonomous/cyclical Tester Present requests from CANoe to the specified or current ECU. |
+| diagStopTesterPresent | Stops sending autonomous/cyclical Tester Present requests from CANoe to the specified or current ECU. |
+
+| Functions | Short Description |
+|---|---|
+| TestWaitForvFlashInitialized , TestWaitForvFlashDeinitialized | Waits until the vFlash library is initialized/deinitialized. |
+| TestWaitForvFlashLastErrorMessage | Waits until the last detailed error message is retrieved from vFlash. |
+| TestWaitForvFlashNetworkActivated | Waits until the FlexRay network management has been activated on the configured network. |
+| TestWaitForvFlashProjectLoaded, TestWaitForvFlashProjectUnloaded | Waits until the given packed vFlash project (including flashware) is loaded or unloaded. |
+| TestWaitForvFlashReprogrammed | Starts the flashing process and waits until it has finished. |
+| TestWaitForvFlashStopped | Aborts the active flashing process and waits until the flashing has stopped. |
+| vFlashActivateNetwork | Activates the FlexRay network management, if required. |
+| vFlashDeinitialize, vFlashInitialize | Initialize (deinitialize) vFlash. |
+| vFlashGetCustomActionAttributeConfigValue, vFlashGetCustomActionAttributeLastRunValue, vFlashSetCustomActionAttribute | Get the value of a vFlash CustomAction attribute. |
+| vFlashGetFlashAttributeConfigValue, vFlashGetFlashAttributeLastRunValue, vFlashSetFlashAttribute | Get the value of a Flash attribute. |
+| vFlashGetLastErrorMessage | Requests a call to the CAPL callback vFlashErrorMessage containing information on the error that occurred. |
+| vFlashLoadProject | Loads the provided vFlash project stored under given path. |
+| vFlashReprogram | Starts the flashing procedure. |
+| vFlashStop | Stops the flashing procedure. |
+| vFlashUnloadProject | Unloads the current vFlash project. |
+
+| Note With the DoIP CAPL API you can simulate a DoIP node or DoIP gateway in CAPL. For the implementation of a (DoIP) tester the following functions are not stringently necessary. |
+|---|
+
+| Intrinsic Callback Functions (Tester Side) | Short Description |
+|---|---|
+| The following callback functions are also called when the DoIP.DLL is NOT configured in the CAPL node: |  |
+| _DoIP_ConnectionClosedInd | The TCP connection to the peer has been closed, i.e. another exchange of diagnostic messages will require a connection setup. |
+| _DoIP_VehicleAnnouncementInd | The tester has received a Vehicle Announcement Response from an ECU, with the given values. |
+| _DoIP_VehicleConnectedInd | The TCP communications channel to the vehicle has been established successfully, i.e. diagnostic messages can be exchanged without further delays. |
+| _DoIP_VehicleIdentificationCompleteInd | The vehicle identification phase has completed, i.e. no further Vehicle Identification Response Messages are expected. |
+| Intrinsic Functions (Tester Side) | Short Description |
+| DoIP_SelectVehicle | Select a specific vehicle by setting a MAC/VIN. |
+| DoIP_SetRoutingActivationType | Configures the value of the ISO 13400-2 parameter routing activation request activation type sent by the tester the next time it starts to communicate with a vehicle on the build-in channel. |
+| TestWaitForDoIPActivationLineStartup | Waits until DoIP Activation Line start-up time has passed. |
+
+| Note The following DoIP CAPL functions are only available with the modeling library DoIP.DLL. Information about the DoIP DLL you find on this page: DoIP CAPL Introduction |
+|---|
+
+| Fault Injection Functions | Short Description |
+|---|---|
+| DoIP_SetNextDiagnosticMessageNACKCode | Sets the next return code sent in the acknowledgment for a diagnostic message received. |
+| General Callback Functions | Short Description |
+| _DoIP_EntityStatusResponse | The tester received a response for an Entity Status request. |
+| _DoIP_IdentificationRequest | Is called if a vehicle simulation has received a Vehicle Identification Request Message. |
+| _DoIP_MessageAcknowledgeInd | A positive or negative acknowledgment was received in the tester. |
+| _DoIP_PowerModeInformationResponse | Is called if the tester received a response for a Power Mode Information Request. |
+| _DoIP_RoutingActivationRequest | A request for routing activation was received in a vehicle simulation. |
+| _DoIP_TCPDataInd | Is called if a DoIP PDU was received that cannot be interpreted by this implementation. |
+| _DoIP_TCPPreSend | The DoIP implementation is about to send a TCP DoIP PDU with the given content. |
+| _DoIP_UDPDataInd | Is called if an UDP packet was received that cannot be interpreted by this DoIP implementation. |
+| _DoIP_UDPInd | An UDP packet was received. Every DoIP UDP packet is forwarded to this function. The return value determines if the packet is processed or ignored. |
+| _DoIP_UDPPreSend | The DoIP implementation is about to send an UDP DoIP packet with the given content. |
+| DoIP_DataCon | Is called from the DoIP layer when data was sent. |
+| DoIP_DataInd | Is called from the DoIP layer when new data is received. |
+| DoIP_ErrorInd | Is called from the DoIP layer when an error occurred. |
+| General Functions | Short Description |
+| DoIP_AddCombinedPDU | Append another PDU to the combination. |
+| DoIP_AddECU | Adds a valid DoIP ECU address to the DoIP layer. |
+| DoIP_AddTester | Adds a valid DoIP tester address to the DoIP layer. |
+| DoIP_CloseConnection | Closes the TCP connection to the peer. |
+| DoIP_CreatePDUCombination | Initialize the combination of PDUs. |
+| DoIP_DataReq | Request the transfer of the given data to the DoIP peer. |
+| DoIP_EnableTLS | Enables secure communication (TLS) for DoIP tester or ECU simulation. |
+| DoIP_ForceLocalTCPSendPort | Forces local TCP send port to a specific value. |
+| DoIP_ForceLocalUDPSendPort | Forces local UDP send port to a specific value. |
+| DoIP_GetLastResponseCode | Returns the last negative response code received from the peer. |
+| DoIP_SendPDUCombination | Send PDU combination on open TCP connection. |
+| DoIP_SetBroadcastIPaddress | Sets target IP address for broadcast messages. |
+| DoIP_SetGatewayLogicalAddress | Sets gateway logical address. |
+| DoIP_SetLocalIPaddress | Sets local IP address to bind to. |
+| DoIP_SetLocalIPaddressVersion | IP version of local address to select if no address is given. |
+| DoIP_SetProtocol | Sets protocol version used in DoIP PDUs. |
+| DoIP_SetTesterAdapter | Sets the network interface to be used by the DoIP layer. |
+| DoIP_SetTesterLogicalAddress | Sets logical DoIP address of the tester used for sending. |
+| DoIP_SetTesterUdpPort | Sets the UDP port to be used by the DoIP layer. |
+| DoIP_SetVehicleAdapter | Sets the network interface to be used by the DoIP layer. |
+| DoIP_SetVehicleAddress | Sets the address to be used by the DoIP layer. |
+| DoIP_SetVehicleLogicalAddress | Sets vehicle logical DoIP address sent in DoIP PDUs. |
+| DoIP_SetVehicleTcpPort | Sets the TCP port to be used by the DoIP layer. |
+| DoIP_SetVehicleUdpPort | Sets the UDP port to be used by the DoIP layer. |
+| DoIP_SetWriteLevel | Sets the amount of messages written by the DoIP implementation. |
+| DoIP_TCPSend | Sends a DoIP PDU with valid layout on the open TCP connection. |
+| DoIP_UDPSend | Sends given raw data to peer(s) as UDP frame. Sends a DoIP PDU with valid layout to peer(s) as UDP frame. |
+| DoIP_UDPSendPort | (raw): Sends given raw data to peer(s) as UDP frame.(PDU): Sends given DoIP PDU to peer(s) as UDP frame. |
+| Tester Configuration Functions | Short Description |
+| DoIP_ConfigureRoutingActivationRequest | Configures the Routing Activation Request Message sent by a tester. |
+| DoIP_ConfigureRoutingActivationRetries | Allows to activate or deactivate DoIP routing activation retries. |
+| DoIP_ConnectToVehicle | Tries to connect to the configured vehicle. |
+| DoIP_GetReconnectInterval | Gets reconnect interval. |
+| DoIP_InitAsTester | Activates tester role. |
+| DoIP_SendEntityStatusRequest | Sends an entity status request to the configured peer or the given address. |
+| DoIP_SendPowerModeInformationRequest | Requests/sends power mode information. |
+| DoIP_SendRoutingActivationRequest | Send routing activation request to connected vehicle. |
+| DoIP_SetIdentificationRequestEID | Configures the Vehicle Identification Request Message sent by a tester. |
+| DoIP_SetIdentificationRequestVIN | Configures the Vehicle Identification Request Message sent by a tester. |
+| DoIP_SetMulticastScopeId | Sets an IPv6 address scope ID for multicast requests, sent by a tester. |
+| DoIP_SetReconnectInterval | Tester will retry to reconnect in this interval. |
+| DoIP_SetRoutingActivationOEMSpecific | Sets the OEM-specific parameters in the Routing Activation Request Message. |
+| Timing Functions | Short Description |
+| DoIP_GetAliveCheckTimeout | Returns the alive check timeout parameter of the DoIP layer. |
+| DoIP_GetAnnounceInterval | Gets the time between the Vehicle Announcement Messages sent. |
+| DoIP_GetAnnounceMessageCount | Gets the number of configured Vehicle Announcement Messages to be sent. |
+| DoIP_GetAnnounceWaitTime | Gets the delay before the sending of Vehicle Announcement Messages starts. |
+| DoIP_GetControlTimeout | Returns the timeout for Vehicle Identification Requests, connect and routing activation. |
+| DoIP_GetDiagnosticMessageTimeout | Returns timeout waiting for a diagnostic message positive or negative acknowledgment. |
+| DoIP_GetGenericTimeout | Returns the generic timeout. |
+| DoIP_GetInitialTimeout | Returns the initial timeout. |
+| DoIP_GetReconnectDelay | Gets reconnect delay. |
+| DoIP_GetVehicleDiscoveryTimeout | Returns the timeout waiting for Vehicle Identification Response Messages. |
+| DoIP_SetAliveCheckTimeout | Sets the alive check timeout parameter of the DoIP layer. |
+| DoIP_SetControlTimeout | Sets the timeout for Vehicle Identification Requests, connect and routing activation. |
+| DoIP_SetDiagnosticMessageTimeout | Sets timeout waiting for a diagnostic message positive or negative acknowledgment. |
+| DoIP_SetGenericTimeout | Sets the generic timeout. |
+| DoIP_SetInitialTimeout | Sets the initial timeout. |
+| DoIP_SetReconnectDelay | Tester will try to reconnect after this delay. |
+| DoIP_SetVehicleDiscoveryTimeout | Sets the timeout waiting for Vehicle Identification Response Messages. |
+| Vehicle Simulation Functions | Short Description |
+| DoIP_AddLocalIPaddress | Adds another IP address this vehicle simulation can be reached under. |
+| DoIP_AnnounceVehicle | Starts broadcasting Vehicle Announcement Messages. |
+| DoIP_ConfigureRoutingActivationResponse | Configures the routing activation response message sent by the vehicle simulation on the reception of a routing activation request message. |
+| DoIP_ConfigureVehicleAnnouncement | Configures when the Vehicle Announcement Messages are sent. |
+| DoIP_RemoveLocalIPaddress | Removes an IP address the vehicle will no longer listen at. |
+| DoIP_SetEID | Configures the Vehicle Announcement Message sent by a vehicle simulation. |
+| DoIP_SetEntityStatusInformation | Sets the values returned for an entity status request. |
+| DoIP_SetGroupIdentification | Configures the Vehicle Announcement Message sent by a vehicle simulation. |
+| DoIP_SetPowerModeInformation | Sets the value returned for a power mode information request. |
+| DoIP_SetVIN | Configures the Vehicle Announcement Message sent by a vehicle simulation. |
+
+| Response/Request Events | Short Description |
+|---|---|
+| on diagRequest | Is called when a diagnostic request is received in the ECU simulation. |
+| on diagRequestSent | Is called when a diagnostic request has been sent by the tester. |
+| on diagResponse | Is called when a diagnostic response is received in the tester. |
+
+| Functions | Short Description |
+|---|---|
+| CallbackTPDataIndication | Indicates the transmission of an ISO TP data packet on a CAN channel where the ISO TP Observer is configured to supervise the communication. |
+| DiagGetDescriptionInformation | Returns information on a diagnostic description, as stored in the database file itself. |
+| DiagGetDescriptionVersion | Returns information on a diagnostic description, as stored in the database file itself. |
+| diagGetErrorString | Retrieves a text describing the error code. |
+
+| Functions for Generic Diagnostics TP Interface | Short Description |
+|---|---|
+| To use the CAPL callback interface, you have to implement the following CAPL functions: |  |
+| _Diag_ConfigureChannel | Will be called when a diagnostic request has to be sent to a new target. |
+| _Diag_DataRequest (mandatory) | With this function CANoe triggers the CAPL interface to transmit data. |
+| _Diag_DisconnectReq, Diag_DisconnectRequest | The diagnostic communication channel to the target with the given qualifier shall be closed. |
+| _Diag_FunctionalRequest | The given bytes shall be sent as a functional diagnostic request to the ECU or functional group with the given qualifier. |
+| _Diag_PhysicalRequest | The given bytes shall be sent as a physical diagnostic request to the ECU or functional group with the given qualifier. |
+| _Diag_SendFunctional | With this function CANoe can be triggered to send a functional request via the CAPL interface. |
+| _Diag_SetChannelParameters (mandatory) | This function will be called after measurement start (in ECU simulations) or after DiagSetTarget() (in test nodes) and enables the CAPL program to configure the transport protocol. |
+| _Diag_SetupChannelReq (mandatory in tester) | With this function the CAPL program of a tester implementation will be requested to open a channel to the ECU. |
+| _Diag_SetupChannelRequest | With this function the CAPL program of a tester implementation will be requested to open a channel to the ECU. |
+| diag_ClosedChannelInd | Communicates to CANoe that the communication channel is not longer available. |
+| diag_DataCon | Tells the diagnostic layer, via the count parameter, how many bytes of data were transmitted successfully. |
+| diag_DataInd | Passes count bytes of the transmitter address sender from the rxBuffer buffer to the diagnostic layer. |
+| diag_ErrorInd | Reports errors to the diagnostic layer. |
+| diag_FirstFrameInd | Indicates the start of a diagnostic data reception to the diagnostic layer. |
+| diag_RequestDone | Can be called if the diagnostic communication layer detected a timeout. |
+| diag_SetDataSegmentation | Configures the segmentation of diagnostic data at the transmission. |
+| diag_SetupChannelCon | Communicates to CANoe, that a communication channel is available to the communication partner and data can be sent. |
+| diagGetFunctionalGroupExt | Returns the value of the "address extension" byte. |
+| diagGetFunctionalGroupId | Determines the CAN ID on which functional requests are sent by the diagnostic tester. |
+| diagGetFunctionalGroupIdMask | Determines the CAN ID mask in order to be able to filter out CAN messages sent by the diagnostic tester as functional requests. |
+
+| Functions | Short Description |
+|---|---|
+| _Diag_AuthResult | Indicates the result of the diagnostics authentication process started with diagStartAuth/diagStartAuthGeneric. |
+| _Diag_GenerateKeyResult | Indicates the result of the security key computation started with DiagStartGenerateKeyFromSeed. |
+| diagGenerateKeyFromSeed | Creates a key to execute secured diagnostic functions within devices. |
+| diagStartAuth | Starts the diagnostics authentication process. |
+| diagStartAuthGeneric | Starts the diagnostics authentication process generic. |
+| diagStartGenerateKeyFromSeed | Starts generation of the security key from the seed using a Seed & Key DLL. |
+
+| Functions | Short Description |
+|---|---|
+| diagCheckObjectMatch | Checks if the response is a valid (positive or negative) response for the request. |
+| diagCheckValidNegResCode | Checks if the given negative response code is defined for the object. |
+| diagCheckValidPrimitive | Checks if the given object matches its specification in the diagnostic description. |
+| diagCheckValidRespPrimitive | Checks if the response received for the request matches its specification in the diagnostic description. |
+
+| Functions | Short Description |
+|---|---|
+| TestCollectDiagEcuInformation | Sends diagnostic requests to the currently selected diagnostic target and writes the responses to the report file. |
+| TestJoinDiagResponseFromEcu | Adds an event to the set of joined events. Events: Arrival of a diagnostic response from a specific or any ECU. |
+| TestJoinDiagVariantIdentificationCompleted | Adds an event to the set of joined events that will fire when the variant identification started for the given ECU is completed. |
+| TestReportWriteDiagObject | Writes a test step with a textual interpretation of the specified request or response object into the test report. |
+| TestReportWriteDiagResponse | Writes a test step with a textual interpretation of the received response for the specified request object into the test report. |
+| TestValidateDiagAuth | Initiates the diagnostics authentication process and waits until this process has completed. |
+| TestValidateDiagAuthGeneric | Initiates the diagnostics authentication process and waits until this process has generic completed. |
+| TestWaitForDiagAuthCompleted | Initiates the diagnostics authentication process and waits until this process has completed. |
+| TestWaitForDiagAuthGenericCompleted | Initiates the diagnostics authentication process and waits until this process has generic completed. |
+| TestWaitForDiagChangedActiveVariant | Changes the active variant for the current target. |
+| TestWaitForDiagECUVariantIdentificationCompleted | Waits for the completion of the automatic variant identification algorithm. |
+| TestWaitForDiagRequestSent | Waits until the previously sent request has been sent to the ECU. |
+| TestWaitForDiagResponse | Waits for arrival of the response to the given request. |
+| TestWaitForDiagResponseStart | Waits for the arrival of the response to a sent request, e.g. the so-called "First Frame" in ISO TP transmissions. |
+| TestWaitForDiagSetIdentifiedVariant | Performs a variant identification and activates the found variant. |
+| testWaitForDiagVariantIdentificationCompleted | Waits for the completion of the automatic variant identification algorithm. |
+| TestWaitForDoIPActivationLineStartup | Waits until DoIP Activation Line start-up time has passed. |
+| TestWaitForGenerateKeyFromSeed | Generates the security key from the seed using the configured Seed and Key DLL. |
+| TestWaitForUnlockEcu | Tries to unlock an ECU. |
+
+| Functions | Short Description |
+|---|---|
+| diagGetActiveVariant | Returns the currently active variant. |
+| diagGetConfiguredVariant | Retrieves the qualifier of the variant that is configured for the current or given target in the Diagnostics configuration dialog. |
+| diagGetIdentifiedVariant | Retrieves the qualifier of the variant that has been identified by the last successful run of the automatic variant identification algorithm for given target, or the current target if no target is given. |
+| diagStartVariantIdentification | Starts the automatic variant identification algorithm for the given target, or the currently selected one if none is given. |
+| testWaitForDiagChangedActiveVariant | Changes the active variant for the current target. |
+| testWaitForDiagSetIdentifiedVariant | Performs a variant identification and activates the found variant. |
+| testWaitForDiagVariantIdentificationCompleted | Waits for the completion of the automatic variant identification algorithm. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

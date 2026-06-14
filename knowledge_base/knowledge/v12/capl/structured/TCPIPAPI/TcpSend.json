@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "TcpSend",
+  "category": "TCPIPAPI",
+  "title": "TcpSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionTCPSend.htm",
+  "syntax": [
+    "long TcpSend( dword socket, char buffer[], dword size);",
+    "socket.Send( char buffer[], dword size);"
+  ],
+  "description": [
+    "The function sends data on the specified socket. If the send operation does not complete immediately the operation is performed asynchronously and the function will return SOCKET_ERROR (-1).",
+    "Use IpGetLastSocketError to get a more specific error code. If the specific error code is WSA_IO_PENDING (997), this indicates an asynchronous sending.",
+    "The CAPL callback OnTcpSend will be called on completion (successful or not), providing that it is implemented in the same CAPL program.",
+    "If the function returns with 0, the data were able to be sent immediately (synchronously). In this case OnTcpSend is NOT called up.For this reason you must relocate the code in OnTcpSend to a function or call up OnTcpSend explicitly."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "// ---------------------------------------------------\n// send tcp data.\n// ---------------------------------------------------\nvoid sendTcpData( dword socket, char data[] )\n{\n  long result;\n  dword size;\n\n  size = elcount(data);\n  result = TcpSend(socket, data, size);\n  if (result == 0)\n  {\n    // sending took place immediately.\n    // => OnTcpSend is NOT called.\n  }\n  else\n  {\n    if (result == -1)\n    {\n      result = IpGetLastSocketError(socket);\n      if (result == 997)\n      {\n        // sending is done asynchronously.\n        // => OnTcpSend is called when done sending.\n      }\n      else\n      {\n        writeLineEx( 1, 3, \"   [ sendTcpData: Error sending data. (%d) ]\", result);\n      }\n    }\n    else\n    {\n      writeLineEx( 1, 3, \"   [ sendTcpData: Error sending data. (%d) ]\", result);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsClearObjectName",
+  "category": "CANopen",
+  "title": "coTfsClearObjectName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsClearObjectName.htm",
+  "syntax": [
+    "long coTfsClearObjectName( dword nodeId );"
+  ],
+  "description": [
+    "This function deletes stored object names that are load with coTfsLoadDeviceDescription."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID of the relevant node or 0 if all nodes are used."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear known object dictionary entries for node-ID 112 */\nif (coTfsClearObjectName(112) != 1)\n{\n  /* clear process failed */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

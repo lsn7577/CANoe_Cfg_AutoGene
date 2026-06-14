@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestAddTriggerTesterAction",
+  "category": "Test",
+  "title": "TestAddTriggerTesterAction",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestAddTriggerTesterAction.htm",
+  "syntax": [
+    "long TestAddTriggerTesterAction(long handle, Signal callbackTrigger);"
+  ],
+  "description": [
+    "Adds a trigger to a tester action previously created with TestCreateTesterAction. Every trigger triggers the call of the CAPL callback of its tester action cyclically or when the value of the signal, system variable, environment variable updates."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "The handle of the tester action to add the trigger."
+    }
+  ],
+  "return": "> 0: Handle of the trigger.",
+  "example": {
+    "description": [],
+    "code": "int CallbackTesterAction(int trigger)\n{\n  if (trigger == gTriggerCycle)\n  {\n    testStep(\"\", \"Triggered by cycle time”);\n  }\n  else if (trigger == gTriggerSig)\n  {\n    testStep(\"\", \"Triggered by signal”);\n  }\n  else if (trigger == gTriggerSV)\n  {\n    testStep(\"\", \"Triggered by system variable”);\n  }\n  else if (trigger == gTriggerEV)\n  {\n    testStep(\"\", \"Triggered by environment variable”);\n  }\n  else\n  {\n    testStep(\"\", \"Triggered before opening dialog or before closing dialog after timeout”);\n  }\n  if(@sysVarEngineStarted == 1)\n    return 1;\n\n  return 0;\n}\n\ntestcase TCTesterAction()\n  {\n  long handle;\n\n  handle = TestCreateTesterAction(\"This is the tester action text\", \"Tester action heading\", \"Resource.jpg\", \"Resource Caption\", \"CallbackTesterAction\");\n\n  gTriggerCycle = TestAddTriggerTesterAction(handle, 1000);\n  gTriggerSig = TestAddTriggerTesterAction(handle, SigSigned16);\n  gTriggerSV = TestAddTriggerTesterAction(handle, sysvar::sysInt);\n  gTriggerEV = TestAddTriggerTesterAction(handle, EnvInt);\n\n  TestValidateTesterAction(handle, 10000, 3);\n  }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

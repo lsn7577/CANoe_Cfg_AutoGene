@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetPacketData",
+  "category": "ADFX",
+  "title": "AfdxGetPacketData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxGetPacketData.htm",
+  "syntax": [
+    "long AfdxGetPacketData( long packet, long offset, long length, byte buffer[] );"
+  ],
+  "description": [
+    "This function copies the packet content (including protocol header and payload) to a local buffer."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket or from within a callback"
+    }
+  ],
+  "return": "number of copied data bytes\nWith AfdxGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [],
+    "code": "void OnAfdxRawPacket( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet )\n{\n  byte rawdata[8330];\n  long packetLength;\n  long rxLength;\n  long packetHandle;\n  long msgId;\n\n  if (afdxFlags & packetIsReassembled) {\n    write( \"<%NODE_NAME%> OnAfdxRawPacket: packet is JumboPacket --> skip\" );\n    return; // don't transfer Jumbo-frames\n  }\n  if (afdxFlags & packetIsFragmented) {\n    write( \"<%NODE_NAME%> OnAfdxRawPacket: packet is fragmented\" );\n  }\n\n  rxLength = AfdxGetPacketData( packet, 0 , elCount(rawdata), rawdata );\n  write( \"<%NODE_NAME%> AfdxGetPacketData has length: %d\", rxLength );\n\n  if (rxLength==0) {\n    write (\"<%NODE_NAME%> Error empty packet-length at timestamp %u\", timestamp / 1000);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

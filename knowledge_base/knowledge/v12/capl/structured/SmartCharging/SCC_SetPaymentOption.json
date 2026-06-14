@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetPaymentOption",
+  "category": "SmartCharging",
+  "title": "SCC_SetPaymentOption",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetPaymentOption.htm",
+  "syntax": [
+    "long SCC_SetPaymentOption ( char PaymentOption[], dword Force )"
+  ],
+  "description": [
+    "Sets the desired payment option for a running SCC session."
+  ],
+  "parameters": [
+    {
+      "name": "PaymentOption",
+      "type": "",
+      "description": "Desired payment option as string. For ISO 15118, the value must be either Contract (indicates PnC mode) or ExternalPayment (indicates EIM mode)."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

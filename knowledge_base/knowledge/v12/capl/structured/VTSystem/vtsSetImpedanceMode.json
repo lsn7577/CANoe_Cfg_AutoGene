@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "vtsSetImpedanceMode",
+  "category": "VTSystem",
+  "title": "vtsSetImpedanceMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetImpedanceMode.htm",
+  "syntax": [
+    "long vtsSetImpedanceMode (char Target[], eVTSImpedanceMode Mode);"
+  ],
+  "description": [
+    "Switches for VT1004A/VT1104 between the mode with high impedance (default state) and low impedance. The behavior of a channel in mode with high impedance is the same as the behavior of a channel in older VT1004 modules. In the mode with lower impedance the accurateness of the measurement of PWM frequency and duty cycle. This provides significant advantages especially for measurement of very low or high duty cycles. The input resistance is lower in this mode and thus the load on ECU output is higher. Details you find in the VT System Manual."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "PWM measurement with switching of the impedance mode."
+    ],
+    "code": "double frequency;\ndouble dutyCycle;\n\n  // Set PWM threshold to 12V\n  vtsSetPWMThreshold( \"LowBeamLeft\", 12);\n  // Set PWM measurement duration to 100ms\n  vtsSetPWMMeasurementDuration( \"LowBeamLeft\", 0.1);\n  // Enable low impedance mode to improve PWM measurement accuracy\n  vtsSetImpedanceMode( \"LowBeamLeft\", eVTSImpedanceModeLow);\n\n  // Wait a bit until the PWM measurement has finished\n  testWaitForTimeout(200);\n\n  // Get measured values\n  frequency = @sysvar::VTS::LowBeamLeft::PWMFreq;\n  dutyCycle = @sysvar::VTS::LowBeamLeft::PWMDC;\n\n  // Check the frequency and duty cycle\n  if( frequency > 50 && dutyCycle > 20 )\n  {\n    testStepPass();\n  }\n  else\n  {\n    testStepFail();\n  }\n  <vtsystem_configure title=\"Set PWM threshold and measurement duration\">\n    <pwm_measurement_duration channel=\"LowBeamLeft\">100ms</pwm_measurement_duration>\n    <pwm_threshold channel=\"LowBeamLeft\">12</pwm_threshold>\n    <impedance_mode channel=\"LowBeamLeft\" mode=\"low\" />\n  </vtsystem_configure>\n\n  <statecheck wait=\"200\" title=\"Check frequency and duty cycle\">\n    <expected>\n      <sysvar name=\"PWMFreq\" namespace=\"VTS::LowBeamLeft\">\n        <gt>50</gt>\n      </sysvar>\n      <sysvar name=\"PWMDC\" namespace=\"VTS::LowBeamLeft\">\n        <gt>20</gt>\n      </sysvar>\n    </expected>\n  </statecheck>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

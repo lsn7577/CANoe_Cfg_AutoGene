@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "FDXClientHandleTcp",
+  "category": "Other",
+  "title": "FDXClientHandleTcp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionFDXClientHandleTcp.htm",
+  "syntax": [
+    "long FDXClientHandleTcp(dword ipv4Address, dword port); // form 1"
+  ],
+  "description": [
+    "This function creates an FDX client handle for the FDX client with the specified address.",
+    "Prerequisite for the function is to configure TCP/IPv4 or TCP/IPv6 as transport layer for the FDX feature."
+  ],
+  "parameters": [
+    {
+      "name": "ipv4Address",
+      "type": "",
+      "description": "IPv4 address of the FDX clients"
+    }
+  ],
+  "return": "If successful, the function returns a value greater than 0, which means the FDX client handle. Values smaller than or equal to zero indicate an error.",
+  "example": {
+    "description": [],
+    "code": "long  fdxClientHandle = 0;\ndword fdxClientPort = 0;\nbyte  fdxClientAddr[16];\n\nIpGetAddressAsArray(\"::1\", fdxClientAddr);\nfdxClientPort = 2820;\nfdxClientHandle = FDXClientHandleTcp(fdxClientAddr, fdxClientPort);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

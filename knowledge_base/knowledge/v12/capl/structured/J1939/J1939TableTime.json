@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TableTime",
+  "category": "J1939",
+  "title": "J1939TableTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939TableTime.htm",
+  "syntax": [
+    "dword J1939TableTime( char busName[] );"
+  ],
+  "description": [
+    "The function returns the time stamp of the last received \"Request for Address Claim\". Use this function to determine, if the network table is up to data."
+  ],
+  "parameters": [
+    {
+      "name": "busName",
+      "type": "",
+      "description": "bus name or \"default\""
+    }
+  ],
+  "return": "time stamp of the last received Request for Address Claim in 10µs",
+  "example": {
+    "description": [],
+    "code": "dword time;\ntime = J1939TableTime( \"default\" \r\n );\n\nif (time + 25000 < timeNow()) \r\n {\nwrite( \"Last Request for ACL is older than 250ms\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

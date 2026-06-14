@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitForDiagSetIdentifiedVariant",
+  "category": "Test",
+  "title": "testWaitForDiagSetIdentifiedVariant",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDiagSetIdentifiedVariant.htm",
+  "syntax": [
+    "long testWaitForDiagSetIdentifiedVariant(); // form 1"
+  ],
+  "description": [
+    "Performs a variant identification and activates the found variant."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description."
+    }
+  ],
+  "return": "<=0: An error occurred, e.g. a wrong variant Qualifier was used or a communication error occurred.",
+  "example": {
+    "description": [],
+    "code": "testcase SetActiveVariantFromSystemVariable()\n{\n  char variantName[100];\n  char outputBuffer[100];\n  long retVal;\n  diagSetTarget(\"ECU\");\n\n  retVal = sysGetVariableString(sysvar::VariantSwitch::VariantToUse,\n  variantName, elcount(variantName));\n\n  if( 0 > retVal)\n  {\n    testStepFail(\"\", \"Could not get variant name from system variable (%d)\", retVal);\n  }\n\n  retVal = testWaitForDiagChangedActiveVariant(variantName);\n\n  if(0 >= retVal)\n  {\n    diagGetErrorString(retVal, outputBuffer, elcount(outputBuffer));\n    testStepFail(\"\", \"Error %d when changing variant (%s)\", retVal, outputBuffer);\n  }\n}\n\ntestcase SwitchToIdentifiedVariant()\n{\n  char variantName[100];\n  char outputBuffer[100];\n  long retVal;\n\n  diagSetTarget(\"ECU\");\n\n  retVal = testWaitForDiagSetIdentifiedVariant();\n\n  if(0 >= retVal)\n  {\n    diagGetErrorString(retVal, outputBuffer, elcount(outputBuffer));\n    testStepFail(\"\", \"Error %d while setting identified variant (%s)\", retVal, outputBuffer);\n  }\n\n  retVal = diagGetActiveVariant(variantName, elcount(variantName));\n\n  if( 0 > retVal)\n  {\n    testStepFail(\"\", \"Could not get active Variant\");\n  }\n\n  sysSetVariableString(sysvar::VariantSwitch::ActiveVariant, variantName);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

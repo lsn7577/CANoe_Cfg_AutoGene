@@ -1,0 +1,386 @@
+{
+  "page_type": "notes",
+  "name": "New CAPL Functions",
+  "category": "Other",
+  "title": "New CAPL Functions",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/CAPLfunctionsNewOverview.htm",
+  "syntax": [],
+  "description": [
+    "A429",
+    "ADAS",
+    "AFDX",
+    "Associative Fields",
+    "AUTOSAR PDU IL",
+    "CAN",
+    "CAN Disturbance Interface",
+    "CANoe IL",
+    "CANopen",
+    "CANstress",
+    "Car2x",
+    "CarMaker Interface",
+    "Communication Concept",
+    "Diagnostics",
+    "Ethernet",
+    "FlexRay",
+    "FRstress",
+    "GPIB",
+    "ISO11783",
+    "J1587",
+    "J1939",
+    "KLine",
+    "LIN",
+    "Map Window API",
+    "Media",
+    "MOST",
+    "Other",
+    "RS232",
+    "Scope",
+    "Security",
+    "Sensor",
+    "Signal Access",
+    "Smart Charging",
+    "Struct Byte Access",
+    "System Variables",
+    "TCPIP",
+    "Test",
+    "TLS",
+    "VT System",
+    "XCP",
+    "In this version no new functions are available.",
+    "TestWaitForADASSpeed",
+    "Waits for a Detected Object for with a speed above/below a specified value.",
+    "Communication Objects",
+    "Distributed Objects",
+    "SCC_CertChainVerificationInd",
+    "The callback is called when a received certificate chain (e.g. ContractSignatureCertChain) is verified.",
+    "SCC_GetCertChainVerificationError",
+    "SCC_GetCertChainVerificationErrorCount"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "NEW FUNCTIONS"
+      ]
+    ],
+    [
+      [
+        "A429 ADAS AFDX Associative Fields AUTOSAR PDU IL CAN CAN Disturbance Interface CANoe IL CANopen CANstress",
+        "Car2x CarMaker Interface Communication Concept Diagnostics Ethernet FlexRay FRstress GPIB ISO11783 J1587",
+        "J1939 KLine LIN Map Window API Media MOST Other RS232 Scope Security",
+        "Sensor Signal Access Smart Charging Struct Byte Access System Variables TCPIP Test TLS VT System XCP"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "TestGetWaitADASDetectedObject",
+        "Retrieves the name of the Detected Object that triggered the wait function."
+      ],
+      [
+        "TestWaitForADASDistance",
+        "Waits for a Detected Object for which the distance is above/below a specified value."
+      ],
+      [
+        "TestWaitForADASSpeed",
+        "Waits for a Detected Object for with a speed above/below a specified value."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "SOMEIP_InjectPDU",
+        "Injects the PDU into the Communication Concepts SOME/IP-BindingBlock, where its then send."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "attributable",
+        "The type of objects that can have attributes."
+      ],
+      [
+        "attribute",
+        "The types of attributes for distributed objects."
+      ],
+      [
+        "bytes",
+        "The corresponding CAPL type for the bytes type in vCDL."
+      ],
+      [
+        "getAttribute",
+        "Reads an attribute value from an attributable object."
+      ],
+      [
+        "setAttribute",
+        "Writes an attribute value at an attributable object."
+      ],
+      [
+        "on any_fct_called",
+        "This handler is called whenever a provided method of a distributed object derived from the given interface is called."
+      ],
+      [
+        "on any_fct_calling",
+        "This handler is called whenever a method of a distributed object derived from the given interface is about to be called."
+      ],
+      [
+        "on any_fct_retured",
+        "This handler is called whenever a method of a distributed object derived from the given interface has returned at the consumer."
+      ],
+      [
+        "on any_fct_returning",
+        "This handler is called whenever a method of a distributed object derived from the given interface is about to return its answer at the provider."
+      ],
+      [
+        "on any_value_change",
+        "This handler is called whenever a value of the given set changes."
+      ],
+      [
+        "on any_value_update",
+        "This handler is called whenever a value of the given set is updated."
+      ],
+      [
+        "on transmit_any_announce",
+        "This handler is called whenever an instance of a provided data, event, or field member transmits an announce via the CAPL binding."
+      ],
+      [
+        "on transmit_any_call",
+        "This handler is called whenever an instance of a consumed method member transmits a value via the CAPL binding."
+      ],
+      [
+        "on transmit_any_return",
+        "This handler is called whenever an instance of a provided method member transmits a return via the CAPL binding."
+      ],
+      [
+        "on transmit_any_subscribe",
+        "This handler is called whenever an instance of a consumed data, event, or field member transmits a subscribe via the CAPL binding."
+      ],
+      [
+        "on transmit_any_unannounce",
+        "This handler is called whenever an instance of a provided data, event, or field member transmits an unannounce via the CAPL binding."
+      ],
+      [
+        "on transmit_any_unsubscribe",
+        "This handler is called whenever an instance of a consumed data, event, or field member transmits an unsubscribe via the CAPL binding."
+      ],
+      [
+        "on transmit_any_value",
+        "This handler is called whenever an instance of a provided data, event, or field interface member transmits a value via the CAPL binding."
+      ],
+      [
+        "Extended Functions"
+      ],
+      [
+        "memcpy"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "DoIP_EnableTLS",
+        "Enables secure communication for DoIP tester or ECU simulation."
+      ],
+      [
+        "vFlashGetCustomActionAttributeConfigValue, vFlashGetCustomActionAttributeLastRunValue, vFlashSetCustomActionAttribute",
+        "Get the value of a vFlash CustomAction attribute."
+      ],
+      [
+        "vFlashGetFlashAttributeConfigValue, vFlashGetFlashAttributeLastRunValue, vFlashSetFlashAttribute",
+        "Get the value of a Flash attribute."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "on ethernetPhyState",
+        "Is called when the state of an ethernet PHY has changed or any relevant activity has been triggered."
+      ],
+      [
+        "OnPtpSendPrepare",
+        "Is called right before a packet will be sent by the gPTP stack."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "DTC Support ISO11783 VTIL"
+      ],
+      [
+        "VTIL_DeleteAllStoredVersions",
+        "Deletes all object pool versions which are stored by the Virtual Terminal IL."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "J1939CalculateCrcOfSDM",
+        "Calculates CRC for payload of a Safety Data Message."
+      ],
+      [
+        "J1939FillSHM",
+        "Fills payload of a Safety Header Message with data of Safety Data Message."
+      ],
+      [
+        "J1939GetChecksumAndCounter",
+        "Stores the checksum and counter of the parameter group in the given arguments.."
+      ],
+      [
+        "J1939ParseSHM",
+        "Provides data of the SDM message, which are contained in payload of the SHM message."
+      ],
+      [
+        "J1939SetChecksumAndCounter",
+        "Calculates and sets the checksum and the given counter to the parameter group."
+      ],
+      [
+        "Extended Functions"
+      ],
+      [
+        "J1939CalcChecksum"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "on offlineSourceStatusChanged",
+        "Is called when the state of an offline source changes: At its start, at the first event, and at the end."
+      ],
+      [
+        "on replaySourceStatusChanged",
+        "Is called when the state of a replay block changes: At its start, at the first event, and at the end."
+      ],
+      [
+        "IsRunningInStandaloneMode",
+        "Gets the information whether the CAPL code is executed in standalone mode."
+      ],
+      [
+        "Extended Functions"
+      ],
+      [
+        "TcpReceive"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "New CAPL functions for X.509 Certificates",
+        "Available since version 11.0 SP4."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "QueueSpcTriggerPulse sensorQueueSpcTriggerPulse",
+        "Queues a single SPC trigger pulse on the specified ECU channel."
+      ],
+      [
+        "QueueSpcTriggerPulseSequence sensorQueueSpcTriggerPulseSequence",
+        "Queues a sequence of SPC trigger pulses on the specified ECU channel."
+      ],
+      [
+        "StopSpcTriggerPulseTransmission sensorStopSpcTriggerPulseTransmission",
+        "Stops any periodic trigger pulse transmission on the specified ECU channel."
+      ],
+      [
+        "ResetClockTickLength sensorResetClockTickLength",
+        "Resets the clock tick length of a simulated sensor to the initially configured value."
+      ],
+      [
+        "SetClockTickLength sensorSetClockTickLength",
+        "Overwrites the clock tick length of a simulated sensor with the given value."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "SCC_CertChainVerificationInd",
+        "The callback is called when a received certificate chain (e.g. ContractSignatureCertChain) is verified."
+      ],
+      [
+        "SCC_GetCertChainVerificationError",
+        "Returns the number of verification errors from the last certificate chain verification."
+      ],
+      [
+        "SCC_GetCertChainVerificationErrorCount",
+        "Returns the number of verification errors from the last certificate chain verification."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "TestJoinEthernetPhyState",
+        "Completes the current set of joined events with the transmitted event."
+      ],
+      [
+        "TestWaitForEthernetPhyState",
+        "Waits for the occurrence of the specified Ethernet PHY state."
+      ],
+      [
+        "ChkCreate_J1939_76_FunctionalSafetyCheck",
+        "Observes the J1939-76 functional safety communication according J1939-76."
+      ],
+      [
+        "Extended Functions"
+      ],
+      [
+        "ChkCreate_MsgSignalValueInvalid, ChkStart_MsgSignalValueInvalid"
+      ],
+      [
+        "ChkCreate_MsgSignalValueRangeViolation, ChkStart_MsgSignalValueRangeViolation"
+      ],
+      [
+        "ChkCreate_SignalValueChange, ChkStart_SignalValueChange"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

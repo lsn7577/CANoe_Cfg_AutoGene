@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "serviceProviderRef::IsServiceProvided",
+  "category": "CommunicationObjects",
+  "title": "serviceProviderRef::IsServiceProvided",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionServiceProviderRefIsServiceProvided.htm",
+  "syntax": [
+    "dword serviceProviderRef::IsServiceProvided()"
+  ],
+  "description": [
+    "Returns whether the service is currently provided at the endpoint."
+  ],
+  "parameters": [],
+  "return": "0: Service is not currently provided",
+  "example": {
+    "description": [],
+    "code": "val = MirrorAdjustment.providerSide[LeftMirror].IsServiceProvided();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

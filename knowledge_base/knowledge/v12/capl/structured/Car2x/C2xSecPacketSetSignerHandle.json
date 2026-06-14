@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "C2xSecPacketSetSignerHandle",
+  "category": "Car2x",
+  "title": "C2xSecPacketSetSignerHandle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSecPacketSetSignerHandle.htm",
+  "syntax": [
+    "long C2xSecPacketSetSignerHandle( long packetHandle, long certificateHandle );"
+  ],
+  "description": [
+    "Assigns a certificate to a Tx packet.",
+    "The assigned certificate is used to sign the Tx packet when C2xCompletePacket(packetHandle) is called.",
+    "The protocol type and version of the packet must match the protocol type and version of the certificate. E.g. an ETSI TS 103 097 encoded message cannot be signed using an IEEE 1609.2 encoded certificate."
+  ],
+  "parameters": [
+    {
+      "name": "packetHandle",
+      "type": "",
+      "description": "Handle of the packet"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "long packetHandle;\nlong certificateHandle;\npacketHandle = C2xInitPacket(\"geo_eh\", \"BEACON | SH\");\ncertificateHandle = C2xSecCertificateGetHandle ( \"MyCert\" );\nC2xSecPacketSetSignerHandle(packetHandle, certificateHandle);\nC2xCompletePacket(packetHandle);\nC2xOutputPacket(packetHandle);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

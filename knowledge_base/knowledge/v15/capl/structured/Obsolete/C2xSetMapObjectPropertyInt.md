@@ -1,0 +1,22 @@
+# C2xSetMapObjectPropertyInt
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function For internal use only. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long C2xSetMapObjectPropertyInt( long handle, char propertyName[], long propertyValue ); |  |  |  |
+| Function | With this function it is possible to support all integer attributes by using their specific property name regardless of whether supported by the convenience layer or not. As the property names can change, it is recommended to use the convenient functions like C2xSetMapObjectFillColor. These functions take the responsibility to set the correct property name by default. |  |  |  |
+| Parameters | handle Reference of the map object |  |  |  |
+| propertyName Name of the property to be changed |  |  |  |  |
+| propertyValue Value of the property to be set |  |  |  |  |
+| Return Values | 0 if success, else the set went wrong |  |  |  |
+| Availability | Since Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 8.1 | Car2x | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

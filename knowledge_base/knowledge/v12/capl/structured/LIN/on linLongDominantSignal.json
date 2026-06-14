@@ -1,0 +1,31 @@
+{
+  "page_type": "event",
+  "name": "on linLongDominantSignal",
+  "category": "LIN",
+  "title": "on linLongDominantSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/EventProcedures/CAPLfunctionOnLINLongDominantSignal.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure on linLongDominantSignal is called when the LIN hardware detects a long dominant signal on the bus (i.e. a dominant signal longer than a valid wake-up frame).",
+    "The keyword this and the selectors (see Option .LIN: linLongDominantSignal selectors) can be used to access the data of the event that has just been received."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "linLongDominantSignal",
+      "link": "../Selectors/CAPLfunctionLINLongDominantSignal.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

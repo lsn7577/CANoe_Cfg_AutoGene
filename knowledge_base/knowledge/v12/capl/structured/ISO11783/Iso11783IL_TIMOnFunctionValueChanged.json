@@ -1,0 +1,68 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMOnFunctionValueChanged",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMOnFunctionValueChanged",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimOnFunctionValueChanged.htm",
+  "syntax": [
+    "void Iso11783IL_TIMOnFunctionValueChanged(dword functionID, dword newRawValue)"
+  ],
+  "description": [
+    "This callback function is called if the value of a function has been changed due to a function request message. It is not called when a function request command failed (e.g. because function is not assigned or value is out of range)."
+  ],
+  "parameters": [
+    {
+      "name": "Function ID",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1-32 (1h-20h)",
+      "type": "",
+      "description": "Auxiliary Value 1 – 32"
+    },
+    {
+      "name": "64 (40h)",
+      "type": "",
+      "description": "Front PTO"
+    },
+    {
+      "name": "65 (41h)",
+      "type": "",
+      "description": "Rear PTO"
+    },
+    {
+      "name": "66 (42h)",
+      "type": "",
+      "description": "Front hitch"
+    },
+    {
+      "name": "67 (43h)",
+      "type": "",
+      "description": "Rear hitch"
+    },
+    {
+      "name": "68 (44h)",
+      "type": "",
+      "description": "Vehicle speed"
+    },
+    {
+      "name": "70 (46h)",
+      "type": "",
+      "description": "External guidance"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

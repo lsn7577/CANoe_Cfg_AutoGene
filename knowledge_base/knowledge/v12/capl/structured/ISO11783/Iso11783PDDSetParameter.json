@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDSetParameter",
+  "category": "ISO11783",
+  "title": "Iso11783PDDSetParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDSetParameter.htm",
+  "syntax": [
+    "long Iso11783PDDSetParameter( dword ecuHandle, char paramName[], float paramValue );"
+  ],
+  "description": [
+    "Changes an internal parameter of the PDD API."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783PDDSetParameter( ecuHandle, \"debug\", 1 ) == 0) {\n  write( \"Debug mode activated\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

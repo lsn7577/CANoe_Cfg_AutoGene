@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMConnectSysVarToState",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMConnectSysVarToState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimConnectSysVarToState.htm",
+  "syntax": [
+    "long Iso11783IL_TIMConnectSysVarToState(dbNode counterpart, char[] sysVarNameWithPath); // form 1"
+  ],
+  "description": [
+    "Connects the state of a TIM client/server connection to a system variable.",
+    "You find the possible states in the tables of Client States (TIM Component - ISO11783) or Server States (TIM Component - ISO11783).",
+    "By means of the function you can wait for a specific state (e.g. using TestWaitForSignalMatch) and with Iso11783IL_TIMFreezeConnection you can stay in this state.",
+    "To release connection between the system variable and a state, just call the same method again, but with the empty string instead of the name of system variable."
+  ],
+  "parameters": [
+    {
+      "name": "counterpart",
+      "type": "",
+      "description": "TIM counterpart of the client/server connection."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_TIMConnectSysVarToState(TIMClient, \"sysvarTIMClientState\"); \r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

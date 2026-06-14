@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OnError",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOnError.htm",
+  "syntax": [
+    "void Iso11783IL_OnError( long errorCode, long param );"
+  ],
+  "description": [
+    "This callback function is called from the ISO11783 IL if an error occurred."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "Error code"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_OnError( LONG errorCode, LONG param )\n{\n  write( \"Error %d, parameter %d\", errorCode, param );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

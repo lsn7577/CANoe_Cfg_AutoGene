@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnAREthEstablishedIPv6TCPConnection",
+  "category": "IP",
+  "title": "OnAREthEstablishedIPv6TCPConnection",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthEstablishedIPv6TCPConnection.htm",
+  "syntax": [
+    "void OnAREthEstablishedIPv6TCPConnection(byte localIPv6Address[], dword localPort, byte remoteIPv6Address[], dword remotePort)"
+  ],
+  "description": [
+    "This callback will be called after an incoming or outgoing TCP connection has been established for an IL’s application endpoint"
+  ],
+  "parameters": [
+    {
+      "name": "localIPv6Address",
+      "type": "",
+      "description": "Local IPv6 address"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "void OnAREthEstablishedIPv6TCPConnection(byte localIPv6Address[], dword localPort, byte remoteIPv6Address[], dword remotePort)\n{\n  char localAddrStr[128], remoteAddrStr[128];\n\n  ipGetAddressAsString(localIPv6Address, localAddrStr, elcount(localAddrStr));\n  ipGetAddressAsString(remoteIPv6Address, remoteAddrStr, elcount(remoteAddrStr));\n\n  write(\"Established connection: [%s]:%d  <-> [%s]:%d\", localAddrStr, localPort, remoteAddrStr, remotePort);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

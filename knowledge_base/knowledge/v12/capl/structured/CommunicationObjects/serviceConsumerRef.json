@@ -1,0 +1,73 @@
+{
+  "page_type": "function",
+  "name": "serviceConsumerRef",
+  "category": "CommunicationObjects",
+  "title": "serviceConsumerRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionServiceConsumerRef.htm",
+  "syntax": [
+    "serviceConsumerRef * <var>"
+  ],
+  "description": [
+    "References a service consumer endpoint."
+  ],
+  "parameters": [
+    {
+      "name": "Service",
+      "type": "",
+      "description": "Service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "serviceConsumerRef MirrorAdjustment svc1;\nsvc1 = MirrorAdjustment.consumerSide[CANoe];"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the consumer endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the consumer endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Address Generalized address of the endpoint. Can be used with binding-specific API like Abstract_GetDisplayName to retrieve information.",
+        "AddressHandle",
+        "Read only"
+      ]
+    },
+    {
+      "name": "Abstract_GetDisplayName",
+      "link": "../Functions/CAPLfunctionAbstractGetDisplayName.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

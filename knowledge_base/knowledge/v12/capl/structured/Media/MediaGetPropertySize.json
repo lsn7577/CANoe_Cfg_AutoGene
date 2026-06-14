@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MediaGetPropertySize",
+  "category": "Media",
+  "title": "MediaGetPropertySize",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaGetPropertySize.htm",
+  "syntax": [
+    "long MediaGetPropertySize(dword objHandle, char propertyName[], dword& width, dword& height);"
+  ],
+  "description": [
+    "Retrieves a property whose value is a size, expressed as a width and height. Properties can be retrieved on an object specific basis for a media type object (e.g. returned by MediaGetMediaType)."
+  ],
+  "parameters": [
+    {
+      "name": "propertyName",
+      "type": "",
+      "description": "Name of the property to be retrieved."
+    }
+  ],
+  "return": "0: The function succeeded.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

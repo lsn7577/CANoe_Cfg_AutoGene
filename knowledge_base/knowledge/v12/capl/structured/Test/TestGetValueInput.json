@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestGetValueInput",
+  "category": "Test",
+  "title": "TestGetValueInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetValueInput.htm",
+  "syntax": [
+    "double TestGetValueInput ();"
+  ],
+  "description": [
+    "Returns the result of the last successful call of TestWaitForValueInput."
+  ],
+  "parameters": [],
+  "return": "= 0.0: Possible error during the last call of TestWaitForValueInput.\nThis can mean that the entry could not be correctly converted to a numeric value. This value is also returned if no previous call of TestWaitForValueInput occurred.\nBut it is also possible that the user actually entered \"0\". This can be determined by checking the entry in text form which can be obtained via TestGetStringInput.\nNote that this value can only be the desired entry from the user if it was preceded by a successful call of TestWaitForValueInput, i.e. with the return value \"1\".",
+  "example": {
+    "description": [],
+    "code": "// ask for the test ID and report it in the Write Window\nTestWaitForValueInput(\"Please enter the test ID\", 5000);\nWrite(\"Test ID = %f\", TestGetValueInput());"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

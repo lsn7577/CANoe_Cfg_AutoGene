@@ -1,0 +1,176 @@
+{
+  "page_type": "notes",
+  "name": "TestIso11783IL_PDDSetParameter",
+  "category": "Obsolete",
+  "title": "TestIso11783IL_PDDSetParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/TestISO11783il/CAPLfunctionTestIso11783ILPDDSetParameter.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by: Iso11783IL_PDDSetParameter"
+      ],
+      [
+        "Function Syntax",
+        "long TestIso11783IL_PDDSetParameter( dbNode node, char paramName[], float paramValue );"
+      ],
+      [
+        "Function",
+        "Changes an internal parameter of the PDD API. Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment.",
+        "Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment."
+      ],
+      [
+        "Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment."
+      ],
+      [
+        "Parameters",
+        "node Simulation node to apply the function."
+      ],
+      [
+        "paramName Value Description \"debug\" activates debug outputs in the Write Window 1: on 0: off \"autoUpdateVariable\" process variable is updated if value command is received 1: auto update 0: process variable have to be updated manually by Iso11783IL_PDDSetValue e.g. in callback function Iso11783IL_PDDOnDataChanged \"version\" Note Using version the version value obtained from the database (node attribute ISO11783PDDVersion) is overwritten. supported version of the ISO11783 specification: 1,2 (default),3, and 4 If version is set to 3 or higher, further parameter values can be used for the Version message that is sent by the implement (see specification ISO11783-10, B.5.3). Value Description \"BootTimeTC\" maximum number of seconds from a power cycle to transmission of the first Task Controller Status message, default: 255 \"ImplementSectionControl\" 1: supports implement section control default: doesn’t support. \"PeerControlAssignment\" 1: supports peer control assignment default: doesn’t support \"TC_GEO_DefinitionPositionBasedControl\" 1: TC-GEO definition, position based control default: doesn’t support. \"TimeAndPositionForDataLogging\" 1: supports time and position for data logging default: doesn’t support \"Documentation\" 1: supports documentation default: doesn’t support \"NumberOfBooms\" minimum required number of booms that the Working Set requires to operate correctly, default: 0 \"NumberOfSection\" minimum required number of sections that the Working Set requires to operate correctly, default: 0 \"NumberOfControlChannels\" minimum required number of individual control channels that the Working Set requires to operate correctly, default: 0 If version is set to 3 or higher, further parameter values can be used for the Request Structure Label message that is sent by the implement (see specification ISO11783-10, B.6.2). Value Description \"RequestForLatestStructureLabel\" 1: bytes 2..8 of the Request Structure Label message are transmitted as FF. It is used to determine the version of the latest device description structure present at the Task Controller or Data Logger. 0 :default",
+        "Value",
+        "Description",
+        "\"debug\"",
+        "activates debug outputs in the Write Window 1: on 0: off",
+        "\"autoUpdateVariable\"",
+        "process variable is updated if value command is received 1: auto update 0: process variable have to be updated manually by Iso11783IL_PDDSetValue e.g. in callback function Iso11783IL_PDDOnDataChanged",
+        "\"version\"",
+        "Note Using version the version value obtained from the database (node attribute ISO11783PDDVersion) is overwritten. supported version of the ISO11783 specification: 1,2 (default),3, and 4",
+        "Note Using version the version value obtained from the database (node attribute ISO11783PDDVersion) is overwritten.",
+        "Value",
+        "Description",
+        "\"BootTimeTC\"",
+        "maximum number of seconds from a power cycle to transmission of the first Task Controller Status message, default: 255",
+        "\"ImplementSectionControl\"",
+        "1: supports implement section control default: doesn’t support.",
+        "\"PeerControlAssignment\"",
+        "1: supports peer control assignment default: doesn’t support",
+        "\"TC_GEO_DefinitionPositionBasedControl\"",
+        "1: TC-GEO definition, position based control default: doesn’t support.",
+        "\"TimeAndPositionForDataLogging\"",
+        "1: supports time and position for data logging default: doesn’t support",
+        "\"Documentation\"",
+        "1: supports documentation default: doesn’t support",
+        "\"NumberOfBooms\"",
+        "minimum required number of booms that the Working Set requires to operate correctly, default: 0",
+        "\"NumberOfSection\"",
+        "minimum required number of sections that the Working Set requires to operate correctly, default: 0",
+        "\"NumberOfControlChannels\"",
+        "minimum required number of individual control channels that the Working Set requires to operate correctly, default: 0",
+        "Value",
+        "Description",
+        "\"RequestForLatestStructureLabel\"",
+        "1: bytes 2..8 of the Request Structure Label message are transmitted as FF. It is used to determine the version of the latest device description structure present at the Task Controller or Data Logger. 0 :default"
+      ],
+      [
+        "Value",
+        "Description"
+      ],
+      [
+        "\"debug\"",
+        "activates debug outputs in the Write Window 1: on 0: off"
+      ],
+      [
+        "\"autoUpdateVariable\"",
+        "process variable is updated if value command is received 1: auto update 0: process variable have to be updated manually by Iso11783IL_PDDSetValue e.g. in callback function Iso11783IL_PDDOnDataChanged"
+      ],
+      [
+        "\"version\"",
+        "Note Using version the version value obtained from the database (node attribute ISO11783PDDVersion) is overwritten. supported version of the ISO11783 specification: 1,2 (default),3, and 4",
+        "Note Using version the version value obtained from the database (node attribute ISO11783PDDVersion) is overwritten."
+      ],
+      [
+        "Note Using version the version value obtained from the database (node attribute ISO11783PDDVersion) is overwritten."
+      ],
+      [
+        "Value",
+        "Description"
+      ],
+      [
+        "\"BootTimeTC\"",
+        "maximum number of seconds from a power cycle to transmission of the first Task Controller Status message, default: 255"
+      ],
+      [
+        "\"ImplementSectionControl\"",
+        "1: supports implement section control default: doesn’t support."
+      ],
+      [
+        "\"PeerControlAssignment\"",
+        "1: supports peer control assignment default: doesn’t support"
+      ],
+      [
+        "\"TC_GEO_DefinitionPositionBasedControl\"",
+        "1: TC-GEO definition, position based control default: doesn’t support."
+      ],
+      [
+        "\"TimeAndPositionForDataLogging\"",
+        "1: supports time and position for data logging default: doesn’t support"
+      ],
+      [
+        "\"Documentation\"",
+        "1: supports documentation default: doesn’t support"
+      ],
+      [
+        "\"NumberOfBooms\"",
+        "minimum required number of booms that the Working Set requires to operate correctly, default: 0"
+      ],
+      [
+        "\"NumberOfSection\"",
+        "minimum required number of sections that the Working Set requires to operate correctly, default: 0"
+      ],
+      [
+        "\"NumberOfControlChannels\"",
+        "minimum required number of individual control channels that the Working Set requires to operate correctly, default: 0"
+      ],
+      [
+        "Value",
+        "Description"
+      ],
+      [
+        "\"RequestForLatestStructureLabel\"",
+        "1: bytes 2..8 of the Request Structure Label message are transmitted as FF. It is used to determine the version of the latest device description structure present at the Task Controller or Data Logger. 0 :default"
+      ],
+      [
+        "paramValue new value for the parameter"
+      ],
+      [
+        "Return Values",
+        "0: process data dictionary has been created successfully <0: an error has occurred"
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.5",
+        "ISO11783 Test nodes",
+        "—",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

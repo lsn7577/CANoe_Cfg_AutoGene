@@ -1,0 +1,163 @@
+{
+  "page_type": "function",
+  "name": "SCC_CurrentDemandRes",
+  "category": "SmartCharging",
+  "title": "SCC_CurrentDemandRes",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Callbacks/CAPLfunctionSCC_CurrentDemandRes.htm",
+  "syntax": [
+    "void SCC_CurrentDemandRes ( byte SessionId[], long ResponseCode, float EVSEPresentVoltage, float EVSEPresentCurrent, byte LimitAchievedFlags[], char EVSEID[], long SAScheduleTupleID, long ReceiptRequired)"
+  ],
+  "description": [
+    "The callback is called as soon as a Current Demand Response is received. Further details that are transmitted in this message can be queried with the following functions:"
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "ResponseCode",
+      "type": "",
+      "description": "1 if OK, 0 if FAILED"
+    },
+    {
+      "name": "EVSEPresentVoltage",
+      "type": "",
+      "description": "Present voltage value of charge point."
+    },
+    {
+      "name": "EVSEPresentCurrent",
+      "type": "",
+      "description": "Present current of charge point."
+    },
+    {
+      "name": "LimitAchievedFlags (ISO 15118)",
+      "type": "",
+      "description": "Array of three flags which correspond to current | voltage | power limit achieved, in this order."
+    },
+    {
+      "name": "EVSEID (ISO 15118)",
+      "type": "",
+      "description": "ID of charge point."
+    },
+    {
+      "name": "SAScheduleTupleID (ISO 15118)",
+      "type": "",
+      "description": "ID of the selected SAScheduleTuple."
+    },
+    {
+      "name": "ReceiptRequired (ISO 15118)",
+      "type": "",
+      "description": "Indicates if the vehicle is required to send a MeteringReceiptReq."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

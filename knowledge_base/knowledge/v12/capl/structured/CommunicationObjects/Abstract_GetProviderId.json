@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_GetProviderId",
+  "category": "CommunicationObjects",
+  "title": "Abstract_GetProviderId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractGetProviderId.htm",
+  "syntax": [
+    "long Abstract_GetProviderId(addressHandle address)"
+  ],
+  "description": [
+    "Returns an ID for a provider with an abstract binding pseudo address. Through the ID, you can identify the provider."
+  ],
+  "parameters": [
+    {
+      "name": "Address",
+      "type": "",
+      "description": "Address of the provider."
+    }
+  ],
+  "return": "A unique ID for the provider.",
+  "example": {
+    "description": [],
+    "code": "id = Abstract_GetProviderId(newProvider.Address);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

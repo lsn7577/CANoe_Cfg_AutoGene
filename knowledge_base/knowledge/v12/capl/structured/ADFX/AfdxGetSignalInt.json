@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetSignalInt",
+  "category": "ADFX",
+  "title": "AfdxGetSignalInt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxGetSignalInt.htm",
+  "syntax": [
+    "long AfdxGetSignalInt( long packet, char* signalName ); // form 1"
+  ],
+  "description": [
+    "This function returns the value of a 32-bit integer signal."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message"
+    }
+  ],
+  "return": "signal value (call AfdxGetLastErrror() to check for errors in the call)",
+  "example": {
+    "description": [
+      "Analyze signals from an incoming AFDX packet with two signals without DBC",
+      "Analyze signals from an incoming AFDX packet with two signals with DBC"
+    ],
+    "code": "on preStart\n{\n AfdxRegisterReceiveCallback(\"OnPacket\");\n}\nvoid OnPacket( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet )\n{\n  long temp1, temp2;\n  byte status1, status2;\n\n  // get status bytes first to see if signals are valid\n  status1 = AfdxGetSignalStatus( packet, 4 );\n  status2 = AfdxGetSignalStatus( packet, 5 );\n  if (status1 == 3 && status2 == 3 )\n  {\n    // get oil temperature\n    temp1 = AfdxGetSignalInt( packet, 8 ); // offset=8\n    // get oil temp 2\n    temp2 = AfdxGetSignalInt( packet, 12 );  // offset=12\n  // do something with this values\n  }\n}\non preStart\n{\n  AfdxRegisterReceiveCallback(\"OnPacket\");\n}\nvoid OnPacket( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet )\n{\n  long temp1, temp2;\n  byte status1, status2;\n\n  // get status bytes first to see if signals are valid\n  status1 = AfdxGetSignalStatus( packet, “IOM_TEST_VFG_OIL_TEMP_A_2_21” );\n  status2 = AfdxGetSignalStatus( packet, “IOM_TEST_VFG_OIL_TEMP_A_2_22” );\n\n  if (status1 == 3 && status2 == 3 )\n  {\n    // get oil temperature\n    temp1 = AfdxGetSignalInt( packet, “IOM_TEST_VFG_OIL_TEMP_A_2_21” ); // offset=8\n    // get oil temp 2\n    temp2 = AfdxGetSignalInt( packet, “IOM_TEST_VFG_OIL_TEMP_A_2_21” ); // offset=12\n    // do something with this values\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

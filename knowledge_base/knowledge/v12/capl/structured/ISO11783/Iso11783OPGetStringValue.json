@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPGetStringValue",
+  "category": "ISO11783",
+  "title": "Iso11783OPGetStringValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPGetStringValue.htm",
+  "syntax": [
+    "long Iso11783OPGetStringValue( dword ecuHandle, dword objectID, dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "The function copies a string value of an object in the object pool into a buffer. The object must exist in the object pool and support a string value."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "char buffer[100];\nIso11783OPGetStringValue( handle, 1000, elCount(buffer), buffer );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

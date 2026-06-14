@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "TestDisableMsgAllTx",
+  "category": "Test",
+  "title": "TestDisableMsgAllTx",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestDisableMsgAllTx.htm",
+  "syntax": [
+    "long TestDisableMsgAllTx (char [] aNode)"
+  ],
+  "description": [
+    "Disables the sending of all tx messages of the node except the sending with testSetMsgEvent.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer or CANopen simulation."
+  ],
+  "parameters": [
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "Node, the tx messages should be disabled."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// send a message event for a message which is disabled by TestDisableMsgAllTx\nTestDisableMsgAllTx(NodeToManipulate);\nTestWaitForTimeout(5000);\nTestSetMsgEvent(MsgToManipulate);\nTestWaitForTimeout(5000);\nTestEnableMsgAllTx(NodeToManipulate);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.0 SP4",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

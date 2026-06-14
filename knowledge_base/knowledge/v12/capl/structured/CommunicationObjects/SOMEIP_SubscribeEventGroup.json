@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SOMEIP_SubscribeEventGroup",
+  "category": "CommunicationObjects",
+  "title": "SOMEIP_SubscribeEventGroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSOMEIPSubscribeEventGroup.htm",
+  "syntax": [
+    "long SOMEIP_SubscribeEventGroup(consumedEventGroupRef * eventGroup)"
+  ],
+  "description": [
+    "Subscribes for a service event group if SOME/IP binding is used. Note that this is more low-level; usually its more convenient to call consumedEventGroupRef::SOMEIPRequestEventGroup on the event group."
+  ],
+  "parameters": [
+    {
+      "name": "eventGroup",
+      "type": "",
+      "description": "Event group which shall be subscribed."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "SOMEIP_SubscribeEventGroup(MirrorAdjustment.consumerSide[0,0].AllEvents);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

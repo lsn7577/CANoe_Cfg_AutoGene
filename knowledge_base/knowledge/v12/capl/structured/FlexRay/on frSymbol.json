@@ -1,0 +1,29 @@
+{
+  "page_type": "event",
+  "name": "on frSymbol",
+  "category": "FlexRay",
+  "title": "on frSymbol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/EventProcedures/CAPLfunctionOnFRSymbol.htm",
+  "syntax": [
+    "on frSymbol"
+  ],
+  "description": [
+    "The event procedure is called whenever a symbol (wake-up, CAS, MTS) is received."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [
+      "The following program reacts on received symbols and prints them in the Write Window, Trace Window, and logging."
+    ],
+    "code": "variables\n{\n   const \r\n int cWriteTextSize = 512;\n   char \r\n writeTxt[cWriteTextSize];\n   const int cWriteTextSize2 = 40;\n   char writeTxt2[cWriteTextSize2];\n   const int writeSink_Trace           = \r\n -3;\n   const int writeSink_Logging         = \r\n -2;\n   const int writeSeverity_Information = 1;\n}\non frSymbol\n{\n   getFRSymbolName(this.FR_Symbol, \r\n cWriteTextSize2, writeTxt2);\n   snprintf(writeTxt, cWriteTextSize, \"%10.6f: on FRSymbol   %2d \r\n (%-32s) in cycle %3d on channel %2d with Mask %d, Length %d.\", getTime(0), this.FR_Symbol, writeTxt2, this.FR_Cycle, (int)this.MsgChannel, this.FR_ChannelMask, this.FR_Length);\n   myprint(writeTxt);\n   output(this); \r\n // only required in Measurement Setup\n}\nfloat getTime (float time)\n{\n   return TimeNowNS() / 1000000000.0;\n}\nvoid myprint(char text[])\n{\n   write(\"%s\", \r\n text);\n   writeLineEx(writeSink_Trace,   writeSeverity_Information, \"%s\", text);\n   writeLineEx(writeSink_Logging, \r\n writeSeverity_Information, \"%s\", text);\n}\nint getFRSymbolName (word symbol, word nameSize, char name[])\n{\n  int r = -1;\n  if (symbol == 0) {\n      snprintf(name, nameSize, \"Unknown\");\nr = symbol;\n  } \r\n else if (symbol == 1) { \n      snprintf(name, \r\n nameSize, \"CAS\");\nr = symbol;\n   } else if (symbol == 2) { \n      snprintf(name, \r\n nameSize, \"MTS\");\nr = symbol;\n  } \r\n else if (symbol == 3) { \n      snprintf(name, \r\n nameSize, \"Wakeup Symbol\");\nr = symbol;\n   } else { \n      snprintf(name, nameSize, \"Unspecified\");\nr = -1;\n   }\n   return r;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

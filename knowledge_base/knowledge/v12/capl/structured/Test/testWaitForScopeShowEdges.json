@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitForScopeShowEdges",
+  "category": "Test",
+  "title": "testWaitForScopeShowEdges",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForScopeShowEdges.htm",
+  "syntax": [
+    "long testWaitForScopeShowEdges(linFrame aMessage, dword msgFieldStart,long bitNo, long noOfBits, dword flags, ScopeanalyseHandle handle);"
+  ],
+  "description": [
+    "The defined frame cutout of the previously transition time measurement frame together with a bit mask is shown in the scope's Diagram view. The bit mask is only shown if the parameter flags is correct defined. The enlarged area is automatically scaled in time direction."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The message to be fitted."
+    }
+  ],
+  "return": "1 = Success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

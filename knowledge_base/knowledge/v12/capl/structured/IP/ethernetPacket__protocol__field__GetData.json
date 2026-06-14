@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::protocol::field::GetData",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::field::GetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionProtocolFieldGetData.htm",
+  "syntax": [
+    "word ethernetPacket.<protocol>.<field>.GetData( word offset, char[] dest, word length );"
+  ],
+  "description": [
+    "Gets data of a protocol field within an Ethernet packet.",
+    "The data is copied to a destination buffer of the specified type. If the buffer is too small, the data is truncated.",
+    "If specified length is greater than available data, only the available data is copied to dest and the number of copied bytes is returned.",
+    "If <protocol>.<field> is not available in the packet, 0 is returned.",
+    "The method is only available for protocol fields, which are not of type integer."
+  ],
+  "parameters": [
+    {
+      "name": "dest",
+      "type": "",
+      "description": "Buffer where the data is copied to."
+    }
+  ],
+  "return": "Number of bytes copied to dest.",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if (this.ipv6.IsAvailable())\n  {\n    byte ipv6AddrData[16];\n    long ipv6AddrDataLength;\n    char ipv6AddrStr[40];\n\n    ipv6AddrDataLength = this.ipv6.source.GetData( 0, ipv6AddrData, elcount(ipv6AddrData) );\n\n    if (ipv6AddrDataLength == 16)\n    {\n      ipGetAddressAsString( ipv6AddrData, ipv6AddrStr, elcount      (ipv6AddrStr) );\n      writeLineEx( kWritSink, 0, \"Received IPv6 packet from %s\", ipv6AddrStr );\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

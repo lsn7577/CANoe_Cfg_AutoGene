@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::protocol::IsAvailable",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::IsAvailable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionProtocolIsAvailable.htm",
+  "syntax": [
+    "long ethernetPacket.<protocol>.IsAvailable();"
+  ],
+  "description": [
+    "Checks if a protocol or protocol field is contained in the Ethernet packet."
+  ],
+  "parameters": [],
+  "return": "1: Ethernet packet contains the protocol",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if (this.udp.IsAvailable())\n  {\n  write( \"Packet has UDP protocol with port %d to %d!\", this.udp.source, this.udp.destination );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

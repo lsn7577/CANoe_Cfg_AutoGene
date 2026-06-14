@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TCIL_SetTCStatus",
+  "category": "ISO11783",
+  "title": "TCIL_SetTCStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILSetTCStatus.htm",
+  "syntax": [
+    "long TCIL_SetTCStatus(dword cycleTime); // form 1"
+  ],
+  "description": [
+    "This function changes the content and cycle time of the TC Status message.",
+    "Form 1 and 3: The content of TC Status message stays unchanged; only the cycle time is changed."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "pg PD pgPD;\npgPD.TCFunctionTCtoECU = 254;\npgPD.SourceAdressOfActiveWSM = 1;\npgPD.VisibleDataAlarmMaskID = 1000;\npgPD.VisibleSoftKeyMaskID = 2000;\npgPD.TCBusyCode1 = 0;\npgPD.TCBusyCode2 = 0;\npgPD.TCBusyCode3 = 0;\npgPD.TCBusyCode4 = 0;\npgPD.TCBusyCode8 = 0;\npgPD.TCFunctionCode = 0;\nif (TCIL_SetTCStatus( TC, 1000, pgPD ) < 0)\n{\n  TestStepFail(\"Failed to set TC Status\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

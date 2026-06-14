@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetTokenString",
+  "category": "ADFX",
+  "title": "AfdxGetTokenString",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionAfdxGetTokenString.htm",
+  "syntax": [
+    "long AfdxGetTokenString( long packet, char protocolDesignator[], char tokenDesignator[], long offset, long bufSize, char buffer[] );"
+  ],
+  "description": [
+    "This function copies characters from the token and adds a terminating \"\\0\"."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the message that has been created with AfdxInitPacket."
+    },
+    {
+      "name": "protocolDesignator",
+      "type": "",
+      "description": "Name of the protocol, e.g. \"afdx\"."
+    },
+    {
+      "name": "tokenDesignator",
+      "type": "",
+      "description": "Name of the token, e.g. \"data\"."
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "This is the offset from the beginning of the token's data area. If this is 0, data is copied starting at byte 0 of the token's data area."
+    },
+    {
+      "name": "bufSize",
+      "type": "",
+      "description": "Size of buffer in bytes. This function adds a terminating \"\\0\". Thus the maximum number of copied characters is length-1."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "The characters are copied to this buffer area."
+    }
+  ],
+  "return": "Number of copied characters or 0.\nWith AfdxGetLastError you have to check if the function has been processed successfully.",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  AfdxRegisterReceiveCallback ( \"OnAfdxPacket\");\n}\nvoid OnAfdxPacket( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet )\n{\n  char rx_str[100];\n  char error[100];\n\n  // get a string value located in FDS1\n  long offset = 8; // FDS1 + 2 byte length info\n  long status  = 0;\n  long len = 0;\n\n  len = AfdxGetTokenInt( packet, \"udp\", \"data\", offset, 2, 1 );\n\n  if (AfdxGetLastError() == 0)\n  {\n    AfdxGetTokenString( packet, \"udp\", \"data\", offset+2,  len, rx_str );\n    if (AfdxGetLastError() == 0)\n    {\n      write(rx_str);\n    }\n  }\n  else\n  {\n    AfdxGetLastErrorText( elCount(error), error );\n    write(\"Error: %s\", error );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "SetPWMThreshold",
+  "category": "VTSystem",
+  "title": "SetPWMThreshold",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSetPWMThreshold.htm",
+  "syntax": [
+    "long SysVarNamespace.SetPWMThreshold (double Threshold);"
+  ],
+  "description": [
+    "Sets the threshold value for differentiating between high and low levels.",
+    "Voltages at the input exceeding this threshold value are evaluated as high level and voltages undershooting it are evaluated as low level."
+  ],
+  "parameters": [
+    {
+      "name": "Comparison Table",
+      "type": "",
+      "description": "VT1004 VT1004A VT1104"
+    },
+    {
+      "name": "Voltage value in volts in the range from ...",
+      "type": "",
+      "description": "-32 V to +32 V -40 V to +40 V -60 V to +60 V"
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

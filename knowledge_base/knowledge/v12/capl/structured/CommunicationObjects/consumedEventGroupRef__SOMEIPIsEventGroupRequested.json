@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedEventGroupRef::SOMEIPIsEventGroupRequested",
+  "category": "CommunicationObjects",
+  "title": "consumedEventGroupRef::SOMEIPIsEventGroupRequested",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedEventGroupRefSOMEIPIsEventGroupRequested.htm",
+  "syntax": [
+    "dword consumedEventGroupRef::SOMEIPIsEventGroupRequested()"
+  ],
+  "description": [
+    "Returns whether the specified event group is currently requested."
+  ],
+  "parameters": [],
+  "return": "0: Event group is not currently requested",
+  "example": {
+    "description": [],
+    "code": "val = MirrorAdjustment.consumerSide[CANoe,LeftMirror].AllEvents.SOMEIPIsEventGroupRequested();\r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

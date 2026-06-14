@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsWToArr",
+  "category": "CANopen",
+  "title": "coTfsWToArr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsWToArr.htm",
+  "syntax": [
+    "long coTfsWToArr( word wordValue, byte outByteArray[], dword arraysize );"
+  ],
+  "description": [
+    "The function converts a word value into a byte array."
+  ],
+  "parameters": [
+    {
+      "name": "wordValue",
+      "type": "",
+      "description": "Value to be converted."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* converts a word value to a byte array */\nWord inValue = 2345;\nByte outDataArr[2];\n\nif (coTfsWToArr(inValue, outDataArr, 2) != 1)\n{\n  /* conversion failed */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

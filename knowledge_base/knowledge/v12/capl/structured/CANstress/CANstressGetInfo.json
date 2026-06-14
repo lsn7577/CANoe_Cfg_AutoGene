@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressGetInfo",
+  "category": "CANstress",
+  "title": "CANstressGetInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressGetInfo.htm",
+  "syntax": [
+    "long CANstressGetInfo( char softwareVersion[], long swVersionBufLen, char firmwareVersion[], long fwVersionBufLen, char serialNumber[], long snBufLen, char canInterface1[], long if1BufLen, char canInterface2[], long if2BufLen );"
+  ],
+  "description": [
+    "Delivers information about CANstress software and the connected CAN hardware."
+  ],
+  "parameters": [
+    {
+      "name": "softwareVersion",
+      "type": "",
+      "description": "Buffer in which the version of the software is written (recommended buffer size: 20 Byte)."
+    }
+  ],
+  "return": "0: On successful call.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

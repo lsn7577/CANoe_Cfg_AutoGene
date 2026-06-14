@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestStepBegin",
+  "category": "Test",
+  "title": "TestStepBegin",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestStepBegin.htm",
+  "syntax": [
+    "TestStepBegin (dword Importance, char Identifier[], char Description[]);"
+  ],
+  "description": [
+    "With these functions, test steps can be logged within a test case. Such a test step is introduced with TestStepBegin, which is then completed with TestStepPass, TestStepFail or TestStepWarning. A test step is noted in the test report only with this conclusion."
+  ],
+  "parameters": [
+    {
+      "name": "Importance",
+      "type": "",
+      "description": "It is possible to identify with a number how important this test step is. In the test report, it is possible that only test steps up to a certain importance will be displayed. 0 means \"very important\", higher numbers indicate lower degrees of importance."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "TestStepBegin (0, „3.1“, „Receipt of response message“);\nif (result == 1)\n   TestStepPass ();\nelse\n   TestStepFail („failed because of Timeout“);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

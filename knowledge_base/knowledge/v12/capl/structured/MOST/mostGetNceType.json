@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "mostGetNceType",
+  "category": "MOST",
+  "title": "mostGetNceType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGetNCEType.htm",
+  "syntax": [
+    "long mostGetNceType()"
+  ],
+  "description": [
+    "Returns the type of network change event (NCE) (when changing the MPR register).",
+    "This function can only be called within the OnMostMPR() event procedure."
+  ],
+  "parameters": [],
+  "return": "< 0: NCE-. The absolute value corresponds to the number of devices which closed their bypass.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

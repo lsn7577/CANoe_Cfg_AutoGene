@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_AcceptRxPG",
+  "category": "ISO11783",
+  "title": "VTIL_AcceptRxPG",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILAcceptRxPG.htm",
+  "syntax": [
+    "long VTIL_AcceptRxPG( pg * rxPG );"
+  ],
+  "description": [
+    "Checks if the received parameter group is addressed to the ISO11783 IL."
+  ],
+  "parameters": [
+    {
+      "name": "rxPG",
+      "type": "",
+      "description": "Receive parameter group"
+    }
+  ],
+  "return": "<0: VT IL Error Code",
+  "example": {
+    "description": [],
+    "code": "on pg TPRS\n{\n  if (VTIL_AcceptRxPG( this ) <= 0) return;\n  // ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

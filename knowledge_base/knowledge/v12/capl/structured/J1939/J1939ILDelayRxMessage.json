@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "J1939ILDelayRxMessage",
+  "category": "J1939",
+  "title": "J1939ILDelayRxMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILDelayRxMessage.htm",
+  "syntax": [
+    "long J1939ILDelayRxMessage(dword pgn, dword sourceAddress, qword filterMask, qword filterValue, dword delay); // form 1"
+  ],
+  "description": [
+    "A message described in the function is only forwarded to the simulation node after the defined delay. As a result, the simulated node reacts to the message only after this delay.",
+    "You can also define a system variable which is set if the specified message is received.",
+    "To revert this command you can use J1939ILResetDelayedRxMessage or J1939ILResetAllDelayedRxMessage."
+  ],
+  "parameters": [
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "Parameter Group Number (with data page) of the message to be delayed."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "—"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

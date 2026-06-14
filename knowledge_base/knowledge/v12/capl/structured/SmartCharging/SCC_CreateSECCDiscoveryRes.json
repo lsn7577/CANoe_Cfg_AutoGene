@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateSECCDiscoveryRes",
+  "category": "SmartCharging",
+  "title": "SCC_CreateSECCDiscoveryRes",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateSECCDiscoveryRes.htm",
+  "syntax": [
+    "long SCC_CreateSECCDiscoveryRes ( char IpAddress[],dword Port, dword Security )"
+  ],
+  "description": [
+    "Creates a SECC Discovery Response message for sending. Depending on the function call, the IP Address is either interpreted as an IPv4 address or an IPv6 address."
+  ],
+  "parameters": [
+    {
+      "name": "IpAddress",
+      "type": "",
+      "description": "String representation of the EVSE’s IP address in the usual notation."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

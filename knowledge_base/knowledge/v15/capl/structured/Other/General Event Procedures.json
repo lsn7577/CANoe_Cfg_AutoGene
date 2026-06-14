@@ -1,0 +1,128 @@
+{
+  "page_type": "notes",
+  "name": "General Event Procedures",
+  "category": "Other",
+  "title": "General Event Procedures",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/CAPLfunctionsEventProceduresOverview.htm",
+  "syntax": [],
+  "description": [
+    "CAPL is a procedural language in which the execution of program blocks is controlled by events. These program blocks are referred to as event procedures. Within an event procedure there may be reactions to the following events:",
+    "Measurement stop has been requested",
+    "on preStop",
+    "on testContextCompleted",
+    "The program code that you define in event procedures is executed when the event occurs. For example, you could send a message onto the bus in response to a key press (on key), track the occurrence of messages on the bus (on message), or else execute cyclically defined actions (on timer).",
+    "Example",
+    "on preStart{write (\"start\");}",
+    "on preStop{write (\"stop\");deferStop (5000);}",
+    "Event Procedures: Overview"
+  ],
+  "parameters": [],
+  "return": "Environment variable",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Event",
+        "Event Procedure These CAPL functions are supported by Windows and Linux. The functionality under Linux has not been fully tested yet."
+      ],
+      [
+        "Receipt of any message",
+        "on *"
+      ],
+      [
+        "Environment variable change (only CANoe)",
+        "on envVar"
+      ],
+      [
+        "System variable change",
+        "on sysVaron sysVar_change"
+      ],
+      [
+        "Notification of system variable updates without value change",
+        "on sysVar_update"
+      ],
+      [
+        "Press of a key",
+        "on key"
+      ],
+      [
+        "Elapse of a timer",
+        "on timer"
+      ],
+      [
+        "State of a replay block has changed",
+        "on replaySourceStatusChanged"
+      ],
+      [
+        "State of a offline source has changed",
+        "on offlineSourceStatusChanged"
+      ],
+      [
+        "Response to Signal Changes"
+      ],
+      [
+        "Receipt of a signal",
+        "on signal_update"
+      ],
+      [
+        "Signal change",
+        "on signal"
+      ],
+      [
+        "Events of Measurement System"
+      ],
+      [
+        "Initialization of measurement (before start)",
+        "on preStart"
+      ],
+      [
+        "Program start",
+        "on start"
+      ],
+      [
+        "Measurement stop has been requested",
+        "on preStop"
+      ],
+      [
+        "End of measurement",
+        "on stopMeasurement"
+      ],
+      [
+        "AUTOSAR PDU"
+      ],
+      [
+        "Is called if the corresponding PDU is received of which the updated bit is set or undefined.",
+        "on PDU"
+      ],
+      [
+        "Test Support"
+      ],
+      [
+        "Supports the code coverage use case.",
+        "on testContextCompleted"
+      ]
+    ],
+    [
+      [
+        "Example Example"
+      ]
+    ],
+    [
+      [
+        "Note for Using Handlers within CAPL Test Nodes. Note for preStop handler, event handler and time handler:If a test is stopped (test module inactive), these handlers will not be executed within the CAPL test node. Example: In a XML test module a CAPL test node is added. on preStart{write (\"start\");} on preStop{write (\"stop\");deferStop (5000);} If the test module is inactive, the on preStart() write is displayed, on preStop will not be executed."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

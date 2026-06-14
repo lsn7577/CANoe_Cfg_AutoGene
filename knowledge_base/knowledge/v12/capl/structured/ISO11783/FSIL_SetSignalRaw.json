@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_SetSignalRaw",
+  "category": "ISO11783",
+  "title": "FSIL_SetSignalRaw",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILSetSignalRaw.htm",
+  "syntax": [
+    "long FSIL_SetSignalRaw( dbSignal signal, long value );"
+  ],
+  "description": [
+    "Sets the signal to the specified raw value. The message of the signal is sent according the configured send type."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "Signal name from database.The signal must be assigned to the node as Tx signal."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void SendLanguageCommand_English()\n{\n  FSIL_SetSignalRaw( LC_FS::LanguageCodeCmd, 0x6E65 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

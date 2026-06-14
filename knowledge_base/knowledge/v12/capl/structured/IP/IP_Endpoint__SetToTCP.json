@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "IP_Endpoint::SetToTCP",
+  "category": "IP",
+  "title": "IP_Endpoint::SetToTCP",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionSetToTCP.htm",
+  "syntax": [
+    "long IP_Endpoint::SetToTCP();"
+  ],
+  "description": [
+    "Sets the transport protocol to TCP."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Endpoint 192.168.1.1:4000 addr;\n  addr.SetToTCP();\n  if (addr.IsTCP())\n  {\n   write( \"Is TCP endpoint\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

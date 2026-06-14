@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "fieldProviderRef::GetSubscribedConsumer",
+  "category": "CommunicationObjects",
+  "title": "fieldProviderRef::GetSubscribedConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionfieldProviderRefGetSubscribedConsumer.htm",
+  "syntax": [
+    "serviceConsumerRef * fieldProviderRef::GetSubscribedConsumer(dword index)"
+  ],
+  "description": [
+    "Returns the subscribed consumer with the specified index."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the consumer. The condition 0 <= index < fieldProviderRef::GetNrOfSubscribedConsumers must be true."
+    }
+  ],
+  "return": "The specified service consumer. An uninitialized object if the index is invalid.",
+  "example": {
+    "description": [],
+    "code": "// output all subscribed consumers\r\n                                \ndword i, nrOfConsumers;\nserviceConsumerRef * consumer;\nfieldProviderRef * provider;\n\nprovider = MirrorAdjustment.providerSide[LeftMirror].CurrentPosition;\nnrOfConsumers = provider.GetNrOfSubscribedConsumers();\nwrite(\"Nr of consumers is %d\", nrOfConsumers);\nfor (i = 0; i < nrOfConsumers; ++i)\n{\n  consumer = provider.GetSubscribedConsumer(i);\n  write(\"Consumer %d is %s\", i, consumer.Name);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

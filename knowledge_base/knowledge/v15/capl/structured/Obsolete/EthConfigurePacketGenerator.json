@@ -1,0 +1,77 @@
+{
+  "page_type": "notes",
+  "name": "EthConfigurePacketGenerator",
+  "category": "Obsolete",
+  "title": "EthConfigurePacketGenerator",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/EthernetIL/CAPLfunctionEthConfigurePacketGenerator.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by: ethStartPacketGenerator"
+      ],
+      [
+        "Note This feature is only available with Vector Ethernet hardware (e.g. VN5610)."
+      ],
+      [
+        "Function Syntax",
+        "long EthConfigurePacketGenerator( long packet, dword transmissionRate );"
+      ],
+      [
+        "long EthConfigurePacketGenerator( long packet, dword transmissionRate, dword counterPosition );"
+      ],
+      [
+        "Function",
+        "This function configures the Ethernet packet that can be sent continuously by the hardware. To start the transmission you have to call EthStartPacketGenerator."
+      ],
+      [
+        "Parameters",
+        "packet Handle of a packet to send."
+      ],
+      [
+        "transmissionRate The rate in frames per second the packet should be transmitted. Range: [1 ... 1000000]"
+      ],
+      [
+        "counterPosition The position a 4 byte counter is placed inside the Ethernet-payload on a zero based index. Index 0 is the first byte after the source MAC Address. Take care that the counter has to fit completely into the payload. E.g. for a packet with 100 byte Ethernet payload the highest position for a 4 byte counter is 96."
+      ],
+      [
+        "Return Values",
+        "0 or error code"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.1 SP3-12.0",
+        "Ethernet",
+        "—",
+        "•"
+      ],
+      [
+        "Example on start{ LONG packetHandle; char error[255]; // create packet and start packet generator packetHandle = EthInitPacket(\"udp\"); if (EthGetLastError() == 0) { // set protocol fields EthSetTokenInt( packetHandle, \"ipv4\", \"source\", 0xC0A80001 ); // 192.168.0.1 EthSetTokenInt( packetHandle, \"ipv4\", \"destination\", 0xFFFFFFFF ); // 255.255.255.255 EthSetTokenInt( packetHandle, \"udp\", \"source\", 23 ); EthSetTokenInt( packetHandle, \"udp\", \"destination\", 23 ); // set UDP payload EthResizeToken( packetHandle, \"udp\", \"data\", 12*8 ); /*8 byte text, 4 byte counter*/ EthSetTokenData( packetHandle, \"udp\", \"data\", 5, \"Counter \" ); // complete EthCompletePacket( packetHandle ); // configure generator EthConfigurePacketGenerator(packetHandle, 10000, 38); //10000 fps // release packet EthReleasePacket( packetHandle ); } else { EthGetLastErrorText( elCount(error), error ); write(\"Error: %s\", error ); }}on key '1'{ // start generator EthStartPacketGenerator(1000000); //one million packets, should run about 100s}on key '2'{ // stop generator before it is finished EthStopPacketGenerator();}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

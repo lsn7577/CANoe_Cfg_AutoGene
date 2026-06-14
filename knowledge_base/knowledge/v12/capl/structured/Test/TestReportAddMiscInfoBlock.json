@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestReportAddMiscInfoBlock",
+  "category": "Test",
+  "title": "TestReportAddMiscInfoBlock",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestReportAddMiscInfoBlock.htm",
+  "syntax": [
+    "TestReportAddMiscInfoBlock (char title[]);"
+  ],
+  "description": [
+    "The function generates a new information block for additional information pairs in the report. With the function TestReportAddMiscInfo information pairs can be taken up into this block. This is possible until a new information block is opened with TestReportAddMiscInfoBlock, the current test case is ended (if the information block was opened within the test case) or a test case is called (if the information block was called in the test module)."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

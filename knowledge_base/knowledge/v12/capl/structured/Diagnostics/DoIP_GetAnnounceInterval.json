@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetAnnounceInterval",
+  "category": "Diagnostics",
+  "title": "DoIP_GetAnnounceInterval",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetAnnounceInterval.htm",
+  "syntax": [
+    "dword DoIP_GetAnnounceInterval();"
+  ],
+  "description": [
+    "Gets the time between the Vehicle Announcement Messages sent by a vehicle simulation (in milliseconds)."
+  ],
+  "parameters": [],
+  "return": "Time between the sent vehicle announcement messages (configured in the DoIP.INI or via DoIP_ConfigureVehicleAnnouncement).",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

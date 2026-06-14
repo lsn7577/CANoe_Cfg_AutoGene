@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysSetVariableDescriptionForValue",
+  "category": "SystemVariables",
+  "title": "sysSetVariableDescriptionForValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysSetVariableDescriptionForValue.htm",
+  "syntax": [
+    "long sysSetVariableDescriptionForValue(char namespace[], char variable[], long value, char description[]);"
+  ],
+  "description": [
+    "Sets a description for a particular value of a system variable of type long or long array. In this way, you can define a value table for a variable which you have created with sysDefineVariableInt/sysDefineVariableIntArray."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "0: no error, function successful",
+  "example": {
+    "description": [],
+    "code": "sysSetVariableDescriptionForValue(\"Dynamic\", \"IntVar\", 0, \"Zero\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

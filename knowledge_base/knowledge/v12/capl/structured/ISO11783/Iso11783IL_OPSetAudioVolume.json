@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPSetAudioVolume",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPSetAudioVolume",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPSetAudioVolume.htm",
+  "syntax": [
+    "long Iso11783IL_OPSetAudioVolume( dword volume ); // form 1"
+  ],
+  "description": [
+    "The function sets the audio volume of the Virtual Terminal. A Set Audio Volume command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "volume",
+      "type": "",
+      "description": "volume, 0..100%"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPSetAudioVolume( 100 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

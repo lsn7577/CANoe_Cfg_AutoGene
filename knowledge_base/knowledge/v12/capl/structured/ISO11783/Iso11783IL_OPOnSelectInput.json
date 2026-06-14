@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPOnSelectInput",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPOnSelectInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPOnSelectInput.htm",
+  "syntax": [
+    "void Iso11783IL_OPOnSelectInput( dword objectID, dword what );"
+  ],
+  "description": [
+    "The function is called by the node layer, if an input object is selected."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "Object ID of the selected input object"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_OPOnSelectInput( dword objectID, dword what )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbConnect",
+  "category": "IP",
+  "title": "AvbConnect",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbConnect.htm",
+  "syntax": [
+    "dword AvbConnect(dword talkerHandle, byte remoteMacAddress[], char onConnectCallback[]); // form 1"
+  ],
+  "description": [
+    "The function establishes a connection with the specified location. If the connect operation does not complete immediately the operation is performed asynchronously and the function will return 460609. In this case the passed CAPL callback OnAvbConnect will be called on completion (successful or not)."
+  ],
+  "parameters": [
+    {
+      "name": "talkerHandle",
+      "type": "",
+      "description": "The Talker handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,141 @@
+{
+  "page_type": "notes",
+  "name": "LSS Event Types",
+  "category": "Obsolete",
+  "title": "LSS Event Types",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/CAPLfunctionsCANopenNLLssEventTypes.htm",
+  "syntax": [],
+  "description": [
+    "Event Type",
+    "Type Description",
+    "Description param",
+    "Description param2",
+    "0x10",
+    "The service Switch Mode Global was executed successfully. Since this service is an unconfirmed service, this event signals only a successful entry of the LSS message in the send queue.",
+    "-",
+    "0x11",
+    "The service Switch Mode Selective was executed successfully. The occurrence of this event signals the receipt of the confirmation of a LSS slave at the LSS address specified in the request.",
+    "0x12",
+    "The service Configure Node ID was executed successfully. The occurrence of this event signals the successful entry of the specified node-ID for the LSS slave.",
+    "error code",
+    "specific error code",
+    "0x15",
+    "The service Store Configuration was executed successfully. The occurrence of this event signals the successful storage of the configured values by the LSS slave.",
+    "0x16",
+    "The service Inquire Identity Vendor-ID was executed successfully. The occurrence of this event signals the successful querying of the vendor-ID of the LSS slave.",
+    "vendor ID",
+    "0x17",
+    "The service Inquire Identity Product Code was executed successfully. The occurrence of this event signals the successful querying of the product code of the LSS slave.",
+    "product code",
+    "0x18",
+    "The service Inquire Identity Revision Number was executed successfully. The occurrence of this event signals the successful querying of the revision number of the LSS slave.",
+    "revision number",
+    "0x19",
+    "The service Inquire Identity Serial Number was executed successfully. The occurrence of this event signals the successful querying of the serial number of the LSS slave.",
+    "serial number",
+    "0x20",
+    "The service Inquire Node ID was executed successfully. The occurrence of this event signals the successful querying of the node-ID of the LSS slave.",
+    "node-ID",
+    "0x21",
+    "The service Identify Remote Slaves was executed successfully. The occurrence of this event signals the receipt of the confirmation of one or several LSS slaves in the LSS address range specified in the query.",
+    "0x22",
+    "The service Identify Non-Configured Remote Slaves was executed successfully. The occurrence of this event signals the receipt of the confirmation of one or several non-configured LSS slaves.",
+    "CANopen Node Layer Functions | See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Note The significance of the two parameters param and param2 depends on the LSS event. For detailed information, /6/ must be used."
+      ]
+    ],
+    [
+      [
+        "Event Type",
+        "Type Description",
+        "Description param",
+        "Description param2"
+      ],
+      [
+        "0x10",
+        "The service Switch Mode Global was executed successfully. Since this service is an unconfirmed service, this event signals only a successful entry of the LSS message in the send queue.",
+        "-",
+        "-"
+      ],
+      [
+        "0x11",
+        "The service Switch Mode Selective was executed successfully. The occurrence of this event signals the receipt of the confirmation of a LSS slave at the LSS address specified in the request.",
+        "-",
+        "-"
+      ],
+      [
+        "0x12",
+        "The service Configure Node ID was executed successfully. The occurrence of this event signals the successful entry of the specified node-ID for the LSS slave.",
+        "error code",
+        "specific error code"
+      ],
+      [
+        "0x15",
+        "The service Store Configuration was executed successfully. The occurrence of this event signals the successful storage of the configured values by the LSS slave.",
+        "error code",
+        "specific error code"
+      ],
+      [
+        "0x16",
+        "The service Inquire Identity Vendor-ID was executed successfully. The occurrence of this event signals the successful querying of the vendor-ID of the LSS slave.",
+        "vendor ID",
+        "-"
+      ],
+      [
+        "0x17",
+        "The service Inquire Identity Product Code was executed successfully. The occurrence of this event signals the successful querying of the product code of the LSS slave.",
+        "product code",
+        "-"
+      ],
+      [
+        "0x18",
+        "The service Inquire Identity Revision Number was executed successfully. The occurrence of this event signals the successful querying of the revision number of the LSS slave.",
+        "revision number",
+        "-"
+      ],
+      [
+        "0x19",
+        "The service Inquire Identity Serial Number was executed successfully. The occurrence of this event signals the successful querying of the serial number of the LSS slave.",
+        "serial number",
+        "-"
+      ],
+      [
+        "0x20",
+        "The service Inquire Node ID was executed successfully. The occurrence of this event signals the successful querying of the node-ID of the LSS slave.",
+        "node-ID",
+        "-"
+      ],
+      [
+        "0x21",
+        "The service Identify Remote Slaves was executed successfully. The occurrence of this event signals the receipt of the confirmation of one or several LSS slaves in the LSS address range specified in the query.",
+        "-",
+        "-"
+      ],
+      [
+        "0x22",
+        "The service Identify Non-Configured Remote Slaves was executed successfully. The occurrence of this event signals the receipt of the confirmation of one or several non-configured LSS slaves.",
+        "-",
+        "-"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coOnError",
+  "category": "Obsolete",
+  "title": "coOnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOnError.htm",
+  "syntax": [
+    "void coOnError( dword errorCode, dword errorClass, dword nodeId, dword index, dword subIndex, dword param );"
+  ],
+  "description": [
+    "This function is called if an error occurs."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "Error code (see error codes of coOnError)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnError( dword errorCode, dword errorClass, dword nodeId, dword index, dword subIndex, dword param){\n  write( \"Error occurred, code = 0x%X, class = %d\", errorCode, errorClass );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDGetValue",
+  "category": "ISO11783",
+  "title": "Iso11783PDDGetValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDGetValue.htm",
+  "syntax": [
+    "float Iso11783PDDGetValue( dword ecuHandle, dbSignal signal, dword elementNumber );"
+  ],
+  "description": [
+    "The function requests the value of a process variable."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "Value of the process variable, 0 if the variable is not defined",
+  "example": {
+    "description": [],
+    "code": "char text[256];\nvalue = Iso11783PDDGetValue\r\n ( ecuHandle, PD::AppRateSignal, 0;\nif (Iso11783PDDGetLastError \r\n () != 0) {\n  Iso11783PDDGetLastErrorText \r\n ( elCount(text), text );\n  write( \r\n \"ERROR: %s\", text );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

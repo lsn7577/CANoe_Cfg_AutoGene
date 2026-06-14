@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "title": "DBC File Field Reference (Vector CANoe 15.0)",
+    "description": "Comprehensive reference of all DBC file keywords, attributes, object types, and their usage.",
+    "version": "15.0",
+    "source": "Vector CANeds Help (CANoe 15.0)",
+    "new_in_v15": [
+      "CAT_DEF_",
+      "CAT_",
+      "FILTER",
+      "BO_TX_BU_",
+      "SIG_VALTYPE_"
+    ]
+  },
+  "syntax_keywords": [
+    {
+      "name": "VERSION",
+      "category": "File Header",
+      "required": true,
+      "syntax": "VERSION \"<version_string>\"",
+      "description": "DBC file format version. The canonical value is an empty string. v15 supports up to 14 named tags."
+    },
+    {
+      "name": "NS_",
+      "category": "File Header",
+      "required": true,
+      "syntax": "NS_ : NS_DESC_ CM_ BA_DEF_ BA_ VAL_TABLE_ ...",
+      "description": "New Symbols declaration. Lists all reserved identifier names used in the file."
+    },
+    {
+      "name": "BS_",
+      "category": "Bus Configuration",
+      "required": false,
+      "syntax": "BS_: <bus_speed>",
+      "description": "Bus Speed. v15 deprecates this in favor of BA_DEF_ BusSpeed attribute."
+    },
+    {
+      "name": "BU_",
+      "category": "Network Nodes",
+      "required": true,
+      "syntax": "BU_: <Node1> <Node2> ...",
+      "description": "Bus nodes (ECUs). Lists all network nodes in the database."
+    },
+    {
+      "name": "VAL_TABLE_",
+      "category": "Value Tables",
+      "required": false,
+      "syntax": "VAL_TABLE_ <Name> <Value1> <Text1> <Value2> <Text2> ... ;",
+      "description": "Value table definition. v15 supports up to 2^31-1 entries per table."
+    },
+    {
+      "name": "BO_",
+      "category": "Message Definition",
+      "required": true,
+      "syntax": "BO_ <MsgId> <MsgName>: <MsgLen> <Transmitter>",
+      "description": "Message definition. v15: MsgId can be extended (29-bit) or standard (11-bit)."
+    },
+    {
+      "name": "SG_",
+      "category": "Signal Definition",
+      "required": true,
+      "syntax": "SG_ <SigName> [M|m<Mult>|M<Mult>m] : <StartBit>|<Length>@<Endian><Signed> (<Factor>,<Offset>) [<Min>|<Max>] \"<Unit>\" <Receivers>",
+      "description": "Signal definition. v15 supports multiplexed signals (M, m) and value ranges."
+    },
+    {
+      "name": "EV_",
+      "category": "Environment Variable",
+      "required": false,
+      "syntax": "EV_ <VarName>: <DataType> [Unit] [Min|Max] [AccessType] [AccessNodes];",
+      "description": "Environment variable for non-bus data. v15 adds ENV_VAR_DATA semantics."
+    },
+    {
+      "name": "CM_",
+      "category": "Comment",
+      "required": false,
+      "syntax": "CM_ [<BU_>|BO_ <MsgId>|SG_ <MsgId> <SigName>|EV_ <VarName>|...] \"<comment>\";",
+      "description": "Comment. v15 supports multi-line comments and Unicode."
+    },
+    {
+      "name": "BA_DEF_",
+      "category": "Attribute Definition",
+      "required": false,
+      "syntax": "BA_DEF_ <ObjectType> \"<AttrName>\" <AttrType> [<DefaultValue>];",
+      "description": "Attribute definition. v15 supports ENUM, FLOAT, INTEGER, STRING, HEX, HEX_LONG."
+    },
+    {
+      "name": "BA_",
+      "category": "Attribute Value",
+      "required": false,
+      "syntax": "BA_ \"<AttrName>\" <ObjectType> <ObjectId> <Value>;",
+      "description": "Attribute value assignment. Sets the value of a previously defined attribute."
+    },
+    {
+      "name": "VAL_",
+      "category": "Value Description",
+      "required": false,
+      "syntax": "VAL_ <MsgId> <SigName> <Value1> \"<Text1>\" <Value2> \"<Text2>\" ... ;",
+      "description": "Value description for a signal. Used for textual state display."
+    },
+    {
+      "name": "CAT_DEF_",
+      "category": "Category Definition (v15)",
+      "required": false,
+      "syntax": "CAT_DEF_ <CatName> \"<DisplayName>\" <Color>;",
+      "description": "Category definition (v15). Allows messages to be visually grouped in CANeds."
+    },
+    {
+      "name": "CAT_",
+      "category": "Category Assignment (v15)",
+      "required": false,
+      "syntax": "CAT_ <CatName> <MsgId>;",
+      "description": "Message category assignment (v15)."
+    },
+    {
+      "name": "FILTER",
+      "category": "Filter (v15)",
+      "required": false,
+      "syntax": "FILTER <FilterName> <BusNode> <MsgIdRange>;",
+      "description": "Bus filter (v15). Restricts bus traffic to specified node/message combination."
+    },
+    {
+      "name": "BA_DEF_SG_",
+      "category": "Signal Attribute",
+      "required": false,
+      "syntax": "BA_DEF_SG_ \"<AttrName>\" <Type> [<Default>];",
+      "description": "Signal-group specific attribute definition. v15 supports this for vCDL signals."
+    },
+    {
+      "name": "SIG_GROUP_",
+      "category": "Signal Group",
+      "required": false,
+      "syntax": "SIG_GROUP_ <GroupName> <MsgId> : <Sig1> <Sig2> ... ;",
+      "description": "Signal group definition. v15: signals in a group must be from the same message and non-overlapping."
+    },
+    {
+      "name": "SIG_VALTYPE_",
+      "category": "Signal Value Type (v15)",
+      "required": false,
+      "syntax": "SIG_VALTYPE_ <MsgId> <SigName> : <FloatType>;",
+      "description": "Signal value type (v15). Specifies IEEE_FLOAT or IEEE_DOUBLE encoding."
+    },
+    {
+      "name": "BO_TX_BU_",
+      "category": "Transmitter Relation (v15)",
+      "required": false,
+      "syntax": "BO_TX_BU_ <MsgId> : <Transmitter1> <Transmitter2> ... ;",
+      "description": "Transmitter relation (v15). Allows multiple senders for a message."
+    },
+    {
+      "name": "RX_BU_",
+      "category": "Receiver Relation (deprecated v15)",
+      "required": false,
+      "syntax": "RX_BU_ <MsgId> <SigName> : <Receiver1> <Receiver2> ... ;",
+      "description": "Receiver relation (deprecated in v15). Replaced by SG_ <SigName> <Receivers> field."
+    }
+  ],
+  "object_types": [
+    {
+      "name": "BU_ (Node)",
+      "description": "Network node (ECU)"
+    },
+    {
+      "name": "BO_ (Message)",
+      "description": "CAN message"
+    },
+    {
+      "name": "SG_ (Signal)",
+      "description": "CAN signal within a message"
+    },
+    {
+      "name": "EV_ (Environment Variable)",
+      "description": "Non-bus variable"
+    },
+    {
+      "name": "SIG_GROUP_ (Signal Group)",
+      "description": "Group of related signals"
+    },
+    {
+      "name": "MUX (Multiplexor)",
+      "description": "Multiplexed signal (M=m leader, m=follower)"
+    }
+  ],
+  "attribute_types": [
+    {
+      "name": "ENUM",
+      "description": "Enumeration of allowed string values"
+    },
+    {
+      "name": "FLOAT",
+      "description": "IEEE 754 single precision (32-bit)"
+    },
+    {
+      "name": "FLOAT64",
+      "description": "IEEE 754 double precision (64-bit) - v15"
+    },
+    {
+      "name": "HEX",
+      "description": "Hexadecimal integer"
+    },
+    {
+      "name": "HEX_LONG",
+      "description": "Hexadecimal long integer (64-bit) - v15"
+    },
+    {
+      "name": "INT",
+      "description": "Signed integer"
+    },
+    {
+      "name": "UINT",
+      "description": "Unsigned integer"
+    },
+    {
+      "name": "STRING",
+      "description": "UTF-8 string"
+    }
+  ]
+}

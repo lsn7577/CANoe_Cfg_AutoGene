@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IpGetStackParameter",
+  "category": "TCPIPAPI",
+  "title": "IpGetStackParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIpGetStackParameter.htm",
+  "syntax": [
+    "long IpGetStackParameter(char parameterName[], long value);"
+  ],
+  "description": [
+    "With this function it is possible to read the value of a TCP/IP Stack parameter. The name of the parameter is given as a path separated by dots.",
+    "The following values can be read by the function:"
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  LONG result;\n  LONG ifIndex;\n  LONG value;\n\n  // get the maximum transmission unit of the interface given in ifIndex\n  ifIndex = 1;\n  result = ipGetStackParameter(ifIndex, \"canoe.interface.mtu\", value);\n  if(result != 0) {\n    writeLineEx(1, 3, \"Failed to get mtu of interface %d. Result: %d\", ifIndex, result);\n  }\n  else {\n    writeLineEx(1, 0, \"MTU of interface %d is %d byte.\", ifIndex, value);\n  }\n\n  // get the ipv6 default scope\n  result = ipGetStackParameter(\"canoe.ipv6.default_scope\", value);\n  if(result != 0) {\n    writeLineEx(1, 3, \"Failed to get ipv6 default scope. Result: %d\", result);\n  }\n  else {\n    writeLineEx(1, 0, \"IPv6 default scope is set to interface %d.\", value);\n  }\n\n  // get the tcp delayed acknowlege behaviour\n  result = ipGetStackParameter(\"net.inet.tcp.delayed_ack\", value);\n  if(result != 0) {\n    writeLineEx(1, 3, \"Failed to get delayed acknowledge behaviour. Result: %d\", result);\n  }\n  else {\n    if( value == 0){\n      writeLineEx(1, 0, \"TCP delayed acknowledge is disabled\");\n    }\n    else{\n      writeLineEx(1, 0, \"TCP delayed acknowledge is enabled\");\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

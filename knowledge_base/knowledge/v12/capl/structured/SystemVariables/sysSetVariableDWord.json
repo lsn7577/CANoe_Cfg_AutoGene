@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysSetVariableDWord",
+  "category": "SystemVariables",
+  "title": "sysSetVariableDWord",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysSetVariableDWord.htm",
+  "syntax": [
+    "long sysSetVariableDWord(char namespace[], char variable[], dword value); // form 1"
+  ],
+  "description": [
+    "Sets the value of a variable of type unsigned 32 bit integer."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "0: no error, function successful",
+  "example": {
+    "description": [],
+    "code": "sysSetVariableDWord(sysvar::MyNamespace::UInt32Var, 1);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

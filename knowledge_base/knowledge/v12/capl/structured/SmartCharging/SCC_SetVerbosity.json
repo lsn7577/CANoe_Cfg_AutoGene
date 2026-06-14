@@ -1,0 +1,58 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetVerbosity",
+  "category": "SmartCharging",
+  "title": "SCC_SetVerbosity",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetVerbosity.htm",
+  "syntax": [
+    "void SCC_SetVerbosity ( dword Level )"
+  ],
+  "description": [
+    "Sets the Verbosity parameter of the DLL. The higher the value is, the more information will be output in the write window."
+  ],
+  "parameters": [
+    {
+      "name": "Selector",
+      "type": "",
+      "description": "Description of return value"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Signals only critical errors"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Signals errors due to erroneous configurations, etc."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Warns, if an unexpected protocol status is reached, and signals missing obligatory callbacks"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Informs about missing optional callbacks and minor problems"
+    },
+    {
+      "name": ">3",
+      "type": "",
+      "description": "Signals low level events such as setting and expiring of timers"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

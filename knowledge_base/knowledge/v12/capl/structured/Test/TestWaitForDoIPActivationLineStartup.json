@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDoIPActivationLineStartup",
+  "category": "Test",
+  "title": "TestWaitForDoIPActivationLineStartup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDoIPActivationLineStartup .htm",
+  "syntax": [
+    "long TestWaitForDoIPActivationLineStartup();"
+  ],
+  "description": [
+    "Wait until the DoIP Activation Line startup time has passed after start of the measurement. Please cf. Activation Line (DoIP)."
+  ],
+  "parameters": [],
+  "return": "1: The DoIP activation line has been activated for the configured amount of time, or is not configured and therefore waiting is not necessary.",
+  "example": {
+    "description": [
+      "Make sure that the startup time has passed in a test module or unit:",
+      "Explicitly deactivate Activation Line using the configured system variable to perform a specific test"
+    ],
+    "code": "// If this testcase is run first, activation line startup will be observed\ntestcase ConnectToVehicle( char target[])\n{\n  TestWaitForDoIPActivationLineStartup(); // does nothing after startup \ntime\n  diagConnectChannel(target);             // form with target available since 9.0 SP3\n}\nSafeDoIPSending( diagRequest * req)\n{\n  TestWaitForDoIPActivationLineStartup(); // does nothing after startup time\n  req.SendRequest();\n}\ntestcase TC_CheckErrorWithoutActivationLine()\n{\n  char svActivationLine[100];\n  char svActivationLineNS[100];\n  long activationLineDelay;\n\n  activationLineDelay = diagGetCommParameter(DoIP.ActivationLineStartuptime\");\n  if( activationLineDelay < 100)\n  {\n    TestStepWarning( \"\", \"Activation Line startup time of %d is too low for this test. Ignored.\", activationLineDelay);\n    return;\n  }\n  // The entity needs enough time so that we can test if it reacts before the delay has passed\n\n  diagCloseChannel();\n  testWaitForDiagChannelClosed( 1000);\n\n  if( 0 >= DiagGetCommParameter( \"DoIP.ActivationLineSysvar\", 0, svActivationLine, elcount( svActivationLine))\n  || 0 >= DiagGetCommParameter( \"DoIP.ActivationLineSysvarNamespace\", 0, svActivationLineNS, elcount( svActivationLineNS)))\n  {\n    TestStepFail( \"System variable to control Activation Line cannot be retrieved!\");\n    return;\n  }\n\n  TestStep( \"\", \"Switch off Activation Line via system variable %s::%s\", svActivationLineNS, svActivationLine);\n  sysSetVariableInt( svActivationLineNS, svActivationLine, 0);\n  TestWaitForTimeout( 500); // make sure the DoIP can go offline\n\n  TestStep( \"\", \"Switch on Activation Line via system variable %s::%s\", svActivationLineNS, svActivationLine);\n  sysSetVariableInt( svActivationLineNS, svActivationLine, 1);\n\n  TestStep( \"\", \"Do not give the entity enough time\");\n  TestWaitForTimeout( activationLineDelay - 100);\n\n  TestStep( \"\", \"Try to connect to vehicle - should fail since the startup time has not passed yet!\");\n  diagConnectChannel();\n  if( 0 == testWaitForDiagChannelConnected( 3000))\n  {\n    TestStepPass( \"Timeout connecting to DoIP entity before Activation Line delay passed, OK\");\n  } else\n  {\n    TestStepFail( \"Connecting to the DoIP entity did not time out even though the startup time has not passed yet!\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

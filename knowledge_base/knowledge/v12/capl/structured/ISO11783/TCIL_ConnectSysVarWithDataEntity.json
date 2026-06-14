@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TCIL_ConnectSysVarWithDataEntity",
+  "category": "ISO11783",
+  "title": "TCIL_ConnectSysVarWithDataEntity",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILConnectSysVarWithDataEntity.htm",
+  "syntax": [
+    "long TCIL_ConnectSysVarWithDataEntity(dbNode client, dword ddi, dword elementNumber, char[]sysVarNameWithPath, dword useRawValue); // form 1"
+  ],
+  "description": [
+    "This function connects a data entity specified by the data dictionary identifier to a system variable.",
+    "If the value of the data entity is changed, the new value is put into the system variable. To release connection between the system variable and data entity, just call the same method again, but with the empty string instead of the name of system variable."
+  ],
+  "parameters": [
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "Data dictionary identifier of the data entity, 0x0000..0xFFFF."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "result = TCIL_ConnectSysVarWithDataEntity(TC, Sprayer, 117, 1, \"Sprayer::svEffectiveTotalDistance\", 1);\nswitch (result)\n{\n  case     0: TestStepPass(); break;\n  case -2203: TestStepFail(\"Invalid system variable path!\"); break;\n  case -2211: TestStepFail(\"System variable does not exist!\"); break;\n  default   : TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

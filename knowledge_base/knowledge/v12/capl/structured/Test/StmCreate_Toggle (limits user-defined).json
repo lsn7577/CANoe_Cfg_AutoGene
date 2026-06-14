@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "StmCreate_Toggle (limits user-defined)",
+  "category": "Test",
+  "title": "StmCreate_Toggle (limits user-defined)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionStmCreateToggleUserDefined.htm",
+  "syntax": [
+    "dword StmCreate_Toggle(message aMessage, dbsignal aDBSignal, double ValueA, double ValueB, dword CycleTime); // form 1"
+  ],
+  "description": [
+    "Creates a stimulus generator that toggles between two values."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "To stimulate signals:",
+      "To stimulate environment variables:",
+      "To stimulate system variables:"
+    ],
+    "code": "mId = StmCreate_Toggle(MsgBuf, Msg::Sig, ValueA, ValueB, CycleTime);\nTo stimulate signals with the Interaction Layer:\nmId = StmCreate_Toggle(Msg::Sig, ValueA, ValueB, CycleTime);\n\nmId = StmCreate_Toggle(EnvVarToStimulate, ValueA, ValueB, CycleTime);\nmId = StmCreate_Toggle(SysVarToStimulate, ValueA, ValueB, CycleTime);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkConfig_Init",
+  "category": "Test",
+  "title": "ChkConfig_Init",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkConfigInit.htm",
+  "syntax": [
+    "long ChkConfig_Init (char aRole[]); // form 1: deprecated"
+  ],
+  "description": [
+    "Initializes TSL to be used subsequently.",
+    "If the function is used, then it is recommended to perform the initialization once during preStart section of the CAPL program.",
+    "The tester role (form 1) has no longer an effect."
+  ],
+  "parameters": [
+    {
+      "name": "aRole",
+      "type": "",
+      "description": "Allowed value range: developer, user"
+    }
+  ],
+  "return": "-1: error",
+  "example": {
+    "description": [],
+    "code": "// test is executed in the role of a developer\non preStart\n{\n   ChkConfig_Init();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,41 @@
+# ChkCreate_MostCriticalUnlock, ChkStart_MostCriticalUnlock
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+dword ChkCreate_MostCriticalUnlock();
+dword ChkStart_MostCriticalUnlock();
+dword ChkCreate_MostCriticalUnlock(Callback aCallback);
+dword ChkStart_MostCriticalUnlock(Callback aCallback);
+```
+
+## Description
+
+The check function monitors the occurrence of "CriticalUnlock" events.
+
+A "CriticalUnlock" event is generated as soon an unlock occurs after a "Stable Lock" condition, which is longer than tUnlock (70 ms), or several unlocks occur successively, which together are longer than tUnlock (see MOST specification for more information).
+
+This check always works on events. Therefore, it will not detect a current "CriticalUnlock" state, if this state has been entered before the check’s activation.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| aCallback | Name of the callback function, which should be called as soon as a "CriticalUnlock" event occurs. In simulation nodes this parameter has to be set.In test modules this parameter is optional. |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.0 7.0 SP5: method | — | — | — | — |
+| Restricted To | — | MOST | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | — | — | N/A |

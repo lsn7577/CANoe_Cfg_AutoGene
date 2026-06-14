@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthSendARPDUTo",
+  "category": "IP",
+  "title": "AREthSendARPDUTo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSendARPDUTo.htm",
+  "syntax": [
+    "long AREthSendARPDUTo( dword aep, dword dstIPv4Addr, dword dstPort, dword bufferLength, char buffer[], dword headerID ); // form 1"
+  ],
+  "description": [
+    "Transmits data as AUTOSAR PDU via an Ethernet connection with activated Header option. Before transmitting each AUTOSAR PDU gets an Header that contains an ID and length."
+  ],
+  "parameters": [
+    {
+      "name": "aep",
+      "type": "",
+      "description": "Handle of an application endpoint that was opened with AREthOpenLocalApplicationEndpoint."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,23 @@
+# diagSetCurrentSession
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+diagGenerateKeyFromSeed | TestWaitForGenerateKeyFromSeed | _Diag_GenerateKeyResult | diagStartGenerateKeyFromSeed
+
+| Deprecated Function You can use the option parameter in the following functions instead: DiagGenerateKeyFromSeed, diagStartGenerateKeyFromSeed (form 2 and 4) and TestWaitForGenerateKeyFromSeed. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long diagSetCurrentSession(long sessionId); // form 1 |  |  |  |
+| long DiagSetCurrentSession(char ecuQualifier[], long sessionId); // form 2 |  |  |  |  |
+| Function | Saves the given sessionId in order to forward it later as an optional parameter to the corresponding Seed & Key DLL, if a key value needs to be computed from a seed. Function is deprecated since meanwhile it is possible to use a Seed & Key DLL implementing a key computation function with an optional parameter (see Seed & Key DLL / Security Access for Details). Note: Calling diagSetCurrentSession does not switch the currently active session, therefore no request will be sent. |  |  |  |
+| Parameters | sessionId The numeric representation of the session, e.g. 1 for default session. |  |  |  |
+| ecuQualifier Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description. |  |  |  |  |
+| Return Values | Error code |  |  |  |
+| Availability | Since Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 8.2 form 1 | Online mode | — | • |  |
+| 9.0 SP3 form 2 | Online mode | — | • |  |
+| Example Testfunction ComputeKeyInExtendedSession( BYTE seed[], BYTE key[]){ DWORD keyLenOut; keyLenOut = 0; DiagSetCurrentSession( 0x03); // extended session // The key computation may use the current session as optional argument TestWaitForGenerateKeyFromSeed( seed, elcount( seed), 1, key, elcount(key), keyLenOut, 1000);} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

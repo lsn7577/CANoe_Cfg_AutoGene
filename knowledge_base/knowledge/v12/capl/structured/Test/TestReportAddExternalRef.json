@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestReportAddExternalRef",
+  "category": "Test",
+  "title": "TestReportAddExternalRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestReportAddExternalRef.htm",
+  "syntax": [
+    "TestReportAddExternalRef(char[] type, char[] title, char[] ref); // form 1"
+  ],
+  "description": [
+    "Adds an external reference to the report (URL, DOORS or eASEE link), which appears as a link in the test report.",
+    "Can be used in test cases (test case functions), test groups or in MainTest functions."
+  ],
+  "parameters": [
+    {
+      "name": "type",
+      "type": "",
+      "description": "\"url\" for any kinds of URLs, \"doors\" for links to DOORS, \"easee\" for links to eASEE."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "testcase tc_1_1()\n{\n   TestCaseTitle(\"tc_1_1\", \"Test Case 1.1\");\n TestReportAddExternalRef(\"url\", \"Requirement\", \n\"doors://doorssrv:36677/?version=1,prodID=0,dbid=42d2481361dc551c,container=00004600,object=19\");\n   ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

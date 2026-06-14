@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coThisGetSigned",
+  "category": "Obsolete",
+  "title": "coThisGetSigned",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoThisGetSigned.htm",
+  "syntax": [
+    "long coThisGetSigned( dword errCode[] );"
+  ],
+  "description": [
+    "The function returns a value with leading sign of an object in the event functions coOnUploadResponse or coOnDownloadIndication. The call is only allowed in these event functions."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nlong value;\n\nvalue = coThisGetSigned( errCode );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

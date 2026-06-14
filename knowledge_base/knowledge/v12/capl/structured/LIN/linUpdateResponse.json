@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linUpdateResponse",
+  "category": "LIN",
+  "title": "linUpdateResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINUpdateResponse.htm",
+  "syntax": [
+    "dword linUpdateResponse(dword frameId, dword dlc, byte[] responseData); // form 1"
+  ],
+  "description": [
+    "Updates the response data of a specific LIN frame."
+  ],
+  "parameters": [
+    {
+      "name": "frameId",
+      "type": "",
+      "description": "ID of the LIN frame whose response will be updated."
+    }
+  ],
+  "return": "Returns 1 if the response update succeeded, otherwise 0.",
+  "example": {
+    "description": [],
+    "code": "// Update the response of the LIN frame with the id 0x04\n\non linFrame 0x04\n\n{\n  long i;\n  byte frm4data[8];\n\n  for(i = 0; i < linGetDlc(this.id); i++)\n  {\n    frm4data[i] = this.byte(i) + 1;\n  }\n\nlinUpdateResponse(this.id, linGetDlc(this.id), frm4data);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

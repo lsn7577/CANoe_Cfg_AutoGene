@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPControlAudio",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPControlAudio",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPControlAudio.htm",
+  "syntax": [
+    "long Iso11783IL_OPControlAudio( dword activations, dword frequency, dword onTime, dword offTime ); // form 1"
+  ],
+  "description": [
+    "The function plays an acoustic signal on the Virtual Terminal. A Control Audio Device command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "activations",
+      "type": "",
+      "description": "number of tones"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPControlAudio( \r\n 2, 2000, 100, 50 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

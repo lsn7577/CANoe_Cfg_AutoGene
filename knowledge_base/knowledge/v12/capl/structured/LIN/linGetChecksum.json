@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linGetChecksum",
+  "category": "LIN",
+  "title": "linGetChecksum",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGetChecksum.htm",
+  "syntax": [
+    "byte linGetChecksum(linFrame linFrame)"
+  ],
+  "description": [
+    "Returns the checksum of a LIN frame or LIN checksum error.",
+    "Checksum model (classic/enhanced) is determined automatically."
+  ],
+  "parameters": [
+    {
+      "name": "linFrame",
+      "type": "",
+      "description": "LIN frame object"
+    }
+  ],
+  "return": "Calculated checksum",
+  "example": {
+    "description": [
+      "Get the checksum of a received LIN frame with name myframe"
+    ],
+    "code": "on linFrame myframe\n{\nbyte checksum;\nchecksum = linGetChecksum(this);\n}\nor\n// Calculate the checksum of a LIN frame object \n...\nbyte checksum;\n// create a LIN frame object\nlinFrame 0x1 myLinFrame = { dlc = 1, byte(0) = 1 };\n// calculate its checksum\nchecksum = linGetChecksum(myLinFrame);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

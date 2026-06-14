@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitEventMsgData",
+  "category": "Test",
+  "title": "TestGetWaitEventMsgData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitEventMsgData.htm",
+  "syntax": [
+    "long TestGetWaitEventMsgData (message aMessage);"
+  ],
+  "description": [
+    "If a message event is the last event that triggers a wait instruction, the message content can be called up with the first function.The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message variable that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": "// add msg event to the current set of “joined events” and fill the msg data to message ‘eventMessage’\ndword index = 0;\nTestJoinMessageEvent(VehicleMotion);\n// ... other join events\nindex = TestWaitForAnyJoinedEvent(2000);\n\nTestGetWaitEventMsgData(index, eventMessage);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestJoinMessageEvent",
+  "category": "Test",
+  "title": "TestJoinMessageEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinMessageEvent.htm",
+  "syntax": [
+    "long TestJoinMessageEvent (dbMessage aMessage)"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message that should be awaited."
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": "// add msg event to the current set of “joined events” and fill the msg data to message ‘eventMessage’\ndword index = 0;\nTestJoinMessageEvent(VehicleMotion);\n// ... other join events\nTestJoinEnvVarEvent(MyEnvVar);\nTestJoinSignalInRange(Velocity, 80, 100);\nTestJoinTextEvent(\"ErrorFrame occurred!\");\n\nindex = TestWaitForAnyJoinedEvent(2000);\n\nTestGetWaitEventMsgData(index, eventMessage);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

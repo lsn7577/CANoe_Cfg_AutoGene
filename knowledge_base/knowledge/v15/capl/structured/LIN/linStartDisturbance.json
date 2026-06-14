@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "linStartDisturbance",
+  "category": "LIN",
+  "title": "linStartDisturbance",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINStartDisturbance.htm",
+  "syntax": [
+    "long linStartDisturbance(dword length, dword level);"
+  ],
+  "description": [
+    "Starts a disturbance on the bus.",
+    "Note that disturbances shorter than 64 bit times"
+  ],
+  "parameters": [
+    {
+      "name": "length",
+      "type": "",
+      "description": "Length of the disturbance in bit times. -1: permanent disturbance"
+    },
+    {
+      "name": "level",
+      "type": "",
+      "description": "The level of the disturbance. 0: dominant disturbance (inverts recessive bits) 1: recessive disturbance (inverts dominant bits - requires mag-Cab/Piggyback and external power supply)"
+    }
+  ],
+  "return": "On success a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN Real bus mode",
+      "—",
+      "—",
+      "—",
+      "LIN Real bus mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

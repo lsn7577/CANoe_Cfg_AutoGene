@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SetStimulationMode",
+  "category": "VTSystem",
+  "title": "SetStimulationMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSetStimulationMode.htm",
+  "syntax": [
+    "long SysVarNamespace.SetStimulationMode (eVTSStimulationMode Mode);"
+  ],
+  "description": [
+    "Sets the mode for internal voltage or resistance stimulation."
+  ],
+  "parameters": [
+    {
+      "name": "Mode",
+      "type": "",
+      "description": "Values see eVTSStimulationMode"
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "The following example demonstrates how to use the PWM output of a VT2004 channel to simulate a PWM based sensor (e.g. a RPM sensor). The channel used in this example is called RPM_Sensor."
+    ],
+    "code": "SimulateSensorPWM ()\n{\n   // The current value of the frequency (100Hz)\n   float currentFrequency = 100.0;\n\n   // Choose voltage stimulation and a PWM curve type\n   sysvar::VTS::RPM_Sensor.SetStimulationMode(eVTSStimulationModeVoltage);\n   sysvar::VTS::RPM_Sensor.SetCurveType(eVTSCurveTypePWM);\n\n   // PWM signal will toggle between 0V and 5V\n   sysvar::VTS::RPM_Sensor.SetPWMVoltageLow(0.0);\n   sysvar::VTS::RPM_Sensor.SetPWMVoltageHigh(5.0);\n\n   // Set the number of repeats to unlimited\n   sysvar::VTS::RPM_Sensor.SetPWMRepeats(0);\n\n   // Set initial frequency (100Hz) and duty cycle (50%) values\n   @sysvar::VTS::RPM_Sensor::PWMFreq = currentFrequency;\n   @sysvar::VTS::RPM_Sensor::PWMDC = 50.0;\n\n   // Start the stimulation\n   sysvar::VTS::RPM_Sensor.StartStimulation();\n\n   // To stimulate different sensor readings increase\n   // frequency of the PWM signal over time\n   while(currentFrequency < 200)\n   {\n      // Increase the frequency by 1Hz every 100ms\n      TestWaitForTimeOut(100);\n      currentFrequency += 1;\n      @sysvar::VTS::RPM_Sensor::PWMFreq = currentFrequency;\n   }\n\n   // Stop the stimulation\n   sysvar::VTS::RPM_Sensor.StopStimulation();\n}\npublic void SimulateSensorPWM()\n   {\n   // Get VTS interface and VT2004 channel\n   IVTSystem vts = VTSystem.Instance;\n   IVT2004Channel rpmSensor = vts.GetChannel(\"RPM_Sensor\") as IVT2004Channel;\n\n   // The current value of the frequency (100Hz)\n   double currentFrequency = 100.0;\n\n   // Choose voltage stimulation and a PWM curve type\n   rpmSensor.SetStimulationMode(StimulationMode.Voltage, CurveType.PWM);\n\n   // PWM signal will toggle between 0V and 5V\n   rpmSensor.PWMVoltageLow.Value = 0.0;\n   rpmSensor.PWMVoltageHigh.Value = 5.0;\n\n   // Set the number of repeats to unlimited\n   rpmSensor.PWMRepeats.Value = 0;\n\n   // Set initial frequency (100Hz) and duty cycle (50%) values\n   rpmSensor.PWMFreq.Value = currentFrequency;\n   rpmSensor.PWMDC.Value = 50.0;\n\n   // Start the stimulation\n   rpmSensor.StartStimulation();\n\n   // To stimulate different sensor readings increase\n   // frequency of the PWM signal over time\n   while(currentFrequency < 200)\n   {\n      // Increase the frequency by 1Hz every 100ms\n      Vector.CANoe.Threading.Execution.Wait(100);\n      currentFrequency += 1;\n      rpmSensor.PWMFreq.Value = currentFrequency;\n   }\n\n   // Stop the stimulation\n   rpmSensor.StopStimulation();\n}\n<testcase title=\"SimulateSensorPWM\" ident=\"\">\n      <vtsystem_configure title=\"Initialize PWM\">\n         <stimulation_mode channel=\"VTS::RPM_Sensor\" mode=\"voltage\" />\n         <curve_type channel=\"VTS::RPM_Sensor\" type=\"pwm\" />\n         <pwm_voltage_low channel=\"VTS::RPM_Sensor\">0.0</pwm_voltage_low>\n         <pwm_voltage_high channel=\"VTS::RPM_Sensor\">5.0</pwm_voltage_high>\n      </vtsystem_configure>\n      <set title=\"Set frequency and duty cycle\">\n         <sysvar name=\"VTS::RPM_Sensor::PWMDC\">50.0</sysvar>\n         <sysvar name=\"VTS::RPM_Sensor::PWMFreq\">100.0</sysvar>\n      </set>\n      <vtsystem_configure title=\"Start stimulation\">\n         <start_stimulation channel=\"VTS::RPM_Sensor\" />\n      </vtsystem_configure>\n   </testcase>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

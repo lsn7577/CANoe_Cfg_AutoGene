@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GetReservedField",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GetReservedField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GetReservedField.htm",
+  "syntax": [
+    "long SCC_SLAC_GetReservedField ( dword Index, byte Data[], dword& DataSize )"
+  ],
+  "description": [
+    "Queries one of the reserved fields of the message. For a valid message, these fields must contain only zeroes."
+  ],
+  "parameters": [
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Number of the reserved field (0 or 1)"
+    }
+  ],
+  "return": "Data and length of the reserved field.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

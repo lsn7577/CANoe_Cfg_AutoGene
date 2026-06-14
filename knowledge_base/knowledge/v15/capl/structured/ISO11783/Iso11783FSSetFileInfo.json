@@ -1,0 +1,174 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSSetFileInfo",
+  "category": "ISO11783",
+  "title": "Iso11783FSSetFileInfo",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fssetfileinfo.htm",
+  "syntax": [
+    "long Iso11783FSSetFileInfo( dword fileHandle, dword infoCount, dword info[] );",
+    "long Iso11783FSSetFileInfo( char fileName[], dword infoCount, dword info[] );"
+  ],
+  "description": [
+    "This function sets file or directory attributes."
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "File or directory handle, see also Iso11783FSOpenFile"
+    },
+    {
+      "name": "fileName",
+      "type": "",
+      "description": "Name of file or directory"
+    },
+    {
+      "name": "infoCount",
+      "type": "",
+      "description": "Number of elements in info"
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "bit field with valid elements, Bit 1 set = Index 1 is valid, ..."
+    },
+    {
+      "name": "Bit",
+      "type": "Value",
+      "description": "Function"
+    },
+    {
+      "name": "1-2",
+      "type": "013",
+      "description": "Read-only attribute ClearSetNo change"
+    },
+    {
+      "name": "3-4",
+      "type": "013",
+      "description": "Hidden attribute ClearSetNo change"
+    },
+    {
+      "name": "5-6",
+      "type": "013",
+      "description": "System attribute ClearSetNo change"
+    },
+    {
+      "name": "7-8",
+      "type": "013",
+      "description": "Archive attribute ClearSetNo change"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "LONG handle;\ndword info[2];\n\nhandle = Iso11783FSSetFileInfo( \"\\TEST.TXT\", 0x00 );\nif (handle > 0) {\n  info[0] = 0x01; // Entry 1 is valid\n  info[1] = 0x04; // Hide file\n  if (Iso11783FSSetFileInfo( handle, elCount(info), info ) == 0) {\n    write( \"Changed attributes successfully\" );\n  }\n  Iso11783FSCloseFile( handle );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

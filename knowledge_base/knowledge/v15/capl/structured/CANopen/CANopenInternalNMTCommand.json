@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "CANopenInternalNMTCommand",
+  "category": "CANopen",
+  "title": "CANopenInternalNMTCommand",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/CANopenBasic/Functions/CAPLfunctionsCANopenInternalNMTCommand.htm",
+  "syntax": [
+    "void CANopenInternalNMTCommand(dword nodeId, dword NMTCommand );"
+  ],
+  "description": [
+    "Performs an NMT command inside a simulated CANopen node."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "ID of the simulated CANopen node."
+    },
+    {
+      "name": "NMTCommand",
+      "type": "",
+      "description": "Value of the NMT command to be executed: 0x01: Start node 0x02: Stop node 0x80: Enter pre-operational 0x81: Reset node 0x82: Reset communication"
+    }
+  ],
+  "return": "The data as qword.",
+  "example": {
+    "description": [],
+    "code": "CANopenInternalNMTCommand(2, 1); //Start node 2\n\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0",
+      "13.0",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

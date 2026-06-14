@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MCDMapECUParamToSysVariableWrite",
+  "category": "Obsolete",
+  "title": "MCDMapECUParamToSysVariableWrite",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMCDMapECUParamToSysVariableWrite.htm",
+  "syntax": [
+    "long MCDMapECUParamToSysVariableWrite(char moduleName[], char parameterName[], SysVarName)"
+  ],
+  "description": [
+    "Maps an ECU parameter to a system variable so that it is changed whenever the system variable changes."
+  ],
+  "parameters": [
+    {
+      "name": "moduleName",
+      "type": "",
+      "description": "Name of the module that is configured in the global options dialog External Programs|MCD 3D Server."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

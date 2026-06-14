@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "C2xSecCertificateGetSignerHandle",
+  "category": "Car2x",
+  "title": "C2xSecCertificateGetSignerHandle",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xSecCertificateGetSignerHandle.htm",
+  "syntax": [
+    "long C2xSecCertificateGetSignerHandle( long certificateHandle );"
+  ],
+  "description": [
+    "Gets the signer (parent) certificate of a certificate."
+  ],
+  "parameters": [
+    {
+      "name": "certificateHandle",
+      "type": "",
+      "description": "Handle of the certificate"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long certificateHandle;\nlong signerHandle;\ncertificateHandle = C2xSecCertificateGetHandle( \"MyCert\" );\nif (certificateHandle != 0)\n{\n  signerHandle = C2xSecCertificateGetSignerHandle(certificateHandle);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

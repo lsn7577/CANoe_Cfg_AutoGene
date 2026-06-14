@@ -1,0 +1,76 @@
+{
+  "page_type": "function",
+  "name": "diagGetCommParameter",
+  "category": "Diagnostics",
+  "title": "diagGetCommParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetCommParameter.htm",
+  "syntax": [
+    "long diagGetCommParameter (char paramName[]); // form 1"
+  ],
+  "description": [
+    "Returns the value of a numeric/textual communication parameter of the given or currently active diagnostic description. The values are read from the diagnostic description if they cannot be set in the configuration dialog."
+  ],
+  "parameters": [
+    {
+      "name": "Qualifier",
+      "type": "Available in",
+      "description": "Description"
+    },
+    {
+      "name": "CANoe.AddressMode",
+      "type": "",
+      "description": "ISO TP address mode: 0: Normal 1: Extended 2: NormalFixed 3: Mixed <0: No ISO TP"
+    },
+    {
+      "name": "CANoe.TxId",
+      "type": "[0 1*]",
+      "description": "CAN Id for transmitted frames"
+    },
+    {
+      "name": "CANoe.RxId",
+      "type": "[0 1*]",
+      "description": "CAN Id for received frames"
+    },
+    {
+      "name": "CANoe.BaseAddress",
+      "type": "[1*]",
+      "description": "TP base address"
+    },
+    {
+      "name": "CANoe.EcuAddr",
+      "type": "[1 2 3]",
+      "description": "Number of this node"
+    },
+    {
+      "name": "CANoe.TgtAddr",
+      "type": "[1 2 3]",
+      "description": "Target node number"
+    },
+    {
+      "name": "CANoe.AddrExt",
+      "type": "[3]",
+      "description": "Address extension byte"
+    },
+    {
+      "name": "CANoe.TxPrio",
+      "type": "[2 3]",
+      "description": "Frame transmit priority"
+    }
+  ],
+  "return": "Error code or value of the parameter.",
+  "example": {
+    "description": [
+      "For details and an example please refer to the reference implementation of the K-Line CAPL Callback Interface for diagnostics that is installed under",
+      "and can be included in CAPL programs with"
+    ],
+    "code": "#include \"Diagnostics\\CCI_KLine.cin\""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

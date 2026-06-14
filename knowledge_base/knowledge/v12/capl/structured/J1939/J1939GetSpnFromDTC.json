@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetSpnFromDTC",
+  "category": "J1939",
+  "title": "J1939GetSpnFromDTC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/Functions/CAPLfunctionJ1939GetSpnFromDTC.htm",
+  "syntax": [
+    "dword J1939GetSpnFromDTC(dword dtc)"
+  ],
+  "description": [
+    "Function extracts SPN from DTC."
+  ],
+  "parameters": [
+    {
+      "name": "dtc",
+      "type": "",
+      "description": "DTC from which an SPN is to be extracted."
+    }
+  ],
+  "return": "Extracted SPN.",
+  "example": {
+    "description": [],
+    "code": "on pg DM1\n{\n  int totalNumOfDTCs, curNumOfDTC;\n  dword dtc;\n  word fmi, oc;\n  dword spn;\n\n  //Iterate over all DTC blocks\n  //and extract corresponding SPN, FMI and OC\n  totalNumOfDTCs = (this.dlc - 2) / 4;\n  for(curNumOfDTC = 0; curNumOfDTC < totalNumOfDTCs; curNumOfDTC++)\n  {\n    dtc = this.dword(2 + (curNumOfDTC * 4));\n    spn = J1939GetSpnFromDTC(dtc);\n    fmi = J1939GetFmiFromDTC(dtc);\n    oc = J1939GetOcFromDTC(dtc);\n    WriteEx(-3, 3, \"DM1, DTC Nr. %d: SPN=%d, FMI=%d, OC=%d\",\n                             curNumOfDTC+1, spn, fmi, oc);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

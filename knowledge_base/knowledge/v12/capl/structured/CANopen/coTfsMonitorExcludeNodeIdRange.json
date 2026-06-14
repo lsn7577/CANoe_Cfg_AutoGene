@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsMonitorExcludeNodeIdRange",
+  "category": "CANopen",
+  "title": "coTfsMonitorExcludeNodeIdRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsMonitorExcludeNodeIdRange.htm",
+  "syntax": [
+    "long coTfsMonitorExcludeNodeIdRange( dword minNodeId, dword maxNodeId );"
+  ],
+  "description": [
+    "This function excludes the specified range of node-IDs from monitoring. To exclude a single node-ID use the function coTfsMonitorExcludeNodeId.",
+    "You can start the monitoring with coTfsMonitorActivate and stop it with coTfsMonitorDeactivate.",
+    "To include node-IDs or ranges of node-IDs for monitoring you can use the functions coTfsMonitorIncludeNodeId and coTfsMonitorIncludeNodeIdRange. With coTfsMonitorSetNmtTimeout and coTfsMonitorSetSdoTimeout you can set NMT and SDO timeouts."
+  ],
+  "parameters": [
+    {
+      "name": "minNodeId",
+      "type": "",
+      "description": "Lower limit"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "// configure node-IDs for monitoring: monitor nodes 1..14, 21..24, 26..64 and 127\ncoTfsMonitorIncludeNodeIdRange( 1, 64);\ncoTfsMonitorExcludeNodeIdRange( 15, 20);\ncoTfsMonitorExcludeNodeId   ( 25);\ncoTfsMonitorIncludeNodeId   (127);\n\ncoTfsMonitorSetSdoTimeout( 100 ); // set SDO timeout to 100 ms\ncoTfsMonitorSetNmtTimeout( 2000 ); // set NMT timeout for boot-up message to 2 s\n\ncoTfsMonitorActivate();      // activate monitoring\nTestWaitForTimeout(30000);     // monitor CANopen traffic for 60 seconds ...\nif (coTfsMonitorDeactivate() != 1) { // deactivate monitoring and add results to report, check for errors\n  TestStepFail(\"Monitoring\", \"At least one monitored response was not received in time\");\n}\nelse {\n  TestStepPass(\"Monitoring\", \"All monitored responses were received in time\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

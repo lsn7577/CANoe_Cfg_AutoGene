@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "vtsResetMinMax",
+  "category": "VTSystem",
+  "title": "vtsResetMinMax",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsResetMinMax.htm",
+  "syntax": [
+    "long vtsResetMinMax (char Target[]);"
+  ],
+  "description": [
+    "Resets the measurement of the minimum and maximum value."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "This example demonstrates how to measure the minimum and maximum voltages at a VT1004 channel. After the test is started, the old min and max values are reset. Then the input voltage is analyzed for 5 seconds. After that the new min and max voltages are output to CANoe's Write Window / the test report."
+    ],
+    "code": "PerformMinMaxMeasurement ()\n{\n   // Initialize and wait for 5 seconds\n   vtsResetMinMax(\"VTS::TempSensor\");\n   TestWaitForTimeOut(5000);\n\n   // Print measurement results to Write Window\n   write(\"Measured voltage minimum: %0.2fV\", @sysvar::VTS::TempSensor::Min);\n   write(\"Measured voltage maximum: %0.2fV\", @sysvar::VTS::TempSensor::Max);\n}\npublic void PerformMinMaxMeasurement()\n   {\n      // Get VTS interface and VT1004 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT1004Channel tempSensor = vts.GetChannel(\"TempSensor\") as IVT1004Channel;\n\n      // Initialize and wait for 5 seconds\n      tempSensor.ResetMinMax();\n      Vector.CANoe.Threading.Execution.Wait(5000);\n\n      // Print measurement results to Write Window\n      Vector.Tools.Output.WriteLine(\"Measured voltage minimum: \" + tempSensor.Min.Value.ToString() + \"V\");\n      Vector.Tools.Output.WriteLine(\"Measured voltage maximum: \" + tempSensor.Max.Value.ToString() + \"V\");\n   }\n<testcase title=\"PerformMinMaxMeasurement\" ident=\"\">\n      <vtsystem_configure title=\"Reset min and max values\">\n         <reset_min_max channel=\"VTS::TempSensor\" />\n      </vtsystem_configure>\n      <wait time=\"5000\" title=\"Wait 5s\" />\n      <valuecomment>\n         <description>Minimum value that occurred during the last 5s</description>\n         <sysvar name=\"VTS::TempSensor::Min\" />\n      </valuecomment>\n      <valuecomment>\n         <description>Maximum value that occurred during the last 5s</description>\n         <sysvar name=\"VTS::TempSensor::Max\"></sysvar>\n      </valuecomment>\n   </testcase>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

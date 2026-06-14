@@ -1,0 +1,39 @@
+# on Abstract_EventSubscribed
+
+> Category: `CommunicationObjects` | Type: `event`
+
+## Description
+
+The event procedure is called at the provider when an event is subscribed by a consumer and abstract binding is used.
+
+## Example
+
+```c
+on Abstract_EventSubscribed MirrorAdjustment[LeftMirror].CurrentPosition
+{
+  // send the event to the consumer on subscription
+  providedEventRef long ev1;
+  ev1 = MirrorAdjustment.providerSide[this.consumer.ConsumerIndex,LeftMirror].CurrentPosition;
+  ev1.Trigger();
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 12.0 | 13.0 | 15 | 14 | 4.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | ✔ | N/A |
+| 64-Bit | — | ✔ | ✔ | ✔ | ✔ | N/A |
+
+## Selectors
+
+| consumer | Consumer, the type is eventConsumerRef * |
+|---|---|

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TCIL_MakeDdopAvailable",
+  "category": "ISO11783",
+  "title": "TCIL_MakeDdopAvailable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILMakeDdopAvailable.htm",
+  "syntax": [
+    "long TCIL_MakeDdopAvailable(char[] ddopPath[]); // form 1"
+  ],
+  "description": [
+    "Loads a device descriptor object pool (DDOP) into the Task Controller.",
+    "Represents the situation that the DDOP is available on the side of Task Controller (e.g. via task file). An available DDOP can be activated with the Object-pool Activate message."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "Task Controller simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult =  TCIL_MakeDdopAvailable ( TC, \"xml\\\\sprayerV1.xml\");\nif (result < 0)\n{\n  TestStepFail(\"Failed to make DDOP file available!\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

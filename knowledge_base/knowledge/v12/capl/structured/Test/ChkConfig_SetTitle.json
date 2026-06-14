@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkConfig_SetTitle",
+  "category": "Test",
+  "title": "ChkConfig_SetTitle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkConfigSetTitle.htm",
+  "syntax": [
+    "long ChkConfig_SetTitle (dword aCheckId, char aTitle[]);",
+    "check.SetTitle(char aTitle[]);"
+  ],
+  "description": [
+    "Sets the title of a check.",
+    "The check is displayed in the Write Window and the test report with this title."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Identifier of the check"
+    }
+  ],
+  "return": "0: Title is set successfully",
+  "example": {
+    "description": [],
+    "code": "// set title of the check\ndword mCheckId;\nmCheckId = ChkCreate_Timeout(1000);\nChkConfig_SetTitle(mCheckId, \"Check Timeout\");\nChkControl_Start(mCheckId);\nTestCheck tc;\ntc = TestCheck::CreateTimeout(1000);\ntc.SetTitle(\"Check Timeout\");\ntc.Start();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

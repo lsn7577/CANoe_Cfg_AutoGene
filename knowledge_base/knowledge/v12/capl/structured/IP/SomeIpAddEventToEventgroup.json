@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SomeIpAddEventToEventgroup",
+  "category": "IP",
+  "title": "SomeIpAddEventToEventgroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpAddEventToEventgroup.htm",
+  "syntax": [
+    "LONG SomeIpAddEventToEventgroup( dword pevgHandle, dword pevHandle );"
+  ],
+  "description": [
+    "This function assigns an Event which was created by SomeIpAddEvent to an Event Group which was created by SomeIpAddProvidedEventGroup.",
+    "The Event can be removed from the Event Group with SomeIpRemoveEventFromEventGroup."
+  ],
+  "parameters": [
+    {
+      "name": "pevgHandle",
+      "type": "",
+      "description": "Handle of the Event Group that should be assigned to an Event, see SomeIpAddProvidedEventGroup"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "void Initialize()\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD psi; // provided service handle\n  DWORD peg; // provided Eventgroup handle\n  DWORD pev; // provided Event handle\n\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = SomeIpCreateProvidedServiceInstance(aep,10,1);\n\n  // create Eventgroup\n  peg = SomeIpAddProvidedEventGroup(psi,1);\n\n  // create Event and add Event to Eventgroup\n  pev = SomeIpAddEvent(psi, 1, \"OnPrepareEvent1\");\n  SomeIpAddEventToEventgroup(peg, pev);\n\n  // ensure that Event is sent cyclically\n  SomeIpSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1(DWORD eventHandle, DWORD messageHandle)\n{\n  // this function is called before the Event is sent. Parameters can be specified here.\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

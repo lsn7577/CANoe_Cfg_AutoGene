@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "frSetSendPDU",
+  "category": "FlexRay",
+  "title": "frSetSendPDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRSetSendPDU.htm",
+  "syntax": [
+    "void frSetSendPDU( <PDU object> );"
+  ],
+  "description": [
+    "Configures the hardware to transmit the specified PDU.",
+    "All relevant slots are submitted for transmission.",
+    "This submission must take place in the On preStart routine in the transmit branch.",
+    "If a frPDU object was created using frPDU, it can be submitted for transmission with this function."
+  ],
+  "parameters": [
+    {
+      "name": "<PDU object>",
+      "type": "",
+      "description": "Specifies the PDU object that is to be submitted for transmission."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

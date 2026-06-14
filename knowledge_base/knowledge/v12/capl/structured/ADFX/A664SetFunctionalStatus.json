@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "A664SetFunctionalStatus",
+  "category": "ADFX",
+  "title": "A664SetFunctionalStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664SetFunctionalStatus.htm",
+  "syntax": [
+    "long A664SetFunctionalStatus (PDU aPDU, BYTE fs)"
+  ],
+  "description": [
+    "This function sets the Functional Status (FS) of a AFDX-PDU (FDS).",
+    "Note: This function is only available in PDU-mode."
+  ],
+  "parameters": [
+    {
+      "name": "aPDU",
+      "type": "",
+      "description": "the AFDX-PDU (FDS) which status should be set"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "PDU AFDX1::FDS_2_HSMU_DEMO_INT3 myPDU1; // define PDU from database\na664SetFunctionalStatus(myPDU1, 3);\t    // set FS to Normal operation\nmyPDU1.IOM_DEMO_VFG_OIL_TEMP_A_32 = 0;\t // set a signal value in the PDU\nTriggerPDU(myPDU1);\t                   \t\t\t// send PDU"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

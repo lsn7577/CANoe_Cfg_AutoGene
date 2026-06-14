@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetNodeAddr",
+  "category": "J1939",
+  "title": "J1939GetNodeAddr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939GetNodeAddr.htm",
+  "syntax": [
+    "dword J1939GetNodeAddr( dword ecuHandle );"
+  ],
+  "description": [
+    "This function returns the current address of a logical ECU."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "current ECU address\n0xFE if the address is the J1939 NULL address. If this function is called with an invalid handle, the function returns 0xFFFF.",
+  "example": {
+    "description": [],
+    "code": "addr = J1939GetNodeAddr(ecuHandle);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

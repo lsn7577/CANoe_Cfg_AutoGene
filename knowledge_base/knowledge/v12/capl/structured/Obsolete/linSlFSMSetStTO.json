@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSlFSMSetStTO",
+  "category": "Obsolete",
+  "title": "linSlFSMSetStTO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSlFSMSetStTO.htm",
+  "syntax": [
+    "void linSlFSMSetStTO (unsigned int slaveId, unsigned int stateId, unsigned int timeout, unsigned int followUpState);"
+  ],
+  "description": [
+    "Sets a timeout for the state specified by stateId of the Slave with the identifier slaveId."
+  ],
+  "parameters": [
+    {
+      "name": "slaveId",
+      "type": "",
+      "description": "Identifier of the relevant Slave. Corresponds to the slaveId, that was defined with linSlSimulate."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

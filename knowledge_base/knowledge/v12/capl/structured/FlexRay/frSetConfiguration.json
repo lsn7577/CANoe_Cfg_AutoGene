@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "frSetConfiguration",
+  "category": "FlexRay",
+  "title": "frSetConfiguration",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRSetConfiguration.htm",
+  "syntax": [
+    "frSetConfiguration( int channel, <configuration var> );"
+  ],
+  "description": [
+    "This function writes the FlexRay protocol parameters from the configuration object to the FlexRay interface's Communication Controller.",
+    "The values must previously have been set in the configuration object in compliance with the FlexRay specification.",
+    "The new protocol parameters will only be applied when the Communication Controller is reset!"
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "FlexRay channel (cluster number)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The following CAPL program reconfigures the FlexRay Communication Controller with new FlexRay protocol parameters."
+    ],
+    "code": "variables\n{\n   frConfiguration gFRParams;\n}\nvoid setFRConf1 ()\n{\n   frGetConfiguration(%CHANNEL%, gFRParams);\n   gFRParams.FRBaudrate = 10000; // \"kBit/s\"\n   gFRParams.gdMacrotick = 1; // \"us\"\n   gFRParams.gMacroPerCycle = 5000; // \"MT\"\n   gFRParams.gdNIT = 100; // \"MT\"\n   //gFRParams.gdSampleClockPeriod = 0.0; // \"us\"\n   gFRParams.gdTSSTransmitter = 10; // \"Bit\"\n   gFRParams.gPayloadLengthStatic = 2; // \"Words\"\n   gFRParams.gdActionPointOffset = 9; // \"MT\"\n   gFRParams.gdStaticSlot = 35; // \"MT\"\n   gFRParams.gNumberOfStaticSlots = 60; // \"#\"\n   gFRParams.gdMinislotActionPointOffset = 4; // \"MT\"\n   gFRParams.gdMinislot = 10; // \"MT\"\n   gFRParams.gNumberOfMinislots = 276; // \"#\"\n   //gFRParams.gClusterDriftDamping = 0; // \"\"\n   gFRParams.gListenNoise = 10; // \"\"\n   gFRParams.gColdStartAttempts = 20; // \"#\"\n   gFRParams.gSyncNodeMax = 4; // \"#\"\n   gFRParams.gOffsetCorrectionStart = 4931; // \"MT\"\n   gFRParams.gdDynamicSlotIdlePhase = 1; // \"MS\"\n   gFRParams.gdSymbolWindow = 35; // \"MT\"\n   gFRParams.gdCASRxLowMax = 0; // \"Bit\"\n   gFRParams.gdCASRxLowMin = 0; // \"Bit\"\n   gFRParams.gdWakeupSymbolRxIdle = 59; // \"Bit\"\n   gFRParams.gdWakeupSymbolRxLow = 51; // \"Bit\"\n   gFRParams.gdWakeupSymbolRxWindow = 301; // \"Bit\"\n   gFRParams.gdWakeupSymbolTxIdle = 180; // \"Bit\"\n   gFRParams.gdWakeupSymbolTxLow = 60; // \"Bit\"\n   gFRParams.gMaxWithoutClockCorrectionFatal = 10; // \"double cycles\"\n   gFRParams.gMaxWithoutClockCorrectionPassive = 6; // \"double cycles\"\n   gFRParams.gNetworkManagementVectorLength = 0; // \"Bytes\"\n   gFRParams.pChannels = 3; // \"A+B\"\n   gFRParams.pMicroPerCycle = 200000; // \"uT\"\n   gFRParams.pSamplesPerMicrotick = 2; // \"#\"\n   gFRParams.pPayloadLengthDynMax = 10; // \"Words\"\n   gFRParams.pPayloadLengthFIFO = 10; // \"Words\"\n   gFRParams.pLatestTx = 272; // \"MS\"\n   gFRParams.pdMaxDrift = 89; // \"uT\"\n   gFRParams.pdAcceptedStartupRange = 189; // \"uT\"\n   gFRParams.pdListenTimeout = 401202; // \"uT\"\n   gFRParams.pClusterDriftDamping = 1; // \"uT\"\n   gFRParams.pDecodingCorrection = 52; // \"uT\"\n   gFRParams.pDelayCompensation_A = 10; // \"uT\"\n   gFRParams.pDelayCompensation_B = 10; // \"uT\"\n   gFRParams.pOffsetCorrectionOut = 143; // \"uT\"\n   gFRParams.pRateCorrectionOut = 601; // \"uT\"\n   gFRParams.pExternOffsetCorrection = 0; // \"uT\"\n   gFRParams.pExternRateCorrection = 0; // \"uT\"\n   gFRParams.pExternCorrectionMode = 0; // \"\"\n   gFRParams.pMacroInitialOffset_A = 9; // \"MT\"\n   gFRParams.pMacroInitialOffset_B = 9; // \"MT\"\n   gFRParams.pMicroInitialOffset_A = 18; // \"uT\"\n   gFRParams.pMicroInitialOffset_B = 18; // \"uT\"\n   gFRParams.pWakeupChannel = 1; // 1 (A) or 2 (B)\n   gFRParams.pWakeupPattern = 0; // \"#\"\n   gFRParams.pAllowHaltDueToClock = 1; // \"Boolean\"\n   gFRParams.pAllowPassiveToActive = 1; // \"cycles\"\n   //gFRParams.pBGTick = 0; // \"Boolean\"\n   //gFRParams.pPhysicalLayer = 0; // \"\"\n   gFRParams.pSingleSlotEnabled = 0; // \"Boolean\"\n   //gFRParams.pBGEnable = 0; // \"Boolean\"\n   //gFRParams.pDynamicSegmentEnable = 0; // \"Boolean\"\n\n   frSetConfiguration(%CHANNEL%, gFRParams);\n   resetFlexRayCC(%CHANNEL%); // in order to apply the new values\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

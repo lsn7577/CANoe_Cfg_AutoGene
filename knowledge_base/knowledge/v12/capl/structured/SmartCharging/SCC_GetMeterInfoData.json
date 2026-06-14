@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetMeterInfoData",
+  "category": "SmartCharging",
+  "title": "SCC_GetMeterInfoData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetMeterInfoData.htm",
+  "syntax": [
+    "void SCC_GetMeterInfoData ( char MeterID, float& MeterReading, byte SigMeterReading, long& MeterStatus, long& TMeter )"
+  ],
+  "description": [
+    "Gets data from MeterInfo."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Returns Data assigned to the meter: ID (32 characters), current meter reading in [Wh], signature, status and timestamp in UNIX format Length of signature is dependent on the encryption algorithm.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

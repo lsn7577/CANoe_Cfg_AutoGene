@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "swapWord, swapInt, swapDWord, swapLong, swapInt64, swapQWord",
+  "category": "Other",
+  "title": "swapWord, swapInt, swapDWord, swapLong, swapInt64, swapQWord",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSwapWord.htm",
+  "syntax": [
+    "word swapWord(word x); // form 1"
+  ],
+  "description": [
+    "Swaps bytes of parameters. CAPL arithmetics follows the \"little-endian-format\" (Intel). The swap-functions serve for swapping bytes for the transition to and from the \"big-endian-format\" (Motorola)."
+  ],
+  "parameters": [],
+  "return": "Value with swapped bytes.",
+  "example": {
+    "description": [],
+    "code": "bigEndian = swapInt(1234); // create constant 1234 for Motorola processors"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

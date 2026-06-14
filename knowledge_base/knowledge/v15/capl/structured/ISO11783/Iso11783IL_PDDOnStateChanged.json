@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDOnStateChanged",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDOnStateChanged",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDOnStateChanged.htm",
+  "syntax": [
+    "void Iso11783IL_PDDOnStateChanged( dword state );"
+  ],
+  "description": [
+    "Is called up when the interaction layer changes its state."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": "task state: 0: not initialized 1: initialized 2: start up delay (6 seconds) 3: wait for task controller status 4: query information 5: transfer object pool 6: object pool activation 7: online 8: task active"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_PDDOnStateChanged( dword state )\n{\n  switch(state) {\n  case 0: // Uninitialized\n    break;\n  case 1: // Initialized\n    break;\n  case 2: // StartUpDelay\n    break;\n  case 3: // Wait For Task Controller \r\n Status\n    break;\n  case 4: // Query Info\n    break;\n  case 5: // Transfer Object Pool\n    break;\n  case 6: // Activate Object Pool\n    break;\n  case 7: // Online\n    break;\n  case 8: // Task active\n    break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

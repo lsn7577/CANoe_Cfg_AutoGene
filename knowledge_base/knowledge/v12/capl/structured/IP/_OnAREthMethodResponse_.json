@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "<OnAREthMethodResponse>",
+  "category": "IP",
+  "title": "<OnAREthMethodResponse>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthMethodResponse.htm",
+  "syntax": [
+    "void <OnAREthMethodResponse>(dword methodCallHandle, dword messageResponseHandle );"
+  ],
+  "description": [
+    "A callback function with this signature must be passed to the CAPL function AREthCreateMethodCall."
+  ],
+  "parameters": [
+    {
+      "name": "methodCallHandle",
+      "type": "",
+      "description": "Handle of the Event that triggered the callback, see AREthAddMethod."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the created method is contained in the FIBEX database that is assigned to the CANoe configuration. The method has the Method ID 31, two input parameters (Member_value1 and Member_value2), and a return parameter (Result)."
+    ],
+    "code": "variables\n{\n  dword gMc; // global method call handle\n}\n\nvoid Initialize()\n{\n  dword aep; // application endpoint handle\n  dword csi; // consumed Service Instance handle\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(0x11, 50002);\n\n  // cretae Service Instance\n  csi = AREthCreateConsumedServiceInstance(aep,11,1);\n\n  // create method call\n  gMc = AREthCreateMethodCall(csi,31,\"OnMethodResponse\");\n}\n\non key 's'\n{\n  // if this key is pressed the method should be called\n\n  // set the two input parameters of the method\n  AREthSetValueDWord(gMc,\"Member_value1\",11);\n  AREthSetValueDWord(gMc,\"Member_value2\",22);\n\n  // call the method\n  AREthCallMethod(gMc);\n}\n\nvoid OnMethodResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  dword res; // value of return parameter\n\n  // get the returned parameter values\n  res = AREthGetValueDWord(messageResponseHandle,\"Result\");\n\n  write(\"The method call returned value: %d\",res);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

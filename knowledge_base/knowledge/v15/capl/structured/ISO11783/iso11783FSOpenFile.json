@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "iso11783FSOpenFile",
+  "category": "ISO11783",
+  "title": "iso11783FSOpenFile",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783FSOpenFile.htm",
+  "syntax": [
+    "long iso11783FSOpenFile( char path[], dword flags );"
+  ],
+  "description": [
+    "This function opens a file or directory."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "absolute path of the file"
+    },
+    {
+      "name": "Bit",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1-2",
+      "type": "",
+      "description": "0: Read only 1: Write only 2: Read and write 3: Open directory for reading"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "0: Open an existing file or directory 1: Create a new file or directory if not yet existing"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "0: Random access 1: Append"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "0: Shared access 1: Exclusive access"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "LONG handle;\nchar data[200];\n\nhandle = iso11783FSOpenFile( \r\n \"\\test.TXT\", 0x00 );\nif (handle > 0) \r\n {\n  Iso11783FSReadData( \r\n handle, elCount(data), data );\n  Iso11783FSCloseFile( \r\n handle );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

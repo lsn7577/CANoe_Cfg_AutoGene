@@ -1,0 +1,38 @@
+{
+  "page_type": "event",
+  "name": "on fctCalling",
+  "category": "CommunicationObjects",
+  "title": "on fctCalling",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnfctCalling.htm",
+  "syntax": [
+    "on fctCalling <function>"
+  ],
+  "description": [
+    "The event procedure is called when a service function is about to be called at a provider. At this time, the automatic answering feature has not yet set out parameters or delay, so you can still use the ParamDefaults or DefaultResult values to configure it."
+  ],
+  "parameters": [
+    {
+      "name": "<function>",
+      "type": "",
+      "description": "Designates the function on which the event procedure shall react. This must be a combination of endpoints on provider side, but the consumer endpoint can also be replaced by all to designate that the handler shall react on all consumer calls."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on fctCalling MirrorAdjustment[all,LeftMirror].Adjust\n{\n  if (abs(this.deltaX) > MAX_X || abs(this.deltaY) > MAX_Y)\n  {\n    $MirrorAdjustment.providerSide[all,LeftMirror].Adjust.DefaultResult = Mirrors::AdjustResult::OutOfRange;\n  }\n  else\n  {\n    $MirrorAdjustment.providerSide[all,LeftMirror].Adjust.DefaultResult = Mirrors::AdjustResult::OK;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "callContext",
+      "link": "../Objects/CAPLfunctionCallContext.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

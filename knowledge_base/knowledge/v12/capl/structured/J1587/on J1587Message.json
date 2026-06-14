@@ -1,0 +1,26 @@
+{
+  "page_type": "event",
+  "name": "on J1587Message",
+  "category": "J1587",
+  "title": "on J1587Message",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1587/EventHandler/CAPLfunctionOnJ1587Message.htm",
+  "syntax": [],
+  "description": [
+    "Defines the event handler for a valid J1708 message, the thispointer is of type J1587Message.",
+    "For passing this message to other node, output(this) must be called inside the event handler."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on J1587Message 50 // 50 is Sender MID, can be dbNode name or MID\n{\n  J1587Param 0 param;\n  if (GetParameterByPID(this, 30, param) == 0)\n  {\n    output(this);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

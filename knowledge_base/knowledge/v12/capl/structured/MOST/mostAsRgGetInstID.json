@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostAsRgGetInstID",
+  "category": "MOST",
+  "title": "mostAsRgGetInstID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsRgGetInstID.htm",
+  "syntax": [
+    "long mostAsRgGetInstID(long regsel, long i)"
+  ],
+  "description": [
+    "Returns the InstID at position i of the registry. Indexing starts at 0."
+  ],
+  "parameters": [
+    {
+      "name": "regsel",
+      "type": "",
+      "description": "1: Local FBlockList2: Bus registry"
+    }
+  ],
+  "return": ">=0: InstID",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetBitInfo",
+  "category": "Test",
+  "title": "testWaitScopeGetBitInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopeGetBitInfo.htm",
+  "syntax": [
+    "long testWaitScopeGetBitInfo(ScopeAnalyseHandle handle, dword msgFieldStart,long startBitNo, dword msgFieldEnd, long EndBitNo, ScopeMaskViolationData data);"
+  ],
+  "description": [
+    "After a signal was analyzed with the function testWaitScopeAnalyseSignal, the average values of the voltages of CAN_H, CAN_L, and CAN_Diff are calculated for a defined bit range."
+  ],
+  "parameters": [
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    }
+  ],
+  "return": "1 = Success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

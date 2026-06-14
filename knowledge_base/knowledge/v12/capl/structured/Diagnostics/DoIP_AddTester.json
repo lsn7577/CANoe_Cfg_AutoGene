@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_AddTester",
+  "category": "Diagnostics",
+  "title": "DoIP_AddTester",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPAddTester.htm",
+  "syntax": [
+    "void DoIP_AddTester( dword address);"
+  ],
+  "description": [
+    "Adds a valid DoIP tester address to the DoIP layer."
+  ],
+  "parameters": [
+    {
+      "name": "address",
+      "type": "",
+      "description": "Logical DoIP address of a tester. You must set at least one valid logical tester address."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword address;\naddress = DiagGetCommParameter( “DoIP.TESTER_LogicalAddress\")\nDoIP_AddTester(address);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

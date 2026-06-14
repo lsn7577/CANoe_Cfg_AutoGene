@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SomeIpRemoveEvent",
+  "category": "IP",
+  "title": "SomeIpRemoveEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpRemoveEvent.htm",
+  "syntax": [
+    "long SomeIpRemoveEvent( dword pevHandle );"
+  ],
+  "description": [
+    "Removes an Event from a Provided Service Instance. The Event was previously added by SomeIpAddEvent.",
+    "Afterwards, the callback registered with SomeIpAddEvent is no longer called. The Event is no longer sent by the SOME/IP IL."
+  ],
+  "parameters": [
+    {
+      "name": "pevHandle",
+      "type": "",
+      "description": "Handle of the Event that is to be removed. The handle must have been created with SomeIpAddEvent."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  DWORD aep;  // Application Endpoint handle\n  DWORD psi;  // provided service handle\n  DWORD peg1; // provided Eventgroup handle\n  DWORD peg2; // provided Eventgroup handle\n  DWORD pev;  // provided Event handle\n\n  // open an Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create service\n  psi = SomeIpCreateProvidedServiceInstance(aep,10,1);\n\n  // create Eventgroups\n  peg1 = SomeIpAddProvidedEventGroup(psi,1);\n  peg2 = SomeIpAddProvidedEventGroup(psi,1);\n\n  // create Event and add Event to both Eventgroups\n  pev = SomeIpAddEvent(psi, 1, \"OnPrepareEvent1\");\n  SomeIpAddEventToEventgroup(peg1, pev);\n  SomeIpAddEventToEventgroup(peg2, pev);\n\n  // ensure that Event is sent cyclically\n  SomeIpSetProperty(pev,\"CycleTimeMs\",1000);\n\n  // ... do something here\n\n  // remove the Event\n  SomeIpRemoveEvent(pev);\n\n  // ... Event is removed from both Eventgroups and is not sent anymore\n  // ... Application Endpoint, provided Service Instance and Eventgroup can still be used here\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

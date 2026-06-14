@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "TestJoinLinETFSingleResponseEvent",
+  "category": "Test",
+  "title": "TestJoinLinETFSingleResponseEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestJoinLinEtfSingleResponseEvent.htm",
+  "syntax": [
+    "long TestJoinLinETFSingleResponseEvent (dword aETFFrameId, dword aAssocFrameId)"
+  ],
+  "description": [
+    "Adds an event of type LIN Event-triggered Frame Single Response to the set of joined events. This is a non-blocking function."
+  ],
+  "parameters": [
+    {
+      "name": "aETFFrameId",
+      "type": "",
+      "description": "Frame identifier of LIN event-triggered frame to be awaited."
+    },
+    {
+      "name": "aAssocFrameId",
+      "type": "",
+      "description": "Frame identifier of a LIN unconditional frame associated with the awaited event-triggered frame."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_waitForLinETFSingleResponse(int etfFrameId)\n{\n   long eventIndex;\n   testJoinLinETFSingleResponseEvent(etfFrameId, linGetProtectedID(0x36));\n   testJoinLinETFSingleResponseEvent(etfFrameId, linGetProtectedID(0x34));\n\n   eventIndex = testWaitForAnyJoinedEvent(5000);\n   switch (eventIndex)\n   {\n      case 1:\n         testStepPass(\"Validation\", \"ETF single frame response occurred. FrameId=0x36\");\n      break;\n\n      case 2:\n         testStepPass(\"Validation\", \"ETF single frame response occurred. FrameId=0x34\");\n      break;\n\n      default:\n         testStepFail(\"Validation\", \"ETF single frame response not occurred\");\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.0",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN",
+      "LIN",
+      "—",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

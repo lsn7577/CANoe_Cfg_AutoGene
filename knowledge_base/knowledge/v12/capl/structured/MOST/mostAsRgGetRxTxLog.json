@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostAsRgGetRxTxLog",
+  "category": "MOST",
+  "title": "mostAsRgGetRxTxLog",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsRgGetRxTxLog.htm",
+  "syntax": [
+    "long mostAsRgGetRxTxLog(long regsel, long i)"
+  ],
+  "description": [
+    "The first one returns the logical device address (node address) at position i of the registry. Indexing starts at 0.",
+    "The second one returns the logical device address (node address) of the function block. If there is no entry with the given FBlockId and InstId, an error code <0 is returned."
+  ],
+  "parameters": [
+    {
+      "name": "regsel",
+      "type": "",
+      "description": "1: Local FBlockList2: Bus registry"
+    }
+  ],
+  "return": ">=0: Logical device address",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

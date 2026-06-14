@@ -1,0 +1,201 @@
+{
+  "page_type": "function",
+  "name": "diagGetP2Extended, diagSetP2Extended",
+  "category": "Diagnostics",
+  "title": "diagGetP2Extended, diagSetP2Extended",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetP2ExtendedDiagSetP2Extended.htm",
+  "syntax": [
+    "long diagGetP2Extended (); // form 1: deprecated. Is equivalent to form 2 with source value 2.",
+    "long diagGetP2Extended (dword source); // form 2",
+    "long diagSetP2Extended (long timeout); // form 3",
+    "long DiagGetP2Extended(char ecuQualifier[], long isTester, dword source); // form 4"
+  ],
+  "description": [
+    "Returns the P2 extended timeout from the selected source, or sets it to the specified value."
+  ],
+  "parameters": [
+    {
+      "name": "-1",
+      "type": "",
+      "description": "Deactivates \"Response Pending\" handling."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Resets P2ex to its preset value."
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Sets P2ex to the value (in ms)."
+    },
+    {
+      "name": "Note If \"Response Pending\" handling is deactivated, CANoe forwards these responses to CAPL as negative responses. Otherwise the P2ex timer is automatically started and the final response or a timeout is reported.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Currently active value, i.e. the value originally set or last set from CAPL."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Value stored at the selected interface in the description's document."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Value configured in the configuration dialog for the description."
+    },
+    {
+      "name": "other",
+      "type": "",
+      "description": "reserved"
+    },
+    {
+      "name": "Note Basic diagnostic devices do not have an interface defined in a description, therefore source=1 will return the value set at the configuration (source=2).",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description."
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "The node asking for the communication parameter is an ECU simulation."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "The node asking for the communication parameter is a tester."
+    },
+    {
+      "name": "other",
+      "type": "",
+      "description": "reserved"
+    }
+  ],
+  "return": "Error code or time in ms for DiagGetP2Extended.",
+  "example": {
+    "description": [],
+    "code": "diagSetTarget( \"ECU1\");\nwrite( \"Current P2 = %d\", diagGetP2Extended(0));\nwrite( \"Original value at interface = %d\", diagGetP2Extended(1));"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5 SP2 8.0 SP3: form 1 replaced by form 2 9.0 SP3: from 4",
+      "5.1 8.0 SP3: form 1 replaced by form 2 9.0 SP3: form 4",
+      "—",
+      "—",
+      "—",
+      "1.0: form 2, 3 2.1 SP3: form 4"
+    ],
+    [
+      "Restricted To",
+      "Online mode",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

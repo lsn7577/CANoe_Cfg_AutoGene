@@ -1,0 +1,22 @@
+{
+  "page_type": "concept",
+  "name": "Event Procedure: on sysVar",
+  "category": "Other",
+  "title": "Event Procedure: on sysVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/EventProcedures/CAPLfunctionOnSysVar.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [
+      "In the following example there is a reaction to a change on the I/O input DI_0 (first input port), and the new value of the I/O signal is assigned to the signal IOValue of a CAN message transmitted by the node Gateway."
+    ],
+    "code": "on sysvar IO::DI_0\n{\n$Gateway::IOValue = @this;\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

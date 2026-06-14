@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForUnlockEcu",
+  "category": "Test",
+  "title": "TestWaitForUnlockEcu",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForUnlockEcu.htm",
+  "syntax": [
+    "long TestWaitForUnlockEcu(long securityLevel); // form 1"
+  ],
+  "description": [
+    "This functions tries to unlock an ECU. It requests a seed, calculates the key with the Seed & Key DLL and sends it to the ECU. The Seed & Key DLL must be configured in the diagnostic configuration dialog.",
+    "The message exchange can be monitored with on DiagRequest/on DiagResponse event handler."
+  ],
+  "parameters": [
+    {
+      "name": "securityLevel",
+      "type": "",
+      "description": "The required security level."
+    }
+  ],
+  "return": "On success 0, otherwise error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

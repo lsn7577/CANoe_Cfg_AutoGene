@@ -1,0 +1,34 @@
+# OnMostStableLock
+
+> Category: `MOST` | Type: `function`
+
+## Syntax
+
+```c
+OnMostStableLock();
+```
+
+## Description
+
+A "Stable Lock" was detected on one of the configured MOST channels. This event occurs if the lock status of the connected MOST hardware exhibits "Lock" (see MOST Spec 2V3 - 3.2.2 NetInterface) for at least t_Lock (see MOST Spec 2V3 – 3.9 Timing Definitions). The relevant channel or time stamp of this event can be called up with the mostEventChannel, mostEventTime and mostEventOrigTime functions.
+
+CAPL nodes are transparent to the controller events. Please use the Multibus Filter or MOST Filter, to filter these events in nodal sequences.
+
+## Return Values
+
+—
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | 5.2 | 5.2 | — | — | — | —✔ |
+| Restricted To | MOST25 MOST50 MOST150 | MOST25 MOST50 MOST150 | — | — | — | —✔ |
+| CANalyzer Measurement Setup (Transmit Branch) | ✔ | N/A | N/A | N/A | N/A | — |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | ✔ | ✔ | — | — | N/A | —✔ |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | —✔ |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | —✔ |
+| 32-Bit | ✔ | ✔ | — | N/A | — | —✔ |
+| 64-Bit | ✔ | ✔ | — | — | — | —✔ |

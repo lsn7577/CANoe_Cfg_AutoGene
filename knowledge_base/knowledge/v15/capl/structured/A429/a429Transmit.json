@@ -1,0 +1,136 @@
+{
+  "page_type": "function",
+  "name": "a429Transmit",
+  "category": "A429",
+  "title": "a429Transmit",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/A429/Functions/CAPLfunctionA429Transmit.htm",
+  "syntax": [
+    "long a429Transmit (a429word myA429Word[], dword myNum);"
+  ],
+  "description": [
+    "This function triggers the transfer of myNum A429words to the network hardware interface at once. When the mode Simulated bus is used, a built-in simulation layer takes care of the ARINC word.",
+    "The following restrictions apply:",
+    "Note that the ARINC word selector Gap (see a429SetGap) may be used to adjust the distance between the ARINC words. A single ARINC word is transmitted or updated with output.",
+    "Attention: Be aware that the hardware queue size is limited; therefore calling this method rapidly may cause a queue overflow."
+  ],
+  "parameters": [
+    {
+      "name": "myA429word",
+      "type": "",
+      "description": "array of ARINC words"
+    },
+    {
+      "name": "myNum",
+      "type": "",
+      "description": "[1...64] number of elements to be sent from myA429word"
+    }
+  ],
+  "return": "invalid number of",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  a429Word * myWord[3];\n}\n\non start {\n  int i;\n  for (i = 0; i < elCount(myWord); i++) {\n    myWord[i].msgChannel = 2;\n    myWord[i].Id = 64 + i; // create different label numbers\n    // send 3 ARINC words with 38.75 and 37.5 us gap\n    a429SetGap (myWord[i],\n      a429CalcBitLength(myWord[i].msgChannel, 32 - i));\n  }\n}\n\non key 's' {\n  int i;\n  for (i = 0; i < elCount(myWord); i++) {\n    myWord[i].byte(1) += 1;\n  }\n  a429Transmit(myWord, elCount(myWord)); // update\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "9.0 SP2",
+      "9.0 SP2",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "A429",
+      "A429",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

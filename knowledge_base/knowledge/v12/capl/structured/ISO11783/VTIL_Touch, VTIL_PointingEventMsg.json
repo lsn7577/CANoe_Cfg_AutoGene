@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "VTIL_Touch, VTIL_PointingEventMsg",
+  "category": "ISO11783",
+  "title": "VTIL_Touch, VTIL_PointingEventMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILTouch.htm",
+  "syntax": [
+    "long VTIL_Touch(dword x, dword y, dword duration); // form 1"
+  ],
+  "description": [
+    "Touches into the Data Mask.",
+    "The VTIL_Touch methods simulate a touch into the Data Mask and a release of the touch event after the duration. As a result, the Pointing Event Message is sent immediately with the touch state = pressed, then every 200 ms with the touch state = Held and after the duration with the touch state = Released.",
+    "If there is a button or input object at the specified position, the button or object is selected and pressed.",
+    "The VTIL_PointingEventMsg methods only send the Pointing Event Message (without influencing any button or input object and without triggering any event in the Virtual Terminal). You can use it to implement dragging operation."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_Touch(VT, 1, 2, 500);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2104: TestStepFail(\"Currently there is no active Working Set!\"); break;\n  case -2115: TestStepFail(\"VT works in passive mode. Therefore you cannot touch it!\"); break;\n  default:    TestStepFail(\"Unexpected error\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

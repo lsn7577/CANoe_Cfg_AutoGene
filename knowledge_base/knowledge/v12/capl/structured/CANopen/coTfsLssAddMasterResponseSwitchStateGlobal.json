@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssAddMasterResponseSwitchStateGlobal",
+  "category": "CANopen",
+  "title": "coTfsLssAddMasterResponseSwitchStateGlobal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssAddMasterResponseSwitchStateGlobal.htm",
+  "syntax": [
+    "long coTfsLssAddMasterResponseSwitchStateGlobal( dword mode, dword modeMask );"
+  ],
+  "description": [
+    "This function adds a single LSS Master request wait condition to the internal list of LSS Master request wait conditions."
+  ],
+  "parameters": [
+    {
+      "name": "mode",
+      "type": "",
+      "description": "0 - Waiting mode1 - Configuration mode"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\n  write(\"Clear list failed\");\n  return;\n} \n\n/* add one or more test functions */\nif (coTfsLssAddMasterResponseSwitchStateGlobal( 0, 0xFFFFFFFF ) {\n  write(\"could not add request\");\n  return;\n} \n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\n  write(\"no event received\");\n} \nelse {\n  write(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

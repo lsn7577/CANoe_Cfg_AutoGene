@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsTimingSDOReset",
+  "category": "CANopen",
+  "title": "coTfsTimingSDOReset",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsTimingSdoReset.htm",
+  "syntax": [
+    "long coTfsTimingSDOReset( dword nodeId );"
+  ],
+  "description": [
+    "The function resets the internal statistics of the SDO response times of the specified node."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsTimingSDOReset( 0 ); // reset all sdo time statistics"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

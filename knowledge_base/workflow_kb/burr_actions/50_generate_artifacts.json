@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1.0",
+  "id": "generate_artifacts",
+  "phase": "generation",
+  "description": "Render CAPL, DBC, panel binding plans, CI files, and project layout files from project_spec.",
+  "reads": [
+    "project_spec",
+    "evidence_bundle"
+  ],
+  "writes": [
+    "generated_artifacts"
+  ],
+  "knowledge_inputs": [
+    {
+      "kind": "workflow_patterns",
+      "path": "workflow_kb/generation_patterns",
+      "required": true
+    }
+  ],
+  "pack_inputs": [
+    "packs/*/generation_patterns",
+    "generation_patterns/*/pattern.json"
+  ],
+  "gates": [
+    "no_unknown_api_rendered_without_assumption",
+    "generated_artifacts_index_complete"
+  ],
+  "transitions": [
+    {
+      "to": "validate_artifacts",
+      "condition": "generated_artifacts.status == 'generated'"
+    }
+  ],
+  "extension_notes": [
+    "This action can dispatch by artifact kind to plugin-like renderers.",
+    "Generated files should carry header comments naming target CANoe version and evidence refs."
+  ]
+}
+

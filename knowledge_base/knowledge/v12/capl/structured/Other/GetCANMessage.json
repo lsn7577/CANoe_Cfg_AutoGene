@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetCANMessage",
+  "category": "Other",
+  "title": "GetCANMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetCANMessage.htm",
+  "syntax": [
+    "long GetCANMessage(this, message * msg);"
+  ],
+  "description": [
+    "This function can only be called inside of an on PDU handler. The function will return in its second parameter the CAN (or CAN-FD) frame, the PDU was contained."
+  ],
+  "parameters": [
+    {
+      "name": "this",
+      "type": "",
+      "description": "Handle to the currently handled (received) PDU object."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": "on PDU PDU_A\n{\n  message * aMsg_01;\n  long result;\n  result = GetCANMessage(this, aMsg_01); // PDU is assumed to be sent on CAN\n  if (result == 0)\n  {\n    write(\"Received PDU 'PDU_A' in message with CAN ID %lu\", aMsg_01.ID);\n  }\n  else\n  {\n    write(\"Error accessing PDU!\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

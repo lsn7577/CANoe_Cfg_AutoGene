@@ -1,0 +1,5350 @@
+# CAPL Scripting & Programming Guide (Vector CANoe 15.0)
+
+> This document is auto-generated from the Vector CANoe 15.0 help
+> using a Vector template-aware HTML parser. Each function lives in
+> its own structured file under capl/structured/<CATEGORY>/.
+> Per-function JSON has typed fields (syntax, parameters, return,
+> example, availability, selectors) for direct programmatic use.
+> Generated: 2026/06/01
+
+---
+
+## Table of Contents
+
+- CAPL language overview (CANoe 15.0)
+- CAPL basic syntax
+- CAPL preprocessor and include files
+- CAPL function reference (44 categories)
+
+---
+
+## CAPL ARINC 429 (A429)
+
+**Function count**: 22
+
+- [A429 CAPL Functions](structured/A429/A429 CAPL Functions.md) `notes`
+- [a429CalcBitLength](structured/A429/a429CalcBitLength.md) `function`
+- [a429CheckParity](structured/A429/a429CheckParity.md) `function`
+- [a429GetBitLength](structured/A429/a429GetBitLength.md) `function`
+- [a429GetConfiguration](structured/A429/a429GetConfiguration.md) `function`
+- [a429GetErrorPosition](structured/A429/a429GetErrorPosition.md) `function`
+- [a429InitPayload](structured/A429/a429InitPayload.md) `function`
+- [a429ResetEx](structured/A429/a429ResetEx.md) `function`
+- [a429SetConfiguration](structured/A429/a429SetConfiguration.md) `function`
+- [a429SetGap](structured/A429/a429SetGap.md) `function`
+- [a429SetParity](structured/A429/a429SetParity.md) `function`
+- [a429SetScheduleTx](structured/A429/a429SetScheduleTx.md) `function`
+- [a429StopTx](structured/A429/a429StopTx.md) `function`
+- [a429Transmit](structured/A429/a429Transmit.md) `function`
+- [ARINC Word Selectors](structured/A429/ARINC Word Selectors.md) `notes`
+- [Declaration of ARINC Words (A429)](structured/A429/Declaration of ARINC Words (A429).md) `notes`
+- [on a429error](structured/A429/on a429error.md) `event`
+- [on a429word](structured/A429/on a429word.md) `event`
+- [on a429worderror](structured/A429/on a429worderror.md) `event`
+- [output (A429)](structured/A429/output (A429).md) `function`
+- [Reconfigure a Channel (A429)](structured/A429/Reconfigure a Channel (A429).md) `notes`
+- [Scheduling an ARINC Word (A429)](structured/A429/Scheduling an ARINC Word (A429).md) `notes`
+
+---
+
+## CAPL Advanced Driver Assistance Systems (ADAS)
+
+**Function count**: 4
+
+- [ADAS CAPL Functions](structured/ADAS/ADAS CAPL Functions.md) `notes`
+- [TestGetWaitADASDetectedObject](structured/ADAS/TestGetWaitADASDetectedObject.md) `function`
+- [TestWaitForADASDistance](structured/ADAS/TestWaitForADASDistance.md) `function`
+- [TestWaitForADASSpeed](structured/ADAS/TestWaitForADASSpeed.md) `function`
+
+---
+
+## CAPL ADFX (ADFX)
+
+**Function count**: 73
+
+- [<OnAfdxError>](structured/ADFX/_OnAfdxError_.md) `function`
+- [<OnAfdxPacket>](structured/ADFX/_OnAfdxPacket_.md) `function`
+- [A664CloseProxyPort](structured/ADFX/A664CloseProxyPort.md) `function`
+- [A664GetFunctionalStatus](structured/ADFX/A664GetFunctionalStatus.md) `function`
+- [A664InitICMP](structured/ADFX/A664InitICMP.md) `function`
+- [A664InitMessage](structured/ADFX/A664InitMessage.md) `function`
+- [A664InitPayload](structured/ADFX/A664InitPayload.md) `function`
+- [A664InitProxyPort](structured/ADFX/A664InitProxyPort.md) `function`
+- [A664isICMP](structured/ADFX/A664isICMP.md) `function`
+- [A664MsgConfig](structured/ADFX/A664MsgConfig.md) `function`
+- [A664ResizeMessage](structured/ADFX/A664ResizeMessage.md) `function`
+- [A664SetChecksum](structured/ADFX/A664SetChecksum.md) `function`
+- [A664SetFunctionalStatus](structured/ADFX/A664SetFunctionalStatus.md) `function`
+- [A664SetStringSignal](structured/ADFX/A664SetStringSignal.md) `function`
+- [A664TriggerFrame](structured/ADFX/A664TriggerFrame.md) `function`
+- [A664TriggerMessage](structured/ADFX/A664TriggerMessage.md) `function`
+- [A664VLConfig](structured/ADFX/A664VLConfig.md) `function`
+- [AFDX CAPL Functions](structured/ADFX/AFDX CAPL Functions.md) `notes`
+- [AFDX Copy-Operator](structured/ADFX/AFDX Copy-Operator.md) `function`
+- [AFDX Error Codes](structured/ADFX/AFDX Error Codes.md) `notes`
+- [AFDX Selectors](structured/ADFX/AFDX Selectors.md) `notes`
+- [AfdxCompletePacket](structured/ADFX/AfdxCompletePacket.md) `function`
+- [AfdxDeregisterReceiveCallback](structured/ADFX/AfdxDeregisterReceiveCallback.md) `function`
+- [AfdxGetDBAttrAsString](structured/ADFX/AfdxGetDBAttrAsString.md) `function`
+- [AfdxGetDBAttrValue](structured/ADFX/AfdxGetDBAttrValue.md) `function`
+- [AfdxGetDBMessageName](structured/ADFX/AfdxGetDBMessageName.md) `function`
+- [AfdxGetLastError](structured/ADFX/AfdxGetLastError.md) `function`
+- [AfdxGetLastErrorText](structured/ADFX/AfdxGetLastErrorText.md) `function`
+- [AfdxGetMessageId](structured/ADFX/AfdxGetMessageId.md) `function`
+- [AfdxGetMessageName](structured/ADFX/AfdxGetMessageName.md) `function`
+- [AfdxGetPacketData](structured/ADFX/AfdxGetPacketData.md) `function`
+- [AfdxGetSignalBool](structured/ADFX/AfdxGetSignalBool.md) `function`
+- [AfdxGetSignalInt](structured/ADFX/AfdxGetSignalInt.md) `function`
+- [AfdxGetSignalInt64](structured/ADFX/AfdxGetSignalInt64.md) `function`
+- [AfdxGetSignalOpaque](structured/ADFX/AfdxGetSignalOpaque.md) `function`
+- [AfdxGetSignalReal](structured/ADFX/AfdxGetSignalReal.md) `function`
+- [AfdxGetSignalStatus](structured/ADFX/AfdxGetSignalStatus.md) `function`
+- [AfdxGetSignalString](structured/ADFX/AfdxGetSignalString.md) `function`
+- [AfdxGetTokenData](structured/ADFX/AfdxGetTokenData.md) `function`
+- [AfdxGetTokenInt](structured/ADFX/AfdxGetTokenInt.md) `function`
+- [AfdxGetTokenInt64](structured/ADFX/AfdxGetTokenInt64.md) `function`
+- [AfdxGetTokenLengthBit](structured/ADFX/AfdxGetTokenLengthBit.md) `function`
+- [AfdxGetTokenReal](structured/ADFX/AfdxGetTokenReal.md) `function`
+- [AfdxGetTokenString](structured/ADFX/AfdxGetTokenString.md) `function`
+- [AfdxInitPacket](structured/ADFX/AfdxInitPacket.md) `function`
+- [AfdxInitProtocol](structured/ADFX/AfdxInitProtocol.md) `function`
+- [AfdxInitSchedule](structured/ADFX/AfdxInitSchedule.md) `function`
+- [AfdxIsPacketValid](structured/ADFX/AfdxIsPacketValid.md) `function`
+- [AfdxIsReceiveCallbackRegistered](structured/ADFX/AfdxIsReceiveCallbackRegistered.md) `function`
+- [AfdxOutputPacket](structured/ADFX/AfdxOutputPacket.md) `function`
+- [AfdxOutputPacketRaw](structured/ADFX/AfdxOutputPacketRaw.md) `function`
+- [AfdxOutputPacketWithSignals](structured/ADFX/AfdxOutputPacketWithSignals.md) `function`
+- [AfdxRegisterReceiveCallback](structured/ADFX/AfdxRegisterReceiveCallback.md) `function`
+- [AfdxReleasePacket](structured/ADFX/AfdxReleasePacket.md) `function`
+- [AfdxRemoveToken](structured/ADFX/AfdxRemoveToken.md) `function`
+- [AfdxResizeToken](structured/ADFX/AfdxResizeToken.md) `function`
+- [AfdxSetErrorHandler](structured/ADFX/AfdxSetErrorHandler.md) `function`
+- [AfdxSetSignalBool](structured/ADFX/AfdxSetSignalBool.md) `function`
+- [AfdxSetSignalInt](structured/ADFX/AfdxSetSignalInt.md) `function`
+- [AfdxSetSignalInt64](structured/ADFX/AfdxSetSignalInt64.md) `function`
+- [AfdxSetSignalOpaque](structured/ADFX/AfdxSetSignalOpaque.md) `function`
+- [AfdxSetSignalReal](structured/ADFX/AfdxSetSignalReal.md) `function`
+- [AfdxSetSignalStatus](structured/ADFX/AfdxSetSignalStatus.md) `function`
+- [AfdxSetSignalString](structured/ADFX/AfdxSetSignalString.md) `function`
+- [AfdxSetTokenData](structured/ADFX/AfdxSetTokenData.md) `function`
+- [AfdxSetTokenInt](structured/ADFX/AfdxSetTokenInt.md) `function`
+- [AfdxSetTokenInt64](structured/ADFX/AfdxSetTokenInt64.md) `function`
+- [AfdxSetTokenReal](structured/ADFX/AfdxSetTokenReal.md) `function`
+- [AfdxSetTokenString](structured/ADFX/AfdxSetTokenString.md) `function`
+- [AfdxSetVerbosity](structured/ADFX/AfdxSetVerbosity.md) `function`
+- [on a664Frame](structured/ADFX/on a664Frame.md) `event`
+- [on a664Message](structured/ADFX/on a664Message.md) `event`
+- [output (AFDX)](structured/ADFX/output (AFDX).md) `function`
+
+---
+
+## CAPL AUTOSAR PDU Interaction Layer (AUTOSARpduIL)
+
+**Function count**: 39
+
+- [applPDUILTxPending](structured/AUTOSARpduIL/applPDUILTxPending.md) `function`
+- [ARILCalculateCRC](structured/AUTOSARpduIL/ARILCalculateCRC.md) `function`
+- [ARILConfigureNMNotifications](structured/AUTOSARpduIL/ARILConfigureNMNotifications.md) `function`
+- [ARILControlInit](structured/AUTOSARpduIL/ARILControlInit.md) `function`
+- [ARILControlPDU](structured/AUTOSARpduIL/ARILControlPDU.md) `function`
+- [ARILControlResume](structured/AUTOSARpduIL/ARILControlResume.md) `function`
+- [ARILControlSimulationOff](structured/AUTOSARpduIL/ARILControlSimulationOff.md) `function`
+- [ARILControlSimulationOn](structured/AUTOSARpduIL/ARILControlSimulationOn.md) `function`
+- [ARILControlStart](structured/AUTOSARpduIL/ARILControlStart.md) `function`
+- [ARILControlStop](structured/AUTOSARpduIL/ARILControlStop.md) `function`
+- [ARILControlWait](structured/AUTOSARpduIL/ARILControlWait.md) `function`
+- [ARILFaultInjectionDisableAllTxPDU](structured/AUTOSARpduIL/ARILFaultInjectionDisableAllTxPDU.md) `function`
+- [ARILFaultInjectionDisablePDU](structured/AUTOSARpduIL/ARILFaultInjectionDisablePDU.md) `function`
+- [ARILFaultInjectionDisturbChecksum](structured/AUTOSARpduIL/ARILFaultInjectionDisturbChecksum.md) `function`
+- [ARILFaultInjectionDisturbNodeUpdateBits](structured/AUTOSARpduIL/ARILFaultInjectionDisturbNodeUpdateBits.md) `function`
+- [ARILFaultInjectionDisturbSequenceCounter](structured/AUTOSARpduIL/ARILFaultInjectionDisturbSequenceCounter.md) `function`
+- [ARILFaultInjectionDisturbUpdateBit](structured/AUTOSARpduIL/ARILFaultInjectionDisturbUpdateBit.md) `function`
+- [ARILFaultInjectionEnableAllTxPDU](structured/AUTOSARpduIL/ARILFaultInjectionEnableAllTxPDU.md) `function`
+- [ARILFaultInjectionEnablePDU](structured/AUTOSARpduIL/ARILFaultInjectionEnablePDU.md) `function`
+- [ARILFaultInjectionResetAllFaultInjections](structured/AUTOSARpduIL/ARILFaultInjectionResetAllFaultInjections.md) `function`
+- [ARILFaultInjectionResetPDULength](structured/AUTOSARpduIL/ARILFaultInjectionResetPDULength.md) `function`
+- [ARILFaultInjectionSetIgnitionState](structured/AUTOSARpduIL/ARILFaultInjectionSetIgnitionState.md) `function`
+- [ARILFaultInjectionSetPDULength](structured/AUTOSARpduIL/ARILFaultInjectionSetPDULength.md) `function`
+- [ARILFaultInjectionSetPowerState](structured/AUTOSARpduIL/ARILFaultInjectionSetPowerState.md) `function`
+- [ARILGetSigGroupCount](structured/AUTOSARpduIL/ARILGetSigGroupCount.md) `function`
+- [ARILGetSigGroupName](structured/AUTOSARpduIL/ARILGetSigGroupName.md) `function`
+- [ARILResetPDUAsrTXMode](structured/AUTOSARpduIL/ARILResetPDUAsrTXMode.md) `function`
+- [ARILResetPDUTimingCyclic](structured/AUTOSARpduIL/ARILResetPDUTimingCyclic.md) `function`
+- [ARILResetPDUTimingEvent](structured/AUTOSARpduIL/ARILResetPDUTimingEvent.md) `function`
+- [ARILSetAutoStartParam](structured/AUTOSARpduIL/ARILSetAutoStartParam.md) `function`
+- [ARILSetEvent](structured/AUTOSARpduIL/ARILSetEvent.md) `function`
+- [ARILSetIgnitionState](structured/AUTOSARpduIL/ARILSetIgnitionState.md) `function`
+- [ARILSetOperationMode](structured/AUTOSARpduIL/ARILSetOperationMode.md) `function`
+- [ARILSetPDUAsrTXMode](structured/AUTOSARpduIL/ARILSetPDUAsrTXMode.md) `function`
+- [ARILSetPDUEvent](structured/AUTOSARpduIL/ARILSetPDUEvent.md) `function`
+- [ARILSetPDUTimingCyclic](structured/AUTOSARpduIL/ARILSetPDUTimingCyclic.md) `function`
+- [ARILSetPDUTimingEvent](structured/AUTOSARpduIL/ARILSetPDUTimingEvent.md) `function`
+- [ARILSetPowerState](structured/AUTOSARpduIL/ARILSetPowerState.md) `function`
+- [AUTOSAR PDU IL CAPL Functions](structured/AUTOSARpduIL/AUTOSAR PDU IL CAPL Functions.md) `notes`
+
+---
+
+## CAPL Associative Fields (AssociativeFields)
+
+**Function count**: 5
+
+- [Associative Fields CAPL Functions](structured/AssociativeFields/Associative Fields CAPL Functions.md) `notes`
+- [clear](structured/AssociativeFields/clear.md) `method`
+- [containsKey](structured/AssociativeFields/containsKey.md) `method`
+- [remove](structured/AssociativeFields/remove.md) `method`
+- [size](structured/AssociativeFields/size.md) `method`
+
+---
+
+## CAPL CAN (CAN)
+
+**Function count**: 67
+
+- [BusLoad](structured/CAN/BusLoad.md) `function`
+- [CAN CAPL Functions](structured/CAN/CAN CAPL Functions.md) `notes`
+- [CAN Error Frame Selectors](structured/CAN/CAN Error Frame Selectors.md) `notes`
+- [CAN Message Selectors](structured/CAN/CAN Message Selectors.md) `notes`
+- [canActivateTxSelfAck](structured/CAN/canActivateTxSelfAck.md) `function`
+- [canConfigureBusOff](structured/CAN/canConfigureBusOff.md) `function`
+- [canFdGetConfiguration, canFdSetConfiguration](structured/CAN/canFdGetConfiguration, canFdSetConfiguration.md) `function`
+- [canFlushTxQueue](structured/CAN/canFlushTxQueue.md) `function`
+- [canGetConfiguration, canSetConfiguration](structured/CAN/canGetConfiguration, canSetConfiguration.md) `function`
+- [canGetDataLength](structured/CAN/canGetDataLength.md) `function`
+- [canOutputErrorFrame](structured/CAN/canOutputErrorFrame.md) `function`
+- [canSetChannelAcc](structured/CAN/canSetChannelAcc.md) `function`
+- [canSetChannelMode](structured/CAN/canSetChannelMode.md) `function`
+- [canSetChannelOutput](structured/CAN/canSetChannelOutput.md) `function`
+- [ChipState](structured/CAN/ChipState.md) `function`
+- [ErrorFrameCount](structured/CAN/ErrorFrameCount.md) `function`
+- [ErrorFrameRate](structured/CAN/ErrorFrameRate.md) `function`
+- [Events of the CAN Controller](structured/CAN/Events of the CAN Controller.md) `notes`
+- [Example: Selector CAN (controller number)](structured/CAN/Example_ Selector CAN (controller number).md) `selector`
+- [Example: Selector DIR (direction of transmission)](structured/CAN/Example_ Selector DIR (direction of transmission).md) `selector`
+- [Example: Selector DLC (data length code)](structured/CAN/Example_ Selector DLC (data length code).md) `selector`
+- [Example: Selector ID (message identifier)](structured/CAN/Example_ Selector ID (message identifier).md) `selector`
+- [Example: Selector RTR (remote transmission request)](structured/CAN/Example_ Selector RTR (remote transmission request).md) `selector`
+- [Example: Selector SIMULATED (message from simulated node)](structured/CAN/Example_ Selector SIMULATED (message from simulated node).md) `selector`
+- [Example: Selector TIME (time stamp of message in units of 10 microseconds)](structured/CAN/Example_ Selector TIME (time stamp of message in units of 10 microseconds).md) `selector`
+- [Example: Selector TIME_NS (time stamp of message in units of 10 microseconds)](structured/CAN/Example_ Selector TIME_NS (time stamp of message in units of 10 microseconds).md) `selector`
+- [Example: Selector TYPE](structured/CAN/Example_ Selector TYPE.md) `selector`
+- [Example: Selector TYPE](structured/CAN/Example_ Selector TYPE.md) `selector`
+- [ExtendedFrameCount](structured/CAN/ExtendedFrameCount.md) `function`
+- [ExtendedFrameRate](structured/CAN/ExtendedFrameRate.md) `function`
+- [ExtendedRemoteFrameCount](structured/CAN/ExtendedRemoteFrameCount.md) `function`
+- [ExtendedRemoteFrameRate](structured/CAN/ExtendedRemoteFrameRate.md) `function`
+- [FunctionName](structured/CAN/FunctionName.md) `function`
+- [getCardTypeEx](structured/CAN/getCardTypeEx.md) `function`
+- [getChipType](structured/CAN/getChipType.md) `function`
+- [getFirstCANdbFilename](structured/CAN/getFirstCANdbFilename.md) `function`
+- [getFirstCANdbName](structured/CAN/getFirstCANdbName.md) `function`
+- [getMessageAttrInt](structured/CAN/getMessageAttrInt.md) `function`
+- [getMessageID](structured/CAN/getMessageID.md) `function`
+- [getMessageName](structured/CAN/getMessageName.md) `function`
+- [getNextCANdbFilename](structured/CAN/getNextCANdbFilename.md) `function`
+- [getNextCANdbName](structured/CAN/getNextCANdbName.md) `function`
+- [getPayloadData](structured/CAN/getPayloadData.md) `function`
+- [getSignalName](structured/CAN/getSignalName.md) `function`
+- [isStdId, isExtId](structured/CAN/isStdId, isExtId.md) `function`
+- [mkExtId](structured/CAN/mkExtId.md) `function`
+- [on errorFrame](structured/CAN/on errorFrame.md) `event`
+- [on message](structured/CAN/on message.md) `event`
+- [output (CAN)](structured/CAN/output (CAN).md) `function`
+- [OverloadFrameCount](structured/CAN/OverloadFrameCount.md) `function`
+- [OverloadFrameRate](structured/CAN/OverloadFrameRate.md) `function`
+- [PeakLoad](structured/CAN/PeakLoad.md) `function`
+- [resetCan](structured/CAN/resetCan.md) `function`
+- [ResetCanEx](structured/CAN/ResetCanEx.md) `function`
+- [RxChipErrorCount](structured/CAN/RxChipErrorCount.md) `function`
+- [ScanBaudrateActive](structured/CAN/ScanBaudrateActive.md) `function`
+- [ScanBaudratePassive](structured/CAN/ScanBaudratePassive.md) `function`
+- [setBtr](structured/CAN/setBtr.md) `function`
+- [setCanCabsMode](structured/CAN/setCanCabsMode.md) `function`
+- [setOcr](structured/CAN/setOcr.md) `function`
+- [setSignalStartValues](structured/CAN/setSignalStartValues.md) `function`
+- [StandardFrameCount](structured/CAN/StandardFrameCount.md) `function`
+- [StandardFrameRate](structured/CAN/StandardFrameRate.md) `function`
+- [StandardRemoteFrameCount](structured/CAN/StandardRemoteFrameCount.md) `function`
+- [StandardRemoteFrameRate](structured/CAN/StandardRemoteFrameRate.md) `function`
+- [TxChipErrorCount](structured/CAN/TxChipErrorCount.md) `function`
+- [valOfId](structured/CAN/valOfId.md) `function`
+
+---
+
+## CAPL CAN Disturbance (CANDisturbance)
+
+**Function count**: 23
+
+- [CAN Disturbance Interface CAPL Functions](structured/CANDisturbance/CAN Disturbance Interface CAPL Functions.md) `notes`
+- [canDisturbanceCombinedFrameTrigger::AddFrameTrigger](structured/CANDisturbance/canDisturbanceCombinedFrameTrigger__AddFrameTrigger.md) `method`
+- [canDisturbanceCombinedFrameTrigger::Clear](structured/CANDisturbance/canDisturbanceCombinedFrameTrigger__Clear.md) `method`
+- [canDisturbanceFrameSequence::RecalculateCRC](structured/CANDisturbance/canDisturbanceFrameSequence__RecalculateCRC.md) `method`
+- [canDisturbanceFrameSequence::SetMessage](structured/CANDisturbance/canDisturbanceFrameSequence__SetMessage.md) `method`
+- [canDisturbanceFrameTrigger::RecalculateCRC](structured/CANDisturbance/canDisturbanceFrameTrigger__RecalculateCRC.md) `method`
+- [canDisturbanceFrameTrigger::SetMessage](structured/CANDisturbance/canDisturbanceFrameTrigger__SetMessage.md) `method`
+- [canDisturbanceSequence::AppendToSequence](structured/CANDisturbance/canDisturbanceSequence__AppendToSequence.md) `method`
+- [canDisturbanceSequence::Clear](structured/CANDisturbance/canDisturbanceSequence__Clear.md) `method`
+- [canDisturbanceSequence::ToString](structured/CANDisturbance/canDisturbanceSequence__ToString.md) `method`
+- [canDisturbanceTriggerDisable](structured/CANDisturbance/canDisturbanceTriggerDisable.md) `method`
+- [canDisturbanceTriggerEnable](structured/CANDisturbance/canDisturbanceTriggerEnable.md) `function`
+- [canDisturbanceTriggerNow](structured/CANDisturbance/canDisturbanceTriggerNow.md) `method`
+- [Class: CanDisturbanceBitSequence](structured/CANDisturbance/Class_ CanDisturbanceBitSequence.md) `notes`
+- [Class: CanDisturbanceCombinedFrameTrigger](structured/CANDisturbance/Class_ CanDisturbanceCombinedFrameTrigger.md) `notes`
+- [Class: CanDisturbanceErrorFrameTrigger](structured/CANDisturbance/Class_ CanDisturbanceErrorFrameTrigger.md) `notes`
+- [Class: CanDisturbanceExternalTrigger](structured/CANDisturbance/Class_ CanDisturbanceExternalTrigger.md) `notes`
+- [Class: CanDisturbanceFrameSequence](structured/CANDisturbance/Class_ CanDisturbanceFrameSequence.md) `notes`
+- [Class: CanDisturbanceFrameSequenceField](structured/CANDisturbance/Class_ CanDisturbanceFrameSequenceField.md) `notes`
+- [Class: CanDisturbanceFrameTrigger](structured/CANDisturbance/Class_ CanDisturbanceFrameTrigger.md) `notes`
+- [Class: CanDisturbanceSequence](structured/CANDisturbance/Class_ CanDisturbanceSequence.md) `notes`
+- [Class: CanDisturbanceTriggerRepetitions](structured/CANDisturbance/Class_ CanDisturbanceTriggerRepetitions.md) `notes`
+- [Classes](structured/CANDisturbance/Classes.md) `notes`
+
+---
+
+## CAPL CANoe Interaction Layer (CANoeIL)
+
+**Function count**: 62
+
+- [applILTxPending](structured/CANoeIL/applILTxPending.md) `function`
+- [applILTxRequestConsumed](structured/CANoeIL/applILTxRequestConsumed.md) `function`
+- [applILTxRequestPending](structured/CANoeIL/applILTxRequestPending.md) `function`
+- [CANoe IL CAPL Functions](structured/CANoeIL/CANoe IL CAPL Functions.md) `notes`
+- [Functions in the Execution Context](structured/CANoeIL/Functions in the Execution Context.md) `notes`
+- [ILActivateClamp15, ILDeactivateClamp15](structured/CANoeIL/ILActivateClamp15, ILDeactivateClamp15.md) `function`
+- [ILCalculateChecksum](structured/CANoeIL/ILCalculateChecksum.md) `function`
+- [ILConfigureNMNotifications](structured/CANoeIL/ILConfigureNMNotifications.md) `function`
+- [ILControlInit](structured/CANoeIL/ILControlInit.md) `function`
+- [ILControlMsg](structured/CANoeIL/ILControlMsg.md) `function`
+- [ILControlResume](structured/CANoeIL/ILControlResume.md) `function`
+- [ILControlSimulationOff](structured/CANoeIL/ILControlSimulationOff.md) `function`
+- [ILControlSimulationOn](structured/CANoeIL/ILControlSimulationOn.md) `function`
+- [ILControlStart](structured/CANoeIL/ILControlStart.md) `function`
+- [ILControlStop](structured/CANoeIL/ILControlStop.md) `function`
+- [ILControlWait](structured/CANoeIL/ILControlWait.md) `function`
+- [ILDisableMsg](structured/CANoeIL/ILDisableMsg.md) `function`
+- [ILEnableMsg](structured/CANoeIL/ILEnableMsg.md) `function`
+- [ILEnableTimingCyclic](structured/CANoeIL/ILEnableTimingCyclic.md) `function`
+- [ILEnableTimingEvtTrg](structured/CANoeIL/ILEnableTimingEvtTrg.md) `function`
+- [ILEnableTimingImmed](structured/CANoeIL/ILEnableTimingImmed.md) `function`
+- [ILErrno](structured/CANoeIL/ILErrno.md) `function`
+- [ILFaultInjectionDisableMsg](structured/CANoeIL/ILFaultInjectionDisableMsg.md) `function`
+- [ILFaultInjectionEnableMsg](structured/CANoeIL/ILFaultInjectionEnableMsg.md) `function`
+- [ILFaultInjectionResetAllFaultInjections](structured/CANoeIL/ILFaultInjectionResetAllFaultInjections.md) `function`
+- [ILFaultInjectionResetMsgCycleTime](structured/CANoeIL/ILFaultInjectionResetMsgCycleTime.md) `function`
+- [ILFaultInjectionResetMsgDlc](structured/CANoeIL/ILFaultInjectionResetMsgDlc.md) `function`
+- [ILFaultInjectionResetMsgLength](structured/CANoeIL/ILFaultInjectionResetMsgLength.md) `function`
+- [ILFaultInjectionSetMsgCycleTime](structured/CANoeIL/ILFaultInjectionSetMsgCycleTime.md) `function`
+- [ILFaultInjectionSetMsgDlc](structured/CANoeIL/ILFaultInjectionSetMsgDlc.md) `function`
+- [ILFaultInjectionSetMsgLength](structured/CANoeIL/ILFaultInjectionSetMsgLength.md) `function`
+- [ILNodeControlMsg](structured/CANoeIL/ILNodeControlMsg.md) `function`
+- [ILNodeControlResume](structured/CANoeIL/ILNodeControlResume.md) `function`
+- [ILNodeControlSimulationOff](structured/CANoeIL/ILNodeControlSimulationOff.md) `function`
+- [ILNodeControlSimulationOn](structured/CANoeIL/ILNodeControlSimulationOn.md) `function`
+- [ILNodeControlStart](structured/CANoeIL/ILNodeControlStart.md) `function`
+- [ILNodeControlStop](structured/CANoeIL/ILNodeControlStop.md) `function`
+- [ILNodeControlWait](structured/CANoeIL/ILNodeControlWait.md) `function`
+- [ILNodeDisturbAllNodesUpdateBits](structured/CANoeIL/ILNodeDisturbAllNodesUpdateBits.md) `function`
+- [ILNodeDisturbAllUpdateBits](structured/CANoeIL/ILNodeDisturbAllUpdateBits.md) `function`
+- [ILNodeDisturbChecksum](structured/CANoeIL/ILNodeDisturbChecksum.md) `function`
+- [ILNodeDisturbCounter](structured/CANoeIL/ILNodeDisturbCounter.md) `function`
+- [ILNodeDisturbPduUpdateBit](structured/CANoeIL/ILNodeDisturbPduUpdateBit.md) `function`
+- [ILNodeDisturbSignalGroupUpdateBit](structured/CANoeIL/ILNodeDisturbSignalGroupUpdateBit.md) `function`
+- [ILNodeDisturbSignalUpdateBit](structured/CANoeIL/ILNodeDisturbSignalUpdateBit.md) `function`
+- [ILNodeResetPDUAsrTxMode](structured/CANoeIL/ILNodeResetPDUAsrTxMode.md) `function`
+- [ILNodeResetPDUTimingCyclic](structured/CANoeIL/ILNodeResetPDUTimingCyclic.md) `function`
+- [ILNodeResetPDUTimingEvent](structured/CANoeIL/ILNodeResetPDUTimingEvent.md) `function`
+- [ILNodeSetAllNodesOperationMode](structured/CANoeIL/ILNodeSetAllNodesOperationMode.md) `function`
+- [ILNodeSetOperationMode](structured/CANoeIL/ILNodeSetOperationMode.md) `function`
+- [ILNodeSetPDUAsrTxMode](structured/CANoeIL/ILNodeSetPDUAsrTxMode.md) `function`
+- [ILNodeSetPDUTimingCyclic](structured/CANoeIL/ILNodeSetPDUTimingCyclic.md) `function`
+- [ILNodeSetPDUTimingEvent](structured/CANoeIL/ILNodeSetPDUTimingEvent.md) `function`
+- [ILNodeSetSigGroupOperationMode](structured/CANoeIL/ILNodeSetSigGroupOperationMode.md) `function`
+- [ILResetAllCANFDParam](structured/CANoeIL/ILResetAllCANFDParam.md) `function`
+- [ILSetAutoStartParam](structured/CANoeIL/ILSetAutoStartParam.md) `function`
+- [ILSetCANFDParam](structured/CANoeIL/ILSetCANFDParam.md) `function`
+- [ILSetEvent](structured/CANoeIL/ILSetEvent.md) `function`
+- [ILSetMsgEvent](structured/CANoeIL/ILSetMsgEvent.md) `function`
+- [ILSetOperationMode](structured/CANoeIL/ILSetOperationMode.md) `function`
+- [ILSetResultString](structured/CANoeIL/ILSetResultString.md) `function`
+- [ILSetSignalRawField](structured/CANoeIL/ILSetSignalRawField.md) `function`
+
+---
+
+## CAPL CANopen (CANopen)
+
+**Function count**: 193
+
+- [CANopen](structured/CANopen/CANopen.md) `notes`
+- [CANopen Basic Functions](structured/CANopen/CANopen Basic Functions.md) `notes`
+- [CANopen Test Feature Set Node Layer Functions](structured/CANopen/CANopen Test Feature Set Node Layer Functions.md) `notes`
+- [CANopenDomainServerOpenFileRead](structured/CANopen/CANopenDomainServerOpenFileRead.md) `function`
+- [CANopenDomainServerSetFileContents](structured/CANopen/CANopenDomainServerSetFileContents.md) `function`
+- [CANopenDownload](structured/CANopen/CANopenDownload.md) `function`
+- [CANopenDownloadDomain](structured/CANopen/CANopenDownloadDomain.md) `function`
+- [CANopenDownloadDomainFromFile](structured/CANopen/CANopenDownloadDomainFromFile.md) `function`
+- [CANopenEmergency](structured/CANopen/CANopenEmergency.md) `function`
+- [CANopenInternalNMTCommand](structured/CANopen/CANopenInternalNMTCommand.md) `function`
+- [CANopenTriggerTPDO](structured/CANopen/CANopenTriggerTPDO.md) `function`
+- [CANopenUpload](structured/CANopen/CANopenUpload.md) `function`
+- [CANopenUploadDomain](structured/CANopen/CANopenUploadDomain.md) `function`
+- [CANopenUploadGetData](structured/CANopen/CANopenUploadGetData.md) `function`
+- [CANopenUploadGetDouble](structured/CANopen/CANopenUploadGetDouble.md) `function`
+- [CANopenUploadGetSigned](structured/CANopen/CANopenUploadGetSigned.md) `function`
+- [CANopenUploadGetUnsigned](structured/CANopen/CANopenUploadGetUnsigned.md) `function`
+- [Checked Objects](structured/CANopen/Checked Objects.md) `notes`
+- [Constants Used in the CAPL Examples](structured/CANopen/Constants Used in the CAPL Examples.md) `notes`
+- [coTfs Level 1 functions](structured/CANopen/coTfs Level 1 functions.md) `notes`
+- [coTfs Level 2 functions](structured/CANopen/coTfs Level 2 functions.md) `notes`
+- [coTfs Level 3 functions](structured/CANopen/coTfs Level 3 functions.md) `notes`
+- [coTfs Test control functions](structured/CANopen/coTfs Test control functions.md) `notes`
+- [coTfsActivateGuardingReqMonitor](structured/CANopen/coTfsActivateGuardingReqMonitor.md) `function`
+- [coTfsActivateHeartbeatMonitor](structured/CANopen/coTfsActivateHeartbeatMonitor.md) `function`
+- [coTfsActivateSyncMonitor](structured/CANopen/coTfsActivateSyncMonitor.md) `function`
+- [coTfsActivateSyncPdoMonitor](structured/CANopen/coTfsActivateSyncPdoMonitor.md) `function`
+- [coTfsArrToD](structured/CANopen/coTfsArrToD.md) `function`
+- [coTfsArrToQ](structured/CANopen/coTfsArrToQ.md) `function`
+- [coTfsArrToW](structured/CANopen/coTfsArrToW.md) `function`
+- [coTfsatoxD](structured/CANopen/coTfsatoxD.md) `function`
+- [coTfsatoxL](structured/CANopen/coTfsatoxL.md) `function`
+- [coTfsCbGetReferenceTime](structured/CANopen/coTfsCbGetReferenceTime.md) `function`
+- [coTfsCbGetSettings](structured/CANopen/coTfsCbGetSettings.md) `function`
+- [coTfsCheckAndCompareGenericMonitorMessage](structured/CANopen/coTfsCheckAndCompareGenericMonitorMessage.md) `function`
+- [coTfsClearObjectName](structured/CANopen/coTfsClearObjectName.md) `function`
+- [coTfsConfigureGenericMonitor](structured/CANopen/coTfsConfigureGenericMonitor.md) `function`
+- [coTfsDeactivateGenericMonitor](structured/CANopen/coTfsDeactivateGenericMonitor.md) `function`
+- [coTfsDeactivateGuardingReqMonitor](structured/CANopen/coTfsDeactivateGuardingReqMonitor.md) `function`
+- [coTfsDeactivateHeartbeatMonitor](structured/CANopen/coTfsDeactivateHeartbeatMonitor.md) `function`
+- [coTfsDeactivateSyncMonitor](structured/CANopen/coTfsDeactivateSyncMonitor.md) `function`
+- [coTfsDeactivateSyncPdoMonitor](structured/CANopen/coTfsDeactivateSyncPdoMonitor.md) `function`
+- [coTfsDToArr](structured/CANopen/coTfsDToArr.md) `function`
+- [coTfsEmcyGetErrorCode](structured/CANopen/coTfsEmcyGetErrorCode.md) `function`
+- [coTfsEmcyResetList](structured/CANopen/coTfsEmcyResetList.md) `function`
+- [coTfsEmcySendMessage](structured/CANopen/coTfsEmcySendMessage.md) `function`
+- [coTfsEmcyWaitForMessage](structured/CANopen/coTfsEmcyWaitForMessage.md) `function`
+- [coTfsGetApplProfile](structured/CANopen/coTfsGetApplProfile.md) `function`
+- [coTfsGetNodeId](structured/CANopen/coTfsGetNodeId.md) `function`
+- [coTfsGetTestModuleNodeId](structured/CANopen/coTfsGetTestModuleNodeId.md) `function`
+- [coTfsGetVersion](structured/CANopen/coTfsGetVersion.md) `function`
+- [coTfsGuarding](structured/CANopen/coTfsGuarding.md) `function`
+- [coTfsGuardingRequest](structured/CANopen/coTfsGuardingRequest.md) `function`
+- [coTfsHeartbeat](structured/CANopen/coTfsHeartbeat.md) `function`
+- [coTfsHeartbeatConsumer](structured/CANopen/coTfsHeartbeatConsumer.md) `function`
+- [coTfsHeartbeatProducer](structured/CANopen/coTfsHeartbeatProducer.md) `function`
+- [coTfsHeartbeatProducerCheckIfActive](structured/CANopen/coTfsHeartbeatProducerCheckIfActive.md) `function`
+- [coTfsLifeGuarding](structured/CANopen/coTfsLifeGuarding.md) `function`
+- [coTfsLoadDeviceDescription](structured/CANopen/coTfsLoadDeviceDescription.md) `function`
+- [coTfsLssAddMasterResponseActivateBitTiming](structured/CANopen/coTfsLssAddMasterResponseActivateBitTiming.md) `function`
+- [coTfsLssAddMasterResponseConfigureBitTiming](structured/CANopen/coTfsLssAddMasterResponseConfigureBitTiming.md) `function`
+- [coTfsLssAddMasterResponseConfigureNodeId](structured/CANopen/coTfsLssAddMasterResponseConfigureNodeId.md) `function`
+- [coTfsLssAddMasterResponseIdentifyFastscan](structured/CANopen/coTfsLssAddMasterResponseIdentifyFastscan.md) `function`
+- [coTfsLssAddMasterResponseIdentifyNonConfRemoteSlv](structured/CANopen/coTfsLssAddMasterResponseIdentifyNonConfRemoteSlv.md) `function`
+- [coTfsLssAddMasterResponseIdentifyRemoteSlave](structured/CANopen/coTfsLssAddMasterResponseIdentifyRemoteSlave.md) `function`
+- [coTfsLssAddMasterResponseInquireNodeId](structured/CANopen/coTfsLssAddMasterResponseInquireNodeId.md) `function`
+- [coTfsLssAddMasterResponseInquireProductCode](structured/CANopen/coTfsLssAddMasterResponseInquireProductCode.md) `function`
+- [coTfsLssAddMasterResponseInquireRevisionNo](structured/CANopen/coTfsLssAddMasterResponseInquireRevisionNo.md) `function`
+- [coTfsLssAddMasterResponseInquireSerialNo](structured/CANopen/coTfsLssAddMasterResponseInquireSerialNo.md) `function`
+- [coTfsLssAddMasterResponseInquireVendorId](structured/CANopen/coTfsLssAddMasterResponseInquireVendorId.md) `function`
+- [coTfsLssAddMasterResponseStoreConfiguration](structured/CANopen/coTfsLssAddMasterResponseStoreConfiguration.md) `function`
+- [coTfsLssAddMasterResponseSwitchStateGlobal](structured/CANopen/coTfsLssAddMasterResponseSwitchStateGlobal.md) `function`
+- [coTfsLssAddMasterResponseSwitchStateSelective](structured/CANopen/coTfsLssAddMasterResponseSwitchStateSelective.md) `function`
+- [coTfsLssClearMasterResponseList](structured/CANopen/coTfsLssClearMasterResponseList.md) `function`
+- [coTfsLssSendActivateBitTimingRequest](structured/CANopen/coTfsLssSendActivateBitTimingRequest.md) `function`
+- [coTfsLssSendConfigureBitTimingRequest](structured/CANopen/coTfsLssSendConfigureBitTimingRequest.md) `function`
+- [coTfsLssSendConfigureBitTimingResponse](structured/CANopen/coTfsLssSendConfigureBitTimingResponse.md) `function`
+- [coTfsLssSendConfigureNodeIdRequest](structured/CANopen/coTfsLssSendConfigureNodeIdRequest.md) `function`
+- [coTfsLssSendConfigureNodeIdResponse](structured/CANopen/coTfsLssSendConfigureNodeIdResponse.md) `function`
+- [coTfsLssSendFastScanRequest](structured/CANopen/coTfsLssSendFastScanRequest.md) `function`
+- [coTfsLssSendIdentifyNonConfRemoteSlaveRequest](structured/CANopen/coTfsLssSendIdentifyNonConfRemoteSlaveRequest.md) `function`
+- [coTfsLssSendIdentifyNonConfSlaveResponse](structured/CANopen/coTfsLssSendIdentifyNonConfSlaveResponse.md) `function`
+- [coTfsLssSendIdentifyRemoteSlaveSequence](structured/CANopen/coTfsLssSendIdentifyRemoteSlaveSequence.md) `function`
+- [coTfsLssSendIdentifySlaveResponse](structured/CANopen/coTfsLssSendIdentifySlaveResponse.md) `function`
+- [coTfsLssSendInquireNodeIdRequest](structured/CANopen/coTfsLssSendInquireNodeIdRequest.md) `function`
+- [coTfsLssSendInquireProductCodeRequest](structured/CANopen/coTfsLssSendInquireProductCodeRequest.md) `function`
+- [coTfsLssSendInquireRevisionNoRequest](structured/CANopen/coTfsLssSendInquireRevisionNoRequest.md) `function`
+- [coTfsLssSendInquireSerialNoRequest](structured/CANopen/coTfsLssSendInquireSerialNoRequest.md) `function`
+- [coTfsLssSendInquireVendorIdRequest](structured/CANopen/coTfsLssSendInquireVendorIdRequest.md) `function`
+- [coTfsLssSendStoreConfigurationRequest](structured/CANopen/coTfsLssSendStoreConfigurationRequest.md) `function`
+- [coTfsLssSendSwitchStateModeGlobalRequest](structured/CANopen/coTfsLssSendSwitchStateModeGlobalRequest.md) `function`
+- [coTfsLssSendSwitchStateSelectiveSequence](structured/CANopen/coTfsLssSendSwitchStateSelectiveSequence.md) `function`
+- [coTfsLssSetMasterResponseIdentifyRemoteSlaveMask](structured/CANopen/coTfsLssSetMasterResponseIdentifyRemoteSlaveMask.md) `function`
+- [coTfsLssWaitForActivateBitTimingRequest](structured/CANopen/coTfsLssWaitForActivateBitTimingRequest.md) `function`
+- [coTfsLssWaitForConfigureBitTimingRequest](structured/CANopen/coTfsLssWaitForConfigureBitTimingRequest.md) `function`
+- [coTfsLssWaitForConfigureNodeIdRequest](structured/CANopen/coTfsLssWaitForConfigureNodeIdRequest.md) `function`
+- [coTfsLssWaitForFastScanRequest](structured/CANopen/coTfsLssWaitForFastScanRequest.md) `function`
+- [coTfsLssWaitForIdentifyNonConfRemoteSlaveRequest](structured/CANopen/coTfsLssWaitForIdentifyNonConfRemoteSlaveRequest.md) `function`
+- [coTfsLssWaitForIdentifyNonConfSlaveResponse](structured/CANopen/coTfsLssWaitForIdentifyNonConfSlaveResponse.md) `function`
+- [coTfsLssWaitForIdentifyRemoteSlaveSequence](structured/CANopen/coTfsLssWaitForIdentifyRemoteSlaveSequence.md) `function`
+- [coTfsLssWaitForIdentifySlaveResponse](structured/CANopen/coTfsLssWaitForIdentifySlaveResponse.md) `function`
+- [coTfsLssWaitForInquireNodeIdRequest](structured/CANopen/coTfsLssWaitForInquireNodeIdRequest.md) `function`
+- [coTfsLssWaitForInquireProductCodeRequest](structured/CANopen/coTfsLssWaitForInquireProductCodeRequest.md) `function`
+- [coTfsLssWaitForInquireRevisionNoRequest](structured/CANopen/coTfsLssWaitForInquireRevisionNoRequest.md) `function`
+- [coTfsLssWaitForInquireSerialNoRequest](structured/CANopen/coTfsLssWaitForInquireSerialNoRequest.md) `function`
+- [coTfsLssWaitForInquireVendorIdRequest](structured/CANopen/coTfsLssWaitForInquireVendorIdRequest.md) `function`
+- [coTfsLssWaitForMasterRequestMessage](structured/CANopen/coTfsLssWaitForMasterRequestMessage.md) `function`
+- [coTfsLssWaitForStoreConfigurationRequest](structured/CANopen/coTfsLssWaitForStoreConfigurationRequest.md) `function`
+- [coTfsLssWaitForSwitchStateModeGlobalRequest](structured/CANopen/coTfsLssWaitForSwitchStateModeGlobalRequest.md) `function`
+- [coTfsLssWaitForSwitchStateSelectiveSequence](structured/CANopen/coTfsLssWaitForSwitchStateSelectiveSequence.md) `function`
+- [coTfsMonitorActivate](structured/CANopen/coTfsMonitorActivate.md) `function`
+- [coTfsMonitorDeactivate](structured/CANopen/coTfsMonitorDeactivate.md) `function`
+- [coTfsMonitorExcludeNodeId](structured/CANopen/coTfsMonitorExcludeNodeId.md) `function`
+- [coTfsMonitorExcludeNodeIdRange](structured/CANopen/coTfsMonitorExcludeNodeIdRange.md) `function`
+- [coTfsMonitorGetStatistics](structured/CANopen/coTfsMonitorGetStatistics.md) `function`
+- [coTfsMonitorIncludeNodeId](structured/CANopen/coTfsMonitorIncludeNodeId.md) `function`
+- [coTfsMonitorIncludeNodeIdRange](structured/CANopen/coTfsMonitorIncludeNodeIdRange.md) `function`
+- [coTfsMonitorSetLssTimeout](structured/CANopen/coTfsMonitorSetLssTimeout.md) `function`
+- [coTfsMonitorSetNmtTimeout](structured/CANopen/coTfsMonitorSetNmtTimeout.md) `function`
+- [coTfsMonitorSetSdoTimeout](structured/CANopen/coTfsMonitorSetSdoTimeout.md) `function`
+- [coTfsNmt](structured/CANopen/coTfsNmt.md) `function`
+- [coTfsNmtEnterPreOperational](structured/CANopen/coTfsNmtEnterPreOperational.md) `function`
+- [coTfsNmtGetCurrentState](structured/CANopen/coTfsNmtGetCurrentState.md) `function`
+- [coTfsNmtRequest](structured/CANopen/coTfsNmtRequest.md) `function`
+- [coTfsNmtResetCommunication](structured/CANopen/coTfsNmtResetCommunication.md) `function`
+- [coTfsNmtResetNode](structured/CANopen/coTfsNmtResetNode.md) `function`
+- [coTfsNmtStartNode](structured/CANopen/coTfsNmtStartNode.md) `function`
+- [coTfsNmtStopNode](structured/CANopen/coTfsNmtStopNode.md) `function`
+- [coTfsNmtWaitForBootupMessage](structured/CANopen/coTfsNmtWaitForBootupMessage.md) `function`
+- [coTfsNodeGuarding](structured/CANopen/coTfsNodeGuarding.md) `function`
+- [coTfsODAddEntry](structured/CANopen/coTfsODAddEntry.md) `function`
+- [coTfsODAddEntryIndexRange](structured/CANopen/coTfsODAddEntryIndexRange.md) `function`
+- [coTfsODAddEntrySubIndexRange](structured/CANopen/coTfsODAddEntrySubIndexRange.md) `function`
+- [coTfsODAddOptEntryValue](structured/CANopen/coTfsODAddOptEntryValue.md) `function`
+- [coTfsODAddOptEntryValueRange](structured/CANopen/coTfsODAddOptEntryValueRange.md) `function`
+- [coTfsODChk](structured/CANopen/coTfsODChk.md) `function`
+- [coTfsODChkNotExist](structured/CANopen/coTfsODChkNotExist.md) `function`
+- [coTfsODChkSingleEntry](structured/CANopen/coTfsODChkSingleEntry.md) `function`
+- [coTfsODChkSingleEntryNotExist](structured/CANopen/coTfsODChkSingleEntryNotExist.md) `function`
+- [coTfsODChkStdEntries](structured/CANopen/coTfsODChkStdEntries.md) `function`
+- [coTfsODClearAllEntries](structured/CANopen/coTfsODClearAllEntries.md) `function`
+- [coTfsODSetErrorHandling](structured/CANopen/coTfsODSetErrorHandling.md) `function`
+- [coTfsResetTfs](structured/CANopen/coTfsResetTfs.md) `function`
+- [coTfsSDO](structured/CANopen/coTfsSDO.md) `function`
+- [coTfsSDOAbort](structured/CANopen/coTfsSDOAbort.md) `function`
+- [coTfsSDOAbortCodeOccurred](structured/CANopen/coTfsSDOAbortCodeOccurred.md) `function`
+- [coTfsSDOAbortTest](structured/CANopen/coTfsSDOAbortTest.md) `function`
+- [coTfsSDOAddAccAbortCode](structured/CANopen/coTfsSDOAddAccAbortCode.md) `function`
+- [coTfsSDOBlockDownload](structured/CANopen/coTfsSDOBlockDownload.md) `function`
+- [coTfsSDOBlockDownloadSegmentRequest](structured/CANopen/coTfsSDOBlockDownloadSegmentRequest.md) `function`
+- [coTfsSDOBlockEnd](structured/CANopen/coTfsSDOBlockEnd.md) `function`
+- [coTfsSDOBlockInit](structured/CANopen/coTfsSDOBlockInit.md) `function`
+- [coTfsSDOBlockUpload](structured/CANopen/coTfsSDOBlockUpload.md) `function`
+- [coTfsSDOBlockUploadGetCRC](structured/CANopen/coTfsSDOBlockUploadGetCRC.md) `function`
+- [coTfsSDOBlockUploadSegmentResponse](structured/CANopen/coTfsSDOBlockUploadSegmentResponse.md) `function`
+- [coTfsSDOCalcCrc](structured/CANopen/coTfsSDOCalcCrc.md) `function`
+- [coTfsSDOChkCrcSupport](structured/CANopen/coTfsSDOChkCrcSupport.md) `function`
+- [coTfsSDOChkEntryExists](structured/CANopen/coTfsSDOChkEntryExists.md) `function`
+- [coTfsSDOChkForUnexpectedAbort](structured/CANopen/coTfsSDOChkForUnexpectedAbort.md) `function`
+- [coTfsSDODownload](structured/CANopen/coTfsSDODownload.md) `function`
+- [coTfsSDODownloadUploadAndCompare](structured/CANopen/coTfsSDODownloadUploadAndCompare.md) `function`
+- [coTfsSDOGetAbortCode](structured/CANopen/coTfsSDOGetAbortCode.md) `function`
+- [coTfsSDOGetBlockSize](structured/CANopen/coTfsSDOGetBlockSize.md) `function`
+- [coTfsSDOGetUploadData](structured/CANopen/coTfsSDOGetUploadData.md) `function`
+- [coTfsSDOGetUploadSize](structured/CANopen/coTfsSDOGetUploadSize.md) `function`
+- [coTfsSDOInit](structured/CANopen/coTfsSDOInit.md) `function`
+- [coTfsSDOInjectAbortMsg](structured/CANopen/coTfsSDOInjectAbortMsg.md) `function`
+- [coTfsSDOInjectRawMsg](structured/CANopen/coTfsSDOInjectRawMsg.md) `function`
+- [coTfsSDOResetAbortList](structured/CANopen/coTfsSDOResetAbortList.md) `function`
+- [coTfsSDOResetAccAbortList](structured/CANopen/coTfsSDOResetAccAbortList.md) `function`
+- [coTfsSDOSegmentRequest](structured/CANopen/coTfsSDOSegmentRequest.md) `function`
+- [coTfsSDOSetAbortControl](structured/CANopen/coTfsSDOSetAbortControl.md) `function`
+- [coTfsSDOSetSdoAbortOnError](structured/CANopen/coTfsSDOSetSdoAbortOnError.md) `function`
+- [coTfsSDOUpload](structured/CANopen/coTfsSDOUpload.md) `function`
+- [coTfsSDOUploadAndCompare](structured/CANopen/coTfsSDOUploadAndCompare.md) `function`
+- [coTfsSDOWaitForAbortCode](structured/CANopen/coTfsSDOWaitForAbortCode.md) `function`
+- [coTfsSDOWaitForSpecificAbortCode](structured/CANopen/coTfsSDOWaitForSpecificAbortCode.md) `function`
+- [coTfsSetApplProfile](structured/CANopen/coTfsSetApplProfile.md) `function`
+- [coTfsSetFailControl](structured/CANopen/coTfsSetFailControl.md) `function`
+- [coTfsSetNodeId](structured/CANopen/coTfsSetNodeId.md) `function`
+- [coTfsSetReportBehaviour](structured/CANopen/coTfsSetReportBehaviour.md) `function`
+- [coTfsSetSdoCANid](structured/CANopen/coTfsSetSdoCANid.md) `function`
+- [coTfsSetSDOScan](structured/CANopen/coTfsSetSDOScan.md) `function`
+- [coTfsSetTestModuleNodeId](structured/CANopen/coTfsSetTestModuleNodeId.md) `function`
+- [coTfsSetTimeoutValue](structured/CANopen/coTfsSetTimeoutValue.md) `function`
+- [coTfsSyncProducer](structured/CANopen/coTfsSyncProducer.md) `function`
+- [coTfsSyncProducerDetail](structured/CANopen/coTfsSyncProducerDetail.md) `function`
+- [coTfsTPDOGetDataByEventTimer](structured/CANopen/coTfsTPDOGetDataByEventTimer.md) `function`
+- [coTfsTPDOGetDataByRTR](structured/CANopen/coTfsTPDOGetDataByRTR.md) `function`
+- [coTfsTPDOGetDataBySyncCyclic](structured/CANopen/coTfsTPDOGetDataBySyncCyclic.md) `function`
+- [coTfsWToArr](structured/CANopen/coTfsWToArr.md) `function`
+- [References](structured/CANopen/References.md) `notes`
+- [Test Feature Set Error Codes](structured/CANopen/Test Feature Set Error Codes.md) `notes`
+
+---
+
+## CAPL CANstress (CANstress)
+
+**Function count**: 38
+
+- [Access Multiple CANstress Devices from a Single Test Module](structured/CANstress/Access Multiple CANstress Devices from a Single Test Module.md) `notes`
+- [CANstress and Distributed Mode](structured/CANstress/CANstress and Distributed Mode.md) `notes`
+- [CANstress CAPL Functions](structured/CANstress/CANstress CAPL Functions.md) `notes`
+- [CANstress: Main Test Function Example](structured/CANstress/CANstress_ Main Test Function Example.md) `notes`
+- [CANstressAvailableDevices](structured/CANstress/CANstressAvailableDevices.md) `function`
+- [CANstressConnect](structured/CANstress/CANstressConnect.md) `function`
+- [CANstressCreateServer](structured/CANstress/CANstressCreateServer.md) `function`
+- [CANstressCreateServer(Device number)](structured/CANstress/CANstressCreateServer(Device number).md) `function`
+- [CANstressCreateServer(DeviceAlias)](structured/CANstress/CANstressCreateServer(DeviceAlias).md) `function`
+- [CANstressGetDevice](structured/CANstress/CANstressGetDevice.md) `function`
+- [CANstressGetInfo](structured/CANstress/CANstressGetInfo.md) `function`
+- [CANstressGetPerformedDisturbances](structured/CANstress/CANstressGetPerformedDisturbances.md) `function`
+- [CANstressIsFinished](structured/CANstress/CANstressIsFinished.md) `function`
+- [CANstressIsIdle](structured/CANstress/CANstressIsIdle.md) `function`
+- [CANstressIsPending](structured/CANstress/CANstressIsPending.md) `function`
+- [CANstressOnFinished](structured/CANstress/CANstressOnFinished.md) `function`
+- [CANstressOnIdle](structured/CANstress/CANstressOnIdle.md) `function`
+- [CANstressOnPending](structured/CANstress/CANstressOnPending.md) `function`
+- [CANstressOpen](structured/CANstress/CANstressOpen.md) `function`
+- [CANstressQuit](structured/CANstress/CANstressQuit.md) `function`
+- [CANstressSetBTR](structured/CANstress/CANstressSetBTR.md) `function`
+- [CANstressSetContinuousDisturbanceTimeLimited](structured/CANstress/CANstressSetContinuousDisturbanceTimeLimited.md) `function`
+- [CANstressSetContinuousDisturbanceUntilStop](structured/CANstress/CANstressSetContinuousDisturbanceUntilStop.md) `function`
+- [CANstressSetContinuousDisturbanceWhileTrigger](structured/CANstress/CANstressSetContinuousDisturbanceWhileTrigger.md) `function`
+- [CANstressSetDevice](structured/CANstress/CANstressSetDevice.md) `function`
+- [CANstressSetDisturbanceSequence](structured/CANstress/CANstressSetDisturbanceSequence.md) `function`
+- [CANstressSetLimitedDisturbanceNumber](structured/CANstress/CANstressSetLimitedDisturbanceNumber.md) `function`
+- [CANstressSetResistor](structured/CANstress/CANstressSetResistor.md) `function`
+- [CANstressSetTriggerId](structured/CANstress/CANstressSetTriggerId.md) `function`
+- [CANstressSetTriggerRange](structured/CANstress/CANstressSetTriggerRange.md) `function`
+- [CANstressSetUnlimitedDisturbanceNumber](structured/CANstress/CANstressSetUnlimitedDisturbanceNumber.md) `function`
+- [CANstressStart](structured/CANstress/CANstressStart.md) `function`
+- [CANstressStop](structured/CANstress/CANstressStop.md) `function`
+- [CANstressStopTrigger](structured/CANstress/CANstressStopTrigger.md) `function`
+- [CANstressTrigger](structured/CANstress/CANstressTrigger.md) `function`
+- [CANstressWaitForFinished](structured/CANstress/CANstressWaitForFinished.md) `function`
+- [CANstressWaitForIdle](structured/CANstress/CANstressWaitForIdle.md) `function`
+- [CANstressWaitForPending](structured/CANstress/CANstressWaitForPending.md) `function`
+
+---
+
+## CAPL Car2x (V2X) (Car2x)
+
+**Function count**: 112
+
+- [<OnC2xPacket>](structured/Car2x/_OnC2xPacket_.md) `function`
+- [<OnC2xTransmitPacket>](structured/Car2x/_OnC2xTransmitPacket_.md) `function`
+- [C2xAddGeoPos](structured/Car2x/C2xAddGeoPos.md) `function`
+- [C2xAddToken](structured/Car2x/C2xAddToken.md) `function`
+- [C2xApplyPathHistory](structured/Car2x/C2xApplyPathHistory.md) `function`
+- [C2xCompletePacket](structured/Car2x/C2xCompletePacket.md) `function`
+- [C2xConfigureChannel](structured/Car2x/C2xConfigureChannel.md) `function`
+- [C2xConvertMod32TsToUTC](structured/Car2x/C2xConvertMod32TsToUTC.md) `function`
+- [C2xConvertTimeFromMSSinceUTC](structured/Car2x/C2xConvertTimeFromMSSinceUTC.md) `function`
+- [C2xConvertTimeToMSSinceUTC](structured/Car2x/C2xConvertTimeToMSSinceUTC.md) `function`
+- [C2xDisableMsg](structured/Car2x/C2xDisableMsg.md) `function`
+- [C2xDispatchPacket](structured/Car2x/C2xDispatchPacket.md) `function`
+- [C2xEnableCV2xMode](structured/Car2x/C2xEnableCV2xMode.md) `function`
+- [C2xEnableMsg](structured/Car2x/C2xEnableMsg.md) `function`
+- [C2xGetChannelConfiguration](structured/Car2x/C2xGetChannelConfiguration.md) `function`
+- [C2xGetCycleTime](structured/Car2x/C2xGetCycleTime.md) `function`
+- [C2xGetDefaultMacId](structured/Car2x/C2xGetDefaultMacId.md) `function`
+- [C2xGetITSTimeStamp](structured/Car2x/C2xGetITSTimeStamp.md) `function`
+- [C2xGetLastError](structured/Car2x/C2xGetLastError.md) `function`
+- [C2xGetLastErrorText](structured/Car2x/C2xGetLastErrorText.md) `function`
+- [C2xGetMessageHandle](structured/Car2x/C2xGetMessageHandle.md) `function`
+- [C2xGetMessageName](structured/Car2x/C2xGetMessageName.md) `function`
+- [C2xGetNodeName](structured/Car2x/C2xGetNodeName.md) `function`
+- [C2xGetStationAttributeDouble](structured/Car2x/C2xGetStationAttributeDouble.md) `function`
+- [C2xGetStationAttributeInt64](structured/Car2x/C2xGetStationAttributeInt64.md) `function`
+- [C2xGetStationColor](structured/Car2x/C2xGetStationColor.md) `function`
+- [C2xGetStationHandle](structured/Car2x/C2xGetStationHandle.md) `function`
+- [C2xGetStationName](structured/Car2x/C2xGetStationName.md) `function`
+- [C2xGetStationSubAttributeDouble](structured/Car2x/C2xGetStationSubAttributeDouble.md) `function`
+- [C2xGetStationSubAttributeInt64](structured/Car2x/C2xGetStationSubAttributeInt64.md) `function`
+- [C2xGetThisData](structured/Car2x/C2xGetThisData.md) `function`
+- [C2xGetThisMotorolaValue16](structured/Car2x/C2xGetThisMotorolaValue16.md) `function`
+- [C2xGetThisMotorolaValue32](structured/Car2x/C2xGetThisMotorolaValue32.md) `function`
+- [C2xGetThisMotorolaValue64](structured/Car2x/C2xGetThisMotorolaValue64.md) `function`
+- [C2xGetThisTimeNS](structured/Car2x/C2xGetThisTimeNS.md) `function`
+- [C2xGetThisValue16](structured/Car2x/C2xGetThisValue16.md) `function`
+- [C2xGetThisValue32](structured/Car2x/C2xGetThisValue32.md) `function`
+- [C2xGetThisValue64](structured/Car2x/C2xGetThisValue64.md) `function`
+- [C2xGetThisValue8](structured/Car2x/C2xGetThisValue8.md) `function`
+- [C2xGetTokenBitOfBitString](structured/Car2x/C2xGetTokenBitOfBitString.md) `function`
+- [C2xGetTokenBitString](structured/Car2x/C2xGetTokenBitString.md) `function`
+- [C2xGetTokenData](structured/Car2x/C2xGetTokenData.md) `function`
+- [C2xGetTokenInt](structured/Car2x/C2xGetTokenInt.md) `function`
+- [C2xGetTokenInt64](structured/Car2x/C2xGetTokenInt64.md) `function`
+- [C2xGetTokenLengthBit](structured/Car2x/C2xGetTokenLengthBit.md) `function`
+- [C2xGetTokenPhys](structured/Car2x/C2xGetTokenPhys.md) `function`
+- [C2xGetTokenString](structured/Car2x/C2xGetTokenString.md) `function`
+- [C2xGetTokenSubString](structured/Car2x/C2xGetTokenSubString.md) `function`
+- [C2xInitPacket](structured/Car2x/C2xInitPacket.md) `function`
+- [C2xInitProtocol](structured/Car2x/C2xInitProtocol.md) `function`
+- [C2xIsMsgEnabled](structured/Car2x/C2xIsMsgEnabled.md) `function`
+- [C2xIsPacketValid](structured/Car2x/C2xIsPacketValid.md) `function`
+- [C2xIsScenarioStarted](structured/Car2x/C2xIsScenarioStarted.md) `function`
+- [C2xIsTokenAvailable](structured/Car2x/C2xIsTokenAvailable.md) `function`
+- [C2xLoadScenario](structured/Car2x/C2xLoadScenario.md) `function`
+- [C2xOutputPacket](structured/Car2x/C2xOutputPacket.md) `function`
+- [C2xParsePacket](structured/Car2x/C2xParsePacket.md) `function`
+- [C2xReceivePacket](structured/Car2x/C2xReceivePacket.md) `function`
+- [C2xRegisterCallback](structured/Car2x/C2xRegisterCallback.md) `function`
+- [C2xReleasePacket](structured/Car2x/C2xReleasePacket.md) `function`
+- [C2xRemoveToken](structured/Car2x/C2xRemoveToken.md) `function`
+- [C2xResetPathHistory](structured/Car2x/C2xResetPathHistory.md) `function`
+- [C2xResizeToken](structured/Car2x/C2xResizeToken.md) `function`
+- [C2xSecCertificateCreate](structured/Car2x/C2xSecCertificateCreate.md) `function`
+- [C2xSecCertificateGetHandle](structured/Car2x/C2xSecCertificateGetHandle.md) `function`
+- [C2xSecCertificateGetHashedId8](structured/Car2x/C2xSecCertificateGetHashedId8.md) `function`
+- [C2xSecCertificateGetName](structured/Car2x/C2xSecCertificateGetName.md) `function`
+- [C2xSecCertificateGetSignerHandle](structured/Car2x/C2xSecCertificateGetSignerHandle.md) `function`
+- [C2xSecCertificateGetSignerHashedId8](structured/Car2x/C2xSecCertificateGetSignerHashedId8.md) `function`
+- [C2xSecCertificateGetStatus](structured/Car2x/C2xSecCertificateGetStatus.md) `function`
+- [C2xSecCertificateValidAppSspBitmap](structured/Car2x/C2xSecCertificateValidAppSspBitmap.md) `function`
+- [C2xSecCertificateValidIdentifiedRegion](structured/Car2x/C2xSecCertificateValidIdentifiedRegion.md) `function`
+- [C2xSecPacketGetSignerHandle](structured/Car2x/C2xSecPacketGetSignerHandle.md) `function`
+- [C2xSecPacketGetSignerHashedId8](structured/Car2x/C2xSecPacketGetSignerHashedId8.md) `function`
+- [C2xSecPacketGetSignerType](structured/Car2x/C2xSecPacketGetSignerType.md) `function`
+- [C2xSecPacketGetStatus](structured/Car2x/C2xSecPacketGetStatus.md) `function`
+- [C2xSecPacketIsSecured](structured/Car2x/C2xSecPacketIsSecured.md) `function`
+- [C2xSecPacketSetSignerHandle](structured/Car2x/C2xSecPacketSetSignerHandle.md) `function`
+- [C2xSecPacketSetSignerType](structured/Car2x/C2xSecPacketSetSignerType.md) `function`
+- [C2xSendMsg](structured/Car2x/C2xSendMsg.md) `function`
+- [C2xSetCycleTime](structured/Car2x/C2xSetCycleTime.md) `function`
+- [C2xSetSendParameters](structured/Car2x/C2xSetSendParameters.md) `function`
+- [C2xSetSignal](structured/Car2x/C2xSetSignal.md) `function`
+- [C2xSetStationAttributeDouble](structured/Car2x/C2xSetStationAttributeDouble.md) `function`
+- [C2xSetStationAttributeInt64](structured/Car2x/C2xSetStationAttributeInt64.md) `function`
+- [C2xSetTokenBitOfBitString](structured/Car2x/C2xSetTokenBitOfBitString.md) `function`
+- [C2xSetTokenBitString](structured/Car2x/C2xSetTokenBitString.md) `function`
+- [C2xSetTokenData](structured/Car2x/C2xSetTokenData.md) `function`
+- [C2xSetTokenInt](structured/Car2x/C2xSetTokenInt.md) `function`
+- [C2xSetTokenInt64](structured/Car2x/C2xSetTokenInt64.md) `function`
+- [C2xSetTokenPhys](structured/Car2x/C2xSetTokenPhys.md) `function`
+- [C2xSetTokenString](structured/Car2x/C2xSetTokenString.md) `function`
+- [C2xSetVerbosity](structured/Car2x/C2xSetVerbosity.md) `function`
+- [C2xStartNode](structured/Car2x/C2xStartNode.md) `function`
+- [C2xStartScenario](structured/Car2x/C2xStartScenario.md) `function`
+- [C2xStopNode](structured/Car2x/C2xStopNode.md) `function`
+- [C2xStopScenario](structured/Car2x/C2xStopScenario.md) `function`
+- [C2xTestGetWaitForMessage](structured/Car2x/C2xTestGetWaitForMessage.md) `function`
+- [C2xTestJoinMessage](structured/Car2x/C2xTestJoinMessage.md) `function`
+- [C2xTestJoinSignalInRange](structured/Car2x/C2xTestJoinSignalInRange.md) `function`
+- [C2xTestJoinSignalMatch](structured/Car2x/C2xTestJoinSignalMatch.md) `function`
+- [C2xTestWaitForMessage](structured/Car2x/C2xTestWaitForMessage.md) `function`
+- [C2xTestWaitForSignalInRange](structured/Car2x/C2xTestWaitForSignalInRange.md) `function`
+- [C2xTestWaitForSignalMatch](structured/Car2x/C2xTestWaitForSignalMatch.md) `function`
+- [Car2x CAPL Functions](structured/Car2x/Car2x CAPL Functions.md) `notes`
+- [Car2x Error Codes](structured/Car2x/Car2x Error Codes.md) `notes`
+- [Car2x Test Service Library](structured/Car2x/Car2x Test Service Library.md) `notes`
+- [Map Window API](structured/Car2x/Map Window API.md) `notes`
+- [OnScenarioStateChanged](structured/Car2x/OnScenarioStateChanged.md) `function`
+- [OnStartScenario](structured/Car2x/OnStartScenario.md) `function`
+- [OnStationAttributeTrigger](structured/Car2x/OnStationAttributeTrigger.md) `function`
+- [OnStationAttributeTriggerAll](structured/Car2x/OnStationAttributeTriggerAll.md) `function`
+
+---
+
+## CAPL CarMaker Integration (CarMaker)
+
+**Function count**: 20
+
+- [CarMaker CAPL Functions](structured/CarMaker/CarMaker CAPL Functions.md) `notes`
+- [CarMaker Return Codes](structured/CarMaker/CarMaker Return Codes.md) `notes`
+- [CarMaker_BeginWrite, CarMaker_FinishWrite](structured/CarMaker/CarMaker_BeginWrite, CarMaker_FinishWrite.md) `function`
+- [CarMaker_Connect](structured/CarMaker/CarMaker_Connect.md) `function`
+- [CarMaker_Disconnect](structured/CarMaker/CarMaker_Disconnect.md) `function`
+- [CarMaker_GetNamedValue](structured/CarMaker/CarMaker_GetNamedValue.md) `function`
+- [CarMaker_InvokeCommand](structured/CarMaker/CarMaker_InvokeCommand.md) `function`
+- [CarMaker_LoadTestRun](structured/CarMaker/CarMaker_LoadTestRun.md) `function`
+- [CarMaker_LoadTestSeries](structured/CarMaker/CarMaker_LoadTestSeries.md) `function`
+- [CarMaker_Poll](structured/CarMaker/CarMaker_Poll.md) `function`
+- [CarMaker_SetNamedValue](structured/CarMaker/CarMaker_SetNamedValue.md) `function`
+- [CarMaker_StartCommand](structured/CarMaker/CarMaker_StartCommand.md) `function`
+- [CarMaker_StartSim](structured/CarMaker/CarMaker_StartSim.md) `function`
+- [CarMaker_StartTestSeries](structured/CarMaker/CarMaker_StartTestSeries.md) `function`
+- [CarMaker_Status](structured/CarMaker/CarMaker_Status.md) `function`
+- [CarMaker_StatusText](structured/CarMaker/CarMaker_StatusText.md) `function`
+- [CarMaker_StopSim](structured/CarMaker/CarMaker_StopSim.md) `function`
+- [CarMaker_StopTestSeries](structured/CarMaker/CarMaker_StopTestSeries.md) `function`
+- [CarMaker_Subscribe](structured/CarMaker/CarMaker_Subscribe.md) `function`
+- [CarMaker_WriteAbs](structured/CarMaker/CarMaker_WriteAbs.md) `function`
+
+---
+
+## CAPL Communication Objects (CommunicationObjects)
+
+**Function count**: 185
+
+- [Abstract_CreateAddress](structured/CommunicationObjects/Abstract_CreateAddress.md) `function`
+- [Abstract_GetConsumerId](structured/CommunicationObjects/Abstract_GetConsumerId.md) `function`
+- [Abstract_GetDisplayName](structured/CommunicationObjects/Abstract_GetDisplayName.md) `function`
+- [Abstract_GetProviderId](structured/CommunicationObjects/Abstract_GetProviderId.md) `function`
+- [Abstract_ReleaseAddress](structured/CommunicationObjects/Abstract_ReleaseAddress.md) `function`
+- [Abstract_SubscribeEvent](structured/CommunicationObjects/Abstract_SubscribeEvent.md) `function`
+- [Abstract_SubscribeField](structured/CommunicationObjects/Abstract_SubscribeField.md) `function`
+- [Abstract_SubscribePdu](structured/CommunicationObjects/Abstract_SubscribePdu.md) `function`
+- [Abstract_UnsubscribeEvent](structured/CommunicationObjects/Abstract_UnsubscribeEvent.md) `function`
+- [Abstract_UnsubscribeField](structured/CommunicationObjects/Abstract_UnsubscribeField.md) `function`
+- [Abstract_UnsubscribePdu](structured/CommunicationObjects/Abstract_UnsubscribePdu.md) `function`
+- [callContext](structured/CommunicationObjects/callContext.md) `function`
+- [callcontext::CreatePermanentHandle](structured/CommunicationObjects/callcontext__CreatePermanentHandle.md) `method`
+- [callcontext::DeferAnswer](structured/CommunicationObjects/callcontext__DeferAnswer.md) `method`
+- [callcontext::FromHandle](structured/CommunicationObjects/callcontext__FromHandle.md) `method`
+- [callcontext::ReleaseHandle](structured/CommunicationObjects/callcontext__ReleaseHandle.md) `method`
+- [callcontext::ReturnCall](structured/CommunicationObjects/callcontext__ReturnCall.md) `method`
+- [callcontext::SetDefaultAnswer](structured/CommunicationObjects/callcontext__SetDefaultAnswer.md) `method`
+- [callcontext::SetTimeToAnswer](structured/CommunicationObjects/callcontext__SetTimeToAnswer.md) `method`
+- [Clear](structured/CommunicationObjects/Clear.md) `method`
+- [Communication Objects CAPL Functions](structured/CommunicationObjects/Communication Objects CAPL Functions.md) `notes`
+- [consumedEventGroupRef::SOMEIPIsEventGroupRequested](structured/CommunicationObjects/consumedEventGroupRef__SOMEIPIsEventGroupRequested.md) `method`
+- [consumedEventGroupRef::SOMEIPReleaseEventGroup](structured/CommunicationObjects/consumedEventGroupRef__SOMEIPReleaseEventGroup.md) `method`
+- [consumedEventGroupRef::SOMEIPRequestEventGroup](structured/CommunicationObjects/consumedEventGroupRef__SOMEIPRequestEventGroup.md) `method`
+- [consumedEventRef](structured/CommunicationObjects/consumedEventRef.md) `function`
+- [consumedEventRef::AbstractIsEventRequested](structured/CommunicationObjects/consumedEventRef__AbstractIsEventRequested.md) `method`
+- [consumedEventRef::AbstractReleaseEvent](structured/CommunicationObjects/consumedEventRef__AbstractReleaseEvent.md) `method`
+- [consumedEventRef::AbstractRequestEvent](structured/CommunicationObjects/consumedEventRef__AbstractRequestEvent.md) `method`
+- [consumedFieldRef](structured/CommunicationObjects/consumedFieldRef.md) `function`
+- [consumedFieldRef::AbstractIsFieldRequested](structured/CommunicationObjects/consumedFieldRef__AbstractIsFieldRequested.md) `method`
+- [consumedFieldRef::AbstractReleaseField](structured/CommunicationObjects/consumedFieldRef__AbstractReleaseField.md) `method`
+- [consumedFieldRef::AbstractRequestField](structured/CommunicationObjects/consumedFieldRef__AbstractRequestField.md) `method`
+- [consumedMethodRef](structured/CommunicationObjects/consumedMethodRef.md) `function`
+- [consumedMethodRef::CallAsync](structured/CommunicationObjects/consumedMethodRef__CallAsync.md) `method`
+- [consumedMethodRef::CallAsyncPhys](structured/CommunicationObjects/consumedMethodRef__CallAsyncPhys.md) `method`
+- [consumedPDURef](structured/CommunicationObjects/consumedPDURef.md) `function`
+- [consumedPduRef::AbstractIsPduRequested](structured/CommunicationObjects/consumedPduRef__AbstractIsPduRequested.md) `method`
+- [consumedPduRef::AbstractReleasePdu](structured/CommunicationObjects/consumedPduRef__AbstractReleasePdu.md) `method`
+- [consumedPduRef::AbstractRequestPdu](structured/CommunicationObjects/consumedPduRef__AbstractRequestPdu.md) `method`
+- [consumedServiceRef](structured/CommunicationObjects/consumedServiceRef.md) `function`
+- [consumedServiceRef::IsServiceRequested](structured/CommunicationObjects/consumedServiceRef__IsServiceRequested.md) `method`
+- [consumedServiceRef::ReleaseService](structured/CommunicationObjects/consumedServiceRef__ReleaseService.md) `method`
+- [consumedServiceRef::RequestService](structured/CommunicationObjects/consumedServiceRef__RequestService.md) `method`
+- [eventConsumerRef](structured/CommunicationObjects/eventConsumerRef.md) `function`
+- [eventProviderRef](structured/CommunicationObjects/eventProviderRef.md) `function`
+- [eventProviderRef::GetNrOfSubscribedConsumers](structured/CommunicationObjects/eventProviderRef__GetNrOfSubscribedConsumers.md) `method`
+- [eventProviderRef::GetSubscribedConsumer](structured/CommunicationObjects/eventProviderRef__GetSubscribedConsumer.md) `method`
+- [eventProviderRef::Trigger](structured/CommunicationObjects/eventProviderRef__Trigger.md) `method`
+- [fieldConsumerRef](structured/CommunicationObjects/fieldConsumerRef.md) `function`
+- [fieldProviderRef](structured/CommunicationObjects/fieldProviderRef.md) `function`
+- [fieldProviderRef::GetNrOfSubscribedConsumers](structured/CommunicationObjects/fieldProviderRef__GetNrOfSubscribedConsumers.md) `method`
+- [fieldProviderRef::GetSubscribedConsumer](structured/CommunicationObjects/fieldProviderRef__GetSubscribedConsumer.md) `method`
+- [GetConsumedFieldRef](structured/CommunicationObjects/GetConsumedFieldRef.md) `method`
+- [GetConsumedServiceRef](structured/CommunicationObjects/GetConsumedServiceRef.md) `method`
+- [GetConsumer](structured/CommunicationObjects/GetConsumer.md) `method`
+- [GetConsumerIndex](structured/CommunicationObjects/GetConsumerIndex.md) `method`
+- [GetNrOfCOConsumers](structured/CommunicationObjects/GetNrOfCOConsumers.md) `function`
+- [GetNrOfCOProviders](structured/CommunicationObjects/GetNrOfCOProviders.md) `function`
+- [GetNrOfCOReceivers](structured/CommunicationObjects/GetNrOfCOReceivers.md) `function`
+- [GetNrOfCOSenders](structured/CommunicationObjects/GetNrOfCOSenders.md) `function`
+- [GetProvidedFieldRef](structured/CommunicationObjects/GetProvidedFieldRef.md) `method`
+- [GetProvidedServiceRef](structured/CommunicationObjects/GetProvidedServiceRef.md) `method`
+- [GetProvider](structured/CommunicationObjects/GetProvider.md) `method`
+- [GetProviderIndex](structured/CommunicationObjects/GetProviderIndex.md) `method`
+- [GetReceiver](structured/CommunicationObjects/GetReceiver.md) `method`
+- [GetReceiverIndex](structured/CommunicationObjects/GetReceiverIndex.md) `method`
+- [GetSender](structured/CommunicationObjects/GetSender.md) `method`
+- [GetSenderIndex](structured/CommunicationObjects/GetSenderIndex.md) `method`
+- [LookupConsumedEvent](structured/CommunicationObjects/LookupConsumedEvent.md) `function`
+- [LookupConsumedField](structured/CommunicationObjects/LookupConsumedField.md) `function`
+- [LookupConsumedMethod](structured/CommunicationObjects/LookupConsumedMethod.md) `function`
+- [LookupConsumedPDU](structured/CommunicationObjects/LookupConsumedPDU.md) `function`
+- [LookupConsumedService](structured/CommunicationObjects/LookupConsumedService.md) `function`
+- [LookupEventConsumer](structured/CommunicationObjects/LookupEventConsumer.md) `function`
+- [LookupEventProvider](structured/CommunicationObjects/LookupEventProvider.md) `function`
+- [LookupFieldConsumer](structured/CommunicationObjects/LookupFieldConsumer.md) `function`
+- [LookupFieldProvider](structured/CommunicationObjects/LookupFieldProvider.md) `function`
+- [LookupMeasuredEvent](structured/CommunicationObjects/LookupMeasuredEvent.md) `function`
+- [LookupMeasuredField](structured/CommunicationObjects/LookupMeasuredField.md) `function`
+- [LookupMeasuredMethod](structured/CommunicationObjects/LookupMeasuredMethod.md) `function`
+- [LookupMeasuredPDU](structured/CommunicationObjects/LookupMeasuredPDU.md) `function`
+- [LookupMeasuredService](structured/CommunicationObjects/LookupMeasuredService.md) `function`
+- [LookupPDUConsumer](structured/CommunicationObjects/LookupPDUConsumer.md) `function`
+- [LookupPDUProvider](structured/CommunicationObjects/LookupPDUProvider.md) `function`
+- [LookupProvidedEvent](structured/CommunicationObjects/LookupProvidedEvent.md) `function`
+- [LookupProvidedField](structured/CommunicationObjects/LookupProvidedField.md) `function`
+- [LookupProvidedMethod](structured/CommunicationObjects/LookupProvidedMethod.md) `function`
+- [LookupProvidedPDU](structured/CommunicationObjects/LookupProvidedPDU.md) `function`
+- [LookupProvidedService](structured/CommunicationObjects/LookupProvidedService.md) `function`
+- [LookupRxPDU](structured/CommunicationObjects/LookupRxPDU.md) `function`
+- [LookupRxSignal](structured/CommunicationObjects/LookupRxSignal.md) `function`
+- [LookupServiceConsumer](structured/CommunicationObjects/LookupServiceConsumer.md) `function`
+- [LookupServiceProvider](structured/CommunicationObjects/LookupServiceProvider.md) `function`
+- [LookupTxPDU](structured/CommunicationObjects/LookupTxPDU.md) `function`
+- [LookupTxSignal](structured/CommunicationObjects/LookupTxSignal.md) `function`
+- [measuredEventRef](structured/CommunicationObjects/measuredEventRef.md) `function`
+- [measuredFieldRef](structured/CommunicationObjects/measuredFieldRef.md) `function`
+- [measuredMethodRef](structured/CommunicationObjects/measuredMethodRef.md) `function`
+- [measuredPDURef](structured/CommunicationObjects/measuredPDURef.md) `function`
+- [measuredServicePDURef](structured/CommunicationObjects/measuredServicePDURef.md) `function`
+- [measuredServiceRef](structured/CommunicationObjects/measuredServiceRef.md) `function`
+- [on Abstract_EventSubscribed](structured/CommunicationObjects/on Abstract_EventSubscribed.md) `event`
+- [on Abstract_EventUnsubscribed](structured/CommunicationObjects/on Abstract_EventUnsubscribed.md) `event`
+- [on Abstract_FieldSubscribed](structured/CommunicationObjects/on Abstract_FieldSubscribed.md) `event`
+- [on Abstract_FieldUnsubscribed](structured/CommunicationObjects/on Abstract_FieldUnsubscribed.md) `event`
+- [on fct_Called](structured/CommunicationObjects/on fct_Called.md) `event`
+- [on fct_Calling](structured/CommunicationObjects/on fct_Calling.md) `event`
+- [on fct_Returned](structured/CommunicationObjects/on fct_Returned.md) `event`
+- [on fct_Returning](structured/CommunicationObjects/on fct_Returning.md) `event`
+- [on PDU_change](structured/CommunicationObjects/on PDU_change.md) `event`
+- [on PDU_Subscribed](structured/CommunicationObjects/on PDU_Subscribed.md) `event`
+- [on PDU_Unsubscribed](structured/CommunicationObjects/on PDU_Unsubscribed.md) `event`
+- [on PDU_update](structured/CommunicationObjects/on PDU_update.md) `event`
+- [on SD_connection_established](structured/CommunicationObjects/on SD_connection_established.md) `event`
+- [on SD_connection_failed](structured/CommunicationObjects/on SD_connection_failed.md) `event`
+- [on SD_connection_requested](structured/CommunicationObjects/on SD_connection_requested.md) `event`
+- [on SD_consumer_discovered](structured/CommunicationObjects/on SD_consumer_discovered.md) `event`
+- [on SD_provider_discovered](structured/CommunicationObjects/on SD_provider_discovered.md) `event`
+- [on SD_service_discovery](structured/CommunicationObjects/on SD_service_discovery.md) `event`
+- [on SOMEIP_EventGroupSubscribed](structured/CommunicationObjects/on SOMEIP_EventGroupSubscribed.md) `event`
+- [on SOMEIP_EventGroupUnsubscribed](structured/CommunicationObjects/on SOMEIP_EventGroupUnsubscribed.md) `event`
+- [on value_change](structured/CommunicationObjects/on value_change.md) `event`
+- [on value_update](structured/CommunicationObjects/on value_update.md) `event`
+- [pduConsumerRef](structured/CommunicationObjects/pduConsumerRef.md) `function`
+- [pduProviderRef](structured/CommunicationObjects/pduProviderRef.md) `function`
+- [pduProviderRef::GetNrOfSubscribedConsumers](structured/CommunicationObjects/pduProviderRef__GetNrOfSubscribedConsumers.md) `method`
+- [pduProviderRef::GetSubscribedConsumer](structured/CommunicationObjects/pduProviderRef__GetSubscribedConsumer.md) `method`
+- [providedEventRef](structured/CommunicationObjects/providedEventRef.md) `function`
+- [providedEventRef::Trigger](structured/CommunicationObjects/providedEventRef__Trigger.md) `method`
+- [providedFieldRef](structured/CommunicationObjects/providedFieldRef.md) `function`
+- [providedMethodRef](structured/CommunicationObjects/providedMethodRef.md) `function`
+- [providedPDURef](structured/CommunicationObjects/providedPDURef.md) `function`
+- [providedServiceRef](structured/CommunicationObjects/providedServiceRef.md) `function`
+- [rxPDURef](structured/CommunicationObjects/rxPDURef.md) `function`
+- [rxSignalRef](structured/CommunicationObjects/rxSignalRef.md) `function`
+- [SD_AddConsumer](structured/CommunicationObjects/SD_AddConsumer.md) `function`
+- [SD_AddProvider](structured/CommunicationObjects/SD_AddProvider.md) `function`
+- [SD_AnnounceProvider](structured/CommunicationObjects/SD_AnnounceProvider.md) `function`
+- [SD_ConnectAsync](structured/CommunicationObjects/SD_ConnectAsync.md) `function`
+- [SD_Disconnect](structured/CommunicationObjects/SD_Disconnect.md) `function`
+- [SD_DiscoverProviders](structured/CommunicationObjects/SD_DiscoverProviders.md) `function`
+- [SD_RemoveConsumer](structured/CommunicationObjects/SD_RemoveConsumer.md) `function`
+- [SD_RemoveProvider](structured/CommunicationObjects/SD_RemoveProvider.md) `function`
+- [SD_SetAddress](structured/CommunicationObjects/SD_SetAddress.md) `function`
+- [SD_UnnnounceProvider](structured/CommunicationObjects/SD_UnnnounceProvider.md) `function`
+- [serviceConsumerRef](structured/CommunicationObjects/serviceConsumerRef.md) `function`
+- [serviceProviderRef](structured/CommunicationObjects/serviceProviderRef.md) `function`
+- [serviceProviderRef::IsServiceProvided](structured/CommunicationObjects/serviceProviderRef__IsServiceProvided.md) `method`
+- [serviceProviderRef::ProvideService](structured/CommunicationObjects/serviceProviderRef__ProvideService.md) `method`
+- [serviceProviderRef::ReleaseService](structured/CommunicationObjects/serviceProviderRef__ReleaseService.md) `method`
+- [SetConsumer](structured/CommunicationObjects/SetConsumer.md) `method`
+- [SetEvent](structured/CommunicationObjects/SetEvent.md) `method`
+- [SetField](structured/CommunicationObjects/SetField.md) `method`
+- [SetMethod](structured/CommunicationObjects/SetMethod.md) `method`
+- [SetPDU](structured/CommunicationObjects/SetPDU.md) `method`
+- [SetProvider](structured/CommunicationObjects/SetProvider.md) `method`
+- [SetReceiver](structured/CommunicationObjects/SetReceiver.md) `method`
+- [SetSender](structured/CommunicationObjects/SetSender.md) `method`
+- [SetService](structured/CommunicationObjects/SetService.md) `method`
+- [SetSignal](structured/CommunicationObjects/SetSignal.md) `method`
+- [SetSubscriptionStateIsolated](structured/CommunicationObjects/SetSubscriptionStateIsolated.md) `function`
+- [SOMEIP_InjectPDU](structured/CommunicationObjects/SOMEIP_InjectPDU.md) `function`
+- [SOMEIP_SubscribeEventGroup](structured/CommunicationObjects/SOMEIP_SubscribeEventGroup.md) `function`
+- [SOMEIP_UnsubscribeEventGroup](structured/CommunicationObjects/SOMEIP_UnsubscribeEventGroup.md) `function`
+- [TestWaitForAnswer](structured/CommunicationObjects/TestWaitForAnswer.md) `function`
+- [TestWaitForChange](structured/CommunicationObjects/TestWaitForChange.md) `function`
+- [TestWaitForChangeCountGreater](structured/CommunicationObjects/TestWaitForChangeCountGreater.md) `function`
+- [TestWaitForChangeFlag](structured/CommunicationObjects/TestWaitForChangeFlag.md) `function`
+- [TestWaitForNextCall](structured/CommunicationObjects/TestWaitForNextCall.md) `function`
+- [TestWaitForUpdate](structured/CommunicationObjects/TestWaitForUpdate.md) `function`
+- [TestWaitForUpdateCountGreater](structured/CommunicationObjects/TestWaitForUpdateCountGreater.md) `function`
+- [TestWaitForUpdateFlag](structured/CommunicationObjects/TestWaitForUpdateFlag.md) `function`
+- [TestWaitForValue](structured/CommunicationObjects/TestWaitForValue.md) `function`
+- [TestWaitForValueFloat](structured/CommunicationObjects/TestWaitForValueFloat.md) `function`
+- [TestWaitForValueSInt](structured/CommunicationObjects/TestWaitForValueSInt.md) `function`
+- [TestWaitForValueString](structured/CommunicationObjects/TestWaitForValueString.md) `function`
+- [TestWaitForValueUInt](structured/CommunicationObjects/TestWaitForValueUInt.md) `function`
+- [txPDURef](structured/CommunicationObjects/txPDURef.md) `function`
+- [txSignalRef](structured/CommunicationObjects/txSignalRef.md) `function`
+- [valueHandle::ClearChangeFlag](structured/CommunicationObjects/valueHandle__ClearChangeFlag.md) `method`
+- [valueHandle::ClearUpdateFlag](structured/CommunicationObjects/valueHandle__ClearUpdateFlag.md) `method`
+- [valueHandle::GetChangeCount](structured/CommunicationObjects/valueHandle__GetChangeCount.md) `method`
+- [valueHandle::GetUpdateCount](structured/CommunicationObjects/valueHandle__GetUpdateCount.md) `method`
+- [valueHandle::GetValueState](structured/CommunicationObjects/valueHandle__GetValueState.md) `method`
+- [valueHandle::ResetValueState](structured/CommunicationObjects/valueHandle__ResetValueState.md) `method`
+
+---
+
+## CAPL Diagnostics (UDS/KWP2000) (Diagnostics)
+
+**Function count**: 219
+
+- [_Diag_ChannelStateChanged](structured/Diagnostics/_Diag_ChannelStateChanged.md) `function`
+- [_Diag_ConfigureChannel](structured/Diagnostics/_Diag_ConfigureChannel.md) `function`
+- [_Diag_DataRequest](structured/Diagnostics/_Diag_DataRequest.md) `function`
+- [_Diag_DisconnectReq, _Diag_DisconnectRequest](structured/Diagnostics/_Diag_DisconnectReq, _Diag_DisconnectRequest.md) `function`
+- [_Diag_GenerateKeyResult](structured/Diagnostics/_Diag_GenerateKeyResult.md) `function`
+- [_Diag_PhysicalRequest, _Diag_FunctionalRequest](structured/Diagnostics/_Diag_PhysicalRequest, _Diag_FunctionalRequest.md) `function`
+- [_Diag_SendFunctional](structured/Diagnostics/_Diag_SendFunctional.md) `function`
+- [_Diag_SetChannelParameters](structured/Diagnostics/_Diag_SetChannelParameters.md) `function`
+- [_Diag_SetupChannelRequest, _Diag_SetupChannelReq](structured/Diagnostics/_Diag_SetupChannelRequest, _Diag_SetupChannelReq.md) `function`
+- [_DoIP_ConnectionClosedInd](structured/Diagnostics/_DoIP_ConnectionClosedInd.md) `function`
+- [_DoIP_EntityStatusResponse](structured/Diagnostics/_DoIP_EntityStatusResponse.md) `function`
+- [_DoIP_IdentificationRequest](structured/Diagnostics/_DoIP_IdentificationRequest.md) `function`
+- [_DoIP_MessageAcknowledgeInd](structured/Diagnostics/_DoIP_MessageAcknowledgeInd.md) `function`
+- [_DoIP_PowerModeInformationResponse](structured/Diagnostics/_DoIP_PowerModeInformationResponse.md) `function`
+- [_DoIP_RoutingActivationRequest](structured/Diagnostics/_DoIP_RoutingActivationRequest.md) `function`
+- [_DoIP_TCPDataInd](structured/Diagnostics/_DoIP_TCPDataInd.md) `function`
+- [_DoIP_TCPPreSend](structured/Diagnostics/_DoIP_TCPPreSend.md) `function`
+- [_DoIP_UDPDataInd](structured/Diagnostics/_DoIP_UDPDataInd.md) `function`
+- [_DoIP_UDPInd](structured/Diagnostics/_DoIP_UDPInd.md) `function`
+- [_DoIP_UDPPreSend](structured/Diagnostics/_DoIP_UDPPreSend.md) `function`
+- [_DoIP_VehicleAnnouncementInd](structured/Diagnostics/_DoIP_VehicleAnnouncementInd.md) `function`
+- [_DoIP_VehicleConnectedInd](structured/Diagnostics/_DoIP_VehicleConnectedInd.md) `function`
+- [_DoIP_VehicleIdentificationCompleteInd](structured/Diagnostics/_DoIP_VehicleIdentificationCompleteInd.md) `function`
+- [CallbackTPDataIndication](structured/Diagnostics/CallbackTPDataIndication.md) `function`
+- [diag_ClosedChannelInd](structured/Diagnostics/diag_ClosedChannelInd.md) `function`
+- [diag_DataCon](structured/Diagnostics/diag_DataCon.md) `function`
+- [diag_DataInd](structured/Diagnostics/diag_DataInd.md) `function`
+- [diag_ErrorInd](structured/Diagnostics/diag_ErrorInd.md) `function`
+- [diag_FirstFrameInd](structured/Diagnostics/diag_FirstFrameInd.md) `function`
+- [diag_RequestDone](structured/Diagnostics/diag_RequestDone.md) `function`
+- [diag_SetDataSegmentation](structured/Diagnostics/diag_SetDataSegmentation.md) `function`
+- [diag_SetupChannelCon](structured/Diagnostics/diag_SetupChannelCon.md) `function`
+- [diagCheckObjectMatch](structured/Diagnostics/diagCheckObjectMatch.md) `function`
+- [diagCheckValidNegResCode](structured/Diagnostics/diagCheckValidNegResCode.md) `function`
+- [diagCheckValidPrimitive](structured/Diagnostics/diagCheckValidPrimitive.md) `function`
+- [diagCheckValidRespPrimitive](structured/Diagnostics/diagCheckValidRespPrimitive.md) `function`
+- [diagCloseChannel](structured/Diagnostics/diagCloseChannel.md) `function`
+- [diagConnectChannel](structured/Diagnostics/diagConnectChannel.md) `function`
+- [diagDisconnectChannel](structured/Diagnostics/diagDisconnectChannel.md) `function`
+- [diagGenerateKeyFromSeed](structured/Diagnostics/diagGenerateKeyFromSeed.md) `function`
+- [diagGetAbsolutePosition, diagGetAbsolutePositionResp](structured/Diagnostics/diagGetAbsolutePosition, diagGetAbsolutePositionResp.md) `function`
+- [diagGetActiveVariant](structured/Diagnostics/diagGetActiveVariant.md) `function`
+- [diagGetAssignedTargetGroups](structured/Diagnostics/diagGetAssignedTargetGroups.md) `function`
+- [diagGetCommParameter](structured/Diagnostics/diagGetCommParameter.md) `function`
+- [diagGetCommParameter (FlexRay)](structured/Diagnostics/diagGetCommParameter (FlexRay).md) `function`
+- [diagGetCommunicationErrorString](structured/Diagnostics/diagGetCommunicationErrorString.md) `function`
+- [diagGetComplexParameter](structured/Diagnostics/diagGetComplexParameter.md) `function`
+- [diagGetComplexParameterRaw, diagSetComplexParameterRaw](structured/Diagnostics/diagGetComplexParameterRaw, diagSetComplexParameterRaw.md) `function`
+- [diagGetComplexRespParameter](structured/Diagnostics/diagGetComplexRespParameter.md) `function`
+- [diagGetComplexRespParameterRaw](structured/Diagnostics/diagGetComplexRespParameterRaw.md) `function`
+- [diagGetConfiguredVariant](structured/Diagnostics/diagGetConfiguredVariant.md) `function`
+- [diagGetCurrentEcu](structured/Diagnostics/diagGetCurrentEcu.md) `function`
+- [diagGetDescriptionInformation](structured/Diagnostics/diagGetDescriptionInformation.md) `function`
+- [diagGetDescriptionVersion](structured/Diagnostics/diagGetDescriptionVersion.md) `function`
+- [diagGetErrorString](structured/Diagnostics/diagGetErrorString.md) `function`
+- [diagGetFunctionalGroupExt](structured/Diagnostics/diagGetFunctionalGroupExt.md) `function`
+- [diagGetFunctionalGroupId](structured/Diagnostics/diagGetFunctionalGroupId.md) `function`
+- [diagGetFunctionalGroupIdMask](structured/Diagnostics/diagGetFunctionalGroupIdMask.md) `function`
+- [diagGetIdentifiedVariant](structured/Diagnostics/diagGetIdentifiedVariant.md) `function`
+- [diagGetIterationCount, diagGetRespIterationCount](structured/Diagnostics/diagGetIterationCount, diagGetRespIterationCount.md) `function`
+- [diagGetLastCommunicationError](structured/Diagnostics/diagGetLastCommunicationError.md) `function`
+- [diagGetLastResponse](structured/Diagnostics/diagGetLastResponse.md) `function`
+- [diagGetObjectName](structured/Diagnostics/diagGetObjectName.md) `function`
+- [diagGetObjectPath](structured/Diagnostics/diagGetObjectPath.md) `function`
+- [diagGetP2Extended, diagSetP2Extended](structured/Diagnostics/diagGetP2Extended, diagSetP2Extended.md) `function`
+- [diagGetP2Timeout](structured/Diagnostics/diagGetP2Timeout.md) `function`
+- [diagGetP6Extended, diagGetP6Timeout, diagSetP6Timeouts](structured/Diagnostics/diagGetP6Extended, diagGetP6Timeout, diagSetP6Timeouts.md) `function`
+- [diagGetParameter](structured/Diagnostics/diagGetParameter.md) `function`
+- [diagGetParameterCoded, diagSetParameterCoded](structured/Diagnostics/diagGetParameterCoded, diagSetParameterCoded.md) `function`
+- [diagGetParameterLongName, diagGetRespParameterLongName](structured/Diagnostics/diagGetParameterLongName, diagGetRespParameterLongName.md) `function`
+- [diagGetParameterName](structured/Diagnostics/diagGetParameterName.md) `function`
+- [diagGetParameterPath, diagGetRespParameterPath](structured/Diagnostics/diagGetParameterPath, diagGetRespParameterPath.md) `function`
+- [diagGetParameterSizeCoded](structured/Diagnostics/diagGetParameterSizeCoded.md) `function`
+- [diagGetParameterSizeRaw](structured/Diagnostics/diagGetParameterSizeRaw.md) `function`
+- [diagGetParameterType, diagGetRespParameterType](structured/Diagnostics/diagGetParameterType, diagGetRespParameterType.md) `function`
+- [diagGetParameterUnit](structured/Diagnostics/diagGetParameterUnit.md) `function`
+- [diagGetPrimitiveByte](structured/Diagnostics/diagGetPrimitiveByte.md) `function`
+- [diagGetPrimitiveData, diagSetPrimitiveData](structured/Diagnostics/diagGetPrimitiveData, diagSetPrimitiveData.md) `function`
+- [diagGetPrimitiveSize](structured/Diagnostics/diagGetPrimitiveSize.md) `function`
+- [diagGetResponseCode, diagGetLastResponseCode](structured/Diagnostics/diagGetResponseCode, diagGetLastResponseCode.md) `function`
+- [diagGetRespParameter](structured/Diagnostics/diagGetRespParameter.md) `function`
+- [diagGetRespParameterRaw](structured/Diagnostics/diagGetRespParameterRaw.md) `function`
+- [diagGetRespPrimitiveByte](structured/Diagnostics/diagGetRespPrimitiveByte.md) `function`
+- [diagGetRespPrimitiveSize](structured/Diagnostics/diagGetRespPrimitiveSize.md) `function`
+- [diagGetSendingMode](structured/Diagnostics/diagGetSendingMode.md) `function`
+- [diagGetSuppressResp, diagSetSuppressResp](structured/Diagnostics/diagGetSuppressResp, diagSetSuppressResp.md) `function`
+- [diagGetTargetCount](structured/Diagnostics/diagGetTargetCount.md) `function`
+- [diagGetTargetGroupName](structured/Diagnostics/diagGetTargetGroupName.md) `function`
+- [diagGetTargetGroupQualifier](structured/Diagnostics/diagGetTargetGroupQualifier.md) `function`
+- [diagGetTargetQualifier](structured/Diagnostics/diagGetTargetQualifier.md) `function`
+- [diagGetTesterPresentState](structured/Diagnostics/diagGetTesterPresentState.md) `function`
+- [diagInitialize](structured/Diagnostics/diagInitialize.md) `function`
+- [diagInterpretAs](structured/Diagnostics/diagInterpretAs.md) `function`
+- [diagInterpretRespAs](structured/Diagnostics/diagInterpretRespAs.md) `function`
+- [diagIsChannelConnected](structured/Diagnostics/diagIsChannelConnected.md) `function`
+- [diagIsNegativeResponse](structured/Diagnostics/diagIsNegativeResponse.md) `function`
+- [diagIsParameterConstant, diagIsRespParameterConstant](structured/Diagnostics/diagIsParameterConstant, diagIsRespParameterConstant.md) `function`
+- [diagIsParameterDefault](structured/Diagnostics/diagIsParameterDefault.md) `function`
+- [diagIsPositiveResponse](structured/Diagnostics/diagIsPositiveResponse.md) `function`
+- [diagIsRaw](structured/Diagnostics/diagIsRaw.md) `function`
+- [diagIsRawResp](structured/Diagnostics/diagIsRawResp.md) `function`
+- [diagIsRespParameterDefault](structured/Diagnostics/diagIsRespParameterDefault.md) `function`
+- [diagIsValidValue](structured/Diagnostics/diagIsValidValue.md) `function`
+- [Diagnostic CAPL Functions](structured/Diagnostics/Diagnostic CAPL Functions.md) `notes`
+- [Diagnostic Descriptions with Overloaded Responses](structured/Diagnostics/Diagnostic Descriptions with Overloaded Responses.md) `notes`
+- [Diagnostic Event Handlers in Analysis Branch](structured/Diagnostics/Diagnostic Event Handlers in Analysis Branch.md) `notes`
+- [Diagnostics](structured/Diagnostics/Diagnostics.md) `notes`
+- [Diagnostics: Access Mode](structured/Diagnostics/Diagnostics_ Access Mode.md) `notes`
+- [Diagnostics: Basic CAPL Procedure for a Tester Implementation](structured/Diagnostics/Diagnostics_ Basic CAPL Procedure for a Tester Implementation.md) `notes`
+- [Diagnostics: Basic CAPL Procedure for an ECU Implementation](structured/Diagnostics/Diagnostics_ Basic CAPL Procedure for an ECU Implementation.md) `notes`
+- [Diagnostics: Connection of the Communication Layer](structured/Diagnostics/Diagnostics_ Connection of the Communication Layer.md) `notes`
+- [Diagnostics: Expanded Functions in CAPL](structured/Diagnostics/Diagnostics_ Expanded Functions in CAPL.md) `notes`
+- [Diagnostics: Generic CAPL Callback Interface](structured/Diagnostics/Diagnostics_ Generic CAPL Callback Interface.md) `notes`
+- [Diagnostics: Processing Functional Diagnostic Requests in ECU Simulations](structured/Diagnostics/Diagnostics_ Processing Functional Diagnostic Requests in ECU Simulations.md) `notes`
+- [Diagnostics: Using Diagnostic Functions in Test Cases](structured/Diagnostics/Diagnostics_ Using Diagnostic Functions in Test Cases.md) `notes`
+- [diagResetParameter](structured/Diagnostics/diagResetParameter.md) `function`
+- [diagResize](structured/Diagnostics/diagResize.md) `function`
+- [diagSendFunctional](structured/Diagnostics/diagSendFunctional.md) `function`
+- [diagSendNegativeResponse](structured/Diagnostics/diagSendNegativeResponse.md) `function`
+- [diagSendRequest](structured/Diagnostics/diagSendRequest.md) `function`
+- [diagSendResponse, diagSendPositiveResponse](structured/Diagnostics/diagSendResponse, diagSendPositiveResponse.md) `function`
+- [diagSetComplexParameter](structured/Diagnostics/diagSetComplexParameter.md) `function`
+- [diagSetP2Timeouts](structured/Diagnostics/diagSetP2Timeouts.md) `function`
+- [diagSetParameter](structured/Diagnostics/diagSetParameter.md) `function`
+- [diagSetParameterRaw, diagGetParameterRaw](structured/Diagnostics/diagSetParameterRaw, diagGetParameterRaw.md) `function`
+- [diagSetPrimitiveByte](structured/Diagnostics/diagSetPrimitiveByte.md) `function`
+- [diagSetRespPrimitiveByte](structured/Diagnostics/diagSetRespPrimitiveByte.md) `function`
+- [diagSetTarget](structured/Diagnostics/diagSetTarget.md) `function`
+- [diagSetTimeout](structured/Diagnostics/diagSetTimeout.md) `function`
+- [diagSetTimeoutHandler](structured/Diagnostics/diagSetTimeoutHandler.md) `function`
+- [diagStartAuth, diagStartAuthGeneric, _Diag_AuthResult](structured/Diagnostics/diagStartAuth, diagStartAuthGeneric, _Diag_AuthResult.md) `function`
+- [diagStartGenerateKeyFromSeed](structured/Diagnostics/diagStartGenerateKeyFromSeed.md) `function`
+- [diagStartTesterPresent](structured/Diagnostics/diagStartTesterPresent.md) `function`
+- [diagStartVariantIdentification](structured/Diagnostics/diagStartVariantIdentification.md) `function`
+- [diagStopTesterPresent](structured/Diagnostics/diagStopTesterPresent.md) `function`
+- [DoIP (Diagnostics over IP)](structured/Diagnostics/DoIP (Diagnostics over IP).md) `notes`
+- [DoIP_AddCombinedPDU](structured/Diagnostics/DoIP_AddCombinedPDU.md) `function`
+- [DoIP_AddECU](structured/Diagnostics/DoIP_AddECU.md) `function`
+- [DoIP_AddLocalIPaddress](structured/Diagnostics/DoIP_AddLocalIPaddress.md) `function`
+- [DoIP_AddTester](structured/Diagnostics/DoIP_AddTester.md) `function`
+- [DoIP_AnnounceVehicle](structured/Diagnostics/DoIP_AnnounceVehicle.md) `function`
+- [DoIP_CloseConnection](structured/Diagnostics/DoIP_CloseConnection.md) `function`
+- [DoIP_ConfigureRoutingActivationRequest](structured/Diagnostics/DoIP_ConfigureRoutingActivationRequest.md) `function`
+- [DoIP_ConfigureRoutingActivationResponse](structured/Diagnostics/DoIP_ConfigureRoutingActivationResponse.md) `function`
+- [DoIP_ConfigureRoutingActivationRetries](structured/Diagnostics/DoIP_ConfigureRoutingActivationRetries.md) `function`
+- [DoIP_ConfigureVehicleAnnouncement](structured/Diagnostics/DoIP_ConfigureVehicleAnnouncement.md) `function`
+- [DoIP_ConnectToVehicle](structured/Diagnostics/DoIP_ConnectToVehicle.md) `function`
+- [DoIP_CreatePDUCombination](structured/Diagnostics/DoIP_CreatePDUCombination.md) `function`
+- [DoIP_DataCon](structured/Diagnostics/DoIP_DataCon.md) `function`
+- [DoIP_DataInd](structured/Diagnostics/DoIP_DataInd.md) `function`
+- [DoIP_DataReq](structured/Diagnostics/DoIP_DataReq.md) `function`
+- [DoIP_EnableTLS](structured/Diagnostics/DoIP_EnableTLS.md) `function`
+- [DoIP_ErrorInd](structured/Diagnostics/DoIP_ErrorInd.md) `function`
+- [DoIP_ForceLocalTCPSendPort](structured/Diagnostics/DoIP_ForceLocalTCPSendPort.md) `function`
+- [DoIP_ForceLocalUDPSendPort](structured/Diagnostics/DoIP_ForceLocalUDPSendPort.md) `function`
+- [DoIP_GetAliveCheckTimeout, DoIP_SetAliveCheckTimeout](structured/Diagnostics/DoIP_GetAliveCheckTimeout, DoIP_SetAliveCheckTimeout.md) `function`
+- [DoIP_GetAnnounceInterval](structured/Diagnostics/DoIP_GetAnnounceInterval.md) `function`
+- [DoIP_GetAnnounceMessageCount](structured/Diagnostics/DoIP_GetAnnounceMessageCount.md) `function`
+- [DoIP_GetAnnounceWaitTime](structured/Diagnostics/DoIP_GetAnnounceWaitTime.md) `function`
+- [DoIP_GetControlTimeout, DoIP_SetControlTimeout](structured/Diagnostics/DoIP_GetControlTimeout, DoIP_SetControlTimeout.md) `function`
+- [DoIP_GetDiagnosticMessageTimeout, DoIP_SetDiagnosticMessageTimeout](structured/Diagnostics/DoIP_GetDiagnosticMessageTimeout, DoIP_SetDiagnosticMessageTimeout.md) `function`
+- [DoIP_GetGenericTimeout, DoIP_SetGenericTimeout](structured/Diagnostics/DoIP_GetGenericTimeout, DoIP_SetGenericTimeout.md) `function`
+- [DoIP_GetInitialTimeout, DoIP_SetInitialTimeout](structured/Diagnostics/DoIP_GetInitialTimeout, DoIP_SetInitialTimeout.md) `function`
+- [DoIP_GetLastResponseCode](structured/Diagnostics/DoIP_GetLastResponseCode.md) `function`
+- [DoIP_GetReconnectDelay, DoIP_SetReconnectDelay](structured/Diagnostics/DoIP_GetReconnectDelay, DoIP_SetReconnectDelay.md) `function`
+- [DoIP_GetReconnectInterval, DoIP_SetReconnectInterval](structured/Diagnostics/DoIP_GetReconnectInterval, DoIP_SetReconnectInterval.md) `function`
+- [DoIP_GetVehicleDiscoveryTimeout, DoIP_SetVehicleDiscoveryTimeout](structured/Diagnostics/DoIP_GetVehicleDiscoveryTimeout, DoIP_SetVehicleDiscoveryTimeout.md) `function`
+- [DoIP_InitAsTester](structured/Diagnostics/DoIP_InitAsTester.md) `function`
+- [DoIP_RemoveLocalIPaddress](structured/Diagnostics/DoIP_RemoveLocalIPaddress.md) `function`
+- [DoIP_SelectVehicle](structured/Diagnostics/DoIP_SelectVehicle.md) `function`
+- [DoIP_SendEntityStatusRequest](structured/Diagnostics/DoIP_SendEntityStatusRequest.md) `function`
+- [DoIP_SendPDUCombination](structured/Diagnostics/DoIP_SendPDUCombination.md) `function`
+- [DoIP_SendPowerModeInformationRequest](structured/Diagnostics/DoIP_SendPowerModeInformationRequest.md) `function`
+- [DoIP_SendRoutingActivationRequest](structured/Diagnostics/DoIP_SendRoutingActivationRequest.md) `function`
+- [DoIP_SetBroadcastIPaddress](structured/Diagnostics/DoIP_SetBroadcastIPaddress.md) `function`
+- [DoIP_SetEID, DoIP_SetGroupIdentification, DoIP_SetVIN](structured/Diagnostics/DoIP_SetEID, DoIP_SetGroupIdentification, DoIP_SetVIN.md) `function`
+- [DoIP_SetEntityStatusInformation](structured/Diagnostics/DoIP_SetEntityStatusInformation.md) `function`
+- [DoIP_SetGatewayLogicalAddress](structured/Diagnostics/DoIP_SetGatewayLogicalAddress.md) `function`
+- [DoIP_SetIdentificationRequestEID, DoIP_SetIdentificationRequestVIN](structured/Diagnostics/DoIP_SetIdentificationRequestEID, DoIP_SetIdentificationRequestVIN.md) `function`
+- [DoIP_SetLocalIPaddress](structured/Diagnostics/DoIP_SetLocalIPaddress.md) `function`
+- [DoIP_SetLocalIPaddressVersion](structured/Diagnostics/DoIP_SetLocalIPaddressVersion.md) `function`
+- [DoIP_SetMulticastScopeId](structured/Diagnostics/DoIP_SetMulticastScopeId.md) `function`
+- [DoIP_SetNextDiagnosticMessageNACKCode](structured/Diagnostics/DoIP_SetNextDiagnosticMessageNACKCode.md) `function`
+- [DoIP_SetPowerModeInformation](structured/Diagnostics/DoIP_SetPowerModeInformation.md) `function`
+- [DoIP_SetProtocol](structured/Diagnostics/DoIP_SetProtocol.md) `function`
+- [DoIP_SetRoutingActivationOEMSpecific](structured/Diagnostics/DoIP_SetRoutingActivationOEMSpecific.md) `function`
+- [DoIP_SetRoutingActivationType](structured/Diagnostics/DoIP_SetRoutingActivationType.md) `function`
+- [DoIP_SetTesterAdapter](structured/Diagnostics/DoIP_SetTesterAdapter.md) `function`
+- [DoIP_SetTesterLogicalAddress](structured/Diagnostics/DoIP_SetTesterLogicalAddress.md) `function`
+- [DoIP_SetTesterUdpPort](structured/Diagnostics/DoIP_SetTesterUdpPort.md) `function`
+- [DoIP_SetVehicleAdapter](structured/Diagnostics/DoIP_SetVehicleAdapter.md) `function`
+- [DoIP_SetVehicleAddress](structured/Diagnostics/DoIP_SetVehicleAddress.md) `function`
+- [DoIP_SetVehicleLogicalAddress](structured/Diagnostics/DoIP_SetVehicleLogicalAddress.md) `function`
+- [DoIP_SetVehicleTcpPort](structured/Diagnostics/DoIP_SetVehicleTcpPort.md) `function`
+- [DoIP_SetVehicleUdpPort](structured/Diagnostics/DoIP_SetVehicleUdpPort.md) `function`
+- [DoIP_SetWriteLevel](structured/Diagnostics/DoIP_SetWriteLevel.md) `function`
+- [DoIP_TCPSend](structured/Diagnostics/DoIP_TCPSend.md) `function`
+- [DoIP_UDPSend](structured/Diagnostics/DoIP_UDPSend.md) `function`
+- [DoIP_UDPSendPort](structured/Diagnostics/DoIP_UDPSendPort.md) `function`
+- [Example for Automatic Variant Identification](structured/Diagnostics/Example for Automatic Variant Identification.md) `notes`
+- [on diagRequest](structured/Diagnostics/on diagRequest.md) `event`
+- [on diagRequestSent](structured/Diagnostics/on diagRequestSent.md) `event`
+- [on diagResponse](structured/Diagnostics/on diagResponse.md) `event`
+- [Return Values (Diagnostics)](structured/Diagnostics/Return Values (Diagnostics).md) `notes`
+- [TestWaitForvFlashInitialized , TestWaitForvFlashDeinitialized](structured/Diagnostics/TestWaitForvFlashInitialized , TestWaitForvFlashDeinitialized.md) `function`
+- [TestWaitForvFlashLastErrorMessage](structured/Diagnostics/TestWaitForvFlashLastErrorMessage.md) `function`
+- [TestWaitForvFlashNetworkActivated](structured/Diagnostics/TestWaitForvFlashNetworkActivated.md) `function`
+- [TestWaitForvFlashProjectLoaded, TestWaitForvFlashProjectUnloaded](structured/Diagnostics/TestWaitForvFlashProjectLoaded, TestWaitForvFlashProjectUnloaded.md) `function`
+- [TestWaitForvFlashReprogrammed](structured/Diagnostics/TestWaitForvFlashReprogrammed.md) `function`
+- [TestWaitForvFlashStopped](structured/Diagnostics/TestWaitForvFlashStopped.md) `function`
+- [vFlashActivateNetwork](structured/Diagnostics/vFlashActivateNetwork.md) `function`
+- [vFlashDeinitialize, vFlashInitialize](structured/Diagnostics/vFlashDeinitialize, vFlashInitialize.md) `function`
+- [vFlashGetCustomActionAttributeConfigValue, vFlashGetCustomActionAttributeLastRunValue, vFlashSetCustomActionAttribute](structured/Diagnostics/vFlashGetCustomActionAttributeConfigValue, vFlashGetCustomActionAttributeLastRunValue, vFlashSetCustomActionAttribute.md) `function`
+- [vFlashGetFlashAttributeConfigValue, vFlashGetFlashAttributeLastRunValue, vFlashSetFlashAttribute](structured/Diagnostics/vFlashGetFlashAttributeConfigValue, vFlashGetFlashAttributeLastRunValue, vFlashSetFlashAttribute.md) `function`
+- [vFlashGetLastErrorMessage](structured/Diagnostics/vFlashGetLastErrorMessage.md) `function`
+- [vFlashLoadProject](structured/Diagnostics/vFlashLoadProject.md) `function`
+- [vFlashReprogram](structured/Diagnostics/vFlashReprogram.md) `function`
+- [vFlashStop](structured/Diagnostics/vFlashStop.md) `function`
+- [vFlashUnloadProject](structured/Diagnostics/vFlashUnloadProject.md) `function`
+
+---
+
+## CAPL Distributed Objects (DistributedObjects)
+
+**Function count**: 95
+
+- [attributable](structured/DistributedObjects/attributable.md) `function`
+- [attribute](structured/DistributedObjects/attribute.md) `function`
+- [Binding](structured/DistributedObjects/Binding.md) `function`
+- [Binding::AnnouncementStateReceived](structured/DistributedObjects/Binding__AnnouncementStateReceived.md) `method`
+- [Binding::CallReceived](structured/DistributedObjects/Binding__CallReceived.md) `method`
+- [Binding::CreateCallContext](structured/DistributedObjects/Binding__CreateCallContext.md) `method`
+- [Binding::ReturnReceived](structured/DistributedObjects/Binding__ReturnReceived.md) `method`
+- [Binding::SetInParameter](structured/DistributedObjects/Binding__SetInParameter.md) `method`
+- [Binding::SubscriptionStateReceived](structured/DistributedObjects/Binding__SubscriptionStateReceived.md) `method`
+- [Binding::ValueReceived](structured/DistributedObjects/Binding__ValueReceived.md) `method`
+- [bytes](structured/DistributedObjects/bytes.md) `function`
+- [distObjBlueprint](structured/DistributedObjects/distObjBlueprint.md) `function`
+- [distObjBlueprint::AddVirtualNetwork](structured/DistributedObjects/distObjBlueprint__AddVirtualNetwork.md) `method`
+- [distObjBlueprint::Clear](structured/DistributedObjects/distObjBlueprint__Clear.md) `method`
+- [distObjBlueprint::CopyFromObject](structured/DistributedObjects/distObjBlueprint__CopyFromObject.md) `method`
+- [distObjBlueprint::CreateObject](structured/DistributedObjects/distObjBlueprint__CreateObject.md) `method`
+- [distObjBlueprint::GetAttribute](structured/DistributedObjects/distObjBlueprint__GetAttribute.md) `method`
+- [distObjBlueprint::RemoveAttribute](structured/DistributedObjects/distObjBlueprint__RemoveAttribute.md) `method`
+- [distObjBlueprint::RemoveVirtualNetwork](structured/DistributedObjects/distObjBlueprint__RemoveVirtualNetwork.md) `method`
+- [distObjBlueprint::SetAttribute](structured/DistributedObjects/distObjBlueprint__SetAttribute.md) `method`
+- [distObjContainerRef](structured/DistributedObjects/distObjContainerRef.md) `function`
+- [distObjContainerRef::Create](structured/DistributedObjects/distObjContainerRef__Create.md) `method`
+- [distObjContainerRef::Erase](structured/DistributedObjects/distObjContainerRef__Erase.md) `method`
+- [distObjContainerRef::PopBack](structured/DistributedObjects/distObjContainerRef__PopBack.md) `method`
+- [distObjContainerRef::PushBack](structured/DistributedObjects/distObjContainerRef__PushBack.md) `method`
+- [distObjContainerRef::Resize](structured/DistributedObjects/distObjContainerRef__Resize.md) `method`
+- [distObjDataRef](structured/DistributedObjects/distObjDataRef.md) `function`
+- [distObjEventRef](structured/DistributedObjects/distObjEventRef.md) `function`
+- [distObjEventRef::Trigger](structured/DistributedObjects/distObjEventRef__Trigger.md) `method`
+- [distObjFieldRef](structured/DistributedObjects/distObjFieldRef.md) `function`
+- [distObjInterface](structured/DistributedObjects/distObjInterface.md) `function`
+- [distObjInterface::CreateObject](structured/DistributedObjects/distObjInterface__CreateObject.md) `method`
+- [distObjInterface::CreateObjectBlueprint](structured/DistributedObjects/distObjInterface__CreateObjectBlueprint.md) `method`
+- [distObjInterface::CreateObjectBlueprint](structured/DistributedObjects/distObjInterface__CreateObjectBlueprint.md) `method`
+- [distObjInterface::DestroyObject](structured/DistributedObjects/distObjInterface__DestroyObject.md) `method`
+- [distObjInterfaceMember](structured/DistributedObjects/distObjInterfaceMember.md) `function`
+- [distObjMemberBlueprint](structured/DistributedObjects/distObjMemberBlueprint.md) `function`
+- [distObjMemberBlueprint::GetAttribute](structured/DistributedObjects/distObjMemberBlueprint__GetAttribute.md) `method`
+- [distObjMemberBlueprint::RemoveAttribute](structured/DistributedObjects/distObjMemberBlueprint__RemoveAttribute.md) `method`
+- [distObjMemberBlueprint::RemoveVirtualNetwork](structured/DistributedObjects/distObjMemberBlueprint__RemoveVirtualNetwork.md) `method`
+- [distObjMemberBlueprint::SetAttribute](structured/DistributedObjects/distObjMemberBlueprint__SetAttribute.md) `method`
+- [distObjMemberBlueprint::SetVirtualNetwork](structured/DistributedObjects/distObjMemberBlueprint__SetVirtualNetwork.md) `method`
+- [distObjMemberRef](structured/DistributedObjects/distObjMemberRef.md) `function`
+- [distObjMemberRef::Announce](structured/DistributedObjects/distObjMemberRef__Announce.md) `method`
+- [distObjMemberRef::Subscribe](structured/DistributedObjects/distObjMemberRef__Subscribe.md) `method`
+- [distObjMemberRef::Unannounce](structured/DistributedObjects/distObjMemberRef__Unannounce.md) `method`
+- [distObjMemberRef::Unsubscribe](structured/DistributedObjects/distObjMemberRef__Unsubscribe.md) `method`
+- [distObjMethodRef](structured/DistributedObjects/distObjMethodRef.md) `function`
+- [distObjMethodRef::Call](structured/DistributedObjects/distObjMethodRef__Call.md) `method`
+- [distObjMethodRef::Call_Phys](structured/DistributedObjects/distObjMethodRef__Call_Phys.md) `method`
+- [distObjMethodRef::CallAsync](structured/DistributedObjects/distObjMethodRef__CallAsync.md) `method`
+- [distObjMethodRef::CallAsync_Phys](structured/DistributedObjects/distObjMethodRef__CallAsync_Phys.md) `method`
+- [distObjRef](structured/DistributedObjects/distObjRef.md) `function`
+- [distObjRef::AnnounceAll](structured/DistributedObjects/distObjRef__AnnounceAll.md) `method`
+- [distObjRef::Connect](structured/DistributedObjects/distObjRef__Connect.md) `method`
+- [distObjRef::ConnectTo](structured/DistributedObjects/distObjRef__ConnectTo.md) `method`
+- [distObjRef::Disconnect](structured/DistributedObjects/distObjRef__Disconnect.md) `method`
+- [distObjRef::DisconnectFrom](structured/DistributedObjects/distObjRef__DisconnectFrom.md) `method`
+- [distObjRef::IsConnected](structured/DistributedObjects/distObjRef__IsConnected.md) `method`
+- [distObjRef::IsConnectedTo](structured/DistributedObjects/distObjRef__IsConnectedTo.md) `method`
+- [distObjRef::SubscribeAll](structured/DistributedObjects/distObjRef__SubscribeAll.md) `method`
+- [distObjRef::UnannounceAll](structured/DistributedObjects/distObjRef__UnannounceAll.md) `method`
+- [distObjRef::UnsubscribeAll](structured/DistributedObjects/distObjRef__UnsubscribeAll.md) `method`
+- [distObjReferenceRef](structured/DistributedObjects/distObjReferenceRef.md) `function`
+- [distObjReferenceRef::ResetTarget](structured/DistributedObjects/distObjReferenceRef__ResetTarget.md) `method`
+- [distObjReferenceRef::SetTarget](structured/DistributedObjects/distObjReferenceRef__SetTarget.md) `method`
+- [distObjReferenceRef::SetTargetByPath](structured/DistributedObjects/distObjReferenceRef__SetTargetByPath.md) `method`
+- [Distributed Objects CAPL Functions](structured/DistributedObjects/Distributed Objects CAPL Functions.md) `notes`
+- [getAttribute](structured/DistributedObjects/getAttribute.md) `function`
+- [lookupDistObj](structured/DistributedObjects/lookupDistObj.md) `function`
+- [lookupDistObjContainer](structured/DistributedObjects/lookupDistObjContainer.md) `function`
+- [lookupDistObjReference](structured/DistributedObjects/lookupDistObjReference.md) `function`
+- [lookupVirtNet](structured/DistributedObjects/lookupVirtNet.md) `function`
+- [on any_fct_called](structured/DistributedObjects/on any_fct_called.md) `event`
+- [on any_fct_calling](structured/DistributedObjects/on any_fct_calling.md) `event`
+- [on any_fct_retured](structured/DistributedObjects/on any_fct_retured.md) `event`
+- [on any_fct_returning](structured/DistributedObjects/on any_fct_returning.md) `event`
+- [on any_value_change](structured/DistributedObjects/on any_value_change.md) `event`
+- [on any_value_update](structured/DistributedObjects/on any_value_update.md) `event`
+- [on transmit_announce](structured/DistributedObjects/on transmit_announce.md) `event`
+- [on transmit_any_announce](structured/DistributedObjects/on transmit_any_announce.md) `event`
+- [on transmit_any_call](structured/DistributedObjects/on transmit_any_call.md) `event`
+- [on transmit_any_return](structured/DistributedObjects/on transmit_any_return.md) `event`
+- [on transmit_any_subscribe](structured/DistributedObjects/on transmit_any_subscribe.md) `event`
+- [on transmit_any_unannounce](structured/DistributedObjects/on transmit_any_unannounce.md) `event`
+- [on transmit_any_unsubscribe](structured/DistributedObjects/on transmit_any_unsubscribe.md) `event`
+- [on transmit_any_value](structured/DistributedObjects/on transmit_any_value.md) `event`
+- [on transmit_call](structured/DistributedObjects/on transmit_call.md) `event`
+- [on transmit_return](structured/DistributedObjects/on transmit_return.md) `event`
+- [on transmit_subscribe](structured/DistributedObjects/on transmit_subscribe.md) `event`
+- [on transmit_unannounce](structured/DistributedObjects/on transmit_unannounce.md) `event`
+- [on transmit_unsubscribe](structured/DistributedObjects/on transmit_unsubscribe.md) `event`
+- [on transmit_value](structured/DistributedObjects/on transmit_value.md) `event`
+- [setAttribute](structured/DistributedObjects/setAttribute.md) `function`
+- [virtNet](structured/DistributedObjects/virtNet.md) `function`
+
+---
+
+## CAPL FlexRay Stress (FRStress)
+
+**Function count**: 27
+
+- [FRSActivateCRCCalc](structured/FRStress/FRSActivateCRCCalc.md) `function`
+- [FRSClear](structured/FRStress/FRSClear.md) `function`
+- [FRSEnableTrigDist](structured/FRStress/FRSEnableTrigDist.md) `function`
+- [FRSGetDevice](structured/FRStress/FRSGetDevice.md) `function`
+- [FRSInit](structured/FRStress/FRSInit.md) `function`
+- [FRSOnFinished](structured/FRStress/FRSOnFinished.md) `function`
+- [FRSOnStopped](structured/FRStress/FRSOnStopped.md) `function`
+- [FRSOpen](structured/FRStress/FRSOpen.md) `function`
+- [FRSQuit](structured/FRStress/FRSQuit.md) `function`
+- [FRSSetAnalogMode](structured/FRStress/FRSSetAnalogMode.md) `function`
+- [FRSSetBitstreamDist](structured/FRStress/FRSSetBitstreamDist.md) `function`
+- [FRSSetDevice](structured/FRStress/FRSSetDevice.md) `function`
+- [FRSSetDigitalMode](structured/FRStress/FRSSetDigitalMode.md) `function`
+- [FRSSetDist](structured/FRStress/FRSSetDist.md) `function`
+- [FRSSetDistElem](structured/FRStress/FRSSetDistElem.md) `function`
+- [FRSSetDistPayload](structured/FRStress/FRSSetDistPayload.md) `function`
+- [FRSSetScopeMode](structured/FRStress/FRSSetScopeMode.md) `function`
+- [FRSSetTrig](structured/FRStress/FRSSetTrig.md) `function`
+- [FRSSetTrigElem](structured/FRStress/FRSSetTrigElem.md) `function`
+- [FRSSetTrigOutput](structured/FRStress/FRSSetTrigOutput.md) `function`
+- [FRSSetTrigPayload](structured/FRStress/FRSSetTrigPayload.md) `function`
+- [FRSSetTrigPort](structured/FRStress/FRSSetTrigPort.md) `function`
+- [FRSSoftwareTrigger](structured/FRStress/FRSSoftwareTrigger.md) `function`
+- [FRSStart](structured/FRStress/FRSStart.md) `function`
+- [FRSStop](structured/FRStress/FRSStop.md) `function`
+- [FRstress CAPL Functions](structured/FRStress/FRstress CAPL Functions.md) `notes`
+- [FRstressSetDistCount](structured/FRStress/FRstressSetDistCount.md) `function`
+
+---
+
+## CAPL FlexRay (FlexRay)
+
+**Function count**: 42
+
+- [FlexRay CAPL Functions](structured/FlexRay/FlexRay CAPL Functions.md) `notes`
+- [FlexRayRcvStatusEvent](structured/FlexRay/FlexRayRcvStatusEvent.md) `function`
+- [frConfiguration](structured/FlexRay/frConfiguration.md) `function`
+- [frEnableGateway](structured/FlexRay/frEnableGateway.md) `function`
+- [frEnableNodeTx](structured/FlexRay/frEnableNodeTx.md) `function`
+- [frFrame](structured/FlexRay/frFrame.md) `function`
+- [frGetConfiguration](structured/FlexRay/frGetConfiguration.md) `function`
+- [frGetFrameCRC](structured/FlexRay/frGetFrameCRC.md) `function`
+- [frGwBypassDynamic](structured/FlexRay/frGwBypassDynamic.md) `function`
+- [frGwBypassStatic](structured/FlexRay/frGwBypassStatic.md) `function`
+- [frOutputDynFrame](structured/FlexRay/frOutputDynFrame.md) `function`
+- [frPDU](structured/FlexRay/frPDU.md) `function`
+- [frResetStatistics](structured/FlexRay/frResetStatistics.md) `function`
+- [frSendFrame](structured/FlexRay/frSendFrame.md) `function`
+- [frSendSymbol](structured/FlexRay/frSendSymbol.md) `function`
+- [frSetAutoIncrement](structured/FlexRay/frSetAutoIncrement.md) `function`
+- [frSetConfiguration](structured/FlexRay/frSetConfiguration.md) `function`
+- [frSetExtOffsetRateControl](structured/FlexRay/frSetExtOffsetRateControl.md) `function`
+- [frSetKeySlot](structured/FlexRay/frSetKeySlot.md) `function`
+- [frSetMode](structured/FlexRay/frSetMode.md) `function`
+- [frSetPayloadLengthInByte](structured/FlexRay/frSetPayloadLengthInByte.md) `function`
+- [frSetPduFilter](structured/FlexRay/frSetPduFilter.md) `function`
+- [frSetPOCState](structured/FlexRay/frSetPOCState.md) `function`
+- [frSetSendFrame](structured/FlexRay/frSetSendFrame.md) `function`
+- [frSetSendGroup](structured/FlexRay/frSetSendGroup.md) `function`
+- [frSetSendPDU](structured/FlexRay/frSetSendPDU.md) `function`
+- [frSetTrigger](structured/FlexRay/frSetTrigger.md) `function`
+- [frUpdatePDU](structured/FlexRay/frUpdatePDU.md) `function`
+- [frUpdateStatFrame](structured/FlexRay/frUpdateStatFrame.md) `function`
+- [MessageTimeNS (FR)](structured/FlexRay/MessageTimeNS (FR).md) `function`
+- [on frError](structured/FlexRay/on frError.md) `event`
+- [on frFrame](structured/FlexRay/on frFrame.md) `event`
+- [on frFrameError](structured/FlexRay/on frFrameError.md) `event`
+- [on frNullFrame](structured/FlexRay/on frNullFrame.md) `event`
+- [on frPDU](structured/FlexRay/on frPDU.md) `event`
+- [on frPOCState](structured/FlexRay/on frPOCState.md) `event`
+- [on frSlot](structured/FlexRay/on frSlot.md) `event`
+- [on frStartCycle](structured/FlexRay/on frStartCycle.md) `event`
+- [on frSymbol](structured/FlexRay/on frSymbol.md) `event`
+- [output (FlexRay)](structured/FlexRay/output (FlexRay).md) `function`
+- [resetFlexRayCC](structured/FlexRay/resetFlexRayCC.md) `function`
+- [resetFlexRayCCEx](structured/FlexRay/resetFlexRayCCEx.md) `function`
+
+---
+
+## CAPL GPIB (GPIB)
+
+**Function count**: 22
+
+- [GPIB CAPL Functions](structured/GPIB/GPIB CAPL Functions.md) `notes`
+- [GPIB Error Codes](structured/GPIB/GPIB Error Codes.md) `notes`
+- [GPIB Status](structured/GPIB/GPIB Status.md) `notes`
+- [GPIBDevChangePrimAddr](structured/GPIB/GPIBDevChangePrimAddr.md) `function`
+- [GPIBDevChangeSecAddr](structured/GPIB/GPIBDevChangeSecAddr.md) `function`
+- [GPIBDevClear](structured/GPIB/GPIBDevClear.md) `function`
+- [GPIBDevGotoLocal](structured/GPIB/GPIBDevGotoLocal.md) `function`
+- [GPIBDevOnline](structured/GPIB/GPIBDevOnline.md) `function`
+- [GPIBDevOpen](structured/GPIB/GPIBDevOpen.md) `function`
+- [GPIBGetCnt](structured/GPIB/GPIBGetCnt.md) `function`
+- [GPIBGetCtrlLineStatus](structured/GPIB/GPIBGetCtrlLineStatus.md) `function`
+- [GPIBGetError](structured/GPIB/GPIBGetError.md) `function`
+- [GPIBGetFloatResult](structured/GPIB/GPIBGetFloatResult.md) `function`
+- [GPIBGetIntResult](structured/GPIB/GPIBGetIntResult.md) `function`
+- [GPIBGetStatus](structured/GPIB/GPIBGetStatus.md) `function`
+- [GPIBOnError](structured/GPIB/GPIBOnError.md) `function`
+- [GPIBQuery](structured/GPIB/GPIBQuery.md) `function`
+- [GPIBQueryEx](structured/GPIB/GPIBQueryEx.md) `function`
+- [GPIBReqRelSysCtrl](structured/GPIB/GPIBReqRelSysCtrl.md) `function`
+- [GPIBResponse](structured/GPIB/GPIBResponse.md) `function`
+- [GPIBWriteNum](structured/GPIB/GPIBWriteNum.md) `function`
+- [GPIBWriteStr](structured/GPIB/GPIBWriteStr.md) `function`
+
+---
+
+## CAPL IP/TCP/UDP (IP)
+
+**Function count**: 381
+
+- [<OnAREthEventReceived>](structured/IP/_OnAREthEventReceived_.md) `function`
+- [<OnAREthFieldNotification>](structured/IP/_OnAREthFieldNotification_.md) `function`
+- [<OnAREthMethodError>](structured/IP/_OnAREthMethodError_.md) `function`
+- [<OnAREthMethodRequest>](structured/IP/_OnAREthMethodRequest_.md) `function`
+- [<OnAREthMethodResponse>](structured/IP/_OnAREthMethodResponse_.md) `function`
+- [<OnAREthPrepareEvent>](structured/IP/_OnAREthPrepareEvent_.md) `function`
+- [<OnSomeIpEventReceived>](structured/IP/_OnSomeIpEventReceived_.md) `function`
+- [<OnSomeIpFieldNotification>](structured/IP/_OnSomeIpFieldNotification_.md) `function`
+- [<OnSomeIpMethodError>](structured/IP/_OnSomeIpMethodError_.md) `function`
+- [<OnSomeIpMethodRequest>](structured/IP/_OnSomeIpMethodRequest_.md) `function`
+- [<OnSomeIpMethodResponse>](structured/IP/_OnSomeIpMethodResponse_.md) `function`
+- [<OnSomeIpPrepareEvent>](structured/IP/_OnSomeIpPrepareEvent_.md) `function`
+- [AREthAddConsumedEventGroup](structured/IP/AREthAddConsumedEventGroup.md) `function`
+- [AREthAddEvent](structured/IP/AREthAddEvent.md) `function`
+- [AREthAddEventToEventgroup](structured/IP/AREthAddEventToEventgroup.md) `function`
+- [AREthAddField](structured/IP/AREthAddField.md) `function`
+- [AREthAddFieldToEventgroup](structured/IP/AREthAddFieldToEventgroup.md) `function`
+- [AREthAddMethod](structured/IP/AREthAddMethod.md) `function`
+- [AREthAddProvidedEventGroup](structured/IP/AREthAddProvidedEventGroup.md) `function`
+- [AREthCallMethod](structured/IP/AREthCallMethod.md) `function`
+- [AREthCloseEstablishedTCPConnection](structured/IP/AREthCloseEstablishedTCPConnection.md) `function`
+- [AREthCloseLocalApplicationEndpoint](structured/IP/AREthCloseLocalApplicationEndpoint.md) `function`
+- [AREthCommitField](structured/IP/AREthCommitField.md) `function`
+- [AREthCreateConsumedServiceInstance](structured/IP/AREthCreateConsumedServiceInstance.md) `function`
+- [AREthCreateEventConsumer](structured/IP/AREthCreateEventConsumer.md) `function`
+- [AREthCreateFieldConsumer](structured/IP/AREthCreateFieldConsumer.md) `function`
+- [AREthCreateMessage](structured/IP/AREthCreateMessage.md) `function`
+- [AREthCreateMethodCall](structured/IP/AREthCreateMethodCall.md) `function`
+- [AREthCreateProvidedServiceInstance](structured/IP/AREthCreateProvidedServiceInstance.md) `function`
+- [AREthEstablishTCPConnection](structured/IP/AREthEstablishTCPConnection.md) `function`
+- [AREthGetConsumedObjectHandle](structured/IP/AREthGetConsumedObjectHandle.md) `function`
+- [AREthGetData](structured/IP/AREthGetData.md) `function`
+- [AREthGetDestinationAddress](structured/IP/AREthGetDestinationAddress.md) `function`
+- [AREthGetDestinationPort](structured/IP/AREthGetDestinationPort.md) `function`
+- [AREthGetInterfaceVersion](structured/IP/AREthGetInterfaceVersion.md) `function`
+- [AREthGetLastError](structured/IP/AREthGetLastError.md) `function`
+- [AREthGetLastErrorText](structured/IP/AREthGetLastErrorText.md) `function`
+- [AREthGetLength](structured/IP/AREthGetLength.md) `function`
+- [AREthGetMessageId](structured/IP/AREthGetMessageId.md) `function`
+- [AREthGetMessageType](structured/IP/AREthGetMessageType.md) `function`
+- [AREthGetProtocol](structured/IP/AREthGetProtocol.md) `function`
+- [AREthGetProtocolVersion](structured/IP/AREthGetProtocolVersion.md) `function`
+- [AREthGetProvidedObjectHandle](structured/IP/AREthGetProvidedObjectHandle.md) `function`
+- [AREthGetRequestId](structured/IP/AREthGetRequestId.md) `function`
+- [AREthGetReturnCode](structured/IP/AREthGetReturnCode.md) `function`
+- [AREthGetSecurityValidationState](structured/IP/AREthGetSecurityValidationState.md) `function`
+- [AREthGetSourceAddress](structured/IP/AREthGetSourceAddress.md) `function`
+- [AREthGetSourcePort](structured/IP/AREthGetSourcePort.md) `function`
+- [AREthGetValue...](structured/IP/AREthGetValue....md) `notes`
+- [AREthGetValueDWord](structured/IP/AREthGetValueDWord.md) `function`
+- [AREthGetValueFloat](structured/IP/AREthGetValueFloat.md) `function`
+- [AREthGetValueInt64](structured/IP/AREthGetValueInt64.md) `function`
+- [AREthGetValueLong](structured/IP/AREthGetValueLong.md) `function`
+- [AREthGetValuePhys](structured/IP/AREthGetValuePhys.md) `function`
+- [AREthGetValueQWord](structured/IP/AREthGetValueQWord.md) `function`
+- [AREthGetValueString](structured/IP/AREthGetValueString.md) `function`
+- [AREthILControlGetStatus](structured/IP/AREthILControlGetStatus.md) `function`
+- [AREthILControlInit](structured/IP/AREthILControlInit.md) `function`
+- [AREthILControlResume](structured/IP/AREthILControlResume.md) `function`
+- [AREthILControlStart](structured/IP/AREthILControlStart.md) `function`
+- [AREthILControlStop](structured/IP/AREthILControlStop.md) `function`
+- [AREthILControlWait](structured/IP/AREthILControlWait.md) `function`
+- [AREthIsOptional](structured/IP/AREthIsOptional.md) `function`
+- [AREthOpenLocalApplicationEndpoint](structured/IP/AREthOpenLocalApplicationEndpoint.md) `function`
+- [AREthOutputMessage](structured/IP/AREthOutputMessage.md) `function`
+- [AREthPostMessage](structured/IP/AREthPostMessage.md) `function`
+- [AREthProvidedEventAddConsumer](structured/IP/AREthProvidedEventAddConsumer.md) `function`
+- [AREthProvidedEventGroupAddConsumer](structured/IP/AREthProvidedEventGroupAddConsumer.md) `function`
+- [AREthProvidedEventGroupRemoveConsumer](structured/IP/AREthProvidedEventGroupRemoveConsumer.md) `function`
+- [AREthProvidedEventRemoveConsumer](structured/IP/AREthProvidedEventRemoveConsumer.md) `function`
+- [AREthProvidedEventsAndFieldsAddConsumer](structured/IP/AREthProvidedEventsAndFieldsAddConsumer.md) `function`
+- [AREthProvidedEventsAndFieldsRemoveConsumer](structured/IP/AREthProvidedEventsAndFieldsRemoveConsumer.md) `function`
+- [AREthProvidedFieldAddConsumer](structured/IP/AREthProvidedFieldAddConsumer.md) `function`
+- [AREthProvidedFieldRemoveConsumer](structured/IP/AREthProvidedFieldRemoveConsumer.md) `function`
+- [AREthRegisterCallback](structured/IP/AREthRegisterCallback.md) `function`
+- [AREthReleaseConsumedServiceInstance](structured/IP/AREthReleaseConsumedServiceInstance.md) `function`
+- [AREthReleaseMessage](structured/IP/AREthReleaseMessage.md) `function`
+- [AREthReleaseProvidedServiceInstance](structured/IP/AREthReleaseProvidedServiceInstance.md) `function`
+- [AREthRemoveConsumedEventGroup](structured/IP/AREthRemoveConsumedEventGroup.md) `function`
+- [AREthRemoveEvent](structured/IP/AREthRemoveEvent.md) `function`
+- [AREthRemoveEventConsumer](structured/IP/AREthRemoveEventConsumer.md) `function`
+- [AREthRemoveEventFromEventgroup](structured/IP/AREthRemoveEventFromEventgroup.md) `function`
+- [AREthRemoveField](structured/IP/AREthRemoveField.md) `function`
+- [AREthRemoveFieldConsumer](structured/IP/AREthRemoveFieldConsumer.md) `function`
+- [AREthRemoveFieldFromEventgroup](structured/IP/AREthRemoveFieldFromEventgroup.md) `function`
+- [AREthRemoveMethod](structured/IP/AREthRemoveMethod.md) `function`
+- [AREthRemoveMethodCall](structured/IP/AREthRemoveMethodCall.md) `function`
+- [AREthRemoveProvidedEventGroup](structured/IP/AREthRemoveProvidedEventGroup.md) `function`
+- [AREthRemoveValue](structured/IP/AREthRemoveValue.md) `function`
+- [AREthSDDesubscribeEventGroup](structured/IP/AREthSDDesubscribeEventGroup.md) `function`
+- [AREthSDReleaseService](structured/IP/AREthSDReleaseService.md) `function`
+- [AREthSDRequireService](structured/IP/AREthSDRequireService.md) `function`
+- [AREthSDSetServiceStatus](structured/IP/AREthSDSetServiceStatus.md) `function`
+- [AREthSDSubscribeEventGroup](structured/IP/AREthSDSubscribeEventGroup.md) `function`
+- [AREthSendARPDUTo](structured/IP/AREthSendARPDUTo.md) `function`
+- [AREthSerializeMessage](structured/IP/AREthSerializeMessage.md) `function`
+- [AREthSetData](structured/IP/AREthSetData.md) `function`
+- [AREthSetMulticastReceiverEndpoints](structured/IP/AREthSetMulticastReceiverEndpoints.md) `function`
+- [AREthSetProperty](structured/IP/AREthSetProperty.md) `function`
+- [AREthSetProviderEndpoints](structured/IP/AREthSetProviderEndpoints.md) `function`
+- [AREthSetRequestId](structured/IP/AREthSetRequestId.md) `function`
+- [AREthSetReturnCode](structured/IP/AREthSetReturnCode.md) `function`
+- [AREthSetValue...](structured/IP/AREthSetValue....md) `notes`
+- [AREthSetValueDWord](structured/IP/AREthSetValueDWord.md) `function`
+- [AREthSetValueFloat](structured/IP/AREthSetValueFloat.md) `function`
+- [AREthSetValueInt64](structured/IP/AREthSetValueInt64.md) `function`
+- [AREthSetValueLong](structured/IP/AREthSetValueLong.md) `function`
+- [AREthSetValuePhys](structured/IP/AREthSetValuePhys.md) `function`
+- [AREthSetValueQWord](structured/IP/AREthSetValueQWord.md) `function`
+- [AREthSetValueString](structured/IP/AREthSetValueString.md) `function`
+- [AREthSetVerbosity](structured/IP/AREthSetVerbosity.md) `function`
+- [AREthTCPListen](structured/IP/AREthTCPListen.md) `function`
+- [AREthTriggerEvent](structured/IP/AREthTriggerEvent.md) `function`
+- [AUTOSAR Eth Interaction Layer Error Codes](structured/IP/AUTOSAR Eth Interaction Layer Error Codes.md) `notes`
+- [AUTOSAR Ethernet Interaction Layer](structured/IP/AUTOSAR Ethernet Interaction Layer.md) `notes`
+- [AVB IL Error Codes](structured/IP/AVB IL Error Codes.md) `notes`
+- [AVB Interaction Layer](structured/IP/AVB Interaction Layer.md) `notes`
+- [AvbAccept](structured/IP/AvbAccept.md) `function`
+- [AvbCloseListener](structured/IP/AvbCloseListener.md) `function`
+- [AvbCloseTalker](structured/IP/AvbCloseTalker.md) `function`
+- [AvbConnect](structured/IP/AvbConnect.md) `function`
+- [AvbGetLastError](structured/IP/AvbGetLastError.md) `function`
+- [AvbGetLastErrorText](structured/IP/AvbGetLastErrorText.md) `function`
+- [AvbGetMediaType](structured/IP/AvbGetMediaType.md) `function`
+- [AvbGetProtocol](structured/IP/AvbGetProtocol.md) `function`
+- [AvbGetStreamId](structured/IP/AvbGetStreamId.md) `function`
+- [AvbGetStreamSourceAddress](structured/IP/AvbGetStreamSourceAddress.md) `function`
+- [AvbGetStreamUniqueId](structured/IP/AvbGetStreamUniqueId.md) `function`
+- [AvbILControlInit](structured/IP/AvbILControlInit.md) `function`
+- [AvbILControlResume](structured/IP/AvbILControlResume.md) `function`
+- [AvbILControlStart](structured/IP/AvbILControlStart.md) `function`
+- [AvbILControlStop](structured/IP/AvbILControlStop.md) `function`
+- [AvbILControlWait](structured/IP/AvbILControlWait.md) `function`
+- [AvbListen](structured/IP/AvbListen.md) `function`
+- [AvbOpenListener](structured/IP/AvbOpenListener.md) `function`
+- [AvbOpenTalker](structured/IP/AvbOpenTalker.md) `function`
+- [AvbReceive](structured/IP/AvbReceive.md) `function`
+- [AvbSend](structured/IP/AvbSend.md) `function`
+- [AvbSetMediaType](structured/IP/AvbSetMediaType.md) `function`
+- [AvbSetProperty](structured/IP/AvbSetProperty.md) `function`
+- [AvbSetProtocol](structured/IP/AvbSetProtocol.md) `function`
+- [AvbSetVerbosity](structured/IP/AvbSetVerbosity.md) `function`
+- [Eth](structured/IP/Eth.md) `function`
+- [ethClearMacAddressTable](structured/IP/ethClearMacAddressTable.md) `function`
+- [Ethernet](structured/IP/Ethernet.md) `notes`
+- [Ethernet CAPL Functions](structured/IP/Ethernet CAPL Functions.md) `notes`
+- [ethernetErrorPacket](structured/IP/ethernetErrorPacket.md) `function`
+- [ethernetPacket](structured/IP/ethernetPacket.md) `function`
+- [ethernetPacket Selectors: <protocol>.<field>](structured/IP/ethernetPacket Selectors_ _protocol_._field_.md) `notes`
+- [ethernetPacket Selectors: <protocol>.<field>.bitLength](structured/IP/ethernetPacket Selectors_ _protocol_._field_.bitLength.md) `notes`
+- [ethernetPacket Selectors: <protocol>.<field>.bitOffset](structured/IP/ethernetPacket Selectors_ _protocol_._field_.bitOffset.md) `notes`
+- [ethernetPacket Selectors: <protocol>.<field>.byteLength](structured/IP/ethernetPacket Selectors_ _protocol_._field_.byteLength.md) `notes`
+- [ethernetPacket Selectors: <protocol>.<field>.byteOffset](structured/IP/ethernetPacket Selectors_ _protocol_._field_.byteOffset.md) `notes`
+- [ethernetPacket Selectors: <protocol>.<optional-structure>.<field>](structured/IP/ethernetPacket Selectors_ _protocol_._optional-structure_._field_.md) `notes`
+- [ethernetPacket Selectors: <protocol>.byte/word/dword/qword/char/int/long/int64](structured/IP/ethernetPacket Selectors_ _protocol_.byte_word_dword_qword_char_int_long_int64.md) `notes`
+- [ethernetPacket Selectors: <protocol>.byteLength](structured/IP/ethernetPacket Selectors_ _protocol_.byteLength.md) `notes`
+- [ethernetPacket Selectors: <protocol>.byteOffset](structured/IP/ethernetPacket Selectors_ _protocol_.byteOffset.md) `notes`
+- [ethernetPacket::Clear](structured/IP/ethernetPacket__Clear.md) `method`
+- [ethernetPacket::CompletePacket](structured/IP/ethernetPacket__CompletePacket.md) `method`
+- [ethernetPacket::FaultInjectDisableLengthPadding](structured/IP/ethernetPacket__FaultInjectDisableLengthPadding.md) `method`
+- [ethernetPacket::FaultInjectFCS](structured/IP/ethernetPacket__FaultInjectFCS.md) `method`
+- [ethernetPacket::GetBitLength](structured/IP/ethernetPacket__GetBitLength.md) `method`
+- [ethernetPacket::GetData](structured/IP/ethernetPacket__GetData.md) `method`
+- [ethernetPacket::GetDestinationIPAddress](structured/IP/ethernetPacket__GetDestinationIPAddress.md) `method`
+- [ethernetPacket::GetDestinationIPEndpoint](structured/IP/ethernetPacket__GetDestinationIPEndpoint.md) `method`
+- [ethernetPacket::GetInt](structured/IP/ethernetPacket__GetInt.md) `method`
+- [ethernetPacket::GetInt64](structured/IP/ethernetPacket__GetInt64.md) `method`
+- [ethernetPacket::GetPDU](structured/IP/ethernetPacket__GetPDU.md) `method`
+- [ethernetPacket::GetProtocolErrorText](structured/IP/ethernetPacket__GetProtocolErrorText.md) `method`
+- [ethernetPacket::GetSourceEndpoint](structured/IP/ethernetPacket__GetSourceEndpoint.md) `method`
+- [ethernetPacket::GetSourceIPAddress](structured/IP/ethernetPacket__GetSourceIPAddress.md) `method`
+- [ethernetPacket::GetVlan](structured/IP/ethernetPacket__GetVlan.md) `method`
+- [ethernetPacket::GetVlanId](structured/IP/ethernetPacket__GetVlanId.md) `method`
+- [ethernetPacket::GetVlanPriority](structured/IP/ethernetPacket__GetVlanPriority.md) `method`
+- [ethernetPacket::HasProtocolError](structured/IP/ethernetPacket__HasProtocolError.md) `method`
+- [ethernetPacket::HasVlan](structured/IP/ethernetPacket__HasVlan.md) `method`
+- [ethernetPacket::IsAvailable](structured/IP/ethernetPacket__IsAvailable.md) `method`
+- [ethernetPacket::PDUCount](structured/IP/ethernetPacket__PDUCount.md) `method`
+- [ethernetPacket::PDUOffset](structured/IP/ethernetPacket__PDUOffset.md) `method`
+- [ethernetPacket::protocol::field::GetData](structured/IP/ethernetPacket__protocol__field__GetData.md) `method`
+- [ethernetPacket::protocol::field::IsAvailable](structured/IP/ethernetPacket__protocol__field__IsAvailable.md) `method`
+- [ethernetPacket::protocol::field::ParseAddress](structured/IP/ethernetPacket__protocol__field__ParseAddress.md) `method`
+- [ethernetPacket::protocol::field::SetData](structured/IP/ethernetPacket__protocol__field__SetData.md) `method`
+- [ethernetPacket::protocol::GetData](structured/IP/ethernetPacket__protocol__GetData.md) `method`
+- [ethernetPacket::protocol::Init](structured/IP/ethernetPacket__protocol__Init.md) `method`
+- [ethernetPacket::protocol::IsAvailable](structured/IP/ethernetPacket__protocol__IsAvailable.md) `method`
+- [ethernetPacket::protocol::optional-structure::Clear](structured/IP/ethernetPacket__protocol__optional-structure__Clear.md) `method`
+- [ethernetPacket::protocol::optional-structure::Init](structured/IP/ethernetPacket__protocol__optional-structure__Init.md) `method`
+- [ethernetPacket::protocol::ResizeData](structured/IP/ethernetPacket__protocol__ResizeData.md) `method`
+- [ethernetPacket::protocol::SetData](structured/IP/ethernetPacket__protocol__SetData.md) `method`
+- [ethernetPacket::RemoveVlan](structured/IP/ethernetPacket__RemoveVlan.md) `method`
+- [ethernetPacket::SetData](structured/IP/ethernetPacket__SetData.md) `method`
+- [ethernetPacket::SetDestinationIPAddress](structured/IP/ethernetPacket__SetDestinationIPAddress.md) `method`
+- [ethernetPacket::SetDestinationIPEndpoint](structured/IP/ethernetPacket__SetDestinationIPEndpoint.md) `method`
+- [ethernetPacket::SetSourceIPAddress](structured/IP/ethernetPacket__SetSourceIPAddress.md) `method`
+- [ethernetPacket::SetSourceIPEndpoint](structured/IP/ethernetPacket__SetSourceIPEndpoint.md) `method`
+- [ethernetPacket::SetVlan](structured/IP/ethernetPacket__SetVlan.md) `method`
+- [ethernetPacket::SetVlanId](structured/IP/ethernetPacket__SetVlanId.md) `method`
+- [ethernetPacket::SetVlanPriority](structured/IP/ethernetPacket__SetVlanPriority.md) `method`
+- [ethernetPacket::source::ParseAddress](structured/IP/ethernetPacket__source__ParseAddress.md) `method`
+- [ethernetPort::<NetworkName>::<PortName>](structured/IP/ethernetPort___NetworkName____PortName_.md) `function`
+- [ethGetEthernetPort](structured/IP/ethGetEthernetPort.md) `function`
+- [ethGetEthernetPortInfos](structured/IP/ethGetEthernetPortInfos.md) `function`
+- [ethGetLinkStatus](structured/IP/ethGetLinkStatus.md) `function`
+- [ethGetMacAddressAsNumber](structured/IP/ethGetMacAddressAsNumber.md) `function`
+- [ethGetMacAddressAsString](structured/IP/ethGetMacAddressAsString.md) `function`
+- [ethGetPhyState](structured/IP/ethGetPhyState.md) `function`
+- [ethInjectPacket](structured/IP/ethInjectPacket.md) `function`
+- [ethResetStatistics](structured/IP/ethResetStatistics.md) `function`
+- [ethSetLinkStatus](structured/IP/ethSetLinkStatus.md) `function`
+- [ethSetPhyState](structured/IP/ethSetPhyState.md) `function`
+- [ethStartPacketGenerator](structured/IP/ethStartPacketGenerator.md) `function`
+- [ethStopPacketGenerator](structured/IP/ethStopPacketGenerator.md) `function`
+- [GetServiceSignal](structured/IP/GetServiceSignal.md) `function`
+- [GetServiceSignalData](structured/IP/GetServiceSignalData.md) `function`
+- [GetServiceSignalString](structured/IP/GetServiceSignalString.md) `function`
+- [IP/Ethernet Error Codes](structured/IP/IP_Ethernet Error Codes.md) `notes`
+- [IP_Address](structured/IP/IP_Address.md) `function`
+- [IP_Address::GetAddressAsArray](structured/IP/IP_Address__GetAddressAsArray.md) `method`
+- [IP_Address::IsBroadcast](structured/IP/IP_Address__IsBroadcast.md) `method`
+- [IP_Address::IsIPv4Address](structured/IP/IP_Address__IsIPv4Address.md) `method`
+- [IP_Address::IsIPv6Address](structured/IP/IP_Address__IsIPv6Address.md) `method`
+- [IP_Address::IsMulticast](structured/IP/IP_Address__IsMulticast.md) `method`
+- [IP_Address::MatchesAddress](structured/IP/IP_Address__MatchesAddress.md) `method`
+- [IP_Address::ParseAddressFromString](structured/IP/IP_Address__ParseAddressFromString.md) `method`
+- [IP_Address::PrintAddressToString](structured/IP/IP_Address__PrintAddressToString.md) `method`
+- [IP_Address::SetAddressAsArray](structured/IP/IP_Address__SetAddressAsArray.md) `method`
+- [IP_Endpoint](structured/IP/IP_Endpoint.md) `function`
+- [IP_Endpoint::IsTCP](structured/IP/IP_Endpoint__IsTCP.md) `method`
+- [IP_Endpoint::IsUDP](structured/IP/IP_Endpoint__IsUDP.md) `method`
+- [IP_Endpoint::MatchesEndpoint](structured/IP/IP_Endpoint__MatchesEndpoint.md) `method`
+- [IP_Endpoint::ParseEndpointFromString](structured/IP/IP_Endpoint__ParseEndpointFromString.md) `method`
+- [IP_Endpoint::PrintEndpointToString](structured/IP/IP_Endpoint__PrintEndpointToString.md) `method`
+- [IP_Endpoint::SetToTCP](structured/IP/IP_Endpoint__SetToTCP.md) `method`
+- [IP_Endpoint::SetToUDP](structured/IP/IP_Endpoint__SetToUDP.md) `method`
+- [IP_Endpoint::SetTransportProtocolToUnknown](structured/IP/IP_Endpoint__SetTransportProtocolToUnknown.md) `method`
+- [lookupEthernetPort](structured/IP/lookupEthernetPort.md) `function`
+- [on ethernetErrorPacket](structured/IP/on ethernetErrorPacket.md) `event`
+- [on ethernetPacket](structured/IP/on ethernetPacket.md) `event`
+- [on ethernetPacketForwarded](structured/IP/on ethernetPacketForwarded.md) `event`
+- [on ethernetPhyState](structured/IP/on ethernetPhyState.md) `event`
+- [on ethernetStatus](structured/IP/on ethernetStatus.md) `event`
+- [on serviceSignal](structured/IP/on serviceSignal.md) `event`
+- [on serviceSignal_update](structured/IP/on serviceSignal_update.md) `event`
+- [OnAREthClosedIPv6TCPConnection, OnAREthClosedIPv4TCPConnection, OnAREthClosedTCPConnection](structured/IP/OnAREthClosedIPv6TCPConnection, OnAREthClosedIPv4TCPConnection, OnAREthClosedTCPConnection.md) `function`
+- [OnAREthEstablishedIPv6TCPConnection, OnAREthEstablishedIPv4TCPConnection, OnAREthEstablishedTCPConnection](structured/IP/OnAREthEstablishedIPv6TCPConnection, OnAREthEstablishedIPv4TCPConnection, OnAREthEstablishedTCPConnection.md) `function`
+- [OnAREthMessage](structured/IP/OnAREthMessage.md) `function`
+- [OnAREthProcessRxMessage](structured/IP/OnAREthProcessRxMessage.md) `function`
+- [OnAREthProcessTxARPDU](structured/IP/OnAREthProcessTxARPDU.md) `function`
+- [OnAREthProcessTxMessage](structured/IP/OnAREthProcessTxMessage.md) `function`
+- [OnAREthSDClientEventGroupStatusChanged](structured/IP/OnAREthSDClientEventGroupStatusChanged.md) `function`
+- [OnAREthSDClientServiceStatusChanged](structured/IP/OnAREthSDClientServiceStatusChanged.md) `function`
+- [OnAREthSDServerEventGroupStatusChanged](structured/IP/OnAREthSDServerEventGroupStatusChanged.md) `function`
+- [OnAREthSDServerEventGroupStatusChangedIPv6](structured/IP/OnAREthSDServerEventGroupStatusChangedIPv6.md) `function`
+- [OnAvbConnect](structured/IP/OnAvbConnect.md) `function`
+- [OnAvbListen](structured/IP/OnAvbListen.md) `function`
+- [OnAvbReceive](structured/IP/OnAvbReceive.md) `function`
+- [OnAvbSend](structured/IP/OnAvbSend.md) `function`
+- [OnPtpSendPrepare](structured/IP/OnPtpSendPrepare.md) `function`
+- [OnSomeIpClosedIPv6TCPConnection, OnSomeIpClosedIPv4TCPConnection, OnSomeIpClosedTCPConnection](structured/IP/OnSomeIpClosedIPv6TCPConnection, OnSomeIpClosedIPv4TCPConnection, OnSomeIpClosedTCPConnection.md) `function`
+- [OnSomeIpEstablishedIPv6TCPConnection, OnSomeIpEstablishedIPv4TCPConnection, OnSomeIpEstablishedTCPConnection](structured/IP/OnSomeIpEstablishedIPv6TCPConnection, OnSomeIpEstablishedIPv4TCPConnection, OnSomeIpEstablishedTCPConnection.md) `function`
+- [OnSomeIpMessage](structured/IP/OnSomeIpMessage.md) `function`
+- [OnSomeIpProcessRxMessage](structured/IP/OnSomeIpProcessRxMessage.md) `function`
+- [OnSomeIpProcessTxMessage](structured/IP/OnSomeIpProcessTxMessage.md) `function`
+- [OnSomeIpSDClientEventGroupStatusChanged](structured/IP/OnSomeIpSDClientEventGroupStatusChanged.md) `function`
+- [OnSomeIpSDClientServiceStatusChanged](structured/IP/OnSomeIpSDClientServiceStatusChanged.md) `function`
+- [OnSomeIpSDServerEventGroupStatusChanged](structured/IP/OnSomeIpSDServerEventGroupStatusChanged.md) `function`
+- [output (Ethernet)](structured/IP/output (Ethernet).md) `function`
+- [PtpSetProperty](structured/IP/PtpSetProperty.md) `function`
+- [PtpSimulationTimespanFromPtpTimespan](structured/IP/PtpSimulationTimespanFromPtpTimespan.md) `function`
+- [PtpTimeFromSimulationTime](structured/IP/PtpTimeFromSimulationTime.md) `function`
+- [PtpTimeNow](structured/IP/PtpTimeNow.md) `function`
+- [SetServiceSignal](structured/IP/SetServiceSignal.md) `function`
+- [SetServiceSignalData](structured/IP/SetServiceSignalData.md) `function`
+- [SetServiceSignalString](structured/IP/SetServiceSignalString.md) `function`
+- [SOME/IP Interaction Layer](structured/IP/SOME_IP Interaction Layer.md) `notes`
+- [SOME/IP Interaction Layer Error Codes](structured/IP/SOME_IP Interaction Layer Error Codes.md) `notes`
+- [SomeIpAddConsumedEventGroup](structured/IP/SomeIpAddConsumedEventGroup.md) `function`
+- [SomeIpAddEvent](structured/IP/SomeIpAddEvent.md) `function`
+- [SomeIpAddEventToEventgroup](structured/IP/SomeIpAddEventToEventgroup.md) `function`
+- [SomeIpAddField](structured/IP/SomeIpAddField.md) `function`
+- [SomeIpAddFieldToEventgroup](structured/IP/SomeIpAddFieldToEventgroup.md) `function`
+- [SomeIpAddMethod](structured/IP/SomeIpAddMethod.md) `function`
+- [SomeIpAddProvidedEventGroup](structured/IP/SomeIpAddProvidedEventGroup.md) `function`
+- [SomeIpCallMethod](structured/IP/SomeIpCallMethod.md) `function`
+- [SomeIpCloseEstablishedTCPConnection](structured/IP/SomeIpCloseEstablishedTCPConnection.md) `function`
+- [SomeIpCloseLocalApplicationEndpoint](structured/IP/SomeIpCloseLocalApplicationEndpoint.md) `function`
+- [SomeIpCommitField](structured/IP/SomeIpCommitField.md) `function`
+- [SomeIpCreateConsumedServiceInstance](structured/IP/SomeIpCreateConsumedServiceInstance.md) `function`
+- [SomeIpCreateEventConsumer](structured/IP/SomeIpCreateEventConsumer.md) `function`
+- [SomeIpCreateFieldConsumer](structured/IP/SomeIpCreateFieldConsumer.md) `function`
+- [SomeIpCreateMessage](structured/IP/SomeIpCreateMessage.md) `function`
+- [SomeIpCreateMethodCall](structured/IP/SomeIpCreateMethodCall.md) `function`
+- [SomeIpCreateProvidedServiceInstance](structured/IP/SomeIpCreateProvidedServiceInstance.md) `function`
+- [SomeIpEstablishTCPConnection](structured/IP/SomeIpEstablishTCPConnection.md) `function`
+- [SomeIpGetConsumedObjectHandle](structured/IP/SomeIpGetConsumedObjectHandle.md) `function`
+- [SomeIpGetData](structured/IP/SomeIpGetData.md) `function`
+- [SomeIpGetDestinationAddress](structured/IP/SomeIpGetDestinationAddress.md) `function`
+- [SomeIpGetDestinationPort](structured/IP/SomeIpGetDestinationPort.md) `function`
+- [SomeIpGetInterfaceVersion](structured/IP/SomeIpGetInterfaceVersion.md) `function`
+- [SomeIpGetLastError](structured/IP/SomeIpGetLastError.md) `function`
+- [SomeIpGetLastErrorText](structured/IP/SomeIpGetLastErrorText.md) `function`
+- [SomeIpGetLength](structured/IP/SomeIpGetLength.md) `function`
+- [SomeIpGetMessageId](structured/IP/SomeIpGetMessageId.md) `function`
+- [SomeIpGetMessageType](structured/IP/SomeIpGetMessageType.md) `function`
+- [SomeIpGetProtocol](structured/IP/SomeIpGetProtocol.md) `function`
+- [SomeIpGetProtocolVersion](structured/IP/SomeIpGetProtocolVersion.md) `function`
+- [SomeIpGetProvidedObjectHandle](structured/IP/SomeIpGetProvidedObjectHandle.md) `function`
+- [SomeIpGetRequestId](structured/IP/SomeIpGetRequestId.md) `function`
+- [SomeIpGetReturnCode](structured/IP/SomeIpGetReturnCode.md) `function`
+- [SomeIpGetSecurityValidationState](structured/IP/SomeIpGetSecurityValidationState.md) `function`
+- [SomeIpGetSourceAddress](structured/IP/SomeIpGetSourceAddress.md) `function`
+- [SomeIpGetSourcePort](structured/IP/SomeIpGetSourcePort.md) `function`
+- [SomeIpGetValue...](structured/IP/SomeIpGetValue....md) `notes`
+- [SomeIpGetValueDWord](structured/IP/SomeIpGetValueDWord.md) `function`
+- [SomeIpGetValueFloat](structured/IP/SomeIpGetValueFloat.md) `function`
+- [SomeIpGetValueInt64](structured/IP/SomeIpGetValueInt64.md) `function`
+- [SomeIpGetValueLong](structured/IP/SomeIpGetValueLong.md) `function`
+- [SomeIpGetValuePhys](structured/IP/SomeIpGetValuePhys.md) `function`
+- [SomeIpGetValueQWord](structured/IP/SomeIpGetValueQWord.md) `function`
+- [SomeIpGetValueString](structured/IP/SomeIpGetValueString.md) `function`
+- [SomeIpILControlGetStatus](structured/IP/SomeIpILControlGetStatus.md) `function`
+- [SomeIpILControlInit](structured/IP/SomeIpILControlInit.md) `function`
+- [SomeIpILControlResume](structured/IP/SomeIpILControlResume.md) `function`
+- [SomeIpILControlStart](structured/IP/SomeIpILControlStart.md) `function`
+- [SomeIpILControlStop](structured/IP/SomeIpILControlStop.md) `function`
+- [SomeIpILControlWait](structured/IP/SomeIpILControlWait.md) `function`
+- [SomeIpIsOptional](structured/IP/SomeIpIsOptional.md) `function`
+- [SomeIpOpenLocalApplicationEndpoint](structured/IP/SomeIpOpenLocalApplicationEndpoint.md) `function`
+- [SomeIpOutputMessage](structured/IP/SomeIpOutputMessage.md) `function`
+- [SomeIpPostMessage](structured/IP/SomeIpPostMessage.md) `function`
+- [SomeIpProvidedEventAddConsumer](structured/IP/SomeIpProvidedEventAddConsumer.md) `function`
+- [SomeIpProvidedEventGroupAddConsumer](structured/IP/SomeIpProvidedEventGroupAddConsumer.md) `function`
+- [SomeIpProvidedEventGroupRemoveConsumer](structured/IP/SomeIpProvidedEventGroupRemoveConsumer.md) `function`
+- [SomeIpProvidedEventRemoveConsumer](structured/IP/SomeIpProvidedEventRemoveConsumer.md) `function`
+- [SomeIpProvidedEventsAndFieldsAddConsumer](structured/IP/SomeIpProvidedEventsAndFieldsAddConsumer.md) `function`
+- [SomeIpProvidedEventsAndFieldsRemoveConsumer](structured/IP/SomeIpProvidedEventsAndFieldsRemoveConsumer.md) `function`
+- [SomeIpProvidedFieldAddConsumer](structured/IP/SomeIpProvidedFieldAddConsumer.md) `function`
+- [SomeIpProvidedFieldRemoveConsumer](structured/IP/SomeIpProvidedFieldRemoveConsumer.md) `function`
+- [SomeIpRegisterCallback](structured/IP/SomeIpRegisterCallback.md) `function`
+- [SomeIpReleaseConsumedServiceInstance](structured/IP/SomeIpReleaseConsumedServiceInstance.md) `function`
+- [SomeIpReleaseMessage](structured/IP/SomeIpReleaseMessage.md) `function`
+- [SomeIpReleaseProvidedServiceInstance](structured/IP/SomeIpReleaseProvidedServiceInstance.md) `function`
+- [SomeIpRemoveConsumedEventGroup](structured/IP/SomeIpRemoveConsumedEventGroup.md) `function`
+- [SomeIpRemoveEvent](structured/IP/SomeIpRemoveEvent.md) `function`
+- [SomeIpRemoveEventConsumer](structured/IP/SomeIpRemoveEventConsumer.md) `function`
+- [SomeIpRemoveEventFromEventgroup](structured/IP/SomeIpRemoveEventFromEventgroup.md) `function`
+- [SomeIpRemoveField](structured/IP/SomeIpRemoveField.md) `function`
+- [SomeIpRemoveFieldConsumer](structured/IP/SomeIpRemoveFieldConsumer.md) `function`
+- [SomeIpRemoveFieldFromEventgroup](structured/IP/SomeIpRemoveFieldFromEventgroup.md) `function`
+- [SomeIpRemoveMethod](structured/IP/SomeIpRemoveMethod.md) `function`
+- [SomeIpRemoveMethodCall](structured/IP/SomeIpRemoveMethodCall.md) `function`
+- [SomeIpRemoveProvidedEventGroup](structured/IP/SomeIpRemoveProvidedEventGroup.md) `function`
+- [SomeIpRemoveValue](structured/IP/SomeIpRemoveValue.md) `function`
+- [SomeIpSDDesubscribeEventGroup](structured/IP/SomeIpSDDesubscribeEventGroup.md) `function`
+- [SomeIpSDReleaseService](structured/IP/SomeIpSDReleaseService.md) `function`
+- [SomeIpSDRequireService](structured/IP/SomeIpSDRequireService.md) `function`
+- [SomeIpSDSetServiceStatus](structured/IP/SomeIpSDSetServiceStatus.md) `function`
+- [SomeIpSDSubscribeEventGroup](structured/IP/SomeIpSDSubscribeEventGroup.md) `function`
+- [SomeIpSerializeMessage](structured/IP/SomeIpSerializeMessage.md) `function`
+- [SomeIpSetData](structured/IP/SomeIpSetData.md) `function`
+- [SomeIpSetMulticastReceiverEndpoints](structured/IP/SomeIpSetMulticastReceiverEndpoints.md) `function`
+- [SomeIpSetProperty](structured/IP/SomeIpSetProperty.md) `function`
+- [SomeIpSetProviderEndpoints](structured/IP/SomeIpSetProviderEndpoints.md) `function`
+- [SomeIpSetRequestId](structured/IP/SomeIpSetRequestId.md) `function`
+- [SomeIpSetReturnCode](structured/IP/SomeIpSetReturnCode.md) `function`
+- [SomeIpSetValue...](structured/IP/SomeIpSetValue....md) `notes`
+- [SomeIpSetValueDWord](structured/IP/SomeIpSetValueDWord.md) `function`
+- [SomeIpSetValueFloat](structured/IP/SomeIpSetValueFloat.md) `function`
+- [SomeIpSetValueInt64](structured/IP/SomeIpSetValueInt64.md) `function`
+- [SomeIpSetValueLong](structured/IP/SomeIpSetValueLong.md) `function`
+- [SomeIpSetValuePhys](structured/IP/SomeIpSetValuePhys.md) `function`
+- [SomeIpSetValueQWord](structured/IP/SomeIpSetValueQWord.md) `function`
+- [SomeIpSetValueString](structured/IP/SomeIpSetValueString.md) `function`
+- [SomeIpSetVerbosity](structured/IP/SomeIpSetVerbosity.md) `function`
+- [SomeIpTCPListen](structured/IP/SomeIpTCPListen.md) `function`
+- [SomeIpTriggerEvent](structured/IP/SomeIpTriggerEvent.md) `function`
+- [Syntax for Database-based Access Paths](structured/IP/Syntax for Database-based Access Paths.md) `notes`
+- [Syntax for Database-based Access Paths](structured/IP/Syntax for Database-based Access Paths.md) `notes`
+- [Syntax for Predefined Service Discovery (SD) Access Paths](structured/IP/Syntax for Predefined Service Discovery (SD) Access Paths.md) `notes`
+- [Syntax for Predefined Service Discovery (SD) Access Paths](structured/IP/Syntax for Predefined Service Discovery (SD) Access Paths.md) `notes`
+
+---
+
+## CAPL ISO 11783 (ISOBUS) (ISO11783)
+
+**Function count**: 523
+
+- [Client States (TIM Component - ISO11783)](structured/ISO11783/Client States (TIM Component - ISO11783).md) `notes`
+- [FSIL_AcceptRxPG](structured/ISO11783/FSIL_AcceptRxPG.md) `function`
+- [FSIL_ActivateDiagnosticsSupport](structured/ISO11783/FSIL_ActivateDiagnosticsSupport.md) `function`
+- [FSIL_ActivateDTC](structured/ISO11783/FSIL_ActivateDTC.md) `function`
+- [FSIL_BlockRxMessage](structured/ISO11783/FSIL_BlockRxMessage.md) `function`
+- [FSIL_BlockTxMessage](structured/ISO11783/FSIL_BlockTxMessage.md) `function`
+- [FSIL_ClearAllDTCs](structured/ISO11783/FSIL_ClearAllDTCs.md) `function`
+- [FSIL_ConnectRemovableDevice](structured/ISO11783/FSIL_ConnectRemovableDevice.md) `function`
+- [FSIL_ControlInit](structured/ISO11783/FSIL_ControlInit.md) `function`
+- [FSIL_ControlStart](structured/ISO11783/FSIL_ControlStart.md) `function`
+- [FSIL_ControlStop](structured/ISO11783/FSIL_ControlStop.md) `function`
+- [FSIL_DeactivateDTC](structured/ISO11783/FSIL_DeactivateDTC.md) `function`
+- [FSIL_DelayRxMessage](structured/ISO11783/FSIL_DelayRxMessage.md) `function`
+- [FSIL_DeleteFiles](structured/ISO11783/FSIL_DeleteFiles.md) `function`
+- [FSIL_DisconnectAllRemovableDevices](structured/ISO11783/FSIL_DisconnectAllRemovableDevices.md) `function`
+- [FSIL_DisconnectRemovableDevice](structured/ISO11783/FSIL_DisconnectRemovableDevice.md) `function`
+- [FSIL_EnableAddressViolationDetection](structured/ISO11783/FSIL_EnableAddressViolationDetection.md) `function`
+- [FSIL_EnableNameManagement](structured/ISO11783/FSIL_EnableNameManagement.md) `function`
+- [FSIL_Exists](structured/ISO11783/FSIL_Exists.md) `function`
+- [FSIL_GetAddress](structured/ISO11783/FSIL_GetAddress.md) `function`
+- [FSIL_GetDTCStatus](structured/ISO11783/FSIL_GetDTCStatus.md) `function`
+- [FSIL_GetLastError](structured/ISO11783/FSIL_GetLastError.md) `function`
+- [FSIL_GetLastErrorText](structured/ISO11783/FSIL_GetLastErrorText.md) `function`
+- [FSIL_GetState](structured/ISO11783/FSIL_GetState.md) `function`
+- [FSIL_ImportFiles](structured/ISO11783/FSIL_ImportFiles.md) `function`
+- [FSIL_ManipulateMessage](structured/ISO11783/FSIL_ManipulateMessage.md) `function`
+- [FSIL_OnAddressViolation](structured/ISO11783/FSIL_OnAddressViolation.md) `function`
+- [FSIL_OnCA](structured/ISO11783/FSIL_OnCA.md) `function`
+- [FSIL_OnChangedState](structured/ISO11783/FSIL_OnChangedState.md) `function`
+- [FSIL_OnCurrentDirectoryChanged](structured/ISO11783/FSIL_OnCurrentDirectoryChanged.md) `function`
+- [FSIL_OnError](structured/ISO11783/FSIL_OnError.md) `function`
+- [FSIL_OnNumberOfOpenFilesChanged](structured/ISO11783/FSIL_OnNumberOfOpenFilesChanged.md) `function`
+- [FSIL_OnRequest](structured/ISO11783/FSIL_OnRequest.md) `function`
+- [FSIL_OnRxMessage](structured/ISO11783/FSIL_OnRxMessage.md) `function`
+- [FSIL_OnTxMessage](structured/ISO11783/FSIL_OnTxMessage.md) `function`
+- [FSIL_OnTxPrepare](structured/ISO11783/FSIL_OnTxPrepare.md) `function`
+- [FSIL_ResetAllBlockedRxMessages](structured/ISO11783/FSIL_ResetAllBlockedRxMessages.md) `function`
+- [FSIL_ResetAllBlockedTxMessages](structured/ISO11783/FSIL_ResetAllBlockedTxMessages.md) `function`
+- [FSIL_ResetAllDelayedRxMessage](structured/ISO11783/FSIL_ResetAllDelayedRxMessage.md) `function`
+- [FSIL_ResetAllManipulatedMessages](structured/ISO11783/FSIL_ResetAllManipulatedMessages.md) `function`
+- [FSIL_ResetBlockedRxMessage](structured/ISO11783/FSIL_ResetBlockedRxMessage.md) `function`
+- [FSIL_ResetBlockedTxMessage](structured/ISO11783/FSIL_ResetBlockedTxMessage.md) `function`
+- [FSIL_ResetDelayedRxMessage](structured/ISO11783/FSIL_ResetDelayedRxMessage.md) `function`
+- [FSIL_ResetManipulatedMessage](structured/ISO11783/FSIL_ResetManipulatedMessage.md) `function`
+- [FSIL_SetBusyMode](structured/ISO11783/FSIL_SetBusyMode.md) `function`
+- [FSIL_SetMsgEvent](structured/ISO11783/FSIL_SetMsgEvent.md) `function`
+- [FSIL_SetMsgRawData](structured/ISO11783/FSIL_SetMsgRawData.md) `function`
+- [FSIL_SetNodeProperty](structured/ISO11783/FSIL_SetNodeProperty.md) `function`
+- [FSIL_SetSignal](structured/ISO11783/FSIL_SetSignal.md) `function`
+- [FSIL_SetSignalRaw](structured/ISO11783/FSIL_SetSignalRaw.md) `function`
+- [FSIL_SetVerbosity](structured/ISO11783/FSIL_SetVerbosity.md) `function`
+- [ISO11783 CAPL Functions](structured/ISO11783/ISO11783 CAPL Functions.md) `notes`
+- [ISO11783 File Server Interaction Layer](structured/ISO11783/ISO11783 File Server Interaction Layer.md) `notes`
+- [ISO11783 FS IL Functional Properties](structured/ISO11783/ISO11783 FS IL Functional Properties.md) `notes`
+- [ISO11783 FS IL Network Properties](structured/ISO11783/ISO11783 FS IL Network Properties.md) `notes`
+- [ISO11783 Interaction Layer](structured/ISO11783/ISO11783 Interaction Layer.md) `notes`
+- [ISO11783 Node Layer](structured/ISO11783/ISO11783 Node Layer.md) `notes`
+- [ISO11783 Node Layer Error Codes](structured/ISO11783/ISO11783 Node Layer Error Codes.md) `notes`
+- [ISO11783 Node Layer Error Codes: Process Data API](structured/ISO11783/ISO11783 Node Layer Error Codes_ Process Data API.md) `notes`
+- [ISO11783 Task Controller Interaction Layer](structured/ISO11783/ISO11783 Task Controller Interaction Layer.md) `notes`
+- [ISO11783 TC IL Functional Properties](structured/ISO11783/ISO11783 TC IL Functional Properties.md) `notes`
+- [ISO11783 TC IL Network Properties](structured/ISO11783/ISO11783 TC IL Network Properties.md) `notes`
+- [ISO11783 Virtual Terminal Interaction Layer](structured/ISO11783/ISO11783 Virtual Terminal Interaction Layer.md) `notes`
+- [ISO11783 VT IL Network Properties](structured/ISO11783/ISO11783 VT IL Network Properties.md) `notes`
+- [ISO11783 VT IL Properties](structured/ISO11783/ISO11783 VT IL Properties.md) `notes`
+- [Iso11783AppAddrClaimed](structured/ISO11783/Iso11783AppAddrClaimed.md) `function`
+- [Iso11783AppCmdAddrIndication](structured/ISO11783/Iso11783AppCmdAddrIndication.md) `function`
+- [Iso11783AppErrorIndication](structured/ISO11783/Iso11783AppErrorIndication.md) `function`
+- [Iso11783AppNmtIndication](structured/ISO11783/Iso11783AppNmtIndication.md) `function`
+- [Iso11783AppRequestIndication](structured/ISO11783/Iso11783AppRequestIndication.md) `function`
+- [Iso11783AppRxIndication](structured/ISO11783/Iso11783AppRxIndication.md) `function`
+- [Iso11783AppTxIndication](structured/ISO11783/Iso11783AppTxIndication.md) `function`
+- [Iso11783CreateECU](structured/ISO11783/Iso11783CreateECU.md) `function`
+- [Iso11783DestroyECU](structured/ISO11783/Iso11783DestroyECU.md) `function`
+- [Iso11783ECUGoOffline](structured/ISO11783/Iso11783ECUGoOffline.md) `function`
+- [Iso11783ECUGoOnline](structured/ISO11783/Iso11783ECUGoOnline.md) `function`
+- [Iso11783EnableNameManagement](structured/ISO11783/Iso11783EnableNameManagement.md) `function`
+- [Iso11783FSCloseFile](structured/ISO11783/Iso11783FSCloseFile.md) `function`
+- [Iso11783FSGetFileInfo](structured/ISO11783/Iso11783FSGetFileInfo.md) `function`
+- [Iso11783FSGetVolumeInfo](structured/ISO11783/Iso11783FSGetVolumeInfo.md) `function`
+- [Iso11783FSMakeAbsolutePath](structured/ISO11783/Iso11783FSMakeAbsolutePath.md) `function`
+- [Iso11783FSMove](structured/ISO11783/Iso11783FSMove.md) `function`
+- [iso11783FSOpenFile](structured/ISO11783/iso11783FSOpenFile.md) `function`
+- [Iso11783FSReadFile](structured/ISO11783/Iso11783FSReadFile.md) `function`
+- [Iso11783FSSeekFile](structured/ISO11783/Iso11783FSSeekFile.md) `function`
+- [Iso11783FSSetFileInfo](structured/ISO11783/Iso11783FSSetFileInfo.md) `function`
+- [Iso11783FSSetPath](structured/ISO11783/Iso11783FSSetPath.md) `function`
+- [Iso11783FSWriteFile](structured/ISO11783/Iso11783FSWriteFile.md) `function`
+- [Iso11783Get...](structured/ISO11783/Iso11783Get....md) `function`
+- [Iso11783GetAddress](structured/ISO11783/Iso11783GetAddress.md) `function`
+- [Iso11783GetBus](structured/ISO11783/Iso11783GetBus.md) `function`
+- [Iso11783GetBusName](structured/ISO11783/Iso11783GetBusName.md) `function`
+- [Iso11783GetEcuState](structured/ISO11783/Iso11783GetEcuState.md) `function`
+- [Iso11783GetEnvDbl](structured/ISO11783/Iso11783GetEnvDbl.md) `function`
+- [Iso11783GetEnvInt](structured/ISO11783/Iso11783GetEnvInt.md) `function`
+- [Iso11783GetLastError](structured/ISO11783/Iso11783GetLastError.md) `function`
+- [Iso11783GetLastErrorText](structured/ISO11783/Iso11783GetLastErrorText.md) `function`
+- [Iso11783GetName](structured/ISO11783/Iso11783GetName.md) `function`
+- [Iso11783GetNodeAddr](structured/ISO11783/Iso11783GetNodeAddr.md) `function`
+- [Iso11783GetRxData](structured/ISO11783/Iso11783GetRxData.md) `function`
+- [Iso11783GetWSMAddr](structured/ISO11783/Iso11783GetWSMAddr.md) `function`
+- [Iso11783GetWSMaster](structured/ISO11783/Iso11783GetWSMaster.md) `function`
+- [Iso11783IL_AcceptRxPG](structured/ISO11783/Iso11783IL_AcceptRxPG.md) `function`
+- [Iso11783IL_ActivateDiagnosticsSupport](structured/ISO11783/Iso11783IL_ActivateDiagnosticsSupport.md) `function`
+- [Iso11783IL_ActivateDTC](structured/ISO11783/Iso11783IL_ActivateDTC.md) `function`
+- [Iso11783IL_BlockRxMessage](structured/ISO11783/Iso11783IL_BlockRxMessage.md) `function`
+- [Iso11783IL_BlockTxMessage](structured/ISO11783/Iso11783IL_BlockTxMessage.md) `function`
+- [Iso11783IL_ClearAllDTCs](structured/ISO11783/Iso11783IL_ClearAllDTCs.md) `function`
+- [Iso11783IL_ControlInit](structured/ISO11783/Iso11783IL_ControlInit.md) `function`
+- [Iso11783IL_ControlResume](structured/ISO11783/Iso11783IL_ControlResume.md) `function`
+- [Iso11783IL_ControlStart](structured/ISO11783/Iso11783IL_ControlStart.md) `function`
+- [Iso11783IL_ControlStop](structured/ISO11783/Iso11783IL_ControlStop.md) `function`
+- [Iso11783IL_ControlWait](structured/ISO11783/Iso11783IL_ControlWait.md) `function`
+- [Iso11783IL_DeactivateDTC](structured/ISO11783/Iso11783IL_DeactivateDTC.md) `function`
+- [Iso11783IL_DelayRxMessage](structured/ISO11783/Iso11783IL_DelayRxMessage.md) `function`
+- [Iso11783IL_EnableAddressViolationDetection](structured/ISO11783/Iso11783IL_EnableAddressViolationDetection.md) `function`
+- [Iso11783IL_EnableNameManagement](structured/ISO11783/Iso11783IL_EnableNameManagement.md) `function`
+- [Iso11783IL_FSCloseFile](structured/ISO11783/Iso11783IL_FSCloseFile.md) `function`
+- [Iso11783IL_FSGetFileInfo](structured/ISO11783/Iso11783IL_FSGetFileInfo.md) `function`
+- [Iso11783IL_FSGetVolumeInfo](structured/ISO11783/Iso11783IL_FSGetVolumeInfo.md) `function`
+- [Iso11783IL_FSMakeAbsolutePath](structured/ISO11783/Iso11783IL_FSMakeAbsolutePath.md) `function`
+- [Iso11783IL_FSMove](structured/ISO11783/Iso11783IL_FSMove.md) `function`
+- [Iso11783IL_FSOpenFile](structured/ISO11783/Iso11783IL_FSOpenFile.md) `function`
+- [Iso11783IL_FSReadFile](structured/ISO11783/Iso11783IL_FSReadFile.md) `function`
+- [Iso11783IL_FSSeekFile](structured/ISO11783/Iso11783IL_FSSeekFile.md) `function`
+- [Iso11783IL_FSSetFileInfo](structured/ISO11783/Iso11783IL_FSSetFileInfo.md) `function`
+- [Iso11783IL_FSSetPath](structured/ISO11783/Iso11783IL_FSSetPath.md) `function`
+- [Iso11783IL_FSWriteFile](structured/ISO11783/Iso11783IL_FSWriteFile.md) `function`
+- [Iso11783IL_GetAddress](structured/ISO11783/Iso11783IL_GetAddress.md) `function`
+- [Iso11783IL_GetDTCStatus](structured/ISO11783/Iso11783IL_GetDTCStatus.md) `function`
+- [Iso11783IL_GetLastError](structured/ISO11783/Iso11783IL_GetLastError.md) `function`
+- [Iso11783IL_GetLastErrorText](structured/ISO11783/Iso11783IL_GetLastErrorText.md) `function`
+- [Iso11783IL_GetState](structured/ISO11783/Iso11783IL_GetState.md) `function`
+- [Iso11783IL_GetWSMAddr](structured/ISO11783/Iso11783IL_GetWSMAddr.md) `function`
+- [Iso11783IL_GetWSMaster](structured/ISO11783/Iso11783IL_GetWSMaster.md) `function`
+- [Iso11783IL_ManipulateMessage](structured/ISO11783/Iso11783IL_ManipulateMessage.md) `function`
+- [Iso11783IL_OnAddressViolation](structured/ISO11783/Iso11783IL_OnAddressViolation.md) `function`
+- [Iso11783IL_OnCA](structured/ISO11783/Iso11783IL_OnCA.md) `function`
+- [Iso11783IL_OnChangedState](structured/ISO11783/Iso11783IL_OnChangedState.md) `function`
+- [Iso11783IL_OnError](structured/ISO11783/Iso11783IL_OnError.md) `function`
+- [Iso11783IL_OnRequest](structured/ISO11783/Iso11783IL_OnRequest.md) `function`
+- [Iso11783IL_OnRxMessage](structured/ISO11783/Iso11783IL_OnRxMessage.md) `function`
+- [Iso11783IL_OnTxMessage](structured/ISO11783/Iso11783IL_OnTxMessage.md) `function`
+- [Iso11783IL_OnTxPrepare](structured/ISO11783/Iso11783IL_OnTxPrepare.md) `function`
+- [Iso11783IL_OPActivate](structured/ISO11783/Iso11783IL_OPActivate.md) `function`
+- [Iso11783IL_OPChangeActiveMask](structured/ISO11783/Iso11783IL_OPChangeActiveMask.md) `function`
+- [Iso11783IL_OPChangeBackgroundColor](structured/ISO11783/Iso11783IL_OPChangeBackgroundColor.md) `function`
+- [Iso11783IL_OPChangeChildLocation](structured/ISO11783/Iso11783IL_OPChangeChildLocation.md) `function`
+- [Iso11783IL_OPChangeChildPosition](structured/ISO11783/Iso11783IL_OPChangeChildPosition.md) `function`
+- [Iso11783IL_OPChangeEndPoint](structured/ISO11783/Iso11783IL_OPChangeEndPoint.md) `function`
+- [Iso11783IL_OPChangeFillAttribute](structured/ISO11783/Iso11783IL_OPChangeFillAttribute.md) `function`
+- [Iso11783IL_OPChangeFontAttribute](structured/ISO11783/Iso11783IL_OPChangeFontAttribute.md) `function`
+- [Iso11783IL_OPChangeLineAttribute](structured/ISO11783/Iso11783IL_OPChangeLineAttribute.md) `function`
+- [Iso11783IL_OPChangeListItem](structured/ISO11783/Iso11783IL_OPChangeListItem.md) `function`
+- [Iso11783IL_OPChangePolygonPoint](structured/ISO11783/Iso11783IL_OPChangePolygonPoint.md) `function`
+- [Iso11783IL_OPChangePolygonScale](structured/ISO11783/Iso11783IL_OPChangePolygonScale.md) `function`
+- [Iso11783IL_OPChangePriority](structured/ISO11783/Iso11783IL_OPChangePriority.md) `function`
+- [Iso11783IL_OPChangeSize](structured/ISO11783/Iso11783IL_OPChangeSize.md) `function`
+- [Iso11783IL_OPChangeSoftKeyMask](structured/ISO11783/Iso11783IL_OPChangeSoftKeyMask.md) `function`
+- [Iso11783IL_OPConnectEnvVar](structured/ISO11783/Iso11783IL_OPConnectEnvVar.md) `function`
+- [Iso11783IL_OPConnectSysVar](structured/ISO11783/Iso11783IL_OPConnectSysVar.md) `function`
+- [Iso11783IL_OPControlAudio](structured/ISO11783/Iso11783IL_OPControlAudio.md) `function`
+- [Iso11783IL_OPDeactivate](structured/ISO11783/Iso11783IL_OPDeactivate.md) `function`
+- [Iso11783IL_OPDeleteObjectPool](structured/ISO11783/Iso11783IL_OPDeleteObjectPool.md) `function`
+- [Iso11783IL_OPEnableObject](structured/ISO11783/Iso11783IL_OPEnableObject.md) `function`
+- [Iso11783IL_OPESC](structured/ISO11783/Iso11783IL_OPESC.md) `function`
+- [Iso11783IL_OPExecuteMacro](structured/ISO11783/Iso11783IL_OPExecuteMacro.md) `function`
+- [Iso11783IL_OPGetAttribute](structured/ISO11783/Iso11783IL_OPGetAttribute.md) `function`
+- [Iso11783IL_OPGetNumericValue](structured/ISO11783/Iso11783IL_OPGetNumericValue.md) `function`
+- [Iso11783IL_OPGetProperty](structured/ISO11783/Iso11783IL_OPGetProperty.md) `function`
+- [Iso11783IL_OPGetState](structured/ISO11783/Iso11783IL_OPGetState.md) `function`
+- [Iso11783IL_OPGetStringValue](structured/ISO11783/Iso11783IL_OPGetStringValue.md) `function`
+- [Iso11783IL_OPGetVersion](structured/ISO11783/Iso11783IL_OPGetVersion.md) `function`
+- [Iso11783IL_OPGetVTInfo](structured/ISO11783/Iso11783IL_OPGetVTInfo.md) `function`
+- [Iso11783IL_OPLoad](structured/ISO11783/Iso11783IL_OPLoad.md) `function`
+- [Iso11783IL_OPLoadAuxAssignment](structured/ISO11783/Iso11783IL_OPLoadAuxAssignment.md) `function`
+- [Iso11783IL_OPLoadVersion](structured/ISO11783/Iso11783IL_OPLoadVersion.md) `function`
+- [Iso11783IL_OPLock](structured/ISO11783/Iso11783IL_OPLock.md) `function`
+- [Iso11783IL_OPOnAuxiliaryInput](structured/ISO11783/Iso11783IL_OPOnAuxiliaryInput.md) `function`
+- [Iso11783IL_OPOnError](structured/ISO11783/Iso11783IL_OPOnError.md) `function`
+- [Iso11783IL_OPOnESC](structured/ISO11783/Iso11783IL_OPOnESC.md) `function`
+- [Iso11783IL_OPOnIdentifyWorkingSet](structured/ISO11783/Iso11783IL_OPOnIdentifyWorkingSet.md) `function`
+- [Iso11783IL_OPOnKeyActivation](structured/ISO11783/Iso11783IL_OPOnKeyActivation.md) `function`
+- [Iso11783IL_OPOnPointingEvent](structured/ISO11783/Iso11783IL_OPOnPointingEvent.md) `function`
+- [Iso11783IL_OPOnResponse](structured/ISO11783/Iso11783IL_OPOnResponse.md) `function`
+- [Iso11783IL_OPOnSelectInput](structured/ISO11783/Iso11783IL_OPOnSelectInput.md) `function`
+- [Iso11783IL_OPOnStateChange](structured/ISO11783/Iso11783IL_OPOnStateChange.md) `function`
+- [Iso11783IL_OPOnValueChange](structured/ISO11783/Iso11783IL_OPOnValueChange.md) `function`
+- [Iso11783IL_OPSave](structured/ISO11783/Iso11783IL_OPSave.md) `function`
+- [Iso11783IL_OPSaveAuxAssignment](structured/ISO11783/Iso11783IL_OPSaveAuxAssignment.md) `function`
+- [Iso11783IL_OPScreenCapture](structured/ISO11783/Iso11783IL_OPScreenCapture.md) `function`
+- [Iso11783IL_OPSelectActiveWorkingSet](structured/ISO11783/Iso11783IL_OPSelectActiveWorkingSet.md) `function`
+- [Iso11783IL_OPSelectColorMap](structured/ISO11783/Iso11783IL_OPSelectColorMap.md) `function`
+- [Iso11783IL_OPSelectInput](structured/ISO11783/Iso11783IL_OPSelectInput.md) `function`
+- [Iso11783IL_OPSetAttribute](structured/ISO11783/Iso11783IL_OPSetAttribute.md) `function`
+- [Iso11783IL_OPSetAudioVolume](structured/ISO11783/Iso11783IL_OPSetAudioVolume.md) `function`
+- [Iso11783IL_OPSetLabel](structured/ISO11783/Iso11783IL_OPSetLabel.md) `function`
+- [Iso11783IL_OPSetNumericValue](structured/ISO11783/Iso11783IL_OPSetNumericValue.md) `function`
+- [Iso11783IL_OPSetProperty](structured/ISO11783/Iso11783IL_OPSetProperty.md) `function`
+- [Iso11783IL_OPSetStringValue](structured/ISO11783/Iso11783IL_OPSetStringValue.md) `function`
+- [Iso11783IL_OPShowObject](structured/ISO11783/Iso11783IL_OPShowObject.md) `function`
+- [Iso11783IL_OPStoreVersion](structured/ISO11783/Iso11783IL_OPStoreVersion.md) `function`
+- [Iso11783IL_PDDChangeDesignator](structured/ISO11783/Iso11783IL_PDDChangeDesignator.md) `function`
+- [Iso11783IL_PDDConnectEnvVar](structured/ISO11783/Iso11783IL_PDDConnectEnvVar.md) `function`
+- [Iso11783IL_PDDConnectSysVar](structured/ISO11783/Iso11783IL_PDDConnectSysVar.md) `function`
+- [Iso11783IL_PDDConnectSysVarWithSection](structured/ISO11783/Iso11783IL_PDDConnectSysVarWithSection.md) `function`
+- [Iso11783IL_PDDDelete](structured/ISO11783/Iso11783IL_PDDDelete.md) `function`
+- [Iso11783IL_PDDGetLastError](structured/ISO11783/Iso11783IL_PDDGetLastError.md) `function`
+- [Iso11783IL_PDDGetLastErrorText](structured/ISO11783/Iso11783IL_PDDGetLastErrorText.md) `function`
+- [Iso11783IL_PDDGetSectionState](structured/ISO11783/Iso11783IL_PDDGetSectionState.md) `function`
+- [Iso11783IL_PDDGetValueRaw, Iso11783IL_PDDGetValuePhysical](structured/ISO11783/Iso11783IL_PDDGetValueRaw, Iso11783IL_PDDGetValuePhysical.md) `function`
+- [Iso11783IL_PDDLoadDeviceDescription](structured/ISO11783/Iso11783IL_PDDLoadDeviceDescription.md) `function`
+- [Iso11783IL_PDDObjectPoolDeactivate](structured/ISO11783/Iso11783IL_PDDObjectPoolDeactivate.md) `function`
+- [Iso11783IL_PDDObjectPoolDelete](structured/ISO11783/Iso11783IL_PDDObjectPoolDelete.md) `function`
+- [Iso11783IL_PDDOnDataChanged](structured/ISO11783/Iso11783IL_PDDOnDataChanged.md) `function`
+- [Iso11783IL_PDDOnDefaultLogRequest](structured/ISO11783/Iso11783IL_PDDOnDefaultLogRequest.md) `function`
+- [Iso11783IL_PDDOnError](structured/ISO11783/Iso11783IL_PDDOnError.md) `function`
+- [Iso11783IL_PDDOnIdentifyWorkingSet](structured/ISO11783/Iso11783IL_PDDOnIdentifyWorkingSet.md) `function`
+- [Iso11783IL_PDDOnPDM](structured/ISO11783/Iso11783IL_PDDOnPDM.md) `function`
+- [Iso11783IL_PDDOnStateChanged](structured/ISO11783/Iso11783IL_PDDOnStateChanged.md) `function`
+- [Iso11783IL_PDDSetDistance](structured/ISO11783/Iso11783IL_PDDSetDistance.md) `function`
+- [Iso11783IL_PDDSetLogTrigger](structured/ISO11783/Iso11783IL_PDDSetLogTrigger.md) `function`
+- [Iso11783IL_PDDSetParameter](structured/ISO11783/Iso11783IL_PDDSetParameter.md) `function`
+- [Iso11783IL_PDDSetSectionState](structured/ISO11783/Iso11783IL_PDDSetSectionState.md) `function`
+- [Iso11783IL_PDDSetValue](structured/ISO11783/Iso11783IL_PDDSetValue.md) `function`
+- [Iso11783IL_PDDSetValueRaw, Iso11783IL_PDDSetValuePhysical](structured/ISO11783/Iso11783IL_PDDSetValueRaw, Iso11783IL_PDDSetValuePhysical.md) `function`
+- [Iso11783IL_PDDUpdateDeviceDescription](structured/ISO11783/Iso11783IL_PDDUpdateDeviceDescription.md) `function`
+- [Iso11783IL_PDDValueCommand, Iso11783IL_PDDValueCommandRaw, Iso11783IL_PDDValueCommandPhysical](structured/ISO11783/Iso11783IL_PDDValueCommand, Iso11783IL_PDDValueCommandRaw, Iso11783IL_PDDValueCommandPhysical.md) `function`
+- [Iso11783IL_ResetAllBlockedRxMessages](structured/ISO11783/Iso11783IL_ResetAllBlockedRxMessages.md) `function`
+- [Iso11783IL_ResetAllBlockedTxMessages](structured/ISO11783/Iso11783IL_ResetAllBlockedTxMessages.md) `function`
+- [Iso11783IL_ResetAllDelayedRxMessage](structured/ISO11783/Iso11783IL_ResetAllDelayedRxMessage.md) `function`
+- [Iso11783IL_ResetAllManipulatedMessages](structured/ISO11783/Iso11783IL_ResetAllManipulatedMessages.md) `function`
+- [Iso11783IL_ResetBlockedRxMessage](structured/ISO11783/Iso11783IL_ResetBlockedRxMessage.md) `function`
+- [Iso11783IL_ResetBlockedTxMessage](structured/ISO11783/Iso11783IL_ResetBlockedTxMessage.md) `function`
+- [Iso11783IL_ResetDelayedRxMessage](structured/ISO11783/Iso11783IL_ResetDelayedRxMessage.md) `function`
+- [Iso11783IL_ResetManipulatedMessage](structured/ISO11783/Iso11783IL_ResetManipulatedMessage.md) `function`
+- [Iso11783IL_SetMessageProperty](structured/ISO11783/Iso11783IL_SetMessageProperty.md) `function`
+- [Iso11783IL_SetMsgCycleTime](structured/ISO11783/Iso11783IL_SetMsgCycleTime.md) `function`
+- [Iso11783IL_SetMsgDA](structured/ISO11783/Iso11783IL_SetMsgDA.md) `function`
+- [Iso11783IL_SetMsgDelayTime](structured/ISO11783/Iso11783IL_SetMsgDelayTime.md) `function`
+- [Iso11783IL_SetMsgEvent](structured/ISO11783/Iso11783IL_SetMsgEvent.md) `function`
+- [Iso11783IL_SetMsgPriority](structured/ISO11783/Iso11783IL_SetMsgPriority.md) `function`
+- [Iso11783IL_SetMsgRawData](structured/ISO11783/Iso11783IL_SetMsgRawData.md) `function`
+- [Iso11783IL_SetNodeProperty](structured/ISO11783/Iso11783IL_SetNodeProperty.md) `function`
+- [Iso11783IL_SetSignal](structured/ISO11783/Iso11783IL_SetSignal.md) `function`
+- [Iso11783IL_SetSignalRaw](structured/ISO11783/Iso11783IL_SetSignalRaw.md) `function`
+- [Iso11783IL_SetVerbosity](structured/ISO11783/Iso11783IL_SetVerbosity.md) `function`
+- [Iso11783IL_SetWSMAddr](structured/ISO11783/Iso11783IL_SetWSMAddr.md) `function`
+- [Iso11783IL_TIMActivateServer](structured/ISO11783/Iso11783IL_TIMActivateServer.md) `function`
+- [Iso11783IL_TIMAddCertificate](structured/ISO11783/Iso11783IL_TIMAddCertificate.md) `function`
+- [Iso11783IL_TIMAssignFunction](structured/ISO11783/Iso11783IL_TIMAssignFunction.md) `function`
+- [Iso11783IL_TIMClearLwATable](structured/ISO11783/Iso11783IL_TIMClearLwATable.md) `function`
+- [Iso11783IL_TIMConnectSysVarToFunctionState](structured/ISO11783/Iso11783IL_TIMConnectSysVarToFunctionState.md) `function`
+- [Iso11783IL_TIMConnectSysVarToState](structured/ISO11783/Iso11783IL_TIMConnectSysVarToState.md) `function`
+- [Iso11783IL_TIMConnectSysVarToSynchronizationPoint](structured/ISO11783/Iso11783IL_TIMConnectSysVarToSynchronizationPoint.md) `function`
+- [Iso11783IL_TIMConnectToServer](structured/ISO11783/Iso11783IL_TIMConnectToServer.md) `function`
+- [Iso11783IL_TIMContinueConnection](structured/ISO11783/Iso11783IL_TIMContinueConnection.md) `function`
+- [Iso11783IL_TIMDeactivateServer](structured/ISO11783/Iso11783IL_TIMDeactivateServer.md) `function`
+- [Iso11783IL_TIMDisconnectFromServer](structured/ISO11783/Iso11783IL_TIMDisconnectFromServer.md) `function`
+- [Iso11783IL_TIMFreezeConnection](structured/ISO11783/Iso11783IL_TIMFreezeConnection.md) `function`
+- [Iso11783IL_TIMFunctionRequest](structured/ISO11783/Iso11783IL_TIMFunctionRequest.md) `function`
+- [Iso11783IL_TIMGetFunctionState](structured/ISO11783/Iso11783IL_TIMGetFunctionState.md) `function`
+- [Iso11783IL_TIMGetProperty](structured/ISO11783/Iso11783IL_TIMGetProperty.md) `function`
+- [Iso11783IL_TIMLoadLwATable](structured/ISO11783/Iso11783IL_TIMLoadLwATable.md) `function`
+- [Iso11783IL_TIMOnClientReadyToControl](structured/ISO11783/Iso11783IL_TIMOnClientReadyToControl.md) `function`
+- [Iso11783IL_TIMOnError](structured/ISO11783/Iso11783IL_TIMOnError.md) `function`
+- [Iso11783IL_TIMOnFunctionStateChanged](structured/ISO11783/Iso11783IL_TIMOnFunctionStateChanged.md) `function`
+- [Iso11783IL_TIMOnFunctionValueChanged](structured/ISO11783/Iso11783IL_TIMOnFunctionValueChanged.md) `function`
+- [Iso11783IL_TIMOnFunctionValueRequested](structured/ISO11783/Iso11783IL_TIMOnFunctionValueRequested.md) `function`
+- [Iso11783IL_TIMOperatorAcknowledge](structured/ISO11783/Iso11783IL_TIMOperatorAcknowledge.md) `function`
+- [Iso11783IL_TIMOperatorAcknowledgeStartOfMotion](structured/ISO11783/Iso11783IL_TIMOperatorAcknowledgeStartOfMotion.md) `function`
+- [Iso11783IL_TIMOperatorEnable](structured/ISO11783/Iso11783IL_TIMOperatorEnable.md) `function`
+- [Iso11783IL_TIMRemoveCertificate](structured/ISO11783/Iso11783IL_TIMRemoveCertificate.md) `function`
+- [Iso11783IL_TIMResetAllRequiredFunctions](structured/ISO11783/Iso11783IL_TIMResetAllRequiredFunctions.md) `function`
+- [Iso11783IL_TIMResetAllSupportedFunctions](structured/ISO11783/Iso11783IL_TIMResetAllSupportedFunctions.md) `function`
+- [Iso11783IL_TIMResetClientStatus](structured/ISO11783/Iso11783IL_TIMResetClientStatus.md) `function`
+- [Iso11783IL_TIMResetServerStatus](structured/ISO11783/Iso11783IL_TIMResetServerStatus.md) `function`
+- [Iso11783IL_TIMRestartAuthentication](structured/ISO11783/Iso11783IL_TIMRestartAuthentication.md) `function`
+- [Iso11783IL_TIMSaveLwATable](structured/ISO11783/Iso11783IL_TIMSaveLwATable.md) `function`
+- [Iso11783IL_TIMSetAuthenticationBusyMode](structured/ISO11783/Iso11783IL_TIMSetAuthenticationBusyMode.md) `function`
+- [Iso11783IL_TIMSetCertificateSequence](structured/ISO11783/Iso11783IL_TIMSetCertificateSequence.md) `function`
+- [Iso11783IL_TIMSetClientHeartbeatCounter](structured/ISO11783/Iso11783IL_TIMSetClientHeartbeatCounter.md) `function`
+- [Iso11783IL_TIMSetClientStatus](structured/ISO11783/Iso11783IL_TIMSetClientStatus.md) `function`
+- [Iso11783IL_TIMSetComplianceCertification](structured/ISO11783/Iso11783IL_TIMSetComplianceCertification.md) `function`
+- [Iso11783IL_TIMSetCRL](structured/ISO11783/Iso11783IL_TIMSetCRL.md) `function`
+- [Iso11783IL_TIMSetFunctionValue](structured/ISO11783/Iso11783IL_TIMSetFunctionValue.md) `function`
+- [Iso11783IL_TIMSetPrivateKey](structured/ISO11783/Iso11783IL_TIMSetPrivateKey.md) `function`
+- [Iso11783IL_TIMSetProductIdentification](structured/ISO11783/Iso11783IL_TIMSetProductIdentification.md) `function`
+- [Iso11783IL_TIMSetProperty](structured/ISO11783/Iso11783IL_TIMSetProperty.md) `function`
+- [Iso11783IL_TIMSetRequiredFacility](structured/ISO11783/Iso11783IL_TIMSetRequiredFacility.md) `function`
+- [Iso11783IL_TIMSetServerHeartbeatCounter](structured/ISO11783/Iso11783IL_TIMSetServerHeartbeatCounter.md) `function`
+- [Iso11783IL_TIMSetServerStatus](structured/ISO11783/Iso11783IL_TIMSetServerStatus.md) `function`
+- [Iso11783IL_TIMSetSupportedFacility](structured/ISO11783/Iso11783IL_TIMSetSupportedFacility.md) `function`
+- [Iso11783IL_TIMSetSystemOperationState](structured/ISO11783/Iso11783IL_TIMSetSystemOperationState.md) `function`
+- [Iso11783IL_TIMUnassignFunction](structured/ISO11783/Iso11783IL_TIMUnassignFunction.md) `function`
+- [Iso11783MakeName](structured/ISO11783/Iso11783MakeName.md) `function`
+- [Iso11783NMTDump](structured/ISO11783/Iso11783NMTDump.md) `function`
+- [Iso11783OPActivate](structured/ISO11783/Iso11783OPActivate.md) `function`
+- [Iso11783OPChangeActiveMask](structured/ISO11783/Iso11783OPChangeActiveMask.md) `function`
+- [Iso11783OPChangeBackgroundColor](structured/ISO11783/Iso11783OPChangeBackgroundColor.md) `function`
+- [Iso11783OPChangeChildLocation](structured/ISO11783/Iso11783OPChangeChildLocation.md) `function`
+- [Iso11783OPChangeChildPosition](structured/ISO11783/Iso11783OPChangeChildPosition.md) `function`
+- [Iso11783OPChangeEndPoint](structured/ISO11783/Iso11783OPChangeEndPoint.md) `function`
+- [Iso11783OPChangeFillAttribute](structured/ISO11783/Iso11783OPChangeFillAttribute.md) `function`
+- [Iso11783OPChangeFontAttribute](structured/ISO11783/Iso11783OPChangeFontAttribute.md) `function`
+- [Iso11783OPChangeLineAttribute](structured/ISO11783/Iso11783OPChangeLineAttribute.md) `function`
+- [Iso11783OPChangeListItem](structured/ISO11783/Iso11783OPChangeListItem.md) `function`
+- [Iso11783OPChangePolygonPoint](structured/ISO11783/Iso11783OPChangePolygonPoint.md) `function`
+- [Iso11783OPChangePolygonScale](structured/ISO11783/Iso11783OPChangePolygonScale.md) `function`
+- [Iso11783OPChangePriority](structured/ISO11783/Iso11783OPChangePriority.md) `function`
+- [Iso11783OPChangeSize](structured/ISO11783/Iso11783OPChangeSize.md) `function`
+- [Iso11783OPChangeSoftKeyMask](structured/ISO11783/Iso11783OPChangeSoftKeyMask.md) `function`
+- [Iso11783OPConnectEnvVar](structured/ISO11783/Iso11783OPConnectEnvVar.md) `function`
+- [Iso11783OPControlAudio](structured/ISO11783/Iso11783OPControlAudio.md) `function`
+- [Iso11783OPDeactivate](structured/ISO11783/Iso11783OPDeactivate.md) `function`
+- [Iso11783OPEnableObject](structured/ISO11783/Iso11783OPEnableObject.md) `function`
+- [Iso11783OPESC](structured/ISO11783/Iso11783OPESC.md) `function`
+- [Iso11783OPExecuteMacro](structured/ISO11783/Iso11783OPExecuteMacro.md) `function`
+- [Iso11783OPGetAttribute](structured/ISO11783/Iso11783OPGetAttribute.md) `function`
+- [Iso11783OPGetNumericValue](structured/ISO11783/Iso11783OPGetNumericValue.md) `function`
+- [Iso11783OPGetProperty](structured/ISO11783/Iso11783OPGetProperty.md) `function`
+- [Iso11783OPGetState](structured/ISO11783/Iso11783OPGetState.md) `function`
+- [Iso11783OPGetStringValue](structured/ISO11783/Iso11783OPGetStringValue.md) `function`
+- [Iso11783OPGetVersion](structured/ISO11783/Iso11783OPGetVersion.md) `function`
+- [Iso11783OPGetVTInfo](structured/ISO11783/Iso11783OPGetVTInfo.md) `function`
+- [Iso11783OPLoad](structured/ISO11783/Iso11783OPLoad.md) `function`
+- [Iso11783OPLoadAuxAssignment](structured/ISO11783/Iso11783OPLoadAuxAssignment.md) `function`
+- [Iso11783OPLoadVersion](structured/ISO11783/Iso11783OPLoadVersion.md) `function`
+- [Iso11783OPLock](structured/ISO11783/Iso11783OPLock.md) `function`
+- [Iso11783OPOnAuxiliaryInput](structured/ISO11783/Iso11783OPOnAuxiliaryInput.md) `function`
+- [Iso11783OPOnError](structured/ISO11783/Iso11783OPOnError.md) `function`
+- [Iso11783OPOnESC](structured/ISO11783/Iso11783OPOnESC.md) `function`
+- [Iso11783OPOnIdentifyWorkingSet](structured/ISO11783/Iso11783OPOnIdentifyWorkingSet.md) `function`
+- [Iso11783OPOnKeyActivation](structured/ISO11783/Iso11783OPOnKeyActivation.md) `function`
+- [Iso11783OPOnPointingEvent](structured/ISO11783/Iso11783OPOnPointingEvent.md) `function`
+- [Iso11783OPOnResponse](structured/ISO11783/Iso11783OPOnResponse.md) `function`
+- [Iso11783OPOnSelectInput](structured/ISO11783/Iso11783OPOnSelectInput.md) `function`
+- [Iso11783OPOnStateChange](structured/ISO11783/Iso11783OPOnStateChange.md) `function`
+- [Iso11783OPOnValueChange](structured/ISO11783/Iso11783OPOnValueChange.md) `function`
+- [Iso11783OPSave](structured/ISO11783/Iso11783OPSave.md) `function`
+- [Iso11783OPSaveAuxAssignment](structured/ISO11783/Iso11783OPSaveAuxAssignment.md) `function`
+- [Iso11783OPSelectColorMap](structured/ISO11783/Iso11783OPSelectColorMap.md) `function`
+- [Iso11783OPSelectInput](structured/ISO11783/Iso11783OPSelectInput.md) `function`
+- [Iso11783OPSetAttribute](structured/ISO11783/Iso11783OPSetAttribute.md) `function`
+- [Iso11783OPSetAudioVolume](structured/ISO11783/Iso11783OPSetAudioVolume.md) `function`
+- [Iso11783OPSetLabel](structured/ISO11783/Iso11783OPSetLabel.md) `function`
+- [Iso11783OPSetNumericValue](structured/ISO11783/Iso11783OPSetNumericValue.md) `function`
+- [Iso11783OPSetProperty](structured/ISO11783/Iso11783OPSetProperty.md) `function`
+- [Iso11783OPSetStringValue](structured/ISO11783/Iso11783OPSetStringValue.md) `function`
+- [Iso11783OPShowObject](structured/ISO11783/Iso11783OPShowObject.md) `function`
+- [Iso11783OPStoreVersion](structured/ISO11783/Iso11783OPStoreVersion.md) `function`
+- [Iso11783PDDChangeDesignator](structured/ISO11783/Iso11783PDDChangeDesignator.md) `function`
+- [Iso11783PDDConnectEnvVar](structured/ISO11783/Iso11783PDDConnectEnvVar.md) `function`
+- [Iso11783PDDDelete](structured/ISO11783/Iso11783PDDDelete.md) `function`
+- [Iso11783PDDGetLastError](structured/ISO11783/Iso11783PDDGetLastError.md) `function`
+- [Iso11783PDDGetLastErrorText](structured/ISO11783/Iso11783PDDGetLastErrorText.md) `function`
+- [Iso11783PDDGetValue](structured/ISO11783/Iso11783PDDGetValue.md) `function`
+- [Iso11783PDDLoadDeviceDescription](structured/ISO11783/Iso11783PDDLoadDeviceDescription.md) `function`
+- [Iso11783PDDObjectPoolDeactivate](structured/ISO11783/Iso11783PDDObjectPoolDeactivate.md) `function`
+- [Iso11783PDDObjectPoolDelete](structured/ISO11783/Iso11783PDDObjectPoolDelete.md) `function`
+- [Iso11783PDDOnDataChanged](structured/ISO11783/Iso11783PDDOnDataChanged.md) `function`
+- [Iso11783PDDOnDefaultLogRequest](structured/ISO11783/Iso11783PDDOnDefaultLogRequest.md) `function`
+- [Iso11783PDDOnError](structured/ISO11783/Iso11783PDDOnError.md) `function`
+- [Iso11783PDDOnIdentifyWorkingSet](structured/ISO11783/Iso11783PDDOnIdentifyWorkingSet.md) `function`
+- [Iso11783PDDOnPDM](structured/ISO11783/Iso11783PDDOnPDM.md) `function`
+- [Iso11783PDDOnStateChanged](structured/ISO11783/Iso11783PDDOnStateChanged.md) `function`
+- [Iso11783PDDSetDistance](structured/ISO11783/Iso11783PDDSetDistance.md) `function`
+- [Iso11783PDDSetLogTrigger](structured/ISO11783/Iso11783PDDSetLogTrigger.md) `function`
+- [Iso11783PDDSetParameter](structured/ISO11783/Iso11783PDDSetParameter.md) `function`
+- [Iso11783PDDSetValue](structured/ISO11783/Iso11783PDDSetValue.md) `function`
+- [Iso11783PDDUpdateDeviceDescription](structured/ISO11783/Iso11783PDDUpdateDeviceDescription.md) `function`
+- [Iso11783Set...](structured/ISO11783/Iso11783Set....md) `function`
+- [Iso11783SetEnvDbl](structured/ISO11783/Iso11783SetEnvDbl.md) `function`
+- [Iso11783SetEnvInt](structured/ISO11783/Iso11783SetEnvInt.md) `function`
+- [Iso11783SetTPParam](structured/ISO11783/Iso11783SetTPParam.md) `function`
+- [Iso11783SetWSMAddr](structured/ISO11783/Iso11783SetWSMAddr.md) `function`
+- [Iso11783TableTime](structured/ISO11783/Iso11783TableTime.md) `function`
+- [Iso11783TxAbort](structured/ISO11783/Iso11783TxAbort.md) `function`
+- [Iso11783TxReqPG](structured/ISO11783/Iso11783TxReqPG.md) `function`
+- [Iso11783UpdateTable](structured/ISO11783/Iso11783UpdateTable.md) `function`
+- [Object Pool XML Elements](structured/ISO11783/Object Pool XML Elements.md) `notes`
+- [Server States (TIM Component - ISO11783)](structured/ISO11783/Server States (TIM Component - ISO11783).md) `notes`
+- [TCIL_AcceptRxPG](structured/ISO11783/TCIL_AcceptRxPG.md) `function`
+- [TCIL_ActivateDiagnosticsSupport](structured/ISO11783/TCIL_ActivateDiagnosticsSupport.md) `function`
+- [TCIL_ActivateDTC](structured/ISO11783/TCIL_ActivateDTC.md) `function`
+- [TCIL_AssignReceiver](structured/ISO11783/TCIL_AssignReceiver.md) `function`
+- [TCIL_AssignTransmitter](structured/ISO11783/TCIL_AssignTransmitter.md) `function`
+- [TCIL_BlockRxMessage](structured/ISO11783/TCIL_BlockRxMessage.md) `function`
+- [TCIL_BlockTxMessage](structured/ISO11783/TCIL_BlockTxMessage.md) `function`
+- [TCIL_ClearAllDTCs](structured/ISO11783/TCIL_ClearAllDTCs.md) `function`
+- [TCIL_ConnectSysVarWithDataEntity](structured/ISO11783/TCIL_ConnectSysVarWithDataEntity.md) `function`
+- [TCIL_ConnectSysVarWithSection](structured/ISO11783/TCIL_ConnectSysVarWithSection.md) `function`
+- [TCIL_ControlInit](structured/ISO11783/TCIL_ControlInit.md) `function`
+- [TCIL_ControlStart](structured/ISO11783/TCIL_ControlStart.md) `function`
+- [TCIL_ControlStop](structured/ISO11783/TCIL_ControlStop.md) `function`
+- [TCIL_CreatePeerControlAssignment](structured/ISO11783/TCIL_CreatePeerControlAssignment.md) `function`
+- [TCIL_DeactivateDTC](structured/ISO11783/TCIL_DeactivateDTC.md) `function`
+- [TCIL_DelayRxMessage](structured/ISO11783/TCIL_DelayRxMessage.md) `function`
+- [TCIL_EnableAddressViolationDetection](structured/ISO11783/TCIL_EnableAddressViolationDetection.md) `function`
+- [TCIL_EnableNameManagement](structured/ISO11783/TCIL_EnableNameManagement.md) `function`
+- [TCIL_ExportAllDdops](structured/ISO11783/TCIL_ExportAllDdops.md) `function`
+- [TCIL_ExportDdop](structured/ISO11783/TCIL_ExportDdop.md) `function`
+- [TCIL_GetAddress](structured/ISO11783/TCIL_GetAddress.md) `function`
+- [TCIL_GetDesignator](structured/ISO11783/TCIL_GetDesignator.md) `function`
+- [TCIL_GetDeviceParameters](structured/ISO11783/TCIL_GetDeviceParameters.md) `function`
+- [TCIL_GetDTCStatus](structured/ISO11783/TCIL_GetDTCStatus.md) `function`
+- [TCIL_GetLastError](structured/ISO11783/TCIL_GetLastError.md) `function`
+- [TCIL_GetLastErrorText](structured/ISO11783/TCIL_GetLastErrorText.md) `function`
+- [TCIL_GetSectionState](structured/ISO11783/TCIL_GetSectionState.md) `function`
+- [TCIL_GetState](structured/ISO11783/TCIL_GetState.md) `function`
+- [TCIL_GetValuePresentationData](structured/ISO11783/TCIL_GetValuePresentationData.md) `function`
+- [TCIL_GetValueRaw, TCIL_GetValuePhysical](structured/ISO11783/TCIL_GetValueRaw, TCIL_GetValuePhysical.md) `function`
+- [TCIL_MakeDdopAvailable](structured/ISO11783/TCIL_MakeDdopAvailable.md) `function`
+- [TCIL_ManipulateMessage](structured/ISO11783/TCIL_ManipulateMessage.md) `function`
+- [TCIL_MeasurementCommandRaw, TCIL_MeasurementCommandPhysical](structured/ISO11783/TCIL_MeasurementCommandRaw, TCIL_MeasurementCommandPhysical.md) `function`
+- [TCIL_OnAddressViolation](structured/ISO11783/TCIL_OnAddressViolation.md) `function`
+- [TCIL_OnCA](structured/ISO11783/TCIL_OnCA.md) `function`
+- [TCIL_OnChangedState](structured/ISO11783/TCIL_OnChangedState.md) `function`
+- [TCIL_OnError](structured/ISO11783/TCIL_OnError.md) `function`
+- [TCIL_OnRequest](structured/ISO11783/TCIL_OnRequest.md) `function`
+- [TCIL_OnRxMessage](structured/ISO11783/TCIL_OnRxMessage.md) `function`
+- [TCIL_OnTxMessage](structured/ISO11783/TCIL_OnTxMessage.md) `function`
+- [TCIL_OnTxPrepare](structured/ISO11783/TCIL_OnTxPrepare.md) `function`
+- [TCIL_RemoveAllDdops](structured/ISO11783/TCIL_RemoveAllDdops.md) `function`
+- [TCIL_RemovePeerControlAssignment](structured/ISO11783/TCIL_RemovePeerControlAssignment.md) `function`
+- [TCIL_RequestValueCommand](structured/ISO11783/TCIL_RequestValueCommand.md) `function`
+- [TCIL_RequestVersion](structured/ISO11783/TCIL_RequestVersion.md) `function`
+- [TCIL_ResetAllBlockedRxMessages](structured/ISO11783/TCIL_ResetAllBlockedRxMessages.md) `function`
+- [TCIL_ResetAllBlockedTxMessages](structured/ISO11783/TCIL_ResetAllBlockedTxMessages.md) `function`
+- [TCIL_ResetAllDelayedRxMessage](structured/ISO11783/TCIL_ResetAllDelayedRxMessage.md) `function`
+- [TCIL_ResetAllManipulatedMessages](structured/ISO11783/TCIL_ResetAllManipulatedMessages.md) `function`
+- [TCIL_ResetBlockedRxMessage](structured/ISO11783/TCIL_ResetBlockedRxMessage.md) `function`
+- [TCIL_ResetBlockedTxMessage](structured/ISO11783/TCIL_ResetBlockedTxMessage.md) `function`
+- [TCIL_ResetDelayedRxMessage](structured/ISO11783/TCIL_ResetDelayedRxMessage.md) `function`
+- [TCIL_ResetManipulatedMessage](structured/ISO11783/TCIL_ResetManipulatedMessage.md) `function`
+- [TCIL_ResetResponseContent](structured/ISO11783/TCIL_ResetResponseContent.md) `function`
+- [TCIL_ResetTCStatus](structured/ISO11783/TCIL_ResetTCStatus.md) `function`
+- [TCIL_SetMsgEvent](structured/ISO11783/TCIL_SetMsgEvent.md) `function`
+- [TCIL_SetMsgRawData](structured/ISO11783/TCIL_SetMsgRawData.md) `function`
+- [TCIL_SetNodeProperty](structured/ISO11783/TCIL_SetNodeProperty.md) `function`
+- [TCIL_SetResponseContent](structured/ISO11783/TCIL_SetResponseContent.md) `function`
+- [TCIL_SetSectionState](structured/ISO11783/TCIL_SetSectionState.md) `function`
+- [TCIL_SetSignal](structured/ISO11783/TCIL_SetSignal.md) `function`
+- [TCIL_SetSignalRaw](structured/ISO11783/TCIL_SetSignalRaw.md) `function`
+- [TCIL_SetTCStatus](structured/ISO11783/TCIL_SetTCStatus.md) `function`
+- [TCIL_SetValueRaw, TCIL_SetValuePhysical](structured/ISO11783/TCIL_SetValueRaw, TCIL_SetValuePhysical.md) `function`
+- [TCIL_SetVerbosity](structured/ISO11783/TCIL_SetVerbosity.md) `function`
+- [TCIL_StartTask](structured/ISO11783/TCIL_StartTask.md) `function`
+- [TCIL_StopTask](structured/ISO11783/TCIL_StopTask.md) `function`
+- [TCIL_UnassignReceiver](structured/ISO11783/TCIL_UnassignReceiver.md) `function`
+- [TCIL_UnassignTransmitter](structured/ISO11783/TCIL_UnassignTransmitter.md) `function`
+- [TCIL_ValueAndAckCommand, TCIL_ValueAndAckCommandRaw, TCIL_ValueAndAckCommandPhysical](structured/ISO11783/TCIL_ValueAndAckCommand, TCIL_ValueAndAckCommandRaw, TCIL_ValueAndAckCommandPhysical.md) `function`
+- [TCIL_ValueCommand, TCIL_ValueCommandRaw, TCIL_ValueCommandPhysical](structured/ISO11783/TCIL_ValueCommand, TCIL_ValueCommandRaw, TCIL_ValueCommandPhysical.md) `function`
+- [VTIL_AcceptRxPG](structured/ISO11783/VTIL_AcceptRxPG.md) `function`
+- [VTIL_ACK, VTIL_ACKMsg](structured/ISO11783/VTIL_ACK, VTIL_ACKMsg.md) `function`
+- [VTIL_ActivateDiagnosticsSupport](structured/ISO11783/VTIL_ActivateDiagnosticsSupport.md) `function`
+- [VTIL_ActivateDTC](structured/ISO11783/VTIL_ActivateDTC.md) `function`
+- [VTIL_ActivateWorkingSet](structured/ISO11783/VTIL_ActivateWorkingSet.md) `function`
+- [VTIL_BlockRxMessage](structured/ISO11783/VTIL_BlockRxMessage.md) `function`
+- [VTIL_BlockTxMessage](structured/ISO11783/VTIL_BlockTxMessage.md) `function`
+- [VTIL_ClearAllDTCs](structured/ISO11783/VTIL_ClearAllDTCs.md) `function`
+- [VTIL_ConnectSysVar](structured/ISO11783/VTIL_ConnectSysVar.md) `function`
+- [VTIL_ControlInit](structured/ISO11783/VTIL_ControlInit.md) `function`
+- [VTIL_ControlStart](structured/ISO11783/VTIL_ControlStart.md) `function`
+- [VTIL_ControlStop](structured/ISO11783/VTIL_ControlStop.md) `function`
+- [VTIL_CreateAuxAssignment](structured/ISO11783/VTIL_CreateAuxAssignment.md) `function`
+- [VTIL_DeactivateDTC](structured/ISO11783/VTIL_DeactivateDTC.md) `function`
+- [VTIL_DelayRxMessage](structured/ISO11783/VTIL_DelayRxMessage.md) `function`
+- [VTIL_DeleteAllStoredVersions](structured/ISO11783/VTIL_DeleteAllStoredVersions.md) `function`
+- [VTIL_EditNumericValue, VTIL_ChangeNumericValueMsg](structured/ISO11783/VTIL_EditNumericValue, VTIL_ChangeNumericValueMsg.md) `function`
+- [VTIL_EditStringValue, VTIL_ChangeStringValueMsg](structured/ISO11783/VTIL_EditStringValue, VTIL_ChangeStringValueMsg.md) `function`
+- [VTIL_EnableAddressViolationDetection](structured/ISO11783/VTIL_EnableAddressViolationDetection.md) `function`
+- [VTIL_EnableNameManagement](structured/ISO11783/VTIL_EnableNameManagement.md) `function`
+- [VTIL_ESC, VTIL_ESCMsg](structured/ISO11783/VTIL_ESC, VTIL_ESCMsg.md) `function`
+- [VTIL_ExportObjectPool](structured/ISO11783/VTIL_ExportObjectPool.md) `function`
+- [VTIL_GetActiveMask](structured/ISO11783/VTIL_GetActiveMask.md) `function`
+- [VTIL_GetAddress](structured/ISO11783/VTIL_GetAddress.md) `function`
+- [VTIL_GetChildObjectId](structured/ISO11783/VTIL_GetChildObjectId.md) `function`
+- [VTIL_GetDisplayedValue](structured/ISO11783/VTIL_GetDisplayedValue.md) `function`
+- [VTIL_GetDTCStatus](structured/ISO11783/VTIL_GetDTCStatus.md) `function`
+- [VTIL_GetDwordValue, VTIL_GetDoubleValue, VTIL_GetStringValue](structured/ISO11783/VTIL_GetDwordValue, VTIL_GetDoubleValue, VTIL_GetStringValue.md) `function`
+- [VTIL_GetLastError](structured/ISO11783/VTIL_GetLastError.md) `function`
+- [VTIL_GetLastErrorText](structured/ISO11783/VTIL_GetLastErrorText.md) `function`
+- [VTIL_GetNextTAN](structured/ISO11783/VTIL_GetNextTAN.md) `function`
+- [VTIL_GetNumberOfChildObjects](structured/ISO11783/VTIL_GetNumberOfChildObjects.md) `function`
+- [VTIL_GetState](structured/ISO11783/VTIL_GetState.md) `function`
+- [VTIL_IsObjectVisible](structured/ISO11783/VTIL_IsObjectVisible.md) `function`
+- [VTIL_ManipulateMessage](structured/ISO11783/VTIL_ManipulateMessage.md) `function`
+- [VTIL_OnAddressViolation](structured/ISO11783/VTIL_OnAddressViolation.md) `function`
+- [VTIL_OnCA](structured/ISO11783/VTIL_OnCA.md) `function`
+- [VTIL_OnChangedState](structured/ISO11783/VTIL_OnChangedState.md) `function`
+- [VTIL_OnError](structured/ISO11783/VTIL_OnError.md) `function`
+- [VTIL_OnRequest](structured/ISO11783/VTIL_OnRequest.md) `function`
+- [VTIL_OnRxMessage](structured/ISO11783/VTIL_OnRxMessage.md) `function`
+- [VTIL_OnTxMessage](structured/ISO11783/VTIL_OnTxMessage.md) `function`
+- [VTIL_OnTxPrepare](structured/ISO11783/VTIL_OnTxPrepare.md) `function`
+- [VTIL_PressButton, VTIL_ButtonActivationMsg](structured/ISO11783/VTIL_PressButton, VTIL_ButtonActivationMsg.md) `function`
+- [VTIL_PressISB](structured/ISO11783/VTIL_PressISB.md) `function`
+- [VTIL_PressSoftKey, VTIL_SoftKeyActivationMsg](structured/ISO11783/VTIL_PressSoftKey, VTIL_SoftKeyActivationMsg.md) `function`
+- [VTIL_RegisterObjectPool](structured/ISO11783/VTIL_RegisterObjectPool.md) `function`
+- [VTIL_RemoveAuxAssignment](structured/ISO11783/VTIL_RemoveAuxAssignment.md) `function`
+- [VTIL_ResetAllBlockedRxMessages](structured/ISO11783/VTIL_ResetAllBlockedRxMessages.md) `function`
+- [VTIL_ResetAllBlockedTxMessages](structured/ISO11783/VTIL_ResetAllBlockedTxMessages.md) `function`
+- [VTIL_ResetAllDelayedRxMessage](structured/ISO11783/VTIL_ResetAllDelayedRxMessage.md) `function`
+- [VTIL_ResetAllManipulatedMessages](structured/ISO11783/VTIL_ResetAllManipulatedMessages.md) `function`
+- [VTIL_ResetBlockedRxMessage](structured/ISO11783/VTIL_ResetBlockedRxMessage.md) `function`
+- [VTIL_ResetBlockedTxMessage](structured/ISO11783/VTIL_ResetBlockedTxMessage.md) `function`
+- [VTIL_ResetDelayedRxMessage](structured/ISO11783/VTIL_ResetDelayedRxMessage.md) `function`
+- [VTIL_ResetManipulatedMessage](structured/ISO11783/VTIL_ResetManipulatedMessage.md) `function`
+- [VTIL_ResetResponseContent](structured/ISO11783/VTIL_ResetResponseContent.md) `function`
+- [VTIL_ResetVTStatus](structured/ISO11783/VTIL_ResetVTStatus.md) `function`
+- [VTIL_SaveAsImage](structured/ISO11783/VTIL_SaveAsImage.md) `function`
+- [VTIL_SelectInputObject, VTIL_SelectInputObjectMsg](structured/ISO11783/VTIL_SelectInputObject, VTIL_SelectInputObjectMsg.md) `function`
+- [VTIL_SetMsgEvent](structured/ISO11783/VTIL_SetMsgEvent.md) `function`
+- [VTIL_SetMsgRawData](structured/ISO11783/VTIL_SetMsgRawData.md) `function`
+- [VTIL_SetNextTAN](structured/ISO11783/VTIL_SetNextTAN.md) `function`
+- [VTIL_SetNodeProperty](structured/ISO11783/VTIL_SetNodeProperty.md) `function`
+- [VTIL_SetResponseContent](structured/ISO11783/VTIL_SetResponseContent.md) `function`
+- [VTIL_SetSignal](structured/ISO11783/VTIL_SetSignal.md) `function`
+- [VTIL_SetSignalRaw](structured/ISO11783/VTIL_SetSignalRaw.md) `function`
+- [VTIL_SetVerbosity](structured/ISO11783/VTIL_SetVerbosity.md) `function`
+- [VTIL_SetVTStatus](structured/ISO11783/VTIL_SetVTStatus.md) `function`
+- [VTIL_Touch, VTIL_PointingEventMsg](structured/ISO11783/VTIL_Touch, VTIL_PointingEventMsg.md) `function`
+
+---
+
+## CAPL J1587 (J1587)
+
+**Function count**: 9
+
+- [J1587 CAPL Functions](structured/J1587/J1587 CAPL Functions.md) `notes`
+- [J1587AppendParameter](structured/J1587/J1587AppendParameter.md) `function`
+- [J1587GetParameter](structured/J1587/J1587GetParameter.md) `function`
+- [J1587GetParameterByPID](structured/J1587/J1587GetParameterByPID.md) `function`
+- [J1587GetParameterCount](structured/J1587/J1587GetParameterCount.md) `function`
+- [on J1587ErrorMessage](structured/J1587/on J1587ErrorMessage.md) `event`
+- [on J1587Message](structured/J1587/on J1587Message.md) `event`
+- [on J1587Param](structured/J1587/on J1587Param.md) `event`
+- [setJ1587TP](structured/J1587/setJ1587TP.md) `function`
+
+---
+
+## CAPL J1939 (J1939)
+
+**Function count**: 249
+
+- [Device Name Functions J1939](structured/J1939/Device Name Functions J1939.md) `function`
+- [GB/T 27930 Interaction Layer](structured/J1939/GB_T 27930 Interaction Layer.md) `notes`
+- [GBT27930IL_BlockRxMessage](structured/J1939/GBT27930IL_BlockRxMessage.md) `function`
+- [GBT27930IL_BlockTxMessage](structured/J1939/GBT27930IL_BlockTxMessage.md) `function`
+- [GBT27930IL_ControlInit](structured/J1939/GBT27930IL_ControlInit.md) `function`
+- [GBT27930IL_ControlStart](structured/J1939/GBT27930IL_ControlStart.md) `function`
+- [GBT27930IL_ControlStop](structured/J1939/GBT27930IL_ControlStop.md) `function`
+- [GBT27930IL_DelayRxMessage](structured/J1939/GBT27930IL_DelayRxMessage.md) `function`
+- [GBT27930IL_DisableMsg](structured/J1939/GBT27930IL_DisableMsg.md) `function`
+- [GBT27930IL_EnableMsg](structured/J1939/GBT27930IL_EnableMsg.md) `function`
+- [GBT27930IL_GetAddress](structured/J1939/GBT27930IL_GetAddress.md) `function`
+- [GBT27930IL_GetCommunicationState](structured/J1939/GBT27930IL_GetCommunicationState.md) `function`
+- [GBT27930IL_GetLastError](structured/J1939/GBT27930IL_GetLastError.md) `function`
+- [GBT27930IL_GetLastErrorText](structured/J1939/GBT27930IL_GetLastErrorText.md) `function`
+- [GBT27930IL_InitAsBMS](structured/J1939/GBT27930IL_InitAsBMS.md) `function`
+- [GBT27930IL_InitAsCharger](structured/J1939/GBT27930IL_InitAsCharger.md) `function`
+- [GBT27930IL_ManipulateMessage](structured/J1939/GBT27930IL_ManipulateMessage.md) `function`
+- [GBT27930IL_OnError](structured/J1939/GBT27930IL_OnError.md) `function`
+- [GBT27930IL_OnRxMessage](structured/J1939/GBT27930IL_OnRxMessage.md) `function`
+- [GBT27930IL_OnTxMessage](structured/J1939/GBT27930IL_OnTxMessage.md) `function`
+- [GBT27930IL_OnTxPrepare](structured/J1939/GBT27930IL_OnTxPrepare.md) `function`
+- [GBT27930IL_ResetAllBlockedRxMessages](structured/J1939/GBT27930IL_ResetAllBlockedRxMessages.md) `function`
+- [GBT27930IL_ResetAllBlockedTxMessages](structured/J1939/GBT27930IL_ResetAllBlockedTxMessages.md) `function`
+- [GBT27930IL_ResetAllDelayedRxMessage](structured/J1939/GBT27930IL_ResetAllDelayedRxMessage.md) `function`
+- [GBT27930IL_ResetAllManipulatedMessages](structured/J1939/GBT27930IL_ResetAllManipulatedMessages.md) `function`
+- [GBT27930IL_ResetBlockedRxMessage](structured/J1939/GBT27930IL_ResetBlockedRxMessage.md) `function`
+- [GBT27930IL_ResetBlockedTxMessage](structured/J1939/GBT27930IL_ResetBlockedTxMessage.md) `function`
+- [GBT27930IL_ResetDelayedRxMessage](structured/J1939/GBT27930IL_ResetDelayedRxMessage.md) `function`
+- [GBT27930IL_ResetManipulatedMessage](structured/J1939/GBT27930IL_ResetManipulatedMessage.md) `function`
+- [GBT27930IL_SetCommunicationState](structured/J1939/GBT27930IL_SetCommunicationState.md) `function`
+- [GBT27930IL_SetDelayForStateTransition](structured/J1939/GBT27930IL_SetDelayForStateTransition.md) `function`
+- [GBT27930IL_SetMaxAllowedMissingTimeForMsg](structured/J1939/GBT27930IL_SetMaxAllowedMissingTimeForMsg.md) `function`
+- [GBT27930IL_SetMsgCycleTime](structured/J1939/GBT27930IL_SetMsgCycleTime.md) `function`
+- [GBT27930IL_SetMsgDA](structured/J1939/GBT27930IL_SetMsgDA.md) `function`
+- [GBT27930IL_SetMsgDelayTime](structured/J1939/GBT27930IL_SetMsgDelayTime.md) `function`
+- [GBT27930IL_SetMsgEvent](structured/J1939/GBT27930IL_SetMsgEvent.md) `function`
+- [GBT27930IL_SetMsgPGN](structured/J1939/GBT27930IL_SetMsgPGN.md) `function`
+- [GBT27930IL_SetMsgPriority](structured/J1939/GBT27930IL_SetMsgPriority.md) `function`
+- [GBT27930IL_SetMsgRawData](structured/J1939/GBT27930IL_SetMsgRawData.md) `function`
+- [GBT27930IL_SetNodeProperty](structured/J1939/GBT27930IL_SetNodeProperty.md) `function`
+- [GBT27930IL_SetSignal](structured/J1939/GBT27930IL_SetSignal.md) `function`
+- [GBT27930IL_SetSignalRaw](structured/J1939/GBT27930IL_SetSignalRaw.md) `function`
+- [GBT27930IL_StartChargingSimulation](structured/J1939/GBT27930IL_StartChargingSimulation.md) `function`
+- [GBT27930IL_StopChargingSimulation](structured/J1939/GBT27930IL_StopChargingSimulation.md) `function`
+- [GBT27930IL_SuspendCharging](structured/J1939/GBT27930IL_SuspendCharging.md) `function`
+- [GBT27930IL_TolerateDeviation](structured/J1939/GBT27930IL_TolerateDeviation.md) `function`
+- [GetJ1939Address](structured/J1939/GetJ1939Address.md) `function`
+- [GNSS Node Layer](structured/J1939/GNSS Node Layer.md) `notes`
+- [GNSS Node Layer Error Codes: GNSSAppErrorIndication](structured/J1939/GNSS Node Layer Error Codes_ GNSSAppErrorIndication.md) `notes`
+- [GNSS Node Layer Error Codes: GNSSGetLastError](structured/J1939/GNSS Node Layer Error Codes_ GNSSGetLastError.md) `notes`
+- [GNSSAddWp](structured/J1939/GNSSAddWp.md) `function`
+- [GNSSAddWpFile](structured/J1939/GNSSAddWpFile.md) `function`
+- [GNSSAddWpLine](structured/J1939/GNSSAddWpLine.md) `function`
+- [GNSSAddWpMeander](structured/J1939/GNSSAddWpMeander.md) `function`
+- [GNSSAddWpRect](structured/J1939/GNSSAddWpRect.md) `function`
+- [GNSSAddWpRef](structured/J1939/GNSSAddWpRef.md) `function`
+- [GNSSAddWpRefS](structured/J1939/GNSSAddWpRefS.md) `function`
+- [GNSSAddWpRel](structured/J1939/GNSSAddWpRel.md) `function`
+- [GNSSAddWpRels](structured/J1939/GNSSAddWpRels.md) `function`
+- [GNSSAddWpS](structured/J1939/GNSSAddWpS.md) `function`
+- [GNSSAppAddrClaimed](structured/J1939/GNSSAppAddrClaimed.md) `function`
+- [GNSSAppCmdAddrIndication](structured/J1939/GNSSAppCmdAddrIndication.md) `function`
+- [GNSSAppErrorIndication](structured/J1939/GNSSAppErrorIndication.md) `function`
+- [GNSSContinueSpeed](structured/J1939/GNSSContinueSpeed.md) `function`
+- [GNSSGetAbsFilePath](structured/J1939/GNSSGetAbsFilePath.md) `function`
+- [GNSSGetAddress](structured/J1939/GNSSGetAddress.md) `function`
+- [GNSSGetCurAlt](structured/J1939/GNSSGetCurAlt.md) `function`
+- [GNSSGetCurCourse](structured/J1939/GNSSGetCurCourse.md) `function`
+- [GNSSGetCurGradient](structured/J1939/GNSSGetCurGradient.md) `function`
+- [GNSSGetCurLat](structured/J1939/GNSSGetCurLat.md) `function`
+- [GNSSGetCurLon](structured/J1939/GNSSGetCurLon.md) `function`
+- [GNSSGetCurSpeed](structured/J1939/GNSSGetCurSpeed.md) `function`
+- [GNSSGetLastError](structured/J1939/GNSSGetLastError.md) `function`
+- [GNSSGetName](structured/J1939/GNSSGetName.md) `function`
+- [GNSSMakeName](structured/J1939/GNSSMakeName.md) `function`
+- [GNSSOnLastWpReached](structured/J1939/GNSSOnLastWpReached.md) `function`
+- [GNSSOnSetSpeed](structured/J1939/GNSSOnSetSpeed.md) `function`
+- [GNSSOnWpBeforeLastReached](structured/J1939/GNSSOnWpBeforeLastReached.md) `function`
+- [GNSSPauseSpeed](structured/J1939/GNSSPauseSpeed.md) `function`
+- [GNSSRemoveWp](structured/J1939/GNSSRemoveWp.md) `function`
+- [GNSSSetCOGSOGVal](structured/J1939/GNSSSetCOGSOGVal.md) `function`
+- [GNSSSetCourse](structured/J1939/GNSSSetCourse.md) `function`
+- [GNSSSetJitterAlt](structured/J1939/GNSSSetJitterAlt.md) `function`
+- [GNSSSetJitterLatLon](structured/J1939/GNSSSetJitterLatLon.md) `function`
+- [GNSSSetPGSettings](structured/J1939/GNSSSetPGSettings.md) `function`
+- [GNSSSetPosDataVal](structured/J1939/GNSSSetPosDataVal.md) `function`
+- [GNSSSetRefPoint](structured/J1939/GNSSSetRefPoint.md) `function`
+- [GNSSSetSpeed](structured/J1939/GNSSSetSpeed.md) `function`
+- [GNSSSetUnits](structured/J1939/GNSSSetUnits.md) `function`
+- [GNSSShutDown](structured/J1939/GNSSShutDown.md) `function`
+- [GNSSStartSimulation](structured/J1939/GNSSStartSimulation.md) `function`
+- [GNSSStartUp](structured/J1939/GNSSStartUp.md) `function`
+- [GNSSStopSimulation](structured/J1939/GNSSStopSimulation.md) `function`
+- [GNSSUpdateTable](structured/J1939/GNSSUpdateTable.md) `function`
+- [InitJ1939PGData](structured/J1939/InitJ1939PGData.md) `function`
+- [J1939 CAPL Functions](structured/J1939/J1939 CAPL Functions.md) `notes`
+- [J1939 CAPL Functions](structured/J1939/J1939 CAPL Functions.md) `notes`
+- [J1939 Interaction Layer](structured/J1939/J1939 Interaction Layer.md) `notes`
+- [J1939 Node Layer](structured/J1939/J1939 Node Layer.md) `notes`
+- [J1939 Node Layer Error Codes](structured/J1939/J1939 Node Layer Error Codes.md) `notes`
+- [J1939 Test Service Library](structured/J1939/J1939 Test Service Library.md) `notes`
+- [J1939 Test Service Library Error Codes](structured/J1939/J1939 Test Service Library Error Codes.md) `notes`
+- [J1939: Access PGNs of database messages](structured/J1939/J1939_ Access PGNs of database messages.md) `notes`
+- [J1939: Define Parameter Groups](structured/J1939/J1939_ Define Parameter Groups.md) `notes`
+- [J1939: Specific Language Limitations](structured/J1939/J1939_ Specific Language Limitations.md) `notes`
+- [J1939AppAddrClaimed](structured/J1939/J1939AppAddrClaimed.md) `function`
+- [J1939AppCmdAddrIndication](structured/J1939/J1939AppCmdAddrIndication.md) `function`
+- [J1939AppErrorIndication](structured/J1939/J1939AppErrorIndication.md) `function`
+- [J1939AppNmtIndication](structured/J1939/J1939AppNmtIndication.md) `function`
+- [J1939AppRequestIndication](structured/J1939/J1939AppRequestIndication.md) `function`
+- [J1939AppRxIndication](structured/J1939/J1939AppRxIndication.md) `function`
+- [J1939AppTxIndication](structured/J1939/J1939AppTxIndication.md) `function`
+- [J1939CalcChecksum](structured/J1939/J1939CalcChecksum.md) `function`
+- [J1939CalculateCrcOfSDM](structured/J1939/J1939CalculateCrcOfSDM.md) `function`
+- [J1939CreateECU](structured/J1939/J1939CreateECU.md) `function`
+- [J1939DestroyECU](structured/J1939/J1939DestroyECU.md) `function`
+- [J1939ECUGoOffline](structured/J1939/J1939ECUGoOffline.md) `function`
+- [J1939ECUGoOnline](structured/J1939/J1939ECUGoOnline.md) `function`
+- [J1939EnableNameManagement](structured/J1939/J1939EnableNameManagement.md) `function`
+- [J1939FillSHM](structured/J1939/J1939FillSHM.md) `function`
+- [J1939Get...](structured/J1939/J1939Get....md) `function`
+- [J1939GetAddress](structured/J1939/J1939GetAddress.md) `function`
+- [J1939GetBus](structured/J1939/J1939GetBus.md) `function`
+- [J1939GetBusName](structured/J1939/J1939GetBusName.md) `function`
+- [J1939GetChecksumAndCounter](structured/J1939/J1939GetChecksumAndCounter.md) `function`
+- [J1939GetDTC](structured/J1939/J1939GetDTC.md) `function`
+- [J1939GetEcuState](structured/J1939/J1939GetEcuState.md) `function`
+- [J1939GetEnvDbl](structured/J1939/J1939GetEnvDbl.md) `function`
+- [J1939GetEnvInt](structured/J1939/J1939GetEnvInt.md) `function`
+- [J1939GetFmiFromDTC](structured/J1939/J1939GetFmiFromDTC.md) `function`
+- [J1939GetLastError](structured/J1939/J1939GetLastError.md) `function`
+- [J1939GetLastErrorText](structured/J1939/J1939GetLastErrorText.md) `function`
+- [J1939GetName](structured/J1939/J1939GetName.md) `function`
+- [J1939GetNodeAddr](structured/J1939/J1939GetNodeAddr.md) `function`
+- [J1939GetNumOfDTCs](structured/J1939/J1939GetNumOfDTCs.md) `function`
+- [J1939GetOcFromDTC](structured/J1939/J1939GetOcFromDTC.md) `function`
+- [J1939GetRxData](structured/J1939/J1939GetRxData.md) `function`
+- [J1939GetSpnFromDTC](structured/J1939/J1939GetSpnFromDTC.md) `function`
+- [J1939GetWSMAddr](structured/J1939/J1939GetWSMAddr.md) `function`
+- [J1939GetWSMaster](structured/J1939/J1939GetWSMaster.md) `function`
+- [J1939ILAcceptRxPG](structured/J1939/J1939ILAcceptRxPG.md) `function`
+- [J1939ILActivateDiagnosticsSupport](structured/J1939/J1939ILActivateDiagnosticsSupport.md) `function`
+- [J1939ILActivateDTC](structured/J1939/J1939ILActivateDTC.md) `function`
+- [J1939ILAddDTC](structured/J1939/J1939ILAddDTC.md) `function`
+- [J1939ILBlockRxMessage](structured/J1939/J1939ILBlockRxMessage.md) `function`
+- [J1939ILBlockTxMessage](structured/J1939/J1939ILBlockTxMessage.md) `function`
+- [J1939ILClearAllDTCs](structured/J1939/J1939ILClearAllDTCs.md) `function`
+- [J1939ILControlInit](structured/J1939/J1939ILControlInit.md) `function`
+- [J1939ILControlResume](structured/J1939/J1939ILControlResume.md) `function`
+- [J1939ILControlStart](structured/J1939/J1939ILControlStart.md) `function`
+- [J1939ILControlStop](structured/J1939/J1939ILControlStop.md) `function`
+- [J1939ILControlWait](structured/J1939/J1939ILControlWait.md) `function`
+- [J1939ILDeactivateDTC](structured/J1939/J1939ILDeactivateDTC.md) `function`
+- [J1939ILDelayRxMessage](structured/J1939/J1939ILDelayRxMessage.md) `function`
+- [J1939ILDisableMsg](structured/J1939/J1939ILDisableMsg.md) `function`
+- [J1939ILEnableAddressViolationDetection](structured/J1939/J1939ILEnableAddressViolationDetection.md) `function`
+- [J1939ILEnableMsg](structured/J1939/J1939ILEnableMsg.md) `function`
+- [J1939ILGetAddress](structured/J1939/J1939ILGetAddress.md) `function`
+- [J1939ILGetDTCStatus](structured/J1939/J1939ILGetDTCStatus.md) `function`
+- [J1939ILGetLastError](structured/J1939/J1939ILGetLastError.md) `function`
+- [J1939ILGetLastErrorText](structured/J1939/J1939ILGetLastErrorText.md) `function`
+- [J1939ILGetState](structured/J1939/J1939ILGetState.md) `function`
+- [J1939ILManipulateMessage](structured/J1939/J1939ILManipulateMessage.md) `function`
+- [J1939ILOnAddressViolation](structured/J1939/J1939ILOnAddressViolation.md) `function`
+- [J1939ILOnCA](structured/J1939/J1939ILOnCA.md) `function`
+- [J1939ILOnChangedState](structured/J1939/J1939ILOnChangedState.md) `function`
+- [J1939ILOnError](structured/J1939/J1939ILOnError.md) `function`
+- [J1939ILOnRequest](structured/J1939/J1939ILOnRequest.md) `function`
+- [J1939ILOnRxMessage](structured/J1939/J1939ILOnRxMessage.md) `function`
+- [J1939ILOnTxMessage](structured/J1939/J1939ILOnTxMessage.md) `function`
+- [J1939ILOnTxPrepare](structured/J1939/J1939ILOnTxPrepare.md) `function`
+- [J1939ILRemoveDTC](structured/J1939/J1939ILRemoveDTC.md) `function`
+- [J1939ILResetAllBlockedRxMessages](structured/J1939/J1939ILResetAllBlockedRxMessages.md) `function`
+- [J1939ILResetAllBlockedTxMessages](structured/J1939/J1939ILResetAllBlockedTxMessages.md) `function`
+- [J1939ILResetAllDelayedRxMessage](structured/J1939/J1939ILResetAllDelayedRxMessage.md) `function`
+- [J1939ILResetAllManipulatedMessages](structured/J1939/J1939ILResetAllManipulatedMessages.md) `function`
+- [J1939ILResetBlockedRxMessage](structured/J1939/J1939ILResetBlockedRxMessage.md) `function`
+- [J1939ILResetBlockedTxMessage](structured/J1939/J1939ILResetBlockedTxMessage.md) `function`
+- [J1939ILResetDelayedRxMessage](structured/J1939/J1939ILResetDelayedRxMessage.md) `function`
+- [J1939ILResetManipulatedMessage](structured/J1939/J1939ILResetManipulatedMessage.md) `function`
+- [J1939ILSetLampStatus](structured/J1939/J1939ILSetLampStatus.md) `function`
+- [J1939ILSetMessageProperty](structured/J1939/J1939ILSetMessageProperty.md) `function`
+- [J1939ILSetMsgCycleTime](structured/J1939/J1939ILSetMsgCycleTime.md) `function`
+- [J1939ILSetMsgDA](structured/J1939/J1939ILSetMsgDA.md) `function`
+- [J1939ILSetMsgDelayTime](structured/J1939/J1939ILSetMsgDelayTime.md) `function`
+- [J1939ILSetMsgEvent](structured/J1939/J1939ILSetMsgEvent.md) `function`
+- [J1939ILSetMsgPriority](structured/J1939/J1939ILSetMsgPriority.md) `function`
+- [J1939ILSetMsgRawData](structured/J1939/J1939ILSetMsgRawData.md) `function`
+- [J1939ILSetNodeProperty](structured/J1939/J1939ILSetNodeProperty.md) `function`
+- [J1939ILSetSignal](structured/J1939/J1939ILSetSignal.md) `function`
+- [J1939ILSetSignalRaw](structured/J1939/J1939ILSetSignalRaw.md) `function`
+- [J1939ILSetVerbosity](structured/J1939/J1939ILSetVerbosity.md) `function`
+- [J1939MakeDTC](structured/J1939/J1939MakeDTC.md) `function`
+- [J1939MakeName](structured/J1939/J1939MakeName.md) `function`
+- [J1939NMTDump](structured/J1939/J1939NMTDump.md) `function`
+- [J1939ParseSHM](structured/J1939/J1939ParseSHM.md) `function`
+- [J1939Set...](structured/J1939/J1939Set....md) `function`
+- [J1939SetChecksumAndCounter](structured/J1939/J1939SetChecksumAndCounter.md) `function`
+- [J1939SetEnvDbl](structured/J1939/J1939SetEnvDbl.md) `function`
+- [J1939SetEnvInt](structured/J1939/J1939SetEnvInt.md) `function`
+- [J1939SetTPParam](structured/J1939/J1939SetTPParam.md) `function`
+- [J1939SetWSMAddr](structured/J1939/J1939SetWSMAddr.md) `function`
+- [J1939TableTime](structured/J1939/J1939TableTime.md) `function`
+- [J1939TestCaseComment](structured/J1939/J1939TestCaseComment.md) `function`
+- [J1939TestChkConfig_SetTitle](structured/J1939/J1939TestChkConfig_SetTitle.md) `function`
+- [J1939TestChkControl_Destroy](structured/J1939/J1939TestChkControl_Destroy.md) `function`
+- [J1939TestChkControl_Reset](structured/J1939/J1939TestChkControl_Reset.md) `function`
+- [J1939TestChkControl_Start](structured/J1939/J1939TestChkControl_Start.md) `function`
+- [J1939TestChkControl_Stop](structured/J1939/J1939TestChkControl_Stop.md) `function`
+- [J1939TestChkCreate_PGDistanceViolation](structured/J1939/J1939TestChkCreate_PGDistanceViolation.md) `function`
+- [J1939TestChkCreate_RequestViolation](structured/J1939/J1939TestChkCreate_RequestViolation.md) `function`
+- [J1939TestChkCreate_SignalRangeViolation](structured/J1939/J1939TestChkCreate_SignalRangeViolation.md) `function`
+- [J1939TestChkQuery_Count](structured/J1939/J1939TestChkQuery_Count.md) `function`
+- [J1939TestChkQuery_Last](structured/J1939/J1939TestChkQuery_Last.md) `function`
+- [J1939TestChkQuery_NumEvents](structured/J1939/J1939TestChkQuery_NumEvents.md) `function`
+- [J1939TestChkQuery_StatAvg](structured/J1939/J1939TestChkQuery_StatAvg.md) `function`
+- [J1939TestChkQuery_StatMax](structured/J1939/J1939TestChkQuery_StatMax.md) `function`
+- [J1939TestChkQuery_StatMin](structured/J1939/J1939TestChkQuery_StatMin.md) `function`
+- [J1939TestCommand](structured/J1939/J1939TestCommand.md) `function`
+- [J1939TestCommandedAddress](structured/J1939/J1939TestCommandedAddress.md) `function`
+- [J1939TestConflictACL](structured/J1939/J1939TestConflictACL.md) `function`
+- [J1939TestJoinDMWithoutSPNEvent](structured/J1939/J1939TestJoinDMWithoutSPNEvent.md) `function`
+- [J1939TestJoinDMWithSPNEvent](structured/J1939/J1939TestJoinDMWithSPNEvent.md) `function`
+- [J1939TestNmtDump](structured/J1939/J1939TestNmtDump.md) `function`
+- [J1939TestNmtQueryAddress](structured/J1939/J1939TestNmtQueryAddress.md) `function`
+- [J1939TestNmtQueryDeviceName](structured/J1939/J1939TestNmtQueryDeviceName.md) `function`
+- [J1939TestNmtQueryDeviceNameForAddress](structured/J1939/J1939TestNmtQueryDeviceNameForAddress.md) `function`
+- [J1939TestNmtQueryECU](structured/J1939/J1939TestNmtQueryECU.md) `function`
+- [J1939TestNmtRefresh](structured/J1939/J1939TestNmtRefresh.md) `function`
+- [J1939TestOnNMTChange](structured/J1939/J1939TestOnNMTChange.md) `function`
+- [J1939TestOutputBAM](structured/J1939/J1939TestOutputBAM.md) `function`
+- [J1939TestOutputTPCM](structured/J1939/J1939TestOutputTPCM.md) `function`
+- [J1939TestReceiveTPCM](structured/J1939/J1939TestReceiveTPCM.md) `function`
+- [J1939TestRequest](structured/J1939/J1939TestRequest.md) `function`
+- [J1939TestRequestACL](structured/J1939/J1939TestRequestACL.md) `function`
+- [J1939TestStmControl_Destroy](structured/J1939/J1939TestStmControl_Destroy.md) `function`
+- [J1939TestStmControl_Reset](structured/J1939/J1939TestStmControl_Reset.md) `function`
+- [J1939TestStmControl_Start](structured/J1939/J1939TestStmControl_Start.md) `function`
+- [J1939TestStmControl_Stop](structured/J1939/J1939TestStmControl_Stop.md) `function`
+- [J1939TestStmCreate_CSV](structured/J1939/J1939TestStmCreate_CSV.md) `function`
+- [J1939TestStmCreate_Toggle](structured/J1939/J1939TestStmCreate_Toggle.md) `function`
+- [J1939TestWaitForAnyJoinedEvent, J1939TestWaitForAllJoinedEvents](structured/J1939/J1939TestWaitForAnyJoinedEvent, J1939TestWaitForAllJoinedEvents.md) `function`
+- [J1939TestWaitForDMWithoutSPN](structured/J1939/J1939TestWaitForDMWithoutSPN.md) `function`
+- [J1939TestWaitForDMWithSPN](structured/J1939/J1939TestWaitForDMWithSPN.md) `function`
+- [J1939TxAbort](structured/J1939/J1939TxAbort.md) `function`
+- [J1939TxReqPG](structured/J1939/J1939TxReqPG.md) `function`
+- [J1939UpdateTable](structured/J1939/J1939UpdateTable.md) `function`
+- [on pg](structured/J1939/on pg.md) `event`
+- [output (J1939)](structured/J1939/output (J1939).md) `function`
+
+---
+
+## CAPL K-Line (KLine)
+
+**Function count**: 37
+
+- [_Diag_PreSend](structured/KLine/_Diag_PreSend.md) `function`
+- [_KLine_ByteReceptionInd](structured/KLine/_KLine_ByteReceptionInd.md) `function`
+- [_KLine_ByteTransmissionCon](structured/KLine/_KLine_ByteTransmissionCon.md) `function`
+- [_KLine_DataCon](structured/KLine/_KLine_DataCon.md) `function`
+- [_KLine_DataInd](structured/KLine/_KLine_DataInd.md) `function`
+- [_KLine_ErrorInd](structured/KLine/_KLine_ErrorInd.md) `function`
+- [_KLine_FastInitPatternReceived](structured/KLine/_KLine_FastInitPatternReceived.md) `function`
+- [_KLine_FrameReceptionInd](structured/KLine/_KLine_FrameReceptionInd.md) `function`
+- [_KLine_FrameTransmissionCon](structured/KLine/_KLine_FrameTransmissionCon.md) `function`
+- [DiagInitEcuSimulation](structured/KLine/DiagInitEcuSimulation.md) `function`
+- [DiagSendRequestPDU](structured/KLine/DiagSendRequestPDU.md) `function`
+- [DiagSendResponsePDU](structured/KLine/DiagSendResponsePDU.md) `function`
+- [K-Line CAPL Functions](structured/KLine/K-Line CAPL Functions.md) `notes`
+- [KLine_CreateECURepresentation](structured/KLine/KLine_CreateECURepresentation.md) `function`
+- [KLine_EnableSegmentedResponses](structured/KLine/KLine_EnableSegmentedResponses.md) `function`
+- [KLine_GetMeasuredInitParameter](structured/KLine/KLine_GetMeasuredInitParameter.md) `function`
+- [KLine_Init5BaudEcuParams](structured/KLine/KLine_Init5BaudEcuParams.md) `function`
+- [KLine_ResetECUConnection](structured/KLine/KLine_ResetECUConnection.md) `function`
+- [KLine_SendFrame](structured/KLine/KLine_SendFrame.md) `function`
+- [KLine_Set5BaudAddressTester](structured/KLine/KLine_Set5BaudAddressTester.md) `function`
+- [KLine_SetBaudrate](structured/KLine/KLine_SetBaudrate.md) `function`
+- [KLine_SetECUAddress](structured/KLine/KLine_SetECUAddress.md) `function`
+- [KLine_SetFunctionalAddress](structured/KLine/KLine_SetFunctionalAddress.md) `function`
+- [KLine_SetHeaderFormat](structured/KLine/KLine_SetHeaderFormat.md) `function`
+- [KLine_SetInitType](structured/KLine/KLine_SetInitType.md) `function`
+- [KLine_SetP1ECU](structured/KLine/KLine_SetP1ECU.md) `function`
+- [KLine_SetP2max](structured/KLine/KLine_SetP2max.md) `function`
+- [KLine_SetP3max](structured/KLine/KLine_SetP3max.md) `function`
+- [KLine_SetP3Tester](structured/KLine/KLine_SetP3Tester.md) `function`
+- [KLine_SetP4Tester](structured/KLine/KLine_SetP4Tester.md) `function`
+- [KLine_SetTesterAddress](structured/KLine/KLine_SetTesterAddress.md) `function`
+- [KLine_SetUARTParameter](structured/KLine/KLine_SetUARTParameter.md) `function`
+- [KLine_SetW4Tester](structured/KLine/KLine_SetW4Tester.md) `function`
+- [KLine_SetW5Tester](structured/KLine/KLine_SetW5Tester.md) `function`
+- [KLine_SetWakeUpTimesTester](structured/KLine/KLine_SetWakeUpTimesTester.md) `function`
+- [KLine_SuppressAutomaticStopCommunication](structured/KLine/KLine_SuppressAutomaticStopCommunication.md) `function`
+- [KLine_UseDefaultHeader](structured/KLine/KLine_UseDefaultHeader.md) `function`
+
+---
+
+## CAPL LIN (LIN)
+
+**Function count**: 171
+
+- [LIN CAPL Functions](structured/LIN/LIN CAPL Functions.md) `notes`
+- [LIN: Hardware Configuration](structured/LIN/LIN_ Hardware Configuration.md) `notes`
+- [LIN: Notes to the Way initial NAD is determined](structured/LIN/LIN_ Notes to the Way initial NAD is determined.md) `notes`
+- [LIN: Timeout Prevention](structured/LIN/LIN_ Timeout Prevention.md) `notes`
+- [linActivateCollisionResolution](structured/LIN/linActivateCollisionResolution.md) `function`
+- [linActivateFlashMode](structured/LIN/linActivateFlashMode.md) `function`
+- [linActivateGlobalNetworkManagement](structured/LIN/linActivateGlobalNetworkManagement.md) `function`
+- [linActivateResps](structured/LIN/linActivateResps.md) `function`
+- [linActivateSlaveNetworkManagement](structured/LIN/linActivateSlaveNetworkManagement.md) `function`
+- [linActivateSlot](structured/LIN/linActivateSlot.md) `function`
+- [linBaudrateEvent Selectors](structured/LIN/linBaudrateEvent Selectors.md) `notes`
+- [linBits2Time_ns](structured/LIN/linBits2Time_ns.md) `function`
+- [linBusIsAwake](structured/LIN/linBusIsAwake.md) `function`
+- [linChangeSchedtable](structured/LIN/linChangeSchedtable.md) `function`
+- [linCheckOEMDataInd](structured/LIN/linCheckOEMDataInd.md) `function`
+- [linCheckOEMSleepInd](structured/LIN/linCheckOEMSleepInd.md) `function`
+- [linCheckOEMWakeupInd](structured/LIN/linCheckOEMWakeupInd.md) `function`
+- [linCheckRespError](structured/LIN/linCheckRespError.md) `function`
+- [linConfigureResponse](structured/LIN/linConfigureResponse.md) `function`
+- [linConfigureResponseRange](structured/LIN/linConfigureResponseRange.md) `function`
+- [linCsError Selectors](structured/LIN/linCsError Selectors.md) `notes`
+- [linDeactivateBitInversion](structured/LIN/linDeactivateBitInversion.md) `function`
+- [linDeactivateResps](structured/LIN/linDeactivateResps.md) `function`
+- [linDeactivateSlot](structured/LIN/linDeactivateSlot.md) `function`
+- [linDetectMultipleErrors](structured/LIN/linDetectMultipleErrors.md) `function`
+- [linDisturbHeaderWithBitStream](structured/LIN/linDisturbHeaderWithBitStream.md) `function`
+- [linDisturbHeaderWithHeader](structured/LIN/linDisturbHeaderWithHeader.md) `function`
+- [linDisturbHeaderWithVariableBitStream](structured/LIN/linDisturbHeaderWithVariableBitStream.md) `function`
+- [linDisturbRespWithBitStream](structured/LIN/linDisturbRespWithBitStream.md) `function`
+- [linDisturbRespWithHeader](structured/LIN/linDisturbRespWithHeader.md) `function`
+- [linDisturbRespWithVariableBitStream](structured/LIN/linDisturbRespWithVariableBitStream.md) `function`
+- [linDlcInfo Selectors](structured/LIN/linDlcInfo Selectors.md) `notes`
+- [linETFSendOnSignalUpdate](structured/LIN/linETFSendOnSignalUpdate.md) `function`
+- [linETFSetDirtyFlag](structured/LIN/linETFSetDirtyFlag.md) `function`
+- [linFrame Selectors](structured/LIN/linFrame Selectors.md) `notes`
+- [linGetBusIdleTimeout](structured/LIN/linGetBusIdleTimeout.md) `function`
+- [linGetChecksum](structured/LIN/linGetChecksum.md) `function`
+- [linGetDlc](structured/LIN/linGetDlc.md) `function`
+- [linGetDominantTimeout](structured/LIN/linGetDominantTimeout.md) `function`
+- [linGetFallingEdgesOfDisturbedByte](structured/LIN/linGetFallingEdgesOfDisturbedByte.md) `function`
+- [linGetHWReceiveAccuracy](structured/LIN/linGetHWReceiveAccuracy.md) `function`
+- [linGetHWTransmitAccuracy](structured/LIN/linGetHWTransmitAccuracy.md) `function`
+- [linGetMasterNode](structured/LIN/linGetMasterNode.md) `function`
+- [linGetMasterResistorState](structured/LIN/linGetMasterResistorState.md) `function`
+- [linGetMeasBaudrate](structured/LIN/linGetMeasBaudrate.md) `function`
+- [linGetMeasByteBitRates](structured/LIN/linGetMeasByteBitRates.md) `function`
+- [linGetMeasEdgeTimeDiffs](structured/LIN/linGetMeasEdgeTimeDiffs.md) `function`
+- [linGetOEMDataInd](structured/LIN/linGetOEMDataInd.md) `function`
+- [linGetOEMSleepInd](structured/LIN/linGetOEMSleepInd.md) `function`
+- [linGetOEMWakeupInd](structured/LIN/linGetOEMWakeupInd.md) `function`
+- [linGetProtectedID](structured/LIN/linGetProtectedID.md) `function`
+- [linGetRespError](structured/LIN/linGetRespError.md) `function`
+- [linGetResponseData](structured/LIN/linGetResponseData.md) `function`
+- [linGotoSleep](structured/LIN/linGotoSleep.md) `function`
+- [linGotoSleepInternal](structured/LIN/linGotoSleepInternal.md) `function`
+- [linHeader Selectors](structured/LIN/linHeader Selectors.md) `notes`
+- [linInvertHeaderBit](structured/LIN/linInvertHeaderBit.md) `function`
+- [linInvertHeaderBitEx](structured/LIN/linInvertHeaderBitEx.md) `function`
+- [linInvertMultipleHeaderBits](structured/LIN/linInvertMultipleHeaderBits.md) `function`
+- [linInvertMultipleRespBits](structured/LIN/linInvertMultipleRespBits.md) `function`
+- [linInvertRespBit](structured/LIN/linInvertRespBit.md) `function`
+- [linInvertRespBitEx](structured/LIN/linInvertRespBitEx.md) `function`
+- [linIsBitStreamBusy](structured/LIN/linIsBitStreamBusy.md) `function`
+- [linIsChannelMatserMode](structured/LIN/linIsChannelMatserMode.md) `function`
+- [linIsFlashModeActive](structured/LIN/linIsFlashModeActive.md) `function`
+- [linIsMasterNode](structured/LIN/linIsMasterNode.md) `function`
+- [linLongDominantSignal Selectors](structured/LIN/linLongDominantSignal Selectors.md) `notes`
+- [linMeasEdgeTimeDiffs](structured/LIN/linMeasEdgeTimeDiffs.md) `function`
+- [linMeasHeaderBaudrate](structured/LIN/linMeasHeaderBaudrate.md) `function`
+- [linMeasRespBaudrate](structured/LIN/linMeasRespBaudrate.md) `function`
+- [linReceiveError Selectors](structured/LIN/linReceiveError Selectors.md) `notes`
+- [linRegisterSchedulerStartStopCallback](structured/LIN/linRegisterSchedulerStartStopCallback.md) `function`
+- [linResetManualChecksum](structured/LIN/linResetManualChecksum.md) `function`
+- [linResetMasterNode](structured/LIN/linResetMasterNode.md) `function`
+- [linResetMaxHeaderLength](structured/LIN/linResetMaxHeaderLength.md) `function`
+- [linResetNAD](structured/LIN/linResetNAD.md) `function`
+- [linResetRespBaudrate](structured/LIN/linResetRespBaudrate.md) `function`
+- [linResetRespBitStream](structured/LIN/linResetRespBitStream.md) `function`
+- [linResetRespDisturbance](structured/LIN/linResetRespDisturbance.md) `function`
+- [linResetSlave](structured/LIN/linResetSlave.md) `function`
+- [linResetStatistics](structured/LIN/linResetStatistics.md) `function`
+- [linRunSchedTableNtimes](structured/LIN/linRunSchedTableNtimes.md) `function`
+- [linSchedulerModeChange Selectors](structured/LIN/linSchedulerModeChange Selectors.md) `notes`
+- [linSendAsSporadic](structured/LIN/linSendAsSporadic.md) `function`
+- [linSendBitStream](structured/LIN/linSendBitStream.md) `function`
+- [linSendDominantSignal](structured/LIN/linSendDominantSignal.md) `function`
+- [linSendHeaderError](structured/LIN/linSendHeaderError.md) `function`
+- [linSendSamplingTestHeader](structured/LIN/linSendSamplingTestHeader.md) `function`
+- [linSendVariableBitStream](structured/LIN/linSendVariableBitStream.md) `function`
+- [linSetBaudrate](structured/LIN/linSetBaudrate.md) `function`
+- [linSetBaudrateDetectionRange](structured/LIN/linSetBaudrateDetectionRange.md) `function`
+- [linSetBreakLength](structured/LIN/linSetBreakLength.md) `function`
+- [linSetBusIdleTimeout](structured/LIN/linSetBusIdleTimeout.md) `function`
+- [linSetChannelMasterMode](structured/LIN/linSetChannelMasterMode.md) `function`
+- [linSetChecksumCompatibility](structured/LIN/linSetChecksumCompatibility.md) `function`
+- [linSetChecksumError](structured/LIN/linSetChecksumError.md) `function`
+- [linSetChecksumModel](structured/LIN/linSetChecksumModel.md) `function`
+- [linSetExpectedRespLength](structured/LIN/linSetExpectedRespLength.md) `function`
+- [linSetGlobalInterByteSpace](structured/LIN/linSetGlobalInterByteSpace.md) `function`
+- [linSetGlobalTimeoutPrevention](structured/LIN/linSetGlobalTimeoutPrevention.md) `function`
+- [linSetInterByteSpace](structured/LIN/linSetInterByteSpace.md) `function`
+- [linSetInterByteSpaces](structured/LIN/linSetInterByteSpaces.md) `function`
+- [linSetInterframeSpace](structured/LIN/linSetInterframeSpace.md) `function`
+- [linSetInterruptingHeaderTransmits](structured/LIN/linSetInterruptingHeaderTransmits.md) `function`
+- [linSetManualChecksum](structured/LIN/linSetManualChecksum.md) `function`
+- [linSetMasterNode](structured/LIN/linSetMasterNode.md) `function`
+- [linSetMasterRequestDirtyFlag](structured/LIN/linSetMasterRequestDirtyFlag.md) `function`
+- [linSetMasterResistor](structured/LIN/linSetMasterResistor.md) `function`
+- [linSetMaxHeaderLength](structured/LIN/linSetMaxHeaderLength.md) `function`
+- [linSetNAD](structured/LIN/linSetNAD.md) `function`
+- [linSetOEMDataInd](structured/LIN/linSetOEMDataInd.md) `function`
+- [linSetOEMDataIndTime](structured/LIN/linSetOEMDataIndTime.md) `function`
+- [linSetOEMSleepInd](structured/LIN/linSetOEMSleepInd.md) `function`
+- [linSetOEMWakeupInd](structured/LIN/linSetOEMWakeupInd.md) `function`
+- [linSetRespBaudrate](structured/LIN/linSetRespBaudrate.md) `function`
+- [linSetRespBitStream](structured/LIN/linSetRespBitStream.md) `function`
+- [linSetRespCounter](structured/LIN/linSetRespCounter.md) `function`
+- [linSetRespDisturbance](structured/LIN/linSetRespDisturbance.md) `function`
+- [linSetRespError](structured/LIN/linSetRespError.md) `function`
+- [linSetRespLength](structured/LIN/linSetRespLength.md) `function`
+- [linSetRespTolerance](structured/LIN/linSetRespTolerance.md) `function`
+- [linSetSchedulerJitter](structured/LIN/linSetSchedulerJitter.md) `function`
+- [linSetValidBreakLimits](structured/LIN/linSetValidBreakLimits.md) `function`
+- [linSetWakeupBehavior](structured/LIN/linSetWakeupBehavior.md) `function`
+- [linSetwakeupCondition](structured/LIN/linSetwakeupCondition.md) `function`
+- [linSetWakeupTimings](structured/LIN/linSetWakeupTimings.md) `function`
+- [linSimulateETFCollision](structured/LIN/linSimulateETFCollision.md) `function`
+- [linSleepModeEvent Selectors](structured/LIN/linSleepModeEvent Selectors.md) `notes`
+- [linSpikeEvent Selectors](structured/LIN/linSpikeEvent Selectors.md) `notes`
+- [linStartDisturbance](structured/LIN/linStartDisturbance.md) `function`
+- [linStartScheduler](structured/LIN/linStartScheduler.md) `function`
+- [linStopDisturbance](structured/LIN/linStopDisturbance.md) `function`
+- [linStopScheduler](structured/LIN/linStopScheduler.md) `function`
+- [linSyncError Selectors](structured/LIN/linSyncError Selectors.md) `notes`
+- [linTime2Bits_ns](structured/LIN/linTime2Bits_ns.md) `function`
+- [LINtp_ActivateFCTransmission](structured/LIN/LINtp_ActivateFCTransmission.md) `function`
+- [LINtp_DataCon](structured/LIN/LINtp_DataCon.md) `function`
+- [LINtp_DataInd](structured/LIN/LINtp_DataInd.md) `function`
+- [LINtp_DataReq](structured/LIN/LINtp_DataReq.md) `function`
+- [LINtp_ErrorInd](structured/LIN/LINtp_ErrorInd.md) `function`
+- [LINtp_FCPreTransmit](structured/LIN/LINtp_FCPreTransmit.md) `function`
+- [LINtp_FirstFrameIndication](structured/LIN/LINtp_FirstFrameIndication.md) `function`
+- [LINtp_GetRxData](structured/LIN/LINtp_GetRxData.md) `function`
+- [LINtp_InitAsMaster](structured/LIN/LINtp_InitAsMaster.md) `function`
+- [LINtp_PreSend](structured/LIN/LINtp_PreSend.md) `function`
+- [LINtp_SetFillByteValue](structured/LIN/LINtp_SetFillByteValue.md) `function`
+- [LINtp_SetMaximumReceiveLength](structured/LIN/LINtp_SetMaximumReceiveLength.md) `function`
+- [LINtp_SetNAD](structured/LIN/LINtp_SetNAD.md) `function`
+- [LINtp_SetSTmin](structured/LIN/LINtp_SetSTmin.md) `function`
+- [LINtp_SetWaiting](structured/LIN/LINtp_SetWaiting.md) `function`
+- [linTransmError Selectors](structured/LIN/linTransmError Selectors.md) `notes`
+- [linTransmitHeader](structured/LIN/linTransmitHeader.md) `function`
+- [linUpdateResponse](structured/LIN/linUpdateResponse.md) `function`
+- [linWakeup](structured/LIN/linWakeup.md) `function`
+- [linWakeupFrame Selectors](structured/LIN/linWakeupFrame Selectors.md) `notes`
+- [linWakeupInternal](structured/LIN/linWakeupInternal.md) `function`
+- [on linBaudrateEvent](structured/LIN/on linBaudrateEvent.md) `event`
+- [on linCsError](structured/LIN/on linCsError.md) `event`
+- [on linDlcInfo](structured/LIN/on linDlcInfo.md) `event`
+- [on linFrame](structured/LIN/on linFrame.md) `event`
+- [on linLongDominantSignal](structured/LIN/on linLongDominantSignal.md) `event`
+- [on linReceiveError](structured/LIN/on linReceiveError.md) `event`
+- [on linSchedulerModeChange](structured/LIN/on linSchedulerModeChange.md) `event`
+- [on linSlaveTimeout](structured/LIN/on linSlaveTimeout.md) `event`
+- [on linSleepModeEvent](structured/LIN/on linSleepModeEvent.md) `event`
+- [on linSpikeEvent](structured/LIN/on linSpikeEvent.md) `event`
+- [on linSyncError](structured/LIN/on linSyncError.md) `event`
+- [on linTransmError](structured/LIN/on linTransmError.md) `event`
+- [on linWakeupFrame](structured/LIN/on linWakeupFrame.md) `event`
+- [output (LIN)](structured/LIN/output (LIN).md) `function`
+- [SlaveId](structured/LIN/SlaveId.md) `notes`
+
+---
+
+## CAPL MATLAB Interface (MATLAB)
+
+**Function count**: 4
+
+- [<ModelName>_init](structured/MATLAB/_ModelName__init.md) `function`
+- [<ModelName>_step](structured/MATLAB/_ModelName__step.md) `function`
+- [GetSimulinkModelName](structured/MATLAB/GetSimulinkModelName.md) `function`
+- [MATLAB Integration CAPL Functions](structured/MATLAB/MATLAB Integration CAPL Functions.md) `notes`
+
+---
+
+## CAPL MOST (MOST)
+
+**Function count**: 205
+
+- [Example: Read-Out of the Registries](structured/MOST/Example_ Read-Out of the Registries.md) `notes`
+- [getThisMessage](structured/MOST/getThisMessage.md) `function`
+- [MOST CAPL Functions](structured/MOST/MOST CAPL Functions.md) `notes`
+- [MOST Selectors](structured/MOST/MOST Selectors.md) `notes`
+- [MOST: Database Support in CAPL](structured/MOST/MOST_ Database Support in CAPL.md) `notes`
+- [MOST: Error Codes of CAPL Functions](structured/MOST/MOST_ Error Codes of CAPL Functions.md) `notes`
+- [MOST: General Tips on XML Function Catalog Support in CAPL](structured/MOST/MOST_ General Tips on XML Function Catalog Support in CAPL.md) `notes`
+- [MOST: High Observer and Combiner](structured/MOST/MOST_ High Observer and Combiner.md) `notes`
+- [MOST: High Observer Error Codes](structured/MOST/MOST_ High Observer Error Codes.md) `notes`
+- [MOST: Initialization of Message Variables](structured/MOST/MOST_ Initialization of Message Variables.md) `notes`
+- [MOST: Input Assistance](structured/MOST/MOST_ Input Assistance.md) `notes`
+- [MOST: Symbolic Identification of Messages](structured/MOST/MOST_ Symbolic Identification of Messages.md) `notes`
+- [MOST: Symbolic Identification of Parameters](structured/MOST/MOST_ Symbolic Identification of Parameters.md) `notes`
+- [mostAllocTableGetCL](structured/MOST/mostAllocTableGetCL.md) `function`
+- [mostAllocTableGetSize](structured/MOST/mostAllocTableGetSize.md) `function`
+- [mostAllocTableGetWidth](structured/MOST/mostAllocTableGetWidth.md) `function`
+- [mostAmsClearTxQueue](structured/MOST/mostAmsClearTxQueue.md) `function`
+- [mostAmsOutput](structured/MOST/mostAmsOutput.md) `function`
+- [mostAmsSetSizePrefixed](structured/MOST/mostAmsSetSizePrefixed.md) `function`
+- [mostApGetFBlockID](structured/MOST/mostApGetFBlockID.md) `function`
+- [mostApGetInstID](structured/MOST/mostApGetInstID.md) `function`
+- [mostApIsAddressed](structured/MOST/mostApIsAddressed.md) `function`
+- [mostApIsRegistered](structured/MOST/mostApIsRegistered.md) `function`
+- [mostApIsRegisteredEx](structured/MOST/mostApIsRegisteredEx.md) `function`
+- [mostApplicationNode](structured/MOST/mostApplicationNode.md) `function`
+- [mostApRegister](structured/MOST/mostApRegister.md) `function`
+- [mostApRegisterEx](structured/MOST/mostApRegisterEx.md) `function`
+- [mostApUnregister](structured/MOST/mostApUnregister.md) `function`
+- [mostApUnregisterEx](structured/MOST/mostApUnregisterEx.md) `function`
+- [mostAsFiEnable](structured/MOST/mostAsFiEnable.md) `function`
+- [mostAsFsEnable, mostAsFsDisable](structured/MOST/mostAsFsEnable, mostAsFsDisable.md) `function`
+- [mostAsFsEnableEx, mostAsFsDisableEx](structured/MOST/mostAsFsEnableEx, mostAsFsDisableEx.md) `function`
+- [mostAsFsFunctionEnable](structured/MOST/mostAsFsFunctionEnable.md) `function`
+- [mostAsFsFunctionEnableEx](structured/MOST/mostAsFsFunctionEnableEx.md) `function`
+- [mostAsNtfDeviceIDListGetSize, mostAsNtfDeviceIDListGetDeviceID](structured/MOST/mostAsNtfDeviceIDListGetSize, mostAsNtfDeviceIDListGetDeviceID.md) `function`
+- [mostAsNtfEnable, mostAsNtfDisable](structured/MOST/mostAsNtfEnable, mostAsNtfDisable.md) `function`
+- [mostAsNtfEnableEx, mostAsNtfDisableEx](structured/MOST/mostAsNtfEnableEx, mostAsNtfDisableEx.md) `function`
+- [mostAsNtfFunctionCheck](structured/MOST/mostAsNtfFunctionCheck.md) `function`
+- [mostAsNtfFunctionClear](structured/MOST/mostAsNtfFunctionClear.md) `function`
+- [mostAsNtfFunctionClearAll](structured/MOST/mostAsNtfFunctionClearAll.md) `function`
+- [mostAsNtfFunctionEnable, mostAsNtfFunctionDisable, mostAsNtfFunctionIsEnabled](structured/MOST/mostAsNtfFunctionEnable, mostAsNtfFunctionDisable, mostAsNtfFunctionIsEnabled.md) `function`
+- [mostAsNtfFunctionEnableEx, mostAsNtfFunctionDisableEx, mostAsNtfFunctionIsEnabledEx](structured/MOST/mostAsNtfFunctionEnableEx, mostAsNtfFunctionDisableEx, mostAsNtfFunctionIsEnabledEx.md) `function`
+- [mostAsNtfFunctionListGetSize, mostAsNtfFunctionListGetFunction](structured/MOST/mostAsNtfFunctionListGetSize, mostAsNtfFunctionListGetFunction.md) `function`
+- [mostAsNtfFunctionSet](structured/MOST/mostAsNtfFunctionSet.md) `function`
+- [mostAsNtfOutput](structured/MOST/mostAsNtfOutput.md) `function`
+- [mostAsNtfShdFunctionEnable, mostAsNtfShdFunctionDisable](structured/MOST/mostAsNtfShdFunctionEnable, mostAsNtfShdFunctionDisable.md) `function`
+- [mostAsRgGetFBlockID](structured/MOST/mostAsRgGetFBlockID.md) `function`
+- [mostAsRgGetInstID](structured/MOST/mostAsRgGetInstID.md) `function`
+- [mostAsRgGetRxTxLog](structured/MOST/mostAsRgGetRxTxLog.md) `function`
+- [mostAsRgGetSize](structured/MOST/mostAsRgGetSize.md) `function`
+- [mostAsShdEnable, mostAsShdDisable](structured/MOST/mostAsShdEnable, mostAsShdDisable.md) `function`
+- [mostConfigureBusloadAsync](structured/MOST/mostConfigureBusloadAsync.md) `function`
+- [mostConfigureBusloadCtrl](structured/MOST/mostConfigureBusloadCtrl.md) `function`
+- [mostConfigureBusloadEthPkt](structured/MOST/mostConfigureBusloadEthPkt.md) `function`
+- [mostConfigureEclSequence](structured/MOST/mostConfigureEclSequence.md) `function`
+- [mostEthPktSetTraceColors](structured/MOST/mostEthPktSetTraceColors.md) `function`
+- [mostEventChannel, mostEventTime, mostEventOrigTime, mostEventTimeNs](structured/MOST/mostEventChannel, mostEventTime, mostEventOrigTime, mostEventTimeNs.md) `function`
+- [mostFiAmsReceive](structured/MOST/mostFiAmsReceive.md) `function`
+- [mostGenerateBusloadAsync](structured/MOST/mostGenerateBusloadAsync.md) `function`
+- [mostGenerateBusloadCtrl](structured/MOST/mostGenerateBusloadCtrl.md) `function`
+- [mostGenerateBusloadEthPkt](structured/MOST/mostGenerateBusloadEthPkt.md) `function`
+- [mostGenerateBypassToggle](structured/MOST/mostGenerateBypassToggle.md) `function`
+- [mostGenerateEclSequence](structured/MOST/mostGenerateEclSequence.md) `function`
+- [mostGenerateLightError](structured/MOST/mostGenerateLightError.md) `function`
+- [mostGenerateLockError](structured/MOST/mostGenerateLockError.md) `function`
+- [mostGetAllBypass](structured/MOST/mostGetAllBypass.md) `function`
+- [mostGetAllocTable](structured/MOST/mostGetAllocTable.md) `function`
+- [mostGetChannel](structured/MOST/mostGetChannel.md) `function`
+- [mostGetClockSource](structured/MOST/mostGetClockSource.md) `function`
+- [mostGetCodingErrors](structured/MOST/mostGetCodingErrors.md) `function`
+- [mostGetHWCapability](structured/MOST/mostGetHWCapability.md) `function`
+- [mostGetHWInfo](structured/MOST/mostGetHWInfo.md) `function`
+- [mostGetLock](structured/MOST/mostGetLock.md) `function`
+- [mostGetLockEx](structured/MOST/mostGetLockEx.md) `function`
+- [mostGetMPR](structured/MOST/mostGetMPR.md) `function`
+- [mostGetNceType](structured/MOST/mostGetNceType.md) `function`
+- [mostGetNetState](structured/MOST/mostGetNetState.md) `function`
+- [mostGetNodeAdr, mostGetGroupAdr, mostGetAltPktAdr, mostGetNodePosAdr](structured/MOST/mostGetNodeAdr, mostGetGroupAdr, mostGetAltPktAdr, mostGetNodePosAdr.md) `function`
+- [mostGetNPR](structured/MOST/mostGetNPR.md) `function`
+- [mostGetRxLight](structured/MOST/mostGetRxLight.md) `function`
+- [mostGetSBC](structured/MOST/mostGetSBC.md) `function`
+- [mostGetShutdownFlag](structured/MOST/mostGetShutdownFlag.md) `function`
+- [mostGetShutdownReason](structured/MOST/mostGetShutdownReason.md) `function`
+- [mostGetSpecVersion](structured/MOST/mostGetSpecVersion.md) `function`
+- [mostGetSpeedGrade](structured/MOST/mostGetSpeedGrade.md) `function`
+- [mostGetSpyCtrl, mostGetSpyAsync, mostGetSpyEthPkt](structured/MOST/mostGetSpyCtrl, mostGetSpyAsync, mostGetSpyEthPkt.md) `function`
+- [mostGetSyncMute](structured/MOST/mostGetSyncMute.md) `function`
+- [mostGetSyncSpdifMode](structured/MOST/mostGetSyncSpdifMode.md) `function`
+- [mostGetSyncVolume](structured/MOST/mostGetSyncVolume.md) `function`
+- [mostGetSystemLock](structured/MOST/mostGetSystemLock.md) `function`
+- [mostGetTimingMode](structured/MOST/mostGetTimingMode.md) `function`
+- [mostGetTxLight](structured/MOST/mostGetTxLight.md) `function`
+- [mostMHPBlockSetTraceColors](structured/MOST/mostMHPBlockSetTraceColors.md) `function`
+- [mostMHPConnectionSetTraceColors](structured/MOST/mostMHPConnectionSetTraceColors.md) `function`
+- [mostMHPErrorSetTraceColors](structured/MOST/mostMHPErrorSetTraceColors.md) `function`
+- [mostMHPPacketSetTraceColors](structured/MOST/mostMHPPacketSetTraceColors.md) `function`
+- [mostMsgDecodeRLE](structured/MOST/mostMsgDecodeRLE.md) `function`
+- [mostMsgEncodeRLE](structured/MOST/mostMsgEncodeRLE.md) `function`
+- [mostMsgGetSymbols](structured/MOST/mostMsgGetSymbols.md) `function`
+- [mostMsgSet](structured/MOST/mostMsgSet.md) `function`
+- [mostNBSetAbilityToWake](structured/MOST/mostNBSetAbilityToWake.md) `function`
+- [mostNwmFiEnableRingScan](structured/MOST/mostNwmFiEnableRingScan.md) `function`
+- [mostNwmFiSetConfigState](structured/MOST/mostNwmFiSetConfigState.md) `function`
+- [mostNwmFiSetParameter, mostNwmFiGetParameter](structured/MOST/mostNwmFiSetParameter, mostNwmFiGetParameter.md) `function`
+- [mostNwmFunctionEnable](structured/MOST/mostNwmFunctionEnable.md) `function`
+- [mostParamGet](structured/MOST/mostParamGet.md) `function`
+- [mostParamGetData](structured/MOST/mostParamGetData.md) `function`
+- [mostParamGetString](structured/MOST/mostParamGetString.md) `function`
+- [mostParamGetStringAscii](structured/MOST/mostParamGetStringAscii.md) `function`
+- [mostParamIsAvailable](structured/MOST/mostParamIsAvailable.md) `function`
+- [mostParamSet](structured/MOST/mostParamSet.md) `function`
+- [mostParamSetData](structured/MOST/mostParamSetData.md) `function`
+- [mostParamSetString](structured/MOST/mostParamSetString.md) `function`
+- [mostParamSetStringEnc](structured/MOST/mostParamSetStringEnc.md) `function`
+- [mostPktSetTraceColors](structured/MOST/mostPktSetTraceColors.md) `function`
+- [mostPMSetOverTemperature, mostPMResetOverTemperature](structured/MOST/mostPMSetOverTemperature, mostPMResetOverTemperature.md) `function`
+- [mostPMShutDownCancel](structured/MOST/mostPMShutDownCancel.md) `function`
+- [mostPMShutDownStart](structured/MOST/mostPMShutDownStart.md) `function`
+- [mostPMTempShutdownWakeupTimeout](structured/MOST/mostPMTempShutdownWakeupTimeout.md) `function`
+- [mostPrepareReport](structured/MOST/mostPrepareReport.md) `function`
+- [mostRcvSpyMessagesOnly](structured/MOST/mostRcvSpyMessagesOnly.md) `function`
+- [mostReadReg](structured/MOST/mostReadReg.md) `function`
+- [mostSendError](structured/MOST/mostSendError.md) `function`
+- [mostSetAllBypass](structured/MOST/mostSetAllBypass.md) `function`
+- [mostSetClockSource](structured/MOST/mostSetClockSource.md) `function`
+- [mostSetCorrectStartupSBC](structured/MOST/mostSetCorrectStartupSBC.md) `function`
+- [mostSetEcl, mostGetEcl](structured/MOST/mostSetEcl, mostGetEcl.md) `function`
+- [mostSetEclGlitchFilter](structured/MOST/mostSetEclGlitchFilter.md) `function`
+- [mostSetEclTermination, mostGetEclTermination](structured/MOST/mostSetEclTermination, mostGetEclTermination.md) `function`
+- [mostSetMacAdr, mostGetMacAdr](structured/MOST/mostSetMacAdr, mostGetMacAdr.md) `function`
+- [mostSetMasterMode, mostGetMasterMode](structured/MOST/mostSetMasterMode, mostGetMasterMode.md) `function`
+- [mostSetNodeAdr, mostSetGroupAdr, mostSetAltPktAdr, mostSetOwnAdr](structured/MOST/mostSetNodeAdr, mostSetGroupAdr, mostSetAltPktAdr, mostSetOwnAdr.md) `function`
+- [mostSetRetryParameter, mostGetRetryParameter](structured/MOST/mostSetRetryParameter, mostGetRetryParameter.md) `function`
+- [mostSetRxBufferAsync](structured/MOST/mostSetRxBufferAsync.md) `function`
+- [mostSetRxBufferCtrl](structured/MOST/mostSetRxBufferCtrl.md) `function`
+- [mostSetSBC](structured/MOST/mostSetSBC.md) `function`
+- [mostSetShutDownFlagUsage, mostGetShutDownFlagUsage](structured/MOST/mostSetShutDownFlagUsage, mostGetShutDownFlagUsage.md) `function`
+- [mostSetShutdownReason](structured/MOST/mostSetShutdownReason.md) `function`
+- [mostSetSpyCtrl, mostSetSpyAsync, mostSetSpyEthPkt](structured/MOST/mostSetSpyCtrl, mostSetSpyAsync, mostSetSpyEthPkt.md) `function`
+- [mostSetStressNodeParameter, mostGetStressNodeParameter](structured/MOST/mostSetStressNodeParameter, mostGetStressNodeParameter.md) `function`
+- [mostSetStressNodeParameterData](structured/MOST/mostSetStressNodeParameterData.md) `function`
+- [mostSetSyncAudio](structured/MOST/mostSetSyncAudio.md) `function`
+- [mostSetSyncMute](structured/MOST/mostSetSyncMute.md) `function`
+- [mostSetSyncSpdif](structured/MOST/mostSetSyncSpdif.md) `function`
+- [mostSetSyncSpdifLock](structured/MOST/mostSetSyncSpdifLock.md) `function`
+- [mostSetSyncSpdifMode](structured/MOST/mostSetSyncSpdifMode.md) `function`
+- [mostSetSyncVolume](structured/MOST/mostSetSyncVolume.md) `function`
+- [mostSetSystemLockFlagUsage, mostGetSystemLockFlagUsage](structured/MOST/mostSetSystemLockFlagUsage, mostGetSystemLockFlagUsage.md) `function`
+- [mostSetTimingMode](structured/MOST/mostSetTimingMode.md) `function`
+- [mostSetTxLight](structured/MOST/mostSetTxLight.md) `function`
+- [mostSetTxLightPower](structured/MOST/mostSetTxLightPower.md) `function`
+- [mostShutDown](structured/MOST/mostShutDown.md) `function`
+- [mostStrictChannelMapping](structured/MOST/mostStrictChannelMapping.md) `function`
+- [mostStringToAscii](structured/MOST/mostStringToAscii.md) `function`
+- [mostSyncAlloc](structured/MOST/mostSyncAlloc.md) `function`
+- [mostSyncDealloc](structured/MOST/mostSyncDealloc.md) `function`
+- [mostTwinklePowerLed](structured/MOST/mostTwinklePowerLed.md) `function`
+- [mostWakeup](structured/MOST/mostWakeup.md) `function`
+- [mostWriteReg](structured/MOST/mostWriteReg.md) `function`
+- [on mostAMSMessage](structured/MOST/on mostAMSMessage.md) `event`
+- [on mostLightLockError](structured/MOST/on mostLightLockError.md) `event`
+- [on mostMessage](structured/MOST/on mostMessage.md) `event`
+- [on mostRawMessage](structured/MOST/on mostRawMessage.md) `event`
+- [OnMostAllBypass](structured/MOST/OnMostAllBypass.md) `function`
+- [OnMostAllocTable](structured/MOST/OnMostAllocTable.md) `function`
+- [OnMostApInstID](structured/MOST/OnMostApInstID.md) `function`
+- [OnMostAsRegistry](structured/MOST/OnMostAsRegistry.md) `function`
+- [OnMostCriticalUnlock](structured/MOST/OnMostCriticalUnlock.md) `function`
+- [OnMostEcl](structured/MOST/OnMostEcl.md) `function`
+- [OnMostEclSequence](structured/MOST/OnMostEclSequence.md) `function`
+- [OnMostEthPkt](structured/MOST/OnMostEthPkt.md) `function`
+- [OnMostEthPktFragment](structured/MOST/OnMostEthPktFragment.md) `function`
+- [OnMostFiAmsPreReceive](structured/MOST/OnMostFiAmsPreReceive.md) `function`
+- [OnMostFiAmsPreSend](structured/MOST/OnMostFiAmsPreSend.md) `function`
+- [OnMostGroupAdr](structured/MOST/OnMostGroupAdr.md) `function`
+- [OnMostMacAdr](structured/MOST/OnMostMacAdr.md) `function`
+- [OnMostMHPBlock](structured/MOST/OnMostMHPBlock.md) `function`
+- [OnMostMHPConnection](structured/MOST/OnMostMHPConnection.md) `function`
+- [OnMostMHPError](structured/MOST/OnMostMHPError.md) `function`
+- [OnMostMHPPacket](structured/MOST/OnMostMHPPacket.md) `function`
+- [OnMostMPR](structured/MOST/OnMostMPR.md) `function`
+- [OnMostMPRDelayed](structured/MOST/OnMostMPRDelayed.md) `function`
+- [OnMostMsgFragment](structured/MOST/OnMostMsgFragment.md) `function`
+- [OnMostNetOn / OnMostInitReady](structured/MOST/OnMostNetOn _ OnMostInitReady.md) `function`
+- [OnMostNetState](structured/MOST/OnMostNetState.md) `function`
+- [OnMostNodeAdr](structured/MOST/OnMostNodeAdr.md) `function`
+- [OnMostNPR](structured/MOST/OnMostNPR.md) `function`
+- [OnMostPkt](structured/MOST/OnMostPkt.md) `function`
+- [OnMostPktFragment](structured/MOST/OnMostPktFragment.md) `function`
+- [OnMostReg](structured/MOST/OnMostReg.md) `function`
+- [OnMostSBC](structured/MOST/OnMostSBC.md) `function`
+- [OnMostShutdownFlag](structured/MOST/OnMostShutdownFlag.md) `function`
+- [OnMostShutdownReason](structured/MOST/OnMostShutdownReason.md) `function`
+- [OnMostStableLock](structured/MOST/OnMostStableLock.md) `function`
+- [OnMostStress](structured/MOST/OnMostStress.md) `function`
+- [OnMostSyncAudio](structured/MOST/OnMostSyncAudio.md) `function`
+- [OnMostSyncSpdif](structured/MOST/OnMostSyncSpdif.md) `function`
+- [OnMostSystemLock](structured/MOST/OnMostSystemLock.md) `function`
+- [OnMostTimingMode](structured/MOST/OnMostTimingMode.md) `function`
+- [OnMostTxLight](structured/MOST/OnMostTxLight.md) `function`
+- [output (MOST)](structured/MOST/output (MOST).md) `function`
+- [outputMostEthPkt](structured/MOST/outputMostEthPkt.md) `function`
+- [outputMostEthPktThis](structured/MOST/outputMostEthPktThis.md) `function`
+- [outputMostPkt](structured/MOST/outputMostPkt.md) `function`
+- [outputMostPktThis](structured/MOST/outputMostPktThis.md) `function`
+
+---
+
+## CAPL Map Window API (MapWindowAPI)
+
+**Function count**: 18
+
+- [CreateMapObject](structured/MapWindowAPI/CreateMapObject.md) `function`
+- [DeleteMapObject](structured/MapWindowAPI/DeleteMapObject.md) `function`
+- [DrawMapObject](structured/MapWindowAPI/DrawMapObject.md) `function`
+- [Map Window API](structured/MapWindowAPI/Map Window API.md) `notes`
+- [OnMapObjectClick](structured/MapWindowAPI/OnMapObjectClick.md) `function`
+- [SetMapObjectBmpCount](structured/MapWindowAPI/SetMapObjectBmpCount.md) `function`
+- [SetMapObjectBmpFilePath](structured/MapWindowAPI/SetMapObjectBmpFilePath.md) `function`
+- [SetMapObjectBmpIndex](structured/MapWindowAPI/SetMapObjectBmpIndex.md) `function`
+- [SetMapObjectFillColor](structured/MapWindowAPI/SetMapObjectFillColor.md) `function`
+- [SetMapObjectHeading](structured/MapWindowAPI/SetMapObjectHeading.md) `function`
+- [SetMapObjectLineColor](structured/MapWindowAPI/SetMapObjectLineColor.md) `function`
+- [SetMapObjectPenWidth](structured/MapWindowAPI/SetMapObjectPenWidth.md) `function`
+- [SetMapObjectPosition](structured/MapWindowAPI/SetMapObjectPosition.md) `function`
+- [SetMapObjectSelectable](structured/MapWindowAPI/SetMapObjectSelectable.md) `function`
+- [SetMapObjectSize](structured/MapWindowAPI/SetMapObjectSize.md) `function`
+- [SetMapObjectText](structured/MapWindowAPI/SetMapObjectText.md) `function`
+- [SetMapObjectVisible](structured/MapWindowAPI/SetMapObjectVisible.md) `function`
+- [SetMapPosition](structured/MapWindowAPI/SetMapPosition.md) `function`
+
+---
+
+## CAPL Media API (Media)
+
+**Function count**: 110
+
+- [AacAudioProfileLevelIndication](structured/Media/AacAudioProfileLevelIndication.md) `notes`
+- [AacPayloadType](structured/Media/AacPayloadType.md) `notes`
+- [AllSamplesIndependent](structured/Media/AllSamplesIndependent.md) `notes`
+- [ArbitraryFormat](structured/Media/ArbitraryFormat.md) `notes`
+- [ArbitraryHeader](structured/Media/ArbitraryHeader.md) `notes`
+- [AudioAvgBytesPerSecond](structured/Media/AudioAvgBytesPerSecond.md) `notes`
+- [AudioBitsPerSample](structured/Media/AudioBitsPerSample.md) `notes`
+- [AudioBlockAlignment](structured/Media/AudioBlockAlignment.md) `notes`
+- [AudioChannelMask](structured/Media/AudioChannelMask.md) `notes`
+- [AudioFloatSamplesPerSecond](structured/Media/AudioFloatSamplesPerSecond.md) `notes`
+- [AudioFolddownMatrix](structured/Media/AudioFolddownMatrix.md) `notes`
+- [AudioNumChannels](structured/Media/AudioNumChannels.md) `notes`
+- [AudioSamplesPerBlock](structured/Media/AudioSamplesPerBlock.md) `notes`
+- [AudioSamplesPerSecond](structured/Media/AudioSamplesPerSecond.md) `notes`
+- [AudioValidBitsPerSample](structured/Media/AudioValidBitsPerSample.md) `notes`
+- [AudioWmadrcAvgref](structured/Media/AudioWmadrcAvgref.md) `notes`
+- [AudioWmadrcAvgtarget](structured/Media/AudioWmadrcAvgtarget.md) `notes`
+- [AudioWmadrcPeakref](structured/Media/AudioWmadrcPeakref.md) `notes`
+- [AudioWmadrcPeaktarget](structured/Media/AudioWmadrcPeaktarget.md) `notes`
+- [AvgBitErrorRate](structured/Media/AvgBitErrorRate.md) `notes`
+- [AvgBitrate](structured/Media/AvgBitrate.md) `notes`
+- [Compressed](structured/Media/Compressed.md) `notes`
+- [DefaultStride](structured/Media/DefaultStride.md) `notes`
+- [DrmFlags](structured/Media/DrmFlags.md) `notes`
+- [DvAauxCtrlPack0](structured/Media/DvAauxCtrlPack0.md) `notes`
+- [DvAauxCtrlPack1](structured/Media/DvAauxCtrlPack1.md) `notes`
+- [DvAauxSrcPack0](structured/Media/DvAauxSrcPack0.md) `notes`
+- [DvAauxSrcPack1](structured/Media/DvAauxSrcPack1.md) `notes`
+- [DvVauxCtrlPack](structured/Media/DvVauxCtrlPack.md) `notes`
+- [DvVauxSrcPack](structured/Media/DvVauxSrcPack.md) `notes`
+- [FixedSizeSamples](structured/Media/FixedSizeSamples.md) `notes`
+- [FrameRate](structured/Media/FrameRate.md) `notes`
+- [FrameRateRangeMax](structured/Media/FrameRateRangeMax.md) `notes`
+- [FrameRateRangeMin](structured/Media/FrameRateRangeMin.md) `notes`
+- [FrameSize](structured/Media/FrameSize.md) `notes`
+- [GeometricAperture](structured/Media/GeometricAperture.md) `notes`
+- [ImageLossTolerant](structured/Media/ImageLossTolerant.md) `notes`
+- [InterlaceMode](structured/Media/InterlaceMode.md) `notes`
+- [Major Media Types / Subtypes](structured/Media/Major Media Types _ Subtypes.md) `notes`
+- [MajorType](structured/Media/MajorType.md) `notes`
+- [MaxKeyframeSpacing](structured/Media/MaxKeyframeSpacing.md) `notes`
+- [Media CAPL Functions](structured/Media/Media CAPL Functions.md) `notes`
+- [Media Concepts](structured/Media/Media Concepts.md) `notes`
+- [Media Error Codes](structured/Media/Media Error Codes.md) `notes`
+- [Media Formats](structured/Media/Media Formats.md) `notes`
+- [Media Properties](structured/Media/Media Properties.md) `notes`
+- [Media Sink Writer](structured/Media/Media Sink Writer.md) `notes`
+- [Media Source Reader](structured/Media/Media Source Reader.md) `notes`
+- [MediaCreateAudioCapturer](structured/Media/MediaCreateAudioCapturer.md) `function`
+- [MediaCreateAudioRenderer](structured/Media/MediaCreateAudioRenderer.md) `function`
+- [MediaCreateMediaType](structured/Media/MediaCreateMediaType.md) `function`
+- [MediaCreateMultiplexer](structured/Media/MediaCreateMultiplexer.md) `function`
+- [MediaCreateSinkWriterFromMediaSink](structured/Media/MediaCreateSinkWriterFromMediaSink.md) `function`
+- [MediaCreateSinkWriterFromURL](structured/Media/MediaCreateSinkWriterFromURL.md) `function`
+- [MediaCreateSourceReaderFromMediaSource](structured/Media/MediaCreateSourceReaderFromMediaSource.md) `function`
+- [MediaCreateSourceReaderFromURL](structured/Media/MediaCreateSourceReaderFromURL.md) `function`
+- [MediaEnumAudioCapturers](structured/Media/MediaEnumAudioCapturers.md) `function`
+- [MediaEnumVideoCapturers](structured/Media/MediaEnumVideoCapturers.md) `function`
+- [MediaGetLastError](structured/Media/MediaGetLastError.md) `function`
+- [MediaGetMediaType](structured/Media/MediaGetMediaType.md) `function`
+- [MediaGetOutputType](structured/Media/MediaGetOutputType.md) `function`
+- [MediaGetProperty](structured/Media/MediaGetProperty.md) `function`
+- [MediaGetPropertyRatio](structured/Media/MediaGetPropertyRatio.md) `function`
+- [MediaGetPropertySize](structured/Media/MediaGetPropertySize.md) `function`
+- [MediaProcessInput](structured/Media/MediaProcessInput.md) `function`
+- [MediaProcessOutput](structured/Media/MediaProcessOutput.md) `function`
+- [MediaRead](structured/Media/MediaRead.md) `function`
+- [MediaReleaseAudioCapturer](structured/Media/MediaReleaseAudioCapturer.md) `function`
+- [MediaReleaseAudioRenderer](structured/Media/MediaReleaseAudioRenderer.md) `function`
+- [MediaReleaseMediaType](structured/Media/MediaReleaseMediaType.md) `function`
+- [MediaReleaseMultiplexer](structured/Media/MediaReleaseMultiplexer.md) `function`
+- [MediaReleaseSinkWriter](structured/Media/MediaReleaseSinkWriter.md) `function`
+- [MediaReleaseSourceReader](structured/Media/MediaReleaseSourceReader.md) `function`
+- [MediaReleaseVideoCapturer](structured/Media/MediaReleaseVideoCapturer.md) `function`
+- [MediaSetInputType](structured/Media/MediaSetInputType.md) `function`
+- [MediaSetMediaType](structured/Media/MediaSetMediaType.md) `function`
+- [MediaSetProperty](structured/Media/MediaSetProperty.md) `function`
+- [MediaSetPropertyRatio](structured/Media/MediaSetPropertyRatio.md) `function`
+- [MediaSetPropertySize](structured/Media/MediaSetPropertySize.md) `function`
+- [MediaWrite](structured/Media/MediaWrite.md) `function`
+- [MinimumDisplayAperture](structured/Media/MinimumDisplayAperture.md) `notes`
+- [Mpeg2Flags](structured/Media/Mpeg2Flags.md) `notes`
+- [Mpeg2Level](structured/Media/Mpeg2Level.md) `notes`
+- [Mpeg2Profile](structured/Media/Mpeg2Profile.md) `notes`
+- [Mpeg4CurrentSampleEntry](structured/Media/Mpeg4CurrentSampleEntry.md) `notes`
+- [Mpeg4SampleDescription](structured/Media/Mpeg4SampleDescription.md) `notes`
+- [MpegSequenceHeader](structured/Media/MpegSequenceHeader.md) `notes`
+- [MpegStartTimeCode](structured/Media/MpegStartTimeCode.md) `notes`
+- [OnMediaRead](structured/Media/OnMediaRead.md) `function`
+- [Original4cc](structured/Media/Original4cc.md) `notes`
+- [OriginalWaveFormatTag](structured/Media/OriginalWaveFormatTag.md) `notes`
+- [PadControlFlags](structured/Media/PadControlFlags.md) `notes`
+- [Palette](structured/Media/Palette.md) `notes`
+- [PanScanAperture](structured/Media/PanScanAperture.md) `notes`
+- [PanScanEnabled](structured/Media/PanScanEnabled.md) `notes`
+- [PixelAspectRatio](structured/Media/PixelAspectRatio.md) `notes`
+- [SampleSize](structured/Media/SampleSize.md) `notes`
+- [SourceContentHint](structured/Media/SourceContentHint.md) `notes`
+- [Subtype](structured/Media/Subtype.md) `notes`
+- [TimestampInterval](structured/Media/TimestampInterval.md) `notes`
+- [TimestampRate](structured/Media/TimestampRate.md) `notes`
+- [TimestampType](structured/Media/TimestampType.md) `notes`
+- [TransferFunction](structured/Media/TransferFunction.md) `notes`
+- [Video3d](structured/Media/Video3d.md) `notes`
+- [VideoChromaSiting](structured/Media/VideoChromaSiting.md) `notes`
+- [VideoLighting](structured/Media/VideoLighting.md) `notes`
+- [VideoNominalRange](structured/Media/VideoNominalRange.md) `notes`
+- [VideoPrimaries](structured/Media/VideoPrimaries.md) `notes`
+- [VideoRotation](structured/Media/VideoRotation.md) `notes`
+- [YuvMatrix](structured/Media/YuvMatrix.md) `notes`
+
+---
+
+## CAPL Object-Oriented Programming (ObjectOrientedProg)
+
+**Function count**: 11
+
+- [Class: Associative fields](structured/ObjectOrientedProg/Class_ Associative fields.md) `notes`
+- [Class: CAN](structured/ObjectOrientedProg/Class_ CAN.md) `notes`
+- [Class: DiagRequest](structured/ObjectOrientedProg/Class_ DiagRequest.md) `notes`
+- [Class: DiagResponse](structured/ObjectOrientedProg/Class_ DiagResponse.md) `notes`
+- [Class: File](structured/ObjectOrientedProg/Class_ File.md) `notes`
+- [Class: TcpSocket](structured/ObjectOrientedProg/Class_ TcpSocket.md) `notes`
+- [Class: TestCheck](structured/ObjectOrientedProg/Class_ TestCheck.md) `notes`
+- [Class: TestStimulus](structured/ObjectOrientedProg/Class_ TestStimulus.md) `notes`
+- [Class: Timer, MsTimer](structured/ObjectOrientedProg/Class_ Timer, MsTimer.md) `notes`
+- [Class: UdpSocket](structured/ObjectOrientedProg/Class_ UdpSocket.md) `notes`
+- [Classes in CAPL](structured/ObjectOrientedProg/Classes in CAPL.md) `notes`
+
+---
+
+## CAPL Obsolete Functions (Obsolete)
+
+**Function count**: 424
+
+- [<ModelName>_getParameter](structured/Obsolete/_ModelName__getParameter.md) `notes`
+- [<ModelName>_setParameter](structured/Obsolete/_ModelName__setParameter.md) `notes`
+- [<ModelName>_setScalarParameter](structured/Obsolete/_ModelName__setScalarParameter.md) `notes`
+- [<OnCorruptEthernetPacket>](structured/Obsolete/_OnCorruptEthernetPacket_.md) `notes`
+- [<OnEthAdapterStatus>](structured/Obsolete/_OnEthAdapterStatus_.md) `notes`
+- [<OnEthPacket>](structured/Obsolete/_OnEthPacket_.md) `notes`
+- [<OnEthRawPacket>](structured/Obsolete/_OnEthRawPacket_.md) `notes`
+- [Access Types of the Object Dictionary](structured/Obsolete/Access Types of the Object Dictionary.md) `notes`
+- [AfdxIsTokenAvailable](structured/Obsolete/AfdxIsTokenAvailable.md) `notes`
+- [AvbGetAafBitDepth](structured/Obsolete/AvbGetAafBitDepth.md) `notes`
+- [AvbGetAafChannelCount](structured/Obsolete/AvbGetAafChannelCount.md) `notes`
+- [AvbGetAafFormat](structured/Obsolete/AvbGetAafFormat.md) `notes`
+- [AvbGetAafSampleRate](structured/Obsolete/AvbGetAafSampleRate.md) `notes`
+- [AvbGetCrfAudioSampleClockFrequency](structured/Obsolete/AvbGetCrfAudioSampleClockFrequency.md) `notes`
+- [AvbGetCrfAudioSampleClockMultiplier](structured/Obsolete/AvbGetCrfAudioSampleClockMultiplier.md) `notes`
+- [AvbGetCrfAudioSampleTimestampInterval](structured/Obsolete/AvbGetCrfAudioSampleTimestampInterval.md) `notes`
+- [AvbGetCrfType](structured/Obsolete/AvbGetCrfType.md) `notes`
+- [AvbSetAafBitDepth](structured/Obsolete/AvbSetAafBitDepth.md) `notes`
+- [AvbSetAafChannelCount](structured/Obsolete/AvbSetAafChannelCount.md) `notes`
+- [AvbSetAafFormat](structured/Obsolete/AvbSetAafFormat.md) `notes`
+- [AvbSetAafSampleRate](structured/Obsolete/AvbSetAafSampleRate.md) `notes`
+- [AvbSetCrfAudioSampleClockFrequency](structured/Obsolete/AvbSetCrfAudioSampleClockFrequency.md) `notes`
+- [AvbSetCrfAudioSampleClockMultiplier](structured/Obsolete/AvbSetCrfAudioSampleClockMultiplier.md) `notes`
+- [AvbSetCrfAudioSampleTimestampInterval](structured/Obsolete/AvbSetCrfAudioSampleTimestampInterval.md) `notes`
+- [AvbSetCrfType](structured/Obsolete/AvbSetCrfType.md) `notes`
+- [beep](structured/Obsolete/beep.md) `notes`
+- [C2xCreateMapObject](structured/Obsolete/C2xCreateMapObject.md) `notes`
+- [C2xDeleteMapObject](structured/Obsolete/C2xDeleteMapObject.md) `notes`
+- [C2xDrawMapObject](structured/Obsolete/C2xDrawMapObject.md) `notes`
+- [C2xSetMapObjectBmpCount](structured/Obsolete/C2xSetMapObjectBmpCount.md) `notes`
+- [C2xSetMapObjectBmpFilePath](structured/Obsolete/C2xSetMapObjectBmpFilePath.md) `notes`
+- [C2xSetMapObjectBmpIndex](structured/Obsolete/C2xSetMapObjectBmpIndex.md) `notes`
+- [C2xSetMapObjectFillColor](structured/Obsolete/C2xSetMapObjectFillColor.md) `notes`
+- [C2xSetMapObjectHeading](structured/Obsolete/C2xSetMapObjectHeading.md) `notes`
+- [C2xSetMapObjectLineColor](structured/Obsolete/C2xSetMapObjectLineColor.md) `notes`
+- [C2xSetMapObjectPenStyle](structured/Obsolete/C2xSetMapObjectPenStyle.md) `notes`
+- [C2xSetMapObjectPenWidth](structured/Obsolete/C2xSetMapObjectPenWidth.md) `notes`
+- [C2xSetMapObjectPosition](structured/Obsolete/C2xSetMapObjectPosition.md) `notes`
+- [C2xSetMapObjectPropertyDouble](structured/Obsolete/C2xSetMapObjectPropertyDouble.md) `notes`
+- [C2xSetMapObjectPropertyInt](structured/Obsolete/C2xSetMapObjectPropertyInt.md) `notes`
+- [C2xSetMapObjectPropertyString](structured/Obsolete/C2xSetMapObjectPropertyString.md) `notes`
+- [C2xSetMapObjectSize](structured/Obsolete/C2xSetMapObjectSize.md) `notes`
+- [C2xSetMapObjectText](structured/Obsolete/C2xSetMapObjectText.md) `notes`
+- [C2xSetMapPosition](structured/Obsolete/C2xSetMapPosition.md) `notes`
+- [CANdelaLibCloseChannel](structured/Obsolete/CANdelaLibCloseChannel.md) `notes`
+- [canGetBusLoad](structured/Obsolete/canGetBusLoad.md) `notes`
+- [canGetChipState](structured/Obsolete/canGetChipState.md) `notes`
+- [canGetErrorCount](structured/Obsolete/canGetErrorCount.md) `notes`
+- [canGetErrorRate](structured/Obsolete/canGetErrorRate.md) `notes`
+- [canGetExtData](structured/Obsolete/canGetExtData.md) `notes`
+- [canGetExtDataRate](structured/Obsolete/canGetExtDataRate.md) `notes`
+- [canGetExtRemote](structured/Obsolete/canGetExtRemote.md) `notes`
+- [canGetExtRemoteRate](structured/Obsolete/canGetExtRemoteRate.md) `notes`
+- [canGetOverloadCount](structured/Obsolete/canGetOverloadCount.md) `notes`
+- [canGetOverloadRate](structured/Obsolete/canGetOverloadRate.md) `notes`
+- [canGetPeakLoad](structured/Obsolete/canGetPeakLoad.md) `notes`
+- [canGetRxErrorCount](structured/Obsolete/canGetRxErrorCount.md) `notes`
+- [canGetStdData](structured/Obsolete/canGetStdData.md) `notes`
+- [canGetStdDataRate](structured/Obsolete/canGetStdDataRate.md) `notes`
+- [canGetStdRemote](structured/Obsolete/canGetStdRemote.md) `notes`
+- [canGetStdRemoteRate](structured/Obsolete/canGetStdRemoteRate.md) `notes`
+- [canGetTxErrorCount](structured/Obsolete/canGetTxErrorCount.md) `notes`
+- [CANopen Node Layer Functions](structured/Obsolete/CANopen Node Layer Functions.md) `notes`
+- [CAPLfunctionLocalSecuritySetVerbosity](structured/Obsolete/CAPLfunctionLocalSecuritySetVerbosity.md) `notes`
+- [CAPLfunctionLocalSecurityVerifyAuthenticationInformation](structured/Obsolete/CAPLfunctionLocalSecurityVerifyAuthenticationInformation.md) `notes`
+- [Car2xTransmitPacket](structured/Obsolete/Car2xTransmitPacket.md) `notes`
+- [checkSignalInRangeByTxNode](structured/Obsolete/checkSignalInRangeByTxNode.md) `notes`
+- [coAllowStart](structured/Obsolete/coAllowStart.md) `notes`
+- [coDownload](structured/Obsolete/coDownload.md) `notes`
+- [coDownloadExpedited](structured/Obsolete/coDownloadExpedited.md) `notes`
+- [coEmergency](structured/Obsolete/coEmergency.md) `notes`
+- [coGetLastError](structured/Obsolete/coGetLastError.md) `notes`
+- [coGetLocalState](structured/Obsolete/coGetLocalState.md) `notes`
+- [coGetNMTState](structured/Obsolete/coGetNMTState.md) `notes`
+- [coGetNodeId](structured/Obsolete/coGetNodeId.md) `notes`
+- [coGetNodeLabel](structured/Obsolete/coGetNodeLabel.md) `notes`
+- [coGetValue](structured/Obsolete/coGetValue.md) `notes`
+- [coGetVersionInfo](structured/Obsolete/coGetVersionInfo.md) `notes`
+- [coLssConfigNodeId](structured/Obsolete/coLssConfigNodeId.md) `notes`
+- [coLssIdentNonConfigSlave](structured/Obsolete/coLssIdentNonConfigSlave.md) `notes`
+- [coLssIdentRemoteSlave](structured/Obsolete/coLssIdentRemoteSlave.md) `notes`
+- [coLssInqNodeId](structured/Obsolete/coLssInqNodeId.md) `notes`
+- [coLssInqProdCode](structured/Obsolete/coLssInqProdCode.md) `notes`
+- [coLssInqRevNo](structured/Obsolete/coLssInqRevNo.md) `notes`
+- [coLssInqSerialNo](structured/Obsolete/coLssInqSerialNo.md) `notes`
+- [coLssInqVendorId](structured/Obsolete/coLssInqVendorId.md) `notes`
+- [coLssStoreConfig](structured/Obsolete/coLssStoreConfig.md) `notes`
+- [coLssSwitchModeGlob](structured/Obsolete/coLssSwitchModeGlob.md) `notes`
+- [coLssSwitchModeSel](structured/Obsolete/coLssSwitchModeSel.md) `notes`
+- [coODAbortTransfer](structured/Obsolete/coODAbortTransfer.md) `notes`
+- [coODConnectEnvVar](structured/Obsolete/coODConnectEnvVar.md) `notes`
+- [coODCreate](structured/Obsolete/coODCreate.md) `notes`
+- [coODCreateArray](structured/Obsolete/coODCreateArray.md) `notes`
+- [coODCreateFloat](structured/Obsolete/coODCreateFloat.md) `notes`
+- [coODCreateFromFile](structured/Obsolete/coODCreateFromFile.md) `notes`
+- [coODCreateSigned](structured/Obsolete/coODCreateSigned.md) `notes`
+- [coODCreateUnsigned](structured/Obsolete/coODCreateUnsigned.md) `notes`
+- [coODDisconnectEnvVar](structured/Obsolete/coODDisconnectEnvVar.md) `notes`
+- [coODDownloadResponse](structured/Obsolete/coODDownloadResponse.md) `notes`
+- [coODGetBitSize](structured/Obsolete/coODGetBitSize.md) `notes`
+- [coODGetData](structured/Obsolete/coODGetData.md) `notes`
+- [coODGetFloat](structured/Obsolete/coODGetFloat.md) `notes`
+- [coODGetSigned](structured/Obsolete/coODGetSigned.md) `notes`
+- [coODGetSize](structured/Obsolete/coODGetSize.md) `notes`
+- [coODGetType](structured/Obsolete/coODGetType.md) `notes`
+- [coODGetUnsigned](structured/Obsolete/coODGetUnsigned.md) `notes`
+- [coODSetData](structured/Obsolete/coODSetData.md) `notes`
+- [coODSetFloat](structured/Obsolete/coODSetFloat.md) `notes`
+- [coODSetSigned](structured/Obsolete/coODSetSigned.md) `notes`
+- [coODSetUnsigned](structured/Obsolete/coODSetUnsigned.md) `notes`
+- [coODUploadResponse](structured/Obsolete/coODUploadResponse.md) `notes`
+- [coOnBootUp](structured/Obsolete/coOnBootUp.md) `notes`
+- [coOnConfigReady](structured/Obsolete/coOnConfigReady.md) `notes`
+- [coOnDownloadIndication](structured/Obsolete/coOnDownloadIndication.md) `notes`
+- [coOnDownloadResponse](structured/Obsolete/coOnDownloadResponse.md) `notes`
+- [coOnEmergency](structured/Obsolete/coOnEmergency.md) `notes`
+- [coOnError](structured/Obsolete/coOnError.md) `notes`
+- [coOnLssEvent](structured/Obsolete/coOnLssEvent.md) `notes`
+- [coOnNodeChangedState](structured/Obsolete/coOnNodeChangedState.md) `notes`
+- [coOnRPDOMissing](structured/Obsolete/coOnRPDOMissing.md) `notes`
+- [coOnUploadIndication](structured/Obsolete/coOnUploadIndication.md) `notes`
+- [coOnUploadResponse](structured/Obsolete/coOnUploadResponse.md) `notes`
+- [coPutValue](structured/Obsolete/coPutValue.md) `notes`
+- [coSetBlockSize](structured/Obsolete/coSetBlockSize.md) `notes`
+- [coSetLocalState](structured/Obsolete/coSetLocalState.md) `notes`
+- [coSetNMTState](structured/Obsolete/coSetNMTState.md) `notes`
+- [coSetNodeLabel](structured/Obsolete/coSetNodeLabel.md) `notes`
+- [coSetOperatingMode](structured/Obsolete/coSetOperatingMode.md) `notes`
+- [coSetOutputLevel](structured/Obsolete/coSetOutputLevel.md) `notes`
+- [coSetSDOTimeout](structured/Obsolete/coSetSDOTimeout.md) `notes`
+- [coShutDown](structured/Obsolete/coShutDown.md) `notes`
+- [coStartUp](structured/Obsolete/coStartUp.md) `notes`
+- [coTfsGetCANid](structured/Obsolete/coTfsGetCANid.md) `notes`
+- [coTfsODChkBreakOnError](structured/Obsolete/coTfsODChkBreakOnError.md) `notes`
+- [coTfsShowEmergenciesInReport](structured/Obsolete/coTfsShowEmergenciesInReport.md) `notes`
+- [coTfsShowSdoAbortsInReport](structured/Obsolete/coTfsShowSdoAbortsInReport.md) `notes`
+- [coTfsTimingSDOAddToReport](structured/Obsolete/coTfsTimingSDOAddToReport.md) `notes`
+- [coTfsTimingSDOPollDevice](structured/Obsolete/coTfsTimingSDOPollDevice.md) `notes`
+- [coTfsTimingSDOReset](structured/Obsolete/coTfsTimingSDOReset.md) `notes`
+- [coTfsTimingSDOStart](structured/Obsolete/coTfsTimingSDOStart.md) `notes`
+- [coTfsTimingSDOStop](structured/Obsolete/coTfsTimingSDOStop.md) `notes`
+- [coTfsUseCANid](structured/Obsolete/coTfsUseCANid.md) `notes`
+- [coTfsUseNodeId](structured/Obsolete/coTfsUseNodeId.md) `notes`
+- [coThisGetData](structured/Obsolete/coThisGetData.md) `notes`
+- [coThisGetFloat](structured/Obsolete/coThisGetFloat.md) `notes`
+- [coThisGetSigned](structured/Obsolete/coThisGetSigned.md) `notes`
+- [coThisGetSize](structured/Obsolete/coThisGetSize.md) `notes`
+- [coThisGetUnsigned](structured/Obsolete/coThisGetUnsigned.md) `notes`
+- [coTriggerTPDO](structured/Obsolete/coTriggerTPDO.md) `notes`
+- [coUpload](structured/Obsolete/coUpload.md) `notes`
+- [Data Types of the Object Dictionary](structured/Obsolete/Data Types of the Object Dictionary.md) `notes`
+- [Deprecated CAPL Functions](structured/Obsolete/Deprecated CAPL Functions.md) `notes`
+- [diagGetNegCode](structured/Obsolete/diagGetNegCode.md) `notes`
+- [DiagGetParameterSize](structured/Obsolete/DiagGetParameterSize.md) `notes`
+- [diagGetPendingRequests](structured/Obsolete/diagGetPendingRequests.md) `notes`
+- [diagIsMarked](structured/Obsolete/diagIsMarked.md) `notes`
+- [diagIsPresent](structured/Obsolete/diagIsPresent.md) `notes`
+- [diagMarkEcu](structured/Obsolete/diagMarkEcu.md) `notes`
+- [diagSendMarked](structured/Obsolete/diagSendMarked.md) `notes`
+- [diagSendNetwork](structured/Obsolete/diagSendNetwork.md) `notes`
+- [diagSetCurrentEcu](structured/Obsolete/diagSetCurrentEcu.md) `notes`
+- [diagSetCurrentSession](structured/Obsolete/diagSetCurrentSession.md) `notes`
+- [diagSetEcuAbsent](structured/Obsolete/diagSetEcuAbsent.md) `notes`
+- [diagSetEcuPresent](structured/Obsolete/diagSetEcuPresent.md) `notes`
+- [diagSetRequestInterval](structured/Obsolete/diagSetRequestInterval.md) `notes`
+- [diagUnmarkAllEcus](structured/Obsolete/diagUnmarkAllEcus.md) `notes`
+- [diagUnmarkEcu](structured/Obsolete/diagUnmarkEcu.md) `notes`
+- [DoIP_SetVehicleInterface](structured/Obsolete/DoIP_SetVehicleInterface.md) `notes`
+- [Error Codes of coGetLastError](structured/Obsolete/Error Codes of coGetLastError.md) `notes`
+- [Error codes of coOnError](structured/Obsolete/Error codes of coOnError.md) `notes`
+- [EthAddToken](structured/Obsolete/EthAddToken.md) `notes`
+- [EthCompletePacket](structured/Obsolete/EthCompletePacket.md) `notes`
+- [EthConfigurePacketGenerator](structured/Obsolete/EthConfigurePacketGenerator.md) `notes`
+- [EthControlInit](structured/Obsolete/EthControlInit.md) `notes`
+- [EthControlStart](structured/Obsolete/EthControlStart.md) `notes`
+- [EthControlStop](structured/Obsolete/EthControlStop.md) `notes`
+- [EthGetAdapterStatus](structured/Obsolete/EthGetAdapterStatus.md) `notes`
+- [EthGetLastError](structured/Obsolete/EthGetLastError.md) `notes`
+- [EthGetLastErrorText](structured/Obsolete/EthGetLastErrorText.md) `notes`
+- [EthGetMacId](structured/Obsolete/EthGetMacId.md) `notes`
+- [EthGetThisData](structured/Obsolete/EthGetThisData.md) `notes`
+- [EthGetThisFrameCheckSequence](structured/Obsolete/EthGetThisFrameCheckSequence.md) `notes`
+- [EthGetThisMotorolaValue16](structured/Obsolete/EthGetThisMotorolaValue16.md) `notes`
+- [EthGetThisMotorolaValue32](structured/Obsolete/EthGetThisMotorolaValue32.md) `notes`
+- [EthGetThisMotorolaValue64](structured/Obsolete/EthGetThisMotorolaValue64.md) `notes`
+- [EthGetThisTimeNS](structured/Obsolete/EthGetThisTimeNS.md) `notes`
+- [EthGetThisValue16](structured/Obsolete/EthGetThisValue16.md) `notes`
+- [EthGetThisValue32](structured/Obsolete/EthGetThisValue32.md) `notes`
+- [EthGetThisValue64](structured/Obsolete/EthGetThisValue64.md) `notes`
+- [EthGetThisValue8](structured/Obsolete/EthGetThisValue8.md) `notes`
+- [EthGetTokenData](structured/Obsolete/EthGetTokenData.md) `notes`
+- [EthGetTokenInt](structured/Obsolete/EthGetTokenInt.md) `notes`
+- [EthGetTokenInt64](structured/Obsolete/EthGetTokenInt64.md) `notes`
+- [EthGetTokenLengthBit](structured/Obsolete/EthGetTokenLengthBit.md) `notes`
+- [EthGetTokenSignalValue](structured/Obsolete/EthGetTokenSignalValue.md) `notes`
+- [EthGetTokenString](structured/Obsolete/EthGetTokenString.md) `notes`
+- [EthGetTokenSubString](structured/Obsolete/EthGetTokenSubString.md) `notes`
+- [EthInitPacket](structured/Obsolete/EthInitPacket.md) `notes`
+- [EthInitProtocol](structured/Obsolete/EthInitProtocol.md) `notes`
+- [EthIsPacketValid](structured/Obsolete/EthIsPacketValid.md) `notes`
+- [EthOutputPacket](structured/Obsolete/EthOutputPacket.md) `notes`
+- [EthOutputRawPacket](structured/Obsolete/EthOutputRawPacket.md) `notes`
+- [EthReceivePacket](structured/Obsolete/EthReceivePacket.md) `notes`
+- [EthReceiveRawPacket](structured/Obsolete/EthReceiveRawPacket.md) `notes`
+- [EthReceiveRxError](structured/Obsolete/EthReceiveRxError.md) `notes`
+- [EthReleasePacket](structured/Obsolete/EthReleasePacket.md) `notes`
+- [EthRemoveToken](structured/Obsolete/EthRemoveToken.md) `notes`
+- [EthResizeToken](structured/Obsolete/EthResizeToken.md) `notes`
+- [EthSetTokenData](structured/Obsolete/EthSetTokenData.md) `notes`
+- [EthSetTokenInt](structured/Obsolete/EthSetTokenInt.md) `notes`
+- [EthSetTokenInt64](structured/Obsolete/EthSetTokenInt64.md) `notes`
+- [EthSetTokenSignalValue](structured/Obsolete/EthSetTokenSignalValue.md) `notes`
+- [EthSetTokenString](structured/Obsolete/EthSetTokenString.md) `notes`
+- [EthSetVerbosity](structured/Obsolete/EthSetVerbosity.md) `notes`
+- [EthStartPacketGenerator](structured/Obsolete/EthStartPacketGenerator.md) `notes`
+- [EthStopPacketGenerator](structured/Obsolete/EthStopPacketGenerator.md) `notes`
+- [Event Types](structured/Obsolete/Event Types.md) `notes`
+- [fileReadArray](structured/Obsolete/fileReadArray.md) `notes`
+- [fileReadFloat](structured/Obsolete/fileReadFloat.md) `notes`
+- [fileReadInt](structured/Obsolete/fileReadInt.md) `notes`
+- [fileReadString](structured/Obsolete/fileReadString.md) `notes`
+- [fileWriteFloat](structured/Obsolete/fileWriteFloat.md) `notes`
+- [fileWriteInt](structured/Obsolete/fileWriteInt.md) `notes`
+- [fileWriteString](structured/Obsolete/fileWriteString.md) `notes`
+- [FlexRayRcvV6Frame](structured/Obsolete/FlexRayRcvV6Frame.md) `notes`
+- [FlexRayRcvV6StartCycle](structured/Obsolete/FlexRayRcvV6StartCycle.md) `notes`
+- [FrSendMsg](structured/Obsolete/FrSendMsg.md) `notes`
+- [FrSetSendMsg](structured/Obsolete/FrSetSendMsg.md) `notes`
+- [FRSSetDistMode](structured/Obsolete/FRSSetDistMode.md) `notes`
+- [getCardType](structured/Obsolete/getCardType.md) `notes`
+- [getChecksum](structured/Obsolete/getChecksum.md) `notes`
+- [getSignalByTxNode](structured/Obsolete/getSignalByTxNode.md) `notes`
+- [getSignalTimeByTxNode](structured/Obsolete/getSignalTimeByTxNode.md) `notes`
+- [getThisMessage (J1939)](structured/Obsolete/getThisMessage (J1939).md) `notes`
+- [ILAllNodesSetOperationMode](structured/Obsolete/ILAllNodesSetOperationMode.md) `notes`
+- [ILControlResume](structured/Obsolete/ILControlResume.md) `notes`
+- [ILControlWait](structured/Obsolete/ILControlWait.md) `notes`
+- [ILDisturbAllNodeUpdateBits](structured/Obsolete/ILDisturbAllNodeUpdateBits.md) `notes`
+- [ILDisturbChecksum](structured/Obsolete/ILDisturbChecksum.md) `notes`
+- [ILDisturbCounter](structured/Obsolete/ILDisturbCounter.md) `notes`
+- [ILDisturbNodeUpdateBits](structured/Obsolete/ILDisturbNodeUpdateBits.md) `notes`
+- [ILDisturbPduUpdateBit](structured/Obsolete/ILDisturbPduUpdateBit.md) `notes`
+- [ILDisturbSignalGroupUpdateBit](structured/Obsolete/ILDisturbSignalGroupUpdateBit.md) `notes`
+- [ILDisturbSignalUpdateBit](structured/Obsolete/ILDisturbSignalUpdateBit.md) `notes`
+- [ILSetSignal](structured/Obsolete/ILSetSignal.md) `notes`
+- [ILSetSignalRaw](structured/Obsolete/ILSetSignalRaw.md) `notes`
+- [inspect](structured/Obsolete/inspect.md) `notes`
+- [Iso11783IL_PDDGetValue](structured/Obsolete/Iso11783IL_PDDGetValue.md) `notes`
+- [J1939CalcChecksum (Obsolete)](structured/Obsolete/J1939CalcChecksum (Obsolete).md) `function`
+- [J1939TestChkCreate_AbsCycleTimeViolation](structured/Obsolete/J1939TestChkCreate_AbsCycleTimeViolation.md) `notes`
+- [J1939TestChkCreate_ACLViolation](structured/Obsolete/J1939TestChkCreate_ACLViolation.md) `notes`
+- [J1939TestChkCreate_BAMViolation](structured/Obsolete/J1939TestChkCreate_BAMViolation.md) `notes`
+- [J1939TestChkCreate_RelCycleTimeViolation](structured/Obsolete/J1939TestChkCreate_RelCycleTimeViolation.md) `notes`
+- [J1939TestChkCreate_RTSCTSViolation](structured/Obsolete/J1939TestChkCreate_RTSCTSViolation.md) `notes`
+- [J1939TestGetWaitEventPGData](structured/Obsolete/J1939TestGetWaitEventPGData.md) `notes`
+- [J1939TestJoinPGEvent](structured/Obsolete/J1939TestJoinPGEvent.md) `notes`
+- [J1939TestWaitForPG](structured/Obsolete/J1939TestWaitForPG.md) `notes`
+- [linBits2Time](structured/Obsolete/linBits2Time.md) `notes`
+- [linCalcChecksum](structured/Obsolete/linCalcChecksum.md) `notes`
+- [linCalcCRC](structured/Obsolete/linCalcCRC.md) `notes`
+- [linChangeDlc](structured/Obsolete/linChangeDlc.md) `notes`
+- [linChangeWakeupSettings](structured/Obsolete/linChangeWakeupSettings.md) `notes`
+- [linGetByteEndTime](structured/Obsolete/linGetByteEndTime.md) `notes`
+- [linGetEndOfHeader](structured/Obsolete/linGetEndOfHeader.md) `notes`
+- [linGetStartOfFrame](structured/Obsolete/linGetStartOfFrame.md) `notes`
+- [linGetSyncBreakLength](structured/Obsolete/linGetSyncBreakLength.md) `notes`
+- [linGetSyncDelLength](structured/Obsolete/linGetSyncDelLength.md) `notes`
+- [linGetWakeupLength](structured/Obsolete/linGetWakeupLength.md) `notes`
+- [linInitBegin](structured/Obsolete/linInitBegin.md) `notes`
+- [linInitEnd](structured/Obsolete/linInitEnd.md) `notes`
+- [linInitGetRs232Baud](structured/Obsolete/linInitGetRs232Baud.md) `notes`
+- [linInitSetBaseBaud](structured/Obsolete/linInitSetBaseBaud.md) `notes`
+- [linInitSetMaster](structured/Obsolete/linInitSetMaster.md) `notes`
+- [linMrSchedGetMode](structured/Obsolete/linMrSchedGetMode.md) `notes`
+- [linMrSchedSetGlobal](structured/Obsolete/linMrSchedSetGlobal.md) `notes`
+- [linMrSchedSetMode](structured/Obsolete/linMrSchedSetMode.md) `notes`
+- [linMrSchedSetRqId](structured/Obsolete/linMrSchedSetRqId.md) `notes`
+- [linMrSchedSetSyncT](structured/Obsolete/linMrSchedSetSyncT.md) `notes`
+- [linMrSendRequest](structured/Obsolete/linMrSendRequest.md) `notes`
+- [linRcvFrame](structured/Obsolete/linRcvFrame.md) `notes`
+- [linResetScopeTrigger](structured/Obsolete/linResetScopeTrigger.md) `notes`
+- [linSendSleepModFrm](structured/Obsolete/linSendSleepModFrm.md) `notes`
+- [linSendWakeup](structured/Obsolete/linSendWakeup.md) `notes`
+- [linSetDlc](structured/Obsolete/linSetDlc.md) `notes`
+- [linSetHeaderError](structured/Obsolete/linSetHeaderError.md) `notes`
+- [linSetResponseData](structured/Obsolete/linSetResponseData.md) `notes`
+- [linSetResponseMsg](structured/Obsolete/linSetResponseMsg.md) `notes`
+- [linSetScopeTrigger](structured/Obsolete/linSetScopeTrigger.md) `notes`
+- [linSetWakeupParams](structured/Obsolete/linSetWakeupParams.md) `notes`
+- [linSilentWakeup](structured/Obsolete/linSilentWakeup.md) `notes`
+- [linSleepModeEvent](structured/Obsolete/linSleepModeEvent.md) `notes`
+- [linSlFSMSetGlobal](structured/Obsolete/linSlFSMSetGlobal.md) `notes`
+- [linSlFSMSetState](structured/Obsolete/linSlFSMSetState.md) `notes`
+- [linSlFSMSetStBegin](structured/Obsolete/linSlFSMSetStBegin.md) `notes`
+- [linSlFSMSetStEnd](structured/Obsolete/linSlFSMSetStEnd.md) `notes`
+- [linSlFSMSetStMFUp](structured/Obsolete/linSlFSMSetStMFUp.md) `notes`
+- [linSlFSMSetStSFUp](structured/Obsolete/linSlFSMSetStSFUp.md) `notes`
+- [linSlFSMSetStTO](structured/Obsolete/linSlFSMSetStTO.md) `notes`
+- [linSlSimulate](structured/Obsolete/linSlSimulate.md) `notes`
+- [linTime2Bits](structured/Obsolete/linTime2Bits.md) `notes`
+- [linWakeupFrame](structured/Obsolete/linWakeupFrame.md) `notes`
+- [LocalSecurityActivateRxPDUs1](structured/Obsolete/LocalSecurityActivateRxPDUs1.md) `notes`
+- [LocalSecurityActivateTxPDUs](structured/Obsolete/LocalSecurityActivateTxPDUs.md) `notes`
+- [LocalSecurityCalculateAuthenticator](structured/Obsolete/LocalSecurityCalculateAuthenticator.md) `notes`
+- [LocalSecurityDecryptAES128CBC](structured/Obsolete/LocalSecurityDecryptAES128CBC.md) `notes`
+- [LocalSecurityDecryptAES128ECB](structured/Obsolete/LocalSecurityDecryptAES128ECB.md) `notes`
+- [LocalSecurityEncryptAES128CBC](structured/Obsolete/LocalSecurityEncryptAES128CBC.md) `notes`
+- [LocalSecurityEncryptAES128ECB](structured/Obsolete/LocalSecurityEncryptAES128ECB.md) `notes`
+- [LocalSecurityGenerateCMAC](structured/Obsolete/LocalSecurityGenerateCMAC.md) `notes`
+- [LocalSecurityGenerateSHA256](structured/Obsolete/LocalSecurityGenerateSHA256.md) `notes`
+- [LocalSecurityGenerateSHA512](structured/Obsolete/LocalSecurityGenerateSHA512.md) `notes`
+- [LocalSecurityGenerateSharedSecretECDH](structured/Obsolete/LocalSecurityGenerateSharedSecretECDH.md) `notes`
+- [LSS Event Types](structured/Obsolete/LSS Event Types.md) `notes`
+- [MCDCreateModule](structured/Obsolete/MCDCreateModule.md) `notes`
+- [MCDEcuOnOffline](structured/Obsolete/MCDEcuOnOffline.md) `notes`
+- [MCDExit](structured/Obsolete/MCDExit.md) `notes`
+- [MCDGetCurrentValue](structured/Obsolete/MCDGetCurrentValue.md) `notes`
+- [MCDGetECUParam](structured/Obsolete/MCDGetECUParam.md) `notes`
+- [MCDGetLastError](structured/Obsolete/MCDGetLastError.md) `notes`
+- [MCDInit](structured/Obsolete/MCDInit.md) `notes`
+- [MCDInitEx](structured/Obsolete/MCDInitEx.md) `notes`
+- [MCDMapECUParamToSysVariableRead](structured/Obsolete/MCDMapECUParamToSysVariableRead.md) `notes`
+- [MCDMapECUParamToSysVariableWrite](structured/Obsolete/MCDMapECUParamToSysVariableWrite.md) `notes`
+- [MCDParamIsValid](structured/Obsolete/MCDParamIsValid.md) `notes`
+- [MCDParamResponse](structured/Obsolete/MCDParamResponse.md) `notes`
+- [MCDQuitCANape](structured/Obsolete/MCDQuitCANape.md) `notes`
+- [MCDSetECUParam](structured/Obsolete/MCDSetECUParam.md) `notes`
+- [MCDStartDataAcq/ MCDStartDataAcqAsync](structured/Obsolete/MCDStartDataAcq_ MCDStartDataAcqAsync.md) `notes`
+- [MCDStatusIndication](structured/Obsolete/MCDStatusIndication.md) `notes`
+- [MCDStopDataAcq](structured/Obsolete/MCDStopDataAcq.md) `notes`
+- [mostGetFBlockID, mostGetFunctionID, mostGetOpType](structured/Obsolete/mostGetFBlockID, mostGetFunctionID, mostGetOpType.md) `notes`
+- [mostGetLight, mostSetLight](structured/Obsolete/mostGetLight, mostSetLight.md) `notes`
+- [mostSetFBlockID, mostSetFunctionID, mostSetOpType](structured/Obsolete/mostSetFBlockID, mostSetFunctionID, mostSetOpType.md) `notes`
+- [mostSetOptoMode, mostGetOptoMode](structured/Obsolete/mostSetOptoMode, mostGetOptoMode.md) `notes`
+- [on linMessage](structured/Obsolete/on linMessage.md) `event`
+- [OnLocalSecurityPDUPreTx](structured/Obsolete/OnLocalSecurityPDUPreTx.md) `notes`
+- [OnLocalSecurityPDUValidated](structured/Obsolete/OnLocalSecurityPDUValidated.md) `notes`
+- [OnLocalSecurityQueryLocalFreshness](structured/Obsolete/OnLocalSecurityQueryLocalFreshness.md) `notes`
+- [Output Level](structured/Obsolete/Output Level.md) `notes`
+- [RegisterSignalDriverByTxNode](structured/Obsolete/RegisterSignalDriverByTxNode.md) `notes`
+- [Removed CAPL Functions](structured/Obsolete/Removed CAPL Functions.md) `notes`
+- [resetManualChecksum](structured/Obsolete/resetManualChecksum.md) `notes`
+- [RestoreChannelState](structured/Obsolete/RestoreChannelState.md) `notes`
+- [RS232ByteCallback](structured/Obsolete/RS232ByteCallback.md) `notes`
+- [setManualChecksum](structured/Obsolete/setManualChecksum.md) `notes`
+- [setMsgTime](structured/Obsolete/setMsgTime.md) `notes`
+- [setPortBits - Lowspeed and CANcab 1041](structured/Obsolete/setPortBits - Lowspeed and CANcab 1041.md) `notes`
+- [setPortBits - Single Wire](structured/Obsolete/setPortBits - Single Wire.md) `notes`
+- [SetSignalByTxNode](structured/Obsolete/SetSignalByTxNode.md) `notes`
+- [StoreChannelState](structured/Obsolete/StoreChannelState.md) `notes`
+- [SymbolMappingSetDynamicGroup](structured/Obsolete/SymbolMappingSetDynamicGroup.md) `notes`
+- [SysGetVariableIntArray](structured/Obsolete/SysGetVariableIntArray.md) `notes`
+- [SysSetVariableIntArray](structured/Obsolete/SysSetVariableIntArray.md) `notes`
+- [TestFRILControlResume](structured/Obsolete/TestFRILControlResume.md) `notes`
+- [TestFRILControlWait](structured/Obsolete/TestFRILControlWait.md) `notes`
+- [TestFRILDisturbChecksum](structured/Obsolete/TestFRILDisturbChecksum.md) `notes`
+- [TestFRILDisturbCounter](structured/Obsolete/TestFRILDisturbCounter.md) `notes`
+- [TestFRILDisturbPduUpdateBit](structured/Obsolete/TestFRILDisturbPduUpdateBit.md) `notes`
+- [TestFRILDisturbSignalUpdateBit](structured/Obsolete/TestFRILDisturbSignalUpdateBit.md) `notes`
+- [TestILDisturbAllNodeUpdateBits](structured/Obsolete/TestILDisturbAllNodeUpdateBits.md) `notes`
+- [TestILDisturbChecksum](structured/Obsolete/TestILDisturbChecksum.md) `notes`
+- [TestILDisturbCounter](structured/Obsolete/TestILDisturbCounter.md) `notes`
+- [TestILDisturbNodeUpdateBits](structured/Obsolete/TestILDisturbNodeUpdateBits.md) `notes`
+- [TestILDisturbSignalUpdateBit, TestILDisturbSignalGroupUpdateBit](structured/Obsolete/TestILDisturbSignalUpdateBit, TestILDisturbSignalGroupUpdateBit.md) `notes`
+- [TestIso11783IL_OPActivate](structured/Obsolete/TestIso11783IL_OPActivate.md) `notes`
+- [TestIso11783IL_OPChangeActiveMask](structured/Obsolete/TestIso11783IL_OPChangeActiveMask.md) `notes`
+- [TestIso11783IL_OPChangeBackgroundColor](structured/Obsolete/TestIso11783IL_OPChangeBackgroundColor.md) `notes`
+- [TestIso11783IL_OPChangeChildLocation](structured/Obsolete/TestIso11783IL_OPChangeChildLocation.md) `notes`
+- [TestIso11783IL_OPChangeChildPosition](structured/Obsolete/TestIso11783IL_OPChangeChildPosition.md) `notes`
+- [TestIso11783IL_OPChangeEndPoint](structured/Obsolete/TestIso11783IL_OPChangeEndPoint.md) `notes`
+- [TestIso11783IL_OPChangeFontAttribute](structured/Obsolete/TestIso11783IL_OPChangeFontAttribute.md) `notes`
+- [TestIso11783IL_OPChangeLineAttribute](structured/Obsolete/TestIso11783IL_OPChangeLineAttribute.md) `notes`
+- [TestIso11783IL_OPChangeListItem](structured/Obsolete/TestIso11783IL_OPChangeListItem.md) `notes`
+- [TestIso11783IL_OPChangePolygonPoint](structured/Obsolete/TestIso11783IL_OPChangePolygonPoint.md) `notes`
+- [TestIso11783IL_OPChangePolygonScale](structured/Obsolete/TestIso11783IL_OPChangePolygonScale.md) `notes`
+- [TestIso11783IL_OPChangePriority](structured/Obsolete/TestIso11783IL_OPChangePriority.md) `notes`
+- [TestIso11783IL_OPChangeSize](structured/Obsolete/TestIso11783IL_OPChangeSize.md) `notes`
+- [TestIso11783IL_OPChangeSoftKeyMask](structured/Obsolete/TestIso11783IL_OPChangeSoftKeyMask.md) `notes`
+- [TestIso11783IL_OPControlAudio](structured/Obsolete/TestIso11783IL_OPControlAudio.md) `notes`
+- [TestIso11783IL_OPDeactivate](structured/Obsolete/TestIso11783IL_OPDeactivate.md) `notes`
+- [TestIso11783IL_OPEnableObject](structured/Obsolete/TestIso11783IL_OPEnableObject.md) `notes`
+- [TestIso11783IL_OPESC](structured/Obsolete/TestIso11783IL_OPESC.md) `notes`
+- [TestIso11783IL_OPExecuteMacro](structured/Obsolete/TestIso11783IL_OPExecuteMacro.md) `notes`
+- [TestIso11783IL_OPGetAttribute](structured/Obsolete/TestIso11783IL_OPGetAttribute.md) `notes`
+- [TestIso11783IL_OPGetNumericValue](structured/Obsolete/TestIso11783IL_OPGetNumericValue.md) `notes`
+- [TestIso11783IL_OPGetProperty](structured/Obsolete/TestIso11783IL_OPGetProperty.md) `notes`
+- [TestIso11783IL_OPGetState](structured/Obsolete/TestIso11783IL_OPGetState.md) `notes`
+- [TestIso11783IL_OPGetStringValue](structured/Obsolete/TestIso11783IL_OPGetStringValue.md) `notes`
+- [TestIso11783IL_OPGetVersion](structured/Obsolete/TestIso11783IL_OPGetVersion.md) `notes`
+- [TestIso11783IL_OPGetVTInfo](structured/Obsolete/TestIso11783IL_OPGetVTInfo.md) `notes`
+- [TestIso11783IL_OPLoad](structured/Obsolete/TestIso11783IL_OPLoad.md) `notes`
+- [TestIso11783IL_OPLoadAuxAssignment](structured/Obsolete/TestIso11783IL_OPLoadAuxAssignment.md) `notes`
+- [TestIso11783IL_OPLoadVersion](structured/Obsolete/TestIso11783IL_OPLoadVersion.md) `notes`
+- [TestIso11783IL_OPLock](structured/Obsolete/TestIso11783IL_OPLock.md) `notes`
+- [TestIso11783IL_OPSave](structured/Obsolete/TestIso11783IL_OPSave.md) `notes`
+- [TestIso11783IL_OPSaveAuxAssignment](structured/Obsolete/TestIso11783IL_OPSaveAuxAssignment.md) `notes`
+- [TestIso11783IL_OPSelectColorMap](structured/Obsolete/TestIso11783IL_OPSelectColorMap.md) `notes`
+- [TestIso11783IL_OPSelectInput](structured/Obsolete/TestIso11783IL_OPSelectInput.md) `notes`
+- [TestIso11783IL_OPSetAttribute](structured/Obsolete/TestIso11783IL_OPSetAttribute.md) `notes`
+- [TestIso11783IL_OPSetAudioVolume](structured/Obsolete/TestIso11783IL_OPSetAudioVolume.md) `notes`
+- [TestIso11783IL_OPSetLabel](structured/Obsolete/TestIso11783IL_OPSetLabel.md) `notes`
+- [TestIso11783IL_OPSetNumericValue](structured/Obsolete/TestIso11783IL_OPSetNumericValue.md) `notes`
+- [TestIso11783IL_OPSetProperty](structured/Obsolete/TestIso11783IL_OPSetProperty.md) `notes`
+- [TestIso11783IL_OPSetStringValue](structured/Obsolete/TestIso11783IL_OPSetStringValue.md) `notes`
+- [TestIso11783IL_OPShowObject](structured/Obsolete/TestIso11783IL_OPShowObject.md) `notes`
+- [TestIso11783IL_OPStoreVersion](structured/Obsolete/TestIso11783IL_OPStoreVersion.md) `notes`
+- [TestIso11783IL_PDDChangeDesignator](structured/Obsolete/TestIso11783IL_PDDChangeDesignator.md) `notes`
+- [TestIso11783IL_PDDDelete](structured/Obsolete/TestIso11783IL_PDDDelete.md) `notes`
+- [TestIso11783IL_PDDGetValue](structured/Obsolete/TestIso11783IL_PDDGetValue.md) `notes`
+- [TestIso11783IL_PDDLoadDeviceDescription](structured/Obsolete/TestIso11783IL_PDDLoadDeviceDescription.md) `notes`
+- [TestIso11783IL_PDDObjectPoolDeactivate](structured/Obsolete/TestIso11783IL_PDDObjectPoolDeactivate.md) `notes`
+- [TestIso11783IL_PDDObjectPoolDelete](structured/Obsolete/TestIso11783IL_PDDObjectPoolDelete.md) `notes`
+- [TestIso11783IL_PDDSetDistance](structured/Obsolete/TestIso11783IL_PDDSetDistance.md) `notes`
+- [TestIso11783IL_PDDSetLogTrigger](structured/Obsolete/TestIso11783IL_PDDSetLogTrigger.md) `notes`
+- [TestIso11783IL_PDDSetParameter](structured/Obsolete/TestIso11783IL_PDDSetParameter.md) `notes`
+- [TestIso11783IL_PDDSetValue](structured/Obsolete/TestIso11783IL_PDDSetValue.md) `notes`
+- [TestIso11783IL_PDDUpdateDeviceDescription](structured/Obsolete/TestIso11783IL_PDDUpdateDeviceDescription.md) `notes`
+- [TestReportSetLoggingBlock](structured/Obsolete/TestReportSetLoggingBlock.md) `notes`
+- [testValidateSignalInRangeByTxNode](structured/Obsolete/testValidateSignalInRangeByTxNode.md) `notes`
+- [testValidateSignalOutsideRangeByTxNode](structured/Obsolete/testValidateSignalOutsideRangeByTxNode.md) `notes`
+- [TestWaitForSignal](structured/Obsolete/TestWaitForSignal.md) `notes`
+- [TestWaitForSignals](structured/Obsolete/TestWaitForSignals.md) `notes`
+- [vtsRestoreChannelState](structured/Obsolete/vtsRestoreChannelState.md) `notes`
+- [vtsStoreChannelState](structured/Obsolete/vtsStoreChannelState.md) `notes`
+
+---
+
+## CAPL Other Functions (Other)
+
+**Function count**: 292
+
+- [_atoi64](structured/Other/_atoi64.md) `function`
+- [_ceil](structured/Other/_ceil.md) `function`
+- [_floor](structured/Other/_floor.md) `function`
+- [_gcvt](structured/Other/_gcvt.md) `function`
+- [_Log](structured/Other/_Log.md) `function`
+- [_Log10](structured/Other/_Log10.md) `function`
+- [_max](structured/Other/_max.md) `function`
+- [_min](structured/Other/_min.md) `function`
+- [_pow](structured/Other/_pow.md) `function`
+- [_round](structured/Other/_round.md) `function`
+- [abs](structured/Other/abs.md) `function`
+- [addTimeToMeasurementStartTime](structured/Other/addTimeToMeasurementStartTime.md) `function`
+- [arccos](structured/Other/arccos.md) `function`
+- [arcsin](structured/Other/arcsin.md) `function`
+- [arctan](structured/Other/arctan.md) `function`
+- [atodbl](structured/Other/atodbl.md) `function`
+- [atol](structured/Other/atol.md) `function`
+- [callAllOnEnvVar](structured/Other/callAllOnEnvVar.md) `function`
+- [cancelTimer](structured/Other/cancelTimer.md) `function`
+- [canOffline](structured/Other/canOffline.md) `function`
+- [canOnline](structured/Other/canOnline.md) `function`
+- [ClockControlReset](structured/Other/ClockControlReset.md) `function`
+- [ClockControlStart](structured/Other/ClockControlStart.md) `function`
+- [ClockControlStop](structured/Other/ClockControlStop.md) `function`
+- [closePanel](structured/Other/closePanel.md) `function`
+- [CompleteStop](structured/Other/CompleteStop.md) `function`
+- [convertGPSTimestamp](structured/Other/convertGPSTimestamp.md) `function`
+- [ConvertString](structured/Other/ConvertString.md) `function`
+- [convertTimestamp, convertTimestampNS](structured/Other/convertTimestamp, convertTimestampNS.md) `function`
+- [convertTimestampToNS](structured/Other/convertTimestampToNS.md) `function`
+- [convertUTCDateToUnixTimestamp](structured/Other/convertUTCDateToUnixTimestamp.md) `function`
+- [cos](structured/Other/cos.md) `function`
+- [Crc_CalculateCRC16](structured/Other/Crc_CalculateCRC16.md) `function`
+- [Crc_CalculateCRC32](structured/Other/Crc_CalculateCRC32.md) `function`
+- [Crc_CalculateCRC32P4](structured/Other/Crc_CalculateCRC32P4.md) `function`
+- [Crc_CalculateCRC64](structured/Other/Crc_CalculateCRC64.md) `function`
+- [Crc_CalculateCRC8](structured/Other/Crc_CalculateCRC8.md) `function`
+- [Crc_CalculateCRC8H2F](structured/Other/Crc_CalculateCRC8H2F.md) `function`
+- [CreateGlobalMarker](structured/Other/CreateGlobalMarker.md) `function`
+- [DecodeString](structured/Other/DecodeString.md) `function`
+- [DeferStop](structured/Other/DeferStop.md) `function`
+- [DeleteControlContent](structured/Other/DeleteControlContent.md) `function`
+- [elCount](structured/Other/elCount.md) `function`
+- [enableControl](structured/Other/enableControl.md) `function`
+- [EncodeString](structured/Other/EncodeString.md) `function`
+- [EnvVarTimeNS](structured/Other/EnvVarTimeNS.md) `function`
+- [Events of the Measurement System](structured/Other/Events of the Measurement System.md) `notes`
+- [Example](structured/Other/Example.md) `notes`
+- [Example: File Functions](structured/Other/Example_ File Functions.md) `notes`
+- [Example: ReplayStart, ReplayStop, ReplaySuspend, ReplayResume, ReplayState](structured/Other/Example_ ReplayStart, ReplayStop, ReplaySuspend, ReplayResume, ReplayState.md) `notes`
+- [Example: writeClear, writeCreate, writeDestroy, writeEx, writeLineEx](structured/Other/Example_ writeClear, writeCreate, writeDestroy, writeEx, writeLineEx.md) `notes`
+- [Example: writeProfileInt, writeProfileFloat, writeProfileString, getProfileInt, getProfileFloat, getProfileString, getProfileArray](structured/Other/Example_ writeProfileInt, writeProfileFloat, writeProfileString, getProfileInt, getProfileFloat, getProfileString, getProfileArray.md) `notes`
+- [exp](structured/Other/exp.md) `function`
+- [FDXClientHandleTcp](structured/Other/FDXClientHandleTcp.md) `function`
+- [FDXClientHandleUdp](structured/Other/FDXClientHandleUdp.md) `function`
+- [FDXConfigureSequenceCounting](structured/Other/FDXConfigureSequenceCounting.md) `function`
+- [FDXDisableFreeRunningMode](structured/Other/FDXDisableFreeRunningMode.md) `function`
+- [FDXEnableFreeRunningMode](structured/Other/FDXEnableFreeRunningMode.md) `function`
+- [FDXSetByteOrder](structured/Other/FDXSetByteOrder.md) `function`
+- [FDXSetProtocolVersion](structured/Other/FDXSetProtocolVersion.md) `function`
+- [FDXTriggerDataGroup](structured/Other/FDXTriggerDataGroup.md) `function`
+- [File Functions](structured/Other/File Functions.md) `notes`
+- [File Search Procedure](structured/Other/File Search Procedure.md) `notes`
+- [fileClose](structured/Other/fileClose.md) `function`
+- [fileGetBinaryBlock](structured/Other/fileGetBinaryBlock.md) `function`
+- [fileGetString](structured/Other/fileGetString.md) `function`
+- [fileGetStringSZ](structured/Other/fileGetStringSZ.md) `function`
+- [fileName](structured/Other/fileName.md) `function`
+- [filePutString](structured/Other/filePutString.md) `function`
+- [fileRewind](structured/Other/fileRewind.md) `function`
+- [fileWriteBinaryBlock](structured/Other/fileWriteBinaryBlock.md) `function`
+- [General](structured/Other/General.md) `notes`
+- [General CAPL Functions](structured/Other/General CAPL Functions.md) `notes`
+- [General Event Procedures](structured/Other/General Event Procedures.md) `notes`
+- [GetA664Message](structured/Other/GetA664Message.md) `function`
+- [getAbsFilePath](structured/Other/getAbsFilePath.md) `function`
+- [GetBusContext](structured/Other/GetBusContext.md) `function`
+- [GetBusNameContext](structured/Other/GetBusNameContext.md) `function`
+- [GetCANMessage](structured/Other/GetCANMessage.md) `function`
+- [GetComputerName](structured/Other/GetComputerName.md) `function`
+- [getConfigurationName](structured/Other/getConfigurationName.md) `function`
+- [getDrift](structured/Other/getDrift.md) `function`
+- [GetEthernetPacket](structured/Other/GetEthernetPacket.md) `function`
+- [GetEventSortingStatus](structured/Other/GetEventSortingStatus.md) `function`
+- [GetFrFrame](structured/Other/GetFrFrame.md) `function`
+- [getGPSTimeString](structured/Other/getGPSTimeString.md) `function`
+- [GetIPAddress](structured/Other/GetIPAddress.md) `function`
+- [getJitterMax](structured/Other/getJitterMax.md) `function`
+- [getJitterMin](structured/Other/getJitterMin.md) `function`
+- [getLocalTime](structured/Other/getLocalTime.md) `function`
+- [getLocalTimeString](structured/Other/getLocalTimeString.md) `function`
+- [getMeasurementStartTime](structured/Other/getMeasurementStartTime.md) `function`
+- [GetNetworkName](structured/Other/GetNetworkName.md) `function`
+- [getNumOfflineFiles](structured/Other/getNumOfflineFiles.md) `function`
+- [getOfflineFileName](structured/Other/getOfflineFileName.md) `function`
+- [GetPDUsTPIPv4DstAddr](structured/Other/GetPDUsTPIPv4DstAddr.md) `function`
+- [GetPDUsTPIPv4SrcAddr](structured/Other/GetPDUsTPIPv4SrcAddr.md) `function`
+- [GetPDUsTPIPv6DstAddr](structured/Other/GetPDUsTPIPv6DstAddr.md) `function`
+- [GetPDUsTPIPv6SrcAddr](structured/Other/GetPDUsTPIPv6SrcAddr.md) `function`
+- [GetPDUsTPTCPDstPort](structured/Other/GetPDUsTPTCPDstPort.md) `function`
+- [GetPDUsTPTCPSrcPort](structured/Other/GetPDUsTPTCPSrcPort.md) `function`
+- [GetPDUsTPUDPDstPort](structured/Other/GetPDUsTPUDPDstPort.md) `function`
+- [GetPDUsTPUDPSrcPort](structured/Other/GetPDUsTPUDPSrcPort.md) `function`
+- [getProfileArray](structured/Other/getProfileArray.md) `function`
+- [getProfileFloat](structured/Other/getProfileFloat.md) `function`
+- [getProfileInt](structured/Other/getProfileInt.md) `function`
+- [getProfileString](structured/Other/getProfileString.md) `function`
+- [getStartdelay](structured/Other/getStartdelay.md) `function`
+- [getUserFilePath](structured/Other/getUserFilePath.md) `function`
+- [getValue](structured/Other/getValue.md) `function`
+- [getValueSize](structured/Other/getValueSize.md) `function`
+- [gmLanId](structured/Other/gmLanId.md) `function`
+- [gmLanSetPID, gmLanSetSourceId, gmLanSetPrio, gmLanGetPID, gmLanGetSourceId, gmLanGetPrio](structured/Other/gmLanSetPID, gmLanSetSourceId, gmLanSetPrio, gmLanGetPID, gmLanGetSourceId, gmLanGetPrio.md) `function`
+- [graphicsWindowClear](structured/Other/graphicsWindowClear.md) `function`
+- [graphicsWindowFit](structured/Other/graphicsWindowFit.md) `function`
+- [graphicsWindowModifyGroup](structured/Other/graphicsWindowModifyGroup.md) `function`
+- [graphicsWindowPause](structured/Other/graphicsWindowPause.md) `function`
+- [graphicsWindowTimeInterval](structured/Other/graphicsWindowTimeInterval.md) `function`
+- [halt](structured/Other/halt.md) `function`
+- [InterfaceStatus](structured/Other/InterfaceStatus.md) `function`
+- [interpretAsDword, interpretAsFloat, interpretAsQword, interpretAsDouble](structured/Other/interpretAsDword, interpretAsFloat, interpretAsQword, interpretAsDouble.md) `function`
+- [isOfflineFileActive](structured/Other/isOfflineFileActive.md) `function`
+- [isOfflineMode](structured/Other/isOfflineMode.md) `function`
+- [IsRunningInStandaloneMode](structured/Other/IsRunningInStandaloneMode.md) `function`
+- [IsRunningOnRemoteKernel](structured/Other/IsRunningOnRemoteKernel.md) `function`
+- [isSimulated](structured/Other/isSimulated.md) `function`
+- [isStatisticAcquisitionRunning](structured/Other/isStatisticAcquisitionRunning.md) `function`
+- [isTimerActive](structured/Other/isTimerActive.md) `function`
+- [keypressed](structured/Other/keypressed.md) `function`
+- [Keyword this](structured/Other/Keyword this.md) `notes`
+- [lookupFrFrame](structured/Other/lookupFrFrame.md) `function`
+- [lookupFrPDU](structured/Other/lookupFrPDU.md) `function`
+- [lookupMessage](structured/Other/lookupMessage.md) `function`
+- [lookupNode](structured/Other/lookupNode.md) `function`
+- [lookupPdu](structured/Other/lookupPdu.md) `function`
+- [lookupServiceSignal](structured/Other/lookupServiceSignal.md) `function`
+- [lookupServiceSignalData](structured/Other/lookupServiceSignalData.md) `function`
+- [lookupServiceSignalNumber](structured/Other/lookupServiceSignalNumber.md) `function`
+- [lookupServiceSignalString](structured/Other/lookupServiceSignalString.md) `function`
+- [lookupSignal](structured/Other/lookupSignal.md) `function`
+- [lookupSysvar](structured/Other/lookupSysvar.md) `function`
+- [lookupSysvarData](structured/Other/lookupSysvarData.md) `function`
+- [lookupSysvarFloat](structured/Other/lookupSysvarFloat.md) `function`
+- [lookupSysvarFloatArray](structured/Other/lookupSysvarFloatArray.md) `function`
+- [lookupSysvarInt](structured/Other/lookupSysvarInt.md) `function`
+- [lookupSysvarIntArray](structured/Other/lookupSysvarIntArray.md) `function`
+- [lookupSysvarLongLong](structured/Other/lookupSysvarLongLong.md) `function`
+- [lookupSysvarString](structured/Other/lookupSysvarString.md) `function`
+- [ltoa](structured/Other/ltoa.md) `function`
+- [MakeARGB](structured/Other/MakeARGB.md) `function`
+- [MakeRGB](structured/Other/MakeRGB.md) `function`
+- [mbstrlen](structured/Other/mbstrlen.md) `function`
+- [mbstrncmp, mbstrncmp_off](structured/Other/mbstrncmp, mbstrncmp_off.md) `function`
+- [mbstrncpy, mbstrncpy_off](structured/Other/mbstrncpy, mbstrncpy_off.md) `function`
+- [mbstrstr, mbstrstr_off](structured/Other/mbstrstr, mbstrstr_off.md) `function`
+- [mbsubstr_cpy, mbsubstr_cpy_off](structured/Other/mbsubstr_cpy, mbsubstr_cpy_off.md) `function`
+- [MessageTimeNS](structured/Other/MessageTimeNS.md) `function`
+- [msgBeep](structured/Other/msgBeep.md) `function`
+- [New CAPL Functions](structured/Other/New CAPL Functions.md) `notes`
+- [on *](structured/Other/on _.md) `event`
+- [on envVar](structured/Other/on envVar.md) `event`
+- [on key](structured/Other/on key.md) `event`
+- [on offlineSourceStatusChanged](structured/Other/on offlineSourceStatusChanged.md) `event`
+- [on PDU](structured/Other/on PDU.md) `event`
+- [on replaySourceStatusChanged](structured/Other/on replaySourceStatusChanged.md) `event`
+- [on sysVar](structured/Other/on sysVar.md) `event`
+- [on testContextCompleted](structured/Other/on testContextCompleted.md) `event`
+- [on timer](structured/Other/on timer.md) `event`
+- [Open](structured/Other/Open.md) `function`
+- [openFileRead](structured/Other/openFileRead.md) `function`
+- [openFileWrite](structured/Other/openFileWrite.md) `function`
+- [openPanel](structured/Other/openPanel.md) `function`
+- [PDU](structured/Other/PDU.md) `function`
+- [putValue](structured/Other/putValue.md) `function`
+- [putValueAsync](structured/Other/putValueAsync.md) `function`
+- [putValueToControl](structured/Other/putValueToControl.md) `function`
+- [random](structured/Other/random.md) `function`
+- [RegisterUserFile](structured/Other/RegisterUserFile.md) `function`
+- [ReplayResume](structured/Other/ReplayResume.md) `function`
+- [ReplayStart](structured/Other/ReplayStart.md) `function`
+- [ReplayState](structured/Other/ReplayState.md) `function`
+- [ReplayStop](structured/Other/ReplayStop.md) `function`
+- [ReplaySuspend](structured/Other/ReplaySuspend.md) `function`
+- [runError](structured/Other/runError.md) `function`
+- [Runtime Errors](structured/Other/Runtime Errors.md) `notes`
+- [SetBusContext](structured/Other/SetBusContext.md) `function`
+- [SetClockControlTime](structured/Other/SetClockControlTime.md) `function`
+- [SetControlBackColor](structured/Other/SetControlBackColor.md) `function`
+- [SetControlColors](structured/Other/SetControlColors.md) `function`
+- [SetControlForeColor](structured/Other/SetControlForeColor.md) `function`
+- [SetControlProperty](structured/Other/SetControlProperty.md) `function`
+- [SetControlVisibility](structured/Other/SetControlVisibility.md) `function`
+- [SetDefaultControlColors](structured/Other/SetDefaultControlColors.md) `function`
+- [setDrift](structured/Other/setDrift.md) `function`
+- [setFilePath](structured/Other/setFilePath.md) `function`
+- [setJitter](structured/Other/setJitter.md) `function`
+- [setLogFileName](structured/Other/setLogFileName.md) `function`
+- [SetMediaFile](structured/Other/SetMediaFile.md) `function`
+- [SetMediaStream](structured/Other/SetMediaStream.md) `function`
+- [SetMinMax](structured/Other/SetMinMax.md) `function`
+- [SetPictureBoxImage](structured/Other/SetPictureBoxImage.md) `function`
+- [setPostTrigger](structured/Other/setPostTrigger.md) `function`
+- [setPreTrigger](structured/Other/setPreTrigger.md) `function`
+- [SetReplayFileName](structured/Other/SetReplayFileName.md) `function`
+- [SetReplayFileNameAndTimeInterval](structured/Other/SetReplayFileNameAndTimeInterval.md) `function`
+- [setStartdelay](structured/Other/setStartdelay.md) `function`
+- [setTimer](structured/Other/setTimer.md) `function`
+- [setTimerCyclic](structured/Other/setTimerCyclic.md) `function`
+- [SetVideoOfflineLoggerCam](structured/Other/SetVideoOfflineLoggerCam.md) `function`
+- [SetVideoOfflineSource](structured/Other/SetVideoOfflineSource.md) `function`
+- [SetVideoRecordFile](structured/Other/SetVideoRecordFile.md) `function`
+- [SetVideoTriggerTimes](structured/Other/SetVideoTriggerTimes.md) `function`
+- [setWriteDbgLevel](structured/Other/setWriteDbgLevel.md) `function`
+- [setWritePath](structured/Other/setWritePath.md) `function`
+- [sin](structured/Other/sin.md) `function`
+- [snprintf](structured/Other/snprintf.md) `function`
+- [sqrt](structured/Other/sqrt.md) `function`
+- [StandaloneConfigOpen](structured/Other/StandaloneConfigOpen.md) `function`
+- [StandaloneConfigSetDefault](structured/Other/StandaloneConfigSetDefault.md) `function`
+- [StandaloneGetCurrentConfig](structured/Other/StandaloneGetCurrentConfig.md) `function`
+- [StandaloneGetDefaultConfig](structured/Other/StandaloneGetDefaultConfig.md) `function`
+- [startLogging](structured/Other/startLogging.md) `function`
+- [StartMacroFile](structured/Other/StartMacroFile.md) `function`
+- [StartReplayFile](structured/Other/StartReplayFile.md) `function`
+- [startStatisticAcquisition](structured/Other/startStatisticAcquisition.md) `function`
+- [startValuesUpdateList](structured/Other/startValuesUpdateList.md) `function`
+- [startValuesUpdateSymbols](structured/Other/startValuesUpdateSymbols.md) `function`
+- [StartVideoRecording](structured/Other/StartVideoRecording.md) `function`
+- [stop](structured/Other/stop.md) `function`
+- [stopLogging](structured/Other/stopLogging.md) `function`
+- [StopMacroFile](structured/Other/StopMacroFile.md) `function`
+- [StopReplayFile](structured/Other/StopReplayFile.md) `function`
+- [stopStatisticAcquisition](structured/Other/stopStatisticAcquisition.md) `function`
+- [StopVideoRecording](structured/Other/StopVideoRecording.md) `function`
+- [str_match_regex](structured/Other/str_match_regex.md) `function`
+- [str_replace](structured/Other/str_replace.md) `function`
+- [str_replace_regex](structured/Other/str_replace_regex.md) `function`
+- [String Literal](structured/Other/String Literal.md) `notes`
+- [strlen](structured/Other/strlen.md) `function`
+- [strncat](structured/Other/strncat.md) `function`
+- [strncmp](structured/Other/strncmp.md) `function`
+- [strncmp_off](structured/Other/strncmp_off.md) `function`
+- [strncpy](structured/Other/strncpy.md) `function`
+- [strncpy_off](structured/Other/strncpy_off.md) `function`
+- [strstr, strstr_off](structured/Other/strstr, strstr_off.md) `function`
+- [strstr_regex, strstr_regex_off](structured/Other/strstr_regex, strstr_regex_off.md) `function`
+- [strtod](structured/Other/strtod.md) `function`
+- [strtol](structured/Other/strtol.md) `function`
+- [strtoll](structured/Other/strtoll.md) `function`
+- [strtoul](structured/Other/strtoul.md) `function`
+- [strtoull](structured/Other/strtoull.md) `function`
+- [substr_cpy](structured/Other/substr_cpy.md) `function`
+- [substr_cpy_off](structured/Other/substr_cpy_off.md) `function`
+- [swapWord, swapInt, swapDWord, swapLong, swapInt64, swapQWord](structured/Other/swapWord, swapInt, swapDWord, swapLong, swapInt64, swapQWord.md) `function`
+- [SymbolMappingSetDynamicMappingSet](structured/Other/SymbolMappingSetDynamicMappingSet.md) `function`
+- [sysExec, sysExecCmd](structured/Other/sysExec, sysExecCmd.md) `function`
+- [sysExit](structured/Other/sysExit.md) `function`
+- [sysMinimize](structured/Other/sysMinimize.md) `function`
+- [sysSetVariableAsync](structured/Other/sysSetVariableAsync.md) `function`
+- [timeDiff](structured/Other/timeDiff.md) `function`
+- [timeNow](structured/Other/timeNow.md) `function`
+- [timeNowFloat](structured/Other/timeNowFloat.md) `function`
+- [timeNowNS, timeNowInt64](structured/Other/timeNowNS, timeNowInt64.md) `function`
+- [timeToElapse](structured/Other/timeToElapse.md) `function`
+- [toLower](structured/Other/toLower.md) `function`
+- [toUpper](structured/Other/toUpper.md) `function`
+- [traceSetEventColors](structured/Other/traceSetEventColors.md) `function`
+- [traceWindowClear](structured/Other/traceWindowClear.md) `function`
+- [trigger](structured/Other/trigger.md) `function`
+- [triggerEx](structured/Other/triggerEx.md) `function`
+- [triggerPDU](structured/Other/triggerPDU.md) `function`
+- [TriggerPDU2](structured/Other/TriggerPDU2.md) `function`
+- [Unconditional (Boxed) Event Procedures](structured/Other/Unconditional (Boxed) Event Procedures.md) `notes`
+- [write](structured/Other/write.md) `function`
+- [Write Format Expressions](structured/Other/Write Format Expressions.md) `notes`
+- [writeClear](structured/Other/writeClear.md) `function`
+- [writeConfigure](structured/Other/writeConfigure.md) `function`
+- [writeCreate](structured/Other/writeCreate.md) `function`
+- [writeDbgLevel](structured/Other/writeDbgLevel.md) `function`
+- [writeDestroy](structured/Other/writeDestroy.md) `function`
+- [writeEx](structured/Other/writeEx.md) `function`
+- [writeLineEX](structured/Other/writeLineEX.md) `function`
+- [writeProfileFloat](structured/Other/writeProfileFloat.md) `function`
+- [writeProfileInt](structured/Other/writeProfileInt.md) `function`
+- [writeProfileString](structured/Other/writeProfileString.md) `function`
+- [writeTextBkgColor](structured/Other/writeTextBkgColor.md) `function`
+- [writeTextColor](structured/Other/writeTextColor.md) `function`
+- [writeToLog](structured/Other/writeToLog.md) `function`
+- [writeToLogEx](structured/Other/writeToLogEx.md) `function`
+- [xlAcquireLED](structured/Other/xlAcquireLED.md) `function`
+- [xlReleaseLED](structured/Other/xlReleaseLED.md) `function`
+- [xlSetLED](structured/Other/xlSetLED.md) `function`
+
+---
+
+## CAPL RS232 (RS232)
+
+**Function count**: 12
+
+- [RS232 CAPL Functions](structured/RS232/RS232 CAPL Functions.md) `notes`
+- [RS232 CAPL Functions: Deprecated INI File](structured/RS232/RS232 CAPL Functions_ Deprecated INI File.md) `notes`
+- [RS232Close](structured/RS232/RS232Close.md) `function`
+- [RS232Configure](structured/RS232/RS232Configure.md) `function`
+- [RS232OnError](structured/RS232/RS232OnError.md) `function`
+- [RS232OnReceive](structured/RS232/RS232OnReceive.md) `function`
+- [RS232OnSend](structured/RS232/RS232OnSend.md) `function`
+- [RS232Open](structured/RS232/RS232Open.md) `function`
+- [RS232Receive](structured/RS232/RS232Receive.md) `function`
+- [RS232Send](structured/RS232/RS232Send.md) `function`
+- [RS232SetHandshake](structured/RS232/RS232SetHandshake.md) `function`
+- [RS232SetSignalLine](structured/RS232/RS232SetSignalLine.md) `function`
+
+---
+
+## CAPL Scope (Scope)
+
+**Function count**: 14
+
+- [Class: scopeAnalyseRange](structured/Scope/Class_ scopeAnalyseRange.md) `notes`
+- [Class: scopeBitDataDutyCycle](structured/Scope/Class_ scopeBitDataDutyCycle.md) `notes`
+- [Class: scopeDutyCycleDefinition](structured/Scope/Class_ scopeDutyCycleDefinition.md) `notes`
+- [Class: ScopeEdgeAnalysisResult](structured/Scope/Class_ ScopeEdgeAnalysisResult.md) `notes`
+- [Class: ScopeEvent](structured/Scope/Class_ ScopeEvent.md) `notes`
+- [Class: scopeFieldLengthData](structured/Scope/Class_ scopeFieldLengthData.md) `notes`
+- [Class: scopeSerialBitAnalysisViolationData](structured/Scope/Class_ scopeSerialBitAnalysisViolationData.md) `notes`
+- [Scope CAPL Functions](structured/Scope/Scope CAPL Functions.md) `notes`
+- [scopeActivateTrigger](structured/Scope/scopeActivateTrigger.md) `function`
+- [scopeConnect](structured/Scope/scopeConnect.md) `function`
+- [scopeDeactivateTrigger](structured/Scope/scopeDeactivateTrigger.md) `function`
+- [scopeDisconnect](structured/Scope/scopeDisconnect.md) `function`
+- [ScopeSinglePolygonBitMask](structured/Scope/ScopeSinglePolygonBitMask.md) `notes`
+- [scopeTriggerNow](structured/Scope/scopeTriggerNow.md) `function`
+
+---
+
+## CAPL Security (Security)
+
+**Function count**: 172
+
+- [GetX509ObjectFactory](structured/Security/GetX509ObjectFactory.md) `method`
+- [OnSecurityLocalApplicationProtocolRxFinished](structured/Security/OnSecurityLocalApplicationProtocolRxFinished.md) `function`
+- [OnSecurityLocalApplicationProtocolTxFinished](structured/Security/OnSecurityLocalApplicationProtocolTxFinished.md) `function`
+- [OnSecurityLocalPDUPreTx](structured/Security/OnSecurityLocalPDUPreTx.md) `function`
+- [OnSecurityLocalPDUValidated](structured/Security/OnSecurityLocalPDUValidated.md) `function`
+- [OnSecurityLocalQueryFreshness](structured/Security/OnSecurityLocalQueryFreshness.md) `function`
+- [OnSecurityOfNodeApplicationProtocolRxFinished](structured/Security/OnSecurityOfNodeApplicationProtocolRxFinished.md) `function`
+- [OnSecurityOfNodeApplicationProtocolTxFinished](structured/Security/OnSecurityOfNodeApplicationProtocolTxFinished.md) `function`
+- [OnSecurityOfNodePDUPreTx](structured/Security/OnSecurityOfNodePDUPreTx.md) `function`
+- [OnSecurityOfNodePDUValidated](structured/Security/OnSecurityOfNodePDUValidated.md) `function`
+- [OnSecurityOfNodeQueryFreshness](structured/Security/OnSecurityOfNodeQueryFreshness.md) `function`
+- [Pkcs10SigningRequest_GetExtensionRequest](structured/Security/Pkcs10SigningRequest_GetExtensionRequest.md) `method`
+- [Pkcs10SigningRequest_GetPublicKey](structured/Security/Pkcs10SigningRequest_GetPublicKey.md) `method`
+- [Pkcs10SigningRequest_GetPublicKeyAlgIdentifier](structured/Security/Pkcs10SigningRequest_GetPublicKeyAlgIdentifier.md) `method`
+- [Pkcs10SigningRequest_GetSignature](structured/Security/Pkcs10SigningRequest_GetSignature.md) `method`
+- [Pkcs10SigningRequest_GetSignatureAlgIdentifier](structured/Security/Pkcs10SigningRequest_GetSignatureAlgIdentifier.md) `method`
+- [Pkcs10SigningRequest_GetSubjectDN](structured/Security/Pkcs10SigningRequest_GetSubjectDN.md) `method`
+- [Pkcs10SigningRequest_GetVersion](structured/Security/Pkcs10SigningRequest_GetVersion.md) `method`
+- [Security CAPL Functions](structured/Security/Security CAPL Functions.md) `notes`
+- [SecurityLocalActivateRxPDUs](structured/Security/SecurityLocalActivateRxPDUs.md) `function`
+- [SecurityLocalActivateTxPDUs](structured/Security/SecurityLocalActivateTxPDUs.md) `function`
+- [SecurityLocalAllowNetworkWideRegistrations](structured/Security/SecurityLocalAllowNetworkWideRegistrations.md) `function`
+- [SecurityLocalCalculateAuthenticator](structured/Security/SecurityLocalCalculateAuthenticator.md) `function`
+- [SecurityLocalDecryptAES128CBC](structured/Security/SecurityLocalDecryptAES128CBC.md) `function`
+- [SecurityLocalDecryptAES128CTR](structured/Security/SecurityLocalDecryptAES128CTR.md) `function`
+- [SecurityLocalDecryptAES128ECB](structured/Security/SecurityLocalDecryptAES128ECB.md) `function`
+- [SecurityLocalDecryptAES256CBC](structured/Security/SecurityLocalDecryptAES256CBC.md) `function`
+- [SecurityLocalEncryptAES128CBC](structured/Security/SecurityLocalEncryptAES128CBC.md) `function`
+- [SecurityLocalEncryptAES128CTR](structured/Security/SecurityLocalEncryptAES128CTR.md) `function`
+- [SecurityLocalEncryptAES128ECB](structured/Security/SecurityLocalEncryptAES128ECB.md) `function`
+- [SecurityLocalEncryptAES256CBC](structured/Security/SecurityLocalEncryptAES256CBC.md) `function`
+- [SecurityLocalGenerateCMAC](structured/Security/SecurityLocalGenerateCMAC.md) `function`
+- [SecurityLocalGenerateSHA256](structured/Security/SecurityLocalGenerateSHA256.md) `function`
+- [SecurityLocalGenerateSHA512](structured/Security/SecurityLocalGenerateSHA512.md) `function`
+- [SecurityLocalGenerateSharedSecretECDH](structured/Security/SecurityLocalGenerateSharedSecretECDH.md) `function`
+- [SecurityLocalGetFreshness](structured/Security/SecurityLocalGetFreshness.md) `function`
+- [SecurityLocalGetNodeLayerVersion](structured/Security/SecurityLocalGetNodeLayerVersion.md) `function`
+- [SecurityLocalGetOperationParameter](structured/Security/SecurityLocalGetOperationParameter.md) `function`
+- [SecurityLocalGetOperationParameterKeys](structured/Security/SecurityLocalGetOperationParameterKeys.md) `function`
+- [SecurityLocalRegisterApplicationProtocol](structured/Security/SecurityLocalRegisterApplicationProtocol.md) `function`
+- [SecurityLocalSetFreshness](structured/Security/SecurityLocalSetFreshness.md) `function`
+- [SecurityLocalSetKey](structured/Security/SecurityLocalSetKey.md) `function`
+- [SecurityLocalSetOperationParameter](structured/Security/SecurityLocalSetOperationParameter.md) `function`
+- [SecurityLocalSetVerbosity](structured/Security/SecurityLocalSetVerbosity.md) `function`
+- [SecurityLocalStartControlSimulationNode](structured/Security/SecurityLocalStartControlSimulationNode.md) `function`
+- [SecurityLocalStopControlSimulationNode](structured/Security/SecurityLocalStopControlSimulationNode.md) `function`
+- [SecurityLocalTransmitApplicationProtocol](structured/Security/SecurityLocalTransmitApplicationProtocol.md) `function`
+- [SecurityLocalUnregisterApplicationProtocol](structured/Security/SecurityLocalUnregisterApplicationProtocol.md) `function`
+- [SecurityLocalVerifyAuthenticationInformation](structured/Security/SecurityLocalVerifyAuthenticationInformation.md) `function`
+- [SecurityOfNodeCalculateAuthenticator](structured/Security/SecurityOfNodeCalculateAuthenticator.md) `function`
+- [SecurityOfNodeGetFreshness](structured/Security/SecurityOfNodeGetFreshness.md) `function`
+- [SecurityOfNodeGetOperationParameter](structured/Security/SecurityOfNodeGetOperationParameter.md) `function`
+- [SecurityOfNodeGetOperationParameterKeys](structured/Security/SecurityOfNodeGetOperationParameterKeys.md) `function`
+- [SecurityOfNodeSetFreshness](structured/Security/SecurityOfNodeSetFreshness.md) `function`
+- [SecurityOfNodeSetKey](structured/Security/SecurityOfNodeSetKey.md) `function`
+- [SecurityOfNodeSetOperationParameter](structured/Security/SecurityOfNodeSetOperationParameter.md) `function`
+- [SecurityOfNodeSetVerbosity](structured/Security/SecurityOfNodeSetVerbosity.md) `function`
+- [SecurityOfNodeTransmitApplicationProtocol](structured/Security/SecurityOfNodeTransmitApplicationProtocol.md) `function`
+- [SecurityOfNodeVerifyAuthenticationInformation](structured/Security/SecurityOfNodeVerifyAuthenticationInformation.md) `function`
+- [X509AlgIdentifier_GetOid](structured/Security/X509AlgIdentifier_GetOid.md) `method`
+- [X509AlgIdentifier_GetParameters](structured/Security/X509AlgIdentifier_GetParameters.md) `method`
+- [X509AlgIdentifier_SetOid](structured/Security/X509AlgIdentifier_SetOid.md) `method`
+- [X509AlgIdentifier_SetParameters](structured/Security/X509AlgIdentifier_SetParameters.md) `method`
+- [X509Certificate_GetAuthorityKeyIdentifier](structured/Security/X509Certificate_GetAuthorityKeyIdentifier.md) `method`
+- [X509Certificate_GetExtensions](structured/Security/X509Certificate_GetExtensions.md) `method`
+- [X509Certificate_GetIssuerDN](structured/Security/X509Certificate_GetIssuerDN.md) `method`
+- [X509Certificate_GetPublicKey](structured/Security/X509Certificate_GetPublicKey.md) `method`
+- [X509Certificate_GetPublicKeyAlgIdentifier](structured/Security/X509Certificate_GetPublicKeyAlgIdentifier.md) `method`
+- [X509Certificate_GetSerialNo](structured/Security/X509Certificate_GetSerialNo.md) `method`
+- [X509Certificate_GetSignature](structured/Security/X509Certificate_GetSignature.md) `method`
+- [X509Certificate_GetSignatureAlgIdentifier](structured/Security/X509Certificate_GetSignatureAlgIdentifier.md) `method`
+- [X509Certificate_GetSubjectDN](structured/Security/X509Certificate_GetSubjectDN.md) `method`
+- [X509Certificate_GetSubjectKeyIdentifier](structured/Security/X509Certificate_GetSubjectKeyIdentifier.md) `method`
+- [X509Certificate_GetValidFrom](structured/Security/X509Certificate_GetValidFrom.md) `method`
+- [X509Certificate_GetValidTo](structured/Security/X509Certificate_GetValidTo.md) `method`
+- [X509Certificate_GetVersion](structured/Security/X509Certificate_GetVersion.md) `method`
+- [X509Certificate_SetAuthorityKeyIdentifier](structured/Security/X509Certificate_SetAuthorityKeyIdentifier.md) `method`
+- [X509Certificate_SetAuthorityKeyIdentifierFromKey](structured/Security/X509Certificate_SetAuthorityKeyIdentifierFromKey.md) `method`
+- [X509Certificate_SetExtensions](structured/Security/X509Certificate_SetExtensions.md) `method`
+- [X509Certificate_SetIssuerDN](structured/Security/X509Certificate_SetIssuerDN.md) `method`
+- [X509Certificate_SetPublicKey](structured/Security/X509Certificate_SetPublicKey.md) `method`
+- [X509Certificate_SetPublicKeyAlgIdentifier](structured/Security/X509Certificate_SetPublicKeyAlgIdentifier.md) `method`
+- [X509Certificate_SetSerialNo](structured/Security/X509Certificate_SetSerialNo.md) `method`
+- [X509Certificate_SetSignature](structured/Security/X509Certificate_SetSignature.md) `method`
+- [X509Certificate_SetSignatureAlgIdentifier](structured/Security/X509Certificate_SetSignatureAlgIdentifier.md) `method`
+- [X509Certificate_SetSubjectDN](structured/Security/X509Certificate_SetSubjectDN.md) `method`
+- [X509Certificate_SetSubjectKeyIdentifier](structured/Security/X509Certificate_SetSubjectKeyIdentifier.md) `method`
+- [X509Certificate_SetSubjectKeyIdentifierFromKey](structured/Security/X509Certificate_SetSubjectKeyIdentifierFromKey.md) `method`
+- [X509Certificate_SetValidFrom](structured/Security/X509Certificate_SetValidFrom.md) `method`
+- [X509Certificate_SetValidTo](structured/Security/X509Certificate_SetValidTo.md) `method`
+- [X509Certificate_SetVersion](structured/Security/X509Certificate_SetVersion.md) `method`
+- [X509Certificate_ToString](structured/Security/X509Certificate_ToString.md) `method`
+- [X509Decoder_DecodeCertificate](structured/Security/X509Decoder_DecodeCertificate.md) `method`
+- [X509Decoder_DecodeSigningRequest](structured/Security/X509Decoder_DecodeSigningRequest.md) `method`
+- [X509DN_GetAttributes](structured/Security/X509DN_GetAttributes.md) `method`
+- [X509DN_GetValueForAttribute](structured/Security/X509DN_GetValueForAttribute.md) `method`
+- [X509DN_SetAttributes](structured/Security/X509DN_SetAttributes.md) `method`
+- [X509DN_SetValueForAttribute](structured/Security/X509DN_SetValueForAttribute.md) `method`
+- [X509DNAttribute_GetAttribute](structured/Security/X509DNAttribute_GetAttribute.md) `method`
+- [X509DNAttribute_GetValue](structured/Security/X509DNAttribute_GetValue.md) `method`
+- [X509DNAttribute_GetValueAsn1Tag](structured/Security/X509DNAttribute_GetValueAsn1Tag.md) `method`
+- [X509DNAttribute_SetAttribute](structured/Security/X509DNAttribute_SetAttribute.md) `method`
+- [X509DNAttribute_SetValue](structured/Security/X509DNAttribute_SetValue.md) `method`
+- [X509DNAttribute_SetValueAsn1Tag](structured/Security/X509DNAttribute_SetValueAsn1Tag.md) `method`
+- [X509DNAttributes_Add](structured/Security/X509DNAttributes_Add.md) `method`
+- [X509DNAttributes_Erase](structured/Security/X509DNAttributes_Erase.md) `method`
+- [X509DNAttributes_GetElement](structured/Security/X509DNAttributes_GetElement.md) `method`
+- [X509DNAttributes_InsertElement](structured/Security/X509DNAttributes_InsertElement.md) `method`
+- [X509DNAttributes_SetElement](structured/Security/X509DNAttributes_SetElement.md) `method`
+- [X509DNAttributes_Size](structured/Security/X509DNAttributes_Size.md) `method`
+- [X509Encoder_EncodeCertificate](structured/Security/X509Encoder_EncodeCertificate.md) `method`
+- [X509Encoder_EncodeSigningRequest](structured/Security/X509Encoder_EncodeSigningRequest.md) `method`
+- [X509Encoder_EncodeTbsCertificate](structured/Security/X509Encoder_EncodeTbsCertificate.md) `method`
+- [X509Encoder_EncodeTbsSigningRequest](structured/Security/X509Encoder_EncodeTbsSigningRequest.md) `method`
+- [X509Extension_GetIsCritical](structured/Security/X509Extension_GetIsCritical.md) `method`
+- [X509Extension_GetOid](structured/Security/X509Extension_GetOid.md) `method`
+- [X509Extension_GetValue](structured/Security/X509Extension_GetValue.md) `method`
+- [X509Extension_SetIsCritical](structured/Security/X509Extension_SetIsCritical.md) `method`
+- [X509Extension_SetOid](structured/Security/X509Extension_SetOid.md) `method`
+- [X509Extension_SetValue](structured/Security/X509Extension_SetValue.md) `method`
+- [X509Extensions_Add](structured/Security/X509Extensions_Add.md) `method`
+- [X509Extensions_Erase](structured/Security/X509Extensions_Erase.md) `method`
+- [X509Extensions_GetElement](structured/Security/X509Extensions_GetElement.md) `method`
+- [X509Extensions_InsertElement](structured/Security/X509Extensions_InsertElement.md) `method`
+- [X509Extensions_SetElement](structured/Security/X509Extensions_SetElement.md) `method`
+- [X509Extensions_Size](structured/Security/X509Extensions_Size.md) `method`
+- [X509ObjectFactory_BytesFromHexString](structured/Security/X509ObjectFactory_BytesFromHexString.md) `method`
+- [X509ObjectFactory_BytesToHexString](structured/Security/X509ObjectFactory_BytesToHexString.md) `method`
+- [X509ObjectFactory_copyX509AlgorithmIdentifier](structured/Security/X509ObjectFactory_copyX509AlgorithmIdentifier.md) `method`
+- [X509ObjectFactory_copyX509Certificate](structured/Security/X509ObjectFactory_copyX509Certificate.md) `method`
+- [X509ObjectFactory_copyX509DN](structured/Security/X509ObjectFactory_copyX509DN.md) `method`
+- [X509ObjectFactory_copyX509DNAttribute](structured/Security/X509ObjectFactory_copyX509DNAttribute.md) `method`
+- [X509ObjectFactory_copyX509DNAttributes](structured/Security/X509ObjectFactory_copyX509DNAttributes.md) `method`
+- [X509ObjectFactory_copyX509Extension](structured/Security/X509ObjectFactory_copyX509Extension.md) `method`
+- [X509ObjectFactory_copyX509Extensions](structured/Security/X509ObjectFactory_copyX509Extensions.md) `method`
+- [X509ObjectFactory_copyX509Oid](structured/Security/X509ObjectFactory_copyX509Oid.md) `method`
+- [X509ObjectFactory_createPkcs10SigningRequest](structured/Security/X509ObjectFactory_createPkcs10SigningRequest.md) `method`
+- [X509ObjectFactory_createX509AlgorithmIdentifier](structured/Security/X509ObjectFactory_createX509AlgorithmIdentifier.md) `method`
+- [X509ObjectFactory_createX509Certificate](structured/Security/X509ObjectFactory_createX509Certificate.md) `method`
+- [X509ObjectFactory_createX509CertificateFromCsr](structured/Security/X509ObjectFactory_createX509CertificateFromCsr.md) `method`
+- [X509ObjectFactory_createX509Decoder](structured/Security/X509ObjectFactory_createX509Decoder.md) `method`
+- [X509ObjectFactory_createX509DN](structured/Security/X509ObjectFactory_createX509DN.md) `method`
+- [X509ObjectFactory_createX509DNAttribute](structured/Security/X509ObjectFactory_createX509DNAttribute.md) `method`
+- [X509ObjectFactory_createX509DNAttributes](structured/Security/X509ObjectFactory_createX509DNAttributes.md) `method`
+- [X509ObjectFactory_createX509Encoder](structured/Security/X509ObjectFactory_createX509Encoder.md) `method`
+- [X509ObjectFactory_createX509Extension](structured/Security/X509ObjectFactory_createX509Extension.md) `method`
+- [X509ObjectFactory_createX509Extensions](structured/Security/X509ObjectFactory_createX509Extensions.md) `method`
+- [X509ObjectFactory_createX509Oid](structured/Security/X509ObjectFactory_createX509Oid.md) `method`
+- [X509ObjectFactory_createX509PkiAccess](structured/Security/X509ObjectFactory_createX509PkiAccess.md) `method`
+- [X509ObjectFactory_createX509Verifier](structured/Security/X509ObjectFactory_createX509Verifier.md) `method`
+- [X509Oid_GetOid](structured/Security/X509Oid_GetOid.md) `method`
+- [X509Oid_GetOidString](structured/Security/X509Oid_GetOidString.md) `method`
+- [X509Oid_SetOid](structured/Security/X509Oid_SetOid.md) `method`
+- [X509Oid_SetOidFromString](structured/Security/X509Oid_SetOidFromString.md) `method`
+- [X509PkiAccess_CreateSigner](structured/Security/X509PkiAccess_CreateSigner.md) `method`
+- [X509PkiAccess_LoadCertificateByKeyIdentifier](structured/Security/X509PkiAccess_LoadCertificateByKeyIdentifier.md) `method`
+- [X509PkiAccess_LoadCertificateByName](structured/Security/X509PkiAccess_LoadCertificateByName.md) `method`
+- [X509PkiAccess_LoadSignerByKeyIdentifier](structured/Security/X509PkiAccess_LoadSignerByKeyIdentifier.md) `method`
+- [X509PkiAccess_LoadSignerByName](structured/Security/X509PkiAccess_LoadSignerByName.md) `method`
+- [X509Signer_CreateCertificateSignature](structured/Security/X509Signer_CreateCertificateSignature.md) `method`
+- [X509Signer_CreateDataSignature](structured/Security/X509Signer_CreateDataSignature.md) `method`
+- [X509Signer_GetAuthorityKeyIdentifier](structured/Security/X509Signer_GetAuthorityKeyIdentifier.md) `method`
+- [X509Signer_GetSignatureAlgIdentifier](structured/Security/X509Signer_GetSignatureAlgIdentifier.md) `method`
+- [X509Signer_GetSignerCertificate](structured/Security/X509Signer_GetSignerCertificate.md) `method`
+- [X509Signer_GetSubjectKeyIdentifier](structured/Security/X509Signer_GetSubjectKeyIdentifier.md) `method`
+- [X509Signer_UpdateAndSignCertificate](structured/Security/X509Signer_UpdateAndSignCertificate.md) `method`
+- [X509Verifier_AddTrustedCertificate](structured/Security/X509Verifier_AddTrustedCertificate.md) `method`
+- [X509Verifier_ClearTrustedCertificates](structured/Security/X509Verifier_ClearTrustedCertificates.md) `method`
+- [X509Verifier_VerifyCertificateChain](structured/Security/X509Verifier_VerifyCertificateChain.md) `method`
+- [X509Verifier_VerifyDataSignature](structured/Security/X509Verifier_VerifyDataSignature.md) `method`
+- [X509Verifier_VerifySelfSignedCertificate](structured/Security/X509Verifier_VerifySelfSignedCertificate.md) `method`
+- [X509Verifier_VerifySigningRequest](structured/Security/X509Verifier_VerifySigningRequest.md) `method`
+
+---
+
+## CAPL Sensor API (Sensor)
+
+**Function count**: 45
+
+- [ClearQueue](structured/Sensor/ClearQueue.md) `method`
+- [Enumeration](structured/Sensor/Enumeration.md) `notes`
+- [QueueCombinedFrame](structured/Sensor/QueueCombinedFrame.md) `method`
+- [QueueFrame](structured/Sensor/QueueFrame.md) `method`
+- [QueueMisoData](structured/Sensor/QueueMisoData.md) `method`
+- [QueueMosiData](structured/Sensor/QueueMosiData.md) `method`
+- [QueuePsi5Frame](structured/Sensor/QueuePsi5Frame.md) `method`
+- [QueueReadFrame](structured/Sensor/QueueReadFrame.md) `method`
+- [QueueSentFrame](structured/Sensor/QueueSentFrame.md) `method`
+- [QueueSerialFrame](structured/Sensor/QueueSerialFrame.md) `method`
+- [QueueSerialFrames](structured/Sensor/QueueSerialFrames.md) `method`
+- [QueueSerialMessage](structured/Sensor/QueueSerialMessage.md) `method`
+- [QueueSpcTriggerPulse](structured/Sensor/QueueSpcTriggerPulse.md) `method`
+- [QueueSpcTriggerPulseSequence](structured/Sensor/QueueSpcTriggerPulseSequence.md) `method`
+- [QueueValues](structured/Sensor/QueueValues.md) `method`
+- [QueueWriteFrame](structured/Sensor/QueueWriteFrame.md) `method`
+- [ResetClockTickLength](structured/Sensor/ResetClockTickLength.md) `method`
+- [Sensor CAPL Functions](structured/Sensor/Sensor CAPL Functions.md) `notes`
+- [sensorClearQueue](structured/Sensor/sensorClearQueue.md) `function`
+- [sensorConvertUnsignedToSigned](structured/Sensor/sensorConvertUnsignedToSigned.md) `function`
+- [sensorExtractInteger](structured/Sensor/sensorExtractInteger.md) `function`
+- [sensorInsertInteger](structured/Sensor/sensorInsertInteger.md) `function`
+- [sensorQueueCombinedFrame](structured/Sensor/sensorQueueCombinedFrame.md) `function`
+- [sensorQueueFrame](structured/Sensor/sensorQueueFrame.md) `function`
+- [sensorQueueMisoData](structured/Sensor/sensorQueueMisoData.md) `function`
+- [sensorQueueMosiData](structured/Sensor/sensorQueueMosiData.md) `function`
+- [sensorQueuePsi5Frame](structured/Sensor/sensorQueuePsi5Frame.md) `function`
+- [sensorQueueReadFrame](structured/Sensor/sensorQueueReadFrame.md) `function`
+- [sensorQueueSentFrame](structured/Sensor/sensorQueueSentFrame.md) `function`
+- [sensorQueueSerialFrame](structured/Sensor/sensorQueueSerialFrame.md) `function`
+- [sensorQueueSerialFrames](structured/Sensor/sensorQueueSerialFrames.md) `function`
+- [sensorQueueSerialMessage](structured/Sensor/sensorQueueSerialMessage.md) `function`
+- [sensorQueueSpcTriggerPulse](structured/Sensor/sensorQueueSpcTriggerPulse.md) `method`
+- [sensorQueueSpcTriggerPulseSequence](structured/Sensor/sensorQueueSpcTriggerPulseSequence.md) `method`
+- [sensorQueueValues](structured/Sensor/sensorQueueValues.md) `function`
+- [sensorQueueWriteFrame](structured/Sensor/sensorQueueWriteFrame.md) `function`
+- [sensorResetClockTickLength](structured/Sensor/sensorResetClockTickLength.md) `method`
+- [sensorReverseBits](structured/Sensor/sensorReverseBits.md) `function`
+- [sensorSetClockTickLength](structured/Sensor/sensorSetClockTickLength.md) `method`
+- [sensorStopSpcTriggerPulseTransmission](structured/Sensor/sensorStopSpcTriggerPulseTransmission.md) `method`
+- [sensorSwitchSupplyVoltage](structured/Sensor/sensorSwitchSupplyVoltage.md) `function`
+- [SetClockTickLength](structured/Sensor/SetClockTickLength.md) `method`
+- [StopSpcTriggerPulseTransmission](structured/Sensor/StopSpcTriggerPulseTransmission.md) `method`
+- [Structs](structured/Sensor/Structs.md) `notes`
+- [SwitchSupplyVoltage](structured/Sensor/SwitchSupplyVoltage.md) `method`
+
+---
+
+## CAPL Signal Access (SignalAccess)
+
+**Function count**: 5
+
+- [getSignalDescriptionForValue](structured/SignalAccess/getSignalDescriptionForValue.md) `function`
+- [getSignalValueForDescription](structured/SignalAccess/getSignalValueForDescription.md) `function`
+- [ReadByteArraySignalAsInteger](structured/SignalAccess/ReadByteArraySignalAsInteger.md) `function`
+- [Signal Access CAPL Functions](structured/SignalAccess/Signal Access CAPL Functions.md) `notes`
+- [WriteByteArraySignalAsInteger](structured/SignalAccess/WriteByteArraySignalAsInteger.md) `function`
+
+---
+
+## CAPL Smart Charging (ISO 15118) (SmartCharging)
+
+**Function count**: 358
+
+- [Message ID](structured/SmartCharging/Message ID.md) `notes`
+- [SCC_AuthorizationReq](structured/SmartCharging/SCC_AuthorizationReq.md) `function`
+- [SCC_AuthorizationRes](structured/SmartCharging/SCC_AuthorizationRes.md) `function`
+- [SCC_CableCheckReq](structured/SmartCharging/SCC_CableCheckReq.md) `function`
+- [SCC_CableCheckRes](structured/SmartCharging/SCC_CableCheckRes.md) `function`
+- [SCC_CertChainVerificationInd](structured/SmartCharging/SCC_CertChainVerificationInd.md) `function`
+- [SCC_CertificateInstallationReq](structured/SmartCharging/SCC_CertificateInstallationReq.md) `function`
+- [SCC_CertificateInstallationRes](structured/SmartCharging/SCC_CertificateInstallationRes.md) `function`
+- [SCC_CertificateUpdateReq](structured/SmartCharging/SCC_CertificateUpdateReq.md) `function`
+- [SCC_CertificateUpdateRes](structured/SmartCharging/SCC_CertificateUpdateRes.md) `function`
+- [SCC_ChargeParameterDiscoveryReqAC](structured/SmartCharging/SCC_ChargeParameterDiscoveryReqAC.md) `function`
+- [SCC_ChargeParameterDiscoveryReqDC](structured/SmartCharging/SCC_ChargeParameterDiscoveryReqDC.md) `function`
+- [SCC_ChargeParameterDiscoveryRes](structured/SmartCharging/SCC_ChargeParameterDiscoveryRes.md) `function`
+- [SCC_ChargingStatusReq](structured/SmartCharging/SCC_ChargingStatusReq.md) `function`
+- [SCC_ChargingStatusRes](structured/SmartCharging/SCC_ChargingStatusRes.md) `function`
+- [SCC_CM_Amp_Map_Cnf](structured/SmartCharging/SCC_CM_Amp_Map_Cnf.md) `function`
+- [SCC_CM_Amp_Map_Req](structured/SmartCharging/SCC_CM_Amp_Map_Req.md) `function`
+- [SCC_CM_Atten_Char_Ind](structured/SmartCharging/SCC_CM_Atten_Char_Ind.md) `function`
+- [SCC_CM_Atten_Char_Rsp](structured/SmartCharging/SCC_CM_Atten_Char_Rsp.md) `function`
+- [SCC_CM_Atten_Profile_Ind](structured/SmartCharging/SCC_CM_Atten_Profile_Ind.md) `function`
+- [SCC_CM_MNBC_Sound_Ind](structured/SmartCharging/SCC_CM_MNBC_Sound_Ind.md) `function`
+- [SCC_CM_Set_Key_Cnf](structured/SmartCharging/SCC_CM_Set_Key_Cnf.md) `function`
+- [SCC_CM_SLAC_Match_Cnf](structured/SmartCharging/SCC_CM_SLAC_Match_Cnf.md) `function`
+- [SCC_CM_SLAC_Match_Req](structured/SmartCharging/SCC_CM_SLAC_Match_Req.md) `function`
+- [SCC_CM_SLAC_Parm_Cnf](structured/SmartCharging/SCC_CM_SLAC_Parm_Cnf.md) `function`
+- [SCC_CM_Slac_Parm_Req](structured/SmartCharging/SCC_CM_Slac_Parm_Req.md) `function`
+- [SCC_CM_Start_Atten_Char_Ind](structured/SmartCharging/SCC_CM_Start_Atten_Char_Ind.md) `function`
+- [SCC_CM_Validate_Cnf](structured/SmartCharging/SCC_CM_Validate_Cnf.md) `function`
+- [SCC_CM_Validate_Req](structured/SmartCharging/SCC_CM_Validate_Req.md) `function`
+- [SCC_ConnectionTimeoutInd](structured/SmartCharging/SCC_ConnectionTimeoutInd.md) `function`
+- [SCC_ContractAuthenticationReq](structured/SmartCharging/SCC_ContractAuthenticationReq.md) `function`
+- [SCC_ContractAuthenticationRes](structured/SmartCharging/SCC_ContractAuthenticationRes.md) `function`
+- [SCC_CreateAuthorizationReq_ISO](structured/SmartCharging/SCC_CreateAuthorizationReq_ISO.md) `function`
+- [SCC_CreateAuthorizationRes_ISO](structured/SmartCharging/SCC_CreateAuthorizationRes_ISO.md) `function`
+- [SCC_CreateCableCheckReq_DIN](structured/SmartCharging/SCC_CreateCableCheckReq_DIN.md) `function`
+- [SCC_CreateCableCheckReq_ISO](structured/SmartCharging/SCC_CreateCableCheckReq_ISO.md) `function`
+- [SCC_CreateCableCheckRes_DIN](structured/SmartCharging/SCC_CreateCableCheckRes_DIN.md) `function`
+- [SCC_CreateCableCheckRes_ISO](structured/SmartCharging/SCC_CreateCableCheckRes_ISO.md) `function`
+- [SCC_CreateCertificateInstallationReq_DIN](structured/SmartCharging/SCC_CreateCertificateInstallationReq_DIN.md) `function`
+- [SCC_CreateCertificateInstallationReq_ISO](structured/SmartCharging/SCC_CreateCertificateInstallationReq_ISO.md) `function`
+- [SCC_CreateCertificateInstallationRes_DIN](structured/SmartCharging/SCC_CreateCertificateInstallationRes_DIN.md) `function`
+- [SCC_CreateCertificateInstallationRes_ISO](structured/SmartCharging/SCC_CreateCertificateInstallationRes_ISO.md) `function`
+- [SCC_CreateCertificateUpdateReq_DIN](structured/SmartCharging/SCC_CreateCertificateUpdateReq_DIN.md) `function`
+- [SCC_CreateCertificateUpdateReq_ISO](structured/SmartCharging/SCC_CreateCertificateUpdateReq_ISO.md) `function`
+- [SCC_CreateCertificateUpdateRes_DIN](structured/SmartCharging/SCC_CreateCertificateUpdateRes_DIN.md) `function`
+- [SCC_CreateCertificateUpdateRes_ISO](structured/SmartCharging/SCC_CreateCertificateUpdateRes_ISO.md) `function`
+- [SCC_CreateChargeParameterDiscoveryReqAC_DIN](structured/SmartCharging/SCC_CreateChargeParameterDiscoveryReqAC_DIN.md) `function`
+- [SCC_CreateChargeParameterDiscoveryReqAC_ISO](structured/SmartCharging/SCC_CreateChargeParameterDiscoveryReqAC_ISO.md) `function`
+- [SCC_CreateChargeParameterDiscoveryReqDC_DIN](structured/SmartCharging/SCC_CreateChargeParameterDiscoveryReqDC_DIN.md) `function`
+- [SCC_CreateChargeParameterDiscoveryReqDC_ISO](structured/SmartCharging/SCC_CreateChargeParameterDiscoveryReqDC_ISO.md) `function`
+- [SCC_CreateChargeParameterDiscoveryResAC_DIN](structured/SmartCharging/SCC_CreateChargeParameterDiscoveryResAC_DIN.md) `function`
+- [SCC_CreateChargeParameterDiscoveryResAC_ISO](structured/SmartCharging/SCC_CreateChargeParameterDiscoveryResAC_ISO.md) `function`
+- [SCC_CreateChargeParameterDiscoveryResDC_DIN](structured/SmartCharging/SCC_CreateChargeParameterDiscoveryResDC_DIN.md) `function`
+- [SCC_CreateChargeParameterDiscoveryResDC_ISO](structured/SmartCharging/SCC_CreateChargeParameterDiscoveryResDC_ISO.md) `function`
+- [SCC_CreateChargingStatusReq_DIN](structured/SmartCharging/SCC_CreateChargingStatusReq_DIN.md) `function`
+- [SCC_CreateChargingStatusReq_ISO](structured/SmartCharging/SCC_CreateChargingStatusReq_ISO.md) `function`
+- [SCC_CreateChargingStatusRes_DIN](structured/SmartCharging/SCC_CreateChargingStatusRes_DIN.md) `function`
+- [SCC_CreateChargingStatusRes_ISO](structured/SmartCharging/SCC_CreateChargingStatusRes_ISO.md) `function`
+- [SCC_CreateCM_Amp_Map_Cnf](structured/SmartCharging/SCC_CreateCM_Amp_Map_Cnf.md) `function`
+- [SCC_CreateCM_Amp_Map_Req](structured/SmartCharging/SCC_CreateCM_Amp_Map_Req.md) `function`
+- [SCC_CreateCM_Atten_Char_Ind](structured/SmartCharging/SCC_CreateCM_Atten_Char_Ind.md) `function`
+- [SCC_CreateCM_Atten_Char_Rsp](structured/SmartCharging/SCC_CreateCM_Atten_Char_Rsp.md) `function`
+- [SCC_CreateCM_Atten_Profile_Ind](structured/SmartCharging/SCC_CreateCM_Atten_Profile_Ind.md) `function`
+- [SCC_CreateCM_MNBC_Sound_Ind](structured/SmartCharging/SCC_CreateCM_MNBC_Sound_Ind.md) `function`
+- [SCC_CreateCM_Set_Key_Cnf](structured/SmartCharging/SCC_CreateCM_Set_Key_Cnf.md) `function`
+- [SCC_CreateCM_Set_Key_Req](structured/SmartCharging/SCC_CreateCM_Set_Key_Req.md) `function`
+- [SCC_CreateCM_SLAC_Match_Cnf](structured/SmartCharging/SCC_CreateCM_SLAC_Match_Cnf.md) `function`
+- [SCC_CreateCM_SLAC_Match_Req](structured/SmartCharging/SCC_CreateCM_SLAC_Match_Req.md) `function`
+- [SCC_CreateCM_SLAC_Parm_Cnf](structured/SmartCharging/SCC_CreateCM_SLAC_Parm_Cnf.md) `function`
+- [SCC_CreateCM_SLAC_Parm_Req](structured/SmartCharging/SCC_CreateCM_SLAC_Parm_Req.md) `function`
+- [SCC_CreateCM_Start_Atten_Char_Ind](structured/SmartCharging/SCC_CreateCM_Start_Atten_Char_Ind.md) `function`
+- [SCC_CreateCM_Validate_Cnf](structured/SmartCharging/SCC_CreateCM_Validate_Cnf.md) `function`
+- [SCC_CreateCM_Validate_Req](structured/SmartCharging/SCC_CreateCM_Validate_Req.md) `function`
+- [SCC_CreateContractAuthenticationReq_DIN](structured/SmartCharging/SCC_CreateContractAuthenticationReq_DIN.md) `function`
+- [SCC_CreateContractAuthenticationRes_DIN](structured/SmartCharging/SCC_CreateContractAuthenticationRes_DIN.md) `function`
+- [SCC_CreateCurrentDemandReq_DIN](structured/SmartCharging/SCC_CreateCurrentDemandReq_DIN.md) `function`
+- [SCC_CreateCurrentDemandReq_ISO](structured/SmartCharging/SCC_CreateCurrentDemandReq_ISO.md) `function`
+- [SCC_CreateCurrentDemandRes_DIN](structured/SmartCharging/SCC_CreateCurrentDemandRes_DIN.md) `function`
+- [SCC_CreateCurrentDemandRes_ISO](structured/SmartCharging/SCC_CreateCurrentDemandRes_ISO.md) `function`
+- [SCC_CreateMeteringReceiptReq_DIN](structured/SmartCharging/SCC_CreateMeteringReceiptReq_DIN.md) `function`
+- [SCC_CreateMeteringReceiptReq_ISO](structured/SmartCharging/SCC_CreateMeteringReceiptReq_ISO.md) `function`
+- [SCC_CreateMeteringReceiptResAC_DIN](structured/SmartCharging/SCC_CreateMeteringReceiptResAC_DIN.md) `function`
+- [SCC_CreateMeteringReceiptResAC_ISO](structured/SmartCharging/SCC_CreateMeteringReceiptResAC_ISO.md) `function`
+- [SCC_CreateMeteringReceiptResDC_ISO](structured/SmartCharging/SCC_CreateMeteringReceiptResDC_ISO.md) `function`
+- [SCC_CreatePaymentDetailsReq_DIN](structured/SmartCharging/SCC_CreatePaymentDetailsReq_DIN.md) `function`
+- [SCC_CreatePaymentDetailsReq_ISO](structured/SmartCharging/SCC_CreatePaymentDetailsReq_ISO.md) `function`
+- [SCC_CreatePaymentDetailsRes_DIN](structured/SmartCharging/SCC_CreatePaymentDetailsRes_DIN.md) `function`
+- [SCC_CreatePaymentDetailsRes_ISO](structured/SmartCharging/SCC_CreatePaymentDetailsRes_ISO.md) `function`
+- [SCC_CreatePaymentServiceSelectionReq_ISO](structured/SmartCharging/SCC_CreatePaymentServiceSelectionReq_ISO.md) `function`
+- [SCC_CreatePaymentServiceSelectionRes_ISO](structured/SmartCharging/SCC_CreatePaymentServiceSelectionRes_ISO.md) `function`
+- [SCC_CreatePowerDeliveryReqAC_DIN](structured/SmartCharging/SCC_CreatePowerDeliveryReqAC_DIN.md) `function`
+- [SCC_CreatePowerDeliveryReqAC_ISO](structured/SmartCharging/SCC_CreatePowerDeliveryReqAC_ISO.md) `function`
+- [SCC_CreatePowerDeliveryReqDC_DIN](structured/SmartCharging/SCC_CreatePowerDeliveryReqDC_DIN.md) `function`
+- [SCC_CreatePowerDeliveryReqDC_ISO](structured/SmartCharging/SCC_CreatePowerDeliveryReqDC_ISO.md) `function`
+- [SCC_CreatePowerDeliveryResAC_DIN](structured/SmartCharging/SCC_CreatePowerDeliveryResAC_DIN.md) `function`
+- [SCC_CreatePowerDeliveryResAC_ISO](structured/SmartCharging/SCC_CreatePowerDeliveryResAC_ISO.md) `function`
+- [SCC_CreatePowerDeliveryResDC_DIN](structured/SmartCharging/SCC_CreatePowerDeliveryResDC_DIN.md) `function`
+- [SCC_CreatePowerDeliveryResDC_ISO](structured/SmartCharging/SCC_CreatePowerDeliveryResDC_ISO.md) `function`
+- [SCC_CreatePreChargeReq_DIN](structured/SmartCharging/SCC_CreatePreChargeReq_DIN.md) `function`
+- [SCC_CreatePreChargeReq_ISO](structured/SmartCharging/SCC_CreatePreChargeReq_ISO.md) `function`
+- [SCC_CreatePreChargeRes_DIN](structured/SmartCharging/SCC_CreatePreChargeRes_DIN.md) `function`
+- [SCC_CreatePreChargeRes_ISO](structured/SmartCharging/SCC_CreatePreChargeRes_ISO.md) `function`
+- [SCC_CreateSECCDiscoveryReq](structured/SmartCharging/SCC_CreateSECCDiscoveryReq.md) `function`
+- [SCC_CreateSECCDiscoveryRes](structured/SmartCharging/SCC_CreateSECCDiscoveryRes.md) `function`
+- [SCC_CreateServiceDetailReq_DIN](structured/SmartCharging/SCC_CreateServiceDetailReq_DIN.md) `function`
+- [SCC_CreateServiceDetailReq_ISO](structured/SmartCharging/SCC_CreateServiceDetailReq_ISO.md) `function`
+- [SCC_CreateServiceDetailRes_DIN](structured/SmartCharging/SCC_CreateServiceDetailRes_DIN.md) `function`
+- [SCC_CreateServiceDetailRes_ISO](structured/SmartCharging/SCC_CreateServiceDetailRes_ISO.md) `function`
+- [SCC_CreateServiceDiscoveryReq_DIN](structured/SmartCharging/SCC_CreateServiceDiscoveryReq_DIN.md) `function`
+- [SCC_CreateServiceDiscoveryReq_ISO](structured/SmartCharging/SCC_CreateServiceDiscoveryReq_ISO.md) `function`
+- [SCC_CreateServiceDiscoveryRes_DIN](structured/SmartCharging/SCC_CreateServiceDiscoveryRes_DIN.md) `function`
+- [SCC_CreateServiceDiscoveryRes_ISO](structured/SmartCharging/SCC_CreateServiceDiscoveryRes_ISO.md) `function`
+- [SCC_CreateServicePaymentSelectionReq_DIN](structured/SmartCharging/SCC_CreateServicePaymentSelectionReq_DIN.md) `function`
+- [SCC_CreateServicePaymentSelectionRes_DIN](structured/SmartCharging/SCC_CreateServicePaymentSelectionRes_DIN.md) `function`
+- [SCC_CreateSessionSetupReq_DIN](structured/SmartCharging/SCC_CreateSessionSetupReq_DIN.md) `function`
+- [SCC_CreateSessionSetupReq_ISO](structured/SmartCharging/SCC_CreateSessionSetupReq_ISO.md) `function`
+- [SCC_CreateSessionSetupRes_DIN](structured/SmartCharging/SCC_CreateSessionSetupRes_DIN.md) `function`
+- [SCC_CreateSessionSetupRes_ISO](structured/SmartCharging/SCC_CreateSessionSetupRes_ISO.md) `function`
+- [SCC_CreateSessionStopReq_DIN](structured/SmartCharging/SCC_CreateSessionStopReq_DIN.md) `function`
+- [SCC_CreateSessionStopReq_ISO](structured/SmartCharging/SCC_CreateSessionStopReq_ISO.md) `function`
+- [SCC_CreateSessionStopRes_DIN](structured/SmartCharging/SCC_CreateSessionStopRes_DIN.md) `function`
+- [SCC_CreateSessionStopRes_ISO](structured/SmartCharging/SCC_CreateSessionStopRes_ISO.md) `function`
+- [SCC_CreateSupportedAppProtocolReq](structured/SmartCharging/SCC_CreateSupportedAppProtocolReq.md) `function`
+- [SCC_CreateSupportedAppProtocolRes](structured/SmartCharging/SCC_CreateSupportedAppProtocolRes.md) `function`
+- [SCC_CreateVS_Nw_Info_Req](structured/SmartCharging/SCC_CreateVS_Nw_Info_Req.md) `function`
+- [SCC_CreateVS_PL_Lnk_Status_Cnf](structured/SmartCharging/SCC_CreateVS_PL_Lnk_Status_Cnf.md) `function`
+- [SCC_CreateVS_PL_Lnk_Status_Req](structured/SmartCharging/SCC_CreateVS_PL_Lnk_Status_Req.md) `function`
+- [SCC_CreateWeldingDetectionReq_DIN](structured/SmartCharging/SCC_CreateWeldingDetectionReq_DIN.md) `function`
+- [SCC_CreateWeldingDetectionReq_ISO](structured/SmartCharging/SCC_CreateWeldingDetectionReq_ISO.md) `function`
+- [SCC_CreateWeldingDetectionRes_DIN](structured/SmartCharging/SCC_CreateWeldingDetectionRes_DIN.md) `function`
+- [SCC_CreateWeldingDetectionRes_ISO](structured/SmartCharging/SCC_CreateWeldingDetectionRes_ISO.md) `function`
+- [SCC_CurrentDemandReq](structured/SmartCharging/SCC_CurrentDemandReq.md) `function`
+- [SCC_CurrentDemandRes](structured/SmartCharging/SCC_CurrentDemandRes.md) `function`
+- [SCC_ErrorStateInd](structured/SmartCharging/SCC_ErrorStateInd.md) `function`
+- [SCC_GenerateRandomData](structured/SmartCharging/SCC_GenerateRandomData.md) `function`
+- [SCC_GetAppProtocolData](structured/SmartCharging/SCC_GetAppProtocolData.md) `function`
+- [SCC_GetBatterySOC](structured/SmartCharging/SCC_GetBatterySOC.md) `function`
+- [SCC_GetBatteryState](structured/SmartCharging/SCC_GetBatteryState.md) `function`
+- [SCC_GetBulkChargingComplete](structured/SmartCharging/SCC_GetBulkChargingComplete.md) `function`
+- [SCC_GetBulkSOC](structured/SmartCharging/SCC_GetBulkSOC.md) `function`
+- [SCC_GetCertChainVerificationError](structured/SmartCharging/SCC_GetCertChainVerificationError.md) `function`
+- [SCC_GetCertChainVerificationErrorCount](structured/SmartCharging/SCC_GetCertChainVerificationErrorCount.md) `function`
+- [SCC_GetCertificateChainCertificate](structured/SmartCharging/SCC_GetCertificateChainCertificate.md) `function`
+- [SCC_GetCertificateChainData](structured/SmartCharging/SCC_GetCertificateChainData.md) `function`
+- [SCC_GetChargingComplete](structured/SmartCharging/SCC_GetChargingComplete.md) `function`
+- [SCC_GetChargingProfileData](structured/SmartCharging/SCC_GetChargingProfileData.md) `function`
+- [SCC_GetConnectionCount](structured/SmartCharging/SCC_GetConnectionCount.md) `function`
+- [SCC_GetConsumptionCostData](structured/SmartCharging/SCC_GetConsumptionCostData.md) `function`
+- [SCC_GetCostData](structured/SmartCharging/SCC_GetCostData.md) `function`
+- [SCC_GetCurrentRegulationTolerance](structured/SmartCharging/SCC_GetCurrentRegulationTolerance.md) `function`
+- [SCC_GetDC_EVStatus](structured/SmartCharging/SCC_GetDC_EVStatus.md) `function`
+- [SCC_GetDCStatusCode](structured/SmartCharging/SCC_GetDCStatusCode.md) `function`
+- [SCC_GetDepartureTime](structured/SmartCharging/SCC_GetDepartureTime.md) `function`
+- [SCC_GetDHPublicKey](structured/SmartCharging/SCC_GetDHPublicKey.md) `function`
+- [SCC_GetDLLInfo](structured/SmartCharging/SCC_GetDLLInfo.md) `function`
+- [SCC_GetEMAIDIdAttr](structured/SmartCharging/SCC_GetEMAIDIdAttr.md) `function`
+- [SCC_GetEncryptedPrivateKey](structured/SmartCharging/SCC_GetEncryptedPrivateKey.md) `function`
+- [SCC_GetEnergyToBeDelivered](structured/SmartCharging/SCC_GetEnergyToBeDelivered.md) `function`
+- [SCC_GetEnergyTransferMode](structured/SmartCharging/SCC_GetEnergyTransferMode.md) `function`
+- [SCC_GetEnergyTransferModeCount](structured/SmartCharging/SCC_GetEnergyTransferModeCount.md) `function`
+- [SCC_GetEnergyTransferType](structured/SmartCharging/SCC_GetEnergyTransferType.md) `function`
+- [SCC_GetEthernetSettings](structured/SmartCharging/SCC_GetEthernetSettings.md) `function`
+- [SCC_GetEVReady](structured/SmartCharging/SCC_GetEVReady.md) `function`
+- [SCC_GetEVSEIP](structured/SmartCharging/SCC_GetEVSEIP.md) `function`
+- [SCC_GetEVSEIsolationStatus](structured/SmartCharging/SCC_GetEVSEIsolationStatus.md) `function`
+- [SCC_GetEVSENotification](structured/SmartCharging/SCC_GetEVSENotification.md) `function`
+- [SCC_GetEVSEPort](structured/SmartCharging/SCC_GetEVSEPort.md) `function`
+- [SCC_GetEVSEStatusCode](structured/SmartCharging/SCC_GetEVSEStatusCode.md) `function`
+- [SCC_GetFaultNotification](structured/SmartCharging/SCC_GetFaultNotification.md) `function`
+- [SCC_GetFullSOC](structured/SmartCharging/SCC_GetFullSOC.md) `function`
+- [SCC_GetGenChallenge](structured/SmartCharging/SCC_GetGenChallenge.md) `function`
+- [SCC_GetHeaderData](structured/SmartCharging/SCC_GetHeaderData.md) `function`
+- [SCC_GetMaxCurrent](structured/SmartCharging/SCC_GetMaxCurrent.md) `function`
+- [SCC_GetMaxEntriesSAScheduleTuple](structured/SmartCharging/SCC_GetMaxEntriesSAScheduleTuple.md) `function`
+- [SCC_GetMaxPower](structured/SmartCharging/SCC_GetMaxPower.md) `function`
+- [SCC_GetMaxVoltage](structured/SmartCharging/SCC_GetMaxVoltage.md) `function`
+- [SCC_GetMessageBodyIdAttr](structured/SmartCharging/SCC_GetMessageBodyIdAttr.md) `function`
+- [SCC_GetMessageRxTime](structured/SmartCharging/SCC_GetMessageRxTime.md) `function`
+- [SCC_GetMeterInfoData](structured/SmartCharging/SCC_GetMeterInfoData.md) `function`
+- [SCC_GetMinCurrent](structured/SmartCharging/SCC_GetMinCurrent.md) `function`
+- [SCC_GetMinVoltage](structured/SmartCharging/SCC_GetMinVoltage.md) `function`
+- [SCC_GetNominalVoltage](structured/SmartCharging/SCC_GetNominalVoltage.md) `function`
+- [SCC_GetNumberOfRootCertificateIDs](structured/SmartCharging/SCC_GetNumberOfRootCertificateIDs.md) `function`
+- [SCC_GetOEMPRovisioningCertificate](structured/SmartCharging/SCC_GetOEMPRovisioningCertificate.md) `function`
+- [SCC_GetPaymentOptions](structured/SmartCharging/SCC_GetPaymentOptions.md) `function`
+- [SCC_GetPeakCurrentRipple](structured/SmartCharging/SCC_GetPeakCurrentRipple.md) `function`
+- [SCC_GetPMaxScheduleEntryCount](structured/SmartCharging/SCC_GetPMaxScheduleEntryCount.md) `function`
+- [SCC_GetPMaxScheduleEntryData](structured/SmartCharging/SCC_GetPMaxScheduleEntryData.md) `function`
+- [SCC_GetPMaxScheduleID](structured/SmartCharging/SCC_GetPMaxScheduleID.md) `function`
+- [SCC_GetPreparedEXIMessage](structured/SmartCharging/SCC_GetPreparedEXIMessage.md) `function`
+- [SCC_GetProcessing](structured/SmartCharging/SCC_GetProcessing.md) `function`
+- [SCC_GetRCD](structured/SmartCharging/SCC_GetRCD.md) `function`
+- [SCC_GetRemainingTimeToBulkSoC](structured/SmartCharging/SCC_GetRemainingTimeToBulkSoC.md) `function`
+- [SCC_GetRemainingTimeToFullSoC](structured/SmartCharging/SCC_GetRemainingTimeToFullSoC.md) `function`
+- [SCC_GetResponseCodeString](structured/SmartCharging/SCC_GetResponseCodeString.md) `function`
+- [SCC_GetRetriesLeft](structured/SmartCharging/SCC_GetRetriesLeft.md) `function`
+- [SCC_GetRetryCounter](structured/SmartCharging/SCC_GetRetryCounter.md) `function`
+- [SCC_GetRootCertificateID](structured/SmartCharging/SCC_GetRootCertificateID.md) `function`
+- [SCC_GetSalesTariffData](structured/SmartCharging/SCC_GetSalesTariffData.md) `function`
+- [SCC_GetSalesTariffEntryCount](structured/SmartCharging/SCC_GetSalesTariffEntryCount.md) `function`
+- [SCC_GetSalesTariffEntryData](structured/SmartCharging/SCC_GetSalesTariffEntryData.md) `function`
+- [SCC_GetSAScheduleTupleID](structured/SmartCharging/SCC_GetSAScheduleTupleID.md) `function`
+- [SCC_GetSelectedParameterSetID](structured/SmartCharging/SCC_GetSelectedParameterSetID.md) `function`
+- [SCC_GetSelectedServiceID](structured/SmartCharging/SCC_GetSelectedServiceID.md) `function`
+- [SCC_GetServiceData](structured/SmartCharging/SCC_GetServiceData.md) `function`
+- [SCC_GetServiceParameterData](structured/SmartCharging/SCC_GetServiceParameterData.md) `function`
+- [SCC_GetServiceParameterNumericalValue](structured/SmartCharging/SCC_GetServiceParameterNumericalValue.md) `function`
+- [SCC_GetServiceParameterPhysicalValue](structured/SmartCharging/SCC_GetServiceParameterPhysicalValue.md) `function`
+- [SCC_GetServiceParameterSetData](structured/SmartCharging/SCC_GetServiceParameterSetData.md) `function`
+- [SCC_GetServiceParameterStringValue](structured/SmartCharging/SCC_GetServiceParameterStringValue.md) `function`
+- [SCC_GetSessionId](structured/SmartCharging/SCC_GetSessionId.md) `function`
+- [SCC_GetSimulationState](structured/SmartCharging/SCC_GetSimulationState.md) `function`
+- [SCC_GetStateName](structured/SmartCharging/SCC_GetStateName.md) `function`
+- [SCC_GetTimestamp](structured/SmartCharging/SCC_GetTimestamp.md) `function`
+- [SCC_GetVerificationStatus](structured/SmartCharging/SCC_GetVerificationStatus.md) `function`
+- [SCC_InvalidMessageInd](structured/SmartCharging/SCC_InvalidMessageInd.md) `function`
+- [SCC_LinkStatusChangeInd](structured/SmartCharging/SCC_LinkStatusChangeInd.md) `function`
+- [SCC_LoadCommunicationConfig](structured/SmartCharging/SCC_LoadCommunicationConfig.md) `function`
+- [SCC_LoadV2GConfig](structured/SmartCharging/SCC_LoadV2GConfig.md) `function`
+- [SCC_MessageRxInd](structured/SmartCharging/SCC_MessageRxInd.md) `function`
+- [SCC_MessageTxInd](structured/SmartCharging/SCC_MessageTxInd.md) `function`
+- [SCC_MeteringReceiptReq](structured/SmartCharging/SCC_MeteringReceiptReq.md) `function`
+- [SCC_MeteringReceiptRes](structured/SmartCharging/SCC_MeteringReceiptRes.md) `function`
+- [SCC_PaymentDetailsReq](structured/SmartCharging/SCC_PaymentDetailsReq.md) `function`
+- [SCC_PaymentDetailsRes](structured/SmartCharging/SCC_PaymentDetailsRes.md) `function`
+- [SCC_PaymentServiceSelectionReq](structured/SmartCharging/SCC_PaymentServiceSelectionReq.md) `function`
+- [SCC_PaymentServiceSelectionRes](structured/SmartCharging/SCC_PaymentServiceSelectionRes.md) `function`
+- [SCC_PowerDeliveryReq](structured/SmartCharging/SCC_PowerDeliveryReq.md) `function`
+- [SCC_PowerDeliveryRes](structured/SmartCharging/SCC_PowerDeliveryRes.md) `function`
+- [SCC_PreChargeReq](structured/SmartCharging/SCC_PreChargeReq.md) `function`
+- [SCC_PreChargeRes](structured/SmartCharging/SCC_PreChargeRes.md) `function`
+- [SCC_PreSendInd](structured/SmartCharging/SCC_PreSendInd.md) `function`
+- [SCC_ProtocolFinishedInd](structured/SmartCharging/SCC_ProtocolFinishedInd.md) `function`
+- [SCC_ResetDCStatusCode](structured/SmartCharging/SCC_ResetDCStatusCode.md) `function`
+- [SCC_RestartInd](structured/SmartCharging/SCC_RestartInd.md) `function`
+- [SCC_SchemaSelectionInd](structured/SmartCharging/SCC_SchemaSelectionInd.md) `function`
+- [SCC_SECCDiscoveryReq](structured/SmartCharging/SCC_SECCDiscoveryReq.md) `function`
+- [SCC_SECCDiscoveryRes](structured/SmartCharging/SCC_SECCDiscoveryRes.md) `function`
+- [SCC_SendPreparedMessage](structured/SmartCharging/SCC_SendPreparedMessage.md) `function`
+- [SCC_ServiceDetailReq](structured/SmartCharging/SCC_ServiceDetailReq.md) `function`
+- [SCC_ServiceDetailRes](structured/SmartCharging/SCC_ServiceDetailRes.md) `function`
+- [SCC_ServiceDiscoveryReq](structured/SmartCharging/SCC_ServiceDiscoveryReq.md) `function`
+- [SCC_ServiceDiscoveryRes](structured/SmartCharging/SCC_ServiceDiscoveryRes.md) `function`
+- [SCC_ServicePaymentSelectionReq](structured/SmartCharging/SCC_ServicePaymentSelectionReq.md) `function`
+- [SCC_ServicePaymentSelectionRes](structured/SmartCharging/SCC_ServicePaymentSelectionRes.md) `function`
+- [SCC_SessionSetupReq](structured/SmartCharging/SCC_SessionSetupReq.md) `function`
+- [SCC_SessionSetupRes](structured/SmartCharging/SCC_SessionSetupRes.md) `function`
+- [SCC_SessionStopReq](structured/SmartCharging/SCC_SessionStopReq.md) `function`
+- [SCC_SessionStopRes](structured/SmartCharging/SCC_SessionStopRes.md) `function`
+- [SCC_SetBatterySoC](structured/SmartCharging/SCC_SetBatterySoC.md) `function`
+- [SCC_SetBatteryState](structured/SmartCharging/SCC_SetBatteryState.md) `function`
+- [SCC_SetCabinConditioning](structured/SmartCharging/SCC_SetCabinConditioning.md) `function`
+- [SCC_SetChargeLoopInterval](structured/SmartCharging/SCC_SetChargeLoopInterval.md) `function`
+- [SCC_SetContractPaymentAllowed](structured/SmartCharging/SCC_SetContractPaymentAllowed.md) `function`
+- [SCC_SetCurrentRegulationTolerance](structured/SmartCharging/SCC_SetCurrentRegulationTolerance.md) `function`
+- [SCC_SetDCStatusCode](structured/SmartCharging/SCC_SetDCStatusCode.md) `function`
+- [SCC_SetEnergyToBeDelivered](structured/SmartCharging/SCC_SetEnergyToBeDelivered.md) `function`
+- [SCC_SetEnergyTransferType](structured/SmartCharging/SCC_SetEnergyTransferType.md) `function`
+- [SCC_SetEVReady](structured/SmartCharging/SCC_SetEVReady.md) `function`
+- [SCC_SetEVSENotification](structured/SmartCharging/SCC_SetEVSENotification.md) `function`
+- [SCC_SetExternalPaymentAllowed](structured/SmartCharging/SCC_SetExternalPaymentAllowed.md) `function`
+- [SCC_SetFaultNotification](structured/SmartCharging/SCC_SetFaultNotification.md) `function`
+- [SCC_SetGenChallenge](structured/SmartCharging/SCC_SetGenChallenge.md) `function`
+- [SCC_SetIsolationStatus](structured/SmartCharging/SCC_SetIsolationStatus.md) `function`
+- [SCC_SetMaxCurrent](structured/SmartCharging/SCC_SetMaxCurrent.md) `function`
+- [SCC_SetMaxPower](structured/SmartCharging/SCC_SetMaxPower.md) `function`
+- [SCC_SetMaxVoltage](structured/SmartCharging/SCC_SetMaxVoltage.md) `function`
+- [SCC_SetMessageDelay](structured/SmartCharging/SCC_SetMessageDelay.md) `function`
+- [SCC_SetMeterReading](structured/SmartCharging/SCC_SetMeterReading.md) `function`
+- [SCC_SetMinCurrent](structured/SmartCharging/SCC_SetMinCurrent.md) `function`
+- [SCC_SetMinVoltage](structured/SmartCharging/SCC_SetMinVoltage.md) `function`
+- [SCC_SetNominalVoltage](structured/SmartCharging/SCC_SetNominalVoltage.md) `function`
+- [SCC_SetNotificationMaxDelay](structured/SmartCharging/SCC_SetNotificationMaxDelay.md) `function`
+- [SCC_SetOptionalParameter](structured/SmartCharging/SCC_SetOptionalParameter.md) `function`
+- [SCC_SetOptionalParameterFromConfig](structured/SmartCharging/SCC_SetOptionalParameterFromConfig.md) `function`
+- [SCC_SetOptionalParameterUnsigned](structured/SmartCharging/SCC_SetOptionalParameterUnsigned.md) `function`
+- [SCC_SetPaymentOption](structured/SmartCharging/SCC_SetPaymentOption.md) `function`
+- [SCC_SetPeakCurrentRipple](structured/SmartCharging/SCC_SetPeakCurrentRipple.md) `function`
+- [SCC_SetPreparedMsgFaultNotification](structured/SmartCharging/SCC_SetPreparedMsgFaultNotification.md) `function`
+- [SCC_SetPreparedMsgHeaderData](structured/SmartCharging/SCC_SetPreparedMsgHeaderData.md) `function`
+- [SCC_SetPresentCurrent](structured/SmartCharging/SCC_SetPresentCurrent.md) `function`
+- [SCC_SetPresentVoltage](structured/SmartCharging/SCC_SetPresentVoltage.md) `function`
+- [SCC_SetProcessing](structured/SmartCharging/SCC_SetProcessing.md) `function`
+- [SCC_SetRCD](structured/SmartCharging/SCC_SetRCD.md) `function`
+- [SCC_SetReceiptRequired](structured/SmartCharging/SCC_SetReceiptRequired.md) `function`
+- [SCC_SetResponseCode](structured/SmartCharging/SCC_SetResponseCode.md) `function`
+- [SCC_SetRESSConditioning](structured/SmartCharging/SCC_SetRESSConditioning.md) `function`
+- [SCC_SetSchema](structured/SmartCharging/SCC_SetSchema.md) `function`
+- [SCC_SetSelectedScheduleTableEntry](structured/SmartCharging/SCC_SetSelectedScheduleTableEntry.md) `function`
+- [SCC_SetSelectedSchema](structured/SmartCharging/SCC_SetSelectedSchema.md) `function`
+- [SCC_SetSelectedService](structured/SmartCharging/SCC_SetSelectedService.md) `function`
+- [SCC_SetServiceDetailRequest](structured/SmartCharging/SCC_SetServiceDetailRequest.md) `function`
+- [SCC_SetSessionId](structured/SmartCharging/SCC_SetSessionId.md) `function`
+- [SCC_SetShutdownRequest](structured/SmartCharging/SCC_SetShutdownRequest.md) `function`
+- [SCC_SetTargetCurrent](structured/SmartCharging/SCC_SetTargetCurrent.md) `function`
+- [SCC_SetTargetVoltage](structured/SmartCharging/SCC_SetTargetVoltage.md) `function`
+- [SCC_SetTLSEnabled](structured/SmartCharging/SCC_SetTLSEnabled.md) `function`
+- [SCC_SetVerbosity](structured/SmartCharging/SCC_SetVerbosity.md) `function`
+- [SCC_SetWeldingDetectionCount](structured/SmartCharging/SCC_SetWeldingDetectionCount.md) `function`
+- [SCC_Shutdown](structured/SmartCharging/SCC_Shutdown.md) `function`
+- [SCC_ShutdownInstant](structured/SmartCharging/SCC_ShutdownInstant.md) `notes`
+- [SCC_SignaturePreSendInd](structured/SmartCharging/SCC_SignaturePreSendInd.md) `function`
+- [SCC_SignatureVerificationInd](structured/SmartCharging/SCC_SignatureVerificationInd.md) `function`
+- [SCC_SimulationReset](structured/SmartCharging/SCC_SimulationReset.md) `function`
+- [SCC_SimulationResume](structured/SmartCharging/SCC_SimulationResume.md) `function`
+- [SCC_SimulationWait](structured/SmartCharging/SCC_SimulationWait.md) `function`
+- [SCC_SLAC_GenerateApplyKey](structured/SmartCharging/SCC_SLAC_GenerateApplyKey.md) `function`
+- [SCC_SLAC_GenerateNID](structured/SmartCharging/SCC_SLAC_GenerateNID.md) `function`
+- [SCC_SLAC_GetApplicationType](structured/SmartCharging/SCC_SLAC_GetApplicationType.md) `function`
+- [SCC_SLAC_GetAttenResults](structured/SmartCharging/SCC_SLAC_GetAttenResults.md) `function`
+- [SCC_SLAC_GetCMSetKeyCnfData](structured/SmartCharging/SCC_SLAC_GetCMSetKeyCnfData.md) `function`
+- [SCC_SLAC_GetDestinationAddress](structured/SmartCharging/SCC_SLAC_GetDestinationAddress.md) `function`
+- [SCC_SLAC_GetEthPacketLength](structured/SmartCharging/SCC_SLAC_GetEthPacketLength.md) `function`
+- [SCC_SLAC_GetKeyData](structured/SmartCharging/SCC_SLAC_GetKeyData.md) `function`
+- [SCC_SLAC_GetLinkStatus](structured/SmartCharging/SCC_SLAC_GetLinkStatus.md) `function`
+- [SCC_SLAC_GetMSoundTarget](structured/SmartCharging/SCC_SLAC_GetMSoundTarget.md) `function`
+- [SCC_SLAC_GetMVFLength](structured/SmartCharging/SCC_SLAC_GetMVFLength.md) `function`
+- [SCC_SLAC_GetPEVAndEVSEId](structured/SmartCharging/SCC_SLAC_GetPEVAndEVSEId.md) `function`
+- [SCC_SLAC_GetRandomValue](structured/SmartCharging/SCC_SLAC_GetRandomValue.md) `function`
+- [SCC_SLAC_GetReservedField](structured/SmartCharging/SCC_SLAC_GetReservedField.md) `function`
+- [SCC_SLAC_GetResponseId](structured/SmartCharging/SCC_SLAC_GetResponseId.md) `function`
+- [SCC_SLAC_GetRespType](structured/SmartCharging/SCC_SLAC_GetRespType.md) `function`
+- [SCC_SLAC_GetResult](structured/SmartCharging/SCC_SLAC_GetResult.md) `function`
+- [SCC_SLAC_GetSecurityType](structured/SmartCharging/SCC_SLAC_GetSecurityType.md) `function`
+- [SCC_SLAC_GetSignalType](structured/SmartCharging/SCC_SLAC_GetSignalType.md) `function`
+- [SCC_SLAC_GetSourceId](structured/SmartCharging/SCC_SLAC_GetSourceId.md) `function`
+- [SCC_SLAC_SetAdditionalParameter](structured/SmartCharging/SCC_SLAC_SetAdditionalParameter.md) `function`
+- [SCC_SLAC_SetAttenuation](structured/SmartCharging/SCC_SLAC_SetAttenuation.md) `function`
+- [SCC_SLAC_SetAttenuationRx](structured/SmartCharging/SCC_SLAC_SetAttenuationRx.md) `function`
+- [SCC_SLAC_SetChipPresent](structured/SmartCharging/SCC_SLAC_SetChipPresent.md) `function`
+- [SCC_SLAC_SetLinkStatus](structured/SmartCharging/SCC_SLAC_SetLinkStatus.md) `function`
+- [SCC_SLAC_SetLinkStatusPollingInterval](structured/SmartCharging/SCC_SLAC_SetLinkStatusPollingInterval.md) `function`
+- [SCC_SLAC_SetLinkStatusPollingType](structured/SmartCharging/SCC_SLAC_SetLinkStatusPollingType.md) `function`
+- [SCC_SLAC_SetPSD](structured/SmartCharging/SCC_SLAC_SetPSD.md) `function`
+- [SCC_SLAC_SetToggleNum](structured/SmartCharging/SCC_SLAC_SetToggleNum.md) `function`
+- [SCC_SLACFinishedInd](structured/SmartCharging/SCC_SLACFinishedInd.md) `function`
+- [SCC_StartCertificateInstallation](structured/SmartCharging/SCC_StartCertificateInstallation.md) `function`
+- [SCC_StartCertificateUpdate](structured/SmartCharging/SCC_StartCertificateUpdate.md) `function`
+- [SCC_StartPassive](structured/SmartCharging/SCC_StartPassive.md) `function`
+- [SCC_StartRenegotiation](structured/SmartCharging/SCC_StartRenegotiation.md) `function`
+- [SCC_StartSimulation](structured/SmartCharging/SCC_StartSimulation.md) `function`
+- [SCC_StateTransitionInd](structured/SmartCharging/SCC_StateTransitionInd.md) `function`
+- [SCC_StopSession](structured/SmartCharging/SCC_StopSession.md) `function`
+- [SCC_StopSimulation](structured/SmartCharging/SCC_StopSimulation.md) `function`
+- [SCC_SupportedAppProtocolReq](structured/SmartCharging/SCC_SupportedAppProtocolReq.md) `function`
+- [SCC_SupportedAppProtocolRes](structured/SmartCharging/SCC_SupportedAppProtocolRes.md) `function`
+- [SCC_SuspendTx](structured/SmartCharging/SCC_SuspendTx.md) `function`
+- [SCC_TCPConnectInd](structured/SmartCharging/SCC_TCPConnectInd.md) `function`
+- [SCC_TCPShutdownInd](structured/SmartCharging/SCC_TCPShutdownInd.md) `function`
+- [SCC_TLSHandshakeInd](structured/SmartCharging/SCC_TLSHandshakeInd.md) `function`
+- [SCC_V2G_EVCC_CableCheck_TimeoutInd](structured/SmartCharging/SCC_V2G_EVCC_CableCheck_TimeoutInd.md) `function`
+- [SCC_V2G_EVCC_Msg_TimeoutInd](structured/SmartCharging/SCC_V2G_EVCC_Msg_TimeoutInd.md) `function`
+- [SCC_V2G_EVCC_PreCharge_TimeoutInd](structured/SmartCharging/SCC_V2G_EVCC_PreCharge_TimeoutInd.md) `function`
+- [SCC_VS_Nw_Info_Cnf](structured/SmartCharging/SCC_VS_Nw_Info_Cnf.md) `function`
+- [SCC_VS_PL_Lnk_Status_Cnf](structured/SmartCharging/SCC_VS_PL_Lnk_Status_Cnf.md) `function`
+- [SCC_WeldingDetectionReq](structured/SmartCharging/SCC_WeldingDetectionReq.md) `function`
+- [SCC_WeldingDetectionRes](structured/SmartCharging/SCC_WeldingDetectionRes.md) `function`
+- [Smart Charging CAPL Functions](structured/SmartCharging/Smart Charging CAPL Functions.md) `notes`
+
+---
+
+## CAPL Struct/Byte Access (StructByteAccess)
+
+**Function count**: 6
+
+- [memcmp](structured/StructByteAccess/memcmp.md) `function`
+- [memcpy](structured/StructByteAccess/memcpy.md) `function`
+- [memcpy_h2n](structured/StructByteAccess/memcpy_h2n.md) `function`
+- [memcpy_n2h](structured/StructByteAccess/memcpy_n2h.md) `function`
+- [memcpy_off](structured/StructByteAccess/memcpy_off.md) `function`
+- [Struct Byte Access CAPL Functions](structured/StructByteAccess/Struct Byte Access CAPL Functions.md) `notes`
+
+---
+
+## CAPL System Variables (SystemVariables)
+
+**Function count**: 52
+
+- [sysBeginVariableStructUpdate](structured/SystemVariables/sysBeginVariableStructUpdate.md) `function`
+- [sysCreateVariableFilter](structured/SystemVariables/sysCreateVariableFilter.md) `function`
+- [sysDefineNamespace](structured/SystemVariables/sysDefineNamespace.md) `function`
+- [sysDefineVariableData](structured/SystemVariables/sysDefineVariableData.md) `function`
+- [sysDefineVariableFloat](structured/SystemVariables/sysDefineVariableFloat.md) `function`
+- [sysDefineVariableFloatArray](structured/SystemVariables/sysDefineVariableFloatArray.md) `function`
+- [sysDefineVariableInt](structured/SystemVariables/sysDefineVariableInt.md) `function`
+- [sysDefineVariableIntArray](structured/SystemVariables/sysDefineVariableIntArray.md) `function`
+- [sysDefineVariableLongLong](structured/SystemVariables/sysDefineVariableLongLong.md) `function`
+- [sysDefineVariableString](structured/SystemVariables/sysDefineVariableString.md) `function`
+- [sysEndVariableStructUpdate](structured/SystemVariables/sysEndVariableStructUpdate.md) `function`
+- [sysFilterAddNamespace](structured/SystemVariables/sysFilterAddNamespace.md) `function`
+- [sysFilterAddVariable](structured/SystemVariables/sysFilterAddVariable.md) `function`
+- [sysFilterRemoveNamespace](structured/SystemVariables/sysFilterRemoveNamespace.md) `function`
+- [sysFilterRemoveVariable](structured/SystemVariables/sysFilterRemoveVariable.md) `function`
+- [sysGetOrigTimeNS](structured/SystemVariables/sysGetOrigTimeNS.md) `function`
+- [sysGetVariableArrayLength](structured/SystemVariables/sysGetVariableArrayLength.md) `function`
+- [sysGetVariableArraySize](structured/SystemVariables/sysGetVariableArraySize.md) `function`
+- [sysGetVariableData](structured/SystemVariables/sysGetVariableData.md) `function`
+- [sysGetVariableDescriptionForValue](structured/SystemVariables/sysGetVariableDescriptionForValue.md) `function`
+- [sysGetVariableDWord](structured/SystemVariables/sysGetVariableDWord.md) `function`
+- [sysGetVariableFloat](structured/SystemVariables/sysGetVariableFloat.md) `function`
+- [sysGetVariableFloatArray](structured/SystemVariables/sysGetVariableFloatArray.md) `function`
+- [sysGetVariableInt](structured/SystemVariables/sysGetVariableInt.md) `function`
+- [sysGetVariableLongArray](structured/SystemVariables/sysGetVariableLongArray.md) `function`
+- [sysGetVariableLongLong](structured/SystemVariables/sysGetVariableLongLong.md) `function`
+- [sysGetVariableMax](structured/SystemVariables/sysGetVariableMax.md) `function`
+- [sysGetVariableMemberPhys](structured/SystemVariables/sysGetVariableMemberPhys.md) `function`
+- [sysGetVariableMin](structured/SystemVariables/sysGetVariableMin.md) `function`
+- [sysGetVariableQWord](structured/SystemVariables/sysGetVariableQWord.md) `function`
+- [sysGetVariableString](structured/SystemVariables/sysGetVariableString.md) `function`
+- [sysGetVariableSVType](structured/SystemVariables/sysGetVariableSVType.md) `function`
+- [sysGetVariableTimeNS](structured/SystemVariables/sysGetVariableTimeNS.md) `function`
+- [sysGetVariableValueForDescription](structured/SystemVariables/sysGetVariableValueForDescription.md) `function`
+- [sysIsVariableTypeSigned](structured/SystemVariables/sysIsVariableTypeSigned.md) `function`
+- [sysSetAnalysisOnlyVariable](structured/SystemVariables/sysSetAnalysisOnlyVariable.md) `function`
+- [SysSetVariableArraySize](structured/SystemVariables/SysSetVariableArraySize.md) `function`
+- [sysSetVariableData](structured/SystemVariables/sysSetVariableData.md) `function`
+- [sysSetVariableDescriptionForValue](structured/SystemVariables/sysSetVariableDescriptionForValue.md) `function`
+- [sysSetVariableDWord](structured/SystemVariables/sysSetVariableDWord.md) `function`
+- [sysSetVariableFilterActive](structured/SystemVariables/sysSetVariableFilterActive.md) `function`
+- [sysSetVariableFloat](structured/SystemVariables/sysSetVariableFloat.md) `function`
+- [sysSetVariableFloatArray](structured/SystemVariables/sysSetVariableFloatArray.md) `function`
+- [sysSetVariableInt](structured/SystemVariables/sysSetVariableInt.md) `function`
+- [sysSetVariableLongArray](structured/SystemVariables/sysSetVariableLongArray.md) `function`
+- [sysSetVariableLongLong](structured/SystemVariables/sysSetVariableLongLong.md) `function`
+- [sysSetVariableMemberPhys](structured/SystemVariables/sysSetVariableMemberPhys.md) `function`
+- [sysSetVariableQWord](structured/SystemVariables/sysSetVariableQWord.md) `function`
+- [sysSetVariableString](structured/SystemVariables/sysSetVariableString.md) `function`
+- [System Variables CAPL Functions](structured/SystemVariables/System Variables CAPL Functions.md) `notes`
+- [sysUndefineNamespace](structured/SystemVariables/sysUndefineNamespace.md) `function`
+- [sysUndefineVariable](structured/SystemVariables/sysUndefineVariable.md) `function`
+
+---
+
+## CAPL TCP/IP API (TCPIPAPI)
+
+**Function count**: 97
+
+- [IpAddAdapterAddress](structured/TCPIPAPI/IpAddAdapterAddress.md) `function`
+- [IpBind](structured/TCPIPAPI/IpBind.md) `function`
+- [IpGetAdapter](structured/TCPIPAPI/IpGetAdapter.md) `function`
+- [IpGetAdapterAddress](structured/TCPIPAPI/IpGetAdapterAddress.md) `function`
+- [IpGetAdapterAddressAsString](structured/TCPIPAPI/IpGetAdapterAddressAsString.md) `function`
+- [IpGetAdapterAddressCount](structured/TCPIPAPI/IpGetAdapterAddressCount.md) `function`
+- [IpGetAdapterChannel](structured/TCPIPAPI/IpGetAdapterChannel.md) `function`
+- [IpGetAdapterCount](structured/TCPIPAPI/IpGetAdapterCount.md) `function`
+- [IpGetAdapterDescription](structured/TCPIPAPI/IpGetAdapterDescription.md) `function`
+- [IpGetAdapterGateway](structured/TCPIPAPI/IpGetAdapterGateway.md) `function`
+- [IpGetAdapterGatewayAsString](structured/TCPIPAPI/IpGetAdapterGatewayAsString.md) `function`
+- [IpGetAdapterMacId](structured/TCPIPAPI/IpGetAdapterMacId.md) `function`
+- [IpGetAdapterMask](structured/TCPIPAPI/IpGetAdapterMask.md) `function`
+- [IpGetAdapterMaskAsString](structured/TCPIPAPI/IpGetAdapterMaskAsString.md) `function`
+- [IpGetAdapterVlanDefaultPriority](structured/TCPIPAPI/IpGetAdapterVlanDefaultPriority.md) `function`
+- [IpGetAdapterVlanId](structured/TCPIPAPI/IpGetAdapterVlanId.md) `function`
+- [IpGetAddressAsArray](structured/TCPIPAPI/IpGetAddressAsArray.md) `function`
+- [IpGetAddressAsNumber](structured/TCPIPAPI/IpGetAddressAsNumber.md) `function`
+- [IpGetAddressAsString](structured/TCPIPAPI/IpGetAddressAsString.md) `function`
+- [IpGetHostByName](structured/TCPIPAPI/IpGetHostByName.md) `function`
+- [IpGetLastError](structured/TCPIPAPI/IpGetLastError.md) `function`
+- [IpGetLastSocketError](structured/TCPIPAPI/IpGetLastSocketError.md) `function`
+- [IpGetLastSocketErrorAsString](structured/TCPIPAPI/IpGetLastSocketErrorAsString.md) `function`
+- [IpGetSocketAddressFamily](structured/TCPIPAPI/IpGetSocketAddressFamily.md) `function`
+- [IpGetSocketName](structured/TCPIPAPI/IpGetSocketName.md) `function`
+- [IpGetSocketOption](structured/TCPIPAPI/IpGetSocketOption.md) `function`
+- [IpGetStackParameter](structured/TCPIPAPI/IpGetStackParameter.md) `function`
+- [IpJoinMulticastGroup](structured/TCPIPAPI/IpJoinMulticastGroup.md) `function`
+- [IpLeaveMulticastGroup](structured/TCPIPAPI/IpLeaveMulticastGroup.md) `function`
+- [IpRemoveAdapterAddress](structured/TCPIPAPI/IpRemoveAdapterAddress.md) `function`
+- [IPRouteAddGateway](structured/TCPIPAPI/IPRouteAddGateway.md) `function`
+- [IPRouteAddHost](structured/TCPIPAPI/IPRouteAddHost.md) `function`
+- [IPRouteAddInterface](structured/TCPIPAPI/IPRouteAddInterface.md) `function`
+- [IPRouteDeleteGateway](structured/TCPIPAPI/IPRouteDeleteGateway.md) `function`
+- [IPRouteDeleteHost](structured/TCPIPAPI/IPRouteDeleteHost.md) `function`
+- [IPRouteDeleteInterface](structured/TCPIPAPI/IPRouteDeleteInterface.md) `function`
+- [ipsecAssociationDatabaseAdd](structured/TCPIPAPI/ipsecAssociationDatabaseAdd.md) `function`
+- [ipsecAssociationDatabaseDelete](structured/TCPIPAPI/ipsecAssociationDatabaseDelete.md) `function`
+- [ipsecAssociationDatabaseDeleteAll](structured/TCPIPAPI/ipsecAssociationDatabaseDeleteAll.md) `function`
+- [ipsecAssociationDatabaseFlush](structured/TCPIPAPI/ipsecAssociationDatabaseFlush.md) `function`
+- [ipsecAssociationDatabaseGetSpi](structured/TCPIPAPI/ipsecAssociationDatabaseGetSpi.md) `function`
+- [ipsecAssociationDatabaseUpdate](structured/TCPIPAPI/ipsecAssociationDatabaseUpdate.md) `function`
+- [ipsecAssociationGetParameter](structured/TCPIPAPI/ipsecAssociationGetParameter.md) `function`
+- [ipsecAssociationInit](structured/TCPIPAPI/ipsecAssociationInit.md) `function`
+- [ipsecAssociationRelease](structured/TCPIPAPI/ipsecAssociationRelease.md) `function`
+- [ipsecAssociationSetParameter](structured/TCPIPAPI/ipsecAssociationSetParameter.md) `function`
+- [ipsecPolicyDatabaseAdd](structured/TCPIPAPI/ipsecPolicyDatabaseAdd.md) `function`
+- [ipsecPolicyDatabaseDelete](structured/TCPIPAPI/ipsecPolicyDatabaseDelete.md) `function`
+- [ipsecPolicyDatabaseFlush](structured/TCPIPAPI/ipsecPolicyDatabaseFlush.md) `function`
+- [ipsecPolicyGetParameter](structured/TCPIPAPI/ipsecPolicyGetParameter.md) `function`
+- [IpSetAdapterGateway](structured/TCPIPAPI/IpSetAdapterGateway.md) `function`
+- [IpSetAdapterMacId](structured/TCPIPAPI/IpSetAdapterMacId.md) `function`
+- [IPSetAdapterStatus](structured/TCPIPAPI/IPSetAdapterStatus.md) `function`
+- [IpSetMulticastInterface](structured/TCPIPAPI/IpSetMulticastInterface.md) `function`
+- [IpSetSocketOption](structured/TCPIPAPI/IpSetSocketOption.md) `function`
+- [IpSetStackParameter](structured/TCPIPAPI/IpSetStackParameter.md) `function`
+- [OnIpAddressAdded](structured/TCPIPAPI/OnIpAddressAdded.md) `function`
+- [OnIpAddressRemoved](structured/TCPIPAPI/OnIpAddressRemoved.md) `function`
+- [OnIpGetHostByName](structured/TCPIPAPI/OnIpGetHostByName.md) `function`
+- [OnIpReceivePrepare](structured/TCPIPAPI/OnIpReceivePrepare.md) `function`
+- [OnIpsecSadbAcquire](structured/TCPIPAPI/OnIpsecSadbAcquire.md) `function`
+- [OnIpSendPrepare](structured/TCPIPAPI/OnIpSendPrepare.md) `function`
+- [OnTcpClose](structured/TCPIPAPI/OnTcpClose.md) `function`
+- [OnTcpConnect](structured/TCPIPAPI/OnTcpConnect.md) `function`
+- [OnTcpListen](structured/TCPIPAPI/OnTcpListen.md) `function`
+- [OnTcpReceive](structured/TCPIPAPI/OnTcpReceive.md) `function`
+- [OnTcpSend](structured/TCPIPAPI/OnTcpSend.md) `function`
+- [OnUdpReceiveFrom](structured/TCPIPAPI/OnUdpReceiveFrom.md) `function`
+- [OnUdpSendTo](structured/TCPIPAPI/OnUdpSendTo.md) `function`
+- [Socket Options](structured/TCPIPAPI/Socket Options.md) `notes`
+- [Socket Options: IPPROTO_IP](structured/TCPIPAPI/Socket Options_ IPPROTO_IP.md) `notes`
+- [Socket Options: IPPROTO_IP](structured/TCPIPAPI/Socket Options_ IPPROTO_IP.md) `notes`
+- [Socket Options: IPPROTO_TCP](structured/TCPIPAPI/Socket Options_ IPPROTO_TCP.md) `notes`
+- [Socket Options: IPPROTO_UDP](structured/TCPIPAPI/Socket Options_ IPPROTO_UDP.md) `notes`
+- [Socket Options: SOL_SOCKET](structured/TCPIPAPI/Socket Options_ SOL_SOCKET.md) `notes`
+- [Socket Options: SOL_VECTOR](structured/TCPIPAPI/Socket Options_ SOL_VECTOR.md) `notes`
+- [TCP/IP CAPL Functions](structured/TCPIPAPI/TCP_IP CAPL Functions.md) `notes`
+- [TcpAbort](structured/TCPIPAPI/TcpAbort.md) `function`
+- [TcpAccept](structured/TCPIPAPI/TcpAccept.md) `function`
+- [TcpClose](structured/TCPIPAPI/TcpClose.md) `function`
+- [TcpConnect](structured/TCPIPAPI/TcpConnect.md) `function`
+- [TCPGetRemoteAddress](structured/TCPIPAPI/TCPGetRemoteAddress.md) `function`
+- [TCPGetRemoteAddressAsString](structured/TCPIPAPI/TCPGetRemoteAddressAsString.md) `function`
+- [TcpGetRemoteEndpoint](structured/TCPIPAPI/TcpGetRemoteEndpoint.md) `function`
+- [TcpListen](structured/TCPIPAPI/TcpListen.md) `function`
+- [TcpOpen](structured/TCPIPAPI/TcpOpen.md) `function`
+- [TcpReceive](structured/TCPIPAPI/TcpReceive.md) `function`
+- [TcpSend](structured/TCPIPAPI/TcpSend.md) `function`
+- [TcpShutdown](structured/TCPIPAPI/TcpShutdown.md) `function`
+- [Technical Details](structured/TCPIPAPI/Technical Details.md) `notes`
+- [UdpClose](structured/TCPIPAPI/UdpClose.md) `function`
+- [UdpConnect](structured/TCPIPAPI/UdpConnect.md) `function`
+- [UdpOpen](structured/TCPIPAPI/UdpOpen.md) `function`
+- [UdpReceiveFrom](structured/TCPIPAPI/UdpReceiveFrom.md) `function`
+- [UdpSend](structured/TCPIPAPI/UdpSend.md) `function`
+- [UdpSendTo](structured/TCPIPAPI/UdpSendTo.md) `function`
+- [Winsock 2 Error Codes](structured/TCPIPAPI/Winsock 2 Error Codes.md) `notes`
+
+---
+
+## CAPL TLS API (TLSAPI)
+
+**Function count**: 11
+
+- [OnDtlsServerConnect](structured/TLSAPI/OnDtlsServerConnect.md) `function`
+- [OnTlsClose](structured/TLSAPI/OnTlsClose.md) `function`
+- [OnTlsHandshakeComplete](structured/TLSAPI/OnTlsHandshakeComplete.md) `function`
+- [TLS CAPL Functions](structured/TLSAPI/TLS CAPL Functions.md) `notes`
+- [tlsAuthenticateAsClient](structured/TLSAPI/tlsAuthenticateAsClient.md) `function`
+- [tlsAuthenticateAsServer](structured/TLSAPI/tlsAuthenticateAsServer.md) `function`
+- [tlsAuthenticateAsServerVerifyClient](structured/TLSAPI/tlsAuthenticateAsServerVerifyClient.md) `function`
+- [tlsClose](structured/TLSAPI/tlsClose.md) `function`
+- [tlsGetLastError](structured/TLSAPI/tlsGetLastError.md) `function`
+- [tlsGetLastErrorAsString](structured/TLSAPI/tlsGetLastErrorAsString.md) `function`
+- [tlsOpen](structured/TLSAPI/tlsOpen.md) `function`
+
+---
+
+## CAPL Test Service Library (Test)
+
+**Function count**: 457
+
+- [checkSignalInRange](structured/Test/checkSignalInRange.md) `function`
+- [CheckSignalMatch](structured/Test/CheckSignalMatch.md) `function`
+- [Chk_AddNode](structured/Test/Chk_AddNode.md) `function`
+- [ChkConfig_DisablePDULayer](structured/Test/ChkConfig_DisablePDULayer.md) `function`
+- [ChkConfig_EnablePDULayer](structured/Test/ChkConfig_EnablePDULayer.md) `function`
+- [ChkConfig_Init](structured/Test/ChkConfig_Init.md) `function`
+- [ChkConfig_SetCallback](structured/Test/ChkConfig_SetCallback.md) `function`
+- [ChkConfig_SetPDUIDFormat](structured/Test/ChkConfig_SetPDUIDFormat.md) `function`
+- [ChkConfig_SetPrecision](structured/Test/ChkConfig_SetPrecision.md) `function`
+- [ChkConfig_SetTitle](structured/Test/ChkConfig_SetTitle.md) `function`
+- [ChkControl_Destroy](structured/Test/ChkControl_Destroy.md) `function`
+- [ChkControl_Reset](structured/Test/ChkControl_Reset.md) `function`
+- [ChkControl_Start](structured/Test/ChkControl_Start.md) `function`
+- [ChkControl_Stop](structured/Test/ChkControl_Stop.md) `function`
+- [ChkCreate_AllNodesBabbling, ChkStart_AllNodesBabbling](structured/Test/ChkCreate_AllNodesBabbling, ChkStart_AllNodesBabbling.md) `function`
+- [ChkCreate_AllNodesDead, ChkStart_AllNodesDead](structured/Test/ChkCreate_AllNodesDead, ChkStart_AllNodesDead.md) `function`
+- [ChkCreate_BurstTimeLimitViolation, ChkStart_BurstTimeLimitViolation](structured/Test/ChkCreate_BurstTimeLimitViolation, ChkStart_BurstTimeLimitViolation.md) `function`
+- [ChkCreate_CRCObservationAsrPDU, ChkStart_CRCObservationAsrPDU](structured/Test/ChkCreate_CRCObservationAsrPDU, ChkStart_CRCObservationAsrPDU.md) `function`
+- [ChkCreate_ErrorFramesOccured, ChkStart_ErrorFramesOccured](structured/Test/ChkCreate_ErrorFramesOccured, ChkStart_ErrorFramesOccured.md) `function`
+- [ChkCreate_InconsistentDLC, ChkStart_InconsistentDLC](structured/Test/ChkCreate_InconsistentDLC, ChkStart_InconsistentDLC.md) `function`
+- [ChkCreate_InconsistentRxDLC, ChkStart_InconsistentRxDLC](structured/Test/ChkCreate_InconsistentRxDLC, ChkStart_InconsistentRxDLC.md) `function`
+- [ChkCreate_InconsistentTxDLC, ChkStart_InconsistentTxDLC](structured/Test/ChkCreate_InconsistentTxDLC, ChkStart_InconsistentTxDLC.md) `function`
+- [ChkCreate_J1939_76_FunctionalSafetyCheck](structured/Test/ChkCreate_J1939_76_FunctionalSafetyCheck.md) `function`
+- [ChkCreate_J1939AddressClaimViolation, ChkStart_J1939AddressClaimViolation](structured/Test/ChkCreate_J1939AddressClaimViolation, ChkStart_J1939AddressClaimViolation.md) `function`
+- [ChkCreate_J1939BAM, ChkStart_J1939BAM](structured/Test/ChkCreate_J1939BAM, ChkStart_J1939BAM.md) `function`
+- [ChkCreate_J1939Request2, ChkStart_J1939Request2](structured/Test/ChkCreate_J1939Request2, ChkStart_J1939Request2.md) `function`
+- [ChkCreate_J1939Request; ChkStart_J1939Request](structured/Test/ChkCreate_J1939Request; ChkStart_J1939Request.md) `function`
+- [ChkCreate_J1939RTSCTS, ChkStart_J1939RTSCTS](structured/Test/ChkCreate_J1939RTSCTS, ChkStart_J1939RTSCTS.md) `function`
+- [ChkCreate_MostCriticalUnlock, ChkStart_MostCriticalUnlock](structured/Test/ChkCreate_MostCriticalUnlock, ChkStart_MostCriticalUnlock.md) `function`
+- [ChkCreate_MostErrorMessage, ChkStart_MostErrorMessage](structured/Test/ChkCreate_MostErrorMessage, ChkStart_MostErrorMessage.md) `function`
+- [ChkCreate_MostLightOff, ChkStart_MostLightOff](structured/Test/ChkCreate_MostLightOff, ChkStart_MostLightOff.md) `function`
+- [ChkCreate_MostMethodProtocolError, ChkStart_MostMethodProtocolError](structured/Test/ChkCreate_MostMethodProtocolError, ChkStart_MostMethodProtocolError.md) `function`
+- [ChkCreate_MostNetState, ChkStart_MostNetState](structured/Test/ChkCreate_MostNetState, ChkStart_MostNetState.md) `function`
+- [ChkCreate_MostPropertyProtocolError, ChkStart_MostPropertyProtocolError](structured/Test/ChkCreate_MostPropertyProtocolError, ChkStart_MostPropertyProtocolError.md) `function`
+- [ChkCreate_MostShortUnlock, ChkStart_MostShortUnlock](structured/Test/ChkCreate_MostShortUnlock, ChkStart_MostShortUnlock.md) `function`
+- [ChkCreate_MostStableLock, ChkStart_MostStableLock](structured/Test/ChkCreate_MostStableLock, ChkStart_MostStableLock.md) `function`
+- [ChkCreate_MsgAbsCycleTimeViolation, ChkStart_MsgAbsCycleTimeViolation](structured/Test/ChkCreate_MsgAbsCycleTimeViolation, ChkStart_MsgAbsCycleTimeViolation.md) `function`
+- [ChkCreate_MsgDistViolation, ChkStart_MsgDistViolation](structured/Test/ChkCreate_MsgDistViolation, ChkStart_MsgDistViolation.md) `function`
+- [ChkCreate_MsgOccurrenceCount, ChkStart_MsgOccurrenceCount](structured/Test/ChkCreate_MsgOccurrenceCount, ChkStart_MsgOccurrenceCount.md) `function`
+- [ChkCreate_MsgRelCycleTimeViolation, ChkStart_MsgRelCycleTimeViolation](structured/Test/ChkCreate_MsgRelCycleTimeViolation, ChkStart_MsgRelCycleTimeViolation.md) `function`
+- [ChkCreate_MsgRelOccurrenceViolation, ChkStart_MsgRelOccurrenceViolation](structured/Test/ChkCreate_MsgRelOccurrenceViolation, ChkStart_MsgRelOccurrenceViolation.md) `function`
+- [ChkCreate_MsgSignalValueInvalid, ChkStart_MsgSignalValueInvalid](structured/Test/ChkCreate_MsgSignalValueInvalid, ChkStart_MsgSignalValueInvalid.md) `function`
+- [ChkCreate_MsgSignalValueRangeViolation, ChkStart_MsgSignalValueRangeViolation](structured/Test/ChkCreate_MsgSignalValueRangeViolation, ChkStart_MsgSignalValueRangeViolation.md) `function`
+- [ChkCreate_NodeBabbling, ChkStart_NodeBabbling](structured/Test/ChkCreate_NodeBabbling, ChkStart_NodeBabbling.md) `function`
+- [ChkCreate_NodeDead, ChkStart_NodeDead](structured/Test/ChkCreate_NodeDead, ChkStart_NodeDead.md) `function`
+- [ChkCreate_NodeMsgsAbsDistViolation, ChkStart_ NodeMsgsAbsDistViolation](structured/Test/ChkCreate_NodeMsgsAbsDistViolation, ChkStart_ NodeMsgsAbsDistViolation.md) `function`
+- [ChkCreate_NodeMsgsRelCycleTimeViolation, ChkStart_NodeMsgsRelCycleTimeViolation](structured/Test/ChkCreate_NodeMsgsRelCycleTimeViolation, ChkStart_NodeMsgsRelCycleTimeViolation.md) `function`
+- [ChkCreate_NodeMsgsRelOccurrenceViolation, ChkStart_NodeMsgsRelOccurrenceViolation](structured/Test/ChkCreate_NodeMsgsRelOccurrenceViolation, ChkStart_NodeMsgsRelOccurrenceViolation.md) `function`
+- [ChkCreate_PayloadGapsObservation, ChkStart_PayloadGapsObservation](structured/Test/ChkCreate_PayloadGapsObservation, ChkStart_PayloadGapsObservation.md) `function`
+- [ChkCreate_PayloadGapsObservationRx, ChkStart_PayloadGapsObservationRx](structured/Test/ChkCreate_PayloadGapsObservationRx, ChkStart_PayloadGapsObservationRx.md) `function`
+- [ChkCreate_PayloadGapsObservationTx, ChkStart_PayloadGapsObservationTx](structured/Test/ChkCreate_PayloadGapsObservationTx, ChkStart_PayloadGapsObservationTx.md) `function`
+- [ChkCreate_SignalValueChange, ChkStart_SignalValueChange](structured/Test/ChkCreate_SignalValueChange, ChkStart_SignalValueChange.md) `function`
+- [ChkCreate_SQCObservationAsrPDU, ChkStart_SQCObservationAsrPDU](structured/Test/ChkCreate_SQCObservationAsrPDU, ChkStart_SQCObservationAsrPDU.md) `function`
+- [ChkCreate_Timeout, ChkStart_Timeout](structured/Test/ChkCreate_Timeout, ChkStart_Timeout.md) `function`
+- [ChkCreate_UBObservationAsrPDU, ChkStart_UBObservationAsrPDU, ChkCreate_UBObservationAsrSignal, ChkStart_UBObservationAsrSignal](structured/Test/ChkCreate_UBObservationAsrPDU, ChkStart_UBObservationAsrPDU, ChkCreate_UBObservationAsrSignal, ChkStart_UBObservationAsrSignal.md) `function`
+- [ChkCreate_UndefinedMessageReceived, ChkStart_UndefinedMessageReceived](structured/Test/ChkCreate_UndefinedMessageReceived, ChkStart_UndefinedMessageReceived.md) `function`
+- [ChkQuery_EventFrameId](structured/Test/ChkQuery_EventFrameId.md) `function`
+- [ChkQuery_EventInterval](structured/Test/ChkQuery_EventInterval.md) `function`
+- [ChkQuery_EventMessageContents](structured/Test/ChkQuery_EventMessageContents.md) `function`
+- [ChkQuery_EventMessageId](structured/Test/ChkQuery_EventMessageId.md) `function`
+- [ChkQuery_EventMessageName](structured/Test/ChkQuery_EventMessageName.md) `function`
+- [ChkQuery_EventNodeName](structured/Test/ChkQuery_EventNodeName.md) `function`
+- [ChkQuery_EventReason](structured/Test/ChkQuery_EventReason.md) `function`
+- [ChkQuery_EventSchedSlotIndex](structured/Test/ChkQuery_EventSchedSlotIndex.md) `function`
+- [ChkQuery_EventSignalValue](structured/Test/ChkQuery_EventSignalValue.md) `function`
+- [ChkQuery_EventSignalValue (for signals with positive values)](structured/Test/ChkQuery_EventSignalValue (for signals with positive values).md) `function`
+- [ChkQuery_EventSignalValueMin, ChkQuery_EventSignalValueMax](structured/Test/ChkQuery_EventSignalValueMin, ChkQuery_EventSignalValueMax.md) `function`
+- [ChkQuery_EventStatus](structured/Test/ChkQuery_EventStatus.md) `function`
+- [ChkQuery_EventStatusToLog](structured/Test/ChkQuery_EventStatusToLog.md) `function`
+- [ChkQuery_EventStatusToWrite](structured/Test/ChkQuery_EventStatusToWrite.md) `function`
+- [ChkQuery_EventTimeStamp](structured/Test/ChkQuery_EventTimeStamp.md) `function`
+- [ChkQuery_EventTiming](structured/Test/ChkQuery_EventTiming.md) `function`
+- [ChkQuery_NumEvents](structured/Test/ChkQuery_NumEvents.md) `function`
+- [ChkQuery_NumRequests](structured/Test/ChkQuery_NumRequests.md) `function`
+- [ChkQuery_NumTimedoutRequests](structured/Test/ChkQuery_NumTimedoutRequests.md) `function`
+- [ChkQuery_Precision](structured/Test/ChkQuery_Precision.md) `function`
+- [ChkQuery_RequestDstAdr](structured/Test/ChkQuery_RequestDstAdr.md) `function`
+- [ChkQuery_RequestFBlockId](structured/Test/ChkQuery_RequestFBlockId.md) `function`
+- [ChkQuery_RequestFunctionId](structured/Test/ChkQuery_RequestFunctionId.md) `function`
+- [ChkQuery_RequestInstId](structured/Test/ChkQuery_RequestInstId.md) `function`
+- [ChkQuery_RequestOpType](structured/Test/ChkQuery_RequestOpType.md) `function`
+- [ChkQuery_RequestSrcAdr](structured/Test/ChkQuery_RequestSrcAdr.md) `function`
+- [ChkQuery_RequestTimestamp](structured/Test/ChkQuery_RequestTimestamp.md) `function`
+- [ChkQuery_StatAvResponseTime](structured/Test/ChkQuery_StatAvResponseTime.md) `function`
+- [ChkQuery_StatEventFreePeriodAvg](structured/Test/ChkQuery_StatEventFreePeriodAvg.md) `function`
+- [ChkQuery_StatEventFreePeriodMax](structured/Test/ChkQuery_StatEventFreePeriodMax.md) `function`
+- [ChkQuery_StatEventFreePeriodMed](structured/Test/ChkQuery_StatEventFreePeriodMed.md) `function`
+- [ChkQuery_StatEventFreePeriodMin](structured/Test/ChkQuery_StatEventFreePeriodMin.md) `function`
+- [ChkQuery_StatMaxValidResponseTime](structured/Test/ChkQuery_StatMaxValidResponseTime.md) `function`
+- [ChkQuery_StatMinResponseTime](structured/Test/ChkQuery_StatMinResponseTime.md) `function`
+- [ChkQuery_StatNumProbes](structured/Test/ChkQuery_StatNumProbes.md) `function`
+- [ChkQuery_StatProbeIntervalAvg](structured/Test/ChkQuery_StatProbeIntervalAvg.md) `function`
+- [ChkQuery_StatProbeIntervalMax](structured/Test/ChkQuery_StatProbeIntervalMax.md) `function`
+- [ChkQuery_StatProbeIntervalMin](structured/Test/ChkQuery_StatProbeIntervalMin.md) `function`
+- [ChkQuery_Valid](structured/Test/ChkQuery_Valid.md) `function`
+- [ChkStart_LINDiagDelayTimesViolation](structured/Test/ChkStart_LINDiagDelayTimesViolation.md) `function`
+- [ChkStart_LINETFViolation](structured/Test/ChkStart_LINETFViolation.md) `function`
+- [ChkStart_LINHeaderToleranceViolation](structured/Test/ChkStart_LINHeaderToleranceViolation.md) `function`
+- [ChkStart_LINMasterBaudrateViolation](structured/Test/ChkStart_LINMasterBaudrateViolation.md) `function`
+- [ChkStart_LINMasterInitTimeViolation](structured/Test/ChkStart_LINMasterInitTimeViolation.md) `function`
+- [ChkStart_LINReconfRequestFormatViolation](structured/Test/ChkStart_LINReconfRequestFormatViolation.md) `function`
+- [ChkStart_LINRespErrorSignal](structured/Test/ChkStart_LINRespErrorSignal.md) `function`
+- [ChkStart_LINRespToleranceViolation](structured/Test/ChkStart_LINRespToleranceViolation.md) `function`
+- [ChkStart_LINSchedTableViolation](structured/Test/ChkStart_LINSchedTableViolation.md) `function`
+- [ChkStart_LINSyncBreakTimingViolation](structured/Test/ChkStart_LINSyncBreakTimingViolation.md) `function`
+- [ChkStart_LINSyncDelTimingViolation](structured/Test/ChkStart_LINSyncDelTimingViolation.md) `function`
+- [ChkStart_LINSynchBreakTimingViolation](structured/Test/ChkStart_LINSynchBreakTimingViolation.md) `function`
+- [ChkStart_LINWakeupReqLengthViolation](structured/Test/ChkStart_LINWakeupReqLengthViolation.md) `function`
+- [ChkStart_LINWakeupRetryViolation](structured/Test/ChkStart_LINWakeupRetryViolation.md) `function`
+- [ChkStart_SignalCycleTimeViolation](structured/Test/ChkStart_SignalCycleTimeViolation.md) `function`
+- [Example: TestCaseTitle, TestCaseDescription, TestStep](structured/Test/Example_ TestCaseTitle, TestCaseDescription, TestStep.md) `notes`
+- [Example: TestGroupBegin, TestGroupEnd](structured/Test/Example_ TestGroupBegin, TestGroupEnd.md) `notes`
+- [Example: TestModuleTitle, TestModuleDescription](structured/Test/Example_ TestModuleTitle, TestModuleDescription.md) `notes`
+- [Example: TestReportAdd* Functions](structured/Test/Example_ TestReportAdd_ Functions.md) `notes`
+- [Example: TestSetVerdictModule](structured/Test/Example_ TestSetVerdictModule.md) `notes`
+- [GetRawSignal](structured/Test/GetRawSignal.md) `function`
+- [getSignal](structured/Test/getSignal.md) `function`
+- [getSignalTime](structured/Test/getSignalTime.md) `function`
+- [HILAPICreateSignalGenerator](structured/Test/HILAPICreateSignalGenerator.md) `function`
+- [HILAPIDestroySignalGenerator](structured/Test/HILAPIDestroySignalGenerator.md) `function`
+- [HILAPIGetSignalGeneratorElapsedTime](structured/Test/HILAPIGetSignalGeneratorElapsedTime.md) `function`
+- [HILAPIGetSignalGeneratorState](structured/Test/HILAPIGetSignalGeneratorState.md) `function`
+- [HILAPIPauseSignalGenerator](structured/Test/HILAPIPauseSignalGenerator.md) `function`
+- [HILAPIStartSignalGenerator](structured/Test/HILAPIStartSignalGenerator.md) `function`
+- [HILAPIStopSignalGenerator](structured/Test/HILAPIStopSignalGenerator.md) `function`
+- [RegisterSignalDriver](structured/Test/RegisterSignalDriver.md) `function`
+- [SetRawSignal](structured/Test/SetRawSignal.md) `function`
+- [SetSignal](structured/Test/SetSignal.md) `function`
+- [Stimulus Generator: Creating a Ramp](structured/Test/Stimulus Generator_ Creating a Ramp.md) `notes`
+- [Stimulus Generator: CSV File as Data Source](structured/Test/Stimulus Generator_ CSV File as Data Source.md) `notes`
+- [Stimulus Generator: Environment variable as Data Source](structured/Test/Stimulus Generator_ Environment variable as Data Source.md) `notes`
+- [Stimulus Generator: Requirements for the Settings of the Trace Window Export](structured/Test/Stimulus Generator_ Requirements for the Settings of the Trace Window Export.md) `notes`
+- [Stimulus Generator: Sample Code StmCreate_Ramp](structured/Test/Stimulus Generator_ Sample Code StmCreate_Ramp.md) `notes`
+- [Stimulus Generator: Toggle Between Two Values](structured/Test/Stimulus Generator_ Toggle Between Two Values.md) `notes`
+- [StmControl_Start, StmControl_Stop, StmControl_Reset, StmControl_Destroy](structured/Test/StmControl_Start, StmControl_Stop, StmControl_Reset, StmControl_Destroy.md) `function`
+- [StmCreate_CSV (cyclical)](structured/Test/StmCreate_CSV (cyclical).md) `function`
+- [StmCreate_CSV (non-cyclical)](structured/Test/StmCreate_CSV (non-cyclical).md) `function`
+- [StmCreate_EnvVar](structured/Test/StmCreate_EnvVar.md) `function`
+- [StmCreate_Ramp (limits taken from database)](structured/Test/StmCreate_Ramp (limits taken from database).md) `function`
+- [StmCreate_Ramp (limits user-defined)](structured/Test/StmCreate_Ramp (limits user-defined).md) `function`
+- [StmCreate_Toggle (limits taken from database)](structured/Test/StmCreate_Toggle (limits taken from database).md) `function`
+- [StmCreate_Toggle (limits user-defined)](structured/Test/StmCreate_Toggle (limits user-defined).md) `function`
+- [StmQuery_Valid](structured/Test/StmQuery_Valid.md) `function`
+- [Test Feature Set CAPL Functions](structured/Test/Test Feature Set CAPL Functions.md) `notes`
+- [Test Feature Set: Definition of MOST packets](structured/Test/Test Feature Set_ Definition of MOST packets.md) `notes`
+- [Test Feature Set: Symbolic definition of MOST messages](structured/Test/Test Feature Set_ Symbolic definition of MOST messages.md) `notes`
+- [Test Service Library Functions](structured/Test/Test Service Library Functions.md) `notes`
+- [Test Service Library: Checks](structured/Test/Test Service Library_ Checks.md) `notes`
+- [Test Service Library: Commands to Control Checks](structured/Test/Test Service Library_ Commands to Control Checks.md) `notes`
+- [Test Service Library: Configuration Functions](structured/Test/Test Service Library_ Configuration Functions.md) `notes`
+- [Test Service Library: Error Codes](structured/Test/Test Service Library_ Error Codes.md) `notes`
+- [Test Service Library: Status Report Functions](structured/Test/Test Service Library_ Status Report Functions.md) `notes`
+- [Test Service Library: Stimulus Functions](structured/Test/Test Service Library_ Stimulus Functions.md) `notes`
+- [Test Service Library: Types of Functions](structured/Test/Test Service Library_ Types of Functions.md) `notes`
+- [TestAcquireStatusLED](structured/Test/TestAcquireStatusLED.md) `function`
+- [TestAddCondition](structured/Test/TestAddCondition.md) `function`
+- [TestAddConstraint](structured/Test/TestAddConstraint.md) `function`
+- [TestAddRange](structured/Test/TestAddRange.md) `function`
+- [TestAddTriggerTesterAction](structured/Test/TestAddTriggerTesterAction.md) `function`
+- [TestAddValueTableEntry](structured/Test/TestAddValueTableEntry.md) `function`
+- [TestCaseComment](structured/Test/TestCaseComment.md) `function`
+- [TestCaseDescription](structured/Test/TestCaseDescription.md) `function`
+- [TestCaseFail](structured/Test/TestCaseFail.md) `function`
+- [TestCaseReportMeasuredValue](structured/Test/TestCaseReportMeasuredValue.md) `function`
+- [TestCaseSkipped](structured/Test/TestCaseSkipped.md) `function`
+- [TestCaseTitle](structured/Test/TestCaseTitle.md) `function`
+- [TestCheck::CreateFlexRayFrameErrorOccurrenceCount, TestCheck::StartFlexRayFrameErrorOccurrenceCount, TestCheck::CreateNodeFlexRayFrameErrorsOccurrenceCount, TestCheck::StartNodeFlexRayFrameErrorsOccurrenceCount](structured/Test/TestCheck__CreateFlexRayFrameErrorOccurrenceCount, TestCheck__StartFlexRayFrameErrorOccurrenceCount, TestCheck__CreateNodeFlexRayFrameErrorsOccurrenceCount, TestCheck__StartNodeFlexRayFrameErrorsOccur.md) `notes`
+- [TestCheck::CreateFlexRayNullFrameOccurrenceCount, TestCheck::StartFlexRayNullFrameOccurrenceCount, TestCheck::CreateNodeFlexRayNullFramesOccurrenceCount, TestCheck::StartNodeFlexRayNullFramesOccurrenceCount](structured/Test/TestCheck__CreateFlexRayNullFrameOccurrenceCount, TestCheck__StartFlexRayNullFrameOccurrenceCount, TestCheck__CreateNodeFlexRayNullFramesOccurrenceCount, TestCheck__StartNodeFlexRayNullFramesOccurrenc.md) `notes`
+- [TestCheck::CreateMsgSendCountViolation, TestCheck::StartMsgSendCountViolation, TestCheck::CreateNodeMsgSendCountViolation, TestCheck::StartNodeMsgSendCountViolation](structured/Test/TestCheck__CreateMsgSendCountViolation, TestCheck__StartMsgSendCountViolation, TestCheck__CreateNodeMsgSendCountViolation, TestCheck__StartNodeMsgSendCountViolation.md) `notes`
+- [TestCheckCondition](structured/Test/TestCheckCondition.md) `function`
+- [TestCheckConstraint](structured/Test/TestCheckConstraint.md) `function`
+- [TestCollectDiagEcuInformation](structured/Test/TestCollectDiagEcuInformation.md) `function`
+- [TestCreateInputRange](structured/Test/TestCreateInputRange.md) `function`
+- [TestCreateStringInputTable, TestCreateValueInputTable](structured/Test/TestCreateStringInputTable, TestCreateValueInputTable.md) `function`
+- [TestCreateTesterAction](structured/Test/TestCreateTesterAction.md) `function`
+- [TestDisableCRCCalculation](structured/Test/TestDisableCRCCalculation.md) `function`
+- [TestDisableMsg](structured/Test/TestDisableMsg.md) `function`
+- [TestDisableMsgAllTx](structured/Test/TestDisableMsgAllTx.md) `function`
+- [TestDisableMsgSequenceCounter](structured/Test/TestDisableMsgSequenceCounter.md) `function`
+- [TestDisableUpdateBit](structured/Test/TestDisableUpdateBit.md) `function`
+- [TestEnableCRCCalculation](structured/Test/TestEnableCRCCalculation.md) `function`
+- [TestEnableMsg](structured/Test/TestEnableMsg.md) `function`
+- [TestEnableMsgAllTx](structured/Test/TestEnableMsgAllTx.md) `function`
+- [TestEnableMsgSequenceCounter](structured/Test/TestEnableMsgSequenceCounter.md) `function`
+- [TestEnableUpdateBit](structured/Test/TestEnableUpdateBit.md) `function`
+- [TestFRILCalculateChecksum](structured/Test/TestFRILCalculateChecksum.md) `function`
+- [TestFRILEnableTimingCyclic](structured/Test/TestFRILEnableTimingCyclic.md) `function`
+- [TestFRILEnableTimingEvtTrg](structured/Test/TestFRILEnableTimingEvtTrg.md) `function`
+- [TestFRILEnableTimingImmed](structured/Test/TestFRILEnableTimingImmed.md) `function`
+- [TestGetByteInput](structured/Test/TestGetByteInput.md) `function`
+- [testGetCurrentCycle](structured/Test/testGetCurrentCycle.md) `function`
+- [testGetCurrentTestCaseTitle](structured/Test/testGetCurrentTestCaseTitle.md) `function`
+- [testGetJoinedEventOccured](structured/Test/testGetJoinedEventOccured.md) `function`
+- [TestGetLastWaitElapsedTimeNS](structured/Test/TestGetLastWaitElapsedTimeNS.md) `function`
+- [TestGetLastWaitResult](structured/Test/TestGetLastWaitResult.md) `function`
+- [TestGetStringInput](structured/Test/TestGetStringInput.md) `function`
+- [testGetTestConfigurationName](structured/Test/testGetTestConfigurationName.md) `function`
+- [testGetTestUnitName](structured/Test/testGetTestUnitName.md) `function`
+- [TestGetValueInput](structured/Test/TestGetValueInput.md) `function`
+- [TestGetVerdictLastTestCase](structured/Test/TestGetVerdictLastTestCase.md) `function`
+- [TestGetVerdictModule](structured/Test/TestGetVerdictModule.md) `function`
+- [testGetWaitEthernetPacketData](structured/Test/testGetWaitEthernetPacketData.md) `function`
+- [testGetWaitEventEnvVarData](structured/Test/testGetWaitEventEnvVarData.md) `function`
+- [TestGetWaitEventKLineByte](structured/Test/TestGetWaitEventKLineByte.md) `function`
+- [TestGetWaitEventKLineFrame](structured/Test/TestGetWaitEventKLineFrame.md) `function`
+- [TestGetWaitEventMostAMSMsgData](structured/Test/TestGetWaitEventMostAMSMsgData.md) `function`
+- [TestGetWaitEventMostMsgData](structured/Test/TestGetWaitEventMostMsgData.md) `function`
+- [TestGetWaitEventMostPkt](structured/Test/TestGetWaitEventMostPkt.md) `function`
+- [TestGetWaitEventMostRawMsgData](structured/Test/TestGetWaitEventMostRawMsgData.md) `function`
+- [TestGetWaitEventMsgData](structured/Test/TestGetWaitEventMsgData.md) `function`
+- [TestGetWaitEventSysVarData](structured/Test/TestGetWaitEventSysVarData.md) `function`
+- [TestGetWaitFrFrameData](structured/Test/TestGetWaitFrFrameData.md) `function`
+- [TestGetWaitFrFrameErrorData](structured/Test/TestGetWaitFrFrameErrorData.md) `function`
+- [TestGetWaitFrNullFrameData](structured/Test/TestGetWaitFrNullFrameData.md) `function`
+- [TestGetWaitFrPDUData](structured/Test/TestGetWaitFrPDUData.md) `function`
+- [TestGetWaitFrPOCStateData](structured/Test/TestGetWaitFrPOCStateData.md) `function`
+- [TestGetWaitFrStartCycleData](structured/Test/TestGetWaitFrStartCycleData.md) `function`
+- [TestGetWaitFrSymbolData](structured/Test/TestGetWaitFrSymbolData.md) `function`
+- [TestGetWaitJ1939PGData](structured/Test/TestGetWaitJ1939PGData.md) `function`
+- [TestGetWaitLinCSErrorData](structured/Test/TestGetWaitLinCSErrorData.md) `function`
+- [TestGetWaitLinETFSingleResponseData](structured/Test/TestGetWaitLinETFSingleResponseData.md) `function`
+- [TestGetWaitLinHdrData](structured/Test/TestGetWaitLinHdrData.md) `function`
+- [TestGetWaitLinLongDominantSignalData](structured/Test/TestGetWaitLinLongDominantSignalData.md) `function`
+- [TestGetWaitLinReceiveErrData](structured/Test/TestGetWaitLinReceiveErrData.md) `function`
+- [TestGetWaitLinSpikeData](structured/Test/TestGetWaitLinSpikeData.md) `function`
+- [TestGetWaitLinSyncErrorData](structured/Test/TestGetWaitLinSyncErrorData.md) `function`
+- [TestGetWaitLinTransmErrData](structured/Test/TestGetWaitLinTransmErrData.md) `function`
+- [TestGetWaitLinWakeupData](structured/Test/TestGetWaitLinWakeupData.md) `function`
+- [TestGetWaitPDUData](structured/Test/TestGetWaitPDUData.md) `function`
+- [TestGetWaitPDUsFrameData](structured/Test/TestGetWaitPDUsFrameData.md) `function`
+- [TestGetWaitPDUsTPIPv4DstAddr](structured/Test/TestGetWaitPDUsTPIPv4DstAddr.md) `function`
+- [TestGetWaitPDUsTPIPv4SrcAddr](structured/Test/TestGetWaitPDUsTPIPv4SrcAddr.md) `function`
+- [TestGetWaitPDUsTPIPv6DstAddr](structured/Test/TestGetWaitPDUsTPIPv6DstAddr.md) `function`
+- [TestGetWaitPDUsTPIPv6SrcAddr](structured/Test/TestGetWaitPDUsTPIPv6SrcAddr.md) `function`
+- [TestGetWaitPDUsTPTCPDstPort](structured/Test/TestGetWaitPDUsTPTCPDstPort.md) `function`
+- [TestGetWaitPDUsTPTCPSrcPort](structured/Test/TestGetWaitPDUsTPTCPSrcPort.md) `function`
+- [TestGetWaitPDUsTPUDPDstPort](structured/Test/TestGetWaitPDUsTPUDPDstPort.md) `function`
+- [TestGetWaitPDUsTPUDPSrcPort](structured/Test/TestGetWaitPDUsTPUDPSrcPort.md) `function`
+- [testGetWaitScopeEventData](structured/Test/testGetWaitScopeEventData.md) `function`
+- [testGetWaitScopeSignalTransitionTime](structured/Test/testGetWaitScopeSignalTransitionTime.md) `function`
+- [TestGroupBegin](structured/Test/TestGroupBegin.md) `function`
+- [TestGroupEnd](structured/Test/TestGroupEnd.md) `function`
+- [testILSetMessageProperty](structured/Test/testILSetMessageProperty.md) `function`
+- [testILSetNodeProperty](structured/Test/testILSetNodeProperty.md) `function`
+- [TestInfoCell](structured/Test/TestInfoCell.md) `function`
+- [TestInfoHeadingBegin](structured/Test/TestInfoHeadingBegin.md) `function`
+- [TestInfoHeadingEnd](structured/Test/TestInfoHeadingEnd.md) `function`
+- [TestInfoRow](structured/Test/TestInfoRow.md) `function`
+- [TestInfoTable](structured/Test/TestInfoTable.md) `function`
+- [TestJoinA429WordEvent](structured/Test/TestJoinA429WordEvent.md) `function`
+- [TestJoinAuxEvent](structured/Test/TestJoinAuxEvent.md) `function`
+- [TestJoinDiagResponseFromEcu](structured/Test/TestJoinDiagResponseFromEcu.md) `function`
+- [TestJoinDiagVariantIdentificationCompleted](structured/Test/TestJoinDiagVariantIdentificationCompleted.md) `function`
+- [TestJoinEnvVarEvent](structured/Test/TestJoinEnvVarEvent.md) `function`
+- [TestJoinEthernetLinkStatus](structured/Test/TestJoinEthernetLinkStatus.md) `function`
+- [TestJoinEthernetPacket](structured/Test/TestJoinEthernetPacket.md) `function`
+- [TestJoinEthernetPhyState](structured/Test/TestJoinEthernetPhyState.md) `function`
+- [TestJoinFrFrameErrorEvent](structured/Test/TestJoinFrFrameErrorEvent.md) `function`
+- [TestJoinFrFrameEvent](structured/Test/TestJoinFrFrameEvent.md) `function`
+- [TestJoinFrNullFrameEvent](structured/Test/TestJoinFrNullFrameEvent.md) `function`
+- [TestJoinFrPDUEvent](structured/Test/TestJoinFrPDUEvent.md) `function`
+- [TestJoinFrPOCState](structured/Test/TestJoinFrPOCState.md) `function`
+- [TestJoinFrStartCycleEvent](structured/Test/TestJoinFrStartCycleEvent.md) `function`
+- [TestJoinFrSymbolEvent](structured/Test/TestJoinFrSymbolEvent.md) `function`
+- [TestJoinJ1939DTCEvent](structured/Test/TestJoinJ1939DTCEvent.md) `function`
+- [TestJoinJ1939PGEvent](structured/Test/TestJoinJ1939PGEvent.md) `function`
+- [TestJoinLinCSErrorEvent](structured/Test/TestJoinLinCSErrorEvent.md) `function`
+- [TestJoinLinETFSingleResponseEvent](structured/Test/TestJoinLinETFSingleResponseEvent.md) `function`
+- [TestJoinLinHeaderEvent](structured/Test/TestJoinLinHeaderEvent.md) `function`
+- [TestJoinLinLongDominantSignal](structured/Test/TestJoinLinLongDominantSignal.md) `function`
+- [TestJoinLinReceiveErrorEvent](structured/Test/TestJoinLinReceiveErrorEvent.md) `function`
+- [TestJoinLinSpike](structured/Test/TestJoinLinSpike.md) `function`
+- [TestJoinLinSyncErrorEvent](structured/Test/TestJoinLinSyncErrorEvent.md) `function`
+- [TestJoinLinTransmErrorEvent](structured/Test/TestJoinLinTransmErrorEvent.md) `function`
+- [TestJoinLinWakeupEvent](structured/Test/TestJoinLinWakeupEvent.md) `function`
+- [TestJoinMessageEvent](structured/Test/TestJoinMessageEvent.md) `function`
+- [TestJoinMostAMSMessageEvent](structured/Test/TestJoinMostAMSMessageEvent.md) `function`
+- [TestJoinMostAMSReportEvent](structured/Test/TestJoinMostAMSReportEvent.md) `function`
+- [TestJoinMostAMSSpyMessageEvent](structured/Test/TestJoinMostAMSSpyMessageEvent.md) `function`
+- [TestJoinMostAMSSpyReportEvent](structured/Test/TestJoinMostAMSSpyReportEvent.md) `function`
+- [TestJoinMostMessageEvent](structured/Test/TestJoinMostMessageEvent.md) `function`
+- [TestJoinMostPktEvent](structured/Test/TestJoinMostPktEvent.md) `function`
+- [TestJoinMostReportEvent](structured/Test/TestJoinMostReportEvent.md) `function`
+- [TestJoinMostSpyMessageEvent](structured/Test/TestJoinMostSpyMessageEvent.md) `function`
+- [TestJoinMostSpyPktEvent](structured/Test/TestJoinMostSpyPktEvent.md) `function`
+- [TestJoinMostSpyReportEvent](structured/Test/TestJoinMostSpyReportEvent.md) `function`
+- [TestJoinPDUEvent](structured/Test/TestJoinPDUEvent.md) `function`
+- [TestJoinRawSignalMatch](structured/Test/TestJoinRawSignalMatch.md) `function`
+- [TestJoinSignalInRange](structured/Test/TestJoinSignalInRange.md) `function`
+- [TestJoinSignalMatch](structured/Test/TestJoinSignalMatch.md) `function`
+- [TestJoinSignalOutsideRange](structured/Test/TestJoinSignalOutsideRange.md) `function`
+- [TestJoinSysVarEvent](structured/Test/TestJoinSysVarEvent.md) `function`
+- [TestJoinTextEvent](structured/Test/TestJoinTextEvent.md) `function`
+- [TestModuleDescription](structured/Test/TestModuleDescription.md) `function`
+- [TestModuleTitle](structured/Test/TestModuleTitle.md) `function`
+- [TestMostReadReg](structured/Test/TestMostReadReg.md) `function`
+- [TestMostRegGetData](structured/Test/TestMostRegGetData.md) `function`
+- [TestMostWriteReg](structured/Test/TestMostWriteReg.md) `function`
+- [TestRemoveCondition](structured/Test/TestRemoveCondition.md) `function`
+- [TestRemoveConstraint](structured/Test/TestRemoveConstraint.md) `function`
+- [TestReportAddEngineerInfo, TestReportAddSetupInfo, TestReportAddSUTInfo](structured/Test/TestReportAddEngineerInfo, TestReportAddSetupInfo, TestReportAddSUTInfo.md) `function`
+- [TestReportAddExtendedInfo](structured/Test/TestReportAddExtendedInfo.md) `function`
+- [TestReportAddExternalRef](structured/Test/TestReportAddExternalRef.md) `function`
+- [TestReportAddImage](structured/Test/TestReportAddImage.md) `function`
+- [TestReportAddMiscInfo](structured/Test/TestReportAddMiscInfo.md) `function`
+- [TestReportAddMiscInfoBlock](structured/Test/TestReportAddMiscInfoBlock.md) `function`
+- [TestReportAddWindowCapture](structured/Test/TestReportAddWindowCapture.md) `function`
+- [TestReportFileName](structured/Test/TestReportFileName.md) `function`
+- [TestReportWriteDiagObject, TestReportWriteDiagResponse](structured/Test/TestReportWriteDiagObject, TestReportWriteDiagResponse.md) `function`
+- [TestResetAllFaultInjections](structured/Test/TestResetAllFaultInjections.md) `function`
+- [TestResetEnvVarValue](structured/Test/TestResetEnvVarValue.md) `function`
+- [TestResetMsgCycleTime](structured/Test/TestResetMsgCycleTime.md) `function`
+- [TestResetMsgDlc](structured/Test/TestResetMsgDlc.md) `function`
+- [TestResetNamespaceSysVarValues](structured/Test/TestResetNamespaceSysVarValues.md) `function`
+- [TestResetNodeSignalValues](structured/Test/TestResetNodeSignalValues.md) `function`
+- [TestResetSignalValue](structured/Test/TestResetSignalValue.md) `function`
+- [TestResetSysVarValue](structured/Test/TestResetSysVarValue.md) `function`
+- [TestSendMostAMSMessage](structured/Test/TestSendMostAMSMessage.md) `function`
+- [TestSendMostRawMessage](structured/Test/TestSendMostRawMessage.md) `function`
+- [TestSetEcuOffline](structured/Test/TestSetEcuOffline.md) `function`
+- [TestSetEcuOnline](structured/Test/TestSetEcuOnline.md) `function`
+- [TestSetMsgCycleTime](structured/Test/TestSetMsgCycleTime.md) `function`
+- [TestSetMsgDlc](structured/Test/TestSetMsgDlc.md) `function`
+- [TestSetMsgEvent](structured/Test/TestSetMsgEvent.md) `function`
+- [TestSetParseErrorConstraint](structured/Test/TestSetParseErrorConstraint.md) `function`
+- [TestSetSendTimeout](structured/Test/TestSetSendTimeout.md) `function`
+- [TestSetVerdictModule](structured/Test/TestSetVerdictModule.md) `function`
+- [testStartParallel](structured/Test/testStartParallel.md) `function`
+- [TestStep, TestStepPass, TestStepFail, TestStepWarning, TestStepInconclusive, TestStepErrorInTestSystem](structured/Test/TestStep, TestStepPass, TestStepFail, TestStepWarning, TestStepInconclusive, TestStepErrorInTestSystem.md) `function`
+- [TestStepBegin](structured/Test/TestStepBegin.md) `function`
+- [TestSupplyTextEvent](structured/Test/TestSupplyTextEvent.md) `function`
+- [testValidateDiagAuthGeneric, testValidateDiagAuth](structured/Test/testValidateDiagAuthGeneric, testValidateDiagAuth.md) `function`
+- [testValidateSignalInRange](structured/Test/testValidateSignalInRange.md) `function`
+- [TestValidateSignalMatch](structured/Test/TestValidateSignalMatch.md) `function`
+- [testValidateSignalOutsideRange](structured/Test/testValidateSignalOutsideRange.md) `function`
+- [TestValidateSystemCall](structured/Test/TestValidateSystemCall.md) `function`
+- [TestValidateSystemCallWithExitCode](structured/Test/TestValidateSystemCallWithExitCode.md) `function`
+- [TestValidateTesterAction](structured/Test/TestValidateTesterAction.md) `function`
+- [TestValidateTesterConfirmation](structured/Test/TestValidateTesterConfirmation.md) `function`
+- [TestWaitForA429Word](structured/Test/TestWaitForA429Word.md) `function`
+- [TestWaitForAllJoinedEvents](structured/Test/TestWaitForAllJoinedEvents.md) `function`
+- [testWaitForAllParallel](structured/Test/testWaitForAllParallel.md) `function`
+- [TestWaitForAnyJoinedEvent](structured/Test/TestWaitForAnyJoinedEvent.md) `function`
+- [TestWaitForAuxEvent](structured/Test/TestWaitForAuxEvent.md) `function`
+- [TestWaitForByteInput](structured/Test/TestWaitForByteInput.md) `function`
+- [testWaitForDiagAuthCompleted, testWaitForDiagAuthGenericCompleted](structured/Test/testWaitForDiagAuthCompleted, testWaitForDiagAuthGenericCompleted.md) `function`
+- [testWaitForDiagChangedActiveVariant](structured/Test/testWaitForDiagChangedActiveVariant.md) `function`
+- [TestWaitForDiagChannelClosed](structured/Test/TestWaitForDiagChannelClosed.md) `function`
+- [TestWaitForDiagChannelConnected](structured/Test/TestWaitForDiagChannelConnected.md) `function`
+- [TestWaitForDiagKLineByteReceived](structured/Test/TestWaitForDiagKLineByteReceived.md) `function`
+- [TestWaitForDiagKLineByteTransmitted](structured/Test/TestWaitForDiagKLineByteTransmitted.md) `function`
+- [TestWaitForDiagKLineFrameReceived](structured/Test/TestWaitForDiagKLineFrameReceived.md) `function`
+- [TestWaitForDiagKLineFrameTransmitted](structured/Test/TestWaitForDiagKLineFrameTransmitted.md) `function`
+- [TestWaitForDiagRequestSent](structured/Test/TestWaitForDiagRequestSent.md) `function`
+- [TestWaitForDiagResponse](structured/Test/TestWaitForDiagResponse.md) `function`
+- [TestWaitForDiagResponseStart](structured/Test/TestWaitForDiagResponseStart.md) `function`
+- [testWaitForDiagSetIdentifiedVariant](structured/Test/testWaitForDiagSetIdentifiedVariant.md) `function`
+- [TestWaitForDiagVariantIdentificationCompleted, TestWaitForDiagEcuVariantIdentificationCompleted](structured/Test/TestWaitForDiagVariantIdentificationCompleted, TestWaitForDiagEcuVariantIdentificationCompleted.md) `function`
+- [TestWaitForDoIPActivationLineStartup](structured/Test/TestWaitForDoIPActivationLineStartup.md) `function`
+- [TestWaitForEnvVar](structured/Test/TestWaitForEnvVar.md) `function`
+- [TestWaitForEthernetLinkStatus](structured/Test/TestWaitForEthernetLinkStatus.md) `function`
+- [TestWaitForEthernetPacket](structured/Test/TestWaitForEthernetPacket.md) `function`
+- [TestWaitForEthernetPhyState](structured/Test/TestWaitForEthernetPhyState.md) `function`
+- [TestWaitForFrFrame](structured/Test/TestWaitForFrFrame.md) `function`
+- [TestWaitForFrFrameError](structured/Test/TestWaitForFrFrameError.md) `function`
+- [TestWaitForFrNullFrame](structured/Test/TestWaitForFrNullFrame.md) `function`
+- [TestWaitForFrPDU](structured/Test/TestWaitForFrPDU.md) `function`
+- [TestWaitForFrPOCState](structured/Test/TestWaitForFrPOCState.md) `function`
+- [TestWaitForFrStartCycle](structured/Test/TestWaitForFrStartCycle.md) `function`
+- [TestWaitForFrSymbol](structured/Test/TestWaitForFrSymbol.md) `function`
+- [TestWaitForGenerateKeyFromSeed](structured/Test/TestWaitForGenerateKeyFromSeed.md) `function`
+- [testWaitForHILAPISignalGeneratorFinished](structured/Test/testWaitForHILAPISignalGeneratorFinished.md) `function`
+- [testWaitForHILAPISignalGeneratorLoaded](structured/Test/testWaitForHILAPISignalGeneratorLoaded.md) `function`
+- [TestWaitForInput](structured/Test/TestWaitForInput.md) `function`
+- [TestWaitForJ1939DTC](structured/Test/TestWaitForJ1939DTC.md) `function`
+- [TestWaitForJ1939PG](structured/Test/TestWaitForJ1939PG.md) `function`
+- [TestWaitForLinBitStreamStatus](structured/Test/TestWaitForLinBitStreamStatus.md) `function`
+- [TestWaitForLinCSError](structured/Test/TestWaitForLinCSError.md) `function`
+- [TestWaitForLinETFSingleResponse](structured/Test/TestWaitForLinETFSingleResponse.md) `function`
+- [TestWaitForLinHeader](structured/Test/TestWaitForLinHeader.md) `function`
+- [TestWaitForLinLongDominantSignal](structured/Test/TestWaitForLinLongDominantSignal.md) `function`
+- [TestWaitForLinReceiveError](structured/Test/TestWaitForLinReceiveError.md) `function`
+- [TestWaitForLinScheduleChange](structured/Test/TestWaitForLinScheduleChange.md) `function`
+- [TestWaitForLinSpike](structured/Test/TestWaitForLinSpike.md) `function`
+- [TestWaitForLinSyncError](structured/Test/TestWaitForLinSyncError.md) `function`
+- [TestWaitForLinTransmError](structured/Test/TestWaitForLinTransmError.md) `function`
+- [TestWaitForLinWakeupFrame](structured/Test/TestWaitForLinWakeupFrame.md) `function`
+- [TestWaitForMeasurementEnd](structured/Test/TestWaitForMeasurementEnd.md) `function`
+- [TestWaitForMessage](structured/Test/TestWaitForMessage.md) `function`
+- [TestWaitForMostAllBypass](structured/Test/TestWaitForMostAllBypass.md) `function`
+- [TestWaitForMostAMSMessage](structured/Test/TestWaitForMostAMSMessage.md) `function`
+- [TestWaitForMostAMSReport](structured/Test/TestWaitForMostAMSReport.md) `function`
+- [TestWaitForMostAMSResponse](structured/Test/TestWaitForMostAMSResponse.md) `function`
+- [TestWaitForMostAMSResult](structured/Test/TestWaitForMostAMSResult.md) `function`
+- [TestWaitForMostAMSSpyMessage](structured/Test/TestWaitForMostAMSSpyMessage.md) `function`
+- [TestWaitForMostAMSSpyReport](structured/Test/TestWaitForMostAMSSpyReport.md) `function`
+- [TestWaitForMostApInstID](structured/Test/TestWaitForMostApInstID.md) `function`
+- [TestWaitForMostAsRegistry](structured/Test/TestWaitForMostAsRegistry.md) `function`
+- [TestWaitForMostCriticalUnlock](structured/Test/TestWaitForMostCriticalUnlock.md) `function`
+- [TestWaitForMostGroupAdr](structured/Test/TestWaitForMostGroupAdr.md) `function`
+- [TestWaitForMostLightOff](structured/Test/TestWaitForMostLightOff.md) `function`
+- [TestWaitForMostMessage](structured/Test/TestWaitForMostMessage.md) `function`
+- [TestWaitForMostMPR](structured/Test/TestWaitForMostMPR.md) `function`
+- [TestWaitForMostNetState](structured/Test/TestWaitForMostNetState.md) `function`
+- [TestWaitForMostNodeAdr](structured/Test/TestWaitForMostNodeAdr.md) `function`
+- [TestWaitForMostNPR](structured/Test/TestWaitForMostNPR.md) `function`
+- [TestWaitForMostPkt](structured/Test/TestWaitForMostPkt.md) `function`
+- [TestWaitForMostRawSpyMessage](structured/Test/TestWaitForMostRawSpyMessage.md) `function`
+- [TestWaitForMostReport](structured/Test/TestWaitForMostReport.md) `function`
+- [TestWaitForMostSBC](structured/Test/TestWaitForMostSBC.md) `function`
+- [TestWaitForMostShortUnlock](structured/Test/TestWaitForMostShortUnlock.md) `function`
+- [TestWaitForMostSpyMessage](structured/Test/TestWaitForMostSpyMessage.md) `function`
+- [TestWaitForMostSpyPkt](structured/Test/TestWaitForMostSpyPkt.md) `function`
+- [TestWaitForMostSpyReport](structured/Test/TestWaitForMostSpyReport.md) `function`
+- [TestWaitForMostStableLock](structured/Test/TestWaitForMostStableLock.md) `function`
+- [testWaitForParallel](structured/Test/testWaitForParallel.md) `function`
+- [TestWaitForPDU](structured/Test/TestWaitForPDU.md) `function`
+- [TestWaitForRawSignalMatch](structured/Test/TestWaitForRawSignalMatch.md) `function`
+- [TestWaitForReplay](structured/Test/TestWaitForReplay.md) `function`
+- [testWaitForScopeAnalyseBitSegments](structured/Test/testWaitForScopeAnalyseBitSegments.md) `function`
+- [testWaitForScopeEvent](structured/Test/testWaitForScopeEvent.md) `function`
+- [testWaitForScopeFitData](structured/Test/testWaitForScopeFitData.md) `function`
+- [testWaitForScopeFitDataFr](structured/Test/testWaitForScopeFitDataFr.md) `function`
+- [testWaitForScopeGetFieldLengthData](structured/Test/testWaitForScopeGetFieldLengthData.md) `function`
+- [testWaitForScopePerformFieldLengthMeasurement](structured/Test/testWaitForScopePerformFieldLengthMeasurement.md) `function`
+- [testWaitForScopeShowEdges](structured/Test/testWaitForScopeShowEdges.md) `function`
+- [testWaitForScopeShowEyeDiagram](structured/Test/testWaitForScopeShowEyeDiagram.md) `function`
+- [TestWaitForSignalAvailable](structured/Test/TestWaitForSignalAvailable.md) `function`
+- [TestWaitForSignalInRange](structured/Test/TestWaitForSignalInRange.md) `function`
+- [TestWaitForSignalMatch](structured/Test/TestWaitForSignalMatch.md) `function`
+- [TestWaitForSignalOutsideRange](structured/Test/TestWaitForSignalOutsideRange.md) `function`
+- [TestWaitForSignalsAvailable](structured/Test/TestWaitForSignalsAvailable.md) `function`
+- [TestWaitForStringInput](structured/Test/TestWaitForStringInput.md) `function`
+- [TestWaitForSyscall](structured/Test/TestWaitForSyscall.md) `function`
+- [TestWaitForSysVar](structured/Test/TestWaitForSysVar.md) `function`
+- [TestWaitForTesterConfirmation](structured/Test/TestWaitForTesterConfirmation.md) `function`
+- [TestWaitForTextEvent](structured/Test/TestWaitForTextEvent.md) `function`
+- [TestWaitForTimeout](structured/Test/TestWaitForTimeout.md) `function`
+- [TestWaitForUnlockEcu](structured/Test/TestWaitForUnlockEcu.md) `function`
+- [TestWaitForUserFileSync](structured/Test/TestWaitForUserFileSync.md) `function`
+- [TestWaitForValueInput](structured/Test/TestWaitForValueInput.md) `function`
+- [testWaitScopeAnalyseSignal](structured/Test/testWaitScopeAnalyseSignal.md) `function`
+- [testWaitScopeExportData](structured/Test/testWaitScopeExportData.md) `function`
+- [testWaitScopeGetAnalysedBitSegments](structured/Test/testWaitScopeGetAnalysedBitSegments.md) `function`
+- [testWaitScopeGetBitInfo](structured/Test/testWaitScopeGetBitInfo.md) `function`
+- [testWaitScopeGetConfigurationInformation](structured/Test/testWaitScopeGetConfigurationInformation.md) `function`
+- [testWaitScopeGetEyeDiagramAnalysis](structured/Test/testWaitScopeGetEyeDiagramAnalysis.md) `function`
+- [testWaitScopeGetMaskViolation](structured/Test/testWaitScopeGetMaskViolation.md) `function`
+- [testWaitScopeGetMessageBits](structured/Test/testWaitScopeGetMessageBits.md) `function`
+- [testWaitScopeGetSerialBitAnalyseViolationData](structured/Test/testWaitScopeGetSerialBitAnalyseViolationData.md) `function`
+- [testWaitScopeGetSerialBitAnalysisData](structured/Test/testWaitScopeGetSerialBitAnalysisData.md) `function`
+- [testWaitScopePerformEdgeAnalysis](structured/Test/testWaitScopePerformEdgeAnalysis.md) `function`
+- [testWaitScopePerformEyeDiagramAnalysis](structured/Test/testWaitScopePerformEyeDiagramAnalysis.md) `function`
+- [testWaitScopePerformSerialBitAnalysis](structured/Test/testWaitScopePerformSerialBitAnalysis.md) `function`
+- [testWaitScopePerformSignalTransitionTime](structured/Test/testWaitScopePerformSignalTransitionTime.md) `function`
+- [testWaitScopeSetConfiguration](structured/Test/testWaitScopeSetConfiguration.md) `function`
+- [testWaitScopeShowMask](structured/Test/testWaitScopeShowMask.md) `function`
+
+---
+
+## CAPL VT System (VTSystem)
+
+**Function count**: 97
+
+- [Differences between Functions and Methods](structured/VTSystem/Differences between Functions and Methods.md) `notes`
+- [Enumeration (VT Sytem)](structured/VTSystem/Enumeration (VT Sytem).md) `notes`
+- [LoadWFBitStream](structured/VTSystem/LoadWFBitStream.md) `method`
+- [LoadWFResistance](structured/VTSystem/LoadWFResistance.md) `method`
+- [LoadWFVoltage](structured/VTSystem/LoadWFVoltage.md) `method`
+- [OnSerialError](structured/VTSystem/OnSerialError.md) `method`
+- [OnSerialReceive](structured/VTSystem/OnSerialReceive.md) `method`
+- [OnSerialSend](structured/VTSystem/OnSerialSend.md) `method`
+- [ResetMinMax](structured/VTSystem/ResetMinMax.md) `method`
+- [SerialClose](structured/VTSystem/SerialClose.md) `method`
+- [SerialConfigure](structured/VTSystem/SerialConfigure.md) `method`
+- [SerialOpen](structured/VTSystem/SerialOpen.md) `method`
+- [SerialReceive](structured/VTSystem/SerialReceive.md) `method`
+- [SerialSend](structured/VTSystem/SerialSend.md) `method`
+- [SerialSetOnErrorHandler](structured/VTSystem/SerialSetOnErrorHandler.md) `method`
+- [SerialSetOnReceiveHandler](structured/VTSystem/SerialSetOnReceiveHandler.md) `method`
+- [SerialSetOnSendHandler](structured/VTSystem/SerialSetOnSendHandler.md) `method`
+- [SetCurveType](structured/VTSystem/SetCurveType.md) `method`
+- [SetImpedanceMode](structured/VTSystem/SetImpedanceMode.md) `method`
+- [SetIntegrationTime](structured/VTSystem/SetIntegrationTime.md) `method`
+- [SetInterconnectionMode](structured/VTSystem/SetInterconnectionMode.md) `method`
+- [SetLoadControlTimeout](structured/VTSystem/SetLoadControlTimeout.md) `method`
+- [SetLoadMode](structured/VTSystem/SetLoadMode.md) `method`
+- [SetMaxCurrentMode](structured/VTSystem/SetMaxCurrentMode.md) `method`
+- [SetMeasurementMode](structured/VTSystem/SetMeasurementMode.md) `method`
+- [SetMinCurrentMeasurementRange](structured/VTSystem/SetMinCurrentMeasurementRange.md) `method`
+- [SetOutputMode](structured/VTSystem/SetOutputMode.md) `method`
+- [SetOutputRange](structured/VTSystem/SetOutputRange.md) `method`
+- [SetOutputSource](structured/VTSystem/SetOutputSource.md) `method`
+- [SetPWMMeasurementDuration](structured/VTSystem/SetPWMMeasurementDuration.md) `method`
+- [SetPWMRepeats](structured/VTSystem/SetPWMRepeats.md) `method`
+- [SetPWMResistanceHigh](structured/VTSystem/SetPWMResistanceHigh.md) `method`
+- [SetPWMResistanceLow](structured/VTSystem/SetPWMResistanceLow.md) `method`
+- [SetPWMStartDelay](structured/VTSystem/SetPWMStartDelay.md) `method`
+- [SetPWMThreshold](structured/VTSystem/SetPWMThreshold.md) `method`
+- [SetPWMVoltageHigh](structured/VTSystem/SetPWMVoltageHigh.md) `method`
+- [SetPWMVoltageLow](structured/VTSystem/SetPWMVoltageLow.md) `method`
+- [SetRefVoltageMode](structured/VTSystem/SetRefVoltageMode.md) `method`
+- [SetStimulationMode](structured/VTSystem/SetStimulationMode.md) `method`
+- [SetThreshold](structured/VTSystem/SetThreshold.md) `method`
+- [SetThreshold1_8](structured/VTSystem/SetThreshold1_8.md) `method`
+- [SetThreshold9_16](structured/VTSystem/SetThreshold9_16.md) `method`
+- [SetTransferCycle](structured/VTSystem/SetTransferCycle.md) `method`
+- [SetTriggerParams](structured/VTSystem/SetTriggerParams.md) `method`
+- [SetTriggerParamsEx](structured/VTSystem/SetTriggerParamsEx.md) `method`
+- [SetWFParams](structured/VTSystem/SetWFParams.md) `method`
+- [StartStimulation](structured/VTSystem/StartStimulation.md) `method`
+- [StartTrigger](structured/VTSystem/StartTrigger.md) `method`
+- [StopStimulation](structured/VTSystem/StopStimulation.md) `method`
+- [VT System CAPL Functions](structured/VTSystem/VT System CAPL Functions.md) `notes`
+- [vtsLoadWFBitStream](structured/VTSystem/vtsLoadWFBitStream.md) `function`
+- [vtsLoadWFResistance](structured/VTSystem/vtsLoadWFResistance.md) `function`
+- [vtsLoadWFVoltage](structured/VTSystem/vtsLoadWFVoltage.md) `function`
+- [vtsResetMinMax](structured/VTSystem/vtsResetMinMax.md) `function`
+- [vtsSerialClose](structured/VTSystem/vtsSerialClose.md) `function`
+- [vtsSerialConfigure](structured/VTSystem/vtsSerialConfigure.md) `function`
+- [vtsSerialOpen](structured/VTSystem/vtsSerialOpen.md) `function`
+- [vtsSerialReceive](structured/VTSystem/vtsSerialReceive.md) `function`
+- [vtsSerialSend](structured/VTSystem/vtsSerialSend.md) `function`
+- [vtsSerialSetOnErrorHandler](structured/VTSystem/vtsSerialSetOnErrorHandler.md) `function`
+- [vtsSerialSetOnReceiveHandler](structured/VTSystem/vtsSerialSetOnReceiveHandler.md) `function`
+- [vtsSerialSetOnSendHandler](structured/VTSystem/vtsSerialSetOnSendHandler.md) `function`
+- [vtsSetBackplaneRelay](structured/VTSystem/vtsSetBackplaneRelay.md) `function`
+- [vtsSetCurveType](structured/VTSystem/vtsSetCurveType.md) `function`
+- [vtsSetImpedanceMode](structured/VTSystem/vtsSetImpedanceMode.md) `function`
+- [vtsSetIntegrationTime](structured/VTSystem/vtsSetIntegrationTime.md) `function`
+- [vtsSetInterconnectionMode](structured/VTSystem/vtsSetInterconnectionMode.md) `function`
+- [vtsSetLoadControlTimeout](structured/VTSystem/vtsSetLoadControlTimeout.md) `function`
+- [vtsSetLoadMode](structured/VTSystem/vtsSetLoadMode.md) `function`
+- [vtsSetMaxCurrentMode](structured/VTSystem/vtsSetMaxCurrentMode.md) `function`
+- [vtsSetMeasurementMode](structured/VTSystem/vtsSetMeasurementMode.md) `function`
+- [vtsSetMinCurrentMeasurementRange](structured/VTSystem/vtsSetMinCurrentMeasurementRange.md) `function`
+- [VTSSetOutputMask](structured/VTSystem/VTSSetOutputMask.md) `notes`
+- [vtsSetOutputMask](structured/VTSystem/vtsSetOutputMask.md) `function`
+- [vtsSetOutputMode](structured/VTSystem/vtsSetOutputMode.md) `function`
+- [vtsSetOutputRange](structured/VTSystem/vtsSetOutputRange.md) `function`
+- [vtsSetOutputSource](structured/VTSystem/vtsSetOutputSource.md) `function`
+- [vtsSetPWMMeasurementDuration](structured/VTSystem/vtsSetPWMMeasurementDuration.md) `function`
+- [vtsSetPWMRepeats](structured/VTSystem/vtsSetPWMRepeats.md) `function`
+- [vtsSetPWMResistanceHigh](structured/VTSystem/vtsSetPWMResistanceHigh.md) `function`
+- [vtsSetPWMResistanceLow](structured/VTSystem/vtsSetPWMResistanceLow.md) `function`
+- [vtsSetPWMStartDelay](structured/VTSystem/vtsSetPWMStartDelay.md) `function`
+- [vtsSetPWMThreshold](structured/VTSystem/vtsSetPWMThreshold.md) `function`
+- [vtsSetPWMVoltageHigh](structured/VTSystem/vtsSetPWMVoltageHigh.md) `function`
+- [vtsSetPWMVoltageLow](structured/VTSystem/vtsSetPWMVoltageLow.md) `function`
+- [vtsSetRefVoltageMode](structured/VTSystem/vtsSetRefVoltageMode.md) `function`
+- [vtsSetStimulationMode](structured/VTSystem/vtsSetStimulationMode.md) `function`
+- [vtsSetThreshold](structured/VTSystem/vtsSetThreshold.md) `function`
+- [vtsSetThreshold1_8](structured/VTSystem/vtsSetThreshold1_8.md) `function`
+- [vtsSetThreshold9_16](structured/VTSystem/vtsSetThreshold9_16.md) `function`
+- [vtsSetTransferCycle](structured/VTSystem/vtsSetTransferCycle.md) `function`
+- [vtsSetTriggerParams](structured/VTSystem/vtsSetTriggerParams.md) `function`
+- [vtsSetTriggerParamsEx](structured/VTSystem/vtsSetTriggerParamsEx.md) `function`
+- [vtsSetWFParams](structured/VTSystem/vtsSetWFParams.md) `function`
+- [vtsStartStimulation](structured/VTSystem/vtsStartStimulation.md) `function`
+- [vtsStartTrigger](structured/VTSystem/vtsStartTrigger.md) `function`
+- [vtsStopStimulation](structured/VTSystem/vtsStopStimulation.md) `function`
+
+---
+
+## CAPL XCP (XCP)
+
+**Function count**: 17
+
+- [OnXcpError](structured/XCP/OnXcpError.md) `function`
+- [OnXcpEvent](structured/XCP/OnXcpEvent.md) `function`
+- [XCP CAPL Functions](structured/XCP/XCP CAPL Functions.md) `notes`
+- [xcpActivate](structured/XCP/xcpActivate.md) `function`
+- [xcpActivateMeasurementGroup](structured/XCP/xcpActivateMeasurementGroup.md) `function`
+- [xcpConnect](structured/XCP/xcpConnect.md) `function`
+- [xcpDeactivate](structured/XCP/xcpDeactivate.md) `function`
+- [xcpDeactivateAll](structured/XCP/xcpDeactivateAll.md) `function`
+- [xcpDisconnect](structured/XCP/xcpDisconnect.md) `function`
+- [xcpGetCalPage](structured/XCP/xcpGetCalPage.md) `function`
+- [xcpGetPollingCycle](structured/XCP/xcpGetPollingCycle.md) `function`
+- [xcpIsConnected](structured/XCP/xcpIsConnected.md) `function`
+- [xcpSendRaw](structured/XCP/xcpSendRaw.md) `function`
+- [xcpSetCalPage](structured/XCP/xcpSetCalPage.md) `function`
+- [xcpSetPollingCycle](structured/XCP/xcpSetPollingCycle.md) `function`
+- [xcpUpload](structured/XCP/xcpUpload.md) `function`
+- [xcpUserCommand](structured/XCP/xcpUserCommand.md) `function`

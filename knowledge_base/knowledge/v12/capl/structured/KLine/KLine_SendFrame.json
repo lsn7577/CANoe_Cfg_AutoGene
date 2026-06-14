@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "KLine_SendFrame",
+  "category": "KLine",
+  "title": "KLine_SendFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSendFrame.htm",
+  "syntax": [
+    "long KLine_SendFrame( byte data[], dword count)"
+  ],
+  "description": [
+    "Send data on the active K-Line communication channel.",
+    "The K-Line header is generated automatically due to header settings.",
+    "In a tester node, you can achieve this functionality by setting the diagnostics request to the byte sequence directly (with DiagResize and DiagSetPrimitiveData)."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Data buffer"
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": "_Diag_DataRequest( BYTE data[], dword count, long furtherSegments)\n{\n   long status;\n   status = KLine_SendFrame( data, count);\n   write( \"KLine_SendFrame returns %d for sending %d bytes\", status, count);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

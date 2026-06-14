@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_ConfigureRoutingActivationRetries",
+  "category": "Diagnostics",
+  "title": "DoIP_ConfigureRoutingActivationRetries",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPConfigureRoutingActivationRetries.htm",
+  "syntax": [
+    "void DoIP_ConfigureRoutingActivationRetries(dword numberOfRetries, dword retryPeriod_ms, byte nackCodes[], dword nackCodesCount);"
+  ],
+  "description": [
+    "Allows to activate or deactivate DoIP routing activation retries. Retries are only attempted for specific negative ACK codes that can be given in a list of codes. There is a default list that is used when nackCodesCount is 0."
+  ],
+  "parameters": [
+    {
+      "name": "numberOfRetries",
+      "type": "",
+      "description": "Routing activation will be retried this many times. The feature can be deactivated with a value of 0 (default)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "ActivateRetries()\n{\n  byte nackCodes[1];\n  // Perform up to 3 retries when the default codes 0x04 or 0x11 are returned\n  DoIP_ConfigureRoutingActivationRetries(3, 100, nackCodes, 0);\n}\n\nDeactivateRetries()\n{\n  byte nackCodes[1];\n  // Turn off retries\n  DoIP_ConfigureRoutingActivationRetries(0, 0, nackCodes, 0);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

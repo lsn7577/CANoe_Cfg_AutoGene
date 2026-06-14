@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetNumOfDTCs",
+  "category": "J1939",
+  "title": "J1939GetNumOfDTCs",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/Functions/CAPLfunctionJ1939GetNumOfDTCs.htm",
+  "syntax": [
+    "long J1939GetNumOfDTCs(pg pgWithDTCs, dword spn, byte fmi, byte oc)"
+  ],
+  "description": [
+    "Function looks through a J1939 diagnostic message and returns the number of DTC blocks that match the search criteria, i.e. that contains defined SPN/FMI/OC values."
+  ],
+  "parameters": [
+    {
+      "name": "pgWithDTC",
+      "type": "",
+      "description": "Message to be checked for a specific DTC block. Must be a J1939 Parameter Group."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on pg DM1\n{\n  int numOfDTCs;\n\n  //Count the number of DTCs with FMI=11\n  numOfDTCs = J1939GetNumOfDTCs (this, 0xFFFFFFFF, 11, 0xFFFF);\n  if(numOfDTCs > 0)\n    WriteEx(-3, 3, \"DM1 wiht %d DTC(s) with FMI=11 observed\", numOfDTCs);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

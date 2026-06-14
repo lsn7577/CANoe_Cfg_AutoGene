@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "VTIL_PressButton, VTIL_ButtonActivationMsg",
+  "category": "ISO11783",
+  "title": "VTIL_PressButton, VTIL_ButtonActivationMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILPressButton.htm",
+  "syntax": [
+    "long VTIL_PressButton(dword objectId, dword duration); // form 1"
+  ],
+  "description": [
+    "The VTIL_PressButton methods simulate the pressing of a Button and the releasing of it after the duration. As a result, the Button Activation Message is immediately sent with the key activation code = pressed/latched, then every 200 ms with the key activation code = still held and after the duration with the key activation code = released/unlatched.",
+    "For form 1 and 3 the button must be part of the active Data/Alarm/Window Mask. Otherwise, the function will return with an error code and no messages will be sent.",
+    "In contrast, forms 2, 4, 5 and 6 do not check whether the button belongs to the given Data/Alarm/Window mask or whether the button is active or visible.",
+    "The VTIL_ButtonActivationMsg methods send only the Button Activation Message (without triggering any event in the Virtual Terminal)."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_PressButton(VT, 3000, 400);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2102: TestStepFail(\"Invalid object!\"); break;\n  case -2104: TestStepFail(\"Currently there is no active Working Set!\"); break;\n  case -2115: TestStepFail(\"VT works in passive mode therefore you cannot press buttons!\"); break;\n  case -2120: TestStepFail(\"Button is currently disabled!\"); break;\n  case -2121: TestStepFail(\"Button is not available in the current  context!\"); break;\n  default:    TestStepFail(\"Unexpected error\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

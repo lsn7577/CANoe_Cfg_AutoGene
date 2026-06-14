@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPChangePolygonPoint",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPChangePolygonPoint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPChangePolygonPoint.htm",
+  "syntax": [
+    "long Iso11783IL_OPChangePolygonPoint( dword polygonID, dword index, dword x, dword y ); // form 1"
+  ],
+  "description": [
+    "The function changes the position of a point of a polygon object. A Change Polygon Point command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "polygonID",
+      "type": "",
+      "description": "Object ID of a polygon object"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPChangePolygonPoint( 1200, 2, 25, 10 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

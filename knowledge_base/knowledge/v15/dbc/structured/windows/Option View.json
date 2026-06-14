@@ -1,0 +1,58 @@
+{
+  "page_type": "concept",
+  "name": "Option View",
+  "category": "DBC",
+  "subcategory": "windows",
+  "title": "Option View",
+  "source": "chm_extract_v15/CANeds/Topics/windows/options/OptionDisplay.htm",
+  "intro": [
+    "This page contains the settings regarding to the view of the tool."
+  ],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Output Window",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "If a file is opened or checked the output window scrolls to show the latest notification. This is also done if a selected object loses its focus and an error is discovered. To avoid the scrolling in the second case it may be switched off.",
+          "For object check with command Check EDSthe automatic scroll can not be switched off."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Window Layout",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "To restore the layout of the different windows when the next EDS is opened, this check box can be activated.",
+          "It is also possible to save the layout by the command Save Window Layout of the View menu."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Database Window",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "If a database with PDOs and SDOs is loaded it may be useful to reduce the number of visible PDOs and SDOs in the database window. There are two fields to set the maximum number.",
+          "Although some objects are not visible they are still used in check procedures.",
+          "If the check box Show complete database file path is selected then the file path is shown in the file view (see command File View of menu Database). Otherwise only the file name is shown."
+        ],
+        "tables": [
+          [
+            [
+              "Version 15© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

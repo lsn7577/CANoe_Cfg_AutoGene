@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "fileGetStringSZ",
+  "category": "Other",
+  "title": "fileGetStringSZ",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionFileGetStringSZ.htm",
+  "syntax": [
+    "long fileGetStringSZ(char buff[], long buffsize, dword fileHandle);"
+  ],
+  "description": [
+    "The function reads a string from the specified file.",
+    "Characters are read until the end of line is reached or the number of read characters is equal to buffsize -1.The end of line is marked either",
+    "No line feed character will be contained in the buffer. See also fileGetString."
+  ],
+  "parameters": [
+    {
+      "name": "buff",
+      "type": "",
+      "description": "Buffer for the read-out string"
+    }
+  ],
+  "return": "If an error occurs, the return value is 0, else 1.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

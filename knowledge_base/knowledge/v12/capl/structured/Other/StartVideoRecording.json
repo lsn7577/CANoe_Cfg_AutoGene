@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "StartVideoRecording",
+  "category": "Other",
+  "title": "StartVideoRecording",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStartVideoRecording.htm",
+  "syntax": [
+    "StartVideoRecording(char windowName[]);"
+  ],
+  "description": [
+    "Starts/resumes the recording for a CANoe Video Window."
+  ],
+  "parameters": [
+    {
+      "name": "windowName",
+      "type": "",
+      "description": "The name of the Video Window."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// start/resume the recording for \"VideoWindow\"\nStartVideoRecording(\"VideoWindow\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

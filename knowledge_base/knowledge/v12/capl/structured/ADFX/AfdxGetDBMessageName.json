@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetDBMessageName",
+  "category": "ADFX",
+  "title": "AfdxGetDBMessageName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxGetDBMessageName.htm",
+  "syntax": [
+    "long AfdxGetDBMessageName( long msgID, long bufSize, char buffer[] );"
+  ],
+  "description": [
+    "Retrieves the message name from database from a given message ID if it is defined there."
+  ],
+  "parameters": [
+    {
+      "name": "msgID",
+      "type": "",
+      "description": "unique message ID as defined in the DBC"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "{\n  char[256] RXlist[long]; // Rx messages: store MSG-Id to name association\n  long invRXlist[ char[] ]; // Rx messages: store name to MSG-Id association\n}\non preStart\n{\n  dword i;\n  dword Tmp;\n  long err;\n  double txRefreshRate;\n  char msgName[256];\n  char portMasterName[128];\n\n  for (i = 0; i < elCount(thisNode.RX); i++)\n  {\n    Tmp = thisNode.RX[i]; // fetch the message ID\n    err = AfdxGetDBMessageName(Tmp, elCount(RXlist[Tmp]), RXlist[Tmp]);\n    invRXlist[RXlist[Tmp]] = Tmp;\n    write(\"RX-ID = %x (%s)\", Tmp, RXlist[Tmp]);\n\n    // retrieve some attributes\n    err = AfdxGetDBAttrAsString(Tmp, “AfdxPortMasterName”, elCount(portMasterName), portMasterName);\n    txRefreshRate = AfdxGetDBAttrValue(Tmp, “AfdxMsgTxRate”);\n    if (err == 0 && AfdxGetLastError() == 0)\n    {\n      write(\"AfdxMasterPortName = %s\", portMasterName);\n      write(\"AfdxMsgTxRate = %d\", (int)txRefreshRate);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

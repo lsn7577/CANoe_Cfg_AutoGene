@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDOnDefaultLogRequest",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDOnDefaultLogRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDOnDefaultLogRequest.htm",
+  "syntax": [
+    "void Iso11783IL_PDDOnDefaultLogRequest( );"
+  ],
+  "description": [
+    "This function can be implemented in the CAPL program. The function is called up by the interaction layer if default logging is requested by the Task Controller. Default logging can then be started with the CAPL function Iso11783IL_PDDSetLogTrigger."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_PDDOnDefaultLogRequest( )\n{\n  Iso11783IL_PDDSetLogTrigger ( 4, 0x0100, 0, 1000 );\n  Iso11783IL_PDDSetLogTrigger ( 4, 0x0101, 0, 1000 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

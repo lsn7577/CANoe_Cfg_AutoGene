@@ -1,0 +1,221 @@
+{
+  "page_type": "function",
+  "name": "mostConfigureBusloadCtrl",
+  "category": "MOST",
+  "title": "mostConfigureBusloadCtrl",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTConfigureBusloadCtrl.htm",
+  "syntax": [
+    "MOST25: long mostConfigureBusloadCtrl(long channel, long rate, long countertype, long counterpos, long prio, long rtype, long destadr, BYTE pdata[]);",
+    "MOST150: mostConfigureBusloadCtrl(long rate, mostMessage msg);"
+  ],
+  "description": [
+    "The function configures the bus load generator for the control channel. Load generation can be started with the mostGenerateBusloadCtrl() function.",
+    "Form 1:",
+    "With the specified rate the generator tries to send messages on the control channel.Due to repeated transmissions or arbitration delays, the bus load actually generated can deviate from the specified rate.As an option, the messages can be supplied with a sequence counter.",
+    "Form 2:",
+    "For OptoLyzer G2 3150o and OptoLyzer MOCCA compact 150c, rate specifies the delay between two messages in 1 ms steps and hence it is not possible to specify number of messages sent per second."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected MOST hardware."
+    },
+    {
+      "name": "rate",
+      "type": "",
+      "description": "VN2600/VN2610: Number of messages per second. At best (optimal arbitration), the chip can send (frequency * 21 / 1024) messages per second. VN2640: Number of messages per second. OptoLyzer G2 3150o, OptoLyzer MOCCA compact 150c: Control busload period. Specifies the delay between two messages: 1 means 1 ms, 2 means 2 ms and so on."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "No sequence counter"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "1 byte counter"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "2 byte counter (higher quality byte first)"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "3 byte counter (higher quality bytes first)"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "4 byte counter (higher quality bytes first)"
+    },
+    {
+      "name": "counterpos",
+      "type": "",
+      "description": "Position of the lowest value sequence counter byte."
+    },
+    {
+      "name": "prio",
+      "type": "",
+      "description": "Sending priority (standard value: 1)"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Normal"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "RemoteRead"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "RemoteWrite"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Alloc"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Dealloc"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "GetSource"
+    },
+    {
+      "name": "destadr",
+      "type": "",
+      "description": "Destination address of the messages."
+    },
+    {
+      "name": "pdata[]",
+      "type": "",
+      "description": "17 user data bytes; for rtype=normal pdata[0] is the message FBlockID."
+    },
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Variable of type mostMessage; control busload custom message."
+    }
+  ],
+  "return": "Repeated transmissions on the control channel can be eliminated by setting the OS8104 transmit retry",
+  "example": {
+    "description": [
+      "Transmits the following messages:",
+      "Configure and start bus load stress on keyboard event."
+    ],
+    "code": "// message data\nbyte data[17] =\n   { 0x01,0x00,0xCC,0xC1,0x04,0x00,0x00,0x00,\n      0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\n      0x00 };\n// configure busload\n// channel, rate, countertype, counterpos, prio, rtype, destadr, data\nmostConfigureBusloadCtrl(mostGetChannel(), 10, 4, 8, 1, 0, 0x1234, data);\n// start busload\nmostGenerateBusloadCtrl(mostGetChannel(), 3);\nDestAdr message data\n                       |- counter -|\n1234     01 00 CC C1 04 00 00 00 00 00 00 00 00 00 00 00 00\n1234     01 00 CC C1 04 00 00 00 01 00 00 00 00 00 00 00 00\n1234     01 00 CC C1 04 00 00 00 02 00 00 00 00 00 00 00 00\non key 's'\n{\n   long channel, rate;\n   mostmessage NetBlock.DeviceInfo.Get msg;\n\n   channel = 1;\n   rate = 50; // msgs/s\n\n   // set counter type: 1-byte\n   mostSetStressNodeParameter(channel, 16, 1);\n\n   // set counter in byte6 (first user data byte)\n   mostSetStressNodeParameter(channel, 17, 6);\n\n   // configure stress pattern\n   msg.MsgChannel = channel;\n   msg.DA = 0x100;\n   mostConfigureBusloadCtrl(rate, msg);\n\n   // start stress: send 10 messages\n   mostGenerateBusloadCtrl(channel, 10);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST150 Not in StopMeasurement",
+      "MOST25 MOST150 Not in StopMeasurement",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

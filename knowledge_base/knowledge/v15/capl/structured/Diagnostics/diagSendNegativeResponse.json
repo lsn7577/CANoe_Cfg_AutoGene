@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "diagSendNegativeResponse",
+  "category": "Diagnostics",
+  "title": "diagSendNegativeResponse",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagSendNegativeResponse.htm",
+  "syntax": [
+    "long diagSendNegativeResponse (diagResponse obj, DWORD code)",
+    "long diagSendNegativeResponse (diagRequest obj, DWORD code)"
+  ],
+  "description": [
+    "Sends a negative response to the tester, whereby the specified value is transmitted as error code."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    },
+    {
+      "name": "code",
+      "type": "",
+      "description": "Error code."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "on diagRequest FaultMemory::FaultMemory::ReportByStatusMask\n{\n  // Send neg response with code 0x78 (requestCorrectlyReceived-ResponsePending)\n  DiagSendNegativeResponse(this, 0x78);\n  // Optionally set a timer to respond with a positive response later\n  setTimer(posReq, 1);\n  // pos resp after 1s\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0 7.0 SP3: methods",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

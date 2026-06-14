@@ -1,0 +1,51 @@
+# coTfsSDO
+
+> Category: `CANopen` | Type: `function`
+
+## Syntax
+
+```c
+long coTfsSDO( dword index, dword subIndex );
+```
+
+## Description
+
+This function executes the following transfers:
+
+In each case, first a value is written with a download and this value is read back with an upload and checked. The test is destructive, the object in the DUT Device Under Test is overwritten. The object's data is overwritten during the test and not restored. The block transfers are transmitted with a CRC checksum if the CANopen® device supports these.
+
+The test counts as passed if all 6 data transmissions were completed successfully.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| index | Index of a domain or string object. |
+| subIndex | Sub index of a domain or string object. |
+
+## Return Values
+
+Error code
+
+## Example
+
+```c
+if ( coTfsSDO (0x2000, 0x0) != 1) {
+  write("SDO test failed");
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 8.2 | 13.0 | — | — | 2.1 SP3 |
+| Restricted To | — | CANopen | CANopen | — | — | CANopen |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

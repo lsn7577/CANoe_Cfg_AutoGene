@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "EthOutputRawPacket",
+  "category": "Obsolete",
+  "title": "EthOutputRawPacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthOutputRawPacket.htm",
+  "syntax": [
+    "long EthOutputRawPacket( long packetLength, char packetData );"
+  ],
+  "description": [
+    "The function sends a raw Ethernet packet. The packet data must contain the destination (byte 0..5) and source (byte 6..11) MAC address and the Ethernet type (byte 12..13 in Motorola format). After that the user data are contained."
+  ],
+  "parameters": [
+    {
+      "name": "packetLength",
+      "type": "",
+      "description": "size of the Ethernet packet in byte (see Packet Length)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "BYTE rawData[18] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x02, 0x00, 0x00, 0x00, 0x00, 0x01, 0xF1, 0x23, 0x01, 0x02, 0x03, 0x04 };\nEthOutputRawPacket( elCount(rawData), rawData ); //with calculated fcs\n\nEthOutputRawPacket(elCount(rawData), 4711, rawData); //with user-defined fcs"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

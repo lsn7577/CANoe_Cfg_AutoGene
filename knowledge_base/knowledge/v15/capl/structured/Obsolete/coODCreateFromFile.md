@@ -1,0 +1,23 @@
+# coODCreateFromFile
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by CANopen Basic Functions. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | void coODCreateFromFile( char filename[], dword nodeId, dword defaults, dword errCode[] ); |  |  |  |
+| Function | The function loads an EDS or DCF file and generates the local object dictionary from it. The given file have to match the format described in /7/. Already existing objects will be deleted on call of that function. All errors that occur and indications about this procedure are reported to the write window. |  |  |  |
+| Parameters | filename File name of the EDS or DCF file |  |  |  |
+| nodeId Node-ID, value range 1..127 (only required if values in the EDS or DCF file depend on the node-ID) |  |  |  |  |
+| defaults Specifies whether the default or parameter values from a DCF file are used:0 - parameter values are used1 - default values are used |  |  |  |  |
+| errCode Error code buffer (is entered in index 0 of the field) |  |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 6.0-9.0 SP6 | CANopen | — | • |  |
+| Example dword errCode[1];coODCreateFromFile( "NMTMaster.eds", 120, 1, errCode );if (errCode[0] == 0) { write( "Object dictionary successfully created" );} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANopenInternalNMTCommand",
+  "category": "CANopen",
+  "title": "CANopenInternalNMTCommand",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/CANopenBasic/Functions/CAPLfunctionsCANopenInternalNMTCommand.htm",
+  "syntax": [
+    "void CANopenInternalNMTCommand(dword nodeId, dword NMTCommand );"
+  ],
+  "description": [
+    "Performs an NMT command inside a simulated CANopen node."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "ID of the simulated CANopen node."
+    }
+  ],
+  "return": "The data as qword.",
+  "example": {
+    "description": [],
+    "code": "CANopenInternalNMTCommand(2, 1); //Start node 2\n\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

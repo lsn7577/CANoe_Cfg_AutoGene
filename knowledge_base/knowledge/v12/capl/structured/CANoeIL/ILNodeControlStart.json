@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILNodeControlStart",
+  "category": "CANoeIL",
+  "title": "ILNodeControlStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILNodeControlStart.htm",
+  "syntax": [
+    "long ILNodeControlStart(char aNodeName[])"
+  ],
+  "description": [
+    "Restarts the interaction layer of the specified simulation node. Cyclical sending of messages is restarted and setting of signals is possible again. The specified node must be in the current bus context. In all other cases the function has no effect and will return with an error."
+  ],
+  "parameters": [
+    {
+      "name": "aNodeName",
+      "type": "",
+      "description": "Name of the node of which the interaction layer should be started."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

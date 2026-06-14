@@ -1,0 +1,197 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_J1939Request; ChkStart_J1939Request",
+  "category": "Test",
+  "title": "ChkCreate_J1939Request; ChkStart_J1939Request",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkCreateJ1939Request.htm",
+  "syntax": [
+    "dword ChkCreate_J1939Request(Node requestNode , Node responseNode, Message requestedMessage, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);",
+    "dword ChkCreate_ J1939Request(Node responseNode, Message requestedMessage, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);",
+    "dword ChkCreate_ J1939Request(dword requestSourceAddress, dword responseSourceAddress, Message requestedMessage, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);",
+    "dword ChkCreate_ J1939Request(dword requestSourceAddress, dword responseSourceAddress, dword requestedPGN, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);",
+    "dword ChkCreate_J1939Request(Node responseNode, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);",
+    "dword ChkStart_J1939Request(Node requestNode , Node responseNode, Message requestedMessage, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);",
+    "dword ChkStart_J1939Request(Node responseNode, Message requestedMessage, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);",
+    "dword ChkStart_J1939Request(dword requestSourceAddress, dword responseSourceAddress, Message requestedMessage, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);",
+    "dword ChkStart_J1939Request(dword requestSourceAddress, dword responseSourceAddress, dword requestedPGN, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);",
+    "dword ChkStart_J1939Request(Node responseNode, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);"
+  ],
+  "description": [
+    "Observes the J1939 Requests (EA00h). It is possible to observe all requests or only requests of a specific node."
+  ],
+  "parameters": [
+    {
+      "name": "requestNode",
+      "type": "",
+      "description": "Requesting node from database."
+    },
+    {
+      "name": "responseNode",
+      "type": "",
+      "description": "Responding node from database."
+    },
+    {
+      "name": "requestSourceAddress",
+      "type": "",
+      "description": "Address of the ECU which sends the request. Possible values:0 – 253: Observe request node with this address 254, -1 (or 0xFFFFFFFF): Observe all request nodes"
+    },
+    {
+      "name": "responseSourceAddress",
+      "type": "",
+      "description": "Address of the ECU which sends the response. Possible values:0 – 253: Observe response node with this address 254, -1 (or 0xFFFFFFFF): Observe all response nodes"
+    },
+    {
+      "name": "requestedMessage",
+      "type": "",
+      "description": "Requested message from database (the parameter group number of this message is used)."
+    },
+    {
+      "name": "requestedPGN",
+      "type": "",
+      "description": "parameter group number of the requested message."
+    },
+    {
+      "name": "expected",
+      "type": "",
+      "description": "One or more expected results bit 1: the requested parameter group bit 2: the negative Acknowledgment message bit 3: the positive Acknowledgment message bit 4: the access denied Acknowledgment message bit 5: the address busy Acknowledgment message bit 6: timeout, no answer expected You can combine the expected parameters by bitwise operations."
+    },
+    {
+      "name": "options",
+      "type": "",
+      "description": "bit 1: allow request if request is pending bit 2: allow Acknowledgment message sent to specific destination address (required by ISO11783) You can combine the options parameters by bitwise operations."
+    },
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "Maximum allowed time between request and response (default 1250 ms) [ms]."
+    },
+    {
+      "name": "requestInhibitTime",
+      "type": "",
+      "description": "Time, during the last received message, when no request for this message is allowed (default 50 ms) [ms]."
+    },
+    {
+      "name": "retryInhibitTime",
+      "type": "",
+      "description": "Time after the last timeout of the second retry (third request) until the same request can be sent again without being recognized as invalid third (default 0 ms) [ms]."
+    },
+    {
+      "name": "callback1",
+      "type": "",
+      "description": "This parameter is optional. Name of the callback which is called when the check fails. Signature: void Callback( dword checkId )"
+    },
+    {
+      "name": "callback2",
+      "type": "",
+      "description": "This parameter is optional. Name of the callback which is called when the check fails. Signature: void Callback( TestCheck check )"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "TestCheck check;\n  // checks the if a response from N2 is received after a J1939 Request from node N1\n  checkId = ChkStart_J1939Request(N1, N2, GBSD, 0x01, 0, 1250, 50, 0);\n  TestAddCondition(checkId);\n\n  // sequence of different actions and waiting conditions\n  TestWaitForTimeout(1000);\n  TestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.5",
+      "13.0",
+      "—",
+      "—",
+      "2.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

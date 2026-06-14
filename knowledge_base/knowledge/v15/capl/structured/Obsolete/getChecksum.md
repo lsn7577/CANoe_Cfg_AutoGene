@@ -1,0 +1,18 @@
+# getChecksum
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function The name of this function is deprecated and has been replaced by linGetChecksum |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | int getChecksum(linFrame msg) |  |  |  |
+| int getChecksum(linCSError error) |  |  |  |  |
+| Function | Returns the currently set checksum of a LIN frame or LIN checksum error. In the case of a LIN frame, the correct value derived from the message data is returned by default, even after the message data has been modified. The user can, however set a deviating value with setManualChecksum to generate checksum errors on the LIN bus. This value is then constant and will not be affected by changes in the message data. To turn off this behavior for a given message, the user must call resetManualChecksum. |  |  |  |
+| Parameters | msg LIN frame for which the checksum will be queried. |  |  |  |
+| error The LIN checksum error for which the checksum will be queried. |  |  |  |  |
+| Return Values | Calculated checksum. |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 3.2 - 5.1 | LIN | • | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,17 @@
+# getThisMessage (J1939)
+
+> Category: `Obsolete` | Type: `notes`
+
+| Note This function is deprecated! Since CANoe 8.0 all data bytes can be accessed with this in an on pg handler. There is one exception with the FastPacket transport protocol where it is still necessary to use this function, see Fast Packet protocol in CAPL. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | getThisMessage(pg pg_variable, int length); |  |  |  |
+| Function | Transfers the parameter group to the indicated parameter group pg. The number of bytes of the transmitted parameter group data is given by length. This function must be used exclusively within the program block. |  |  |  |
+| Parameters | pg_variable Variable of the type "pg" |  |  |  |
+| length Length entry of the type "int" |  |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Since Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| All | J1939 | • | • |  |
+| Example pg TC1 pg_tc1; // Definition of a parameter groupon pg * { // Event procedure for all parameter groupsif (pg.pgn == TC1) { // If the received parameter group is TC1// Transfer the received parameter group to the variableGetThisMessage(pg_tc1, pg_tc1.dlc);} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

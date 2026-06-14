@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestCaseReportMeasuredValue",
+  "category": "Test",
+  "title": "TestCaseReportMeasuredValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCaseReportMeasuredValue.htm",
+  "syntax": [
+    "void TestCaseReportMeasuredValue(char semanticName[], float value);"
+  ],
+  "description": [
+    "Adds a report entry in the measured values table for the given parameter at the test case level. Accepted parameters are: user defined values, signals, system variables and environment variables.",
+    "If the function is called several times inside a test case using the same semantic name, only the last value will be reported in the measured values table."
+  ],
+  "parameters": [
+    {
+      "name": "semanticName",
+      "type": "",
+      "description": "Semantic name for one reported value."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "testcase TestMeasuredValues()\n{\n  double acc;\n  TestCaseTitle(\"\", \"Report Measured Values\");\n\n  TestCaseReportMeasuredValue(\"Version\", \"1.0\");\n  TestCaseReportMeasuredValue(\"Start time\", 210, \"ms\");\n\n  TestCaseReportMeasuredValue(\"Crash\", VehicleMotion::CrashDetected);\n  TestCaseReportMeasuredValue(\"Acceleration\", sysvar::SystemUnderTest::Accelerate);\n\n  TestStep(\"\", \"Value Conversion\");\n  acc = @sysvar::SystemUnderTest::Accelerate * 1000.0 / 3600.0;\n  TestCaseReportMeasuredValue(\"Acceleration\", acc, \"mp/s2\");\n\n  TestWaitForTimeout(2000);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

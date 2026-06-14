@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sensorConvertUnsignedToSigned",
+  "category": "Sensor",
+  "title": "sensorConvertUnsignedToSigned",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionSensorConvertUnsignedToSigned.htm",
+  "syntax": [
+    "dword sensorConvertUnsignedToSigned(dword inputSignalValue, long& outputSignalValue, dword bitCount);"
+  ],
+  "description": [
+    "Converts the given n bit input value from unsigned to signed using two's complement."
+  ],
+  "parameters": [
+    {
+      "name": "inputSignalValue",
+      "type": "",
+      "description": "The unsigned input value."
+    }
+  ],
+  "return": "This function returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "  dword inputValue = 13;\n  dword outputValue;\n\n  // Convert the 4 bit unsigned input value to a signed value\n  sensorConvertUnsignedToSigned(inputValue, outputValue, 4);\n\n  // outputValue is now -3."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetChecksumModel",
+  "category": "LIN",
+  "title": "linSetChecksumModel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetChecksumModel.htm",
+  "syntax": [
+    "long linSetChecksumModel(long channel, long frameID, long checksumModel)"
+  ],
+  "description": [
+    "Sets the checksum calculation model of a single frame."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "The channel for which the checksum model of the frame should be changed."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "on prestart\n{\n  /*send and receive the frame with the ID “4” using the classic checksum model*/\n  linSetChecksumModel(4,0);\n}\non prestart\n{\n  /*send and receive the frame with the ID “4” on channel 1 using the classic checksum model*/\n  linSetChecksumModel(1,4,0);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

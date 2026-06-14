@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939ILControlStart",
+  "category": "J1939",
+  "title": "J1939ILControlStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILControlStart.htm",
+  "syntax": [
+    "long J1939ILControlStart(); // form 1"
+  ],
+  "description": [
+    "The node starts Address Claiming (if NMT is activated). If the Address Claiming was successful, cyclic messages are sent.",
+    "The source address can be specified optionally. If it is not specified the node attribute NmStationAddress must be defined."
+  ],
+  "parameters": [
+    {
+      "name": "address",
+      "type": "",
+      "description": "source address of the node (optional)"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n J1939ILControlStart();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

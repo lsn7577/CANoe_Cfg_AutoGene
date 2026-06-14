@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "StmCreate_Toggle (limits taken from database)",
+  "category": "Test",
+  "title": "StmCreate_Toggle (limits taken from database)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionStmCreateToggleDatabase.htm",
+  "syntax": [
+    "dword StmCreate_Toggle(message aMessage, dbsignal aDBSignal, dword CycleTime);"
+  ],
+  "description": [
+    "Creates a stimulus generator that toggles between two values."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Must exist in DB"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "To stimulate signals:",
+      "To stimulate environment variables:",
+      "To stimulate system variables:"
+    ],
+    "code": "mId = StmCreate_Toggle(MsgBuf, Msg::Sig, CycleTime);\nTo stimulate signals with the Interaction Layer:\nmId = StmCreate_Toggle(Msg::Sig, CycleTime);\nmId = StmCreate_Toggle(EnvVarToStimulate, CycleTime);\nmId = StmCreate_Toggle(SysVarToStimulate, CycleTime);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

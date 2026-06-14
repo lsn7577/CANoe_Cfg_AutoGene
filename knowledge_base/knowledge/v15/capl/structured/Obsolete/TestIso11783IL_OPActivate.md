@@ -1,0 +1,26 @@
+# TestIso11783IL_OPActivate
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by: Iso11783IL_OPActivate |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long TestIso11783IL_OPActivate( dbNode node); |  |  |  |
+| long TestIso11783IL_OPActivate( dbNode node, dword options ); |  |  |  |  |
+| Function | The function activates the Object Pool API. The initialization procedure with the Virtual Terminal is performed and the object pool is transmitted to the Virtual Terminal. During the initialization procedure some information from the Virtual Terminal is requested. This can be suppressed with the options parameter. The requested information can be get with the function Iso11783IL_OPGetVTInfo. Note This function is not necessary if a node was configured completely in the database (DBC):ISO11783IOPFilename and ISO11783IOPVersion are defined and VT21 message was assigned to the node. Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment. | Note This function is not necessary if a node was configured completely in the database (DBC):ISO11783IOPFilename and ISO11783IOPVersion are defined and VT21 message was assigned to the node. | Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment. |  |
+| Note This function is not necessary if a node was configured completely in the database (DBC):ISO11783IOPFilename and ISO11783IOPVersion are defined and VT21 message was assigned to the node. |  |  |  |  |
+| Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment. |  |  |  |  |
+| Parameters | node Simulation node to apply the function. |  |  |  |
+| options Options bit 0 = 1: suppress Get Memory command bit 1 = 1:-suppress Get Number of Softkeys command bit 2 = 1: suppress Get Text Font Data command bit 3 = 1: suppress Get Hardware command |  |  |  |  |
+| Return Values | 0: Function has been executed successfully |  |  |  |
+| <0: An error has occurred, see error codes |  |  |  |  |
+| Availability | Since Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 8.5 | ISO11783 Test nodes | — | • |  |
+| Example testcase StructuredDataSample(){ long table = 0; TestCaseDescription("Shows how to display a user-defined info table."); TestStepPass(0, "1", "First Step"); // begin table table = TestInfoTable("User Structured Data"); // header TestInfoHeadingBegin(table, 0); TestInfoCell(table, "Left part"); TestInfoCell(table, "Operation"); TestInfoCell(table, "Right part"); TestInfoCell(table, "Result"); TestInfoHeadingEnd(table); // row 1 TestInfoRow(table, 0); TestInfoCell(table, "Frequency"); TestInfoCell(table, "<"); TestInfoCell(table, "50"); TestInfoCell(table, "warning"); // row 2 TestInfoRow(table, 0); TestInfoCell(table, "Temperature"); TestInfoCell(table, "in range"); TestInfoCell(table, "90-100"); TestInfoCell(table, "pass"); // intermediate header TestInfoHeadingBegin(table, 1); TestInfoCell(table, "Additional conditions", 4); TestInfoHeadingEnd(table); // row 4 TestInfoRow(table, 1); TestInfoCell(table, "Test Duration", 2); TestInfoCell(table, "60s"); TestInfoCell(table, "fail"); // output table TestStepFail(0, "2", table);} |  |  |  |  |
+| Example: Move to another Virtual Terminal (VT) TestIso11783IL_OPDeactivate(Sprayer, 0);TestIso11783IL_OPSetProperty(Sprayer, "VTFunctionInstance", 1 );TestIso11783IL_OPLoad(Sprayer, "Sprayer.iop", "Ver1" );TestIso11783IL_OPActivate(Sprayer, 0); |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

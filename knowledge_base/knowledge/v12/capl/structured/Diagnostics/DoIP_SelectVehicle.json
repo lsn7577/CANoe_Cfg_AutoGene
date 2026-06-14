@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SelectVehicle",
+  "category": "Diagnostics",
+  "title": "DoIP_SelectVehicle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSelectVehicle.htm",
+  "syntax": [
+    "long DoIP_SelectVehicle(byte EID[6]);"
+  ],
+  "description": [
+    "Specify which vehicle the tester shall target, i.e. indicate in the Vehicle Identification Request Message, or select one of the responding vehicles for communication.",
+    "To set the VIN and EID in an ECU simulation use the DoIP.DLL functions DoIP_SetEID and DoIP_SetVIN."
+  ],
+  "parameters": [
+    {
+      "name": "EID",
+      "type": "",
+      "description": "(6 bytes) entity ID, typically an Ethernet MAC address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "TestCase TC_AccessVehicle1\n{\n  diagRequest ReadEcuInfo req;\n\n  DiagSetTarget( \"ECU1\"); // a DoIP description\n\n  // --- start VIR targeting a specific vehicle via its VIN\n\n  DoIP_SelectVehicle( \"VECT0RVEH1CLE0123\");\n\n  req.SendRequest();\n  // A VIR with VIN should be responded quite fast\n  TestWaitForDiagResponse( req, 1000);\n\n  diagCloseChannel(); // make sure that another VIR will be sent\n\n  // --- send VIR without indicating a vehicle\n\n  DoIP_SelectVehicle( \"\"); // no-parameter-VIR-message\n\n  req.SendRequest();\n  // A VIR without parameter may take a long time, including repeats\n  TestWaitForDiagResponse( req, 9000);\n\n  diagCloseChannel();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,481 @@
+{
+  "page_type": "event",
+  "name": "on frError",
+  "category": "FlexRay",
+  "title": "on frError",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/EventProcedures/CAPLfunctionOnFRError.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure is called in the event of a general error being detected on the FlexRay bus."
+  ],
+  "parameters": [],
+  "return": "The error time stamp that has been synchronized with the global time base in the",
+  "example": {
+    "description": [
+      "The following program reacts on bus errors and prints them in the Write Window, Trace Window, and logging."
+    ],
+    "code": "variables\n{\n   const int cWriteTextSize = 512;\n   char writeTxt[cWriteTextSize];\n   const int cWriteTextSize2 = 40;\n   char writeTxt2[cWriteTextSize2];\n   const int writeSink_Trace           = \r\n -3;\n   const int writeSink_Logging         = \r\n -2;\n   const int writeSeverity_Information = 1;\n}\non frError\n{\n   getFRErrorName(this.FR_Code, \r\n cWriteTextSize2, writeTxt2);\n   snprintf(writeTxt, cWriteTextSize, \"%10.6f: on FRError %3d (%-32s) on channel %2d with HW Type %2d, Data0 0x%02x, Data1 0x%02x, Data2 0x%02x, Data3 0x%02x, Data4 0x%02x.\", getTime(0), this.FR_Code, writeTxt2, (int)this.MsgChannel, this.FR_HWTag, this.FR_Data0, this.FR_Data1, this.FR_Data2, this.FR_Data3, this.FR_Data4);\n   myprint(writeTxt);\n   output(this); // only required in Measurement Setup\n}\nfloat getTime (float time)\n{\n   return TimeNowNS() / 1000000000.0;\n}\nvoid myprint(char text[])\n{\n   write(\"%s\", text);\n   writeLineEx(writeSink_Trace, writeSeverity_Information, \"%s\", text);\n   writeLineEx(writeSink_Logging, writeSeverity_Information, \"%s\", text);\n}\nint getFRErrorName (word code, word nameSize, char name[])\n{\n   int r = -1;\n   if (code == 0) {\n      snprintf(name, nameSize, \"No Error\");\nr = code;\n   } else if (code == 1) {\n      snprintf(name, nameSize, \"FlexCard Overflow\");\nr = code;\n   } else if (code == 2) {\n      snprintf(name, nameSize, \"POC Error Mode Change\");\nr = code;\n   } else if (code == 3) {\n      snprintf(name, nameSize, \"Sync Frames Below Minimum\");\nr = code;\n   } else if (code == 4) {\n      snprintf(name, nameSize, \"Sync Frame Overflow\");\nr = code;\n   } else if (code == 5) {\n      snprintf(name, nameSize, \"Clock Correction Failure\");\nr = code;\n   } else if (code == 6) {\n      snprintf(name, nameSize, \"Parity Error\");\nr = code;\n   } else if (code == 7) {\n      snprintf(name, nameSize, \"Receive FIFO Overrun\");\nr = code;\n   } else if (code == 8) {\n      snprintf(name, nameSize, \"Empty FIFO Access\");\nr = code;\n   } else if (code == 9) {\n    snprintf(name, \r\n nameSize, \"Illegal Input Buffer Access\");\nr = code;\n   } else if (code == 10) {\n      snprintf(name, nameSize, \"Illegal Output Buffer Access\");\nr = code;\n   } else if (code == 11) {\n      snprintf(name, nameSize, \"Syntax Error\");\nr = code;\n   } else if (code == 12) {\n     snprintf(name, nameSize, \"Content Error\");\nr = code;\n   }  else if (code == 13) {\n    snprintf(name, nameSize, \"Slot Boundary Violation\");\nr = code;\n   } else if (code == 14) {\n      snprintf(name, nameSize, \"Transmission Across Boundary A\");\nr = code;\n   } else if (code == 15) {\n      snprintf(name, nameSize, \"Transmission Across Boundary B\");\nr = code;\n   } else if (code == 16) {\n      snprintf(name, nameSize, \"Latest Transmit Violation A\");\nr = code;\n   } else if (code == 17) {\n      snprintf(name, nameSize, \"Latest Transmit Violation B\");\nr = code;\n   } else if (code == 18) {\n      snprintf(name, nameSize, \"Error Detection on A\");\nr = code;\n   } else if (code == 19) {\n      snprintf(name, nameSize, \"Error Detection on B\");\nr = code;\n   } else if (code == 20) {\n      snprintf(name, nameSize, \"Message Handler Constraints Flag Error\");\nr = code;\n   } else if (code == 21) {\n      snprintf(name, nameSize, \"NIT SENA\");\nr = code;\n   } else if (code == 22) {\n      snprintf(name, nameSize, \"NIT SBNA\");\nr = code;\n   } else if (code == 23) {\n      snprintf(name, nameSize, \"NIT SENB\");\nr = code;\n   } else if (code == 24) {\n      snprintf(name, nameSize, \"NIT SBNB\");\nr = code;\n   } else if (code == 25) {\n      snprintf(name, nameSize, \"Internal Error Overflow\");\nr = code;\n   } else if (code == 26) {\n      snprintf(name, nameSize, \"Wrong Frame\");\nr = code;\n   } else if (code == 27) {\n      snprintf(name, nameSize, \"Bus Guardian Error\");\nr = code;\n   } else if (code == 28) {\n      snprintf(name, nameSize, \"CHI Error\");\nr = code;\n   } else if (code == 29) {\n      snprintf(name, nameSize, \"Error Handling Level Changed\");\nr = code;\n   } else if (code == 30) {\n      snprintf(name, nameSize, \"Symbol Received\");\nr = code;\n   } else {\n      snprintf(name, nameSize, \"Unknown\");\nr = -1;\n   }\n   return r;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.1 SP2",
+      "6.1 SP2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Time (data type dword)",
+        "The error time stamp that has been synchronized with the global time base in the computer (CAN hardware or computer system clock). The time stamp must be used if time relations should be regarded with events from other sources. This time stamp is also output in the Trace Window when receiving a symbol. Unit:10 microseconds Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "msgChannel",
+        "Channel in the tool that the FlexRay CC determines. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_HWTag",
+        "Identifies the type of the FlexRay hardware (data type: dword): 0 HW independent 1 Invalid 2 Not used 3 Not used 4 FlexCard Cyclone II 5 Vector FlexRay hardware Write-protected!",
+        "0",
+        "HW independent",
+        "1",
+        "Invalid",
+        "2",
+        "Not used",
+        "3",
+        "Not used",
+        "4",
+        "FlexCard Cyclone II",
+        "5",
+        "Vector FlexRay hardware"
+      ]
+    },
+    {
+      "row": [
+        "0",
+        "HW independent"
+      ]
+    },
+    {
+      "row": [
+        "1",
+        "Invalid"
+      ]
+    },
+    {
+      "row": [
+        "2",
+        "Not used"
+      ]
+    },
+    {
+      "row": [
+        "3",
+        "Not used"
+      ]
+    },
+    {
+      "row": [
+        "4",
+        "FlexCard Cyclone II"
+      ]
+    },
+    {
+      "row": [
+        "5",
+        "Vector FlexRay hardware"
+      ]
+    },
+    {
+      "row": [
+        "FR_Code",
+        "Identifies the error type (data type: LONG) -1 Unknown error 0 NO error 1 FlexCard Overflow 2 POC Error Mode Changed 3 Sync Frames Below Minimum 4 Sync Frame Overflow 5 Clock Correction Failure 6 Parity Error 7 Receive FIFO Overrun 8 Empty FIFO Access 9 Illegal Input Buffer Access 10 Illegal Output Buffer Access 11 Syntax Error 12 Content Error 13 Slot Boundary Violation 14 Transmission Across Boundary Channel A 15 Transmission Across Boundary Channel B 16 Latest Transmit Violation Channel A 17 Latest Transmit Violation Channel B 18 Error Detection on Channel A 19 Error Detection on Channel B 20 Message Handler Constraints Flag Error 21 NIT SENA (Syntax Error during NIT Channel A) 22 NIT SBNA (Slot Boundary Violation during NIT Channel A) 23 NIT SENB (Syntax Error during NIT Channel B) 24 NIT SBNB (Slot Boundary Violation during NIT Channel B) 25 Internal Error Overflow 26 Wrong Frame 27 Bus Guardian Error 28 CHI Error 29 Error Handling Level Changed 30 Symbol Received Write-protected!",
+        "-1",
+        "Unknown error",
+        "0",
+        "NO error",
+        "1",
+        "FlexCard Overflow",
+        "2",
+        "POC Error Mode Changed",
+        "3",
+        "Sync Frames Below Minimum",
+        "4",
+        "Sync Frame Overflow",
+        "5",
+        "Clock Correction Failure",
+        "6",
+        "Parity Error",
+        "7",
+        "Receive FIFO Overrun",
+        "8",
+        "Empty FIFO Access",
+        "9",
+        "Illegal Input Buffer Access",
+        "10",
+        "Illegal Output Buffer Access",
+        "11",
+        "Syntax Error",
+        "12",
+        "Content Error",
+        "13",
+        "Slot Boundary Violation",
+        "14",
+        "Transmission Across Boundary Channel A",
+        "15",
+        "Transmission Across Boundary Channel B",
+        "16",
+        "Latest Transmit Violation Channel A",
+        "17",
+        "Latest Transmit Violation Channel B",
+        "18",
+        "Error Detection on Channel A",
+        "19",
+        "Error Detection on Channel B",
+        "20",
+        "Message Handler Constraints Flag Error",
+        "21",
+        "NIT SENA (Syntax Error during NIT Channel A)",
+        "22",
+        "NIT SBNA (Slot Boundary Violation during NIT Channel A)",
+        "23",
+        "NIT SENB (Syntax Error during NIT Channel B)",
+        "24",
+        "NIT SBNB (Slot Boundary Violation during NIT Channel B)",
+        "25",
+        "Internal Error Overflow",
+        "26",
+        "Wrong Frame",
+        "27",
+        "Bus Guardian Error",
+        "28",
+        "CHI Error",
+        "29",
+        "Error Handling Level Changed",
+        "30",
+        "Symbol Received"
+      ]
+    },
+    {
+      "row": [
+        "-1",
+        "Unknown error"
+      ]
+    },
+    {
+      "row": [
+        "0",
+        "NO error"
+      ]
+    },
+    {
+      "row": [
+        "1",
+        "FlexCard Overflow"
+      ]
+    },
+    {
+      "row": [
+        "2",
+        "POC Error Mode Changed"
+      ]
+    },
+    {
+      "row": [
+        "3",
+        "Sync Frames Below Minimum"
+      ]
+    },
+    {
+      "row": [
+        "4",
+        "Sync Frame Overflow"
+      ]
+    },
+    {
+      "row": [
+        "5",
+        "Clock Correction Failure"
+      ]
+    },
+    {
+      "row": [
+        "6",
+        "Parity Error"
+      ]
+    },
+    {
+      "row": [
+        "7",
+        "Receive FIFO Overrun"
+      ]
+    },
+    {
+      "row": [
+        "8",
+        "Empty FIFO Access"
+      ]
+    },
+    {
+      "row": [
+        "9",
+        "Illegal Input Buffer Access"
+      ]
+    },
+    {
+      "row": [
+        "10",
+        "Illegal Output Buffer Access"
+      ]
+    },
+    {
+      "row": [
+        "11",
+        "Syntax Error"
+      ]
+    },
+    {
+      "row": [
+        "12",
+        "Content Error"
+      ]
+    },
+    {
+      "row": [
+        "13",
+        "Slot Boundary Violation"
+      ]
+    },
+    {
+      "row": [
+        "14",
+        "Transmission Across Boundary Channel A"
+      ]
+    },
+    {
+      "row": [
+        "15",
+        "Transmission Across Boundary Channel B"
+      ]
+    },
+    {
+      "row": [
+        "16",
+        "Latest Transmit Violation Channel A"
+      ]
+    },
+    {
+      "row": [
+        "17",
+        "Latest Transmit Violation Channel B"
+      ]
+    },
+    {
+      "row": [
+        "18",
+        "Error Detection on Channel A"
+      ]
+    },
+    {
+      "row": [
+        "19",
+        "Error Detection on Channel B"
+      ]
+    },
+    {
+      "row": [
+        "20",
+        "Message Handler Constraints Flag Error"
+      ]
+    },
+    {
+      "row": [
+        "21",
+        "NIT SENA (Syntax Error during NIT Channel A)"
+      ]
+    },
+    {
+      "row": [
+        "22",
+        "NIT SBNA (Slot Boundary Violation during NIT Channel A)"
+      ]
+    },
+    {
+      "row": [
+        "23",
+        "NIT SENB (Syntax Error during NIT Channel B)"
+      ]
+    },
+    {
+      "row": [
+        "24",
+        "NIT SBNB (Slot Boundary Violation during NIT Channel B)"
+      ]
+    },
+    {
+      "row": [
+        "25",
+        "Internal Error Overflow"
+      ]
+    },
+    {
+      "row": [
+        "26",
+        "Wrong Frame"
+      ]
+    },
+    {
+      "row": [
+        "27",
+        "Bus Guardian Error"
+      ]
+    },
+    {
+      "row": [
+        "28",
+        "CHI Error"
+      ]
+    },
+    {
+      "row": [
+        "29",
+        "Error Handling Level Changed"
+      ]
+    },
+    {
+      "row": [
+        "30",
+        "Symbol Received"
+      ]
+    },
+    {
+      "row": [
+        "FR_Data0",
+        "Contains extended information (data type: dword): Not used. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_Data1",
+        "Contains extended information (data type: dword): Not used as yet. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_Data2",
+        "Contains extended information (data type: dword): Not used as yet. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_Data3",
+        "Contains extended information (data type: dword): Not used as yet. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_Data4",
+        "Contains extended information (data type: dword): Not used as yet. Write-protected!"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

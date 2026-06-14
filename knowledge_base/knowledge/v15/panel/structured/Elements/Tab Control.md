@@ -1,0 +1,215 @@
+# Tab Control
+
+> Category: `Panel` | Subcategory: `Elements` | Type: `concept`
+
+## Use Case
+
+The Tab Control is used to place controls on several tabs and enables the user to quickly switch between these tabs during runtime. No other panels have to be opened.
+
+The following use cases are possible with Tab Control:
+
+## Configuration
+
+When a new Tab Control is inserted, two tabs are automatically displayed. Additional tabs can be added.
+
+Drag the controls from the toolbox to the desired tab, and arrange them using the displayed snap lines.
+
+Assign a symbol to the added controls.
+
+You can assign a symbol to the control
+
+You can configure the control via the ribbon or the Properties Window.
+
+Selected Tab Control
+
+Selected single tab (Vector Tab Page 1)
+
+Depending on the selection, you can configure the Tab Control or a single tab in the Properties Window:
+
+A certain control on the Tab Control can be selected with the mouse or the Tab key.
+
+You can select the tabs during runtime of CANalyzer:
+
+All control and display possibilities are available from the start of the measurement. Thus, for example, the display of a signal value starts without the related tab having been selected. If a film is running on a tab in a linked Media Player, the film continues running even if the user has switched to another tab.
+
+| Selected Tab Control | Selected single tab (Vector Tab Page 1) |
+|---|---|
+
+## Ribbon|Properties Tab / Properties Window
+
+Here all settings are listed that you can change in the ribbon and/or in the Properties Window.
+
+General Group
+
+General
+
+Name
+
+Control Name
+
+Here you change the name of the control. This name and the name of the panel is required for access from CAPL.
+
+—
+
+Is Visible At Runtime
+
+Specifies whether the control is to be displayed during runtime.
+
+| Ribbon | Properties Window | Description |  |
+|---|---|---|---|
+| General Group | General |  |  |
+| Name | Control Name | Here you change the name of the control. This name and the name of the panel is required for access from CAPL. |  |
+| — | Is Visible At Runtime | Specifies whether the control is to be displayed during runtime. CAPL Access With the function setControlVisibility, you can set, if the control is displayed during runtime or not. |  |
+| — | Tab Index | Defines the order in which the various controls on a panel are to be navigated with the Tab key during runtime. |  |
+| Font Group | Font |  |  |
+| Font | Font\|Name/Size | Here you change the font and the font size. |  |
+| — | With a click on the symbol you increase the font size. |  |  |
+| — | With a click on the symbol you reduce the font size. |  |  |
+| Font\|Bold | With a click on the symbol you format the text bold. |  |  |
+| Font\|Italic | With a click on the symbol you format the text italic. |  |  |
+| Font\|Underline | With a click on the symbol you underline the text. |  |  |
+| — | Font\|Strikeout | Here you strikeout the text. |  |
+| — | Font\|Unit | Here you change the unit of the font size. |  |
+| Edit Group | Edit |  |  |
+| Alignment | Here you change the orientation of the pages: Display pages on the top Display pages on the bottom |  |  |
+| — | With a click on the symbol you add new page. |  |  |
+| Selected Tab Group | Appearance |  |  |
+| Tab Caption | Tab Name | Here you change the name of the selected page. |  |
+| — | Background Color | Here you change the background color of the text. - for single tabs only |  |
+| — | With a click on the symbol you delete the selected page. |  |  |
+| — | With a click on the symbol you move the selected page to the right |  |  |
+| — | With a click on the symbol you move the selected page to the left |  |  |
+| Behaviour Group | Behavior |  |  |
+| Send By Tab Changing | With a click on the symbol you change the transmission behavior. |  |  |
+| More Group | — |  |  |
+| — | Show Properties With a click on the symbol you open the Properties Window. |  |  |
+| Group: — | Flat Style | Here you can change the colors for background and text for the Tab Control. FlatStyle must be set to true. |  |
+| Group: — | Layout |  |  |
+| — | Location/Size | Here you can enter settings relating to the size and position of the control. Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. | Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |
+| Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |  |  |  |
+| Group: — | Symbol |  |  |
+| — | Symbol | You can assign a symbol to the control. With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter. Valid Data Types of Symbols |  |
+| — | Symbol Filter | Here you select the type of the symbol you want to assign to your control. |  |
+
+## CAPL Access
+
+With the function setControlVisibility, you can set, if the control is displayed during runtime or not.
+
+—
+
+Tab Index
+
+Defines the order in which the various controls on a panel are to be navigated with the Tab key during runtime.
+
+Font Group
+
+Font
+
+Font|Name/Size
+
+Here you change the font and the font size.
+
+With a click on the symbol you increase the font size.
+
+With a click on the symbol you reduce the font size.
+
+Font|Bold
+
+With a click on the symbol you format the text bold.
+
+Font|Italic
+
+With a click on the symbol you format the text italic.
+
+Font|Underline
+
+With a click on the symbol you underline the text.
+
+Font|Strikeout
+
+Here you strikeout the text.
+
+Font|Unit
+
+Here you change the unit of the font size.
+
+Edit Group
+
+Edit
+
+Alignment
+
+Here you change the orientation of the pages:
+
+With a click on the symbol you add new page.
+
+Selected Tab Group
+
+Appearance
+
+Tab Caption
+
+Tab Name
+
+Here you change the name of the selected page.
+
+Background Color
+
+Here you change the background color of the text. - for single tabs only
+
+With a click on the symbol you delete the selected page.
+
+With a click on the symbol you move the selected page to the right
+
+With a click on the symbol you move the selected page to the left
+
+Behaviour Group
+
+Behavior
+
+Send By Tab Changing
+
+With a click on the symbol you change the transmission behavior.
+
+More Group
+
+Show Properties
+
+With a click on the symbol you open the Properties Window.
+
+Group: —
+
+Flat Style
+
+Here you can change the colors for background and text for the Tab Control.
+
+FlatStyle must be set to true.
+
+Layout
+
+Location/Size
+
+Here you can enter settings relating to the size and position of the control.
+
+Note
+
+You can also resize the control by dragging its markers.
+
+Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.
+
+Symbol
+
+You can assign a symbol to the control.
+
+With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter.
+
+Valid Data Types of Symbols
+
+Symbol Filter
+
+Here you select the type of the symbol you want to assign to your control.
+
+Assigning Controls
+
+| Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |
+|---|

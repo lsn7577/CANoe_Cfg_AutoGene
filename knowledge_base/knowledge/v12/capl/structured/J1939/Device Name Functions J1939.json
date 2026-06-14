@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Device Name Functions J1939",
+  "category": "J1939",
+  "title": "Device Name Functions J1939",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestMakeDeviceName.htm",
+  "syntax": [
+    "long J1939TestMakeName( char deviceName[8], long aac, long ig, long vsi, long vs, long fct, long fcti, long ecui, long mc, long in );"
+  ],
+  "description": [
+    "The function can be implemented in your CAPL program. The J1939 Test Service Library calls this function if the NMT table changes. The CAPL program can react on this changes."
+  ],
+  "parameters": [
+    {
+      "name": "deviceName",
+      "type": "",
+      "description": "byte array with 8 byte (64 Bit)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "CHAR deviceName[8]\n\nJ1939TestMakeName( deviceName, 0,0,0,1,2,0,0,2047,1001 )\nif (J1939TestGetFct( deviceName ) == 2) {\n  write( \"Function = 2\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

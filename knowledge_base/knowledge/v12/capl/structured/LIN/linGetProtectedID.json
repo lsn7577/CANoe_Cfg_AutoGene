@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linGetProtectedID",
+  "category": "LIN",
+  "title": "linGetProtectedID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGetProtectedID.htm",
+  "syntax": [
+    "dword linGetProtectedID (long frameID)"
+  ],
+  "description": [
+    "With this function it is possible to calculate protected ID for the corresponding LIN frame identifier (i.e. the frame identifier with parity bits)."
+  ],
+  "parameters": [
+    {
+      "name": "frameID",
+      "type": "",
+      "description": "LIN frame identifier whose protected ID will be calculated."
+    }
+  ],
+  "return": "Returns the calculated protected identifier or a value greater than 255 on failure.",
+  "example": {
+    "description": [
+      "Display in Write Window a protected ID for each LIN frame seen on the bus"
+    ],
+    "code": "on linFrame *\n{\ndword pid;\npid = linGetProtectedID(this.ID);\nwriteLineEx(0,0, \"Protected ID for LIN frame identifier 0x%x is 0x%x\", this.ID, pid);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

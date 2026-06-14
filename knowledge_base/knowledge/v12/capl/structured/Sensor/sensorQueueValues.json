@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sensorQueueValues",
+  "category": "Sensor",
+  "title": "sensorQueueValues",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionSensorQueueValues.htm",
+  "syntax": [
+    "SensorErrorCode sensorQueueValues (char[] sysVarName, float[] values, dword valueCount);"
+  ],
+  "description": [
+    "Inserts the given values into the send queue of the given sensor signal system variable."
+  ],
+  "parameters": [
+    {
+      "name": "sysVarName",
+      "type": "",
+      "description": "The name of the sensor signal system variable the values shall be queued in."
+    }
+  ],
+  "return": "This function returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "float values[10];\n// Todo: fill array with signal values\n\nsensorQueueValue(\"SENSOR::PSI5::ExampleChannel::ExampleSensor::ExampleTimeslot::Signals::ExampleSignal_Stim\", values, 10);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

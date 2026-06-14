@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "ErrorFrameCount",
+  "category": "CAN",
+  "title": "ErrorFrameCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionErrorFrameCount.htm",
+  "syntax": [
+    "long ErrorFrameCount ()",
+    "CANx.ErrorFrameCount"
+  ],
+  "description": [
+    "Returns the number of Error Frames on channel x since start of measurement.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Number of Error Frames on channel x since start of measurement.",
+  "example": {
+    "description": [],
+    "code": "write (\"Number of error frames on CAN1 = %d\", \r\n CAN1.ErrorFrameCount);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

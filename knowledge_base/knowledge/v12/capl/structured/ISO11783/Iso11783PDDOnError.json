@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDOnError",
+  "category": "ISO11783",
+  "title": "Iso11783PDDOnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDOnError.htm",
+  "syntax": [
+    "void Iso11783PDDOnError( dword ecuHandle, long errorCode, dword param );"
+  ],
+  "description": [
+    "This function can be implemented in the CAPL program. The function is called up by the node layer when an error occurs."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783PDDOnError( LONG ecuHandle, LONG errorCode, LONG addParam )\n{\n  char buffer[256];\n  Iso11783PDDGetLastErrorText ( elCount(buffer), buffer);\n  write( \"ERROR: %s\", buffer );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

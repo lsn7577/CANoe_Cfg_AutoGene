@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "GNSSContinueSpeed",
+  "category": "J1939",
+  "title": "GNSSContinueSpeed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSScontinuespeed.htm",
+  "syntax": [
+    "dword GNSSContinueSpeed();"
+  ],
+  "description": [
+    "If the speed of the simulation was temporarily reset with the GNSSPauseSpeed function (set to zero), this function now restores the old speed."
+  ],
+  "parameters": [],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "GNSSContinueSpeed();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

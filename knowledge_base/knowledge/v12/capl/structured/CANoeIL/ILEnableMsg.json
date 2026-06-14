@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILEnableMsg",
+  "category": "CANoeIL",
+  "title": "ILEnableMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILEnableMsg.htm",
+  "syntax": [
+    "long ILEnableMsg (char msgName[])"
+  ],
+  "description": [
+    "Enables the sending of the message."
+  ],
+  "parameters": [
+    {
+      "name": "msgName",
+      "type": "",
+      "description": "Message that should be re-enabled after having disabled it withILFaultInjectionDisableMsg / ILDisableMsg."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

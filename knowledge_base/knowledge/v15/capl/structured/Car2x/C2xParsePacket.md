@@ -1,0 +1,40 @@
+# C2xParsePacket
+
+> Category: `Car2x` | Type: `function`
+
+## Syntax
+
+```c
+long C2xParsePacket(long packet)
+```
+
+## Description
+
+Reinterprets the packet after externally defined binary payload data has been assigned to the packet.
+
+When parts of the packet are already available as byte array from external sources, for example gateways or traffic intersection geometry design tools (for MAP packet), these binary byte arrays can be applied to the packet by using C2xSetTokenData function. Here mentioned are byte arrays representing the whole header payload parts like wsmp_t/data, dsmp/data or btp/data and not the data of specific concrete payload tokens.
+
+By calling C2xParsePacket the packet will be reinterpreted, so directly after the call the values of each token existed in external data are accessible (see the example).
+
+This function fails when the external data applied to the packet cannot be successfully interpreted by using database message definitions.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| packet | Handle of a packet that has been created with C2xInitPacket or was obtained via callback function parameter. |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 14 SP2 | — | — | — | 6 |
+| Restricted To | — | Car2x | — | — | — | Car2x |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | — | — | N/A |

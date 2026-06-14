@@ -1,0 +1,25 @@
+{
+  "page_type": "selector",
+  "name": "Example: Selector ID (message identifier)",
+  "category": "CAN",
+  "title": "Example: Selector ID (message identifier)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Selectors/CAPLSelectorID.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [
+    {
+      "name": "Example Selector ID (message identifier)",
+      "description": [],
+      "code": "on message * {\n  if (this.ID == 0x600) {\n    write(\"message 0x600 received; triggering logging...\");\n    trigger();\n  }\n}"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

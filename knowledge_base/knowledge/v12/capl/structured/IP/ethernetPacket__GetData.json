@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::GetData",
+  "category": "IP",
+  "title": "ethernetPacket::GetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionGetData.htm",
+  "syntax": [
+    "word ethernetPacket.GetData(word offset, char dest[], word length); // form 1"
+  ],
+  "description": [
+    "Copies the data of an Ethernet packet to a byte array, char array, CAPL struct or system variable struct."
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Byte offset of the data in the Ethernet packet. Offset 0 is the byte directly after the Ethertype."
+    }
+  ],
+  "return": "Number of bytes copied to the destination buffer.",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  dword ipHeaderLength;\n  byte  ipProtocol;\n\n  switch(this.type)\n  {\n    case 0x0800: // IPv4\n    ipHeaderLength = (this.Byte(0) & 0x0F) * 4;\n    ipProtocol     = this.Byte(9);\n\n    switch(ipProtocol)\n    {\n      case 17:\n      HandleUDP( this, ipHeaderLength+8, swapWord(this.Word(ipHeaderLength)), swapWord(this.Word(ipHeaderLength+2)) );\n      break;\n    }\n\n    break;\n  }\n}\n\nvoid HandleUDP( ethernetPacket * pkt, word udpDataOffset, word srcPort, word dstPort )\n{\n  char buffer[100];\n  word length;\n\n  length = pkt.GetData( udpDataOffset, buffer, elcount(buffer)-1 );\n  buffer[length] = 0; // terminating zero for strings\n\n  write( \"UDP (port 0x%X to 0x%X): %s\", srcPort, dstPort, buffer );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

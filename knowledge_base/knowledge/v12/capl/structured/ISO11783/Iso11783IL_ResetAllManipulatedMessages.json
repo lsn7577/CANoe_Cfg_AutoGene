@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_ResetAllManipulatedMessages",
+  "category": "ISO11783",
+  "title": "Iso11783IL_ResetAllManipulatedMessages",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILResetAllManipulatedMessages.htm",
+  "syntax": [
+    "long ISO11783IL_ResetAllManipulatedMessages(); // form 1"
+  ],
+  "description": [
+    "Resets the changes of all ISO11783IL_ManipulateMessage calls."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "0: Manipulation of all messages has been stopped successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

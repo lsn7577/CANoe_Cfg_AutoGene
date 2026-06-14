@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILGetSigGroupName",
+  "category": "AUTOSARpduIL",
+  "title": "ARILGetSigGroupName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILGetSigGroupName.htm",
+  "syntax": [
+    "long ARILGetSigGroupName (char aMsgName[], dword index, char sigGroupName[], long maxSigGroupNameLen);"
+  ],
+  "description": [
+    "Retrieves the name of the nth signal group of the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "aMsgName",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

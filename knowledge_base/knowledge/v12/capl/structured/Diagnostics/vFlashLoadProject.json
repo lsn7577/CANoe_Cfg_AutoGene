@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "vFlashLoadProject",
+  "category": "Diagnostics",
+  "title": "vFlashLoadProject",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagvFlashLoadProject.htm",
+  "syntax": [
+    "void vFlashLoadProject(char projectPath[]);"
+  ],
+  "description": [
+    "Loads the provided vFlash project stored under given path. A call to CAPL callback function vFlashLoadProjectCompleted will indicate that the project was loaded. Further API calls are only allowed after callback was called!",
+    "Note: This event-driven API is only needed outside of test modules or test units."
+  ],
+  "parameters": [
+    {
+      "name": "projectPath",
+      "type": "",
+      "description": "Path to the flash project file."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "  //...\n  vFlashLoadProject(\"Firmware1.vflashpack\");\n}\n\nvoid vFlashLoadProjectCompleted(long statusCode)\n{\n  write(\"Loading of project completed with status %d\", statusCode);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

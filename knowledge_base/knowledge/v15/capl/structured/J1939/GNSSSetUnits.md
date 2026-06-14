@@ -1,0 +1,49 @@
+# GNSSSetUnits
+
+> Category: `J1939` | Type: `function`
+
+## Syntax
+
+```c
+dword GNSSSetUnits( dword unitType )
+```
+
+## Description
+
+This function determines the system of units of measure that will be used by the various other functions.
+
+Units of measure:
+
+When the node is set up, the metric system for units of measures is set.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| unitType | units of measure 0: kMetricSystem 1: kEnglishSystem 2: kNauticSystem |
+
+## Return Values
+
+error code
+
+## Example
+
+```c
+// set nautic system
+GNSSSetUnits( 2 );
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.2 | 13.0 | — | — | — |
+| Restricted To | — | J1939 ISO11783 | J1939 ISO11783 | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | — | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | — | — | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

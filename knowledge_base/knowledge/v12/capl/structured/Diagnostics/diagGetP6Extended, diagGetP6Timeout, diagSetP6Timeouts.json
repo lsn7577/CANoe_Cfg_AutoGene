@@ -1,0 +1,55 @@
+{
+  "page_type": "function",
+  "name": "diagGetP6Extended, diagGetP6Timeout, diagSetP6Timeouts",
+  "category": "Diagnostics",
+  "title": "diagGetP6Extended, diagGetP6Timeout, diagSetP6Timeouts",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetP6ExtendedDiagGetSetP6Timeout.htm",
+  "syntax": [
+    "long DiagGetP6Extended(dword source);"
+  ],
+  "description": [
+    "Returns or sets the time P6 and P6ex (in milliseconds) from the given source.",
+    "If an ECU qualifier is given, the build-in communications channel for this target is accessed.",
+    "When a Diagnostics over IP target is active, the P2 timeouts cannot be used because a TCP/IP connection does not provide end of transmission and start of reception events. Therefore the P2 functionality cannot be implemented and the overall timeout P6 has been defined."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Currently active value, i.e. the value originally set or last set from CAPL"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Value stored at the selected interface in the description's document"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Value configured in the configuration dialog for the description"
+    },
+    {
+      "name": "other",
+      "type": "",
+      "description": "reserved"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

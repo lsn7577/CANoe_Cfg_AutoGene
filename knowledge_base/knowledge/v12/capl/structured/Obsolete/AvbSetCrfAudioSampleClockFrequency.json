@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AvbSetCrfAudioSampleClockFrequency",
+  "category": "Obsolete",
+  "title": "AvbSetCrfAudioSampleClockFrequency",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionAvbSetCrfAudioSampleClockFrequency.htm",
+  "syntax": [
+    "dword AvbSetCrfAudioSampleClockFrequency(dword talkerHandle, dword clockFrequency);"
+  ],
+  "description": [
+    "The function sets the audio sample clock frequency of the CRF stream originated by the Talker.",
+    "The nominal frequency of the audio sample clock is the frequency set by this function multiplied by the clock multiplier (see AvbSetCrfAudioSampleClockMultiplier)."
+  ],
+  "parameters": [
+    {
+      "name": "talkerHandle",
+      "type": "",
+      "description": "The handle of the Talker."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsShowSdoAbortsInReport",
+  "category": "CANopen",
+  "title": "coTfsShowSdoAbortsInReport",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsShowsDoAbortsInReport.htm",
+  "syntax": [
+    "long coTfsShowSdoAbortsInReport( dword enable );"
+  ],
+  "description": [
+    "Allows the report of SDO aborts in the test protocol. If the function is activated in the test module (default), each recognized SDO abort code is added to the test report."
+  ],
+  "parameters": [
+    {
+      "name": "enable",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsShowSdoAbortsInReport(1); // enable SDO abort reports in test report"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "<ModelName>_getParameter",
+  "category": "Obsolete",
+  "title": "<ModelName>_getParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMODELgetParameter.htm",
+  "syntax": [
+    "long <ModelName>_getParameter( dword index, float values[], dword nrOfValues);"
+  ],
+  "description": [
+    "Retrieves the values of a model parameter and copies them into an array. The array size must not be smaller than the number of values the parameter has."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Model parameter. You can find the index of the model parameter in the file <ModelName>_M.csv which is located in the destination directory of the code generation, i.e the target directory of the model DLL."
+    }
+  ],
+  "return": "0: Success.",
+  "example": {
+    "description": [],
+    "code": "float fArr[4];\n// get parameter number 3 and copy the values to fArr\nmyControllerMdl_getParameter(3, fArr, elcount(fArr));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

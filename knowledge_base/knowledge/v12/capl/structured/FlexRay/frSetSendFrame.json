@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "frSetSendFrame",
+  "category": "FlexRay",
+  "title": "frSetSendFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFrSetSendFrame.htm",
+  "syntax": [
+    "void frSetSendFrame( <frame name>, dword flags );"
+  ],
+  "description": [
+    "Configures the hardware for sending the specified message.",
+    "The call must take place in the On preStart routine in the Simulation Setup / transmission branch."
+  ],
+  "parameters": [
+    {
+      "name": "<frame name>",
+      "type": "",
+      "description": "String that corresponds to a frame name of the database.The necessary parameters slotId, channelMask, len, cycleStart and cycleRepetition are taken from the corresponding frame definition of the database."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "AvbILControlResume",
+  "category": "IP",
+  "title": "AvbILControlResume",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbILControlResume.htm",
+  "syntax": [
+    "dword AvbILControlResume();"
+  ],
+  "description": [
+    "Resumes AVB/TSN automatic message sending behavior after a previous suspension by AvbILControlWait.",
+    "Previously opened Talkers and Listeners do not have to be opened again."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

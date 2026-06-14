@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xConvertTimeFromMSSinceUTC",
+  "category": "Car2x",
+  "title": "C2xConvertTimeFromMSSinceUTC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xConvertTimeFromMSSinceUTC.htm",
+  "syntax": [
+    "long C2xConvertTimeFromMSSinceUTC( int64 milliseconds, long refTime, long buffersize, char buffer[] ); // form 1"
+  ],
+  "description": [
+    "This function converts a time stamp in milliseconds since a reference time into a UTC time stamp in string format (form 1) or as long array with separate values for year, month, day and so on (form 2)."
+  ],
+  "parameters": [
+    {
+      "name": "milliseconds",
+      "type": "",
+      "description": "Time stamp in milliseconds since reference time"
+    }
+  ],
+  "return": "0 if success",
+  "example": {
+    "description": [],
+    "code": "int64 itsTS2004 = 300000000000LL; // original time stamp in 2004 format\nenum enumRefTime{en2004 = 0, en2010 = 1};\nchar buffer[40] ;\nlong utcTime[9] ;\n\nif (C2xConvertTimeFromMSSinceUTC(itsTS2004, en2004, elcount(buffer), buffer) == 0)\n{\n  // output: Time stamp 2013-07-04T05:19:57.000 UTC\n  write(\"Time stamp %s\", buffer);\n}\n\nif (C2xConvertTimeFromMSSinceUTC(itsTS2004, en2004, elcount(utcTime), utcTime) == 0)\n{\n  write(\"Time stamp %d-%02d-%02dT%02d:%02d:%02d.%03d UTC\", 1900+utcTime[6], utcTime[5]+1, utcTime[4], utcTime[3], utcTime[2], utcTime[1], utcTime[0]);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

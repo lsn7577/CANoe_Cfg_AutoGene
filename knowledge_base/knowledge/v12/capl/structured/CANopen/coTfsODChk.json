@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coTfsODChk",
+  "category": "CANopen",
+  "title": "coTfsODChk",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdChk.htm",
+  "syntax": [
+    "long coTfsODChk( void );"
+  ],
+  "description": [
+    "This function executes an user defined object dictionary test.",
+    "Test preparation",
+    "The objects which are to test should be added to the internal list of the test objects with the following functions:",
+    "With the function coTfsODSetErrorHandling the behavior in an error case can be defined.",
+    "Test flow",
+    "The function checks every object dictionary entry of existence and size. Additionally the value is compared with the given value. The compare mask defines which data bits are compared and musts be identical.",
+    "The complete test is only executed if the access type of the object is not writeOnly.",
+    "On a positive comparison and access type readWrite, the read value is written also.",
+    "Test result",
+    "The test was successful if all necessary objects exist and the read values are identical with the fined values. For optional objects, the test node must answer with a SDO abort code (0x08000000, 0x06020000 or 0x06090011) or return a correct value.",
+    "If the access type of the object is readWrite, the read value must be writable with a SDO download without error."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "see example of coTfsODAddEntry"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

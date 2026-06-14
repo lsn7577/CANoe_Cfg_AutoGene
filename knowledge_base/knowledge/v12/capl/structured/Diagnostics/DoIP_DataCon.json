@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_DataCon",
+  "category": "Diagnostics",
+  "title": "DoIP_DataCon",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPDataCon.htm",
+  "syntax": [
+    "void DoIP_DataCon( dword count);"
+  ],
+  "description": [
+    "This callback is called from the DoIP layer when data was sent."
+  ],
+  "parameters": [
+    {
+      "name": "count",
+      "type": "",
+      "description": "Size of the sent data in bytes."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void DoIP_DataCon( dword count)\n{\n   // pass up to the diagnostics layer\n   Diag_DataCon( count);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

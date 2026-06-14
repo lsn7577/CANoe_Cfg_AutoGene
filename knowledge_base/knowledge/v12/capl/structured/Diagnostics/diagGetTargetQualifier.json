@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetTargetQualifier",
+  "category": "Diagnostics",
+  "title": "diagGetTargetQualifier",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetTargetQualifier.htm",
+  "syntax": [
+    "long diagGetTargetQualifier( DWORD index, char bufferOut[], DWORD bufferSize);"
+  ],
+  "description": [
+    "Writes the target qualifier for the diagnostic target at given index into the buffer. If successful, the qualifier can be used in DiagSetTarget."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Value in 0 ≤ index ≤ n, where /n/ is the number of possible targets returned by DiagGetTargetCount."
+    }
+  ],
+  "return": "Error code or number of characters copied into the buffer. Note that an error is returned if the buffer is too small for the qualifier.",
+  "example": {
+    "description": [],
+    "code": "long i;\nchar ecuQual[100];\ni = diagGetTargetCount();\nwhile( i-- > 0)\n{\n   diagGetTargetQualifier( i, ecuQual, elcount(ecuQual));\n   write( \"Target %d: %s\", i, ecuQual);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

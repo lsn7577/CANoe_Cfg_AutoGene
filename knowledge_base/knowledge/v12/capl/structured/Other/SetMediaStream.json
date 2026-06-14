@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "SetMediaStream",
+  "category": "Other",
+  "title": "SetMediaStream",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetMediaStream.htm",
+  "syntax": [
+    "SetMediaStream(panel, control, busType, channel, streamIndex, streamId[]);"
+  ],
+  "description": [
+    "Replaces the media stream at the specified index of the Panel Designer Media Stream Control during runtime.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Setting media stream from Ethernet channel 1."
+    ],
+    "code": "on key 'x'\n{\n  byte streamId[8] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x00, 0x01 };\n  SetMediaStream(\"AVTP Video H.264\", \"Media Stream Control\", eEthernet, 1, 0, streamId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "sensorQueueMosiData",
+  "category": "Sensor",
+  "title": "sensorQueueMosiData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionSensorQueueMosiData.htm",
+  "syntax": [
+    "SensorErrorCode sensorQueueMosiData(char[] sysVarNamespace, byte buffer[], dword bitCount); // from 1",
+    "SensorErrorCode sensorQueueMosiData(char[] sysVarNamespace, byte buffer[], dword bitCount, dword delayNs); // from 2"
+  ],
+  "description": [
+    "This function is intended to be used for SPI master simulation. It inserts the given MOSI data into the send queue from the master to the given slave."
+  ],
+  "parameters": [
+    {
+      "name": "sysVarNamespace",
+      "type": "",
+      "description": "The namespace of the slave the data shall be queued for."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "The array of bytes that shall be put into the masters send queue. The bytes of the array will be output in the order they are specified. The bits of the bytes will be output MSB first. Example: The byte array { 0xD1, 0x3B } will be output as 11010001 00111011."
+    },
+    {
+      "name": "bitCount",
+      "type": "",
+      "description": "The length of the data in bits. Must be at least 2."
+    },
+    {
+      "name": "delayNs",
+      "type": "",
+      "description": "If this parameter is provided, the master will wait the specified amount of time before actually sending the data."
+    }
+  ],
+  "return": "This function returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "  // Some example values\n  dword value1 = 7;\n  dword value2 = 13;\n\n  // Byte array used to prepare the master request\n  byte requestData[2] = {0x00, 0x00};\n\n  // Insert two 6 bit values\n  SensorInsertInteger(requestData, 2, value1, 0, 6, 1);\n  SensorInsertInteger(requestData, 2, value2, 6, 6, 1);\n\n  // Send the prepared 12 bits to the ExampleSlave\n\nsensorQueueMosiData(“SENSOR::SPI::ExampleChannel::ExampleSlave”, requestData, 12);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0",
+      "—",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

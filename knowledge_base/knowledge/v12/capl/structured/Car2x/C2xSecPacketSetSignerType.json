@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSecPacketSetSignerType",
+  "category": "Car2x",
+  "title": "C2xSecPacketSetSignerType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSecPacketSetSignerType.htm",
+  "syntax": [
+    "long C2xSecPacketSetSignerType(long packetHandle, long signerType);"
+  ],
+  "description": [
+    "Specifies how the message signer information is included in the message. It is possible to add only a digest (HashedId8), to transmit the signer’s certificate or to transmit the complete certificate chain."
+  ],
+  "parameters": [
+    {
+      "name": "packetHandle",
+      "type": "",
+      "description": "Handle of the packet"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "long packetHandle;\nlong certificateHandle;\npacketHandle = C2xInitPacket(\"geo_eh\", \"BEACON | SH\");\ncertificateHandle = C2xSecCertificateGetHandle ( \"MyCert\" );\nC2xSecPacketSetSignerHandle(packetHandle, certificateHandle);\nC2xSecPacketSetSignerType(packetHandle, 2); // send certificate\nC2xCompletePacket(packetHandle);\nC2xOutputPacket(packetHandle);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

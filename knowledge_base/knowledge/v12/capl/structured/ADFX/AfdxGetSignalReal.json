@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetSignalReal",
+  "category": "ADFX",
+  "title": "AfdxGetSignalReal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxGetSignalReal.htm",
+  "syntax": [
+    "float AfdxGetSignalReal( long packet, char signalName[] ); // form 1"
+  ],
+  "description": [
+    "This function returns the value of a 32-bit or 64-bit float signal (IEEE 754) in a 64-bit float value."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message"
+    }
+  ],
+  "return": "signal value (call AfdxGetLastErrror to check for errors in the call)",
+  "example": {
+    "description": [
+      "Analyze signals from an incoming AFDX packet using DBC information"
+    ],
+    "code": "on preStart\n{\n  AfdxRegisterReceiveCallback(\"OnPacket\");\n}\nvoid OnPacket( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet )\n{\n  long lVal=0; // integer signal\n  long eVal=0; // enumeration signal\n  long bVal=0; // boolean signal\n  double rVal = 0.0; // float signal\n  char sVal[16]; // string signal\n  byte oVal[16]; // opaque signal\n  long len, status, err;\n  long msgID;\n  char msgName[256];\n\n  // get message ID of this message\n  msgID = AfdxGetMessageId( packet );\n\n  // get message name of this message\n  err = AfdxGetMessageName( packet, 256, msgName );\n\n  // get signal status\n  status = AfdxGetSignalStatus( packet, \"VFG_OIL_TEMP_A_34\" );\n\n  // get integer signal\n  lVal = AfdxGetSignalInt( packet, \"VFG_OIL_TEMP_A_34\" );\n\n  // get float-signal 2\n  rVal = AfdxGetSignalReal( packet, \"VFG_OIL_TEMP_AB_32\" );\n\n  // get boolean signal 3\n  bVal = AfdxGetSignalBool( packet, \"VFG_OIL_TEMP_A_ON\" );\n\n  // get enumeration signal 4\n  eVal = AfdxGetSignalInt( packet, “FLIGHT_GROUND_COND_3\" );\n\n  // get string signal 6\n  len = AfdxGetSignalString( packet, “TEST_STRING14_CITY\", 16, sVal );\n\n  // get opaque signal 7\n  len = AfdxGetSignalOpaque( packet, “TEST_OPAQUE14_IDENT\", 16, oVal );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

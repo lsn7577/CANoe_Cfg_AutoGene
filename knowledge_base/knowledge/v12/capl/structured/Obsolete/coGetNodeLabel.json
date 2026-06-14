@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coGetNodeLabel",
+  "category": "Obsolete",
+  "title": "coGetNodeLabel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoGetNodeLabel.htm",
+  "syntax": [
+    "void coGetNodeLabel( char buffer[], dword bufferSize, dword errCode[] );"
+  ],
+  "description": [
+    "The function returns the label of the node. The label is formed from the name and the node-ID of the assigned database.",
+    "So that the label of the node can be formed correctly, a few things must be noted. For more details, see Integration of the node layer in the introduction."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer for the label"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nchar nodeLabel[256];\n\ncoGetNodeLabel ( nodeLabel, elcount(nodeLabel), errCode );\nif (errCode[0] == 0) {\n  write( \"Nodelabel is: %s\", nodeLabel );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_GetConsumerId",
+  "category": "CommunicationObjects",
+  "title": "Abstract_GetConsumerId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractGetConsumerId.htm",
+  "syntax": [
+    "long Abstract_GetConsumerId(addressHandle address)"
+  ],
+  "description": [
+    "Returns an ID for a consumer with an abstract binding pseudo address. Through the ID, you can identify the consumer."
+  ],
+  "parameters": [
+    {
+      "name": "Address",
+      "type": "",
+      "description": "Address of the consumer."
+    }
+  ],
+  "return": "A unique ID for the consumer.",
+  "example": {
+    "description": [],
+    "code": "id = Abstract_GetConsumerId(newConsumer.Address);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

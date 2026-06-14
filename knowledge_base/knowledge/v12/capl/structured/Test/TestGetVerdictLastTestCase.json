@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestGetVerdictLastTestCase",
+  "category": "Test",
+  "title": "TestGetVerdictLastTestCase",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetVerdictLastTestCase.htm",
+  "syntax": [
+    "long TestGetVerdictLastTestCase();"
+  ],
+  "description": [
+    "Returns the verdict of the last elapsed or current test case."
+  ],
+  "parameters": [],
+  "return": "0: pass",
+  "example": {
+    "description": [],
+    "code": "// gets the verdict of last test case and report it in the Write Window\nvoid MainTest()\n{\n   MyTestCase();\n   if (TestGetVerdictLastTestCase() == 1)\n      Write(\"MyTestCase failed.\");\n   else\n      Write(\"MyTestCase passed.\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

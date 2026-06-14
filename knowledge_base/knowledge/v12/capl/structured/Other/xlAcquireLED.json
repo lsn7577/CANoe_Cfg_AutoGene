@@ -1,0 +1,82 @@
+{
+  "page_type": "function",
+  "name": "xlAcquireLED",
+  "category": "Other",
+  "title": "xlAcquireLED",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionxlAcquireLED.htm",
+  "syntax": [
+    "dword xlAcquireLED(dword ledBitMask);"
+  ],
+  "description": [
+    "Acquires the specified LEDs of a hardware device in order to set their operation mode with xlSetLED afterwards.",
+    "This function is only supported on VN8900 devices.",
+    "Note that for every successful call of xlAcquireLED on a specific LED, you have to call xlReleaseLED to release this LED again."
+  ],
+  "parameters": [
+    {
+      "name": "LED",
+      "type": "",
+      "description": "Numeric Value"
+    },
+    {
+      "name": "Module (M)",
+      "type": "",
+      "description": "0x001"
+    },
+    {
+      "name": "CAN Channel 1",
+      "type": "",
+      "description": "0x008"
+    },
+    {
+      "name": "CAN Channel 2",
+      "type": "",
+      "description": "0x010"
+    },
+    {
+      "name": "CAN Channel 3",
+      "type": "",
+      "description": "0x020"
+    },
+    {
+      "name": "CAN Channel 4",
+      "type": "",
+      "description": "0x040"
+    },
+    {
+      "name": "FlexRay Channel 1 A",
+      "type": "",
+      "description": "0x080"
+    },
+    {
+      "name": "FlexRay Channel 1 B",
+      "type": "",
+      "description": "0x100"
+    },
+    {
+      "name": "Keypad S1",
+      "type": "",
+      "description": "0x200"
+    },
+    {
+      "name": "Keypad S2",
+      "type": "",
+      "description": "0x400"
+    }
+  ],
+  "return": "0: no error, function succeeded.",
+  "example": {
+    "description": [
+      "At measurement start three LEDs are acquired, two LEDs are set to condition \"orange glowing\", and one is set to the condition \"orange flashing\". At measurement stop the LEDs should be released."
+    ],
+    "code": "/*@@var:*/\nvariables\n{\n   // constants for LED access\n   const dword kLedMaskC1         = 0x008;\n   const dword kLedMaskC2         = 0x010;\n   const dword kLedMaskC3         = 0x020;\n   // constants for LED operation modes\n   const dword kLedOrangeOn       = 0x00000020;\n   const dword kLedOrangeBlinking = 0x00000040;\n\n   dword status;\n}\n/*@@end*/\n\n/*@@startStart:Start:*/\non start\n{\n   status = xlAcquireLED(kLedMaskC1 | kLedMaskC2 | kLedMaskC3);\n   if( 0 == status)\n   {\n      xlSetLed(kLedMaskC1 | kLedMaskC2, kLedOrangeOn);\n      xlSetLed(kLedMaskC3, kLedOrangeBlinking);\n   }\n}\n/*@@end*/\n\n/*@@stop:StopMeasurement:*/\non stopMeasurement\n{\n   if( 0 == status)\n   {\n      xlReleaseLED(kLedMaskC1 | kLedMaskC2 | kLedMaskC3);\n   }\n}\n/*@@end*/"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939TestJoinDMWithoutSPNEvent",
+  "category": "J1939",
+  "title": "J1939TestJoinDMWithoutSPNEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestJoinDMWithoutSPNEvent.htm",
+  "syntax": [
+    "long J1939TestJoinDMWithoutSPNEvent( dword sourceAddr, dword pgn, dword spn )"
+  ],
+  "description": [
+    "Adds a new diagnostic message without SPN event to the 'joined events'. The function does not wait.",
+    "The parameter group must be able to contain a SPN, so only this parameter groups are allowed: DM1, DM2, DM6, DM12, DM23, DM27, DM28 and DM41-DM52."
+  ],
+  "parameters": [
+    {
+      "name": "sourceAddr",
+      "type": "",
+      "description": "source address of the PG or null address (0xFE) for wildcard"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long lret;\nJ1939TestJoinDMWithoutSPNEvent(10, 0xFF, 1119);\nJ1939TestJoinDMWithoutSPNEvent(20, 0xFF, 1119);\n\nlret = J1939TestWaitForAnyJoinedEvent ( 500 );\nswitch(lret) {\n  case 1: // first PG received\n    break;\n  case 2: // second PG received\n    break;\n  default: // error, timeout or constrain violation\n    break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

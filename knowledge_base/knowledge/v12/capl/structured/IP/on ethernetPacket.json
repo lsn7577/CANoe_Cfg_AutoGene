@@ -1,0 +1,37 @@
+{
+  "page_type": "event",
+  "name": "on ethernetPacket",
+  "category": "IP",
+  "title": "on ethernetPacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/EventProcedures/CAPLfunctionOnEthernetPacket.htm",
+  "syntax": [
+    "on ethernetPacket *;"
+  ],
+  "description": [
+    "The event procedure is called on the receipt of a valid Ethernet packet.",
+    "To access the control information you would use selectors.",
+    "The key word this is available within an on ethernetPacket procedure, to access the data of the packet that has just been received.",
+    "CAPL programs are by default not transparent to bus events. This means that a CAPL node in the evaluation branch of the measurement configuration will block the data flow to its right side. You must explicitly program the passing of messages in CAPL nodes in the evaluation branch.",
+    "To make the CAPL node transparent to messages you would write:"
+  ],
+  "parameters": [
+    {
+      "name": "msgChannel<X>",
+      "type": "",
+      "description": "Ethernet channel number, range 1..32."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket msgChannel1.*\n{\n  write(\"Received Ethernet packet with length %d\", this.Length );\n  output( this ); // only required in CAPL node in measurement setup!\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetConsumptionCostData",
+  "category": "SmartCharging",
+  "title": "SCC_GetConsumptionCostData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetConsumptionCostData.htm",
+  "syntax": [
+    "void SCC_GetConsumptionCostData ( long i1, long i2, long i3, float& StartValue, long& CostCount )"
+  ],
+  "description": [
+    "Gets the start value and the number of Cost subelements of the ConsumptionCost element with the selected indices."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "The start value and the number of Cost subelements of the ConsumptionCost element with the selected indices via references, where",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

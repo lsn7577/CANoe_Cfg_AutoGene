@@ -1,0 +1,123 @@
+{
+  "page_type": "function",
+  "name": "RxChipErrorCount",
+  "category": "CAN",
+  "title": "RxChipErrorCount",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Functions/CAPLfunctionRxChipErrorCount.htm",
+  "syntax": [
+    "long RxChipErrorCount ()"
+  ],
+  "description": [
+    "Returns the current Rx error count in the receiver of channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Current error count in the receiver of channel x.",
+  "example": {
+    "description": [],
+    "code": "write (\"Rx error count in the receiver of CAN1 \r\n = %d\", CAN1.RxChipErrorCount);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.1",
+      "7.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "CAN",
+      "CAN",
+      "CAN",
+      "—",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "— (since version 8.0) (deprecated, replaced by predefined system variable sysvar::_Statistics::CANn::,for details see system variables for statistics.)",
+      "— (since version 8.0) (deprecated, replaced by predefined system variable sysvar::_Statistics::CANn::,for details see system variables for statistics.)",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

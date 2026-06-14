@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpProvidedEventGroupAddConsumer",
+  "category": "IP",
+  "title": "SomeIpProvidedEventGroupAddConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpProvidedEventGroupAddConsumer.htm",
+  "syntax": [
+    "long SomeIpProvidedEventGroupAddConsumer(dword pevgHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort);"
+  ],
+  "description": [
+    "Adds a consumer to a provided event group. Afterwards event/field notifications will be sent to this consumer."
+  ],
+  "parameters": [
+    {
+      "name": "aepHandle",
+      "type": "",
+      "description": "An application endpoint"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDSetValueRaw, Iso11783IL_PDDSetValuePhysical",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDSetValueRaw, Iso11783IL_PDDSetValuePhysical",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDSetValueRaw.htm",
+  "syntax": [
+    "long Iso11783IL_PDDSetValueRaw(dword ddi, dword elementNumber, long value); // form 1"
+  ],
+  "description": [
+    "Sets the value of a data entity (process variable) without sending any command."
+  ],
+  "parameters": [
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "Data Dictionary Identifier, 0x0000.0xFFFF"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "SetActualAppRateUsingRawValue()\n{\n  // section 1: elementNumber = 3\n  Iso11783IL_PDDSetValuePhysical(Sprayer, 37, 3, 13.360);\n  // section 2: elementNumber = 4\n  Iso11783IL_PDDSetValuePhysical(Sprayer, 37, 4, 13.950);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

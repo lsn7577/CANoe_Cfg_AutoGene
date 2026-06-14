@@ -1,0 +1,76 @@
+{
+  "page_type": "function",
+  "name": "consumedFieldRef",
+  "category": "CommunicationObjects",
+  "title": "consumedFieldRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionConsumedFieldRef.htm",
+  "syntax": [
+    "consumedFieldRef * <var>"
+  ],
+  "description": [
+    "References a consumed field endpoint, which means a specific combination of consumer and provider for a service field on consumer side."
+  ],
+  "parameters": [
+    {
+      "name": "Field",
+      "type": "",
+      "description": "Field of a service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "consumedFieldRef long field1;\nfield1 = MirrorAdjustment.consumerSide[CANoe,LeftMirror].CurrentPosition;\nfield1.AbstractRequestField();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the consumed endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the consumed endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SubscriptionState State of the field subscription: Unavailable: there’s no connection between consumer and provider, the field cannot be subscribed. Available: the field can be subscribed, but currently is not subscribed. Subscribed: the field is subscribed.",
+        "enum",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

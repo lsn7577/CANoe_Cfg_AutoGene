@@ -1,0 +1,167 @@
+{
+  "page_type": "function",
+  "name": "frUpdatePDU",
+  "category": "FlexRay",
+  "title": "frUpdatePDU",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Functions/CAPLfunctionFRUpdatePDU.htm",
+  "syntax": [
+    "void frUpdatePDU(<PDU var>, dword flags, int updateCounter);"
+  ],
+  "description": [
+    "This function updates the PDU payload in the assigned FlexRay frames.",
+    "The update bit can also be set."
+  ],
+  "parameters": [
+    {
+      "name": "<PDU var>",
+      "type": "",
+      "description": "Name of the variable referenced by the PDU object. The variable name was defined via frPDU when the object was created."
+    },
+    {
+      "name": "Bit Mask",
+      "type": "",
+      "description": "Meaning"
+    },
+    {
+      "name": "0x01",
+      "type": "",
+      "description": "Update bit is set on transmission."
+    },
+    {
+      "name": "All other bits are reserved and must be set to a value of 0.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Meaning"
+    },
+    {
+      "name": "-1",
+      "type": "",
+      "description": "The PDU is transmitted in every configured slot."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "The PDU's default value is transmitted."
+    },
+    {
+      "name": "N (>0)",
+      "type": "",
+      "description": "The PDU is transmitted at least n times."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The following example assumes that the database defines a PDU that is named PDU_CNT_02 and that this PDU contains a signal that is named counter.",
+      "This program sends the PDU once every 64 cycles. The update is made on the beginning of cycle 0."
+    ],
+    "code": "variables\n{\n   frPDU MsgChannel%CHANNEL%.PDU_CNT_02 gPDU1;\n   BYTE gCycle; // remember current FlexRay cycle\n}\non preStart\n{\n   // Optionally prepare buffer for PDU gPDU1:\n   frSetSendPDU(gPDU1);\n}\non frStartCycle 0\n{\n   if (this.MsgChannel != %CHANNEL%) return;\n   gCycle = this.FR_Cycle;\n   gPDU1.counter = gCycle;\n   frUpdatePDU(gPDU1, 1, 1); // set update bit and send only once\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.1",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

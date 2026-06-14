@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "linGetHWTransmitAccuracy",
+  "category": "LIN",
+  "title": "linGetHWTransmitAccuracy",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGetHWTransmitAccuracy.htm",
+  "syntax": [
+    "dword linGetHWTransmitAccuracy()"
+  ],
+  "description": [
+    "This function can be used to query the transmit resolution of the LIN hardware in units of 1 Hz."
+  ],
+  "parameters": [],
+  "return": "Returns the transmit resolution of the LIN hardware.",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\nwrite(\"Transmit accuracy = %d\", linGetHWTransmitAccuracy());\nwrite(\"Receive  accuracy = %d\", linGetHWReceiveAccuracy());\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,53 @@
+# Clear
+
+> Category: `CommunicationObjects` | Type: `method`
+
+## Syntax
+
+```c
+void consumedEventRef::Clear();
+void consumedFieldRef::Clear();
+void consumedMethodRef::Clear();
+void consumedPDURef::Clear();
+void consumedServiceRef::Clear();
+void eventConsumerRef::Clear();
+void eventProviderRef::Clear();
+void fieldConsumerRef::Clear();
+void fieldProviderRef::Clear();
+void pduConsumerRef::Clear();
+void pduProviderRef::Clear();
+void providedEventRef::Clear();
+void providedFieldRef::Clear();
+void providedMethodRef::Clear();
+void providedPDURef::Clear();
+void providedServiceRef::Clear();
+void rxPDURef::Clear();
+void rxSignalRef::Clear();
+void serviceConsumerRef::Clear();
+void serviceProviderRef::Clear();
+void txPDURef::Clear();
+void txSignalRef::Clear();
+```
+
+## Description
+
+Clears the CO reference. Afterward, the reference is invalid and can only be used by setting another target object, e.g. through SetService or SetPDU.
+
+## Return Values
+
+—
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 13.0 | 13.0 | 15 | 14 | 5.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | ✔ | N/A |
+| 64-Bit | — | ✔ | ✔ | ✔ | ✔ | N/A |

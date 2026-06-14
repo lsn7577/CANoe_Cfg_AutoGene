@@ -1,0 +1,69 @@
+{
+  "page_type": "function",
+  "name": "pduConsumerRef",
+  "category": "CommunicationObjects",
+  "title": "pduConsumerRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionPDUConsumerRef.htm",
+  "syntax": [
+    "pduConsumerRef * <var>"
+  ],
+  "description": [
+    "References a PDU consumer endpoint."
+  ],
+  "parameters": [
+    {
+      "name": "PDU",
+      "type": "",
+      "description": "PDU of a service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "pduConsumerRef MirrorAdjustment.StatusPDU pdu1;\npdu1 = MirrorAdjustment.consumerSide[CANoe].StatusPDU;"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the consumer endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the consumer endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ServiceIndex Reference to the consumer of the service containing the PDU.",
+        "serviceConsumerRef *",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

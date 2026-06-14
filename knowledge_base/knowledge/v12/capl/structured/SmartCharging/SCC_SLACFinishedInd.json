@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLACFinishedInd",
+  "category": "SmartCharging",
+  "title": "SCC_SLACFinishedInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_SLACFinishedInd.htm",
+  "syntax": [
+    "void SCC_SLACFinishedInd ( dword Result )"
+  ],
+  "description": [
+    "The callback is called when a SLAC run has been completed. It marks the point in time when the SECC Discovery process can be started, if a match has been found and as soon as the link is established.",
+    "The vehicle can use the function SCC_SLAC_GetAttenResults during this callback to get the measured attenuation values."
+  ],
+  "parameters": [
+    {
+      "name": "Result",
+      "type": "",
+      "description": "Result of the SLAC run (1 = match, 0 = no match)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

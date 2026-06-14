@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SetThreshold9_16",
+  "category": "VTSystem",
+  "title": "SetThreshold9_16",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSetThreshold916.htm",
+  "syntax": [
+    "long SysVarNamespace.SetThreshold9_16 (double Threshold);"
+  ],
+  "description": [
+    "Sets the threshold value for differentiating between high and low levels of the channels 9…16 of a digital module VT2516.There is only one threshold setting for all eight channels together.Voltages at the input exceeding this threshold value are evaluated as high level and voltages undershooting it are evaluated as low level."
+  ],
+  "parameters": [
+    {
+      "name": "Threshold",
+      "type": "",
+      "description": "Voltage value in volts in the range from 0…25 V."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

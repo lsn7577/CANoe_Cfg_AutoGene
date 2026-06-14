@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SetReplayFileName",
+  "category": "Other",
+  "title": "SetReplayFileName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetReplayFileName.htm",
+  "syntax": [
+    "dword setReplayFileName(char nameOfReplayBlock[], char fileName[], char fileType[]);"
+  ],
+  "description": [
+    "Replaces the source file of an existing Replay Block. The function call temporarily stops the replay and restarts the Replay Block with the new source file.",
+    "The function call will not modify the configuration of the Reply block in the Simulation Setup or the transmit branch. The new file will not be stored when saving the configuration.",
+    "If you change the source file during measurement in the configuration dialog of the Reply block, the new file name will be stored in the configuration."
+  ],
+  "parameters": [
+    {
+      "name": "nameOfReplayBlock",
+      "type": "",
+      "description": "Contents of the Replay name field in the replay configuration dialog."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "SetReplayFilename(\"R\", \"replay_test_capl1.asc\", \"asc\");\nSetReplayFilename(\"R\", \"replay_test_capl1.blf\", \"blf\");\nSetReplayFilename(\"R\", \"replay_test_capl1.mf4\", \"blf\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

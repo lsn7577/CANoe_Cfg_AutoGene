@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsDeactivateGuardingReqMonitor",
+  "category": "CANopen",
+  "title": "coTfsDeactivateGuardingReqMonitor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsDeactivateGuardingReqMonitor.htm",
+  "syntax": [
+    "long coTfsDeactivateGuardingReqMonitor( dword nodeId );"
+  ],
+  "description": [
+    "This function switches off the calling of the RTR callbacks if these are switched on.",
+    "The callbacks can be switched on with coTfsActivateGuardingReqMonitor."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Identifier of the node for which the RTR callbacks are to deactivate."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsActivateGuardingReqMonitor(2,100,20);\nTestWaitForTimeout(2000);\ncoTfsDeactivateGuardingReqMonitor(0x1);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

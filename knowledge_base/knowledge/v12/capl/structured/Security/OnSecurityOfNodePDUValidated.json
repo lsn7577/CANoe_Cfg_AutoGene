@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnSecurityOfNodePDUValidated",
+  "category": "Security",
+  "title": "OnSecurityOfNodePDUValidated",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/CallbackHandler/CAPLfunctionOnSecurityOfNodePDUValidated.htm",
+  "syntax": [
+    "void OnSecurityOfNodePDUValidated(char nodeName[], char networkName[], char pduName[], dword dataId, byte payload[], dword payloadLength, qword authInfoHigh, qword authInfo, dword authInfoBitLength, qword freshness, dword freshnessBitLength, dword freshnessValueId, dword verificationResult)"
+  ],
+  "description": [
+    "This callback handler is called, when a node received a secured PDU and verified the authentication information.",
+    "Apart from the verification result, all values which have been used for verification can be analyzed.",
+    "You have to call SecurityLocalStartControlSimulationNode before this callback is called."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// this example does an write output for every secured pdu which is received.\nvoid OnSecurityLocalPDUValidated(char nodeName[], char networkName[], char pduName[], dword dataId, byte payload[], dword payloadLength, qword authInfoHigh, qword authInfo, dword authInfoBitLength, qword freshness, dword freshnessBitLength, dword freshnessValueId, dword verificationResult)\n{\n  if (verificationResult > 0)\n    {\n      writeLineEx(1,0,\" Verification SUCCESSFUL\");\n    }\n    else\n    {\n      writeLineEx(1,3,\" Verification FAILED\");\n    }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

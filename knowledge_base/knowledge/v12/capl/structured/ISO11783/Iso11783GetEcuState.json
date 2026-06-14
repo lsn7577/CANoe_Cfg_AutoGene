@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783GetEcuState",
+  "category": "ISO11783",
+  "title": "Iso11783GetEcuState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783GetEcuState.htm",
+  "syntax": [
+    "dword Iso11783GetEcuState(dword ecuHandle);"
+  ],
+  "description": [
+    "Returns the current state of the ECU."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783GetEcuState( handle ) == 2) {\n  write( \"ECU is online\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

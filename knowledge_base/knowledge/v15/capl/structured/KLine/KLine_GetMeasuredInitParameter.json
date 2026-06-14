@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "KLine_GetMeasuredInitParameter",
+  "category": "KLine",
+  "title": "KLine_GetMeasuredInitParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/KLine/Functions/CAPLfunctionKLineGetMeasuredInitParameter.htm",
+  "syntax": [
+    "long KLine_GetMeasuredValue(dword parameterID)"
+  ],
+  "description": [
+    "Retrieves the different parameters of the init patterns."
+  ],
+  "parameters": [
+    {
+      "name": "parameterID",
+      "type": "",
+      "description": "Value range: 0-10 0: KeyByte11: Keybyte22: TiniL3: Twup4: W4 between key byte 2 and inverted key byte 25: W16: W27: W38: W49: W4 between inverted keybyte 2 and inverted address byte10: BaudRate from sync pattern"
+    }
+  ],
+  "return": "Parameter value or error code.",
+  "example": {
+    "description": [],
+    "code": "DiagRequest StartDiagnosticSession req;\nenum eMeasuredValues\n{\n   KeyByte1            = 0,\n   KeyByte2            = 1,\n   TiniL               = 2,\n   Twup                = 3,\n   W4Time1             = 4,\n   InvertedAddressByte = 5,\n   W1Time              = 6,\n   W2Time              = 7,\n   W3Time              = 8,\n   W4Time2             = 9,\n   BaudRateSyncByte    = 10\n};\n\nlong pKeyByte1;\nlong pKeyByte2;\nlong pW4Time1;\nlong pInvertedAddressByte;\nlong pW1Time;\nlong pW2Time;\nlong pW3Time;\nlong pW4Time2;\nlong pBaudRateSyncByte;\n\nDiagSetTarget(“DUT”);\nDiagConnectChannel();\n   if (1 == TestWaitForDiagChannelConnected(3000))\n   {\n      TestStepPass(\"Channel connected successfully\");\n   }\n   else\n   {\n      TestStepFail(\"Could not connect channel\");\n   }\n\nreq.SendRequest();\n   if (1 == testWaitForDiagKLineFrameTransmitted(1000))\n   {\n      TestStepPass(\"Request transmitted successfully.\");\n   }\n   else\n   {\n      TestStepFail(\"No request transmitted.\");\n   }\n\npKeyByte1 = KLine_GetMeasuredInitParameter(KeyByte1);\npKeyByte2 = KLine_GetMeasuredInitParameter(KeyByte2);\npW4Time1 = KLine_GetMeasuredInitParameter(W4Time1);\npInvertedAddressByte = KLine_GetMeasuredInitParameter(InvertedAddressByte);\npW1Time = KLine_GetMeasuredInitParameter(W1Time);\npW2Time = KLine_GetMeasuredInitParameter(W2Time);\npW3Time = KLine_GetMeasuredInitParameter(W3Time);\npW4Time2 = KLine_GetMeasuredInitParameter(W4Time2);\npBaudRateSyncByte = KLine_GetMeasuredInitParameter(BaudRateSyncByte);\n\nwrite(\"KeyByte1: 0x%x\", pKeyByte1);\nwrite(\"KeyByte2: 0x%x\", pKeyByte2);\nwrite(\"W4Time 1: %.2f\", pW4Time1/toMs);\nwrite(\"InvertedAddressByte: 0x%x\", pInvertedAddressByte);\nwrite(\"W1Time: %.2f\", pW1Time/toMs);\nwrite(\"W2Time: %.2f\", pW2Time/toMs);\nwrite(\"W3Time: %.2f\", pW3Time/toMs);\nwrite(\"W4Time 2: %.2f\", pW4Time2/toMs);\nwrite(\"BaudRateSyncByte: %d\", pBaudRateSyncByte);\n\nDiagCloseChannel();\n   if (1 == testWaitforDiagChannelClosed(1000))\n   {\n      TestStepPass(\"Diag channel closed successfully\");\n   }\n   else\n   {\n      TestStepFail(\"Diag channel could not be closed.\");\n   }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.0",
+      "8.0",
+      "—",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "K-Line Real bus mode ECU tester",
+      "K-Line Real bus mode ECU tester",
+      "—",
+      "—",
+      "—",
+      "K-Line Real bus mode ECU tester"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

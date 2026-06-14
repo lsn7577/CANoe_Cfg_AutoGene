@@ -1,0 +1,47 @@
+# setPreTrigger
+
+> Category: `Other` | Type: `function`
+
+## Syntax
+
+```c
+setPreTrigger(long preTriggerTime);
+```
+
+## Description
+
+Sets the pretrigger of the logging. The pretrigger set with this function is valid until the end of the measurement or until the next call of this function.
+
+Note: The function startLogging() does not consider the setting with function setPreTrigger, use the CAPL function trigger() instead.
+
+## Example
+
+```c
+on start
+{
+  SetPreTrigger(5000);
+  SetPostTrigger(5000);
+}
+
+on key 'x'
+{
+
+    //start and stop of all CAPL trigger/Logging blocks with pre and post trigger settings
+  trigger();
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | All | All | 13.0 | — | 14 | 1.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | ✔ | ✔ | ✔ | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | — | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | — | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | — | — | — | — | N/A |
+| 32-Bit | — | — | — | N/A | — | N/A |
+| 64-Bit | ✔ | ✔ | ✔ | — | ✔ | N/A |

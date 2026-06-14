@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForConfigureBitTimingRequest",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForConfigureBitTimingRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForConfBitTimingReq.htm",
+  "syntax": [
+    "long coTfsLssWaitForConfigureBitTimingRequest( byte[] pTableSelector, byte[] pTableIndex );"
+  ],
+  "description": [
+    "This function waits for LSS Configure Bit-Timings Parameters request."
+  ],
+  "parameters": [
+    {
+      "name": "pTableSelector",
+      "type": "",
+      "description": "Selects which bit timing parameter table shall be used."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pTableSelector[1];\nbyte pTableIndex[1];\n\n/* waits for LSS configure bit timing request */\nif (coTfsLssWaitForConfigureBitTimingRequest( pTableSelector, pTableIndex) == 1) {\n  /* received LSS configure bit timing request */\n  /* received values can be found in pTableSelector[0], pTableIndex[0] */\n}\nelse {\n  /* no request received */\n  return;\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

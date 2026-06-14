@@ -1,0 +1,22 @@
+{
+  "page_type": "concept",
+  "name": "Example: Selector TIME (time stamp of message in units of 10 microseconds)",
+  "category": "CAN",
+  "title": "Example: Selector TIME (time stamp of message in units of 10 microseconds)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Selectors/CAPLSelectorTIME.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [
+      "In this example it is checked whether the message is received always in the same distance sendDist.At measurement start lastTime is set to zero."
+    ],
+    "code": "const dword sendDist = 10000; // *10 us = 100ms\n\non message CP24TX {\n  int delta;\n  dword lastTime;\n  delta = (this.TIME - lastTime - sendDist); // in 10 us\n  lastTime = this.TIME;\n  if (delta != 0)\n  {\n    write(\"deviation of send distance: %d us\",10*delta);\n  } \n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

@@ -1,0 +1,138 @@
+{
+  "page_type": "method",
+  "name": "QueueSpcTriggerPulse",
+  "category": "Sensor",
+  "title": "QueueSpcTriggerPulse",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionQueueSpcTriggerPulse.htm",
+  "syntax": [
+    "SensorErrorCode sysvarSensorNamespace.QueueSpcTriggerPulse(dword triggerLengthNs, dword responseSpaceLengthNs, dword periodic);"
+  ],
+  "description": [
+    "Queues a single SPC trigger pulse on the specified ECU channel."
+  ],
+  "parameters": [
+    {
+      "name": "triggerLengthNs",
+      "type": "",
+      "description": "The length of the trigger pulse in nanoseconds."
+    },
+    {
+      "name": "responseSpaceLengthNs",
+      "type": "",
+      "description": "The length of the sensor's response space in nanoseconds."
+    },
+    {
+      "name": "periodic",
+      "type": "",
+      "description": "1 = periodic transmission, otherwise single transmission."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Sensor configuration\nconst double cSensorTickLengthUs = 3.0;\nconst double cSensorMinTriggerLenTicks = 1.5;\nconst double cSensorTotalTriggerLenTicks = 13.0;\nconst dword cSensorNumLowTicks = 5;\nconst dword cSensorNumDataNibbles = 6;\n\ndword triggerLenNs;\ndword responseSpaceLenNs;\ndouble maxSensorResponseTicks;\n\nenum sensorErrorCode result;\n\n// Calculate length of SPC trigger pulse in nanoseconds\ntriggerLenNs = cSensorTickLengthUs * cSensorMinTriggerLenTicks * 1000;\n// Calculate length of the sensor's response space in ticks\nmaxSensorResponseTicks = cSensorTotalTriggerLenTicks - cSensorMinTriggerLenTicks; // Total trigger time high ticks\nmaxSensorResponseTicks += 56; // Sync pulse\nmaxSensorResponseTicks += (cSensorNumDataNibbles + 2) * 27; // Status + data + crc nibbles\nmaxSensorResponseTicks += cSensorNumLowTicks; // SPC end pulse\n\n// Calculate length of the sensor's response space in nanoseconds\nresponseSpaceLenNs = maxSensorResponseTicks * cSensorTickLengthUs * 1000;\n\n// Queue a periodic SPC trigger pulse with the calculated lengths\nresult = sysvar::SENSOR::SENT::ECUSIM.QueueSpcTriggerPulse(triggerLenNs, responseSpaceLenNs, 1);\nif (result == eSensorNoError)\n{\n  write(\"Queuing of periodic SPC trigger pulse succeeded.\");\n}\nelse\n{\n  write(\"Queuing of periodic SPC trigger pulse failed with code: %d.\", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "15",
+      "—",
+      "—",
+      "—",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

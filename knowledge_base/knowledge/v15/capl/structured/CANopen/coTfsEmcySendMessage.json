@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "coTfsEmcySendMessage",
+  "category": "CANopen",
+  "title": "coTfsEmcySendMessage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsEmcySendMessage.htm",
+  "syntax": [
+    "long coTfsEmcySendMessage( dword nodeID, dword emcyCode, dword errorReg, byte inMsCodeBuf[5], dword msCodeBufSize );"
+  ],
+  "description": [
+    "This function sends out an emergency message."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "Node-ID of the node that is sender of the message."
+    },
+    {
+      "name": "emcyCode",
+      "type": "",
+      "description": "Emergency code."
+    },
+    {
+      "name": "errorReg",
+      "type": "",
+      "description": "Error register."
+    },
+    {
+      "name": "inMsCodeBuf[]",
+      "type": "",
+      "description": "Manufacturer-specific code (data field)."
+    },
+    {
+      "name": "msCodeBufSize",
+      "type": "",
+      "description": "Size of buffer in byte of inMsCodeBuf."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pMsCode[5] = {0,0,0,0,0};\nif (coTfsEmcySendMessage(112, 0x8220, 0x20, pMsCode, 5) != 1) {\n  write(\"coTfsSendEmcyMessage failed\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

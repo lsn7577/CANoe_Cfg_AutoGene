@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMostApInstID",
+  "category": "Test",
+  "title": "TestWaitForMostApInstID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForMostApInstID.htm",
+  "syntax": [
+    "long TestWaitForMostApInstID(unsigned long aTimeout);"
+  ],
+  "description": [
+    "The function waits for the specified period of time for a special change event of the application socket which is triggered when the InstanceId of an FBlock on its channel changes."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]"
+    }
+  ],
+  "return": "-2: Resume based on Constraint Violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

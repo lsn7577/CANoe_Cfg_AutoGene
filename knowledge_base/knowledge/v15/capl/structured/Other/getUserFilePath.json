@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "getUserFilePath",
+  "category": "Other",
+  "title": "getUserFilePath",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionGetUserFilePath.htm",
+  "syntax": [
+    "long getUserFilePath(char fileName[], char absPath[], long absPathLen);"
+  ],
+  "description": [
+    "Gets the absolute path of a user file.",
+    "In case of execution in a distributed environment the absolute user file path (including file name) on the remote device (e.g. VN8900) is returned if the user file was pre-defined. If the file was not pre-defined an error code is returned.",
+    "In case of a single Computer environment the registered absolute file path (including file name) of the user file is returned if the user file was pre-defined. If the file was not pre-defined the function returns the same result as getAbsFilePath (converting a path relative to the configuration directory to an absolute path)."
+  ],
+  "parameters": [
+    {
+      "name": "fileName",
+      "type": "",
+      "description": "A file name potentially containing a path. If the file name is pre-defined the path is ignored. Otherwise the path is interpreted as relative to the current configuration path in a single Computer environment."
+    },
+    {
+      "name": "absPath",
+      "type": "",
+      "description": "Buffer to which the full path name should be copied."
+    },
+    {
+      "name": "absPathLen",
+      "type": "",
+      "description": "Size of the buffer [in bytes] for the full path name."
+    }
+  ],
+  "return": "On success this function returns the length of the full path name. Otherwise the function returns -1 if parameters do not fit or buffer size is too small or -2 if no user file with the given name was registered in case of a distributed environment.",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n   char absPath[256];\n   VgetUserFilePath(\"MyCAPLDll.INI\", absPath, 256);\n   MyCAPLDllFunction(absPath);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.6 SP4",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

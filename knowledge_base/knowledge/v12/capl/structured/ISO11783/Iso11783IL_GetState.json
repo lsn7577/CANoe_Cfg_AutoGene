@@ -1,0 +1,25 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_GetState",
+  "category": "ISO11783",
+  "title": "Iso11783IL_GetState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILGetState.htm",
+  "syntax": [
+    "long Iso11783IL_GetState();"
+  ],
+  "description": [],
+  "parameters": [],
+  "return": "0: Initialized",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  LONG state;\n  state = Iso11783IL_GetState();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

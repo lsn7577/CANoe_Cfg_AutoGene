@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783GetWSMaster",
+  "category": "ISO11783",
+  "title": "Iso11783GetWSMaster",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783GetWSMaster.htm",
+  "syntax": [
+    "dword Iso11783GetWSMaster(char busName[], dword ecuAddress);"
+  ],
+  "description": [
+    "This function returns the address of the Working Set Master, which is assigned to an ECU with the address ecuAddress."
+  ],
+  "parameters": [
+    {
+      "name": "busName",
+      "type": "",
+      "description": "Name of the bus"
+    }
+  ],
+  "return": "Address of the Working Set Master",
+  "example": {
+    "description": [],
+    "code": "wsmAddr = Iso11783GetWSMaster( \"default\", 10 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

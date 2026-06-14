@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "resetFlexRayCCEx",
+  "category": "FlexRay",
+  "title": "resetFlexRayCCEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionResetFlexrayCCEX.htm",
+  "syntax": [
+    "long resetFlexRayCCEx (int channel, int wuChMask, int wuCount, int wuTxIdle, int wuTxLow, char[] cfg);"
+  ],
+  "description": [
+    "This function initializes the FlexRay Communication Controller (CC) and generates the specified wake-up pattern before reintegration in the cluster or the start-up."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "FlexRay channel (cluster number)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The following program resets the FlexRay interface of the attached channel and sends a wake-up (if network is idle), when the <W> key is pressed."
+    ],
+    "code": "on key 'w'\n{\n   int wuChMask = 3;    // send wake-up on both channels\n   int wuCount  = 4;    // send symbol 2 times (range 2-63)\n   int wuTxIdle = 180;  // idle time of symbol in bit (range 0-255)\n   int wuTxLow = 60;    // low time of symbol in bit (range 0-63)\n   CHAR cfg[1];         // <cfg> -> not used yet\n   resetFlexRayCCEx(%CHANNEL%,wuChMask,wuCount,wuTxIdle,wuTxLow,cfg);\n   Write(\"FlexRay CC %d is reset and sending a wakeup.\", %CHANNEL%);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

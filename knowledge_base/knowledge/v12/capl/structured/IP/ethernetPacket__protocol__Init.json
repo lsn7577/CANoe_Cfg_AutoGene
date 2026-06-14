@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::protocol::Init",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::Init",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionProtocolInit.htm",
+  "syntax": [
+    "long ethernetPacket.<protocol>.Init();"
+  ],
+  "description": [
+    "Initialize the protocol within an Ethernet packet. It appends the protocol, if it is not already contained in the packet and initialized the protocol header with default values. If a protocol requires other underlaying protocols, it will add these protocols too, i.e. if the UDP protocol is initialized it also adds an IPv4 protocol header by default. If a specific protocol stack is required, the Init() function can be called for every protocol from the lower protocols to the upper protocols, i.e. if UDP over IPv6 is required, first initialize IPv6 and then UDP. Higher protocols than the one which is initialized, will be removed."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "ethernetPacket pkt;\n// initialize packet with IPv4 and UDP protocols\npkt.udp.Init();\n// set IPv4 addresses\npkt.ipv4.source.ParseAddress( \"192.168.1.1\" );\npkt.ipv4.destination.ParseAddress ( \"192.168.1.255\" );\n// set UDP ports\npkt.udp.source      = 40001;\npkt.udp.destination = 40002;\n// set UDP payload\npkt.udp.SetData( 0, \"Hello\", 5 );\n// calculate UDP and IPv4 checksum and send Ethernet packet\npkt.CompletePacket();\noutput( pkt );\nethernetPacket pkt;\n\n// initialize packet with IPv6 and UDP protocols\npkt.ipv6.Init();\npkt.udp.Init();\n\n// set IPv6 addresses\npkt.ipv6.source.ParseAddress(\"FC00::01\" );\npkt.ipv6.destination.ParseAddress(\"FC00::02\",  );\n\n// set UDP ports\npkt.udp.source      = 40001;\npkt.udp.destination = 40002;\n\n// set UDP payload\npkt.udp.SetData( 0, \"Hello\", 5 );\n\n// calculate UDP and IPv4 checksum and send Ethernet packet\npkt.CompletePacket();\noutput( pkt );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

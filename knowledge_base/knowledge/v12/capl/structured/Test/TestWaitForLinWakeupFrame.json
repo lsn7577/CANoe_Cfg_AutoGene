@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForLinWakeupFrame",
+  "category": "Test",
+  "title": "TestWaitForLinWakeupFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForLinWakeupFrame.htm",
+  "syntax": [
+    "long TestWaitForLinWakeupFrame (dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of LIN Wakeup frame. Should the frame not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linWakeupEvent ()\n{\n   linWakeupFrame linWakeupData;\n\n   if (testWaitForLinWakeupFrame(5000) == 1)\n   {\n      if (testGetWaitLinWakeupData(linWakeupData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN Wakeup event occurred. Signal length is %d ns\", linWakeupData.length_ns);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

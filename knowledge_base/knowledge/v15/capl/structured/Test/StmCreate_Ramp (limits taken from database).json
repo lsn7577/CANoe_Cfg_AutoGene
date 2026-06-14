@@ -1,0 +1,175 @@
+{
+  "page_type": "function",
+  "name": "StmCreate_Ramp (limits taken from database)",
+  "category": "Test",
+  "title": "StmCreate_Ramp (limits taken from database)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionStmCreateRampDatabase.htm",
+  "syntax": [
+    "dword StmCreate_Ramp(message aMessage, dbsignal aDBSignal, dword CycleTime, dword TimeUp, dword TimeHigh, dword TimeDown, dword TimeLow);",
+    "dword StmCreate_Ramp(signal aDBSignal, dword CycleTime, dword TimeUp, dword TimeHigh, dword TimeDown, dword TimeLow);",
+    "dword StmCreate_Ramp(dbenvvar EnvVarHandle, dword CycleTime, dword TimeUp, dword TimeHigh, dword TimeDown, dword TimeLow);",
+    "dword StmCreate_Ramp(sysvar SystemVariable, dword CycleTime, dword TimeUp, dword TimeHigh, dword TimeDown, dword TimeLow);"
+  ],
+  "description": [
+    "Creates a stimulus generator that creates a ramp."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Existing message (dbMsg type) in DB"
+    },
+    {
+      "name": "aDBSignal",
+      "type": "",
+      "description": "Existing signal (dbSignal type) in DB"
+    },
+    {
+      "name": "EnvVarHandle",
+      "type": "",
+      "description": "Existing environment variable (EnvVar type) in DB"
+    },
+    {
+      "name": "SystemVariable",
+      "type": "",
+      "description": "Must be available in the configuration."
+    },
+    {
+      "name": "CycleTime",
+      "type": "",
+      "description": "ms; 1 < x < ∞ Defines the cycle in which the signal value in the message buffer is being updated. There is no affect to the bus. Defines the cycle in which the value of the environment or system variable is being updated."
+    },
+    {
+      "name": "Note For more information please see Stimulus Generator: Creating a Ramp.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Note For more information please see Stimulus Generator: Creating a Ramp.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Note Time Up = Time High = Time Down = 0: ESE Invalid stimuli effect (measurement stops) For more information please see Stimulus Generator: Creating a Ramp.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Note For more information please see Stimulus Generator: Creating a Ramp.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Later this ID can be used to control the stimuli",
+  "example": {
+    "description": [
+      "To stimulate signals:",
+      "To stimulate environment variables:",
+      "To stimulate system variables:"
+    ],
+    "code": "mId = StmCreate_Ramp(MsgBuf, Msg::Sig, CycleTime, Tup, Thigh, Tdown, Tlow);\nTo stimulate signals with the Interaction Layer:\nmId = StmCreate_Ramp(Msg::Sig, CycleTime, Tup, Thigh, Tdown, Tlow);\nmId = StmCreate_Ramp(EnvVarToStimulate, CycleTime, Tup, Thigh, Tdown, Tlow);\nmId = StmCreate_Ramp(SysVarToStimulate, CycleTime, Tup, Thigh, Tdown, Tlow);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0 5.1: stimulate with IL 7.0 SP5: method 7.5: system variable support",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

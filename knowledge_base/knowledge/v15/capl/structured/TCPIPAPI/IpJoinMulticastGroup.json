@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "IpJoinMulticastGroup",
+  "category": "TCPIPAPI",
+  "title": "IpJoinMulticastGroup",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIPJoinMulticastGroup.htm",
+  "syntax": [
+    "long IpJoinMulticastGroup( dword socket, dword ifIndex, dword ipv4address ); // form 1",
+    "long IpJoinMulticastGroup( dword socket, dword ifIndex, byte ipv6Address[] ); // form 2",
+    "long IpJoinMulticastGroup( dword socket, dword ifIndex, IP_Address multicastAddress ); // form 3"
+  ],
+  "description": [
+    "Joins the multicast group on the given socket,. to be able to receive multicast messages.",
+    "To receive multicast messages, the multicast group has to be joined before.",
+    "To leave a multicast group, call IpLeaveMulticastGroup.",
+    "Before multicast messages can be sent, IpSetMulticastInterface has to be called."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    },
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index. All adapter addresses including the local loopback address are taken into account in the stack of the operating system. The order depends on how the operating system lists the adapters.All assigned addresses including the VLAN addresses are taken into account in the CANoe stack."
+    },
+    {
+      "name": "ipv4address",
+      "type": "",
+      "description": "The numerical IPv4 address of the destination."
+    },
+    {
+      "name": "ipv6Address",
+      "type": "",
+      "description": "The local IPv6 address in a 16 byte array."
+    },
+    {
+      "name": "multicastAddress",
+      "type": "",
+      "description": "The IP multicast address of the destination."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket gSocket;\n}\n\non start\n{\n  gSocket = UdpSocket::Open( IP_Endpoint(0.0.0.0:40001) );\n  gSocket.JoinMulticastGroup( 1, IP_Address(239.0.0.123) );\n}\n\non key '2'\n{\n  gSocket.LeaveMulticastGroup( 1, IP_Address(239.0.0.123) );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5: form 1-2 12.0: form 3",
+      "8.2: form 1-2 12.0: form 3",
+      "13.0",
+      "13.0: form 3",
+      "—",
+      "2.0 SP2: form 1-2 4.0: form 3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

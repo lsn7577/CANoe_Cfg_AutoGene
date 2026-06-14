@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_AddECU",
+  "category": "Diagnostics",
+  "title": "DoIP_AddECU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPAddECU.htm",
+  "syntax": [
+    "void DoIP_AddECU( dword address);"
+  ],
+  "description": [
+    "Adds a valid DoIP ECU address to the DoIP layer."
+  ],
+  "parameters": [
+    {
+      "name": "address",
+      "type": "",
+      "description": "Logical DoIP address of an ECU. You must set at least one logical ECU address (e.g. the logical DoIP address of the DoIP entity)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "DoIP_AddECU( 0x200);\nDoIP_AddECU( 0x201);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnSomeIpSDClientServiceStatusChanged",
+  "category": "IP",
+  "title": "OnSomeIpSDClientServiceStatusChanged",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionOnSomeIpSDClientServiceStatusChanged.htm",
+  "syntax": [
+    "void OnSomeIpSDClientServiceStatusChanged( dword serviceId, dword instanceId, LONG status ); // form 1"
+  ],
+  "description": [
+    "This callback function can be implemented in the CAPL program, if the Client wants to be notified of status changes to the services.",
+    "The function is called when the status of a service changes.",
+    "The callback is called regardless of whether or not the service is consumed by SomeIpCreateConsumedServiceInstance."
+  ],
+  "parameters": [
+    {
+      "name": "serviceId",
+      "type": "",
+      "description": "ID of the service whose status has changed."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnSomeIpSDClientServiceStatusChanged( dword serviceId, dword majorVersion, dword instanceId, LONG status)\n{\n  char buffer[100];\n  if(status == 0)\n  {\n    snprintf(buffer,elcount(buffer),\"Service down\");\n  }\n  else if(status == 1)\n  {\n    snprintf(buffer,elcount(buffer),\"Service up\");\n  }\n  else\n  {\n    snprintf(buffer,elcount(buffer),\"Undefined status\");\n  }\n  write(\"Service %d (instance %d, major version %d): %s\",serviceId,instanceId,majorVersion,buffer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

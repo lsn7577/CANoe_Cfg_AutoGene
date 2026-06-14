@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LINtp_SetMaximumReceiveLength",
+  "category": "LIN",
+  "title": "LINtp_SetMaximumReceiveLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINtpSetMaximumReceiveLength.htm",
+  "syntax": [
+    "void LINtp_SetMaximumReceiveLength(dword maxRecLen);"
+  ],
+  "description": [
+    "Sets maximum number of bytes node can receive. If more data is indicated in a FirstFrame and FlowControl frames have been activated, an overflow FlowControl frame is sent."
+  ],
+  "parameters": [
+    {
+      "name": "maxRcLen",
+      "type": "",
+      "description": "The maximum number of bytes of segmented data accepted."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

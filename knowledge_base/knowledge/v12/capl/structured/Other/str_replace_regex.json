@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "str_replace_regex",
+  "category": "Other",
+  "title": "str_replace_regex",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStrReplaceRegex.htm",
+  "syntax": [
+    "long str_replace_regex(char s[], char pattern[], char replacement[])"
+  ],
+  "description": [
+    "Replaces all occurrences of pattern in a string with another string."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "String to be modified."
+    }
+  ],
+  "return": "1 if successful, 0 if the resulting string would be too long for the buffer s.",
+  "example": {
+    "description": [],
+    "code": "char buffer[70] = \"Vector Informatik\";\nstr_replace_regex(buffer, \"Inf[a-z]*\", \"CANoe\");\nwrite(buffer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

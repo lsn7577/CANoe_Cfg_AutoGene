@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GPIBWriteStr",
+  "category": "GPIB",
+  "title": "GPIBWriteStr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBWriteStr.htm",
+  "syntax": [
+    "long GPIBWriteStr (long deviceDescriptor, char cmdStr[]);"
+  ],
+  "description": [
+    "Writes cmdStr to the device.",
+    "The function returns immediately and does not wait for the end of the command transmission."
+  ],
+  "parameters": [
+    {
+      "name": "deviceDescriptor",
+      "type": "",
+      "description": "Device ID"
+    }
+  ],
+  "return": "Status",
+  "example": {
+    "description": [],
+    "code": "Setting of a voltage of 1.23 V: GPIBWriteStr(myDev, \"V 1.23\")"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

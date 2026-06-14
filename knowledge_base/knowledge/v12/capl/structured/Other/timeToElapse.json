@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "timeToElapse",
+  "category": "Other",
+  "title": "timeToElapse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionTimeToElapse.htm",
+  "syntax": [
+    "long timeToElapse(timer t) (Form 1)"
+  ],
+  "description": [
+    "Returns a value indicating how much more time will elapse before an on timer event procedure is called.",
+    "For form 1, the time value is returned in seconds; for form 2, the time value is returned in milliseconds.",
+    "If the timer is not active, -1 is returned. This is also the case in the on timer event procedure itself."
+  ],
+  "parameters": [],
+  "return": "Time to go until the timer elapses and the event procedure is called.",
+  "example": {
+    "description": [],
+    "code": "timer t;\nsetTimer(t, 5);\nwrite(\"Time to elapse: %d\", timeToElapse(t)); // writes 5"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

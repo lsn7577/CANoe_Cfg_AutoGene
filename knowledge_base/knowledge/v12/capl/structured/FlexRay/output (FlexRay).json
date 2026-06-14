@@ -1,0 +1,56 @@
+{
+  "page_type": "function",
+  "name": "output (FlexRay)",
+  "category": "FlexRay",
+  "title": "output (FlexRay)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFROutput.htm",
+  "syntax": [
+    "void output(flexraymessage msg); // form 1"
+  ],
+  "description": [
+    "Outputs the object from the program block of the analysis branch. This function must be used inside the appropriate event procedure in order to forward the event to the next block in the analysis branch. If the function is not called, then the event is not forwarded. Thus, events will be filtered by the CAPL program when omitting this function.",
+    "The function must not be used in the Simulation Setup or transmit branch."
+  ],
+  "parameters": [
+    {
+      "name": "flexraymessage",
+      "type": "",
+      "description": "List of available selectors for this type of objects can be found under on frFrame selectors, on frSlot selectors, on frNullFrame selectors, and on frFrameError selectors."
+    },
+    {
+      "name": "flexraystartcycle",
+      "type": "",
+      "description": "List of available selectors for this type of objects can be found under on frStartCycle selectors."
+    },
+    {
+      "name": "flexraysymbol",
+      "type": "",
+      "description": "List of available selectors for this type of objects can be found under on frSymbol selectors."
+    },
+    {
+      "name": "flexraypocstate",
+      "type": "",
+      "description": "List of available selectors for this type of objects can be found under on frPocState selectors."
+    },
+    {
+      "name": "flexrayerror",
+      "type": "",
+      "description": "List of available selectors for this type of objects can be found under on frRError selectors."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "If you react on start of cycle, frame, Null Frame or frame error events, then you must forward the event explicitly to the next node in the Measurement Setup. Otherwise the successor node will not receive that event!"
+    ],
+    "code": "on frFrame *\n{\n   // do something ...\n   // forward event to next node in Measurement Setup:\n   output(this);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

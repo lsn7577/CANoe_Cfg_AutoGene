@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "canSetChannelMode",
+  "category": "CAN",
+  "title": "canSetChannelMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionCanSetChannelMode.htm",
+  "syntax": [
+    "long canSetChannelMode(long channel, long gtx, long gtxreq);"
+  ],
+  "description": [
+    "Activates/deactivates the TXRQ and Tx of the CAN controller. This function does nothing with the Ack bit."
+  ],
+  "parameters": [],
+  "return": "0: ok",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n   long channel =2;\n   char gtx =1;\n   char gtxreq =1;\n   canSetChannelMode(channel,gtx,gtxreq);\n   Write(\"Mode set to tx=%d, txreq=%d\",gtx,gtxreq);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

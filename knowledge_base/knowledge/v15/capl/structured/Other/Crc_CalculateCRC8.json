@@ -1,0 +1,158 @@
+{
+  "page_type": "function",
+  "name": "Crc_CalculateCRC8",
+  "category": "Other",
+  "title": "Crc_CalculateCRC8",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/E2EProtection/CAPLfunctionCrcCalculateCRC8 .htm",
+  "syntax": [
+    "long Crc_CalculateCRC8 (BYTE* data, dword dataSize, dword dataOffset, dword crcLength, dword crcStartValue, dword firstCall, dword* crcCalculated);"
+  ],
+  "description": [
+    "Calculates the corresponding checksum for CRC8 based on the data. The calculation of the CRC value corresponds to AUTOSAR Profile 1."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Payload data for which the checksum is to be calculated."
+    },
+    {
+      "name": "dataSize",
+      "type": "",
+      "description": "Length of data block to be calculated in bytes."
+    },
+    {
+      "name": "dataOffset",
+      "type": "",
+      "description": "Start index for the calculation of the CRC in the payload data."
+    },
+    {
+      "name": "crcLength",
+      "type": "",
+      "description": "The length of the data for the CRC is calculated."
+    },
+    {
+      "name": "crcStartValue",
+      "type": "",
+      "description": "CRC initial value depending on whether it is the first call or a subsequent call. Value is ignored if firstCall is 1."
+    },
+    {
+      "name": "firstCall",
+      "type": "",
+      "description": "Flag for first call or a subsequent call. Possible values are 0 (subsequent call) or 1 (first call)."
+    },
+    {
+      "name": "crcCalculated",
+      "type": "",
+      "description": "Calculated CRC8 value."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// first CALL, Offset '0'\non key 'a'\n{\n  long  retval;\n  dword crc;\n  byte  data[9] = {0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39};\n\n  retval = Crc_CalculateCRC8(data, elcount (data), 0, elcount (data), 0, 1, crc);\n  write(\"CRC of data: 0x%X\", crc);\n}\n\n// first CALL, Offset '2', Length - 2\non key 'b'\n{\n  long  retval;\n  dword crc;\n  byte  data[11] = {0xAA ,0xAA,0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39};\n\n  retval = Crc_CalculateCRC8(data, elcount (data), 2, elcount (data) -2, 0, 1, crc);\n  write(\"CRC of data: 0x%X\", crc);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP5",
+      "13.0",
+      "—",
+      "14",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

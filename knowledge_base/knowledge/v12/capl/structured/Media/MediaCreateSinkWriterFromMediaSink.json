@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "MediaCreateSinkWriterFromMediaSink",
+  "category": "Media",
+  "title": "MediaCreateSinkWriterFromMediaSink",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaCreateSinkWriterFromMediaSink.htm",
+  "syntax": [
+    "dword MediaCreateSinkWriterFromMediaSink(dword mediaSinkHandle);"
+  ],
+  "description": [
+    "Creates the source reader from a media source.",
+    "For more information regarding the source reader see source reader."
+  ],
+  "parameters": [
+    {
+      "name": "mediaFileHandle",
+      "type": "",
+      "description": "The media sink to create the sink writer from."
+    }
+  ],
+  "return": "0: The function failed. Call MediaGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

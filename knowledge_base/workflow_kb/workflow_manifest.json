@@ -1,0 +1,184 @@
+{
+  "schema_version": "0.1.0",
+  "name": "canoe_test_generation_workflow_kb",
+  "description": "Extensible workflow contract layer for Burr-based CANoe automated test project generation.",
+  "default_profile": "default",
+  "default_canoe_version": "v15",
+  "knowledge_roots": {
+    "facts": "knowledge",
+    "agent_lookup": "agent_kb",
+    "retriever": "retriever",
+    "workflow": "workflow_kb"
+  },
+  "schemas": {
+    "test_case_ir": "schemas/test_case_ir.schema.json",
+    "canoe_project_spec": "schemas/canoe_project_spec.schema.json",
+    "capl_module_spec": "schemas/capl_module_spec.schema.json",
+    "dbc_spec": "schemas/dbc_spec.schema.json",
+    "panel_binding_spec": "schemas/panel_binding_spec.schema.json",
+    "evidence_bundle": "schemas/evidence_bundle.schema.json",
+    "validation_report": "schemas/validation_report.schema.json",
+    "burr_action_contract": "schemas/burr_action_contract.schema.json",
+    "workflow_pack": "schemas/workflow_pack.schema.json"
+  },
+  "state_keys": [
+    "raw_test_case",
+    "test_case_ir",
+    "intent_profile",
+    "retrieval_plan",
+    "evidence_bundle",
+    "project_spec",
+    "generated_artifacts",
+    "validation_report",
+    "repair_plan",
+    "final_package"
+  ],
+  "actions": [
+    {
+      "id": "health_check_kb",
+      "contract": "burr_actions/00_health_check.json",
+      "required": true
+    },
+    {
+      "id": "parse_test_case",
+      "contract": "burr_actions/10_parse_test_case.json",
+      "required": true
+    },
+    {
+      "id": "classify_intent",
+      "contract": "burr_actions/20_classify_intent.json",
+      "required": true
+    },
+    {
+      "id": "retrieve_evidence",
+      "contract": "burr_actions/30_retrieve_evidence.json",
+      "required": true
+    },
+    {
+      "id": "plan_project",
+      "contract": "burr_actions/40_plan_project.json",
+      "required": true
+    },
+    {
+      "id": "generate_artifacts",
+      "contract": "burr_actions/50_generate_artifacts.json",
+      "required": true
+    },
+    {
+      "id": "validate_artifacts",
+      "contract": "burr_actions/60_validate_artifacts.json",
+      "required": true
+    },
+    {
+      "id": "repair_or_review",
+      "contract": "burr_actions/70_repair_or_review.json",
+      "required": false
+    },
+    {
+      "id": "package_project",
+      "contract": "burr_actions/80_package_project.json",
+      "required": true
+    }
+  ],
+  "default_transitions": [
+    {
+      "from": "health_check_kb",
+      "to": "parse_test_case",
+      "condition": "validation_report.status in ['pass', 'warn']"
+    },
+    {
+      "from": "parse_test_case",
+      "to": "classify_intent",
+      "condition": "test_case_ir.status == 'parsed'"
+    },
+    {
+      "from": "classify_intent",
+      "to": "retrieve_evidence",
+      "condition": "intent_profile.status == 'classified'"
+    },
+    {
+      "from": "retrieve_evidence",
+      "to": "plan_project",
+      "condition": "evidence_bundle.status in ['complete', 'partial']"
+    },
+    {
+      "from": "plan_project",
+      "to": "generate_artifacts",
+      "condition": "project_spec.status == 'planned'"
+    },
+    {
+      "from": "generate_artifacts",
+      "to": "validate_artifacts",
+      "condition": "generated_artifacts.status == 'generated'"
+    },
+    {
+      "from": "validate_artifacts",
+      "to": "package_project",
+      "condition": "validation_report.status == 'pass'"
+    },
+    {
+      "from": "validate_artifacts",
+      "to": "repair_or_review",
+      "condition": "validation_report.status in ['warn', 'fail']"
+    },
+    {
+      "from": "repair_or_review",
+      "to": "retrieve_evidence",
+      "condition": "repair_plan.next_action == 'retrieve_more_evidence'"
+    },
+    {
+      "from": "repair_or_review",
+      "to": "plan_project",
+      "condition": "repair_plan.next_action == 'replan_project'"
+    },
+    {
+      "from": "repair_or_review",
+      "to": "generate_artifacts",
+      "condition": "repair_plan.next_action == 'regenerate_artifacts'"
+    }
+  ],
+  "packs": [
+    "packs/core/pack.json",
+    "packs/can_signal/pack.json",
+    "packs/diagnostics/pack.json",
+    "packs/panel/pack.json",
+    "packs/dbc/pack.json",
+    "packs/team_eq07/pack.json"
+  ],
+  "global_retrieval_profiles": [
+    "retrieval_profiles/default.json",
+    "retrieval_profiles/team_overrides.json"
+  ],
+  "global_generation_patterns": [
+    "generation_patterns/capl_test_module/pattern.json",
+    "generation_patterns/capl_simulation_node/pattern.json",
+    "generation_patterns/dbc/pattern.json",
+    "generation_patterns/panel_binding/pattern.json",
+    "generation_patterns/canoe_project_layout/pattern.json"
+  ],
+  "global_validation_rules": [
+    "validation_rules/capl_api_evidence_gate.json",
+    "validation_rules/version_compatibility_gate.json",
+    "validation_rules/team_style_gate.json",
+    "validation_rules/artifact_completeness_gate.json"
+  ],
+  "extension_points": [
+    {
+      "id": "domain_pack",
+      "description": "Add a new test generation domain by creating packs/<domain>/pack.json and registering it here."
+    },
+    {
+      "id": "action_contract",
+      "description": "Add or replace a Burr action by registering a contract with explicit reads and writes."
+    },
+    {
+      "id": "graph_profile",
+      "description": "Build alternate Burr graphs by selecting subsets of packs and action contracts."
+    },
+    {
+      "id": "validation_gate",
+      "description": "Add quality gates without changing generation code."
+    }
+  ]
+}
+

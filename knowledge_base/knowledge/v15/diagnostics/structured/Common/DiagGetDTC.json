@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "DiagGetDTC",
+  "syntax": [
+    "long DiagGetDTC(byte statusMask, dword[] dtcList, byte& count);"
+  ],
+  "description": [
+    "Reads all DTCs (Diagnostic Trouble Codes) matching the given status mask.",
+    "Use 0xFF for 'all DTCs' or specific bit patterns like 0x08 (confirmed)."
+  ],
+  "parameters": [
+    {"name": "statusMask", "type": "byte", "description": "Bit mask: 0x01=testFailed, 0x02=confirmed, 0x04=pending, 0x08=confirmed (used by this version)"},
+    {"name": "dtcList", "type": "dword[]", "description": "Pre-allocated array (typically size 64) to receive DTCs"},
+    {"name": "count", "type": "byte&", "description": "Output: number of DTCs actually returned"}
+  ],
+  "return": [
+    "0 on success, <0 on error (e.g. -1 = no response, -2 = NRC 0x14 = responseTooLong)"
+  ],
+  "example": {
+    "description": ["Get all confirmed DTCs."],
+    "code": "dword dtcArr[64];\nbyte cnt;\nif (DiagGetDTC(0x08, dtcArr, cnt) == 0) {\n  write(\"Found %d DTCs\", cnt);\n  for (int i = 0; i < cnt; i++) write(\"DTC: 0x%06X\", dtcArr[i]);\n}"
+  },
+  "availability": [
+    ["Since CANoe 7.0"]
+  ],
+  "selectors": [],
+  "note": [
+    "Internally uses UDS service 0x19 02 (readDTCInformation byStatusMask).",
+    "Result is async; check via Diag_GetDTCResponse callback if using raw API."
+  ]
+}

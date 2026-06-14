@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendSwitchStateSelectiveSequence",
+  "category": "CANopen",
+  "title": "coTfsLssSendSwitchStateSelectiveSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendSwitchStateSelectiveSeq.htm",
+  "syntax": [
+    "long coTfsLssSendSwitchStateSelectiveSequence( dword vendorId, dword productCode, dword revisionNo, dword serialNo );"
+  ],
+  "description": [
+    "The function sends a switch state selective messages and waits for the response."
+  ],
+  "parameters": [
+    {
+      "name": "vendorId",
+      "type": "",
+      "description": "Vendor-ID part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* send LSS switch state selective protocol request */\n\nif (coTfsLssSendSwitchStateSelectiveSequence( 0x12345678,  0x11223344, 0x87654321, 0x1) != 1) {\n  /* message could not be sent */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

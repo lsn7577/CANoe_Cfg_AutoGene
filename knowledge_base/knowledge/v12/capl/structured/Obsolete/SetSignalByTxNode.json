@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SetSignalByTxNode",
+  "category": "Obsolete",
+  "title": "SetSignalByTxNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionSetSignalByTxNode.htm",
+  "syntax": [
+    "void SetSignalByTxNode(dbSignal aSignal, dbNode aNode, double aValue)"
+  ],
+  "description": [
+    "Sets the transmitted signal aSignal to the accompanying value.",
+    "If no suitable signal driver exists and thus no signal can be stimulated, then the verdict of the test module is set to \"fail\".",
+    "GM special (several send nodes)"
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "Signal to be set."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

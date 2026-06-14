@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "tlsGetLastErrorAsString",
+  "category": "TLSAPI",
+  "title": "tlsGetLastErrorAsString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TLSAPI/Functions/CAPLfunctiontlsGetLastErrorAsString.htm",
+  "syntax": [
+    "long tlsGetLastErrorAsString(dword socket, char buffer[], dword bufferLength );"
+  ],
+  "description": [
+    "Retrieves the error message of the last operation that failed on a specified socket."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The error message was written into the text buffer. In case of an invalid error code, the error message has the format \"Unknown error: x\" assuming the last error code x for the specified socket.",
+  "example": {
+    "description": [],
+    "code": "tlsOpen(clientHandle);\ntlsAuthenticateAsServer(clientHandle, \"Server1\");\n\nif ((tlsGetLastError(clientHandle) != 0) &&\n   (tlsGetLastError(clientHandle) != 997))\n{\n  // an error occurred\n  tlsGetLastErrorAsString(clientHandle, errorText, elcount(errorText));\n  write( \"tlsAuthenticateAsServer failed, %s (Result %d)\", errorText,tlsGetLastError(clientHandle) );\n  return;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

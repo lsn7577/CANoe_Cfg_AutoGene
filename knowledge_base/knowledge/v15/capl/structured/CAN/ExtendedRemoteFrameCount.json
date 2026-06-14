@@ -1,0 +1,123 @@
+{
+  "page_type": "function",
+  "name": "ExtendedRemoteFrameCount",
+  "category": "CAN",
+  "title": "ExtendedRemoteFrameCount",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Functions/CAPLfunctionExtendedRemoteFrameCount.htm",
+  "syntax": [
+    "long ExtendedRemoteFrameCount ()"
+  ],
+  "description": [
+    "Returns the number of extended remote CAN messages on channel x since start of measurement.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Number of extended remote CAN messages on channel x since start of measurement.",
+  "example": {
+    "description": [],
+    "code": "write (\"Number of extended remote messages on CAN1 = %d\", CAN1.ExtendedRemoteFrameCount);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.1",
+      "7.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "CAN",
+      "CAN",
+      "CAN",
+      "—",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "— (since version 8.0) (deprecated, replaced by predefined system variable sysvar::_Statistics::CANn::,for details see system variables for statistics.)",
+      "— (since version 8.0) (deprecated, replaced by predefined system variable sysvar::_Statistics::CANn::,for details see system variables for statistics.)",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

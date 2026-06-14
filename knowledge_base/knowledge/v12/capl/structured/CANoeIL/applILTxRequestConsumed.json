@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "applILTxRequestConsumed",
+  "category": "CANoeIL",
+  "title": "applILTxRequestConsumed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionApplILTxRequestConsumed.htm",
+  "syntax": [
+    "void applILTxRequestConsumed ( );"
+  ],
+  "description": [
+    "After the IL clamp 15 state (for ASR PDU IL Ignition state) has been enabled by ILActivateClamp15 (for ASR PDU IL ARILSetIgnitionState) or any wake-up-allowed signal is transmitted, then optionally this functions is called. Within this function the bus NM sleep timer should be restarted."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

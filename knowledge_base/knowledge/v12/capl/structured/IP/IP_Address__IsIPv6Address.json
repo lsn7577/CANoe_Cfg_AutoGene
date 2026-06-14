@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "IP_Address::IsIPv6Address",
+  "category": "IP",
+  "title": "IP_Address::IsIPv6Address",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionIsIPv6Address.htm",
+  "syntax": [
+    "long IP_Address::IsIPv6Address();"
+  ],
+  "description": [
+    "Checks if the current address is an IPv6 address."
+  ],
+  "parameters": [],
+  "return": "Returns 1 if the object currently represents an IPv6 address.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  DoSomething( IP_Address(192.168.1.2) );\n}\n\nvoid DoSomething( IP_Address addr )\n{\n  if (addr.IsIPv4Address())\n  {\n    // ...\n  }\n  else if (addr.IsIPv6Address())\n  {\n    // ...\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_KLine_FrameTransmissionCon",
+  "category": "KLine",
+  "title": "_KLine_FrameTransmissionCon",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineFrameTransmissionCon.htm",
+  "syntax": [
+    "_KLine_FrameTransmisionCon(BYTE data[], int64 timestamps[])"
+  ],
+  "description": [
+    "Is called when a frame has been transmitted."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Transmitted data buffer of the frame."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_KLine_FrameTransmissionCon(BYTE data[], int64 timestamps[])\n{\n   int i;\n   int64 p4Time;\n   dword systemBaudRate;\n   int64 byteLength_ns;\n   systemBaudRate  = 10400;\n   byteLength_ns = ((1.0/systemBaudRate) * 10) * 1000000000; // 10 bit times in ns\n\n   // Calculate P4 Times\n   for (i = 0; i < elcount(data)-1; ++i)\n   {\n      p4Time = (timestamps[i+1] - byteLength_ns) - timestamps[i];\n      write(\"P4 time between byte no.: %d; Value: %x and byte no.: %d; Value: %x == [%.6f s]\\n \", i,    data[i], i+1, data[i+1], p4Time/1000000000.0);\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

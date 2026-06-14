@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "OnSomeIpMessage",
+  "category": "IP",
+  "title": "OnSomeIpMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionOnSomeIpMessage.htm",
+  "syntax": [
+    "void OnSomeIpMessage( dword messageHandle );"
+  ],
+  "description": [
+    "This callback function can be implemented in the CAPL program to be notified when a SOME/IP message is received.",
+    "The function is called for all those SOME/IP messages that are received on the local Application Endpoint of the IL, see SomeIpOpenLocalApplicationEndpoint."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the received SOME/IP message."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

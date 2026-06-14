@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "a429Transmit",
+  "category": "A429",
+  "title": "a429Transmit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429Transmit.htm",
+  "syntax": [
+    "long a429Transmit (a429word myA429Word[], dword myNum);"
+  ],
+  "description": [
+    "This function triggers the transfer of myNum A429words to the network hardware interface at once. When the mode Simulated bus is used, a built-in simulation layer takes care of the ARINC word.",
+    "The following restrictions apply:",
+    "The ARINC word selectors TxCtrl and TxCycle are ignored.",
+    "Note that the ARINC word selector Gap (see a429SetGap) may be used to adjust the distance between the ARINC words. A single ARINC word is transmitted or updated with output.",
+    "Attention: Be aware that the hardware queue size is limited; therefore calling this method rapidly may cause a queue overflow."
+  ],
+  "parameters": [
+    {
+      "name": "myA429word",
+      "type": "",
+      "description": "array of ARINC words"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Transmit ARINC words on request:"
+    ],
+    "code": "variables\n{\n  a429Word * myWord[3];\n}\n\non start {\n  int i;\n  for (i = 0; i < elCount(myWord); i++) {\n    myWord[i].msgChannel = 2;\n    myWord[i].Id = 64 + i; // create different label numbers\n    // send 3 ARINC words with 38.75 and 37.5 us gap\n    a429SetGap (myWord[i],\n      a429CalcBitLength(myWord[i].msgChannel, 32 - i));\n  }\n}\n\non key 's' {\n  int i;\n  for (i = 0; i < elCount(myWord); i++) {\n    myWord[i].byte(1) += 1;\n  }\n  a429Transmit(myWord, elCount(myWord)); // update\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

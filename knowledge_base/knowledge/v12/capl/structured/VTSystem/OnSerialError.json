@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnSerialError",
+  "category": "VTSystem",
+  "title": "OnSerialError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSOnSerialError.htm",
+  "syntax": [
+    "void <OnSerialError> (dword errorFlags);"
+  ],
+  "description": [
+    "The function is called when an error has occurred in an operation on a serial port of the VT7001 module."
+  ],
+  "parameters": [
+    {
+      "name": "Note Several error bits may be set at the same time. Some error flags are up to the driver manufacturer what they mean and when they are issued.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

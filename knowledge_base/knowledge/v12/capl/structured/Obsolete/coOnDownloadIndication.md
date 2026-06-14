@@ -1,0 +1,59 @@
+# coOnDownloadIndication
+
+> Category: `Obsolete` | Type: `function`
+
+## Syntax
+
+```c
+void coOnDownloadIndication( dword index, dword subIndex, dword size, dword dataValid );
+```
+
+## Description
+
+This function is called if an SDO download is executed on an object that was created with the access type 7.
+
+If the parameter size exceeds the value 4, the data must be transmitted segmented. With a segmented transmission, this function is called twice. The first call signals the object and the number of data bytes that should be written (dataValid is 0). Then already before the transfer of the data, a length check can be made and the transfer confirmed with coODDownloadResponse or aborted with coODAbortTransfer. The second call signals that the data was transferred (dataValid is 1). Now the data can be accessed with coThisGetSigned, coThisGetUnsigned, coThisGetFloat, coThisGetData, and coThisGetSize. Then, for example, a range check can be made and confirmed with coODDownloadResponse or aborted with coODAbortTransfer.
+
+The access to the transmitted data is only possible within this function.
+
+The access to objects with the access type 7 is only possible with SDO expedited and SDO segmented transfer. The SDO block transfer is currently not supported for this object type.
+
+If the SDO access is not handled by the application (CAPL), then the node layer aborts the transfer automatically after approx. 2 seconds with a SDO abort message (0x05040000 - SDO Time out).
+
+## Return Values
+
+—
+
+## Example
+
+```c
+void coOnDownloadIndication( dword index, dword subIndex, dword size, dword dataValid ) {
+  dword errCode[1];
+  byte buffer[10];
+
+  if ( dataValid == 0 ) {
+    // check the maximum size
+    if ( size > 10 ) {
+      // size too big - abort the transfer
+      coODAbortTransfer( 0x06070012, errCode );
+    }
+    else {
+      // size ok - confirm the transfer
+      coODDownloadResponse(errCode);
+    }
+  }
+
+  else {
+    write( "Download indication. [0x%.4x,0x%.2x] with size %d", index, subIndex, size ); 
+    // copy transferred data
+    coThisGetData( buffer, elcount(buffer), errCode );
+    // confirm the transfer
+    coODDownloadResponse(errCode);
+  }
+}
+```
+
+## Availability
+
+| Up to Version |
+|---|

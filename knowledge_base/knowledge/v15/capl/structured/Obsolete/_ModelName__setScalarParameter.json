@@ -1,0 +1,77 @@
+{
+  "page_type": "notes",
+  "name": "<ModelName>_setScalarParameter",
+  "category": "Obsolete",
+  "title": "<ModelName>_setScalarParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionMODELsetScalarParameter.htm",
+  "syntax": [],
+  "description": [
+    "value",
+    "3: No model data available (internal error).",
+    "5: Wrong index: No parameter exists with the given index.",
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function The parameterization functions are deprecated. It is much easier to use the generated System variables directly. Example: @myModel::Subsystem::Frequency = 1.0;Instead ofmyModel_setParamter(index, 1.0); Some parameters might not be configurable during measurement. This depends on the implementation of a Simulink block. If the <ModelName>_set functions are used in the preStart section of a CAPL program, all parameters will be configurable and will use the new values during measurement. Parameterization requires the C-API for data exchange which is available since MATLAB R14. <ModelName> = placeholder for Simulink model"
+      ],
+      [
+        "Function Syntax",
+        "long <ModelName>_setScalarParameter( dword index, float value);"
+      ],
+      [
+        "Function",
+        "Sets a scalar model parameter to the given value."
+      ],
+      [
+        "Parameters",
+        "index Model parameter. You can find the index of the model parameter in the file <ModelName>_M.csv which is located in the destination directory of the code generation, i.e the target directory of the model DLL."
+      ],
+      [
+        "value The new value of the parameter."
+      ],
+      [
+        "Return Values",
+        "0: Success."
+      ],
+      [
+        "3: No model data available (internal error)."
+      ],
+      [
+        "5: Wrong index: No parameter exists with the given index."
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "HIL / Simulation / Analysis",
+        "Offline / Synchronized"
+      ],
+      [
+        "7.5",
+        "MATLAB Integration",
+        "•",
+        "—"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

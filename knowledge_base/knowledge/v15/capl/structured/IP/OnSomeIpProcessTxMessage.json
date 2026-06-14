@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "OnSomeIpProcessTxMessage",
+  "category": "IP",
+  "title": "OnSomeIpProcessTxMessage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionOnSomeIpProcessTxMessage.htm",
+  "syntax": [
+    "long OnSomeIpProcessTxMessage(dword messageHandle, long txChannel);"
+  ],
+  "description": [
+    "This callback function is called whenever the IL wants to send a SOME/IP message.",
+    "The return value of this callback determines if the message should be send or if it should be blocked. Furthermore the message may be modified before the IL sends the message."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the to be sent message that triggered the callback."
+    },
+    {
+      "name": "txChannel",
+      "type": "",
+      "description": "The channel of the application endpoint that will be used to send the message."
+    }
+  ],
+  "return": "The message will be send if the callback returns 1.Otherwise the message has been filtered by the callback.",
+  "example": {
+    "description": [],
+    "code": "long OnSomeIpProcessTxMessage(dword messageHandle, long txChannel)\n{\n  DWORD msgId = 0;\n  LONG errorCode = 0;\n  LONG errorOccured = 0;\n  // get data from SOME/IP message\n  if((msgId = SomeIpGetMessageId(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = SomeIpGetLastError()) != 0)\n    {\n      write(\"SOME/IP IL error occured: Error code: %d\", errorCode);\n      errorOccured = 1;\n    } // if\n  } // if\n  if(errorOccured == 0)\n  {\n    write(\"SOME/IP message with Message ID 0x%08x is send\",msgId);\n    return 1;\n  } // if\n  else\n  {\n    return 0;\n  } // else\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP2",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

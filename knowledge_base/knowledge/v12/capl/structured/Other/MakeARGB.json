@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MakeARGB",
+  "category": "Other",
+  "title": "MakeARGB",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMakeARGB.htm",
+  "syntax": [
+    "long MakeARGB(long Alpha, long Red, long Green, long Blue);"
+  ],
+  "description": [
+    "Calculates the color value from the alpha value and the three primary color components."
+  ],
+  "parameters": [
+    {
+      "name": "Alpha",
+      "type": "",
+      "description": "The transparency of the color (0 - 255)"
+    }
+  ],
+  "return": "Color value (type: dword)",
+  "example": {
+    "description": [],
+    "code": "MakeARGB(255, 0, 255, 149);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

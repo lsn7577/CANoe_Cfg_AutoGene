@@ -1,0 +1,232 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMGetFunctionState",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMGetFunctionState",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimGetFunctionState.htm",
+  "syntax": [
+    "long Iso11783IL_TIMGetFunctionState(dword functionID, dword& currentState); // form 1",
+    "long Iso11783IL_TIMGetFunctionState(dword functionID, dword& currentState, dword& counterpartAddress); // form 2",
+    "long Iso11783IL_TIMGetFunctionState(dbNode participant, dword functionID, dword& currentState); // form 3",
+    "long Iso11783IL_TIMGetFunctionState(dbNode participant, dword functionID, dword& currentState, dword& counterpartAddress); // form 4"
+  ],
+  "description": [
+    "Returns the current state of a TIM function.",
+    "If this function is called for a TIM client the function returns state 0 (Automation unavailable) if the TIM function is not assigned by the client."
+  ],
+  "parameters": [
+    {
+      "name": "Function ID",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1-32 (1h-20h)",
+      "type": "",
+      "description": "Auxiliary Value 1 – 32"
+    },
+    {
+      "name": "64 (40h)",
+      "type": "",
+      "description": "Front PTO"
+    },
+    {
+      "name": "65 (41h)",
+      "type": "",
+      "description": "Rear PTO"
+    },
+    {
+      "name": "66 (42h)",
+      "type": "",
+      "description": "Front hitch"
+    },
+    {
+      "name": "67 (43h)",
+      "type": "",
+      "description": "Rear hitch"
+    },
+    {
+      "name": "68 (44h)",
+      "type": "",
+      "description": "Vehicle speed"
+    },
+    {
+      "name": "70 (46h)",
+      "type": "",
+      "description": "External guidance"
+    },
+    {
+      "name": "State",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Automation unavailable"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Automation not ready"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Automation ready to enable"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Automation enabled"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Automation pending"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Active, not limited"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "Active, limited high"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "Active, limited low"
+    },
+    {
+      "name": "14",
+      "type": "",
+      "description": "Non-recoverable fault"
+    },
+    {
+      "name": "15",
+      "type": "",
+      "description": "Not available (parameter not supported or not configured for TIM)"
+    },
+    {
+      "name": "counterpartAddress",
+      "type": "",
+      "description": "Returns the address of the TIM counterpart."
+    },
+    {
+      "name": "participant",
+      "type": "",
+      "description": "TIM participant (TIM server or TIM client)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "13.0",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 3, 4 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1, 2)",
+      "✔ (form 1, 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 3, 4)",
+      "✔ (form 3, 4)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 3, 4)",
+      "✔ (form 3, 4)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

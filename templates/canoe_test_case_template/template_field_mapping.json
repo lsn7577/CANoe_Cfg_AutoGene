@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.2.0",
+  "template": {
+    "path": "F:/Canoe_Gene/templates/canoe_test_case_template/CANoe自动化测试用例模板.xlsx",
+    "project_sheet": "工程参数配置",
+    "test_case_sheet": "测试用例"
+  },
+  "project_config": {
+    "basic_table_headers": ["配置项", "填写值", "是否必填", "填写说明"],
+    "channel_table_headers": [
+      "通道ID",
+      "启用",
+      "总线类型",
+      "CANoe通道名",
+      "仲裁波特率",
+      "数据波特率(CANFD)",
+      "采样点%",
+      "数据采样点%",
+      "DBC路径",
+      "A2L路径",
+      "CDD路径",
+      "节点/网络名",
+      "诊断目标",
+      "备注"
+    ],
+    "strategy_table_headers": ["策略项", "填写值", "是否必填", "填写说明"]
+  },
+  "test_case_columns": [
+    "用例ID",
+    "需求ID",
+    "功能点",
+    "用例名称",
+    "优先级",
+    "自动化标记",
+    "前置条件",
+    "步骤序号",
+    "操作类型",
+    "操作通道",
+    "操作对象",
+    "操作值/参数",
+    "操作周期ms",
+    "操作持续ms",
+    "条件类型",
+    "条件对象",
+    "条件比较符",
+    "条件期望值",
+    "条件超时ms",
+    "结果类型",
+    "结果对象",
+    "结果比较符",
+    "结果期望值",
+    "结果观察窗口ms",
+    "后置处理",
+    "备注",
+    "填写检查"
+  ],
+  "operation_types": [
+    "CAN报文发送",
+    "CAN报文停发",
+    "CAN报文周期调整",
+    "CAN信号赋值",
+    "XCP标定量赋值",
+    "诊断服务请求",
+    "等待手动操作后确认",
+    "无操作"
+  ],
+  "condition_types": [
+    "接收CAN报文发送",
+    "接收CAN报文超时",
+    "CAN信号变化",
+    "观测量变化",
+    "诊断服务响应",
+    "等待手动操作后确认",
+    "等待固定时间",
+    "无条件"
+  ],
+  "result_types": [
+    "接收CAN报文发送",
+    "接收CAN报文超时",
+    "CAN信号变化",
+    "观测量变化",
+    "诊断服务响应",
+    "无结果"
+  ],
+  "compare_operator_mapping": {
+    "等于": "==",
+    "不等于": "!=",
+    "大于": ">",
+    "大于等于": ">=",
+    "小于": "<",
+    "小于等于": "<=",
+    "范围内": "in_range",
+    "包含": "contains",
+    "存在": "exists",
+    "超时": "timeout"
+  },
+  "priority_values": ["P0", "P1", "P2", "P3"],
+  "automation_flags": ["是", "否", "半自动"],
+  "yes_no_values": ["是", "否"],
+  "strategy_values": ["是", "否", "按需"],
+  "canoe_versions": ["v15", "v12", "v17", "v18"],
+  "report_formats": ["HTML", "XML", "TXT", "HTML+XML"],
+  "bus_types": ["CAN", "CANFD", "LIN", "FlexRay", "Ethernet"]
+}
+

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "serviceProviderRef::ProvideService",
+  "category": "CommunicationObjects",
+  "title": "serviceProviderRef::ProvideService",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionServiceProviderRefProvideService.htm",
+  "syntax": [
+    "int serviceProviderRef::ProvideService()"
+  ],
+  "description": [
+    "Provides the service at the endpoint. This means that the binding will announce the service either by broadcast or at a central registry (depending on the binding) and that connection requests from consumers will be accepted."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "MirrorAdjustment.providerSide[LeftMirror].ProvideService();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

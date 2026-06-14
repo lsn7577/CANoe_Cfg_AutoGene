@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coOnLssEvent",
+  "category": "Obsolete",
+  "title": "coOnLssEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOnLssEvent.htm",
+  "syntax": [
+    "void coOnLssEvent( dword evType, dword param, dword param2 );"
+  ],
+  "description": [
+    "This function is called if the response of a LSS command was received. This can be triggered by one of the LSS functions. If during the execution an error occurs, the event function coOnError is called instead of these."
+  ],
+  "parameters": [
+    {
+      "name": "evType",
+      "type": "",
+      "description": "LSS event type"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnLssEvent( dword evType, dword param, dword param2 ){\n  write( \"LSS event occurred 0x%x\", evType );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

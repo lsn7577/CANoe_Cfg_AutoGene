@@ -1,0 +1,76 @@
+{
+  "page_type": "notes",
+  "name": "linGetByteEndTime",
+  "category": "Obsolete",
+  "title": "linGetByteEndTime",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionLINGetByteEndTime.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "dword",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by linFrame selectors, linCsError selectors and linReceiveError selectors."
+      ],
+      [
+        "Function Syntax",
+        "dword linGetByteEndTime(linFrame busEvent, long index)"
+      ],
+      [
+        "dword linGetByteEndTime(linCSError busEvent, long index)"
+      ],
+      [
+        "dword linGetByteEndTime(linReceiveError busEvent, long index)"
+      ],
+      [
+        "Function",
+        "This function can be used to retrieve a data byte time stamp of a certain LIN bus event. The resulting time stamp is a time elapsed since measurement start [in units of 10 µsec]. Note The time returned by this function corresponds to the end of the data byte field as detected by an UART. For the XL-hardware, this includes 9/16 of the stop bit. To calculate the theoretical end of data byte field including the stop bit, 7/16 of a bit time should be added. Similarly to calculate the start of the data byte field, 9 and 9/16 bit times should be subtracted.",
+        "Note The time returned by this function corresponds to the end of the data byte field as detected by an UART. For the XL-hardware, this includes 9/16 of the stop bit. To calculate the theoretical end of data byte field including the stop bit, 7/16 of a bit time should be added. Similarly to calculate the start of the data byte field, 9 and 9/16 bit times should be subtracted."
+      ],
+      [
+        "Note The time returned by this function corresponds to the end of the data byte field as detected by an UART. For the XL-hardware, this includes 9/16 of the stop bit. To calculate the theoretical end of data byte field including the stop bit, 7/16 of a bit time should be added. Similarly to calculate the start of the data byte field, 9 and 9/16 bit times should be subtracted."
+      ],
+      [
+        "Parameters",
+        "busEvent LIN bus event of type frame, checksum error or receive error."
+      ],
+      [
+        "index Data byte index. Value range: 1..N, where N = data bytes count of the current bus event"
+      ],
+      [
+        "Return Values",
+        "Returns the retrieved time stamp [in units of 10 µsec] or 0 on failure."
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "5.1",
+        "LIN",
+        "•",
+        "•"
+      ],
+      [
+        "Example Retrieve time stamps of each data byte on analyzing a receive error event on linReceiveError{long byteIndex;dword byteTimestamp;if (0 == this.lin_ShortError) // .DLC selector only valid when .lin_ShortError is not set{for (byteIndex=1; byteIndex <= this.DLC; ++byteIndex) {byteTimestamp = linGetByteEndTime(this, byteIndex);...}}}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

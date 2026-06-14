@@ -1,0 +1,42 @@
+# frGwBypassStatic
+
+> Category: `FlexRay` | Type: `function`
+
+## Syntax
+
+```c
+long frGwBypassStatic (long bypass, long channel, long slotId, long baseCycle, long cycleRepetition); // form 1
+long frGwBypassStatic (long bypass, long channel, long slotId, long baseCycle, long cycleRepetition, long channelMask); // form 2
+```
+
+## Description
+
+Activates/deactivates the automatic routing for the given slot. The function can be used during measurement.
+
+Form 2 can only be used FlexRay with dual channel gateway (AB-AB-Gateway) mode, see FlexRay gateway.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| bypass | 0 = Routing deactivated1 = Routing activated |
+| channel | Output channel of the gateway. |
+| Slotid | Slot number |
+| baseCycle | Base cycle |
+| cycleRepetition | Repetition factor |
+| channelMask | Channel mask Values: 1: Channel A 2: Channel B 3: Channel A+B |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | 8.2: form 1 11.0 SP2: form 2 | 8.0: form 1 11.0 SP2: form 2 | 13.0 | — | — | 1.0: form 1 3.0 SP2: form 2 |
+| Restricted To | FlexRay | FlexRay | FlexRay | — | — | FlexRay |
+| CANalyzer Measurement Setup (Transmit Branch) | ✔ | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | ✔ | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | ✔ | ✔ | ✔ | — | — | N/A |

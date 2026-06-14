@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "canActivateTxSelfAck",
+  "category": "CAN",
+  "title": "canActivateTxSelfAck",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Functions/CAPLfunctionCanActivateTxSelfAck.htm",
+  "syntax": [
+    "int canActivateTxSelfAck (int channel, int activate);"
+  ],
+  "description": [
+    "Activates/deactivates the transmit self ack feature in CANoe for the defined channel."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "CAN channel"
+    },
+    {
+      "name": "activate",
+      "type": "",
+      "description": "0 = deactivate 1 = activate"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key a'\n{\n  int channel\n  int activate;\n  // Activate TX Self-ACK for CAN channel 1\n  channel = 1;\n  activate = 1;\n  canActivateTXSelfAck(channel, activate);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "9.0",
+      "9.0",
+      "13.0",
+      "—",
+      "—",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "CAN",
+      "CAN",
+      "CAN",
+      "—",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

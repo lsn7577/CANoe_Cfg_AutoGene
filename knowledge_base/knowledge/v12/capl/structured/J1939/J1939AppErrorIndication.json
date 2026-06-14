@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939AppErrorIndication",
+  "category": "J1939",
+  "title": "J1939AppErrorIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939AppErrorIndication.htm",
+  "syntax": [
+    "dword J1939AppErrorIndication( long ecuHandle, long errorClass, long errorNumber, long addCode );"
+  ],
+  "description": [
+    "Indicates that errors have occurred during a transfer or else during the initialization of ECUs (for example timeout during the transport protocol). If an Address Claiming procedure has failed, that will also be reported by means of this function."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword J1939AppErrorIndication( LONG ecuHdl, LONG errClass, LONG errNum, LONG addCode )\n{\n  /* user code */\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

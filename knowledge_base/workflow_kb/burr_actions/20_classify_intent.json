@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1.0",
+  "id": "classify_intent",
+  "phase": "planning",
+  "description": "Map test_case_ir to workflow packs, scenarios, artifact needs, and retrieval profiles.",
+  "reads": [
+    "test_case_ir"
+  ],
+  "writes": [
+    "intent_profile",
+    "retrieval_plan"
+  ],
+  "knowledge_inputs": [
+    {
+      "kind": "agent_kb",
+      "path": "agent_kb/scenarios.json",
+      "required": true
+    }
+  ],
+  "pack_inputs": [
+    "packs/*/pack.json",
+    "packs/*/scenarios.json",
+    "retrieval_profiles/default.json"
+  ],
+  "gates": [
+    "enabled_pack_exists",
+    "retrieval_plan_has_version",
+    "retrieval_plan_has_minimum_queries"
+  ],
+  "transitions": [
+    {
+      "to": "retrieve_evidence",
+      "condition": "intent_profile.status == 'classified'"
+    }
+  ],
+  "extension_notes": [
+    "New domains should add scenario files, not hard-coded classifier branches.",
+    "A graph profile may skip packs that are not relevant to the project."
+  ]
+}
+

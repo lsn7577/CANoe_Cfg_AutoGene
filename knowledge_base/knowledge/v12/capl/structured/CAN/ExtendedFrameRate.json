@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "ExtendedFrameRate",
+  "category": "CAN",
+  "title": "ExtendedFrameRate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionExtendedFrameRate.htm",
+  "syntax": [
+    "long ExtendedFrameRate ()",
+    "CANx.ExtendedFrameRate"
+  ],
+  "description": [
+    "Returns the current rate of extended CAN messages on channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Current rate of extended CAN messages on channel x in messages per second.",
+  "example": {
+    "description": [],
+    "code": "write (\"Rate of extended frames on CAN1 = %d\", \r\n CAN1.ExtendedFrameRate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

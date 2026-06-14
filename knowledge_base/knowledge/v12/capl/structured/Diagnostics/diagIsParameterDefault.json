@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagIsParameterDefault",
+  "category": "Diagnostics",
+  "title": "diagIsParameterDefault",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagIsParameterDefault.htm",
+  "syntax": [
+    "long diagIsParameterDefault (diagResponse obj, char parameterName[])"
+  ],
+  "description": [
+    "Returns <> 0 if the parameter in the object has its default value."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "1 for true or error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

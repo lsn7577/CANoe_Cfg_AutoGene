@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetEVSENotification",
+  "category": "SmartCharging",
+  "title": "SCC_SetEVSENotification",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetEVSENotification.htm",
+  "syntax": [
+    "long SCC_SetEVSENotification ( char EVSENotification[] )"
+  ],
+  "description": [
+    "Sets the EVSE notification enum."
+  ],
+  "parameters": [
+    {
+      "name": "EVSENotification",
+      "type": "",
+      "description": "String buffer that is written to the EVSE notification. The string should be a valid enum value according to the schema."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

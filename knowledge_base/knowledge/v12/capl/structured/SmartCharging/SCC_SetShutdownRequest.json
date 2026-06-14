@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetShutdownRequest",
+  "category": "SmartCharging",
+  "title": "SCC_SetShutdownRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetShutdownRequest.htm",
+  "syntax": [
+    "long SCC_SetShutdownRequest ( long ShutdownRequest )"
+  ],
+  "description": [
+    "Demands the stop of the charging session from the vehicle, the appropriate mechanism for the active schema version, or withdraws this request.",
+    "You can still initiate a shutdown using the specific parameter of the target schema version instead of using this convenience function."
+  ],
+  "parameters": [
+    {
+      "name": "ShutdownRequest",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

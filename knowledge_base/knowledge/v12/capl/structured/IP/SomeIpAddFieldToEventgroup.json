@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "SomeIpAddFieldToEventgroup",
+  "category": "IP",
+  "title": "SomeIpAddFieldToEventgroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpAddFieldToEventgroup.htm",
+  "syntax": [
+    "long SomeIpAddFieldToEventgroup( dword pevgHandle, dword pfHandle );"
+  ],
+  "description": [
+    "This function assigns a Field which was created by SomeIpAddField to an Event Group which was created by SomeIpAddProvidedEventGroup.",
+    "The Field can be removed from the Event Group with SomeIpRemoveFieldFromEventGroup."
+  ],
+  "parameters": [
+    {
+      "name": "pevgHandle",
+      "type": "",
+      "description": "Handle of the Event Group that should be assigned to an Event (see SomeIpAddProvidedEventGroup)."
+    }
+  ],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the utilized field is contained in the FIBEX database that is assigned to the CANoe configuration. The field has the Notification ID 30, the Getter ID 31, and the Setter ID 32. The data type of the field is a standard data type (for example, UINT8)."
+    ],
+    "code": "variables\n{\n  DWORD gPfld_A; // provided field handle\n}\n\nvoid Initialize()\n{\n  CONST DWORD FieldNotificationID = 30;\n  CONST DWORD FieldGetterID       = 31;\n  CONST DWORD FieldSetterID       = 32;\n\n  DWORD aep;   // Application Endpoint handle\n  DWORD psi;   // provided service handle\n  DWORD peg;   // provided Eventgroup handle\n\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = SomeIpCreateProvidedServiceInstance(aep,12,1);\n\n  // create Eventgroup\n  peg = SomeIpAddProvidedEventGroup(psi,300);\n\n  // create field and add field to Eventgroup\n  gPfld_A = SomeIpAddField(psi, FieldNotificationID, FieldGetterID, FieldSetterID);\n  SomeIpAddFieldToEventgroup(peg,gPfld_A);\n}\n\non key 'n'\n{\n  // set value of field content (field has a common data type so no value path is needed)\n  SomeIpSetValueDWord(gPfld_A,\"\",100);\n\n  // commit field content ... notification is sent\n  SomeIpCommitField(gPfld_A);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

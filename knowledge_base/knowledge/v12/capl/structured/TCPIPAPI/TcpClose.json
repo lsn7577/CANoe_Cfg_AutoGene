@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TcpClose",
+  "category": "TCPIPAPI",
+  "title": "TcpClose",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionTCPClose.htm",
+  "syntax": [
+    "long TcpClose( dword socket);"
+  ],
+  "description": [
+    "The function closes the TCP socket. Upon successful completion the passed socket is no longer valid.",
+    "In contrast to TcpShutdown the connection in each direction is closed and the resources for the socket in the stack are released.",
+    "As soon as the socket has been successfully closed, an OnTcpClose event is initiated once on the remote station."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket to be closed."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "void disconnectSocket( dword socket )\n{\n  if (socket != -1)\n  {\n    TcpClose(socket);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

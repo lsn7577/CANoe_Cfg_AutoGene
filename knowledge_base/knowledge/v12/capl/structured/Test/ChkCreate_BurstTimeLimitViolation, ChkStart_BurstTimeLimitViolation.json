@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_BurstTimeLimitViolation, ChkStart_BurstTimeLimitViolation",
+  "category": "Test",
+  "title": "ChkCreate_BurstTimeLimitViolation, ChkStart_BurstTimeLimitViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateBurstTimeLimitViolation.htm",
+  "syntax": [
+    "dword ChkCreate_BurstTimeLimitViolation (char[] aBusName, duration aMaxTime);"
+  ],
+  "description": [
+    "Checks the maximum burst time on a bus."
+  ],
+  "parameters": [
+    {
+      "name": "aBusName",
+      "type": "",
+      "description": "Name of the bus."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// observes the maximum burst time 3 ms\ncheckId = ChkStart_BurstTimeLimitViolation (\"CAN\", 3);\nTestAddCondition(checkId);\n\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

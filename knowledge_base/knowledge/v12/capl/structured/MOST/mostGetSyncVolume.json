@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostGetSyncVolume",
+  "category": "MOST",
+  "title": "mostGetSyncVolume",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGetSyncVolume.htm",
+  "syntax": [
+    "long mostGetSyncVolume(long channel, long device)"
+  ],
+  "description": [
+    "Returns the volume of the audio input or output."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "0...255: Volume (255 = 100%)",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

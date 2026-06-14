@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TCIL_GetLastErrorText",
+  "category": "ISO11783",
+  "title": "TCIL_GetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILGetLastErrorText.htm",
+  "syntax": [
+    "long TCIL_GetLastErrorText( dword bufferSize, char buffer[] ); // form 1"
+  ],
+  "description": [
+    "Returns the result of the last TC IL function as string.",
+    "Form 2 applicable in test module / test unit only."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

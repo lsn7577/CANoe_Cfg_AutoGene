@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "J1939TestNmtRefresh",
+  "category": "J1939",
+  "title": "J1939TestNmtRefresh",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestNmtRefresh.htm",
+  "syntax": [
+    "long J1939TestNmtRefresh( dword waitTime );"
+  ],
+  "description": [
+    "Sends a ‘Request for Address Claim’ from Null Address (0xFE) and updates the NMT table. The function waits until the specified time is elapsed."
+  ],
+  "parameters": [
+    {
+      "name": "waitTime",
+      "type": "",
+      "description": "wait until this time elapses, in milliseconds"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "char deviceName[8];\nJ1939TestNmtRefresh( 250 );\nJ1939TestNmtQueryDeviceName( 1, deviceName );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.1",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

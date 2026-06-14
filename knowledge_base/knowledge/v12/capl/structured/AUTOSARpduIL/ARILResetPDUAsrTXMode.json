@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILResetPDUAsrTXMode",
+  "category": "AUTOSARpduIL",
+  "title": "ARILResetPDUAsrTXMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILResetPDUAsrTXMode.htm",
+  "syntax": [
+    "long ARILResetPDUAsrTXMode (dbMessage);"
+  ],
+  "description": [
+    "Resets the current valid transmission mode to the condition that is defined by or-ing all data filters of all signals."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventStatus",
+  "category": "Test",
+  "title": "ChkQuery_EventStatus",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkQueryEventStatus.htm",
+  "syntax": [
+    "long ChkQuery_EventStatus (dword aCheckId, char aBuffer[], dword aBufferLength);"
+  ],
+  "description": [
+    "Converts the status into a string that can be printed. Returns the number of characters written (<= length)."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "—"
+    },
+    {
+      "name": "aBuffer",
+      "type": "",
+      "description": "—"
+    },
+    {
+      "name": "aBufferLength",
+      "type": "",
+      "description": "—"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long result;\ndword checkId;\nchar eventStatus[256];\ncheckId = ChkStart_MsgRelCycleTimeViolation(VehicleMotion, 0.9, 1.1);\n// ... execute test sequence\nresult = ChkQuery_EventStatus(checkId, eventStatus, 256);\nWrite(\"result = %d\", result);\nWrite(\"Event Status = %s\", eventStatus);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0 7.0 SP5: method",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

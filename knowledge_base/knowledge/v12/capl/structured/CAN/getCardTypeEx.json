@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getCardTypeEx",
+  "category": "CAN",
+  "title": "getCardTypeEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionGetCardTypeEx.htm",
+  "syntax": [
+    "int getCardTypeEx(int can);"
+  ],
+  "description": [
+    "Determines the card type of CAN channel. Is needed e.g. to program the BTR / OCR values."
+  ],
+  "parameters": [
+    {
+      "name": "CAN",
+      "type": "",
+      "description": "Channel number"
+    }
+  ],
+  "return": "Type of board as one of the following values:\n-1\nUnknown or Invalid hardware type\n3\nDEMO - Demo driver\n25\nVector PCMCIA CANcardXL\n27\nVector USB CANcaseXL\n28\nVector CANcaseXLLog (USB + memory)\n29\nVector CANboardXL PCI\n30\nVector CPCI CANboardXL Compact\n31\nVector CANboardXL PCI express\n33\nVector VN7600\n34\nVector ExpressCard CANcardXLe\n36\nVector VN3300\n37\nVector VN3600\n38\nVector VN2610\n40\nVector VN8950\n41\nRemote (IP) Device\n43\nVector VN8910\n46\nVector VT6104\n47\nVector VN8970\n48\nVector VN2640\n49\nVector VN1610\n50\nVector VN1611\n51\nVector VN1630\n52\nVector VN1640\n53\nVector VN5610\n54\nVector VN7570\n55\nVector IP Server\n56\nVector VT6204\n61\nVector VN7572\n62\nVector VN8972\n63\nVector VN7610\n66\nVector VN8810\n67\nVector VN8810 Integrated Network Interface\n71\nVector VN5640\n75\nVector VX1131\n76\nVector VN5610A\nAdditional types may be added!",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

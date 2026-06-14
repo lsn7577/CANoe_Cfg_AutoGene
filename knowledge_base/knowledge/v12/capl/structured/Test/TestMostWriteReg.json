@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestMostWriteReg",
+  "category": "Test",
+  "title": "TestMostWriteReg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestMostWriteReg.htm",
+  "syntax": [
+    "long TestMostWriteReg(long aChannel, long aChip, dword aOffset, dword aRegDataLen, BYTE aRegData[], unsigned long aTimeout);"
+  ],
+  "description": [
+    "Writes one or several chip registers in the MOST hardware and waits for the result. If the operational is successful, the written register values can be read out using TestMostRegGetData."
+  ],
+  "parameters": [
+    {
+      "name": "aChannel",
+      "type": "",
+      "description": "Channel connected to the hardware."
+    }
+  ],
+  "return": "-2: Resume based on Constraint Violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

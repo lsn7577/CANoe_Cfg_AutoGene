@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "C2xConfigureChannel",
+  "category": "Car2x",
+  "title": "C2xConfigureChannel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xConfigureChannel.htm",
+  "syntax": [
+    "long C2xConfigureChannel(long appChannel, long radioChannel, long txPower, long maxTxPower, long layout, long dataRate, long bandWidth, long txAntenna, long rxAntenna)"
+  ],
+  "description": [
+    "Configure a hardware channel.",
+    "This method allows to redefine some or all channel parameters on the fly, i.e. for all following activities on a specific VN4610 channel those new settings will be used.",
+    "In fact the method overwrites the corresponding internal configuration settings provided by the setup-dialog.",
+    "Notes:"
+  ],
+  "parameters": [
+    {
+      "name": "appChannel",
+      "type": "",
+      "description": "Channel to apply settings to (1 .. n), n = available hardware channels (1=Ath1, 2=Ath2,…)”"
+    }
+  ],
+  "return": "0 or error code according to the following.",
+  "example": {
+    "description": [],
+    "code": "void configureChannel()\n{\n  word channelTable[7] = { 172,174,176,178,180,182,184};\n  word dataRates[8] = {3,4,6,9,12,18,24,27};\n  word currentChannelIndex = 0;\n  word currentRateIndex = 0;\n  dword errFlag = 0;\n  word txPower = 0;\n\n  // loop over all radio channels and data rates per timer callback\n  // and configure 2 channels for Tx and Rx\n\n  Write(\"C2xConfigureChannels radioCh:%d, txPow:%d, dataRate:%d, bandWidth:%d\", channelTable[currentChannelIndex], txPower, dataRates[currentRateIndex], 10);\n  errFlag = C2xConfigureChannel(1, channelTable[currentChannelIndex], txPower, 25, 1,\n    dataRates[currentRateIndex], 10, 1, 1);\n  if (errFlag != 0) Write(\"C2xConfigureChannel #1 failed with err=%d\", errFlag);\n  errFlag = C2xConfigureChannel(2, channelTable[currentChannelIndex], txPower, 25, 1,\n    dataRates[currentRateIndex], 10, 2, 2);\n  if (errFlag != 0) Write(\"C2xConfigureChannel #2 failed with err=%d\", errFlag);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

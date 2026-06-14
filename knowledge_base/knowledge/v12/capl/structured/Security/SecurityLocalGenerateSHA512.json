@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalGenerateSHA512",
+  "category": "Security",
+  "title": "SecurityLocalGenerateSHA512",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityLocalGenerateSHA512.htm",
+  "syntax": [
+    "long SecurityLocalGenerateSHA512(byte data[], dword dataLength, byte sha512[], dword sha512Length)"
+  ],
+  "description": [
+    "Generates a SHA512 hash for the given data and key. The generated hash is a SipHash."
+  ],
+  "parameters": [
+    {
+      "name": "byte data[]",
+      "type": "",
+      "description": "The data to encrypt."
+    }
+  ],
+  "return": "A Value of 1 means that the action was successful. A value less than or equal to 0 means error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

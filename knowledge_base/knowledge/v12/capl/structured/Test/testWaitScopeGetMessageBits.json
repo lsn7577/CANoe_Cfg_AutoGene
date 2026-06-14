@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetMessageBits",
+  "category": "Test",
+  "title": "testWaitScopeGetMessageBits",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopeGetMessageBits.htm",
+  "syntax": [
+    "long testWaitScopeGetMessageBits(message msg, ScopeAnalysisSetup setup, dword arraySize, scopeBitData signalData1[], scopeBitData signalData2[], scopeBitData signalData3[]);"
+  ],
+  "description": [
+    "A CAN message stored in the scope buffer will be parsed. For each bit of the message the signal voltage levels, the bit length, and the bit type will be returned."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "The message the bits are fetched."
+    }
+  ],
+  "return": "1 = success",
+  "example": {
+    "description": [],
+    "code": "dword arraySize = 200;\nmessage 0x111 msg1;\nlong res;\nlong evtNo;\nScopeBitData data1[200];\nScopeBitData data2[200];\nScopeBitData data3[200];\nScopeAnalysisSetup setupAnalyse;\n\n//------------------------------\n//Connect to scope\n//------------------------------\nres = scopeConnect();\nres = testWaitForScopeEvent(eScopeConnected, 8000);\n\nif(res > 0)\n{\n  testStep(\"Wait For Event\", \"Waiting for Message 0x111\");\n  testJoinMessageEvent(msg1.id);\n  evtNo = TestWaitForAnyJoinedEvent(2000);\n  res = TestGetWaitEventMsgData(msg1);\n\n  if(res != 0)\n  {\n    testStepFail(\"Wait For Event\", \"No event received\");\n    res = scopeDisconnect();\n    res =testWaitForScopeEvent(eScopeDisconnected, 8000);\n    return;\n  }\n  else\n  {\n    testStepPass(\"Wait For Event\", \"Event received\");\n  }\n\nres = scopeTriggerNow();\nif(res > 0)\n  {\n    res =(testWaitForScopeEvent(eScopeTriggered, 5000));\n\n    if(res > 0)\n    {\n      setupAnalyse.samplePoint = 70;\n      res = testWaitScopeGetMessageBits(msg1, setupAnalyse, arraySize, data1, data2, data3);\n\n      if(res > 0 || res == -105)\n      {\n        int i;\n        for(i = 0; i < arraySize;++i)\n          {\n            write(\"CANH: StarTime%.6f s, Type: %d, TypeExt: %d, BitLength: %d, Voltage: %.6f, BitValue: %d\", data1[i].StartTime /1000000000., data1[i].type, data1[i].typeEx, data1[i].bitLength, data1[i].signalVoltage,data1[i].bitValue);\n            write(\"CANL: StarTime%.6f s, Type: %d, TypeExt: %d, BitLength: %d, Voltage: %.6f, BitValue: %d\", data2[i].StartTime /1000000000., data2[i].type, data2[i].typeEx, data2[i].bitLength, data2[i].signalVoltage,data2[i].bitValue);\n            write(\"CANDiff: StarTime%.6f s, Type: %d, TypeExt: %d, BitLength: %d, Voltage: %.6f, BitValue: %d\", data3[i].StartTime /1000000000., data3[i].type, data3[i].typeEx, data3[i].bitLength, data3[i].signalVoltage,data3[i].bitValue);\n            if(i > 5) //write only first 5 results\n            break; }\n        }\n      }\n    }\n  }\n}\nres = scopeDisconnect();\nres =testWaitForScopeEvent(eScopeDisconnected, 8000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

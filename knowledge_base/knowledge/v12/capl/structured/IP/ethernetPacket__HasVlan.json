@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::HasVlan",
+  "category": "IP",
+  "title": "ethernetPacket::HasVlan",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionHasVlan.htm",
+  "syntax": [
+    "long ethernetPacket.HasVlan(); // form 1"
+  ],
+  "description": [
+    "Returns number of VLAN tags."
+  ],
+  "parameters": [],
+  "return": "Number of VLAN tags",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if (this.hasVlan())\n  {\n    word vlanId;\n\n    vlanId = this.GetVlanId();\n\n    write( \"Received Ethernet packet with VLAN ID %d\", vlanId );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

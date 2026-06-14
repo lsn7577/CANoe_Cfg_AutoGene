@@ -1,0 +1,145 @@
+{
+  "page_type": "function",
+  "name": "OnAREthSDClientEventGroupStatusChanged",
+  "category": "IP",
+  "title": "OnAREthSDClientEventGroupStatusChanged",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthSDClientEventGroupStatusChanged.htm",
+  "syntax": [
+    "void OnAREthSDClientEventGroupStatusChanged( dword serviceId, dword instanceId, dword eventGroupId, long status );"
+  ],
+  "description": [
+    "This callback function can be implemented in the CAPL program if an Event Consumer (Client) wants to be notified of status changes to Event Groups.",
+    "The function is called whenever the status of an Event Group changes.",
+    "The callback function can only be called for status changes related to an Event Group that is consumed by this node."
+  ],
+  "parameters": [
+    {
+      "name": "serviceId",
+      "type": "",
+      "description": "ID of the service whose status has changed."
+    },
+    {
+      "name": "instanceId",
+      "type": "",
+      "description": "Instance ID"
+    },
+    {
+      "name": "eventGroupId",
+      "type": "",
+      "description": "ID of the Event Group"
+    },
+    {
+      "name": "status",
+      "type": "",
+      "description": "0: not subscribed 1: subscribed"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnAREthSDClientEventGroupStatusChanged( dword serviceId, dword instanceId, dword eventGroupId, long status)\n{\n  char buffer[100];\n  if(status == 0)\n  {\n    snprintf(buffer,elcount(buffer),\"not subscribed\");\n  }\n  else if(status == 1)\n  {\n    snprintf(buffer,elcount(buffer),\"subscribed\");\n  }\n  else\n  {\n    snprintf(buffer,elcount(buffer),\"Undefined status\");\n  }\n  write(\"Event group (ID %d), of service %d (instance %d): %s\",eventGroupId,serviceId,instanceId,buffer);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

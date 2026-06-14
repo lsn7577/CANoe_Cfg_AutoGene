@@ -1,0 +1,26 @@
+# ILSetSignalRaw
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+ILSetSignal | ILSetSignalRawField
+
+| Deprecated Function This function is deprecated and has been replaced by SetSignal or $ operator.The function does not work with multiplex messages. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long ILSetSignalRaw (dbSignal sig, double value) |  |  |  |
+| Function | Sets the transferred signal to the provided raw value. |  |  |  |
+| Parameters | sig Signal that should be set. Specify as follows ’Message::Signal’. |  |  |  |
+| value Raw value to which the signal should be set. |  |  |  |  |
+| Return Values | 0: No error. |  |  |  |
+| 1: Momentary state of the IL does not permit this query. |  |  |  |  |
+| -50: Nodelayer is inactive — possibly deactivated in the node’s configuration dialog. |  |  |  |  |
+| -100: Signal or message was not found in the database or is not mapped to this node. |  |  |  |  |
+| -101: The maximum possible value range was exceeded (no sending on the bus). |  |  |  |  |
+| -103: Invalid value was passed. |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 5.1-9.0 SP3 | — | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

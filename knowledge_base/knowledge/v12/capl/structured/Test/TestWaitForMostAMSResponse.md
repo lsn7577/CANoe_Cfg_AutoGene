@@ -1,0 +1,38 @@
+# TestWaitForMostAMSResponse
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+long TestWaitForMostAMSResponse (int aDestinationAddress, char[] aSymbolicMessage, int aInstanceId, unsigned long aTimeout);
+```
+
+## Description
+
+This function immediately sends a symbolically defined MOST message and waits for the appropriate response message from the receiver. Thus, it combines the functionalities of TestSendMostAMSMessage and TestWaitForMostAMSReport into one function call. The response message can be read and evaluated after the return of the wait operation using TestGetWaitEventMostAMSMsgData.
+
+The symbolically defined messages must be complete, which means all mandatory data must be specified explicitly (without use of wildcards), because an actual message is sent. However, a parameter list may be shorter than specified in the function catalog, in order to be able to generate intentionally incomplete messages.
+
+If possible, the message is always sent via the AMS service. However, if this is not activated, the message - if short enough - will be sent as a normal control message (with TelID = 0).
+
+If the message is longer than a control message, the function delivers the return value of -5 and a wait point is not set up.
+
+Consider to set always the appropriate bus context in a multibus environment before the function is called.
+
+Further information on site MultiBus Environment.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| Note If -1 is given, the address handler (if active) searches for the correct node address based on the functional address {FBlockID, InstID} from the Bus Registry. If no node address is found the message is sent to 0xFFFF. This is also the standard for not explicit set values. |  |
+
+## Return Values
+
+-6: Parse Error; on specification of a symbolic message definition that cannot be resolved with the available XML function catalog or that is flawed.
+
+## Availability
+
+| Since Version |
+|---|

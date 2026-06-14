@@ -1,0 +1,145 @@
+{
+  "page_type": "function",
+  "name": "sensorQueueSerialFrames",
+  "category": "Sensor",
+  "title": "sensorQueueSerialFrames",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionSensorQueueSerialFrames.htm",
+  "syntax": [
+    "SensorErrorCode sensorQueueSerialFrames(char[] sysVarNamespace, char[] data, dword dataCount); // form 1",
+    "SensorErrorCode sensorQueueSerialFrames(char[] sysVarNamespace, dword[] data, dword dataCount); // from 2",
+    "SensorErrorCode sensorQueueSerialFrames(char[] sysVarNamespace, dword[] data, dword dataCount, dword frameSpacingNs); // from 3"
+  ],
+  "description": [
+    "Queues one frame for each given datum."
+  ],
+  "parameters": [
+    {
+      "name": "sysVarNamespace",
+      "type": "",
+      "description": "The namespace of the UART/RS-485/LVDS channel the data shall be queued in."
+    },
+    {
+      "name": "data",
+      "type": "",
+      "description": "The array of values/characters that shall be sent (one datum per frame)."
+    },
+    {
+      "name": "dataCount",
+      "type": "",
+      "description": "The number of data/frames to send."
+    },
+    {
+      "name": "frameSpacingNs",
+      "type": "",
+      "description": "The wait time after each sent frame in ns (default is 0). Spacing is performed with a resolution of 10µs. Intermediate values are rounded up to the next greater supported value."
+    }
+  ],
+  "return": "This function returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Send three frames with different payloads\ndword data[3] = {0x01, 0x02, 0x03};\nsensorQueueSerialFrames(“SENSOR::UART::ExampleChannel”, data, 3);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 SP3",
+      "—",
+      "—",
+      "—",
+      "2.2 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

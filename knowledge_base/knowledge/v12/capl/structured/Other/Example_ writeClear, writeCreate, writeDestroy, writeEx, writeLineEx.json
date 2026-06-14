@@ -1,0 +1,21 @@
+{
+  "page_type": "notes",
+  "name": "Example: writeClear, writeCreate, writeDestroy, writeEx, writeLineEx",
+  "category": "Other",
+  "title": "Example: writeClear, writeCreate, writeDestroy, writeEx, writeLineEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionsExampleWrite.htm",
+  "syntax": [],
+  "description": [
+    "variables{long mNewPage; // Sink identifier}on start{//Create a new page at the Write WindowmNewPage= writeCreate(\"New Page\");//Configure the page so that its content is loggedwriteConfigure(mNewPage, 20, 1, \"c:\\\\temp\\\\writelog.TXT\");//Clear content of CAPL pagewriteclear(1);//Show the description of the programwriteLineEx(mNewPage,2,\"This program shows the keyboard sequence in a new created Page \");writeLineEx(mNewPage,4,\"\\nKeyboard sequence: \");}on key *{//show the current key at the \"New Page\"char currentKey;currentKey = this;writeEx(mNewPage,4,\"%c \",currentKey);}on stopMeasurement{//destroy the new created PagewriteDestroy(mNewPage);}"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

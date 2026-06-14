@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "SomeIpILControlWait",
+  "category": "IP",
+  "title": "SomeIpILControlWait",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpILControlWait.htm",
+  "syntax": [
+    "long SomeIpILControlWait();"
+  ],
+  "description": [
+    "Stops sending cyclic messages.",
+    "Application Endpoints and Provided Services are not deleted, Service Discovery continues to run. Messages continue to be received by SOME/IP IL and can be evaluated.",
+    "Use SomeIpILControlResume to send cyclic messages again."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 'w'\n{\n  // stop sending messages\n  SomeIpILControlWait();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

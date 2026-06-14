@@ -1,0 +1,184 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalVerifyAuthenticationInformation",
+  "category": "Security",
+  "title": "SecurityLocalVerifyAuthenticationInformation",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/Functions/CAPLfunctionSecurityLocalVerifyAuthenticationInformation.htm",
+  "syntax": [
+    "long SecurityLocalVerifyAuthenticationInformation(dword dataId, byte payload[], dword payloadLength, qword truncatedAuthenticatorHigh, qword truncatedAuthenticator, dword truncatedAuthenticatorBitLength, qword rxFreshness, dword rxFreshnessBitLength, qword currentFreshness, dword freshnessValueLength, dword freshnessValueId, dword verificationResult)"
+  ],
+  "description": [
+    "Verifies the specified authentication information (MAC and freshness) of the PDU. The (complete) current freshness value must be provided in the function call. Other freshness sources will be ignored. The payload is also an input parameter to the verification logic.",
+    "The result of this method depends on the security profile which is mapped on the network."
+  ],
+  "parameters": [
+    {
+      "name": "dword dataId",
+      "type": "",
+      "description": "Id to lookup the desired key in the security source."
+    },
+    {
+      "name": "byte payload[]",
+      "type": "",
+      "description": "The payload of the PDU."
+    },
+    {
+      "name": "dword payloadLength",
+      "type": "",
+      "description": "The payload length of the PDU in bytes."
+    },
+    {
+      "name": "qword truncatedAuthenticatorHigh",
+      "type": "",
+      "description": "Upper 64 bits of the authenticator (MAC), if authenticator is larger than 64 bits. Otherwise 0."
+    },
+    {
+      "name": "qword truncatedAuthenticator",
+      "type": "",
+      "description": "The full authenticator value or the lower 64 bits of the authenticator (MAC), if authenticator is larger than 64 bits."
+    },
+    {
+      "name": "dword truncatedAuthenticatorBitLength",
+      "type": "",
+      "description": "Length of complete authenticator to transmit( length of authInfo if the authenticator is <= 64 bit, otherwise length of authInfo + authInfoHigh)."
+    },
+    {
+      "name": "qword rxFreshness",
+      "type": "",
+      "description": "The received freshness value."
+    },
+    {
+      "name": "dword rxFreshnessBitLength",
+      "type": "",
+      "description": "The length of the received (typically truncated) freshness in bits."
+    },
+    {
+      "name": "qword currentFreshness",
+      "type": "",
+      "description": "The freshness value to be used for calculation."
+    },
+    {
+      "name": "dword freshnessValueBitLength",
+      "type": "",
+      "description": "The length of currentFreshness in bits."
+    },
+    {
+      "name": "dword freshnessValueId",
+      "type": "",
+      "description": "The freshness value ID of the PDU."
+    },
+    {
+      "name": "dword verificationResult [Out]",
+      "type": "",
+      "description": "1: Valid MAC 0: Invalid MAC"
+    }
+  ],
+  "return": "A Value of 1 means that the action was successful. A value less than or equal to 0 means error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN CAN FD FlexRay Ethernet",
+      "CAN CAN FD FlexRay Ethernet",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

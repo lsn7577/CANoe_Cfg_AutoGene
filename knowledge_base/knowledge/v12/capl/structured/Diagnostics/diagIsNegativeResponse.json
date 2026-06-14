@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagIsNegativeResponse",
+  "category": "Diagnostics",
+  "title": "diagIsNegativeResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagIsNegativeResponse.htm",
+  "syntax": [
+    "long diagIsNegativeResponse (diagResponse obj)"
+  ],
+  "description": [
+    "Returns value <> 0 if the object is a negative response to a request."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "0 or <>0",
+  "example": {
+    "description": [],
+    "code": "on diagResponse *\n{\n  // Handle the ambiguity of neg responses by treating them as '*'\n  if( diagIsNegativeResponse ( this ) )\n  {\n    write( \"Received negative response for service 0x%x, code 0x%x\",\n    (long) diagGetParameter( this, \"SIDRQ_NR\" ),\n    (long) diagGetParameter( this, \"NRC\" ) );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

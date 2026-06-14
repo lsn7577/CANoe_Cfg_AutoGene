@@ -1,0 +1,178 @@
+{
+  "page_type": "function",
+  "name": "TestStep, TestStepPass, TestStepFail, TestStepWarning, TestStepInconclusive, TestStepErrorInTestSystem",
+  "category": "Test",
+  "title": "TestStep, TestStepPass, TestStepFail, TestStepWarning, TestStepInconclusive, TestStepErrorInTestSystem",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestStep.htm",
+  "syntax": [
+    "TestStep (dword LevelOfDetail, char Identifier[], char Description[], ...); // form 1",
+    "TestStep (dword LevelOfDetail, char[] Identifier, long handle); // form 2",
+    "TestStep (char Identifier[], char Description[], ...); // form 3",
+    "TestStepPass (dword LevelOfDetail, char Identifier[], char Description[], ...); // form 4",
+    "TestStepPass (dword LevelOfDetail, char[] Identifier, long handle); // form 5",
+    "TestStepPass (char Identifier[], char Description[], ...); // form 6",
+    "TestStepPass (char Description[]); // form 7",
+    "TestStepPass (); // form 8",
+    "TestStepFail (dword LevelOfDetail, char Identifier[], char Description[], ...); // form 9",
+    "TestStepFail (dword LevelOfDetail, char[] Identifier, long handle); // (10)",
+    "TestStepFail (char Identifier[], char Description[], ...); // form 11",
+    "TestStepFail (char Description[]); // form 12",
+    "TestStepFail (); // form 13",
+    "TestStepWarning (dword LevelOfDetail, char Identifier[], char Description[], ...); // form 14",
+    "TestStepWarning (dword LevelOfDetail, char[] Identifier, long handle); // form 15",
+    "TestStepWarning (char Identifier[], char Description[], ...); // form 16",
+    "TestStepWarning (char Description[]); // form 17",
+    "TestStepWarning (); // form 18",
+    "TestStepInconclusive (dword LevelOfDetail, char Identifier[], char Description[], ...); // form 19",
+    "TestStepInconclusive (dword LevelOfDetail, char[] Identifier, long handle); // form 20",
+    "TestStepInconclusive (char Identifier[], char Description[], ...); // form 21",
+    "TestStepInconclusive (char Description[]); // form 22",
+    "TestStepInconclusive (); // form 23",
+    "TestStepErrorInTestSystem (dword LevelOfDetail, char Identifier[], char Description[], ...); // form 24",
+    "TestStepErrorInTestSystem (dword LevelOfDetail, char[] Identifier, long handle); // form 25",
+    "TestStepErrorInTestSystem (char Identifier[], char Description[], ...); // form 26",
+    "TestStepErrorInTestSystem (char Description[]); // form 27",
+    "TestStepErrorInTestSystem (); // form 28"
+  ],
+  "description": [
+    "With these functions, test steps can be reported within a test case.",
+    "TestStep reports a test step without influence on the result.",
+    "TestStepPass reports a test step that was executed as expected. This is displayed accordingly in the test report.",
+    "TestStepFail describes a test step that causes an error. Also this is displayed accordingly in the test report. The verdict of the test case is hereby set automatically to fail.",
+    "TestStepWarning describes a test case that was executed without errors but whose result could contribute to a problem later on. This is represented appropriately in the test report.",
+    "TestStepInconclusive describes a test step which can not clearly marked as passed or failed . Also this is displayed accordingly in the test report. The verdict of the test case is hereby set automatically to inconclusive.",
+    "TestStepErrorInTestSystem describes a test step that causes an error in test system. Also this is displayed accordingly in the test report. The verdict of the test case is hereby set automatically to error in test system."
+  ],
+  "parameters": [
+    {
+      "name": "LevelOfDetail",
+      "type": "",
+      "description": "It is possible to identify with a number how important this test step is. In the test report, it is possible that only test steps up to a certain importance will be displayed. 0 means \"very important\", higher numbers indicate lower degrees of importance. Without an explicit specification, a LevelOfDetail of 0 is assumed."
+    },
+    {
+      "name": "Identifier",
+      "type": "",
+      "description": "E.g. a test step number) of the test step."
+    },
+    {
+      "name": "Note TestStepPass(\"10.2\", \"Output voltage ok (Uout = %d volts)\", voltage);",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "handle",
+      "type": "",
+      "description": "Handle to the table to be displayed within the step content, created by the function TestInfoTable."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "See example: TestCaseTitle, TestCaseDescription, TestStep"
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0 5.1: TestStepWarning 8.1 SP2: form 2, 5, 10, 15 8.5 SP3: TestStepInconclusive, TestStepErrorInTestSystem, only test units",
+      "13.0",
+      "—",
+      "14",
+      "1.0 2.0 SP2: TestStepInconclusive,TestStepErrorInTestSystem: form 1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

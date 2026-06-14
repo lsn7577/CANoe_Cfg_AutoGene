@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linSlFSMSetStBegin",
+  "category": "Obsolete",
+  "title": "linSlFSMSetStBegin",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSlFSMSetStBegin.htm",
+  "syntax": [
+    "void linSlFSMSetStBegin(unsigned int slaveId, unsigned int stateId);"
+  ],
+  "description": [
+    "Prepares the configuration of the state specified by stateId of the Slave with the identifier slaveId.",
+    "The entire configuration of a state must appear within one linSlFSMSetStBegin / linSlFSMSetStEnd pair."
+  ],
+  "parameters": [
+    {
+      "name": "slaveId",
+      "type": "",
+      "description": "Identifier of the relevant Slave. Corresponds to the slaveId that was defined with linSlSimulate."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

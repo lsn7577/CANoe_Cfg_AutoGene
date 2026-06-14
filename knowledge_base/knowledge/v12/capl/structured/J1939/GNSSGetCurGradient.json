@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "GNSSGetCurGradient",
+  "category": "J1939",
+  "title": "GNSSGetCurGradient",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSgetcurgradient.htm",
+  "syntax": [
+    "double GNSSGetCurGradient();"
+  ],
+  "description": [
+    "This function returns the current gradient in degrees at which the GNSS receiver is moving.",
+    "If a value of 0.0 is returned, the GNSSGetLastError function must be used to check whether the value is valid (see error codes)."
+  ],
+  "parameters": [],
+  "return": "current gradient in degrees",
+  "example": {
+    "description": [
+      "Example"
+    ],
+    "code": "double gradient;\ngradient = GNSSGetCurGradient();\nwrite(“Gradient = %lf degree”, gradient);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

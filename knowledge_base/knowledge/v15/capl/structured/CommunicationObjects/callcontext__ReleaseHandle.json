@@ -1,0 +1,128 @@
+{
+  "page_type": "method",
+  "name": "callcontext::ReleaseHandle",
+  "category": "CommunicationObjects",
+  "title": "callcontext::ReleaseHandle",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CommunicationObjects/Methods/CAPLfunctionCallcontextReleaseHandle.htm",
+  "syntax": [
+    "void callContext::ReleaseHandle(long handle);"
+  ],
+  "description": [
+    "Releases a permanent handle for a call context. You need a permanent handle if you want to keep a call alive for a longer time, e.g. if you wish to store several call contexts in a (associative) array. You also need a permanent handle if you want to pass the call context e.g. to a CAPL DLL."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "A permanent handle for a call context."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on fct_Called MirrorAdjustment.providerSide[all,LeftMirror].Adjust\n{\n  // return the call always only after 2 other calls have been received\n  const dword nrOfCalls = 3;\n  long ccHandles[nrOfCalls];\n  dword nextCallSlot = 0;\n  dword nrOfCallsReceived = 0;\n\n  this.Result = Mirrors::AdjustResult::OK;\n  this.DeferAnswer();\n  ccHandles[nextCallSlot] = this.CreatePermanentHandle();\n  nextCallSlot = (nextCallSlot + 1) % nrOfCalls;\n\n  if (++nrOfCallsReceived >= nrOfCalls)\n  {\n    callContext * cco;\n    dword returnSlot;\n    returnSlot = nrOfCallsReceived % nrOfCalls;\n    cco = cco::FromHandle(ccHandles[returnSlot]);\n    cco.ReturnCall();\n    cco::ReleaseHandle(ccHandles[returnSlot]);\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "15",
+      "14",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

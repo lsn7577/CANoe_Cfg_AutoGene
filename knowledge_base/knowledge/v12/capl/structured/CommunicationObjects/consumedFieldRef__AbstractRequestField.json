@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedFieldRef::AbstractRequestField",
+  "category": "CommunicationObjects",
+  "title": "consumedFieldRef::AbstractRequestField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedFieldRefAbstractRequestField.htm",
+  "syntax": [
+    "int consumedFieldRef::AbstractRequestField()"
+  ],
+  "description": [
+    "Requests the subscription of a specific service field if abstract binding is used: for the specified consumer from the specified provider. If the field is requested, it will be subscribed as soon as the provider is connected with the consumer."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "MirrorAdjustment.consumerSide[CANoe,LeftMirror].CurrentPosition.AbstractRequestField();\r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

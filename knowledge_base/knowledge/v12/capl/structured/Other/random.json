@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "random",
+  "category": "Other",
+  "title": "random",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionRandom.htm",
+  "syntax": [
+    "dword random(dword x);"
+  ],
+  "description": [
+    "Calculates a random number between 0 and x-1."
+  ],
+  "parameters": [],
+  "return": "Random number between 0 and x-1.",
+  "example": {
+    "description": [],
+    "code": "dword x;\n// generate random number in the interval [0;100]\nx = random(100);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

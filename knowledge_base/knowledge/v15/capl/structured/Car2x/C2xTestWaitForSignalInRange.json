@@ -1,0 +1,154 @@
+{
+  "page_type": "function",
+  "name": "C2xTestWaitForSignalInRange",
+  "category": "Car2x",
+  "title": "C2xTestWaitForSignalInRange",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xTestWaitForSignalInRange.htm",
+  "syntax": [
+    "long C2xTestWaitForSignalInRange (char* protocolDesignator, char* tokenDesignator, int64 minTokenValue, int64 maxTokenValue, long timeout) // form 1",
+    "long C2xTestWaitForSignalInRange (char* protocolDesignator, char* tokenDesignator, int64 minTokenValue, int64 maxTokenValue, char* stationName, long timeout) // form 2"
+  ],
+  "description": [
+    "Waits for the occurrence of the first Car2x message with a signal that is inside or equals the given limit. Should the message not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "protocolDesignator",
+      "type": "",
+      "description": "Protocol designator of the Car2x message that should be awaited."
+    },
+    {
+      "name": "tokenDesignator",
+      "type": "",
+      "description": "Token designator of the Car2x message that should be awaited."
+    },
+    {
+      "name": "minTokenValue",
+      "type": "",
+      "description": "Lower limit of the value."
+    },
+    {
+      "name": "maxTokenValue",
+      "type": "",
+      "description": "Upper limit of the value."
+    },
+    {
+      "name": "stationName",
+      "type": "",
+      "description": "Name of the sender station of the Car2x message that should be awaited."
+    },
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]. Transmission of 0: no timeout controlling."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0: form 1, 2",
+      "—",
+      "—",
+      "—",
+      "5.0: form 1, 2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x, Testnodes: form 1, 2",
+      "—",
+      "—",
+      "—",
+      "Car2x: form 1, 2"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

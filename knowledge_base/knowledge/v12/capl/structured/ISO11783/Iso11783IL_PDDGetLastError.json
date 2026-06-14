@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDGetLastError",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDGetLastError.htm",
+  "syntax": [
+    "long Iso11783IL_PDDGetLastError();"
+  ],
+  "description": [
+    "Supplies the last error code."
+  ],
+  "parameters": [],
+  "return": "error code of the function most recently executed",
+  "example": {
+    "description": [],
+    "code": "char text[256];\n\nvalue = Iso11783IL_PDDGetValue ( PD::AppRateSignal, 0;\n\nif (Iso11783IL_PDDGetLastError () != 0) {\n  Iso11783IL_PDDGetLastErrorText ( elCount(text), text );\n  write( \"ERROR: %s\", text );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

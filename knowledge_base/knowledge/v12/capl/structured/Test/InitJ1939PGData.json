@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "InitJ1939PGData",
+  "category": "Test",
+  "title": "InitJ1939PGData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionInitJ1939PGData.htm",
+  "syntax": [
+    "long InitJ1939PGData (pg * aPG);"
+  ],
+  "description": [
+    "Sets all data bytes of the parameter group to 255."
+  ],
+  "parameters": [
+    {
+      "name": "aPG",
+      "type": "",
+      "description": "Parameter group which is initialized."
+    }
+  ],
+  "return": "0: Initialization succeeded",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

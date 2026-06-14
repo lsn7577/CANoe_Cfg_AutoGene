@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetTokenBitString",
+  "category": "Car2x",
+  "title": "C2xGetTokenBitString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetTokenBitString.htm",
+  "syntax": [
+    "long C2xGetTokenBitString( long packet, char protocolDesignator[], char tokenDesignator[], long bufferSize, byte buffer[]); // form 1"
+  ],
+  "description": [
+    "This function gets the bit string value of a token."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "byte brakePedalActive(long channel, longdir, longradioChannel, long signalStrength, long sigQuality, long packet)\n{\n  byte accelerationControl[1];\n\n  if (C2xGetTokenBitString(packet, \"CAM\", \"cam.camParameters.highFrequencyContainer.basicVehicleContainerHighFrequency.accelerationControl\", 7, accelerationControl))\n  {\n    return accelerationControl[0] & 0x80;\n  }\n  return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

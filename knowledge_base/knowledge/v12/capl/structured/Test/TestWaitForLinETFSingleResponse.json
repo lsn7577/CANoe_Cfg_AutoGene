@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForLinETFSingleResponse",
+  "category": "Test",
+  "title": "TestWaitForLinETFSingleResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForLinEtfSingleResponse.htm",
+  "syntax": [
+    "long TestWaitForLinETFSingleResponse (dword aETFFrameId, dword aAssocFrameId, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of a LIN Event-triggered frame with a single response for the specified associated frame. Should the event-triggered frame not occur before the expiration of the specified timeout, the wait condition is resolved nevertheless.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aETFFrameId",
+      "type": "",
+      "description": "Frame identifier of LIN event-triggered frame to be awaited."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linETFSingleResponse ()\n{\n   linFrame 0 linETFSingleResponseData;\n\n   if (testWaitForLinETFSingleResponse(0x3A, 0x36, 5000) == 1)\n   {\n      if (testGetWaitLinETFSingleResponseData(linETFSingleResponseData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN Event-triggered frame with a single response occurred for FrameId=0x%X\", linETFSingleResponseData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

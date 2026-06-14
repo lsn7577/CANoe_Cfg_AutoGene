@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendConfigureNodeIdResponse",
+  "category": "CANopen",
+  "title": "coTfsLssSendConfigureNodeIdResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendConfNodeIdResp.htm",
+  "syntax": [
+    "long coTfsLssSendConfigureNodeIdResponse( dword errorCode, dword specificError );"
+  ],
+  "description": [
+    "This function sends the LSS configure node-ID response."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "Error code."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* send LSS configure nodeID response */\n\nif (coTfsLssSendConfigureNodeIdResponse( 0, 0 ) != 1) {\n  /* message could not be sent */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

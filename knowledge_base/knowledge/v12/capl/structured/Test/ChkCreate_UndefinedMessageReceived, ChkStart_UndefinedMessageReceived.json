@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_UndefinedMessageReceived, ChkStart_UndefinedMessageReceived",
+  "category": "Test",
+  "title": "ChkCreate_UndefinedMessageReceived, ChkStart_UndefinedMessageReceived",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateUndefinedMessageReceived.htm",
+  "syntax": [
+    "dword ChkCreate_UndefinedMessageReceived (char [] CaplCallback); // form 1"
+  ],
+  "description": [
+    "Observes the current bus and reports messages that are not defined.",
+    "If the CANoe configuration contains multiple buses, the current bus context has to be specified (SetBusContext) before the check configuration.",
+    "For FlexRay either only valid data frames or PDUs (according to the database type) are recognized as communication. Null Frames and Erroneous frames are ignored.",
+    "For a FlexRay PDU database this check also ignores all received frames! For a PDU database only PDUs are considered. For a FlexRay PDU database this test makes no sense, because only those PDUs, which are defined in the database, can be retrieved from frames. There cannot exist PDUs that are not defined in the database! Therefore, for a PDU database this check will always pass.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "CaplCallback",
+      "type": "",
+      "description": "In simulation nodes this parameter has to be set.In test modules this parameter is optional."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// observes the bus ‘CAN1’ for undefined messages\nSetBusContext(getBusNameContext(\"CAN1\"));\ncheckId = ChkStart_UndefinedMessageReceived();\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);\ncheckId = ChkCreate_UndefinedMessageReceived(\"CallbackUnknownMsg\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

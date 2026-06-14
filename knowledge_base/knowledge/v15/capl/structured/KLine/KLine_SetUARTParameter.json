@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetUARTParameter",
+  "category": "KLine",
+  "title": "KLine_SetUARTParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/KLine/Functions/CAPLfunctionKLineSetUARTParameter.htm",
+  "syntax": [
+    "long KLine_SetUARTParameter(dword dataBits, dword parity, dword stopBits);"
+  ],
+  "description": [
+    "Configures the way bytes are sent on K-Line, by setting the parameters the UART (universal asynchronous receiver/transmitter) uses."
+  ],
+  "parameters": [
+    {
+      "name": "dataBits",
+      "type": "",
+      "description": "Number of bits a byte consists of.Possible values: 7, 8, 9.Note: 7 bits in a byte will not allow standard K-Line communication."
+    },
+    {
+      "name": "parity",
+      "type": "",
+      "description": "If a parity bit is used to indicate the number of bits set in the byte 1 means _odd_ and 2_even_ parity.A value of 0 indicates that no parity bit is used."
+    },
+    {
+      "name": "stopBits",
+      "type": "",
+      "description": "The number of stop bits that indicate the end of a byte. 1 or 2 is possible."
+    }
+  ],
+  "return": "On success 0, otherwise error code.",
+  "example": {
+    "description": [],
+    "code": "KLine_CreateECURepresentation( gMsgChannel);\nKLine_SetUARTParameter( 9, 1, 2); // 9 data bits, odd parity, 2 stop bits => 13 bit/byte (including start bit)"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "9.0",
+      "9.0",
+      "—",
+      "—",
+      "—",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "K-Line Real bus mode",
+      "K-Line Real bus mode",
+      "—",
+      "—",
+      "—",
+      "K-Line Real bus mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

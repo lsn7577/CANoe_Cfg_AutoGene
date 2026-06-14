@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FRSActivateCRCCalc",
+  "category": "FRStress",
+  "title": "FRSActivateCRCCalc",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/Functions/CAPLfunctionFRSActivateCRCCalc.htm",
+  "syntax": [
+    "FRSActivateCRCCalc (int index, int calculateCRC);"
+  ],
+  "description": [
+    "Activates the automatic CRC computation based on the disturbance data (FRSSetDist, FRSSetDistElem, FRSSetDistPayload) and the real frame."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Values: 1-4"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

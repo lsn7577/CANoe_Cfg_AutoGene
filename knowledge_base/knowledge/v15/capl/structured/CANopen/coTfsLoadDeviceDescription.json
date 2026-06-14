@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "coTfsLoadDeviceDescription",
+  "category": "CANopen",
+  "title": "coTfsLoadDeviceDescription",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLoadDeviceDescription.htm",
+  "syntax": [
+    "long coTfsLoadDeviceDescription( dword nodeId, char fileName[] );"
+  ],
+  "description": [
+    "This function reads an EDS, DCF or XML file. This allows the interpretation of index and sub index during SDO accesses, so that object names can be displayed in plain text.",
+    "The object names can be deleted with coTfsClearObjectName."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID of the relevant node or 0 if all nodes are used. If node specific entries should be added, these have a higher priority on display."
+    },
+    {
+      "name": "fileName[]",
+      "type": "",
+      "description": "Name of the file to be read, relative to your CANoe configuration."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* load for CANopen device with node ID 112 the eds file \"coslave.eds\" (path is relative to configuration folder) */\nif (coTfsLoadDeviceDescription(112, \"coslave.eds\") != 1)\n{\n  /* file could not be loaded, either it does not exist or it is faulty */\n} /* if */"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

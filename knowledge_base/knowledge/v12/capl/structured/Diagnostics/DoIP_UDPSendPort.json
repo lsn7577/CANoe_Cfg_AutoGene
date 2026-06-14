@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_UDPSendPort",
+  "category": "Diagnostics",
+  "title": "DoIP_UDPSendPort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPUDPSendPort.htm",
+  "syntax": [
+    "long DoIP_UDPSendPort(char IPaddress[], word port, byte data[], dword length);"
+  ],
+  "description": [
+    "Send given raw data to peer(s) as UDP frame."
+  ],
+  "parameters": [
+    {
+      "name": "IPaddress",
+      "type": "",
+      "description": "Send to this address, may be a broadcast address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "// Send an invalid identification request to a non-standard port of a \n// specific vehicle that must ignore it\nBYTE rawData[8] = { 0x02,0xFF /*wrong!*/, 0x00,0x01, 0x00,0x00,0x00,0x00};\nDoIP_UDPSendPort( \"169.254.123.45\", 13401 /* non standard */, rawData, elcount( rawData));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

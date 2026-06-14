@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagGetCurrentEcu",
+  "category": "Diagnostics",
+  "title": "diagGetCurrentEcu",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetCurrentECU.htm",
+  "syntax": [
+    "long diagGetCurrentEcu (char[] qualifier, dword bufferLen)"
+  ],
+  "description": [
+    "Gets the qualifier of the ECU for which the last event was processed, especially if a response was received from this ECU. This function can be used to determine the ECU that responded to a functional request.",
+    "In a diagnostics event handler in the measurement setup this function will return the target of request primitives and the source of response primitives (the other communication partner is always a tester)."
+  ],
+  "parameters": [
+    {
+      "name": "qualifier",
+      "type": "",
+      "description": "Output buffer"
+    }
+  ],
+  "return": "Error code or length of the name provided.",
+  "example": {
+    "description": [],
+    "code": "// diagnostic event handler\non diagResponse *\n{\n  char ecu[100];\n  diagGetCurrentEcu( ecu, elcount(ecu));\n  write( \"Received response from %s\", ecu);\n}\n\n// Test module\ntestcase TC1\n{\n  char ecu[100];\n  diagRequest Service1 req1;\n  diagSetTarget( \"FunctionalGroup1\");\n  diagSendNetwork( req1);\n  while( 1 == TestWaitForDiagResponse( req1, 1000))\n  {\n    diagGetCurrentEcu( ecu, elcount( ecu));\n    write( \"Received response from %s\", ecu);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

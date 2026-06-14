@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "A664InitPayload",
+  "category": "ADFX",
+  "title": "A664InitPayload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664InitPayload.htm",
+  "syntax": [
+    "long A664InitPayload (a664Message aMessage)"
+  ],
+  "description": [
+    "The payload section (excluding sequence number) of an AFDX message is set using the current Tx-values of the internal signal list. These are typically set by CAPL signal value assignments, panels, signal generators, start value etc.",
+    "The message must be defined in the database and must contain signals (no protocol oriented types)."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "the message object to be initialized"
+    }
+  ],
+  "return": "<success>",
+  "example": {
+    "description": [],
+    "code": "a664Message TESTMSG_ALLTYPES testMsg = { msgChannel = 1};\na664InitPayload (testMsg); \t// set payload to last known signal values\na664TriggerMessage(testMsg, 1);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

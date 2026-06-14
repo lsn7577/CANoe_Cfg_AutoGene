@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestResetNamespaceSysVarValues",
+  "category": "Test",
+  "title": "TestResetNamespaceSysVarValues",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestResetNamespaceSysVarValues.htm",
+  "syntax": [
+    "long TestResetNamespaceSysVarValues (char aNamespace[]);"
+  ],
+  "description": [
+    "Resets all system variables of the given namespace and all sub-namespaces to their initial value. If no initial value is defined for a system variable, the system variable is not set.",
+    "aNamespace is not allowed to be empty. If system variables without namespace should be reset, TestResetSysVarValue has to be used."
+  ],
+  "parameters": [
+    {
+      "name": "aNamespace",
+      "type": "",
+      "description": "Namespace which system variables should be reset."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": "// check the warning lights\n@sysvar::Lights::SysVarWarningLights = 1;\nTestWaitForTimeout(100);\nif (@sysvar::Lights::SysVarWarningLightsDsp != 1)\n    TestStepFail(“Warning lights do not flash!”);\n\n// reset all “Lights” system variables\nTestResetNamespaceSysVarValues(“Lights”);\nTestWaitForTimeout(200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,63 @@
+{
+  "page_type": "notes",
+  "name": "TestReportSetLoggingBlock",
+  "category": "Obsolete",
+  "title": "TestReportSetLoggingBlock",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionTestReportSetLoggingBlock.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function This command is still retained for compatibility reasons since the logging files used are automatically annotated in the XML log after version 5.2."
+      ],
+      [
+        "Function Syntax",
+        "TestReportSetLoggingBlock (char data name[])"
+      ],
+      [
+        "Function",
+        "This function annotates a logging file to a report, e.g. to HTML reports created with extendedNavigation.xslt."
+      ],
+      [
+        "Parameters",
+        "Data name Path of the logging file.This must always be relative to the XML test report, e.g. \"logfile.asc\" or \"log/logfile.asc\". If a logging file is not displayed correctly, you should check the specified path since it is not automatically checked whether the specified file actually exists. Use \"/\" as a separator to prevent problems in some browsers."
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "5.2",
+        "Test nodes",
+        "—",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

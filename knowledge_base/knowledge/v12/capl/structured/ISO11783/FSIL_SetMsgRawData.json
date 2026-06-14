@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_SetMsgRawData",
+  "category": "ISO11783",
+  "title": "FSIL_SetMsgRawData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILSetMsgRawData.htm",
+  "syntax": [
+    "long FSIL_SetMsgRawData( dbMessage msg, long dataSize, byte data[] );"
+  ],
+  "description": [
+    "Sets the data bytes of the message. The length of the parameter group is adjusted to size of parameter dataSize."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "message name from database, must be assigned to the node as Tx message"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnSerialReceive",
+  "category": "VTSystem",
+  "title": "OnSerialReceive",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSOnSerialReceive.htm",
+  "syntax": [
+    "void <OnSerialReceive> ( byte buffer[], dword number);"
+  ],
+  "description": [
+    "The function is called when data has been received from the assigned VT7001 serial port."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Receive buffer for the assigned VT7001 serial port (set with SerialReceive)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

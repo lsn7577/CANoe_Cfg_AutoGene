@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "ChkConfig_EnablePDULayer",
+  "category": "Test",
+  "title": "ChkConfig_EnablePDULayer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkConfigEnablePDULayer.htm",
+  "syntax": [
+    "long ChkConfig_EnablePDULayer();"
+  ],
+  "description": [
+    "Enables the PDU layer for the current bus context. It affects the next checks that are created after calling this function.",
+    "Use this function to enable the PDU layer again after calling ChkConfig_DisablePDULayer.",
+    "Default is enabled for a PDU network."
+  ],
+  "parameters": [],
+  "return": "0: Successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

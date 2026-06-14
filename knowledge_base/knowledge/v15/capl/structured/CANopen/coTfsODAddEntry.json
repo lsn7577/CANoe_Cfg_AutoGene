@@ -1,0 +1,178 @@
+{
+  "page_type": "function",
+  "name": "coTfsODAddEntry",
+  "category": "CANopen",
+  "title": "coTfsODAddEntry",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdAddEntry.htm",
+  "syntax": [
+    "long coTfsODAddEntry( dword index, dword subIndex, dword accessType, dword entrySize, byte inMaskBuf[], dword maskBufSize, byte inValueBuf[], dword valueBufSize );",
+    "long coTfsODAddEntry( dword index, dword subIndex, dword accessType, dword entrySize, qword mask, qword inValue );"
+  ],
+  "description": [
+    "This function adds one object to the internal list of test objects. The test module manages an internal list for all object dictionary tests. Although certain object dictionary tests do not make use of all information provided, the usage of valid data is recommended.",
+    "Object entries with variable object length are supported too if the data length supplied equals 0. In this case value checks are not performed. The value mask is assumed to be open.",
+    "This function does not provide a stand-alone test. Instead it shall be used as a preparation for the test sequence functions coTfsODChk and coTfsODChkNotExist.",
+    "It may be possible, that the valid data range cannot be described using just one value. Therefore it is possible to add additional values using coTfsODAddOptEntryValue. coTfsODAddOptEntryValueRange allows the addition of complete value ranges. It is possible to combine both. Furthermore the valid range may overlap.",
+    "The compare mask flags all bits, which shall be compared."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Checked object index."
+    },
+    {
+      "name": "subIndex",
+      "type": "",
+      "description": "Checked object sub index."
+    },
+    {
+      "name": "accessType",
+      "type": "",
+      "description": "1: readWrite 2: readOnly 3: writeOnly 4: constant"
+    },
+    {
+      "name": "entrySize",
+      "type": "",
+      "description": "Data size of object in bytes."
+    },
+    {
+      "name": "inMaskBuf[]",
+      "type": "",
+      "description": "Mask for data comparison, the size must be at least same as maskBufSize. 0: don't care 1: execute comparison"
+    },
+    {
+      "name": "maskBufSize",
+      "type": "",
+      "description": "Size of buffer."
+    },
+    {
+      "name": "inValueBuf[]",
+      "type": "",
+      "description": "Data for comparison, the size must be at least same as size of valueBufSize."
+    },
+    {
+      "name": "valueBufSize",
+      "type": "",
+      "description": "Size of buffer."
+    },
+    {
+      "name": "mask",
+      "type": "",
+      "description": "Mask for data comparison."
+    },
+    {
+      "name": "inValue",
+      "type": "",
+      "description": "Data for comparison."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "long retValFunc = kTestStepPassed; /* to store the return value of function */\nlong nodeId = 112;                 /* Node-Id of DUT */\n\ndword index = 0x1017;\ndword subIndex = 0x0;\ndword accessType = kAccessType_ReadWrite;\ndword entrySize = 2; /* object size in bytes */\nbyte inMaskBuf[2] = {0xFF, 0xFF};\ndword maskBufSize = 2;\nbyte inValueBuf[2] = {0x0, 0x0};\ndword valueBufSize = 2;\nchar msg[100]; /* message */\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* call test function : clear test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODClearAllEntries\", elCount(msg));\n  retValFunc = coTfsODClearAllEntries();\n} /* if */\n\n/* call test function : add entry to test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODAddEntry\", elCount(msg));\n  retValFunc = coTfsODAddEntry( index /*dword index*/, subIndex /*dword subIndex*/, accessType /*dword accessType*/, entrySize /*dword entrySize*/, inMaskBuf /*byte inMaskBuf[]*/, maskBufSize /*dword maskBufSize*/, inValueBuf /*byte inValueBuf[]*/, valueBufSize /*dword valueBufSize*/ );\n} /* if */\n\n/* call test function : check objects in test object list */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODChk\", elCount(msg));\n  retValFunc = coTfsODChk();\n} /* if */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

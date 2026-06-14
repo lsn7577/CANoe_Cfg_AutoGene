@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForLinReceiveError",
+  "category": "Test",
+  "title": "TestWaitForLinReceiveError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForLinReceiveError.htm",
+  "syntax": [
+    "long TestWaitForLinReceiveError (dword aFrameId, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of LIN Receive Error event. Should the event not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aFrameId",
+      "type": "",
+      "description": "Numeric ID of a frame whose Receive Error should be awaited."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linReceiveErrorEvent ()\n{\n   linReceiveError linReceiveErrorData;\n\n   if (testWaitForLinReceiveError(5000) == 1)\n   {\n      if (TestGetWaitLinReceiveErrData(linReceiveErrorData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN Receive Error event occurred for FrameId=0x%X\", linReceiveErrorData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

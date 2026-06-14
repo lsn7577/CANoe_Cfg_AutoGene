@@ -1,0 +1,563 @@
+{
+  "page_type": "function",
+  "name": "diagGetCommParameter",
+  "category": "Diagnostics",
+  "title": "diagGetCommParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetCommParameter.htm",
+  "syntax": [
+    "long diagGetCommParameter (char paramName[]); // form 1",
+    "long diagGetCommParameter( char paramName[], dword index, char buffer[], dword bufferLen); // form 2",
+    "long DiagGetCommParameter(char ecuQualifier[], long isTester, char paramName[]); // form 3",
+    "long DiagGetCommParameter(char ecuQualifier[], long isTester, char paramName[], dword index, char buffer[], dword bufferLen); // form 4"
+  ],
+  "description": [
+    "Returns the value of a numeric/textual communication parameter of the given or currently active diagnostic description. The values are read from the diagnostic description if they cannot be set in the configuration dialog."
+  ],
+  "parameters": [
+    {
+      "name": "Qualifier",
+      "type": "Available in",
+      "description": "Description"
+    },
+    {
+      "name": "CANoe.AddressMode",
+      "type": "",
+      "description": "ISO TP address mode: 0: Normal 1: Extended 2: NormalFixed 3: Mixed <0: No ISO TP"
+    },
+    {
+      "name": "CANoe.TxId",
+      "type": "[0 1*]",
+      "description": "CAN Id for transmitted frames"
+    },
+    {
+      "name": "CANoe.RxId",
+      "type": "[0 1*]",
+      "description": "CAN Id for received frames"
+    },
+    {
+      "name": "CANoe.BaseAddress",
+      "type": "[1*]",
+      "description": "TP base address"
+    },
+    {
+      "name": "CANoe.EcuAddr",
+      "type": "[1 2 3]",
+      "description": "Number of this node"
+    },
+    {
+      "name": "CANoe.TgtAddr",
+      "type": "[1 2 3]",
+      "description": "Target node number"
+    },
+    {
+      "name": "CANoe.AddrExt",
+      "type": "[3]",
+      "description": "Address extension byte"
+    },
+    {
+      "name": "CANoe.TxPrio",
+      "type": "[2 3]",
+      "description": "Frame transmit priority"
+    },
+    {
+      "name": "Note 1*: Extended address can be operated on two different types: With base address With free assignment of the TX- and RX-Id The parameter values are each determined from the viewing angle of the corresponding node. Therefore, in an ECU simulation with normal addressing, the TX-Id represents the RX-Id, which is included in the tester node.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Qualifier",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "CANoe.UudtId",
+      "type": "",
+      "description": "If the ECU delivers responses also via UUDT frames, their CAN-Id can be determined here as well."
+    },
+    {
+      "name": "CANoe.Blocksize",
+      "type": "",
+      "description": "ISO TP parameter, number of consecutive frames between two flow control frames."
+    },
+    {
+      "name": "CANoe.STmin",
+      "type": "",
+      "description": "ISO TP parameter, minimum interval [ms] between sent consecutive frames, which the sender should maintain."
+    },
+    {
+      "name": "CANoe.FCDelay",
+      "type": "",
+      "description": "ISO TP parameter, delay of flow control frames sent."
+    },
+    {
+      "name": "Timing Parameter with ISO 15765-3:",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "CANoe.S3ClientTime",
+      "type": "",
+      "description": "Time the diagnostic client (=tester) should wait before sending a tester present request.This value is also returned for the deprecated qualifier CANoe.S3Time."
+    },
+    {
+      "name": "CANoe.S3ServerTime",
+      "type": "",
+      "description": "Timeout in the diagnostic server for leaving a non-default session."
+    },
+    {
+      "name": "CANoe.P3TimePhys",
+      "type": "",
+      "description": "Minimum waiting time after physical transmitting of a request."
+    },
+    {
+      "name": "CANoe.P3TimeFunc",
+      "type": "",
+      "description": "Minimum waiting time after functional transmitting of a request."
+    },
+    {
+      "name": "Values",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "-1",
+      "type": "",
+      "description": "No padding (i.e. DLC variable)"
+    },
+    {
+      "name": "0..255",
+      "type": "",
+      "description": "Use this value to pad to DLC=8."
+    },
+    {
+      "name": "<-1",
+      "type": "",
+      "description": "Normal diagnostic error codes."
+    },
+    {
+      "name": "rest",
+      "type": "",
+      "description": "reserved"
+    },
+    {
+      "name": "Values",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Use the values of the first flow control frame only."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Use the values from ALL flow control frames."
+    },
+    {
+      "name": "Values",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Use the TX priority given."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Use the priority of the received \"first frame\" as priority of flow control frame."
+    },
+    {
+      "name": "CANoe.FirstSN",
+      "type": "",
+      "description": "0..15: The sequence number sent in the first \"consecutive frame\"."
+    },
+    {
+      "name": "CANoe.BSOff",
+      "type": "",
+      "description": "0..255: Block size value indicating \"do not expect further flow controls\"."
+    },
+    {
+      "name": "CANoe.FixedFrameLength",
+      "type": "",
+      "description": "0..8: All CAN frames should have at least this many bytes."
+    },
+    {
+      "name": "CANoe.MaxMessageLength",
+      "type": "",
+      "description": "Maximum accepted length of a ISO TP message."
+    },
+    {
+      "name": "DoIP.VEHICLE_Adapter (replaces DoIP.VEHICLE_Interface)",
+      "type": "See DoIP_SetVehicleAdapter (replaces DoIP_SetVehicleInterface)",
+      "description": "form 2"
+    },
+    {
+      "name": "DoIP.TESTER_Adapter",
+      "type": "See DoIP_SetTesterAdapter",
+      "description": "form 2"
+    },
+    {
+      "name": "DoIP.VEHICLE_Address",
+      "type": "See DoIP_SetVehicleAddress",
+      "description": "form 2"
+    },
+    {
+      "name": "DoIP.VEHICLE_LogicalAddress",
+      "type": "Returns the logical DoIP address of the DoIP entity.",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.VEHICLE_UDP_Data",
+      "type": "See DoIP_SetVehicleUdpPort",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.VEHICLE_TCP_Data",
+      "type": "See DoIP_SetVehicleTcpPort",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.TESTER_LogicalAddress",
+      "type": "Returns the logical DoIP address of the test equipment.",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.TESTER_UDP_Data",
+      "type": "See DoIP_SetTesterUdpPort",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.T_TCP_Generic_Inactivity",
+      "type": "See DoIP_SetGenericTimeout",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.T_TCP_Initial_Inactivity",
+      "type": "See DoIP_SetInitialTimeout",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.T_TCP_Alive_Check",
+      "type": "See DoIP_SetAliveCheckTimeout",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.VehicleSimulationVIN",
+      "type": "Returns the VIN from Vehicle Simulation Parameter area as text in parameter buffer.",
+      "description": "form 2"
+    },
+    {
+      "name": "DoIP.VehicleSimulationEID",
+      "type": "Returns the EID from Vehicle Simulation Parameter area as text in parameter buffer.",
+      "description": "form 2"
+    },
+    {
+      "name": "DoIP.VehicleSimulationGID",
+      "type": "Returns the GID from Vehicle Simulation Parameter area as text in parameter buffer.",
+      "description": "form 2"
+    },
+    {
+      "name": "DoIP.Protocol",
+      "type": "Configured DoIP protocol, see DoIP_SetProtocol.",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.TESTER_PreferIPv6 DoIP.VEHICLE_PreferIPv6",
+      "type": "Returns 6 if the IPv6 address of the local adapter shall be preferred. See DoIP_SetLocalIPaddressVersion.",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.ActivationLineStartuptime",
+      "type": "Returns the time configured for that the activation line shall be active at measurement start before the vehicle can be accessed. See Activation Line (DoIP).",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.GatewayAddress",
+      "type": "Returns the logical address of the gateway entity that is used to reach the target. See DoIP_SetGatewayLogicalAddress.",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.FunctionalAddress",
+      "type": "Returns the logical address used for functional communication. Use DoIP_AddECU in a vehicle simulation to allow reception of such requests, and DoIP_SetVehicleLogicalAddress in a tester to send a request functionally.",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.ReconnectDelay",
+      "type": "See DoIP_Set/GetReconnectDelay",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.ReconnectInterval",
+      "type": "See DoIP_GetReconnectInterval and DoIP_SetReconnectInterval.",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.ReconnectMaxAttempts",
+      "type": "See DoIP_GetReconnectInterval and DoIP_SetReconnectInterval.",
+      "description": "form 1"
+    },
+    {
+      "name": "DoIP.ActivationLineSysvar DoIP.ActivationLineSysvar-Namespace",
+      "type": "Return the system variable configured for the DoIP activation line. See Activation Line (DoIP) for details.",
+      "description": "form 2"
+    },
+    {
+      "name": "DoIP.TESTER_IPAddress",
+      "type": "Returns IP address the tester shall use for sending. Use DoIP_SetLocalIPaddress in a tester node.",
+      "description": "form 2"
+    },
+    {
+      "name": "DoIP.VEHICLE_IPAddress",
+      "type": "Returns the IP address the vehicle simulation shall listen on. Use DoIP_SetLocalIPaddress in a vehicle Simulation.",
+      "description": "form 2"
+    },
+    {
+      "name": "Note For details and an example please refer to the reference implementation of the K-Line CAPL Callback Interface for diagnostics that is installed under <application>\\Reusable\\CAPL_Includes\\Diagnostics\\CCI_KLine.cin and can be included in CAPL programs with #include \"Diagnostics\\CCI_KLine.cin\"",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "KLine.5BaudAddress",
+      "type": "",
+      "description": "Address sent in the 5 baud wakeup pattern.See KLine_Set5BaudAddressTester"
+    },
+    {
+      "name": "KLine.Baudrate",
+      "type": "",
+      "description": "Configured baud rate"
+    },
+    {
+      "name": "KLine.DataBits",
+      "type": "",
+      "description": "Number of data bits configured"
+    },
+    {
+      "name": "KLine.EcuAddress",
+      "type": "",
+      "description": "Address of the ECU"
+    },
+    {
+      "name": "KLine.ForceLengthByte",
+      "type": "",
+      "description": "Shall an address byte be sent always?See KLine_SetHeaderFormat"
+    },
+    {
+      "name": "KLine.FunctionalAddress",
+      "type": "",
+      "description": "Address of the functional group"
+    },
+    {
+      "name": "KLine.InitType",
+      "type": "",
+      "description": "Initialization mode used.See KLine_SetInitType>"
+    },
+    {
+      "name": "KLine.P3min",
+      "type": "",
+      "description": "K-Line timing parameter P3.See KLine_SetP3Tester"
+    },
+    {
+      "name": "KLine.P4min",
+      "type": "",
+      "description": "K-Line timing parameter P4.See KLine_SetP4Tester"
+    },
+    {
+      "name": "KLine.Parity",
+      "type": "",
+      "description": "UART configuration parameter.See KLine_SetUARTParameter"
+    },
+    {
+      "name": "KLine.StopBits",
+      "type": "",
+      "description": "UART configuration parameter.See KLine_SetUARTParameter"
+    },
+    {
+      "name": "KLine.TIdle",
+      "type": "",
+      "description": "K-Line idle time."
+    },
+    {
+      "name": "KLine.TIniL",
+      "type": "",
+      "description": "Fast initialization parameter.See KLine_SetWakeUpTimesTester and _KLine_FastInitPatternReceived"
+    },
+    {
+      "name": "KLine.TWup",
+      "type": "",
+      "description": "Fast initialization parameterSee KLine_SetWakeUpTimesTester and _KLine_FastInitPatternReceived"
+    },
+    {
+      "name": "KLine.TesterAddress",
+      "type": "",
+      "description": "Address the tester shall use."
+    },
+    {
+      "name": "KLine.UartConfig",
+      "type": "",
+      "description": "Encoded UART parameters, see KLine.DataBits, KLine.Parity and KLine.StopBits"
+    },
+    {
+      "name": "KLine.W1max",
+      "type": "",
+      "description": "K-Line timing parameter W1 (max) for 5 baud init pattern"
+    },
+    {
+      "name": "KLine.W2max",
+      "type": "",
+      "description": "K-Line timing parameter W2 (max) for 5 baud init pattern"
+    },
+    {
+      "name": "KLine.W3max",
+      "type": "",
+      "description": "K-Line timing parameter W3 (max) for 5 baud init pattern"
+    },
+    {
+      "name": "KLine.W4max",
+      "type": "",
+      "description": "K-Line timing parameter W4 (max) for 5 baud init pattern KLine_SetW4Tester"
+    },
+    {
+      "name": "KLine.W4min",
+      "type": "",
+      "description": "K-Line timing parameter W4 (min) for 5 baud init pattern KLine_SetW4Tester"
+    },
+    {
+      "name": "index",
+      "type": "",
+      "description": "Set to 0."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer to retrieve string parameters."
+    },
+    {
+      "name": "bufferLen",
+      "type": "",
+      "description": "Size of the buffer in bytes."
+    },
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description."
+    },
+    {
+      "name": "isTester",
+      "type": "",
+      "description": "0: The node asking for the communication parameter is an ECU simulation 1: The node asking for the communication parameter is a tester other: reserved"
+    }
+  ],
+  "return": "Error code or value of the parameter.",
+  "example": {
+    "description": [
+      "You can find examples for this function in the CAPL callback interface (CCI) reference implementations.See Diagnostics: Connection of the Communication Layer for details."
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1: form 1, 2 9.0 SP3; form 3, 4",
+      "—",
+      "—",
+      "—",
+      "1.0: form 1, 2 2.1 SP3: form 3, 4"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

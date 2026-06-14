@@ -1,0 +1,168 @@
+{
+  "page_type": "function",
+  "name": "GNSSSetPosDataVal",
+  "category": "J1939",
+  "title": "GNSSSetPosDataVal",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSsetposdataval.htm",
+  "syntax": [
+    "dword GNSSSetPosDataVal(dword fixSID, dword systemAndMethod, dword integrity, dword numOfSVs, dword hdop, dword pdop, dword geoSeparation, dword numOfRefStat, dword refStations[]}"
+  ],
+  "description": [
+    "This function can be used to change values of parameter group \"GNSS Position Data\" (PGN 129029) which are not modified by the simulation automatically."
+  ],
+  "parameters": [
+    {
+      "name": "fixSID",
+      "type": "",
+      "description": "1 if fix sequence ID (255) has to be used, else 0"
+    },
+    {
+      "name": "systemAndMethod",
+      "type": "",
+      "description": "the first 4 bit specifies the system type, the upper 4 bit the GNSS Method"
+    },
+    {
+      "name": "integrity",
+      "type": "",
+      "description": "integrity"
+    },
+    {
+      "name": "numOfSVs",
+      "type": "",
+      "description": "number of visible satellites"
+    },
+    {
+      "name": "hdop",
+      "type": "",
+      "description": "horizontal dilution of precision"
+    },
+    {
+      "name": "pdop",
+      "type": "",
+      "description": "position dilution of precision"
+    },
+    {
+      "name": "geoSeparation",
+      "type": "",
+      "description": "geoidal separation"
+    },
+    {
+      "name": "numOfRefStat",
+      "type": "",
+      "description": "number of reference stations"
+    },
+    {
+      "name": "refStations",
+      "type": "",
+      "description": "array of reference stations, every station is specified by 4 bytes (Bit 0-3: Type, Bit 4-15: ID, Bit 16-31: Ages of DGNSS Corrections)"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "dword refSta[2];\nrefStation[0] = 0x11110010;\nrefStation[1] = 0x22220020;\nGNSSSetPosDataVal(0,0x20,1,4,21,54,763,2,refSta);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 ISO11783",
+      "J1939 ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpProvidedEventRemoveConsumer",
+  "category": "IP",
+  "title": "SomeIpProvidedEventRemoveConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpProvidedEventRemoveConsumer.htm",
+  "syntax": [
+    "long SomeIpProvidedEventRemoveConsumer(dword pevHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort);"
+  ],
+  "description": [
+    "Removes a consumer from a provided event that has been added by SomeIpProvidedEventAddConsumer."
+  ],
+  "parameters": [
+    {
+      "name": "pevHandle",
+      "type": "",
+      "description": "Provided event handle (may be retrieved by SomeIpGetProvidedObjectHandle)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

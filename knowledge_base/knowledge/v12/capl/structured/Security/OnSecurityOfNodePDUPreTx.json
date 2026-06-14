@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnSecurityOfNodePDUPreTx",
+  "category": "Security",
+  "title": "OnSecurityOfNodePDUPreTx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/CallbackHandler/CAPLfunctionOnSecurityOfNodePDUPreTx-.htm",
+  "syntax": [
+    "void OnSecurityOfNodePDUPreTx(char nodeName[], char networkName[], char pduName[], dword dataId, byte payload[], dword payloadLength, qword& authInfoHigh, qword& authInfo, dword authInfoBitLength, qword& freshness, dword freshnessBitLength, dword freshnessValueId)"
+  ],
+  "description": [
+    "This callback handler is called before the specified node on the specified network transmits a secured PDU, after all data updates and the automatic Authenticator (CMAC) calculation have been done.",
+    "Payload, authInfo (Authentication Information) and Freshness can be modified before the transmission starts. By this a fault injection is easily possible.",
+    "You have to call SecurityLocalStartControlSimulationNode before this callback is called."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node."
+    }
+  ],
+  "return": "byte payload[]The payload of the PDU.",
+  "example": {
+    "description": [],
+    "code": "void OnSecurityOfNodePDUPreTx(char nodeName[], char networkName[], char pduName[], dword dataId, byte payload[], dword payloadLength, qword& authInfoHigh, qword& authInfo, dword authInfoBitLength, qword& freshness, dword freshnessBitLength, dword freshnessValueId)\n{\n  char testNodeName[10]    = \"ECU1\";\n  char testNetworkName[10] = \"CAN1\";\n\nif((!strncmp(nodeName,testNodeName,strlen(nodeName)))&&(!strncmp(networkName,testNetworkName,strlen(networkName))))\n  {\n    if (dataId == 1)\n    {\n      authInfo = 0x123456; // change cmac\n      // freshness = 0x02; // change freshness\n      // payload[0] = 0xFF; // change payload;\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

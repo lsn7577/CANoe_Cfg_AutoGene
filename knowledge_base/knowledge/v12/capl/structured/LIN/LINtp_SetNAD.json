@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LINtp_SetNAD",
+  "category": "LIN",
+  "title": "LINtp_SetNAD",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINtpSetNAD.htm",
+  "syntax": [
+    "long LINtp_SetNAD(long NAD);"
+  ],
+  "description": [
+    "In a slave node, sets its node address for communication with the master."
+  ],
+  "parameters": [
+    {
+      "name": "NAD",
+      "type": "",
+      "description": "Node address [1, 126]"
+    }
+  ],
+  "return": "0: Setting address failed (this is a master or node address is invalid)",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

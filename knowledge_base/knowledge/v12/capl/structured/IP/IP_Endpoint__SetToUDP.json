@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "IP_Endpoint::SetToUDP",
+  "category": "IP",
+  "title": "IP_Endpoint::SetToUDP",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionSetToUDP.htm",
+  "syntax": [
+    "long IP_Endpoint::SetToUDP();"
+  ],
+  "description": [
+    "Sets the transport protocol to UDP."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Endpoint 192.168.1.1:4000 addr;\n  addr.SetToUDP();\n  if (addr.IsUDP())\n  {\n   write( \"Is UDP endpoint\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

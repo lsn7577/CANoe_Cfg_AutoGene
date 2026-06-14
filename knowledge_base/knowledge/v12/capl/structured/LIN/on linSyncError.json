@@ -1,0 +1,31 @@
+{
+  "page_type": "event",
+  "name": "on linSyncError",
+  "category": "LIN",
+  "title": "on linSyncError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/EventProcedures/CAPLfunctionOnLINSyncError.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure on linSyncError is called when the LIN hardware was unable to become synchronized to an external master.",
+    "The keyword this and the selectors can be used to access the data of the event that has just been received."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "linSyncError",
+      "link": "../Selectors/CAPLfunctionLINSyncError.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

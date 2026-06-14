@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostGenerateBusloadAsync",
+  "category": "MOST",
+  "title": "mostGenerateBusloadAsync",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGenerateBusloadAsync.htm",
+  "syntax": [
+    "long mostGenerateBusloadAsync (long channel, long pkts)"
+  ],
+  "description": [
+    "The function sends cyclical packets to the asynchronous channel. Use the mostConfigureBusloadAsync() or mostSetStressNodeParameter() function to specify the send parameters and contents of the packets.",
+    "This function shows no effect if the StressNIC is not set to slave mode. For that purpose use mostSetStressNodeParameter with the proper parameter."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected MOST hardware."
+    }
+  ],
+  "return": "<= 0: See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

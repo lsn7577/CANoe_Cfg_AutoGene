@@ -1,0 +1,25 @@
+{
+  "page_type": "event",
+  "name": "on J1587Param",
+  "category": "J1587",
+  "title": "on J1587Param",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1587/EventHandler/CAPLfunctionOnJ1587Param.htm",
+  "syntax": [],
+  "description": [
+    "Defines the event handler for a valid J1587 parameter, the this pointer is of type J1587Param."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on J1587Param TextMessageAcknowledged\n{\n  if (this.MID == gECU_MID)\n  {\n    if (this.MessageDisplayed == 1)\n    {\n      gDisplayState = kDisplayed;\n    }\n    else\n    {\n      gDisplayState = kTimeout;\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINSynchDelTimingViolation",
+  "category": "Test",
+  "title": "ChkStart_LINSynchDelTimingViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinSynchDelTimingViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINSynchDelTimingViolation (dword MinDelLen, dword MaxDelLen);"
+  ],
+  "description": [
+    "Checks the timing of the synchronization break field in LIN headers.",
+    "An event will be generated, if the measured length [in bit times] of break delimiter is outside of the specified range."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Minimum length of break delimiter shall not be checked"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Minimum allowed length of break delimiter"
+    }
+  ],
+  "return": "0: Check could not be created and must not be referenced",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\nChkConfig_SetPrecision(9); // switch to ns precision\n// Create and start the check for LIN Synch Delimiter violation\ncheckId = ChkStart_LINSynchDelTimingViolation(1, 5, \"LINSynchDelimiterCallback\"); \nChkConfig_SetPrecision(3); // switch to ms precision (default)\n...\n// CAPL callback for violation notification\nvoid LINSynchDelimiterCallback (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

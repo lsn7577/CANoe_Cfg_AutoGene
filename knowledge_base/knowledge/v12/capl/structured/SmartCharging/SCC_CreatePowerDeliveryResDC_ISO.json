@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreatePowerDeliveryResDC_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreatePowerDeliveryResDC_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreatePowerDeliveryResDC_Iso.htm",
+  "syntax": [
+    "long SCC_CreatePowerDeliveryResDC_ISO ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, char StatusCode[], char Notification[] )"
+  ],
+  "description": [
+    "Creates a Power Delivery Response message for sending, using the DC syntax."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

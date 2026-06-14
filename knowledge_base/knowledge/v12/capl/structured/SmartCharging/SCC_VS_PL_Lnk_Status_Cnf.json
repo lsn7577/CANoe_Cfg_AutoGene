@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_VS_PL_Lnk_Status_Cnf",
+  "category": "SmartCharging",
+  "title": "SCC_VS_PL_Lnk_Status_Cnf",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_VS_PL_Lnk_Status_Cnf.htm",
+  "syntax": [
+    "void SCC_VS_PL_Lnk_Status_Cnf ( byte SourceMacAddress[], dword MStatus, dword LinkStatus )"
+  ],
+  "description": [
+    "The callback is called as soon as a VS_PL_Lnk_Status.Cnf message is received. This is the response of the QCA9000 chip when using link status polling. (Additional data cannot be queried at the moment.)"
+  ],
+  "parameters": [
+    {
+      "name": "SourceMacAddress",
+      "type": "",
+      "description": "MAC address of sender"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

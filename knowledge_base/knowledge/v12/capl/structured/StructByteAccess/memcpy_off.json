@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "memcpy_off",
+  "category": "StructByteAccess",
+  "title": "memcpy_off",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/StructByteAccess/Functions/CAPLfunctionMemCpy_off.htm",
+  "syntax": [
+    "void memcpy_off( struct type dest, dword destOffset, byte source[], dword sourceOffset, dword length); // form 1"
+  ],
+  "description": [
+    "Copies bytes from a source to destination, giving a destination start offset. The size of the destination must be at least destOffset + length."
+  ],
+  "parameters": [
+    {
+      "name": "dest",
+      "type": "",
+      "description": "(form 1, 2): Struct into which the bytes shall be copied.(other forms): Array into which the bytes shall be copied."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "event",
+  "name": "on a664Message",
+  "category": "ADFX",
+  "title": "on a664Message",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/EventProcedures/CAPLfunctionAFDXOnA664Message.htm",
+  "syntax": [
+    "on a664Message <message identification>"
+  ],
+  "description": [
+    "The event procedure on a664Message is called on every AFDX message if the following conditions are fulfilled:",
+    "Additional information related to this event is available via the selectors. The keyword this is available within an on a664Message procedure, to access the data of the AFDX event that has just been received."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "Selectors for AFDX messages",
+      "link": "../CAPLfunctionsAFDXSelectors.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

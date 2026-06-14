@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coSetOutputLevel",
+  "category": "Obsolete",
+  "title": "coSetOutputLevel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoSetOutputLevel.htm",
+  "syntax": [
+    "void coSetOutputLevel( dword level, dword errCode[] );"
+  ],
+  "description": [
+    "The function sets the output level of the node layer.",
+    "It must be noted that this function may only be called if the node has been started."
+  ],
+  "parameters": [
+    {
+      "name": "level",
+      "type": "",
+      "description": "Output level, value range 0..10"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\ncoSetOutputLevel( 5, errCode );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

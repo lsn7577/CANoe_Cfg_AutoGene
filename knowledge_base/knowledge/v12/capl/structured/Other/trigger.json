@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "trigger",
+  "category": "Other",
+  "title": "trigger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionTrigger.htm",
+  "syntax": [
+    "void trigger();"
+  ],
+  "description": [
+    "Sends a trigger event to all CANoe Logging or Trigger Blocks.",
+    "For a Logging Block, the trigger event starts and stops logging, depending on",
+    "set in the Trigger Configuration dialog of this block.",
+    "For a trigger block, the trigger event starts and stops the data stream (like a filter) for the whole analysis branch or a single analysis window, depending also on trigger mode and trigger conditions in the Trigger Configuration dialog.",
+    "Please note in CANoe online help the Trigger Condition: CAPL"
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on message 100 \n{\n  write(\"logging start\");\n  trigger(); // start logging\n  setTimer(logging,1000); // for 1000 ms\n}\n\non timer logging\n{\n  trigger(); // Stop logging\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

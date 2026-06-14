@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "linGetMeasBaudrate",
+  "category": "LIN",
+  "title": "linGetMeasBaudrate",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINGetMeasBaudrate.htm",
+  "syntax": [
+    "float linGetMeasBaudrate();"
+  ],
+  "description": [
+    "With this function it is possible to retrieve results of a last baud rate measurement, which is done by calling linMeasHeaderBaudrate() or linMeasRespBaudrate() functions."
+  ],
+  "parameters": [],
+  "return": "Returns the last measured baud rate [in bit/sec] or -1 on failure.",
+  "example": {
+    "description": [
+      "Example 1",
+      "Test case for measuring baud rate using LIN header event.",
+      "These test cases can only be used in the context of test module nodes.",
+      "Example 2",
+      "Test case for measuring baud rate using certain data byte of a LIN frame."
+    ],
+    "code": "testcase tcMeasureHeaderBaudrate ()\n{\nlong waitResult, measBaudrate;\n// set request to measure baud rate according to Synch field of a LIN header\nlinMeasHeaderBaudrate(0);\n// wait maximum 1000 [ms] for LIN header with identifier 0x33\nwaitResult = TestWaitForLinHeader(0x33, 1000);\n// declare failure if Wait has resumed not due to expected event\nif (1 != waitResult)\n{\nTestStepFail(\"Test 1.1\",\"No LIN header \r\n with ID=0x33 occurred during 1000 ms!\");\n}\n// retrieve measured baudrate\nmeasBaudrate = linGetMeasBaudrate();\nif (-1 == measBaudrate)\n{\nTestStepFail(\"Test 1.1\", \"Failed to measure header baudrate!\");\n}\nTestStepPass(\"Test 1.1\", \"Header baudrate measurement done...\");\ntestcase tcMeasureDatabyteBaudrate (int byteIndex)\n{\nlong waitResult, measBaudrate;\n// set request to measure baud rate using the specified \r\n byte of a frame with ID=0x33\nlinMeasRespBaudrate(0x33, byteIndex);\n// wait maximum 1000 [ms] for a frame with ID=0x33\nwaitResult = TestWaitForMessage(0x33, 1000);\n// declare failure if Wait has resumed not due to expected event\nif (1 != waitResult) {\nTestStepFail(\"Test 1.1\",\"Expected frame has not occurred during 1000 ms!\");\n}\n// retrieve measured baudrate\nmeasBaudrate = linGetMeasBaudrate();\nif (-1 == measBaudrate)\n{\nTestStepFail(\"Test 1.1\", \"Failed to measure response baudrate!\");\n}\nTestStepPass(\"Test 1.1\", \"Response baudrate measurement done...\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.1",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "LIN Real bus mode",
+      "LIN Real bus mode",
+      "—",
+      "—",
+      "—",
+      "LIN Real bus mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "A664SetStringSignal",
+  "category": "ADFX",
+  "title": "A664SetStringSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664SetStringSignal.htm",
+  "syntax": [
+    "long A664SetStringSignal (dbSignal aSignal, char val[]) (1)"
+  ],
+  "description": [
+    "This function can be used to set a string-signal within a specific a664Message (form 2) or to set the Tx-signal of the CANoe-subsystem (form 1).",
+    "For AFDX the usual string format contains the string length information at the first 2 bytes of the signal position, so the usual string operations won’t work correct on string signal.",
+    "Note: To set opaque-type signals use the generic function SetRawSignal."
+  ],
+  "parameters": [
+    {
+      "name": "dbSignal",
+      "type": "",
+      "description": "the signal."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "a664Message TESTMSG_ALLTYPES testMsg = { msgChannel = 1};\na664SetStringSignal(TEST_STRING14_CITY, \"STR126\"); // set signal value on signalServer\na664InitPayload (testMsg); \t// set payload to last known signal values\na664TriggerMessage(testMsg, 1);\na664Message TESTMSG_ALLTYPES testMsg = { msgChannel = 1};\ntestMsg.VFG_OIL_TEMP_AB_32 = 86;\na664SetStringSignal(TEST_STRING14_CITY, \"STR126\", testMsg);\na664TriggerMessage(testMsg, 1);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

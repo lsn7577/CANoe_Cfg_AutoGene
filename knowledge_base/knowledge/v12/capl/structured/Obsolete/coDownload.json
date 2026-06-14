@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "coDownload",
+  "category": "Obsolete",
+  "title": "coDownload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoDownload.htm",
+  "syntax": [
+    "void coDownload( dword nodeId, dword index, dword subIndex, char data[], dword dataSize, dword flags, dword errCode[] );"
+  ],
+  "description": [
+    "Writing of an entry into the object dictionary of another node.",
+    "The function triggers a SDO download. The response of the node is returned in the event function coOnDownloadResponse or coOnError.",
+    "(3) If it is used with the float parameter value, it always initiates a transfer with the length 8 bytes. This corresponds to the data type Real64."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID, value range 1..127"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nchar data[256] = \"coDownloadData\";\n\ncoDownload( 1, 0x2000, 0x00, data, strlen(data), 0, errCode );\nif (errCode[0] == 0) {\n  write( \"SDO Download successfully initiated\" ); \n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

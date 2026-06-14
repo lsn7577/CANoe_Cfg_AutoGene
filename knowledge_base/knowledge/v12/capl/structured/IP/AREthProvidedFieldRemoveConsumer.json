@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthProvidedFieldRemoveConsumer",
+  "category": "IP",
+  "title": "AREthProvidedFieldRemoveConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthProvidedFieldRemoveConsumer.htm",
+  "syntax": [
+    "long AREthProvidedFieldRemoveConsumer(dword pfHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort);"
+  ],
+  "description": [
+    "Removes a consumer from a provided field that has been added by AREthProvidedFieldAddConsumer."
+  ],
+  "parameters": [
+    {
+      "name": "pfHandle",
+      "type": "",
+      "description": "Provided field handle (may be retrieved by AREthGetProvidedObjectHandle)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

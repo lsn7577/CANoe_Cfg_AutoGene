@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linWakeup",
+  "category": "LIN",
+  "title": "linWakeup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINWakeUp.htm",
+  "syntax": [
+    "long linWakeup()"
+  ],
+  "description": [
+    "Sends wakeup signals. Wakeup signals can only be sent while the LIN hardware is in Sleep mode. If no parameters are given, the default parameters or the parameters configured with linSetWakeupTimings are used. Wake up timings can be configured per node for nodes defined in a LIN database. If no database is used the signature using wake parameters shall be used.",
+    "When LIN hardware is not in Sleep mode calling this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "ttobrk",
+      "type": "",
+      "description": "This parameter specifies the time difference between the transmissions of two consecutive Wakeup frames, i.e. the time between end of one wakeup frame and start of the next one. Units of this parameter as well as default value depend on the hardware settings (see Hardware Configuration: LIN)."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "// send a wakeup signal via a keyboard event\non key 'w'\n{\n  linWakeup();\n}\n// send wakeup signal 3 times with 150 ms delay between 2 consecutive signals and a length of 300 us\nlinWakeup(150, 3, 300);\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

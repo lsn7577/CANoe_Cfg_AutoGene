@@ -1,0 +1,156 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOGetAbortCode",
+  "category": "CANopen",
+  "title": "coTfsSDOGetAbortCode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoGetAbortCode.htm",
+  "syntax": [
+    "long coTfsSDOGetAbortCode( dword nodeID, dword outSrcNodeId[1], qword outTimeStamp[1], dword outIndex[1], dword outSubIndex[1], dword outAbortCode[1] ); // form 1",
+    "long coTfsSDOGetAbortCode( dword outSrcNodeId[1], qword outTimeStamp[1], dword outIndex[1], dword outSubIndex[1], dword outAbortCode[1] ); // form 2"
+  ],
+  "description": [
+    "This function returns received SDO abort codes. In addition, the following information is delivered:",
+    "Via the parameter nodeID, the returned SDO abort codes can be filtered. The value nodeID=0 returns all SDO abort codes that occur. All SDO abort codes can only be read out once with this function.",
+    "(2) It is possible to omit the parameter nodeID. In this case, the internal saved value set with coTfsSetNodeId() is used as node-ID."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "Node-ID of the node whose SDO abort codes should be read out, 0 for all nodes."
+    },
+    {
+      "name": "outSrcNodeId[]",
+      "type": "",
+      "description": "Pointer to the received CAN-ID."
+    },
+    {
+      "name": "outTimeStamp[]",
+      "type": "",
+      "description": "CANoe time stamp of the input of the SDO abort code."
+    },
+    {
+      "name": "outIndex[]",
+      "type": "",
+      "description": "Object index"
+    },
+    {
+      "name": "outSubIndex[]",
+      "type": "",
+      "description": "Object sub index"
+    },
+    {
+      "name": "outAbortCode[]",
+      "type": "",
+      "description": "SDO abort code."
+    }
+  ],
+  "return": "If no SDO abort code was received, the function returns the return value 0.\nOtherwise, the number of still-outstanding SDO abort codes (current SDO abort code is contained in this number) is returned. For a return value 0, all return arrays are invalid.",
+  "example": {
+    "description": [],
+    "code": "dword pNodeId[1], pIndex[1], pSubIndex[1], pAbortCode[1];\nqword pNanoSecondsTime[1];\ndword counter;\n\nif ((counter = coTfsSDOGetAbortCode( pNodeId, pNanoSecondsTime, pIndex, pSubIndex, pAbortCode))!=0) {\n  write(\"SDO abort message caught: counter %d, node-ID 0x%x, time %I64d [ns], index 0x%x, subIndex 0x%x, abortcode 0x%x\", counter, pNodeId[0], pNanoSecondsTime[0], pIndex[0], pSubIndex[0], pAbortCode[0]);\n}\nelse {\n  write(\"no SDO abort code received\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

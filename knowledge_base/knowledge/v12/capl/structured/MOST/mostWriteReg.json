@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostWriteReg",
+  "category": "MOST",
+  "title": "mostWriteReg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTWriteReg.htm",
+  "syntax": [
+    "long mostWriteReg(long channel, long chip, dword offset, long regdatalen, byte regdata[])"
+  ],
+  "description": [
+    "Writes to one or more registers of a MOST hardware chip."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel to which the hardware is connected"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "SomeIpRemoveConsumedEventGroup",
+  "category": "IP",
+  "title": "SomeIpRemoveConsumedEventGroup",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpRemoveConsumedEventGroup.htm",
+  "syntax": [
+    "LONG SomeIpRemoveConsumedEventGroup( dword cevgHandle );"
+  ],
+  "description": [
+    "Removes an Event Group from a Consumed Service Instance. The Event Group was previously added by SomeIpAddConsumedEventGroup.",
+    "The Events, fields, and methods assigned to the Event Group are not deleted when the Eventgroup is closed."
+  ],
+  "parameters": [
+    {
+      "name": "cevgHandle",
+      "type": "",
+      "description": "Handle of the Consumed Event Group."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 'c'\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD csi; // consumed Service Instance handle\n  DWORD ceg; // consumed Eventgroup handle\n\n  // open an Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,10,1);\n\n  // create Eventgroup\n  ceg = SomeIpAddConsumedEventGroup(csi,1);\n\n  // ... do something here\n\n  // release the consumed Service Instance\n  SomeIpRemoveConsumedEventGroup(ceg);\n\n  // ... Application Endpoint and provided Service Instance can still be used here\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

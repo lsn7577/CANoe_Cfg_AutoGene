@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coLssInqVendorId",
+  "category": "Obsolete",
+  "title": "coLssInqVendorId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssInqVendorId.htm",
+  "syntax": [
+    "void coLssInqVendorId( dword errCode[] );"
+  ],
+  "description": [
+    "This service causes the determination of the vendor-ID of a LSS slave. It is available in configuration mode only and there may only be one LSS slave in this mode."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoLssInqVendorId( errCode );\nif (errCode[0] == 0) {\n  write( \"LSS inquire Vendor-ID commanded\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linSetChecksumError",
+  "category": "LIN",
+  "title": "linSetChecksumError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetChecksumError.htm",
+  "syntax": [
+    "long linSetChecksumError(long frameId, long activate)"
+  ],
+  "description": [
+    "Sets/resets a checksum error of a LIN frame. The activated checksum error is then constant and will not be affected by changes in the frame data."
+  ],
+  "parameters": [
+    {
+      "name": "frameId",
+      "type": "",
+      "description": "LIN frame identifier in the range 0 .. 63."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "Cause check sum error for all LIN frames on the bus"
+    ],
+    "code": "on linFrame *\n{\nlinSetChecksumError(this.id, 1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

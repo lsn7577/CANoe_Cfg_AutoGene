@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "IpSetAdapterGateway",
+  "category": "TCPIPAPI",
+  "title": "IpSetAdapterGateway",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIpSetAdapterGateway.htm",
+  "syntax": [
+    "long IpSetAdapterGateway (dword ifIndex, dword ipv4address); // form 1"
+  ],
+  "description": [
+    "The function sets the default gateway address. There can only be one default gateway. An old default gateway address will be overwritten. The default gateway has to be in one of the subnets configured in the network stack, otherwise the network stack will not be able to find a route to the gateway. To remove the gateway, set the address 0.0.0.0 (IPv4) or :: (IPv6).",
+    "The function is dependent on the selected stack.",
+    "This functionality cannot be used in connection with the operating system TCP/IP stack."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index. Although you set the default gateway on a defined interface, it is valid for the whole network stack."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket gSocket;\n}\n\non start\n{\n  ipSetAdapterGateway( 1, IP_Address(192.168.0.200) );\n  gSocket = UdpSocket::Open( IP_Endpoint(192.168.0.17:40017) );\n\n  // this send call to another sub-net will request the MAC address\n  // of the gateway and sent the UDP packet to the MAC address of the gateway.\n  gSocket.SendTo( IP_Endpoint(192.168.1.100:40100), \"Hello\", 5 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_GetValueRaw, TCIL_GetValuePhysical",
+  "category": "ISO11783",
+  "title": "TCIL_GetValueRaw, TCIL_GetValuePhysical",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILGetValueRawPhysical.htm",
+  "syntax": [
+    "long TCIL_GetValueRaw(dbNode client, dword ddi, dword elementNumber, long & value); // form 1"
+  ],
+  "description": [
+    "These functions return the current value of a data entity of the Task Controller. No Request Value command is sent."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "Task Controller simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void CheckValue(double referenceValue)\n{\n  long result;\n  double value;\n  result = TCIL_GetValuePhysical(TC, Sprayer, 6, 1, value);\n  if (result == 0)\n  {\n    if (value == referenceValue)\n    {\n      TestStepPass();\n    }\n    else\n    {\n      TestStepFail(\"CheckValue\", \"Value of data entity (DDI 6 , element number 1) is different (Expected value: %f)\", referenceValue);\n    }\n  }\n  else\n  {\n    TestStepFail(\"CheckValue\", \"Failed to get value of data entity (DDI 6 , element number 1). Error %i\", result);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

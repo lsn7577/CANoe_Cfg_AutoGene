@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDOnError",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDOnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDOnError.htm",
+  "syntax": [
+    "void Iso11783IL_PDDOnError( long errorCode, dword param );"
+  ],
+  "description": [
+    "This function can be implemented in the CAPL program. The function is called up by the interaction layer when an error occurs."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "error code"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_PDDOnError( LONG errorCode, LONG addParam )\n{\n  char buffer[256];\n  Iso11783IL_PDDGetLastErrorText ( elCount(buffer), buffer);\n  write( \"ERROR: %s\", buffer );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

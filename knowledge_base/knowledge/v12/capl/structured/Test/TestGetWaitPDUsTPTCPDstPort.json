@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitPDUsTPTCPDstPort",
+  "category": "Test",
+  "title": "TestGetWaitPDUsTPTCPDstPort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitPDUsTPTCPDstPort.htm",
+  "syntax": [
+    "long TestGetWaitPDUsTPTCPDstPort(dword &tcpDestinationPort); //form 1"
+  ],
+  "description": [
+    "If a PDU was received via TCP that triggered the last wait function, with form 1 the TCP destination port can be requested.",
+    "Form 2 can only be used for joined events. The number of the joined event (return value of TestJoin...) is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "tcpDestinationPort",
+      "type": "",
+      "description": "TCP destination port."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": "testcase TC_CheckPDUTPProperties()\n{\n  dword srcAddr, dstAddr, srcPort, dstPort;\n  if (TestWaitForPDU(engineDataPDU, 0, 200)!=1)\n  {\n    TestStepFail(\"PDU not received\");\n  }\n  else\n  {\n    if (TestGetWaitPDUsTPIPv4SrcAddr(srcAddr)==0\n      && TestGetWaitPDUsTPIPv4DstAddr(dstAddr)==0\n      && TestGetWaitPDUsTPTCPSrcPort(srcPort)==0\n      && TestGetWaitPDUsTPTCPDstPort(dstPort)==0)\n    {\n      if (srcAddr != IpGetAddressAsNumber(\"192.168.0.1\"))\n        TestStepFail(\"source address not matching\");\n      else if (dstAddr != IpGetAddressAsNumber(\"192.168.0.2\"))\n        TestStepFail(\"destination address not matching\");\n      else if (srcPort != 1234)\n        TestStepFail(\"source port not matching\");\n      else if (dstPort != 4321)\n        TestStepFail(\"destination port not matching\");\n    }\n    else\n      TestStepFail(\"could not retrieve expected PDU TP properties\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

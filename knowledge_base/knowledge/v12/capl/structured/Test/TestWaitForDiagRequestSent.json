@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDiagRequestSent",
+  "category": "Test",
+  "title": "TestWaitForDiagRequestSent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDiagRequestSent.htm",
+  "syntax": [
+    "long TestWaitForDiagRequestSent (diagRequest request, dword timeout);"
+  ],
+  "description": [
+    "Waits until the previously sent request has been sent to the ECU. This might be triggered by a call of the function Diag_DataCon() at the CAPL Callback Interface."
+  ],
+  "parameters": [
+    {
+      "name": "request",
+      "type": "",
+      "description": "Sent request"
+    }
+  ],
+  "return": "<0: An internal error occurred, e.g. a faulty configuration of the Diagnostic Layer.",
+  "example": {
+    "description": [],
+    "code": "DiagRequest SerialNumber_Read req;\nlong result;\n\nDiagSetTarget(\"Door\");\nreq.SendRequest();\n// waits until request is completely sent\nif (TestWaitForDiagRequestSent(req, 2000)== 1)\n  TestStepPass(\"Request was sent successfully!\");\nelse\n  TestStepFail(\"Request could not be sent!\");\nTestWaitForDiagResponse(req, 2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

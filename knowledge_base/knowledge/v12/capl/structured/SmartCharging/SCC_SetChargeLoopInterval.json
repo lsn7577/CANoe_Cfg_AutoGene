@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetChargeLoopInterval",
+  "category": "SmartCharging",
+  "title": "SCC_SetChargeLoopInterval",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetChargeLoopInterval.htm",
+  "syntax": [
+    "void SCC_SetChargeLoopInterval ( dword Interval )"
+  ],
+  "description": [
+    "Specifies the interval time between consecutive requests when inside the charge loop. Does not apply to MeteringReceipt."
+  ],
+  "parameters": [
+    {
+      "name": "Interval",
+      "type": "",
+      "description": "Desired interval time in milliseconds"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

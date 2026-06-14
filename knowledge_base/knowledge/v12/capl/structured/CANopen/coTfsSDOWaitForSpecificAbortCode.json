@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOWaitForSpecificAbortCode",
+  "category": "CANopen",
+  "title": "coTfsSDOWaitForSpecificAbortCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoWaitForSpecificAbortCode.htm",
+  "syntax": [
+    "long coTfsSDOWaitForSpecificAbortCode( dword nodeId, dword sdoAbortCode );"
+  ],
+  "description": [
+    "The function waits for receiving the specified SDO abort message of the device or the occurrence of a time-out."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID of the device, 1..127."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword nodeId = 0x5;\n\nif (coTfsSDOWaitForSpecificAbortCode(nodeId, sdoAbortCode) == 1) {\n  write(\"SDO abort message received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

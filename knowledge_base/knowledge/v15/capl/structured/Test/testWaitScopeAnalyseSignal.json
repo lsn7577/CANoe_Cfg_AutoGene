@@ -1,0 +1,220 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeAnalyseSignal",
+  "category": "Test",
+  "title": "testWaitScopeAnalyseSignal",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitScopeAnalyseSignal.htm",
+  "syntax": [
+    "long testWaitScopeAnalyseSignal (message aMessage, dword flags, dword msgFieldStart, dword msgFieldEnd, ScopeBitMaskPolygon bitMaskPolygon, long domVoltageThreshold , long recVoltageThreshold, ScopeAnalyseHandle handle); // form 1",
+    "long testWaitScopeAnalyseSignal (char nodeName[], dword flags, ScopeBitMaskPolygon bitMaskPolygon, ScopeAnalyseResult analyzeResult, ScopeAnalyseHandle handle); // form 2"
+  ],
+  "description": [
+    "Form 1: Checks the bits of a CAN message against the defined bit mask.",
+    "Form 2: Checks the bits of FlexRay frames which are transmitted by one node against the defined bit mask."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The CAN message to be analyzed."
+    },
+    {
+      "name": "Bits",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0-2",
+      "type": "",
+      "description": "0 = Analyze only frames in Key Slots1 = Analyze only frames of static segment2 = Analyze only frames in dynamic segment3 = Use all frame for analysis"
+    },
+    {
+      "name": "msgFieldStart, msgFieldEnd",
+      "type": "",
+      "description": "The start and end of the cutout to be fitted. See ScopeBitAnalyse.cin"
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "maskPointCount",
+      "type": "Count of the points in the mask-arrays",
+      "description": "long"
+    },
+    {
+      "name": "data_0_Mask",
+      "type": "CAN: Voltage level in mV for dominant bits FlexRay: Voltage level in mV for Data0",
+      "description": "long[]"
+    },
+    {
+      "name": "data_1_Mask",
+      "type": "CAN: Voltage level in mV for recessive bits FlexRay: Voltage level in mV for Data1",
+      "description": "long[]"
+    },
+    {
+      "name": "timeOffset",
+      "type": "Relative position within bit in percent",
+      "description": "double[]"
+    },
+    {
+      "name": "domVoltageThreshold, recVoltageThreshold",
+      "type": "",
+      "description": "The voltage levels in millivolt used from the bit parser for detecting dominant and recessive bits."
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    },
+    {
+      "name": "nodeName",
+      "type": "",
+      "description": "The name of the node."
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "result",
+      "type": "The result of the analysis.1 = pass0 = failed",
+      "description": "byte"
+    },
+    {
+      "name": "analysedFrameCount",
+      "type": "Count of the analyzed frames",
+      "description": "long"
+    },
+    {
+      "name": "framesWithDecodeFailure",
+      "type": "Count of frames with decoding errors",
+      "description": "long"
+    },
+    {
+      "name": "framesWithMaskViolations",
+      "type": "Count of frames with bit mask violations",
+      "description": "long"
+    },
+    {
+      "name": "bitFailureCount",
+      "type": "Count of bits with mask violations",
+      "description": "long"
+    }
+  ],
+  "return": "Form 1:\nForm 2:",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN FlexRay Scope",
+      "CAN FlexRay Scope",
+      "—",
+      "—",
+      "CAN FlexRay Scope"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

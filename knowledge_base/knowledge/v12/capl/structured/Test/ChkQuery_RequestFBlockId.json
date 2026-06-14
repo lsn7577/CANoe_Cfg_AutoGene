@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_RequestFBlockId",
+  "category": "Test",
+  "title": "ChkQuery_RequestFBlockId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryRequestFBlockId.htm",
+  "syntax": [
+    "long ChkQuery_RequestFBlockId(dword aCheckId);",
+    "check.QueryRequestFBlockId();"
+  ],
+  "description": [
+    "Returns the FBlock of the request message, which last led to a protocol violation."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Reference to check context."
+    }
+  ],
+  "return": "< 0: Refers the query error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

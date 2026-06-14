@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "EthSetTokenSignalValue",
+  "category": "Obsolete",
+  "title": "EthSetTokenSignalValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthSetTokenSignalValue.htm",
+  "syntax": [
+    "long EthSetTokenSignalValue( long packet, dbSignal signal, double physValue ); // form 1"
+  ],
+  "description": [
+    "Both functions assume that the packet’s payload is described in the database. They writes the signal’s value into the packet’s payload.",
+    "Form 2 assumes the passed signal is the first element of an array. The value will be written to the element’s position.",
+    "The caller must check itself if the packet’s payload is described by the signal’s database frame."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "LONG packetHandle;\nCHAR error[100];\n\n// create packet\npacketHandle = EthInitPacket(\"udp\");\n\nif (EthGetLastError() == 0)\n{\n  // set protocol fields\n  EthSetTokenInt( packetHandle, \"ipv4\", \"source\", 0xC0A80001 ); // 192.168.0.1\n  EthSetTokenInt( packetHandle, \"ipv4\", \"destination\", 0xFFFFFFFF ); // 255.255.255.255\n  EthSetTokenInt( packetHandle, \"udp\", \"source\", 23 );\n  EthSetTokenInt( packetHandle, \"udp\", \"destination\", 23 ); \n  //this example assumes that a udp payload with destination port 23 is described by the database frame EngineInfo\n\n  // set UDP payload\n  EthResizeToken( packetHandle, \"udp\", \"data\", EngineInfo.DLC*8 /*bits*/ );\n EthSetTokenSignalValue( packetHandle, EngineInfo::CoolantTemperature, 77.0 );\n\n  // Complete and send packet\n  EthCompletePacket( packetHandle );\n  EthOutputPacket( packetHandle );\n\n  // release packet\n  EthReleasePacket( packetHandle );\n}\nelse\n{\n  EthGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

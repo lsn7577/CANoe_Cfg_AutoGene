@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "applILTxRequestPending",
+  "category": "CANoeIL",
+  "title": "applILTxRequestPending",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionApplILTxRequestPending.htm",
+  "syntax": [
+    "void applILTxRequestPending ( );"
+  ],
+  "description": [
+    "If the IL clamp 15 state (for ASR PDU IL Ignition state) is being enabled by ILActivateClamp15 (for ASR PDU IL ARILSetIgnitionState) or any wake-up-allowed signal is changed, then optionally this functions is called. Within this function the bus should be requested by the network management DLL."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

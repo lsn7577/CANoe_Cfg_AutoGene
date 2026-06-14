@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "frEnableNodeTx",
+  "category": "FlexRay",
+  "title": "frEnableNodeTx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFREnableNodeTx.htm",
+  "syntax": [
+    "long FrEnableNodeTx(long channel, char[] node, long enable);"
+  ],
+  "description": [
+    "Enable/disable all TX frames/PDUs of the specified node.",
+    "With enabling the default data of the frames/PDUs are transmitted."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "FlexRay channel."
+    }
+  ],
+  "return": "1 = Successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILFaultInjectionDisableMsg",
+  "category": "CANoeIL",
+  "title": "ILFaultInjectionDisableMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILFaultInjectionDisableMsg.htm",
+  "syntax": [
+    "long ILFaultInjectionDisableMsg (dbMessage msg)"
+  ],
+  "description": [
+    "Disables the sending of the message except by calling the function ILSetMsgEvent."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message that should be disabled."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

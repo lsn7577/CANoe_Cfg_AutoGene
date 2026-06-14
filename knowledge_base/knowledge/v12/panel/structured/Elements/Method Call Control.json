@@ -1,0 +1,162 @@
+{
+  "page_type": "concept",
+  "name": "Method Call Control",
+  "category": "Panel",
+  "subcategory": "Elements",
+  "title": "Method Call Control",
+  "source": "chm_extract/PanelDesigner/Topics/Elements/PanelDesignerControlsMethodCall.htm",
+  "intro": [],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Use Case",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Note",
+          "Only available if the Panel Designer was opened from CANoe/CANalyzer and a configuration with communication objects (service-oriented communication) is loaded there.",
+          "The Method Call Control is used to call a function/method. You can set parameters and receive the corresponding return value."
+        ],
+        "tables": [
+          [
+            [
+              "Note Only available if the Panel Designer was opened from CANoe/CANalyzer and a configuration with communication objects (service-oriented communication) is loaded there."
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The control can be activated with the following CAPL functions:"
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Configuration",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Assign a symbol to the control in the Panel Designer.",
+          "A function/method is always sent from the consumer to the provider. This means that the consumer sends the function and the provider responds. Accordingly, you can only connect the functions/methods of a client to the control. To do this, drag the desired endpoint to the Method Call Control.",
+          "You can assign a symbol to the control",
+          "To enable you to adjust the size of the control optimally, the parameters are displayed immediately after linking to a function/method. The return values are only displayed at runtime of the panel.It is possible that the parameters may take up more space at runtime than the Panel Designer displays. Therefore, always check the size at runtime.",
+          "You can configure the control via the Properties Window."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Display and Control Element",
+      "level": 2,
+      "content": {
+        "paragraphs": [],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Request",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "At runtime of CANoe/CANalyzer, you can set and send the parameters of the linked function on the Request page.",
+          "Click on the corresponding line and enter a value for the parameter. The [Send] button calls the function/method.",
+          "If the parameter is an array, you can open an editor for modifying the parameters with [...].The first column shows you the size of the array and the second column shows all elements of the array.",
+          "If a function/method contains optional parameters, the Send column is displayed in addition to the Parameter Name and Value column. By activating/deactivating the check box you determine whether the parameter is sent or not.If the parameters of the function/method are mandatory, the Send column remains empty.",
+          "The last column shows you whether the value was sent or whether the value was edited and has not been sent yet .",
+          "The call of the function/method and the wait for the response are indicated the symbol on the [Send] button."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Response",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "At runtime of CANoe/CANalyzer, the Response page displays the received return value (if available) and the values of the Out parameters (if available).",
+          "The Response page title shows you whether the contents of both pages corresponds to each other. If the answer has been received and the parameters on the first page have not been changed, will be displayed. As soon as the parameters are changed after sending, will be shown.",
+          "is displayed if the communication does not work, i.e. no confirmation is received after sending the function/method.",
+          "The control does not have a history. Only the last response to the function/method call sent by this control is displayed."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Properties Window",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Note",
+          "As default only the relevant settings for the selected control are displayed. For displaying all properties, please select in the toolbar of the Properties Window.",
+          "Control Name",
+          "Here you can give the control a name. This name and the name of the panel is required for access from CAPL.",
+          "Is Visible At Runtime",
+          "Specifies whether the control is to be displayed during runtime.",
+          "Here you can enter settings relating to the size and position of the control.",
+          "You can also resize the control by dragging its markers.",
+          "Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.",
+          "Value Type",
+          "Determines whether the numerical value of the parameters is to be interpreted as a physical value or as a raw value. The same applies to return value and the out parameters.",
+          "You can assign a symbol to the control by opening the corresponding Symbol Selection dialog:",
+          "Valid Data Types of Symbols",
+          "Assigning Controls"
+        ],
+        "tables": [
+          [
+            [
+              "Note As default only the relevant settings for the selected control are displayed. For displaying all properties, please select in the toolbar of the Properties Window."
+            ]
+          ],
+          [
+            [
+              "General",
+              "Control Name Here you can give the control a name. This name and the name of the panel is required for access from CAPL."
+            ],
+            [
+              "Is Visible At Runtime Specifies whether the control is to be displayed during runtime."
+            ],
+            [
+              "Layout",
+              "Here you can enter settings relating to the size and position of the control. Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.",
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ],
+            [
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ],
+            [
+              "Settings",
+              "Value Type Determines whether the numerical value of the parameters is to be interpreted as a physical value or as a raw value. The same applies to return value and the out parameters."
+            ],
+            [
+              "Symbol",
+              "You can assign a symbol to the control by opening the corresponding Symbol Selection dialog: click the links at the bottom under Symbol (once you have selected the symbol filter) Valid Data Types of Symbols"
+            ]
+          ],
+          [
+            [
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ]
+          ],
+          [
+            [
+              "Version 12.0© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

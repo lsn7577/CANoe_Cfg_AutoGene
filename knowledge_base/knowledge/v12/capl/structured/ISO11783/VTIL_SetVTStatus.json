@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "VTIL_SetVTStatus",
+  "category": "ISO11783",
+  "title": "VTIL_SetVTStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILSetVTStatus.htm",
+  "syntax": [
+    "long VTIL_SetVTStatus(dword cycleTime); // form 1"
+  ],
+  "description": [
+    "Forms (1) and (3): This function changes the cycle time of the VT Status message.The content of VT Status message stays unchanged.",
+    "Forms (2) and (4): This function changes the content and cycle time of the VT Status message."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "pg VT12 vt12;\nvt12.VTFunctionVTtoECU = 254;\nvt12.SourceAdressOfActiveWSM = 1;\nvt12.VisibleDataAlarmMaskID = 1000;\nvt12.VisibleSoftKeyMaskID = 2000;\nvt12.VTBusyCode1 = 0;\nvt12.VTBusyCode2 = 0;\nvt12.VTBusyCode3 = 0;\nvt12.VTBusyCode4 = 0;\nvt12.VTBusyCode8 = 0;\nvt12.VTFunctionCode = 0;\nif (VTIL_SetVTStatus( VT, 1000, vt12 ) < 0)\n{\n  TestStepFail(\"Failed to set VT Status\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

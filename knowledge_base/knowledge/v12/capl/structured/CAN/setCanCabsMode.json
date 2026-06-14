@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "setCanCabsMode",
+  "category": "CAN",
+  "title": "setCanCabsMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionSetCanCabsMode.htm",
+  "syntax": [
+    "long setCanCabsMode(long ntype,long nchannel,long nmode,long nflags);"
+  ],
+  "description": [
+    "Various CANcabs modes may be set. Replaces the setPortBits functions.",
+    "Please note that not all modes set with this functions are supported by all transceivers."
+  ],
+  "parameters": [
+    {
+      "name": "ntype",
+      "type": "",
+      "description": "Unused, must be set to 0"
+    }
+  ],
+  "return": "0: ok",
+  "example": {
+    "description": [],
+    "code": "on key 'n'\n{\n   long ntype, nmode, nchannel, nflags;\n   ntype = 0;\n   nmode = 0;\n   nchannel = 1;\n   nflags = 0;\n   setCanCabsMode(ntype, nchannel, nmode, nflags);\n   write(\"normal mode\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

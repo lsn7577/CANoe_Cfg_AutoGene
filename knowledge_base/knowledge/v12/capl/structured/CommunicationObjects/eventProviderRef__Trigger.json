@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "eventProviderRef::Trigger",
+  "category": "CommunicationObjects",
+  "title": "eventProviderRef::Trigger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionEventProviderRefTrigger.htm",
+  "syntax": [
+    "void eventProviderRef::Trigger()"
+  ],
+  "description": [
+    "Triggers the specified event. This leads to a transmission of the event to all subscribed consumers without changing the current event value. The method is particularly useful for events which do not carry a value (have data type void)."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "MirrorAdjustment.providerSide[LeftMirror].CurrentPosition.Trigger();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

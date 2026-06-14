@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForAnswer",
+  "category": "CommunicationObjects",
+  "title": "TestWaitForAnswer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionTestWaitForAnswer.htm",
+  "syntax": [
+    "long TestWaitForAnswer(callContext cco, dword timeoutMs)"
+  ],
+  "description": [
+    "Waits for the answer to a method call. The call must have been created through consumedMethodRef::CallAsync on a consumed method.",
+    "If the wait is successful, the call context properties for the return value and the out parameters can be read."
+  ],
+  "parameters": [
+    {
+      "name": "cco",
+      "type": "",
+      "description": "Call context for a call."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "long ret;\ncallContext MirrorAdjustment.Adjust cco;\n\ncco = MirrorAdjustment[0,0].Adjust.CallAsync(50, 0);\nret = TestWaitForAnswer(cco, 300);\nif (ret == 1)\n{\n  write(\"Call result: %d\", cco.Result);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

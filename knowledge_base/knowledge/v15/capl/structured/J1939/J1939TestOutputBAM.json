@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "J1939TestOutputBAM",
+  "category": "J1939",
+  "title": "J1939TestOutputBAM",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestOutputBAM.htm",
+  "syntax": [
+    "long J1939TestOutputBAM( pg txMsg, dword seqNum, dword seqCount, dword delay, [dword options], [dword optionArg] )"
+  ],
+  "description": [
+    "With this function the transmission of a message with the BAM transport protocol is influenced. It can created errors during transmission, i.e. violate time distances or wrong sequence numbers."
+  ],
+  "parameters": [
+    {
+      "name": "txMsg",
+      "type": "",
+      "description": "send this parameter group with BAM"
+    },
+    {
+      "name": "seqNum",
+      "type": "",
+      "description": "start with this sequence number, number 0 is the BAM message"
+    },
+    {
+      "name": "seqCount",
+      "type": "",
+      "description": "number of messages to send"
+    },
+    {
+      "name": "delay",
+      "type": "",
+      "description": "delay between messages [ms]"
+    },
+    {
+      "name": "options",
+      "type": "",
+      "description": "optional Bit 0: Do not wait after last message Bit 1: Use number of packets for BAM message from optionArg"
+    },
+    {
+      "name": "optionArg",
+      "type": "",
+      "description": "depends on options, optional"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "pg EC1 txMsg = { DLC=38 };\n\n// send BAM and first Data message\nJ1939TestOutputBAM( txMsg, 0, 2, 50 );\n\n// send Data message, Seq. 2\nJ1939TestOutputBAM( txMsg, 2, 1, 350 );\n\n// the DUT should detect, that the time between Seq 2 and Seq 3 is more than 200ms \n// send Data message, Seq. 3 to 6\nJ1939TestOutputBAM( txMsg, 3, 4, 50 );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.1",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

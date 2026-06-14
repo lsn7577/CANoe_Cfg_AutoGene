@@ -1,0 +1,79 @@
+{
+  "page_type": "function",
+  "name": "xlReleaseLED",
+  "category": "Other",
+  "title": "xlReleaseLED",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionxlReleaseLED.htm",
+  "syntax": [
+    "dword xlReleaseLED(dword ledBitMask);"
+  ],
+  "description": [
+    "Releases the specified LEDs after they were successfully acquired with a call of xlAcquireLED.",
+    "This function is supported by the following device: VN8900 (driver version > 7.5)"
+  ],
+  "parameters": [
+    {
+      "name": "LED",
+      "type": "",
+      "description": "Numeric Value"
+    },
+    {
+      "name": "Module (M)",
+      "type": "",
+      "description": "0x001"
+    },
+    {
+      "name": "CAN Channel 1",
+      "type": "",
+      "description": "0x008"
+    },
+    {
+      "name": "CAN Channel 2",
+      "type": "",
+      "description": "0x010"
+    },
+    {
+      "name": "CAN Channel 3",
+      "type": "",
+      "description": "0x020"
+    },
+    {
+      "name": "CAN Channel 4",
+      "type": "",
+      "description": "0x040"
+    },
+    {
+      "name": "FlexRay Channel 1 A",
+      "type": "",
+      "description": "0x080"
+    },
+    {
+      "name": "FlexRay Channel 1 B",
+      "type": "",
+      "description": "0x100"
+    },
+    {
+      "name": "Keypad S1",
+      "type": "",
+      "description": "0x200"
+    },
+    {
+      "name": "Keypad S2",
+      "type": "",
+      "description": "0x400"
+    }
+  ],
+  "return": "0: no error, function succeeded.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

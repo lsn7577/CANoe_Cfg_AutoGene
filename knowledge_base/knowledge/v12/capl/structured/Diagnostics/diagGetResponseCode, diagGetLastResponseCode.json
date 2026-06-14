@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetResponseCode, diagGetLastResponseCode",
+  "category": "Diagnostics",
+  "title": "diagGetResponseCode, diagGetLastResponseCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetResponseCode.htm",
+  "syntax": [
+    "long diagGetResponseCode (diagResponse resp);"
+  ],
+  "description": [
+    "Returns the code of the specified response or last received response (for the specified request)."
+  ],
+  "parameters": [
+    {
+      "name": "resp",
+      "type": "",
+      "description": "Response"
+    }
+  ],
+  "return": "-1: The response was positive, i.e. there is no error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

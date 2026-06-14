@@ -1,0 +1,65 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMUnassignFunction",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMUnassignFunction",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimUnassignFunction.htm",
+  "syntax": [
+    "long Iso11783IL_TIMUnassignFunction(byte functionId); // form 1"
+  ],
+  "description": [
+    "If the TIM client is already authenticated and enabled by the operator then the assignment process with the function to be released is started again. By using parameter option you can prevent starting the assignment process.",
+    "If the TIM function is not assigned the this function removes the TIM function from the list of functions which shall be assigned to the TIM server.",
+    "To assign a TIM function you can use Iso11783IL_TIMAssignFunction."
+  ],
+  "parameters": [
+    {
+      "name": "Function ID",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1-32 (1h-20h)",
+      "type": "",
+      "description": "Auxiliary Value 1 – 32"
+    },
+    {
+      "name": "64 (40h)",
+      "type": "",
+      "description": "Front PTO"
+    },
+    {
+      "name": "65 (41h)",
+      "type": "",
+      "description": "Rear PTO"
+    },
+    {
+      "name": "66 (42h)",
+      "type": "",
+      "description": "Front hitch"
+    },
+    {
+      "name": "67 (43h)",
+      "type": "",
+      "description": "Rear hitch"
+    },
+    {
+      "name": "68 (44h)",
+      "type": "",
+      "description": "Vehicle speed"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

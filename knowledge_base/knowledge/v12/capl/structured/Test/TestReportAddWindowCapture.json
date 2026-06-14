@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestReportAddWindowCapture",
+  "category": "Test",
+  "title": "TestReportAddWindowCapture",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestReportAddWindowCapture.htm",
+  "syntax": [
+    "TestReportAddWindowCapture(char[] window, char[] data, char[] title, char[] file); //form 1: deprecated"
+  ],
+  "description": [
+    "Creates a screen capture of CANoe window and panels.",
+    "Can only be used within test cases (test case function).",
+    "The test case verdict is not affected. Errors that occur during window capture are logged in the report as warnings, but do not affect the test case verdict.",
+    "The test case verdict is not affected. Window capture is not allowed in CANoe standalone mode. Errors on creating the window capture are reported as a warning in the test report."
+  ],
+  "parameters": [
+    {
+      "name": "window",
+      "type": "",
+      "description": "Name of the window to be captured."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "TestReportAddWindowCapture(\"Graphics\", \"ABSdata::CarSpeed;Gear\", \"Screenshot of Graphic window\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

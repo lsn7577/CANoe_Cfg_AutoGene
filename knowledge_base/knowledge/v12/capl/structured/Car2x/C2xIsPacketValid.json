@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "C2xIsPacketValid",
+  "category": "Car2x",
+  "title": "C2xIsPacketValid",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xIsPacketValid.htm",
+  "syntax": [
+    "long C2xIsPacketValid( long packet );"
+  ],
+  "description": [
+    "This function checks, if a received packet has a protocol error. Packets with a protocol error are marked with an error icon in the Trace Window."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that should be checked"
+    }
+  ],
+  "return": "0: packet is valid",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  C2xReceivePacket( \"OnC2xPacket\");\n}\nvoid OnC2xPacket( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  if (C2xIsPacketValid( packet ) != 0)\n  {\n    write( \"Receive packet with protocol error\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

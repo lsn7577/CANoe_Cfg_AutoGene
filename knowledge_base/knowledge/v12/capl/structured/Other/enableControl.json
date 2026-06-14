@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "enableControl",
+  "category": "Other",
+  "title": "enableControl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionEnableControl.htm",
+  "syntax": [
+    "void enableControl(char panel[], char control[], long enable);"
+  ],
+  "description": [
+    "Selective activation and deactivation of the following elements:",
+    "If a control and display element is configured as a simple display, this command will have no effect on the element in question.The turned on or turned off state of an element remains intact at the start/end of the measurement. Because of this, a defined state should be created for the beginning of the measurement for the elements involved (for example in the CAPL program under System->Start)."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Name of the panel, restricted to 128 characters."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\nenableControl(\"gateway\", \"ElemPanelHelp\", 1);\n// Activates Panel help in the \"gateway\" panel.\n// enable all controls of the panel\nenableControl(\"gateway\", \"\", 1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

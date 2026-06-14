@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "C2xGetTokenSubString",
+  "category": "Car2x",
+  "title": "C2xGetTokenSubString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetTokenSubString.htm",
+  "syntax": [
+    "long C2xGetTokenSubString( long packet, char protocolDesignator[], char tokenDesignator[], long byteOffset, long length, char buffer[] );"
+  ],
+  "description": [
+    "This function copies a specified number of characters from a given position inside the token and adds a terminating \\0."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    }
+  ],
+  "return": "Number of copied characters or 0\nWith C2xGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  C2xReceivePacket(\"OnC2xPacket\");\n}\nvoid OnC2xPacket( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  char rx_str[100];\n  char error[100];\n\n  // get the payload of the packet\n  C2xGetTokenSubString( packet, \"geo_cnh\", \"data\", 8, elCount(rx_str), rx_str );\n  // would access payload of a cnh packet\n\n  if (C2xGetLastError() == 0)\n  {\n    write(rx_str);\n  }\n  else\n  {\n    C2xGetLastErrorText( elCount(error), error );\n    write(\"Error: %s\", error );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

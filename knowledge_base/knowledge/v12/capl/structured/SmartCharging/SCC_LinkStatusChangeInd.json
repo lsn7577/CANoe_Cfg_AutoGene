@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_LinkStatusChangeInd",
+  "category": "SmartCharging",
+  "title": "SCC_LinkStatusChangeInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_LinkStatusChangeInd.htm",
+  "syntax": [
+    "void SCC_LinkStatusChangeInd ( dword OldStatus, dword NewStatus )"
+  ],
+  "description": [
+    "The callback is called each time the internally stored link status changes by means of link status polling."
+  ],
+  "parameters": [
+    {
+      "name": "OldStatus",
+      "type": "",
+      "description": "Previous link status (0 = no link, 1 = link, 2 = unkown)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

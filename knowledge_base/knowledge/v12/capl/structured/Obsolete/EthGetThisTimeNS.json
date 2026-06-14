@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "EthGetThisTimeNS",
+  "category": "Obsolete",
+  "title": "EthGetThisTimeNS",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetThisTimeNs.htm",
+  "syntax": [
+    "qword EthGetThisTimeNS();"
+  ],
+  "description": [
+    "The function returns the time stamp of an received Ethernet packet in nanoseconds.",
+    "It is only usable in a CAPL callback function that had been registered with EthReceiveRawPacket or EthReceivePacket. It depends on the callback function, which part of the packet data is accessed by the function:"
+  ],
+  "parameters": [],
+  "return": "time stamp in nanoseconds",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  EthReceiveRawPacket( \"OnEthRawPacket\");\n}\nvoid OnEthRawPacket( LONG channel, LONG dir, LONG packetLength )\n{\n  float t;\n  t = (float)EthGetThisTimeNS();\n  write(\"Received packet at %f [sec]”, t );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

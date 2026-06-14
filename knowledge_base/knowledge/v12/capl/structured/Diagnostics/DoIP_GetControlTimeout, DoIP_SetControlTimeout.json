@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetControlTimeout, DoIP_SetControlTimeout",
+  "category": "Diagnostics",
+  "title": "DoIP_GetControlTimeout, DoIP_SetControlTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetSetControlTimeout.htm",
+  "syntax": [
+    "void DoIP_SetControlTimeout(dword toControl_ms);"
+  ],
+  "description": [
+    "Sets or returns the timeout for Vehicle Identification Requests, connect and routing activation (in milliseconds)."
+  ],
+  "parameters": [
+    {
+      "name": "toControl_ms",
+      "type": "",
+      "description": "Timeout for Vehicle Identification Requests, connect and routing activation [ms]"
+    }
+  ],
+  "return": "Form 1: —Form 2: Timeout for Vehicle Identification Requests, connect and routing activation [ms]",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

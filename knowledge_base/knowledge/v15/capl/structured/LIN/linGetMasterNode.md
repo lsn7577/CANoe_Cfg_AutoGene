@@ -1,0 +1,36 @@
+# linGetMasterNode
+
+> Category: `LIN` | Type: `function`
+
+## Syntax
+
+```c
+long linGetMasterNode();
+```
+
+## Description
+
+This function returns a unique internal ID for the current LIN master node of the channel given by the current bus context. See SetBusContext for how to change the current bus context.
+
+The return value may be used as input parameter to a call to linSetMasterNode(long nodeId).
+
+The return value must not be used between measurements, as these will be newly generated each time the measurement is started.
+
+## Return Values
+
+Node ID of the current master node. If the return value is 0 (zero), the function failed, or there is currently no LIN master node assigned.
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | 11.0 | 11.0 | — | 13.0 | — | — |
+| Restricted To | LIN Real bus mode | LIN Real bus mode | — | LIN Real bus mode | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | ✔ | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | ✔ | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | — | ✔ | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | ✔ | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | ✔ | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | ✔ | — | N/A |

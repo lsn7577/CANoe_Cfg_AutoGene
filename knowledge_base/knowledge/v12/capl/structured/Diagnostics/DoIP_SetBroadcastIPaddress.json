@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetBroadcastIPaddress",
+  "category": "Diagnostics",
+  "title": "DoIP_SetBroadcastIPaddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetBroadcastIPaddress.htm",
+  "syntax": [
+    "void DoIP_SetBroadcastIPaddress(char broadcastAddress[]);"
+  ],
+  "description": [
+    "Sets target IP address for broadcast messages sent from this node."
+  ],
+  "parameters": [
+    {
+      "name": "broadcastAddress",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "DoIP_SetLocalIPaddress( \"192.168.1.123”);\nif( sendDirectedBroadcast)\n  DoIP_SetBroadcastIPaddress( \"\"); // send to 192.168.1.255\nelse if( sendToOtherNetwork)\n  DoIP_SetBroadcastIPaddress( \"192.168.5.255\"); // send to 192.168.5.255\nelse // restore default\n  DoIP_SetBroadcastIPaddress( \"255.255.255.255\"); // limited broadcast"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

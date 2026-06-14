@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "C2xSecCertificateGetHandle",
+  "category": "Car2x",
+  "title": "C2xSecCertificateGetHandle",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xSecCertificateGetHandle.htm",
+  "syntax": [
+    "long C2xSecCertificateGetHandle( char name[] );",
+    "long C2xSecCertificateGetHandle( byte hashedId8[] );"
+  ],
+  "description": [
+    "Gets a certificate handle from a certificate listed in the Car2x Certificate Manager."
+  ],
+  "parameters": [
+    {
+      "name": "name",
+      "type": "",
+      "description": "Name of the certificate as it is given in the Car2x Certificate Manager."
+    },
+    {
+      "name": "hashedId8",
+      "type": "",
+      "description": "hashedId8 digest of the certificate (e.g. included in the security header of a received frame), size must be 8 bytes. In some protocols this parameter is called certId8."
+    }
+  ],
+  "return": "hashedId8 digest of the",
+  "example": {
+    "description": [],
+    "code": "// assumes a certificate with name \"MyCert\" was added to the configuration in the Car2x Certificate Manager dialog\n\nlong certificateHandle;\ncertificateHandle = C2xSecCertificateGetHandle( \"MyCert\" );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

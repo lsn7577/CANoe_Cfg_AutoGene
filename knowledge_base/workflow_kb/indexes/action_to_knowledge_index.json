@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "actions": {
+    "load_test_case_template": ["templates/canoe_test_case_template/CANoe自动化测试用例模板.xlsx"],
+    "validate_template_contract": ["templates/canoe_test_case_template/template_field_mapping.json", "workflows/canoe_auto_generation_burr/template_field_mapping.json"],
+    "parse_source_files": ["workflow_kb/packs/dbc/validation_rules.json", "workflow_kb/packs/can_signal/validation_rules.json", "workflow_kb/packs/diagnostics/validation_rules.json"],
+    "validate_test_cases": ["workflow_kb/packs/*/validation_rules.json", "extras/team/Common_Gotchas.json"],
+    "retrieve_evidence": ["agent_kb/scenarios.json", "agent_kb/symbol_aliases.json", "agent_kb/kb_lookup.py", "workflow_kb/retrieval_profiles/default.json"],
+    "validate_evidence_gate": ["workflow_kb/validation_rules/capl_api_evidence_gate.json", "agent_kb/symbol_aliases.json"],
+    "plan_repair": ["workflow_kb/burr_actions/70_repair_or_review.json", "workflow_kb/validation_rules/artifact_completeness_gate.json"],
+    "generate_canoe_config": ["workflow_kb/generation_patterns/canoe_project_layout/pattern.json"],
+    "evaluate_canoe_config": ["workflow_kb/validation_rules/artifact_completeness_gate.json"],
+    "generate_capl_script": ["agent_kb/scenarios.json", "agent_kb/symbol_aliases.json", "workflow_kb/generation_patterns/capl_test_module/pattern.json"],
+    "evaluate_capl_script": ["workflow_kb/validation_rules/capl_api_evidence_gate.json", "extras/team/CAPL_Internal_Coding_Standards.json"],
+    "package_outputs": ["workflow_kb/burr_actions/80_package_project.json"]
+  }
+}

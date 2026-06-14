@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "DoIP_DataReq",
+  "category": "Diagnostics",
+  "title": "DoIP_DataReq",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPDataReq.htm",
+  "syntax": [
+    "void DoIP_DataReq( byte buffer[], dword count, dword vehicleAddress, dword testerAddress);"
+  ],
+  "description": [
+    "Request the transfer of the given data to the DoIP peer."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer containing the data to be transmitted."
+    },
+    {
+      "name": "count",
+      "type": "",
+      "description": "Size of data in bytes."
+    },
+    {
+      "name": "vehicleAddress",
+      "type": "",
+      "description": "Logical DoIP address of the ECU, i.e. the target in a tester and the source in an ECU simulation."
+    },
+    {
+      "name": "testerAddress",
+      "type": "",
+      "description": "An ECU simulation may specify the logical address of the tester to send to by giving a value other than 0 here. Otherwise and in tester nodes, 0 should be given. This will determine the tester’s address automatically, i.e. the configured value in a tester, or the sender address of the last request in an ECU simulation."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_Diag_DataRequest( BYTE data[], DWORD count,\n                   long furtherSegments)\n{\n   // send data via DoIP\n   DoIP_DataReq( data, count, gDoIPAddress, 0);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.1 SP4",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

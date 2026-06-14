@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_ControlStart",
+  "category": "ISO11783",
+  "title": "TCIL_ControlStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILControlStart.htm",
+  "syntax": [
+    "long TCIL_ControlStart(); // form 1"
+  ],
+  "description": [
+    "The Task Controller starts Address Claiming (if NMT is activated). If the Address Claiming was successful, cyclic messages are sent."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

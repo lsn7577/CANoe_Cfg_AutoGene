@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ChkControl_Destroy",
+  "category": "Test",
+  "title": "ChkControl_Destroy",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkControlDestroy.htm",
+  "syntax": [
+    "long ChkControl_Destroy(dword aCheckId);"
+  ],
+  "description": [
+    "The check is destroyed and cannot be accessed anymore. Its resources are freed."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Must exist"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": "dword checkId;\ndword numCheckEvents;\n\n// start the Error Frame observation\ncheckId = ChkStart_ErrorFramesOccured();\n// Add check as condition\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\n// Remove check as condition\nTestRemoveCondition(checkId);\n\n// stop the check\nChkControl_Stop(checkId);\n\n// destroy check\nChkControl_Destroy(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,160 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_MostErrorMessage, ChkStart_MostErrorMessage",
+  "category": "Test",
+  "title": "ChkCreate_MostErrorMessage, ChkStart_MostErrorMessage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkCreateMostErrorMessage.htm",
+  "syntax": [
+    "dword ChkCreate_MostErrorMessage(dword aSourceDeviceAddress, char[] aName, dword aInstanceId, dword aErrorCode, Callback aCallback);",
+    "dword ChkStart_MostErrorMessage(dword aSourceDeviceAddress, char[] aName, dword aInstanceId, dword aErrorCode, Callback aCallback);",
+    "dword ChkCreate_MostErrorMessage(dword aSourceDeviceAddress, char[] aName, dword aErrorCode, Callback aCallback);",
+    "dword ChkStart_MostErrorMessage(dword aSourceDeviceAddress, char[] aName, dword aErrorCode, Callback aCallback);",
+    "dword ChkCreate_MostErrorMessage(dword aSourceDeviceAddress, dword aErrorCode, Callback aCallback);",
+    "dword ChkStart_MostErrorMessage(dword aSourceDeviceAddress, dword aErrorCode, Callback aCallback);",
+    "dword ChkCreate_MostErrorMessage(dword aSourceDeviceAddress, char[] aName, dword aInstanceId, dword aErrorCode);",
+    "dword ChkStart_MostErrorMessage(dword aSourceDeviceAddress, char[] aName, dword aInstanceId, dword aErrorCode);",
+    "dword ChkCreate_MostErrorMessage(dword aSourceDeviceAddress, char[] aName, dword aErrorCode);",
+    "dword ChkStart_MostErrorMessage(dword aSourceDeviceAddress, char[] aName, dword aErrorCode);",
+    "dword ChkCreate_MostErrorMessage(dword aSourceDeviceAddress, dword aErrorCode);",
+    "dword ChkStart_MostErrorMessage(dword aSourceDeviceAddress, dword aErrorCode);"
+  ],
+  "description": [
+    "This check can be used to monitor the occurrence of MOST error messages (OpType 0xF or 0x9).",
+    "The check can be implemented for a MOST device address, function block or function. In addition, monitoring can be limited to error messages with a specific error code."
+  ],
+  "parameters": [
+    {
+      "name": "aSourceDeviceAddress",
+      "type": "",
+      "description": "Device node address for which the occurrence of error messages is to be monitored, i.e., only those error messages with a source address equal to the value specified here are taken into consideration. Group or broadcast addresses may not be specified here."
+    },
+    {
+      "name": "aName",
+      "type": "",
+      "description": "Symbolic FBlock or function address for which the occurrence of error messages is to be monitored. The following formats are allowed (wildcards are not permitted): \"FBlock.Instance.Function” \"FBlock.Function\" \"FBlock\""
+    },
+    {
+      "name": "aInstance",
+      "type": "",
+      "description": "The instance of the FBlock specified in aName. If an instance is already specified in aName, this is overwritten by aInstance."
+    },
+    {
+      "name": "aErrorCode",
+      "type": "",
+      "description": "The error code that must be set in an observed error message in order for a check violation to be triggered. If 0 is specified, all error messages are monitored regardless of their error codes."
+    },
+    {
+      "name": "aCallback",
+      "type": "",
+      "description": "Name of the callback function to be called when an error message with the specified criteria occurs."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.0 7.0 SP5: method",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "MOST",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

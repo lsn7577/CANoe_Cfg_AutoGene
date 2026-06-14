@@ -1,0 +1,1635 @@
+{
+  "page_type": "notes",
+  "name": "Deprecated CAPL Functions",
+  "category": "Obsolete",
+  "title": "Deprecated CAPL Functions",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CAPLfunctionsDeprecatedOverview.htm",
+  "syntax": [],
+  "description": [
+    "General Functions",
+    "AFDX",
+    "ASAM-MCD",
+    "CAN Bus Statistics",
+    "CANoe IL",
+    "CANopen Node Layer",
+    "CANopen TFS Node Layer",
+    "Car2x",
+    "Diagnostics",
+    "Ethernet IL",
+    "Ethernet AVB IL",
+    "FlexRay",
+    "FRstress",
+    "ISO11783",
+    "J1939",
+    "LIN",
+    "MATLAB",
+    "MOST",
+    "RS232",
+    "Security",
+    "Smart Charging",
+    "Test",
+    "Searches for a variable entry in a file section.",
+    "Opens a file, finds a special section and writes the variable entry with a special value.",
+    "AfdxIsTokenAvailable",
+    "C2xTransmitPacket",
+    "Registers a CAPL callback function that is called before sending a packet.",
+    "diagSetCurrentSession",
+    "To use the CAPL functions the ETHERNET_Il.DLL must be included.",
+    "Generates a FlexRay frame and sends it to the hardware.",
+    "linBits2Time",
+    "Converts specified bit time to an absolute time.",
+    "linTime2Bits",
+    "Converts specified system time to bit time.",
+    "on linMessage",
+    "LocalSecurityActivateRxPDUs",
+    "Allows a node (e.g. gateway) to validate Rx Secured-I-PDUs of another node.",
+    "LocalSecurityActivateTxPDUs",
+    "Allows a node (e.g. gateway) to do a CMAC calculation for Tx Secured-I-PDUs of another node.",
+    "LocalSecurityCalculateAuthenticator",
+    "Calculates the authenticator (CMAC) for the given payload and freshness. This function can be used for testing.",
+    "LocalSecurityCryptographyDecryptAES128CBC",
+    "Decrypts data with a given key and initialization vector using AES128 (CBC).",
+    "LocalSecurityCryptographyDecryptAES128ECB",
+    "Decrypts data with a given key and initialization vector using AES128 (ECB).",
+    "LocalSecurityCryptographyEncryptAES128CBC",
+    "Encrypts data with a given key and initialization vector using AES128 (CBC).",
+    "LocalSecurityCryptographyEncryptAES128ECB",
+    "Encrypts data with a given key and initialization vector using AES128 (ECB).",
+    "LocalSecurityCryptographyGenerateCMAC",
+    "Generates a CMAC hash for the given data and key.",
+    "LocalSecurityCryptographyGenerateSHA256",
+    "Generates a SHA-256 hash for the given data and key.",
+    "LocalSecurityCryptographyGenerateSHA512",
+    "Generates a SHA-512 hash for the given data and key.",
+    "LocalSecurityCryptographyGenerateSharedSecretECDH",
+    "Generates a Shared Secret between A and B for a given public key of A and private Key and B.",
+    "LocalSecuritySetVerbosity",
+    "Configures the notification level.",
+    "LocalSecurityVerifyAuthenticationInformation",
+    "Verifies the specified authentication information (CMAC and freshness) of the PDU. The payload is also an input parameter to the verification logic.",
+    "OnLocalSecurityPDUPreTx",
+    "This callback handler is called before a node transmits a secured PDU, after all data updates and the automatic Authenticator (CMAC) calculation have been done.",
+    "OnLocalSecurityPDUValidated",
+    "This callback handler is called, when a node receives a secured PDU. Apart from the verification result, all values which have been used for verification can be analyzed.",
+    "OnLocalSecurityQueryLocalFreshness",
+    "This callback handler is called, when a node receives or transmits a secured PDU. It provides the possibility to influence the freshness value.",
+    "Checks the signal value against a condition.",
+    "Iso11783IL_PDDGetValue",
+    "Removed CAPL Functions"
+  ],
+  "parameters": [],
+  "return": "Some functions were deprecated for a long time and were therefore",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Note Deprecated Function All deprecated functions are marked with . If a function is deprecated you get the CAPL Compiler notification \"Function is deprecated. See help for more information\". In CANoe at measurement start different scenarios are possible: The function has full functionality. The functionality of the function is limited, please see notification in the Write Window. The function no longer has any effect, please see notification in the Write Window. Removed Function Some functions were deprecated for a long time and were therefore removed (obsolete). These functions are neither known to the CAPL compiler nor to CANoe. You get the CAPL Compiler notification \"unknown function\" and in CANoe at measurement start a notification in the Write Window. For the display of the notifications see settings in the Options dialog."
+      ]
+    ],
+    [
+      [
+        "General Functions AFDX ASAM-MCD CAN Bus Statistics CANoe IL CANopen Node Layer CANopen TFS Node Layer Car2x",
+        "Diagnostics Ethernet IL Ethernet AVB IL FlexRay FRstress ISO11783 J1939 LIN",
+        "MATLAB MOST RS232 Security Smart Charging Test"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "beep",
+        "Tone output."
+      ],
+      [
+        "checkSignalInRangeByTxNode",
+        "Checks the signal value against a condition."
+      ],
+      [
+        "fileReadArray",
+        "Searches for a variable entry in a file section."
+      ],
+      [
+        "fileReadFloat"
+      ],
+      [
+        "fileReadInt"
+      ],
+      [
+        "fileReadString"
+      ],
+      [
+        "fileWriteFloat",
+        "Opens a file, finds a special section and writes the variable entry with a special value."
+      ],
+      [
+        "fileWriteInt"
+      ],
+      [
+        "fileWriteString"
+      ],
+      [
+        "getCardType",
+        "Determines the type of CAN platform being used."
+      ],
+      [
+        "getSignalByTxNode",
+        "Gets the value of a signal."
+      ],
+      [
+        "getSignalTimeByTxNode",
+        "Gets the time point relative to the measurement start at which the signal was last sent on the bus."
+      ],
+      [
+        "inspect",
+        "Causes an update of the variables displayed on the Inspect side of the Write window."
+      ],
+      [
+        "RegisterSignalDriverByTxNode",
+        "Registers the given callback as a 'signal driver' for the signal."
+      ],
+      [
+        "setMsgTime",
+        "Assigns to one message the capture time of another message or the current time."
+      ],
+      [
+        "SetSignalByTxNode",
+        "Sets the transmitted signal to the accompanying value."
+      ],
+      [
+        "SymbolMappingSetDynamicGroup",
+        "Changes the dynamic mapping set that will be used for mapping in the Symbol Mapping dialog."
+      ],
+      [
+        "SysGetVariableIntArray",
+        "Returns the value of a variable of the int[] type."
+      ],
+      [
+        "SysSetVariableIntArray",
+        "Sets the value of a variable of the int[] type."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AfdxIsTokenAvailable",
+        "This function checks, if the specified token is part of the packet."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "MCDCreateModule",
+        "Creates a module."
+      ],
+      [
+        "MCDEcuOnOffline",
+        "Sets a controller into online or offline mode."
+      ],
+      [
+        "MCDExit",
+        "Ends the connection to the MCD server."
+      ],
+      [
+        "MCDGetCurrentValue",
+        "Get one of the values which was configured with the data acquisition."
+      ],
+      [
+        "MCDGetECUParam",
+        "Reading of a parameter."
+      ],
+      [
+        "MCDGetLastError",
+        "Returns the last occurred error."
+      ],
+      [
+        "MCDInit",
+        "Initialisation of the MCD server. CANape will be started in non modal mode."
+      ],
+      [
+        "MCDInitEx",
+        "Initialisation of the MCD server. CANape will be started in non modal mode."
+      ],
+      [
+        "MCDMapECUParamToSysVariableRead",
+        "Maps an ECU parameter to a system variable so that it the system variable changes whenever the parameter is updated."
+      ],
+      [
+        "MCDMapECUParamToSysVariableWrite",
+        "Maps an ECU parameter to a system variable so that it is changed whenever the system variable changes."
+      ],
+      [
+        "MCDParamIsValid",
+        "Checks, if a parameter is valid."
+      ],
+      [
+        "MCDParamResponse",
+        "Callback handler on a MCDParamRead request."
+      ],
+      [
+        "MCDQuitCANape",
+        "Executes implicit a MCDInitEx and closes CANape."
+      ],
+      [
+        "MCDSetECUParam",
+        "Writing of a parameter."
+      ],
+      [
+        "MCDStartDataAcq/ MCDStartDataAcqAsync",
+        "Configure and start the data acquisition. / The data acquisition is started asynchronous."
+      ],
+      [
+        "MCDStatusIndication",
+        "Callback handler for different MCD status."
+      ],
+      [
+        "MCDStopDataAcq",
+        "Stops the data acquisition explicitly."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "canGetBusLoad",
+        "Returns the current busload."
+      ],
+      [
+        "canGetChipState",
+        "Returns the current chip state."
+      ],
+      [
+        "canGetErrorCount",
+        "Returns the number of Error Frames."
+      ],
+      [
+        "canGetErrorRate",
+        "Returns the current rate of CAN error messages."
+      ],
+      [
+        "canGetExtData",
+        "Returns the number of extended CAN frames."
+      ],
+      [
+        "canGetExtDataRate",
+        "Returns the current rate of extended CAN frames."
+      ],
+      [
+        "canGetExtRemote",
+        "Returns the number of extended remote CAN messages."
+      ],
+      [
+        "canGetExtRemoteRate",
+        "Returns the current rate of extended remote CAN messages."
+      ],
+      [
+        "canGetOverloadCount",
+        "Returns the number of CAN overload frames."
+      ],
+      [
+        "canGetOverloadRate",
+        "Returns the current rate of CAN overload frames."
+      ],
+      [
+        "canGetPeakLoad",
+        "Returns the peakload."
+      ],
+      [
+        "canGetRxErrorCount",
+        "Returns the current error count."
+      ],
+      [
+        "canGetStdData",
+        "Returns the number of standard CAN frames."
+      ],
+      [
+        "canGetStdDataRate",
+        "Returns the current rate of standard CAN frames."
+      ],
+      [
+        "canGetStdRemote",
+        "Returns the number of standard remote CAN frames."
+      ],
+      [
+        "canGetStdRemoteRate",
+        "Returns the current rate of standard remote CAN frames."
+      ],
+      [
+        "canGetTxErrorCount",
+        "Returns the current number of errors."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "ILAllNodesSetOperationMode",
+        "Sets specific operation mode in the interaction layer of all nodes."
+      ],
+      [
+        "ILControlResume",
+        "Cyclical sending restarts."
+      ],
+      [
+        "ILControlWait",
+        "Cyclical sending is stopped; setting signals is possible."
+      ],
+      [
+        "ILDisturbAllNodeUpdateBits",
+        "Modifies all update bits of signals/signal groups of all nodes in the current bus context."
+      ],
+      [
+        "ILDisturbChecksum",
+        "Disturbs the checksum a configurable value."
+      ],
+      [
+        "ILDisturbCounter",
+        "Disturbs the counter with a configurable value."
+      ],
+      [
+        "ILDisturbNodeUpdateBits",
+        "Modifies all update bits of signals/signal groups of a node."
+      ],
+      [
+        "ILDisturbPduUpdateBit",
+        "Disturbs the PDU Update Bit with constant 0 or 1."
+      ],
+      [
+        "ILDisturbSignalGroupUpdateBit",
+        "Modifies the update bit of a signal group."
+      ],
+      [
+        "ILDisturbSignalUpdateBit",
+        "Disturbs the signal update bit with a configurable value."
+      ],
+      [
+        "ILSetSignal",
+        "Sets the transferred signal to the provided physical value."
+      ],
+      [
+        "ILSetSignalRaw",
+        "Sets the transferred signal to the provided raw value."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "coTfsODChkBreakOnError",
+        "The function controls the behavior of the test module while executing coTfsODChk and coTfsODChkNotExist."
+      ],
+      [
+        "coTfsTimingSDOAddToReport",
+        "The minimum, maximum and average SDO response time of the specified node are added to the test protocol. The statistic values are not reset."
+      ],
+      [
+        "coTfsTimingSDOPollDevice",
+        "The functions monitors the average response times of a SDO access on a device."
+      ],
+      [
+        "coTfsTimingSDOReset",
+        "The function resets the internal statistics of the SDO response times of the specified node."
+      ],
+      [
+        "coTfsTimingSDOStart",
+        "The function starts the monitoring of SDO response times."
+      ],
+      [
+        "coTfsTimingSDOStop",
+        "The function stops the monitoring of SDO response times."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xTransmitPacket",
+        "Registers a CAPL callback function that is called before sending a packet."
+      ],
+      [
+        "C2xCreateMapObject",
+        "Initializes a map object to be drawn in the Map Window."
+      ],
+      [
+        "C2xDeleteMapObject",
+        "Deletes the map object assigned to this handle in the Map Window."
+      ],
+      [
+        "C2xDrawMapObject",
+        "Draws a map object in the Map Window with the configured parameters."
+      ],
+      [
+        "C2xSetMapObjectBmpCount",
+        "Sets the number of bitmaps in a multi bitmap file of a map object."
+      ],
+      [
+        "C2xSetMapObjectBmpFilePath",
+        "Sets the file path to a bitmap for a map object of the type bitmap."
+      ],
+      [
+        "C2xSetMapObjectBmpIndex",
+        "Sets the index of a bitmap in a multi bitmap file."
+      ],
+      [
+        "C2xSetMapObjectFillColor",
+        "Sets the fill color of a map object."
+      ],
+      [
+        "C2xSetMapObjectHeading",
+        "Sets the heading of a map object."
+      ],
+      [
+        "C2xSetMapObjectLineColor",
+        "Sets the line color of a map object."
+      ],
+      [
+        "C2xSetMapObjectPenStyle",
+        "Sets the pen style of a map object."
+      ],
+      [
+        "C2xSetMapObjectPenWidth",
+        "Sets the pen width of a map object."
+      ],
+      [
+        "C2xSetMapObjectPosition",
+        "Sets the GPS position of a map object."
+      ],
+      [
+        "C2xSetMapObjectPropertyDouble",
+        "For internal use only."
+      ],
+      [
+        "C2xSetMapObjectPropertyInt",
+        "For internal use only."
+      ],
+      [
+        "C2xSetMapObjectPropertyString",
+        "For internal use only."
+      ],
+      [
+        "C2xSetMapObjectSize",
+        "Sets either the size or the height and width of a map object."
+      ],
+      [
+        "C2xSetMapObjectText",
+        "Sets text or formatted text for a map object of the type text."
+      ],
+      [
+        "C2xSetMapPosition",
+        "Sets the map to a specific position."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "CANdelaLibCloseChannel",
+        "Closes the communication channel to the control unit."
+      ],
+      [
+        "diagGetNegCode",
+        "Returns the error code for a KWP2000 mnemonic."
+      ],
+      [
+        "diagGetParameterSize",
+        "Returns the size of a parameter in bits."
+      ],
+      [
+        "diagSetCurrentSession",
+        "Saves the given sessionId in order to forward it later as an optional parameter to the corresponding Seed & Key DLL, if a key value needs to be computed from a seed."
+      ],
+      [
+        "DoIP_SetVehicleInterface",
+        "Sets the network interface to be used by the DoIP layer."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "diagGetPendingRequests",
+        "Returns the number of unresolved Network Requests."
+      ],
+      [
+        "diagIsMarked",
+        "Checks if the ECU is marked."
+      ],
+      [
+        "diagIsPresent",
+        "Checks if a response was already received from the ECU."
+      ],
+      [
+        "diagMarkEcu",
+        "Marks the specified or current ECU."
+      ],
+      [
+        "diagSendMarked",
+        "Sends a request to all marked ECUs."
+      ],
+      [
+        "diagSendNetwork",
+        "Sends a Request to all ECUs on this bus."
+      ],
+      [
+        "diagSetCurrentEcu",
+        "The specified ECU is made the current ECU."
+      ],
+      [
+        "diagSetEcuAbsent",
+        "No more attempt is made to send Network Requests to the specified or current ECU."
+      ],
+      [
+        "diagSetEcuPresent",
+        "Accepts this ECU back into the group of ECUs to be addressed."
+      ],
+      [
+        "diagSetRequestInterval",
+        "Sets the interval between network requests in milliseconds."
+      ],
+      [
+        "diagUnmarkAllEcus",
+        "Clears all ECU markings."
+      ],
+      [
+        "diagUnmarkEcu",
+        "Clears marking of the specified or current ECU."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "<OnCorruptEthernetPacket>",
+        "CAPL handler to receive corrupt Ethernet packets."
+      ],
+      [
+        "<OnEthAdapterStatus>",
+        "CAPL handler to receive a state change of the Ethernet interface."
+      ],
+      [
+        "<OnEthPacket>",
+        "CAPL handler to receive data of Ethernet packets."
+      ],
+      [
+        "<OnEthRawPacket>",
+        "CAPL handler to receive raw data of Ethernet packets."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "EthGetAdapterStatus",
+        "Gets the state of the Ethernet adapter."
+      ],
+      [
+        "EthGetLastError",
+        "Gets the last error code."
+      ],
+      [
+        "EthGetLastErrorText",
+        "Gets description of the last error code."
+      ],
+      [
+        "EthGetMacId",
+        "Gets the MAC-ID of the Ethernet interface."
+      ],
+      [
+        "EthSetVerbosity",
+        "Sets the verbosity level of the Ethernet IL."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "EthGetThisData",
+        "Gets received data."
+      ],
+      [
+        "EthGetThisFrameCheckSequence",
+        "Returns the frame check sequence (fcs) of a received Ethernet packet."
+      ],
+      [
+        "EthGetThisMotorolaValue16",
+        "Gets received 16 bit value (Motorola format)."
+      ],
+      [
+        "EthGetThisMotorolaValue32",
+        "Gets received 32 bit value (Motorola format)."
+      ],
+      [
+        "EthGetThisMotorolaValue64",
+        "Gets received 64 bit value (Motorola format)."
+      ],
+      [
+        "EthGetThisTimeNS",
+        "Gets time stamp of an received Ethernet packet."
+      ],
+      [
+        "EthGetThisValue8",
+        "Gets received 8 bit value."
+      ],
+      [
+        "EthGetThisValue16",
+        "Gets received 16 bit value (Intel format)."
+      ],
+      [
+        "EthGetThisValue32",
+        "Gets received 32 bit value (Intel format)."
+      ],
+      [
+        "EthGetThisValue64",
+        "Gets received 64 bit value (Intel format)."
+      ],
+      [
+        "EthOutputRawPacket",
+        "Sends a raw Ethernet packet."
+      ],
+      [
+        "EthReceiveRawPacket",
+        "Registers a CAPL handler function to receive raw Ethernet packets."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "EthAddToken",
+        "Adds a token at the end of a protocol header."
+      ],
+      [
+        "EthCompletePacket",
+        "Completes an Ethernet packet for sending."
+      ],
+      [
+        "EthConfigurePacketGenerator",
+        "Configures the Ethernet packet."
+      ],
+      [
+        "EthGetTokenData",
+        "Gets the data of a token."
+      ],
+      [
+        "EthGetTokenInt",
+        "Gets the integer value of a token."
+      ],
+      [
+        "EthGetTokenInt64",
+        "Gets the 64 bit integer value of a token."
+      ],
+      [
+        "EthGetTokenLengthBit",
+        "Gets the token length in bit."
+      ],
+      [
+        "EthGetTokenSignalValue",
+        "Gets the signal’s value of the packet’s payload"
+      ],
+      [
+        "EthGetTokenString",
+        "Gets the string value of a token."
+      ],
+      [
+        "EthGetTokenSubString",
+        "Gets a part of a string value of a token."
+      ],
+      [
+        "EthInitPacket",
+        "Creates a new Ethernet packet."
+      ],
+      [
+        "EthInitProtocol",
+        "Initializes a protocol for an Ethernet packet."
+      ],
+      [
+        "EthIsPacketValid",
+        "Checks if an Ethernet packet has protocol errors."
+      ],
+      [
+        "EthOutputPacket",
+        "Sends an Ethernet packet."
+      ],
+      [
+        "EthReceivePacket",
+        "Registers a CAPL handler function to receive Ethernet packets."
+      ],
+      [
+        "EthReceiveRxError",
+        "Registers a CAPL callback function to receive corrupt Ethernet packets."
+      ],
+      [
+        "EthReleasePacket",
+        "Deletes an Ethernet packet."
+      ],
+      [
+        "EthRemoveToken",
+        "Removes a token from a protocol header."
+      ],
+      [
+        "EthResizeToken",
+        "Modifies the length of a token."
+      ],
+      [
+        "EthSetTokenData",
+        "Sets the data of a token."
+      ],
+      [
+        "EthSetTokenInt",
+        "Sets the integer value of a token."
+      ],
+      [
+        "EthSetTokenSignalValue",
+        "Sets the signal’s value into the packet’s payload."
+      ],
+      [
+        "EthSetTokenInt64",
+        "Sets the 64 bit integer value of a token."
+      ],
+      [
+        "EthSetTokenString",
+        "Sets the string value of a token."
+      ],
+      [
+        "EthStartPacketGenerator",
+        "Starts the Ethernet packet generator."
+      ],
+      [
+        "EthStopPacketGenerator",
+        "Stops the Ethernet packet generator."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "EthControlInit",
+        "Initializes the Ethernet Interaction Layer."
+      ],
+      [
+        "EthControlStart",
+        "Starts the Ethernet Interaction Layer."
+      ],
+      [
+        "EthControlStop",
+        "Stops the Ethernet Interaction Layer."
+      ]
+    ],
+    [
+      [
+        "AAF Listener/Talker Functions",
+        "Short Description"
+      ],
+      [
+        "AvbGetAafBitDepth",
+        "Retrieves the bit depth of an AAF sample in the stream received by the Listener or originated by the Talker."
+      ],
+      [
+        "AvbGetAafChannelCount",
+        "Retrieves the number of channels contained in an AAF frame in the stream received by the Listener or originated by the Talker."
+      ],
+      [
+        "AvbGetAafFormat",
+        "Retrieves the format of the AAF samples in the stream received by the Listener or originated by the Talker."
+      ],
+      [
+        "AvbGetAafSampleRate",
+        "Retrieves the sample rate of the AAF stream received by the Listener or originated by the Talker."
+      ],
+      [
+        "AAF Talker Functions",
+        "Short Description"
+      ],
+      [
+        "AvbSetAafBitDepth",
+        "Sets the bit depth of an AAF sample in the stream originated by the Talker."
+      ],
+      [
+        "AvbSetAafChannelCount",
+        "Sets the number of channels to be contained in an AAF frame in the stream originated by the Talker."
+      ],
+      [
+        "AvbSetAafFormat",
+        "Sets the format of the AAF samples in the stream originated by the Talker."
+      ],
+      [
+        "AvbSetAafSampleRate",
+        "Sets the sample rate of the AAF stream originated by the Talker."
+      ],
+      [
+        "CRF Listener Functions",
+        "Short Description"
+      ],
+      [
+        "AvbGetCrfAudioSampleClockFrequency",
+        "Retrieves the audio sample clock frequency of the CRF stream received by the Listener or originated by the Talker."
+      ],
+      [
+        "AvbGetCrfAudioSampleClockMultiplier",
+        "Retrieves the audio sample clock multiplier of the CRF stream received by the Listener or originated by the Talker."
+      ],
+      [
+        "AvbGetCrfAudioSampleTimestampInterval",
+        "Retrieves the interval between each Audio Sample Timestamp in the CRF stream received by the Listener or originated by the Talker."
+      ],
+      [
+        "AvbGetCrfType",
+        "Retrieves the type of time stamp contained in the CRF stream received by the Listener or originated by the Talker."
+      ],
+      [
+        "Functions CRF Talker",
+        "Short Description"
+      ],
+      [
+        "AvbSetCrfAudioSampleClockFrequency",
+        "Sets the audio sample clock frequency of the CRF stream originated by the Talker."
+      ],
+      [
+        "AvbSetCrfAudioSampleClockMultiplier",
+        "Sets the audio sample clock multiplier of the CRF stream originat-ed by the Talker."
+      ],
+      [
+        "AvbSetCrfAudioSampleTimestampInterval",
+        "Sets the interval between each Audio Sample Timestamp in the CRF stream originated by the Talker."
+      ],
+      [
+        "AvbSetCrfType",
+        "Sets the type of time stamp contained in the CRF stream originated by the Talker."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "FlexRayRcvV6Frame",
+        "A function defined in CAPL with this signature receives all FlexRay frames."
+      ],
+      [
+        "FlexRayRcvV6StartCycle",
+        "A function defined in CAPL with this signature receives all FlexRay StartCycle events."
+      ],
+      [
+        "FrSendMsg",
+        "Generates a FlexRay frame and sends it to the hardware."
+      ],
+      [
+        "FrSetSendMsg",
+        "Configures the hardware for sending the specified message."
+      ],
+      [
+        "FRSSetDistMode",
+        "Configures the disturbance type."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "FRSSetDistMode",
+        "Configures the disturbance type."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "getChecksum",
+        "Returns the currently set checksum of a LIN frame or LIN checksum error."
+      ],
+      [
+        "linBits2Time",
+        "Converts specified bit time to an absolute time."
+      ],
+      [
+        "linCalcChecksum",
+        "Calculates the correct checksum for the transferred data."
+      ],
+      [
+        "linCalcCRC",
+        "Calculates the correct checksum for the passed data."
+      ],
+      [
+        "linChangeWakeupSettings",
+        "Changes the wake-up setting."
+      ],
+      [
+        "linGetByteEndTime",
+        "Retrieves a data byte time stamp of a certain LIN bus event."
+      ],
+      [
+        "linGetEndOfHeader",
+        "Retrieves a time stamp of the header part for a certain LIN bus event."
+      ],
+      [
+        "linGetStartOfFrame",
+        "Retrieves a start time stamp of a LIN bus event."
+      ],
+      [
+        "linGetSyncBreakLength",
+        "Retrieves the sync break (dominant bits) length of a LIN bus event."
+      ],
+      [
+        "linGetSyncDelLength",
+        "Retrieves the synch delimiter (recessive bits) length of a LIN bus event."
+      ],
+      [
+        "linGetWakeupLength",
+        "Retrieves a length of an occurred Wakeup frame."
+      ],
+      [
+        "linInitBegin",
+        "Starts the CAPL controlled LIN initialization procedure."
+      ],
+      [
+        "linInitEnd",
+        "Terminates the LIN initialization procedure and starts transmission of initialization data to the hardware."
+      ],
+      [
+        "linInitGetRs232Baud",
+        "Returns the current transmission speed of the RS232 port to the hardware."
+      ],
+      [
+        "linInitSetBaseBaud",
+        "Sets the transmission speed in baud on the LIN bus."
+      ],
+      [
+        "linInitSetMaster",
+        "Activates or deactivates the Master mode and the terminating resistor on the LIN hardware."
+      ],
+      [
+        "linMrSchedGetMode",
+        "Returns the current Scheduler mode."
+      ],
+      [
+        "linMrSchedSetGlobal",
+        "Configures the basic parameters of the Scheduler."
+      ],
+      [
+        "linMrSchedSetMode",
+        "Switches the Scheduler to a mode."
+      ],
+      [
+        "linMrSchedSetRqId",
+        "Creates an entry for the Scheduler."
+      ],
+      [
+        "linMrSchedSetSyncT",
+        "Configures the synchronization timing."
+      ],
+      [
+        "linMrSendRequest",
+        "Sends a transmit request on the LIN bus for the specified LIN frame identifer."
+      ],
+      [
+        "linRcvFrame",
+        "A function defined in CAPL with this signature receives all LIN frames that are occurring on the bus and are not filtered out by a global message filter."
+      ],
+      [
+        "linResetScopeTrigger",
+        "Resets the oscilloscope trigger condition(s)."
+      ],
+      [
+        "linSendSleepModFrm",
+        "Leads to a transmission of a go-to-sleep-command."
+      ],
+      [
+        "linSendWakeup",
+        "Sends Wakeup frames."
+      ],
+      [
+        "linSetDlc",
+        "Initializes the Data Length Code of a LIN frame."
+      ],
+      [
+        "linSetHeaderError",
+        "Sets invalid parameters in a transmitted LIN header."
+      ],
+      [
+        "linSetScopeTrigger",
+        "Defines trigger conditions for an oscilloscope."
+      ],
+      [
+        "linSetResponseData",
+        "Sets the response data for a transmit request."
+      ],
+      [
+        "linSetResponseMsg",
+        "Sets the response data for a transmit request."
+      ],
+      [
+        "linSetWakeupParams",
+        "Determines the conditions under which the LIN hardware can be reactivated."
+      ],
+      [
+        "linSilentWakeup",
+        "Wakes up the LIN bus without sending any wake-up frames."
+      ],
+      [
+        "linSleepModeEvent",
+        "Is called whenever a SleepModeEvent is received."
+      ],
+      [
+        "linSlFSMSetGlobal",
+        "Sets the number of states."
+      ],
+      [
+        "linSlFSMSetState",
+        "Switches the Slave to the state."
+      ],
+      [
+        "linSlFSMSetStBegin",
+        "Prepares the configuration of the state."
+      ],
+      [
+        "linSlFSMSetStEnd",
+        "Ends the configuration of the state."
+      ],
+      [
+        "linSlFSMSetStMFUp",
+        "Sets up a comparison operation for the state of the Slave."
+      ],
+      [
+        "linSlFSMSetStSFUp",
+        "Causes the Slave to respond to the transmit request for the message."
+      ],
+      [
+        "linSlFSMSetStTO",
+        "Sets a timeout for the state specified by the Slave."
+      ],
+      [
+        "linSlSimulate",
+        "Activates the Slave with the passed identifier for simulation."
+      ],
+      [
+        "linTime2Bits",
+        "Converts specified system time to bit time."
+      ],
+      [
+        "linWakeupFrame",
+        "Is called whenever a Wakeup frame is recognized."
+      ],
+      [
+        "on linMessage",
+        "The event procedure on linMessage is called on the receipt of a valid LIN frame."
+      ],
+      [
+        "resetManualChecksum",
+        "Turns the correct checksum back on for a LIN frame."
+      ],
+      [
+        "setManualChecksum",
+        "Sets a checksum for a LIN frame."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "<ModelName>_getParameter",
+        "Retrieves the values of a model parameter and copies them into an array."
+      ],
+      [
+        "<ModelName>_setParameter",
+        "Copies the values from an array to a model parameter."
+      ],
+      [
+        "<ModelName>_setScalarParameter",
+        "Sets a scalar model parameter to a given value."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "mostGetLight",
+        "Gets the Ring state."
+      ],
+      [
+        "mostSetLight",
+        "Sets the Ring state."
+      ],
+      [
+        "mostGetOptoMode",
+        "Returns the operation mode of the OptoLyzer connected to the given channel."
+      ],
+      [
+        "mostSetOptoMode",
+        "Sets the operation mode of the OptoLyzer to the specified value."
+      ],
+      [
+        "mostGetFBlockID",
+        "Returns the FBlockID of the message."
+      ],
+      [
+        "mostGetFunctionID",
+        "Returns the FunctionID of the message."
+      ],
+      [
+        "mostGetOpType",
+        "Returns the OpType of the message."
+      ],
+      [
+        "mostSetFBlockID",
+        "Sets the FBlockID of the message."
+      ],
+      [
+        "mostSetFunctionID",
+        "Sets the FunctionD of the message."
+      ],
+      [
+        "mostSetOpType",
+        "Sets the OpType of the message."
+      ],
+      [
+        "getThisMessage",
+        "Copies the data of an AMS message into a message variable."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "RS232ByteCallback",
+        "Handler will be called if a byte has been received."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "LocalSecurityActivateRxPDUs",
+        "Allows a node (e.g. gateway) to validate Rx Secured-I-PDUs of another node."
+      ],
+      [
+        "LocalSecurityActivateTxPDUs",
+        "Allows a node (e.g. gateway) to do a CMAC calculation for Tx Secured-I-PDUs of another node."
+      ],
+      [
+        "LocalSecurityCalculateAuthenticator",
+        "Calculates the authenticator (CMAC) for the given payload and freshness. This function can be used for testing."
+      ],
+      [
+        "LocalSecurityCryptographyDecryptAES128CBC",
+        "Decrypts data with a given key and initialization vector using AES128 (CBC)."
+      ],
+      [
+        "LocalSecurityCryptographyDecryptAES128ECB",
+        "Decrypts data with a given key and initialization vector using AES128 (ECB)."
+      ],
+      [
+        "LocalSecurityCryptographyEncryptAES128CBC",
+        "Encrypts data with a given key and initialization vector using AES128 (CBC)."
+      ],
+      [
+        "LocalSecurityCryptographyEncryptAES128ECB",
+        "Encrypts data with a given key and initialization vector using AES128 (ECB)."
+      ],
+      [
+        "LocalSecurityCryptographyGenerateCMAC",
+        "Generates a CMAC hash for the given data and key."
+      ],
+      [
+        "LocalSecurityCryptographyGenerateSHA256",
+        "Generates a SHA-256 hash for the given data and key."
+      ],
+      [
+        "LocalSecurityCryptographyGenerateSHA512",
+        "Generates a SHA-512 hash for the given data and key."
+      ],
+      [
+        "LocalSecurityCryptographyGenerateSharedSecretECDH",
+        "Generates a Shared Secret between A and B for a given public key of A and private Key and B."
+      ],
+      [
+        "LocalSecuritySetVerbosity",
+        "Configures the notification level."
+      ],
+      [
+        "LocalSecurityVerifyAuthenticationInformation",
+        "Verifies the specified authentication information (CMAC and freshness) of the PDU. The payload is also an input parameter to the verification logic."
+      ],
+      [
+        "Callback Handler",
+        "Short Description"
+      ],
+      [
+        "OnLocalSecurityPDUPreTx",
+        "This callback handler is called before a node transmits a secured PDU, after all data updates and the automatic Authenticator (CMAC) calculation have been done."
+      ],
+      [
+        "OnLocalSecurityPDUValidated",
+        "This callback handler is called, when a node receives a secured PDU. Apart from the verification result, all values which have been used for verification can be analyzed."
+      ],
+      [
+        "OnLocalSecurityQueryLocalFreshness",
+        "This callback handler is called, when a node receives or transmits a secured PDU. It provides the possibility to influence the freshness value."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "SCC_ShutdownInstant",
+        "Stops the charging procedure with an instant Session Stop request."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "J1939TestChkCreate_AbsCycleTimeViolation",
+        "Checks the occurrences of cyclic messages."
+      ],
+      [
+        "J1939TestChkCreate_ACLViolation",
+        "Observes the Address Claiming of a node."
+      ],
+      [
+        "J1939TestChkCreate_BAMViolation",
+        "Observes the BAM transport protocol."
+      ],
+      [
+        "J1939TestChkCreate_RelCycleTimeViolation",
+        "Cycle time check for a J1939 parameter group."
+      ],
+      [
+        "J1939TestChkCreate_RTSCTSViolation",
+        "Observe the RTS/CTS transport protocol."
+      ],
+      [
+        "J1939TestGetWaitEventPGData",
+        "Returns the content of a message that triggers a wait instruction."
+      ],
+      [
+        "J1939TestJoinPGEvent",
+        "Completes the current set of \"joined events\" with the transmitted event."
+      ],
+      [
+        "J1939TestWaitForPG",
+        "Waits until the specified parameter group is received."
+      ],
+      [
+        "TestReportSetLoggingBlock",
+        "This function annotates a logging file to a report."
+      ],
+      [
+        "testValidateSignalInRangeByTxNode",
+        "Checks the signal value against a condition."
+      ],
+      [
+        "testValidateSignalOutsideRangeByTxNode"
+      ],
+      [
+        "TestWaitForSignal",
+        "Tests the availability of a specific signal."
+      ],
+      [
+        "TestWaitForSignals",
+        "Tests the availability of all send signals of a node."
+      ],
+      [
+        "TestIso11783IL_OPActivate",
+        "Activates the object pool API."
+      ],
+      [
+        "TestIso11783IL_OPChangeActiveMask",
+        "Changes the active data mask."
+      ],
+      [
+        "TestIso11783IL_OPChangeBackgroundColor",
+        "Changes the background color of an object."
+      ],
+      [
+        "TestIso11783IL_OPChangeChildLocation",
+        "Moves an object."
+      ],
+      [
+        "TestIso11783IL_OPChangeChildPosition",
+        "Changes the absolute position of an object inside its parent object."
+      ],
+      [
+        "TestIso11783IL_OPChangeEndPoint",
+        "Changes the length and alignment of a line object."
+      ],
+      [
+        "TestIso11783IL_OPChangeFontAttribute",
+        "Changes the properties of a font attribute object."
+      ],
+      [
+        "TestIso11783IL_OPChangeLineAttribute",
+        "Changes the properties of a line attribute object."
+      ],
+      [
+        "TestIso11783IL_OPChangeListItem",
+        "Changes an item in an input list object."
+      ],
+      [
+        "TestIso11783IL_OPChangePolygonPoint",
+        "Changes the position of a point of a polygon object."
+      ],
+      [
+        "TestIso11783IL_OPChangePolygonScale",
+        "Changes the size of a polygon object."
+      ],
+      [
+        "TestIso11783IL_OPChangePriority",
+        "Changes the priority of an alarm mask."
+      ],
+      [
+        "TestIso11783IL_OPChangeSize",
+        "Changes the size of an object."
+      ],
+      [
+        "TestIso11783IL_OPChangeSoftkeyMask",
+        "Changes the soft key mask of a data mask."
+      ],
+      [
+        "TestIso11783IL_OPControlAudio",
+        "Plays an acoustic signal on the Virtual Terminal."
+      ],
+      [
+        "TestIso11783IL_OPDeactivate",
+        "Terminates the connection to the virtual terminal."
+      ],
+      [
+        "TestIso11783IL_OPEnableObject",
+        "Activates or deactivates an input object."
+      ],
+      [
+        "TestIso11783IL_OPESC",
+        "Aborts user input on the Virtual Terminal."
+      ],
+      [
+        "TestIso11783IL_OPExecuteMacro",
+        "Executes a macro object."
+      ],
+      [
+        "TestIso11783IL_OPGetAttribute",
+        "Returns a value of an object attribute from the local object pool."
+      ],
+      [
+        "TestIso11783IL_OPGetNumericValue",
+        "Returns a numeric value of an object."
+      ],
+      [
+        "TestIso11783IL_OPGetProperty",
+        "Returns a property of the object pool API."
+      ],
+      [
+        "TestIso11783IL_OPGetState",
+        "Returns the state of the object pool API."
+      ],
+      [
+        "TestIso11783IL_OPGetStringValue",
+        "Copies a string value of an object in the object pool into a buffer."
+      ],
+      [
+        "TestIso11783IL_OPGetVersion",
+        "Requests the stored object pools from the Virtual Terminal."
+      ],
+      [
+        "TestIso11783IL_OPGetVTInfo",
+        "Returns information about the capabilities of the virtual terminal."
+      ],
+      [
+        "TestIso11783IL_OPLoad",
+        "Loads an object pool file (*.iop)."
+      ],
+      [
+        "TestIso11783IL_OPLoadAuxAssignment",
+        "Loads the Preferred Auxiliary Input Assignment from an ini file."
+      ],
+      [
+        "TestIso11783IL_OPLoadVersion",
+        "Loads an object pool, which is stored on the Virtual Terminal."
+      ],
+      [
+        "TestIso11783IL_OPLock",
+        "Locks the screen updates on the Virtual Terminal."
+      ],
+      [
+        "TestIso11783IL_OPSave",
+        "Saves an object pool file (*.iop)."
+      ],
+      [
+        "TestIso11783IL_OPSaveAuxAssignment",
+        "Saves the current auxiliary input assignment as Preferred Auxiliary Input Assignment in an ini file."
+      ],
+      [
+        "TestIso11783IL_OPSelectColorMap",
+        "Selects a color map object."
+      ],
+      [
+        "TestIso11783IL_OPSelectInput",
+        "Selects an input object."
+      ],
+      [
+        "TestIso11783IL_OPSetAttribute",
+        "Sets an attribute value of an object."
+      ],
+      [
+        "TestIso11783IL_OPSetAudioVolume",
+        "Sets the audio volume of the Virtual Terminal."
+      ],
+      [
+        "TestIso11783IL_OPSetLabel",
+        "Sets the label of an object."
+      ],
+      [
+        "TestIso11783IL_OPSetNumericValue",
+        "Sets the numerical value of an object."
+      ],
+      [
+        "TestIso11783IL_OPSetProperty",
+        "Sets a property of the object pool API."
+      ],
+      [
+        "TestIso11783IL_OPSetStringValue",
+        "Sets the string value of an object in the object pool."
+      ],
+      [
+        "TestIso11783IL_OPShowObject",
+        "Shows or hides an object."
+      ],
+      [
+        "TestIso11783IL_OPStoreVersion",
+        "Stores the current object pool on the Virtual Terminal."
+      ],
+      [
+        "TestIso11783IL_PDDChangeDesignator",
+        "Sends a Change Designator message with a new object designator to the Task Controller."
+      ],
+      [
+        "TestIso11783IL_PDDDelete",
+        "Deletes the process data dictionary."
+      ],
+      [
+        "TestIso11783IL_PDDGetValue",
+        "Requests the value of a process variable."
+      ],
+      [
+        "TestIso11783IL_PDDLoadDeviceDescription",
+        "Creates a process data dictionary from a machine configuration file (XML)."
+      ],
+      [
+        "TestIso11783IL_PDDObjectPoolDeactivate",
+        "Sends an Object-pool Deactivate message to the Task Controller and disconnects the connection to the Task Controller."
+      ],
+      [
+        "TestIso11783IL_PDDObjectPoolDelete",
+        "Deletes the current device description object pool and sends an Object-pool Delete message to the Task Controller."
+      ],
+      [
+        "TestIso11783IL_PDDSetDistance",
+        "Set the covered distance."
+      ],
+      [
+        "TestIso11783IL_PDDSetLogTrigger",
+        "Activates the default logging."
+      ],
+      [
+        "TestIso11783IL_PDDSetParameter",
+        "Changes an internal parameter of the process data API."
+      ],
+      [
+        "TestIso11783IL_PDDSetValue",
+        "Sets the value of a process variable."
+      ],
+      [
+        "TestIso11783IL_PDDUpdateDeviceDescription",
+        "Updates the current device description object pool at runtime."
+      ],
+      [
+        "TestFRILControlResume",
+        "Restarts the Interaction Layer of the selected simulation node."
+      ],
+      [
+        "TestFRILControlWait",
+        "Stops the Interaction Layer of the selected simulation node."
+      ],
+      [
+        "TestFRILDisturbChecksum",
+        "Modifies the checksum."
+      ],
+      [
+        "TestFRILDisturbCounter",
+        "Modifies the counter."
+      ],
+      [
+        "TestFRILDisturbPduUpdateBit",
+        "Modifies the update bit of a PDU."
+      ],
+      [
+        "TestFRILDisturbSignalUpdateBit",
+        "Modifies the update bit of a signal."
+      ],
+      [
+        "TestILDisturbAllNodeUpdateBits",
+        "Modifies all update bits of signals/signal groups of all nodes in the current bus context."
+      ],
+      [
+        "TestILDisturbChecksum",
+        "Modifies the checksum."
+      ],
+      [
+        "TestILDisturbCounter",
+        "Modifies the counter."
+      ],
+      [
+        "TestILDisturbNodeUpdateBits",
+        "Modifies all update bits of signals/signal groups of a node."
+      ],
+      [
+        "TestILDisturbSignalUpdateBit",
+        "Modifies the update bit of a signal."
+      ],
+      [
+        "TestILDisturbSignalGroupUpdateBit",
+        "Modifies the update bit of a signal group."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "Iso11783IL_PDDGetValue",
+        "The function returns the value of a process variable."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "getThisMessage (J1939)",
+        "Transfers the parameter group to the indicated parameter group pg."
+      ],
+      [
+        "J1939CalcChecksum (Obsolete)",
+        "This function calculates the checksum of a parameter group."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

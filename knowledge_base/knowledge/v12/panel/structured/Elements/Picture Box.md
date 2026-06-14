@@ -1,0 +1,140 @@
+# Picture Box
+
+> Category: `Panel` | Subcategory: `Elements` | Type: `concept`
+
+## Use Case
+
+The Picture Box is a static element and is used for graphic display.
+
+The following use cases are possible with the Picture Box:
+
+## Configuration
+
+Assign an image to the Picture Box in the Panel Designer.
+
+You can configure the control via the ribbon or the Properties Window.
+
+During runtime of CANoe/CANalyzer the image is displayed on the panel.
+
+Note
+
+A Picture Box is always represented with a dashed-lane frame in the Panel Designer. This default setting allows you to recognize the Picture Box on the panel even without an assigned frame or image. The dashed-line frame is not shown in CANoe/CANalyzer.
+
+| Note A Picture Box is always represented with a dashed-lane frame in the Panel Designer. This default setting allows you to recognize the Picture Box on the panel even without an assigned frame or image. The dashed-line frame is not shown in CANoe/CANalyzer. |
+|---|
+
+## Ribbon|Properties Tab / Properties Window
+
+Here all settings are listed that you can change in the ribbon and/or in the Properties Window.
+
+General Group
+
+General
+
+Name
+
+Control Name
+
+Here you change the name of the control. This name and the name of the panel is required for access from CAPL.
+
+—
+
+Is Visible At Runtime
+
+Specifies whether the control is to be displayed during runtime.
+
+| Ribbon | Properties Window | Description |  |
+|---|---|---|---|
+| General Group | General |  |  |
+| Name | Control Name | Here you change the name of the control. This name and the name of the panel is required for access from CAPL. |  |
+| — | Is Visible At Runtime | Specifies whether the control is to be displayed during runtime. CAPL Access With the function setControlVisibility, you can set, if the control is displayed during runtime or not. |  |
+| Appearance Group | Appearance |  |  |
+| Image File | Image File | Here you change the image for the control. CAPL Access With the function setPictureBoxImage, you can exchange the image file during runtime. On the next measurement start, the image file selected in the Panel Designer will be reloaded. |  |
+| Transparency | Transparent Color | Change the transparent color. The picture transparency is always active. You must only define the color for which the picture should be transparent. |  |
+| Resize Proportionally | Resize Proportionally With a click on the symbol you activate/deactivate the proportional increase/decrease (height = width). |  |  |
+| — | Fit Image Size With a click on the symbol you reset the selected image to its original size. |  |  |
+| Border Style | Here you change the frame of the control: Fixed 3D3D frame Fixed SingleSingle frame NoneNo frame |  |  |
+| More Group | — |  |  |
+| — | Show Properties With a click on the symbol you open the Properties Window. |  |  |
+| Group: — | Settings |  |  |
+| — | Cache Images | Here you can select whether the desired image should be kept in the cache (backup memory). Cache Images = true Use this setting if an image is used several times the image is reassigned several times via CAPL the panel is frequently closed and opened again This setting allows the loading time of the image to be reduced, but the memory usage increases. The image is read once from the file and kept in a list in memory that is used by all controls. Cache Images = false Use this setting if an image is used once many different image files are used the storage space is limited Every time an image is assigned, it is read from the file and not kept in the cache. This reduces memory usage, but the loading time of the image may increase if it used several times. |  |
+| Group: — | Layout |  |  |
+| — | Location/Size | Here you can enter settings relating to the size and position of the control. Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. | Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |
+| Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |  |  |  |
+
+## CAPL Access
+
+With the function setControlVisibility, you can set, if the control is displayed during runtime or not.
+
+Appearance Group
+
+Appearance
+
+Image File
+
+Here you change the image for the control.
+
+## CAPL Access
+
+With the function setPictureBoxImage, you can exchange the image file during runtime. On the next measurement start, the image file selected in the Panel Designer will be reloaded.
+
+Transparency
+
+Transparent Color
+
+Change the transparent color.
+
+The picture transparency is always active. You must only define the color for which the picture should be transparent.
+
+Resize Proportionally
+
+With a click on the symbol you activate/deactivate the proportional increase/decrease (height = width).
+
+—
+
+Fit Image Size
+
+With a click on the symbol you reset the selected image to its original size.
+
+Border Style
+
+Here you change the frame of the control:
+
+More Group
+
+Show Properties
+
+With a click on the symbol you open the Properties Window.
+
+Group: —
+
+Settings
+
+Cache Images
+
+Here you can select whether the desired image should be kept in the cache (backup memory).
+
+Use this setting if
+
+This setting allows the loading time of the image to be reduced, but the memory usage increases.
+
+The image is read once from the file and kept in a list in memory that is used by all controls.
+
+Every time an image is assigned, it is read from the file and not kept in the cache. This reduces memory usage, but the loading time of the image may increase if it used several times.
+
+Layout
+
+Location/Size
+
+Here you can enter settings relating to the size and position of the control.
+
+Note
+
+You can also resize the control by dragging its markers.
+
+Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.
+
+Assigning Controls | Transparency Color
+
+| Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |
+|---|

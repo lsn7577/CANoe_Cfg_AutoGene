@@ -1,0 +1,46 @@
+{
+  "page_type": "function",
+  "name": "setPortBits - Lowspeed and CANcab 1041",
+  "category": "Obsolete",
+  "title": "setPortBits - Lowspeed and CANcab 1041",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionSetPortBitsLowspeed.htm",
+  "syntax": [
+    "void setPortBits (byte Mode);"
+  ],
+  "description": [
+    "To enable the different CAN bus tranceiver modes Normal Mode (standard at start) or Sleep Mode.",
+    "For this function you have to take care that the channel number is the logical one which is used by CANalyzer / CANoe according to the assignment in CAN Driver Configuration."
+  ],
+  "parameters": [
+    {
+      "name": "Bit 0 and 1",
+      "type": "",
+      "description": "Linemode of channel 1 CANcabs"
+    },
+    {
+      "name": "Bit 2 and 3",
+      "type": "",
+      "description": "Linemode of channel 2 CANcabs"
+    },
+    {
+      "name": "Bit 4 – 7",
+      "type": "",
+      "description": "Reserved and must be set to \"0\""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Changing the mode of two lowspeed CANcabs:"
+    ],
+    "code": "variables {\n}\non key '1'\n{\nwrite (\"CAN1 Lowspeed: Normal Mode\");\nsetPortBits (0x01);\n}\non key '2'\n{\nwrite (\"CAN1 Lowspeed: Sleep Mode\");\nsetPortBits (0x02);\n}\non key '3'\n{\nwrite (\"CAN2 Lowspeed: Normal Mode\");\nsetPortBits (0x04);\n}\non key '4'\n{\nwrite (\"CAN2 Lowspeed: Sleep Mode\");\nsetPortBits (0x08);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

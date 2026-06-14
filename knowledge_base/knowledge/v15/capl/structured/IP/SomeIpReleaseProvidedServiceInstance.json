@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "SomeIpReleaseProvidedServiceInstance",
+  "category": "IP",
+  "title": "SomeIpReleaseProvidedServiceInstance",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpReleaseProvidedServiceInstance.htm",
+  "syntax": [
+    "long SomeIpReleaseProvidedServiceInstance( dword psiHandle );"
+  ],
+  "description": [
+    "Deletes a Provided Service Instance that was created by SomeIpCreateProvidedServiceInstance.",
+    "All objects (Eventgroups, Events, Fields, and Methods) are also closed when the Service Instance is closed. If the Service Instance is newly created, all objects must also be newly created."
+  ],
+  "parameters": [
+    {
+      "name": "psiHandle",
+      "type": "",
+      "description": "Handle of the Provided Service Instance to be deleted (see SomeIpCreateProvidedServiceInstance)."
+    }
+  ],
+  "return": "Handle of the Provided Service Instance to be",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD psi; // provided service handle\n\n  // open an Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create service\n  psi = SomeIpCreateProvidedServiceInstance(aep,10,1);\n\n  // ... do something here\n\n  // close the provided Service Instance\n  SomeIpReleaseProvidedServiceInstance(psi);\n\n  // ... Application Endpoint can still be used here\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

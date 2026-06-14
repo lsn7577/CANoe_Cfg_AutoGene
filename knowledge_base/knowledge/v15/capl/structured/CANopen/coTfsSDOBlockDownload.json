@@ -1,0 +1,159 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOBlockDownload",
+  "category": "CANopen",
+  "title": "coTfsSDOBlockDownload",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoBlockDownload.htm",
+  "syntax": [
+    "long coTfsSDOBlockDownload( dword index, dword subIndex, dword size, dword useCrc, byte inValueBuf[], dword valueBufSize, dword outCrcUsed[] );"
+  ],
+  "description": [
+    "This function executes a complete SDO block download. This function can be used to exchange simple larger quantities of data with a CANopen® device insofar as it supports the block transfer. A fallback to segmented transfer is not supported.",
+    "The parameter useCrc reports if a CRC check was executed during transmission."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "object index"
+    },
+    {
+      "name": "subIndex",
+      "type": "",
+      "description": "object sub index"
+    },
+    {
+      "name": "size",
+      "type": "",
+      "description": "number of bytes to be transmitted"
+    },
+    {
+      "name": "useCrc",
+      "type": "",
+      "description": "reports if CRC check was executed during transmission"
+    },
+    {
+      "name": "inValueBuf[]",
+      "type": "",
+      "description": "data field for transfer data"
+    },
+    {
+      "name": "valueBufSize",
+      "type": "",
+      "description": "buffer size in byte of inValueBuf"
+    },
+    {
+      "name": "outCrcUsed[]",
+      "type": "",
+      "description": "datafield, outCrcUsed[0] returns if a CRC check of the data was executed This check can only be done if both sided of the communication (test module and test node) support CRC checks."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pData[50];\ndword outCrc[1];\n\n// ... copy data to pData ...\n\nif (coTfsSDOBlockDownload(0x2000, 0, 32, 1, pData, 50, outCrc) != 1) {\n  TestStepFail(\"SDO block download test failed\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

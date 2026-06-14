@@ -1,0 +1,48 @@
+# getSignalValueForDescription
+
+> Category: `SignalAccess` | Type: `function`
+
+## Syntax
+
+```c
+long getSignalValueForDescription(Signal signal, char description[], int64& rawValue); // form 1
+long getSignalValueForDescription(char signalNamel[], char description[], int64& rawValue); // form 2
+long getSignalValueForDescription(serviceSignalNumber signal, char description[], int64& rawValue); // form 3
+```
+
+## Description
+
+Retrieves the value for a value description of a database signal. In this way, you can access the value table of the signal.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| signal | The signal (form 1). |
+| description | The value description for which the value shall be retrieved. |
+| rawValue | The value for the description. This is the raw value, not the physical value. |
+| Note Signal Ambiguity You have to use further objects to identify the signal uniquely. They are: channel, database name (alias), node name and message name. The exact qualification syntax is:[Channel::][Database name (alias)::][Node::][Message::]Signal The order and completeness of the objects from right to left is important (see example). |  |
+
+## Example
+
+```c
+int64 val; long ret;
+ret = getSignalValueForDescription(PowerTrain::Engine::GearBoxInfo::Gear, "Gear_2", val);
+if (ret == 0) write("Value for description 'Gear_2' is %I64d", val);
+else write("Error getting value for description 'Gear_2': %d", ret);
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 9.0 SP3 | 13.0 | — | — | 2.1 SP3 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | ✔ | ✔ | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

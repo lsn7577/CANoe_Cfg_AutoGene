@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthProvidedEventGroupRemoveConsumer",
+  "category": "IP",
+  "title": "AREthProvidedEventGroupRemoveConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthProvidedEventGroupRemoveConsumer.htm",
+  "syntax": [
+    "long AREthProvidedEventGroupRemoveConsumer(dword pevgHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort);"
+  ],
+  "description": [
+    "Removes a consumer from a provided event group. Afterwards event/field notifications will not be sent to this consumer anymore."
+  ],
+  "parameters": [
+    {
+      "name": "pevgHandle",
+      "type": "",
+      "description": "Provided event group handle (may be retrieved by AREthGetProvidedObjectHandle)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetStringInput",
+  "category": "Test",
+  "title": "TestGetStringInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetStringInput.htm",
+  "syntax": [
+    "long TestGetStringInput (char aAnswer[], dword aAnswerLen);"
+  ],
+  "description": [
+    "Returns the result of the last successful call of TestWaitForStringInput."
+  ],
+  "parameters": [
+    {
+      "name": "aAnswer",
+      "type": "",
+      "description": "Variable in which the entry of the user must be accepted."
+    }
+  ],
+  "return": "<0: General error, e.g. by calling outside of a test sequence or through no previously performed call of TestWaitForStringInput.",
+  "example": {
+    "description": [],
+    "code": "// ask for the users name and report it in the Write Window\nchar answer[100];\nif (1== TestWaitForStringInput(\"Please enter your name\", 5000))\n{\n TestGetStringInput(answer, 100);\n   Write(\"name = %s\", answer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

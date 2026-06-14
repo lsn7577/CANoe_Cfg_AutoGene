@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPChangeBackgroundColor",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPChangeBackgroundColor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPChangeBackgroundColor.htm",
+  "syntax": [
+    "long Iso11783IL_OPChangeBackgroundColor( dword objectID, dword color ); // form 1"
+  ],
+  "description": [
+    "This function changes the background color of an object. The Change Background Color command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "Object ID of the object, which should change the background color"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPChangeBackgroundColor( 1200, 5 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

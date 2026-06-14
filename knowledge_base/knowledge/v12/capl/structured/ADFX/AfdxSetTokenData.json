@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxSetTokenData",
+  "category": "ADFX",
+  "title": "AfdxSetTokenData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxSetTokenData.htm",
+  "syntax": [
+    "long AfdxSetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long offset, long length, byte buffer[] ); // form 1"
+  ],
+  "description": [
+    "This function copies a number of bytes from source buffer to a token's data area. The token is not resized. Use AfdxResizeToken to change the token's length."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

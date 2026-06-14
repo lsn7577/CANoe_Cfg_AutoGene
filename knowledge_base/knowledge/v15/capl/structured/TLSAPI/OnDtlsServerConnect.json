@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "OnDtlsServerConnect",
+  "category": "TLSAPI",
+  "title": "OnDtlsServerConnect",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TLSAPI/EventProcedures/CAPLfunctionOnDtlsServerConnect.htm",
+  "syntax": [
+    "void OnDtlsServerConnect(dword socket, ip_Endpoint endpoint, long result);"
+  ],
+  "description": [
+    "If the CAPL program implements this callback it is called on the DTLS server side when a DTLS client begins its TLS handshake.",
+    "When a DTLS client begins its handshake the server calls internally UdpConnect on the listening socket. After the socket is connected to the clients address the callback gets called to inform the user that a new socket for incoming DTLS connections has to be created."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket which is now connected to the client."
+    },
+    {
+      "name": "endpoint",
+      "type": "",
+      "description": "The address and port to which this socket is now connected."
+    },
+    {
+      "name": "result",
+      "type": "",
+      "description": "The result of the internal call to UdpConnect."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  char data[1500];\n}\n\non start\n{\n  dword socket;\n  socket = UdpOpen(ip_Endpoint(0.0.0.0:0));\n  UdpConnect(socket, ip_Endpoint(192.168.1.2:4433));\n  socket = TlsOpen(socket);\n  tlsAuthenticateAsClient(socket, \"Server1\");\n}\n\nvoid OnTlsHandshakeComplete(dword socket, long result)\n{\n  if(result == 0)\n  {\n    udpSend(socket, \"Request\", 7);\n    udpReceiveFrom(socket, data, elcount(data));\n  }\n}\n\nOnUdpReceiveFrom(dword socket, long result, dword address, dword port, char buffer[], dword size)\n{\n  // handle response\n  // ...\n  write(\"%BASE_FILE_NAME%: received: %s\", buffer);\n  tlsClose(socket, 1);\n}\nvariables\n{\n  dword listeningSocket;\n  char data[1500];\n}\n\non start\n{\n  DtlsListen(ip_Endpoint(0.0.0.0:4433));\n}\n\n// create new socket to listen for next connection\nvoid DtlsListen(ip_Endpoint endpoint)\n{\n  listeningSocket = UdpOpen(endpoint);\n  listeningSocket = tlsOpen(listeningSocket);\n  tlsAuthenticateAsServer(listeningSocket, \"Server1\");\n}\n\nvoid OnDtlsServerConnect(dword socket, ip_Endpoint endpoint, long result)\n{\n  if(result == 0)\n  {\n    DtlsListen(ip_Endpoint(0.0.0.0:4433));\n  }\n}\n\nvoid OnTlsHandshakeComplete(dword socket, long result)\n{\n  if(result != 0)\n  {\n    write(\"%BASE_FILE_NAME%: Tls Handshake failed on socket %d. Socket gets closed. Result: %d\", socket, result);\n    udpClose(socket);\n  }\n  else\n  {\n    write(\"%BASE_FILE_NAME%: Tls Handshake complete on socket %d. Result: %d\", socket, result);\n    udpReceiveFrom(socket, data, elcount(data));\n  }\n}\n\nOnUdpReceiveFrom(dword socket, long result, ip_Endpoint endpoint, char buffer[], dword size)\n{\n  write(\"%BASE_FILE_NAME%: received: %s\", buffer);\n  strncpy(data, buffer, elcount(data));\n  strncat(data, \" reflected\", elcount(data));\n  UdpSend(socket, data, strlen(data)); // reflect data\n  tlsClose(socket, 1);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "12.0",
+      "12.0",
+      "13.0",
+      "—",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

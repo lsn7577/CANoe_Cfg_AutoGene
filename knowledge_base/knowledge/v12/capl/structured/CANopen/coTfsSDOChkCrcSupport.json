@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOChkCrcSupport",
+  "category": "CANopen",
+  "title": "coTfsSDOChkCrcSupport",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoChkCrcSupport.htm",
+  "syntax": [
+    "dword coTfsSDOChkCrcSupport( void );"
+  ],
+  "description": [
+    "The call of this function after receipt of a SDO initiate upload/download response (coTfsSDOBlockInit) returns the information whether the SDO server supports block transfers with CRC checksums."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "see example of coTfsSDOGetBlockSize"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDGetValue",
+  "category": "ISO11783",
+  "title": "Iso11783PDDGetValue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDGetValue.htm",
+  "syntax": [
+    "float Iso11783PDDGetValue( dword ecuHandle, dbSignal signal, dword elementNumber );",
+    "float Iso11783PDDGetValue( dword ecuHandle, dword ddi, dword elementNumber );"
+  ],
+  "description": [
+    "The function requests the value of a process variable."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU. The handle must previously have been created with Iso11783CreateECU."
+    },
+    {
+      "name": "signal",
+      "type": "",
+      "description": "Signal from the database. The attribute ddimust be defined for the signal. The signal must be defined in the same database as the node!"
+    },
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "Data Dictionary Identificator 0x000..0xFFFF"
+    },
+    {
+      "name": "elementNumber",
+      "type": "",
+      "description": "Element number, 0x000..0xFFF"
+    }
+  ],
+  "return": "Value of the process variable, 0 if the variable is not defined",
+  "example": {
+    "description": [],
+    "code": "char text[256];\nvalue = Iso11783PDDGetValue\r\n ( ecuHandle, PD::AppRateSignal, 0;\nif (Iso11783PDDGetLastError \r\n () != 0) {\n  Iso11783PDDGetLastErrorText \r\n ( elCount(text), text );\n  write( \r\n \"ERROR: %s\", text );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

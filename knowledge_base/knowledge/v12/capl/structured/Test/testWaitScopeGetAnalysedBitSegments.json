@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetAnalysedBitSegments",
+  "category": "Test",
+  "title": "testWaitScopeGetAnalysedBitSegments",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopeGetAnalysedBitSegments.htm",
+  "syntax": [
+    "long testWaitScopeGetAnalysedBitSegments(long bitNumber, ScopeAnalyseBitSegmentData segmentData, dword noOfSegments);"
+  ],
+  "description": [
+    "Request the analysis data for a single bit. The analysis data are calculated by calling the function testWaitForScopeAnalyseBitSegments."
+  ],
+  "parameters": [
+    {
+      "name": "bitNumber",
+      "type": "",
+      "description": "The bit number the data are requested.The number must be between 0 and the return value of the function testWaitForScopeAnalyseBitSegments."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

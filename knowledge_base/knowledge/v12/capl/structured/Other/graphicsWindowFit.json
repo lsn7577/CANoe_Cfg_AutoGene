@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "graphicsWindowFit",
+  "category": "Other",
+  "title": "graphicsWindowFit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGraphicsWindowFit.htm",
+  "syntax": [
+    "void graphicsWindowFit(char[] windowName, byte mode);"
+  ],
+  "description": [
+    "Scales symbols in a CANoe Graphics Window."
+  ],
+  "parameters": [
+    {
+      "name": "windowName",
+      "type": "",
+      "description": "The name of the Graphics Window."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "//Clear the Graphics Window to show only data from this test case\ngraphicsWindowClear(\"Graphics\");\ntestWaitForTimeout(2000);\n\n//Fit all signal values\ngraphicsWindowFit(\"Graphics\", 1);\n\n//Take a capture of the window and add it to the test report\nTestReportAddWindowCapture(\"Graphics\", \"\", \"Screenshot of Graphic window\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

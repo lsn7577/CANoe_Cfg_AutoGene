@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TCIL_ConnectSysVarWithSection",
+  "category": "ISO11783",
+  "title": "TCIL_ConnectSysVarWithSection",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILConnectSysVarWithSection.htm",
+  "syntax": [
+    "long TCIL_ConnectSysVarWithSection(dbNode client, dword ddiOfCondensedState, dword elementNumber, dword sectionNumber, char[] sysVarNameWithPath); // form 1"
+  ],
+  "description": [
+    "This function connects a single section state to a system variable.",
+    "If a section state is changed the new value is put into the system variable. To release connection between the system variable and the condensed state, just call the same method again, but with the empty string instead of the name of system variable."
+  ],
+  "parameters": [
+    {
+      "name": "ddiOfCondensedState",
+      "type": "",
+      "description": "Data dictionary identifier the condensed state belongs to, e.g.:"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = TCIL_ConnectSysVarWithSection(TC, Sprayer, 162, 1, 20,\nSprayer::svActualCondensedWorkStateSection20\");\nswitch (result)\n{\n  case     0: TestStepPass(); break;\n  case -2203: TestStepFail(\"Invalid system variable path!\"); break;\n  case -2211: TestStepFail(\"System variable does not exist!\"); break;\n  default   : TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

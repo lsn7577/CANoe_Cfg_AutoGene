@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthGetRequestId",
+  "category": "IP",
+  "title": "AREthGetRequestId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthGetRequestId.htm",
+  "syntax": [
+    "dword AREthGetRequestId ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the Request ID from the SOME/IP message header."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the SOME/IP message (e.g. see OnAREthMessage)"
+    }
+  ],
+  "return": "Request ID\nIn the Event of an error, the function returns the value 0. The AREthGetLastError function can then be used to check whether the value is valid or an error has occurred.",
+  "example": {
+    "description": [],
+    "code": "void OnAREthMessage( dword messageHandle )\n{\n  dword requestId    = 0;\n  LONG  errorCode    = 0;\n  LONG  errorOccured = 0;\n\n  // get data from SOME/IP message\n  if((requestId = AREthGetRequestId(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = AREthGetLastError()) != 0)\n    {\n      write(\"AUTOSAR Eth IL error occured: Error code: %d\", errorCode);\n      errorOccured = 1;\n    } // if\n  } // if\n\n  if(errorOccured == 0)\n  {\n    write(\"SOME/IP message with Request ID 0x%08x received\",requestId);\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

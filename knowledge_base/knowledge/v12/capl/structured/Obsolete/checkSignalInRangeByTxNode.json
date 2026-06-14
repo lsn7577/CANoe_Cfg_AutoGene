@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "checkSignalInRangeByTxNode",
+  "category": "Obsolete",
+  "title": "checkSignalInRangeByTxNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionCheckSignalInRangeByTxNode.htm",
+  "syntax": [
+    "long checkSignalInRangeByTxNode (dbSignal aSignal, dbNode aTxNode, float aLowLimit, float aHighLimit);"
+  ],
+  "description": [
+    "Checks the signal value against the condition:",
+    "aLowLimit <= Value <= aHighLimit"
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "The signal to be polled"
+    }
+  ],
+  "return": "1: If the condition is TRUE",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

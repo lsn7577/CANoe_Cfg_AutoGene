@@ -1,0 +1,18 @@
+# Media Sink Writer
+
+> Category: `Media` | Type: `notes`
+
+## Description
+
+The sink writer is a component for encoding audio or video files.
+
+The following diagram shows, at a high level, how an application uses the sink writer to encode and audio/video file.
+
+The sink writer hosts a media sink and optionally one or more encoders. The encoders convert uncompressed audio or video data to encoded bit streams. The media sink outputs the bit streams to a file. The sink writer performs the following tasks:
+
+The application passes audio/video data to the sink writer as input. It does not matter how the application obtains or generates the input data. One option is to use the source reader, as shown in the following diagram. However, the sink writer does not require the use of the source reader. These two components are independent.
+
+Media Concepts | Media Formats | Source Reader
+
+| Version 15© Vector Informatik GmbH |
+|---|

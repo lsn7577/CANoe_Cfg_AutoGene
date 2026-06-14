@@ -1,0 +1,130 @@
+{
+  "page_type": "method",
+  "name": "SetPWMResistanceHigh",
+  "category": "VTSystem",
+  "title": "SetPWMResistanceHigh",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSSetPWMResistanceHigh.htm",
+  "syntax": [
+    "long SysVarNamespace.SetPWMResistanceHigh (double Resistance);"
+  ],
+  "description": [
+    "Specifies the resistance value of a high signal on PWM output in \"Resistance output PWM\" mode."
+  ],
+  "parameters": [
+    {
+      "name": "Resistance",
+      "type": "",
+      "description": "Resistance value in ohms.Resistance may have values from 1.0 (1 Ω) up to 250000.0 (250 kΩ). This range is only supported by channel 4 of the VT2004 module. The other channels can handle values from 10.0 (10 Ω) up to 150000.0 (150 kΩ).In special cases Resistance may be set to -1 on each channel to get infinite resistance. Values outside the hardware's possible range of values are rounded up to the next highest value or the highest or lowest possible value is used."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following example demonstrates how to use the internal resistor decade of a VT2004 channel to simulate a PWM based sensor. On channel Temp_Sensor the resistor is toggled between 100 Ohm and 140 Ohm with a frequency of 20 Hz and a duty cycle of 50%."
+    ],
+    "code": "SimulateSensorPWMResistance ()\n{\n   // Choose resistor stimulation and a PWM curve type\n   sysvar::VTS::Temp_Sensor.SetStimulationMode(3);\n   sysvar::VTS::Temp_Sensor.SetCurveType(1);\n\n   // Configure low (100Ohm) and high (140Ohm) resistance values\n   sysvar::VTS::Temp_Sensor.SetPWMResistanceLow(100);\n   sysvar::VTS::Temp_Sensor.SetPWMResistanceHigh(140);\n\n   // Set the number of repeats to unlimited\n   sysvar::VTS::Temp_Sensor.SetPWMRepeats(0);\n\n   // Create a PWM signal with frequency 20Hz and DC 50%\n   @sysvar::VTS::Temp_Sensor::PWMFreq = 20.0;\n   @sysvar::VTS::Temp_Sensor::PWMDC = 50.0;\n\n   // Start the stimulation\n   sysvar::VTS::Temp_Sensor.StartStimulation();\n}\npublic void SimulateSensorPWMResistance()\n   {\n      // Get VTS interface and VT2004 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT2004Channel tempSensor = vts.GetChannel(\"Temp_Sensor\") as IVT2004Channel;\n\n      // Choose resistor stimulation and a PWM curve type\n      tempSensor.SetStimulationMode(StimulationMode.ResistanceLower, CurveType.PWM);\n\n      // Configure low (100Ohm) and high (140Ohm) resistance values\n      tempSensor.PWMResistanceLow.Value = 100.0;\n      tempSensor.PWMResistanceHigh.Value = 140.0;\n\n      // Set the number of repeats to unlimited\n      tempSensor.PWMRepeats.Value = 0;\n\n      // Start the stimulation\n      tempSensor.StartStimulation();\n\n      // Create a PWM signal with frequency 20Hz and DC 50%\n      tempSensor.PWMFreq.Value = 20.0;\n      tempSensor.PWMDC.Value = 50.0;\n   }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.0 SP5",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

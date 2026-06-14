@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPActivate",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPActivate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPActivate.htm",
+  "syntax": [
+    "long Iso11783IL_OPActivate( ); // form 1"
+  ],
+  "description": [
+    "The function activates the Object Pool API. The initialization procedure with the Virtual Terminal is performed and the object pool is transmitted to the Virtual Terminal.",
+    "During the initialization procedure some information from the Virtual Terminal is requested. This can be suppressed with the options parameter. The requested information can be get with the function Iso11783IL_OPGetVTInfo.",
+    "This function is not necessary if a node was configured completely in the database (DBC):ISO11783IOPFilename and ISO11783IOPVersion are defined and VT21 message was assigned to the node."
+  ],
+  "parameters": [
+    {
+      "name": "options",
+      "type": "",
+      "description": "Options"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void MoveToVtWithFunctionInstance1()\n{\n  Iso11783IL_OPDeactivate();\n  Iso11783IL_OPSetProperty( \"VTFunctionInstance\", 1 );\n  SetTimer( mMoveTimer, 1000 );\n}\n\non timer mMoveTimer\n{\n  Iso11783IL_OPLoad( \"Sprayer.iop\" );\n  Iso11783IL_OPActivate();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

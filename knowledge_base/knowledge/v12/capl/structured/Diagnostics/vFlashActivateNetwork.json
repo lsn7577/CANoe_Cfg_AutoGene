@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "vFlashActivateNetwork",
+  "category": "Diagnostics",
+  "title": "vFlashActivateNetwork",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagvFlashActivateNetwork.htm",
+  "syntax": [
+    "void vFlashActivateNetwork();"
+  ],
+  "description": [
+    "Activates the FlexRay network management, if required. The next API call is only allowed after the CAPL callback vFlashActivateNetworkCompleted was called!",
+    "Note: This event-driven API is only needed outside of test modules or test units."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "  // ...\n  // Prepare flashing on FlexRay\n  vFlashActivateNetwork();\n}\nvoid vFlashActivateNetworkCompleted(long vFlashStatusCode)\n{\n  write(\"FlexRay network management was activated\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

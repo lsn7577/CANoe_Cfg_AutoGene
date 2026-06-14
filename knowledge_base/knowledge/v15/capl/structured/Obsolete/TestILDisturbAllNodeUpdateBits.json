@@ -1,0 +1,138 @@
+{
+  "page_type": "notes",
+  "name": "TestILDisturbAllNodeUpdateBits",
+  "category": "Obsolete",
+  "title": "TestILDisturbAllNodeUpdateBits",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionTestILDisturbAllNodeUpdateBits.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function This function is deprecated and has been replaced by ILNodeDisturbAllNodesUpdateBits"
+      ],
+      [
+        "Note This function is not available for all OEM packages - depends on the CANoeIL."
+      ],
+      [
+        "Function Syntax",
+        "long TestILDisturbAllNodeUpdateBits (long flags, long disturbanceMode, long disturbanceCount, long disturbanceValue);"
+      ],
+      [
+        "Function",
+        "Modifies all update bits of signals/signal groups of all nodes in the current bus context. Different fault injections are possible. This function influences a simulation node with an assigned CANoe Interaction Layer."
+      ],
+      [
+        "Parameters",
+        "flags The lowest two bits of this parameter are evaluated: 0 Update bits of signals and signal groups are disturbed. 1 Only signal update bits are disturbed. 2 Only signal group update bits are disturbed.",
+        "0",
+        "Update bits of signals and signal groups are disturbed.",
+        "1",
+        "Only signal update bits are disturbed.",
+        "2",
+        "Only signal group update bits are disturbed."
+      ],
+      [
+        "0",
+        "Update bits of signals and signal groups are disturbed."
+      ],
+      [
+        "1",
+        "Only signal update bits are disturbed."
+      ],
+      [
+        "2",
+        "Only signal group update bits are disturbed."
+      ],
+      [
+        "disturbanceMode Identifies the disturbance mode. 0 Value Sets the update bit fix to the value of parameter disturbanceValue. 1 Freeze Current signal value is used (disturbanceValue is not used). 2 Random Random value is used for setting and resetting the update bit (disturbanceValue is not used).",
+        "0",
+        "Value",
+        "Sets the update bit fix to the value of parameter disturbanceValue.",
+        "1",
+        "Freeze",
+        "Current signal value is used (disturbanceValue is not used).",
+        "2",
+        "Random",
+        "Random value is used for setting and resetting the update bit (disturbanceValue is not used)."
+      ],
+      [
+        "0",
+        "Value",
+        "Sets the update bit fix to the value of parameter disturbanceValue."
+      ],
+      [
+        "1",
+        "Freeze",
+        "Current signal value is used (disturbanceValue is not used)."
+      ],
+      [
+        "2",
+        "Random",
+        "Random value is used for setting and resetting the update bit (disturbanceValue is not used)."
+      ],
+      [
+        "disturbanceCount The number of disturbances. -1 Infinite 0 Stops the disturbance, e.g.a infinite disturbance. n Number of disturbances.",
+        "-1",
+        "Infinite",
+        "0",
+        "Stops the disturbance, e.g.a infinite disturbance.",
+        "n",
+        "Number of disturbances."
+      ],
+      [
+        "-1",
+        "Infinite"
+      ],
+      [
+        "0",
+        "Stops the disturbance, e.g.a infinite disturbance."
+      ],
+      [
+        "n",
+        "Number of disturbances."
+      ],
+      [
+        "disturbanceValue This value is used in combination with the disturbanceMode."
+      ],
+      [
+        "Return Values",
+        "0: No error"
+      ],
+      [
+        "-1: General error"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.1 SP2 - 8.2 SP3",
+        "CAN Test nodes",
+        "—",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDSetParameter",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDSetParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDSetParameter.htm",
+  "syntax": [
+    "long Iso11783IL_PDDSetParameter( char paramName[], float paramValue ); // form 1",
+    "long Iso11783IL_PDDSetParameter( dbNode simulNode, char paramName[], float paramValue ); // form 2"
+  ],
+  "description": [
+    "Changes an internal parameter of the PDD API."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "debug",
+      "type": "",
+      "description": "activates debug outputs in the Write Window 1: on 0: off"
+    },
+    {
+      "name": "autoUpdateVariable",
+      "type": "",
+      "description": "process variable is updated if value command is received 1: auto update 0: process variable have to be updated manually by Iso11783IL_PDDSetValue e.g. in callback function Iso11783IL_PDDOnDataChanged"
+    },
+    {
+      "name": "Note Using version the version value obtained from the database (node attribute ISO11783PDDVersion) is overwritten.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "BootTimeTC\"",
+      "type": "",
+      "description": "maximum number of seconds from a power cycle to transmission of the first Task Controller Status message, default: 255"
+    },
+    {
+      "name": "ImplementSectionControl",
+      "type": "",
+      "description": "1: supports implement section control default: doesn’t support."
+    },
+    {
+      "name": "PeerControlAssignment",
+      "type": "",
+      "description": "1: supports peer control assignment default: doesn’t support"
+    },
+    {
+      "name": "TC_GEO_DefinitionPositionBasedControl",
+      "type": "",
+      "description": "1: TC-GEO definition, position based control default: doesn’t support."
+    },
+    {
+      "name": "TimeAndPositionForDataLogging",
+      "type": "",
+      "description": "1: supports time and position for data logging default: doesn’t support"
+    },
+    {
+      "name": "Documentation",
+      "type": "",
+      "description": "1: supports documentation default: doesn’t support"
+    },
+    {
+      "name": "NumberOfBooms",
+      "type": "",
+      "description": "minimum required number of booms that the Working Set requires to operate correctly, default: 0"
+    },
+    {
+      "name": "NumberOfSection",
+      "type": "",
+      "description": "minimum required number of sections that the Working Set requires to operate correctly, default: 0"
+    },
+    {
+      "name": "NumberOfControlChannels",
+      "type": "",
+      "description": "minimum required number of individual control channels that the Working Set requires to operate correctly, default: 0"
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "RequestForLatestStructureLabel",
+      "type": "",
+      "description": "1: bytes 2..8 of the Request Structure Label message are transmitted as FF. It is used to determine the version of the latest device description structure present at the Task Controller or Data Logger. 0 :default"
+    },
+    {
+      "name": "paramValue",
+      "type": "",
+      "description": "new value for the parameter"
+    },
+    {
+      "name": "simulNode",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783IL_PDDSetParameter( \"debug\", 1 ) == 0) {\n  write( \"Debug mode activated\" );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0: form 1 9.0: form 2",
+      "13.0",
+      "—",
+      "—",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 2 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

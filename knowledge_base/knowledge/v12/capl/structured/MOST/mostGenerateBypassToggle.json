@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "mostGenerateBypassToggle",
+  "category": "MOST",
+  "title": "mostGenerateBypassToggle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGenerateBypassToggle.htm",
+  "syntax": [
+    "long mostGenerateBypassToggle(long channel, long invistime, long vistime, long repeat)"
+  ],
+  "description": [
+    "Starts (repeat > 0) or stops (repeat = 0) generation of Bypass-open-close transitions.",
+    "VN2640: The bypass of the INIC used for simulation and stimulation is toggled. The node has to be in slave mode. The range for timing values is 10…65535 ms.",
+    "OptoLyzer: The bypass of the additional stress network interface controller (NIC) in the OptoLyzer G2 3150o is switched. The bypass of the main NIC (which is responsible for sending and receiving) is not affected.",
+    "The stress network interface controller (NIC) must have active bypass or bypass opened (see mostSetStressNodeParameter )."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// prepare stress NIC: set \"active\" bypass\nmostSetStressNodeParameter(1, 3, 2);\n// make the stress NIC visible two times for 50 ms each\nmostGenerateBypassToggle(1, 100, 50, 2);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

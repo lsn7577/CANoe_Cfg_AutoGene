@@ -1,0 +1,189 @@
+{
+  "page_type": "function",
+  "name": "ARILFaultInjectionDisturbChecksum",
+  "category": "AUTOSARpduIL",
+  "title": "ARILFaultInjectionDisturbChecksum",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/AUTOSARpduIL/Functions/CAPLfunctionARILFaultInjectionDisturbChecksum.htm",
+  "syntax": [
+    "long ARILFaultInjectionDisturbChecksum (dbMsg dbMessage, long type, long disturbanceMode, long disturbanceCount, long disturbanceValue);",
+    "long ARILFaultInjectionDisturbChecksum (dbMsg dbMessage, char signalGroupName[], long type, long disturbanceMode, long disturbanceCount, long disturbanceValue);"
+  ],
+  "description": [
+    "Disturbs the CRC of a PDU or signal group (see CRC Value). The function without the parameter for the signal group will only disturb CRCs that are not part of a signal group."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    },
+    {
+      "name": "signalGroupName",
+      "type": "",
+      "description": "The symbolic full name of the signal group."
+    },
+    {
+      "name": "type",
+      "type": "",
+      "description": "reserved (should be set to 0)."
+    },
+    {
+      "name": "Value",
+      "type": "Mode",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "Value",
+      "description": "Sets the CRC fix to the value of parameter disturbanceValue."
+    },
+    {
+      "name": "1",
+      "type": "Freeze",
+      "description": "Current signal value is used (disturbanceValue is not used)."
+    },
+    {
+      "name": "2",
+      "type": "Random",
+      "description": "Random value is used (disturbanceValue is not used)."
+    },
+    {
+      "name": "3",
+      "type": "Offset",
+      "description": "Signal value is increased by value of parameter disturbanceValue."
+    },
+    {
+      "name": "Value",
+      "type": "Repetition",
+      "description": "Description"
+    },
+    {
+      "name": "-1",
+      "type": "Infinite",
+      "description": "Disturbance is continuously applied."
+    },
+    {
+      "name": "0",
+      "type": "Stop",
+      "description": "An active disturbance is stopped and the CRC will be calculated again appropriately."
+    },
+    {
+      "name": "n > 0",
+      "type": "Count",
+      "description": "Do exactly n disturbances."
+    },
+    {
+      "name": "disturbanceValue",
+      "type": "",
+      "description": "According to the disturbance mode the CRC will optionally be set to this value."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "14",
+      "14",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN Ethernet FlexRay",
+      "CAN Ethernet FlexRay",
+      "CAN Ethernet FlexRay",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

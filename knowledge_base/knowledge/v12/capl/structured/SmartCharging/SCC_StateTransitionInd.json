@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_StateTransitionInd",
+  "category": "SmartCharging",
+  "title": "SCC_StateTransitionInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_StateTransitionInd.htm",
+  "syntax": [
+    "void SCC_StateTransitionInd ( byte SessionID[], dword OldState, dword NewState )"
+  ],
+  "description": [
+    "The callback is called each time the internal state machine switches its state, i.e. usually when a new message is received. Use SCC_GetStateName for a string representation of the state IDs."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

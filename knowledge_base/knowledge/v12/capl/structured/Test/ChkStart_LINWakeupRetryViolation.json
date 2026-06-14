@@ -1,0 +1,41 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINWakeupRetryViolation",
+  "category": "Test",
+  "title": "ChkStart_LINWakeupRetryViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinWakeupRetryViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINWakeupRetryViolation (duration TimeoutAfterWakeup, duration TimeoutAfterThreeWakeups, float Tolerance, dword MaxRetryNum, char[] CaplCallback);"
+  ],
+  "description": [
+    "Checks number of LIN wake-up signals and the time between them.",
+    "An event will be generated, if",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Timeout between two consecutive retransmissions shall not be checked"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Timeout between two consecutive retransmissions"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\nChkConfig_SetPrecision(3); // set precision to ms\n// Create and start the check for LIN Wake-Up signals\n// Parameters to validate: Timeout between two wake-up signals – 150 ms,\n// Timeout after each three wake-up signals – 1.5 sec, Allowed tolerance 2%, maximum \n// expected number of retransmitted Wake-Up signals - 4\ncheckId = ChkStart_LINWakeupRetryViolation (150, 1500, 2, 4, \" LINWakeupRetryCallback\"); \n...\n// CAPL callback for violation notification\nvoid LINWakeupRetryCallback (dword aCheckId)\n{\nChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

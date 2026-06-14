@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "GNSSGetCurCourse",
+  "category": "J1939",
+  "title": "GNSSGetCurCourse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSgetcurcourse.htm",
+  "syntax": [
+    "double GNSSGetCurCourse( void )"
+  ],
+  "description": [
+    "This function returns the current course in degrees along which the GNSS receiver is moving.",
+    "If a value of 0.0 is returned, the GNSSGetLastError function must be used to check whether the value is valid (see error codes)."
+  ],
+  "parameters": [],
+  "return": "current course in degrees",
+  "example": {
+    "description": [],
+    "code": "double course;\ncourse = GNSSGetCurCourse();\nwrite(“Course = %lf degree”, course);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

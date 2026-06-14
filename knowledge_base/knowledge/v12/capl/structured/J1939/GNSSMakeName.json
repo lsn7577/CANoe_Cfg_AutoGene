@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GNSSMakeName",
+  "category": "J1939",
+  "title": "GNSSMakeName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSmakename.htm",
+  "syntax": [
+    "void GNSSMakeName( word deviceName[8], dword selfConfigurable, dword industryGroup, dword deviceClassInstance, dword deviceClass, dword function, dword functionInstance, dword ECUInstance, dword manufacturerCode, dword identityNumber);"
+  ],
+  "description": [
+    "The function generates a J1939 device name. It must be transferred with a byte array of size 8. This array is filled with the device name."
+  ],
+  "parameters": [
+    {
+      "name": "deviceName",
+      "type": "",
+      "description": "Name of the device (determines the function)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "char name[8];\nGNSSMakeName( \r\n name, 1, 0, 0, 0, 28, 0, 0, 0, 0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

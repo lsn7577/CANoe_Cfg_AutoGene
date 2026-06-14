@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "containsKey",
+  "category": "AssociativeFields",
+  "title": "containsKey",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AssociativeFields/Functions/CAPLfunctionContainsKey.htm",
+  "syntax": [
+    "m.containsKey(3));"
+  ],
+  "description": [
+    "Returns the information if a key is available in the field."
+  ],
+  "parameters": [
+    {
+      "name": "key",
+      "type": "",
+      "description": "Key that should be checked."
+    }
+  ],
+  "return": "1 if the key was available - otherwise 0",
+  "example": {
+    "description": [],
+    "code": "if (m.containsKey(3)) { // …"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "O(log(N))",
+  "syntax_status": "inferred_from_example"
+}

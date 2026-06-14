@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOBlockUploadGetCRC",
+  "category": "CANopen",
+  "title": "coTfsSDOBlockUploadGetCRC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoBlockUploadGetCRC.htm",
+  "syntax": [
+    "long coTfsSDOBlockUploadGetCRC( dword outValueBuf[] );"
+  ],
+  "description": [
+    "This function makes available the received CRC checksum of the last successful SDO block upload procedure."
+  ],
+  "parameters": [
+    {
+      "name": "outValueBuf[]",
+      "type": "",
+      "description": "Buffer to store the received CRC checksum."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

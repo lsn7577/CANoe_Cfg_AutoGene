@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDiagResponse",
+  "category": "Test",
+  "title": "TestWaitForDiagResponse",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForDiagResponse.htm",
+  "syntax": [
+    "long TestWaitForDiagResponse (diagRequest request, dword timeout); // form 1",
+    "long TestWaitForDiagResponse (dword timeout); // form 2"
+  ],
+  "description": [
+    "Waits for the arrival of the response to the given request.",
+    "The function will return immediately after a positive or negative response - other than \"responsePending\" - was received within the configured protocol (P2/P2*) timings.",
+    "Intermediate \"responsePending\" NRCs from the target ECU will automatically prolong the wait timer of the tester in P2* increments until maximally <timeout> [ms]. If by then no response has been received from the ECU target, the function will return with value =0 (timeout reached).",
+    "In case the tester node implements a \"CAPL callback interface for diagnostics\" (CCI), but has no further provisions to handle NRCs on its own right, the behaviour is equivalent to the one described above (automated \"responsePending\" handling).",
+    "If the tester implements a CCI and handles \"responsePending\" messages by itself - calling DiagSetP2Extended(-1) beforehand on the CCI - then this function will also treat \"responsePending\" as a regular negative response code and will return immediately after having received such a negative response."
+  ],
+  "parameters": [
+    {
+      "name": "request",
+      "type": "",
+      "description": "Sent request"
+    },
+    {
+      "name": "timeout [ms]",
+      "type": "",
+      "description": "Maximum wait time"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Using Diagnostics Functions in Test Cases"
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

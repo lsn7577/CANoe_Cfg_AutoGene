@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "MCDInitEx",
+  "category": "Obsolete",
+  "title": "MCDInitEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMCDInitEx.htm",
+  "syntax": [
+    "long MCDInitEx (long driverType)"
+  ],
+  "description": [
+    "Initialisation of the MCD server. CANape will be started in non modal mode.",
+    "This function must only be called during the initialisation phase of the measurement (MeasurementInit)."
+  ],
+  "parameters": [
+    {
+      "name": "driverType",
+      "type": "",
+      "description": "0: Driver initialisation as CCP session1: Driver initialisation as XCP session"
+    }
+  ],
+  "return": "0: OK",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

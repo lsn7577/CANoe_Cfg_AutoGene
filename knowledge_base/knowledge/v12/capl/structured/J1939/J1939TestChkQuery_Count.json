@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkQuery_Count",
+  "category": "J1939",
+  "title": "J1939TestChkQuery_Count",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestChkQueryCount.htm",
+  "syntax": [
+    "long J1939TestChkQuery_Count( long checkId );"
+  ],
+  "description": [
+    "The function returns the number of measured values."
+  ],
+  "parameters": [
+    {
+      "name": "checkId",
+      "type": "",
+      "description": "identifier of the check to start"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long cycleCheck;\ncycleCheck = J1939TestChkCreate_AbsCycleTimeViolation( 1, 2, 0xf123, 0.8, 1.2, \"CycleCallback\" );\n\nJ1939TestChkControl_Start( cycleCheck );\n//...\nwrite( \"Number of values=%d\", J1939TestChkQuery_Count(cycleCheck));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,290 @@
+{
+  "page_type": "function",
+  "name": "diagGetCommParameter (FlexRay)",
+  "category": "Diagnostics",
+  "title": "diagGetCommParameter (FlexRay)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetCommParameterFR.htm",
+  "syntax": [
+    "long diagGetCommParameter (char qualifier[]);"
+  ],
+  "description": [
+    "Returns the value of a numeric/textual communication parameter of the given or currently active diagnostic description. The values are read from the diagnostic description if they cannot be set in the configuration dialog."
+  ],
+  "parameters": [
+    {
+      "name": "Qualifier",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "FlexRay.Protocol",
+      "type": "",
+      "description": "The protocol variant to use. 0 AUTOSAR 2.xrest reserved for future extensions"
+    },
+    {
+      "name": "Values",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "One byte addresses"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Two byte addresses"
+    },
+    {
+      "name": "FlexRay.LocalAddress",
+      "type": "",
+      "description": "Address of *this* node, i.e. ECU address in ECU simulation, tester address in tester nodes."
+    },
+    {
+      "name": "FlexRay.RemoteAddress",
+      "type": "",
+      "description": "Address of the target node, i.e. ECU address in tester nodes, tester address in ECU simulation."
+    },
+    {
+      "name": "Values",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Unicast"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Acknowledged Unicast"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Acknowledged Unicast with Retry"
+    },
+    {
+      "name": "rest",
+      "type": "",
+      "description": "reserved"
+    },
+    {
+      "name": "Note Please refer to the AUTOSAR FlexRay TP specification for details on the parameter value semantics.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Values",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "ISO"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "ISO6"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "L16M"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "L4G"
+    },
+    {
+      "name": "rest",
+      "type": "",
+      "description": "reserved"
+    },
+    {
+      "name": "Note Please refer to the AUTOSAR FlexRay TP specification for details on the parameter value semantics.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Note Please refer to the AUTOSAR FlexRay TP specification for details on the parameter value semantics.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Note Please refer to the AUTOSAR FlexRay TP specification for details on the parameter value semantics.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Qualifier",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "FlexRay.LocalStartSlot",
+      "type": "",
+      "description": "Id of first slot the node sends in"
+    },
+    {
+      "name": "FlexRay.LocalCount",
+      "type": "",
+      "description": "Number of consecutive slots to send in"
+    },
+    {
+      "name": "FlexRay.LocalStartCycle",
+      "type": "",
+      "description": "First cycle to send slots in"
+    },
+    {
+      "name": "FlexRay.LocalCycleRepetition",
+      "type": "",
+      "description": "Cycle spacing to send slots in"
+    },
+    {
+      "name": "FlexRay.LocalPayloadLen",
+      "type": "",
+      "description": "Length of slots to send in"
+    },
+    {
+      "name": "FlexRay.RemoteStartSlot",
+      "type": "",
+      "description": "Id of first slot to receive"
+    },
+    {
+      "name": "FlexRay.RemoteCount",
+      "type": "",
+      "description": "Number of consecutive slots to receive"
+    },
+    {
+      "name": "FlexRay.RemoteStartCycle",
+      "type": "",
+      "description": "First cycle to receive slots in"
+    },
+    {
+      "name": "FlexRay.RemoteCycleRepetition",
+      "type": "",
+      "description": "Cycle spacing of slots to receive"
+    },
+    {
+      "name": "FlexRay.RemotePayloadLen",
+      "type": "",
+      "description": "Length of slots received"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [
+      "You can find examples for this function in the CAPL callback interface (CCI) reference implementations.See Diagnostics: Connection of the Communication Layer for details."
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

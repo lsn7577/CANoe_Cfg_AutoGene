@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "MessageTimeNS",
+  "category": "Other",
+  "title": "MessageTimeNS",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMessageTimeNS.htm",
+  "syntax": [
+    "float MessageTimeNS(message msg);"
+  ],
+  "description": [
+    "Returns the time stamp in nanoseconds.",
+    "The time stamp that can be polled with this function has a greater precision than the msg.TIME time stamp, whereby the precision depends on the CAN or LIN hardware that is being used."
+  ],
+  "parameters": [
+    {
+      "name": "message",
+      "type": "",
+      "description": "CAN message"
+    }
+  ],
+  "return": "Time stamp of the message in ns",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

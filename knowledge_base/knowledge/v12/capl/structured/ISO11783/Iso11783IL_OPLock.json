@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPLock",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPLock",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPLock.htm",
+  "syntax": [
+    "long Iso11783IL_OPLock( dword lock, dword maskID, dword timeout ); // form 1"
+  ],
+  "description": [
+    "The function locks the screen updates on the Virtual Terminal. A Lock command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "lock",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPLock( 1200, 1, 500 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

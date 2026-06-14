@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostGetSBC",
+  "category": "MOST",
+  "title": "mostGetSBC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGetSBC.htm",
+  "syntax": [
+    "long mostGetSBC (long channel)"
+  ],
+  "description": [
+    "This function returns the \"Synchronous Bandwidth Control (SBC) Register\" value of the MOST hardware chip connected to the channel."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected MOST hardware."
+    }
+  ],
+  "return": ">= 0: Current value of the SBC register",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

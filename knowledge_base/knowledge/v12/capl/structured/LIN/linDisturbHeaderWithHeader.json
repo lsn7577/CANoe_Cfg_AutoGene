@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linDisturbHeaderWithHeader",
+  "category": "LIN",
+  "title": "linDisturbHeaderWithHeader",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINDisturbHeaderWithHeader.htm",
+  "syntax": [
+    "dword linDisturbHeaderWithHeader(dword byteIndex, dword bitIndex, long disturbingFrameId);"
+  ],
+  "description": [
+    "Configures the LIN hardware to disturb the next header with a new header (id=<disturbanceHeaderID>)."
+  ],
+  "parameters": [
+    {
+      "name": "byteIndex",
+      "type": "",
+      "description": "Starts disturbance in byte with index <byteIndex>."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

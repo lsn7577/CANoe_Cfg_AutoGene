@@ -1,0 +1,31 @@
+{
+  "page_type": "event",
+  "name": "on linReceiveError",
+  "category": "LIN",
+  "title": "on linReceiveError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/EventProcedures/CAPLfunctionOnLINReceiveError.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure on linReceiveError is called when an error occurred during a frame transmission. The exact reason of the error is specified by lin_StateReason selector.",
+    "The keyword this and the selectors can be used to access the data of the event that has just been received."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "linFrame MotorControl frmMotorControl;\n...\n   // Simulate Receive Error by setting wrong response length\nif (linSetRespLength (frmMotorControl.ID, frmMotorControl.DLC) \r\n != 0)\n{\n// from now on a receive error notified for the MotorControl frame\n...\n}\n...\n// Handle the error\non linReceiveError\n{\nint state, reason;\nif (this.lin_ShortError != 0)\n{\n      // The received data was too short. No additional info is available.\n...\n}\nelse\n{\n      // extract identifier of LIN hardware state at the time the error has occurred\n      state = this.lin_StateReason & 0x0F;\n      // extract identifier of reason caused the error\n      reason = this.lin_StateReason & 0xF0;\n...\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "linReceiveError",
+      "link": "../Selectors/CAPLfunctionLINReceiveError.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

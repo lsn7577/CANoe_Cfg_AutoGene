@@ -1,0 +1,32 @@
+{
+  "page_type": "selector",
+  "name": "Example: Selector DIR (direction of transmission)",
+  "category": "CAN",
+  "title": "Example: Selector DIR (direction of transmission)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Selectors/CAPLSelectorDIR.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [
+    {
+      "name": "Example Selector DIR (direction of transmission)",
+      "description": [],
+      "code": "on message 0x100 {\n  if (this.DIR == Rx) {\n    write(\"message 0x100 received\");\n  }\n  if (this.DIR == Tx) {\n    write(\"message 0x100 sent\");\n  }\n}"
+    },
+    {
+      "name": "Note for CANoe Users",
+      "description": [
+        "Please note the semantics of Rx for CAPL nodes in the Simulation Setup of CANoe."
+      ],
+      "code": ""
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

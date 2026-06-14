@@ -1,0 +1,190 @@
+{
+  "page_type": "function",
+  "name": "ILSetOperationMode",
+  "category": "CANoeIL",
+  "title": "ILSetOperationMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANoeIL/Functions/CAPLfunctionILSetOperationMode.htm",
+  "syntax": [
+    "long ILSetOperationMode(long mode, long param); // form 1",
+    "long ILSetOperationMode(dbMsg message, char signalGroupName[], long mode, long param); // form 2",
+    "long ILSetOperationMode(dbSignal signal, long mode, long param); // form 3"
+  ],
+  "description": [
+    "Form 1:",
+    "Sets specific operation mode in the interaction layer of the specified simulation node. The specified node must be in the current bus context. In all other cases the function has no effect and will return with an error.",
+    "Form 2:",
+    "Sets specific operation mode in the interaction layer for the specified signal group of the specified message.",
+    "Form 3:",
+    "Sets specific operation mode in the interaction layer for the specified signal."
+  ],
+  "parameters": [
+    {
+      "name": "aNodeName",
+      "type": "",
+      "description": "Name of the node of which the specific operation mode should be set."
+    },
+    {
+      "name": "signalGroupName",
+      "type": "",
+      "description": "Name of the signal group."
+    },
+    {
+      "name": "message",
+      "type": "",
+      "description": "Message of which the specific operation mode should be set."
+    },
+    {
+      "name": "signal",
+      "type": "",
+      "description": "Name of the update bit signal of which the specific operation mode should be set."
+    },
+    {
+      "name": "mode",
+      "type": "",
+      "description": "0: Influences update bits. Thus, the OEM should support update bits. How the operation of setting update bits is manipulated defines the second parameter, see below. Other values are reserved."
+    },
+    {
+      "name": "Syntax Form",
+      "type": "",
+      "description": "Mode Value Param Value Description"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "0 0 All update bits will be set or reset depending on the signal updates"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "All update bits will always be sent with value = 1"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "0 0 The update bit of the signal group will be set or reset depending on the signal updates"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "The update bit of the signal group will always be sent with value = 1"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "0 0 The update bit will be set or reset depending on the signal updates"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "The update bit will always be sent with value = 1"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2 SP3",
+      "13.0",
+      "—",
+      "14",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN FlexRay",
+      "CAN FlexRay",
+      "—",
+      "CAN FlexRay",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

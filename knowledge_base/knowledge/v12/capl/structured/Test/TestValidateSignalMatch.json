@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestValidateSignalMatch",
+  "category": "Test",
+  "title": "TestValidateSignalMatch",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestValidateSignalMatch.htm",
+  "syntax": [
+    "long TestValidateSignalMatch (char aTestStep[], Signal aSignal, float aCompareValue); // form 1"
+  ],
+  "description": [
+    "Checks the given value against the value of the signal, the system variable or the environment variable. The resolution of the signal is considered.",
+    "The test step is evaluated as either passed or failed depending on the results."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Correct functionality",
+  "example": {
+    "description": [],
+    "code": "// validates the value of the signal against the given value\nlong result;\nresult = TestValidateSignalMatch(\"Check Velocity\", Node_SUT::Velocity, 80);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

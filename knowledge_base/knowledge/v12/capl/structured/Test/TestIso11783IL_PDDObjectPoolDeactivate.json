@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestIso11783IL_PDDObjectPoolDeactivate",
+  "category": "Test",
+  "title": "TestIso11783IL_PDDObjectPoolDeactivate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestIso11783ILPDDObjectPoolDeactivate.htm",
+  "syntax": [
+    "long TestIso11783IL_PDDObjectPoolDeactivate( dbNode node );"
+  ],
+  "description": [
+    "The function sends an Object-pool Deactivate message to the Task Controller and disconnects the connection to the Task Controller.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

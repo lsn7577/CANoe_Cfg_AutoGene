@@ -1,0 +1,137 @@
+{
+  "page_type": "function",
+  "name": "SetSignal",
+  "category": "Test",
+  "title": "SetSignal",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionSetSignal.htm",
+  "syntax": [
+    "long setSignal(char signalName[], double aValue); // form 2"
+  ],
+  "description": [
+    "Sets the transmitted signal aSignal to the accompanying value.",
+    "If no suitable signal driver exists and thus no signal can be stimulated, then in the test module the verdict of the test module is set to \"fail\". In the modeling library the measurement is stopped and an error message is displayed."
+  ],
+  "parameters": [
+    {
+      "name": "Note Signal Ambiguity You have to use further objects to identify the signal uniquely. They are: channel, database name (alias), node name and message name. The exact qualification syntax is:[Channel::][Database name (alias)::][Node::][Message::]Signal The order and completeness of the objects from right to left is important (see example).",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "aValue",
+      "type": "",
+      "description": "Physical value to be accepted."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1 — Signal is unique",
+      "Example 2 — Signal is ambiguous"
+    ],
+    "code": "setSignal(\"OnOff\", 1.0);\n\n//Message and signal\nsetSignal(\"LightState::OnOff\", 1.0);\n//Node, message and signal \nsetSignal(\"LightSwitch::LightState::OnOff\", 1.0);\n//Database name (alias), node, message and signal \nsetSignal(\"PowerTrain::LightSwitch::LightState::OnOff\", 1.0);\nsetSignal(\"C11_Fy_Cluster::ESP::PDU_ESP_35::BTS_Bmg\", 1);\n//Channel, database name (alias), node, message and signal \nsetSignal(\"CAN1::PowerTrain::LightSwitch::LightState::OnOff\", 1.0);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Test nodes",
+      "Test nodes",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

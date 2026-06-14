@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "writeClear",
+  "category": "Other",
+  "title": "writeClear",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWriteClear.htm",
+  "syntax": [
+    "void writeClear(dword sink)"
+  ],
+  "description": [
+    "Clears the contents of the specified page in the Write Window.You can use the following constants for the target identifier or type of message:",
+    "In addition you can use one of the target identifiers returned by the function writeCreate. You can clear all tabs using \"-1\" as parameter. The Overview page can’t be cleared solely."
+  ],
+  "parameters": [
+    {
+      "name": "sink",
+      "type": "",
+      "description": "Target identifier for the page to be deleted."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_AcceptRxPG",
+  "category": "ISO11783",
+  "title": "TCIL_AcceptRxPG",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILAcceptRxPG.htm",
+  "syntax": [
+    "long TCIL_AcceptRxPG( pg * rxPG );"
+  ],
+  "description": [
+    "Checks if the received parameter group is addressed to the TC IL."
+  ],
+  "parameters": [
+    {
+      "name": "rxPG",
+      "type": "",
+      "description": "Receive parameter group"
+    }
+  ],
+  "return": "<0: TC IL Error Code",
+  "example": {
+    "description": [],
+    "code": "on pg TPRS\n{\n  if (TCIL_AcceptRxPG( this ) <= 0) return;\n  // ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

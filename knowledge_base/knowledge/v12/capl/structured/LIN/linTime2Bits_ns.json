@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linTime2Bits_ns",
+  "category": "LIN",
+  "title": "linTime2Bits_ns",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINTime2BitsNS.htm",
+  "syntax": [
+    "dword linTime2Bits_ns(int64 time)"
+  ],
+  "description": [
+    "This function converts specified system times to bit times. The conversion is done using the current baud rate on the channel determined by the CAPL program context.",
+    "Calling this function with the explicit channel is only possible from a CAPL program defined in the Measurement Setup of CANoe."
+  ],
+  "parameters": [
+    {
+      "name": "time",
+      "type": "",
+      "description": "System time to be converted [in ns]."
+    }
+  ],
+  "return": "Resulting bit time.",
+  "example": {
+    "description": [
+      "Extract sync break length of LIN frames"
+    ],
+    "code": "on linFrame *\n{\n..dword bitTimeSyncBreak;\n  bitTimeSyncBreak = linTime2Bits_ns(this.breakLen);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

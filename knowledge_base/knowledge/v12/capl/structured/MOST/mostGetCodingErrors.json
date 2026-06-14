@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostGetCodingErrors",
+  "category": "MOST",
+  "title": "mostGetCodingErrors",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGetCodingErrors.htm",
+  "syntax": [
+    "long mostGetCodingErrors (long channel)"
+  ],
+  "description": [
+    "Returns the number of coding errors since measurement start or the last time this function was called.",
+    "Calling this function resets the counter in the hardware! The total number of coding errors during measurement is displayed in Bus Statistics Window."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface"
+    }
+  ],
+  "return": ">= 0: Number of coding errors.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "frGetConfiguration",
+  "category": "FlexRay",
+  "title": "frGetConfiguration",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Functions/CAPLfunctionFRGetConfiguration.htm",
+  "syntax": [
+    "frGetConfiguration( int channel, frConfiguration<configuration var> );"
+  ],
+  "description": [
+    "This function copies the FlexRay protocol parameters to <configuration var>."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "FlexRay channel (cluster number)."
+    },
+    {
+      "name": "<configuration var>",
+      "type": "",
+      "description": "Name of the variable referenced by the configuration object. The variable name was defined when the object was created using frConfiguration."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The following CAPL function outputs all FlexRay protocol parameters in the Write Window."
+    ],
+    "code": "variables\n{\n   frConfiguration gFRParams;\n}\nvoid printFRConf ()\n{\n   frGetConfiguration(%CHANNEL%, gFRParams);\n   Write(\"%33s = %6d %s\", \"pCCVersion\", gFRParams.pCCVersion, \"\");\n   Write(\"%33s = %6ld %s\",\"FRBaudrate\", gFRParams.FRBaudrate, \"kBit/s\");\n   Write(\"%33s = %6f %s\", \"gdMacrotick\", gFRParams.gdMacrotick, \"us\");\n   Write(\"%33s = %6d %s\", \"gMacroPerCycle\", gFRParams.gMacroPerCycle, \"MT\");\n   Write(\"%33s = %6d %s\", \"gdNIT\", gFRParams.gdNIT, \"MT\");\n   Write(\"%33s = %6f %s\", \"gdSampleClockPeriod\", gFRParams.gdSampleClockPeriod, \"us\");\n   Write(\"%33s = %6d %s\", \"gdTSSTransmitter\", gFRParams.gdTSSTransmitter, \"Bit\");\n   Write(\"%33s = %6d %s\", \"gPayloadLengthStatic\", gFRParams.gPayloadLengthStatic, \"Words\");\n   Write(\"%33s = %6d %s\", \"gdActionPointOffset\", gFRParams.gdActionPointOffset, \"MT\");\n   Write(\"%33s = %6d %s\", \"gdStaticSlot\", gFRParams.gdStaticSlot, \"MT\");\n   Write(\"%33s = %6d %s\", \"gNumberOfStaticSlots\", gFRParams.gNumberOfStaticSlots, \"#\");\n   Write(\"%33s = %6d %s\", \"gdMinislotActionPointOffset\", gFRParams.gdMinislotActionPointOffset, \"MT\");\n   Write(\"%33s = %6d %s\", \"gdMinislot\", gFRParams.gdMinislot, \"MT\");\n   Write(\"%33s = %6d %s\", \"gNumberOfMinislots\", gFRParams.gNumberOfMinislots, \"#\");\n   Write(\"%33s = %6d %s\", \"gClusterDriftDamping\", gFRParams.gClusterDriftDamping, \"\");\n   Write(\"%33s = %6d %s\", \"gListenNoise\", gFRParams.gListenNoise, \"\");\n   Write(\"%33s = %6d %s\", \"gColdStartAttempts\", gFRParams.gColdStartAttempts, \"#\");\n   Write(\"%33s = %6d %s\", \"gSyncNodeMax\", gFRParams.gSyncNodeMax, \"#\");\n   Write(\"%33s = %6d %s\", \"gOffsetCorrectionStart\", gFRParams.gOffsetCorrectionStart, \"MT\");\n   Write(\"%33s = %6d %s\", \"gdDynamicSlotIdlePhase\", gFRParams.gdDynamicSlotIdlePhase, \"MS\");\n   Write(\"%33s = %6d %s\", \"gdSymbolWindow\", gFRParams.gdSymbolWindow, \"MT\");\n   Write(\"%33s = %6d %s\", \"gdCASRxLowMax\", gFRParams.gdCASRxLowMax, \"Bit\");\n   Write(\"%33s = %6d %s\", \"gdCASRxLowMin\", gFRParams.gdCASRxLowMin, \"Bit\");\n   Write(\"%33s = %6d %s\", \"gdWakeupSymbolRxIdle\", gFRParams.gdWakeupSymbolRxIdle, \"Bit\");\n   Write(\"%33s = %6d %s\", \"gdWakeupSymbolRxLow\", gFRParams.gdWakeupSymbolRxLow, \"Bit\");\n   Write(\"%33s = %6d %s\", \"gdWakeupSymbolRxWindow\", gFRParams.gdWakeupSymbolRxWindow, \"Bit\");\n   Write(\"%33s = %6d %s\", \"gdWakeupSymbolTxIdle\", gFRParams.gdWakeupSymbolTxIdle, \"Bit\");\n   Write(\"%33s = %6d %s\", \"gdWakeupSymbolTxLow\", gFRParams.gdWakeupSymbolTxLow, \"Bit\");\n   Write(\"%33s = %6d %s\", \"gMaxWithoutClockCorrectionFatal\", gFRParams.gMaxWithoutClockCorrectionFatal, \"double cycles\");\n   Write(\"%33s = %6d %s\", \"gMaxWithoutClockCorrectionPassive\", gFRParams.gMaxWithoutClockCorrectionPassive, \"double cycles\");\n   Write(\"%33s = %6d %s\", \"gNetworkManagementVectorLength\", gFRParams.gNetworkManagementVectorLength, \"Bytes\");\n   Write(\"%33s = %6d %s\", \"pChannels\", gFRParams.pChannels, \"\");\n   Write(\"%33s = %6d %s\", \"pMicroPerCycle\", gFRParams.pMicroPerCycle, \"uT\");\n   Write(\"%33s = %6d %s\", \"pSamplesPerMicrotick\", gFRParams.pSamplesPerMicrotick, \"#\");\n   Write(\"%33s = %6d %s\", \"pPayloadLengthDynMax\", gFRParams.pPayloadLengthDynMax, \"Words\");\n   Write(\"%33s = %6d %s\", \"pPayloadLengthFIFO\", gFRParams.pPayloadLengthFIFO, \"Words\");\n   Write(\"%33s = %6d %s\", \"pLatestTx\", gFRParams.pLatestTx, \"MS\");\n   Write(\"%33s = %6d %s\", \"pdMaxDrift\", gFRParams.pdMaxDrift, \"uT\");\n   Write(\"%33s = %6d %s\", \"pdAcceptedStartupRange\", gFRParams.pdAcceptedStartupRange, \"uT\");\n   Write(\"%33s = %6d %s\", \"pdListenTimeout\", gFRParams.pdListenTimeout, \"uT\");\n   Write(\"%33s = %6d %s\", \"pClusterDriftDamping\", gFRParams.pClusterDriftDamping, \"uT\");\n   Write(\"%33s = %6d %s\", \"pDecodingCorrection\", gFRParams.pDecodingCorrection, \"uT\");\n   Write(\"%33s = %6d %s\", \"pDelayCompensation_A\", gFRParams.pDelayCompensation_A, \"uT\");\n   Write(\"%33s = %6d %s\", \"pDelayCompensation_B\", gFRParams.pDelayCompensation_B, \"uT\");\n   Write(\"%33s = %6d %s\", \"pOffsetCorrectionOut\", gFRParams.pOffsetCorrectionOut, \"uT\");\n   Write(\"%33s = %6d %s\", \"pRateCorrectionOut\", gFRParams.pRateCorrectionOut, \"uT\");\n   Write(\"%33s = %6d %s\", \"pExternOffsetCorrection\", gFRParams.pExternOffsetCorrection, \"uT\");\n   Write(\"%33s = %6d %s\", \"pExternRateCorrection\", gFRParams.pExternRateCorrection, \"uT\");\n   Write(\"%33s = %6d %s\", \"pExternCorrectionMode\", gFRParams.pExternCorrectionMode, \"\");\n   Write(\"%33s = %6d %s\", \"pMacroInitialOffset_A\", gFRParams.pMacroInitialOffset_A, \"MT\");\n   Write(\"%33s = %6d %s\", \"pMacroInitialOffset_B\", gFRParams.pMacroInitialOffset_B, \"MT\");\n   Write(\"%33s = %6d %s\", \"pMicroInitialOffset_A\", gFRParams.pMicroInitialOffset_A, \"uT\");\n   Write(\"%33s = %6d %s\", \"pMicroInitialOffset_B\", gFRParams.pMicroInitialOffset_B, \"uT\");\n   Write(\"%33s = %6d %s\", \"pWakeupChannel\", gFRParams.pWakeupChannel, \"\");\n   Write(\"%33s = %6d %s\", \"pWakeupPattern\", gFRParams.pWakeupPattern, \"#\");\n   Write(\"%33s = %6d %s\", \"pAllowHaltDueToClock\", gFRParams.pAllowHaltDueToClock, \"Boolean\");\n   Write(\"%33s = %6d %s\", \"pAllowPassiveToActive\", gFRParams.pAllowPassiveToActive, \"cycles\");\n   Write(\"%33s = %6d %s\", \"pBGTick\", gFRParams.pBGTick, \"Boolean\");\n   Write(\"%33s = %6d %s\", \"pPhysicalLayer\", gFRParams.pPhysicalLayer, \"\");\n   Write(\"%33s = %6d %s\", \"pSingleSlotEnabled\", gFRParams.pSingleSlotEnabled, \"Boolean\");\n   Write(\"%33s = %6d %s\", \"pBGEnable\", gFRParams.pBGEnable, \"Boolean\");\n   Write(\"%33s = %6d %s\", \"pDynamicSegmentEnable\", gFRParams.pDynamicSegmentEnable, \"Boolean\");\n   Write(\"%33s = %6d %s\", \"pStrobePointPosition\", gFRParams.pStrobePointPosition, \"\");\n   Write(\"%33s = %6f %s\", \"pdMicrotick\", gFRParams.pdMicrotick, \"us\");\"\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.0",
+      "6.0",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔ (since version 7.1)",
+      "✔(since version 7.1)",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_diag_ConfigureChannel",
+  "category": "Diagnostics",
+  "title": "_diag_ConfigureChannel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagConfigureChannel.htm",
+  "syntax": [
+    "void _Diag_ConfigureChannel(char target[]);"
+  ],
+  "description": [
+    "This callback function will be called when a diagnostic request has to be sent to a new target. The CAPL node can configure the transport protocol, e.g. set CAN IDs for sending and receiving."
+  ],
+  "parameters": [
+    {
+      "name": "target",
+      "type": "",
+      "description": "Qualifier of the ECU to communicate with."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_Diag_ConfigureChannel(char target[])\n{\n  long connectionHandle;\n  connectionHandle = CreateConnection(target);\n  TPLayer_SetTxId(connectionHandle, GetTxId(target));\n  TPLayer_SetRxId(connectionHandle, GetRxId(target));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

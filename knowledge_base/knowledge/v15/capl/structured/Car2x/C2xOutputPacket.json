@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "C2xOutputPacket",
+  "category": "Car2x",
+  "title": "C2xOutputPacket",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xOutputPacket.htm",
+  "syntax": [
+    "long C2xOutputPacket( long packet) // form 1",
+    "long C2xOutputPacket( long packet, long txPower ) // form 2"
+  ],
+  "description": [
+    "This function sends a WLAN packet. (form 1)",
+    "This function sends a WLAN packet with a specific txPower. (form 2)",
+    "This method extends the existing OutputPacket function and allows to send a frame with a dedicated Tx-power. It can be used in combination with the existing (old) OutputPacket function, which still uses the default-txPower defined in the Setup-Dialog or by SetSendParameters."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the packet to send"
+    },
+    {
+      "name": "txPower",
+      "type": "",
+      "description": "Transmission power in dBm"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "see also example of C2xInitPacket"
+    ],
+    "code": "void SendGNPacket()\n{\n  long handle;   // handle to c2x message\n  long counter = 0, txPower = 25;\n  handle = C2xInitPacket(\"geo_cnh\");    // Create a c2x message\n\n  // If nothing went wrong...\n  if (handle != 0 && txPower > -20)\n  {\n    counter++;\n    C2xSetTokenInt(handle, \"geo_cnh\", \"reserved\", counter);   // Fill the message with the payload\n    C2xOutputPacket(handle, txPower);   // transmit packet with decreasing txPower\n    txPower--;\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.6: form 1 11.0: form 1-2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3: form 1 3.0: form 1-2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

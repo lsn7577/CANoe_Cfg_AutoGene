@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsODChkSingleEntry",
+  "category": "CANopen",
+  "title": "coTfsODChkSingleEntry",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdChkSingleEntry.htm",
+  "syntax": [
+    "long coTfsODChkSingleEntry( dword index, dword subIndex, dword accessType, dword entrySize, byte inMaskBuf[], dword maskBufSize, byte inValueBuf[], dword valueBufSize );"
+  ],
+  "description": [
+    "The function checks a single object dictionary entry of existence and size via a SDO upload. Additionally the value is compared with the given value. The compare mask defines which data bits are compared and musts be identical. The test is only executed if the access type of the object is not writeOnly.",
+    "The test was successful if the values of a mandatory object are correct. On an optional object, the SDO abort codes (0x08000000, 0x06020000 and 0x06090011) are accepted also.",
+    "On a positive comparison and access type readWrite, the read value is written."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Checked object index."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "long retValFunc = kTestStepPassed; /* to store the return value of function */\nlong nodeId = 112;                 /* Node-Id of DUT */\n\ndword index = 0x1000; /* device type */\ndword subIndex = 0x0; /* sub-index */\ndword accessType = kAccessType_ReadOnly;\ndword entrySize = 4;\nbyte inMaskBuf[4] = {0xFF, 0xFF, 0xFF, 0xFF};\ndword maskBufSize = 4;\nbyte inValueBuf[4] = {0x0, 0x0, 0x0, 0x0};\ndword valueBufSize = 4;\nchar msg[100]; /* message */\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* call test function */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODChkSingleEntry\", elCount(msg));\n  retValFunc = coTfsODChkSingleEntry( index /*dword index*/, subIndex /*dword subIndex*/, accessType /*dword accessType*/, entrySize /*dword entrySize*/, inMaskBuf /*byte inMaskBuf[]*/, maskBufSize /*dword maskBufSize*/, inValueBuf /*byte inValueBuf[]*/, valueBufSize /*dword valueBufSize*/ );\n} /* if */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

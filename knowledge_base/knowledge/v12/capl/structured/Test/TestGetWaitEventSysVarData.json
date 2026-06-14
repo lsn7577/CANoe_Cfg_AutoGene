@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitEventSysVarData",
+  "category": "Test",
+  "title": "TestGetWaitEventSysVarData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitEventSysVarData.htm",
+  "syntax": [
+    "long testGetWaitEventSysVarData(dword index, float & value); // form 1"
+  ],
+  "description": [
+    "Retrieves the system variable value that has led to the resume of a joined wait statement."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": "// add sysVar event to the current set of “joined events” and get the sysVar value\ndword index = 0;\nfloat sysValue = 0;\nTestJoinSysVarEvent(MySysVar);\n// ... other join events\nindex = TestWaitForAnyJoinedEvent(2000);\n\nTestGetWaitEventSysVarData(index, sysValue);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

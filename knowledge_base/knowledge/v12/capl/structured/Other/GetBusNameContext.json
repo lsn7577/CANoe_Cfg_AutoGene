@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "GetBusNameContext",
+  "category": "Other",
+  "title": "GetBusNameContext",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetBusNameContext.htm",
+  "syntax": [
+    "dword GetBusNameContext(char name[])"
+  ],
+  "description": [
+    "Returns the context of the specified bus."
+  ],
+  "parameters": [
+    {
+      "name": "name",
+      "type": "",
+      "description": "The name of the bus.The bus name can be taken from the CANoe Simulation Setup:"
+    }
+  ],
+  "return": "In the case of success, the context of the specified bus is returned.\nIf the specified bus does not exist, 0 is returned.",
+  "example": {
+    "description": [
+      "This is an example for a simulation node.Test nodes should copy the bus context to a CAPL variable in the Main() function because all global variables are cleared when a test module is started."
+    ],
+    "code": "variables\n{\nchar ibus[32] = \"ibus\";\nchar motbus[32] = \"motbus\";\n\ndword ibus_context = 0;\ndword motbus_context = 0;\n}\non preStart\n{\nibus_context = GetBusNameContext( ibus);\nmotbus_context = GetBusNameContext( motbus);\n\nif ( 0 == ibus_context)\n{\nwriteex( 0, 3, \"Error: Cannot determine context for bus: %s\", ibus);\n}\nif ( 0 == motbus_context)\n{\nwriteex( 0, 3, \"Error: Cannot determine context for bus: %s\", motbus);\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

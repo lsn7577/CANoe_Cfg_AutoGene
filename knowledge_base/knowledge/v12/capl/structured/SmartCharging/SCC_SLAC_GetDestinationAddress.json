@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GetDestinationAddress",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GetDestinationAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GetDestinationAddress.htm",
+  "syntax": [
+    "long SCC_SLAC_GetDestinationAddress ( byte[] MACAddress )"
+  ],
+  "description": [
+    "Returns the destination MAC address of a SLAC message, to the output buffer",
+    "The destination address may differ from the simulation node’s address when the node is in passive mode. This function is intended to allow filtering for the node’s address in this case."
+  ],
+  "parameters": [
+    {
+      "name": "MACAddress",
+      "type": "",
+      "description": "Destination address of the MME frame"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

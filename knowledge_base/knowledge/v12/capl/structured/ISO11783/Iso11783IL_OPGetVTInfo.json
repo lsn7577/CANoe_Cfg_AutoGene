@@ -1,0 +1,98 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPGetVTInfo",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPGetVTInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPGetVTInfo.htm",
+  "syntax": [
+    "long Iso11783IL_OPGetVTInfo( char key[] ); // form 1"
+  ],
+  "description": [
+    "During initialization phase the Object Pool API request some information about the capabilities from Virtual Terminal. These information can be get with this function."
+  ],
+  "parameters": [
+    {
+      "name": "\"VersionNumber“",
+      "type": "",
+      "description": "Get memory"
+    },
+    {
+      "name": "\"NavigationSoftKeyCount\"",
+      "type": "",
+      "description": "Get number of Soft Keys"
+    },
+    {
+      "name": "\"SoftKeyWidth\"",
+      "type": "",
+      "description": "Get width of Soft Keys"
+    },
+    {
+      "name": "\"SoftKeyHeight\"",
+      "type": "",
+      "description": "Get height of Soft Keys"
+    },
+    {
+      "name": "\"VirtualSoftKeyCount\"",
+      "type": "",
+      "description": "Get number of virtual Soft Keys"
+    },
+    {
+      "name": "\"PhysicalSoftKeyCount\"",
+      "type": "",
+      "description": "Get number of physical Soft Keys"
+    },
+    {
+      "name": "\"SmallFontSizes\"",
+      "type": "",
+      "description": "Get Text Font Data"
+    },
+    {
+      "name": "\"LargeFontSizes\"",
+      "type": "",
+      "description": "Get Text Font Data"
+    },
+    {
+      "name": "\"FontTypeAttribute\"",
+      "type": "",
+      "description": "Get Text Font Data"
+    },
+    {
+      "name": "\"BootTime\"",
+      "type": "",
+      "description": "Get Hardware"
+    },
+    {
+      "name": "\"GraphicType\"",
+      "type": "",
+      "description": "Get Hardware"
+    },
+    {
+      "name": "\"Hardware\"",
+      "type": "",
+      "description": "Get Hardware"
+    },
+    {
+      "name": "\"Width\"",
+      "type": "",
+      "description": "Get Hardware"
+    },
+    {
+      "name": "\"Height\"",
+      "type": "",
+      "description": "Get Hardware"
+    }
+  ],
+  "return": ">= 0: Value",
+  "example": {
+    "description": [],
+    "code": "LONG vtWidth;\nvtWidth = Iso11783IL_OPGetVTInfo( \"Width\" );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSWriteFile",
+  "category": "ISO11783",
+  "title": "Iso11783FSWriteFile",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fswritefile.htm",
+  "syntax": [
+    "long Iso11783FSWriteFile( dword fileHandle, dword bufferSize, char buffer[] );",
+    "long Iso11783FSWriteFile( dword fileHandle, dword bufferSize, byte buffer[] );"
+  ],
+  "description": [
+    "This function writes data to an open file."
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "File handle, see also Iso11783FSOpenFile"
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Number of bytes to write"
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Data to write"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "LONG handle;\nchar data[200];\n\nhandle = Iso11783FSOpenFile( \"\\test.TXT\", 0x02 );\nif (handle > 0) {\nIso11783FSWriteFile( handle, 12, \"Hello World!\" );\n  Iso11783FSCloseFile( handle );\n} "
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

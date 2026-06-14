@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GPIBReqRelSysCtrl",
+  "category": "GPIB",
+  "title": "GPIBReqRelSysCtrl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBReqRelSysCtrl.htm",
+  "syntax": [
+    "long GPIBReqRelSysCtrl (long boardIdx, long mode);"
+  ],
+  "description": [
+    "Sets or deletes the permission to send interface clear (IFC) or remote enable (REN). If mode is \"0,\" the GPIB board surrenders system control and all controller-specific commands are not allowed. If mode = \"1,\" then controller-specific commands are allowed."
+  ],
+  "parameters": [
+    {
+      "name": "boardIdx",
+      "type": "",
+      "description": "GPIB Board ID"
+    }
+  ],
+  "return": "Status",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_EnableNameManagement",
+  "category": "ISO11783",
+  "title": "VTIL_EnableNameManagement",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILEnableNameManagement.htm",
+  "syntax": [
+    "dword VTIL_EnableNameManagement(dword enable );"
+  ],
+  "description": [
+    "This function activates the name management of a node. Not until the name management is activated another node can change the device name of this node by sending a name management message."
+  ],
+  "parameters": [
+    {
+      "name": "enable",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0 on success or VT IL Error Code",
+  "example": {
+    "description": [],
+    "code": "//allow every component to be changed except arbitrary address capable flag\nVTIL_EnableNameManagement(1, 0xFE);\r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

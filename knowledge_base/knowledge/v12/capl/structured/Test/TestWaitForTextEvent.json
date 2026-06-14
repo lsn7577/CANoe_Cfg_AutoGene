@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForTextEvent",
+  "category": "Test",
+  "title": "TestWaitForTextEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForTextEvent.htm",
+  "syntax": [
+    "long TestWaitForTextEvent(char aText[], dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the signaling of the specified textual event from the individual test module. A signaling from another test module does not effect this wait instruction.",
+    "Should this event not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "aText",
+      "type": "",
+      "description": "Any (meaningful) textual event name"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "// waits for the occurrence of text event „ErrorFrame occurred!“\nlong result;\nresult = TestWaitForTextEvent(\"ErrorFrame occurred!\", 3000);\n\n// handler ‘on errorFrame’ signals event\non errorFrame\n{\n   TestSupplyTextEvent(\"ErrorFrame occurred!\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

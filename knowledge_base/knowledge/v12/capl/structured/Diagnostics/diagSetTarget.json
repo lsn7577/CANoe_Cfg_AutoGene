@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagSetTarget",
+  "category": "Diagnostics",
+  "title": "diagSetTarget",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSetTarget.htm",
+  "syntax": [
+    "long diagSetTarget (char ecuName[])"
+  ],
+  "description": [
+    "Sets the target ECU with which the tester shall communicate from now on and configures/establishes the communication channel to that ECU.",
+    "After calling the function in the tester, the following actions are executed:"
+  ],
+  "parameters": [
+    {
+      "name": "ecuName",
+      "type": "",
+      "description": "Qualifier of the ECU as set in the diagnostic configuration dialog for the respective diagnostic description (CDD/ODX)."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "// In this example, diagSetTarget(<ECU>) is simply called once in the\n// ‘MainTest’ function of a test node, as this tester only needs to access\n// one dedicated ECU with ECU qualifier \"Door\".\n// In case a test module needs to perform diagnostics with different ECUs,\n// the function could be called e.g. in the first / initializing test case\n// of a test group for each specific ECU\n\nvoid MainTest ()\n{\n  if( 0 != diagSetTarget( \"Door\")) write( \"Error setting target!\");\n  // ... Call your test cases here\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

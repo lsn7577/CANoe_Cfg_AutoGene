@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SetDefaultControlColors",
+  "category": "Other",
+  "title": "SetDefaultControlColors",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetDefaultControlColors.htm",
+  "syntax": [
+    "void SetDefaultControlColors(char[] panel, char[] control);"
+  ],
+  "description": [
+    "Sets back the background and text color of panel elements as defined in the Panel Designer.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "//Set the default background and text color for a specific control of a panel.\nSetDefaultControlColors(\"motor\", \"PedalPos\");\n//All controls of the panel are set to the default background and text color as defined in the Panel Designer.\nSetDefaultControlColors(\"motor\", \"\");\n//All controls of all panels are set to the default background and text color as defined in the Panel Designer.\nSetDefaultControlColors(\"\", \"\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

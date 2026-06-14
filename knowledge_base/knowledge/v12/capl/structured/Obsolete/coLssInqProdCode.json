@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coLssInqProdCode",
+  "category": "Obsolete",
+  "title": "coLssInqProdCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssInqProdCode.htm",
+  "syntax": [
+    "void coLssInqProdCode( dword errCode[] );"
+  ],
+  "description": [
+    "This service causes the determination of the product code of a LSS slave. It is available in configuration mode only and there may only be one LSS slave in this mode."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoLssInqProdCode( errCode );\nif (errCode[0] == 0) {\n  write( \"LSS inquire Product-Code commanded\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

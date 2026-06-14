@@ -1,0 +1,25 @@
+{
+  "page_type": "selector",
+  "name": "Example: Selector TYPE",
+  "category": "CAN",
+  "title": "Example: Selector TYPE",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Selectors/CAPLSelectorTYPE.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [
+    {
+      "name": "Example Selector TYPE",
+      "description": [],
+      "code": "message 0x100 resp_msg = {dlc = 2, word(0) = 0x1234};\n\non message 0x100 {\n  if (this.TYPE == RXREMOTE) {\n    // remote frame 0x100 received\n    output(resp_msg);\n  }\n}"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

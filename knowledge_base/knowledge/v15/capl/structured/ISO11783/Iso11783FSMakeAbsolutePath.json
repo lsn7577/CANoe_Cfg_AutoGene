@@ -1,0 +1,160 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSMakeAbsolutePath",
+  "category": "ISO11783",
+  "title": "Iso11783FSMakeAbsolutePath",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fsmakeabsolutepath.htm",
+  "syntax": [
+    "long Iso11783FSMakeAbsolutePath( char relPath[], char absPath[], dword mustExist, dword bufferSize, char buffer[] );",
+    "long Iso11783FSMakeAbsolutePath( char relPath[], char absPath[], dword mustExist, dword bufferSize, char buffer[], char volume[], long manufacturerCode );"
+  ],
+  "description": [
+    "This function converts an relative path into an absolute path including a conversion to uppercase characters. An absolute path begins with \\ and refers to the root directory (see also Iso11783SetPath). A relative path could contain .. and ..",
+    "A path must follow the 8.3 format (8 character identifier with 4 character extension)."
+  ],
+  "parameters": [
+    {
+      "name": "relPath",
+      "type": "",
+      "description": "Relative path which could contain .. and ."
+    },
+    {
+      "name": "absPath",
+      "type": "",
+      "description": "Absolute path"
+    },
+    {
+      "name": "mustExist",
+      "type": "",
+      "description": "1: check, if path exists and return an error if the file does not exist 0: the path must not exist"
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Size of buffer in byte"
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "New path is copied to this buffer"
+    },
+    {
+      "name": "volume",
+      "type": "",
+      "description": "Name of the volume, this information and the manufacturer code are needed to resolve the root directory in the paths"
+    },
+    {
+      "name": "manufacturerCode",
+      "type": "",
+      "description": "Manufacturer code, this information and the volume are needed to resolve the root directory in the paths"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "char defaultDirectory[64] = \"\\IMPL\";\nchar newPath[255];\n\nif (Iso11783FSMakeAbsolutePath( \"..\\DATA\", defaultDirectory, 1, elCount(newPath), newPath ) == 0) {\n  write( \"Path '%s'\", newPath );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

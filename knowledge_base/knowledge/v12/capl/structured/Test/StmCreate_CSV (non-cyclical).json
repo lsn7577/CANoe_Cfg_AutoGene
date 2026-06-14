@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "StmCreate_CSV (non-cyclical)",
+  "category": "Test",
+  "title": "StmCreate_CSV (non-cyclical)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionStmCreateCsvNonCyclical.htm",
+  "syntax": [
+    "dword StmCreate_CSV(message aMessage, dbsignal aDBSignal, const char *aFile);"
+  ],
+  "description": [
+    "Creates stimulus generator with csv file as data source."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Must exist in DB"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "To stimulate signals:",
+      "To stimulate signals with the Interaction Layer:",
+      "To stimulate environment variables:",
+      "To stimulate system variables:"
+    ],
+    "code": "mId = StmCreate_CSV(MsgBuf, Msg::Sig, File);\nmId = StmCreate_CSV(Msg::Sig, File);\nmId = StmCreate_CSV(EnvVarToStimulate, Msg::Sig, File);\nmId = StmCreate_CSV(SysVarToStimulate, Msg::Sig, File);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

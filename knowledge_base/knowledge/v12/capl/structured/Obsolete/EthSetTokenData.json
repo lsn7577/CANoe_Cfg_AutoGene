@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthSetTokenData",
+  "category": "Obsolete",
+  "title": "EthSetTokenData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthSetTokenData.htm",
+  "syntax": [
+    "long EthSetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long length, char data[] );"
+  ],
+  "description": [
+    "The function sets the data or a part of data of a token.",
+    "It does not resize the token. Use EthResizeToken to change the length."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "see example of EthInitPacket"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

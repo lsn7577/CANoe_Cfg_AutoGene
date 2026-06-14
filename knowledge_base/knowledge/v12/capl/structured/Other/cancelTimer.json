@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "cancelTimer",
+  "category": "Other",
+  "title": "cancelTimer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionCancelTimer.htm",
+  "syntax": [
+    "void cancelTimer(msTimer t);"
+  ],
+  "description": [
+    "Stops an active timer."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables {\nmsTimer takt;\nmessage 100 data = {dlc = 1, byte(0) = 0xFF, dir = Tx};\n}\non Timer takt{\noutput(data);\nsetTimer(takt, 200);\n}\non key F1 {\ncancelTimer(takt); // cancel timer\nwrite(\"canceled\");\n}\non key F2 {\nsetTimer(takt, 200); // set timer to 200ms\nwrite(\"start\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

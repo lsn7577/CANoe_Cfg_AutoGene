@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "AvbILControlInit",
+  "category": "IP",
+  "title": "AvbILControlInit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbILControlInit.htm",
+  "syntax": [
+    "dword AvbILControlInit();"
+  ],
+  "description": [
+    "Initialization of the AVB IL.",
+    "Initializes, but prevents the AVB IL, i.e. the simulated time aware end station (PTP clock instance), from starting automatically. If this function is used, the AVB IL must then be started with the AvbILControlStart function.",
+    "This function may only be used in on preStart."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

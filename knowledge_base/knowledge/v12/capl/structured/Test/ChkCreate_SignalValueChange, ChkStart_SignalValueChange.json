@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_SignalValueChange, ChkStart_SignalValueChange",
+  "category": "Test",
+  "title": "ChkCreate_SignalValueChange, ChkStart_SignalValueChange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateSignalValueChange.htm",
+  "syntax": [
+    "dword ChkCreate_SignalValueChange (Signal aObservedSignal, char [] CaplCallback); // form 1"
+  ],
+  "description": [
+    "Checks the physical value of a signal or an environment variable.",
+    "An event will be generated, if the value will be changed.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aObservedSignal",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks that there is no change of the value of the signal\ncheckId = ChkStart_SignalValueChange (SignalToObserve);\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

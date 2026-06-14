@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "getJitterMin",
+  "category": "Other",
+  "title": "getJitterMin",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetJitterMin.htm",
+  "syntax": [
+    "int getJitterMin()"
+  ],
+  "description": [
+    "Determines the lower limit for the allowable deviation when Jitter is set."
+  ],
+  "parameters": [],
+  "return": "Lower deviation in parts per thousand.",
+  "example": {
+    "description": [],
+    "code": "int val;\n...\n// Assign to val the lower value of the Jitter\nval = getJitterMin();\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

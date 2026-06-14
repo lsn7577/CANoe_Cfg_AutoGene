@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1587GetParameterCount",
+  "category": "J1587",
+  "title": "J1587GetParameterCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1587/Functions/CAPLfunctionJ1587GetParameterCount.htm",
+  "syntax": [
+    "word J1587GetParameterCount(J1587Message msg /*in*/)"
+  ],
+  "description": [
+    "Gets the count of J1587 parameters inside a given J1708 message that can be used to further calls to J1587GetParameter()."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "J1708 message"
+    }
+  ],
+  "return": "number of parameters",
+  "example": {
+    "description": [],
+    "code": "on J1587Message 50 // 50 is Sender MID, can be dbNode name or MID\n{\n  write (\"Number of parameters received: %d\", J1587GetParameterCount(this));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

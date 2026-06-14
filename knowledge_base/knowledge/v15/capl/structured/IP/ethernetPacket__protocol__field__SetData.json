@@ -1,0 +1,143 @@
+{
+  "page_type": "method",
+  "name": "ethernetPacket::protocol::field::SetData",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::field::SetData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Methods/CAPLfunctionProtocolFieldSetData.htm",
+  "syntax": [
+    "word ethernetPacket.<protocol>.<field>.SetData( word offset, char[]data, word length ); // from 1",
+    "word ethernetPacket.<protocol>.<field>.SetData( word offset, byte[]data, word length ); // form 2",
+    "word ethernetPacket.<protocol>.<field>.SetData( word offset, struct * data); // from 3",
+    "word ethernetPacket.<protocol>.<field>.SetData( word offset, sysvarStruct data); // from 4"
+  ],
+  "description": [
+    "Sets payload data of a protocol within an Ethernet packet.",
+    "The length of the protocol field is not changed. If the source data is larger than the protocol field, the data is truncated.",
+    "If <protocol> or <field> is not available in the packet, no data is set and 0 is returned."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "buffer where the data is copied from."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "Number of bytes to copy to the protocol field data."
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Byte offset in the protocol field data where it starts to copy data."
+    }
+  ],
+  "return": "Number of bytes copied to the Ethernet packet.",
+  "example": {
+    "description": [],
+    "code": "ethernetPacket pkt;\nbyte ipv6AddrData[16];\n\n// initialize packet with IPv6 and UDP protocols\npkt.ipv6.Init();\npkt.udp.Init();\n\n// set IPv6 addresses\nipGetAddressAsArray( \"FC00::01\", ipv6AddrData );\npkt.ipv6.source.SetData( 0, ipv6AddrData, elcount(ipv6AddrData) );\n\nipGetAddressAsArray( \"FC00::02\", ipv6AddrData );\npkt.ipv6.destination.SetData( 0, ipv6AddrData, elcount(ipv6AddrData) );\n\n// set UDP ports\npkt.udp.source      = 40001;\npkt.udp.destination = 40002;\n\n// set UDP payload\npkt.udp.SetData( 0, \"Hello\", 5 );\n\n// calculate UDP and IPv6 checksum and send Ethernet packet\npkt.CompletePacket();\noutput( pkt );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "11.0 SP3",
+      "11.0 SP3",
+      "13.0",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

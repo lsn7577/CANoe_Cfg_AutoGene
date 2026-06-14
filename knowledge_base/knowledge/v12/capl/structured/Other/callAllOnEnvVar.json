@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "callAllOnEnvVar",
+  "category": "Other",
+  "title": "callAllOnEnvVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionCallAllOnEnvVar.htm",
+  "syntax": [
+    "void callAllOnEnvVar();"
+  ],
+  "description": [
+    "Calls all event procedures for environment variables (on envVar). This can be necessary at measurement start to initialize environment variables, to start timers activated in response to changes of environment variables, or to send messages on the bus with the start values of environment variables."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on start\n{\ncallAllOnEnvVar();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

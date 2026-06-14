@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "TestJoinSignalMatch",
+  "category": "Test",
+  "title": "TestJoinSignalMatch",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestJoinSignalMatch.htm",
+  "syntax": [
+    "long TestJoinSignalMatch (Signal aSignal, float CompareValue); // form 1",
+    "long TestJoinSignalMatch (dbEnvVar aEnvVar, float CompareValue); // form 2",
+    "long TestJoinSignalMatch (sysvar aSysVar, float CompareValue); // form 3",
+    "long TestJoinSignalMatch (Signal aSignal, float CompareValue, word waitForSignalUpdate); // form 4",
+    "long TestJoinSignalMatch (sysvar aSysVar, int64 CompareValue); // form 5",
+    "long TestJoinSignalMatch (ServiceSignalNumber aSignal, float CompareValue); // form 6",
+    "long TestJoinSignalMatch (ServiceSignalNumber aSignal, float CompareValue, word waitForSignalUpdate); // form 7"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait.",
+    "By default this condition will be checked immediately when the set of joined events is evaluated by TestWaitForAllJoinedEvents or TestWaitForAnyJoinedEvent and may not wait for a value change. It is also possible to delay the checking of the condition until the next message with the given signal arrives."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// waits until signal ‘Velocity’ matches to a specific value\nlong result;\ndword index = 0;\nresult = TestJoinSignalMatch(Node_SUT::Velocity, 80);\n// ... other join events\nTestJoinEnvVarEvent(MyEnvVar);\nTestJoinTextEvent(\"ErrorFrame occurred!\");\n\nindex = TestWaitForAllJoinedEvents(500);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.2: form 1 7.5: form 2, 3 8.5 SP3: form 4, 5 9.0 SP4: form 6, 7",
+      "13.0",
+      "—",
+      "14",
+      "1.0: form 1-3 2.0 SP2: form 4, 5 2.1 SP4: form 6, 7"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "form 3, 5",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

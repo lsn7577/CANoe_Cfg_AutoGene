@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestJoinLinReceiveErrorEvent",
+  "category": "Test",
+  "title": "TestJoinLinReceiveErrorEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinLinReceiveErrorEvent.htm",
+  "syntax": [
+    "long TestJoinLinReceiveErrorEvent (dword aFrameId)"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aFrameId",
+      "type": "",
+      "description": "Numeric ID of a frame whose Receive Error should be awaited."
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_waitForLINResponse(int frameId)\n{\n   long eventIndex;\n\n   testJoinMessageEvent(frameId);\n   testJoinLinReceiveErrorEvent(frameId);\n   testJoinLinCSErrorEvent(frameId);\n   testJoinLinTransmErrorEvent(frameId);\n\n   eventIndex = testWaitForAnyJoinedEvent(5000);\n   switch (eventIndex)\n   {\n      case 1: // valid frame\n         testStepPass(\"Validation\", \"IUT has responded correctly\");\n      break;\n\n      case 2:  // receive error\n         testStepFail(\"Validation\", \"IUT has responded with wrong number of data bytes\");\n      break;\n\n      case 3: // checksum error\n         testStepFail(\"Validation\", \"IUT has responded with wrong checksum\");\n      break;\n\n      case 4: // transmission error\n         testStepFail(\"Validation\", \"IUT has not responded\");\nbreak;\n      default:\n         testStepFail(\"Validation\", \"Internal error! Unexpected event (return code %d) on waiting for response\", eventIndex);\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linSetWakeupBehavior",
+  "category": "LIN",
+  "title": "linSetWakeupBehavior",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetWakeupBahvior.htm",
+  "syntax": [
+    "linSetWakeupBehavior(dword restartScheduler, dword wakeupIdentifier);"
+  ],
+  "description": [
+    "Defines the behavior after wake-up signal or an internal wake-up.",
+    "When LIN hardware is not in sleep mode calling this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "restartScheduler",
+      "type": "",
+      "description": "Determines if index of the slot to be started with after wakeup has to be reset, i.e. it becomes 0. If it’s not reset the next slot before entering sleep mode is used."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "Change wake-up behavior on receiving a sleep mode event"
+    ],
+    "code": "on linSleepModeEvent\n{\n  linSetWakeupBehavior (0, 0x1, 0, 100); // don't restart scheduler, use 0x1 as wake-up identifier, start scheduling or send the wake-up identifier after 100 ms.\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "canDisturbanceFrameSequence::SetMessage",
+  "category": "CANDisturbance",
+  "title": "canDisturbanceFrameSequence::SetMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANDisturbance/Functions/CAPLfunctionCanDisturbanceFrameSequenceSetMessage.htm",
+  "syntax": [
+    "void canDisturbanceFrameSequence::SetMessage(dword deviceID, message msg); //form 1"
+  ],
+  "description": [
+    "Configures the output sequence based on the frame msg.",
+    "All CanDisturbanceBitSequence objects in all fields of this frame sequence are overridden by a sequence that corresponds to the bits the frame."
+  ],
+  "parameters": [
+    {
+      "name": "deviceID",
+      "type": "",
+      "description": "The device ID of the CAN Disturbance Interface."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

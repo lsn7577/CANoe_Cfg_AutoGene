@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILNodeControlMsg",
+  "category": "CANoeIL",
+  "title": "ILNodeControlMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILNodeControlMsg.htm",
+  "syntax": [
+    "ILNodeControlMsg(dbMessage msg, dword control, dword flags, dword param1, dword param2); // form 1"
+  ],
+  "description": [
+    "This generic function influences the sending of a certain message of a simulation node with an assigned CANoe Interaction Layer. The meaning of the parameters flags, param1 and param2 depends on the parameter control."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message that should be influenced."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

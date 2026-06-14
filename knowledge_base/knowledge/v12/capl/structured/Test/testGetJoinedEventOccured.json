@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testGetJoinedEventOccured",
+  "category": "Test",
+  "title": "testGetJoinedEventOccured",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetJoinedEventOccured.htm",
+  "syntax": [
+    "long testGetJoinedEventOccured(dword index, int64& occurrenceTime);"
+  ],
+  "description": [
+    "Retrieves the occurrence and the occurrence time of a joined event."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Number of the \"joined event\" corresponds with the return value of testJoin...."
+    }
+  ],
+  "return": "0: Event not occurred",
+  "example": {
+    "description": [],
+    "code": "MainTest()\n{\n  WaitForAllEvents();\n}\n\non errorFrame\n{\n  TestSupplyTextEvent(\"ErrorFrame occurred!\");\n}\n\ntestcase WaitForAllEvents()\n{\n  const dword waitDuration = 5000; // [ms]\n  long  eventHandle1, eventHandle2;\n  int64 eventTime1  , eventTime2  ;\n  long  res;\n\n  TestCaseTitle(\"Demo\", \"WaitForAllEvents\");\n\n  eventHandle1 = testJoinSysVarEvent(sysvar::Sysvar1);\n  eventHandle2 = TestJoinTextEvent(\"ErrorFrame occurred!\");\n  res = TestWaitForAllJoinedEvents(waitDuration);\n\n  if (res > 0) // all events ocurred, last one is stored in res\n  {\n    write(\"All expected events occured\");\n  }\n  else\n  {\n    write(\"Timeout after %d ms: Not all expected events occured\", waitDuration);\n  }\n\n  if (testGetJoinedEventOccured(eventHandle1, eventTime1) == 1)\n  {\n    write(\"SysVar1 changed at %I64d\", eventTime1);\n  }\n  else\n  {\n    write(\"SysVar1 unchanged\");\n  }\n\n  if (testGetJoinedEventOccured(eventHandle2, eventTime2) == 1)\n  {\n    write(\"Errorframe occured at %I64d\", eventTime2);\n  }\n  else\n  {\n    write(\"No Errorframe\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

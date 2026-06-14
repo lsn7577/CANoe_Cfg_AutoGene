@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mbstrncpy, mbstrncpy_off",
+  "category": "Other",
+  "title": "mbstrncpy, mbstrncpy_off",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMbStrnCpy.htm",
+  "syntax": [
+    "void mbstrncpy(char dest[], char src[], long len);"
+  ],
+  "description": [
+    "mbstrncpy function copies src to dest. len indicates the number of characters that shall be copied; use -1 to indicate that as much shall be copied into dest as will fit (maximum until the end of src). The function ensures that there is a terminating 0 byte; but in contrast to strncpy, that byte is not counted into len.",
+    "mbstrncpy_off overwrites characters in the destination buffer starting at the character offset destOffset."
+  ],
+  "parameters": [
+    {
+      "name": "dest",
+      "type": "",
+      "description": "Destination buffer"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "char s1[50] = \"eine grüne \"; // german for 'a green'\nchar s2[10] = \"Türen\"; // german for 'doors'\nmbstrncpy_off(s1, 11, s2, 3);\nwrite(\"%s\", s1); // eine grüne Tür (german for 'a green door')"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

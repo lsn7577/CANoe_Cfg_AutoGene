@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "diagSetParameter",
+  "category": "Diagnostics",
+  "title": "diagSetParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSetParameter.htm",
+  "syntax": [
+    "long diagSetParameter (diagResponse obj, char parameterName[], double newValue)"
+  ],
+  "description": [
+    "Sets the numeric parameter to the specified value.",
+    "Textual diagnostic parameters cannot be set with double values.",
+    "With 7.6 SP2 the function behavior was changed. The parameter will no longer be set to its default value."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

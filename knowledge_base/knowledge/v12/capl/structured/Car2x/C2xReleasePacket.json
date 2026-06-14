@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xReleasePacket",
+  "category": "Car2x",
+  "title": "C2xReleasePacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xReleasePacket.htm",
+  "syntax": [
+    "long C2xReleasePacket( long packet );"
+  ],
+  "description": [
+    "This function deletes a packet created with C2xInitPacket. The handle can not be used any longer."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the packet to delete"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

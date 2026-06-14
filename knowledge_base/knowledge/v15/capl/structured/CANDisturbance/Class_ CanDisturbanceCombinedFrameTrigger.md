@@ -1,0 +1,21 @@
+# Class: CanDisturbanceCombinedFrameTrigger
+
+> Category: `CANDisturbance` | Type: `notes`
+
+## Description
+
+CanDisturbanceCombinedFrameTrigger combines up to 32 frame triggers. If the received bus data matches one of the configured CanDisturbanceFrameTrigger objects, then this combined trigger matches and the configured sequence is output to the bus.
+
+The attributes TriggerFieldType and TriggerFieldOffset of the added CanDisturbanceFrameTrigger objects are ignored. Use the attributes TriggerFieldType and TriggerFieldOffset of the CanDisturbanceCombinedFrameTrigger object instead.
+
+You can access control information of a CanDisturbanceCombinedFrameTrigger object with the following attributes:
+
+| Keyword | Description | Type | Access Limitations |
+|---|---|---|---|
+| Trigger start definition |  |  |  |
+| CountOfFrameTrigger | Number of configured frame triggers. Maximum number: 32 | dword | read-only |
+| TriggerFieldType | The CAN frame field that will cause the trigger to start sending the configured sequence. The system variable sysvar::CanDisturbanceInterace::Enums::FieldType contains an enumeration of possible values. | dword | — |
+| TriggerFieldOffset | The offset in the CAN frame field configured by TriggerFieldType. If the offset is outside the trigger field, the offset is set to the maximum number of bits this field contains. If the trigger field EndOfFrame is used, the offset is extended up to 26. The reason is that in this case an IFS or a Bus Idle trigger can also be configured. | dword | — |
+
+| Version 15© Vector Informatik GmbH |
+|---|

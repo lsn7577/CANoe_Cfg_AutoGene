@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILSetPDUTimingCyclic",
+  "category": "AUTOSARpduIL",
+  "title": "ARILSetPDUTimingCyclic",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILSetPDUTimingCyclic.htm",
+  "syntax": [
+    "long ARILSetPDUTimingCyclic (dbMessage, long TrueOrFalse, long offset, long period, long disturbanceCount, long flags);"
+  ],
+  "description": [
+    "Overrides the defined cyclic-timing from the database. Possibly two timings (False and True) exist in parallel and are selected upon the current transmission mode of the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

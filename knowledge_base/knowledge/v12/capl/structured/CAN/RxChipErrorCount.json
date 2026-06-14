@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "RxChipErrorCount",
+  "category": "CAN",
+  "title": "RxChipErrorCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionRxChipErrorCount.htm",
+  "syntax": [
+    "long RxChipErrorCount ()",
+    "CANx.RxChipErrorCount"
+  ],
+  "description": [
+    "Returns the current Rx error count in the receiver of channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Current error count in the receiver of channel x.",
+  "example": {
+    "description": [],
+    "code": "write (\"Rx error count in the receiver of CAN1 \r\n = %d\", CAN1.RxChipErrorCount);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

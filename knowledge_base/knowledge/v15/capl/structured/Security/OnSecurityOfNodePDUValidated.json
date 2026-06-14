@@ -1,0 +1,190 @@
+{
+  "page_type": "function",
+  "name": "OnSecurityOfNodePDUValidated",
+  "category": "Security",
+  "title": "OnSecurityOfNodePDUValidated",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/CallbackHandler/CAPLfunctionOnSecurityOfNodePDUValidated.htm",
+  "syntax": [
+    "void OnSecurityOfNodePDUValidated(char nodeName[], char networkName[], char pduName[], dword dataId, byte payload[], dword payloadLength, qword authInfoHigh, qword authInfo, dword authInfoBitLength, qword freshness, dword freshnessBitLength, dword freshnessValueId, dword verificationResult)"
+  ],
+  "description": [
+    "This callback handler is called, when a node received a secured PDU and verified the authentication information.",
+    "Apart from the verification result, all values which have been used for verification can be analyzed.",
+    "You have to call SecurityLocalStartControlSimulationNode before this callback is called."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node."
+    },
+    {
+      "name": "char networkName[]",
+      "type": "",
+      "description": "The name of the network the node is on."
+    },
+    {
+      "name": "char pduName[]",
+      "type": "",
+      "description": "The name of the PDU."
+    },
+    {
+      "name": "dword dataId",
+      "type": "",
+      "description": "The data ID of the PDU."
+    },
+    {
+      "name": "byte payload[]",
+      "type": "",
+      "description": "The payload of the PDU."
+    },
+    {
+      "name": "dword payloadLength",
+      "type": "",
+      "description": "The payload length of the PDU in bytes."
+    },
+    {
+      "name": "qword authInfoHigh",
+      "type": "",
+      "description": "Upper 64 bits of the authenticator (CMAC), where authenticators larger than 64 bits are supported."
+    },
+    {
+      "name": "qword authInfo",
+      "type": "",
+      "description": "The authenticator or the lower 64 bits of the authenticator (CMAC), where authenticators larger than 64 bits are supported."
+    },
+    {
+      "name": "dword authInfoBitLength",
+      "type": "",
+      "description": "Length of authInfo in bits or length of authInfoHigh and authInfo combined, where authenticators larger than 64 bits are supported."
+    },
+    {
+      "name": "qword& freshness",
+      "type": "",
+      "description": "The freshness value."
+    },
+    {
+      "name": "dword freshnessBitLength",
+      "type": "",
+      "description": "The freshness value length in bits."
+    },
+    {
+      "name": "dword freshnessValueId",
+      "type": "",
+      "description": "The freshness value ID of the PDU."
+    },
+    {
+      "name": "dword verificationResult",
+      "type": "",
+      "description": "1: Verification successful 0: Verification failed"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// this example does an write output for every secured pdu which is received.\nvoid OnSecurityLocalPDUValidated(char nodeName[], char networkName[], char pduName[], dword dataId, byte payload[], dword payloadLength, qword authInfoHigh, qword authInfo, dword authInfoBitLength, qword freshness, dword freshnessBitLength, dword freshnessValueId, dword verificationResult)\n{\n  if (verificationResult > 0)\n    {\n      writeLineEx(1,0,\" Verification SUCCESSFUL\");\n    }\n    else\n    {\n      writeLineEx(1,3,\" Verification FAILED\");\n    }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "11.0 SP3",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN CAN FD FR ETH",
+      "CAN CAN FD FR ETH",
+      "—",
+      "—",
+      "CAN CAN FD FR ETH"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

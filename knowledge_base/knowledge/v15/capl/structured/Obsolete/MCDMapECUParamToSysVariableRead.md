@@ -1,0 +1,30 @@
+# MCDMapECUParamToSysVariableRead
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+MCDMapECUParamToSysVariableWrite | MCDStartDataAcq | MCDGetCurrentValue
+
+| Deprecated Function Merely due to compatibility reasons ASAM MCD3 via CANape is currently still available.Please use CANoe option .AMD/XCP instead. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long MCDMapECUParamToSysVariableRead(char moduleName[], char parameterName[], SysVarName) |  |  |  |
+| Function | Maps an ECU parameter to a system variable so that it the system variable changes whenever the parameter is updated. The MCD data acquisition must already be started. |  |  |  |
+| Parameters | moduleName Name of the module that is configured in the global options dialog External Programs\|MCD 3D Server. |  |  |  |
+| parameterName Name of the parameter. |  |  |  |  |
+| SysVarName System variable. |  |  |  |  |
+| Return Values | 0: No error. |  |  |  |
+| 1: The system variable is already mapped as read target of a different parameter. |  |  |  |  |
+| 2: The system variable is already mapped as read target of this parameter. |  |  |  |  |
+| 3: The parameter is already mapped as read source of a different system variable. |  |  |  |  |
+| 4: The system variable is already mapped as write source of a different parameter. |  |  |  |  |
+| 5: The system variable is not of type float. |  |  |  |  |
+| 6: The system variable is read-only. |  |  |  |  |
+| 7: The MCD data acquisition is not currently active. |  |  |  |  |
+| -1: An internal error occurred. |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 8.2 SP4 | ASAM-MCD | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,40 @@
+{
+  "page_type": "function",
+  "name": "AREthCreateMessage",
+  "category": "IP",
+  "title": "AREthCreateMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthCreateMessage.htm",
+  "syntax": [
+    "dword AREthCreateMessage( dword messageId, dword requestId, dword protocolVersion, dword interfaceVersion, dword messageType, dword returnCode ); // form 1"
+  ],
+  "description": [
+    "This function is used to create a SOME/IP message that can then be sent with AREthOutputMessage or AREthPostMessage.",
+    "Form 1",
+    "If a FIBEX database is assigned to the CANoe configuration, a check is made to determine whether the message ID (messageId parameter) is contained in this database. If so, the payload is created according to the database description and initialized with 0. The length field in the SOME/IP message header is set automatically. If a corresponding message ID is not found in the database, only the SOME/IP message header is created. In this case, the payload must be created with AREthSetData.",
+    "Form 2",
+    "During creation, the message header length is taken from the data stream specified in the buffer parameter. In so doing, incorrect length values are not corrected.",
+    "If the message is successfully accessed later with a AREthGetValue... or AREthSetValue... function, the length is adapted in the message, if necessary, if a FIBEX database is assigned to the CANoe configuration and the message ID is contained in the database.",
+    "In order to send a SOME/IP message, the message must have a payload.",
+    "The created message can be deleted again with AREthReleaseMessage."
+  ],
+  "parameters": [
+    {
+      "name": "messageId",
+      "type": "",
+      "description": "The message identifier of the SOME/IP message."
+    }
+  ],
+  "return": "0: An error occurred. The error can be evaluated using the AREthGetLastError function.",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  dword messageId = 0x12340004; // service ID = 0x1234, method ID = 0x0004\n  dword requestId = 0; // client ID = 0, session ID = 0\n  dword protocolVersion = 1;\n  dword interfaceVersion = 1;\n  dword messageType = 0x2; // notification message\n  dword returnCode = 0; // not available\n  dword aep = 0;          // application endpoint handle\n  dword messageHandle    = 0; // handle of the created SOME/IP message\n  BYTE payload[5]; // the message payload\n  dword count            = 0; // a simple counter\n\n  // initialize the payload\n  count = 0;\n  payload[count++] = 0x11;\n  payload[count++] = 0x22;\n  payload[count++] = 0x33;\n  payload[count++] = 0x44;\n  payload[count++] = 0x55;\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create the SOME/IP message itself and set the message payload\n  messageHandle = AREthCreateMessage(messageId,requestId,protocolVersion,interfaceVersion,messageType,returnCode);\n  AREthSetData(messageHandle,elcount(payload),payload);\n\n  // send the SOME/IP message\n  AREthOutputMessage(aep,0xFFFFFFFF,40001,messageHandle);\n\n  // release the some IP message\n  AREthReleaseMessage(messageHandle);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

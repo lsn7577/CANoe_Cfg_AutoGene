@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetWakeUpTimesTester",
+  "category": "KLine",
+  "title": "KLine_SetWakeUpTimesTester",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetWakeUpTimesTester.htm",
+  "syntax": [
+    "long KLine_SetWakeUpTimesTester(dword TiniL_us, dword Twup_us)"
+  ],
+  "description": [
+    "Sets the timings of the fast init wake-up pattern."
+  ],
+  "parameters": [
+    {
+      "name": "TiniL_us",
+      "type": "",
+      "description": "Duration of the low phase in us. Value range: 2000 - 650000"
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "GNSSUpdateTable",
+  "category": "J1939",
+  "title": "GNSSUpdateTable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSupdatetable.htm",
+  "syntax": [
+    "dword GNSSUpdateTable();"
+  ],
+  "description": [
+    "Updates the network table.",
+    "The function deletes the content of the current table and initiates the Request PGN that was used to request Address Claiming. After that, the table is restructured. If a node is forced off the network by another node with the same address, it remains intact in the network table with a NULL address. The content of the table is not deleted until this function is called. It also initiates an update of the table. Nodes reporting with the NULL address are not accepted in this process."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "GNSSUpdateTable();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

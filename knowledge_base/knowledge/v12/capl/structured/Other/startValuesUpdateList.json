@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "startValuesUpdateList",
+  "category": "Other",
+  "title": "startValuesUpdateList",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStartValuesUpdateList.htm",
+  "syntax": [
+    "void startValuesUpdateList(); // form 1"
+  ],
+  "description": [
+    "Sets the start values of variables/signals to the currently measured values in the CANoe Start Value Window."
+  ],
+  "parameters": [
+    {
+      "name": "groupName",
+      "type": "",
+      "description": "Name of a group containing start values."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  startValuesUpdateList(\"Start values group1\");\n}\n\non key '2'\n{\n  startValuesUpdateList();\n}\n\non key '3'\n{\n  startValuesUpdateList(\"\"); // corresponds to startValuesUpdateList();\n}\n\non key '4'\n{\n  startValuesUpdateList(\"Start values group1\", 1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::GetVlanId",
+  "category": "IP",
+  "title": "ethernetPacket::GetVlanId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionGetVlanId.htm",
+  "syntax": [
+    "dword ethernetPacket.GetVlanId(); // form 1"
+  ],
+  "description": [
+    "Returns the VLAN ID, if the Ethernet packet contains a VLAN tag.For double-tagged VLAN form 2 can be used to access a specific VLAN ID."
+  ],
+  "parameters": [
+    {
+      "name": "vlanIndex",
+      "type": "",
+      "description": "Index of the VLAN tag for double-tagged VLANs. Index 0 is the inner VLAN, index 1 the outer VLAN.Range: 0..2"
+    }
+  ],
+  "return": "ID of the VLAN or 0xFFFF if no VLAN is available.",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if (this.hasVlan())\n  {\n    word vlanId;\n\n    vlanId = this.GetVlanId();\n\n    write( \"Received Ethernet packet with VLAN ID %d\", vlanId );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

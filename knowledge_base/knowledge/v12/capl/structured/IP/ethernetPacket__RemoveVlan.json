@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::RemoveVlan",
+  "category": "IP",
+  "title": "ethernetPacket::RemoveVlan",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionRemoveVlan.htm",
+  "syntax": [
+    "long ethernetPacket.RemoveVlan(); // form 1"
+  ],
+  "description": [
+    "Removes a VLAN tag from an Ethernet packet.",
+    "To remove a specific VLAN tag from a double-tagged packet form 2 can be used."
+  ],
+  "parameters": [
+    {
+      "name": "vlanIndex",
+      "type": "",
+      "description": "Index of the VLAN tag for double-tagged VLANs. Index 0 is the inner VLAN, index 1 the outer VLAN.Range 0..2"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if ((this.hasVlan()) && (this.msgChannel == 1))\n  {\n    ethernetPacket forwardPkt;\n\n    forwardPkt = this;\n    forwardPkt.msgChannel = 2;\n    forwardPkt.RemoveVlan();\n\n    output( forwardPkt );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

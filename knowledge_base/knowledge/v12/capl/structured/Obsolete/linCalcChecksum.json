@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linCalcChecksum",
+  "category": "Obsolete",
+  "title": "linCalcChecksum",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINCalcChecksum.htm",
+  "syntax": [
+    "unsigned int linCalcChecksum (unsigned long numberOfDataBytes, unsigned char dataBytes[]);"
+  ],
+  "description": [
+    "Calculates the correct checksum for the transferred data."
+  ],
+  "parameters": [
+    {
+      "name": "numberOfDataBytes",
+      "type": "",
+      "description": "The number of valid bytes to be taken into consideration in the following data field."
+    }
+  ],
+  "return": "Calculated checksum.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

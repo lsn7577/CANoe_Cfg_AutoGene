@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "canGetTxErrorCount",
+  "category": "Obsolete",
+  "title": "canGetTxErrorCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionCanGetTxErrorCount.htm",
+  "syntax": [
+    "long canGetTxErrorCount (long channel)"
+  ],
+  "description": [
+    "Returns the current number of TX errors in the CAN receiver of the specified channel."
+  ],
+  "parameters": [
+    {
+      "name": "Vector API driver",
+      "type": "",
+      "description": "Values 1 ... 32"
+    },
+    {
+      "name": "Softing API driver",
+      "type": "",
+      "description": "Values 1, 2"
+    }
+  ],
+  "return": "Current number of errors in the CAN receiver of the specified channel.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateVS_Nw_Info_Req",
+  "category": "SmartCharging",
+  "title": "SCC_CreateVS_Nw_Info_Req",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateVS_Nw_Info_Req.htm",
+  "syntax": [
+    "void SCC_CreateVS_Nw_Info_Req ( byte SourceMac[],byte TargetMac[] )"
+  ],
+  "description": [
+    "Creates a VS_Nw_Info.Req message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SourceMac",
+      "type": "",
+      "description": "Source address of the Ethernet frame"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

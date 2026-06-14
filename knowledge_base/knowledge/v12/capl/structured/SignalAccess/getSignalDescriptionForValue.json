@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getSignalDescriptionForValue",
+  "category": "SignalAccess",
+  "title": "getSignalDescriptionForValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SignalAccess/CAPLfunctionGetSignalDescriptionForValue.htm",
+  "syntax": [
+    "long getSignalDescriptionForValue(Signal signal, int64 rawValue, char buffer[], long bufferSize); // form 1"
+  ],
+  "description": [
+    "Retrieves the description for the value of a database signal. In this way, you can access the value table of the signal."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "The signal (form 1)."
+    }
+  ],
+  "return": "0: No error, function successful.",
+  "example": {
+    "description": [],
+    "code": "char buffer[100]; long ret;\nret = getSignalDescriptionForValue(PowerTrain::Engine::GearBoxInfo::Gear, 1, buffer, elcount(buffer));\nif (ret == 0) write(\"Description for value 1 is '%s'\", buffer);\nelse write(\"Error getting description for value 1: %d\", ret);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

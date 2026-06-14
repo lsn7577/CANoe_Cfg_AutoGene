@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linGetFallingEdgesOfDisturbedByte",
+  "category": "LIN",
+  "title": "linGetFallingEdgesOfDisturbedByte",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGetFallingEdgesOfDisturbedByte.htm",
+  "syntax": [
+    "dword linGetFallingEdgesOfDisturbedByte(int64 fallingEdges[])"
+  ],
+  "description": [
+    "With this function it is possible to retrieve time stamps of all falling edges in the disturbed byte or in the pseudo-byte caused by the last bit inversion.",
+    "Note, that prior to calling this function the measurement of the falling edges has to be activated and the bit inversion has to be executed (see linInvertRespBit, linInvertHeaderBit)"
+  ],
+  "parameters": [
+    {
+      "name": "fallingEdges",
+      "type": "",
+      "description": "An array which will receive the measured time stamps [in nanoseconds]. The array size is 6. Unused time stamps will be set to 0 (i.e. in case of less than 6 falling edges)."
+    }
+  ],
+  "return": "On successful request returns 1, otherwise 0.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

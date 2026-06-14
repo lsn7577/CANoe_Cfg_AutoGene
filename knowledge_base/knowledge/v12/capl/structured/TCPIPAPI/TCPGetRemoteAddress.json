@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCPGetRemoteAddress",
+  "category": "TCPIPAPI",
+  "title": "TCPGetRemoteAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionTCPGetRemoteAddress.htm",
+  "syntax": [
+    "dword TcpGetRemoteAddress(dword socket); // form 1"
+  ],
+  "description": [
+    "This function retrieves the remote IPv4 address of the specified connected socket."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "The IPv4 address of the remote host in network-byte order.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

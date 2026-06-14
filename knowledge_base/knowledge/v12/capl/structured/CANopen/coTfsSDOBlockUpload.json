@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOBlockUpload",
+  "category": "CANopen",
+  "title": "coTfsSDOBlockUpload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoBlockUpload.htm",
+  "syntax": [
+    "long coTfsSDOBlockUpload( dword index, dword subIndex, dword useCrc, dword outCrcUsed[1] ); // form 1"
+  ],
+  "description": [
+    "This function executes a complete SDO block upload. The block transfer must be supported by the receiver. After a successful upload, the data received can be called up with the command coTfsSDOGetUploadData. (form 1)",
+    "Alternatively the received data can be used as parameters directly and set whether the block transfer is executed with or without CRC support. (form 2)",
+    "A fallback to segmented transfer is not supported."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Object index"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword dataLength, i;\nbyte pReceiveData[2048];\ndword pOutCrcUsed[1];\n\nif ( coTfsSDOBlockUpload(0x2002, 0, 1, pOutCrcUsed) != 1) {\n  TestStepFail(\"SDO block upload test failed\");\n  return;\n} // if\nwrite (\"show data received in previous step\");\n\nif ((dataLength = coTfsSDOGetUploadData( pReceiveData, 2048)) > 0) {\n  write(\"datalength = %d, CRC used = %d\",dataLength,pOutCrcUsed[0]);\n  for (i = 0; i< dataLength; i++) {\n    write(\"data %i = 0x%X\",i,pReceiveData[i]);\n  } // for\n} // if\nelse {\n  write(\"no data available\");\n} // else"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

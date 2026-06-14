@@ -1,0 +1,131 @@
+{
+  "page_type": "function",
+  "name": "OnMostEclSequence",
+  "category": "MOST",
+  "title": "OnMostEclSequence",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/EventProcedures/CAPLfunctionOnMOSTEclSequence.htm",
+  "syntax": [
+    "OnMostEclSequence(long state);"
+  ],
+  "description": [
+    "The event procedure is called before the beginning and after the end of a sequence on the Electrical Control Line.",
+    "Within this event procedure the functions mostEventChannel, mostEventTime and mostEventOrigTime can be used to call up supplemental information."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": "0: ECL sequence is stopped1: ECL sequence is started"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Output of ECL sequence changes with time stamp."
+    ],
+    "code": "OnMostEclSequence(long state)\n{\n   if(state == 0)\n      write(„ECL sequence stopped at %fs“, MostEventTimeNs() / 1.0e9);\n   else\n      write(„ECL sequence started at %fs“, MostEventTimeNs() / 1.0e9);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5 SP2",
+      "7.5 SP2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST150",
+      "MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

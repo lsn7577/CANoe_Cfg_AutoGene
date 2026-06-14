@@ -1,0 +1,81 @@
+{
+  "page_type": "notes",
+  "name": "TestIso11783IL_OPSetNumericValue",
+  "category": "Obsolete",
+  "title": "TestIso11783IL_OPSetNumericValue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/TestISO11783il/CAPLfunctionTestIso11783ILOPSetNumericValue.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by: Iso11783IL_OPSetNumericValue"
+      ],
+      [
+        "Function Syntax",
+        "long TestIso11783IL_OPSetNumericValue( dbNode node, dword objectID, long numericValue );"
+      ],
+      [
+        "long TestIso11783IL_OPSetNumericValue( dbNode node, dword objectID, long numericValue, long options );"
+      ],
+      [
+        "Function",
+        "The function sets the numerical value of an object. The object must exist in the object pool and must support a numerical value. If the Object Pool API is active, a Change Numeric Value command is sent to the Virtual Terminal. This can be suppress with Bit 0 in options. Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment.",
+        "Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment."
+      ],
+      [
+        "Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment."
+      ],
+      [
+        "Parameters",
+        "node Simulation node to apply the function."
+      ],
+      [
+        "objectID Object ID of the object that has an updated value"
+      ],
+      [
+        "numericValue New value within the value range of the object"
+      ],
+      [
+        "options Options Bit 0 and 1 = 0: send Change Numeric Value command if parameters are valid Bit 0 and 1 = 1: suppress Change Numeric Value command Bit 0 and 1 = 2: force sending Change Numeric Value command even parameters are invalid Bit 0 and 1 = 3: reserved"
+      ],
+      [
+        "Return Values",
+        "0: Function has been executed successfully <0: An error has occurred, see error codes"
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.5",
+        "ISO11783 Test nodes",
+        "—",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSimulateETFCollision",
+  "category": "LIN",
+  "title": "linSimulateETFCollision",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSimulateETFCollision.htm",
+  "syntax": [
+    "dword linSimulateETFCollision (dword etfId)"
+  ],
+  "description": [
+    "This function can be used to cause collisions for next coming header(s) of an event-triggered frame."
+  ],
+  "parameters": [
+    {
+      "name": "etfId",
+      "type": "",
+      "description": "LIN frame identifier in the range 0 .. 59"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

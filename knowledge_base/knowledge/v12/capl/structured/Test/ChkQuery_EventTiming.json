@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventTiming",
+  "category": "Test",
+  "title": "ChkQuery_EventTiming",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventTiming.htm",
+  "syntax": [
+    "float ChkQuery_EventTiming (dword checkId);",
+    "check.QueryEventTiming();"
+  ],
+  "description": [
+    "Retrieves the timing value that has been violated in the LIN specific check."
+  ],
+  "parameters": [
+    {
+      "name": "checkId",
+      "type": "",
+      "description": "Identifier of the queried Check."
+    }
+  ],
+  "return": "< 0: Refers the query error codes",
+  "example": {
+    "description": [],
+    "code": "testcase tcTSL_LINSyncBreak()\n{\n   dword checkId;\n   float lastMeasuredSyncBreakLength;\n\n   checkId = ChkStart_LINSyncBreakTimingViolation (18, 20);\n   testWaitForTimeout(5000);\n   ChkControl_Stop(checkId);\n\n   lastMeasuredSyncBreakLength = ChkQuery_EventTiming(checkId);\n   testStep(\"Evaluation\", \"Last measured sync break length is %.2f bits\", lastMeasuredSyncBreakLength);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

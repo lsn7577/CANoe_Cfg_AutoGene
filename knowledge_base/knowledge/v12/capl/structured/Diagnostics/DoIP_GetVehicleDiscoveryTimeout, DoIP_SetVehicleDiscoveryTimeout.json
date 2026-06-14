@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetVehicleDiscoveryTimeout, DoIP_SetVehicleDiscoveryTimeout",
+  "category": "Diagnostics",
+  "title": "DoIP_GetVehicleDiscoveryTimeout, DoIP_SetVehicleDiscoveryTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetSetVehicleDiscoveryTimeout.htm",
+  "syntax": [
+    "void DoIP_SetVehicleDiscoveryTimeout(dword toVehicleDiscovery);"
+  ],
+  "description": [
+    "Sets or returns the timeout waiting for Vehicle Identification Response Messages after a Vehicle Identification Request was sent (in milliseconds)."
+  ],
+  "parameters": [
+    {
+      "name": "toVehicleDiscovery",
+      "type": "",
+      "description": "Time in milliseconds [ms]"
+    }
+  ],
+  "return": "Form 1: —Form 2: Timeout waiting for Vehicle Identification Response Messages",
+  "example": {
+    "description": [
+      "This value can also be configured in the DoIP.INI file."
+    ],
+    "code": "// Wait longer than the standard suggests to detect more vehicles\nDoIP_SetVehicleDiscoveryTimeout( 10000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

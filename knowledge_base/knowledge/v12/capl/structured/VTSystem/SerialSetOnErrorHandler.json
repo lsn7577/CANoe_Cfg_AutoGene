@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SerialSetOnErrorHandler",
+  "category": "VTSystem",
+  "title": "SerialSetOnErrorHandler",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSerialSetOnErrorHandler.htm",
+  "syntax": [
+    "long SysVarNamespace.SerialSetOnErrorHandler( char onErrorCallback[]);"
+  ],
+  "description": [
+    "Sets the callback that notifies when an error occurred during a send or receive operation.",
+    "The set callback has to have following signature: void <OnSerialError>( dword errorFlags)"
+  ],
+  "parameters": [
+    {
+      "name": "onErrorCallback",
+      "type": "",
+      "description": "CAPL callback function name."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILNodeControlSimulationOn",
+  "category": "CANoeIL",
+  "title": "ILNodeControlSimulationOn",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILNodeControlSimulationOn.htm",
+  "syntax": [
+    "long ILNodeControlSimulationOn(char aNodeName[])"
+  ],
+  "description": [
+    "Start the simulation of the interaction layer of the specified simulation node. The IL is in the same state as it was before stopping. The specified node must be in the current bus context. In all other cases the function has no effect and will return with an error."
+  ],
+  "parameters": [
+    {
+      "name": "aNodeName",
+      "type": "",
+      "description": "Name of the node of which the interaction layer should be turned on."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1.0",
+  "id": "validate_artifacts",
+  "phase": "validation",
+  "description": "Run evidence, version, style, static, and completeness checks over generated artifacts.",
+  "reads": [
+    "project_spec",
+    "generated_artifacts",
+    "evidence_bundle"
+  ],
+  "writes": [
+    "validation_report"
+  ],
+  "knowledge_inputs": [
+    {
+      "kind": "validation_rules",
+      "path": "workflow_kb/validation_rules",
+      "required": true
+    }
+  ],
+  "pack_inputs": [
+    "packs/*/validation_rules.json",
+    "validation_rules/*.json"
+  ],
+  "gates": [
+    "capl_api_evidence_gate",
+    "version_compatibility_gate",
+    "team_style_gate",
+    "artifact_completeness_gate"
+  ],
+  "transitions": [
+    {
+      "to": "package_project",
+      "condition": "validation_report.status == 'pass'"
+    },
+    {
+      "to": "repair_or_review",
+      "condition": "validation_report.status in ['warn', 'fail']"
+    }
+  ],
+  "extension_notes": [
+    "CANoe compilation can be added as an optional external validation gate when the tool is available.",
+    "Keep static validation separate from actual CANoe compilation status."
+  ]
+}
+

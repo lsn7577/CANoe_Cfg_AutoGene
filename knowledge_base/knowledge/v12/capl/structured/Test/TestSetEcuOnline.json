@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestSetEcuOnline",
+  "category": "Test",
+  "title": "TestSetEcuOnline",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestSetEcuOnline.htm",
+  "syntax": [
+    "void testSetEcuOnline (dbNode aNode);"
+  ],
+  "description": [
+    "Connects the ECU to the bus.After calling the testSetEcuOffline() function the ECU can be reconnected to the bus by using the testSetEcuOnline() function. Messages being sent by the ECU will be forwarded to the bus.",
+    "This function interferes with the CAPL program and possible Nodelayer DLLs."
+  ],
+  "parameters": [
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "ECU to be switched online (must be defined in the database)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// cuts the node ‚SUT’ 5000 ms from the bus\nTestSetEcuOffline(SUT);\nTestWaitForTimeout(5000);\nTestSetEcuOnline(SUT)"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

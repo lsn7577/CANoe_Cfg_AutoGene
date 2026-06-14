@@ -1,0 +1,215 @@
+{
+  "page_type": "function",
+  "name": "ipsecPolicyGetParameter",
+  "category": "TCPIPAPI",
+  "title": "ipsecPolicyGetParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIpsecPolicyGetParameter.htm",
+  "syntax": [
+    "long ipsecPolicyGetParameter(long policy, char[] parameter, char[] value); // form 1",
+    "long ipsecPolicyGetParameter(long policy, char[] parameter, IP_Endpoint value); // form 2",
+    "long ipsecPolicyGetParameter(long policy, char[] parameter, dword value); // form 3"
+  ],
+  "description": [
+    "Get a parameter from a security policy record."
+  ],
+  "parameters": [
+    {
+      "name": "policy",
+      "type": "",
+      "description": "Handle to a security policy record object."
+    },
+    {
+      "name": "Source",
+      "type": "",
+      "description": "Returns the source selector."
+    },
+    {
+      "name": "Destination",
+      "type": "",
+      "description": "Returns the destination selector."
+    },
+    {
+      "name": "UNSPEC",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "ESP",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "AH",
+      "type": "",
+      "description": "2"
+    },
+    {
+      "name": "ANY",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "TRANSPORT",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "TUNNEL",
+      "type": "",
+      "description": "2"
+    },
+    {
+      "name": "DEFAULT",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "USE",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "REQUIRE",
+      "type": "",
+      "description": "2"
+    },
+    {
+      "name": "DISCARD",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "NONE",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "IPSEC",
+      "type": "",
+      "description": "2"
+    },
+    {
+      "name": "ENTRUST",
+      "type": "",
+      "description": "3"
+    },
+    {
+      "name": "BYPASS",
+      "type": "",
+      "description": "4"
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "The returned value of the parameter."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  dword socket;\n\n  // add a policy\n  IpSecPolicyDatabaseAdd(ip_Endpoint(0.0.0.0:0), 0, ip_Endpoint(192.168.1.0:0), 24, \"any\", \"out ipsec ah/transport//require\");\n\n  // try to send data which maches the policy -> this will trigger OnIpsecSadbAcquire\n  socket = udpOpen(ip_Endpoint(0.0.0.0:0));\n  udpSendTo(socket, ip_Endpoint(192.168.1.10:12345), \"hello world\", 11);\n}\n\nvoid PrintSecurityPolicyParameter(long handle, char parameterName[])\n{\n  char value[100];\n  ip_Endpoint ep;\n  if(ipsecPolicyGetParameter(handle, parameterName, value) >= 0)\n  {\n    write(\"%s: %s\", parameterName, value);\n  }\n  else if(ipsecPolicyGetParameter(handle, parameterName, ep) >= 0)\n  {\n    ep.PrintEndpointToString(value);\n    write(\"%s: %s\", parameterName, value);\n  }\n}\n\nvoid OnIpsecSadbAcquire(ip_Endpoint source, ip_Endpoint destination, long policyHandle)\n{\n  PrintSecurityPolicyParameter(policyHandle, \"source\");\n  PrintSecurityPolicyParameter(policyHandle, \"destination\");\n  PrintSecurityPolicyParameter(policyHandle, \"protocol\");PrintSecurityPolicyParameter(policyHandle, \"mode\");\n  PrintSecurityPolicyParameter(policyHandle, \"level\");\n  PrintSecurityPolicyParameter(policyHandle, \"policytype\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "—",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

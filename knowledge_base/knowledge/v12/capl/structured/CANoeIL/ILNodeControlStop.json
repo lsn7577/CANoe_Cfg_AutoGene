@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILNodeControlStop",
+  "category": "CANoeIL",
+  "title": "ILNodeControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILNodeControlStop.htm",
+  "syntax": [
+    "long ILNodeControlStop(char aNodeName[])"
+  ],
+  "description": [
+    "Stops the interaction layer of the specified simulation node. Cyclical sending of messages is stopped and setting of signals is not possible anymore. The specified node must be in the current bus context. In all other cases the function has no effect and will return with an error."
+  ],
+  "parameters": [
+    {
+      "name": "aNodeName",
+      "type": "",
+      "description": "Name of the node of which the interaction layer should be stopped."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

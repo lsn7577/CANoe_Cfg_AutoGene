@@ -1,0 +1,43 @@
+{
+  "page_type": "function",
+  "name": "mostConfigureBusloadCtrl",
+  "category": "MOST",
+  "title": "mostConfigureBusloadCtrl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTConfigureBusloadCtrl.htm",
+  "syntax": [
+    "mostConfigureBusloadCtrl(rate, msg);"
+  ],
+  "description": [
+    "The function configures the bus load generator for the control channel. Load generation can be started with the mostGenerateBusloadCtrl() function.",
+    "Form 1:",
+    "With the specified rate the generator tries to send messages on the control channel.Due to repeated transmissions or arbitration delays, the bus load actually generated can deviate from the specified rate.As an option, the messages can be supplied with a sequence counter.",
+    "Form 2:",
+    "For OptoLyzer G2 3150o and OptoLyzer MOCCA compact 150c, rate specifies the delay between two messages in 1 ms steps and hence it is not possible to specify number of messages sent per second.",
+    "Bus load can also be generated without CAPL programming using the MOST Stress Window.",
+    "Repeated transmissions on the control channel can be eliminated by setting the OS8104 transmit retry register (XRTY) to 1 (mostWriteReq()).",
+    "A sequence counter and the stress pattern can be configured with mostSetStressNodeParameter."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected MOST hardware."
+    }
+  ],
+  "return": "<= 0: See error codes",
+  "example": {
+    "description": [
+      "Configure and start bus load stress on keyboard event."
+    ],
+    "code": "on key 's'\n{\n   long channel, rate;\n   mostmessage NetBlock.DeviceInfo.Get msg;\n\n   channel = 1;\n   rate = 50; // msgs/s\n\n   // set counter type: 1-byte\n   mostSetStressNodeParameter(channel, 16, 1);\n\n   // set counter in byte6 (first user data byte)\n   mostSetStressNodeParameter(channel, 17, 6);\n\n   // configure stress pattern\n   msg.MsgChannel = channel;\n   msg.DA = 0x100;\n   mostConfigureBusloadCtrl(rate, msg);\n\n   // start stress: send 10 messages\n   mostGenerateBusloadCtrl(channel, 10);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_example"
+}

@@ -1,0 +1,32 @@
+{
+  "page_type": "function",
+  "name": "OnMostFiAmsPreSend",
+  "category": "MOST",
+  "title": "OnMostFiAmsPreSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTFiAmsPreSend.htm",
+  "syntax": [
+    "OnMostFiAmsPreSend(mostAmsMessage * msg);"
+  ],
+  "description": [],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "This variable contains the send request of the simulation node."
+    }
+  ],
+  "return": "The return value can be used to control whether or not the message is sent.\n0: Original message is not sent1: Original message is sent without alteration",
+  "example": {
+    "description": [],
+    "code": "// change all Status messages a simulated node tries to send to error messages\nlong OnMostFiAmsPreSend(mostAmsMessage * msg)\n{\n   if(msg.OpType == 0xC) // Status or Result message\n   {\n      // make a copy\n      mostAmsMessage * modMsg = {DLC = 1000}; // buffer for 1000 data bytes\n      modMsg = msg; // at most 1000 data bytes are copied here\n\n      // modify OpType\n      modMsg.OpType = 0xF;\n      // keep message length and data\n      // but change the first byte\n      modMsg.byte(0) = 0x0B; // set ErrorCode=Device malfunction\n      // send modified message\n      output(modMsg);\n\n      // do not send original message\n      return 0;\n   }\n   else\n   {\n      // send original message\n      return 1;\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_example"
+}

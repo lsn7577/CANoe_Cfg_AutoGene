@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IpGetLastSocketError",
+  "category": "TCPIPAPI",
+  "title": "IpGetLastSocketError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetLastSocketError.htm",
+  "syntax": [
+    "long IpGetLastSocketError( dword socket);",
+    "socket.GetLastSocketError();"
+  ],
+  "description": [
+    "The function returns the Winsock 2 error code of the last operation that failed on the specified socket."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "WSA_INVALID_PARAMETER (87): The specified socket was invalid.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  const dword INVALID_SOCKET = ~0; // invalid socket constant\n  dword socket = INVALID_SOCKET;   // a socket\n\n  // just create an unspecified socket.\n  socket = UdpOpen( 0, 0 );\n\n  // produce an error e.g. using invalid parameters to UdpSendTo\n  if (UdpSendTo(socket, 0, 0, \"a\", 1) == -1)\n  {\n    writeLineEx(1, 3, \"IpGetLastSocketError: %d\", IpGetLastSocketError(socket));\n  }\n\n  // close the socket.\n  UdpClose(socket);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

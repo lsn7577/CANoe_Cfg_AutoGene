@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetResponseCodeString",
+  "category": "SmartCharging",
+  "title": "SCC_GetResponseCodeString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetResponseCodeString.htm",
+  "syntax": [
+    "void SCC_GetResponseCodeString ( char ResponseCode[] )"
+  ],
+  "description": [
+    "Gets the response code."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Queries the response code string (to the output buffer). This allows for evaluating its actual semantics, whereas each callback only returns a binary value indicating OK or FAILED.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

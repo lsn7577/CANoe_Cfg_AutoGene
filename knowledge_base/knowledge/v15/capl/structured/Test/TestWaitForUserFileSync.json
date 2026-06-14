@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForUserFileSync",
+  "category": "Test",
+  "title": "TestWaitForUserFileSync",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForUserFileSync.htm",
+  "syntax": [
+    "long TestWaitForUserFileSync(char aFileName[], long isDirectionClientToServer);"
+  ],
+  "description": [
+    "This function can be used to start synchronization of user files between client and server system in a distributed environment. Once the synchronization has been started successfully the system waits until the file is synchronized.",
+    "The function is not allowed in CANoe standalone mode. Errors are reported as error in test system or fail in case of 2-valued verdict concept."
+  ],
+  "parameters": [
+    {
+      "name": "aFileName",
+      "type": "",
+      "description": "The name of the user file to be synchronized (path component is ignored)."
+    },
+    {
+      "name": "isDirectionClientToServer",
+      "type": "",
+      "description": "If this parameter is set to true (≠0) the file is synchronized from the client (e.g. CANoe) to the server system."
+    }
+  ],
+  "return": "The name of the user file to be",
+  "example": {
+    "description": [],
+    "code": "long ret;\nTestStepBegin(\"tc1\", \"sync\");\nret = TestWaitForUserFileSync(\"UserFileCAPL.TXT\", 1);\nif (ret != 1) {\n   TestStepFail(\"Transmit of \\\"UserFileCAPL.TXT\\\" from client to server failed.\");\n   TestCaseFail();\n} else {\n   TestStepPass(\"Synchronization succeeded.\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

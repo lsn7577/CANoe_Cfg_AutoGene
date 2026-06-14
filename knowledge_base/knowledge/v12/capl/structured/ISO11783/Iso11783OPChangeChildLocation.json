@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPChangeChildLocation",
+  "category": "ISO11783",
+  "title": "Iso11783OPChangeChildLocation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPChangeChildLocation.htm",
+  "syntax": [
+    "long Iso11783OPChangeChildLocation( dword ecuHandle, dword parentID, dword objectID, long dx, long dy );"
+  ],
+  "description": [
+    "The function moves an object. The object is moved relative inside the parent object. A Change Child Location command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "// move object 5 pixels to the right\nIso11783OPChangeChildLocation( handle, 1000, \r\n 1200, 5, 0 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

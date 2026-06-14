@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SomeIpReleaseConsumedServiceInstance",
+  "category": "IP",
+  "title": "SomeIpReleaseConsumedServiceInstance",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpReleaseConsumedServiceInstance.htm",
+  "syntax": [
+    "LONG SomeIpReleaseConsumedServiceInstance(dword csiHandle );"
+  ],
+  "description": [
+    "Deletes a Consumed Service Instance that was created by SomeIpCreateConsumedServiceInstance.",
+    "The objects assigned to the Service Instance (Eventgroups, Events, fields, and methods) are deleted when the Service Instance is closed. If the Service Instance is newly created, all objects must also be newly created."
+  ],
+  "parameters": [
+    {
+      "name": "csiHandle",
+      "type": "",
+      "description": "Handle of the Consumed Service Instance to be deleted."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 'c'\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD csi; // consumed Service Instance handle\n\n  // open an Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,10,1);\n\n  // ... do something here\n\n  // release the consumed Service Instance\n  SomeIpReleaseConsumedServiceInstance(csi);\n\n  // ... Application Endpoint can still be used here\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

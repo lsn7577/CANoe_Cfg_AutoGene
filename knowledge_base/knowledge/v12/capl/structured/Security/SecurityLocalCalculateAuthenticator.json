@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalCalculateAuthenticator",
+  "category": "Security",
+  "title": "SecurityLocalCalculateAuthenticator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityLocalCalculateAuthenticator.htm",
+  "syntax": [
+    "long SecurityLocalCalculateAuthenticator(dword dataId, byte payload[], dword payloadLength, qword truncatedAuthenticatorHigh, qword truncatedAuthenticator, dword truncatedAuthenticatorBitLength, qword freshness, dword truncatedFreshnessBitLength, dword freshnessValueBitLength, dword freshnessValueId)"
+  ],
+  "description": [
+    "Calculate the authenticator from arbitrary data. The (complete) freshness value must be provided in the function call. Other freshness sources will be ignored. The method returns the truncated freshness via freshness parameter. The calculated authenticator is returned via the TruncatedAuthenticator parameter. The truncated bit lengths of the authenticator and freshness can be modified.",
+    "The result of this method depends on the security profile which is mapped on the network."
+  ],
+  "parameters": [
+    {
+      "name": "dword DATAID",
+      "type": "",
+      "description": "The data ID of the PDU to lookup the desired key in the security source."
+    }
+  ],
+  "return": "qword truncatedAuthenticatorHigh [Out]\nUpper 64 bits of the authenticator (MAC), if authenticator is larger than 64 bits. Otherwise 0;",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

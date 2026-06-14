@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysGetOrigTimeNS",
+  "category": "SystemVariables",
+  "title": "sysGetOrigTimeNS",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetOrigTimeNS.htm",
+  "syntax": [
+    "int64 sysGetOrigTimeNS(SysVarName);"
+  ],
+  "description": [
+    "Returns the original time stamp of the last update to the variable value, before time synchronization may have changed it."
+  ],
+  "parameters": [
+    {
+      "name": "SysVarName",
+      "type": "",
+      "description": "Name of the fully qualified name of the system variable, including all name spaces, separated by \"::\". The name must be preceded by \"sysVar::\"."
+    }
+  ],
+  "return": "Original time stamp of the last update to the variable value in nanoseconds since measurement start.",
+  "example": {
+    "description": [],
+    "code": "int64 timeStamp;\ntimeStamp = sysGetOrigTimeNS(sysvar::MyNamespace::FloatVar);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

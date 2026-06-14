@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalDecryptAES128CBC",
+  "category": "Security",
+  "title": "SecurityLocalDecryptAES128CBC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/Functions/CAPLfunctionSecurityLocalDecryptAES128CBC.htm",
+  "syntax": [
+    "long SecurityLocalDecryptAES128CBC(byte key[], dword keyLength, byte cipheredData[], dword cipheredDataLength, byte initVector[], dword initVectorLength, byte plainData[], dword plainDataLength)"
+  ],
+  "description": [
+    "Decrypts ciphered data with a given key and initialization vector using AES128 (CBC), Padding Mode PKCS5."
+  ],
+  "parameters": [
+    {
+      "name": "byte key[]",
+      "type": "",
+      "description": "The key to be used for AES (128 bit)."
+    }
+  ],
+  "return": "1: Success. A Value of 1 means that the action was successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

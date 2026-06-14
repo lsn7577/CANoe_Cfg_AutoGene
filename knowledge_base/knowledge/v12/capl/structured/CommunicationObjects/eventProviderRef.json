@@ -1,0 +1,69 @@
+{
+  "page_type": "function",
+  "name": "eventProviderRef",
+  "category": "CommunicationObjects",
+  "title": "eventProviderRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionEventProviderRef.htm",
+  "syntax": [
+    "eventProviderRef * <var>"
+  ],
+  "description": [
+    "References an event provider endpoint."
+  ],
+  "parameters": [
+    {
+      "name": "Event",
+      "type": "",
+      "description": "Event of a service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "eventProviderRef long event1;\nevent1 = MirrorAdjustment.providerSide[LeftMirror].CurrentPosition;\n$event1 = newValue;"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the provider endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the provider endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ServiceProvider Reference to the provider of the service containing the event.",
+        "serviceProviderRef*",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

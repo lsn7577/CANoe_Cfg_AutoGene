@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetEnergyTransferType",
+  "category": "SmartCharging",
+  "title": "SCC_GetEnergyTransferType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetEnergyTransferType.htm",
+  "syntax": [
+    "long SCC_GetEnergyTransferType ( char[] EnergyTransferType )"
+  ],
+  "description": [
+    "Gets the energy transfer type (DIN 70121) resp. -mode (ISO 15118) from various messages."
+  ],
+  "parameters": [
+    {
+      "name": "EnergyTransferType",
+      "type": "",
+      "description": "Desired charging mode."
+    }
+  ],
+  "return": "Type of requested power supply:\nAC_Charging = 0,\nDC_Charging = 1\nThe EnergyTransferType resp -Mode string is additionally written to the output buffer. If this is not required, an empty string can be transferred.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

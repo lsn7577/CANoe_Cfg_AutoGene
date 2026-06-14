@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MediaSetPropertyRatio",
+  "category": "Media",
+  "title": "MediaSetPropertyRatio",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaSetPropertyRatio.htm",
+  "syntax": [
+    "long MediaSetPropertyRatio(dword objHandle, char propertyName[], dword numerator, dword denominator);"
+  ],
+  "description": [
+    "Sets a ratio as a 64-bit property value. Properties can be set on an object specific basis for a media type object (e.g. returned by MediaGetMediaType)."
+  ],
+  "parameters": [
+    {
+      "name": "propertyName",
+      "type": "",
+      "description": "Name of the property to be set."
+    }
+  ],
+  "return": "0: The function succeeded.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

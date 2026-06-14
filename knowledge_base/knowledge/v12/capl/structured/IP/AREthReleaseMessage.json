@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthReleaseMessage",
+  "category": "IP",
+  "title": "AREthReleaseMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthReleaseMessage.htm",
+  "syntax": [
+    "long AREthReleaseMessage( dword messageHandle );"
+  ],
+  "description": [
+    "This function is used to delete a message that was created with AREthCreateMessage, for example."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the message that was created with AREthCreateMessage, for example."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  dword messageId = 0x12340004; // service ID = 0x1234, method ID = 0x0004\n  dword requestId = 0; // client ID = 0, session ID = 0\n  dword protocolVersion = 1;\n  dword interfaceVersion = 1;\n  dword messageType = 0x2; // notification message\n  dword returnCode = 0; // not available\n  dword aep = 0; // application endpoint handle\n  dword messageHandle = 0; // handle of the created SOME/IP message\n  BYTE payload[5]; // the message payload\n  dword count = 0; // a simple counter\n\n  // initialize the payload\n  count = 0;\n  payload[count++] = 0x11;\n  payload[count++] = 0x22;\n  payload[count++] = 0x33;\n  payload[count++] = 0x44;\n  payload[count++] = 0x55;\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create the SOME/IP message itself and set the message payload\n  messageHandle = AREthCreateMessage(messageId,requestId,protocolVersion,interfaceVersion,messageType,returnCode);\n  AREthSetData(messageHandle,elcount(payload),payload);\n\n  // send the SOME/IP message\n  AREthOutputMessage(aep,0xFFFFFFFF,40001,messageHandle);\n\n  // release the some IP message\n  AREthReleaseMessage(messageHandle);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

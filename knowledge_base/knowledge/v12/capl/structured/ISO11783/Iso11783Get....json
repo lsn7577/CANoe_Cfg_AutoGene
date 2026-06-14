@@ -1,0 +1,41 @@
+{
+  "page_type": "function",
+  "name": "Iso11783Get...",
+  "category": "ISO11783",
+  "title": "Iso11783Get...",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783Get.htm",
+  "syntax": [
+    "long Iso11783GetAAC( char[] deviceName );",
+    "long Iso11783GetIG( char[] deviceName );",
+    "long Iso11783GetVS( char[] deviceName );",
+    "long Iso11783GetVSInstance( char[] deviceName );",
+    "long Iso11783GetFct( char[] deviceName );",
+    "long Iso11783GetFctInstance( char[] deviceName );",
+    "long Iso11783GetECUInstance( char[] deviceName );",
+    "long Iso11783GetMC( char[] deviceName );",
+    "long Iso11783GetIN( char[] deviceName );"
+  ],
+  "description": [
+    "This function reads a part of the device name."
+  ],
+  "parameters": [
+    {
+      "name": "deviceName",
+      "type": "",
+      "description": "Buffer for read part of the device name, minimum size of 8 bytes required"
+    }
+  ],
+  "return": "Value of the device name part",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

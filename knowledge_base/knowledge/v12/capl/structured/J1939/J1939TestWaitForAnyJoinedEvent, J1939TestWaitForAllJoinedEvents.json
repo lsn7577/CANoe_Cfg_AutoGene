@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939TestWaitForAnyJoinedEvent, J1939TestWaitForAllJoinedEvents",
+  "category": "J1939",
+  "title": "J1939TestWaitForAnyJoinedEvent, J1939TestWaitForAllJoinedEvents",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestWaitForJoinedEvent.htm",
+  "syntax": [
+    "long J1939TestWaitForAnyJoinedEvent( dword timeout )"
+  ],
+  "description": [
+    "Waits for the actual set of \"joined events\". Each of this events can cancel the wait state or the wait condition will be canceled if all \"joined events\" are signaled. If no event occurred until the time of \"timeout\" the wait condition will be canceled.",
+    "If function J1939TestJoinPG is used this function must be used to wait. The function TestWaitForAllJoinedEvents must not be used in this case!"
+  ],
+  "parameters": [
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "timeout in [ms] or 0 to disable"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long lret;\n\nJ1939TestJoinPGEvent(10, 0xFF, 0xF123);\nJ1939TestJoinPGEvent(20, 0xFF, 0xF123);\n\nlret = J1939TestWaitForAnyJoinedEvent ( 500 );\nswitch(lret) {\ncase 1:\n  // first PG received\n  break;\ncase 2:\n  // second PG received\n  break;\ndefault:\n  // error, timeout or constraint violation\n  break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

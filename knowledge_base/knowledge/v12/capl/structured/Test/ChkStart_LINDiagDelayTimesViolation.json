@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINDiagDelayTimesViolation",
+  "category": "Test",
+  "title": "ChkStart_LINDiagDelayTimesViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinDiagDelayTimesViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINDiagDelayTimesViolation (Node ObservedNode);"
+  ],
+  "description": [
+    "Checks the values of P2_min and ST_min for a specified LIN Slave node or for all LIN Slaves defined in LDF.",
+    "An event will be generated, if the measured P2_min or ST_min value is smaller than one specified in the database (LDF).",
+    "The check monitors bus traffic and automatically recognizes diagnostic frames.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "ObservedNode",
+      "type": "",
+      "description": "Slave node to be checked."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\n// Create and start the check for LIN diagnostic delay times\ncheckId = ChkStart_LINDiagDelayTimesViolation(\"LINDiagDelayTimesCallback\"); \n...\n// CAPL callback for violation notification\nvoid LINDiagDelayTimesCallback (dword aCheckId)\n{   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

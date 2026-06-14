@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "lookupServiceSignal",
+  "category": "Other",
+  "title": "lookupServiceSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionlookupServiceSignal.htm",
+  "syntax": [
+    "serviceSignal * lookupServiceSignal(char serviceSignalName[]);"
+  ],
+  "description": [
+    "Searches for a SOME/IP Service Signal in the database(s). If the Service Signal is not found or if the name is not unique, test modules/units report an error in test system while simulation/analysis nodes write a warning into the Write Window, and the function returns an invalid serviceSignal.",
+    "It is recommended to use this function only in special cases or during measurement start, since searching for the database definition may impact real-time performance.",
+    "lookupServiceSignal can be used to access a Service Signal, which was specified by a string during measurement. The function makes it possible to write dynamic tests with a Service Signal, where the name of the Service Signal is not given at compile time.",
+    "To access the value of a Service Signal it is necessary to use a more specific variant of lookupServiceSignal depending by the type, see lookupServiceSignalNumber, lookupServiceSignalData and lookupServiceSignalString."
+  ],
+  "parameters": [
+    {
+      "name": "serviceSignalName",
+      "type": "",
+      "description": "The qualifier of the Service Signal."
+    }
+  ],
+  "return": "The found unique Service Signal or an invalid object.",
+  "example": {
+    "description": [],
+    "code": "// set the values of some service-signals\n\nint i;\nchar serviceSignalNames[3][70] = \n{ \"sif_2001::TrafficSignDetection::DetectedTrafficSign[0].DistanceToSign\",\n  \"sif_2001::TrafficSignDetection::DetectedTrafficSign[0].Reliability\",\n  \"sif_2001::TrafficSignDetection::DetectedTrafficSign[0].SignType\" };\ndouble serviceSignalValues[3] = { 1.0, 2.0, 3.0 };\n\nfor( i = 0; i < elcount(serviceSignalNames); i++ )\n{\n  serviceSignalNumber * sig;\n  sig = lookupServiceSignalNumber( serviceSignalNames[i] );\n\n  $sig = serviceSignalValues[i];\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

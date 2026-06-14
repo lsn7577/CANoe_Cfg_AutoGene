@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterAddressAsString",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterAddressAsString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterAddressAsString.htm",
+  "syntax": [
+    "long IpGetAdapterAddressAsString( dword ifIndex, char address[], dword count);"
+  ],
+  "description": [
+    "The function retrieves the string representation of the first address associated with the specified network interface."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  const dword IPV4_STR_SIZE = 16; // IPv4 string size\n  char ipAddr[IPV4_STR_SIZE];     // human readable ipv4 address string.\n  dword ifIdx;                    // interface index\n  long result;                    // function result.\n\n  for (ifIdx = 1; ifIdx <= IpGetAdapterCount(); ifIdx++)\n  {\n    result = IpGetAdapterAddressAsString( ifIdx, ipAddr, elcount(ipAddr) );\n    if (result == 0)\n    {\n      // success.\n      write(\"IpGetAdapterAddressAsString for adapter %d returned: %s\", ifIdx, ipAddr);\n    }\n    else\n    {\n      writeLineEx(1, 3, \"IpGetAdapterAddressAsString: Error %d\", result);\n      // handle error...\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

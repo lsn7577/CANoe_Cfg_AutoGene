@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostPktSetTraceColors",
+  "category": "MOST",
+  "title": "mostPktSetTraceColors",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTPktSetTraceColors.htm",
+  "syntax": [
+    "mostPktSetTraceColors(long font, long bkgnd)"
+  ],
+  "description": [
+    "Sets the text and background color for displaying the MOST event in the Trace Window. The makeRGB function can be used for the colors."
+  ],
+  "parameters": [
+    {
+      "name": "font",
+      "type": "",
+      "description": "Font color (RGB value)"
+    }
+  ],
+  "return": "0: OK",
+  "example": {
+    "description": [],
+    "code": "OnMostPkt (long  pktlen) \n{\n   mostPktSetTraceColors(makeRGB(0, 0, 0), makeRGB(255,  0, 0) );   \n   outputMostPktThis(); // Forwards this packet to the node in the  Measurement Setup \n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

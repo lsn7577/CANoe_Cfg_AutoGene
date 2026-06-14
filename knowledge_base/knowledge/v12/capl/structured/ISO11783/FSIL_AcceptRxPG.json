@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_AcceptRxPG",
+  "category": "ISO11783",
+  "title": "FSIL_AcceptRxPG",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILAcceptRxPG.htm",
+  "syntax": [
+    "long FSIL_AcceptRxPG( pg * rxPG );"
+  ],
+  "description": [
+    "Checks if the received parameter group is addressed to the FS IL."
+  ],
+  "parameters": [
+    {
+      "name": "rxPG",
+      "type": "",
+      "description": "Receive parameter group"
+    }
+  ],
+  "return": "<0: FS IL Error Code",
+  "example": {
+    "description": [],
+    "code": "on pg TPRS\n{\n  if (FSIL_AcceptRxPG( this ) <= 0) return;\n  // ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

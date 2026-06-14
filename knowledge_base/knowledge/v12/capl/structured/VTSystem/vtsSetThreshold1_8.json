@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "vtsSetThreshold1_8",
+  "category": "VTSystem",
+  "title": "vtsSetThreshold1_8",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetThreshold18.htm",
+  "syntax": [
+    "long vtsSetThreshold1_8 (char Namespace [],double Threshold);"
+  ],
+  "description": [
+    "Sets the threshold value for differentiating between high and low levels of the channels 1…8 of a digital module VT2516.There is only one threshold setting for all eight channels together.Voltages at the input exceeding this threshold value are evaluated as high level and voltages undershooting it are evaluated as low level."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "The following example demonstrates how to measure a PWM signal on a VT2516 channel (e.g. a ECU output that controls an LED). The measured frequency and duty cycle is then output to the Write Window / the test report."
+    ],
+    "code": "PWMMeasurement ()\n{\n   // Declare variables to hold measured data\n   float frequency;\n   float dutyCycle;\n\n   // Set threshold for channels 1-8 to 2.5 V\n   vtsSetThreshold1_8(\"VTS::DigitalSignals\", 3.5);\n\n   // Set maximum measurement duration to 100 ms\n   // (because the lowest PWM frequency is 100 Hz)\n   vtsSetPWMMeasurementDuration(\"VTS::LED\", 0.1);\n\n   // Wait 100 ms and read measured PWM parameters\n   TestWaitForTimeout (100);\n   frequency = @sysvar::VTS::LED::PWMFreq;\n   dutyCycle = @sysvar::VTS::LED::PWMDC;\n\n   // Output measured values to the Write Window\n   write(\"Frequency: %0.2fHz, Duty Cycle: %0.2f%%.\", frequency, dutyCycle);\n}\npublic void PWMMeasurement()\n   {\n      // Get VTS interface, VT2516 module and VT2516 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT2516 vt2516 = vts.GetModule(\"DigitalSignals\") as IVT2516;\n      IVT2516Channel led = vts.GetChannel(\"LED\") as IVT2516Channel;\n\n      // Set threshold for channels 1-8 to 2.5 V\n      vt2516.Threshold1To8.Value = 3.5;\n\n      // Set maximum measurement duration to 100 ms\n      // (because the lowest PWM frequency is 100 Hz)\n      led.PWMMeasurementDuration.Value = 0.1;\n\n      // Wait 100 ms and read measured PWM parameters\n      Vector.CANoe.Threading.Execution.Wait(100);\n      double frequency = led.PWMFreq.Value;\n      double dutyCycle = led.PWMDC.Value;\n\n      // Output measured values to the Write Window\n      Vector.Tools.Output.WriteLine(\"Frequency: \" + frequency + \"Hz\");\n      Vector.Tools.Output.WriteLine(\"DutyCycle: \" + dutyCycle + \"%\");\n   }\n<testcase title=\"PWMMeasurement\" ident=\"\">\n      <vtsystem_configure title=\"Initialize PWM measurement\">\n         <pwm_measurement_duration channel=\"VTS::LED\">0.1</pwm_measurement_duration>\n         <group_threshold channel=\"VTS::DigitalSignals\" group=\"1-8\">3.5</group_threshold>\n      </vtsystem_configure>\n      <wait time=\"100\" title=\"Wait 100ms\" />\n      <valuecomment>\n         <description>Measured PWM duty cycle</description>\n         <sysvar name=\"VTS::LED::PWMDC\"></sysvar>\n      </valuecomment>\n      <valuecomment>\n         <description>Measured PWM frequency</description>\n         <sysvar name=\"VTS::LED::PWMFreq\"></sysvar>\n      </valuecomment>\n   </testcase>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

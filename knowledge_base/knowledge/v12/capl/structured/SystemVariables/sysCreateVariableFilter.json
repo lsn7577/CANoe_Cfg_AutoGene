@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysCreateVariableFilter",
+  "category": "SystemVariables",
+  "title": "sysCreateVariableFilter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysCreateVariableFilter.htm",
+  "syntax": [
+    "long sysCreateVariableFilter(long filterType); // form 1"
+  ],
+  "description": [
+    "Creates a new variable filter behind the node calling the function. If no filterName is given, the default filter with an empty name is created."
+  ],
+  "parameters": [
+    {
+      "name": "filterType",
+      "type": "",
+      "description": "Specifies the filter behavior: 0: Stop Filter. Stops all variables that are added to it. 1: Pass Filter. Stops all variables that are not added to it."
+    }
+  ],
+  "return": "0: No error, function successful.",
+  "example": {
+    "description": [],
+    "code": "long result;\n//create the default filter as a Stop Filter.\nresult = sysCreateVariableFilter(0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

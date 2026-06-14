@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "startValuesUpdateSymbols",
+  "category": "Other",
+  "title": "startValuesUpdateSymbols",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStartValuesUpdateSymbols.htm",
+  "syntax": [
+    "void startValuesUpdateSymbols(char groupName[]);"
+  ],
+  "description": [
+    "Sets the variables/signals contained in a specific group to their individual start values in the CANoe Start Value Window."
+  ],
+  "parameters": [
+    {
+      "name": "groupName",
+      "type": "",
+      "description": "Name of a group containing variables/signals that are set to their individual start values."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key '3'\n{\nstartValuesUpdateSymbols(\"Start values group2\");\n}\n\non key '4'\n{\nstartValuesUpdateSymbols(\"\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_OnRxMessage",
+  "category": "J1939",
+  "title": "GBT27930IL_OnRxMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILOnRxMessage.htm",
+  "syntax": [
+    "long GBT27930IL_OnRxMessage( pg * rxPG )"
+  ],
+  "description": [
+    "This callback function is called from the GBT27930 IL if the GBT27930 IL receives the parameter group, namely before the parameter group is processed by the GBT27930 IL. The message data can be manipulated in the callback method or handling of the message by the IL can be suppressed.",
+    "Usage"
+  ],
+  "parameters": [
+    {
+      "name": "rxPG",
+      "type": "",
+      "description": "message which is received"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

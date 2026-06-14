@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "EthGetMacId",
+  "category": "Obsolete",
+  "title": "EthGetMacId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetMacId.htm",
+  "syntax": [
+    "long EthGetMacId( byte macId[] );"
+  ],
+  "description": [
+    "This function reads the MAC-ID of the Ethernet interface."
+  ],
+  "parameters": [
+    {
+      "name": "macId",
+      "type": "",
+      "description": "destination array for the read MAC-ID with six elements"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\r\n\n{\r\n\n  BYTE macId[6];\r\n \n  if (EthGetMacId( macId ) == 0) \n  {\r\n\n    write( \"MAC ID is %.2X:%.2X:%.2X:%.2X:%.2X:%.2X:\", macId[0], macId[1], \n    macId[2],  macId[3], macId[4], macId[5] );\r\n\n  }\n}\r"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

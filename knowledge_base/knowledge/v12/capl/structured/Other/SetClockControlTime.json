@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SetClockControlTime",
+  "category": "Other",
+  "title": "SetClockControlTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetClockControlTime.htm",
+  "syntax": [
+    "void SetClockControlTime(char[] panel, char[] control, int hours, int minutes, int seconds);"
+  ],
+  "description": [
+    "Sets the time of the Panel Designer Clock Control.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Set the time in hours, minutes, seconds. It will be displayed '10:20:30'.\non key 'a'\n{\nSetClockControlTime(\"ClockControl1\", \"ClockCAPL\", 10, 20, 30);\n}\n// Set the time in seconds. It will be displayed '01:00:00'.\non key 'b'\n{\nSetClockControlTime(\"ClockControl1\", \"ClockCAPL\", 3600);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

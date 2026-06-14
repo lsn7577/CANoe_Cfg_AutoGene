@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILFaultInjectionSetPDULength",
+  "category": "AUTOSARpduIL",
+  "title": "ARILFaultInjectionSetPDULength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILFaultInjectionSetPDULength.htm",
+  "syntax": [
+    "long ARILFaultInjectionSetPDULength (dbMessage, dword len);"
+  ],
+  "description": [
+    "Sets a new payload length for the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

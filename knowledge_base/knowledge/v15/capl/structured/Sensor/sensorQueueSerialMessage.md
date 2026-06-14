@@ -1,0 +1,55 @@
+# sensorQueueSerialMessage
+
+> Category: `Sensor` | Type: `function`
+
+## Syntax
+
+```c
+SensorErrorCode sensorQueueSerialMessage(char[] sysVarNamespace, dword messageId, dword useLongMessageId);
+```
+
+## Description
+
+Inserts the given serial message into the send queue of the given time slot (PSI5)/channel (SENT).
+
+Please note that the actual data of the message is not specified in this function call. Instead it will be taken from any signal system variables defined in the Sensor configuration dialog for this serial message ID.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| sysVarNamespace | The namespace of the time slot (PSI5)/channel (SENT) the serial message shall be queued in. |
+| messageId | Specifies the ID of the serial message. If useLongMessageId is set to TRUE, the message ID is 8 bits long. Otherwise the message ID is 4 bits long. |
+| useLongMessageId | If set to TRUE, the message will have n 8 bit ID and 12 bits of payload data. If set to FALSE, the message will have a 4 bit ID and 16 bits of payload data. |
+
+## Return Values
+
+This function returns a SensorErrorCode.
+
+## Example
+
+Example PSI5
+
+Example SENT
+
+```c
+// Send serial message with ID 15 (4 bit ID, 16 bit data)
+sensorQueueSerialMessage("SENSOR::PSI5::ExampleChannel::ExampleSensor::ExampleTimeslot", 0x15, 0);
+// Send serial message with ID 15 (4 bit ID, 16 bit data)
+sensorQueueSerialMessage("SENSOR::PSI5::ExampleChannel", 0x15, 0);
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 9.0 SP3 | — | — | — | 2.2 |
+| Restricted To | — | Sensor | — | — | — | Sensor |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | — | — | N/A |

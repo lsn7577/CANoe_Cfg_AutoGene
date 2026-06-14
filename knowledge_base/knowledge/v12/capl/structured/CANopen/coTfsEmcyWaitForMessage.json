@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsEmcyWaitForMessage",
+  "category": "CANopen",
+  "title": "coTfsEmcyWaitForMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsEmcyWaitForMessage.htm",
+  "syntax": [
+    "long coTfsEmcyWaitForMessage( dword timeout );"
+  ],
+  "description": [
+    "This function waits until either a time-out occurs or an emergency message for the selected DUT Device Under Test is received."
+  ],
+  "parameters": [
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "Time-out in ms."
+    }
+  ],
+  "return": "0 = A time-out has occurred\n1 = An emergency message was received",
+  "example": {
+    "description": [],
+    "code": "if ( coTfsEmcyWaitForMessage( 5000 )== 1) {\n  write(\"emergency message received\");\n}\nelse {\n  write(\"time-out occurred\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

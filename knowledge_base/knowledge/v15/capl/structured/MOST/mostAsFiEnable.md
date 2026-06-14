@@ -1,0 +1,42 @@
+# mostAsFiEnable
+
+> Category: `MOST` | Type: `function`
+
+## Syntax
+
+```c
+long mostAsFiEnable(long mode);
+```
+
+## Description
+
+This function allows to temporarily switch the Application Socket Fault Injection on and off.
+
+The Application Socket Fault Injection allows modifications of the behavior of CANoe’s Appliction Socket services.
+
+All AMS Tx messages from any Application Socket service will be passed through OnMostFiAmsPreSend before sending. All AMS Rx messages to any Application Socket service will be passed through OnMostFiAmsPreReceive before receiving. Incoming and outgoing messages can be blocked or modified within these callbacks in order to simulate an imperfect device.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| onoff | 0: disable1: enable |
+
+## Return Values
+
+See error codes
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 7.2 | — | — | — | —✔ |
+| Restricted To | — | MOST25 MOST50 MOST150 | — | — | — | —✔ |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | — |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | —✔ |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | —✔ |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | —✔ |
+| 32-Bit | — | ✔ | — | N/A | — | —✔ |
+| 64-Bit | — | ✔ | — | — | — | —✔ |

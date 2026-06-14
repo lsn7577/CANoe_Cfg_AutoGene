@@ -1,0 +1,69 @@
+{
+  "page_type": "function",
+  "name": "measuredServiceRef",
+  "category": "CommunicationObjects",
+  "title": "measuredServiceRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionMeasuredServiceRef.htm",
+  "syntax": [
+    "measuredServiceRef * <var>"
+  ],
+  "description": [
+    "References a service measurement point, which means measuring a specific connection between consumer and provider for a service."
+  ],
+  "parameters": [
+    {
+      "name": "Service",
+      "type": "",
+      "description": "Service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "measuredServiceRef MirrorAdjustment svc1;\nsvc1 = MirrorAdjustment.measure[CANoe,LeftMirror];"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the measurement endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the measurement endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

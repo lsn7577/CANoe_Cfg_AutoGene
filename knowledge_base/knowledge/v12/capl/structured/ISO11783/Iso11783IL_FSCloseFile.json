@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_FSCloseFile",
+  "category": "ISO11783",
+  "title": "Iso11783IL_FSCloseFile",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILfsclosefile.htm",
+  "syntax": [
+    "long Iso11783IL_FSCloseFile( dword fileHandle );"
+  ],
+  "description": [
+    "This function closes an opened file or directory."
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "Handle of the file or directory, which was opened with Iso11783IL_FSOpenFile"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "// handle references a file\nLONG handle;\nchar data[200];\n\nhandle = Iso11783IL_FSOpenFile( \r\n \"\\test.TXT\", 0x00 );\nif (handle > 0) \r\n {\n  Iso11783IL_FSReadFile( \r\n handle, elCount(data), data );\n Iso11783IL_FSCloseFile( handle );\n}\n// handle references a directory\nLONG dirHandle;\nchar data[200];\n\ndirHandle = Iso11783IL_FSOpenFile( \r\n \"\\dir1\", 0x03 );\nif (dirHandle > \r\n 0) {\n  Iso11783IL_FSReadFile( \r\n dirHandle, (elCount(data)-2)/22, data);\n Iso11783IL_FSCloseFile( dirHandle );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

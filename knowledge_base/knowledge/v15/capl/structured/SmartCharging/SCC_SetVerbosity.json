@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetVerbosity",
+  "category": "SmartCharging",
+  "title": "SCC_SetVerbosity",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_SetVerbosity.htm",
+  "syntax": [
+    "void SCC_SetVerbosity ( dword Level )"
+  ],
+  "description": [
+    "Sets the Verbosity parameter of the DLL. The higher the value is, the more information will be output in the write window."
+  ],
+  "parameters": [
+    {
+      "name": "Selector",
+      "type": "",
+      "description": "Description of return value"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Signals only critical errors."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Signals errors due to erroneous configurations, etc."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Warns, if an unexpected protocol status is reached, and signals missing obligatory callbacks."
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Informs about missing optional callbacks and minor problems."
+    },
+    {
+      "name": ">3",
+      "type": "",
+      "description": "Signals low level events such as setting and expiring of timers."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

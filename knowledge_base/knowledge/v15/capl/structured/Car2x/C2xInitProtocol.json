@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "C2xInitProtocol",
+  "category": "Car2x",
+  "title": "C2xInitProtocol",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xInitProtocol.htm",
+  "syntax": [
+    "long C2xInitProtocol( long packet, char protocolDesignator[] );",
+    "long C2xInitProtocol( long packet, char protocolDesignator[], char packetTypeDesignator[] );"
+  ],
+  "description": [
+    "This function initializes the protocol for a packet. If necessary further needed lower protocols are initialized, e.g. IPv4. Already initialized higher protocols are deleted.",
+    "Protocol fields that are marked as InitProtocol in the protocol overview are initialized."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    },
+    {
+      "name": "protocolDesignator",
+      "type": "",
+      "description": "Name of the protocol, taken from the protocol overview"
+    },
+    {
+      "name": "packetTypeDesignator",
+      "type": "",
+      "description": "Type of the packet, taken from the protocol overview"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long packetHandle;\nchar error[100];\nbyte macAddress[6] = { 0x20, 0x00, 0x00, 0x00, 0x00, 0x01 };\n\n// create packet\npacketHandle = C2xInitPacket(\"wlan\");\n\n// init CNH protocol\nC2xInitProtocol(packetHandle, \"geo_cnh\" );\n\n// set protocol fields\nC2xSetTokenData( packetHandle, \"wlan\", \"address2\", 6, macAddress );\nC2xSetTokenData( packetHandle, \"eth\" , \"source\" , 6, macAddress );\n\n// set CNH values\nC2xSetTokenInt( packetHandle, \"geo_cnh\", \"lpvSpeed\" , 100 );\nC2xSetTokenInt( packetHandle, \"geo_cnh\", \"lpvHeading\" , 1800 );\nC2xSetTokenInt( packetHandle, \"geo_cnh\", \"lpvAltitude\", 0 );\n\n// Complete and send packet\nC2xCompletePacket( packetHandle );\nC2xOutputPacket( packetHandle );\n\n// release packet\nC2xReleasePacket( packetHandle );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.6",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

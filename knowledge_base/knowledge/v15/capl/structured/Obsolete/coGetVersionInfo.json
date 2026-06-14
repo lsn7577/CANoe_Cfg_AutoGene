@@ -1,0 +1,71 @@
+{
+  "page_type": "notes",
+  "name": "coGetVersionInfo",
+  "category": "Obsolete",
+  "title": "coGetVersionInfo",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoGetVersionInfo.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by CANopen Basic Functions."
+      ],
+      [
+        "Function Syntax",
+        "void coGetVersionInfo( char buffer[], dword bufferSize, dword errCode[] );"
+      ],
+      [
+        "Function",
+        "The function returns the current version number of the node layer used."
+      ],
+      [
+        "Parameters",
+        "buffer Buffer for the version number"
+      ],
+      [
+        "buffersize Size of the buffer in bytes"
+      ],
+      [
+        "errCode Error code buffer (is entered in index 0 of the field)"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "6.0-9.0 SP6",
+        "CANopen",
+        "—",
+        "•"
+      ],
+      [
+        "Example dword errCode[1];char buffer[128];coGetVersionInfo( buffer, elCount(buffer), errCode );if (errCode[0] == 0) { write( \"Used Node layer version: %s\", buffer ); }"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

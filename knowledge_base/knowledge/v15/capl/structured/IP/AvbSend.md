@@ -1,0 +1,46 @@
+# AvbSend
+
+> Category: `IP` | Type: `function`
+
+## Syntax
+
+```c
+dword AvbSend(dword talkerHandle, int buffer[], dword& length, char onSendCallback[]); // form 1
+dword AvbSend(dword talkerHandle, long buffer[], dword& length, char onSendCallback[]); // form 2
+dword AvbSend(dword talkerHandle, qword buffer[], dword& length, char onSendCallback[]); // form 3
+dword AvbSend(dword talkerHandle, byte buffer[], dword& length, char onSendCallback[]); // form 4
+```
+
+## Description
+
+The function sends the data passed in the buffer. If the send operation completes immediately the function returns the number of sent elements in the length parameter and the passed CAPL callback OnAvbSend will not be called.
+
+If the send operation does not complete immediately the operation is performed asynchronously and the function will return 460609.
+
+In this case the CAPL callback OnAvbSend will be called on completion (successful or not).
+
+No data should be written to the buffer until the send operation is complete to avoid corruption of the sent data.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| talkerHandle | The Talker handle. |
+| buffer | The buffer containing the data to be sent. |
+| length | The length of the data buffer. |
+| onSendCallback | The name of the CAPL callback function (see OnAvbSend). |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 8.2 SP2: form 1-3 8.5: form 4 | — | — | — | 2.0 SP2 |
+| Restricted To | — | Ethernet | — | — | — | Ethernet |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | — | — | N/A |

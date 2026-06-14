@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetAnnounceMessageCount",
+  "category": "Diagnostics",
+  "title": "DoIP_GetAnnounceMessageCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetAnnounceMessageCount.htm",
+  "syntax": [
+    "dword DoIP_GetAnnounceMessageCount();"
+  ],
+  "description": [
+    "Gets the number of configured Vehicle Announcement Messages to be sent by a vehicle simulation."
+  ],
+  "parameters": [],
+  "return": "The number of configured vehicle announcement messages (configured in the DoIP.INI or via DoIP_ConfigureVehicleAnnouncement).",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "AREthILControlStart",
+  "category": "IP",
+  "title": "AREthILControlStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthILControlStart.htm",
+  "syntax": [
+    "long AREthILControlStart();"
+  ],
+  "description": [
+    "Starts AUTOSAR Eth IL.",
+    "Enabled sending and receiving SOME/IP messages and Service Discovery. After the start of AUTOSAR Eth IL, all Application Endpoints and the Provided Services must be created.",
+    "AUTOSAR Eth IL can be stopped using the AREthILControlStop function."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  // start IL manually\n  AREthILControlStart();\n\n  // add application endpoints and provided services here\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

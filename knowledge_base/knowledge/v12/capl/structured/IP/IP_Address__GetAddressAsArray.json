@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "IP_Address::GetAddressAsArray",
+  "category": "IP",
+  "title": "IP_Address::GetAddressAsArray",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionGetAddressAsArray.htm",
+  "syntax": [
+    "long IP_Address::GetAddressAsArray(byte ipAddr[]); // form 1"
+  ],
+  "description": [
+    "Copies the current IP address to the byte array whereas the byte array's size needs to fit the current IP address value."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Address FC00::0001 addr;\n  byte addrData[16];\n\n  if(addr.SetAddressAsArray( addrData ) == 0)\n  {\n    // do something with addrData\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

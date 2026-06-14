@@ -1,0 +1,20 @@
+{
+  "page_type": "concept",
+  "name": "Scheduling an ARINC Word (A429)",
+  "category": "A429",
+  "title": "Scheduling an ARINC Word (A429)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/CAPLfunctionsA429Scheduling.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables {\n  a429Word LBL_103 myWord = {msgChannel = 1};\n}\non start {\n  myWord.SSM_103 = 3;\n  output (myWord); // start scheduling\n}\non key '+' {\n  myWord.SelAirspeed.phys += 22.5;\n  output(myWord); // update\n}\non key '-' {\n  myWord.SelAirspeed.phys -= 22.5;\n  output(myWord); // update\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

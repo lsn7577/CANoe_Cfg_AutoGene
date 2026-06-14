@@ -1,0 +1,38 @@
+{
+  "page_type": "event",
+  "name": "on SOMEIP_EventGroupUnsubscribed",
+  "category": "CommunicationObjects",
+  "title": "on SOMEIP_EventGroupUnsubscribed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnSOMEIPEventGroupUnsubscribed.htm",
+  "syntax": [
+    "On SOMEIP_EventGroupUnsubscribed <EventGroup>"
+  ],
+  "description": [
+    "The event procedure is called at the provider when an event group is unsubscribed by a consumer and SOME/IP binding is used."
+  ],
+  "parameters": [
+    {
+      "name": "<EventGroup>",
+      "type": "",
+      "description": "Designates the event group on which the event procedure shall react. This must be a provider endpoint."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on SOMEIP_EventGroupUnsubscribed MirrorAdjustment[LeftMirror].AllEvents\n{\n  write(\"Event group unsubscribed by %s\", this.consumer.Name);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "serviceConsumerRef *",
+      "link": "../Objects/CAPLfunctionServiceConsumerRef.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

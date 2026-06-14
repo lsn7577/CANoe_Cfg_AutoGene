@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "vFlashUnloadProject",
+  "category": "Diagnostics",
+  "title": "vFlashUnloadProject",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagvFlashUnloadProject.htm",
+  "syntax": [
+    "void vFlashUnloadProject();"
+  ],
+  "description": [
+    "Unloads the current vFlash project. The CAPL callback vFlashUnloadProjectCompleted will be called when the unloading completed and further API calls are possible.",
+    "Note: This event-driven API is only needed outside of test modules or test units."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "  // ...\n  vFlashUnloadProject();\n}\n\nvoid vFlashUnloadProjectCompleted(enum vFlashStatusCode statusCode)\n{\n  write(\"Unloading project completed, another project can be loaded.\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

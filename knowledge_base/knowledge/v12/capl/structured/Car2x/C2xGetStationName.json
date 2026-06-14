@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetStationName",
+  "category": "Car2x",
+  "title": "C2xGetStationName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetStationName.htm",
+  "syntax": [
+    "long C2xGetStationName(long stationHandle, long length, char name[]);"
+  ],
+  "description": [
+    "Get the name assigned to the ITS Station in the StationManager."
+  ],
+  "parameters": [
+    {
+      "name": "stationHandle",
+      "type": "",
+      "description": "Handle of the ITS station."
+    }
+  ],
+  "return": "0 or error code.",
+  "example": {
+    "description": [],
+    "code": "char   stationName[1024];\nlong   stationHdl ;\n\nstationHdl = C2xGetStationHandle(packet) ;\nif (C2xGetStationName(stationHdl, elcount(stationName), stationName) == 0)\n{\n  write(\"Station: %s\", stationName) ;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

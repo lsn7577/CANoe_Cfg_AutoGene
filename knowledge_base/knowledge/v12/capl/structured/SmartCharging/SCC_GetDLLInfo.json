@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetDLLInfo",
+  "category": "SmartCharging",
+  "title": "SCC_GetDLLInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetDLLInfo.htm",
+  "syntax": [
+    "dword SCC_GetDLLInfo ( dword selector )"
+  ],
+  "description": [
+    "This function returns additional information to the DLL."
+  ],
+  "parameters": [
+    {
+      "name": "selector",
+      "type": "",
+      "description": "Selects the desired return value (see below)."
+    }
+  ],
+  "return": "Selector\nDescription of return value\n0\nThe file version of the DLL in BCD format, e.g., 0x010203 for V1.2.3\n1\nThe main version of the DLL\n2\nThe subversion of the DLL\n3\nThe build number of the DLL",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

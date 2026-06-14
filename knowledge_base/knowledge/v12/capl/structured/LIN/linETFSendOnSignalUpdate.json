@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linETFSendOnSignalUpdate",
+  "category": "LIN",
+  "title": "linETFSendOnSignalUpdate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINETFSendOnSignalUpdate.htm",
+  "syntax": [
+    "long linETFSendOnSignalUpdate(long etfId, long active)"
+  ],
+  "description": [
+    "With this function it is possible to activate/deactivate the automatic responses on a certain event-triggered frame request in the case of a signal update on its associated frame(s). This concerns all Slave tasks publishing the responses to the specified event-triggered frame."
+  ],
+  "parameters": [
+    {
+      "name": "etfId",
+      "type": "",
+      "description": "Identifier of event-triggered frame."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

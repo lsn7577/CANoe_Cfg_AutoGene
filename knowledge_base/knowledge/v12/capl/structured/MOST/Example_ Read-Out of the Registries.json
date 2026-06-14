@@ -1,0 +1,22 @@
+{
+  "page_type": "notes",
+  "name": "Example: Read-Out of the Registries",
+  "category": "MOST",
+  "title": "Example: Read-Out of the Registries",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTExampleReadOutRegistries.htm",
+  "syntax": [],
+  "description": [
+    "In the following example whenever a registry changes its contents are output to the Write Window.",
+    "OnMostAsRegistry(long regsel){ long size, i; long rxtxlog, fblockid, instid; // display registry type if(regsel == 1) write(\"Local Registry:\"); else if(regsel == 2) write(\"Bus Registry:\"); // get registry size size = mostAsRgGetSize(regsel); // print the whole registry write(\"Adr FBlock InstID\"); for(i = 0; i < size; ++i) { rxtxlog = mostAsRgGetRxTxLog(regsel,i); fblockid = mostAsRgGetFBlockID(regsel,i); instid = mostAsRgGetInstID(regsel,i); write(\"%04X %02X %02X\", rxtxlog, fblockid, instid); }}Bus Registry:Adr FBlock InstID0100 02 000100 04 010100 C0 010101 C1 010101 C5 01"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeSetConfiguration",
+  "category": "Test",
+  "title": "testWaitScopeSetConfiguration",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctiontestWaitScopeSetConfiguration.htm",
+  "syntax": [
+    "long testWaitScopeSetConfiguration (char deviceName[], char configurationName[]);"
+  ],
+  "description": [
+    "Configures the appropriate oscilloscope with the specified configuration.",
+    "Hint: The possible device names and configurations names can be requested with the function testWaitScopeGetConfigurationInformation"
+  ],
+  "parameters": [
+    {
+      "name": "deviceName",
+      "type": "",
+      "description": "The name of the scope device."
+    }
+  ],
+  "return": "1 - Successful",
+  "example": {
+    "description": [],
+    "code": "void SetScopeConfiguration()\n{\n  long res;\n\n  res = testWaitScopeSetConfiguration(“Scope_1”, “MyConfiguration”);\n\n  if (res != 1)\n  {\n    testStepFail(\"SetConfiguration\",\"Set configuration MyConfiguration of Scope_1 was not possible. Result = %d\", res);\n  }\n\n  else\n\n  {\n    testStepPass(\"SetConfiguration\", \"Configuration of Scope_1 is set to MyConfiguration”);\n  }\n\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

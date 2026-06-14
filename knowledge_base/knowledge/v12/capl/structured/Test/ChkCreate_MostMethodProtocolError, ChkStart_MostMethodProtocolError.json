@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_MostMethodProtocolError, ChkStart_MostMethodProtocolError",
+  "category": "Test",
+  "title": "ChkCreate_MostMethodProtocolError, ChkStart_MostMethodProtocolError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateMostMethodProtocolError.htm",
+  "syntax": [
+    "dword ChkCreate_MostMethodProtocolError(char aMethod[], long aInstanceID, dword aTimeoutWaitForProcessing1, dword aTimeoutWaitForProcessing2, dword aTimeoutMaxDuration, Callback aCallback);"
+  ],
+  "description": [
+    "This check monitors MOST protocol compliance for a given method supporting the optypes \"StartResult\" or \"StartResultAck\". This includes monitoring of the messages sequences and timeout conditions on answer times and send intervals.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMethod",
+      "type": "",
+      "description": "Name of the method to be monitored in one of the following formats:"
+    }
+  ],
+  "return": "0: Check could not be created and must not be referenced",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

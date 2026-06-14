@@ -1,0 +1,25 @@
+{
+  "page_type": "selector",
+  "name": "Example: Selector DLC (data length code)",
+  "category": "CAN",
+  "title": "Example: Selector DLC (data length code)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Selectors/CAPLSelectorDLC.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [
+    {
+      "name": "Example Selector DLC (data length code)",
+      "description": [],
+      "code": "on message OneByteMessage {\n  if (this.DLC != 1) {\n    write(\"error: OneByteMessage has DLC != 1\");\n    stop();\n  }\n}"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,45 @@
+# TestReportAddExtendedInfo
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+TestReportAddExtendedInfo (char type[], char text[], ...);
+```
+
+## Description
+
+With this function, it is possible to take over information into the protocol that is not subject to processing by CANoe. This way, for example, any HTML code can be copied directly into the protocol. A corresponding type specification specifies the type of information (e.g. HTML).
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| html | HTML code |
+| text | Plain text without formatting instructions |
+| other | other Text, taken over into the XML report, but not shown in the HTML report. |
+| text | Info text to be written into the report. The text can optionally contain values that are given as additional parameters. For that the corresponding format string can be inserted into the text and corresponding values are added to the parameter list. The format strings have the same meaning as with the write function and are described there. Example TestReportAddExtendedInfo("text", "Output voltage = %d volts)", voltage); To obtain line breaks in CANoe Test Report Viewer or in HTML test report, "\n" may be inserted at any place. In case of XML/HTML format, the required replacement takes place during the transformation of the XML test report into an HTML file by means of an XSLT style sheet, where it can also be deactivated (see Test:Tips & Tricks). |
+
+## Return Values
+
+—
+
+## Example
+
+See example: TestReportAdd* Functions
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.0 | 13.0 | — | 14 | 1.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | — | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | ✔ | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | ✔ | N/A |
+| 64-Bit | — | ✔ | ✔ | — | ✔ | N/A |

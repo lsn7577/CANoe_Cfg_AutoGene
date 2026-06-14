@@ -1,0 +1,90 @@
+{
+  "page_type": "function",
+  "name": "measuredMethodRef",
+  "category": "CommunicationObjects",
+  "title": "measuredMethodRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionMeasuredMethodRef.htm",
+  "syntax": [
+    "measuredMethodRef * <var>"
+  ],
+  "description": [
+    "References a method measurement point, which means measuring a specific connection between consumer and provider for a service function."
+  ],
+  "parameters": [
+    {
+      "name": "Method",
+      "type": "",
+      "description": "Method, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "measuredMethodRef MirrorAdjustment.Adjust method;\nmethod = MirrorAdjustment.measure[CANoe,LeftMirror].Adjust;\nwrite(\"Latest x: %d\", method.LatestCall.x);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the measurement endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the measurement endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "measuredService The measurement point at the service.",
+        "measuredServiceRef *",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "LatestCall Information about the latest call measured at this point.",
+        "struct",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "LatestReturn Information about the latest return measured at this point.",
+        "struct",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

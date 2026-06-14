@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coOnConfigReady",
+  "category": "Obsolete",
+  "title": "coOnConfigReady",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOnConfigReady.htm",
+  "syntax": [
+    "void coOnConfigReady( dword event, dword nodeId );"
+  ],
+  "description": [
+    "During the start, a simulated node as configuration manager can supply other nodes on the network with configuration data. This data is then transmitted via SDO by the simulated configuration manager. The function informs the user about the current state of the configuration process."
+  ],
+  "parameters": [
+    {
+      "name": "event",
+      "type": "",
+      "description": "Event type"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnConfigReady( \r\n dword event, dword nodeId ){\n\n  dword \r\n errCode[1];\n\n  switch \r\n (event) {\n    case \r\n 0:\n      write( \r\n \"Configuration management started\" );\n      break;\n    case \r\n 1:\n      write( \r\n \"Wait for start\" );\n      break;\n    case \r\n 2:\n      write( \r\n \"All mandatory nodes configured\" );\n      break;\n    case \r\n 3:\n      if \r\n (nodeId) {\n        write( \r\n \"Node %d configured\", nodeId );\n      }\n      else \r\n {\n        write( \r\n \"All nodes configured\" );\n      }\n      break;\n    case \r\n 4:\n      write( \r\n \"Software update state reached\" );\n      coAllowStart(errCode); \r\n    // go on with boot process by default\n      break;\n    case 5: \n      write( \"Output level set differing from default\" );\n      break;\n    case 6:\n      write( \"Mandatory node fails error control - NMT reset all nodes transmitted\" );\n      break;\n    case 7:\n      write( \"Mandatory node fails error control - NMT stop all nodes transmitted\" );\n      break;\n  };\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

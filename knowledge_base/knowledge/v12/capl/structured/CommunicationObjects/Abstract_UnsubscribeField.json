@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_UnsubscribeField",
+  "category": "CommunicationObjects",
+  "title": "Abstract_UnsubscribeField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractUnsubscribeField.htm",
+  "syntax": [
+    "long Abstract_UnsubscribeField(consumedFieldRef * field)"
+  ],
+  "description": [
+    "Unsubscribes for a service field if abstract binding is used. Note that this is more low-level; usually its more convenient to call consumedFieldRef::AbstractReleaseField on the field."
+  ],
+  "parameters": [
+    {
+      "name": "field",
+      "type": "",
+      "description": "Field which shall be unsubscribed."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "Abstract_UnsubscribeField(MirrorAdjustment.consumerSide[0,0].CurrentPosition);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

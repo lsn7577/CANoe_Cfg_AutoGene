@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "TxChipErrorCount",
+  "category": "CAN",
+  "title": "TxChipErrorCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionTxChipErrorCount.htm",
+  "syntax": [
+    "long TxChipErrorCount ()",
+    "CANx.TxChipErrorCount"
+  ],
+  "description": [
+    "Returns the current number of Tx errors in the CAN receiver of channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Current number of errors in the CAN receiver of channel x.",
+  "example": {
+    "description": [],
+    "code": "write (\"Number of Tx errors in receiver of CAN1 = %d\", CAN1.TxChipErrorCount);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

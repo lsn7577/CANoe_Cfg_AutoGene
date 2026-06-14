@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressSetTriggerRange",
+  "category": "CANstress",
+  "title": "CANstressSetTriggerRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressSetTriggerRange.htm",
+  "syntax": [
+    "void CANstressSetTriggerRange (dword fromId, dword toId);"
+  ],
+  "description": [
+    "Sets a range for message IDs, which will activate triggers. Both simple and extended CAN message IDs can be specified. However, the corresponding mode must be set in the basic configuration!"
+  ],
+  "parameters": [
+    {
+      "name": "fromId",
+      "type": "",
+      "description": "Sets the lower limit of the trigger range."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestResetSignalValue",
+  "category": "Test",
+  "title": "TestResetSignalValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestResetSignalValue.htm",
+  "syntax": [
+    "long TestResetSignalValue (Signal aSignal); // form 1"
+  ],
+  "description": [
+    "Resets the signal to initial value. The sending depends on the message send typ.",
+    "The reset-function does not contain a waiting time which guarantees that the signal is sent out on the bus. If a waiting time is desired, the TestWaitForTimeout function has additionally been executed."
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "Signal that should be reset."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": "// check reaction of signal “LockState” after crash\n$CrashDetected = 1;\nTestWaitForTimeout(100);\nif ($LockState !=  Unlocked)\n    TestStepFail(“Doors are locked after crash is detected!”);\n\n// reset test signals\nTestResetSignalValue(CrashDetected);\nTestResetSignalValue(LockState);\nTestWaitForTimeout(200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

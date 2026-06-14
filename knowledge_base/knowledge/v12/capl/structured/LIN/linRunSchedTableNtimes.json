@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linRunSchedTableNtimes",
+  "category": "LIN",
+  "title": "linRunSchedTableNtimes",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINRunSchedTableNtimes.htm",
+  "syntax": [
+    "long linRunSchedTableNtimes (dword tableIndex, dword numberOfRepetitions, dword onSlotIndex, dword returnToTableIndex);"
+  ],
+  "description": [
+    "Switches from the current schedule table to another one, runs the table n times and returns to the initial table or to a different table.",
+    "This function only works with LIN core network interfaces."
+  ],
+  "parameters": [
+    {
+      "name": "tableIndex",
+      "type": "",
+      "description": "Index of the schedule table to be changed to."
+    }
+  ],
+  "return": "Index of the current schedule table or -1 if no active schedule table exists and on failure.",
+  "example": {
+    "description": [],
+    "code": "// on pressing key ‘c’ change to schedule table with index 1, run it 2 times and return to the previous table\n...\non key 'c'\n{\n  linRunSchedTableNTimes (1, 2, -2, -1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

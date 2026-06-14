@@ -1,0 +1,31 @@
+# coODUploadResponse
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+The function is only available in the event functions (callbacks).
+
+If more than 4 byes should be transmitted (size > 4) or if the available data exceeds the transfer size (size > dataSize), then the data from value and data are copied to the beginning and the remaining data is filled with zeroes.
+
+See Also
+
+| Deprecated Function Replaced by CANopen Basic Functions. |  |  |  |  |
+|---|---|---|---|---|
+| Note The function is only available in the event functions (callbacks). If more than 4 byes should be transmitted (size > 4) or if the available data exceeds the transfer size (size > dataSize), then the data from value and data are copied to the beginning and the remaining data is filled with zeroes. |  |  |  |  |
+| Function Syntax | void coODUploadResponse( dword size, dword value, dword errCode[] ); |  |  |  |
+| void coODUploadResponse( dword size, char data[], dword dataSize, dword errCode[] ); |  |  |  |  |
+| void coODUploadResponse( dword size, byte data[], dword dataSize, dword errCode[] ); |  |  |  |  |
+| Function | The function confirms a SDO upload transfer, which was initiated on an object with access type 7. It can be used, e.g. in the event function coOnUploadIndication. If the transfer should be aborted, then coODAbortTransfer must be used. |  |  |  |
+| Parameters | size Transfer size, value range 0..4.294.967.295 |  |  |  |
+| value Value of the object |  |  |  |  |
+| data Data of the object |  |  |  |  |
+| dataSize Number of data bytes |  |  |  |  |
+| errCode Error code buffer (is entered in index 0 of the field) |  |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 6.0-9.0 SP6 | CANopen | — | • |  |
+| Example void coOnUploadIndication (dword index, dword subIndex){ dword errCode[1]; if (index == 0x2000) {coODUploadResponse( 2, 0x1234, errCode ); if (errCode[0] == 0) { write("SDO upload successfully confirmed"); } }} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

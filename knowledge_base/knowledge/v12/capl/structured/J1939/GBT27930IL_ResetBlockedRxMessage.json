@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_ResetBlockedRxMessage",
+  "category": "J1939",
+  "title": "GBT27930IL_ResetBlockedRxMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILResetBlockedRxMessage.htm",
+  "syntax": [
+    "long GBT27930IL_ResetBlockedRxMessage(dword pgn, dword sourceAddress, qword filterMask, qword filterValue); // form 1"
+  ],
+  "description": [
+    "Resets the change of a single GBT27930IL_BlockRxMessage call. The message to unblock is specified by PGN, source address and a part of the first eight data bytes."
+  ],
+  "parameters": [
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "Use same value as in GBT27930IL_BlockRxMessage to stop blocking the message."
+    }
+  ],
+  "return": "0: Blocking has been stopped successfully",
+  "example": {
+    "description": [],
+    "code": "—"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

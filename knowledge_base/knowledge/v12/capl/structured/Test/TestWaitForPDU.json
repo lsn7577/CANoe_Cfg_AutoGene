@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForPDU",
+  "category": "Test",
+  "title": "TestWaitForPDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForPDU.htm",
+  "syntax": [
+    "long TestWaitForPDU (dbPDU aPDU, dword flags1, dword aTimeout); // form 1"
+  ],
+  "description": [
+    "Waits for the occurrence of the specified PDU. Should the PDU not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "When no PDU is specified the wait condition is resolved on any PDU.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called."
+  ],
+  "parameters": [
+    {
+      "name": "aPDU",
+      "type": "",
+      "description": "PDU to be awaited as it is defined in the database."
+    }
+  ],
+  "return": "-6: Parse error, PDU is specified as string, but the name cannot be resolved or the PDU header ID cannot be found.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

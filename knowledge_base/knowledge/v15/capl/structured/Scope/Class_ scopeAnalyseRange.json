@@ -1,0 +1,62 @@
+{
+  "page_type": "notes",
+  "name": "Class: scopeAnalyseRange",
+  "category": "Scope",
+  "title": "Class: scopeAnalyseRange",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Scope/Classes/CAPLfunctionScopeAnalyseRange.htm",
+  "syntax": [],
+  "description": [
+    "This structure defines the analysis range for e.g. a transition time measurement.",
+    "—",
+    "testWaitScopePerformSignalTransitionTime"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Keyword",
+        "Description",
+        "Type",
+        "Access Limitations"
+      ],
+      [
+        "StartField",
+        "The start field of the area. See ScopeBitAnalyse.cin",
+        "long",
+        "Read/Write"
+      ],
+      [
+        "StartFieldBit",
+        "The bit number within the start field (starts with 0)",
+        "long",
+        "Read/Write"
+      ],
+      [
+        "EndField",
+        "The end field of the area.",
+        "long",
+        "Read/Write"
+      ],
+      [
+        "EndFieldBite",
+        "The bit number within the end field (starts with 0)",
+        "long",
+        "Read/Write"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

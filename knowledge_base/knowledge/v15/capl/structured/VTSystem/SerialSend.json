@@ -1,0 +1,135 @@
+{
+  "page_type": "method",
+  "name": "SerialSend",
+  "category": "VTSystem",
+  "title": "SerialSend",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSSerialSend.htm",
+  "syntax": [
+    "long SysVarNamespace.SerialSend( byte buffer[], dword number);"
+  ],
+  "description": [
+    "Sends a block of bytes to the serial port of the specified VT7001 channel"
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "An array of bytes that contains the data to be sent."
+    },
+    {
+      "name": "number",
+      "type": "",
+      "description": "Number of bytes to send from the buffer. Number must have a value > 0 and < 65."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "See example SerialConfigure"
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.2 SP3",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

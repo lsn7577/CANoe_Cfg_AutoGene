@@ -1,0 +1,133 @@
+{
+  "page_type": "event",
+  "name": "on linCsError",
+  "category": "LIN",
+  "title": "on linCsError",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/EventProcedures/CAPLfunctionOnLINCsError.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure on linCsError is called when a frame was transmitted without a failure, but with an incorrect checksum.",
+    "The keyword this and the selectors can be used to access the data of the event that has just been received."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [
+      "Simulate checksum error and check how it is handled."
+    ],
+    "code": "on key 'c'\n{\nint index;\nbyte checksum;\nlinFrame MotorControl frmMotorControl;\n   // set data byte values and calculate resulting checksum\n   for (index=0; index < frmMotorControl.DLC; ++index)\n{\nfrmMotorControl.byte(index) = 0xFF;\n}\n   // Set permanent CS error for the current frame\n   linSetChecksumError(frmMotorControl.id, \r\n 1);\n   // update response data\n   frmMotorControl.RTR=0;\noutput(frmMotorControl);  \n   // apply frame's header on the bus\n   frmMotorControl.RTR=1;\noutput(frmMotorControl);\n}\n...\non linCsError\n{\nint index;\nlinFrame MotorControl frmMotorControl;\n// compare correct checksum and the received one\n   if (this.ID == frmMotorControl.ID)\n{\n// set data byte values and calculate correct checksum\n      for (index=0; index < frmMotorControl.DLC; ++index)\n{\nfrmMotorControl.byte(index) = this.byte(index);\n}\n      WriteLineEx(0,0,\"received \r\n checksum=%d\", getChecksum(this));\n      WriteLineEx(0,0,\"correct checksum=%d\", getChecksum(frmMotorControl));\n}\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.0",
+      "5.0",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "LIN",
+      "LIN",
+      "LIN",
+      "—",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "linCsError"
+      ]
+    },
+    {
+      "name": "linCsError",
+      "link": "../Selectors/CAPLfunctionLINCSError.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

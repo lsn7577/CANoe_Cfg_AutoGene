@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxRemoveToken",
+  "category": "ADFX",
+  "title": "AfdxRemoveToken",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxRemoveToken.htm",
+  "syntax": [
+    "long AfdxRemoveToken( long packet, char protocolDesignator[], char tokenDesignator[] );"
+  ],
+  "description": [
+    "This function removes a token from a protocol header"
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

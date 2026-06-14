@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ConvertString",
+  "category": "Other",
+  "title": "ConvertString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionConvertString.htm",
+  "syntax": [
+    "long ConvertString(byte output[], long& encodedSize, long maxOutputSize, dword outputCodepage, byte input[], long inputSize, dword inputCodepage);"
+  ],
+  "description": [
+    "Converts a string from one encoding to another encoding. The length of the converted string depends on the requested encoding. The number of bytes used in the output byte array is written to encodedSize. If the size of the output array maxOutputSize is not sufficient to hold the converted string and a terminating “\\0”, the function returns an error and the content of output is undefined. Characters that cannot be represented in the requested encoding, are replaced with the best matching character, selected by the Windows function WideCharToMultiByte."
+  ],
+  "parameters": [
+    {
+      "name": "output",
+      "type": "",
+      "description": "Target byte array."
+    }
+  ],
+  "return": "0: Success, the byte array output and the resulting length encodedSize are valid.",
+  "example": {
+    "description": [],
+    "code": "// Convert a system variable string value (e.g. input from a panel) into UTF-16 and vice versa\nincludes\n{\n  #include \"Encoding.cin\"\n}\n\n// handle input of a string, e.g. from a panel\non sysvar TestVars::StringSV\n{\n  byte data[100]; long nrOfBytes; byte data2[200]; long res;\n  // get the string in UTF-8\n  sysGetVariableData(sysvar::TestVars::StringSV, data, nrOfBytes);\n  // convert it to UTF-16\n  res = ConvertString(data2, nrOfBytes, elcount(data2), CP_UTF16, data, nrOfBytes, CP_UTF8);\n  // now use the UTF-16 bytes, e.g. send them over a network\n  // here simulated by using a system variable of type data\n  sysSetVariableData(sysvar::TestVars::DataVar, data2, nrOfBytes);\n}\n\n// receive UTF-16 data, e.g. from a network\n// here simulated by using a system variable of type data\non sysvar TestVars::DataVar\n{\n  byte data[200]; long nrOfBytes; byte data2[100]; long res;\n  sysGetVariableData(sysvar::TestVars::DataVar, data, nrOfBytes);\n  // data is the string in UTF-16; convert it to UTF-8\n  res = ConvertString(data2, nrOfBytes, elcount(bytes), CP_UTF8, data, nrOfBytes, CP_UTF16);\n  // copy the string into a system variable of type string, e.g. to display it in a panel\n  sysSetVariableData(sysvar::TestVars::OutStringVar, data2, nrOfBytes);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

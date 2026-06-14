@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coLssIdentRemoteSlave",
+  "category": "Obsolete",
+  "title": "coLssIdentRemoteSlave",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssIdentRemoteSlave.htm",
+  "syntax": [
+    "void coLssIdentRemoteSlave( dword vendorId, dword productCode, dword revisionNoLow, dword revisionNoHigh, dword serialNoLow, dword serialNoHigh, dword errCode[] );"
+  ],
+  "description": [
+    "With this service the LSS master commands all LSS slaves whose LSS address matches the transmitted LSS address parameters to identify themselves."
+  ],
+  "parameters": [
+    {
+      "name": "vendorId",
+      "type": "",
+      "description": "Vendor-ID"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\n/* get values from environment variables */\ndword vendorId = getValue(envVendorId);\ndword productCode = getValue(envProductCode);\ndword revNoLow = getValue(envRevNoLow);\ndword revNoHigh = getValue(envRevNoHigh);\ndword serialNoLow = getValue(envSerialNoLow);\ndword serialNoHigh = getValue(envSerialNoHigh);\n\ncoLssIdentRemoteSlave( vendorId, productCode, revNoLow, revNoHigh, serialNoLow, serialNoHigh );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

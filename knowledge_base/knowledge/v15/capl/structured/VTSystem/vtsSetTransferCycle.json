@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "vtsSetTransferCycle",
+  "category": "VTSystem",
+  "title": "vtsSetTransferCycle",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetTransferCycle.htm",
+  "syntax": [
+    "long vtsSetTransferCycle (char Target[], double CycleTime);"
+  ],
+  "description": [
+    "Sets the cycle time for retrieving the measured value of a system variable from the VT System and writing it to the corresponding system variable."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    },
+    {
+      "name": "CycleTime",
+      "type": "",
+      "description": "Defines the cycle time in seconds.The only available cycle times are 1 ms (= 0,001), 2 ms, 5 ms, 10 ms, 20 ms, 50 ms, 100 ms, 200 ms, 500 ms, 1 s, 2 s, 5 s and 10 s. Please note that not all cycle times are available for all measurement values. See possible settings in the VT System configuration dialog.If an invalid cycle time is specified, the call will fail with a feedback value of -1."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following example demonstrates how to change the transfer cycle of a VT System system variable during the measurement. Here the transfer cycle is reduced to 1 ms while the function waits for the input signal to change. This allows for a fast reaction. After the event has occurred the transfer cycle is set back to 100 ms."
+    ],
+    "code": "testfunction WaitForECUSignalChange ()\n{\n   // Change transfer cycle to 1ms to allow fast reaction\n   vtsSetTransferCycle(\"VTS::ECU_Dout_1::CurBit\", 0.001);\n\n   // Wait for digital ECU output to rise\n   while(1)\n   {\n      if(@sysvar::VTS::ECU_Dout_1::CurBit == 1) break;\n      TestWaitForTimeOut(1);\n   }\n\n   // Change transfer cycle back to 100ms\n   vtsSetTransferCycle(\"VTS::ECU_Dout_1::CurBit\", 0.1);\n}\npublic void WaitForECUSignalChange()\n   {\n      // Get VTS interface and digital input channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT2516Channel ecuDOut1 = vts.GetChannel(\"ECU_Dout_1\") as IVT2516Channel;\n\n      // Change transfer cycle to 1ms to allow fast reaction\n      ecuDOut1.CurBit.TransferCycle = 0.001;\n\n      // Wait for digital ECU output to change\n      bool initialValue = ecuDOut1.CurBit.Value;\n      while (ecuDOut1.CurBit.Value == initialValue)\n         Vector.CANoe.Threading.Execution.Wait(1);\n\n      // Change transfer cycle back to 100ms\n      ecuDOut1.CurBit.TransferCycle = 0.1;\n   }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.5 SP2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

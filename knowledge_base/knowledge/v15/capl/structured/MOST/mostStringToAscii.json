@@ -1,0 +1,146 @@
+{
+  "page_type": "function",
+  "name": "mostStringToAscii",
+  "category": "MOST",
+  "title": "mostStringToAscii",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTStringToAscii.htm",
+  "syntax": [
+    "long mostStringToAscii(byte sourceData[], long sourceDatalen, char buffer[], long buffersize);"
+  ],
+  "description": [
+    "Convert MOST string to ASCII string. Unsupported characters in the input data are ignored."
+  ],
+  "parameters": [
+    {
+      "name": "sourceData",
+      "type": "",
+      "description": "A buffer containing the MOST string to be decoded."
+    },
+    {
+      "name": "sourceDataLen",
+      "type": "",
+      "description": "The size of the buffer containing the MOST string."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer to which the ASCII string is copied."
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Maximum number of copied ASCII string bytes (can be specified with (elcount(buffer)))."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Output:",
+      "ASCII: abc"
+    ],
+    "code": "byte data[9] = {0x00,0x00,0x61,0x00,0x62,0x00,0x63,0x00,0x00);\nchar buffer[200];\nif(0 < mostStringToAscii(data, elcount(data), buffer, elcount(buffer)))\n  write(\"ASCII: %s\", buffer);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.2",
+      "7.2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST50 MOST150",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

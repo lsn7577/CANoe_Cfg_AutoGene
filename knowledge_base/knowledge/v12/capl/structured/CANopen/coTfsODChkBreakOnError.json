@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsODChkBreakOnError",
+  "category": "CANopen",
+  "title": "coTfsODChkBreakOnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdChkBreakOnError.htm",
+  "syntax": [
+    "long coTfsODChkBreakOnError( dword enable );"
+  ],
+  "description": [
+    "The function controls the behavior of the test module while executing coTfsODChk and coTfsODChkNotExist. It can called before the two test sequences and define the behavior in an error case. It can be defined if the tests should stop in an error occurrence to execute the next command (breakOnError=1) or if the error should be ignored (breakOnError=0)."
+  ],
+  "parameters": [
+    {
+      "name": "enable",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsODChkBreakOnError(1); // break on error\ncoTfsOdRunHiddenObjUserTest();"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

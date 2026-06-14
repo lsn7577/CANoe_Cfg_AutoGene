@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMessage",
+  "category": "Test",
+  "title": "TestWaitForMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForMessage.htm",
+  "syntax": [
+    "long TestWaitForMessage(dbMessage aMessage, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of the specified message aMessage. Should the message not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "When no message is specified the wait condition is resolved on any message.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message that should be awaited"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "// waits for the occurrence of message ‚VehicleMotion’\nlong result;\nresult = TestWaitForMessage(VehicleMotion, 2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

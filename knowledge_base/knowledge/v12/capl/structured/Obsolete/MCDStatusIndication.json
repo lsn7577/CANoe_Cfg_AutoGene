@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "MCDStatusIndication",
+  "category": "Obsolete",
+  "title": "MCDStatusIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMCDStatusIndication.htm",
+  "syntax": [
+    "MCDStatusIndication( char moduleName[], long operation, long status)"
+  ],
+  "description": [
+    "Callback handler for different MCD status.",
+    "The function provides the status of successful/ not successful data acquisition starts."
+  ],
+  "parameters": [
+    {
+      "name": "modulName",
+      "type": "",
+      "description": "Module name configured in the global option dialog. External Programs|MCD 3D Server."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

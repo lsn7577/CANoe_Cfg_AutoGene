@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1.0",
+  "id": "plan_project",
+  "phase": "planning",
+  "description": "Convert test_case_ir and evidence into a CANoe project specification.",
+  "reads": [
+    "test_case_ir",
+    "intent_profile",
+    "evidence_bundle"
+  ],
+  "writes": [
+    "project_spec"
+  ],
+  "knowledge_inputs": [
+    {
+      "kind": "schema",
+      "path": "workflow_kb/schemas/canoe_project_spec.schema.json",
+      "required": true
+    }
+  ],
+  "pack_inputs": [
+    "generation_patterns/*/pattern.json"
+  ],
+  "gates": [
+    "project_spec_schema_valid",
+    "artifact_plan_complete",
+    "required_evidence_refs_present"
+  ],
+  "transitions": [
+    {
+      "to": "generate_artifacts",
+      "condition": "project_spec.status == 'planned'"
+    }
+  ],
+  "extension_notes": [
+    "New artifact kinds should be introduced as generation patterns.",
+    "Keep planning separate from file rendering so validation can inspect intent before generation."
+  ]
+}
+

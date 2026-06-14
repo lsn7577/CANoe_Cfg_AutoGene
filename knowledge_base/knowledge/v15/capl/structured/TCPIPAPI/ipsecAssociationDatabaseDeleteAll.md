@@ -1,0 +1,65 @@
+# ipsecAssociationDatabaseDeleteAll
+
+> Category: `TCPIPAPI` | Type: `function`
+
+## Syntax
+
+```c
+long ipsecAssociationDatabaseDeleteAll(IP_Endpoint source, IP_Endpoint destination, char[] protocol, char[] mode);
+```
+
+## Description
+
+With this function it is possible to manually delete all security associations independent of their spi from the security association database of the current network stack.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| source | Source endpoint of the security association. |
+| destination | Destination endpoint of the security association. |
+| UNSPEC | 0 |
+| ESP | 1 |
+| AH | 2 |
+| ANY | 0 |
+| TRANSPORT | 1 |
+| TUNNEL | 2 |
+
+## Example
+
+```c
+on start
+{
+  long association;
+
+  // create and init a security association record
+  association = ipsecAssociationInit(ip_Endpoint(192.168.1.1), ip_Endpoint(192.168.1.10), "ah", "any", 30000);
+
+  // add the security association to the security association database
+  ipsecAssociationDatabaseAdd(association);
+
+  // release the association object when it isn't needed anymore
+  ipsecAssociationRelease(association);
+}
+
+on stopMeasurement
+{
+  // delete the security association from the security association database
+  ipsecAssociationDatabaseDeleteAll(ip_Endpoint(192.168.1.1), ip_Endpoint(192.168.1.10), "ah", "any");
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 12.0 SP3 | — | — | — | 4.0 SP3 |
+| Restricted To | — | Ethernet | — | — | — | Ethernet |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | — | — | N/A |

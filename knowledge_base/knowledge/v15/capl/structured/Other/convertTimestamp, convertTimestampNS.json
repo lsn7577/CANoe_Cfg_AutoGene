@@ -1,0 +1,165 @@
+{
+  "page_type": "function",
+  "name": "convertTimestamp, convertTimestampNS",
+  "category": "Other",
+  "title": "convertTimestamp, convertTimestampNS",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionConvertTimestamp.htm",
+  "syntax": [
+    "void convertTimestamp(dword timestamp, dword& days, byte& hours, byte& minutes, byte& seconds, word& milliSeconds, word& microSeconds); // form 1",
+    "void convertTimestampNS(qword timestamp, dword& days, byte& hours, byte& minutes, byte& seconds, word& milliSeconds, word& microSeconds, word& nanoSeconds); // form 2"
+  ],
+  "description": [
+    "Converts a time stamp to separate parts",
+    "(form 1: maximum time: .2^32 * 10 microseconds = 11 hours, 55 minutes, 49 seconds, 672 milliseconds, 96 microseconds)."
+  ],
+  "parameters": [
+    {
+      "name": "timestamp",
+      "type": "",
+      "description": "time stamp in 10 microseconds (form 1) time stamp in nanoseconds (form 2)"
+    },
+    {
+      "name": "days",
+      "type": "",
+      "description": "Receives the days of the time stamp"
+    },
+    {
+      "name": "hours",
+      "type": "",
+      "description": "Receives the hours the time stamp (between 0 and 23)"
+    },
+    {
+      "name": "minutes",
+      "type": "",
+      "description": "Receives the minutes of the time stamp (between 0 and 59)"
+    },
+    {
+      "name": "seconds",
+      "type": "",
+      "description": "Receives the seconds of the time stamp (between 0 and 59)"
+    },
+    {
+      "name": "milliseconds",
+      "type": "",
+      "description": "Receives the milliseconds of the time stamp (between 0 and 999)"
+    },
+    {
+      "name": "microseconds",
+      "type": "",
+      "description": "Receives the microseconds of the time stamp (between 0 and 999)"
+    },
+    {
+      "name": "nanoseconds (only form 2)",
+      "type": "",
+      "description": "Receives the nanoseconds of the time stamp (between 0 and 999)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on envVar EnvGearUp\n{\n   dword d;\n   byte h, m, s;\n   word ms, us, ns;\n   convertTimestampNS(timeNowNS(), d, h, m, s, ms, us, ns);\n   write(\"Gear up at %d days, %d::%d::%d,%d.%d.%d\", d, h, m, s, ms, us, ns);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5",
+      "7.5",
+      "13.0",
+      "13.0",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

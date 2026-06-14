@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1.0",
+  "id": "core",
+  "name": "Core Excel Intake And Workflow Control",
+  "version": "0.1.0",
+  "status": "active",
+  "owner": "workflow",
+  "domains": ["intake", "validation", "packaging"],
+  "compatible_canoe_versions": ["v12", "v15", "v17", "v18"],
+  "depends_on_packs": [],
+  "files": {
+    "schemas": ["workflow_kb/schemas/test_case_ir.schema.json", "workflow_kb/schemas/validation_report.schema.json"]
+  },
+  "provided_capabilities": [
+    "read Excel test-case template",
+    "group rows into test cases",
+    "emit structured test case JSON",
+    "emit correction items"
+  ]
+}
+

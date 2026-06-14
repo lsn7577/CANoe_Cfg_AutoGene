@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPChangeActiveMask",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPChangeActiveMask",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPChangeActiveMask.htm",
+  "syntax": [
+    "long Iso11783IL_OPChangeActiveMask( dword maskID ); // form 1"
+  ],
+  "description": [
+    "This function changes the active data mask. The Change Active Mask command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "maskID",
+      "type": "",
+      "description": "object ID of the data mask object, which should be activated"
+    }
+  ],
+  "return": "= 0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPChangeActiveMask( 1000 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

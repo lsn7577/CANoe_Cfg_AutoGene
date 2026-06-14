@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "SetMeasurementMode",
+  "category": "VTSystem",
+  "title": "SetMeasurementMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSetMeasurementMode.htm",
+  "syntax": [
+    "long SysVarNamespace.SetMeasurementMode (eVTSMeasurementMode Mode); // VT1004/VT1104"
+  ],
+  "description": [
+    "Controls the internal measuring instrument.",
+    "VT1004/VT1104: It is possible to switch between direct and filtered differential voltage measurement as well as measurement of pin a or b to reference ground (AGND).",
+    "VT2816: For the measurement channels (1-12) it is possible to switch between different voltage measurement modes and the current measurement mode."
+  ],
+  "parameters": [
+    {
+      "name": "Mode",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "This example demonstrates how change the measurement mode of a VT1004 channel. By default the voltage is measured between the two input lines A and B. This example shows how to configure a measurement between input line A and the VT1004 module’s AGND."
+    ],
+    "code": "MeasurementAToAGnd ()\n{\n   // Change measurement mode from differential\n   // to line A against ground (AGND)\n   sysvar::VTS::TempSensor.SetMeasurementMode(eVTSMeasurementModeLineAToGnd);\n\n   // Measure the voltage between line A and AGND\n   write(\"Current voltage: %0.2fV\", @sysvar::VTS::TempSensor::Cur);\n}\npublic void MeasurementAToAGnd()\n   {\n      // Get VTS interface and VT1004 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT1004Channel tempSensor = vts.GetChannel(\"TempSensor\") as IVT1004Channel;\n\n      // Change measurement mode from differential\n      // to line A against ground (AGND)\n      tempSensor.MeasurementMode.Value = MeasurementMode.LineAToGnd;\n\n      // Print measurement results to Write Window\n      Vector.Tools.Output.WriteLine(\"Current voltage: \" + tempSensor.Cur.Value + \"V\");\n   }\n<testcase title=\"MeasurementAToAGnd\" ident=\"\">\n      <vtsystem_configure title=\"Set measurement mode\">\n         <measurement_mode channel=\"VTS::TempSensor\" mode=\"a_only\" />\n      </vtsystem_configure>\n      <valuecomment>\n         <description>Current sensor voltage</description>\n         <sysvar name=\"VTS::TempSensor::Cur\" />\n      </valuecomment>\n   </testcase>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

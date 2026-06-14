@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestJoinDiagResponseFromEcu",
+  "category": "Test",
+  "title": "TestJoinDiagResponseFromEcu",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinDiagResponseFromEcu.htm",
+  "syntax": [
+    "long TestJoinDiagResponseFromEcu()"
+  ],
+  "description": [
+    "Adds an event of type diagnostic response reception to the set of joined events. This is a non-blocking function.",
+    "Please be aware that the tester will only receive responses from the selected ECU target! Therefore if an event for ECU1 is added to the set of joined events, but ECU2 is set as target before the response from ECU1 arrives, the response from ECU1 will NOT be processed, i.e. the wait function does not continue.",
+    "If the test program should continue on the reception of diagnostic responses from several ECUs at the same time, a physical or functional network description has to be the active diagnostic target!"
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "If given, only a response from the indicated ECU will fire the event."
+    }
+  ],
+  "return": "Number of conditions in stock:\n-3: Error while adding the specified event to the set of joined events\n-1: General error, for example, functionality is not available\n>0: Number of the newly joined event",
+  "example": {
+    "description": [],
+    "code": "// waits for a diagnostic response\n// wait is resumed on check event\ndword index = 0;\n\nTestJoinDiagResponseFromEcu();\n// … other join events\nTestJoinEnvVarEvent(MyEnvVar);\nTestJoinSignalInRange(Velocity, 80, 100);\nTestJoinTextEvent(\"ErrorFrame occurred!\");\n\nIndex = TestWaitForAnyJoinedEvent(2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

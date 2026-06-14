@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetServerStatus",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetServerStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetServerStatus.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetServerStatus(dword cycleTime); // form 1"
+  ],
+  "description": [
+    "Forms (1, 3): This function changes the cycle time of the TIM_ServerStatus_Msg message. The content of TIM_ServerStatus_Msg message stays unchanged.",
+    "Forms (2, 4): This function changes the content and cycle time of the TIM_ServerStatus_Msg message."
+  ],
+  "parameters": [
+    {
+      "name": "cycleTime",
+      "type": "",
+      "description": "Cycle time of the TIM_ServerStatus_Msg message [ms] (default: 100)."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

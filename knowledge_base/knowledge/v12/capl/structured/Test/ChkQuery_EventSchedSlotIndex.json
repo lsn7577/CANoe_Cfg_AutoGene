@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventSchedSlotIndex",
+  "category": "Test",
+  "title": "ChkQuery_EventSchedSlotIndex",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventSchedSlotIndex.htm",
+  "syntax": [
+    "long ChkQuery_EventSchedSlotIndex (dword CheckId)",
+    "check.QueryEventSchedSlotIndex()"
+  ],
+  "description": [
+    "Retrieves slot index of a schedule table for which the event has been sent."
+  ],
+  "parameters": [
+    {
+      "name": "CheckId",
+      "type": "",
+      "description": "Identifier of the queried Check."
+    }
+  ],
+  "return": "< 0: Refers the query error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

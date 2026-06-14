@@ -1,0 +1,121 @@
+# CANoe IL CAPL Functions
+
+> Category: `CANoeIL` | Type: `notes`
+
+## Description
+
+Callback Interface
+
+Control
+
+Fault Injection and Disturbance
+
+Functions for Test Setup and Simulation Setup
+
+Maintenance
+
+Message Handling
+
+OEM Package based on Fault Injection Functions
+
+Signal Handling
+
+Various control and disturbance functions are provided for implementing a central control node in the Simulation Setup or tests in the CAPL test module.
+
+CAN or FlexRay Specific Functions for Simulation Setup
+
+CANoe Interaction Layer (CAN) | Return Codes | Test Feature Set CAPL Functions | Functions in the Execution Context
+
+| CANOE IL The following functions are available with the CANoe Interaction Layer (CANoe IL) and included CANoeILNLVector.dll. These CAPL functions are supported by Windows and Linux. The functionality under Linux has not been fully tested yet.Overview of tested functions for Linux. |
+|---|
+
+| Callback Interface Control Fault Injection and Disturbance Functions for Test Setup and Simulation Setup | Maintenance Message Handling OEM Package based on Fault Injection Functions Signal Handling |
+|---|---|
+
+| Functions | Short Description |
+|---|---|
+| applILTxPending | This callback is optionally being called before the IL sends a message to the bus. |
+| applILTxRequestConsumed | After the IL clamp 15 state has been enabled by ILActivateClamp15 or any wake-up-allowed signal is transmitted, then optionally this functions is called. |
+| applILTxRequestPending | If the IL clamp 15 state is being enabled by ILActivateClamp15 or any wake-up-allowed signal is changed, then optionally this functions is called. |
+
+| Functions | Short Description |
+|---|---|
+| ILActivateClamp15 | Forwards the appropriate state of clamp 15. |
+| ILConfigureNMNotifications | Allows manipulating the coupling between IL and NM module. |
+| ILControlInit | Initialization of CANoe IL. |
+| ILControlResume | Cyclical sending restarts. |
+| ILControlSimulationOff | Stops the simulation of the IL. |
+| ILControlSimulationOn | Starts the simulation of the IL. |
+| ILControlStart | Cyclical sending starts; setting signals is now possible. |
+| ILControlStop | Cyclical sending is stopped; setting signals is now no longer possible. |
+| ILControlWait | Cyclical sending is stopped; setting signals is possible. |
+| ILDeactivateClamp15 | Forwards the appropriate state of clamp 15. |
+| ILSetAutoStartParam | Defines the behavior of the interaction layer at measurement start. |
+| ILSetOperationMode | Sets specific operation mode in the interaction layer. |
+
+| Functions | Short Description |
+|---|---|
+| ILFaultInjectionDisableMsg | Prevents all sending of the message except the sending by calling the function ILSetMsgEvent. |
+| ILFaultInjectionEnableMsg | Enables the sending of the message. |
+| ILFaultInjectionResetAllFaultInjections | Reset all fault injection settings. |
+| ILFaultInjectionResetMsgCycleTime | Resets the cycle time of the message to the database cycle time. |
+| ILFaultInjectionResetMsgDlc | Resets the DLC of the message to the database DLC. |
+| ILFaultInjectionResetMsgLength | Resets the message length (in bytes) of the message to the database. |
+| ILFaultInjectionSetMsgCycleTime | Assigns a new cycle time to the message. |
+| ILFaultInjectionSetMsgDlc | Assigns a new DLC to the message. |
+| ILFaultInjectionSetMsgLength | Assigns a new message length (in bytes) to the message. |
+
+| Functions | Short Description |
+|---|---|
+| ILNodeControlMsg | Influences the sending of a certain message of a simulation node with an assigned interaction layer. |
+| ILNodeControlResume | Restarts cyclical sending. |
+| ILNodeControlSimulationOff | Stops the simulation of the interaction layer. |
+| ILNodeControlSimulationOn | Starts the simulation of the interaction layer. |
+| ILNodeControlStart | Starts cyclical sending. Setting of signals is possible again. |
+| ILNodeControlStop | Stops cyclical sending. Setting of signals is not possible anymore. |
+| ILNodeControlWait | Stops cyclical sending. Setting of signals is still possible. |
+| ILNodeDisturbAllNodesUpdateBits | Modifies all update bits of signals/signal groups of all nodes in the current bus context. |
+| ILNodeDisturbAllUpdateBits | Modifies all update bits of signals/signal groups of a node. |
+| ILNodeDisturbChecksum | Disturbs the checksum a configurable value. |
+| ILNodeDisturbCounter | Disturbs the counter with a configurable value. |
+| ILNodeDisturbPduUpdateBit | Modifies the update bit of a signal group. |
+| ILNodeDisturbSignalGroupUpdateBit | Disturbs the signal update bit with a configurable value. |
+| ILNodeDisturbSignalUpdateBit | Disturbs the PDU Update Bit with constant 0 or 1. |
+| ILNodeSetAllNodesOperationMode | Sets specific operation mode in the interaction layer of all nodes. |
+| ILNodeSetOperationMode | Sets specific operation mode in the interaction layer. |
+| ILNodeSetSigGroupOperationMode | Sets specific operation mode in the interaction layer for a specified signal group. |
+| ILNodeSetPDUTimingCyclic | Overrides the defined cyclic-timing from the database. |
+| ILNodeResetPDUTimingCyclic | Resets the cyclic-timing to the values from the database. |
+| ILNodeSetPDUTimingEvent | Overrides the defined event timing from the database. |
+| ILNodeResetPDUTimingEvent | Resets the event-timing to the values from the database. |
+| ILNodeSetPDUAsrTxMode | Overrides the current valid transmission mode of the PDU. |
+| ILNodeResetPDUAsrTxMode | Resets the current valid transmission mode to the condition that is defined by or-ing all data filters of all signals. |
+
+| Functions | Short Description |
+|---|---|
+| ILErrno | Returns the last CANoe IL error code. |
+| ILSetResultString | Converts the transferred error code to text. |
+
+| Functions | Short Description |
+|---|---|
+| ILControlMsg | Allows to manipulate the sending behavior of a message. |
+| ILResetAllCANFDParam | Resets CAN FD parameters of all messages to database values. |
+| ILSetCANFDParam | Allows setting of CAN FD parameters for a specific message. |
+| ILSetMsgEvent | Sends the transferred message directly to the bus if the network is active. |
+
+| Functions | Short Description |
+|---|---|
+| ILCalculateChecksum | Calculates the corresponding CRC checksum based on the payload. |
+| ILDisableMSG | Disables the sending of the message except by calling the function ILSetMsgEvent. |
+| ILEnableMSG | Enables the sending of the message. |
+| ILEnableTimingCyclic | Controls the cyclic timing of PDUs. The cyclic timing can be enabled/disabled. |
+| ILEnableTimingEvtTrg | Controls the event triggered timing of PDUs. The event triggered timing can be enabled/disabled. |
+| ILEnableTimingImmed | Controls the immediate timing of PDUs. The immediate timing can be enabled/disabled. |
+
+| Functions | Short Description |
+|---|---|
+| ILSetEvent | Sends the transferred signal directly to the bus if the network is active. |
+| ILSetSignalRawField | Sets the transferred signal to the provided value. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

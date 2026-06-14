@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LINtp_ActivateFCTransmission",
+  "category": "LIN",
+  "title": "LINtp_ActivateFCTransmission",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINtpActivateFCTransmission.htm",
+  "syntax": [
+    "void LINtp_ActivateFCTransmission(long blockSize);"
+  ],
+  "description": [
+    "Activate the usage of FlowControl frames. These frames will be indicated in the optional callback LINtp_FCPreTransmit before sending."
+  ],
+  "parameters": [
+    {
+      "name": "blockSize",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

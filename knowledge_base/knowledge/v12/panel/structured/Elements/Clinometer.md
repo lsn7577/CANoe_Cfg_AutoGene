@@ -1,0 +1,184 @@
+# Clinometer
+
+> Category: `Panel` | Subcategory: `Elements` | Type: `concept`
+
+## Use Cases
+
+The Clinometer displays the transverse and the longitudinal slopes (roll and pitch). You can select one of the following views and functions:
+
+## Configuration
+
+Assign a symbol to the control in the Panel Designer.
+
+You can assign a symbol to the control
+
+The view only displays the transverse slope or the longitudinal slope. No combined view is available. The value can be read on the scale in the image or displayed as a number below the image.
+
+You can configure the control via the ribbon or the Properties Window.
+
+## Display Element
+
+During runtime of CANoe/CANalyzer the Clinometer indicates the current symbol value.
+
+## Ribbon|Properties Tab / Properties Window
+
+Here all settings are listed that you can change in the ribbon and/or in the Properties Window.
+
+General Group
+
+General
+
+Name
+
+Control Name
+
+Here you change the name of the control. This name and the name of the panel is required for access from CAPL.
+
+—
+
+Is Visible At Runtime
+
+Specifies whether the control is to be displayed during runtime.
+
+| Ribbon | Properties Window | Description |  |
+|---|---|---|---|
+| General Group | General |  |  |
+| Name | Control Name | Here you change the name of the control. This name and the name of the panel is required for access from CAPL. |  |
+| — | Is Visible At Runtime | Specifies whether the control is to be displayed during runtime. CAPL Access With the function setControlVisibility, you can set, if the control is displayed during runtime or not. |  |
+| View Group | Clinometer Settings |  |  |
+| View | Here you can change the view and the type of the display: Vehicle: PitchLongitudinal slope of a vehicle Vehicle: RollTransverse slope of a vehicle Airplane: PitchDescent and climb of a airplane Airplane: RollTurning flight of a airplane |  |  |
+| Value Group | Clinometer Settings |  |  |
+| Show Value | Show With a click on the symbol you switch on or off the display of the slope below the image. |  |  |
+| Show Decimal Places | Decimal Place With a click on the symbol the slope value below the image is displayed with or without a decimal. |  |  |
+| Value Font Group | Font |  |  |
+| Font | Value Font | Here you change the font and the font size. |  |
+| — | With a click on the symbol you increase the font size. |  |  |
+| — | With a click on the symbol you reduce the font size. |  |  |
+| Value Font\|Bold | With a click on the symbol you format the text bold. |  |  |
+| Value Font\|Italic | With a click on the symbol you format the text italic. |  |  |
+| Value Font\|Underline | With a click on the symbol you underline the text. |  |  |
+| — | Value Font\|Strikeout | Here you strikeout the text. |  |
+| — | Value Font\|Unit | Here you change the unit of the font size. |  |
+| Value Color | Here you change the color of the text. CAPL Access With the function setControlBackColor, you can change the Value Color for the display of the speed. |  |  |
+| Background Color | Here you change the background color of the text. |  |  |
+| More Group | — |  |  |
+| — | Show Properties With a click on the symbol you open the Properties Window. |  |  |
+| Group: — | Layout |  |  |
+| — | Location/Size | Here you can enter settings relating to the size and position of the control. Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. | Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |
+| Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |  |  |  |
+| Group: — | Symbol |  |  |
+| — | Symbol | You can assign a symbol to the control. With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter. See also Configuration of the control. Valid Data Types of Symbols |  |
+| — | Symbol Filter | Here you select the type of the symbol you want to assign to your control. |  |
+
+## CAPL Access
+
+With the function setControlVisibility, you can set, if the control is displayed during runtime or not.
+
+View Group
+
+Clinometer Settings
+
+View
+
+Here you can change the view and the type of the display:
+
+Value Group
+
+Show Value
+
+Show
+
+With a click on the symbol you switch on or off the display of the slope below the image.
+
+Show Decimal Places
+
+Decimal Place
+
+With a click on the symbol the slope value below the image is displayed with or without a decimal.
+
+Value Font Group
+
+Font
+
+Value Font
+
+Here you change the font and the font size.
+
+—
+
+With a click on the symbol you increase the font size.
+
+With a click on the symbol you reduce the font size.
+
+Value Font|Bold
+
+With a click on the symbol you format the text bold.
+
+Value Font|Italic
+
+With a click on the symbol you format the text italic.
+
+Value Font|Underline
+
+With a click on the symbol you underline the text.
+
+Value Font|Strikeout
+
+Here you strikeout the text.
+
+Value Font|Unit
+
+Here you change the unit of the font size.
+
+Value Color
+
+Here you change the color of the text.
+
+## CAPL Access
+
+With the function setControlBackColor, you can change the Value Color for the display of the speed.
+
+Background Color
+
+Here you change the background color of the text.
+
+More Group
+
+—
+
+Show Properties
+
+With a click on the symbol you open the Properties Window.
+
+Group: —
+
+Layout
+
+Location/Size
+
+Here you can enter settings relating to the size and position of the control.
+
+Note
+
+You can also resize the control by dragging its markers.
+
+Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.
+
+Symbol
+
+You can assign a symbol to the control.
+
+With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter.
+
+See also Configuration of the control.
+
+Valid Data Types of Symbols
+
+Symbol Filter
+
+Here you select the type of the symbol you want to assign to your control.
+
+Assigning Controls
+
+| Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |
+|---|

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783GetAddress",
+  "category": "ISO11783",
+  "title": "Iso11783GetAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783GetAddress.htm",
+  "syntax": [
+    "dword Iso11783GetAddress( char[] busName, dword componentMask, char deviceName[8] );"
+  ],
+  "description": [
+    "This function returns a network address with which a device that is described by the function parameters logged onto the network."
+  ],
+  "parameters": [
+    {
+      "name": "busName",
+      "type": "",
+      "description": "Bus name or \"default\""
+    }
+  ],
+  "return": "Address of the node or Null Address (0xFE) if no device is found or FFFFFFFFh if the functions fails.",
+  "example": {
+    "description": [],
+    "code": "char deviceName[8] = { 0, 0, 0, 0, 0 ,0, 0, 0};\naddress = Iso11783GetAddress( \"default\", \r\n 0x1ff, deviceName);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

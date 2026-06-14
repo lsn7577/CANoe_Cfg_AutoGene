@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ethClearMacAddressTable",
+  "category": "IP",
+  "title": "ethClearMacAddressTable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionEthClearMacAddressTable.htm",
+  "syntax": [
+    "long ethClearMacAddressTable( long channel);"
+  ],
+  "description": [
+    "Clears the MAC address table of the Ethernet network interface.",
+    "The function can only be used with Vector network interface (i.e. VN5640) in operation mode which manages a MAC address table, i.e. Ethernet switch."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel number."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on '1'\n{\n  EthClearMacAddressTable( 1 ); // clear table on Eth 1\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

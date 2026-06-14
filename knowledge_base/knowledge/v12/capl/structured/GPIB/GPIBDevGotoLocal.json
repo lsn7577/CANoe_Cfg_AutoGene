@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GPIBDevGotoLocal",
+  "category": "GPIB",
+  "title": "GPIBDevGotoLocal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBDevGotoLocal.htm",
+  "syntax": [
+    "long GPIBDevGotoLocal (long deviceDescriptor);"
+  ],
+  "description": [
+    "Sets a device into local mode. A successor GPIB command sets the device back into remote mode."
+  ],
+  "parameters": [
+    {
+      "name": "deviceDescriptor",
+      "type": "",
+      "description": "Device ID"
+    }
+  ],
+  "return": "Status",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

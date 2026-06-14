@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsMonitorSetLssTimeout",
+  "category": "CANopen",
+  "title": "coTfsMonitorSetLssTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsMonitorSetLssTimeout.htm",
+  "syntax": [
+    "long coTfsMonitorSetLssTimeout( dword lssTimeoutInMs );"
+  ],
+  "description": [
+    "This function sets the LSS timeout for the passive communication monitor.",
+    "You can start the monitoring with coTfsMonitorActivate and stop it with coTfsMonitorDeactivate.",
+    "To include node-IDs or ranges of node-IDs for monitoring you can use the functions coTfsMonitorIncludeNodeId and coTfsMonitorIncludeNodeIdRange. For exclusion you can use coTfsMonitorExcludeNodeId and coTfsMonitorExcludeNodeIdRange."
+  ],
+  "parameters": [
+    {
+      "name": "lssTimeoutInMs",
+      "type": "",
+      "description": "Timeout in ms, default value: 200 ms."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "// configure node-IDs for monitoring: monitor nodes 1..14, 21..24, 26..64 and 127\ncoTfsMonitorIncludeNodeIdRange( 1, 64);\ncoTfsMonitorExcludeNodeIdRange( 15, 20);\ncoTfsMonitorExcludeNodeId   ( 25);\ncoTfsMonitorIncludeNodeId   (127);\n\ncoTfsMonitorSetLssTimeout( 100 ); // set LSS timeout to 100 ms\ncoTfsMonitorSetNmtTimeout( 2000 ); // set NMT timeout for boot-up message to 2 s\n\ncoTfsMonitorActivate();      // activate monitoring\nTestWaitForTimeout(30000);     // monitor CANopen traffic for 60 seconds ...\nif (coTfsMonitorDeactivate() != 1) { // deactivate monitoring and add results to report, check for errors\n  TestStepFail(\"Monitoring\", \"At least one monitored response was not received in time\");\n}\nelse {\n  TestStepPass(\"Monitoring\", \"All monitored responses were received in time\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

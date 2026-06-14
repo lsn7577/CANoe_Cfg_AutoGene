@@ -1,0 +1,123 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOGetBlockSize",
+  "category": "CANopen",
+  "title": "coTfsSDOGetBlockSize",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoGetBlockSize.htm",
+  "syntax": [
+    "dword coTfsSDOGetBlockSize( void );"
+  ],
+  "description": [
+    "The function returns the block size of the last Initiate SDO Block Download or Download SDO Block Segment Response message.",
+    "With a return value 0, the message is not detected or awaited. The block size can only be read out once after each individual block"
+  ],
+  "parameters": [],
+  "return": "Block size",
+  "example": {
+    "description": [],
+    "code": "long retValFunc = kTestStepPassed; /* to store the return value of function */\nlong nodeId = 112;                 /* Node-Id of DUT */\n\ndword index = 0x1017; /* object index */\ndword subIndex = 0;   /* object sub-index */\ndword ccs = kClientCommandSpecifier_BlockDownload;\ndword cs = kClientSubcommand_InitiateDownloadRequest;\ndword crcSupported = kCRC_Support; /* 1 = client supports CRC check */\ndword sizeIndicated = 1;           /* 1 = size known */\ndword size = 2;                    /* size of the data transmission in bytes */\ndword blkSize = 0;                 /* It does not matter for block download transfer */\ndword threshold = 0;               /* It does not matter for block download transfer */\ndword crcSupportFlag = 0;          /* to store the return value of coTfsSDOChkCrcSupport */\ndword newBlkSize = 0;              /* to store the return value of coTfsSDOGetBlockSize */\ndword cont = kContinueBit_NoMoreSegments;\ndword seqNumber = 1;               /* sequence number */\nbyte inValueBuf[2] = {0, 0};       /* data to be downloaded */\ndword valueBufSize = 2;\ndword isLastSegment = 1;           /* It is the last segment for the current block transfer, 0 = do not wait for block confirmation, 1 = wait for block confirmation */\ndword notUsed = 0;                 /* number of bytes, which does not contains data */\ndword crc = 0;                     /* crc value */\nchar msg[100];                     /* message */\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* Tip: Using the level 2 function for block download transfer :\n  * dword useCrc = 1;\n  * dword outCrcUsed[1] = {0};\n  * coTfsSDOBlockDownload(index, subIndex, size, 1, inValueBuf, valueBufSize, outCrcUsed);\n*/\n\n/* initiate block download request */\nif (retValFunc == kTestStepPassed)\n{\n  /* initiate the block download */\n  strncpy(msg,\"coTfsSDOBlockInit\", elCount(msg));\n  retValFunc = coTfsSDOBlockInit( index, subIndex, ccs, cs, crcSupported, sizeIndicated, blkSize, size, threshold );\n} /* if */\n\n/* block download segment request */\nif (retValFunc == kTestStepPassed)\n{\n  /* check if the sdo server supports CRC */\n  crcSupportFlag = coTfsSDOChkCrcSupport();\n  /* outputs a message to the 'write' window */\n  write( \"coTfsSDOChkCrcSupport = %X\", crcSupportFlag);\n  /* get the block size data coming from SDO server */\n  newBlkSize = coTfsSDOGetBlockSize();/* outputs a message to the 'write' window */\n  write( \"coTfsSDOGetBlockSize = %X\", newBlkSize);\n  /* send segment data to SDO server */\n  strncpy(msg,\"coTfsSDOBlockDownloadSegmentRequest\", elCount(msg));\n  retValFunc = coTfsSDOBlockDownloadSegmentRequest( cont, seqNumber, inValueBuf, valueBufSize, isLastSegment );\n} /* if */\n\n/* block download segment request */\nif (retValFunc == kTestStepPassed)\n{\n  /* calculate the CRC */\n  crc = coTfsSDOCalcCrc( inValueBuf, valueBufSize );\n  /* outputs a message to the 'write' window */\n  write( \"coTfsSDOCalcCrc = %X\", crc);\n  /* end the block download transfer */\n  strncpy(msg,\"coTfsSDOBlockEnd\", elCount(msg));\n  ccs = 6; /* 6 = block download */\n  cs = 1; /* end block download */\n  notUsed = 5; /* number of bytes in the last segment that contains no data */\n  retValFunc = coTfsSDOBlockEnd( ccs, cs, notUsed, crc );\n} /* if */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendInquireRevisionNoRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendInquireRevisionNoRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendInquireRevisionNoReq.htm",
+  "syntax": [
+    "long coTfsLssSendInquireRevisionNoRequest( dword[] pRevisionNo );"
+  ],
+  "description": [
+    "This function sends an Inquire revision number request and waits for the response."
+  ],
+  "parameters": [
+    {
+      "name": "pRevisionNo",
+      "type": "",
+      "description": "Revision number part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword pRevisionNo[1];\n\n/* send LSS inquire revision number request */\n\nif (coTfsLssSendInquireRevisionNoRequest( pRevisionNo ) == 1) {\n  /* sent LSS inquire revision number request and received response */\n  /* received value can be found in pRevisionNo */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

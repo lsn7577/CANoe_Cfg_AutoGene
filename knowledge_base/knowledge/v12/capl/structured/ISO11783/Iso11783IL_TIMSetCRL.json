@@ -1,0 +1,43 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetCRL",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetCRL",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetCRL.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetCRL(byte crlType, char crlFilePath[]); // form 1"
+  ],
+  "description": [
+    "Loads a Certificate Revocation List file which is used for TIM authentication. If there is already a loaded certificate file for a certificate type these file is overwritten."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Certificate Revocation List for Testlab, Manufacturer, manufacturer series, TIM client and TIM server certificates."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Certificate Revocation List for the CRL signing CA certificates."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

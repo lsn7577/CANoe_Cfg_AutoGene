@@ -1,0 +1,178 @@
+{
+  "page_type": "notes",
+  "name": "ILDisturbCounter",
+  "category": "Obsolete",
+  "title": "ILDisturbCounter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionILDisturbCounter.htm",
+  "syntax": [],
+  "description": [
+    "-1: General error"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function This function is deprecated and has been replaced by ILNodeDisturbCounter"
+      ],
+      [
+        "Note This function is not available for all OEM packages — depends on the CANoeIL. This function can be used in a global node outside the node context of the IL."
+      ],
+      [
+        "Function Syntax",
+        "long ILDisturbCounter(char aMsgName[], long counterType, long disturbanceMode, long disturbanceCount, long disturbanceValue, long continueMode); // form 1"
+      ],
+      [
+        "long ILDisturbCounter(char aMsgName[], char aSigGroupName[], long counterType, long disturbanceMode, long disturbanceCount, long disturbanceValue, long continueMode); // form 2"
+      ],
+      [
+        "Function",
+        "This function modifies the counter. Different fault injections are possible.This function influences a simulation node with an assigned CANoe interaction layer."
+      ],
+      [
+        "Parameters",
+        "aMsgName Name of the message or PDU that should be modified."
+      ],
+      [
+        "aSigGroupName Some systems assign a counter to signal group. With this variant you can apply the disturbance to a dedicated signal group within a PDU."
+      ],
+      [
+        "counterType The possible values are described in the corresponding OEM Package manual."
+      ],
+      [
+        "disturbanceMode Identifies the disturbance mode: 0 Value The disturbance uses the value in disturbanceValue as counter. 1 Freeze The current counter value is transmitted. 2 Random A random value is transmitted as counter. 3 Offset The counter is incremented with the value in disturbanceValue.",
+        "0",
+        "Value",
+        "The disturbance uses the value in disturbanceValue as counter.",
+        "1",
+        "Freeze",
+        "The current counter value is transmitted.",
+        "2",
+        "Random",
+        "A random value is transmitted as counter.",
+        "3",
+        "Offset",
+        "The counter is incremented with the value in disturbanceValue."
+      ],
+      [
+        "0",
+        "Value",
+        "The disturbance uses the value in disturbanceValue as counter."
+      ],
+      [
+        "1",
+        "Freeze",
+        "The current counter value is transmitted."
+      ],
+      [
+        "2",
+        "Random",
+        "A random value is transmitted as counter."
+      ],
+      [
+        "3",
+        "Offset",
+        "The counter is incremented with the value in disturbanceValue."
+      ],
+      [
+        "disturbanceCount -1 Infinite. 0 Stops the disturbance, e.g.a infinite disturbance. n Number of disturbances.",
+        "-1",
+        "Infinite.",
+        "0",
+        "Stops the disturbance, e.g.a infinite disturbance.",
+        "n",
+        "Number of disturbances."
+      ],
+      [
+        "-1",
+        "Infinite."
+      ],
+      [
+        "0",
+        "Stops the disturbance, e.g.a infinite disturbance."
+      ],
+      [
+        "n",
+        "Number of disturbances."
+      ],
+      [
+        "disturbanceValue This value is used in combination with the disturbanceMode."
+      ],
+      [
+        "continueMode Defines the behavior of the counter after the disturbances are finished. 0 CorrectCounter The counter will be incremented with counter value + number of disturbances. 1 LastValidCounter The counters next value bases on the last value before the disturbance has started. 2 LastValue The counter increments the last counter value (last disturbance value).",
+        "0",
+        "CorrectCounter",
+        "The counter will be incremented with counter value + number of disturbances.",
+        "1",
+        "LastValidCounter",
+        "The counters next value bases on the last value before the disturbance has started.",
+        "2",
+        "LastValue",
+        "The counter increments the last counter value (last disturbance value)."
+      ],
+      [
+        "0",
+        "CorrectCounter",
+        "The counter will be incremented with counter value + number of disturbances."
+      ],
+      [
+        "1",
+        "LastValidCounter",
+        "The counters next value bases on the last value before the disturbance has started."
+      ],
+      [
+        "2",
+        "LastValue",
+        "The counter increments the last counter value (last disturbance value)."
+      ],
+      [
+        "Return Values",
+        "0: No error"
+      ],
+      [
+        "-1: General error"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.0 - 8.2 SP3: form 1",
+        "CAN FlexRay Simulation nodes",
+        "—",
+        "•"
+      ],
+      [
+        "8.0 - 8.2 SP3: form 2",
+        "FlexRay Simulation nodes",
+        "—",
+        "•"
+      ],
+      [
+        "8.2 SP3: form 2",
+        "CAN FlexRay Simulation nodes",
+        "—",
+        "•"
+      ],
+      [
+        "Example // Disturbs the PDU counter, disturbance pattern: 100x random value,// after the disturbance the counters next value bases on// the last value before the disturbance has started.variables { long countertype =0; long disturbanceMode= 2; // A random value is transmitted as counter. long disturbanceCoun=100; long disturbanceValue=0; // value will be ignored due to disturbance mode long continueMode=1; // The counters next value bases on the last value // before the disturbance has started.}on key 'a'{ ILDisturbCounter(\"PDU_A\", counterType, disturbanceMode, disturbanceCount, disturbanceValue, continueMode);}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

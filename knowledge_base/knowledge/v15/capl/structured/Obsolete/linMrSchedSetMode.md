@@ -1,0 +1,17 @@
+# linMrSchedSetMode
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function No replacement. |  |  |  |  |
+|---|---|---|---|---|
+| Note This function may only be called in the event procedure on preStart. |  |  |  |  |
+| Function Syntax | void linMrSchedSetMode(unsigned int mode); |  |  |  |
+| Function | Switches the Scheduler to the mode mode. |  |  |  |
+| Parameters | mode Mode to be activated.The highest mode is activated if mode is too large. |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 3.1 - 5.1 | LIN | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

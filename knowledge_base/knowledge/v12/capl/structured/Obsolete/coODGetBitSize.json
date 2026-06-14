@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coODGetBitSize",
+  "category": "Obsolete",
+  "title": "coODGetBitSize",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdGetBitSize.htm",
+  "syntax": [
+    "dwordcoODGetBitSize( dword index, dword subIndex, dword errCode[] );"
+  ],
+  "description": [
+    "The function returns the size of an object in the local object dictionary in bits."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the object, value range 1..65.535"
+    }
+  ],
+  "return": "Size of the object in bits",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\ndword size;\n\nsize = coODGetBitSize( 0x1000, 0x0, errCode );\nif(errCode[0] == 0) {\n  write( \"Object size: %d bit\", size);\n} "
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

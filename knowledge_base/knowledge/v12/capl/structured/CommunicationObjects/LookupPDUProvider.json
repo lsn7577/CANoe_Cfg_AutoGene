@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupPDUProvider",
+  "category": "CommunicationObjects",
+  "title": "LookupPDUProvider",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupPDUProvider.htm",
+  "syntax": [
+    "pduProviderRef * LookupPDUProvider(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified PDU provider. The path must be complete including namespaces, endpoint and PDU: (Namespace::)+Service[provider].PDU.",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the PDU provider."
+    }
+  ],
+  "return": "The PDU provider. An uninitialized object if the PDU provider is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "pduProviderRef MirrorAdjustment.Status statusPDU;\nchar path[200];\nchar service[50] = \"Mirrors::MirrorAdjustment\";\nchar provider[20] = \"LeftMirror\";\nchar pduName[20] = \"Status\";\n\nsnprintf(path, elcount(path), \"%s[%s].%s\", service, provider, pduName);\nstatusPDU = (pduProviderRef MirrorAdjustment.Status) lookupPDUProvider(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

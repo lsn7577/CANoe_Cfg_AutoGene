@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterDescription",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterDescription",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterDescription.htm",
+  "syntax": [
+    "long IpGetAdapterDescription( dword ifIndex, char name[], dword count);"
+  ],
+  "description": [
+    "The function retrieves the description of the specified network interface.",
+    "All adapter addresses including the local loopback address are taken into account in the stack of the operating system. The order depends on how the operating system lists the adapters.All assigned addresses including the VLAN addresses are taken into account in the CANoe stack."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  const dword STR_SIZE = 256; // string buffer size\n  char ifDescr[STR_SIZE];     // Interface description string.\n  dword ifIdx;                // interface index\n  long result;                // function result.\n\n  for (ifIdx = 1; ifIdx <= IpGetAdapterCount(); ifIdx++)\n  {\n    result = IpGetAdapterDescription( ifIdx, ifDescr, elcount(ifDescr) );\n    if (result == 0)\n    {\n      // success.\n      write(\"IpGetAdapterDescription for adapter %d returned: %s\", ifIdx, ifDescr);\n    }\n    else\n    {\n      writeLineEx(1, 3, \"IpGetAdapterDescription: Error %d\", result);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

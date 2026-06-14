@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coOnRPDOMissing",
+  "category": "Obsolete",
+  "title": "coOnRPDOMissing",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOnRpdoMissing.htm",
+  "syntax": [
+    "void coOnRPDOMissing( dword pdoNumber );"
+  ],
+  "description": [
+    "The function is called if an event timer of a RPDO is activated and the PDO is not received in the defined time."
+  ],
+  "parameters": [
+    {
+      "name": "pdoNumber",
+      "type": "",
+      "description": "RPDO number 1..512"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnRPDOMissing(dword pdoNumber){\n  write( \"Receive PDO %d is missing\", pdoNumber);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

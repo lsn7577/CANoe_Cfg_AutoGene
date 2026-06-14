@@ -1,0 +1,81 @@
+{
+  "page_type": "notes",
+  "name": "TestIso11783IL_PDDChangeDesignator",
+  "category": "Obsolete",
+  "title": "TestIso11783IL_PDDChangeDesignator",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/TestISO11783il/CAPLfunctionTestIso11783ILPDDChangeDesignator.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by: Iso11783IL_PDDChangeDesignator"
+      ],
+      [
+        "Function Syntax",
+        "long TestIso11783IL_PDDChangeDesignator( dbNode node, word objectID, char asciiDesignator[] );"
+      ],
+      [
+        "long TestIso11783IL_PDDChangeDesignator( dbNode node, word objectID, char asciiDesignator[], byte encoding );"
+      ],
+      [
+        "Function",
+        "The function sends a Change Designator message with a new object designator to the Task Controller. The first variant converts the ASCII designator string to an UTF-8 string if the supported version is 2 or higher. In the second variant you can specify if the designator string shall encoded to UTF-8 or not. Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment.",
+        "Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment."
+      ],
+      [
+        "Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment."
+      ],
+      [
+        "Parameters",
+        "node Simulation node to apply the function."
+      ],
+      [
+        "objectID ID of the object"
+      ],
+      [
+        "asciiDesignator new object designator"
+      ],
+      [
+        "encoding specifies if the designator is encoded before it is transmitted or not 0: designator string is not encoded 1: designator string is encoded to UTF-8"
+      ],
+      [
+        "Return Values",
+        "error code"
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.5",
+        "ISO11783 Test nodes",
+        "—",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

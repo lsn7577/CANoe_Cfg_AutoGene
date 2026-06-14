@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetTargetGroupQualifier",
+  "category": "Diagnostics",
+  "title": "diagGetTargetGroupQualifier",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetTargetGroupQualifier.htm",
+  "syntax": [
+    "long DiagGetTargetGroupQualifier(char ecuQualifier[], dword bitPos, char groupQualOut[]);"
+  ],
+  "description": [
+    "Returns the qualifier of the diagnostic target group for which the bit at the given position is used by diagGetAssignedTargetGroups. If the target ECU is not specified explicitly, the target selected with diagSetTarget is used."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Use this diagnostic target, not that selected with DiagSetTarget."
+    }
+  ],
+  "return": "≥ 0: number of characters written",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

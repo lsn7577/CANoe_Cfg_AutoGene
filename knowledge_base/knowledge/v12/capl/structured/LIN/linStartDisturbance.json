@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linStartDisturbance",
+  "category": "LIN",
+  "title": "linStartDisturbance",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINStartDisturbance.htm",
+  "syntax": [
+    "long linStartDisturbance(dword length, dword level)"
+  ],
+  "description": [
+    "Starts a disturbance on the bus.",
+    "Note that disturbances shorter than 64 bit times"
+  ],
+  "parameters": [
+    {
+      "name": "length",
+      "type": "",
+      "description": "Length of the disturbance in bit times."
+    }
+  ],
+  "return": "On success a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

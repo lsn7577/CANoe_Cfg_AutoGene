@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedPduRef::AbstractReleasePdu",
+  "category": "CommunicationObjects",
+  "title": "consumedPduRef::AbstractReleasePdu",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedPduRefAbstractReleasePdu.htm",
+  "syntax": [
+    "int consumedPDURef::AbstractReleasePDU()"
+  ],
+  "description": [
+    "Releases the subscription of a specific service PDU if abstract binding is used: for the specified consumer from the specified provider. If the PDU is released, it will be unsubscribed and not automatically re-subscribed."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "MirrorAdjustment.consumerSide[CANoe,LeftMirror].StatusPDU.AbstractReleasePDU();\r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

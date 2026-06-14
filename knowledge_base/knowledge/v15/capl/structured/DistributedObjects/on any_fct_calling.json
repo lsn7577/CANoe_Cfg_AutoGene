@@ -1,0 +1,142 @@
+{
+  "page_type": "event",
+  "name": "on any_fct_calling",
+  "category": "DistributedObjects",
+  "title": "on any_fct_calling",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/EventProcedures/CAPLfunctionOnAnyFctCalling.htm",
+  "syntax": [],
+  "description": [
+    "This handler is called whenever a method of a distributed object derived from the given interface is about to be called. At this time, the automatic answering feature has not yet set out parameters or delay, so you can still use the ParamDefaults or DefaultResult values to configure it."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// vCDL\nversion 1.4;\nnamespace SomeNamespace\n{\n  interface SomeInterface\n  {\n    internal method void SomeMethod(int32 p);\n  }\n  SomeInterface Obj1;\n  SomeInterface Obj2;\n}\n\n// CAPL\non key 'a'\n{\n  Obj1.SomeMethod.CallAsync(1);\n}\non key 'b'\n{\n  Obj2.SomeMethod.CallAsync(2);\n}\non any_fct_calling SomeInterface.SomeMethod\n{\n  write(\"Calling SomeMethod at object %s with parameter %d\",\n  this.object.Path,\n  this.context.p);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "15",
+      "15",
+      "15",
+      "15",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "object Parent object of the called method.",
+        "distObjRef <T>",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "context Call context of the method call.",
+        "callContext <T>",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,84 @@
+{
+  "page_type": "notes",
+  "name": "Iso11783IL_PDDGetValue",
+  "category": "Obsolete",
+  "title": "Iso11783IL_PDDGetValue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionIso11783ILPDDGetValue.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "float",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function This function is deprecated and has been replaced by Iso11783IL_PDDGetValueRaw, Iso11783IL_PDDGetValuePhysical."
+      ],
+      [
+        "Function Syntax",
+        "float Iso11783IL_PDDGetValue( dbSignal signal, dword elementNumber ); // form 1"
+      ],
+      [
+        "float Iso11783IL_PDDGetValue( dword ddi, dword elementNumber ); // form 2"
+      ],
+      [
+        "float Iso11783IL_PDDGetValue( dbNode implement, dword ddi, dword elementNumber ); // form 3"
+      ],
+      [
+        "Function",
+        "The function returns the value of a process variable."
+      ],
+      [
+        "Parameters",
+        "signal signal from the database The attribute DDI must be defined for the signal. The signal must be defined in the same database as the node!"
+      ],
+      [
+        "ddi Data Dictionary Identificator 0x000..0xFFFF"
+      ],
+      [
+        "elementNumber element number, 0x000..0xFFF"
+      ],
+      [
+        "implement Simulation node to apply the function."
+      ],
+      [
+        "Return Values",
+        "value of the process variable, 0 if the variable is not defined"
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "8.0: form 1, 2",
+        "ISO11783",
+        "—",
+        "•"
+      ],
+      [
+        "9.0: form 3",
+        "ISO11783 Test nodes",
+        "—",
+        "•"
+      ],
+      [
+        "Example char text[256];value = Iso11783IL_PDDGetValue( PD::AppRateSignal, 0 );if (Iso11783IL_PDDGetLastError () != 0) { Iso11783IL_PDDGetLastErrorText ( elCount(text), text ); write( \"ERROR: %s\", text);}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

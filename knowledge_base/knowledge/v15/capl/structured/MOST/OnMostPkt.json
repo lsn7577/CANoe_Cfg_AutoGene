@@ -1,0 +1,132 @@
+{
+  "page_type": "function",
+  "name": "OnMostPkt",
+  "category": "MOST",
+  "title": "OnMostPkt",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/EventProcedures/CAPLfunctionOnMOSTPkt.htm",
+  "syntax": [
+    "OnMostPkt(long pktdatalen);"
+  ],
+  "description": [
+    "When a packet is received over the Asynchronous Channel the OnMostPkt() event procedure is called.",
+    "The following functions are available for evaluating the event:",
+    "In nodal sequences (Measurement Setup) a received packet can be passed to the next node by the outputMostPktThis command."
+  ],
+  "parameters": [
+    {
+      "name": "pktdatalen",
+      "type": "",
+      "description": "Number of data bytes of the packet."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Access to packet data:"
+    ],
+    "code": "OnMostPkt(long pktDataLen)\n{\n   byte data[1524];\n   long i, bytesdisp;\n   write(\"Packet detected on channel %d\", mostPktMsgChannel());\n   // copy packet data to local buffer\n   mostPktGetData(data, pktDataLen);\n   // output first data bytes\n   bytesdisp = pktDataLen > 10 ? 10 : pktDataLen;\n   for(i = 0; i < bytesdisp; i++)\n   {\n      write(\"Byte %03d: %02X\", i, data[i]);\n   }\n   // forward packet to the next node\n   outputMostPktThis();\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.0: MOST25 7.1 SP2: MOST150 7.2 SP3: MOST50",
+      "5.0: MOST25 7.1 SP2: MOST150 7.2 SP3: MOST50",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST50 MOST150",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

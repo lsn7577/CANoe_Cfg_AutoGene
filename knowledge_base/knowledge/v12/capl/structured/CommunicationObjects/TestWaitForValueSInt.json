@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForValueSInt",
+  "category": "CommunicationObjects",
+  "title": "TestWaitForValueSInt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionTestWaitForValueSInt.htm",
+  "syntax": [
+    "long TestWaitForValueSInt(COValue value, int64 awaitedValue, dword timeoutMs)"
+  ],
+  "description": [
+    "Waits for a communication object value to reach a certain value. This function can only be used for communication object values with a signed integer data type. It cannot be used for system variables or bus system signals."
+  ],
+  "parameters": [
+    {
+      "name": "COValue",
+      "type": "",
+      "description": "Value of a communication object."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "long ret;\nret = testWaitForValueSInt(ErrorSignal[LeftMirror], -1, 200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

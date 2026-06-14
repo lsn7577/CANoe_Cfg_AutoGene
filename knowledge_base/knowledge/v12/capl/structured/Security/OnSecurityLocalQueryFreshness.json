@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnSecurityLocalQueryFreshness",
+  "category": "Security",
+  "title": "OnSecurityLocalQueryFreshness",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/CallbackHandler/CAPLfunctionOnSecurityLocalQueryFreshness.htm",
+  "syntax": [
+    "long OnSecurityLocalQueryFreshness(dword context, char pduName[], dword dataId, dword freshnessValueId, dword attemptNr, byte payload[], dword payloadLength, qword& freshness, dword& freshnessLength, qword truncatedRxFreshness, dword truncatedRxFreshnessBitLength)"
+  ],
+  "description": [
+    "This callback is called for every secured PDU for which a CMAC has to be calculated of verified.",
+    "The callback is triggered before the CMAC calculation starts.",
+    "The callback provides the possibility the calculate a freshness value in CAPL and force the Security Manager to use this freshness value for the next CMAC calculation / verification."
+  ],
+  "parameters": [
+    {
+      "name": "dword context",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// Example 1:\n// implement this callback at the transmitting node of the pdu\n// This example shows how to specify an older or newer freshness value, the CMAC will be \"correct\" but the freshness is \"wrong\" (compared to the freshness of the system)\nlong OnSecurityLocalQueryFreshness(\n  dword context,\n  char pduName[],\n  dword dataId,\n  dword freshnessValueId,\n  dword attemptNr,\n  byte payload[],\n  dword payloadLength,\n  qword& freshness,\n  dword& freshnessLength,\n  qword truncatedRxFreshness,\n  dword truncatedRxFreshnessBitLength)\n{\n  long result = 0;\n  char  idString[2] = \"\";\n  dword idValue;\n  BYTE freshnessValue[6];\n  dword freshnessValueLength;\n\n  // filter for tx pdus (tx = 0; rx = 1)\n  if (context != 0)\n  {\n    return 0; // use internal freshness model\n  }\n\n  // filter for the correct data id to influence\n  if (dataId != 0)\n  {\n    return 0; // use internal freshness model\n  }\n\n  // now get the freshness currently stored in the internal freshness model\n  // the following parameter size and values are depending on the selected Security Profile.\n  // Please refer to the Security Source Manual to get more detailled information\n  // about parameter values, identifier and freshness value layouts.\n\n  idValue = 0;\n  freshnessValueLength= 6;\n  result = SecurityLocalGetFreshness(\"\", idValue, freshnessValue, freshnessValueLength);\n\n  // change the freshness value\n  freshnessValue[5] = 0xFF;\n\n  // write the new Freshness value back.\n  // the last parameter is currently reserved and shall be set to 0\n  result = SecurityLocalSetFreshness(\"\", idValue, freshnessValue, freshnessValueLength, 0);\n\n  // as Set and Get Freshness is changing the internal freshness model, return 0\n  return 0;\n}\n// Example 2:\n// This example shows how to provide a USER based freshness value\nlong OnSecurityLocalQueryFreshness(\n  dword context,\n  char pduName[],\n  dword dataId,\n  dword freshnessValueId,\n  dword attemptNr,\n  byte payload[],\n  dword payloadLength,\n  qword& freshness,\n  dword& freshnessLength,\n  qword truncatedRxFreshness,\n  dword truncatedRxFreshnessBitLength)\n{\n  if ((dataId == 1) && (context == 0)) // check for PDU with data ID and\n  context [(0 = tx) (1 = rx)] to specify a freshness for\n  {\n    freshness = 7; // new Freshness Value\n    freshnessLength = 64; // new freshness length\n\n    return 1; // use my values\n  }\n  return 0; // for all others use internal calculated freshness values\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetMessageDelay",
+  "category": "SmartCharging",
+  "title": "SCC_SetMessageDelay",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetMessageDelay.htm",
+  "syntax": [
+    "void SCC_SetMessageDelay ( dword Delay ) // form 1"
+  ],
+  "description": [
+    "Specifies the delay time before an SCC message is sent. This allows you to slow down the protocol sequence. The delay applies to all active connections of the module."
+  ],
+  "parameters": [
+    {
+      "name": "Delay",
+      "type": "",
+      "description": "Desired delay value in milliseconds"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

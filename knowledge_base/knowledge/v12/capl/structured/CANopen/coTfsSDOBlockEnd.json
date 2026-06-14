@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOBlockEnd",
+  "category": "CANopen",
+  "title": "coTfsSDOBlockEnd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoBlockEnd.htm",
+  "syntax": [
+    "long coTfsSDOBlockEnd( dword ccs, dword cs, dword notUsed, dword crc ); // form 1"
+  ],
+  "description": [
+    "This function sends a SDO block end response/request message (depending on a SDO block upload and SDO block download) and awaits the corresponding response.",
+    "(2) The parameter crcSetting is used for SDO block upload only."
+  ],
+  "parameters": [
+    {
+      "name": "ccs (client command specifier)",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "see example of coTfsSDOBlockInit"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

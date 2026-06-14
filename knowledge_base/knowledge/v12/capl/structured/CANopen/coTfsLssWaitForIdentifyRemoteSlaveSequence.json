@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForIdentifyRemoteSlaveSequence",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForIdentifyRemoteSlaveSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForIdentifyRemoteSlaveSeq.htm",
+  "syntax": [
+    "long coTfsLssWaitForIdentifyRemoteSlaveSequence( dword[] pVendorId, dword[] pProductCode, dword[] pRevNoLowBound, dword[] pRevNoHighBound, dword[] pSerialNoLowBound, dword[] pSerialNoHighBound );"
+  ],
+  "description": [
+    "This function waits for a LSS identify remote slave sequence.",
+    "For a successful test all parameters are to be received within a defined time-out."
+  ],
+  "parameters": [
+    {
+      "name": "pVendorId",
+      "type": "",
+      "description": "Vendor-ID"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword pVendorId[1];\ndword pProductCode[1];\ndword pRevNoLowBound[1];\ndword pRevNoHighBound[1];\ndword pSerialNoLowBound[1];\ndword pSerialNoHighBound[1];\n\n/* waits for a LSS identify remote slave sequence */\nif (coTfsLssWaitForIdentifyRemoteSlaveSequence( pVendorId, pProductCode, pRevNoLowBound, pRevNoHighBound, pSerialNoLowBound,pSerialNoHighBound ) == 1) {\n  /* waits for LSS identify remote slave sequence */\n  /* received values can be found in pVendorId, pProductCode, pRevNoLowBound, pRevNoHighBound, pSerialNoLowBound,pSerialNoHighBound */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

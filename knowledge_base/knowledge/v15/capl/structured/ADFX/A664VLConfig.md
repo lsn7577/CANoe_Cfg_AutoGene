@@ -1,0 +1,43 @@
+# A664VLConfig
+
+> Category: `ADFX` | Type: `function`
+
+## Syntax
+
+```c
+long A664VLConfig (a664Frame aFrame, dword RxFlags, dword TxFlags, dword BagValue, dword MaxFrameSize, dword SkewMax) (1)
+long A664VLConfig (a664Message aMessage, dword RxFlags, dword TxFlags, dword BagValue, dword MaxFrameSize, dword SkewMax) (2)
+```
+
+## Description
+
+Configure a Virtual-Link for a given a664Frame or a664Message.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| RxFlags | Control integrity checking (IntChk: bit position 0) and redundancy management (RMA: bit position 1). |
+| IntChk | 0 set integrity checking to OFF 1 set integrity checking to ON |
+| RMA | 0 set redundancy management to OFF 1 set redundancy management to ON |
+| TxFlags | Control the selected line (LineSelect: bit position 0, 1) and IP fragmentation (IpFragAllowed: bit position 2). |
+| LineSelect | 0 use existing value from LineSelect for transmission 1 transmit on line A 2 transmit on line B 3 transmit on both lines |
+| IpFragAllowed | 0 fragmentation not allowed 1 fragments are allowed |
+| BagValue | Give the BAG for this VL. |
+| MaxFrameSize | Give the maximum Ethernet frame size MaxFrameSize for this VL. |
+| SkewMax | This is the maximum timely difference between a transmission on line A and B. The value SkewMax is considered for Rx direction only. |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | 9.0 SP4 | 9.0 SP4 | — | — | — | — |
+| Restricted To | AFDX | AFDX | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | ✔ | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | ✔ | ✔ | — | N/A | — | N/A |
+| 64-Bit | ✔ | ✔ | — | — | — | N/A |

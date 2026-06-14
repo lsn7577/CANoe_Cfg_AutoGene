@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestJoinFrFrameEvent",
+  "category": "Test",
+  "title": "TestJoinFrFrameEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinFrFrameEvent.htm",
+  "syntax": [
+    "long TestJoinFrFrameEvent (dbFrFrame aFrame)"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aFrame",
+      "type": "",
+      "description": "Frame to be awaited as it is defined in the database."
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

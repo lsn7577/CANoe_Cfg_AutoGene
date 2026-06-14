@@ -1,0 +1,130 @@
+{
+  "page_type": "function",
+  "name": "TestJoinEnvVarEvent",
+  "category": "Test",
+  "title": "TestJoinEnvVarEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestJoinEnvVarEvent.htm",
+  "syntax": [
+    "long TestJoinEnvVarEvent(dbEnvVar aEnvVar)"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait."
+  ],
+  "parameters": [
+    {
+      "name": "aEnvVar",
+      "type": "",
+      "description": "Environment variable that should be awaited."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1"
+    ],
+    "code": "putValue (evMyEnvVar, 1);\nTestJoinEnvVarEvent (evMyEnvVar);\nTestWaitForAnyJoinedEvent (1000); // Does not wait, is immediately discontinued by an environment variable change!\n// add envVar event to the current set of “joined events” and get the envVar value\ndword index = 0;\nfloat evValue = 0;\nTestJoinEnvVarEvent(MyEnvVar);\n// ... other join events\nTestJoinSignalInRange(Velocity, 80, 100);\nTestJoinTextEvent(\"ErrorFrame occurred!\");\n\nindex = TestWaitForAnyJoinedEvent(2000);\n\nTestGetWaitEventEnvVarData(index, evValue);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

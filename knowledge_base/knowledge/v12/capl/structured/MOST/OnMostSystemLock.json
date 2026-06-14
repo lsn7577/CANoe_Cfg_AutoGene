@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "OnMostSystemLock",
+  "category": "MOST",
+  "title": "OnMostSystemLock",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTSystemLock.htm",
+  "syntax": [
+    "OnMostSystemLock(long oldstate, long newstate)"
+  ],
+  "description": [
+    "This event procedure is called each time the state of the System-Lock flag changes.",
+    "Within this event procedure the functions mostEventChannel, mostEventTime and mostEventOrigTime can be used to call up supplemental information."
+  ],
+  "parameters": [
+    {
+      "name": "oldstate",
+      "type": "",
+      "description": "Old state of the System Lock Flag."
+    }
+  ],
+  "return": "1: System Lock Flag set.\n0: System Lock Flag not set.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

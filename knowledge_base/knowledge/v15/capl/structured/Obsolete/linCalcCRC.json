@@ -1,0 +1,68 @@
+{
+  "page_type": "notes",
+  "name": "linCalcCRC",
+  "category": "Obsolete",
+  "title": "linCalcCRC",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionLINCalcCRC.htm",
+  "syntax": [],
+  "description": [
+    "Calculated checksum."
+  ],
+  "parameters": [],
+  "return": "unsigned int",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by linCalcChecksum."
+      ],
+      [
+        "Function Syntax",
+        "unsigned int linCalcCRC(unsigned long numberOfDataBytes, unsigned char dataBytes[]);"
+      ],
+      [
+        "Function",
+        "Calculates the correct checksum for the passed data."
+      ],
+      [
+        "Parameters",
+        "numberOfDataBytes Number of valid bytes to be considered in the data field that follows."
+      ],
+      [
+        "dataBytes Data bytes over which the checksum should be determined."
+      ],
+      [
+        "Return Values",
+        "Calculated checksum."
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "3.0",
+        "LIN",
+        "•",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

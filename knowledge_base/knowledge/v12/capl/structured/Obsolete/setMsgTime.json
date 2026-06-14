@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "setMsgTime",
+  "category": "Obsolete",
+  "title": "setMsgTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionSetMsgTime.htm",
+  "syntax": [
+    "void setMsgTime(message m, NOW);"
+  ],
+  "description": [
+    "Assigns to one message the capture time of another message or the current time. This function is deprecated and only serves to establish compatibility with older versions."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "setMsgTime(m100, this); // CANalyzer 1.xx & 2.xx\nm100.time = this.time; // CANalyzer 2.xx\nsetMsgTime (m101, now);"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

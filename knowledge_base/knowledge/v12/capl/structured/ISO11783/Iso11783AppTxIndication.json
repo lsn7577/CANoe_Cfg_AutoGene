@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783AppTxIndication",
+  "category": "ISO11783",
+  "title": "Iso11783AppTxIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783AppTxIndication.htm",
+  "syntax": [
+    "dword Iso11783AppTxIndication( long ecuHandle, long txPG, long source, long dest );"
+  ],
+  "description": [
+    "Indicates that a PG has been sent successfully. The function for determining the actual sending time can be useful, especially in the case of a fragmented transfer or higher bus load. Use the function Iso11783GetRxData() to get the data bytes of the parameter group."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword Iso11783AppTxIndication( LONG ecuHdl, LONG txPG, LONG source, LONG dest )\n{\n  char data[50];\n  Iso11783GetRxData( elCount(data), data );\n  /* user code */\n  return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

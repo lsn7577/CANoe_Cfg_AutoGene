@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetCommunicationErrorString",
+  "category": "Diagnostics",
+  "title": "diagGetCommunicationErrorString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetCommunicationErrorString.htm",
+  "syntax": [
+    "long DiagGetCommunicationErrorString( long communicationError, char descriptionOut, dword bufferLen);"
+  ],
+  "description": [
+    "Returns a description for the given communication error."
+  ],
+  "parameters": [
+    {
+      "name": "communicationError",
+      "type": "",
+      "description": "Value returned by diagGetLastCommunicationError."
+    }
+  ],
+  "return": "Number of characters written to the buffer.",
+  "example": {
+    "description": [],
+    "code": "...\nif (0 == TestWaitForDiagResponse( req, 2000))\n{\n  char errStr[100];\n  err = DiagGetLastCommunicationError();\n  DiagGetCommunicationErrorString( err, errStr, elcount(errStr));\n  write(\"LastCommunicationError=%d - %s\", err, errStr);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

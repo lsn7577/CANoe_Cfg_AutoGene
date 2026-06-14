@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "getUserFilePath",
+  "category": "Other",
+  "title": "getUserFilePath",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetUserFilePath.htm",
+  "syntax": [
+    "long getUserFilePath(char fileName[], char absPath[], long absPathLen)"
+  ],
+  "description": [
+    "Gets the absolute path of a user file.",
+    "In case of execution in a distributed environment the absolute user file path (including file name) on the remote device (e.g. VN8900) is returned if the user file was pre-defined. If the file was not pre-defined an error code is returned.",
+    "In case of a single PC environment the registered absolute file path (including file name) of the user file is returned if the user file was pre-defined. If the file was not pre-defined the function returns the same result as getAbsFilePath (converting a path relative to the configuration directory to an absolute path)."
+  ],
+  "parameters": [
+    {
+      "name": "fileName",
+      "type": "",
+      "description": "A file name potentially containing a path. If the file name is pre-defined the path is ignored. Otherwise the path is interpreted as relative to the current configuration path in a single PC environment."
+    }
+  ],
+  "return": "On success this function returns the length of the full path name. Otherwise the function returns -1 if parameters do not fit or buffer size is too small or -2 if no user file with the given name was registered in case of a distributed environment.",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n   char absPath[256];\n   VgetUserFilePath(\"MyCAPLDll.INI\", absPath, 256);\n   MyCAPLDllFunction(absPath);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

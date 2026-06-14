@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "AFDX Copy-Operator",
+  "category": "ADFX",
+  "title": "AFDX Copy-Operator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxCopyOperator.htm",
+  "syntax": [
+    "target-object = source-object"
+  ],
+  "description": [
+    "The copy-operator allows to copy the following object combinations:",
+    "1. A664Message on A664Message",
+    "2. A664Message on A664Frame",
+    "3. A664Frame on A664Frame.",
+    "It is explicitly not allowed to copy a A664Frame on to a A664Message (as this might violate the A664Message integrity)."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "a664Message DEMOMSG_ALLTYPES myMsg = { msgChannel = 1};\na664Message * myMsg2;\na664Frame *     myFrame;\n\nmyMsg2 = myMsg;\t\t// copy myMsg onto myMsg2\n//myMsg2.EthVlId = 2;\t// forbidden for messages\n\n\nwrite(\"Msg2 as copy from Msg: #Ch:%d VlId=%x name:=%s\",\nmyMsg2.msgChannel,\nmyMsg2.EthVlId, myMsg2.name);\n\nmyFrame = myMsg;\t\t// copy myMsg onto myFrame\nmyFrame.EthVlId = 1;\t// allowed for frames\n\nwrite(\"myFrame as copy from Msg: #Ch:%d VlId=%x name:=%s\", myFrame.msgChannel,\n\nmyFrame.EthVlId, myFrame.name);\nmyFrame.EthVlId = 3;\nmyFrame.msgChannel = 2;\n\nwrite(\"myFrame modified2: #Ch:%d VlId=%x name:=%s\", myFrame.msgChannel,\nmyFrame.EthVlId, myFrame.name);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

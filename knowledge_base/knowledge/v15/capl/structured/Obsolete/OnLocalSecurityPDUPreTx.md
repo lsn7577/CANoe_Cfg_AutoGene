@@ -1,0 +1,30 @@
+# OnLocalSecurityPDUPreTx
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+Replaced by OnSecurityLocalPDUPreTx.
+
+This callback handler is called, after all data updates and the automatic Authenticator (CMAC) calculation has be done. Payload, AuthInfo and freshness can be modified in this handler before the transmission starts. Fault injection and evaluation of new algorithm are typical examples.
+
+Length of the AuthInfo in bit
+
+| Deprecated Function Replaced by OnSecurityLocalPDUPreTx. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | void OnLocalSecurityPDUPreTx(char pduName[], dword dataId, byte payload[], dword payloadLength, qword& authInfo, dword authInfoBitLength, qword& freshness, dword freshnessBitLength) |  |  |  |
+| Function | This callback handler is called, after all data updates and the automatic Authenticator (CMAC) calculation has be done. Payload, AuthInfo and freshness can be modified in this handler before the transmission starts. Fault injection and evaluation of new algorithm are typical examples. |  |  |  |
+| Parameters | pduName PDU name |  |  |  |
+| dataId Used DataID |  |  |  |  |
+| payload Byte array with the data to be transmitted |  |  |  |  |
+| payloadLength Length of the payload array in byte |  |  |  |  |
+| authInfo Authenticator (CMAC) |  |  |  |  |
+| authInfoLength Length of the AuthInfo in bit |  |  |  |  |
+| freshness Used freshness value |  |  |  |  |
+| freshnessLength Length of the freshness in bit |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 11.0 SP2 | CAN CAN FD FlexRay Ethernet | — | • |  |
+| Example /// This callback can be used to inject faults./// This callback is called after the CMAC is calculated for a PDU to send/// You can change the truncated freshness, the truncated calculated authenticator or the payload - the values which are part of the Secured-I-PDUvoid OnLocalSecurityPDUPreTx(char pduName[], dword dataId, byte payload[], dword payloadLength, qword& truncatedAuthInfo, dword truncatedAuthInfoBitLength, qword& truncatedFreshness, dword truncatedFreshnessBitLength){ if (dataId == 1) { truncatedAuthInfo = 0x123456; // change cmac // truncatedFreshness = 0x02; // change freshness // payload[0] = 0xFF; // change payload; }} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

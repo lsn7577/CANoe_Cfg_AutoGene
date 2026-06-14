@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "mostConfigureEclSequence",
+  "category": "MOST",
+  "title": "mostConfigureEclSequence",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTConfigureEclSequence.htm",
+  "syntax": [
+    "long mostConfigureEclSequence (long channel, long numIntervals, dword[] state, dword[] duration100us);"
+  ],
+  "description": [
+    "The function prepares VN2640 to generate a signal sequence on the ECL. The signal sequence can be started with the mostGenerateEclSeq function.",
+    "The sequence is defined in two arrays of dword. The first indicates the level (0: dominant, 1: recessive) of the generators output for each time interval. The second describes the duration for each time interval."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    },
+    {
+      "name": "numIntervals",
+      "type": "",
+      "description": "number of intervals described in the following arrays"
+    },
+    {
+      "name": "state",
+      "type": "",
+      "description": "For each time interval 0: dominant1: recessive"
+    },
+    {
+      "name": "duration100us",
+      "type": "",
+      "description": "Duration of interval with a resolution of 100 µs."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n   // configure a rectangle wave with a period of 20 ms\n   const long kEclSequenceLength = 8;\n   dword eclSequenceStates[kEclSequenceLength] = { 0, 1, 0, 1, 0, 1, 0, 1};\n   dword eclSequenceDuration[kEclSequenceLength] = { 100, 100, 100, 100, 100, 100, 100, 100};\n   mostConfigureEclSequence(1, kEclSequenceLength, eclSequenceStates, eclSequenceDuration);\n   // start generation of the sequence\n   mostGenerateEclSequence(1, 1);\n}\n\nOnMostEclSequence(long state)\n{\n   if(state == 1)\n   {\n      write (\"ECL Sequence Started!\");\n   }\n   else\n   {\n   write (\"ECL Sequence Stopped or Finished!\");\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.6 SP3",
+      "7.6 SP3",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST150",
+      "MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

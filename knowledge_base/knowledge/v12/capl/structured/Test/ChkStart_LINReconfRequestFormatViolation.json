@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINReconfRequestFormatViolation",
+  "category": "Test",
+  "title": "ChkStart_LINReconfRequestFormatViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinReconfRequestFormatViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINReconfRequestFormatViolation ();"
+  ],
+  "description": [
+    "Checks the format of LIN reconfiguration requests.",
+    "An event will be generated, if in a detected reconfiguration request at least one Slave attribute is violated.",
+    "As reconfiguration request considered frames with ID=0x3C, carrying the Service Identifier byte (SID) in the range [0xB0..0xB7]",
+    "Checked attributes: NAD, supplier ID, function ID, variant ID, message ID, protected ID, StartIndex.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "CaplCallback",
+      "type": "",
+      "description": "Name of CAPL callback function to be called on generated event. In simulation nodes this parameter has to be set. In test modules this parameter is optional."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\n// Create and start the check for LIN reconfiguration request format violation\ncheckId = ChkStart_LINReconfRequestFormatViolation(\"LINReconfRequestFormatCallback\"); \n...\n// CAPL callback for violation notification\nvoid LINReconfRequestFormatCallback (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

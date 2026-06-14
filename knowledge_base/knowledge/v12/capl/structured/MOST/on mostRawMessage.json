@@ -1,0 +1,29 @@
+{
+  "page_type": "event",
+  "name": "on mostRawMessage",
+  "category": "MOST",
+  "title": "on mostRawMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTRawMessage.htm",
+  "syntax": [
+    "on mostRawMessage"
+  ],
+  "description": [
+    "on mostRawMessage is called on the receipt of MOST frames whose type isn't Normal.",
+    "These are RemoteRead, RemoteWrite, Alloc, Dealloc and GetSource. See Selectors for the applicable selectors. The command output(this) can be used for forwarding the message in a node chain.",
+    "If the event procedure should only react to messages on channel 1 this is defined as follows:"
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPOnStateChange",
+  "category": "ISO11783",
+  "title": "Iso11783OPOnStateChange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPOnStateChange.htm",
+  "syntax": [
+    "void Iso11783OPOnStateChange( dword ecuHandle, dword state );"
+  ],
+  "description": [
+    "The function is called by the node layer, if the state of the Object Pool API has changed."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783OPOnStateChange( dword handle, dword state )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

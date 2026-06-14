@@ -1,0 +1,40 @@
+{
+  "page_type": "event",
+  "name": "on SD_service_discovery",
+  "category": "CommunicationObjects",
+  "title": "on SD_service_discovery",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnSDServiceDiscovery.htm",
+  "syntax": [
+    "on SD_service_discovery <Service>"
+  ],
+  "description": [
+    "The event procedure is called when service discovery is triggered by a consumer."
+  ],
+  "parameters": [
+    {
+      "name": "<Service>",
+      "type": "",
+      "description": "Designates the Service on which the event procedure shall react."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "}"
+    ],
+    "code": "on SD_service_discovery Mirrors::MirrorAdjustment\n{\n  dword i;\n  for (i = 0; i < getNrOfCOProviders(MirrorAdjustment); ++i)\n  {\n    SD_AnnounceProvider(MirrorAdjustment.providerSide[this.consumer.ConsumerIndex, i]);\n  }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "serviceConsumerRef *",
+      "link": "../Objects/CAPLfunctionServiceConsumerRef.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

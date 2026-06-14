@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1.0",
+  "scenarios": [
+    {
+      "id": "diagnostic_service_request",
+      "operation_types": ["诊断服务请求"],
+      "condition_types": ["诊断服务响应"],
+      "result_types": ["诊断服务响应"],
+      "required_sources": ["cdd"],
+      "required_kb_symbols": ["diagSendRequest", "diagSetParameter", "diagSetTarget"]
+    }
+  ]
+}
+

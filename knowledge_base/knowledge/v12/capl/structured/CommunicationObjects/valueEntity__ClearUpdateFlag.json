@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "valueEntity::ClearUpdateFlag",
+  "category": "CommunicationObjects",
+  "title": "valueEntity::ClearUpdateFlag",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionValueClearUpdateFlag.htm",
+  "syntax": [
+    "dword <value>::ClearUpdateFlag()"
+  ],
+  "description": [
+    "Clears the update flag of the value. It will be set again when the value is updated the next time. You can wait for the flag to be set with TestWaitForUpdateFlag.",
+    "Using the update flag instead of waiting for a single update has the advantage that it doesn’t matter how many times the value is updated or in which order two values are updated."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "long ret;\nconsumedEventRef * anEvent;\nanEvent = lookupConsumedEvent(path);\nanEvent.ClearUpdateFlag();\n// ...\nret = testWaitForUpdateFlag(anEvent, 200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

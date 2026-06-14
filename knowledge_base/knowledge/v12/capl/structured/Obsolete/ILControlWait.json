@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILControlWait",
+  "category": "Obsolete",
+  "title": "ILControlWait",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionILControlWait.htm",
+  "syntax": [
+    "long ILControlWait(char aNodeName[])"
+  ],
+  "description": [
+    "Stops the interaction layer of the selected simulation node.This function influences a simulation node with an assigned CANoe interaction layer."
+  ],
+  "parameters": [
+    {
+      "name": "aNodeName",
+      "type": "",
+      "description": "Name of the node that should stop the interaction layer."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": "// stops the interaction layer of ECU A for 2000ms.\n\nvariables {\n  msTimer WaitTimer;\n}\n\nOn Key 'x' {\n  ILControlWait (\"ECU_A\");\n  SetTimer(WaitTimer,2000);\n}\n\nOn Timer WaitTimer {\n  ILControlResume (\"ECU_A\");\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

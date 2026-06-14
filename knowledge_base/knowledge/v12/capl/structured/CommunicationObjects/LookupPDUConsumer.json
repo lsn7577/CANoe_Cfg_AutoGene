@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupPDUConsumer",
+  "category": "CommunicationObjects",
+  "title": "LookupPDUConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupPDUConsumer.htm",
+  "syntax": [
+    "pduConsumerRef * LookupPDUConsumer(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified PDU consumer. The path must be complete including namespaces, endpoint and PDU: (Namespace::)+Service[consumer].PDU.",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the PDU consumer."
+    }
+  ],
+  "return": "The PDU consumer. An uninitialized object if the PDU consumer is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "pduConsumerRef MirrorAdjustment.Status statusPDU;\nchar path[200];\nchar service[50] = \"Mirrors::MirrorAdjustment\";\nchar consumer[20] = \"CANoe\";\nchar pduName[20] = \"Status\";\n\nsnprintf(path, elcount(path), \"%s[%s].%s\", service, consumer, pduName);\nstatusPDU = (pduConsumerRef MirrorAdjustment.Status) lookupPDUConsumer(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

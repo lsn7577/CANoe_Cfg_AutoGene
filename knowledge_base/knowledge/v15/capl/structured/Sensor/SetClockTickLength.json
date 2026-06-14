@@ -1,0 +1,128 @@
+{
+  "page_type": "method",
+  "name": "SetClockTickLength",
+  "category": "Sensor",
+  "title": "SetClockTickLength",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionSetClockTickLength.htm",
+  "syntax": [
+    "SensorErrorCode sysvarSensorNamespace.SetClockTickLength(double clockTickLengthUs);"
+  ],
+  "description": [
+    "Overwrites the clock tick length of a simulated sensor with the given value."
+  ],
+  "parameters": [
+    {
+      "name": "clockTickLengthUs",
+      "type": "",
+      "description": "The overridden clock tick length in microseconds. Valid range: 1.4 – 120 µs"
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "enum sensorErrorCode result;\n\n// Change the sensor's tick length to 2.5 us\nresult = sysvar::SENSOR::SENT::SENSORSIM::Sensor.SetClockTickLength(2.5);\n\nif (result == eSensorNoError)\n{\n  write(\"Sensor clock tick lenght changed successfully.\");\n}\nelse\n{\n  write(\"Changing sensor clock tick length failed with code: %d\", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "15",
+      "—",
+      "—",
+      "—",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

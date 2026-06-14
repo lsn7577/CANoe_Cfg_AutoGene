@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetManualChecksum",
+  "category": "LIN",
+  "title": "linSetManualChecksum",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetManualChecksum.htm",
+  "syntax": [
+    "void linSetManualChecksum(linFrame linFrame, byte csValue)"
+  ],
+  "description": [
+    "Sets a checksum (that is usually not a correct one) for a LIN frame.Text"
+  ],
+  "parameters": [
+    {
+      "name": "linFrame",
+      "type": "",
+      "description": "LIN frame for which a checksum will be set."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "...\nlinFrame MotorControl frmMotorControl;\nlinSetManualChecksum(frmMotorControl, 0x1A);\noutput(frmMotorControl); // it is important to call output() to make the changes active"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

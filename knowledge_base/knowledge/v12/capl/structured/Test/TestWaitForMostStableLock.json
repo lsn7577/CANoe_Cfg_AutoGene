@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMostStableLock",
+  "category": "Test",
+  "title": "TestWaitForMostStableLock",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForMostStableLock.htm",
+  "syntax": [
+    "long TestWaitForMostStableLock(dword aTimeout);"
+  ],
+  "description": [
+    "The function waits until the expiration of the time aTimout for the occurrence of a LightLock event indicating \"stable lock\" state.",
+    "A LightLock event with a \"stable lock\" state is generated, when a \"light & Lock\" state lasts uninterrupted at the hardware for a period of time equal or longer than tLock (see MOST specification).",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum wait time [ms] (Specification of 0: no timeout controlling)"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

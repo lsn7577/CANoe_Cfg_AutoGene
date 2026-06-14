@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GetCMSetKeyCnfData",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GetCMSetKeyCnfData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GetCMSetKeyCnfData.htm",
+  "syntax": [
+    "void SLAC_GetCMSetKeyCnfData ( dword& MyNonce, dword& YourNonce, dword& PID, dword& PRN, dword& PMN, dword& CCOCapability )"
+  ],
+  "description": [
+    "Queries the additional parameters of a CM_Set_Key.Cnf message, all at once, via references."
+  ],
+  "parameters": [
+    {
+      "name": "MyNonce",
+      "type": "",
+      "description": "Random number that will be used to verify next message (usually 0)."
+    },
+    {
+      "name": "YourNonce",
+      "type": "",
+      "description": "Last nonce received; used to verify this message (usually 0)."
+    },
+    {
+      "name": "PID",
+      "type": "",
+      "description": "Protocol (usually 0x04)."
+    },
+    {
+      "name": "PRN",
+      "type": "",
+      "description": "Protocol Run Number (usually 0)."
+    },
+    {
+      "name": "PMN",
+      "type": "",
+      "description": "Protocol Message Number (usually 0)."
+    },
+    {
+      "name": "CCOCapability",
+      "type": "",
+      "description": "STA’s CCo capability (usually 0)."
+    }
+  ],
+  "return": "Data and length of the reserved field.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

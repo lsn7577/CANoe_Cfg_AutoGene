@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "testGetWaitScopeEventData",
+  "category": "Test",
+  "title": "testGetWaitScopeEventData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestGetWaitScopeEventData.htm",
+  "syntax": [
+    "long testGetWaitScopeEventData (ScopeEvent aScopeEvent);"
+  ],
+  "description": [
+    "Retrieves the data of CANoe Scope event triggered by the last wait instruction."
+  ],
+  "parameters": [
+    {
+      "name": "aScopeEvent",
+      "type": "",
+      "description": "Data structure to be filled."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void WaitForAnyScopeEvent(enum ScopeEventType expectedEventType)\n{\n   long res;\n   int expected;\n   int received;\n   ScopeEvent scopeEventData;\n   if ((res = testWaitForScopeEvent(8000)) != 1)\n   {\n      testStepFail(\"\",\"testWaitForScopeEvent (any) failed res=%d\", res);\n      return;\n   }\n   res = testGetWaitScopeEventData(scopeEventData);\n   if (res != 0)\n   {\n      testStepFail(\"\",\"testGetWaitScopeEventData failed res=%d\", res);\n      return;\n   }\n   if (scopeEventData.Type != expectedEventType)\n   {\n      expected = expectedEventType;\n      received = scopeEventData.Type;\n      testStepFail(\"\",\"testGetWaitScopeEventData delivers not expected event type: expected = %d, received = %d\", expected, received);\n      return;\n   }\n   testStepPass(\"\", \"Scope event received. Data: type=%d, DataId=%d, Time=%I64d\", (int)scopeEventData.Type, (int)scopeEventData.DataID, scopeEventData.Time);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.6 SP3",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Scope",
+      "Scope",
+      "—",
+      "—",
+      "Scope"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

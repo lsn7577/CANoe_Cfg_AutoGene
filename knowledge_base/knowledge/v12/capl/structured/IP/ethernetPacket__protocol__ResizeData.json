@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::protocol::ResizeData",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::ResizeData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionProtocolResizeData.htm",
+  "syntax": [
+    "long ethernetPacket.<protocol>.ResizeData( word newLength );"
+  ],
+  "description": [
+    "Resizes the payload of a protocol within an Ethernet packet.",
+    "If the newLength is greater than the length of the Ethernet packet, the Ethernet packet is enlarged.",
+    "If <protocol> is not available in the packet, an error is returned."
+  ],
+  "parameters": [
+    {
+      "name": "newLength",
+      "type": "",
+      "description": "New length in bytes"
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "word i;\nethernetPacket pkt;\n\npkt.udp.Init();\npkt.udp.ResizeData( 200 );\n\nfor (i = 0; i < 200; i++ )\n{\n  pkt.udp.Byte(i) = 0;\n}\n\npkt.CompletePacket();\noutput( pkt );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

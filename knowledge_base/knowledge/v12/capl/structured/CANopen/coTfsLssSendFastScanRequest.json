@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendFastScanRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendFastScanRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendFastScanReq.htm",
+  "syntax": [
+    "long coTfsLssSendFastScanRequest( dword idNumber, dword bitCheck, dword sub, dword next );"
+  ],
+  "description": [
+    "This function sends a LSS fast scan protocol request."
+  ],
+  "parameters": [
+    {
+      "name": "idNumber",
+      "type": "",
+      "description": "FastScan ID"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* send LSS fast scan protocol request */\n\nif (coTfsLssSendFastScanRequest(0x000002, 28, 1, 1) == 1) {\n  /* request sent */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

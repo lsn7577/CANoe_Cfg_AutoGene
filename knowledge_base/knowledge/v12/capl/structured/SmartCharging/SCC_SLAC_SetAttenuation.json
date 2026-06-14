@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_SetAttenuation",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_SetAttenuation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_SetAttenuation.htm",
+  "syntax": [
+    "long SCC_SLAC_SetAttenuation ( float AttenuationMean, float AttenuationDev )"
+  ],
+  "description": [
+    "Changes the probability distribution used to create attenuation characteristics when simulating a QCA chip. The values apply to all SLAC sessions, yet may be set each time an M-Sound is received using the indication SCC_CM_MNBC_Sound_Ind."
+  ],
+  "parameters": [
+    {
+      "name": "AttenuationMean",
+      "type": "",
+      "description": "Attenuation Mean Value in dB"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

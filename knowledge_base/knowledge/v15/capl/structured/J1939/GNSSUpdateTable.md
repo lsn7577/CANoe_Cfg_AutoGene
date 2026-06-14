@@ -1,0 +1,40 @@
+# GNSSUpdateTable
+
+> Category: `J1939` | Type: `function`
+
+## Syntax
+
+```c
+dword GNSSUpdateTable();
+```
+
+## Description
+
+Updates the network table.
+
+The function deletes the content of the current table and initiates the Request PGN that was used to request Address Claiming. After that, the table is restructured. If a node is forced off the network by another node with the same address, it remains intact in the network table with a NULL address. The content of the table is not deleted until this function is called. It also initiates an update of the table. Nodes reporting with the NULL address are not accepted in this process.
+
+## Return Values
+
+Error code
+
+## Example
+
+```c
+GNSSUpdateTable();
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.2 | 13.0 | — | — | — |
+| Restricted To | — | J1939 ISO11783 | J1939 ISO11783 | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | — | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | — | — | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

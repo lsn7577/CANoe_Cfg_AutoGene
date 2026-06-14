@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDOnDataChanged",
+  "category": "ISO11783",
+  "title": "Iso11783PDDOnDataChanged",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDOnDataChanged.htm",
+  "syntax": [
+    "void Iso11783PDDOnDataChanged( dword ecuHandle, dword ddi, dword elNum, double value );"
+  ],
+  "description": [
+    "This function can be implemented in the CAPL program. The function is called up by the node layer if a process variable has been changed with a value command via the CAN Bus."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783PDDOnDataChanged( dword ecuHandle, dword ddi, dword elNum, double value ){\n  switch( ddi) {\n    case 0x200:\n      switch(elNum) {\n        case 2:\n          // set values of sections\n          Iso11783PDDSetValue( Sprayer, 0x200. 3, value );\n          Iso11783PDDSetValue( Sprayer, 0x200. 4, value );\n          Iso11783PDDSetValue( Sprayer, 0x200. 5, value );\n          gOutputPerArea[0] = value;\n          gOutputPerArea[1] = value;\n          gOutputPerArea[2] = value;\n          break;\n        case 3:\n          gOutputPerArea[0] = value;\n          break;\n        case 4:\n          gOutputPerArea[1] = value;\n          break;\n        case 5:\n          gOutputPerArea[2] = value;\n          break;\n      }\n      break;\n    case 0x402: // volume count\n       switch(elNum) {\n        case 1:\n          gVolumeCount = value;\n          break;\n      }\n      break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

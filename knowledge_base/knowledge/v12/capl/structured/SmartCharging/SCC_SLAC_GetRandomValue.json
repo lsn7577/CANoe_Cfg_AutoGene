@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GetRandomValue",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GetRandomValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GetRandomValue.htm",
+  "syntax": [
+    "void SCC_SLAC_GetRandomValue ( byte Rnd[] )"
+  ],
+  "description": [
+    "Gets the random value transmitted with CM_MNBC_Sound.Ind."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "The random value transmitted with CM_MNBC_Sound.Ind, to the output buffer (16 byte).",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

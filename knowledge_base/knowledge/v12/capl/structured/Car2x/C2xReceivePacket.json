@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "C2xReceivePacket",
+  "category": "Car2x",
+  "title": "C2xReceivePacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xReceivePacket.htm",
+  "syntax": [
+    "long C2xReceivePacket( char *onPacketCallback );"
+  ],
+  "description": [
+    "Use this function to register a CAPL callback to receive WLAN packets. The callback has a packet handle as parameter and the functions to access the tokens can be used. The C2xGetThis-functions can be used to access the payload of the highest interpretable protocol.",
+    "The callback must have the following signature:"
+  ],
+  "parameters": [
+    {
+      "name": "onPacketCallback",
+      "type": "",
+      "description": "Name of CAPL callback"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n C2xReceivePacket( \"OnC2xPacket\");\n}\nvoid OnC2xPacket( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  byte rx_data[1500];\n  byte rx_packet[1500];\n  long rx_length;\n  long rx_headerLength;\n\n  rx_headerLength = C2xGetTokenData(packet, \"wlan\", \"header\", elCount(rx_packet), rx_packet);\n  // without Ethernet header\n  rx_length = C2xGetTokenData(packet, \"eth\", \"data\", elCount(rx_data), rx_data);\n  write (\"rx_headerLength: %d\", rx_headerLength);\n  write (\"rx_dataLength: %d\", rx_length);\n  memcpy_off(rx_packet, rx_headerLength, rx_data, 0, rx_length);\n  rx_length += rx_headerLength;\n  // Always use rx_length to access rx_packet!\n  write (\"rx_length: %d\", rx_length);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

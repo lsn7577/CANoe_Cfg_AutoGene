@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "DoIP_InitAsTester",
+  "category": "Diagnostics",
+  "title": "DoIP_InitAsTester",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPInitAsTester.htm",
+  "syntax": [
+    "void DoIP_InitAsTester();"
+  ],
+  "description": [
+    "Per default the DoIP.DLL will operate as ECU simulation. In order to use this DLL as tester, e.g. in a test module, the operation mode has to be changed by calling this function in on preStart. It is NOT necessary to call this function when the built-in diagnostics channel is used, i.e. if the DoIP.DLL is not configured in the tester."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  // Make sure the DoIP.DLL does not act as vehicle\n  DoIP_InitAsTester();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

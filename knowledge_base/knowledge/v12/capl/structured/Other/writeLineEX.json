@@ -1,0 +1,59 @@
+{
+  "page_type": "function",
+  "name": "writeLineEX",
+  "category": "Other",
+  "title": "writeLineEX",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWriteLineEx.htm",
+  "syntax": [
+    "void writeLineEx(long sink, dword severity, char format[], ...)"
+  ],
+  "description": [
+    "Writes the text into a new line of the specified window, into a page of the CANoe Write Window or into a logging file.",
+    "To write into the CANoe Trace Window please activate the CAPL System Message in the predefined filters of the Trace Window."
+  ],
+  "parameters": [
+    {
+      "name": "-3",
+      "type": "",
+      "description": "Trace Window"
+    },
+    {
+      "name": "-2",
+      "type": "",
+      "description": "Output to the logging file (only in ASC format and if the CAPL node is inserted in the Measurement Setup in front of the Logging Block)"
+    },
+    {
+      "name": "-1",
+      "type": "",
+      "description": "Reserved"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Output to the System page of the Write Window"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Output to the CAPL page of the Write Window"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Output to the Test page of the Write Window"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitEventMostAMSMsgData",
+  "category": "Test",
+  "title": "TestGetWaitEventMostAMSMsgData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitEventMostAmsMsgData.htm",
+  "syntax": [
+    "long TestGetWaitEventMostAMSMsgData (MostAMSmessage aMessage);"
+  ],
+  "description": [
+    "If the last event was a MOST AMS message that resolved a wait construction, with the first function the content of the message can be called.The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin…\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message variable that should be filled in with this function."
+    }
+  ],
+  "return": "0: Successful data access",
+  "example": {
+    "description": [],
+    "code": "if(testWaitForMostAMSMessage(\"AudioDiskPlayer.MediaInfo.Status\", 1, 500) == 1)\n  {\n    mostAMSMessage * msg;\n    testGetWaitEventMostAMSMsgData(msg);\n    if(msg.DLC > 4 && msg.byte(4) == 1)\n    {\n      testStepPass(\"MediaType = Audio\");\n    }\n    else\n    {\n      testStepFail();\n    }\n  }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

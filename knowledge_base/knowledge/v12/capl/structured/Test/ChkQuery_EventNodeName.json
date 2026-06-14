@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventNodeName",
+  "category": "Test",
+  "title": "ChkQuery_EventNodeName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventNodeName.htm",
+  "syntax": [
+    "long ChkQuery_EventNodeName (dword CheckId, char buffer[], dword bufferlen);",
+    "check.QueryEventNodeName (char buffer[], dword bufferlen);"
+  ],
+  "description": [
+    "Stores the name of the node, for which the event has been sent, in the buffer and returns the length of the name, or 0 if specified for a range of nodes."
+  ],
+  "parameters": [
+    {
+      "name": "CheckId",
+      "type": "",
+      "description": "Identifier of the queried Check."
+    }
+  ],
+  "return": "< 0: Refers the query error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

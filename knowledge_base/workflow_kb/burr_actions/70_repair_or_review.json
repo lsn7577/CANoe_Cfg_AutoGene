@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1.0",
+  "id": "repair_or_review",
+  "phase": "repair",
+  "description": "Convert validation failures into a repair plan or a human review request.",
+  "reads": [
+    "validation_report",
+    "project_spec",
+    "generated_artifacts",
+    "evidence_bundle"
+  ],
+  "writes": [
+    "repair_plan"
+  ],
+  "knowledge_inputs": [
+    {
+      "kind": "validation_report",
+      "source": "state.validation_report"
+    }
+  ],
+  "pack_inputs": [
+    "validation_rules/*.json"
+  ],
+  "gates": [
+    "repair_plan_has_next_action",
+    "unrepairable_items_marked_for_review"
+  ],
+  "transitions": [
+    {
+      "to": "retrieve_evidence",
+      "condition": "repair_plan.next_action == 'retrieve_more_evidence'"
+    },
+    {
+      "to": "plan_project",
+      "condition": "repair_plan.next_action == 'replan_project'"
+    },
+    {
+      "to": "generate_artifacts",
+      "condition": "repair_plan.next_action == 'regenerate_artifacts'"
+    }
+  ],
+  "extension_notes": [
+    "This action is optional in strict graph profiles that stop on validation failure.",
+    "Use bounded retry counters in Burr state to avoid loops."
+  ]
+}
+

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coGetVersionInfo",
+  "category": "Obsolete",
+  "title": "coGetVersionInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoGetVersionInfo.htm",
+  "syntax": [
+    "void coGetVersionInfo( char buffer[], dword bufferSize, dword errCode[] );"
+  ],
+  "description": [
+    "The function returns the current version number of the node layer used."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer for the version number"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nchar buffer[128];\n\ncoGetVersionInfo( buffer, elCount(buffer), errCode );\nif (errCode[0] == 0) {\n  write( \"Used Node layer version: %s\", buffer ); \n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

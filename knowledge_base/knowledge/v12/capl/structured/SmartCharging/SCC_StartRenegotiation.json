@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_StartRenegotiation",
+  "category": "SmartCharging",
+  "title": "SCC_StartRenegotiation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_StartRenegotiation.htm",
+  "syntax": [
+    "long SCC_StartRenegotiation ( )"
+  ],
+  "description": [
+    "Initiates a renegotiation procedure while inside the charge loop.",
+    "The charge point may initiate a renegotiation procedure by sending an EVSENotification with the value ReNegotiation (see SCC_SetEVSENotification)."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForUserFileSync",
+  "category": "Test",
+  "title": "TestWaitForUserFileSync",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForUserFileSync.htm",
+  "syntax": [
+    "long TestWaitForUserFileSync(char aFileName[], long isDirectionClientToServer);"
+  ],
+  "description": [
+    "This function can be used to start synchronization of user files between client and server system in a distributed environment. Once the synchronization has been started successfully the system waits until the file is synchronized.",
+    "The function is not allowed in CANoe standalone mode. Errors are reported as error in test system or fail in case of 2-valued verdict concept."
+  ],
+  "parameters": [
+    {
+      "name": "aFileName",
+      "type": "",
+      "description": "The name of the user file to be synchronized (path component is ignored)."
+    }
+  ],
+  "return": "1: The user file was successfully synchronized.",
+  "example": {
+    "description": [],
+    "code": "long ret;\nTestStepBegin(\"tc1\", \"sync\");\nret = TestWaitForUserFileSync(\"UserFileCAPL.TXT\", 1);\nif (ret != 1) {\n   TestStepFail(\"Transmit of \\\"UserFileCAPL.TXT\\\" from client to server failed.\");\n   TestCaseFail();\n} else {\n   TestStepPass(\"Synchronization succeeded.\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

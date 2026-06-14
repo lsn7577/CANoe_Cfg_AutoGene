@@ -1,0 +1,22 @@
+# coGetLastError
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+Error Handling with CANopen Node Layer | See Also
+
+| Deprecated Function Replaced by CANopen Basic Functions. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | dword coGetLastError( char buffer[], dword bufferSize ); |  |  |  |
+| Function | The function returns the error code and error text of the last function call. Note If after a failed call a function is called successfully, then the last error is deleted. | Note If after a failed call a function is called successfully, then the last error is deleted. |  |  |
+| Note If after a failed call a function is called successfully, then the last error is deleted. |  |  |  |  |
+| Parameters | buffer Buffer for the error text |  |  |  |
+| bufferSize Size of the buffer in bytes |  |  |  |  |
+| Return Values | Error code |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 6.0-9.0 SP6 | CANopen | — | • |  |
+| Example dword errCode[1];char errText[100];coODCreateFloat( 0x2000, 0x0, 0x1, 1, 2.5894, errCode );if ( coGetLastError(errText, elcount(errText)) != 0){ write( "Error %d occurred, ErrorText = %s", errCode[0], errText );} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

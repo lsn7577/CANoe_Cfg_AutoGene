@@ -1,0 +1,32 @@
+{
+  "page_type": "concept",
+  "name": "ethernetPacket Selectors: <protocol>.<field>.byteLength",
+  "category": "IP",
+  "title": "ethernetPacket Selectors: <protocol>.<field>.byteLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Selectors/CAPLfunctionProtocolFieldByteLength.htm",
+  "syntax": [],
+  "description": [
+    "Byte length of a protocol field. The selector is read only.",
+    "If <protocol> or <field> is not contained in the packet, the selector returns 0. ethernetPacket::protocol::field::IsAvailable can be used to find out if the field is available."
+  ],
+  "parameters": [],
+  "return": "Byte length of a protocol field.",
+  "example": {
+    "description": [],
+    "code": "ethernetPacket pkt;\nword           offset, length;\n\n// initialize packet with IPv4 and UDP protocols\npkt.udp.Init();\npkt.udp.ResizeData(10);\n\noffset = pkt.udp.checksum.byteOffset;\nlength = pkt.udp.checksum.byteLength;\n\nwrite( \"Protocol field udp.checksum is at byte %d:%d\", offset, length );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "ethernetPacket",
+      "link": "../Objects/CAPLfunctionEthernetPacket.htm"
+    }
+  ],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

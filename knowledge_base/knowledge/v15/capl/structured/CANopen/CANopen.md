@@ -1,0 +1,29 @@
+# CANopen
+
+> Category: `CANopen` | Type: `notes`
+
+## Description
+
+The Test Feature Set test module for CANopen can be assigned to any test module within CANoe. This test module makes available the following functionality:
+
+Starting with CANoe 10.0 the CANopen basic functions replace the CANopen node layer functions. See below.
+
+Also available: Test Feature Set for CANopen
+
+The CANopen® CANopen® is a registered community trade mark of CAN in Automation e.V. Node Layer can be assigned to every node in the simulation structure. It simplifies the simulation of CANopen nodes and offers CANopen specific functions:
+
+| CANopen Only available with option .CANopen. |
+|---|
+
+| CANopen Test Feature Set Node Layer CAPL Functions The Test Feature Set test module for CANopen can be assigned to any test module within CANoe. This test module makes available the following functionality: SDO protocol tests NMT tests Heartbeat tests Guarding tests Emergency tests SDO response time statistics User callbacks for sync messages/PDOs, heartbeat and callback events PDO tests Object dictionary tests SDO timing tests | CANopen Test Feature Set Node Layer | CAPL Functions The Test Feature Set test module for CANopen can be assigned to any test module within CANoe. This test module makes available the following functionality: SDO protocol tests NMT tests Heartbeat tests Guarding tests Emergency tests SDO response time statistics User callbacks for sync messages/PDOs, heartbeat and callback events PDO tests Object dictionary tests SDO timing tests | CANopen Basic CAPL Functions Starting with CANoe 10.0 the CANopen basic functions replace the CANopen node layer functions. See below. Also available: Test Feature Set for CANopen CANopen Node Layer (deprecated) CAPL Functions Note The CANopen node layer is still supported for capability with CANoe versions up to and including 9.0 SP6. It was replaced by the CANopenSimulation Concept that is supported starting with CANoe 10.0. The CANopen® CANopen® is a registered community trade mark of CAN in Automation e.V. Node Layer can be assigned to every node in the simulation structure. It simplifies the simulation of CANopen nodes and offers CANopen specific functions: Realizing the object dictionary Communication status machine Guarding and Heartbeat Processing PDOs | CANopen Basic | CAPL Functions Starting with CANoe 10.0 the CANopen basic functions replace the CANopen node layer functions. See below. Also available: Test Feature Set for CANopen | CANopen Node Layer (deprecated) | CAPL Functions Note The CANopen node layer is still supported for capability with CANoe versions up to and including 9.0 SP6. It was replaced by the CANopenSimulation Concept that is supported starting with CANoe 10.0. The CANopen® CANopen® is a registered community trade mark of CAN in Automation e.V. Node Layer can be assigned to every node in the simulation structure. It simplifies the simulation of CANopen nodes and offers CANopen specific functions: Realizing the object dictionary Communication status machine Guarding and Heartbeat Processing PDOs | Note The CANopen node layer is still supported for capability with CANoe versions up to and including 9.0 SP6. It was replaced by the CANopenSimulation Concept that is supported starting with CANoe 10.0. |
+|---|---|---|---|---|---|---|---|---|
+| CANopen Test Feature Set Node Layer |  |  |  |  |  |  |  |  |
+| CAPL Functions The Test Feature Set test module for CANopen can be assigned to any test module within CANoe. This test module makes available the following functionality: SDO protocol tests NMT tests Heartbeat tests Guarding tests Emergency tests SDO response time statistics User callbacks for sync messages/PDOs, heartbeat and callback events PDO tests Object dictionary tests SDO timing tests |  |  |  |  |  |  |  |  |
+| CANopen Basic |  |  |  |  |  |  |  |  |
+| CAPL Functions Starting with CANoe 10.0 the CANopen basic functions replace the CANopen node layer functions. See below. Also available: Test Feature Set for CANopen |  |  |  |  |  |  |  |  |
+| CANopen Node Layer (deprecated) |  |  |  |  |  |  |  |  |
+| CAPL Functions Note The CANopen node layer is still supported for capability with CANoe versions up to and including 9.0 SP6. It was replaced by the CANopenSimulation Concept that is supported starting with CANoe 10.0. The CANopen® CANopen® is a registered community trade mark of CAN in Automation e.V. Node Layer can be assigned to every node in the simulation structure. It simplifies the simulation of CANopen nodes and offers CANopen specific functions: Realizing the object dictionary Communication status machine Guarding and Heartbeat Processing PDOs | Note The CANopen node layer is still supported for capability with CANoe versions up to and including 9.0 SP6. It was replaced by the CANopenSimulation Concept that is supported starting with CANoe 10.0. |  |  |  |  |  |  |  |
+| Note The CANopen node layer is still supported for capability with CANoe versions up to and including 9.0 SP6. It was replaced by the CANopenSimulation Concept that is supported starting with CANoe 10.0. |  |  |  |  |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

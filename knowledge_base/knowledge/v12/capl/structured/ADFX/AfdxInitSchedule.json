@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AfdxInitSchedule",
+  "category": "ADFX",
+  "title": "AfdxInitSchedule",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxInitSchedule.htm",
+  "syntax": [
+    "long AfdxInitSchedule( long packet );"
+  ],
+  "description": [
+    "Initializes the scheduled transmission of the specified message during the start phase of the measurement.",
+    "The behavior of the function call differs for different measurement phases."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  long packet;\n  char errTxt[256];\n\n  packet = AfdxInitPacket(0, \"TESTMSG_ALLTYPES\", 0 );\n  if (packet == 0)\n  {\n    AfdxGetLastErrorText(elCount(errTxt), errTxt);\n    writeEx( -3, 0, \"<%NODE_NAME%> AfdxInitPacket failed due to:%s\", errTxt );\n  }\n\n  if (AfdxInitSchedule(packet) != 0)\n  {\n    AfdxGetLastErrorText(elCount(errTxt), errTxt);\n    writeEx( -3, 0, \"<%NODE_NAME%> AfdxInitSchedule failed due to:%s\", errTxt );\n  }\n  AfdxReleasePacket(packet);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

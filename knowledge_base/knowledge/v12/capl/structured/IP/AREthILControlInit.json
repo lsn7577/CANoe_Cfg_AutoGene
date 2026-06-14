@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "AREthILControlInit",
+  "category": "IP",
+  "title": "AREthILControlInit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthILControlInit.htm",
+  "syntax": [
+    "long AREthILControlInit();"
+  ],
+  "description": [
+    "Initialization of AUTOSAR Eth IL.",
+    "Prevents the AUTOSAR Eth IL from starting automatically. If this function is used, the AUTOSAR Eth IL must then be started with the AREthILControlStart function.",
+    "This function may only be used in on preStart."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  // prevent auto start\n  AREthILControlInit();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

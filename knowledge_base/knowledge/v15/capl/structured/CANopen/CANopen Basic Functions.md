@@ -1,0 +1,67 @@
+# CANopen Basic Functions
+
+> Category: `CANopen` | Type: `notes`
+
+## Description
+
+This section offers an overview of the CANopen basic CAPL functions.
+
+Callbacks for SDO Server Simulation of Domain Data Objects
+
+The following callbacks are called in the CAPL program of a CANopen simulation node that provides objects of Data Type DOMAIN if CAPL is selected in the CANopen Configuration Window:
+
+Callbacks for SDO Client Simulation of Domain Data Objects
+
+The following callbacks are called in the CAPL program for objects of Data Type DOMAIN if CAPL is selected in the CANopenConfiguration Window:
+
+| Functions | Short Description |
+|---|---|
+| CANopenDomainServerOpenFileRead | Opens the file for a domain data object of a CANopen node for read access. |
+| CANopenDomainServerSetFileContents | Sets the contents of a domain data object file of a CANopen node. |
+| CANopenDownload | Writes an entry in the object dictionary of another node using the SDO protocol. |
+| CANopenDownloadDomain | Writes an entry of type DOMAIN in the object dictionary of another node. |
+| CANopenDownloadDomainFromFile | Writes the contents of a file to an entry of type DOMAIN in the object dictionary of another node. |
+| CANopenEmergency | Activates/deactivates an emergency error code. |
+| CANopenInternalNMTCommand | Performs an NMT command inside a simulated CANopen node. |
+| CANopenTriggerTPDO | Triggers the immediate transmission of a TPDO. |
+| CANopenUpload | Reads an entry from the object dictionary of another node using the SDO protocol. |
+| CANopenUploadGetData | Returns the data of a CANopen upload in a callback function as char or byte array. |
+| CANopenUploadGetDouble | Returns the data of a CANopen upload in a callback function as double. |
+| CANopenUploadGetSigned | Returns the data of a CANopen upload in a callback function as a signed value. |
+| CANopenUploadGetUnsigned | Returns the data of a CANopen upload in a callback function as an unsigned value. |
+| CANopenUploadDomain | Reads an entry of type DOMAIN from the object dictionary of another node. |
+
+| Functions | Syntax / Short Description |
+|---|---|
+| OnCANopenDomainServerDownloadBegin | OnCANopenDomainServerDownloadBegin(dword index, dword subIndex, dword size) |
+| Is called in the SDO server simulation if an SOO client writes an entry in the Object dictionary of data type DOMAIN. index Index of the object, value range 1..65.535. subIndex Sub index of the object, value range 0..255. size Size of the data that will be written. |  |
+| OnCANopenDomainServerDownloadNextData | OnCANopenDomainServerDownloadNextData(dword index, dword subIndex, dword offset, dword payloadSize, byte payload[]) |
+| Is called in the SDO server simulation for the next data transmission writing an entry of data type DOMAIN. index Index of the object, value range 1..65.535. subIndex Sub index of the object, value range 0..255. offset Start offset in the total data which is written. payloadSize Size of the payload in bytes. payload Data to be written. |  |
+| OnCANopenDomainServerUploadBegin | OnCANopenDomainServerUploadBegin(dword index, dword subIndex, dword& size) |
+| Is called in the SDO server simulation if an SDO client reads an entry in the Object dictionary of data type DOMAIN. index Index of the object, value range 1..65.535. subIndex Sub index of the object, value range 0..255. size (out parameter) Size of the data that is read. |  |
+| OnCANopenDomainServerUploadNextData | OnCANopenDomainServerUploadNextData(dword index, dword subIndex, dword offset, dword payloadSize, byte payload[]) |
+| Is called in the SDO server simulation for the next data transmission reading an entry of data type DOMAIN. index Index of the object, value range 1..65.535. subIndex Sub index of the object, value range 0..255. offset Start offset in the total data which is written. payloadSize Size of the data in bytes. payload Data to be read. |  |
+
+| Functions | Syntax / Short Description |
+|---|---|
+| OnCANopenDomainDownloadNextData | OnCANopenDomainDownloadNextData(dword id, dword index, dword subIndex, dword offset, dword payloadSize, byte payload[]) |
+| Is called for the next data transmission writing an entry of data type DOMAIN. id Node ID of the SDO Server. index Index of the object, value range 1..65.535. subIndex Sub index of the object, value range 0..255. offset Start offset in the total data which is written. payloadSize Size of the payload in bytes. payload Data to be written. |  |
+| OnCANopenDomainUploadBegin | OnCANopenDomainUploadBegin(dword id, dword index, dword subIndex, dword size) |
+| Is called if an SDO client reads an entry in the Object dictionary of data type DOMAIN. id Node ID of the SDO Server. index Index of the object, value range 1..65.535. subIndex Sub index of the object, value range 0..255. size Size of the data in bytes. |  |
+| OnCANopenDomainUploadNextData | OnCANopenDomainUploadNextData(dword id, dword index, dword subIndex, dword offset, dword payloadSize, byte payload[]) |
+| Is called for the next data transmission reading an entry of data type DOMAIN. id Node ID of the SDO Server. index Index of the object, value range 1..65.535. subIndex Sub index of the object, value range 0..255. payloadSize Size of the payload in bytes. payload Data to be read. |  |
+
+| Functions | Short Description |
+|---|---|
+| TestDisableMsg | Prevents all sending of the message except the sending by calling the function testSetMsgEvent. |
+| TestEnableMsg | Enables the sending of the message. |
+| TestDisableMsgAllTx | Prevents all sending of tx messages of the node except the sending with testSetMsgEvent. |
+| TestEnableMsgAllTx | Enables the sending of all tx messages of a node. |
+| TestSetMsgCycleTime | Assigns a new cycle time to the message. |
+| TestResetMsgCycleTime | Resets the cycle time of the message to the database cycle time. |
+| TestSetMsgEvent | Sends the message once. |
+| TestSetMsgDlc | Assigns a new DLC to the message. |
+| TestResetAllFaultInjections | Reset all fault injection settings. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

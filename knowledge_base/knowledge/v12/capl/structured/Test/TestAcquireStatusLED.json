@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestAcquireStatusLED",
+  "category": "Test",
+  "title": "TestAcquireStatusLED",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestAcquireStatusLED.htm",
+  "syntax": [
+    "long TestAcquireStatusLED(dword ledBitMask);"
+  ],
+  "description": [
+    "Can be used in standalone mode to assign the test module state to an LED.",
+    "States:"
+  ],
+  "parameters": [
+    {
+      "name": "ledBitMask",
+      "type": "",
+      "description": "The LED that wants to be used. Available bit masks under xlAcquireLED.The LED’s Keypad S1 and Keypad S2 cannot be used for test modules."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

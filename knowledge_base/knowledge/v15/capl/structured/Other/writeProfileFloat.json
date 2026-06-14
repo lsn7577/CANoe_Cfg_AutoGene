@@ -1,0 +1,149 @@
+{
+  "page_type": "function",
+  "name": "writeProfileFloat",
+  "category": "Other",
+  "title": "writeProfileFloat",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionWriteProFileFloat.htm",
+  "syntax": [
+    "long writeProfileFloat(char section[], char entry[], float value, char filename[]); // form 1",
+    "long writeProfileFloat(char section[], char entry[], float value, char filename[], dword utf16); // form 2"
+  ],
+  "description": [
+    "Opens the file filename, searches the section section and writes the variable entry with the value value. If entry already exists the old value is overwritten."
+  ],
+  "parameters": [
+    {
+      "name": "section",
+      "type": "",
+      "description": "Section of the file as a string."
+    },
+    {
+      "name": "entry",
+      "type": "",
+      "description": "Variable name as a string."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "Value as a float."
+    },
+    {
+      "name": "filename",
+      "type": "",
+      "description": "File path as a string."
+    },
+    {
+      "name": "utf16",
+      "type": "",
+      "description": "If this flag is set the file will be UTF-16LE encoded if it is newly written, or interpreted as such, if the corresponding BOM is also present."
+    }
+  ],
+  "return": "The functional result is 0 in case of an error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "3.0: form 1 12.0: form 2",
+      "3.0: form 1 12.0: form 2",
+      "13.0",
+      "—",
+      "14",
+      "1.0: form 1 4.0: form 2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

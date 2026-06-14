@@ -1,0 +1,209 @@
+{
+  "page_type": "function",
+  "name": "putValueToControl",
+  "category": "Other",
+  "title": "putValueToControl",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionPutValueToControl.htm",
+  "syntax": [
+    "void putValueToControl(char panel[], char control[], float val);",
+    "void putValueToControl(char panel[], char control[], float val, long paragraph);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], long val);",
+    "void putValueToControl(char panel[], char control[], long val, long paragraph);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], long val, long paragraph, long dispHex);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], char val[]);",
+    "void putValueToControl(char panel[], char control[], message val);",
+    "void putValueToControl(char panel[], char control[], message val, long paragraph);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], message val, long paragraph, long dispHex);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], pg val);",
+    "void putValueToControl(char panel[], char control[], pg val, long paragraph);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], pg val, long paragraph, long dispHex);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], linFrame val);",
+    "void putValueToControl(char panel[], char control[], linFrame val, long paragraph);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], linFrame val, long paragraph, long dispHex);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], mostMessage val);",
+    "void putValueToControl(char panel[], char control[], mostMessage val, long paragraph);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], mostMessage val, long paragraph, long dispHex);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], mostRawMessage val);",
+    "void putValueToControl(char panel[], char control[], mostRawMessage val, long paragraph);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], mostRawMessage val, long paragraph, long dispHex);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], gmLanMessage val);",
+    "void putValueToControl(char panel[], char control[], gmLanMessage val, long paragraph);This function requires CANoe 7.5 and higher.1",
+    "void putValueToControl(char panel[], char control[], gmLanMessage val, long paragraph, long dispHex);This function requires CANoe 7.5 and higher.1"
+  ],
+  "description": [
+    "Assigns the value val to the Panel Designer Multi Display Control or the control:",
+    "CAPL Output View",
+    "The Multi Display Control/ CAPL Output View is located on the panel with the title panel.",
+    "Different contents are displayed with the Multi Display Control/CAPL Output View. In addition to numbers (float and integer) and texts (char[]), in particular different messages (CAN, LIN, ... and J1939 PGNs) can also be displayed."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Name of the panel, restricted to 128 characters."
+    },
+    {
+      "name": "control",
+      "type": "",
+      "description": "Name of the control, restricted to 128 characters."
+    },
+    {
+      "name": "val",
+      "type": "",
+      "description": "Value to be displayed."
+    },
+    {
+      "name": "Note This parameter is only available with the: CAPL Output View",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Parameter Values",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "In this case, no new paragraph is set. The text will be append directly to the existing output. This is the default setting. If you want to use the default setting you do not need to set the parameter when calling the function."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "In this case, the output is written to a new line."
+    },
+    {
+      "name": "Note This parameter is only available with the: CAPL Output View The physical value of a signal cannot be displayed in hexadecimal format. Then the setting is not considered and will be ignored. Only the raw value of a signal can be formatted hexadecimal.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Parameter Values",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "In this case, the signal/message/value is written in decimal notation. For signals this is the default setting. If you want to use the default setting you do not need to set the parameter when calling the function."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "In this case, the signal/message/value is written in hexadecimal notation. For messages this is the default setting. If you want to use the default setting you do not need to set the parameter when calling the function."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Example: Output of a string, a message, a signal - no additional function parameters used",
+      "Example: Output of a message — optional with function parameters",
+      "Example: Output of a signal (raw format) — optional with function parameters",
+      "Example: Output of a signal (physical format) — optional with function parameters"
+    ],
+    "code": "variables\n{\n   int value;\nmessage EngineData mEngineData;\n}\non envVar EnvShowMultiDisplay\n{\n   value = getvalue(this);\n   switch(value)\n   {\n      case 1: putValueToControl(\"Gateway\",\"DisplayControl\",\"This is the Automot Demo!\");\n         break;\n      case 2: putValueToControl(\"Gateway\",\"DisplayControl\",mEngineData);\n         break;\n      case 3: putValueToControl(\"Gateway\",\"DisplayControl\",mEngineData.EngSpeed.phys);\n         break;\n   }\n}\nvariables\n{\n...message MyMessage TestMsg;\n}\n\n}on key 'a'\n{\n//Output of a message without additional parameter settings. In this case parameters have default settings; they are 'no new paragraph' and 'display message in 'hexadecimal' notation'\nputValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg);\n\n//Output of a message, each time in a new paragraph.\nputValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg, 1);\n\n//Output of a message, each time with a new paragraph and the message is displayed in decimal notation.\n//putValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg, 1, 0);\n}\nvariables\n{\n...message MyMessage TestMsg;\n}\n\n}on key 'b'\n{\n//Output of a signal (raw) without additional parameter settings.\n//In this case parameters have default settings;\n//they are 'no new paragraph' and display signal in 'decimal' notation.\nputValueToControl(\"TestPanel\",\"ControlOutput1\", \"\\nSignal raw\\n\");\nputValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg.Signal1);\n\n//Output of a signal (raw), each time in a new paragraph.\nputValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg.Signal1, 1);\n\n//Output of a signal (raw), each time in a new paragraph and in hexadecimal notation.\nputValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg.Signal1, 1, 1);\n}\nvariables\n{\n...message MyMessage TestMsg;\n}\n\n}on key 'c'\n{\n//Output of a signal (physical) without additional parameter settings.\n//In this case parameters have default settings;\n//they are 'no new paragraph' and display signal in 'decimal' notation.\nputValueToControl(\"TestPanel\",\"ControlOutput1\", \"\\nSignal raw\\n\");\nputValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg.Signal1.phys);\n\n//Output of a signal (physical), each time in a new paragraph.\nputValueToControl(\"TestPanel\",\"ControlOutput1\", TestMsg.Signal1.phys, 1);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "3.2 7.5: This function requires CANoe 7.5 and higher.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "CAPL Output View",
+      "CAPL Output View",
+      "CAPL Output View",
+      "—",
+      "—",
+      "CAPL Output View"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

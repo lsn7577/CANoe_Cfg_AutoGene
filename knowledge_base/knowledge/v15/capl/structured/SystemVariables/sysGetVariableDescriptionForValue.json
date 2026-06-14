@@ -1,0 +1,154 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableDescriptionForValue",
+  "category": "SystemVariables",
+  "title": "sysGetVariableDescriptionForValue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableDescriptionForValue.htm",
+  "syntax": [
+    "long sysGetVariableDescriptionForValue(SysVarName, long value, char buffer[], long bufferSize); // form 1",
+    "long sysGetVariableDescriptionForValue(char namespace[], char variable[], long value, char buffer[], long bufferSize); // form 2"
+  ],
+  "description": [
+    "Retrieves a description for a value of a system variable of type long or long array. In this way, you can access the value table of the system variable."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    },
+    {
+      "name": "variable",
+      "type": "",
+      "description": "Name of the variable."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "Value for which the description shall be retrieved."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer which receives the description."
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Size of the buffer."
+    },
+    {
+      "name": "SysVarName",
+      "type": "",
+      "description": "Name of the fully qualified name of the system variable, including all name spaces, separated by \"::\".The name must be preceded by \"sysVar::\"."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "char buffer[20];\nsysGetVariableDescriptionForValue(\"Dynamic\", \"IntVar\", 0, buffer, elcount(buffer));"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.0 SP4",
+      "8.0 SP4",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

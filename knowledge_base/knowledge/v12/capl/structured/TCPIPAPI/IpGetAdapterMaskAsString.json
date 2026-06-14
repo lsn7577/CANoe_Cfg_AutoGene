@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterMaskAsString",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterMaskAsString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterMaskAsString.htm",
+  "syntax": [
+    "long IpGetAdapterMaskAsString( dword ifIndex, char mask[], dword count);"
+  ],
+  "description": [
+    "The function retrieves the string representation of the first address mask associated with the specified network interface."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  const dword IPV4_STR_SIZE = 16;  // IPv4 string size\n  dword ifIdx;                     // interface index\n  long result;                     // function result.\n  char ipv4AdrStr[IPV4_STR_SIZE];  // human readable IPv4 address string\n  char ipv4MaskStr[IPV4_STR_SIZE]; // human readable IPv4 address mask string\n\n  for (ifIdx = 1; ifIdx <= IpGetAdapterCount(); ifIdx++)\n  {\n    IpGetAdapterAddressAsString( ifIdx, ipv4AdrStr, elcount(ipv4AdrStr) );\n    result = IpGetAdapterMaskAsString( ifIdx, ipv4MaskStr, elcount(ipv4MaskStr) );\n    if (result == 0)\n    {\n      // success.\n      write(\"IpGetAdapterMask first IP %s of adapter with index %d has mask %s\", ipv4AdrStr, ifIdx, ipv4MaskStr);\n    }\n    else\n    {\n      writeLineEx(1, 3, \"IpGetAdapterMask: Error %d\", result);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

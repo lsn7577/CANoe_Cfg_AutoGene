@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPLoad",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPLoad",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPLoad.htm",
+  "syntax": [
+    "long Iso11783IL_OPLoad( char filename[] ); // form 1"
+  ],
+  "description": [
+    "The function loads an object pool file (*.iop). All other object pool access functions can only be used, if an object pool is loaded.",
+    "If the activation of the object pool was already done, the object pool is transmitted to the Virtual Terminal immediately. If not, this happens when the activation is done with Iso11873IL_OPActivate.",
+    "Optional a version designator for the object pool can be specified. The node layer tries to load the version with the Load Version command. If this is successful the object pool must not be transmitted to the Virtual Terminal.",
+    "This function is not necessary if a node was configured completely in the database (DBC):ISO11783IOPFilename and ISO11783IOPVersion are defined and VT21 message is assigned to the node."
+  ],
+  "parameters": [
+    {
+      "name": "filename",
+      "type": "",
+      "description": "File name of an object pool file (*.IOP)"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPLoad( \"ObjectPool.iop\", \"pool001\"  );\nIso11783IL_OPActivate( );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

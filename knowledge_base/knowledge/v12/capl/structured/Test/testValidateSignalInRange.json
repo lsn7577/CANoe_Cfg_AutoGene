@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "testValidateSignalInRange",
+  "category": "Test",
+  "title": "testValidateSignalInRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestValidateSignalInRange.htm",
+  "syntax": [
+    "long testValidateSignalInRange (char aTestStep[], Signal aSignal, float aLowLimit, float aHighLimit); // form 1"
+  ],
+  "description": [
+    "Checks the value of the signal, the environment variable value or the system variable value against the condition:",
+    "The test step is evaluated as either passed or failed depending on the results",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "-1: General error",
+  "example": {
+    "description": [],
+    "code": "// validates the value of the signal against the given range\nlong result;\nresult = testValidateSignalInRange(\"Check Velocity\", Node_SUT::Velocity, 60, 100);\nif (result != 0)\nTestStepFail(\"Error occurred!\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

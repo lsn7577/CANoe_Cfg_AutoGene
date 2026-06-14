@@ -1,0 +1,164 @@
+{
+  "page_type": "function",
+  "name": "ARILSetPDUTimingEvent",
+  "category": "AUTOSARpduIL",
+  "title": "ARILSetPDUTimingEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/AUTOSARpduIL/Functions/CAPLfunctionARILSetPDUTimingEvent.htm",
+  "syntax": [
+    "long ARILSetPDUTimingEvent (dbMsg dbMessage, long TrueOrFalse, long enable, long repetitionPeriod, long repetitionCount, long debounceDelay, long disturbanceCount, long flags);"
+  ],
+  "description": [
+    "Overrides the defined event-timing from the database. Possibly two timings (False and True) exist in parallel and are selected upon the current transmission mode of the PDU.",
+    "Only when an enabled event-timing exists, the PDU can be transmitted regardless of any cyclic timing if any transfer property of a signal or signal group is firing/triggering."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    },
+    {
+      "name": "TrueOrFalse",
+      "type": "",
+      "description": "0: denotes the False timing 1: denotes the True timing 3: denotes the True and the False timing"
+    },
+    {
+      "name": "enable",
+      "type": "",
+      "description": "Enables (1) or disables (0) the appropriate event timing."
+    },
+    {
+      "name": "repetitionPeriod",
+      "type": "",
+      "description": "Defines the period in [ms] for the possible repeated transmissions (only valid and used, when repetitionCount > 0)."
+    },
+    {
+      "name": "repetitionCount",
+      "type": "",
+      "description": "Defines the amount of repeated transmissions after the event occurred (0 means only one transmission without any repetition)."
+    },
+    {
+      "name": "debounceDelay",
+      "type": "",
+      "description": "Defines the minimal distance in [ms] of any two transmissions of this PDU (bandwidth control). 0 means that PDU can be transmitted as fast as possible and possibly produces bursts."
+    },
+    {
+      "name": "disturbanceCount",
+      "type": "",
+      "description": "Reserved/unused; should be set to -1 (infinite)."
+    },
+    {
+      "name": "flags",
+      "type": "",
+      "description": "Reserved; should be set to 0."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "14",
+      "14",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN Ethernet FlexRay",
+      "CAN Ethernet FlexRay",
+      "CAN Ethernet FlexRay",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "vtsSetOutputMode",
+  "category": "VTSystem",
+  "title": "vtsSetOutputMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetOutputMode.htm",
+  "syntax": [
+    "long vtsSetOutputMode (char Target[], eVTS2848OutputMode Mode);"
+  ],
+  "description": [
+    "Sets the mode for output on the channel."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "The following example demonstrates how to use the PWM output of a VT2848 channel to simulate a PWM based sensor (e.g. a RPM sensor). The channel used in this example is called RPM_Sensor."
+    ],
+    "code": "SimulateSensorPWM ()\n{\n   // The current value of the frequency (100Hz)\n   float currentFrequency = 100.0;\n\n   // Choose ′low side switch′, PWM curve type and\n   // Vext as source for high value\n   vtsSetOutputMode (\"VTS::RPM_Sensor\", eVTS2848OutputModeLowsideSwitch);\n   vtsSetCurveType(\"VTS::RPM_Sensor\", eVTSCurveTypePWM);\n   vtsSetOutputSource(\"VTS::SensorModule1\", eVTSOutputSourceGroupChannels1To4, eVTSOutputSourceVExt);\n\n   // Set the number of repeats to unlimited\n   vtsSetPWMRepeats(\"VTS::RPM_Sensor\", 0);\n\n   // Set initial frequency (100Hz) and duty cycle (50%) values\n   @sysvar::VTS::RPM_Sensor::PWMOutputFreq = currentFrequency;\n   @sysvar::VTS::RPM_Sensor::PWMOutputDC = 50.0;\n\n   // Start the stimulation\n   vtsStartStimulation(\"VTS::RPM_Sensor\");\n\n   // To stimulate different sensor readings increase\n   // frequency of the PWM signal over time\n   while(currentFrequency < 200)\n   {\n      // Increase the frequency by 1Hz every 100ms\n      TestWaitForTimeOut(100);\n      currentFrequency += 1;\n      @sysvar::VTS::RPM_Sensor::PWMOutputFreq = currentFrequency;\n   }\n\n   // Stop the stimulation\n   StopStimulation();\n}\npublic void SimulateSensorPWM()\n   {\n      // Get VTS interface, module and channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT2848 sensorModule1 = vts.GetChannel<IVT2848>(\"Sensor_Module1\");\n      IVT2848PWMStimChannel rpmSensor = vts.GetChannel<IVT2848PWMStimChannel>(\"RPM_Sensor\");\n\n      // The current value of the frequency (100Hz)\n      double currentFrequency = 100.0;\n\n      // Choose the source for high voltage on channels 1-4\n      sensorModule1.OutputSource1To4.Value = OutputSource.VExt;\n\n      // Choose a PWM curve\n      rpmSensor.CurveType.Value = CurveType.PWM;\n      // Set the number of repeats to unlimited\n      rpmSensor.PWMRepeats.Value = 0;\n\n      // Set initial frequency (100Hz) and duty cycle (50%) values\n      rpmSensor.PWMOutputFreq.Value = currentFrequency;\n      rpmSensor.PWMOutputDC.Value = 50.0;\n\n      // Start the stimulation\n      rpmSensor.StartStimulation();\n\n      // To stimulate different sensor readings increase\n      // frequency of the PWM signal over time\n      while (currentFrequency < 200)\n      {\n         // Increase the frequency by 1Hz every 100ms\n         Vector.CANoe.Threading.Execution.Wait(100);\n         currentFrequency += 1;\n         rpmSensor.PWMOutputFreq.Value = currentFrequency;\n      }\n\n      // Stop the stimulation\n      rpmSensor.StopStimulation();\n   }\n<testcase title=\"SimulateSensorPWM\" ident=\"\">\n      <vtsystem_configure title=\"Initialize PWM\">\n         <output_mode channel=\"VTS::RPM_Sensor\" mode=\"low_side_switch\" />\n         <curve_type channel=\"VTS::RPM_Sensor\" type=\"pwm\" />\n         <output_source channel=\"VTS::RPM_Sensor\" source=\"v_ext\" />\n      </vtsystem_configure>\n      <set title=\"Set frequency and duty cycle\">\n         <sysvar name=\"VTS::RPM_Sensor::PWMOutputDC\">50.0</sysvar>\n         <sysvar name=\"VTS::RPM_Sensor::PWMOutputFreq\">100.0</sysvar>\n      </set>\n      <vtsystem_configure title=\"Start stimulation\">\n         <start_stimulation channel=\"VTS::RPM_Sensor\" />\n      </vtsystem_configure>\n   </testcase>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,38 @@
+{
+  "page_type": "event",
+  "name": "on fctReturned",
+  "category": "CommunicationObjects",
+  "title": "on fctReturned",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnfctReturned.htm",
+  "syntax": [
+    "on fctReturned <function>"
+  ],
+  "description": [
+    "The event procedure is called at the consumer when a service function answer is returned to the consumer."
+  ],
+  "parameters": [
+    {
+      "name": "<function>",
+      "type": "",
+      "description": "Designates the function on which the event procedure shall react. This must be a combination of endpoints on consumer side."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on fctReturned MirrorAdjustment[CANoe,LeftMirror].Adjust\n{\n  write(\"Function result is %d\", this.Result);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "callContext",
+      "link": "../Objects/CAPLfunctionCallContext.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

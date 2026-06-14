@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ISO11783IL_PDDSetSectionState",
+  "category": "ISO11783",
+  "title": "ISO11783IL_PDDSetSectionState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDSetSectionState.htm",
+  "syntax": [
+    "long ISO11783IL_PDDSetSectionState(dword ddiOfCondensedState, dword elementNumber, dword sectionNumber, dword sectionState); // form 1"
+  ],
+  "description": [
+    "Sets the state of a single section.",
+    "For the already specified DDIs (currently in range DDI=0 and DDI=520), the functions check if the sectionNumber fits to the DDI."
+  ],
+  "parameters": [
+    {
+      "name": "ddiOfCondensedState",
+      "type": "",
+      "description": "Data dictionary identifier the condensed state belongs to, e.g.:"
+    }
+  ],
+  "return": "0: function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nchar text[256];\nresult = Iso11783IL_PDDSetSectionState(290, 10, 1, 1);\nif (result < 0)\n{\n  Iso11783IL_PDDGetLastErrorText ( elCount(text), text );\n  write( \"ERROR: %s\", text);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

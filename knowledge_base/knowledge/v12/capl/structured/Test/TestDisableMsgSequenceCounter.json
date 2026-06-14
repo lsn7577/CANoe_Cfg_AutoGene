@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestDisableMsgSequenceCounter",
+  "category": "Test",
+  "title": "TestDisableMsgSequenceCounter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestDisableMsgSequenceCounter.htm",
+  "syntax": [
+    "long TestDisableMsgSequenceCounter (dbMessage aMessage)"
+  ],
+  "description": [
+    "Disables the message sequence counter.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message that should be manipulated."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": "// disables the message sequence counter of message ‚MsgToManipulate’ for 2000ms\nTestDisableMsgSequenceCounter(MsgToManipulate);\nTestWaitForTimeout(2000);\nTestEnableMsgSequenceCounter(MsgToManipulate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

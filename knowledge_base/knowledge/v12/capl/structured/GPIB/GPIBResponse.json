@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GPIBResponse",
+  "category": "GPIB",
+  "title": "GPIBResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBResponse.htm",
+  "syntax": [
+    "GPIBResponse (long deviceDescriptor, char queryString[], char resultString[]);"
+  ],
+  "description": [
+    "This function is called when the query returns. Users must implement this function and receive the original query string, the result as a string and the device ID."
+  ],
+  "parameters": [
+    {
+      "name": "deviceDescriptor",
+      "type": "",
+      "description": "The Device Descriptor of the device, that transmitted the response."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "char myQuery[3] = \"V?\";\nGPIBQuery(myDevice, \"V?\");\n...\nGPIBResponse \r\n (long deviceDescriptor, char queryString[], char resultString[])\n{\n   if \r\n (deviceDescriptor == myDevice)\n   {\n      if \r\n ( !strncmp(queryStr, myQuery))\n      {\n         putValue(EnvVoltage, GPIBGetFloatResult(resultString));\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_J1939AddressClaimViolation, ChkStart_J1939AddressClaimViolation",
+  "category": "Test",
+  "title": "ChkCreate_J1939AddressClaimViolation, ChkStart_J1939AddressClaimViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateJ1939AddressClaimViolation.htm",
+  "syntax": [
+    "dword ChkCreate_J1939AddressClaimViolation (Node aNode, dword aAddress, dword aac, dword ig, dword sys, dword sysi, dword fct, dword fcti, dword ecui, dword mc, dword in, dword aTimeout, dword aFlags, Callback aCallback);"
+  ],
+  "description": [
+    "Observes the Address Claiming of a J1939 node. The specified node must respond to a Request for Address Claim.",
+    "Optionally the check allows sending other messages, only if an Address Claim message (0xEE00) of the node is received first.",
+    "You can add further nodes to this check with Chk_AddNode.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "Name of the node to be checked. Must exist in database."
+    }
+  ],
+  "return": "0: Check could not be created and must not be referenced.",
+  "example": {
+    "description": [],
+    "code": "TestCheck c;\n// checks the address claim violation of node N1\nc = TestCheck::CreateJ1939AddressClaimViolation( N1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 200, 0x01);\n\n// add node N2 to the check\nc.AddNode (N2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);\nTestAddCondition(c);\n\n// Start check\nc.start();\n\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(c);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

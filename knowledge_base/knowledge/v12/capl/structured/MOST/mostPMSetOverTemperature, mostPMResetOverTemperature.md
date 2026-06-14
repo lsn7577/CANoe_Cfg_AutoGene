@@ -1,0 +1,24 @@
+# mostPMSetOverTemperature, mostPMResetOverTemperature
+
+> Category: `MOST` | Type: `function`
+
+## Syntax
+
+```c
+long mostPMSetOverTemperature ()
+```
+
+## Description
+
+mostPMSetOverTemperature notifies the PowerMaster in its own device that an over temperature of the device will be simulated. When setting the "over temperature status", the PowerMaster is prompted to not wake-up the ring after it has been shut down, if a MOST signal is detected at the Rx FOT.mostPMResetOverTemperature signals the PowerMaster that the device has again reached operating temperature.
+
+No message that triggers the shutdown of the ring due to overheating is sent by setting the "overview temperature status" (NetBlock.Shutdown.Result(0x03)). If the "over temperature status" is reset, the ring is not automatically woken up by the PowerMaster. This must be performed by the application, if necessary.
+
+## Return Values
+
+See error codes
+
+## Availability
+
+| Since Version |
+|---|

@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "ChkControl_Stop",
+  "category": "Test",
+  "title": "ChkControl_Stop",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkControlStop.htm",
+  "syntax": [
+    "long ChkControl_Stop(dword aCheckId);"
+  ],
+  "description": [
+    "Turns off the checking of the event condition."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Must exist"
+    }
+  ],
+  "return": "Check was already in the resulting lifecycle",
+  "example": {
+    "description": [],
+    "code": "dword checkId;\ndword numCheckEvents;\n\n// start the Error Frame observation\ncheckId = ChkStart_ErrorFramesOccured();\n// Add check as condition,\n// that means that check violations are reported and\n// the verdict of the test case is set to \"failed\"\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\n// Remove check as condition\nTestRemoveCondition(checkId);\n\n// stop the check\nChkControl_Stop(checkId);\n\n// reset stored values of the check\nChkControl_Reset(checkId);\n\n// start the check again without adding as condition,\n// that means that Error Frames are observed, but violations\n// are not reported and do not set the test case verdict to \"failed\"\nChkControl_Start(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\n// stop the check\nChkControl_Stop(checkId);\n\n// analysis of check\nnumCheckEvents = ChkQuery_NumEvents(checkId);\nif (numCheckEvents > 0)\nTestStepFail(\"Error Frame occurred!\");\n\n// destroy check\nChkControl_Destroy(checkId);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.0 7.0 SP5: method",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

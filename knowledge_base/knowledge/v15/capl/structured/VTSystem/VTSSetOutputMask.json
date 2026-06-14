@@ -1,0 +1,130 @@
+{
+  "page_type": "function",
+  "name": "vtsSetOutputMask",
+  "category": "VTSystem",
+  "title": "vtsSetOutputMask",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetOutputMask.htm",
+  "syntax": [
+    "long vtsSetOutputMask (DWORD RowMask);"
+  ],
+  "description": [
+    "Activates the requested rows of a switch matrix module for dynamic stimulation (PWM, Bitstreams). The row selection is binary encoded into the call parameter."
+  ],
+  "parameters": [
+    {
+      "name": "RowMask",
+      "type": "",
+      "description": "Binary interpreted 32bit unsigned integer value where the least significant five bits encode the connection of the corresponding matrix row with the current matrix channel. The assignment of matrix rows to bits of RowMask is implemented as follows: Matrix Row 1 is activated with Bit0 Matrix Row 2 is activated with Bit1 Matrix Row 3 is activated with Bit2 Matrix Row 4 is activated with Bit3 Direct Switch is activated with Bit 4 (channel 5-8)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following example demonstrates how an identical switch sequence defined in MyBitstream.txt (e.g. a bouncing contact simulation) is applied subsequently to all rows of a VT2832 channel."
+    ],
+    "code": "ToggleMatrixRows()\n{\n  int iRow;\n\n  // This calls the method SetCurveType on VTS::MyMatrixChannel\n  sysvar::VTS::MyMatrixChannel_1.SetCurveType(eVTSCurveTypeBitStream);\n\n  // This calls the method LoadWFBitStream on VTS::MyMatrixChannel_2\n  sysvar::VTS::MyMatrixChannel_1.LoadWFBitStream(\"MyBitstream.txt\");\n\n  // Configure waveform Parameters:\n      // TimeIncrement (time to hold each sample)       = 20ms\n      // Pause (pause between two waveform repetitions) = 0s\n      // NumberOfRepeats (number of repetitions)        = 1\n\n  sysvar::VTS::MyMatrixChannel_1.SetWFParams(0.020, 0.0, 1);\n\n  // Start stimulation\n  vtsStartStimulation(\"VTS::MyMatrixChannel_1\");\n\n  for (iRow = 1; iRow < 16; iRow = iRow << 1)\n  {\n    // This calls the method SetOutputMask on VTS::MyMatrixChannel_1\n    vtsSetOutputMask(\"VTS::MyMatrixChannel_1\", iRow);\n  }\n\n  // Stop the simulation\n  vtsStopStimulation(\"VTS::MyMatrixChannel_1\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "—",
+      "—",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,18 @@
+# AvbSetAafSampleRate
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function Set property AudioSamplesPerSecond on the media type (retrievable via AvbGetMediaType) and call AvbSetMediaType. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | dword AvbSetAafSampleRate(dword talkerHandle, dword sampleRate); |  |  |  |
+| Function | The function sets the sample rate of the AAF stream originated by the Talker. |  |  |  |
+| Parameters | talkerHandle The handle of the Talker. |  |  |  |
+| sampleRate The sample rate of the AAF stream. For supported values see AvbGetAafSampleRate. |  |  |  |  |
+| Return Values | 0: The function completed successfully. |  |  |  |
+| >0: Error code |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 8.2 SP2-9.0 SP5 | Ethernet | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

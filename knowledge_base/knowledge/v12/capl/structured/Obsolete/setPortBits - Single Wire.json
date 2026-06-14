@@ -1,0 +1,56 @@
+{
+  "page_type": "function",
+  "name": "setPortBits - Single Wire",
+  "category": "Obsolete",
+  "title": "setPortBits - Single Wire",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionSetPortBitsSingleWire.htm",
+  "syntax": [
+    "void setPortBits (byte Mode);"
+  ],
+  "description": [
+    "To enable the different CAN bus transceiver modes.",
+    "For this function you have to take care that the channel number is the logical one which is used by CANalyzer / CANoe according to the assignment in CAN Driver Configuration. Further on, setting the mode explicitly for one channel is not possible, you always have to set the modes for both channels (which can be different modes of course)."
+  ],
+  "parameters": [
+    {
+      "name": "Bit 0 and 1",
+      "type": "",
+      "description": "Linemode of CANcab on channel 1"
+    },
+    {
+      "name": "Bit 2 and 3",
+      "type": "",
+      "description": "Linemode of CANcab on channel 2"
+    },
+    {
+      "name": "Bit 4",
+      "type": "",
+      "description": "High priority for channel 1"
+    },
+    {
+      "name": "Bit 5",
+      "type": "",
+      "description": "High priority for channel 2"
+    },
+    {
+      "name": "Bits 6 and 7",
+      "type": "",
+      "description": "Reserved, must be set to \"0\""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Sending a HighVoltage-WakeUp message on logical CAN channel 1:"
+    ],
+    "code": "variables {\nmessage 0x100 msg;\n}\non start\n{\nmsg.CAN = 1;\nmsg.DLC = 0;\n}\non key 'w' \n{\n// sets the transceiver of channel 1 in HighVoltage mode \n// and the transceiver of channel 2 in Normal mode.\nsetPortBits(0x0D);\n// sends the message.\noutput(msg);\r\n \n// After sending the Wakeup message the transceiver\n// of both channels will be set to Normal mode.\nsetPortBits(0x0F);\n}\non message *\n{\noutput(this);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

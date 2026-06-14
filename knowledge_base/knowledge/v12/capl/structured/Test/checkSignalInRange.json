@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "checkSignalInRange",
+  "category": "Test",
+  "title": "checkSignalInRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionCheckSignalInRange.htm",
+  "syntax": [
+    "long checkSignalInRange(Signal aSignal, float aLowLimit, float aHighLimit); // form 1"
+  ],
+  "description": [
+    "Checks the signal value or the environment variable value or the system variable value against the condition:",
+    "aLowLimit <= Value <= aHighLimit",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "1: If the condition is TRUE",
+  "example": {
+    "description": [],
+    "code": "// checks if the value of the signal is in the given range\nlong result;\nresult = checkSignalInRange(Node_SUT::Velocity, 60, 100);\nif (result != 1)\nTestStepFail(\"Value of signal is not in the allowed range!\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

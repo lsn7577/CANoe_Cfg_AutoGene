@@ -1,0 +1,149 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPControlAudio",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPControlAudio",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPControlAudio.htm",
+  "syntax": [
+    "long Iso11783IL_OPControlAudio( dword activations, dword frequency, dword onTime, dword offTime ); // form 1",
+    "long Iso11783IL_OPControlAudio( dbNode implement, dword activations, dword frequency, dword onTime, dword offTime ); // form 2"
+  ],
+  "description": [
+    "The function plays an acoustic signal on the Virtual Terminal. A Control Audio Device command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "activations",
+      "type": "",
+      "description": "number of tones"
+    },
+    {
+      "name": "frequency",
+      "type": "",
+      "description": "frequency in [Hz]"
+    },
+    {
+      "name": "onTime",
+      "type": "",
+      "description": "duration of the tone in [ms]"
+    },
+    {
+      "name": "offTime",
+      "type": "",
+      "description": "duration of the gaps between the tones"
+    },
+    {
+      "name": "implement",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPControlAudio( \r\n 2, 2000, 100, 50 );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0: form 1 9.0: form 2",
+      "13.0",
+      "—",
+      "—",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 2 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

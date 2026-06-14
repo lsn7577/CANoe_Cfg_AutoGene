@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "mostAsNtfFunctionSet",
+  "category": "MOST",
+  "title": "mostAsNtfFunctionSet",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsNTFFunctionSet.htm",
+  "syntax": [
+    "long mostAsNtfFunctionSet(long deviceID, long fblockID, long instID, long functionID)"
+  ],
+  "description": [
+    "Registers a notification client in the notification matrix. Functionality is similar to command message FBlock.Notification.Set(SetFunction, deviceID, functionID).",
+    "The notification matrix can be written with the function without sending a respective message.",
+    "The notification matrix is deleted on NetOn and if the network status changes to ConfigNotOk."
+  ],
+  "parameters": [
+    {
+      "name": "deviceID",
+      "type": "",
+      "description": "Address of the notification client"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

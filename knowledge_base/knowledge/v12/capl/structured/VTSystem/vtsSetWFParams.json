@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "vtsSetWFParams",
+  "category": "VTSystem",
+  "title": "vtsSetWFParams",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetWFParams.htm",
+  "syntax": [
+    "long vtsSetWFParams (char Target[], double timeIncrement, double pause, dword numOfRepeats);"
+  ],
+  "description": [
+    "The function configures the parameters for the output of a voltage or resistance curve or bitstream."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "The following example demonstrates how to use the waveform resistance output of a VT2004 channel to simulate a sensor. In the example a waveform called WaveForm.TXT is loaded and replayed on channel Temp_Sensor. More details on waveforms can be found on CANoe online help topic VT2004: Arbitrary Wave Forms."
+    ],
+    "code": "// Example of an arbitrary wave form for resistance stimulation\n100\n120 ; 2\n140 ; 1\n100\n160 ; 4\n100\nSimulateSensorResistanceWF ()\n{\n   // Choose resistor stimulation and waveform curve type\n   vtsSetStimulationMode(\"VTS::Temp_Sensor\", 3);\n   vtsSetCurveType(\"VTS::Temp_Sensor\", 2);\n\n   // Load waveform (the contents of waveform.TXT are listed below)\n   vtsLoadWFResistance(\"VTS::Temp_Sensor\", \"C:\\\\WaveForm.TXT\");\n\n   // Configure waveform. Parameters:\n   // TimeIncrement (time to hold each sample)       = 65ms\n   // Pause (pause between two waveform repetitions) = 2s\n   // NumberOfRepeats (number of repetitions)        = 3\n   vtsSetWFParams(\"VTS::Temp_Sensor\", 0.065, 2.0, 3);\n\n   // Start stimulation with the previously configured waveform\n   vtsStartStimulation(\"VTS::Temp_Sensor\");\n}\npublic void SimulateSensorResistanceWF()\n   {\n      // Get VTS interface and VT2004 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT2004Channel tempSensor = vts.GetChannel(\"Temp_Sensor\") as IVT2004Channel;\n\n      // Choose voltage stimulation and a constant curve type\n      tempSensor.SetStimulationMode(StimulationMode.ResistanceLower, CurveType.AnalogWaveform);\n\n      // Load waveform (the contents of waveform.TXT are listed below)\n      tempSensor.LoadWFResistance(\"C:\\\\WaveForm.TXT\");\n\n      // Configure waveform. Parameters:\n      // TimeIncrement (time to hold each sample)       = 65ms\n      // Pause (pause between two waveform repetitions) = 2s\n      // NumberOfRepeats (number of repetitions)        = 3\n      tempSensor.SetWFParams(0.065, 2.0, 3);\n\n      // Start stimulation with the previously configured waveform\n      tempSensor.StartStimulation();\n   }\n<testcase title=\"SimulateSensorResistanceWF\" ident=\"\">\n      <vtsystem_configure title=\"Initialize waveform\">\n         <stimulation_mode channel=\"VTS::Temp_Sensor\" mode=\"resistor_lt\" />\n         <curve_type channel=\"VTS::Temp_Sensor\" type=\"wave_form\" />\n         <load_wave_form channel=\"VTS::Temp_Sensor\" type=\"resistor\">C:\\WaveForm.TXT</load_wave_form>\n         <wave_form_params channel=\"VTS::Temp_Sensor\" time_increment=\"0.065\" pause=\"2.0\" />\n      </vtsystem_configure>\n      <wait time=\"10\" title=\"Wait 10ms\" />\n      <vtsystem_configure title=\"Start stimulation\">\n         <start_stimulation channel=\"VTS::Temp_Sensor\" num_of_repeats=\"0\" />\n      </vtsystem_configure>\n      <wait time=\"10000\" title=\"Wait 10s\" />\n      <vtsystem_configure title=\"Stop stimulation\">\n         <stop_stimulation channel=\"VTS::Temp_Sensor\" />\n      </vtsystem_configure>\n</testcase>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

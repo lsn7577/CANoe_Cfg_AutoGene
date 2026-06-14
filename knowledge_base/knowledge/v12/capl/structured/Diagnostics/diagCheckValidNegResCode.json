@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagCheckValidNegResCode",
+  "category": "Diagnostics",
+  "title": "diagCheckValidNegResCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagCheckValidNegrescode.htm",
+  "syntax": [
+    "long diagCheckValidNegResCode( diagRequest obj, dword negResCode);"
+  ],
+  "description": [
+    "The functions return 1 if the given negative response code is defined for the object. It returns 0 if the code is not valid, and <0 for an error.",
+    "In the one-argument form, the response object has to be a negative response."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object to check the response code for."
+    }
+  ],
+  "return": "1: Code is defined for the object in the CDD.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

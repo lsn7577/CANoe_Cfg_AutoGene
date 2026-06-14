@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILSetEvent",
+  "category": "AUTOSARpduIL",
+  "title": "ARILSetEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILSetEvent.htm",
+  "syntax": [
+    "long ARILSetEvent (dbSignal)"
+  ],
+  "description": [
+    "This function considers Debounce Delay, and it also considers the activity of the network. So a call of this function will lead to a transmission of the associated PDU, if the network is active."
+  ],
+  "parameters": [
+    {
+      "name": "dbSignal",
+      "type": "",
+      "description": "The symbolic name of a signal in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "str_match_regex",
+  "category": "Other",
+  "title": "str_match_regex",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStrMatchRegex.htm",
+  "syntax": [
+    "long str_match_regex(char s[], char pattern[])"
+  ],
+  "description": [
+    "Checks whether a string completely matches a regular expression pattern."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "String to be checked."
+    }
+  ],
+  "return": "1 if the string matches the pattern, 0 if it doesn’t match the pattern.",
+  "example": {
+    "description": [],
+    "code": "char buffer[70] = \"Vector Informatik\";\nlong res;\nres = str_match_regex(buffer, \"Vector [A-Za-z]*\"); // 1\nres = str_match_regex(buffer, \"Inf[a-z]*\"); // 0"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

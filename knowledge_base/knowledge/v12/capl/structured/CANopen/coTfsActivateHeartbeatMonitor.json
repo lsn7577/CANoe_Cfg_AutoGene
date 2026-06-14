@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coTfsActivateHeartbeatMonitor",
+  "category": "CANopen",
+  "title": "coTfsActivateHeartbeatMonitor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsActivateHeartbeatMonitor.htm",
+  "syntax": [
+    "long coTfsActivateHeartbeatMonitor( dword nodeID, dword producerTime, dword tolerance );"
+  ],
+  "description": [
+    "This function checks whether the DUT Device Under Test as heartbeat producer makes the heartbeat message available within the defined times.",
+    "For each correct occurrence, the callback void coTfsOnHeartbeatMsg (dword nodeId) is called. If the time is not adhered to, then the callback void coTfsOnHeartbeatFail(dword nodeId, dword cause) is called. After an error has occurred, the callback system is automatically disabled. The reason for the error is specified in the parameter cause:1 = Message distance too small2 = Message distance too large or message is missing",
+    "Only one DUT can be monitored at a time. This check can be switched off again with coTfsDeactivateHeartbeatMonitor."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "Node-ID of the DUT."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [
+      "Demonstration of the mode of operation of coTfsActivateHeartbeatMonitor and the corresponding callback functions"
+    ],
+    "code": "coTfsActivateHeartbeatMonitor (0x1, 100, 20);\r"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

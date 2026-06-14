@@ -1,0 +1,141 @@
+{
+  "page_type": "function",
+  "name": "C2xDisableMsg",
+  "category": "Car2x",
+  "title": "C2xDisableMsg",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xDisableMsg.htm",
+  "syntax": [
+    "long C2xDisableMsg (char* dbMessage); //form 1",
+    "long C2xDisableMsg (char* dbMessage, char* stationName); //form 2",
+    "long C2xDisableMsg(long packetHandle); // form 3",
+    "long C2xDisableMsg(char stationName[], long packetHandle); // form 4"
+  ],
+  "description": [
+    "Disables a message for which the database attribute Send Type is Cyclic or CyclicIfActive in the database for cyclic sending. The function has no effect for messages with Send Type NoMsgSendType."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "Name of the message to be disabled."
+    },
+    {
+      "name": "stationName",
+      "type": "",
+      "description": "Name of the sending station"
+    },
+    {
+      "name": "packetHandle",
+      "type": "",
+      "description": "Packet handle of the message to be disabled."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long packetHdl =  -1;\nC2xDisableMsg(\"CAM\");\npacketHdl = C2xGetMessageHandle(1,1);\nC2xDisableMsg(packetHdl);\nC2xDisableMsg(\"BasicNode\",packetHdl);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0: form 1 13.0: form 2, 3, 4",
+      "—",
+      "—",
+      "—",
+      "2.2: form 1 5.0: form 2, 3, 4"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x: form 1, 3 Car2x, Testnodes: form 2, 4",
+      "—",
+      "—",
+      "—",
+      "Car2x: form 1, 3 Car2x, Testnodes: form 2, 4"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

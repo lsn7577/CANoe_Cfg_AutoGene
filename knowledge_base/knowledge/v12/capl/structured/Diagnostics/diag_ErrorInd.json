@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "diag_ErrorInd",
+  "category": "Diagnostics",
+  "title": "diag_ErrorInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagErrorInd.htm",
+  "syntax": [
+    "void diag_ErrorInd (long error); // form 1"
+  ],
+  "description": [
+    "Reports errors to the diagnostic layer.",
+    "This function is typically called within a transport layer callback. The transport layer uses it to report errors to the diagnostic layer.",
+    "If, for example, testWaitForDiagResponse is used in a test module to wait for receipt of a response and Diag_ErrorInd reports an error, the test function returns an error and stops waiting."
+  ],
+  "parameters": [
+    {
+      "name": "error",
+      "type": "",
+      "description": "Error number."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

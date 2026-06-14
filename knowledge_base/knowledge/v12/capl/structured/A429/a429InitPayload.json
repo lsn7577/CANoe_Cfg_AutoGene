@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "a429InitPayload",
+  "category": "A429",
+  "title": "a429InitPayload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429InitPayload.htm",
+  "syntax": [
+    "long a429InitPayload (a429Word myA429word)"
+  ],
+  "description": [
+    "Initialize the payload of an existing a429word using the current values of corresponding signals from SignalServer.",
+    "This can be used to initialize a message from scratch to the StartValues of the StartValue-table in the Init-section, or to assign the current signal values to the payload during any time of measurement."
+  ],
+  "parameters": [
+    {
+      "name": "myA429Word",
+      "type": "",
+      "description": "message which should be initialized with current signal values"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  a429Word *msg = { msgChannel = 1};\n}\non key '1'\n{\n  a429InitPayload(msg);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_SetResponseContent",
+  "category": "ISO11783",
+  "title": "VTIL_SetResponseContent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILSetResponseContent.htm",
+  "syntax": [
+    "long VTIL_SetResponseContent(dbNode workingSetMaster, byte vtFunction, pg VT12 pgWithNewContent); // form 1"
+  ],
+  "description": [
+    "The function changes the content of the next VT response VT12 sent by the VT IL to allow fault injection."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\npg VT12 vt12;\nInitJ1939PGData(vt12);\nvt12.VTFunctionVTtoECU = 168; // Change numeric value response\nvt12.ObjectToChangeNumValueID = objectID;\nvt12.byte(3)                  = errorCodes;\nvt12.ValueOfTheObject         = value;\nresult = VTIL_SetResponseContent(VT, Sprayer, 168, vt12);\nif (result < 0)\n{\n  TestStepFail(\"Failed to change Numeric Value response\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

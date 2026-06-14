@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sensorQueueFrame",
+  "category": "Sensor",
+  "title": "sensorQueueFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionSensorQueueFrame.htm",
+  "syntax": [
+    "SensorErrorCode sensorQueueFrame(char[] sysVarNamespace, byte buffer[], dword byteCount);"
+  ],
+  "description": [
+    "This function is intended to be used for I2C slave simulation. It inserts the given data bytes into the response queue of the given slave."
+  ],
+  "parameters": [
+    {
+      "name": "sysVarNamespace",
+      "type": "",
+      "description": "The namespace of the slave the data shall be queued in."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Byte array used to prepare the slave's 12 bit response\nbyte responseData[2] = {0x42, 0x21};\n\n// Queue the resonse in the slave\nsensorQueueFrame(\"SENSOR::I2C::ExampleChannel::ExampleSlave\", responseData, 2);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

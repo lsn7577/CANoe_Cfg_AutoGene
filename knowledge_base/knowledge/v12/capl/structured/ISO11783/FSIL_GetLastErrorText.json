@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "FSIL_GetLastErrorText",
+  "category": "ISO11783",
+  "title": "FSIL_GetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILGetLastErrorText.htm",
+  "syntax": [
+    "long FSIL_GetLastErrorText( dword bufferSize, char buffer[] ); // form 1"
+  ],
+  "description": [
+    "Returns the textual description of the value of the last called FS IL function.",
+    "Returns the result of the last FS IL function as string.",
+    "Form 2 applicable in test module / test unit only."
+  ],
+  "parameters": [
+    {
+      "name": "fs",
+      "type": "",
+      "description": "FS simulation node to apply the function"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

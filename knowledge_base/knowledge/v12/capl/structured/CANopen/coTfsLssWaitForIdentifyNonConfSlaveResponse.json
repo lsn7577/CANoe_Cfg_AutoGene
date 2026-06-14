@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForIdentifyNonConfSlaveResponse",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForIdentifyNonConfSlaveResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForIdentifyNonConfSlaveResp.htm",
+  "syntax": [
+    "long coTfsLssWaitForIdentifyNonConfSlaveResponse( void );"
+  ],
+  "description": [
+    "This function waits for an Identify non-configured slave response."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* wait for identify non configured slave response */\nif (coTfsLssWaitForIdentifyNonConfSlaveResponse() == 1) {\n  /* response received */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

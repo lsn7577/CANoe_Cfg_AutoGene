@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateChargeParameterDiscoveryResDC_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreateChargeParameterDiscoveryResDC_DIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateChargeParameterDiscoveryResDC_Din.htm",
+  "syntax": [
+    "long SCC_CreateChargeParameterDiscoveryResDC_DIN ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, char StatusCode[], char Notification[], long EVSEProcessing, float CurrentAndVoltageLimits[], float PeakCurrentRipple)"
+  ],
+  "description": [
+    "Creates a Charge Parameter Discovery Response message for sending, using the DC syntax."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

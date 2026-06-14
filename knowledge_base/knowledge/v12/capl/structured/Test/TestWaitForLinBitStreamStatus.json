@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForLinBitStreamStatus",
+  "category": "Test",
+  "title": "TestWaitForLinBitStreamStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForLinBitStreamStatus.htm",
+  "syntax": [
+    "long TestWaitForLinBitStreamStatus(dword awaitedStatus, dword timeout); // form 1"
+  ],
+  "description": [
+    "Waits until the sending of a LIN bit stream is started or stopped. The function will resume immediately if the transmission already has the awaited status.",
+    "Should the event not occur before the expiration of the time timeout, the wait condition is resolved nevertheless.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "awaitedStatus",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "testcase tc_TestWaitForLinBitStreamStatus()\n{\n  long  result;\n\n  // Wait for a maximum time of 100ms for the bit stream to start sending\n  result = TestWaitForLinBitStreamStatus(1, 100);\n\n  if(result != 1)\n  {\n    testStepFail(\"The sending of the bit stream didn't start within 100ms!\");\n    testCaseFail();\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

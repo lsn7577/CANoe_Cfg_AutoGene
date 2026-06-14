@@ -1,0 +1,58 @@
+{
+  "page_type": "function",
+  "name": "ARILFaultInjectionDisturbNodeUpdateBits",
+  "category": "AUTOSARpduIL",
+  "title": "ARILFaultInjectionDisturbNodeUpdateBits",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILFaultInjectionDisturbNodeUpdateBits.htm",
+  "syntax": [
+    "long ARILFaultInjectionDisturbNodeUpdateBits (long flags, long disturbanceMode, long disturbanceCount, long disturbanceValue);"
+  ],
+  "description": [
+    "Disturbs the Update Bit of all signals and/or signal groups that are sent by the current node (see Update Bit)."
+  ],
+  "parameters": [
+    {
+      "name": "Mask",
+      "type": "Value",
+      "description": "Description"
+    },
+    {
+      "name": "0x3",
+      "type": "0",
+      "description": "Disturbs signal and signal group update bits of node."
+    },
+    {
+      "name": "0x3",
+      "type": "1",
+      "description": "Disturbs only signal update bits of node."
+    },
+    {
+      "name": "0x3",
+      "type": "2",
+      "description": "Disturbs only signal group update bits of node."
+    },
+    {
+      "name": "0x3",
+      "type": "3",
+      "description": "reserved"
+    },
+    {
+      "name": "0xFFFFFFFC",
+      "type": "all",
+      "description": "reserved"
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

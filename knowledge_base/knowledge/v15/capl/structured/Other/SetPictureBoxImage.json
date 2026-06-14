@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "SetPictureBoxImage",
+  "category": "Other",
+  "title": "SetPictureBoxImage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionSetPictureBoxImage.htm",
+  "syntax": [
+    "setPictureBoxImage(panel, control, imagefile);"
+  ],
+  "description": [
+    "Replaces the image of the Panel Designer control during runtime:",
+    "Picture Box",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    },
+    {
+      "name": "control",
+      "type": "",
+      "description": "Name of the control, restricted to 128 characters.\"\" – references all controls on the panel."
+    },
+    {
+      "name": "iamgefile",
+      "type": "",
+      "description": "Path and name of the image file."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Setting image file using absolute path.",
+      "Setting image file using relative path. The image is in the Images folder and this folder is parallel to the panel folder."
+    ],
+    "code": "on key 'x'\n{\nSetPictureBoxImage(\"Movie\", \"Picture Box\", \"D:\\\\Example\\\\PictureBoxProject\\\\Images\\\\Picture.bmp\");\n}\non key 'y'\n{\nSetPictureBoxImage(\"Movie\", \"Picture Box\", \"..\\\\Images\\\\Picture.bmp\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5",
+      "7.5",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "Picture Box",
+      "Picture Box",
+      "Picture Box",
+      "—",
+      "—",
+      "Picture Box"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

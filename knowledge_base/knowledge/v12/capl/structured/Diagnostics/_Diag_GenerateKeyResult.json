@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_Diag_GenerateKeyResult",
+  "category": "Diagnostics",
+  "title": "_Diag_GenerateKeyResult",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGenerateKeyResult.htm",
+  "syntax": [
+    "void _Diag_GenerateKeyResult(long result, BYTE computedKey[]);"
+  ],
+  "description": [
+    "Indicates the result of the security key computation which was started with DiagStartGenerateKeyFromSeed."
+  ],
+  "parameters": [
+    {
+      "name": "result",
+      "type": "",
+      "description": "0: Successother: Error code"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

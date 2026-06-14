@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsLifeGuarding",
+  "category": "CANopen",
+  "title": "coTfsLifeGuarding",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLifeGuarding.htm",
+  "syntax": [
+    "long coTfsLifeGuarding( dword guardTime, dword retryFactor, dword tolerance );"
+  ],
+  "description": [
+    "The test sets the guard time and retry factor objects in the DUT Device Under Test. After that, 20 guarding remote frames are sent to the target device which must respond to all queries within the guardTime+tolerance.",
+    "Afterwards the sending of the remote frames is stopped. It is waited for the corresponding emergency message (EMCY code = 0x8130, Error Register = 0x11) before the values of the guard time and retry factor objects are reset."
+  ],
+  "parameters": [
+    {
+      "name": "guardTime",
+      "type": "",
+      "description": "Guard time in milliseconds."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if ( coTfsLifeGuarding ( 500, 5, 50) != 1) {  // guard time, retry Factor, tolerance\n  write(\"lifeguarding failed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

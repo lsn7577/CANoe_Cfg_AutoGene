@@ -1,0 +1,131 @@
+{
+  "page_type": "function",
+  "name": "frGetFrameCRC",
+  "category": "FlexRay",
+  "title": "frGetFrameCRC",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Functions/CAPLfunctionFRGetFrameCRC.htm",
+  "syntax": [
+    "dword frGetFrameCRC(this);"
+  ],
+  "description": [
+    "This function returns the CRC of a received FlexRay frame.",
+    "The Header CRC can be determined with a special selector of the event procedure."
+  ],
+  "parameters": [
+    {
+      "name": "this",
+      "type": "",
+      "description": "The function can only be used in the context of the following event procedures: on frRSlot on frFrame on frNullFrame on frFrameError this references the corresponding receive object in the event procedure."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following example writes the CRC into the Write Window for all received frames."
+    ],
+    "code": "on frFrame *\n{\n   dword \r\n crc;\n   crc \r\n = frGetFrameCRC(this);\n   Write(“Frame %d in Cycle %d has CRC 0x%x”, this.FR_SlotID, this.FR_Cycle, crc);\n   output(this); // only required in Measurement Setup\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.1",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

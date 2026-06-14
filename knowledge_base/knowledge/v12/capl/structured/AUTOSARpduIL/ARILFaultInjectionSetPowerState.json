@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILFaultInjectionSetPowerState",
+  "category": "AUTOSARpduIL",
+  "title": "ARILFaultInjectionSetPowerState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILFaultInjectionSetPowerState.htm",
+  "syntax": [
+    "long ARILFaultInjectionSetPowerState (long value);"
+  ],
+  "description": [
+    "Activates or deactivates the power status locally. Modifying the power state of the local IL instance is similar to calling ARILControlSimulationOn or ARILControlSimulationOff."
+  ],
+  "parameters": [
+    {
+      "name": "value",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

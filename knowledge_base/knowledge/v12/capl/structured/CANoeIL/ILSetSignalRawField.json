@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ILSetSignalRawField",
+  "category": "CANoeIL",
+  "title": "ILSetSignalRawField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILSetSignalRawField.htm",
+  "syntax": [
+    "long ILSetSignalRawField (dbSignal sig, const char *pData, long aDataLen)"
+  ],
+  "description": [
+    "Sets the transferred signal to the provided value.",
+    "Use for integer signals > 32 bit."
+  ],
+  "parameters": [
+    {
+      "name": "sig",
+      "type": "",
+      "description": "Signal that should be set. Specify as follows 'Message::Signal'."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

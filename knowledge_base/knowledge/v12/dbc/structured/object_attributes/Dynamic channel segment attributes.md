@@ -1,0 +1,45 @@
+# Dynamic channel segment attributes
+
+> Category: `DBC` | Subcategory: `object_attributes` | Type: `concept`
+
+In case of programmable devices according to CiA302 rsp. CiA405 the description of the dynamic network variable arrays are not written in the EDS. All necessary information are already given by the dynamic channel objects.
+
+Each data type and direction (Input/Output) has its own area, called segment. A segment is a range of indexes in the object dictionary with following values:
+
+Data Type
+
+Data type of objects in this segment.
+
+Direction
+
+Distinction between inputs and outputs (necessary for mapping).
+
+Start / End Index
+
+Range of indexes.
+
+Offset
+
+Offset in the process picture, where the first object of this segment is allocated.
+
+Many devices distinguish strictly between different segments in the process picture for different data types. For those devices the offset of the first segment will be 0, the offset of the second segment will be the maximum count of the first segment multiplied by the data type size of the first segment and so forth.
+
+Other devices mix different data types in the same segment. For those devices all offset attributes will have the value 0.
+
+Bit Address Difference
+
+If the data type of this segment is Boolean, the bit address difference has to be defined (most often 1 or 8).
+
+Maximal Number
+
+Maximum number of objects which can be allocated in this segment.
+
+The capability of the device to manage dynamic variables has to be declared in the Device Information page.
+
+| Data Type | Data type of objects in this segment. |
+|---|---|
+| Direction | Distinction between inputs and outputs (necessary for mapping). |
+| Start / End Index | Range of indexes. |
+| Offset | Offset in the process picture, where the first object of this segment is allocated. Many devices distinguish strictly between different segments in the process picture for different data types. For those devices the offset of the first segment will be 0, the offset of the second segment will be the maximum count of the first segment multiplied by the data type size of the first segment and so forth. Other devices mix different data types in the same segment. For those devices all offset attributes will have the value 0. |
+| Bit Address Difference | If the data type of this segment is Boolean, the bit address difference has to be defined (most often 1 or 8). |
+| Maximal Number | Maximum number of objects which can be allocated in this segment. |

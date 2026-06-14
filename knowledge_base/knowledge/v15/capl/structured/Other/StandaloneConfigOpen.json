@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "StandaloneConfigOpen",
+  "category": "Other",
+  "title": "StandaloneConfigOpen",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionStandaloneConfigOpen.htm",
+  "syntax": [
+    "dword StandaloneConfigOpen(CHAR rtcfgFileName[], dword stopCurrentMeasurement, dword startNewMeasurement, dword returnToActiveConfig)"
+  ],
+  "description": [
+    "Opens the RTCFG file with the given name as standalone configuration."
+  ],
+  "parameters": [
+    {
+      "name": "rtcfgFileName",
+      "type": "",
+      "description": "Name of the standalone configuration file (without path) to be set as default file."
+    },
+    {
+      "name": "stopCurrentMeasurement",
+      "type": "",
+      "description": "If this parameter is 1 measurement is stopped immediately (but still waiting for deferred stop clients). If the parameter value is 0 the request to load another configuration is queued until end of measurement."
+    },
+    {
+      "name": "startNewMeasurement",
+      "type": "",
+      "description": "If this parameter is set to 1 measurement will start immediately after the new configuration has been loaded."
+    },
+    {
+      "name": "returnToActiveConfig",
+      "type": "",
+      "description": "If this parameter is set to 1 the default configuration (usually a sort of “master configuration”) will be loaded automatically after measurement based on the new configuration will have been stopped."
+    }
+  ],
+  "return": "The function returns an error code with 0 representing successful operation.",
+  "example": {
+    "description": [],
+    "code": "// \"Config1.RTCFG\" (master config.) contains following CAPL code:\n\non key F2\n{\n   StandaloneConfigOpen(\"Config2.RTCFG\", 1, 1, 1);\n}\non key F3\n{\n   StandaloneConfigOpen(\"Config3.RTCFG\", 1, 0, 1);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.6 SP3",
+      "7.6 SP3",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "Standalone mode",
+      "Standalone mode",
+      "Standalone mode",
+      "—",
+      "Standalone mode",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,131 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_UndefinedMessageReceived, ChkStart_UndefinedMessageReceived",
+  "category": "Test",
+  "title": "ChkCreate_UndefinedMessageReceived, ChkStart_UndefinedMessageReceived",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkCreateUndefinedMessageReceived.htm",
+  "syntax": [
+    "dword ChkCreate_UndefinedMessageReceived (char [] CaplCallback); // form 1",
+    "dword ChkStart_UndefinedMessageReceived (char [] CaplCallback); // form 2"
+  ],
+  "description": [
+    "Observes the current bus and reports messages that are not defined.",
+    "If the CANoe configuration contains multiple buses, the current bus context has to be specified (SetBusContext) before the check configuration.",
+    "For FlexRay either only valid data frames or PDUs (according to the database type) are recognized as communication. Null Frames and Erroneous frames are ignored."
+  ],
+  "parameters": [
+    {
+      "name": "CaplCallback",
+      "type": "",
+      "description": "In simulation nodes this parameter has to be set.In test modules this parameter is optional."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// observes the bus ‘CAN1’ for undefined messages\nSetBusContext(getBusNameContext(\"CAN1\"));\ncheckId = ChkStart_UndefinedMessageReceived();\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);\ncheckId = ChkCreate_UndefinedMessageReceived(\"CallbackUnknownMsg\");"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1 7.0 SP5: method 7.2: form 2",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN FlexRay",
+      "CAN FlexRay",
+      "—",
+      "CAN FlexRay",
+      "CAN FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

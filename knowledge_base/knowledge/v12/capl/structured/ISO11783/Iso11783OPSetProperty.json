@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPSetProperty",
+  "category": "ISO11783",
+  "title": "Iso11783OPSetProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPSetProperty.htm",
+  "syntax": [
+    "long Iso11783OPSetProperty( dword ecuHandle, char propertyName[], long newValue );"
+  ],
+  "description": [
+    "The function sets a property of the Object Pool API, i.e. the supported Virtual Terminal version."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPSetProperty( handle, \"Version\", 3 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

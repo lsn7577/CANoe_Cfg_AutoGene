@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "FSIL_OnRxMessage",
+  "category": "ISO11783",
+  "title": "FSIL_OnRxMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILOnRxMessage.htm",
+  "syntax": [
+    "long FSIL_OnRxMessage( pg * rxPG );"
+  ],
+  "description": [
+    "Is called from the FS IL if the FS IL receives the parameter group, namely before the parameter group is processed by the FS IL. The message data can be manipulated in the callback method or handling of the message by the IL can be suppressed.",
+    "Usage"
+  ],
+  "parameters": [
+    {
+      "name": "rxPG",
+      "type": "",
+      "description": "Message which is received"
+    }
+  ],
+  "return": "0: Received parameter group will be ignored by the FS IL",
+  "example": {
+    "description": [
+      "The following example blocks the RQST of the pgn = 0x5** (case 5) and replace the RQST of the pgn = 0x3** by the RQST of the pgn = 0x4** (case 3)."
+    ],
+    "code": "long FSIL_OnRxMessage( pg * rxPG )\n{\nif(rxPG.PGN == 0xEA00)\n  {\n  switch(rxPG.BYTE(1))\n  {\n  case 3:\n    rxPG.BYTE(1) = 4;\n    return 1;\n  case 5:\n    return 0;\n  default:\n    return 1;\n  }\n }\n return 1;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

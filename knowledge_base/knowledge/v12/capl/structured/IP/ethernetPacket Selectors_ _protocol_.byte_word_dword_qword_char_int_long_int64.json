@@ -1,0 +1,38 @@
+{
+  "page_type": "concept",
+  "name": "ethernetPacket Selectors: <protocol>.byte/word/dword/qword/char/int/long/int64",
+  "category": "IP",
+  "title": "ethernetPacket Selectors: <protocol>.byte/word/dword/qword/char/int/long/int64",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Selectors/CAPLfunctionProtocolByte.htm",
+  "syntax": [],
+  "description": [
+    "Access to the payload of a protocol.",
+    "If index is greater than available data or <protocol> is not contained in the packet, the measurement is stopped with a runtime error. ethernetPacket::protocol::IsAvailable and ethernetPacket::protocol::byteLength can be used to find out if the data is available."
+  ],
+  "parameters": [
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Byte offset. Index 0 is the first byte within the payload of the protocol. If index is greater than ethernetPacket.<protocol>.byteLength a runtime error occurs."
+    }
+  ],
+  "return": "Value at specified index.",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if ((this.udp.IsAvailable()) && (this.udp.byteLength >= 16))\n  {\n    word val;\n    val = this.udp.Word(15);\n  }\n}\non key '1'\n{\n  int i;\n  ethernetPacket pkt;\n\n  // initialize packet with IPv4 and UDP protocols\n  pkt.udp.Init();\n\n  // set IPv4 addresses\n  pkt.ipv4.source.ParseAddress( \"192.168.1.1\" );\n  pkt.ipv4.destination.ParseAddress( \"192.168.1.255\" );\n\n  // set UDP ports\n  pkt.udp.source      = 40001;\n  pkt.udp.destination = 40002;\n\n  // set UDP payload\n  pkt.udp.ResizeData( 10 );\n \n  for( i = 0; i < 10; i++ )\n  {\n    pkt.udp.Byte(i) = i;\n  }\n\n  // calculate UDP and IPv4 checksum and send Ethernet packet\n  pkt.CompletePacket();\n  output( pkt );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "ethernetPacket",
+      "link": "../Objects/CAPLfunctionEthernetPacket.htm"
+    }
+  ],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

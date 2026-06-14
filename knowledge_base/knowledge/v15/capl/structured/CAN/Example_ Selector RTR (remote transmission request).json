@@ -1,0 +1,25 @@
+{
+  "page_type": "selector",
+  "name": "Example: Selector RTR (remote transmission request)",
+  "category": "CAN",
+  "title": "Example: Selector RTR (remote transmission request)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Selectors/CAPLSelectorRTR.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [
+    {
+      "name": "Example Selector RTR (remote transmission request)",
+      "description": [],
+      "code": "// send remote frame\nmessage 0x100 rmsg;\nrmsg.RTR = 1;\noutput(rmsg);"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

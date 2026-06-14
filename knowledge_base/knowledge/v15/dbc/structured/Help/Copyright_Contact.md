@@ -1,0 +1,45 @@
+# Copyright/Contact
+
+> Category: `DBC` | Subcategory: `Help` | Type: `concept`
+
+© Vector Informatik GmbH
+
+Vector Informatik GmbH – Support
+
+Our business hours are Monday to Friday from 08:30 am to 5:00 pm (CET):
+
+Phone:
+
+Fax:
+
+E-Mail:
+
+KnowledgeBase:
+
+Support Page:
+
++49 711 80670 200
+
++49 711 80670 111
+
+support@vector.com
+
+kb.vector.com
+
+vector.com/support
+
+You can submit your support request in the Vector Customer Portal, via e-mail or telephone or use one of the forms below. Please select your issue type below to submit your issue the Vector support team.
+
+International Subsidiaries
+
+Depending on your location or language you may select the corresponding phone or e-mail support contact under vector.com/support.
+
+| Vector Informatik GmbH – Support Our business hours are Monday to Friday from 08:30 am to 5:00 pm (CET): Phone: Fax: E-Mail: KnowledgeBase: Support Page: +49 711 80670 200 +49 711 80670 111 support@vector.com kb.vector.com vector.com/support You can submit your support request in the Vector Customer Portal, via e-mail or telephone or use one of the forms below. Please select your issue type below to submit your issue the Vector support team. Software tool or hardware product issue Hardware repair Embedded software issue Return shipments Other issues | Phone: Fax: E-Mail: KnowledgeBase: Support Page: | +49 711 80670 200 +49 711 80670 111 support@vector.com kb.vector.com vector.com/support | You can submit your support request in the Vector Customer Portal, via e-mail or telephone or use one of the forms below. Please select your issue type below to submit your issue the Vector support team. Software tool or hardware product issue Hardware repair Embedded software issue Return shipments Other issues |
+|---|---|---|---|
+| Phone: Fax: E-Mail: KnowledgeBase: Support Page: | +49 711 80670 200 +49 711 80670 111 support@vector.com kb.vector.com vector.com/support |  |  |
+| You can submit your support request in the Vector Customer Portal, via e-mail or telephone or use one of the forms below. Please select your issue type below to submit your issue the Vector support team. Software tool or hardware product issue Hardware repair Embedded software issue Return shipments Other issues |  |  |  |
+| International Subsidiaries Depending on your location or language you may select the corresponding phone or e-mail support contact under vector.com/support. |  |  |  |
+
+| Phone: Fax: E-Mail: KnowledgeBase: Support Page: | +49 711 80670 200 +49 711 80670 111 support@vector.com kb.vector.com vector.com/support |
+|---|---|
+| You can submit your support request in the Vector Customer Portal, via e-mail or telephone or use one of the forms below. Please select your issue type below to submit your issue the Vector support team. Software tool or hardware product issue Hardware repair Embedded software issue Return shipments Other issues |  |

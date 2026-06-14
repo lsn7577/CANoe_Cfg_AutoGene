@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "distObjRef",
+  "category": "DistributedObjects",
+  "title": "distObjRef",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Objects/CAPLfunctiondistObjRef.htm",
+  "syntax": [
+    "distObjRef *",
+    "distObjRef <Interface>",
+    "distObjRef reverse<<Interface>>"
+  ],
+  "description": [
+    "References a distributed object that is derived from the denoted interface."
+  ],
+  "parameters": [
+    {
+      "name": "Interface",
+      "type": "",
+      "description": "The optionally qualified name of a distributed object interface."
+    },
+    {
+      "name": "reverse<Interface>",
+      "type": "",
+      "description": "The reverse of a distributed object interface."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  distObjRef reverse<::ExampleNamespace::ExampleInterface> x;\n  distObjRef * y[42], z = ExampleNamespace::ExampleObject;\n  x = (distObjRef reverse<ExampleInterface>)z;\n  if (x.IsValid)\n  {\n    y[0] = x;\n  }\n  func(y[0]);\n}\n\nvoid func(distObjRef *& p)\n{\n  write(\"Path: %s\", p.Path);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "13.0",
+      "15",
+      "14",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

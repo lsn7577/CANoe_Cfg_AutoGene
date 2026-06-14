@@ -1,0 +1,50 @@
+{
+  "page_type": "notes",
+  "name": "Class: CanDisturbanceExternalTrigger",
+  "category": "CANDisturbance",
+  "title": "Class: CanDisturbanceExternalTrigger",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANDisturbance/Classes/CAPLfunctionCanDisturbanceExternalTrigger.htm",
+  "syntax": [],
+  "description": [
+    "This trigger can be used, if a sequence or a frame based sequence should be sent based on a digital input value.",
+    "—",
+    "You can access control information of a CanDisturbanceExternalTrigger object with the following attributes:"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Keyword",
+        "Description",
+        "Type",
+        "Access Limitations"
+      ],
+      [
+        "DIOChannel",
+        "Number of the DIO channel. Possible values: 0: DIN0 1: DIN1",
+        "dword",
+        "—"
+      ],
+      [
+        "TriggerType",
+        "The trigger type used for the external trigger. Possible values: 0: Active Low 1: Active High 2: Rising Edge 3: Falling Edge",
+        "dword",
+        "—"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,67 @@
+# TcpAccept
+
+> Category: `TCPIPAPI` | Type: `function`
+
+## Syntax
+
+```c
+dword TcpAccept( dword socket);
+```
+
+## Description
+
+The function accepts an incoming connection request on the specified socket resulting in a new socket . If the operation fails, the function will return INVALID_SOCKET (~0).
+
+A listen socket created with TcpListen is responded to with callback function OnTcpListen when the connection is established by a client with TcpConnect.
+
+The incoming connection must always be accepted with TcpAccept. That is typically carried out in callback function OnTcpListen.
+
+As long as the connection is not accepted, no other clients can be accepted on the listen socket. All other incoming clients then have error 10061 (Connection refused) delivered in callback OnTcpConnect and can also no longer be accepted subsequently.
+
+Without acceptance of the connection the system goes to a state in which nothing else happens because no data can be sent and other clients are refused on the listen socket.
+
+There is a queue size for incoming connections in the stack. This is set permanently to 1 in CANoe so that only one client can be in the queue until it is accepted.
+
+As soon as the connection has been accepted, there is a new socket for the client on which incoming data can be awaited with TcpReceive and on which data can be sent to the client with TcpSend.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| socket | The socket handle of the listen socket that was created with TcpListen. |
+
+## Example
+
+```c
+// ---------------------------------------------------
+// Callback when client connects to server's listen socket.
+// ---------------------------------------------------
+void OnTcpListen( dword socket, long result)
+{
+  dword newSocket;
+  newSocket = TcpAccept( socket );
+  if (newSocket != INVALID_SOCKET)
+  {
+    // start to receive data on newSocket with TcpReceive...
+  }
+  else
+  {
+    writeLineEx( 1, 3, "TcpAccept: Error %d", IpGetLastSocketError(listenSocket));
+  }
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | 8.5 | 7.0 7.0 SP5: method | 13.0 | 13.0 | — | 2.0 SP2 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | ✔ | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | ✔ | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | ✔ | — | N/A |
+| 32-Bit | ✔ | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | ✔ | ✔ | ✔ | ✔ | — | N/A |

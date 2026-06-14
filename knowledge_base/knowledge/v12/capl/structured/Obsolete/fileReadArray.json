@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "fileReadArray",
+  "category": "Obsolete",
+  "title": "fileReadArray",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionFileReadArray.htm",
+  "syntax": [
+    "long fileReadArray(char section[], char entry[], char buffer[], long bufferlen, char file[]);"
+  ],
+  "description": [
+    "Searches for the variable entry in the section section of the file file. Its contents are interpreted as a list of byte values. The number format is decimal or with the prefix 0x it is hexadecimal. Numbers are separated by spaces, tabs, a comma, semi-colon or slash. The buffer is filled up to a quantity of bufferlen bytes."
+  ],
+  "parameters": [
+    {
+      "name": "section",
+      "type": "",
+      "description": "Section of file"
+    }
+  ],
+  "return": "Number of characters read.",
+  "example": {
+    "description": [
+      "Result:",
+      "len = 5. The array buf is filled with the values 1,2,3,32,100."
+    ],
+    "code": "File TEST.INI:\n[DATA]\nFIELD=1,2,3,0x20,100\n...\nint len;\nchar buf[20];\nlen = fileReadArray(\"DATA\", \"FIELD\", buf, elCount(buf), \"TEST.INI\");\n..."
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestCaseSkipped",
+  "category": "Test",
+  "title": "TestCaseSkipped",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCaseSkipped.htm",
+  "syntax": [
+    "TestCaseSkipped(char[] ident, char[] title);"
+  ],
+  "description": [
+    "This function can be used to mark a test case as unexecuted. This will then appear as a \"skipped\" test case in the Test Report.The verdict of the test module is not affected. This function may only be called in the context of the MainTest function."
+  ],
+  "parameters": [
+    {
+      "name": "ident",
+      "type": "",
+      "description": "Identifier of the test case, e.g. number."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "test case \"tc3\" is only executed under certain conditions"
+    ],
+    "code": "MainTest\n{\n   tc1();\n   tc2();\n   if(condition)\n   {\n      tc3();\n   }\n   else\n   {\n      TestCaseSkipped(\"TC3\", \"Example\");\n   }\n   tc4();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

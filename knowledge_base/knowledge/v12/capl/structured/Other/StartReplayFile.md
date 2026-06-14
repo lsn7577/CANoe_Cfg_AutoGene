@@ -1,0 +1,32 @@
+# StartReplayFile
+
+> Category: `Other` | Type: `function`
+
+## Syntax
+
+```c
+dword StartReplayFile(char fileName[]);
+```
+
+## Description
+
+Starts playing the replay file with the name fileName.
+
+This function replays events of the following types:
+
+In particular, replay of LIN, FlexRay and MOST events using this function is not possible.
+
+All events are replayed on the same channel as they are recorded in the replay file. Events targeted to non-configured channels are discarded.
+
+The first event in the replay file is replayed immediately, disregarding it's time stamp.
+
+The start of replay is timely decoupled from calling this function, so replay will actually start a short but indeterminate time span after this function returns.
+
+## Return Values
+
+The returned handle is required to stop the replay file.
+
+## Availability
+
+| Since Version |
+|---|

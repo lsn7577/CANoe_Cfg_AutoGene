@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "ipsecAssociationDatabaseFlush",
+  "category": "TCPIPAPI",
+  "title": "ipsecAssociationDatabaseFlush",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIpsecAssociationDatabaseFlush.htm",
+  "syntax": [
+    "long ipsecAssociationDatabaseFlush(char[] protocol);"
+  ],
+  "description": [
+    "With this function it is possible to manually delete all security associations of the same protocol type from the security association database of the current network stack."
+  ],
+  "parameters": [
+    {
+      "name": "UNSPEC",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "ESP",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "AH",
+      "type": "",
+      "description": "2"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void CleanSecurityAssociationDatabase()\n{\n  // clean the security association database\n  IPsecAssociationDatabaseFlush(\"ah\");\n  IPsecAssociationDatabaseFlush(\"esp\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "—",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

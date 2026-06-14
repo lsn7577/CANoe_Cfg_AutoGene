@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostMHPPacketSetTraceColors",
+  "category": "MOST",
+  "title": "mostMHPPacketSetTraceColors",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTMHPPacketSetTraceColors.htm",
+  "syntax": [
+    "mostMHPPacketSetTraceColors(long font, long bkgnd)"
+  ],
+  "description": [
+    "Sets the text and background color for displaying the MOST event in the Trace Window. The makeRGB function can be used for the colors."
+  ],
+  "parameters": [
+    {
+      "name": "font",
+      "type": "",
+      "description": "Font color (RGB value)"
+    }
+  ],
+  "return": "0: OK",
+  "example": {
+    "description": [],
+    "code": "OnMostMHPPacket (long  sourceDevID, long destDevID, long fBlockID, long instID, long functionID, long  opType)\n{\n   mostMHPPacketSetTraceColors(makeRGB(0, 0, 0), makeRGB(255, 0, 0) );\n   return 1; // Forward the MHPPacket to the next node in the Measurement Setup\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

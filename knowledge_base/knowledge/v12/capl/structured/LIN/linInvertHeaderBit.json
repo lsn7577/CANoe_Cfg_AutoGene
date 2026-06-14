@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linInvertHeaderBit",
+  "category": "LIN",
+  "title": "linInvertHeaderBit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINInvertHeaderBit.htm",
+  "syntax": [
+    "dword linInvertHeaderBit(dword byteIndex, dword bitIndex); // form 1"
+  ],
+  "description": [
+    "Inverts the specified bit in the next LIN header."
+  ],
+  "parameters": [
+    {
+      "name": "byteIndex",
+      "type": "",
+      "description": "Index of the byte."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "on key 'i'\n{\nif (0!=linInvertHeaderBit(0, 0, 0))\n{\n// for the next LIN header invert first bit (it’s the recessive one) of the Sync byte\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

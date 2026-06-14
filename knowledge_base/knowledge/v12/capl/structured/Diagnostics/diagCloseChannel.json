@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagCloseChannel",
+  "category": "Diagnostics",
+  "title": "diagCloseChannel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagCloseChannel.htm",
+  "syntax": [
+    "long diagCloseChannel(); // form 1"
+  ],
+  "description": [
+    "Closes a diagnostic channel. State of the channel is Closed afterwards.",
+    "The channel the function refers to is set with the last call of diagSetTarget."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description."
+    }
+  ],
+  "return": "On success 0, otherwise error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

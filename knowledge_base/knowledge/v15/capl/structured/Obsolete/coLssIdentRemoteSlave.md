@@ -1,0 +1,26 @@
+# coLssIdentRemoteSlave
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by CANopen Basic Functions. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | void coLssIdentRemoteSlave( dword vendorId, dword productCode, dword revisionNoLow, dword revisionNoHigh, dword serialNoLow, dword serialNoHigh, dword errCode[] ); |  |  |  |
+| Function | With this service the LSS master commands all LSS slaves whose LSS address matches the transmitted LSS address parameters to identify themselves. |  |  |  |
+| Parameters | vendorId Vendor-ID |  |  |  |
+| productCode Product code |  |  |  |  |
+| revisionNoLow Revision number (lower limit) |  |  |  |  |
+| revisionNoHigh Revision number (upper limit) |  |  |  |  |
+| serialNoLow Serial number (lower limit) |  |  |  |  |
+| serialNoHigh Serial number (upper limit) |  |  |  |  |
+| errCode Error code buffer (is entered in index 0 of the field) |  |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 6.0-9.0 SP6 | CANopen | — | • |  |
+| Example dword errCode[1];/* get values from environment variables */dword vendorId = getValue(envVendorId);dword productCode = getValue(envProductCode);dword revNoLow = getValue(envRevNoLow);dword revNoHigh = getValue(envRevNoHigh);dword serialNoLow = getValue(envSerialNoLow);dword serialNoHigh = getValue(envSerialNoHigh);coLssIdentRemoteSlave( vendorId, productCode, revNoLow, revNoHigh, serialNoLow, serialNoHigh ); |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "diagGetParameterLongName, diagGetRespParameterLongName",
+  "category": "Diagnostics",
+  "title": "diagGetParameterLongName, diagGetRespParameterLongName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctiondiagGetParameterLongName.htm",
+  "syntax": [
+    "diagGetParameterLongName, diagGetRespParameterLongName(obj);"
+  ],
+  "description": [
+    "Copies the long name of a diagnostic parameter into the buffer, honoring the character encoding configured in the diagnostic description. The text is converted into the encoding used in the CAPL program.",
+    "There are two ways to identify the parameter:"
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostic object."
+    }
+  ],
+  "return": "Length of path written to buffer, may be truncated.",
+  "example": {
+    "description": [],
+    "code": "// Write the parameter paths, names and symbolic values of a response object to the Write Window\nDumpResponseParameterPaths( DiagResponse * resp)\n{\n  WORD i;\n  char path[100];\n\n  resp.GetObjectPath( path, elcount( path));\n  write( \"Object: %s\", path);\n\n  i = 0;\n  while( resp.GetParameterPath( i, path, elcount( path)) > 0)\n  {\n    char parameterSymbol[200];\n    char name[200];\n    resp.GetParameter( path, parameterSymbol, elcount( parameterSymbol));\n    DiagGetParameterLongName( resp, path, name, elcount(name));\n    write( \"%2i %-50s %-20s = %s\", i, path, name, parameterSymbol);\n    ++i;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_parameters"
+}

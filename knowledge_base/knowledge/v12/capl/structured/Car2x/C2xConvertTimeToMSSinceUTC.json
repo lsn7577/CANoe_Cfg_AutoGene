@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "C2xConvertTimeToMSSinceUTC",
+  "category": "Car2x",
+  "title": "C2xConvertTimeToMSSinceUTC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xConvertTimeToMSSinceUTC.htm",
+  "syntax": [
+    "int64 C2xConvertTimeToMSSinceUTC( int64 itsTimestamp, long refTime ); // form 1"
+  ],
+  "description": [
+    "This function returns the elapsed milliseconds between a reference time and a time stamp.",
+    "As time stamp input either a Unix time stamp in milliseconds (form 1) or a UTC time given with year, month, hour and so on as separate parameters (form 2) can be given. Specific reference times can be set as additional parameter.",
+    "The result can be used for the time stamps defined in e.g. a CAM or a DENM."
+  ],
+  "parameters": [
+    {
+      "name": "itsTimestamp",
+      "type": "",
+      "description": "Unix time stamp in milliseconds (time zone UTC)"
+    }
+  ],
+  "return": "Time stamp in milliseconds or -1 in case of an error",
+  "example": {
+    "description": [],
+    "code": "int64 itsTimestamp = 0; // original time stamp\nint64 itsTS2004 = 0; // converted to 2004 format\nword itsTS2004mod16unsigned = 0; // -> mod16 unsigned\nlong itsTS2004mod32signed = 0; // -> mod32 signed\nint64 itsTS2010 = 0; // converted to 2010 format\nenum enumRefTime{en2004 = 0, en2010 = 1};\n\n// get times tamp once\nitsTimestamp = C2xGetITSTimestamp();\n\n// convert time stamps into needed formats\nitsTS2004 = C2xConvertTimeToMSSinceUTC(itsTimestamp, en2004);\nitsTS2004mod16unsigned = C2xConvertTimeToMSSinceUTC(itsTimestamp, en2004) & 0xFFFFFFFF;\nitsTS2004mod32signed = C2xConvertTimeToMSSinceUTC(itsTimestamp, en2004) & 0x7FFFFFFFFFFFFFFFLL;\nitsTS2010 = C2xConvertTimeToMSSinceUTC(itsTimestamp, en2010);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

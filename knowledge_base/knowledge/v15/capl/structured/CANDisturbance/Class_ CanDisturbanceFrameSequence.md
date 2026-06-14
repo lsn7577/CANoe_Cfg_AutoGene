@@ -1,0 +1,48 @@
+# Class: CanDisturbanceFrameSequence
+
+> Category: `CANDisturbance` | Type: `notes`
+
+## Description
+
+This class represents a frame based sequence for the CAN Disturbance Interface. The frame can be configured by using the SetMessage method or by using the different attributes.
+
+RecalculateCRC
+
+You can access control information of a CanDisturbanceFrameSequence object with the following attributes:
+
+Classical Base Frame Format
+
+Classical Extended Frame Format
+
+FD Base Frame Format
+
+FD Extended Frame Format
+
+N/A
+
+Digital Disturbance
+
+| Keyword | Description | Type | Access Limitations | CBFF Classical Base Frame Format | CEFF Classical Extended Frame Format | FBFF FD Base Frame Format | FEFF FD Extended Frame Format |
+|---|---|---|---|---|---|---|---|
+| IDBase | Base ID of a frame | CanDisturbanceFrameSequenceField | N/A | ID28 – 18 | N/A | ID28 – 18 |  |
+| RemoteBase | RTR/SSR or RRS bit | CanDisturbanceFrameSequenceField | — | RTR | SRR | RRS | SRR |
+| IDE | Extended identifier bit | CanDisturbanceFrameSequenceField | — | IDE |  |  |  |
+| IDExtended | Extended ID of a frame | CanDisturbanceFrameSequenceField | — | ID(17-0) |  |  |  |
+| RemoteExtended | RTR/RRS | CanDisturbanceFrameSequenceField | — | N/A | RTR | N/A | RRS |
+| FDF | FDF bit | CanDisturbanceFrameSequenceField | — | FDF |  |  |  |
+| Reserved | r0/res bit | CanDisturbanceFrameSequenceField | — | N/A | r0 | res | res |
+| BRS | Bit rate switch bit | CanDisturbanceFrameSequenceField | — | N/A | BRS | BRS |  |
+| ESI | Error switch identifier bit | CanDisturbanceFrameSequenceField | — | N/A | ESI | ESI |  |
+| DLC | Data length code field | CanDisturbanceFrameSequenceField | — | DLC0-3 |  |  |  |
+| Payload | The payload field | CanDisturbanceFrameSequenceField[64] | — | D0-D7 | D0-D7 | D0-D63 | D0-D63 |
+| StuffCount | The stuff count includes the parity bit | CanDisturbanceFrameSequenceField | — | N/A | StuffCount0 – StuffCount3 |  |  |
+| CRC | Checksum field | CanDisturbanceFrameSequenceField | — | CRC (length depends on format and on DLC) |  |  |  |
+| CRCDelimiter | CRC delimiter | CanDisturbanceFrameSequenceField | — | CRC delimiter |  |  |  |
+| AckSlot | Acknowledge slot | CanDisturbanceFrameSequenceField | — | ACK |  |  |  |
+| AckDel | Acknowledge delimiter | CanDisturbanceFrameSequenceField | — | Ack delimiter |  |  |  |
+| EOF | End of frame | CanDisturbanceFrameSequenceField | — | End of frame |  |  |  |
+| ArbitrationTicks | Ticks used by default for one bit of the arbitration phase | word | read only |  |  |  |  |
+| DataTicks | Ticks used by default for one bit of the data phase | word | read only |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

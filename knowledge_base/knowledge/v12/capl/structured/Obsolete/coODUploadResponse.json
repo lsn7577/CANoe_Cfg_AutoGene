@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coODUploadResponse",
+  "category": "Obsolete",
+  "title": "coODUploadResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdUploadResponse.htm",
+  "syntax": [
+    "void coODUploadResponse( dword size, dword value, dword errCode[] );"
+  ],
+  "description": [
+    "The function confirms a SDO upload transfer, which was initiated on an object with access type 7. It can be used, e.g. in the event function coOnUploadIndication. If the transfer should be aborted, then coODAbortTransfer must be used."
+  ],
+  "parameters": [
+    {
+      "name": "size",
+      "type": "",
+      "description": "Transfer size, value range 0..4.294.967.295"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnUploadIndication (dword index, dword subIndex){\n  dword errCode[1]; \n\n  if (index == 0x2000) {\ncoODUploadResponse( 2, 0x1234, errCode );\n    if (errCode[0] == 0) {\n      write(\"SDO upload successfully confirmed\");\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForvFlashLastErrorMessage",
+  "category": "Diagnostics",
+  "title": "TestWaitForvFlashLastErrorMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagvFlashTestWaitForvFlashLastErrorMessage.htm",
+  "syntax": [
+    "long TestWaitForvFlashLastErrorMessage(char errorText[], dword maxLength);"
+  ],
+  "description": [
+    "Waits until the last detailed error message is retrieved from vFlash. If a message is received, it is copied into the given buffer."
+  ],
+  "parameters": [],
+  "return": "1: Success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

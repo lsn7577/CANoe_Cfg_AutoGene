@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "SetLoadMode",
+  "category": "VTSystem",
+  "title": "SetLoadMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSetLoadMode.htm",
+  "syntax": [
+    "long SysVarNamespace.SetLoadMode (eVTSLoadMode Mode);"
+  ],
+  "description": [
+    "Switches the internal load to a specific mode."
+  ],
+  "parameters": [
+    {
+      "name": "Mode",
+      "type": "",
+      "description": "Values see eVTSLoadMode"
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "The following example demonstrates the usage of the internal load of a VT1004 channel. In this example the channel is called LowBeamLeft. The internal load is configured for resistance-control-mode with a resistance of 120 Ohm. So the electronic load functions as a constant resistor against the input.",
+      "The second part of the example shows how to use the current control mode. Here the electronic load is regulated so that a constant current flows between the two ECU lines."
+    ],
+    "code": "InternalLoad_ResistanceControl ()\n{\n   // Set the resistor of the internal load to 120Ohm\n   @sysvar::VTS::LowBeamLeft::IntLoadResistor = 120;\n\n   // Set internal load mode to resistance control\n   sysvar::VTS::LowBeamLeft.SetLoadMode(eVTSLoadModeResistanceControl);\n\n   // Connect ECU with internal load\n   @sysvar::VTS::LowBeamLeft::RelayIntLoadA = 1;\n   @sysvar::VTS::LowBeamLeft::RelayIntLoadB = 1;\n}\nInternalLoad_CurrentControl ()\n{\n   // Set the current of the internal load to 1A\n   @sysvar::VTS::LowBeamLeft::IntLoadCurrent = 1;\n\n   // Set internal load mode to current control\n   sysvar::VTS::LowBeamLeft.SetLoadMode(eVTSLoadModeResistanceControl);\n\n   // Connect ECU with internal load\n   @sysvar::VTS::LowBeamLeft::RelayIntLoadA = 1;\n   @sysvar::VTS::LowBeamLeft::RelayIntLoadB = 1;\n}\npublic void InternalLoad_ResistanceControl()\n   {\n      // Get VTS interface and VT1004 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT1004Channel lowBeamLeft = vts.GetChannel(\"LowBeamLeft\") as IVT1004Channel;\n\n      // Set the resistor of the internal load to 120Ohm\n      lowBeamLeft.IntLoadResistor.Value = 120.0;\n\n      // Set internal load mode to resistance control\n      lowBeamLeft.LoadMode.Value = LoadMode.ResistanceControl;\n\n      // Connect ECU with internal load\n      lowBeamLeft.RelayIntLoadA.Value = true;\n      lowBeamLeft.RelayIntLoadB.Value = true;\n   }\npublic void InternalLoad_CurrentControl()\n   {\n      // Get VTS interface and VT1004 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT1004Channel lowBeamLeft = vts.GetChannel(\"LowBeamLeft\") as IVT1004Channel;\n\n      // Set the current of the internal load to 1A\n      lowBeamLeft.IntLoadCurrent.Value = 1.0;\n\n      // Set internal load mode to current control\n      lowBeamLeft.LoadMode.Value = LoadMode.CurrentControl;\n\n      // Connect ECU with internal load\n      lowBeamLeft.RelayIntLoadA.Value = true;\n      lowBeamLeft.RelayIntLoadB.Value = true;\n   }\n<testcase title=\"InternalLoad_ResistanceControl\" ident=\"\">\n      <set title=\"Set the resistor of the internal load to 120Ohm\">\n         <sysvar name=\"IntLoadResistor\" namespace=\"VTS::LowBeamLeft\">120</sysvar>\n      </set>\n      <vtsystem_configure title=\"Set internal load mode to resistor control\">\n         <load_mode channel=\"VTS::LowBeamLeft\" mode=\"resistor\" />\n      </vtsystem_configure>\n      <set title=\"Connect ECU with internal load\">\n         <sysvar name=\"RelayIntLoadA\" namespace=\"VTS::LowBeamLeft\">1</sysvar>\n         <sysvar name=\"RelayIntLoadB\" namespace=\"VTS::LowBeamLeft\">1</sysvar>\n      </set>\n   </testcase>\n<testcase title=\"InternalLoad_CurrentControl\" ident=\"\">\n      <set title=\"Set the current of the internal load to 1A\">\n         <sysvar name=\"IntLoadCurrent\" namespace=\"VTS::LowBeamLeft\">1</sysvar>\n      </set>\n      <vtsystem_configure title=\"Set internal load mode to current control\">\n         <load_mode channel=\"VTS::LowBeamLeft\" mode=\"current\" />\n      </vtsystem_configure>\n      <set title=\"Connect ECU with internal load\">\n         <sysvar name=\"RelayIntLoadA\" namespace=\"VTS::LowBeamLeft\">1</sysvar>\n         <sysvar name=\"RelayIntLoadB\" namespace=\"VTS::LowBeamLeft\">1</sysvar>\n      </set>\n   </testcase>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

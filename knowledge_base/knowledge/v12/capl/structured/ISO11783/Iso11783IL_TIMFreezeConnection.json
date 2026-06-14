@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMFreezeConnection",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMFreezeConnection",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimFreezeConnection.htm",
+  "syntax": [
+    "long Iso11783IL_TIMFreezeConnection(dbNode counterpart, dword runToState); // form 1"
+  ],
+  "description": [
+    "After calling this function the TIM client or TIM server runs until the specified state is reached. In this state the node still sends the cyclic status messages.",
+    "You find the possible states in the tables of Client States (TIM Component - ISO11783) or Server States (TIM Component - ISO11783).",
+    "To continue the standard process you can call Iso11783IL_TIMContinueConnection.",
+    "For form 2, 4, 6 and 8 you can specify an additional system variable which is set to value 1 if the specified state is reached."
+  ],
+  "parameters": [
+    {
+      "name": "counterpart",
+      "type": "",
+      "description": "TIM counterpart of the client/server connection."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

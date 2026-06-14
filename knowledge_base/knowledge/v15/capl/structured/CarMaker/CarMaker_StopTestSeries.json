@@ -1,0 +1,122 @@
+{
+  "page_type": "function",
+  "name": "CarMaker_StopTestSeries",
+  "category": "CarMaker",
+  "title": "CarMaker_StopTestSeries",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CarMaker/Functions/CAPLfunctionCarMakerStopTestSeries.htm",
+  "syntax": [
+    "long CarMaker_StopTestSeries( );"
+  ],
+  "description": [
+    "Stops test series immediately in CarMaker."
+  ],
+  "parameters": [],
+  "return": "APO return code",
+  "example": {
+    "description": [],
+    "code": "// stop test series\ngErrorState = CarMaker_StopTestSeries();\r"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "—",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CarMaker",
+      "—",
+      "—",
+      "—",
+      "CarMaker"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "vtsSerialSetOnErrorHandler",
+  "category": "VTSystem",
+  "title": "vtsSerialSetOnErrorHandler",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSerialSetOnErrorHandler.htm",
+  "syntax": [
+    "long vtsSerialSetOnErrorHandler (char Target[], char onErrorCallback[]);"
+  ],
+  "description": [
+    "Sets the callback that notifies when an error occurred during a send or receive operation.",
+    "The set callback has to have following signature: void <OnSerialError>( dword errorFlags)"
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

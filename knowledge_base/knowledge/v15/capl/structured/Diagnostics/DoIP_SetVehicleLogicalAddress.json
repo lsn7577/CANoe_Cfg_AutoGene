@@ -1,0 +1,130 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetVehicleLogicalAddress",
+  "category": "Diagnostics",
+  "title": "DoIP_SetVehicleLogicalAddress",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPSetVehicleLogicalAddress.htm",
+  "syntax": [
+    "void DoIP_SetVehicleLogicalAddress(dword logicalAddress);"
+  ],
+  "description": [
+    "Sets vehicle logical DoIP address sent in DoIP PDUs."
+  ],
+  "parameters": [
+    {
+      "name": "logicalAddress",
+      "type": "",
+      "description": "Address used (0x0000 to 0xFFFF)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The following example sets the Logical Address of a vehicle (used e.g. in Routing Activation Responses) and makes it known to the DoIP layer."
+    ],
+    "code": "dword gGatewayLogAddress = 0x1000;\nwrite(\"Logical address of vehicle = 0x%04x\", gGatewayLogAddress);\nDoIP_SetVehicleLogicalAddress( gGatewayLogAddress);\nDoIP_AddECU( gGatewayLogAddress);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP2",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

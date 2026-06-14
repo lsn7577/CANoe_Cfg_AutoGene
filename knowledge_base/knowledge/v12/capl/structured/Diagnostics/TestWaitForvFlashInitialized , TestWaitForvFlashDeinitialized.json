@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForvFlashInitialized , TestWaitForvFlashDeinitialized",
+  "category": "Diagnostics",
+  "title": "TestWaitForvFlashInitialized , TestWaitForvFlashDeinitialized",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagvFlashTestWaitForvFlashDeInitialized.htm",
+  "syntax": [
+    "long TestWaitForvFlashInitialized();"
+  ],
+  "description": [
+    "Waits until the vFlash library is initialized/deinitialized. A call to TestWaitForvFlashDeinitialized is mandatory if any other call to a function of the vFlash API is made."
+  ],
+  "parameters": [],
+  "return": "1: Success",
+  "example": {
+    "description": [],
+    "code": "  // ...\n  // Prepare flashing on FlexRay\n  vFlashActivateNetwork();\n}\nvoid vFlashActivateNetworkCompleted(long vFlashStatusCode)\n{\n  write(\"FlexRay network management was activated\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

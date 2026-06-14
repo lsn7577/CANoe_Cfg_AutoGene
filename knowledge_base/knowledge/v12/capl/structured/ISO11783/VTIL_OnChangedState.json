@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_OnChangedState",
+  "category": "ISO11783",
+  "title": "VTIL_OnChangedState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILOnChangedState.htm",
+  "syntax": [
+    "void VTIL_OnChangedState( long state );"
+  ],
+  "description": [
+    "This callback function is called from the VT IL if it has changed its state."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void VTIL_OnChangedState( long state )\n{\n  switch(state) {\n    case 1: // Claiming\n      break;\n    case 2: // Active\n      break;\n    case 3: // Stopped\n      break;\n    case 4: // Suspended\n      break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

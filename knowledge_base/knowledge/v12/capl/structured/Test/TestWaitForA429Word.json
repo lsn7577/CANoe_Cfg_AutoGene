@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForA429Word",
+  "category": "Test",
+  "title": "TestWaitForA429Word",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForA429Word.htm",
+  "syntax": [
+    "long TestWaitForA429Word (dbA429Word aWord, dword aTimeout);"
+  ],
+  "description": [
+    "Wait for the occurrence of the specified word aWord. In case the ARINC word does not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless. If no specific ARINC word is given, the wait condition is resolved on any word.",
+    "If ARINC word events are delivered from different buses, the context has to be adjusted correctly (SetBusContext).",
+    "The function handles only incoming and error free ARINC words."
+  ],
+  "parameters": [
+    {
+      "name": "aWord",
+      "type": "",
+      "description": "Event connected to ARINC word from an assigned data base."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "//Example\n//This example waits for the occurrence of two messages in correct order\nvariables\n{\n  dword a429Ch5Context = 0;\n  dword a429Ch6Context = 0;\n  long resultTestWait = 0;\n\n  dword timeToWait = 5000; //in ms\n}\n\nMainTest()\n{\n  //save the bus context for later use\n  a429Ch5Context = getBusNameContext (\"A429Ch5\");\n  a429Ch6Context = getBusNameContext (\"A429Ch6\");\n  \n  TestWaitForA429Word_Two ();\n}\n\ntestcase TestWaitForA429Word_Two()\n{\n  a429word * myWord;\n  dword index = 0;\n  \nTestStepPass(\"Library: Test.can\", \"Testcase: TestWaitForA429Word_Two\");\n\n  TestStep (\"Wait Condition\", \"Create Wait for LBL_075\");\n  \n  setBusContext (a429Ch5Context);\n  CheckWaitResult (testWaitForA429Word (LBL_075, timeToWait));\n  \n  TestStep (\"Wait Condition\", \"Create Wait for LBL_012\");\n  setBusContext (a429Ch6Context);\n  CheckWaitResult (testWaitForA429Word (LBL_012, timeToWait));\n}\n\ntestfunction CheckWaitResult(long result)\n{\n  if( result < 0)\n  {\n    TestStepFail (\"Wait Condition\", \"result = %d, Failure on joining symbolic event: LBL_075\", result);\n  }\n  else if( result == 0)\n  {\n    TestStepFail (\"Wait Condition\", \"result = %d, Failure on waiting symbolic event: LBL_075, event did not occur\", result);\n  }\n  else\n  {\n    TestStepPass (\"Wait Condition\", \"Awaited symbolic event occurred\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

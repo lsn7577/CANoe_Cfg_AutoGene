@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "CarMaker_Connect",
+  "category": "CarMaker",
+  "title": "CarMaker_Connect",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CarMaker/Functions/CAPLfunctionCarMakerConnect.htm",
+  "syntax": [
+    "long CarMaker_Connect(char host[], char user[]);"
+  ],
+  "description": [
+    "Creates a connection to the CarMaker instance running on the selected host by the given user. If the user name is an empty string, only the host name is used to select the CarMaker instance. An IPv4 address is also accepted as host name."
+  ],
+  "parameters": [
+    {
+      "name": "host",
+      "type": "",
+      "description": "Host name or IP address of the CarMaker host computer."
+    },
+    {
+      "name": "user",
+      "type": "",
+      "description": "Name of the user running the CarMaker instance. If this value is an empty string and multiple CarMaker instances are running on the specified host, any instance is connected. If the special name localuser is given the current user of the CANoe RT kernel is resolved and used for the connection."
+    }
+  ],
+  "return": "APO return code",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  // connect to CarMaker instance\n  gErrorState = CarMaker_Connect(\"localhost\", \"localuser\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "—",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CarMaker",
+      "—",
+      "—",
+      "—",
+      "CarMaker"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

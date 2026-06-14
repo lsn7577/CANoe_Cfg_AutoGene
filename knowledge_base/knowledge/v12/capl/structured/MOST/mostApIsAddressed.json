@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostApIsAddressed",
+  "category": "MOST",
+  "title": "mostApIsAddressed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTApIsAddressed.htm",
+  "syntax": [
+    "long mostApIsAddressed(long fblockID, long instID)"
+  ],
+  "description": [
+    "mostApIsAddressed checks whether the functional MOST address {fblockID, instID} matches the CAPL node function blocks assigned via mostApRegister() or mostApRegisterEx(). The functional address is permitted to contain wildcard symbols.",
+    "This function can be used to determine whether an incoming command message is destined for the CAPL node."
+  ],
+  "parameters": [
+    {
+      "name": "fblockID",
+      "type": "",
+      "description": "Function block identifier of the functional address."
+    }
+  ],
+  "return": "1: If a MOST application simulated by this CAPL node is addressed.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "OnAREthSDServerEventGroupStatusChangedIPv6",
+  "category": "IP",
+  "title": "OnAREthSDServerEventGroupStatusChangedIPv6",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthSDServerEventGroupStatusChangedIPv6.htm",
+  "syntax": [
+    "void OnAREthSDServerEventGroupStatusChangedIPv6( dword serviceId, dword majorVersion, dword instanceId, dword eventGroupId, long status, byte newIpAddress[], dword newPort );"
+  ],
+  "description": [
+    "This callback function can be implemented in the CAPL program if a Service Server wants to be notified whenever a Subscriber is added.",
+    "This function is called when a Client executes a subscribe eventgroup command."
+  ],
+  "parameters": [
+    {
+      "name": "serviceId",
+      "type": "",
+      "description": "ID of the service whose status has changed."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

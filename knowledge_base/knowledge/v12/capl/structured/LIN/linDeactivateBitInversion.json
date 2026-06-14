@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "linDeactivateBitInversion",
+  "category": "LIN",
+  "title": "linDeactivateBitInversion",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINDeactivateBitInversion.htm",
+  "syntax": [
+    "long LINDeactivateBitInversion()"
+  ],
+  "description": [
+    "With this function it is possible to cancel a previously activated bits inversion for LIN header or response. This function is useful when after calling linInvertHeaderBit() no header occurred yet on the bus or when after calling linInvertRespBit() no frame occurred yet."
+  ],
+  "parameters": [],
+  "return": "On success a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "Deactivate previous bit inversion"
+    ],
+    "code": "on key 'd'\n{\n   if (0==linDeactivateBitInversion())\n   {\n      write(\"CAPL: Bit inversion deactivation failure!\");\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

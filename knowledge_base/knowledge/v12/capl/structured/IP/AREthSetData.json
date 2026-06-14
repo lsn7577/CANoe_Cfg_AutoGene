@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AREthSetData",
+  "category": "IP",
+  "title": "AREthSetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSetData.htm",
+  "syntax": [
+    "long AREthSetData( dword messageHandle, dword dataLength, char data[] );"
+  ],
+  "description": [
+    "This function can be used to set the payload of a SOME/IP message. If data in the payload of the message already exist, the data will be overwritten with this function call.",
+    "If necessary the length field in the SOME/IP Message Header will be adapted at the function call."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the received SOME/IP message (see OnAREthMessage)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  dword messageId = 0x12340004; // service ID = 0x1234, method ID = 0x0004\n  dword requestId = 0; // client ID = 0, session ID = 0\n  dword protocolVersion = 1;\n  dword interfaceVersion = 1;\n  dword messageType = 0x2; // notification message\n  dword returnCode = 0; // not available\n  dword aep = 0; // application endpoint handle\n  dword messageHandle = 0; // handle of the created SOME/IP message\n  BYTE payload[5]; // the message payload\n  dword count = 0; // a simple counter\n\n  // initialize the payload\n  count = 0;\n  payload[count++] = 0x11;\n  payload[count++] = 0x22;\n  payload[count++] = 0x33;\n  payload[count++] = 0x44;\n  payload[count++] = 0x55;\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create the SOME/IP message itself and set the message payload\n  messageHandle = AREthCreateMessage(messageId,requestId,protocolVersion,interfaceVersion,messageType,returnCode);\n  AREthSetData(messageHandle,elcount(payload),payload);\n\n  // send the SOME/IP message\n  AREthOutputMessage(aep,0xFFFFFFFF,40001,messageHandle);\n\n  // release the some IP message\n  AREthReleaseMessage(messageHandle);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

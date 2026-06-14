@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetDescriptionInformation",
+  "category": "Diagnostics",
+  "title": "diagGetDescriptionInformation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetDescriptionInformation.htm",
+  "syntax": [
+    "long diagGetDescriptionInformation (char ecuQualifier[], char field[], char buffer[], dword bufferLen)"
+  ],
+  "description": [
+    "Returns information on a diagnostic description, as stored in the database file itself."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Retrieves information for this diagnostic description. If not given, the currently selected target or description assigned to the ECU simulation is used."
+    }
+  ],
+  "return": "Number of characters written into the array, or error code. If a value is not defined in the database, 0 and an empty string are returned.",
+  "example": {
+    "description": [],
+    "code": "char buffer[300];\nDiagGetDescriptionInformation( \"ECU1\", \"\", buffer, elcount(buffer));\nwrite( buffer);\n/* Example output:\nQualifier: ECU1\nName: ABCD2015\nFile: C:\\Projects\\2015\\R123\\ABCD.cdd\nManufacturer: Vector\nLast history change: 2014-07-11 08:32:23+02:00\nFile version: 1.3 #132\nTemplate version: 14.20.19 #1\n*/\nDiagSetTarget( \"ECU1\");\nDiagGetDescriptionVersion( buffer, elcount(buffer));\n// returns \"1.3\"\r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

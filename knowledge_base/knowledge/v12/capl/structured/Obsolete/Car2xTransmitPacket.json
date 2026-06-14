@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Car2xTransmitPacket",
+  "category": "Obsolete",
+  "title": "Car2xTransmitPacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionC2xTransmitPacket.htm",
+  "syntax": [
+    "long C2xTransmitPacket( char *message, char *onC2xTransmitPacket)"
+  ],
+  "description": [
+    "Registers a CAPL callback function that is invoked before transmission of a database defined packet. This allows the modification of signals and stack values before a packet is sent.",
+    "The callback must have the following signature:",
+    "void <OnC2xTransmitPacket> ( long packet )"
+  ],
+  "parameters": [
+    {
+      "name": "message",
+      "type": "",
+      "description": "Name of the message for which the callback is invoked. The message needs to be configured as Tx message (with an appropriate Send Type) of this network node."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  C2xTransmitPacket(\"BasicSafetyMessage\", \"OnTxBSM\") ;\n}\nvoid OnTxBSM(LONG packet)\n{\n  C2xSetSignal(\"BasicSafetyMessage::blob1::_Blob_BSMblob::motion::heading\", 90) ;\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

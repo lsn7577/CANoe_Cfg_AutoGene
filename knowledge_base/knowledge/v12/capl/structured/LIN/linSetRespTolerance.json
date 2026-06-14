@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetRespTolerance",
+  "category": "LIN",
+  "title": "linSetRespTolerance",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetRespTolerance.htm",
+  "syntax": [
+    "dword linSetRespTolerance(long frameId, long toleranceInPercent)"
+  ],
+  "description": [
+    "Sets the response tolerance for a specified frame in percent."
+  ],
+  "parameters": [
+    {
+      "name": "frameId",
+      "type": "",
+      "description": "The identifier of the frame for which the response tolerance shall be set."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

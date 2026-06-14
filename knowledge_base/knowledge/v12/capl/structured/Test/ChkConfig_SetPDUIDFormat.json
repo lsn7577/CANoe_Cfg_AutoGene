@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkConfig_SetPDUIDFormat",
+  "category": "Test",
+  "title": "ChkConfig_SetPDUIDFormat",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkConfigSetPDUIDFormat.htm",
+  "syntax": [
+    "long ChkConfig_SetPDUIDFormat(dword format);"
+  ],
+  "description": [
+    "Sets the format of the header ID for the current bus context. It affects the next checks that are created after calling this function.",
+    "It may be used if not the default header ID format shall be used. Default:"
+  ],
+  "parameters": [
+    {
+      "name": "format",
+      "type": "",
+      "description": "Format of the header ID."
+    }
+  ],
+  "return": "0: Successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

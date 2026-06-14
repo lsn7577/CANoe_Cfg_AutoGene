@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreatePreChargeReq_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreatePreChargeReq_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreatePreChargeReq_Iso.htm",
+  "syntax": [
+    "long SCC_CreatePreChargeReq_ISO ( byte SessionID[], byte StatusFlags[], char ErrorCode[], float TargetVoltage, float TargetCurrent )"
+  ],
+  "description": [
+    "Creates a PreCharge Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

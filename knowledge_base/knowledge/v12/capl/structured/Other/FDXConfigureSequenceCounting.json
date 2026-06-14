@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "FDXConfigureSequenceCounting",
+  "category": "Other",
+  "title": "FDXConfigureSequenceCounting",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionFDXConfigureSequenceCounting.htm",
+  "syntax": [
+    "long FDXConfigureSequenceCounting(long fdxClientHandle, long mode);"
+  ],
+  "description": [
+    "This function sets the behavior with which CANoe should fill out the field seqNrOrDgramLen in the FDX datagram header.",
+    "Prerequisite for the function is to configure UPD/IPv4 or UDP/IPv6 as transport layer for the FDX feature."
+  ],
+  "parameters": [
+    {
+      "name": "fdxClientHandle",
+      "type": "",
+      "description": "FDX client for which the sequence counting should be configured."
+    }
+  ],
+  "return": "0: Successful function call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,157 @@
+{
+  "page_type": "function",
+  "name": "SetMediaStream",
+  "category": "Other",
+  "title": "SetMediaStream",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionSetMediaStream.htm",
+  "syntax": [
+    "SetMediaStream(panel, control, busType, channel, streamIndex, streamId[]);"
+  ],
+  "description": [
+    "Replaces the media stream at the specified index of the Panel Designer during runtime:",
+    "Media Stream Control",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    },
+    {
+      "name": "control",
+      "type": "",
+      "description": "Name of the control, restricted to 128 characters.\"\" – references all controls on the panel."
+    },
+    {
+      "name": "busType",
+      "type": "",
+      "description": "Bus type of the source media stream (e.g. eCAN, eFlexRay, eEthernet, ...).Currently only bus type eEthernet is supported."
+    },
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel number of the source media stream."
+    },
+    {
+      "name": "streamIndex",
+      "type": "",
+      "description": "Target stream index of the Media Stream Control."
+    },
+    {
+      "name": "streamId",
+      "type": "",
+      "description": "Stream ID of the source media stream."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Setting media stream from Ethernet channel 1."
+    ],
+    "code": "on key 'x'\n{\n  byte streamId[8] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x00, 0x01 };\n  SetMediaStream(\"AVTP Video H.264\", \"Media Stream Control\", eEthernet, 1, 0, streamId);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "11.0",
+      "11.0",
+      "13.0",
+      "—",
+      "14",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "Media Stream Control",
+      "Media Stream Control",
+      "Media Stream Control",
+      "—",
+      "Media Stream Control",
+      "Media Stream Control"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

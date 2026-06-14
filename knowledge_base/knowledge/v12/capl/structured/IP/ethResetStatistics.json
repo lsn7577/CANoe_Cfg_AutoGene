@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethResetStatistics",
+  "category": "IP",
+  "title": "ethResetStatistics",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionEthResetStatistics.htm",
+  "syntax": [
+    "void ethResetStatistics( long channel );"
+  ],
+  "description": [
+    "Resets Ethernet channel statistics. The Ethernet channel statistics are provided by the Eth<channel> object."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel number."
+    }
+  ],
+  "return": "Value range: 1..32",
+  "example": {
+    "description": [],
+    "code": "on key 'i'\n{\n  ethResetStatistics( 1 ); // Reset statistics of Eth 1\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

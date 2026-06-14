@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssFastScanTestMaster",
+  "category": "CANopen",
+  "title": "coTfsLssFastScanTestMaster",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssFastScanTestMaster.htm",
+  "syntax": [
+    "long coTfsLssFastScanTestMaster( void );"
+  ],
+  "description": [
+    "This function executes a LSS FastScan test for CANopen® master."
+  ],
+  "parameters": [
+    {
+      "name": "checkPerformedFixedDeviceScan",
+      "type": "",
+      "description": "Include a fixed device scan test."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if (coTfsLssFastScanTestMaster() == 1) {\n\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

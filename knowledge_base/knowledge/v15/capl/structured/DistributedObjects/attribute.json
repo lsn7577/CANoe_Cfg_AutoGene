@@ -1,0 +1,160 @@
+{
+  "page_type": "function",
+  "name": "attribute",
+  "category": "DistributedObjects",
+  "title": "attribute",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Objects/CAPLfunctionAttribute.htm",
+  "syntax": [
+    "attribute *",
+    "attribute int32",
+    "attribute uint32",
+    "attribute int64",
+    "attribute uint64",
+    "attribute double",
+    "attribute string"
+  ],
+  "description": [
+    "The types of attributes for distributed objects.",
+    "These types are not available for user declarations."
+  ],
+  "parameters": [
+    {
+      "name": "int32",
+      "type": "",
+      "description": "32-Bit signed integer attribute. Access requires type long in CAPL."
+    },
+    {
+      "name": "unit32",
+      "type": "",
+      "description": "32-Bit unsigned integer attribute. Access requires type dword in CAPL."
+    },
+    {
+      "name": "int64",
+      "type": "",
+      "description": "64-Bit signed integer attribute. Access requires type int64 in CAPL."
+    },
+    {
+      "name": "unit64",
+      "type": "",
+      "description": "64-Bit unsigned integer attribute. Access requires type qword in CAPL."
+    },
+    {
+      "name": "doube",
+      "type": "",
+      "description": "64-Bit floating point attribute. Access requires type double in CAPL."
+    },
+    {
+      "name": "string",
+      "type": "",
+      "description": "String attribute. Access requires a large enough char array in CAPL."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// vCDL\nversion 1.4;\nnamespace ExampleNamespace\n{\n  interface ExampleInterface\n  {\n    internal data int32 ExampleMember;\n  }\n  ExampleInterface ExampleObject;\n  attribute int32 ExampleIntAttr { mutable; }\n  attribute string ExampleStringAttr { mutable; }\n}\n\n// CAPL\non start\n{\n  dword val;\n\n  // reference attributes in CAPL\n  ExampleNamespace::ExampleIntAttr;\n  ExampleNamespace::ExampleStringAttr;\n\n  // use setAttribute function to set the value of an attribute at an object\n  setAttribute(ExampleInterface, ExampleNamespace::ExampleStringAttr, \"test\");\n  setAttribute(ExampleInterface.ExampleMember, ExampleNamespace::ExampleIntAttr, 42);\n  setAttribute(ExampleObject, ExampleNamespace::ExampleStringAttr, \"test\");\n  setAttribute(ExampleObject.ExampleMember, ExampleNamespace::ExampleIntAttr, 42);\n\n  // use getAttribute function to read the value of an attribute\n  getAttribute(ExampleObject.ExampleMember, _SystemAttributes::AutoSubscribe, val);\n  write(\"AutoSubscribe: %d\", val);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "15",
+      "15",
+      "15",
+      "15",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

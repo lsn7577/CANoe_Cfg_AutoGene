@@ -1,0 +1,615 @@
+{
+  "page_type": "event",
+  "name": "on frPOCState",
+  "category": "FlexRay",
+  "title": "on frPOCState",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/EventProcedures/CAPLfunctionOnFRPocState.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure is called whenever there is a change of state on the FlexRay Communication Controller's protocol operation state machine."
+  ],
+  "parameters": [],
+  "return": "The transition time stamp that has been synchronized with the global time base in the",
+  "example": {
+    "description": [
+      "The following program reacts on Protocol Operation Control state changes in the FlexRay interface and prints them in the Write Window, Trace Window, and logging."
+    ],
+    "code": "variables\n{\n   const int cWriteTextSize = 512;\n   char writeTxt[cWriteTextSize];\n   const int cWriteTextSize2 = 40;\n   char writeTxt2[cWriteTextSize2];\n   const int writeSink_Trace           = -3;\n   const int writeSink_Logging         = -2;\n   const int writeSeverity_Information = 1;\n   int gClusterIsAsync = -1;\n}\n\non frPocState\n{\n   getPOCStateName(this.FR_POCState, cWriteTextSize2, writeTxt2);\n   snprintf(writeTxt, cWriteTextSize, \"%10.6f: on FRPOCState %2d (%-32s) in cycle %3d on channel %2d with HW Type %2d, Info1 0x%02x, Info2 0x%02x, Info3 0x%02x, Info4 0x%02x.\", getTime(0), this.FR_POCState, writeTxt2, this.FR_Cycle, (int)this.MsgChannel, this.Type, this.FR_Info1, this.FR_Info2, this.FR_Info3, this.FR_Info4);\n   myprint(writeTxt);\n   output(this); // only required in Measurement Setup\n   if ((this.FR_POCState != -1) && (this.FR_POCState < 100)) {\n     if (((gClusterIsAsync == -1) || (gClusterIsAsync == 0)) && ((this.FR_POCState == 4) || (this.FR_POCState == -2))) {\n        gClusterIsAsync = 1;\n        write(\"gClusterIsAsync = 1\");\n     }\n     if (((gClusterIsAsync == -1) || (gClusterIsAsync == 1)) && (this.FR_POCState == 2)) {\n        gClusterIsAsync = 0;\n        write(\"gClusterIsAsync = 0\");\n     }\n   }\n}\n\nfloat getTime (float time)\n{\n   return TimeNowNS() / 1000000000.0;\n}\n\nvoid myprint(char text[])\n{\n   write(\"%s\", text);\n   writeLineEx(writeSink_Trace,   writeSeverity_Information, \"%s\", text);\n   writeLineEx(writeSink_Logging, writeSeverity_Information, \"%s\", text);\n}\n\nint getPOCStateName (int state, word nameSize, char name[])\n{\n   int r = -1;\n   if (state == -2) {\n      snprintf(name, nameSize, \"Synchronization Lost\");\n      r = state;\n   } else if (state == 0x00) {\n      snprintf(name, nameSize, \"Default Config\");\n      r = state;\n   } else if (state == 0x01) { \n      snprintf(name, nameSize, \"Ready\");\n      r = state;\n   } else if (state == 0x02) { \n      snprintf(name, nameSize, \"Normal Active\");\n      r = state;\n   } else if (state == 0x03) { \n      snprintf(name, nameSize, \"Normal Passive\");\n      r = state;\n   } else if (state == 0x04) { \n      snprintf(name, nameSize, \"Halt\");\n      r = state;\n   } else if (state == 0x05) { \n      snprintf(name, nameSize, \"Monitor Mode\");\n      r = state;\n   } else if (state == 0x0f) { \n      snprintf(name, nameSize, \"Config\");\n      r = state;\n   } else if (state == 0x10) { \n      snprintf(name, nameSize, \"Wakeup Standby\");\n      r = state;\n   } else if (state == 0x11) { \n      snprintf(name, nameSize, \"Wakeup Listen\");\n      r = state;\n   } else if (state == 0x12) { \n      snprintf(name, nameSize, \"Wakeup Send\");\n      r = state;\n   } else if (state == 0x13) { \n      snprintf(name, nameSize, \"Wakeup Detect\");\n      r = state;\n   } else if (state == 0x20) { \n      snprintf(name, nameSize, \"Startup Prepare\");\n      r = state;\n   } else if (state == 0x21) { \n      snprintf(name, nameSize, \"Coldstart Listen\");\n      r = state;\n   } else if (state == 0x22) { \n      snprintf(name, nameSize, \"Coldstart Collision Resolution\");\n      r = state;\n   } else if (state == 0x23) { \n      snprintf(name, nameSize, \"Coldstart Consistency Check\");\n      r = state;\n   } else if (state == 0x24) { \n      snprintf(name, nameSize, \"Coldstart Gap\");\n      r = state;\n   } else if (state == 0x25) { \n      snprintf(name, nameSize, \"Coldstart Join\");\n      r = state;\n   } else if (state == 0x26) { \n      snprintf(name, nameSize, \"Integration Coldstart Check\");\n      r = state;\n   } else if (state == 0x27) { \n      snprintf(name, nameSize, \"Integration Listen\");\n      r = state;\n   } else if (state == 0x28) { \n      snprintf(name, nameSize, \"Integration Consistency Check\");\n      r = state;\n   } else if (state == 0x29) { \n      snprintf(name, nameSize, \"Initialize Schedule\");\n      r = state;\n   } else if (state == 0x2a) { \n      snprintf(name, nameSize, \"Abort Startup\");\n      r = state;\n   } else if (state == 0x2b) { \n      snprintf(name, nameSize, \"Startup Success\");\n      r = state;\n   } else { \n      snprintf(name, nameSize, \"Unknown\");\n      r = -1;\n   }\n   return r;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.1 SP2",
+      "6.1 SP2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Time (data type dword)Time_ns (data type int64)",
+        "The transition time stamp that has been synchronized with the global time base in the computer (CAN hardware or computer system clock). The time stamp must be used if time relations should be regarded with events from other sources. This time stamp is also output in the Trace Window when receiving a symbol. Timer unit: 10 microseconds.NS timer unit: nanoseconds. Note: The Time selector is not available when executing CAPL programs directly on an interface hardware (CAPL-on-Board). Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "MsgChannel",
+        "Channel in the tool that the FlexRay CC determines. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_POCState",
+        "The POC state of the E-Ray and the cold-start helper CC can be changed with the function FrSetPocState. If the desired POC-state is reached, then this event is generated. Identifies the new state of the POC state machine (data type LONG): E-Ray Coldstart Helper POC State -2 254 SYNC LOST -1 255 UNKNOWN 0 256 DEFAULT CONFIG 1 257 READY 2 258 NORMAL ACTIVE 3 259 NORMAL PASSIVE 4 260 HALT 5 261 MONITOR MODE 15 262 CONFIG 16 263 WAKEUP STANDBY 17 264 WAKEUP LISTEN 18 265 WAKEUP SEND 19 266 WAKEUP DETECT 32 267 STARTUP PREPARE 33 268 COLDSTART LISTEN 34 269 COLDSTART COLLISION RESOLUTION 35 270 COLDSTART CONSISTENCY CHECK 36 271 COLDSTART GAP 37 272 COLDSTART JOIN 38 273 INTEGRATION COLDSTART CHECK 39 274 INTEGRATION LISTEN 40 275 INTEGRATION CONSISTENCY CHECK 41 276 INITIALIZE SCHEDULE 42 277 ABORT STARTUP 43 278 STARTUP SUCCESS 100 — RESERVED FOR INTERNAL USE Write-protected!",
+        "E-Ray",
+        "Coldstart Helper",
+        "POC State",
+        "-2",
+        "254",
+        "SYNC LOST",
+        "-1",
+        "255",
+        "UNKNOWN",
+        "0",
+        "256",
+        "DEFAULT CONFIG",
+        "1",
+        "257",
+        "READY",
+        "2",
+        "258",
+        "NORMAL ACTIVE",
+        "3",
+        "259",
+        "NORMAL PASSIVE",
+        "4",
+        "260",
+        "HALT",
+        "5",
+        "261",
+        "MONITOR MODE",
+        "15",
+        "262",
+        "CONFIG",
+        "16",
+        "263",
+        "WAKEUP STANDBY",
+        "17",
+        "264",
+        "WAKEUP LISTEN",
+        "18",
+        "265",
+        "WAKEUP SEND",
+        "19",
+        "266",
+        "WAKEUP DETECT",
+        "32",
+        "267",
+        "STARTUP PREPARE",
+        "33",
+        "268",
+        "COLDSTART LISTEN",
+        "34",
+        "269",
+        "COLDSTART COLLISION RESOLUTION",
+        "35",
+        "270",
+        "COLDSTART CONSISTENCY CHECK",
+        "36",
+        "271",
+        "COLDSTART GAP",
+        "37",
+        "272",
+        "COLDSTART JOIN",
+        "38",
+        "273",
+        "INTEGRATION COLDSTART CHECK",
+        "39",
+        "274",
+        "INTEGRATION LISTEN",
+        "40",
+        "275",
+        "INTEGRATION CONSISTENCY CHECK",
+        "41",
+        "276",
+        "INITIALIZE SCHEDULE",
+        "42",
+        "277",
+        "ABORT STARTUP",
+        "43",
+        "278",
+        "STARTUP SUCCESS",
+        "100",
+        "—",
+        "RESERVED FOR INTERNAL USE"
+      ]
+    },
+    {
+      "row": [
+        "E-Ray",
+        "Coldstart Helper",
+        "POC State"
+      ]
+    },
+    {
+      "row": [
+        "-2",
+        "254",
+        "SYNC LOST"
+      ]
+    },
+    {
+      "row": [
+        "-1",
+        "255",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "row": [
+        "0",
+        "256",
+        "DEFAULT CONFIG"
+      ]
+    },
+    {
+      "row": [
+        "1",
+        "257",
+        "READY"
+      ]
+    },
+    {
+      "row": [
+        "2",
+        "258",
+        "NORMAL ACTIVE"
+      ]
+    },
+    {
+      "row": [
+        "3",
+        "259",
+        "NORMAL PASSIVE"
+      ]
+    },
+    {
+      "row": [
+        "4",
+        "260",
+        "HALT"
+      ]
+    },
+    {
+      "row": [
+        "5",
+        "261",
+        "MONITOR MODE"
+      ]
+    },
+    {
+      "row": [
+        "15",
+        "262",
+        "CONFIG"
+      ]
+    },
+    {
+      "row": [
+        "16",
+        "263",
+        "WAKEUP STANDBY"
+      ]
+    },
+    {
+      "row": [
+        "17",
+        "264",
+        "WAKEUP LISTEN"
+      ]
+    },
+    {
+      "row": [
+        "18",
+        "265",
+        "WAKEUP SEND"
+      ]
+    },
+    {
+      "row": [
+        "19",
+        "266",
+        "WAKEUP DETECT"
+      ]
+    },
+    {
+      "row": [
+        "32",
+        "267",
+        "STARTUP PREPARE"
+      ]
+    },
+    {
+      "row": [
+        "33",
+        "268",
+        "COLDSTART LISTEN"
+      ]
+    },
+    {
+      "row": [
+        "34",
+        "269",
+        "COLDSTART COLLISION RESOLUTION"
+      ]
+    },
+    {
+      "row": [
+        "35",
+        "270",
+        "COLDSTART CONSISTENCY CHECK"
+      ]
+    },
+    {
+      "row": [
+        "36",
+        "271",
+        "COLDSTART GAP"
+      ]
+    },
+    {
+      "row": [
+        "37",
+        "272",
+        "COLDSTART JOIN"
+      ]
+    },
+    {
+      "row": [
+        "38",
+        "273",
+        "INTEGRATION COLDSTART CHECK"
+      ]
+    },
+    {
+      "row": [
+        "39",
+        "274",
+        "INTEGRATION LISTEN"
+      ]
+    },
+    {
+      "row": [
+        "40",
+        "275",
+        "INTEGRATION CONSISTENCY CHECK"
+      ]
+    },
+    {
+      "row": [
+        "41",
+        "276",
+        "INITIALIZE SCHEDULE"
+      ]
+    },
+    {
+      "row": [
+        "42",
+        "277",
+        "ABORT STARTUP"
+      ]
+    },
+    {
+      "row": [
+        "43",
+        "278",
+        "STARTUP SUCCESS"
+      ]
+    },
+    {
+      "row": [
+        "100",
+        "—",
+        "RESERVED FOR INTERNAL USE"
+      ]
+    },
+    {
+      "row": [
+        "Type",
+        "Identifies the FlexRay hardware type (data type: dword) 0 HW Independent 1 Invalid 2 Not used 3 Not used 4 FlexCard Cyclone II 5 VN 6 Reserved for internal use Write-protected!",
+        "0",
+        "HW Independent",
+        "1",
+        "Invalid",
+        "2",
+        "Not used",
+        "3",
+        "Not used",
+        "4",
+        "FlexCard Cyclone II",
+        "5",
+        "VN",
+        "6",
+        "Reserved for internal use"
+      ]
+    },
+    {
+      "row": [
+        "0",
+        "HW Independent"
+      ]
+    },
+    {
+      "row": [
+        "1",
+        "Invalid"
+      ]
+    },
+    {
+      "row": [
+        "2",
+        "Not used"
+      ]
+    },
+    {
+      "row": [
+        "3",
+        "Not used"
+      ]
+    },
+    {
+      "row": [
+        "4",
+        "FlexCard Cyclone II"
+      ]
+    },
+    {
+      "row": [
+        "5",
+        "VN"
+      ]
+    },
+    {
+      "row": [
+        "6",
+        "Reserved for internal use"
+      ]
+    },
+    {
+      "row": [
+        "FR_Info1",
+        "Contains extended information (data type: dword): If Type == 1: 0 Interface is synchronized, but passive 1 Interface is synchronized and active 2 Interface is not synchronized 3 Unknown Write-protected!",
+        "0",
+        "Interface is synchronized, but passive",
+        "1",
+        "Interface is synchronized and active",
+        "2",
+        "Interface is not synchronized",
+        "3",
+        "Unknown"
+      ]
+    },
+    {
+      "row": [
+        "0",
+        "Interface is synchronized, but passive"
+      ]
+    },
+    {
+      "row": [
+        "1",
+        "Interface is synchronized and active"
+      ]
+    },
+    {
+      "row": [
+        "2",
+        "Interface is not synchronized"
+      ]
+    },
+    {
+      "row": [
+        "3",
+        "Unknown"
+      ]
+    },
+    {
+      "row": [
+        "FR_Info2",
+        "Contains extended information (data type: dword): 0 WAKEUP UNDEFINED 1 WAKEUP RECEIVED HEADER 2 WAKEUP RECEIVED WUP 3 WAKEUP COLLISION HEADER 4 WAKEUP COLLISION WUP 5 WAKEUP COLLISION UNKNOWN 6 WAKEUP TRANSMITTED 7 WAKEUP RECEIVED (Only with VN interfaces) 16 WUP DETECTED (Only with VN interfaces) Write-protected!",
+        "0",
+        "WAKEUP UNDEFINED",
+        "1",
+        "WAKEUP RECEIVED HEADER",
+        "2",
+        "WAKEUP RECEIVED WUP",
+        "3",
+        "WAKEUP COLLISION HEADER",
+        "4",
+        "WAKEUP COLLISION WUP",
+        "5",
+        "WAKEUP COLLISION UNKNOWN",
+        "6",
+        "WAKEUP TRANSMITTED",
+        "7",
+        "WAKEUP RECEIVED (Only with VN interfaces)",
+        "16",
+        "WUP DETECTED (Only with VN interfaces)"
+      ]
+    },
+    {
+      "row": [
+        "0",
+        "WAKEUP UNDEFINED"
+      ]
+    },
+    {
+      "row": [
+        "1",
+        "WAKEUP RECEIVED HEADER"
+      ]
+    },
+    {
+      "row": [
+        "2",
+        "WAKEUP RECEIVED WUP"
+      ]
+    },
+    {
+      "row": [
+        "3",
+        "WAKEUP COLLISION HEADER"
+      ]
+    },
+    {
+      "row": [
+        "4",
+        "WAKEUP COLLISION WUP"
+      ]
+    },
+    {
+      "row": [
+        "5",
+        "WAKEUP COLLISION UNKNOWN"
+      ]
+    },
+    {
+      "row": [
+        "6",
+        "WAKEUP TRANSMITTED"
+      ]
+    },
+    {
+      "row": [
+        "7",
+        "WAKEUP RECEIVED (Only with VN interfaces)"
+      ]
+    },
+    {
+      "row": [
+        "16",
+        "WUP DETECTED (Only with VN interfaces)"
+      ]
+    },
+    {
+      "row": [
+        "FR_Info3",
+        "Contains extended information (data type: dword): Not used as yet. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_Info4",
+        "Contains extended information (data type: dword). FR_POCState is set to -1 and FR_Info4 is set to 1, when the trigger input of the VN interface has recognized an appropriate edge. For enabling of the trigger input see FlexRay Configuration: VN Interface Trigger Input. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_Cycle",
+        "Current FlexRay cycle number. Write-protected!"
+      ]
+    },
+    {
+      "name": "FrSetPocState",
+      "link": "../Functions/CAPLfunctionFRSetPocState.htm"
+    },
+    {
+      "name": "FlexRay Configuration: VN Interface Trigger Input",
+      "link": "../../../CANoeCANalyzer/FlexRay/Configuration/FlexRayVNInterfaceTriggerIO.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

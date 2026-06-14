@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "applILTxPending",
+  "category": "CANoeIL",
+  "title": "applILTxPending",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionApplILTxPending.htm",
+  "syntax": [
+    "dword applILTxPending(long aId, dword aDlc, byte data[]);"
+  ],
+  "description": [
+    "This callback is optionally being called before the IL sends a message to the bus. In this callback it is possible to prevent the sending of the message or to change the data of the message."
+  ],
+  "parameters": [
+    {
+      "name": "aId",
+      "type": "",
+      "description": "With the ID you can identify the message."
+    }
+  ],
+  "return": "0: sending of the message with the supplied aId is prevented",
+  "example": {
+    "description": [
+      "Calculation of a checksum and a message counter:"
+    ],
+    "code": "dword applILTxPending (long aId, dword aDlc, byte data[])\n{\n  dword i;\n  byte xor;\n  /* Message 0x1A0 contains a XOR checksum in Byte 0. It will\n  /* be calculated from the other data bytes of the message.\n  */\n  if(aId == 0x1A0)\n  {\n    // calculate\n    xor = 0x00;\n    for(i = 1; i < aDlc; ++i) {\n      xor = xor ^ data[i];\n    }\n    // set the new checksum\n    data[0] = xor;\n  }\n  /* Message 0x1A1 contains a 4-Bit message counter in\n  /* the first 4 Bits of Byte 0.\n  */\n  if(aId == 0x1A1)\n  {\n    // get the old value\n    i = data[0] & 0x0F;\n    // increment\n    i++;\n    i = i % 16;\n    //set the new message counter\n    data[0] = i & 0x0F;\n  }\n  return 1; // don't prevent sending of the message\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

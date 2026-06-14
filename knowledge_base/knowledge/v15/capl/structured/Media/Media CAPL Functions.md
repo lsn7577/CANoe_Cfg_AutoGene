@@ -1,0 +1,100 @@
+# Media CAPL Functions
+
+> Category: `Media` | Type: `notes`
+
+## Description
+
+Further Topics
+
+Callbacks
+
+General Functions
+
+Media Sink Functions
+
+Media Source Functions
+
+Media Type Functions
+
+Multiplexer
+
+Sink Writer Functions
+
+Source Reader Functions
+
+Source Reader/Sink Writer Functions
+
+Releases a multiplexer.
+
+Sets the input media type for a multiplexer at a given index.
+
+Media Concepts | Media Properties | Major Media Types / Audio Subtypes | Error Codes
+
+| MEDIA Only available with option .Ethernet. To use the CAPL functions the AVB_IL.DLL must be included. |
+|---|
+
+| Further Topics Callbacks General Functions | Media Sink Functions Media Source Functions Media Type Functions Multiplexer | Sink Writer Functions Source Reader Functions Source Reader/Sink Writer Functions |
+|---|---|---|
+
+| Functions | Short Description |
+|---|---|
+| OnMediaRead | This callback is dispatched when an asynchronous read operation on a source reader completes. |
+
+| Functions | Short Description |
+|---|---|
+| MediaGetLastError | Retrieves the calling CAPL program’s last-error code value of the Media API. |
+| MediaGetProperty | Gets the properties used for configuring the behavior of an object. |
+| MediaSetProperty | Sets the properties used for configuring the behavior of an object. |
+| MediaGetPropertyRatio | Retrieves a property whose value is a ratio. |
+| MediaSetPropertyRatio | Sets a ratio as a 64-bit property value. |
+| MediaGetPropertySize | Retrieves a property whose value is a size, expressed as a width and height. |
+| MediaSetPropertySize | Sets width and height as a single 64-bit property value. |
+
+| Functions | Short Description |
+|---|---|
+| MediaCreateAudioRenderer | Creates the streaming audio renderer (SAR) which is a media sink that renders audio in an output device. |
+| MediaReleaseAudioRenderer | Releases the audio renderer. |
+
+| Functions | Short Description |
+|---|---|
+| MediaCreateAudioCapturer | Creates a streaming audio capturer which is a media source that captures audio from an input device. |
+| MediaEnumAudioCapturers | Enumerates a list of audio capture devices. |
+| MediaReleaseAudioCapturer | Releases the audio capturer. |
+| MediaEnumVideoCapturers | Enumerates a list of video capture devices. |
+| MediaReleaseVideoCapturer | Releases the video capturer. |
+
+| Functions | Short Description |
+|---|---|
+| MediaReleaseMediaType | Releases a media type retrieved by MediaGetMediaType. |
+| MediaCreateMediaType | Creates an empty media type. |
+
+| Functions | Short Description |
+|---|---|
+| MediaCreateMultiplexer | Creates a multiplexor for the provided output media subtype. |
+| MediaGetOutputType | Retrieves the media type of a stream the multiplexer produces as output at a given index. |
+| MediaProcessInput | Delivers data to an input stream on this multiplexer. |
+| MediaProcessOutput | Generates output from the current input data. |
+| MediaReleaseMultiplexer | Releases a multiplexer. |
+| MediaSetInputType | Sets the input media type for a multiplexer at a given index. |
+
+| Functions | Short Description |
+|---|---|
+| MediaCreateSinkWriterFromMediaSink | Creates the source reader from a media source. |
+| MediaCreateSinkWriterFromURL | Creates the sink writer from a URL. |
+| MediaReleaseSinkWriter | Releases the sink writer. |
+| MediaWrite | Delivers sample data to the sink writer. |
+
+| Functions | Short Description |
+|---|---|
+| MediaGetMediaType | Gets the media type for a source reader. |
+| MediaSetMediaType | Sets the media type for a source reader or a sink writer. |
+
+| Functions | Short Description |
+|---|---|
+| MediaCreateSourceReaderFromMediaSource | Creates the source reader from a media source. |
+| MediaCreateSourceReaderFromURL | Creates the source reader from a URL. |
+| MediaRead | Reads sample data from the media source. |
+| MediaReleaseSourceReader | Releases the source reader. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

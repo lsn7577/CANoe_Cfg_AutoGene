@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOAbortTest",
+  "category": "CANopen",
+  "title": "coTfsSDOAbortTest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoAbortTest.htm",
+  "syntax": [
+    "long coTfsSDOAbortTest( dword noOfMsgs );"
+  ],
+  "description": [
+    "The function aborts the following test after the transmission of messages specified in noOfMsgs. If the test function sends less messages, the test is not aborted."
+  ],
+  "parameters": [
+    {
+      "name": "noOfMsgs",
+      "type": "",
+      "description": "Number of messages after which the test is aborted."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsSDOAbortTest (3); // stop transmission after third message"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetHeaderData",
+  "category": "SmartCharging",
+  "title": "SCC_GetHeaderData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetHeaderData.htm",
+  "syntax": [
+    "void SCC_GetHeaderData ( byte HeaderData[] )"
+  ],
+  "description": [
+    "Returns the SDP or V2G message header (to the output buffer)."
+  ],
+  "parameters": [
+    {
+      "name": "HeaderData",
+      "type": "",
+      "description": "8 byte output buffer"
+    }
+  ],
+  "return": "Returns V2G / SDP Transport Layer message header.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coLssSwitchModeGlob",
+  "category": "Obsolete",
+  "title": "coLssSwitchModeGlob",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssSwitchModeGlob.htm",
+  "syntax": [
+    "void coLssSwitchModeGlob( dword mode, dword errCode[] );"
+  ],
+  "description": [
+    "Change of all LSS slaves into the configuration mode or leaving of the mode."
+  ],
+  "parameters": [
+    {
+      "name": "mode",
+      "type": "",
+      "description": "Specifies in which mode all LSS slaves are switched"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoLssSwitchModeGlob( 1, errCode );\nif (errCode[0] == 0) {\n  write( \"Switch to configuration mode for all slaves commanded\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

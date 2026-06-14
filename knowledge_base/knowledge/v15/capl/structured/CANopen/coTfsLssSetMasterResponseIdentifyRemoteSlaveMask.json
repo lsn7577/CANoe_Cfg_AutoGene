@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSetMasterResponseIdentifyRemoteSlaveMask",
+  "category": "CANopen",
+  "title": "coTfsLssSetMasterResponseIdentifyRemoteSlaveMask",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSetMasterResponseIdentifyRemoteSlaveMask.htm",
+  "syntax": [
+    "long coTfsLssSetMasterResponseIdentifyRemoteSlaveMask( dword vendorIdMask, dword productCodeMask, dword revisionNoLowMask, dword revisionNoHighMask, dword serialNoLowMask, dword serialNoHighMask );"
+  ],
+  "description": [
+    "This function sets the masks for the parameters of function coTfsLssAddMasterResponseIdentifyRemoteSlave and has to be called before that function."
+  ],
+  "parameters": [
+    {
+      "name": "vendorIdMask",
+      "type": "",
+      "description": "Mask for vendor-ID parameter; set bits are compared, not set bits are not compared."
+    },
+    {
+      "name": "productCodeMask",
+      "type": "",
+      "description": "Mask for product code parameter; set bits are compared, not set bits are not compared."
+    },
+    {
+      "name": "revisionNoLowMask",
+      "type": "",
+      "description": "Mask for low boundary of revision number parameter; set bits are compared, not set bits are not compared."
+    },
+    {
+      "name": "revisionNoHighMask",
+      "type": "",
+      "description": "Mask for high boundary of revision number parameter; set bits are compared, not set bits are not compared."
+    },
+    {
+      "name": "serialNoLowMask",
+      "type": "",
+      "description": "Mask for low boundary of serial number parameter; set bits are compared, not set bits are not compared."
+    },
+    {
+      "name": "serialNoHighMask",
+      "type": "",
+      "description": "Mask for high boundary of serial number parameter; set bits are compared, not set bits are not compared."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\nwrite(\"Clear list failed\");\nreturn;\n}\n\n/* add one or more test functions */\n\nif (coTfsLssSetMasterResponseIdentifyRemoteSlaveMask( 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF ) {\n  if (coTfsLssAddMasterResponseIdentifyRemoteSlave( 0x1234, 0x43214321, 0, 0xFFFFFFFF, 0, 1000 ) {\n    write(\"could not add request\");\n    return;\n  }\n}\n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\n  write(\"no event received\");\n}\nelse {\n  write(\"event received\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

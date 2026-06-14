@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SetVideoOfflineSource",
+  "category": "Other",
+  "title": "SetVideoOfflineSource",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetVideoOfflineSource.htm",
+  "syntax": [
+    "SetVideoOfflineSource(char windowName[], long sourceType, char sourcePath[]);"
+  ],
+  "description": [
+    "Sets the offline source (type and path) for a CANoe Video Window."
+  ],
+  "parameters": [
+    {
+      "name": "windowName",
+      "type": "",
+      "description": "The name of the Video Window."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  //Configure offline source (video file)\n  SetVideoOfflineSource(\"Video Window\", 1, \"MyVideoFile.avi\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

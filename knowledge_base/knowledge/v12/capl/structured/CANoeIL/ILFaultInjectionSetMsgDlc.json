@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILFaultInjectionSetMsgDlc",
+  "category": "CANoeIL",
+  "title": "ILFaultInjectionSetMsgDlc",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILFaultInjectionSetMsgDlc.htm",
+  "syntax": [
+    "long ILFaultInjectionSetMsgDlc (dbMessage msg, dword dlc)"
+  ],
+  "description": [
+    "Assigns a new DLC to the message. To set the DLC back to its original value, use ILFaultInjectionResetMsgDlc."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message that should get a new DLC."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

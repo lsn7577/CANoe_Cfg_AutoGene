@@ -1,0 +1,135 @@
+{
+  "page_type": "method",
+  "name": "Binding::AnnouncementStateReceived",
+  "category": "DistributedObjects",
+  "title": "Binding::AnnouncementStateReceived",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Methods/CAPLfunctionBindingAnnouncementStateReceived.htm",
+  "syntax": [
+    "long Binding::AnnouncementStateReceived(distObjDataRef * member, dword value);",
+    "long Binding::AnnouncementStateReceived(distObjEventRef * member, dword value);",
+    "long Binding::AnnouncementStateReceived(distObjFieldRef * member, dword value);"
+  ],
+  "description": [
+    "Sets the announcement state of a provided data, event, or field member value that uses the CAPL binding and PublishSubscribe communication pattern with announcements."
+  ],
+  "parameters": [
+    {
+      "name": "member",
+      "type": "",
+      "description": "Member which receives a subscription state via the CAPL binding."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "Announcement state to be received. Unannounced (0): Announce() was not yet called (after the last Unannounce call). Announced (1): Announce() was called. Note: One can use the enum DOMemberAnnouncement from the namespace _SystemDataTypes::SDStates (see example)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// example.vcdl\nversion 1.3;\nnamespace SomeNamespace {\n  interface Example {\n    [Binding=\"CAPL\", HasAnnounceAPI=true]\n    provided data int32 SomeData;\n  }\n  object Consumer : reverse<Example> {}\n  object Provider : Example {}\n}\n\n// consumer_binding.can\nvariables {\n  using namespace _SystemDataTypes::SDStates;\n}\non transmit_subscribe Consumer.SomeData {\n  Binding::SubscriptionStateReceived(Consumer.SomeData, DOMemberSubscription::Subscribed);\n}\n\n// provider.can\nvariables {\n  using namespace _SystemDataTypes::SDStates;\n}\non key 'a' {\n  // toggle announcement\n  if ($Provider.SomeData.AnnouncementState == DOMemberAnnouncement::Unannounced)\n    Provider.SomeData.Announce();\n  else\n    Provider.SomeData.Unannounce();\n}\non key 'b' {\n  // increment value\n  $Provider.SomeData++;\n}\n\n// provider_binding.can\nvariables {\n  using namespace _SystemDataTypes::SDStates;\n  enum DOMemberAnnouncement registry[char[]];\n}\non transmit_announce Provider.SomeData {\n  registry[Provider.SomeData.Path] = DOMemberAnnouncement::Announced;\n  Binding::AnnouncementStateReceived(Provider.SomeData, DOMemberAnnouncement::Announced);\n}\non transmit_unannounce Provider.SomeData {\n  registry[Provider.SomeData.Path] = DOMemberAnnouncement::Unannounced;\n  Binding::AnnouncementStateReceived(Provider.SomeData, DOMemberAnnouncement::Unannounced);\n}\non transmit_value Provider.SomeData {\n  if (registry[Provider.SomeData.Path] == DOMemberAnnouncement::Announced)\n  Binding::ValueReceived(Consumer.SomeData, $this);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "14",
+      "15",
+      "15",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

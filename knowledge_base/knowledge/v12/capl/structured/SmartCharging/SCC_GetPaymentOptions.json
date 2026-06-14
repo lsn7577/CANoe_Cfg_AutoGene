@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetPaymentOptions",
+  "category": "SmartCharging",
+  "title": "SCC_GetPaymentOptions",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetPaymentOptions.htm",
+  "syntax": [
+    "long SCC_GetPaymentOptions ( )"
+  ],
+  "description": [
+    "Gets the Payment options where 0=ExternalPayment, 1=Contract and 2=both"
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Available PaymentOptions, where\n0 = ExternalPayment\n1 = Contract\n2 = both",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

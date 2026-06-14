@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostSetCorrectStartupSBC",
+  "category": "MOST",
+  "title": "mostSetCorrectStartupSBC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetCorrectStartupSBC.htm",
+  "syntax": [
+    "long mostSetCorrectStartupSBC (long channel, long mode)"
+  ],
+  "description": [
+    "During the next start-up phase of the ring, this function activates or deactivates the correct setting of the \"Synchronous Bandwidth Control\" register (SBC) in the MOST chip (e.g. at the next wake-up of the ring)."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected MOST interface."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

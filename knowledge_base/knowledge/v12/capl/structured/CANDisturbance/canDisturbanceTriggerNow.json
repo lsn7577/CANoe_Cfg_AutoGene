@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "canDisturbanceTriggerNow",
+  "category": "CANDisturbance",
+  "title": "canDisturbanceTriggerNow",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANDisturbance/Functions/CAPLfunctionCanDisturbanceTriggerNow.htm",
+  "syntax": [
+    "long canDisturbanceTriggerNow (long deviceID, canDisturbanceSequence); // form 1"
+  ],
+  "description": [
+    "Sends a user-defined sequence or a frame-based sequence on the bus with the CAN Disturbance Interface.",
+    "The sequence or frame-based sequence sends directly on the bus. If a frame is currently sent by another interface, this frame will be disturbed.",
+    "A typical use case is to send a sequence or a frame based sequence on the bus without any trigger conditions."
+  ],
+  "parameters": [
+    {
+      "name": "deviceID",
+      "type": "",
+      "description": "The unique device ID configured via the Network Hardware Configuration dialog for a CAN channel."
+    }
+  ],
+  "return": "1: Success",
+  "example": {
+    "description": [],
+    "code": "canDisturbanceFrameSequence        frameSequence;\ncanDisturbanceTriggerRepetitions   repetitions;\nmessage 0x100                      msgFrameSeq;\nlong                               result;\n\n//set message to sequence\nframeSequence.SetMessage(deviceID, msgFrameSeq);\n\n//Define two repetitions and one cycle with a 1 ms hold off time\nrepetitions.Cycles = 1;\nrepetitions.HoldOffCycles = 1;\nrepetitions.HoldOffRepetitions = 1;\nrepetitions.Repetitions = 2;\n\n//output the sequence twice\nresult = canDisturbanceTriggerNow(deviceID, frameSequence, repetitions);\n\nif(result == 1)\n{\n  write(\"Trigger now is configured.\");\n}\nelse\n{\n  write(\"Error by configuration of trigger now %d\", result);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitForScopePerformFieldLengthMeasurement",
+  "category": "Test",
+  "title": "testWaitForScopePerformFieldLengthMeasurement",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForScopePerformFieldLengthMeasurement.htm",
+  "syntax": [
+    "long testWaitForScopePerformFieldLengthMeasurement (frFrame msg, dword msgFieldStart, dword msgFieldEnd, dword bitStartNo, dword bitEndNo, qword fieldLength ScopeAnalyseHandle handle);"
+  ],
+  "description": [
+    "Returns the number of bits are contained within the defined range and the length of this range."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "The message where the field length should be measured."
+    }
+  ],
+  "return": ">0 = Number of bits",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

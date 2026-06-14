@@ -1,0 +1,154 @@
+{
+  "page_type": "function",
+  "name": "xcpSetCalPage",
+  "category": "XCP",
+  "title": "xcpSetCalPage",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/XCP/Functions/CAPLfunctionXCPSetCalPage.htm",
+  "syntax": [
+    "void OnXcpSetCalPage(char ecuQualifier[]);"
+  ],
+  "description": [
+    "If the XCP slave device supports calibration data page switching, this command sets the current page and access mode.",
+    "The callback returns that the ECU switched the calibration data page."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Name of the device, configured within the CANoeXCP/CCP Window."
+    },
+    {
+      "name": "Bit 7",
+      "type": "",
+      "description": "Use for all segments, i.e. parameter segmentNr is ignored."
+    },
+    {
+      "name": "Bit 1",
+      "type": "",
+      "description": "The slave device XCP driver will access the given page."
+    },
+    {
+      "name": "Bit 0",
+      "type": "",
+      "description": "The given page will be used by the slave device application."
+    },
+    {
+      "name": "segmentNr",
+      "type": "",
+      "description": "Logical data segment number. Ignored if bit 7 of the mode parameter is set to 1."
+    },
+    {
+      "name": "pageNr",
+      "type": "",
+      "description": "Logical data page number. Usually 0 identifies the page in RAM and 1 the page in FLASH memory. CANoe.XCP can only work on parameters stored in RAM."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n   long mMode;\n   long mSegmentNr;\n}\n\nvoid OnXcpConnect(char ecuName[])\n{\n   mMode = 255;\n   mSegmentNr = 0;\n   write(\"Connect callback! ECU: %s\", ecuName);\n   XcpGetCalPage(ecuName, mMode, mSegmentNr);\n}\n\nvoid OnXcpGetCalPage(char ecu[], long reserved1, long reserved2, long pageNumber)\n{\n   Write(\"OnXcpGetCalPage callback! ECU: %s. Current PageNumber: %d\", ecu, pageNumber);\n   if (pageNumber == 0)\n   {\n      pageNumber = 1;\n   }\n   else\n   {\n      pageNumber = 0;\n   }\n   XcpSetCalPage(ecu, mMode, mSegmentNr, pageNumber);\n}\n\nvoid OnXcpSetCalPage(char ecu[])\n{\n   Write(\"OnXcpSetCalPage callback! ECU: %s\", ecu);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "XCP",
+      "XCP",
+      "—",
+      "—",
+      "XCP"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

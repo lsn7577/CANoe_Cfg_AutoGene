@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSetMasterResponseIdentifyRemoteSlaveMask",
+  "category": "CANopen",
+  "title": "coTfsLssSetMasterResponseIdentifyRemoteSlaveMask",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSetMasterResponseIdentifyRemoteSlaveMask.htm",
+  "syntax": [
+    "long coTfsLssSetMasterResponseIdentifyRemoteSlaveMask( dword vendorIdMask, dword productCodeMask, dword revisionNoLowMask, dword revisionNoHighMask, dword serialNoLowMask, dword serialNoHighMask );"
+  ],
+  "description": [
+    "This function sets the masks for the parameters of function coTfsLssAddMasterResponseIdentifyRemoteSlave and has to be called before that function."
+  ],
+  "parameters": [
+    {
+      "name": "vendorIdMask",
+      "type": "",
+      "description": "Mask for vendor-ID parameter; set bits are compared, not set bits are not compared."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\nwrite(\"Clear list failed\");\nreturn;\n}\n\n/* add one or more test functions */\n\nif (coTfsLssSetMasterResponseIdentifyRemoteSlaveMask( 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF ) {\n  if (coTfsLssAddMasterResponseIdentifyRemoteSlave( 0x1234, 0x43214321, 0, 0xFFFFFFFF, 0, 1000 ) {\n    write(\"could not add request\");\n    return;\n  }\n}\n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\n  write(\"no event received\");\n}\nelse {\n  write(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

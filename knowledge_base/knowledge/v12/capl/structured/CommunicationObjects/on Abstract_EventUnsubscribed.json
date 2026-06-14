@@ -1,0 +1,38 @@
+{
+  "page_type": "event",
+  "name": "on Abstract_EventUnsubscribed",
+  "category": "CommunicationObjects",
+  "title": "on Abstract_EventUnsubscribed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnAbstractEventUnsubscribed.htm",
+  "syntax": [
+    "on Abstract_EventUnsubscribed <Event>"
+  ],
+  "description": [
+    "The event procedure is called at the provider when an event is unsubscribed by a consumer and abstract binding is used."
+  ],
+  "parameters": [
+    {
+      "name": "<event>",
+      "type": "",
+      "description": "Designates the event on which the event procedure shall react. This must be a provider endpoint."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on Abstract_EventUnsubscribed MirrorAdjustment[LeftMirror].CurrentPosition\n{\n  write(\"Event unsubscribed by %s\", this.consumer.Name);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "eventConsumerRef *",
+      "link": "../Objects/CAPLfunctionEventConsumerRef.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

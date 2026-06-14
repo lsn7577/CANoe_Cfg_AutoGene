@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::PDUOffset",
+  "category": "IP",
+  "title": "ethernetPacket::PDUOffset",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionPDUOffset.htm",
+  "syntax": [
+    "long ethernetPacket.PDUOffset(long n);"
+  ],
+  "description": [
+    "Returns the byte offset of the start of the PDU with index n in the payload of the packet data"
+  ],
+  "parameters": [
+    {
+      "name": "n",
+      "type": "",
+      "description": "Index of the requestetd PDU."
+    }
+  ],
+  "return": ">=0: offset of the requestetd PDU.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

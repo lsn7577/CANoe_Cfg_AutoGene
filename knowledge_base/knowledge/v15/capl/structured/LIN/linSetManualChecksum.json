@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "linSetManualChecksum",
+  "category": "LIN",
+  "title": "linSetManualChecksum",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINSetManualChecksum.htm",
+  "syntax": [
+    "void linSetManualChecksum(linFrame linFrame, byte csValue);"
+  ],
+  "description": [
+    "Sets a checksum (that is usually not a correct one) for a LIN frame."
+  ],
+  "parameters": [
+    {
+      "name": "linFrame",
+      "type": "",
+      "description": "LIN frame for which a checksum will be set."
+    },
+    {
+      "name": "csValue",
+      "type": "",
+      "description": "The checksum value to be set."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "...\nlinFrame MotorControl frmMotorControl;\nlinSetManualChecksum(frmMotorControl, 0x1A);\noutput(frmMotorControl); // it is important to call output() to make the changes active"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.0",
+      "6.0",
+      "13.0",
+      "13.0",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "LIN",
+      "LIN",
+      "LIN",
+      "LIN",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

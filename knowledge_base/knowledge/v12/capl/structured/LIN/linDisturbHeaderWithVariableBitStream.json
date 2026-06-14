@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linDisturbHeaderWithVariableBitStream",
+  "category": "LIN",
+  "title": "linDisturbHeaderWithVariableBitStream",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINDisturbHeaderWithVariableBitStream.htm",
+  "syntax": [
+    "dword linDisturbHeaderWithVariableBitStream(dword byteIndex, dword bitIndex, byte dataBuffer[], int64 lengthInNS[], dword numberOfBits, dword roundUp, dword timeoutPrevention);"
+  ],
+  "description": [
+    "Configures the LIN hardware to disturb the next header with a variable bit stream."
+  ],
+  "parameters": [
+    {
+      "name": "byteIndex",
+      "type": "",
+      "description": "Start disturbance in byte with index <byteIndex>."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

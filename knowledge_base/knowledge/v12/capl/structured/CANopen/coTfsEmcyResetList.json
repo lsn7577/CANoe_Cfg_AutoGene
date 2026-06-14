@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsEmcyResetList",
+  "category": "CANopen",
+  "title": "coTfsEmcyResetList",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsEmcyResetList.htm",
+  "syntax": [
+    "long coTfsEmcyResetList( void );"
+  ],
+  "description": [
+    "This function deletes the internal list on which occurring emergency messages are stored.",
+    "It is possible to omit the nodeID parameter. In this case, the internally-stored value set with coTfsSetNodeId is used."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "All messages of the associated node-ID are deleted; for nodeID=0, all emergency messages of all nodes are deleted."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsEmcyResetList(2);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

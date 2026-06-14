@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestIso11783IL_OPSelectColorMap",
+  "category": "Test",
+  "title": "TestIso11783IL_OPSelectColorMap",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestIso11783ILOPSelectColorMap.htm",
+  "syntax": [
+    "long TestIso11783IL_OPSelectColorMap( dbNode node, dword colorMapID );"
+  ],
+  "description": [
+    "The function selects a color map object. A Select Color Map command is sent to the Virtual Terminal.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "ZeroMicroAmpSensor",
+  "category": "VTSystem",
+  "title": "ZeroMicroAmpSensor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSZeroMicroAmpSensor.htm",
+  "syntax": [
+    "long SysVarNamespace.ZeroMicroAmpSensor ();"
+  ],
+  "description": [
+    "Zeroes the µA current sensor of a simulated battery cell of the Comemso Battery Cell Simulator."
+  ],
+  "parameters": [],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "Micro ampere sensor is zeroed before testing charging and discharging processes.",
+      "Sample code for a single cell. Checked limits are not based on real-world battery cells!"
+    ],
+    "code": "double chargingCurrent = 0.0;\ndouble dischargingCurrent = 0.0;\n\n// Prepare: zero micro ampere sensor while no current is going through the cell simulator\nsysvar::VTS::Cell1.ZeroMicroAmpSensor();\n\n// Set up cell simulation\n@sysvar::VTS::Cell1::SettingsMode = 1;\n@sysvar::VTS::Cell1::LoadSetting = 1.0;\n@sysvar::VTS::Cell1::OperationMode = 1;\n\n// initiate charging process\n//...\n\n// Check for expected charging current after on minute\ntestWaitForTimeout( 60000);\nchargingCurrent = @sysvar::VTS::Cell1::CurrentMeasure;\nif (chargingCurrent < 0.8 || chargingCurrent > 1.1)\n{\n  TestStepFail(\"Test Failure\", \"Unexpected charging current occurred!\");\n}\n\n// initiate mode where simulated cell provides a very small current\n//...\n\n// Check for expected discharging current after 10 seconds\ntestWaitForTimeout( 10000);\ndischargingCurrent = @sysvar::VTS::Cell1::CurrentMeasure;\nif (dischargingCurrent < 0.0001 || dischargingCurrent > 0.0004)\n{\n  TestStepFail(\"Test Failure\", \"Unexpected charging current occurred!\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

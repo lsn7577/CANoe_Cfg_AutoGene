@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "frGwBypassDynamic",
+  "category": "FlexRay",
+  "title": "frGwBypassDynamic",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Functions/CAPLfunctionFRGwBypassDynamic.htm",
+  "syntax": [
+    "long frGwBypassDynamic(long bypass, long channel);"
+  ],
+  "description": [
+    "Activates/deactivates the automatic routing for the dynamic part. The function can not be used during a measurement.",
+    "Settings from the Network Hardware Configuration dialog are overwritten with this function."
+  ],
+  "parameters": [
+    {
+      "name": "bypass",
+      "type": "",
+      "description": "0 = Routing deactivated1 = Routing activated"
+    },
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Output channel of the gateway."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\nfrGwBypassDynamic (0,1)\n// The gateway routing for the dynamic part will be deactivated \n// for the gateway that uses channel 1.\n..."
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.2",
+      "8.0",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay On Pre Start",
+      "FlexRay On Pre Start",
+      "FlexRay On Pre Start",
+      "—",
+      "—",
+      "FlexRay On Pre Start"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

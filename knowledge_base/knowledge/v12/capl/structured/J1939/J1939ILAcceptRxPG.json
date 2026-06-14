@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939ILAcceptRxPG",
+  "category": "J1939",
+  "title": "J1939ILAcceptRxPG",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILAcceptRxPG.htm",
+  "syntax": [
+    "long J1939ILAcceptRxPG( pg * rxPG )"
+  ],
+  "description": [
+    "Checks if the received parameter group is addressed to the J1939 IL."
+  ],
+  "parameters": [
+    {
+      "name": "rxPG",
+      "type": "",
+      "description": "receive parameter group"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on pg TPRS\n{\n  if (J1939ILAcceptRxPG( this ) <= 0) return;\n  // ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

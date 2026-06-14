@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "testValidateSignalInRange",
+  "category": "Test",
+  "title": "testValidateSignalInRange",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestValidateSignalInRange.htm",
+  "syntax": [
+    "long testValidateSignalInRange (char aTestStep[], Signal aSignal, float aLowLimit, float aHighLimit); // form 1",
+    "long testValidateSignalInRange (char aTestStep[], EnvVarName, float aLowLimit, float aHighLimit); // form 2",
+    "long testValidateSignalInRange (char aTestStep[], sysvar aSysVar, float aLowLimit, float aHighLimit); // form 3",
+    "long testValidateSignalInRange (char aTestStep[], sysvar aSysVar, int64 aLowLimit, int64 aHighLimit); // form 4",
+    "long testValidateSignalInRange (char aTestStep[], ServiceSignalNumber aSignal, float aLowLimit, float aHighLimit); // form 5"
+  ],
+  "description": [
+    "Checks the value of the signal, the environment variable value or the system variable value against the condition:",
+    "The test step is evaluated as either passed or failed depending on the results"
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// validates the value of the signal against the given range\nlong result;\nresult = testValidateSignalInRange(\"Check Velocity\", Node_SUT::Velocity, 60, 100);\nif (result != 0)\nTestStepFail(\"Error occurred!\");"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1: form 1 6.0: form 2 7.0: form 3 8.5 SP3: form 4 9: form 5",
+      "13.0",
+      "—",
+      "14",
+      "1.0: form 1-3 2.0 SP2: form 4 2.1 SP4: form 5"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

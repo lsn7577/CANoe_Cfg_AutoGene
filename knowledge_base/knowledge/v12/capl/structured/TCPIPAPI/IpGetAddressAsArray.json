@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetAddressAsArray",
+  "category": "TCPIPAPI",
+  "title": "IpGetAddressAsArray",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAddressAsArray.htm",
+  "syntax": [
+    "dword IpGetAddressAsArray( char address[], byte ipv6Address[]);"
+  ],
+  "description": [
+    "The function converts an address string in colon notation to a 16 byte array with the address bytes in network order."
+  ],
+  "parameters": [
+    {
+      "name": "address",
+      "type": "",
+      "description": "The numerical IPv4 address to be converted."
+    }
+  ],
+  "return": "0xFFFFFF: The specified address string was invalid.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  const dword IPV6_STR_SIZE = 40; // IPv6 string size\n  int i;                          // loop variable\n  byte ipv6Addr[16];              // IPv6 address bytes.\n  dword result;                   // function result\n\n  char ipv6AddrStr[IPV6_STR_SIZE] = \"2001:DB8:85A3:8D3:1319:8A2E:370:7344\";\n\n  write(\"Converting IPv6 Address %s to bytes...\", ipv6AddrStr);\n\n  result = IpGetAddressAsArray( ipv6AddrStr, ipv6Addr );\n  if (result == 0)\n  {\n    // success...\n    write(\"IpGetAddressAsArray: returned array with IPv6 bytes:\");\n    for ( i=0; i<16; i++)\n    {\n      write(\"Byte %.2d = 0x%.2x\", i, ipv6Addr[i]);\n    }\n  }\n  else\n  {\n    writeLineEx(1, 3, \"IpGetAddressAsArray: The specified address string was invalid.\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

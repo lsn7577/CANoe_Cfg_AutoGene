@@ -1,0 +1,235 @@
+{
+  "page_type": "function",
+  "name": "FRSSetDistElem",
+  "category": "FRStress",
+  "title": "FRSSetDistElem",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FRStress/Functions/CAPLfunctionFRSSetDistElem.htm",
+  "syntax": [
+    "long FRSSetDistElem(long triggerCondition, long disturbanceElement, long disturbanceValue);"
+  ],
+  "description": [
+    "Modifies the specified frame element with bit accuracy. A complex disturbance can be configured through multiple calls.",
+    "The associated trigger condition must not overlap with the disturbance.",
+    "If the function is called in analog mode, it has no effect."
+  ],
+  "parameters": [
+    {
+      "name": "triggerCondition",
+      "type": "",
+      "description": "Values: 1-4"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "PPI"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "NFI"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "SFI"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "SUPFI"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "FrameId"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "PayloadLength"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "HeaderCR"
+    },
+    {
+      "name": "8",
+      "type": "",
+      "description": "cycleCount"
+    },
+    {
+      "name": "9",
+      "type": "",
+      "description": "BSS1"
+    },
+    {
+      "name": "10",
+      "type": "",
+      "description": "BSS2"
+    },
+    {
+      "name": "11",
+      "type": "",
+      "description": "BSS3"
+    },
+    {
+      "name": "12",
+      "type": "",
+      "description": "BSS4"
+    },
+    {
+      "name": "13",
+      "type": "",
+      "description": "BSS5"
+    },
+    {
+      "name": "14",
+      "type": "",
+      "description": "TrailerBSS1"
+    },
+    {
+      "name": "15",
+      "type": "",
+      "description": "TrailerBSS2"
+    },
+    {
+      "name": "16",
+      "type": "",
+      "description": "TrailerBSS3"
+    },
+    {
+      "name": "17",
+      "type": "",
+      "description": "TrailerCRCByte1"
+    },
+    {
+      "name": "18",
+      "type": "",
+      "description": "TrailerCRCByte2"
+    },
+    {
+      "name": "19",
+      "type": "",
+      "description": "TrailerCRCByte"
+    },
+    {
+      "name": "20",
+      "type": "",
+      "description": "FES"
+    },
+    {
+      "name": "disturbanceValue",
+      "type": "",
+      "description": "Numerical value of disturbance. e.g.: FrameId=5"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.2",
+      "—",
+      "—",
+      "—",
+      "1.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "FlexRay Digital, analog, Scope mode",
+      "—",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

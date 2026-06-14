@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetDepartureTime",
+  "category": "SmartCharging",
+  "title": "SCC_GetDepartureTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetDepartureTime.htm",
+  "syntax": [
+    "dword SCC_GetDepartureTime( )"
+  ],
+  "description": [
+    "Gets the end of charging time ChargeParameterDiscoveryReq message."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "End of charging time as offset in seconds from the time this message is sent.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

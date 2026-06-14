@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "keypressed",
+  "category": "Other",
+  "title": "keypressed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionKeyPressed.htm",
+  "syntax": [
+    "dword keypressed();"
+  ],
+  "description": [
+    "This function returns the key code of a currently pressed key. If no key is being pressed it returns 0.. For example, pressing of a key can be queried in a timer function. The reaction can also be to letting go of a key."
+  ],
+  "parameters": [],
+  "return": "Key code of pressed key.\nIf the 8 lower bits do not equal 0, keypressed returns the ASCII code of the next key in the keyboard buffer. If the 8 lower bits do not equal 0, the 8 upper bits represent the extended key code (see IBM PC Technical Reference Manual).",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n   message 0x1A0 msg; // intialises a message with the\n         // name msg and identifier 0x1A0\n   msTimer myTimer;  // timer with millisecond resolution\n   int running;  // memorises the first keypress to\n         // bypass the key repeat\n   int counter;  // message counter\n}\non timer myTimer\n{\n   if (keypressed())   // if key is pressed ...\n   {  \n      counter++;   // increment counter by 1\n      msg.byte(0) = counter; // write the counter reading\n         // into the 1. byte of the message\n      output(msg);  // send the message to the bus\n      setTimer(myTimer, 100); // set a timer to 100 ms\n   }\n   else      // if key is released...\n   {\n      running = 0;  // wait until new keypress\n   }\n}\non key 'r'\n{\n   if (running == 1) return; // inhibit key repeat\n\n   setTimer (myTimer,0);  // start timer\n   running = 1;   // memorise of first keypress\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

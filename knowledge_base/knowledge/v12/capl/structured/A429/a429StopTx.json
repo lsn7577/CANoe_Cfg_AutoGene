@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "a429StopTx",
+  "category": "A429",
+  "title": "a429StopTx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429StopTx.htm",
+  "syntax": [
+    "dword a429StopTx( a429word myA429word );"
+  ],
+  "description": [
+    "This function is necessary to stop the cyclic transmission of an ARINC word in the hardware scheduler. The function modifies the selector TxCtrl."
+  ],
+  "parameters": [
+    {
+      "name": "myA429word",
+      "type": "",
+      "description": "ARINC word"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

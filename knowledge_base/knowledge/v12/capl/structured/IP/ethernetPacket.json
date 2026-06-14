@@ -1,0 +1,266 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket",
+  "category": "IP",
+  "title": "ethernetPacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Objects/CAPLfunctionEthernetPacket.htm",
+  "syntax": [
+    "ethernetPacket <packet var>;"
+  ],
+  "description": [
+    "Can be used to create an Ethernet send object. The object data can be manipulated by selectors associated with this object."
+  ],
+  "parameters": [
+    {
+      "name": "packet var",
+      "type": "",
+      "description": "Character string defining the object’s variable name."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "With Vector network interfaces in operation modes which supports more than 1 hardware channel, the selector hwChannel can be set to output on a specific hardware channel. If the hwChannel is not set or 0, the transfer function decides on which hardware channel(s) the packet is sent."
+    ],
+    "code": "ethernetPacket txPacket;\nint i;\n\ntxPacket.msgChannel  = 1;\ntxPacket.hwChannel   = 2;\ntxPacket.source      = EthGetMacAddressAsNumber( \"20:00:00:00:00:01\" );\ntxPacket.destination = EthGetMacAddressAsNumber( \"FF:FF:FF:FF:FF:FF\" );\ntxPacket.Length      = 100;\ntxPacket.type        = 0xF123;\n\nfor( i = 0; i < txPacket.Length; i++ )\n{\n  txPacket.Byte(i) = i & 0xFF;\n}\noutput( txPacket );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "time_ns Point in time, units: nanoseconds",
+        "int64",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "dir Direction of transmission, event classification; possible values: Rx, Tx",
+        "byte",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "msgChannel Application channel, i.e. Eth 1",
+        "word"
+      ]
+    },
+    {
+      "row": [
+        "hwChannel Hardware channel. If not supported by network interface, value is 1.",
+        "word",
+        "Only with Vector Interfaces, i.e. VN5640, with operation mode with more than 1 hardware channel."
+      ]
+    },
+    {
+      "row": [
+        "Length Length of Ethernet payload data (starting after the Ethertype).",
+        "word"
+      ]
+    },
+    {
+      "row": [
+        "FCS Ethernet frame checksum. For some Ethernet hardware this value is not available (value 0).",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "FrameLen Frame duration in ns. For some Ethernet hardware this value is not available (value 0).",
+        "int64",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SOF Start-of-Frame time stamp in ns. For some Ethernet hardware this value is not available (value 0).",
+        "int64",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Type Ethertype",
+        "word"
+      ]
+    },
+    {
+      "row": [
+        "Source Source Ethernet MAC address. Only 6 bytes of the QWord are used and network byte order is used.",
+        "qword"
+      ]
+    },
+    {
+      "row": [
+        "Destination Destination Ethernet MAC address. Only 6 bytes of the QWord are used and network byte order is used.",
+        "qword"
+      ]
+    },
+    {
+      "row": [
+        "byte(x) Message data byte (unsigned 8 bit); Offset 0 is the byte directly after the Ethertype.",
+        "byte"
+      ]
+    },
+    {
+      "row": [
+        "char(x) Message data byte (signed 8 bit); Offset 0 is the byte directly after the Ethertype.",
+        "char"
+      ]
+    },
+    {
+      "row": [
+        "word(x) Message data word (unsigned 16 bit); Offset 0 is the word directly after the Ethertype.",
+        "word"
+      ]
+    },
+    {
+      "row": [
+        "int(x) Message data word (signed 16 bit); Offset 0 is the int directly after the Ethertype.",
+        "int"
+      ]
+    },
+    {
+      "row": [
+        "dword(x) Message data word (unsigned 32 bit); Offset 0 is the dword directly after the Ethertype.",
+        "dword"
+      ]
+    },
+    {
+      "row": [
+        "long(x) Message data word (signed 32 bit); Offset 0 is the long directly after the Ethertype.",
+        "long"
+      ]
+    },
+    {
+      "row": [
+        "qword(x) Message data word (unsigned 64 bit); Offset 0 is the qword directly after the Ethertype.",
+        "qword"
+      ]
+    },
+    {
+      "row": [
+        "int64(x) Message data word (signed 64 bit); Offset 0 is the int64 directly after the Ethertype.",
+        "int64"
+      ]
+    },
+    {
+      "row": [
+        "Simulated Message has been sent by a simulated CAPL node; possible values: 0 (no), 1 (yes)",
+        "byte",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<protocol>.byte/word/dword/qword/char/int/int64/long",
+        "byte, word, dword, qword, char, int, int64, long"
+      ]
+    },
+    {
+      "row": [
+        "<protocol>.byteLength",
+        "long",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<protocol>.byteOffset",
+        "long",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<protocol>.<field>",
+        "byte, word, dword, qword (depends on field)"
+      ]
+    },
+    {
+      "row": [
+        "<protocol>.<field>.bitLength",
+        "long",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<protocol>.<field>.bitOffset",
+        "long",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<protocol>.<field>.byteLength",
+        "long",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<protocol>.<field>.byteOffset",
+        "long",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "<protocol>.<optional-structure>.<field>",
+        "byte, word, dword, qword (depends on field)"
+      ]
+    },
+    {
+      "name": "<protocol>.byte/word/dword/qword/char/int/int64/long",
+      "link": "../Selectors/CAPLfunctionProtocolByte.htm"
+    },
+    {
+      "name": "<protocol>.byteLength",
+      "link": "../Selectors/CAPLfunctionProtocolByteLength.htm"
+    },
+    {
+      "name": "<protocol>.byteOffset",
+      "link": "../Selectors/CAPLfunctionProtocolByteOffset.htm"
+    },
+    {
+      "name": "<protocol>.<field>",
+      "link": "../Selectors/CAPLfunctionProtocolField.htm"
+    },
+    {
+      "name": "<protocol>.<field>.bitLength",
+      "link": "../Selectors/CAPLfunctionProtocolFieldBitLength.htm"
+    },
+    {
+      "name": "<protocol>.<field>.bitOffset",
+      "link": "../Selectors/CAPLfunctionProtocolFieldBitOffset.htm"
+    },
+    {
+      "name": "<protocol>.<field>.byteLength",
+      "link": "../Selectors/CAPLfunctionProtocolFieldByteLength.htm"
+    },
+    {
+      "name": "<protocol>.<field>.byteOffset",
+      "link": "../Selectors/CAPLfunctionProtocolFieldByteOffset.htm"
+    },
+    {
+      "name": "<protocol>.<optional-structure>.<field>",
+      "link": "../Selectors/CAPLfunctionProtocolOptionalStructureField.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

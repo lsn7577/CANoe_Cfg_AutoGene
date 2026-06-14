@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostAsNtfShdFunctionEnable, mostAsNtfShdFunctionDisable",
+  "category": "MOST",
+  "title": "mostAsNtfShdFunctionEnable, mostAsNtfShdFunctionDisable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsNTFShdFunctionEnableCAPLfunctionMOSTAsNTFShdFunctionDisable.htm",
+  "syntax": [
+    "long mostAsNtfShdFunctionEnable(long fblockId, long instId, long functionId)"
+  ],
+  "description": [
+    "mostAsNtfShdFunctionEnable() registers a MOST function with the notification shadow service. As soon as the specified function block (fblockId, instId) appears in the bus registry of the simulated device, the notification shadow service enters the simulated device in the notification matrix of the function block, i.e., it sends the FBlockId.InstId.Notification.Set(SetFunction, functionId) message.",
+    "mostAsNtfShdFunctionDisable() removes a MOST function from the notification shadow service."
+  ],
+  "parameters": [
+    {
+      "name": "fblockId",
+      "type": "",
+      "description": "Function block ID"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

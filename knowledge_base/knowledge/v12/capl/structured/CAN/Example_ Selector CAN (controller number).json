@@ -1,0 +1,20 @@
+{
+  "page_type": "concept",
+  "name": "Example: Selector CAN (controller number)",
+  "category": "CAN",
+  "title": "Example: Selector CAN (controller number)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Selectors/CAPLSelectorCAN.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "message 0x100 msg = {dlc = 2, word(0) = 0x1234};\n\non key '1' {\n  write(\"sende via CAN 1\");\n  msg.CAN = 1;\n  output(msg);\n}\non key '2' {\n  write(\"sende via CAN 2\");\n  msg.CAN = 2;\n  output(msg);\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendIdentifyRemoteSlaveSequence",
+  "category": "CANopen",
+  "title": "coTfsLssSendIdentifyRemoteSlaveSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendIdentifyRemoteSlaveSeq.htm",
+  "syntax": [
+    "long coTfsLssSendIdentifyRemoteSlaveSequence( dword vendorId, dword productCode, dword revNoLowBound, dword revNoHighBound, dword serialNoLowBound, dword serialNoHighBound );"
+  ],
+  "description": [
+    "This function sends a LSS identify remote slave sequence."
+  ],
+  "parameters": [
+    {
+      "name": "vendorId",
+      "type": "",
+      "description": "Vendor-ID"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* sends LSS identify remote slave sequence */\n\nif (coTfsLssSendIdentifyRemoteSlaveSequence( 0x1234, 0x43214321, 0, 0xFFFFFFFF, 0, 1000 ) == 1) {\n  /* received LSS identify remote slave sequence, sent response with selected parameters */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

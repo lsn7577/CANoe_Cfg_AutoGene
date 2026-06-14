@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "_KLine_FrameTransmissionCon",
+  "category": "KLine",
+  "title": "_KLine_FrameTransmissionCon",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/KLine/Functions/CAPLfunctionKLineFrameTransmissionCon.htm",
+  "syntax": [
+    "_KLine_FrameTransmisionCon(BYTE data[], int64 timestamps[])"
+  ],
+  "description": [
+    "Is called when a frame has been transmitted."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Transmitted data buffer of the frame."
+    },
+    {
+      "name": "timestamps",
+      "type": "",
+      "description": "End of byte time stamps of the transmitted data bytes."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_KLine_FrameTransmissionCon(BYTE data[], int64 timestamps[])\n{\n   int i;\n   int64 p4Time;\n   dword systemBaudRate;\n   int64 byteLength_ns;\n   systemBaudRate  = 10400;\n   byteLength_ns = ((1.0/systemBaudRate) * 10) * 1000000000; // 10 bit times in ns\n\n   // Calculate P4 Times\n   for (i = 0; i < elcount(data)-1; ++i)\n   {\n      p4Time = (timestamps[i+1] - byteLength_ns) - timestamps[i];\n      write(\"P4 time between byte no.: %d; Value: %x and byte no.: %d; Value: %x == [%.6f s]\\n \", i,    data[i], i+1, data[i+1], p4Time/1000000000.0);\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.0",
+      "8.0",
+      "—",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "K-Line Real bus mode ECU tester",
+      "K-Line Real bus mode ECU simulation ECU tester",
+      "—",
+      "—",
+      "—",
+      "K-Line Real bus mode ECU simulation ECU tester"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

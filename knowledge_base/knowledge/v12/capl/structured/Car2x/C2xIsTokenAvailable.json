@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "C2xIsTokenAvailable",
+  "category": "Car2x",
+  "title": "C2xIsTokenAvailable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xIsTokenAvailable.htm",
+  "syntax": [
+    "long C2xIsTokenAvailable( long packet, char protocolDesignator[], char tokenDesignator[] );"
+  ],
+  "description": [
+    "This function checks, if the specified token is part of the packet.",
+    "For ASN.1 based protocols, tokens that are not set are not part of the packet between the functions calls of C2xInitPacket and C2xCompletePacket. For other protocols the non-optional tokens are always part of the packet."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    }
+  ],
+  "return": "1: token is part of the packet",
+  "example": {
+    "description": [],
+    "code": "long packet;\n\n//create geoNetworking unicast\npacket = C2xInitPacket(\"geoNetworking\");\n\n//spvNetAddr is optional but headertype (ht) is unicast per default which contains spvNetAddr\nif (!C2xIsTokenAvailable(packet, \"geoNetworking\",\"spvNetAddr\"))\n{\n  write(\"error! spvNetAddr is not available in geoNetworking unicast\");\n}\n\n//transform packet to geoNetworking broadcast\nif (C2xSetTokenInt(packet, \"geo_cnh\", \"ht\", 4) != 0)\n{\n  write(\"error! C2xSetTokenInt failed\");\n}\nif (C2xResizeToken(packet, \"geoNetworking\", \"header\", 384) != 0)\n{\n  write(\"error! C2xResizeToken failed\");\n}\n\n//broadcast does not contain spvNetAddr\nif (C2xIsTokenAvailable(packet, \"geoNetworking\", \"spvNetAddr\"))\n{\nwrite(\"error! spvNetAddr is available in geoNetworking broadcast\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

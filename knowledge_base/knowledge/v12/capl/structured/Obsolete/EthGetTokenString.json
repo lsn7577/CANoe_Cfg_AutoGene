@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "EthGetTokenString",
+  "category": "Obsolete",
+  "title": "EthGetTokenString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetTokenString.htm",
+  "syntax": [
+    "long EthGetTokenString( long packet, char protocolDesignator[], char tokenDesignator[], long bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "The function copies characters from the token and adds a terminating \"\\0\"."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "number of copied characters or 0\nWith EthGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  EthReceivePacket(\"OnEthPacket\");\n}\nvoid OnEthPacket( LONG channel, LONG dir, LONG packetHandle )\n{\n  CHAR rx_str[100];\n  CHAR error[100];\n\n  // get the payload of the packet\n  EthGetTokenString( packetHandle, \"udp\", \"data\", elCount(rx_str), rx_str );\n\n  if (EthGetLastError() == 0)\n  {\n    write(rx_str);\n  }\n  else\n  {\n    EthGetLastErrorText( elCount(error), error );\n    write(\"Error: %s\", error );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

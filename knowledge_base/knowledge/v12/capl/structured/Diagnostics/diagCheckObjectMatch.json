@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagCheckObjectMatch",
+  "category": "Diagnostics",
+  "title": "diagCheckObjectMatch",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagCheckObjectMatch.htm",
+  "syntax": [
+    "long diagCheckObjectMatch( diagRequest request, diagResponse response);"
+  ],
+  "description": [
+    "Checks if the response service id is a valid (positive or negative) response for the request."
+  ],
+  "parameters": [
+    {
+      "name": "request",
+      "type": "",
+      "description": "Diagnostics request"
+    }
+  ],
+  "return": "1: Objects match.",
+  "example": {
+    "description": [],
+    "code": "DiagRequest AirbaContr_Read req;\nDiagResponse AirbaContr_Read resp;\n\nif( 1 == diagCheckObjectMatch( req, resp))\nwrite( \"Request and response match!\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

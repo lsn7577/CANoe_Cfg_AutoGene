@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetSelectedScheduleTableEntry",
+  "category": "SmartCharging",
+  "title": "SCC_SetSelectedScheduleTableEntry",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetSelectedScheduleTableEntry.htm",
+  "syntax": [
+    "long SCC_SetSelectedScheduleTableEntry ( long ID )"
+  ],
+  "description": [
+    "Sets the ID of the selected SAScheduleTuple, which is sent in the messages PowerDeliveryReq and MeteringReceiptReq.",
+    "For a valid charge session, use one of the SAScheduleTupleIDs sent by the charge point in the message ChargeParameterDiscoveryRes. You can query them using the function SCC_GetSAScheduleTupleID. If no tuple is selected, the vehicle will automatically select the first or newest one."
+  ],
+  "parameters": [
+    {
+      "name": "ID",
+      "type": "",
+      "description": "Desired SAScheduleTupleID"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coLssIdentNonConfigSlave",
+  "category": "Obsolete",
+  "title": "coLssIdentNonConfigSlave",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssIdentNonConfigSlave.htm",
+  "syntax": [
+    "void coLssIdentNonConfigSlave( dword errCode[] );"
+  ],
+  "description": [
+    "With this service, the LSS master commands all LSS slaves whose node-ID is not configured (0xFF) to identify themselves."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoLssIdentNonConfigSlave( errCode );\nif (errCode[0] == 0) {\n  write( \"LSS identify non-configured slaves commanded\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

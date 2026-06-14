@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestJoinDiagVariantIdentificationCompleted",
+  "category": "Test",
+  "title": "TestJoinDiagVariantIdentificationCompleted",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinDiagVariantIdentificationCompleted.htm",
+  "syntax": [
+    "long testJoinDiagVariantIdentificationCompleted(char ecuQualifier[]);"
+  ],
+  "description": [
+    "Adds an event to the set of joined events that will fire when the variant identification started for the given ECU is completed."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "The event will fire on the completion of the variant identification for this ECU."
+    }
+  ],
+  "return": "Number of conditions in stock:\n-100: Input parameter error, i.e. the variant identification is not running for this ECU.\n-3: Error while adding the specified event to the set of joined events.\n-1: General error, for example, functionality is not available.\n>0: Number of the newly joined event.",
+  "example": {
+    "description": [],
+    "code": "testcase TC_ParallelIdentification()\n{\n  // Perform variant identification for 3 ECUs in parallel\n  diagStartVariantIdentification(\"ECU1\");\n  testJoinDiagVariantIdentificationCompleted(\"ECU1\");\n  diagStartVariantIdentification(\"ECU2\");\n  testJoinDiagVariantIdentificationCompleted(\"ECU2\");\n  diagStartVariantIdentification(\"ECU3\");\n  testJoinDiagVariantIdentificationCompleted(\"ECU3\");\n\n  if( 0 < TestWaitForAllJoinedEvents(5000))\n  TestStepPass( \"All variant identification tasks completed in time.\");\n  else\n  TestStepFail( \"Not all variant identification tasks completed in time!\");\n\n  {\n    char identifiedVariant[100];\n    diagGetIdentifiedVariant( \"ECU1\", identifiedVariant, elcount(identifiedVariant));\n    if( 0 == strncmp( identifiedVariant, \"Beta\", 5))\n      TestStepFail( \"Should not run this test with beta version!\");\n  }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

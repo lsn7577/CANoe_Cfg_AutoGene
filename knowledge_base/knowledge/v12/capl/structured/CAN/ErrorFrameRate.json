@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "ErrorFrameRate",
+  "category": "CAN",
+  "title": "ErrorFrameRate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionErrorFrameRate.htm",
+  "syntax": [
+    "long ErrorFrameRate ()",
+    "CANx.ErrorFrameRate"
+  ],
+  "description": [
+    "Returns the current rate of CAN error messages of channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Current rate of CAN error messages on channel x in messages per second.",
+  "example": {
+    "description": [],
+    "code": "write (\"Rate of error messages on CAN1 = %d\", CAN1.ErrorFrameRate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "frSendSymbol",
+  "category": "FlexRay",
+  "title": "frSendSymbol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRSendSymbol.htm",
+  "syntax": [
+    "frSendSymbol( long <type>, long <param>, int channel );"
+  ],
+  "description": [
+    "This function sends an MTS symbol in the next possible symbol window if the Communication Controller is in normal mode (synchronized)."
+  ],
+  "parameters": [
+    {
+      "name": "<type>",
+      "type": "",
+      "description": "Not used at this time. Reserved for future expansions. Should always be equal to 0."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Example",
+      "This example sends a MTS symbol when a key is pressed in the next possible cycle."
+    ],
+    "code": "on key 'm'\n{\n   frSendSymbol(0 /* not used */, 0 /* not used */, %CHANNEL%);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

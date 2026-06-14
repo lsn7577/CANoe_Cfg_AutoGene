@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "IpSetMulticastInterface",
+  "category": "TCPIPAPI",
+  "title": "IpSetMulticastInterface",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIPSetMulticastInterface.htm",
+  "syntax": [
+    "long IpSetMulticastInterface ( dword socket, dword ifIndex );"
+  ],
+  "description": [
+    "Set the interface for outgoing multicast messages. Without calling this no multicast messages can be sent on the given socket.",
+    "To receive multicast messages, the multicast group has to be joined with IpJoinMulticastGroup before.",
+    "To leave a multicast group, call IpLeaveMulticastGroup."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    },
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index. All adapter addresses including the local loopback address are taken into account in the stack of the operating system. The order depends on how the operating system lists the adapters.All assigned addresses including the VLAN addresses are taken into account in the CANoe stack."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  const dword IPV4_STR_SIZE = 16;            // IPv4 string size\n  const dword INVALID_SOCKET = ~0;           // invalid socket constant\n  dword udpMulticastSocket = INVALID_SOCKET; // a multicast socket\n  dword port = 12345;                        // port to send udp to.\n  dword ifIdx = 1;                           // interface index.\n  dword ipv4MulticastAddr;                   // an IPv4 multicast address\n  char ipv4MulticastAddrStr[IPV4_STR_SIZE] = \"224.123.111.222\"; // an IPv4 multicast address\n}\n\non start\n{\n  long result; // function result\n  // calculate the numeric multicast address.\n  ipv4MulticastAddr = IpGetAddressAsNumber( ipv4MulticastAddrStr );\n\n  udpMulticastSocket = UdpOpen(0, 0); // open an UDP socket...\n  if (udpMulticastSocket != INVALID_SOCKET)\n  {\n    result = IpSetMulticastInterface( udpMulticastSocket, ifIdx );\n    if (result == 0)\n    {\n      write(\"Socket %d set to send multicast %s on adapter %d.\", udpMulticastSocket, ipv4MulticastAddrStr, ifIdx);\n      write(\"Sending some multicast messages to %s:%d ...\", ipv4MulticastAddrStr, port);\n      UdpSendTo( udpMulticastSocket, ipv4MulticastAddr, port, \"a\", 1 );\n      UdpSendTo( udpMulticastSocket, ipv4MulticastAddr, port, \"b\", 1 );\n      UdpSendTo( udpMulticastSocket, ipv4MulticastAddr, port, \"c\", 1 );\n    }\n    else\n    {\n      writeLineEx(1, 3, \"IpSetMulticastInterface: Error %d\", result);\n    }\n  }\n  else\n  {\n    writeLineEx( 1, 3, \"UdpOpen: Failed to open socket.\");\n  }\n}\n\non preStop\n{\n  // close the socket\n  UdpClose(udpMulticastSocket);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopePerformSerialBitAnalysis",
+  "category": "Test",
+  "title": "testWaitScopePerformSerialBitAnalysis",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopePerformSerialBitAnalysis.htm",
+  "syntax": [
+    "long testWaitScopePerformSerialBitAnalysis (linframe aMessage, dword flags, dword msgFieldStart, dword msgFieldEnd, ScopeBitMaskPolygon bitMaskPolygon, long domVoltageThreshold , long recVoltageThreshold, ScopeAnalyseHandle handle);"
+  ],
+  "description": [
+    "Checks the bits of a LIN message against the defined bit mask."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The LIN message to be analyzed."
+    }
+  ],
+  "return": "0 = No errors found",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

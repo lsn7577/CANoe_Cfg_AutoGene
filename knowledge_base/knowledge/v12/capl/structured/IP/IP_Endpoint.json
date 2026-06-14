@@ -1,0 +1,59 @@
+{
+  "page_type": "function",
+  "name": "IP_Endpoint",
+  "category": "IP",
+  "title": "IP_Endpoint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Objects/CAPLfunctionIPEndpoint.htm",
+  "syntax": [
+    "IP_Endpoint <endpoint> <var name>; // form 1"
+  ],
+  "description": [
+    "Initializes a variable of type IP_Endpoint with a concrete IP endpoint (form 1) or without an IP endpoint (form 2)."
+  ],
+  "parameters": [
+    {
+      "name": "endpoint",
+      "type": "",
+      "description": "An IPv4 or IPv6 address and port number separated by a colon."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  IP_Endpoint TCP:192.168.1.1:4000 ipEndpoint1;\n  IP_Endpoint 192.168.1.2:4001     ipEndpoint2;\n  IP_Endpoint 192.168.1.2          ipEndpoint3;\n  IP_Endpoint UDP:[ff::1]:6000     ipEndpoint4;\n  IP_Endpoint [ff::1]:6001         ipEndpoint5;\n  IP_Endpoint ff::1                ipEndpoint6;\n}\non start\n{\n  IP_Endpoint ep;\n  ep = IP_Endpoint(192.168.1.2:4001);\n  // ... do something with ep\n}\non start\n{\n  DoSomething( IP_Address(FC00::0001) );\n}\n\nvoid DoSomething( IP_Address addr )\n{\n  if (addr.IsIPv4Address())\n  {\n    // ...\n  }\n  else if (addr.IsIPv6Address())\n  {\n    // ...\n  }\n}\non start\n{\n  IP_Endpoint 192.168.1.1:4000 ep1;\n  IP_Endpoint 192.168.1.1:4000 ep2;\n  if (ep1 == ep2)\n  {\n    write( \"Endpoints are equal!\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "PortNumber Accesses the port number. The byte order is host byte order.",
+        "dword",
+        "—"
+      ]
+    },
+    {
+      "row": [
+        "IP_Address IP_Address object representing the IP_Endpoint's IP address.",
+        "IP_Address",
+        "—"
+      ]
+    },
+    {
+      "name": "IP_Address",
+      "link": "CAPLfunctionIPAdredress.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

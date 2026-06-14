@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnSecurityOfNodeApplicationProtocolTxFinished",
+  "category": "Security",
+  "title": "OnSecurityOfNodeApplicationProtocolTxFinished",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/CallbackHandler/CAPLfunctionOnSecurityOfNodeApplicationProtocolTxFinished.htm",
+  "syntax": [
+    "void OnSecurityOfNodeApplicationProtocolTxFinished(char nodeName[], char networkName[], char applicationProtocolName[], long result)"
+  ],
+  "description": [
+    "This callback handler is called when the specified node on the specified network finished the transmission of an application protocol.",
+    "As the behavior of application protocols are Security specific you have to refer to the Security Source specific manual to get more information about how they work.",
+    "You have to call SecurityLocalStartControlSimulationNode before this callback is called."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

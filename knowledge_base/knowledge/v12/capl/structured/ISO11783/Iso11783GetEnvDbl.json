@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783GetEnvDbl",
+  "category": "ISO11783",
+  "title": "Iso11783GetEnvDbl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783GetEnvDbl.htm",
+  "syntax": [
+    "double Iso11783GetEnvDbl( char envVar[], dword index );"
+  ],
+  "description": [
+    "This function gets the value of an environment variable."
+  ],
+  "parameters": [
+    {
+      "name": "envVar",
+      "type": "",
+      "description": "Name of the environment variable"
+    }
+  ],
+  "return": "Value of the environment variable or 0.0 if it does not exist",
+  "example": {
+    "description": [],
+    "code": "value \r\n = Iso11783GetEnvDbl( „EvFrictionForce“, \r\n 1 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

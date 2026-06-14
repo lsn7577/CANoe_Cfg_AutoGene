@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "diagGetCommParameter (FlexRay)",
+  "category": "Diagnostics",
+  "title": "diagGetCommParameter (FlexRay)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetCommParameterFR.htm",
+  "syntax": [
+    "long diagGetCommParameter (char qualifier[]);"
+  ],
+  "description": [
+    "Returns the value of a numeric/textual communication parameter of the given or currently active diagnostic description. The values are read from the diagnostic description if they cannot be set in the configuration dialog."
+  ],
+  "parameters": [
+    {
+      "name": "Qualifier",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "FlexRay.Protocol",
+      "type": "",
+      "description": "The protocol variant to use. 0 AUTOSAR 2.xrest reserved for future extensions"
+    },
+    {
+      "name": "Values",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "One byte addresses"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Two byte addresses"
+    },
+    {
+      "name": "FlexRay.LocalAddress",
+      "type": "",
+      "description": "Address of *this* node, i.e. ECU address in ECU simulation, tester address in tester nodes."
+    },
+    {
+      "name": "FlexRay.RemoteAddress",
+      "type": "",
+      "description": "Address of the target node, i.e. ECU address in tester nodes, tester address in ECU simulation."
+    },
+    {
+      "name": "Values",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Unicast"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Acknowledged Unicast"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Acknowledged Unicast with Retry"
+    },
+    {
+      "name": "rest",
+      "type": "",
+      "description": "reserved"
+    },
+    {
+      "name": "Note Please refer to the AUTOSAR FlexRay TP specification for details on the parameter value semantics.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Values",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "ISO"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "ISO6"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "L16M"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "L4G"
+    },
+    {
+      "name": "rest",
+      "type": "",
+      "description": "reserved"
+    },
+    {
+      "name": "Note Please refer to the AUTOSAR FlexRay TP specification for details on the parameter value semantics.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Note Please refer to the AUTOSAR FlexRay TP specification for details on the parameter value semantics.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Note Please refer to the AUTOSAR FlexRay TP specification for details on the parameter value semantics.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

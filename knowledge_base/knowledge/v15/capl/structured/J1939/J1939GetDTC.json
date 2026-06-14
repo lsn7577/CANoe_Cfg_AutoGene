@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "J1939GetDTC",
+  "category": "J1939",
+  "title": "J1939GetDTC",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/Functions/CAPLfunctionJ1939GetDTC.htm",
+  "syntax": [
+    "long J1939GetDTC(pg pgWithDTC, dword spn, byte fmi, byte oc, dword &dtcValue)"
+  ],
+  "description": [
+    "Function looks through a J1939 diagnostic message and returns the first DTC block that matches the search criteria, i.e. that contains defined SPN/FMI/OC values."
+  ],
+  "parameters": [
+    {
+      "name": "pgWithDTC",
+      "type": "",
+      "description": "Message to be checked for a specific DTC block. Must be a J1939 Parameter Group."
+    },
+    {
+      "name": "spn",
+      "type": "",
+      "description": "Suspect Parameter Number of the specified DTC. 0xFFFFFFFF if spn is to be ignored."
+    },
+    {
+      "name": "fmi",
+      "type": "",
+      "description": "Failure Mode Identifier of the specified DTC. 0xFFFF if fmi is to be ignored."
+    },
+    {
+      "name": "oc",
+      "type": "",
+      "description": "Occurrence Counter of the specified DTC . 0xFFFF if oc is to be ignored."
+    },
+    {
+      "name": "dtcValue",
+      "type": "",
+      "description": "The value of the found DTC block."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on pg DM1\n{\n  int posOfDTC;\n  dword foundDTC;\n  word fmi, oc;\n  dword spn;\n\n  //Look for the DTC with SPN=67890\n  posOfDTC = J1939GetDTC(this, 67890, 0xFFFF, 0xFFFF, foundDTC);\n  if(posOfDTC > 0)\n  {\n    fmi = J1939GetFmiFromDTC(foundDTC);\n    oc = J1939GetOcFromDTC(foundDTC);\n    WriteEx(-3, 3, \"DM1 with DTC (SPN=67890) observed: FMI=%d, OC=%d\", fmi, oc);\n  \n}\n  //Look for the DTC with SPN=123 and OC=5\n  posOfDTC = J1939GetDTC(this, 123, 0xFFFF, 5, foundDTC);\n  if(posOfDTC > 0)\n  {\n    fmi = J1939GetFmiFromDTC(foundDTC);\n    WriteEx(-3, 3, \"DM1 with DTC (SPN=123, OC=5) observed: FMI=%d\", fmi);\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "12.0",
+      "12.0",
+      "13.0",
+      "—",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "J1939",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

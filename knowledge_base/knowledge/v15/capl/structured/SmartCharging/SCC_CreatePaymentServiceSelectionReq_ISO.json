@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreatePaymentServiceSelectionReq_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreatePaymentServiceSelectionReq_ISO",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreatePaymentServiceSelectionReq_ISO.htm",
+  "syntax": [
+    "long SCC_CreatePaymentServiceSelectionReq_ISO ( byte SessionID[], char SelectedPaymentOption[], byte SelectedServiceIDs[], byte SelectedParameterSetIDs[], dword ServiceIDCount )"
+  ],
+  "description": [
+    "Creates a Payment Service Selection Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "SelectedPaymentOption",
+      "type": "",
+      "description": "Contract or ExternalPayment."
+    },
+    {
+      "name": "SelectedServiceIDs",
+      "type": "",
+      "description": "IDs of the selected services. Must contain at least one entry."
+    },
+    {
+      "name": "SelectedParameterSetIDs",
+      "type": "",
+      "description": "Parameter set IDs corresponding to the SelectedServiceIDs. Array must be the same size as SelectedServiceIDs, you can use -1 to omit a parameter set ID."
+    },
+    {
+      "name": "ServiceIDCount",
+      "type": "",
+      "description": "Size of the array SelectedServiceIDs."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

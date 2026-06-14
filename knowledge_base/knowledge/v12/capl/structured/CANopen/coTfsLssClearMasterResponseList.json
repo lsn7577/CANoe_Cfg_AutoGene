@@ -1,0 +1,23 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssClearMasterResponseList",
+  "category": "CANopen",
+  "title": "coTfsLssClearMasterResponseList",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssClearMasterResponseList.htm",
+  "syntax": [
+    "long coTfsLssClearMasterResponseList( void );"
+  ],
+  "description": [
+    "Clears the internal list of expected LSS Master request including the answers. The list is reset also after calling the function coTfsLssWaitForMasterRequestMessage()."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\n  write(\"Clear list failed\");\n  return;\n}\n\n/* add one or more test functions */\n\nif (coTfsLssAddMasterResponseActivateBitTiming( 1000 /*switch delay in ms*/, 0xFFFF /*switch delay bit mask*/ ) != 1) {\n  write(\"could not add request\");\n  return;\n}\n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\n  write(\"no event received\");\n} \nelse {\n  write(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

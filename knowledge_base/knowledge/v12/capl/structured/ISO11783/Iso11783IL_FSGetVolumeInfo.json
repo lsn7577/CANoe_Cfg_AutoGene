@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_FSGetVolumeInfo",
+  "category": "ISO11783",
+  "title": "Iso11783IL_FSGetVolumeInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILfsgetvolumeinfo.htm",
+  "syntax": [
+    "long Iso11783IL_FSGetVolumeInfo( dword infoCount, dword retInfo[] );"
+  ],
+  "description": [
+    "This function returns information about the current volume. The current volume is the volume where the configuration is stored."
+  ],
+  "parameters": [
+    {
+      "name": "infoCount",
+      "type": "",
+      "description": "Number of elements in retInfo"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "dword info[3];\n\nIso11783IL_FSGetVolumeInfo( elCount(info), info );\nwrite( \"Total \r\n size %d blocks\", info[1] );\nwrite( \"Free size \r\n %d blocks\", info[2] );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

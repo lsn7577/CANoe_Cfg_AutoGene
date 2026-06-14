@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestNmtQueryDeviceName",
+  "category": "J1939",
+  "title": "J1939TestNmtQueryDeviceName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestNmtQueryDeviceName.htm",
+  "syntax": [
+    "long J1939TestNmtQueryDeviceName( long ecuHandle, char retDeviceName[8] );"
+  ],
+  "description": [
+    "The function queries for an ECU device name."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "handle of the ECU"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "char deviceName[8];\nJ1939TestNmtRefresh( 250 );\nJ1939TestNmtQueryDeviceName( 1, deviceName );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "diagGetLastCommunicationError",
+  "category": "Diagnostics",
+  "title": "diagGetLastCommunicationError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetLastCommunicationError.htm",
+  "syntax": [
+    "syntax: long DiagGetLastCommunicationError();"
+  ],
+  "description": [
+    "Returns the error code of the last diagnostic request."
+  ],
+  "parameters": [],
+  "return": "Value\nDescription\n-1\n0\nThe response wasn't received in expected time.\n1\nTime for transmission of the CAN frame on the receiver side expired.\n2\nTime for transmission of the CAN frame on the sender side expired.\n3\nTime until reception of the next Flow Control expired.\n4\nTime until reception of the next Consecutive Frame expired.\n5\nNot specified communication error.\n6\nThe response wasn't received in the expected extended time.\n7\nA previously queued request was canceled.\n8\nNot possible to forward the message to the Bus System Proxy (not defined/open or driver error).\n9\nThe response wasn't received in the expected RC21 completion time.\nValue\nDescription\n100\nThe request to send some data was rejected since another transmission is in progress.\n101\nA reception was active when FF or SF was received.\n102\nA negative ACK was received for acknowledged connections.\n103\nThe bus did not confirm transmission of a frame in time.\n104\nThe transmitter did not receive a FC (or AF) in time.\n105\nThe receiver did not receive the next CF in time.\n106\nThe peer rejected the data since it is too long.\n107\nPeer sent an undefined ACK.\n108\nA message received is not fit for processing, e.g. a First Frame where a Single Frame would have sufficed.\n109\nReceiver has sent too many wait frames and must therefore abort the transfer!\n110\nReceiver has requested the resending of an illegal frame, e.g. the First Frame.\n111\nISO: Receiver requested the transfer to be aborted.\n200: StartCommunication request wasn't answered by the ECU.\n600: The requested function isn't supported.",
+  "example": {
+    "description": [],
+    "code": "testcase TC()\n{\n  DiagRequest XY_Read req;\n  int err;\n\n  TestStep( \"Test\", \"Step\");\n  DiagSetTarget(\"ECU\");\n  DiagSendRequest(req);\n  if (0 == TestWaitForDiagResponse( req, 2000))\n  {\n    err = DiagGetLastCommunicationError();\n    write(\"LastCommunicationError=%d\", err);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

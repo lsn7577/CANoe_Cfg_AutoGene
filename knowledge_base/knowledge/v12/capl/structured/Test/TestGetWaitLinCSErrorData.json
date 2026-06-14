@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitLinCSErrorData",
+  "category": "Test",
+  "title": "TestGetWaitLinCSErrorData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitLinCsErrData.htm",
+  "syntax": [
+    "long TestGetWaitLinCSErrorData (linCSError apEvent);"
+  ],
+  "description": [
+    "Retrieves the data of a checksum error triggered by the last wait instruction.The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "apEvent",
+      "type": "",
+      "description": "Data structure with the checksum error data."
+    }
+  ],
+  "return": "0: Data access was successful",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linCSError ()\n{\n   linCSError linCSErrorData;\n   if (testWaitForLinCSError(5000) == 1)\n   {\n      if (testGetWaitLinCSErrorData(linCSErrorData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN CS Error event occurred for FrameId=0x%X\", linCSErrorData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

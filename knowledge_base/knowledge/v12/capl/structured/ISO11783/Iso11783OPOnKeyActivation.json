@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPOnKeyActivation",
+  "category": "ISO11783",
+  "title": "Iso11783OPOnKeyActivation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPOnKeyActivation.htm",
+  "syntax": [
+    "void Iso11783OPOnKeyActivation( dword ecuHandle, dword objectID, dword parentID, dword keyCode, dword activation );"
+  ],
+  "description": [
+    "The function is called by the node layer, if the user presses a soft key or button."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783OPOnKeyActivation( dword handle, dword object ID, dword parentID, dword keyCode, \r\n dword activation )\n{\n  if (activation == 1) {\n    switch(keyCode) {\n    case 1: DoSometing1(); break;\n    case 2: DoSometing2(); break;\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssAddMasterResponseInquireNodeId",
+  "category": "CANopen",
+  "title": "coTfsLssAddMasterResponseInquireNodeId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssAddMasterResponseInquireNodeId.htm",
+  "syntax": [
+    "long coTfsLssAddMasterResponseInquireNodeId( dword nodeId );"
+  ],
+  "description": [
+    "This function adds a single LSS Master request wait condition to the internal list of LSS Master request wait conditions and sends a response if a request is received."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\n  write(\"Clear list failed\");\n  return;\n} \n\n/* add one or more test functions */\nif (coTfsLssAddMasterResponseInquireNodeId( 112 ) {\n  write(\"could not add request\");\n  return;\n} \n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\n  write(\"no event received\");\n} \nelse {\n  write(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

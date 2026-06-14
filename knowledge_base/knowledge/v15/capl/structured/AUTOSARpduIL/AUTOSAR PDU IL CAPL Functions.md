@@ -1,0 +1,103 @@
+# AUTOSAR PDU IL CAPL Functions
+
+> Category: `AUTOSARpduIL` | Type: `notes`
+
+## Description
+
+Callback Interface
+
+Control
+
+Fault Injection and Disturbance
+
+Maintenance
+
+Message Handling
+
+Signal Handling
+
+Timing Modification
+
+ARILFaultInjectionDisableAllTxPDU
+
+Disables the sending of all PDUs of the current node instance.
+
+ARILFaultInjectionEnableAllTxPDU
+
+Enables the sending of all PDUs of the current node instance.
+
+AUTOSAR PDU Interaction Layer | Return Codes | Test Feature Set CAPL Functions
+
+| AUTOSAR PDU IL The functions are available with the AUTOSAR PDU Interaction Layer (AUTOSAR PDU IL) and included AsrPDUIL2.dll. These CAPL functions are supported by Windows and Linux. The functionality under Linux has not been fully tested yet. |
+|---|
+
+| Callback Interface Control Fault Injection and Disturbance Maintenance | Message Handling Signal Handling Timing Modification |
+|---|---|
+
+| Functions | Short Description |
+|---|---|
+| applPDUilTxPending | This callback is optionally being called before the IL sends a PDU to the bus. |
+| applILTxRequestConsumed | After Ignition state has been enabled by ARILSetIgnitionState or any wake-up-allowed signal is transmitted, then optionally this functions is called. |
+| applILTxRequestPending | If the Ignition state is being enabled by ARILSetIgnitionState or any wake-up-allowed signal is changed, then optionally this functions is called. |
+
+| Note The following functions are suitable to control the interaction layer. These functions can be used when needed. This may be the case when simulating bus-off-states or network management sleep active states. The standard NM-module (DCNM01.dll) does not need those functions. |
+|---|
+
+| Functions | Short Description |
+|---|---|
+| ARILConfigureNMNotifications | This function has impact on the (automatic) coupling between IL and NM on the IL side. |
+| ARILControlInit | Initializes the IL. If this function is called in on preStart, then the IL will enter the suspended state during on Start and must explicitly be started. |
+| ARILControlResume | Resumes a suspended IL and starts sending PDUs again. |
+| ARILControlSimulationOff | Stops the simulation of the IL. The IL is not operational. All API function except function ARILControlSimulationOn will not work. |
+| ARILControlSimulationOn | Starts the simulation of the IL. The IL is operational and started. The IL will send PDUs. |
+| ARILControlStart | When the IL is started, then it is fully operating and sending. |
+| ARILControlStop | Stops sending of PDUs. |
+| ARILControlPDU | Sets/activates/deactivates a special feature/action for a dedicated PDU. |
+| ARILControlWait | Stops sending, but accepts signal changes. |
+| ARILSetAutoStartParam | This function influences the start behavior. |
+| ARILSetIgnitionState | Activates or deactivates the ignition status globally. |
+| ARILSetOperationMode | Influences the behavior of the update bits and counters. |
+| ARILSetPowerState | Activates or deactivates the power status globally. |
+
+| Functions | Short Description |
+|---|---|
+| ARILFaultInjectionDisableAllTxPDU | Disables the sending of all PDUs of the current node instance. |
+| ARILFaultInjectionDisablePDU | Disables the sending of the PDU except by calling the function ARILSetPDUEvent. |
+| ARILFaultInjectionDisturbChecksum | Disturbs the CRC of a PDU or signal group (see CRC Value). |
+| ARILFaultInjectionDisturbNodeUpdateBits | Disturbs the Update Bit of all signals and/or signal groups that are sent by the current node (see Update Bit). |
+| ARILFaultInjectionDisturbSequenceCounter | Disturbs the SQC or TGL of a PDU or signal group (see Supported Features). |
+| ARILFaultInjectionDisturbUpdateBit | Disturbs the Update Bit of a signal or signal group (see Update Bit). |
+| ARILFaultInjectionEnableAllTxPDU | Enables the sending of all PDUs of the current node instance. |
+| ARILFaultInjectionEnablePDU | Enables the sending of the PDU. |
+| ARILFaultInjectionResetAllFaultInjections | Resets the fault injection settings for all PDUs of the node. |
+| ARILFaultInjectionResetPDULength | Resets the payload length back to its original value from the database. |
+| ARILFaultInjectionSetIgnitionState | Activates or deactivates the ignition status locally. |
+| ARILFaultInjectionSetPDULength | Sets a new payload length for the PDU. |
+| ARILFaultInjectionSetPowerState | Activates or deactivates the power status locally. |
+
+| Functions | Short Description |
+|---|---|
+| ARILCalculateCRC | Calculates the CRC of the PDU according to the given payload. |
+| ARILGetSigGroupCount | Evaluates how many signal groups are defined inside the PDU. |
+| ARILGetSigGroupName | Retrieves the name of the nth signal group of the PDU. |
+
+| Functions | Short Description |
+|---|---|
+| ARILSetPDUEvent | A call of this function will lead to a transmission of the associated PDU. |
+| ARILControlPDU | Sets/activates/deactivates a special feature/action for a dedicated PDU. |
+
+| Functions | Short Description |
+|---|---|
+| ARILSetEvent | This function considers Debounce Delay, and it also considers the activity of the network. |
+
+| Functions | Short Description |
+|---|---|
+| ARILResetPDUAsrTXMode | Resets the current valid transmission mode to the condition that is defined by or-ing all data filters of all signals. |
+| ARILResetPDUTimingCyclic | Resets the cyclic-timing to the values from the database. |
+| ARILResetPDUTimingEvent | Resets the event-timing to the values from the database. |
+| ARILSetPDUAsrTXMode | Overrides the current valid transmission mode of the PDU. |
+| ARILSetPDUTimingCyclic | Overrides the defined cyclic-timing from the database. |
+| ARILSetPDUTimingEvent | Overrides the defined event-timing from the database. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

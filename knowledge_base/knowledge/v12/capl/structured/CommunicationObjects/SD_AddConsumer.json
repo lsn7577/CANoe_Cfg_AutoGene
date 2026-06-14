@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SD_AddConsumer",
+  "category": "CommunicationObjects",
+  "title": "SD_AddConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSDAddConsumer.htm",
+  "syntax": [
+    "long SD_AddConsumer(service svc, char[] name, dword isSimulated, serviceConsumerRef * newConsumer)"
+  ],
+  "description": [
+    "Adds a consumer endpoint to a service communication object. The new endpoint may be real and detected through some protocol messages, or it may be simulated to test reaction of a provider to dynamic endpoint changes."
+  ],
+  "parameters": [
+    {
+      "name": "svc",
+      "type": "",
+      "description": "Service to which the endpoint shall be added."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "SD_AddConsumer(MirrorAdjustment, \"DiagConsole\", 1, newConsumer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

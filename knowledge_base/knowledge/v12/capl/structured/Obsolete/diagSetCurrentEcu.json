@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagSetCurrentEcu",
+  "category": "Obsolete",
+  "title": "diagSetCurrentEcu",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionDiagSetCurrentECU.htm",
+  "syntax": [
+    "long diagSetCurrentEcu (char[] qualifier)"
+  ],
+  "description": [
+    "When the current diagnostic target is a physical network request description, select the given ECU as target for single physical requests.",
+    "This function is only supported for physical network requests. If a request is sent using diagSendRequest, and not diagSendNetwork, the request is sent physically to the current ECU alone."
+  ],
+  "parameters": [
+    {
+      "name": "qualifier",
+      "type": "",
+      "description": "ECU identifier"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "// Select a physical network request description as target\ndiagSetTarget( \"PNR1\");\n// Send request to all targets on the network\nreq1.SendNetwork();\n\n// Collect all responses from all ECUs\nwhile( 1 == TestWaitForDiagResponse( req1, 1000))\n{\n  diagGetCurrentEcu( current, elcount(current));\n  write( \"Received response from %s\", current);\n}\n\nif( current[0] != 0)\n{\n  // If there was a response, chose the last ECU to send another request to\n  diagSetCurrentEcu( current);\n  req2.SendRequest();\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

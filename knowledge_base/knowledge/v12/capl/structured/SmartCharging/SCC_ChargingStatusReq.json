@@ -1,0 +1,32 @@
+{
+  "page_type": "concept",
+  "name": "SCC_ChargingStatusReq",
+  "category": "SmartCharging",
+  "title": "SCC_ChargingStatusReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_ChargingStatusReq.htm",
+  "syntax": [],
+  "description": [
+    "The callback is called as soon as a Charging Status Request is received."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

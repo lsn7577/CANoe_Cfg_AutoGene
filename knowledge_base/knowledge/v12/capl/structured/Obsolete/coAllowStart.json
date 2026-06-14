@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coAllowStart",
+  "category": "Obsolete",
+  "title": "coAllowStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoAllowStart.htm",
+  "syntax": [
+    "void coAllowStart( dword errCode[] );"
+  ],
+  "description": [
+    "If a simulated node is configured as NMT master (Bit 0 in 1F80 set), there are various states during the start procedure in which the application is signaled by the event function coOnConfigReady. In these states, the simulated node waits for the release of the application in order to be able to continue the start procedure. The various events and the associated information can be read in the description of coOnConfigReady."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnConfigReady ( dword event, dword nodeId ){\n  dword errCode[1];\n\n  switch (event) {\n    case 1:\n      write( \"Wait for start\" );\n      coAllowStart ( errCode );    // switch to operational\n      break;\n    case 4:\n      write( \"Software update state reached\" );\n      coAllowStart( errCode );    // go on with boot process by default\n      break;\n  };\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

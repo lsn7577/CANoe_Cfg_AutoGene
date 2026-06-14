@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "SomeIpILControlStart",
+  "category": "IP",
+  "title": "SomeIpILControlStart",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpILControlStart.htm",
+  "syntax": [
+    "long SomeIpILControlStart();"
+  ],
+  "description": [
+    "Starts SOME/IP IL.",
+    "Enabled sending and receiving SOME/IP messages and Service Discovery. After the start of SOME/IP IL, all Application Endpoints and the Provided Services must be created.",
+    "SOME/IP IL can be stopped using the SomeIpILControlStop function."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  // start IL manually\n  SomeIpILControlStart();\n\n  // add application endpoints and provided services here\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

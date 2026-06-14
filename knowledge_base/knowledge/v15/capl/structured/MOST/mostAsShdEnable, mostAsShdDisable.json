@@ -1,0 +1,136 @@
+{
+  "page_type": "function",
+  "name": "mostAsShdEnable, mostAsShdDisable",
+  "category": "MOST",
+  "title": "mostAsShdEnable, mostAsShdDisable",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTAsShdEnableCAPLfunctionMOSTAsShdDisable.htm",
+  "syntax": [
+    "long mostAsShdEnable(long fblockId, long instId);",
+    "long mostAsShdDisable(long fblockId, long instId);"
+  ],
+  "description": [
+    "mostAsShdEnable() adds an entry to the list of searched function blocks. If certain network events occur, CANoe automatically sends a request to the NetworkMaster to determine the logical device address of the function block.",
+    "Registration with mostAsShdEnable(fblockId, 0xFF) causes the service to request the device addresses of all function blocks with the appropriate FBlockId at the NetworkMaster.",
+    "mostAsShdDisable() removes an entry from the list of searched function blocks."
+  ],
+  "parameters": [
+    {
+      "name": "fblockId",
+      "type": "",
+      "description": "Function block ID"
+    },
+    {
+      "name": "instId",
+      "type": "",
+      "description": "Instance ID"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.0",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "MOST25 MOST50 MOST150 While Application Socket is active",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

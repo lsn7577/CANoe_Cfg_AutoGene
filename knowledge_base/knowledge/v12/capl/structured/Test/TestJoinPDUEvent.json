@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestJoinPDUEvent",
+  "category": "Test",
+  "title": "TestJoinPDUEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinPDUEvent.htm",
+  "syntax": [
+    "long TestJoinPDUEvent (dbPDU aPDU, dword flags1); // form 1"
+  ],
+  "description": [
+    "Completes the current set of joined events with the transmitted event. This function does not wait.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called."
+  ],
+  "parameters": [
+    {
+      "name": "aPDU",
+      "type": "",
+      "description": "PDU to be awaited as it is defined in the database.Default value: wait for any PDU."
+    }
+  ],
+  "return": "-6: Parse error, PDU is specified as string, but the name cannot be resolved or the PDU header ID cannot be found.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

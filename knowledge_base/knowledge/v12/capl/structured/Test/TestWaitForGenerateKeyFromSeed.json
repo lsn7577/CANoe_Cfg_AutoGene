@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForGenerateKeyFromSeed",
+  "category": "Test",
+  "title": "TestWaitForGenerateKeyFromSeed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForGenerateKeyFromSeed.htm",
+  "syntax": [
+    "long TestWaitForGenerateKeyFromSeed(byte seedArray[], dword seedArraySize, dword securityLevel, byte keyArray[], dword maxKeyArraySize, dword& keyArraySizeOut, dword appTimeout_ms); // form 1"
+  ],
+  "description": [
+    "Generates the security key from the seed using the configured Seed and Key DLL. The call into the DLL may need more time, therefore a test module may want to wait for the result in order not to disturb the real-time execution of the test."
+  ],
+  "parameters": [
+    {
+      "name": "seedArray",
+      "type": "",
+      "description": "Seed as returned from the ECU."
+    }
+  ],
+  "return": "1: Key generation successful",
+  "example": {
+    "description": [],
+    "code": "Testfunction ComputeKeyInExtendedSession( BYTE seed[], BYTE key[])\n{\n  DWORD keyLenOut;\n  keyLenOut = 0;\n  DiagSetCurrentSession( 0x03); // extended session\n  // The key computation may use the current session as optional argument\n  TestWaitForGenerateKeyFromSeed( seed, elcount( seed), 1, key, elcount(key), keyLenOut, 1000);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

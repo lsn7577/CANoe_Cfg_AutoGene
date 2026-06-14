@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpSDSubscribeEventGroup",
+  "category": "IP",
+  "title": "SomeIpSDSubscribeEventGroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpSDSubscribeEventGroup.htm",
+  "syntax": [
+    "long SomeIpSDSubscribeEventGroup( dword cevgHandle, LONG tillReboot );"
+  ],
+  "description": [
+    "An Event Group that was unregistered at the node (consumer) using the SomeIpSDDesubscribeEventGroup function can be registered again with this function. The associated Service Discovery message (Subscribe Eventgroup) is then sent."
+  ],
+  "parameters": [
+    {
+      "name": "cevgHandle",
+      "type": "",
+      "description": "Handle of the Consumed Event Group (see SomeIpAddConsumedEventGroup)."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD aep; // application endpoint handle\n  DWORD csi; // consumed Service Instance handle\n  DWORD ceg; // consumed Eventgroup handle\n  DWORD cev; // consumed Event handle\n}\n\non start()\n{\n  // open application endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,10,1);\n  // create Eventgroup\n  ceg = SomeIpAddConsumedEventGroup(csi,1);\n  // create Event Consumer\n  cev = SomeIpCreateEventConsumer(csi,32770,\"CallbackEvent1\");\n}\n\nvoid CallbackEvent1(DWORD cevHandle, DWORD messageHandle)\n{\n  // this function is called if the Event was sent. Parameters can be evaluated here.\n}\n\non key 'd'\n{\n  SomeIpSDDesubscribeEventGroup(ceg);\n  write(\"Event Group is no longer subscribed\");\n}\n\non key 's'\n{\n  SomeIpSDSubscribeEventgroup (ceg,1);\n  write(\"Event Group will now be subscribed again\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

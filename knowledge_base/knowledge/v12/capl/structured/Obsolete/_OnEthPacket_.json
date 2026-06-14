@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "<OnEthPacket>",
+  "category": "Obsolete",
+  "title": "<OnEthPacket>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionOnEthPacket.htm",
+  "syntax": [
+    "void <OnEthPacket>( long channel, long dir, long packet);"
+  ],
+  "description": [
+    "The function is called when a registered Ethernet packet is received.",
+    "Within this callback function the following functions can be used to retrieve the received packet data:",
+    "The functions access the payload of the highest interpretable protocol. Offset 0 starts at the beginning of the payload."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel on which the packet was received"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "see example of EthReceivePacket"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

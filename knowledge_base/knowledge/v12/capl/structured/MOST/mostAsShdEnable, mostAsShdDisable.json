@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "mostAsShdEnable, mostAsShdDisable",
+  "category": "MOST",
+  "title": "mostAsShdEnable, mostAsShdDisable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsShdEnableCAPLfunctionMOSTAsShdDisable.htm",
+  "syntax": [
+    "long mostAsShdEnable(long fblockId, long instId)"
+  ],
+  "description": [
+    "mostAsShdEnable() adds an entry to the list of searched function blocks. If certain network events occur, CANoe automatically sends a request to the NetworkMaster to determine the logical device address of the function block.",
+    "Registration with mostAsShdEnable(fblockId, 0xFF) causes the service to request the device addresses of all function blocks with the appropriate FBlockId at the NetworkMaster.",
+    "mostAsShdDisable() removes an entry from the list of searched function blocks."
+  ],
+  "parameters": [
+    {
+      "name": "fblockId",
+      "type": "",
+      "description": "Function block ID"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

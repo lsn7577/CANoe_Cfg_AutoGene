@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestMostReadReg",
+  "category": "Test",
+  "title": "TestMostReadReg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestMostReadReg.htm",
+  "syntax": [
+    "long TestMostReadReg(long aChannel, long aChip, dword aOffset, dword aRegDataLen, unsigned long aTimeout);"
+  ],
+  "description": [
+    "Reads one or several chip registers in the MOST hardware and waits for the result. If the operation is successful, the written register values can be read out using TestMostRegGetData."
+  ],
+  "parameters": [
+    {
+      "name": "aChannel",
+      "type": "",
+      "description": "Channel connected to the hardware."
+    }
+  ],
+  "return": "-101 to -129: Error codes like for mostReadReg, mostWriteReg",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

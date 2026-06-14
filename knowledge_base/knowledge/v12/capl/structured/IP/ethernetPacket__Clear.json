@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::Clear",
+  "category": "IP",
+  "title": "ethernetPacket::Clear",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionClear.htm",
+  "syntax": [
+    "void ethernetPacket.Clear();"
+  ],
+  "description": [
+    "Clears data and resets length."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "ethernetPacket pkt;\n\n// prepare packet for first output\npkt.ipv6.Init();\npkt.udp.Init();\npkt.udp.SetData( 0, \"Hello\", 5 );\npkt.CompletePacket();\noutput( pkt );\n\n// clear the packet\npkt.Clear();\n\n// prepare packet for second output with different\n// protocols and data than with first output above\n\npkt.tcp.Init();\npkt.CompletePacket();\noutput( pkt );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

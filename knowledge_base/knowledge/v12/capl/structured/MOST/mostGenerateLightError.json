@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostGenerateLightError",
+  "category": "MOST",
+  "title": "mostGenerateLightError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGenerateLightError.htm",
+  "syntax": [
+    "long mostGenerateLightError(long channel, long lightofftime, long lightontime, long repeat)"
+  ],
+  "description": [
+    "Starts (repeat > 0) or stops (repeat = 0) generation of Light-ON-OFF transitions.",
+    "For OptoLyzerOL3150o: The stress network interface controller (NIC) must have active bypass or bypass opened (see mostSetStressNodeParameter)."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

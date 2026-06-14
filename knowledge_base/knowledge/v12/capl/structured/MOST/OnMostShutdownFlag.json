@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "OnMostShutdownFlag",
+  "category": "MOST",
+  "title": "OnMostShutdownFlag",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTShutdownFlag.htm",
+  "syntax": [
+    "OnMostShutdownFlag(long oldstate, long newstate)"
+  ],
+  "description": [
+    "This event procedure is called each time the state of the Shutdown flag changes.",
+    "Within this event procedure the functions mostEventChannel, mostEventTime and mostEventOrigTime can be used to call up supplemental information."
+  ],
+  "parameters": [
+    {
+      "name": "oldstate",
+      "type": "",
+      "description": "Old state of the Shutdown Flag."
+    }
+  ],
+  "return": "1: Shutdown Flag set.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

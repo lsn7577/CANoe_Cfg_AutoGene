@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SupportedAppProtocolReq",
+  "category": "SmartCharging",
+  "title": "SCC_SupportedAppProtocolReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_SupportedAppProtocolReq.htm",
+  "syntax": [
+    "void SCC_SupportedAppProtocolReq"
+  ],
+  "description": [
+    "The callback is called as soon as a SupportedAppProtocol Request is received.",
+    "The list entries must be queried via the separate help function SCC_GetAppProtocolData."
+  ],
+  "parameters": [
+    {
+      "name": "AppProtocolCount",
+      "type": "",
+      "description": "Number of transmitted AppProtocol elements."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

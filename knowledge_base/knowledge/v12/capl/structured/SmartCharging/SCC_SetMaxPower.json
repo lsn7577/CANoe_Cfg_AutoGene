@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetMaxPower",
+  "category": "SmartCharging",
+  "title": "SCC_SetMaxPower",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetMaxPower.htm",
+  "syntax": [
+    "long SCC_SetMaxPower ( float MaxPower )"
+  ],
+  "description": [
+    "Sets the limit for power. These limits are used in various messages for both AC and DC mode (the actual element name depends on the charging mode and the protocol version). Defaults can be set using the respective configuration file."
+  ],
+  "parameters": [
+    {
+      "name": "MaxPower",
+      "type": "",
+      "description": "Limit value to be set."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

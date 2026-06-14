@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "C2xSetMapObjectPropertyString",
+  "category": "Car2x",
+  "title": "C2xSetMapObjectPropertyString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSetMapObjectPropertyString.htm",
+  "syntax": [
+    "long C2xSetMapObjectPropertyString( long handle, char propertyName[], char propertyValue[] );"
+  ],
+  "description": [
+    "With this function it is possible to support all string attributes by using their specific property name regardless of whether supported by the convenience layer or not.",
+    "As the property names can change, it is recommended to use the convenient functions like C2xSetMapObjectFillColor. These functions take the responsibility to set the correct property name by default."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "Reference of the map object"
+    }
+  ],
+  "return": "0 if success, else the set went wrong",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

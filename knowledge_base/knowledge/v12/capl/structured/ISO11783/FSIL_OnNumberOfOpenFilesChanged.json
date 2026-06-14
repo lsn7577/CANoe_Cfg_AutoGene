@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_OnNumberOfOpenFilesChanged",
+  "category": "ISO11783",
+  "title": "FSIL_OnNumberOfOpenFilesChanged",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILOnNumberOfOpenFilesChanged.htm",
+  "syntax": [
+    "void FSIL_OnNumberOfOpenFilesChanged( dword clientAddress, dword numberOfOpenFiles)"
+  ],
+  "description": [
+    "Is called from the FS IL if a client has opened or closed a file or directory."
+  ],
+  "parameters": [
+    {
+      "name": "clientAddress",
+      "type": "",
+      "description": "Address of the File Server client which has opened or closed a file or directory."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void FSIL_OnNumberOfOpenFilesChanged( dword clientAddress, dword numberOfOpenFiles)\n{\n  write(\"Client with address %u has %u open files\", clientAddress, numberOfOpenFiles);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

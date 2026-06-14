@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetLocalIPaddress",
+  "category": "Diagnostics",
+  "title": "DoIP_SetLocalIPaddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetLocalIPaddress.htm",
+  "syntax": [
+    "long DoIP_SetLocalIPaddress(char ipAddress[]);"
+  ],
+  "description": [
+    "Set local IP address to bind to. In an ECU simulation, Vehicle Announcement Messages (VAM) will be sent from this IP address, in a tester node the Vehicle Identification Request (VIR) messages. If the tester node sets IP address in on prestart, it can receive VAMs even before it sends VIR messages itself. The target IP address is derived from this IP address: for an IPv4 address the broad-cast address is determined using the network mask, for an IPv6 address the multicast address is used.",
+    "If diagnostics communication is performed on a built-in channel (i.e. the tester node does not configure DoIP.DLL as a node-layer module), this function cannot be used. The address configured in the CANoe Vehicle Simulation Parameter area is used instead."
+  ],
+  "parameters": [
+    {
+      "name": "ipAddress",
+      "type": "",
+      "description": "Textual representation of the IP address to bind to, e.g. 192.169.2.22 for an IPv4 address, or 2001::1234 for an IPv6 address."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "DoIP_SetLocalIPaddress( \"10.10.10.222\"); // Set an IPv4 address\n...\nDoIP_SetLocalIPaddress( \"2001::2222\");   // Set an IPv6 address\n...\n// retrieve the IP address configured for this simulation node's TCP/IP stack\nipGetAdapterAddressAsString( 1, localAddr, elcount(localAddr));\n// and use it as local address\nDoIP_SetLocalIPaddress( localAddr);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

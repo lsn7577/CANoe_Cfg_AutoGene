@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_SetChipPresent",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_SetChipPresent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_SetChipPresent.htm",
+  "syntax": [
+    "long SCC_SLAC_SetChipPresent ( dword ChipPresent )"
+  ],
+  "description": [
+    "Configures the SLAC protocol to run with a real QCA7000 chip, or without it. This toggles the sending of artificial attenuation data.",
+    "This function overrides the configuration parameter <SLAC_ChipPresent>. The supplied EV / EVSE configurations for VT8770 are already configured to use a real chip - there is no need to adapt these."
+  ],
+  "parameters": [
+    {
+      "name": "ChipPresent",
+      "type": "",
+      "description": "1 to disable chip simulation, 0 to enable-"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

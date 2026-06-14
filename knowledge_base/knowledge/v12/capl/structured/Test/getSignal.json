@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "getSignal",
+  "category": "Test",
+  "title": "getSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionGetSignal.htm",
+  "syntax": [
+    "float getSignal(Signal aSignal);"
+  ],
+  "description": [
+    "Gets the value of a signal."
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "The signal to be polled."
+    }
+  ],
+  "return": "If the signal is available (already appeared on the bus), this function returns the current signal value.",
+  "example": {
+    "description": [
+      "You have to use at minimum one more object to identify the signal uniquely. It could be any object from the list of possible objects, see hints for resolving signal ambiguities."
+    ],
+    "code": "float value;\nvalue = getSignal(OnOff);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

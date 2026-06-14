@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SerialSetOnSendHandler",
+  "category": "VTSystem",
+  "title": "SerialSetOnSendHandler",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSerialSetOnSendHandler.htm",
+  "syntax": [
+    "long SysVarNamespace.SerialSetOnSendHandler( char onSendCallback[]);"
+  ],
+  "description": [
+    "Sets the callback that notifies when a send operation on the serial port of the specified channel is completed successfully.",
+    "The set callback must have following signature: void <OnSerialSend>( byte sendBuffer[], dword number)"
+  ],
+  "parameters": [
+    {
+      "name": "onSendCallback",
+      "type": "",
+      "description": "CAPL callback function name."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,142 @@
+{
+  "page_type": "method",
+  "name": "ethernetPacket::GetData",
+  "category": "IP",
+  "title": "ethernetPacket::GetData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Methods/CAPLfunctionGetData.htm",
+  "syntax": [
+    "word ethernetPacket.GetData(word offset, char dest[], word length); // form 1",
+    "word ethernetPacket.GetData(word offset, byte dest[], word length); // form 2",
+    "word ethernetPacket.GetData(word offset, struct * dest); // form 3",
+    "word ethernetPacket.GetData(word offset, sysvarStruct dest); // form 4",
+    "word ethernetPacket.GetData(char protocol[], char field[], byte dest[]); // form 5"
+  ],
+  "description": [
+    "Copies the data of an Ethernet packet to a byte array, char array, CAPL struct or system variable struct."
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Byte offset of the data in the Ethernet packet. Offset 0 is the byte directly after the Ethertype."
+    },
+    {
+      "name": "dest",
+      "type": "",
+      "description": "Destination where the data is copied to."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "Number of bytes to copy."
+    }
+  ],
+  "return": "Number of bytes copied to the destination buffer.",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  dword ipHeaderLength;\n  byte  ipProtocol;\n\n  switch(this.type)\n  {\n    case 0x0800: // IPv4\n    ipHeaderLength = (this.Byte(0) & 0x0F) * 4;\n    ipProtocol     = this.Byte(9);\n\n    switch(ipProtocol)\n    {\n      case 17:\n      HandleUDP( this, ipHeaderLength+8, swapWord(this.Word(ipHeaderLength)), swapWord(this.Word(ipHeaderLength+2)) );\n      break;\n    }\n\n    break;\n  }\n\n  if(this.IsAvailable(\"tcp\", \"data\"))\n  {\n    byte buffer[1500];\n    word payloadLength;\n    payloadLength = this.GetData(\"tcp\", \"data\", buffer);\n   write(\"tcp payload length: %d\", payloadLength);\n  }\n}\n\nvoid HandleUDP( ethernetPacket * pkt, word udpDataOffset, word srcPort, word dstPort )\n{\n  char buffer[100];\n  word length;\n\n  length = pkt.GetData( udpDataOffset, buffer, elcount(buffer)-1 );\n  buffer[length] = 0; // terminating zero for strings\n\n  write( \"UDP (port 0x%X to 0x%X): %s\", srcPort, dstPort, buffer );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0: form 1-4 13.0 SP2: form 5",
+      "10.0: form 1-4 13.0 SP2: form 5",
+      "13.0",
+      "—",
+      "—",
+      "2.2: form 1-4 5.0 SP2: form 5"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

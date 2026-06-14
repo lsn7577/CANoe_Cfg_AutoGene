@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetMaxCurrent",
+  "category": "SmartCharging",
+  "title": "SCC_SetMaxCurrent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetMaxCurrent.htm",
+  "syntax": [
+    "long SCC_SetMaxCurrent ( float MaxCurrent )"
+  ],
+  "description": [
+    "Sets the limit for current. These limits are used in various messages for both AC and DC mode (the actual element name depends on the charging mode and the protocol version). Defaults can be set using the respective configuration file."
+  ],
+  "parameters": [
+    {
+      "name": "MaxCurrent",
+      "type": "",
+      "description": "Limit value to be set."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

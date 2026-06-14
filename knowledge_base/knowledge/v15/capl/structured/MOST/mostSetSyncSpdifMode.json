@@ -1,0 +1,145 @@
+{
+  "page_type": "function",
+  "name": "mostSetSyncSpdifMode",
+  "category": "MOST",
+  "title": "mostSetSyncSpdifMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTSetSyncSpdifMode.htm",
+  "syntax": [
+    "long mostSetSyncSpdifMode(long channel, long mode);"
+  ],
+  "description": [
+    "Sets the timing mode for the S/PDIF signal."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "S/PDIF slave."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "S/PDIF master."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [
+      "Use Cases:",
+      "External S/PDIF sink device connected to the S/PDIF Out connector of the VN2610",
+      "In this case the VN2610 is S/PDIF Master and the S/PDIF mode has to be set accordingly (mode = 1).",
+      "External S/PDIF source device connected to the S/PDIF In connector of the VN2610",
+      "In this case the VN2610 is S/PDIF Slave and the S/PDIF mode has to be set accordingly (mode = 0).",
+      "More S/PDIF examples see CANoe online help MOST Access to Digital Audio Channels (S/PDIF In and Out)."
+    ],
+    "code": "on key 's'\n{\n  long channel = 1;\n  mostSetSyncSpdifMode( channel, 1 );\n}\n\non key 's'\n{\n  long channel = 1;\n  mostSetSyncSpdifMode( channel, 0 );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.0",
+      "6.0",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST150",
+      "MOST25 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_ceil",
+  "category": "Other",
+  "title": "_ceil",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionCeil.htm",
+  "syntax": [
+    "float _ceil(float x);"
+  ],
+  "description": [
+    "Calculates the ceiling of a value, i.e. the smallest integer larger or equal to the value."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "Value of which the ceiling shall be calculated."
+    }
+  ],
+  "return": "Ceiling of x.",
+  "example": {
+    "description": [],
+    "code": "float x;\nx = _ceil(3.6); // x == 4.0"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

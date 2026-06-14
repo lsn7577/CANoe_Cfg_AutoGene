@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "remove",
+  "category": "AssociativeFields",
+  "title": "remove",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AssociativeFields/Functions/CAPLfunctionRemove.htm",
+  "syntax": [
+    "m.remove(3);"
+  ],
+  "description": [
+    "Removes one element from the field."
+  ],
+  "parameters": [
+    {
+      "name": "key",
+      "type": "",
+      "description": "Key of the element."
+    }
+  ],
+  "return": "1 if the key was available - otherwise 0",
+  "example": {
+    "description": [
+      "Text"
+    ],
+    "code": "m.remove(3);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "O(log(N))",
+  "syntax_status": "inferred_from_example"
+}

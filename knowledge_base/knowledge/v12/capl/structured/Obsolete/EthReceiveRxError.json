@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "EthReceiveRxError",
+  "category": "Obsolete",
+  "title": "EthReceiveRxError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthReceiveRxError.htm",
+  "syntax": [
+    "long EthReceiveRxError(char *callback );"
+  ],
+  "description": [
+    "Use this function to register a CAPL callback function to receive corrupt Ethernet packets. The callback function is called, if a corrupt packet is received.",
+    "The callback must have the following signature:"
+  ],
+  "parameters": [
+    {
+      "name": "callback",
+      "type": "",
+      "description": "name of CAPL callback function"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  EthReceiveRxError( \"OnCorruptEthernetPacket\" );\n}\nvoid OnCorruptEthernetPacket( LONG channel, LONG errorCode, LONG packetLength )\n{\n  BYTE srcMac[6];\n  // get source MAC address of the corrupt packet\n  EthGetThisData( 6, elCount(srcMac), srcMac );\n  write(\"Corrupt packet received from MAC address %X:%X:%X:%X:%X:%X with error code %d\", srcMac[0], srcMac[1], srcMac[2], srcMac[3], srcMac[4], srcMac[5], errorCode);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

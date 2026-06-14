@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LINtp_DataReq",
+  "category": "LIN",
+  "title": "LINtp_DataReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINtpDataReq.htm",
+  "syntax": [
+    "void LINtp_DataReq(byte data[], long numData, long NAD);"
+  ],
+  "description": [
+    "Send the given data. Once all data has been sent, the callback LINtp_DataCon is called. If there has been an error, LINtp_ErrorInd is called."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Data to send."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "BYTE data[20];\nLINtp_DataReq( data, elcount(data), 0x12);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsDeactivateSyncMonitor",
+  "category": "CANopen",
+  "title": "coTfsDeactivateSyncMonitor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsDeactivateSyncMonitor.htm",
+  "syntax": [
+    "long coTfsDeactivateSyncMonitor( dword canId );"
+  ],
+  "description": [
+    "This function switches off the calling of the sync callbacks if these are switched on. Furthermore all active sync PDO checks are also disabled.",
+    "The callbacks can be switched on with coTfsActivateSyncMonitor."
+  ],
+  "parameters": [
+    {
+      "name": "canId",
+      "type": "",
+      "description": "CAN identifier"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsActivateSyncMonitor(0x080080,100.20);\nTestWaitForTimeout(2000);\ncoTfsDeactivateSyncMonitor(0x008080);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

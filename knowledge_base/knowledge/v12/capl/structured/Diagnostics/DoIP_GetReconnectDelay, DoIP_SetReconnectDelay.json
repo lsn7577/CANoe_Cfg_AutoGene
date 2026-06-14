@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetReconnectDelay, DoIP_SetReconnectDelay",
+  "category": "Diagnostics",
+  "title": "DoIP_GetReconnectDelay, DoIP_SetReconnectDelay",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetSetReconnectDelay.htm",
+  "syntax": [
+    "void DoIP_SetReconnectDelay(dword reconnectDelay_ms);"
+  ],
+  "description": [
+    "Sets or returns the delay started by the tester when the ECU closes the TCP connection. After the configured time the tester attempts at first to re-open the TCP connection and afterwards to re-establish the routing activation."
+  ],
+  "parameters": [
+    {
+      "name": "reconnectDelay_ms",
+      "type": "",
+      "description": "Delay in milliseconds between TCP connection close and attempt to reactivate it. A value of 0 will deactivate this feature, i.e. the tester does not try to reactivate the route."
+    }
+  ],
+  "return": "Form 1: —Form 2: TCP reconnection delay",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

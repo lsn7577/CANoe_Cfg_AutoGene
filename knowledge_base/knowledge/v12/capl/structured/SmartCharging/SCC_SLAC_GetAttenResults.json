@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GetAttenResults",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GetAttenResults",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GetAttenResults.htm",
+  "syntax": [
+    "void SCC_SLAC_GetAttenResults ( float Results[], long& ResultCount )"
+  ],
+  "description": [
+    "Queries the measured average attenuation values during the callback SCC_SLACFinishedInd."
+  ],
+  "parameters": [
+    {
+      "name": "Results",
+      "type": "",
+      "description": "Array to which the attenuation results are written. The results are returned sorted, starting with the lowest attenuation."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

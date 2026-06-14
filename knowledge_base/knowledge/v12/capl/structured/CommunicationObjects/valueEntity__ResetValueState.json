@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "valueEntity::ResetValueState",
+  "category": "CommunicationObjects",
+  "title": "valueEntity::ResetValueState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionValueResetValueState.htm",
+  "syntax": [
+    "void <value>::ResetValueState()"
+  ],
+  "description": [
+    "Resets the state of the value:"
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "testcase MirrorTest1()\n{\n// at the start of the testcase, reset all states\nMirrorAdjustment.consumerSide[0,0].CurrentPosition.ResetValueState();\n// ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

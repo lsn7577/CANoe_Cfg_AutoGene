@@ -1,0 +1,152 @@
+{
+  "page_type": "function",
+  "name": "SomeIpCreateFieldConsumer",
+  "category": "IP",
+  "title": "SomeIpCreateFieldConsumer",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpCreateFieldConsumer.htm",
+  "syntax": [
+    "dword SomeIpCreateFieldConsumer( dword csiHandle, long notificationId, long getterId, long setterId, char onFieldNotificationCallback[] );"
+  ],
+  "description": [
+    "This function adds a Field Consumer to a Consumed Service Instance that was created by SomeIpCreateConsumedServiceInstance.",
+    "When a suitable field notification is received, the passed Notification Callback is called (see <OnSomeIpFieldNotification>).",
+    "A Field Consumer can be removed again using the SomeIpRemoveFieldConsumer function."
+  ],
+  "parameters": [
+    {
+      "name": "csiHandle",
+      "type": "",
+      "description": "Handle of the Consumed Service Instance that was created with SomeIpCreateConsumerServiceInstance."
+    },
+    {
+      "name": "notificationId",
+      "type": "",
+      "description": "Identifier of the field notification. If the field does not support a notifier, the value -1 must be specified here."
+    },
+    {
+      "name": "getterId",
+      "type": "",
+      "description": "Identifier of the Field Getter method. In order to call a getter method, a method must be created with the getterId beforehand (see also SomeIpCreateMethodCall and <OnSomeIpMethodResponse>). The method itself is then called with SomeIpCallMethod. If the field does not support a getter method, the value -1 must be specified here."
+    },
+    {
+      "name": "setterId",
+      "type": "",
+      "description": "Identifier of the Field Setter method. In order to call a setter method, a method must be created with the setterId beforehand (see also SomeIpCreateMethodCall and <OnSomeIpMethodResponse>). The method itself is then called with SomeIpCallMethod. If the field does not support a setter method, the value -1 must be specified here."
+    },
+    {
+      "name": "onFieldNotificationCallback",
+      "type": "",
+      "description": "This callback function is called when the Field Notification message is received."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the utilized field is contained in the FIBEX database that is assigned to the CANoe configuration. The field has the Notification ID 30, the Getter ID 31, and the Setter ID 32. The data type of the field is a standard data type (for example, UINT8)."
+    ],
+    "code": "variables\n{\n  DWORD gMcGetter; // getter method call\n  DWORD gMcSetter; // setter method call\n}\n\nvoid Initialize()\n{\n  CONST DWORD FieldNotificationID = 30;\n  CONST DWORD FieldGetterID       = 31;\n  CONST DWORD FieldSetterID       = 32;\n  DWORD aep; // Application Endpoint handle\n  DWORD csi; // consumed Service Instance handle\n  DWORD ceg; // consumed Eventgroup handle\n\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,12,1);\n\n  // create Eventgroup\n  ceg = SomeIpAddConsumedEventGroup(csi,300);\n\n  // create field consumer as well as getter and setter method calls\n  SomeIpCreateFieldConsumer(csi,FieldNotificationID,FieldGetterID,FieldSetterID,\"OnFieldNotification\");\n  gMcGetter = SomeIpCreateMethodCall(csi,FieldGetterID,\"OnFieldGetterResponse\");\n  gMcSetter = SomeIpCreateMethodCall(csi,FieldSetterID,\"OnFieldSetterResponse\");\n}\n\nvoid OnFieldNotification(DWORD pfHandle,DWORD messageHandle)\n{\n  write (\"Field Notification Received\");\n\n  // do something here\n}\n\nvoid OnFieldGetterResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  write (\"Field Getter Response Received\");\n\n  // do something here\n}\n\nvoid OnFieldSetterResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  write (\"Field Setter Response Received\");\n\n  // do something here\n}\n\non key 'g'\n{\n  // call getter method\n  SomeIpCallMethod(gMcGetter);\n}\n\non key 's'\n{\n  // set value of field content (field has common data type so no value path is needed)\n  SomeIpSetValueDWord(gMcSetter,\"\",200);\n\n  // call setter method\n  SomeIpCallMethod(gMcSetter);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP2",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

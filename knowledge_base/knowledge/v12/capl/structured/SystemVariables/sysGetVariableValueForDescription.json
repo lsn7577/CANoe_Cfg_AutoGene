@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableValueForDescription",
+  "category": "SystemVariables",
+  "title": "sysGetVariableValueForDescription",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableValueForDescription.htm",
+  "syntax": [
+    "long sysGetVariableValueForDescription(SysVarName, char description[], long& value); // form 1"
+  ],
+  "description": [
+    "Retrieves the value for a value description of a system variable of type long or long array. In this way, you can access the value table of the system variable."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "0: no error, function successful",
+  "example": {
+    "description": [],
+    "code": "long val;\nsysGetVariableValueForDescription(\"Dynamic\", \"IntVar\", \"Zero\", val);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

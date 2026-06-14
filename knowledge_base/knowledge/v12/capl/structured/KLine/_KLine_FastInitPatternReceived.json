@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "_KLine_FastInitPatternReceived",
+  "category": "KLine",
+  "title": "_KLine_FastInitPatternReceived",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineFastInitPatternReceived.htm",
+  "syntax": [
+    "_KLine_FastInitPatternReceived(dword TiniL_us, dword TWup_us, int64 timestampTWup)"
+  ],
+  "description": [
+    "Called when a fast init pattern has been received.",
+    "Called for the following values:"
+  ],
+  "parameters": [
+    {
+      "name": "TiniL_us",
+      "type": "",
+      "description": "TiniL time in us."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_KLine_FastInitPatternReceived( dword TiniL_us, dword Twup_us, int64 timestampTwup)\n{\n   write(FastInitPattern @%.3f received, type %d, TiniL = %d us, Twup = %d us\", timestampTwup / cNs2s, type, TiniL_us, Twup_us);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

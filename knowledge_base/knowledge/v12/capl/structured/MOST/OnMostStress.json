@@ -1,0 +1,83 @@
+{
+  "page_type": "function",
+  "name": "OnMostStress",
+  "category": "MOST",
+  "title": "OnMostStress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTStress.htm",
+  "syntax": [
+    "OnMostStress(long mode, long state)"
+  ],
+  "description": [
+    "The event procedure OnMostStress() will be called before the beginning and after the end of the stress generation."
+  ],
+  "parameters": [
+    {
+      "name": "1",
+      "type": "",
+      "description": "Stress generation with mostGenerateLightError"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Stress generation with mostGenerateLockError"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Stress generation with mostGenerateBusloadCtrl"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Stress generation with mostGenerateBusloadAsync"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Stress generation with mostSetRxBufferCtrl"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "Stress generation with mostSetTxLightPower"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "mostGenerateBypassToggle"
+    },
+    {
+      "name": "8",
+      "type": "",
+      "description": "mostSetSystemLockFlagUsage"
+    },
+    {
+      "name": "9",
+      "type": "",
+      "description": "mostSetShutDownFlagUsage"
+    },
+    {
+      "name": "10",
+      "type": "",
+      "description": "mostGenerateBusloadEthPkt"
+    },
+    {
+      "name": "11",
+      "type": "",
+      "description": "mostSetRxBufferAsync"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

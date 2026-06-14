@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linDisturbRespWithHeader",
+  "category": "LIN",
+  "title": "linDisturbRespWithHeader",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINDisturbRespWithHeader.htm",
+  "syntax": [
+    "dword linDisturbRespWithHeader(long disturbedFrameId, dword byteIndex, dword bitIndex, long disturbingFrameId);"
+  ],
+  "description": [
+    "Configures the LIN hardware to disturb the specified response with a new header (id=<disturbanceHeaderID>)."
+  ],
+  "parameters": [
+    {
+      "name": "disturbedFrameID",
+      "type": "",
+      "description": "ID of the bus event to be disturbed."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "workflow_kb/schemas/panel_binding_spec.schema.json",
+  "title": "Panel Binding Specification",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "panel_name",
+    "controls"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "panel_name": {
+      "type": "string"
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "binds_to": {
+            "type": "string"
+          },
+          "capl_handler": {
+            "type": "string"
+          },
+          "dbc_signal": {
+            "type": "string"
+          },
+          "properties": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "system_variables": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+

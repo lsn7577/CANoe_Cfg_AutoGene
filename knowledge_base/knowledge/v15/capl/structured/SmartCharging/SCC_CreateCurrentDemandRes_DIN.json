@@ -1,0 +1,188 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCurrentDemandRes_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCurrentDemandRes_DIN",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCurrentDemandRes_Din.htm",
+  "syntax": [
+    "long SCC_CreateCurrentDemandRes_DIN ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, char StatusCode[], char Notification[], float PresentVoltage, float PresentCurrent, byte LimitAchievedFlags[] )"
+  ],
+  "description": [
+    "Creates a Current Demand Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection range: 0 - 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "ResponseCode",
+      "type": "",
+      "description": "Acknowledgement status of the message."
+    },
+    {
+      "name": "NotificationMaxDelay",
+      "type": "",
+      "description": "Time until the vehicle is expected to react on the notification (for DC_EVSEStatus)."
+    },
+    {
+      "name": "StatusCode",
+      "type": "",
+      "description": "Internal state of the EVSE (for DC_EVSEStatus)."
+    },
+    {
+      "name": "Notification",
+      "type": "",
+      "description": "Notification about an action that the charge point wants the vehicle to perform (for DC_EVSEStatus)."
+    },
+    {
+      "name": "PresentVoltage",
+      "type": "",
+      "description": "EVSEPresentVoltage"
+    },
+    {
+      "name": "PresentCurrent",
+      "type": "",
+      "description": "EVSEPresentCurrent"
+    },
+    {
+      "name": "LimitAchievedFlags",
+      "type": "",
+      "description": "Flags that indicate if any limit is achieved: LimitAchievedFlags [0] = EVSECurrentLimitAchieved LimitAchievedFlags [1] = EVSEVoltageLimitAchieved LimitAchievedFlags [2] = EVSEPowerLimitAchieved"
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "IsolationStatus char[] Current isolation condition."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "MaxVoltage float EVSEMaximumVoltageLimit"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "MaxCurrent float EVSEMaximumCurrentLimit"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "MaxPower float EVSEMaximumPowerLimit"
+    }
+  ],
+  "return": "Internal state of the",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

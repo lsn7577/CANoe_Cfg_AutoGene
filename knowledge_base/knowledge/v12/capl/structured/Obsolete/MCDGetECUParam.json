@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MCDGetECUParam",
+  "category": "Obsolete",
+  "title": "MCDGetECUParam",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMCDGetECUPram.htm",
+  "syntax": [
+    "long MCDGetECUParam ( char moduleName[], char parameterName[], int format)"
+  ],
+  "description": [
+    "Reading of a parameter. The read parameter value will be available in the MCDParamResponse callback handler."
+  ],
+  "parameters": [
+    {
+      "name": "ModuleName",
+      "type": "",
+      "description": "Name of the module that is configured in the global options dialog External Programs|MCD 3D Server."
+    }
+  ],
+  "return": "0: OK",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

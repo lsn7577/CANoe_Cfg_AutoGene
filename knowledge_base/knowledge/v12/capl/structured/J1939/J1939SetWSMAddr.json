@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939SetWSMAddr",
+  "category": "J1939",
+  "title": "J1939SetWSMAddr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939SetWSMAddr.htm",
+  "syntax": [
+    "dword J1939SetWSMAddr( dword ecuHandle, dword wsmAddress );"
+  ],
+  "description": [
+    "Use this function to set the address of the Working Set Master, if this ECU is a member of a working set. All parameter groups which are addressed to the Working Set Master are also received by an ECU which calls this function."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "J1939SetWSMAddr( ecuHdl, 0x06 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

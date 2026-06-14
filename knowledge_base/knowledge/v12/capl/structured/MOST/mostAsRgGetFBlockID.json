@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostAsRgGetFBlockID",
+  "category": "MOST",
+  "title": "mostAsRgGetFBlockID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAsRgGetFBlockID.htm",
+  "syntax": [
+    "long mostAsRgGetFBlockID(long regsel, long i)"
+  ],
+  "description": [
+    "Returns the FBlockID at position i of the registry. Indexing starts at 0."
+  ],
+  "parameters": [
+    {
+      "name": "regsel",
+      "type": "",
+      "description": "1: Local FBlockList2: Bus registry"
+    }
+  ],
+  "return": ">=0: FBlockID",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

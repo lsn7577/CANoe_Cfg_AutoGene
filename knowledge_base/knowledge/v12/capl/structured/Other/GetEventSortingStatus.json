@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "GetEventSortingStatus",
+  "category": "Other",
+  "title": "GetEventSortingStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetEventSortingStatus.htm",
+  "syntax": [
+    "int GetEventSortingStatus(message msg);"
+  ],
+  "description": [
+    "Determines the Event Sorting state.",
+    "With active Event Sorting the return value indicates if the given event in the Simulation Setup of CANoe was processed in correct time sequence."
+  ],
+  "parameters": [],
+  "return": "0: Invalid state\nThe Event Sorting is inactive or it concerns a program internal event that will never be sorted (e.g. environment variable).",
+  "example": {
+    "description": [],
+    "code": "on message *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linSlaveTimeout\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linTransmError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linCsError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linReceiveError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linSyncError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non pg *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non gmLanMessage *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}  \n}\non linFrame *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non mostMessage *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non mostRawMessage\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non mostAMSMessage *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non J1587Param *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event\", (double)this.msgOrigTime/100000 );\n}\n}\non linBaudrateEvent\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linDlcInfo\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linSchedulerModeChange\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linSleepModeEvent\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non linWakeupFrame\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non mostLightLockError\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non FRSlot *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non FRFrame *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}\non FRStartCycle *\n{\nif ( GetEventSortingStatus(this)==2 )  {\nWrite(\"Unsorted Event at time %.6f\", (double)this.time/100000 );\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

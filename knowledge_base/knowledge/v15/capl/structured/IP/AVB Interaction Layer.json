@@ -1,0 +1,217 @@
+{
+  "page_type": "notes",
+  "name": "AVB Interaction Layer",
+  "category": "IP",
+  "title": "AVB Interaction Layer",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AVBIL/CAPLfunctionsAVBILOverview.htm",
+  "syntax": [],
+  "description": [
+    "Callback Functions",
+    "Control Functions",
+    "General Functions",
+    "Listener Functions",
+    "Listener/Talker Functions",
+    "Talker",
+    "Media API"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "ETHERNET Only available with option .Ethernet. To use the CAPL functions the AVB_IL.DLL must be included."
+      ]
+    ],
+    [
+      [
+        "Callback Functions Control Functions General Functions",
+        "Listener Functions Listener/Talker Functions Talker"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "OnAvbConnect",
+        "Is dispatched when an asynchronous connection operation completes."
+      ],
+      [
+        "OnAvbListen",
+        "Is dispatched when a connection request for the specified Listener is received."
+      ],
+      [
+        "OnAvbReceive",
+        "Is dispatched when an asynchronous receive operation on a Listener completes."
+      ],
+      [
+        "OnAvbSend",
+        "Is dispatched when an asynchronous send operation on a Talker completes."
+      ],
+      [
+        "OnPtpSendPrepare",
+        "Is called right before a packet will be sent by the gPTP stack."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AvbILControlInit",
+        "Initialization of the AVB IL."
+      ],
+      [
+        "AvbILControlResume",
+        "Resumes AVB/TSN automatic message sending behavior after a previous suspension."
+      ],
+      [
+        "AvbILControlStart",
+        "Starts the AVB IL."
+      ],
+      [
+        "AvbILControlStop",
+        "Stops the AVB IL."
+      ],
+      [
+        "AvbILControlWait",
+        "Stops sending AVB/TSN related messages."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AvbGetLastError",
+        "Checks whether the last called function of AVB IL has been successfully executed."
+      ],
+      [
+        "AvbGetLastErrorText",
+        "Retrieves the last error which occurs in the AVB IL as string."
+      ],
+      [
+        "AvbSetProperty",
+        "Sets the properties to configure the behavior of the AVB IL."
+      ],
+      [
+        "AvbSetVerbosity",
+        "Sets the verbosity level of AVB IL messages in the Write Window."
+      ],
+      [
+        "PtpSetPropery",
+        "The behavior of the PTP layer can be configured using properties."
+      ],
+      [
+        "PtpSimulationTimespanFromPtpTimespan",
+        "Returns the simulation timespan equivalent to the corresponding PTP timespan."
+      ],
+      [
+        "PtpTimeFromSimulationTime",
+        "Returns the global PTP time corresponding to the simulation time."
+      ],
+      [
+        "PtpTimeNow",
+        "Returns the current global PTP time."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AvbAccept",
+        "Accepts an incoming connection request on the specified Listener resulting in a new Listener."
+      ],
+      [
+        "AvbCloseListener",
+        "Closes the Listener."
+      ],
+      [
+        "AvbListen",
+        "Causes the Listener to listen for incoming connection requests."
+      ],
+      [
+        "AvbOpenListener",
+        "Creates a Listener for use in connection-based, message-oriented communications."
+      ],
+      [
+        "AvbReceive",
+        "Receives data into the specified buffer."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AvbGetMediaType",
+        "Gets the media type for a Listener or a Talker."
+      ],
+      [
+        "AvbGetProtocol",
+        "Retrieves the bit depth of an AAF sample in the stream received by the Listener or originated by the Talker."
+      ],
+      [
+        "AvbGetStreamId",
+        "Retrieves the Stream Identifier (ID) of the Listener or Talker."
+      ],
+      [
+        "AvbGetStreamSourceAddress",
+        "Retrieves the stream’s Source Address of the Listener or Talker."
+      ],
+      [
+        "AvbGetStreamUniqueId",
+        "Retrieves the stream’s Unique Identifier (ID) of the Listener or Talker as part of the Stream Identifier (ID)."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "AvbCloseTalker",
+        "Closes the Talker."
+      ],
+      [
+        "AvbConnect",
+        "Establishes a connection with the specified location."
+      ],
+      [
+        "AvbOpenTalker",
+        "Creates a Talker for use in connection-based, message-oriented communications."
+      ],
+      [
+        "AvbSend",
+        "Receives data into the specified buffer."
+      ],
+      [
+        "AvbSetMediaType",
+        "Sets the media type for a Talker."
+      ],
+      [
+        "AvbSetProtocol",
+        "Sets the AVTP protocol of the Talker."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

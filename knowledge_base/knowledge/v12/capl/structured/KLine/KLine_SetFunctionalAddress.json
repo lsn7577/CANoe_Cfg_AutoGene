@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetFunctionalAddress",
+  "category": "KLine",
+  "title": "KLine_SetFunctionalAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetFunctionalAddress.htm",
+  "syntax": [
+    "long KLine_SetFunctionalAddress(Byte functionalAddress)"
+  ],
+  "description": [
+    "Sets the functional address of the ECU, i.e. it can receive broadcast messages directed at this address."
+  ],
+  "parameters": [
+    {
+      "name": "functionalAddress",
+      "type": "",
+      "description": "Broadcast address used by the tester to address a group of ECUs."
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

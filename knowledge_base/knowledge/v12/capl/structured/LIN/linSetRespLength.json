@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "linSetRespLength",
+  "category": "LIN",
+  "title": "linSetRespLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetRespLength.htm",
+  "syntax": [
+    "long linSetRespLength(long frameID, long numberOfBytes)"
+  ],
+  "description": [
+    "This function can be used to configure how many data bytes of the frame response should be sent. The frame’s length is not changed by this function.",
+    "To send a correct response the numberOfBytes should be set equal to DLC+1 i.e for the frame data bytes and their checksum.",
+    "If the numberOfBytes is to set to a value larger than DLC + 1, then a complete response is also sent.",
+    "If the numberOfBytes is set to a value smaller than DLC+1, then a receiving error will occur or if numberOfBytes = 0 a transmission error.",
+    "This function can be used to simulate collisions during sending of a frame response e.g. after receiving an event triggered frame."
+  ],
+  "parameters": [
+    {
+      "name": "frameID",
+      "type": "",
+      "description": "Identifier of the LIN frame to be configured.Value range: 0…63"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "linFrame MotorControl frameMotorControl;\n...\nif (linSetRespLength (frameMotorControl.ID, frameMotorControl.DLC) != 0) {\n   // from now on a receive error notified for the MotorControl frame\n...\n}\nif (linSetRespLength (frameMotorControl.ID, 0) != 0)\n{\n// from now on a transmission error notified for the MotorControl frame\n...\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

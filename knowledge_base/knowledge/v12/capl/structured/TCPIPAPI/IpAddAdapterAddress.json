@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "IpAddAdapterAddress",
+  "category": "TCPIPAPI",
+  "title": "IpAddAdapterAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIpAddAdapterAddress.htm",
+  "syntax": [
+    "long IpAddAdapterAddress(dword ifIndex, dword ipv4address, dword ipv4mask);"
+  ],
+  "description": [
+    "The function adds an address to the network interface with the given index.",
+    "The function is dependent on the selected stack.",
+    "This functionality cannot be used in connection with the operating system TCP/IP stack."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket gSocket;\n}\n\non start\n{\n  ipAddAdapterAddress( 1, IP_Address( 192.168.0.116 ), 24 );\n  gSocket = UdpSocket::Open( IP_Endpoint(192.168.0.116:40016) );\n  gSocket.SendTo( IP_Endpoint(192.168.0.255:40255), \"Hello\", 5 );\n}\n\non preStop\n{\n  ipRemoveAdapterAddress( 1, IP_Address( 192.168.0.116 ), 24 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "GNSSAppAddrClaimed",
+  "category": "J1939",
+  "title": "GNSSAppAddrClaimed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSappaddrclaimed.htm",
+  "syntax": [
+    "void GNSSAppAddrClaimed();"
+  ],
+  "description": [
+    "Identifies an Address Claiming procedure that was performed successfully. In this manner the control device is able to communicate on the CAN bus. If the Address Claiming cannot be successfully performed, the GNSSAppErrorIndication function is called with the corresponding error code."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void GNSSAppAddrClaimed()\n{\n  write( \"Address Claiming was successful\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

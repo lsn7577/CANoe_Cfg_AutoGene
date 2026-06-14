@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPExecuteMacro",
+  "category": "ISO11783",
+  "title": "Iso11783OPExecuteMacro",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPExecuteMacro.htm",
+  "syntax": [
+    "long Iso11783OPExecuteMacro( dword ecuHandle, dword macroID );"
+  ],
+  "description": [
+    "The function executes a macro object. An Execute Macro command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPExecuteMacro( \r\n handle, 1200 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

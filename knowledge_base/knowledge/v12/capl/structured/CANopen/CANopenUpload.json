@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANopenUpload",
+  "category": "CANopen",
+  "title": "CANopenUpload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/CANopenBasic/Functions/CAPLfunctionsCANopenUpload.htm",
+  "syntax": [
+    "void CANopenUpload( dword nodeId, dword index, dword subIndex, dword blockMode, dword errCode[] ); // form 1"
+  ],
+  "description": [
+    "Reads an entry from the object dictionary of another node using the SDO protocol. When the node responds with the requested data, the callback OnCANopenUploadResponse is called. If the data transfer is aborted, the callback OnCANopenAbort is called."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "CANopen node ID of the SDO server, i.e. the node that contains the object dictionary with the entry to be read. Value range 1..127"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nCANopenUpload ( 1, 0x1000, 0x00, 0, errCode );\n\nif (errCode[0] == 0)\n{\n  write( \"SDO Upload successfully initiated\" );\n}\n\nvoid OnCANopenUploadResponse ( dword nodeId, dword index, dword subIndex, dword size \n{\n  dword errCode[1];\n  dword value;\n  value = CANopenUploadGetUnsigned ( errCode );\n  write( \"Upload response data: 0x%X\", value );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

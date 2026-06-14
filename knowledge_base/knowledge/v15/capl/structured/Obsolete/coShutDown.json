@@ -1,0 +1,69 @@
+{
+  "page_type": "notes",
+  "name": "coShutDown",
+  "category": "Obsolete",
+  "title": "coShutDown",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoShutdown.htm",
+  "syntax": [],
+  "description": [
+    "0 - object dictionary is not deleted (can also be used again after renewed coStartUp)1 - object dictionary is deleted (must be generated again)",
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by CANopen Basic Functions."
+      ],
+      [
+        "Function Syntax",
+        "void coShutDown( dword deleteOD, dword errCode[] );"
+      ],
+      [
+        "Function",
+        "Stops the CANopen® communication of the node."
+      ],
+      [
+        "Parameters",
+        "deleteOD Specifies whether the object dictionary should be deleted 0 - object dictionary is not deleted (can also be used again after renewed coStartUp)1 - object dictionary is deleted (must be generated again)"
+      ],
+      [
+        "errCode Error code buffer (is entered in index 0 of the field)"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "6.0-9.0 SP6",
+        "CANopen",
+        "—",
+        "•"
+      ],
+      [
+        "Example dword errCode[1];coShutDown( 1, errCode );if (errCode[0] == 0) { write( \"Shut down node with clearing object dictionary successfully\" );}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

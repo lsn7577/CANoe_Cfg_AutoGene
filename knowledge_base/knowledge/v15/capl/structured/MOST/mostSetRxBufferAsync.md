@@ -1,0 +1,43 @@
+# mostSetRxBufferAsync
+
+> Category: `MOST` | Type: `function`
+
+## Syntax
+
+```c
+long mostSetRxBufferAsync (long channel, long buffermode);
+```
+
+## Description
+
+Starts or stops draining of the asynchronous receive buffer and thereby allows to provoke low level retries.
+
+VN2640:
+
+The node may receive a varying number of packets (MDP or MEP) before it eventually provokes low level retries. The number depends on the size of the packets and is limited either to 3 kByte of data or 255 packets.After enabling the draining of the Rx buffer again, a number of packets received during the stress mode may be shown in the Trace with time stamps close to the time of re-enabling the draining.
+
+OptoLyzer G2 3150o:
+
+The stress network interface controller (NIC) must have its bypass opened (see mostSetStressNodeParameter).Only packets addressed to the StressNIC will be blocked.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| channel | Channel of the connected interface. |
+| buffermode | 0: stops draining the Rx buffer for MDP and MEP1: starts draining the buffer again. |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | 7.6 SP3 | 7.6 SP3 | — | — | — | —✔ |
+| Restricted To | MOST150 | MOST150 | — | — | — | —✔ |
+| CANalyzer Measurement Setup (Transmit Branch) | ✔ | N/A | N/A | N/A | N/A | — |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | —✔ |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | —✔ |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | —✔ |
+| 32-Bit | ✔ | ✔ | — | N/A | — | —✔ |
+| 64-Bit | ✔ | ✔ | — | — | — | —✔ |

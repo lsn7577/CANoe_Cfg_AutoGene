@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coODGetData",
+  "category": "Obsolete",
+  "title": "coODGetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdGetData.htm",
+  "syntax": [
+    "dword coODGetData( dword index, dword subIndex, char buffer[], dword bufferSize, dword errCode[] );"
+  ],
+  "description": [
+    "Returns the data of an object in the local object dictionary. This function can be applied to all objects. For objects with a size up to 32 bits or floating point objects, however, the functions coODGetSigned, coODGetUnsigned, and coODGetFloat are recommended.",
+    "For the use of this function, a note on handling should be considered."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the object, value range 1..65.535"
+    }
+  ],
+  "return": "Number of read data bytes",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nchar buffer[128];\ndword count;\n\ncount = coODGetData( 0x1008, 0x0, buffer, elCount(buffer), errCode );\nif (errCode[0] == 0) {\n  write( \"Object size %d, object data %s\", count, buffer);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

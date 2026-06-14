@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "title": "CANoe Configuration Attribute Reference (Vector CANoe 15.0)",
+    "description": "Comprehensive reference of all CANoe configuration attributes, channel assignment, database loading, A2L (XCP), and CDD (diagnostic) configuration options.",
+    "version": "15.0",
+    "source": "Vector CANoe/CANalyzer 15.0 Help"
+  },
+  "channel_assignment": {
+    "description": "Channel assignment maps application channels (logical) to physical hardware channels (e.g. CAN1, CAN2 on a VN1610).",
+    "config_steps": [
+      "Open the Vector Hardware Config dialog from the Tools menu",
+      "Select the hardware channel to map",
+      "Assign the application channel (e.g. CAN 1) to the hardware channel",
+      "Configure the baud rate, sample point, and other bus parameters",
+      "Click OK to apply"
+    ],
+    "attributes": [
+      {
+        "name": "Channel Number",
+        "type": "Integer",
+        "description": "Logical channel number (1, 2, ...) used in CAPL and configuration."
+      },
+      {
+        "name": "Application Channel Name",
+        "type": "String",
+        "description": "User-friendly name for the application channel."
+      },
+      {
+        "name": "Hardware Channel",
+        "type": "String",
+        "description": "Physical hardware channel (e.g. VN1610 CAN 1)."
+      },
+      {
+        "name": "Baud Rate",
+        "type": "Integer",
+        "description": "Bus baud rate in bps. v15 supports up to 5 Mbit/s for CAN FD."
+      },
+      {
+        "name": "Sample Point",
+        "type": "Float",
+        "description": "Sample point as a fraction of the bit time (e.g. 0.875 for CAN FD)."
+      },
+      {
+        "name": "FD Baud Rate",
+        "type": "Integer",
+        "description": "CAN FD data phase baud rate (v15). Up to 5 Mbit/s."
+      }
+    ]
+  },
+  "database_loading": {
+    "description": "Configuration of database files (.dbc, .ldf, .xml, .vcdl) for symbolic access.",
+    "config_steps": [
+      "Right-click on the network in the Simulation Setup",
+      "Select 'Add Database...' (v15) or 'Add CAN Database...' (v12)",
+      "Choose database type and file",
+      "Click 'Add' to load"
+    ]
+  },
+  "a2l_xcp": {
+    "description": "A2L (XCP/CCP) configuration for ECU calibration.",
+    "config_steps": [
+      "Open the ECUs window",
+      "Right-click the ECU and select 'Add ECU'",
+      "Browse to the .a2l file",
+      "Configure XCP/CCP transport layer (CAN, TCP/IP, FlexRay)",
+      "Set the slave address and timing parameters"
+    ]
+  },
+  "new_in_v15": [
+    "RT Setup - Real-time test configuration",
+    "SIL (Software-in-the-Loop) configuration",
+    "Standalone Manager",
+    "Vector Tools Environment (VTE) integration",
+    "vCDL (Vector Communication Description Language) support",
+    "ADAS simulation panels",
+    "Connectivity (Car2x, V2X) stack"
+  ]
+}

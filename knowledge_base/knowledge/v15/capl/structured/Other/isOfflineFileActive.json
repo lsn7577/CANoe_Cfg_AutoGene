@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "isOfflineFileActive",
+  "category": "Other",
+  "title": "isOfflineFileActive",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionIsOfflineFileActive.htm",
+  "syntax": [
+    "long isOfflineFileActive(long index);"
+  ],
+  "description": [
+    "Returns whether events of an offline source file are currently replayed, i.e., the start of the source file has been reached but the end of the source file has not yet been reached."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the offline source file."
+    }
+  ],
+  "return": "If",
+  "example": {
+    "description": [],
+    "code": "long isActive;\nchar buffer[256];\nlong numFiles;\nlong i;\n\nnumFiles = getNumOfflineFiles();\nfor (i = 0; i < numFiles; ++i)\n{\n  getOfflineFileName(i, buffer, 256);\n  isActive = isOfflineFileActive(i);\n  if (isActive)\n  {\n    write(\"Offline file %s is active\", buffer);\n  }\n  else\n  {\n    write(\"Offline file %s is inactive\", buffer);\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "11.0",
+      "11.0",
+      "13.0",
+      "—",
+      "14",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

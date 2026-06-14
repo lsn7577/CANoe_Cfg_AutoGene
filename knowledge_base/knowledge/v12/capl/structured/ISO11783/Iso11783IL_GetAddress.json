@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_GetAddress",
+  "category": "ISO11783",
+  "title": "Iso11783IL_GetAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILGetAddress.htm",
+  "syntax": [
+    "long Iso11783IL_GetAddress();"
+  ],
+  "description": [
+    "Returns the address that is used by the ISO11783 IL."
+  ],
+  "parameters": [],
+  "return": ">=0: Address of the ISO11783 IL",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n  LONG addr;\n  addr = Iso11783IL_GetAddress();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

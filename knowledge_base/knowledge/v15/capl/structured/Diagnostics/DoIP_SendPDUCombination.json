@@ -1,0 +1,122 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SendPDUCombination",
+  "category": "Diagnostics",
+  "title": "DoIP_SendPDUCombination",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPSendPDUCombination.htm",
+  "syntax": [
+    "long DoIP_SendPDUCombination();"
+  ],
+  "description": [
+    "Send the combined PDUs on the open TCP connection in one block. Typically, the PDUs will be sent in one IP packet, depending on the PDU size of the transporting medium."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "BYTE rawReq[7] = {\n  0x01, 0x01 // target address (ECU)\n, 0x0E, 0x80 // source address (tester)\n, 0x22, 0x01, 0x05 // diagnostics service Read Data By Identifier\n};\n\n// Initialize the PDU combination, i.e. drop previous combination\nDoIP_CreatePDUCombination();\n\n// Add diagnostics message PDUs, changing the target address for each PDU\nDoIP_AddCombinedPDU( 0x8001, rawReq, 7);\nrawReq[1] = 0x02;\nDoIP_AddCombinedPDU( 0x8001, rawReq, 7);\nrawReq[1] = 0x03;\nDoIP_AddCombinedPDU( 0x8001, rawReq, 7);\nrawReq[1] = 0x04;\nDoIP_AddCombinedPDU( 0x8001, rawReq, 7);\n\n// Send the PDU combination. On Ethernet all four PDUs will be put into the\n// same frame and arrive together at the DoIP gateway\nDoIP_SendPDUCombination();"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.5 SP2",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

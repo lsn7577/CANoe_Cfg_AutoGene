@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939ILOnCA",
+  "category": "J1939",
+  "title": "J1939ILOnCA",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILOnCA.htm",
+  "syntax": [
+    "long J1939ILOnCA(long newAddress)"
+  ],
+  "description": [
+    "This callback function is called from the J1939 IL when a Command Address message is received.",
+    "The assignment of the new address can be suppressed."
+  ],
+  "parameters": [
+    {
+      "name": "newAddress",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long J1939ILOnCA(long address)\n{\n  if(address == 2)\n    return 0; //don’t accept the address ‘2’\n  else\n    return 1;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

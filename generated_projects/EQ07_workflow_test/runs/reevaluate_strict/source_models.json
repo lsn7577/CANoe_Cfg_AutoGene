@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.1.0",
+  "status": "fail",
+  "strict_source_validation": true,
+  "source_files": {
+    "requirements": [],
+    "dbc": [
+      "./dbc/EQ07_CAN1.dbc"
+    ],
+    "a2l": [
+      "./a2l/EQ07.a2l"
+    ],
+    "cdd": [
+      "./cdd/EQ07.cdd"
+    ]
+  },
+  "models": {
+    "requirements": {
+      "kind": "requirements",
+      "files": [],
+      "status": "not_declared"
+    },
+    "dbc": {
+      "kind": "dbc",
+      "files": [
+        {
+          "declared": "./dbc/EQ07_CAN1.dbc",
+          "resolved": "F:\\Canoe_Gene\\templates\\canoe_test_case_template\\dbc\\EQ07_CAN1.dbc",
+          "exists": false,
+          "status": "missing"
+        }
+      ],
+      "status": "missing"
+    },
+    "a2l": {
+      "kind": "a2l",
+      "files": [
+        {
+          "declared": "./a2l/EQ07.a2l",
+          "resolved": "F:\\Canoe_Gene\\templates\\canoe_test_case_template\\a2l\\EQ07.a2l",
+          "exists": false,
+          "status": "missing"
+        }
+      ],
+      "status": "missing"
+    },
+    "cdd": {
+      "kind": "cdd",
+      "files": [
+        {
+          "declared": "./cdd/EQ07.cdd",
+          "resolved": "F:\\Canoe_Gene\\templates\\canoe_test_case_template\\cdd\\EQ07.cdd",
+          "exists": false,
+          "status": "missing"
+        }
+      ],
+      "status": "missing"
+    }
+  },
+  "issues": [
+    {
+      "severity": "error",
+      "category": "source_model",
+      "source_kind": "dbc",
+      "message": "DBC source file not found: ./dbc/EQ07_CAN1.dbc",
+      "resolved": "F:\\Canoe_Gene\\templates\\canoe_test_case_template\\dbc\\EQ07_CAN1.dbc"
+    },
+    {
+      "severity": "error",
+      "category": "source_model",
+      "source_kind": "a2l",
+      "message": "A2L source file not found: ./a2l/EQ07.a2l",
+      "resolved": "F:\\Canoe_Gene\\templates\\canoe_test_case_template\\a2l\\EQ07.a2l"
+    },
+    {
+      "severity": "error",
+      "category": "source_model",
+      "source_kind": "cdd",
+      "message": "CDD source file not found: ./cdd/EQ07.cdd",
+      "resolved": "F:\\Canoe_Gene\\templates\\canoe_test_case_template\\cdd\\EQ07.cdd"
+    }
+  ]
+}

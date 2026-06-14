@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForAuxEvent",
+  "category": "Test",
+  "title": "TestWaitForAuxEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForAuxEvent.htm",
+  "syntax": [
+    "long TestWaitForAuxEvent(dword aAuxEventId, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the signaling of the specified auxiliary event from a connected NodeLayer module.",
+    "Should the event not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "aAuxEventId",
+      "type": "",
+      "description": "Numeric event ID as it is returned on the creation of a check, for example."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "// wait is resumed on check event\nlong result;\ncheckId = ChkStart_Timeout(1000);\nresult = TestWaitForAuxEvent(checkId, 2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

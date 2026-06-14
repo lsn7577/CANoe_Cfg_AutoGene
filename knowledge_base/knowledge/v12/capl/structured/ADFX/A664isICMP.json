@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "A664isICMP",
+  "category": "ADFX",
+  "title": "A664isICMP",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664isICMP.htm",
+  "syntax": [
+    "long A664isICMP (a664Frame aFrame, dbNode NodeName) (1)"
+  ],
+  "description": [
+    "This function returns the ICMP type and code for a packet. The intended use case is a check for an expected ICMP packet in an on-handler. The packet is checked according to the following rules:"
+  ],
+  "parameters": [
+    {
+      "name": "aFrame",
+      "type": "",
+      "description": "the frame object of type a664Frame to be checked"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

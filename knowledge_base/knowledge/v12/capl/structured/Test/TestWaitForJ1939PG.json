@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForJ1939PG",
+  "category": "Test",
+  "title": "TestWaitForJ1939PG",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForJ1939PG.htm",
+  "syntax": [
+    "long TestWaitForJ1939PG (dbMessage aMessage, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of the specified message aMessage. Should the message not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message that should be awaited. Must be a J1939 parameter group."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "// waits for the occurrence of message ‚RQST’\nlong result;\nresult = TestWaitForJ1939PG(RQST, 2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

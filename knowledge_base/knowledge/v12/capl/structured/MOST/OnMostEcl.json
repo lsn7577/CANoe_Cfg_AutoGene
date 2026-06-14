@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "OnMostEcl",
+  "category": "MOST",
+  "title": "OnMostEcl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTEcl.htm",
+  "syntax": [
+    "OnMostEcl(long eclState)"
+  ],
+  "description": [
+    "The event procedure is called when the state of the Electrical Control Line has changed.",
+    "Within this event procedure the functions mostEventChannel, mostEventTime and mostEventOrigTime can be used to call up supplemental information."
+  ],
+  "parameters": [
+    {
+      "name": "eclState",
+      "type": "",
+      "description": "0: Low1: High"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Output of ECL changes with time stamp."
+    ],
+    "code": "OnMostEcl(long eclState)\n{\n   write(„ECL state at %fs: %d“, mostEventTimeNs() / 1.0e9, eclState);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

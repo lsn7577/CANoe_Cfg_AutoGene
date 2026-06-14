@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetFaultNotification",
+  "category": "SmartCharging",
+  "title": "SCC_SetFaultNotification",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetFaultNotification.htm",
+  "syntax": [
+    "void SCC_SetFaultNotification ( char FaultCode[], char FaultMsg[] )"
+  ],
+  "description": [
+    "Sets the fault code and message for the next V2G message. The fault code is contained within the V2G header."
+  ],
+  "parameters": [
+    {
+      "name": "FaultCode",
+      "type": "",
+      "description": "Desired fault code, which must be a valid enum value according to the specification."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

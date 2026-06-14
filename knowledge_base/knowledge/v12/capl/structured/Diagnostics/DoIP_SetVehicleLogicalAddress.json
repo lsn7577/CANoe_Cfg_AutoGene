@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetVehicleLogicalAddress",
+  "category": "Diagnostics",
+  "title": "DoIP_SetVehicleLogicalAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetVehicleLogicalAddress.htm",
+  "syntax": [
+    "void DoIP_SetVehicleLogicalAddress(dword logicalAddress);"
+  ],
+  "description": [
+    "Sets vehicle logical DoIP address sent in DoIP PDUs."
+  ],
+  "parameters": [
+    {
+      "name": "logicalAddress",
+      "type": "",
+      "description": "Address used (0x0000 to 0xFFFF)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The following example sets the Logical Address of a vehicle (used e.g. in Routing Activation Responses) and makes it known to the DoIP layer."
+    ],
+    "code": "dword gGatewayLogAddress = 0x1000;\nwrite(\"Logical address of vehicle = 0x%04x\", gGatewayLogAddress);\nDoIP_SetVehicleLogicalAddress( gGatewayLogAddress);\nDoIP_AddECU( gGatewayLogAddress);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

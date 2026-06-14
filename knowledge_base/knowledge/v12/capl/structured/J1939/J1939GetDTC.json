@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetDTC",
+  "category": "J1939",
+  "title": "J1939GetDTC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/Functions/CAPLfunctionJ1939GetDTC.htm",
+  "syntax": [
+    "long J1939GetDTC(pg pgWithDTC, dword spn, byte fmi, byte oc, dword &dtcValue)"
+  ],
+  "description": [
+    "Function looks through a J1939 diagnostic message and returns the first DTC block that matches the search criteria, i.e. that contains defined SPN/FMI/OC values."
+  ],
+  "parameters": [
+    {
+      "name": "pgWithDTC",
+      "type": "",
+      "description": "Message to be checked for a specific DTC block. Must be a J1939 Parameter Group."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on pg DM1\n{\n  int posOfDTC;\n  dword foundDTC;\n  word fmi, oc;\n  dword spn;\n\n  //Look for the DTC with SPN=67890\n  posOfDTC = J1939GetDTC(this, 67890, 0xFFFF, 0xFFFF, foundDTC);\n  if(posOfDTC > 0)\n  {\n    fmi = J1939GetFmiFromDTC(foundDTC);\n    oc = J1939GetOcFromDTC(foundDTC);\n    WriteEx(-3, 3, \"DM1 with DTC (SPN=67890) observed: FMI=%d, OC=%d\", fmi, oc);\n  \n}\n  //Look for the DTC with SPN=123 and OC=5\n  posOfDTC = J1939GetDTC(this, 123, 0xFFFF, 5, foundDTC);\n  if(posOfDTC > 0)\n  {\n    fmi = J1939GetFmiFromDTC(foundDTC);\n    WriteEx(-3, 3, \"DM1 with DTC (SPN=123, OC=5) observed: FMI=%d\", fmi);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

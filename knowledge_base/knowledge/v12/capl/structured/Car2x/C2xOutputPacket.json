@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "C2xOutputPacket",
+  "category": "Car2x",
+  "title": "C2xOutputPacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xOutputPacket.htm",
+  "syntax": [
+    "long C2xOutputPacket( long packet) // form 1"
+  ],
+  "description": [
+    "This function sends a WLAN packet. (form 1)",
+    "This function sends a WLAN packet with a specific txPower. (form 2)",
+    "This method extends the existing OutputPacket function and allows to send a frame with a dedicated Tx-power. It can be used in combination with the existing (old) OutputPacket function, which still uses the default-txPower defined in the Setup-Dialog or by SetSendParameters.",
+    "Notes:"
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the packet to send"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [
+      "see also example of C2xInitPacket"
+    ],
+    "code": "void SendGNPacket()\n{\n  long handle;   // handle to c2x message\n  long counter = 0, txPower = 25;\n  handle = C2xInitPacket(\"geo_cnh\");    // Create a c2x message\n\n  // If nothing went wrong...\n  if (handle != 0 && txPower > -20)\n  {\n    counter++;\n    C2xSetTokenInt(handle, \"geo_cnh\", \"reserved\", counter);   // Fill the message with the payload\n    C2xOutputPacket(handle, txPower);   // transmit packet with decreasing txPower\n    txPower--;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagSetTimeoutHandler",
+  "category": "Diagnostics",
+  "title": "diagSetTimeoutHandler",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSetTimeoutHandler.htm",
+  "syntax": [
+    "long diagSetTimeoutHandler (diagRequest obj, char callbackName[])"
+  ],
+  "description": [
+    "Sets the timeout callback for a request, or default timeout callback function. This function will be called if no response arrives at the tester within the timeout specified with diagSetTimeout."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  diagSetTimeoutHandler(\"Request_Timeout\");\n}\n\non key '1'\n{\n  DiagRequest SimECU.ReadDataByIdentifier_Process req;\n  diagSendRequest(req);\n}\n\nvoid Request_Timeout()\n{\n  write(\"No response received within expected time frame!\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

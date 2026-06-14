@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDiagVariantIdentificationCompleted, TestWaitForDiagEcuVariantIdentificationCompleted",
+  "category": "Test",
+  "title": "TestWaitForDiagVariantIdentificationCompleted, TestWaitForDiagEcuVariantIdentificationCompleted",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDiagVariantIdentificationCompleted.htm",
+  "syntax": [
+    "long TestWaitForDiagVariantIdentificationCompleted(); // form 1"
+  ],
+  "description": [
+    "Waits for the completion of the automatic variant identification algorithm. If the qualifier of an expected variant is given, an error is returned if a different variant is identified."
+  ],
+  "parameters": [
+    {
+      "name": "expectedVariant",
+      "type": "",
+      "description": "Qualifier of the variant that should be identified."
+    }
+  ],
+  "return": "1: Identification algorithm finished successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

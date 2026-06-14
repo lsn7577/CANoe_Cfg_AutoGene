@@ -1,0 +1,411 @@
+{
+  "page_type": "concept",
+  "name": "Data Types of Assigned Symbols",
+  "category": "Panel",
+  "subcategory": "Elements",
+  "title": "Data Types of Assigned Symbols",
+  "source": "chm_extract_v15/VectorToolsEnvironment/Topics/PanelDesigner/Elements/PanelDesignerControlsDataTypes.htm",
+  "intro": [
+    "In the following table you can find an overview about valid data types of assigned symbols:",
+    "Analog Gauge",
+    "●",
+    "—",
+    "Button",
+    "CAPL Output View",
+    "Check Box",
+    "Clinometer",
+    "Clock Control",
+    "Combo Box",
+    "Compass (Direction/Speed)",
+    "Event Control",
+    "File Button",
+    "Group Box",
+    "Hex/Text Editor",
+    "Input/Output Box",
+    "LCD Control",
+    "LED Band",
+    "LED Control",
+    "Media Player",
+    "Media Stream Control",
+    "Meter",
+    "Method Call Control",
+    "MOST Send Button",
+    "NM Control",
+    "Numeric Up/Down",
+    "Panel Control Button",
+    "Path Dialog",
+    "Picture Box",
+    "Progress Bar",
+    "Radio Button",
+    "Start Stop Control",
+    "Static Text",
+    "Switch/Indicator",
+    "Tab Control",
+    "Track Bar",
+    "User-defined Controls(derived from PluginPanelControl)",
+    "Assigning Symbols"
+  ],
+  "intro_tables": [
+    [
+      [
+        "Control",
+        "Integer/Long",
+        "Float/Double",
+        "String",
+        "Integer/Long Array",
+        "Byte Array (Data)",
+        "Array Length",
+        "Non"
+      ],
+      [
+        "Analog Gauge",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Button",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "CAPL Output View",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "Check Box",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Clinometer",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Clock Control",
+        "—",
+        "—",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Combo Box",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Compass (Direction/Speed)",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Event Control",
+        "●",
+        "●",
+        "●",
+        "●",
+        "●",
+        "—",
+        "—"
+      ],
+      [
+        "File Button",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "Group Box",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "Hex/Text Editor",
+        "—",
+        "—",
+        "●",
+        "●",
+        "●",
+        "—"
+      ],
+      [
+        "Input/Output Box",
+        "●",
+        "●",
+        "●",
+        "—",
+        "—",
+        "●",
+        "—"
+      ],
+      [
+        "LCD Control",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "LED Band",
+        "●",
+        "●",
+        "—",
+        "—",
+        "●",
+        "—",
+        "—"
+      ],
+      [
+        "LED Control",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Media Player",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Media Stream Control",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "Meter",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Method Call Control",
+        "●",
+        "●",
+        "●",
+        "●",
+        "●",
+        "—",
+        "—"
+      ],
+      [
+        "MOST Send Button",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "NM Control",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "Numeric Up/Down",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Panel Control Button",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "Path Dialog",
+        "—",
+        "—",
+        "●",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Picture Box",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "Progress Bar",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Radio Button",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Start Stop Control",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "Static Text",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "●"
+      ],
+      [
+        "Switch/Indicator",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Tab Control",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "Track Bar",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "User-defined Controls(derived from PluginPanelControl)",
+        "●",
+        "●",
+        "—",
+        "—",
+        "—",
+        "—",
+        "—"
+      ]
+    ],
+    [
+      [
+        "Version 2.0© Vector Informatik GmbH"
+      ]
+    ]
+  ],
+  "intro_code_blocks": [],
+  "sections": [],
+  "property_references": {
+    "properties": [],
+    "symbols": [],
+    "groups": [],
+    "syntax_patterns": []
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ARILFaultInjectionDisturbUpdateBit",
+  "category": "AUTOSARpduIL",
+  "title": "ARILFaultInjectionDisturbUpdateBit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILFaultInjectionDisturbUpdateBit.htm",
+  "syntax": [
+    "long ARILFaultInjectionDisturbUpdateBit dbSignal, long disturbanceMode, long disturbanceCount, long disturbanceValue);"
+  ],
+  "description": [
+    "Disturbs the Update Bit of a signal or signal group (see Update Bit).",
+    "The function without the parameter for the signal group will only disturb update bits of signals.",
+    "The function with the parameter for the signal group will only disturb update bits of signal groups."
+  ],
+  "parameters": [
+    {
+      "name": "dbSignal",
+      "type": "",
+      "description": "The symbolic name of an update bit signal in the database. The update bit signal names have the same name as the signal or the signal group they control followed by the suffix _UB."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

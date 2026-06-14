@@ -1,0 +1,116 @@
+# CAN CAPL Functions
+
+> Category: `CAN` | Type: `notes`
+
+## Description
+
+CANdb API
+
+Event Procedures
+
+General Functions
+
+Hardware API
+
+Selectors
+
+Statistics API
+
+Returns the signal name at indexed positions (start bit) in the payload of a CAN message for CAN networks. (Form 1)
+
+Returns the signal name at indexed positions (start bit) of a PDU for CAN networks. (Form 2)
+
+CANstress CAPL Functions
+
+| CAN Only available with option .CAN. These CAPL functions are supported by Windows and Linux. The functionality under Linux has not been fully tested yet. |
+|---|
+
+| CANdb API Event Procedures General Functions | Hardware API Selectors Statistics API |
+|---|---|
+
+| Functions | Short Description |
+|---|---|
+| getFirstCANdbFilename | Finds out the file name of the first assigned database. |
+| getFirstCANdbName | Finds out the name of the first assigned database. |
+| getSignalName | Returns the signal name at indexed positions (start bit) in the payload of a CAN message for CAN networks. (Form 1) Returns the signal name at indexed positions (start bit) of a PDU for CAN networks. (Form 2) |
+| getMessageAttrInt | Gets the value of a message attribute from the database. |
+| GetMessageID | Finds out the message ID. |
+| GetMessageName | Finds out the message name. |
+| getNextCANdbFilename | Finds out the file names of the other assigned databases. |
+| getNextCANdbName | Finds out the names of the other assigned databases. |
+| setSignalStartValues | Sets the values of the signals in the parameter to the start values defined in the database. |
+
+| Event Procedures | Short Description |
+|---|---|
+| on errorFrame | Occurrence of an Error Frame. |
+| on message | Receipt of a CAN message. |
+| on signal | Is called with every signal change. |
+| on signal_change | Is called with every signal change. |
+| on signal_update | Is called with every signal reception. |
+| Events of CAN controller |  |
+| on busOff | CAN controller goes to Bus Off. |
+| on errorActive | CAN controller goes to ErrorActive. |
+| on errorPassive | CAN controller goes to ErrorPassive. |
+| on warningLimit | CAN controller reaches the Warning Limit. |
+
+| Functions | Short Description |
+|---|---|
+| canConfigureBusOff | Sets the bus state to BussOff. |
+| canGetDataLength | Returns the valid payload length of the can message. |
+| canOutputErrorFrame | Outputs an Error Frame to the CAN bus. |
+| getPayloadData | Returns the valid payload of a frame that was interrupted during transmission. |
+| isStdId | Checks parameter for standard identifier. |
+| isExtId | Checks parameter for extended identifier. |
+| mkExtId | Returns an extended ID. |
+| output | Outputs a message or an Error Frame from the program block. |
+| valOfId | Returns the value of a message identifier independent of its type. |
+
+| Functions | Short Description |
+|---|---|
+| canActivateTxSelfAck | Activates/deactivates the transmit self ack feature in CANoe for the defined channel. |
+| canFdGetConfiguration | Gets the CAN controller parameters for arbitration and data phase. |
+| canFdSetConfiguration | Sets the CAN controller parameters for arbitration and data phase. |
+| canFlushTxQueue | Flushes the Tx queue for the defined channel. |
+| canGetConfiguration | Reads the CAN controller parameters. |
+| canSetChannelAcc | Sends received messages through to CANoe via an acceptance filter. |
+| canSetChannelMode | Activates/deactivates the TXRQ of the CAN controller. |
+| canSetChannelOutput | Defines the response of the CAN controller to the bus traffic and sets the ACK bit. |
+| canSetConfiguration | Sets the CAN controller parameters. |
+| getCardTypeEx | Determines the card type of CAN channel. |
+| getChipType | Determines the type of CAN controller used. |
+| resetCan | Resets the CAN controller. |
+| ResetCanEx | Resets the CAN controller for one specific CAN channel. |
+| ScanBaudrateActive | Determines the baud rate for the given channel. |
+| ScanBaudratePassive | Starts the scan and detects the baud rate on the given channel. |
+| setBtr | Sets another baud rate. |
+| setCanCabsMode | Sets various CANcab modes. |
+| setOcr | Sets the Output Control Register. |
+
+| Selectors | Short Description |
+|---|---|
+| Message | Detailed description of the CAN message selectors. |
+| ErrorFrame | Detailed description of the CAN Error Frame selectors. |
+
+| Functions | Short Description |
+|---|---|
+| canResetStatistics | Resets CAN statistics. |
+| BusLoad | Returns the current busload of a channel. |
+| ChipState | Returns the current chip state of the CAN controller. |
+| ErrorFrameCount | Returns the number of Error Frames on a channel since start of measurement. |
+| ErrorFrameRate | Returns the current rate of CAN error messages of a channel. |
+| ExtendedFrameCount | Returns the number of extended CAN messages on a channel since start of measurement. |
+| ExtendedFrameRate | Returns the current rate of extended CAN messages on a channel. |
+| ExtendedRemoteFrameCount | Returns the current rate of extended remote CAN messages on a channel. |
+| ExtendedRemoteFrameRate | Returns the number of extended remote CAN messages on a channel since start of measurement. |
+| OverloadFrameCount | Returns the number of CAN overload frames on a channel since start of measurement. |
+| OverloadFrameRate | Returns the current rate of CAN overload frames on a channel. |
+| PeakLoad | Returns the peakload of a channel. |
+| RxChipErrorCount | Returns the current Rx error count in the receiver of a channel. |
+| StandardFrameCount | Returns the number of standard CAN messages on a channel since start of measurement. |
+| StandardFrameRate | Returns the current rate of standard CAN messages on a channel. |
+| StandardRemoteFrameCount | Returns the number of standard remote CAN messages on channel x since start of measurement. |
+| StandardRemoteFrameRate | Returns the current rate of standard CAN messages on a channel. |
+| TxChipErrorCount | Returns the current number of Tx errors in the CAN receiver of a channel. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

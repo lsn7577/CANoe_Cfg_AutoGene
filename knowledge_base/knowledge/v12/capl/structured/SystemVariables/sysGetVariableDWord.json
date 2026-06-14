@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableDWord",
+  "category": "SystemVariables",
+  "title": "sysGetVariableDWord",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableDWord.htm",
+  "syntax": [
+    "dword sysGetVariableDWord(char namespace[], char variable[]); // form 1"
+  ],
+  "description": [
+    "Returns the value of a variable of type unsigned 32 bit integer."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "Value of the variable or 0 in case of error (form 1 and 2)",
+  "example": {
+    "description": [],
+    "code": "sysGetVariableDWord(sysvar::MyNamespace::UInt32Var);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

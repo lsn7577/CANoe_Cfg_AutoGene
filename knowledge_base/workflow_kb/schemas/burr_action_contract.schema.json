@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "workflow_kb/schemas/burr_action_contract.schema.json",
+  "title": "Burr Action Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "phase",
+    "description",
+    "reads",
+    "writes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "phase": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "reads": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "writes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "knowledge_inputs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "pack_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "extension_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+

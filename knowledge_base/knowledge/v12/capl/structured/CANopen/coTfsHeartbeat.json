@@ -1,0 +1,32 @@
+{
+  "page_type": "function",
+  "name": "coTfsHeartbeat",
+  "category": "CANopen",
+  "title": "coTfsHeartbeat",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsHeartBeat.htm",
+  "syntax": [
+    "long coTfsHeartbeat( dword virtProducerId );"
+  ],
+  "description": [
+    "This function tests the heartbeat consumer and heartbeat producer of the DUT Device Under Test with two different time settings.",
+    "First, the heartbeat producer is tested for regularity. The test duration is 10 seconds in each case. The heartbeat time is set to 1sec and after that, 200 ms. The tolerance is 10 or 20%. After that, the heartbeat consumer is tested with a cycle time of 1sec and a tolerance of 10 % and 5%.",
+    "The test uses internally the functions coTfsHeartbeatConsumer and coTfsHeartbeatProducer .",
+    "After this test the target device is in the pre-operational state."
+  ],
+  "parameters": [
+    {
+      "name": "virtProducerId",
+      "type": "",
+      "description": "Virtual heartbeat producer, this node may not exist in the test setup."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if ( coTfsHeartbeat( 2 ) != 1) {\n  write ( \"heartbeat test failed\" );\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

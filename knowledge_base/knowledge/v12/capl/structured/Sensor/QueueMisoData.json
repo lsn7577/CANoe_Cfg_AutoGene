@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "QueueMisoData",
+  "category": "Sensor",
+  "title": "QueueMisoData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionQueueMisoData.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueMisoData(byte buffer[], dword bitCount);"
+  ],
+  "description": [
+    "This method is intended to be used for SPI slave simulation in basic mode. It inserts the given MISO data into the response queue of the given slave."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "The array of bytes that shall be put into the slave’s response queue. The bytes of the array will be output in the order they are specified. The bits of the bytes will be output MSB first."
+    },
+    {
+      "name": "Example:",
+      "type": "",
+      "description": "The byte array { 0xD1, 0x3B } will be output as 11010001 00111011."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "  // Some example values\n  dword value1 = 7;\n  dword value2 = 13;\n\n  // Byte array used to prepare the slave's 12 bit response\n  byte responseData[2] = {0x00, 0x00};\n\n  // Insert two 6 bit values\n  SensorInsertInteger(responseData, 2, value1, 0, 6, 1);\n  SensorInsertInteger(responseData, 2, value2, 6, 6, 1);\n\n  // Queue the resonse in the slave\n\nsysvar::SENSOR::SPI::ExampleChannel::ExampleSlave.QueueMisoData(responseData, 12);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

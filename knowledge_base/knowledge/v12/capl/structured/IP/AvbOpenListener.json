@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbOpenListener",
+  "category": "IP",
+  "title": "AvbOpenListener",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbOpenListener.htm",
+  "syntax": [
+    "dword AvbOpenListener( );"
+  ],
+  "description": [
+    "The function creates a Listener for use in connection-based, message-oriented communications."
+  ],
+  "parameters": [
+    {
+      "name": "streamUniqueId",
+      "type": "",
+      "description": "The stream’s unique identifier."
+    }
+  ],
+  "return": "0: The function failed. Call AvbGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

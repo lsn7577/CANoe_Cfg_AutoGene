@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939SetTPParam",
+  "category": "J1939",
+  "title": "J1939SetTPParam",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939SetTPParam.htm",
+  "syntax": [
+    "dword J1939SetTPParam( dword ecuHandle, dword what, dword value );"
+  ],
+  "description": [
+    "Changing transport protocol settings."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "J1939SetTPParam(ecuHdl, \r\n 1, 32*1024 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "a429GetErrorPosition",
+  "category": "A429",
+  "title": "a429GetErrorPosition",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429GetErrorPosition.htm",
+  "syntax": [
+    "long a429GetErrorPosition( a429worderror myA429word );"
+  ],
+  "description": [
+    "For every Rx error an error position is provided. You may access this information with the operator this in an on a429Worderror handler."
+  ],
+  "parameters": [
+    {
+      "name": "myA429word",
+      "type": "",
+      "description": "ARINC word in on a429Worderror handler"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

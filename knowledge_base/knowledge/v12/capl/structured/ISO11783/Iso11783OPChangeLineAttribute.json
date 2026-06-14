@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPChangeLineAttribute",
+  "category": "ISO11783",
+  "title": "Iso11783OPChangeLineAttribute",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPChangeLineAttr.htm",
+  "syntax": [
+    "long Iso11783OPChangeLineAttribute( dword ecuHandle, dword objectID, dword color, dword width, dword art );"
+  ],
+  "description": [
+    "The function changes the properties of a line attribute object. A Change Line Attribute command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPChangeLineAttributeibute( handle, 1100, 10, 3, 0xaa );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

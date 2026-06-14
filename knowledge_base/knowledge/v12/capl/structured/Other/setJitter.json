@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "setJitter",
+  "category": "Other",
+  "title": "setJitter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetJitter.htm",
+  "syntax": [
+    "setJitter(int min, int max)"
+  ],
+  "description": [
+    "The Jitter interval for the timers of a network node can be set with this function. The two values may lie between –10000 and 10000 (corresponds to –100.00% to 100.00%). If one of the two values does not lie within this range, a message is output in the Write Window.",
+    "Setting of a Jitter will cause any existing Drift to be reset. To utilize Jitter and Drift simultaneously please refer to the example."
+  ],
+  "parameters": [
+    {
+      "name": "min",
+      "type": "",
+      "description": "Integer for the lower interval limit."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "...\n// Set a Jitter with +–4 percent\nsetJitter(-400, 400);\n...\n...\n// Set a Jitter with +–4 percent\n// and a Drift of 17 percent\nsetJitter(1300, 2100);\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

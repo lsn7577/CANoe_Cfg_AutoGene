@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_RequestValueCommand",
+  "category": "ISO11783",
+  "title": "TCIL_RequestValueCommand",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILRequestValueCommand.htm",
+  "syntax": [
+    "long TCIL_RequestValueCommand(dbNode client, dword ddi, dword elementNumber); // form 1"
+  ],
+  "description": [
+    "This function sends the Request Value command to the client."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "Task Controller simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = TCIL_RequestValueCommand(TC, Sprayer, 6, 3);\nif (result != 0)\n{\n  TestStepFail(\"RequestValue\", \"Failed to request value of data entity (DDI 6 , element number 1). Error %i\", result);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

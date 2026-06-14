@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FRSSetTrigPayload",
+  "category": "FRStress",
+  "title": "FRSSetTrigPayload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/Functions/CAPLfunctionFRSSetTrigPayload.htm",
+  "syntax": [
+    "long FRSSetTrigPayload (int triggerCondition, int triggerPayloadElement, int byteIndex, char triggerValue[]);"
+  ],
+  "description": [
+    "Adds a bit sequence to the respective trigger condition as a trigger value. A complex trigger condition can be created through multiple calls."
+  ],
+  "parameters": [
+    {
+      "name": "triggerCondition",
+      "type": "",
+      "description": "Values: 1…4"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

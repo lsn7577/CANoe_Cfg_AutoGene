@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linMrSchedSetRqId",
+  "category": "Obsolete",
+  "title": "linMrSchedSetRqId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINMrSchedSetRqId.htm",
+  "syntax": [
+    "void linMrSchedSetRqId (unsigned int requestId, unsigned long period, unsigned char modeFlags[]);"
+  ],
+  "description": [
+    "Creates an entry for the Scheduler.",
+    "linMrSchedSetRqId may only be called once for each LIN Message Identifier. During a processing step of the Scheduler the outstanding transmit requests are serviced in the order in which they were configured by linMrSchedSetRqId."
+  ],
+  "parameters": [
+    {
+      "name": "requestId",
+      "type": "",
+      "description": "LIN Message Identifier for which transmit requests should be placed."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

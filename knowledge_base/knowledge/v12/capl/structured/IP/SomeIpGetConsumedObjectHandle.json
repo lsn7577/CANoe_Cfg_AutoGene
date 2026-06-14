@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetConsumedObjectHandle",
+  "category": "IP",
+  "title": "SomeIpGetConsumedObjectHandle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetConsumedObjectHandle.htm",
+  "syntax": [
+    "DWORD SomeIpGetConsumedObjectHandle( char objectSymbolicQualifier[] );"
+  ],
+  "description": [
+    "Enables to search for a consumed object which has been created separately."
+  ],
+  "parameters": [
+    {
+      "name": "objectSymbolicQualifier",
+      "type": "",
+      "description": "Symbolic qualifier identifying uniquely a FIBEX 4.1 database object. For syntax see Symbolic Database Access by SOME/IP."
+    }
+  ],
+  "return": "0: An error occurred. The error can be evaluated using the SomeIpGetLastError function.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD gCev; // consumed event handle\n  DWORD gCfNotifier; // consumed field notifier handle\n  DWORD gCfGetter; // consumed field getter handle\n  DWORD gCfSetter; // consumed field setter handle\n  msTimer gTimer;\n}\n\non start\n{\n  // That the following code works there must be in the FIBEX 4.1\n  // database a node consuming under an unreliable endpoint\n  // (UDP socket) the following objects:\n  //  - A service instance named \"Service_Test\"\n  //  - An event group named \"All\" belonging to \"Service_Test\"\n  //  - An event named \"Event_Test\" belonging to \"All\"\n  //  - A field named \"Field_Test\" belonging to \"All\" and     having a notifier, a getter and a setter\n  //  - A node providing the event group \"All\"\n\n  // Get handle of the consumed event named \"Event_Test\"\n  gCev = SomeIpGetConsumedObjectHandle (\"Service_Test::Event_Test\");\n\n  // Register a CAPL callback for this event notification\n  SomeIpRegisterCallback(gCev, \"OnSomeIpEventReceived\");\n\n  // Get handle of the consumed field notification named \"Field_Test\"\n  gCfNotifier = SomeIpGetConsumedObjectHandle (\"Field_Test\");\n\n  // Register a CAPL callback for this field notification\n  SomeIpRegisterCallback(gCfNotifier, \"OnSomeIpFieldNotificationReceived\");\n\n  // Get handle of the consumed field getter named \"Field_Test\"\n  gCfGetter = SomeIpGetConsumedObjectHandle (\"get_Field_Test\");\n\n  // Register a CAPL callback for this getter response\n  SomeIpRegisterCallback(gCfGetter, \"OnSomeIpFieldGetterResponse\");\n\n  // Get handle of the consumed field setter named \"Field_Test\"\n  gCfSetter = SomeIpGetConsumedObjectHandle (\"set_Field_Test\");\n\n  // Register a CAPL callback for this setter response\n  SomeIpRegisterCallback(gCfSetter, \"OnSomeIpFieldSetterResponse\");\n\n  // Start timer\n  setTimer(gTimer, 3000);\n}\n\non timer gTimer\n{\n  // Call the field setter and getter\n  SomeIpCallMethod(gCfGetter);\n  SomeIpCallMethod(gCfSetter);\n  // Restart timer\n  setTimer(gTimer, 3000);\n}\n\nvoid OnSomeIpEventReceived( dword cevHandle, dword messageHandle )\n{\n  write (\"Event notification received\");\n  // do something here\n}\n\nvoid OnSomeIpFieldNotificationReceived( dword cfHandle, dword messageHandle )\n{\n  write (\"Field notification received\");\n  // do something here\n}\n\nvoid OnSomeIpFieldGetterResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  write (\"Field getter response received\");\n  // do something here\n}\n\nvoid OnSomeIpFieldSetterResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  write (\"Field setter response received\");\n  // do something here\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

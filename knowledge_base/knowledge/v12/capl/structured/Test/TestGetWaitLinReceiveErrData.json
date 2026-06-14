@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitLinReceiveErrData",
+  "category": "Test",
+  "title": "TestGetWaitLinReceiveErrData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitLinReceiveErrData.htm",
+  "syntax": [
+    "long TestGetWaitLinReceiveErrData (linReceiveError apEvent);"
+  ],
+  "description": [
+    "If LIN Receive Error event is the last event that triggers a wait instruction, the error content can be called up with the first function.The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "apEvent",
+      "type": "",
+      "description": "Event variable that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linReceiveErrorEvent ()\n{\n   linReceiveError linReceiveErrorData;\n   if (testWaitForLinReceiveError(5000) == 1)\n   {\n      if (TestGetWaitLinReceiveErrData(linReceiveErrorData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN Receive Error event occurred for FrameId=0x%X\", linReceiveErrorData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

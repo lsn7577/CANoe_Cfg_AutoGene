@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ARILSetAutoStartParam",
+  "category": "AUTOSARpduIL",
+  "title": "ARILSetAutoStartParam",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILILSetAutoStartParam.htm",
+  "syntax": [
+    "long ARILSetAutoStartParam(dword state)"
+  ],
+  "description": [
+    "This function influences the start behavior. The function must be called in",
+    "on preStart, otherwise it will not have any effect."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": "The value defines the desired start behaviour:"
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

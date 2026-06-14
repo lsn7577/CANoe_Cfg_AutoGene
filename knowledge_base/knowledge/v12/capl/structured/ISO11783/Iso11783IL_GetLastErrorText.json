@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_GetLastErrorText",
+  "category": "ISO11783",
+  "title": "Iso11783IL_GetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILGetLastErrorText.htm",
+  "syntax": [
+    "long Iso11783IL_GetLastErrorText( dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "Returns the result of the last called ISO11783 IL function as string."
+  ],
+  "parameters": [
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "size of the return buffer"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't' \n{\n  char error[64];\n  BYTE date = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 };\n  ISO11783ILSetSignalRaw( EEC1::EngSpeed, 6, data );\n\n  Iso11783IL_GetLastErrorText( elCount(error), error );\n  write( \"Errorcode:  %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

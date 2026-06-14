@@ -1,0 +1,69 @@
+{
+  "page_type": "function",
+  "name": "eventConsumerRef",
+  "category": "CommunicationObjects",
+  "title": "eventConsumerRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionEventConsumerRef.htm",
+  "syntax": [
+    "eventConsumerRef * <var>"
+  ],
+  "description": [
+    "References an event consumer endpoint."
+  ],
+  "parameters": [
+    {
+      "name": "Event",
+      "type": "",
+      "description": "Event of a service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "eventConsumerRef long event1;\nevent1 = MirrorAdjustment.consumerSide[LeftMirror].CurrentPosition;"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the consumer endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the consumer endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ServiceConsumer Reference to the consumer of the service containing the event.",
+        "serviceConsumerRef*",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

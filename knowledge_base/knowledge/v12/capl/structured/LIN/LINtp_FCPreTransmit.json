@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LINtp_FCPreTransmit",
+  "category": "LIN",
+  "title": "LINtp_FCPreTransmit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINtpFCPreTransmit.htm",
+  "syntax": [
+    "void LINtp_FCPreTransmit(byte fcData);"
+  ],
+  "description": [
+    "When the usage of FlowControl frames has been activated with LINtp_ActivateFCTransmission, each FlowControl frame is forwarded to this callback function before it is sent."
+  ],
+  "parameters": [
+    {
+      "name": "fcData",
+      "type": "",
+      "description": "Data of the FC frame."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void LINtp_FCPreTransmit( BYTE fcData[])\n{\n  write( \"FlowControl to be sent: %02x %02x %02x %02x (%d byte)\"\n  , fcData[0] , fcData[1] , fcData[2] , fcData[3], elcount(fcdata));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

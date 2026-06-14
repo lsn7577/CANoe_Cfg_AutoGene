@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetTargetVoltage",
+  "category": "SmartCharging",
+  "title": "SCC_SetTargetVoltage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetTargetVoltage.htm",
+  "syntax": [
+    "long SCC_SetTargetVoltage ( float TargetVoltage )"
+  ],
+  "description": [
+    "Sets the desired voltage. These limits are used in various DC messages. If no values are set, the vehicle will automatically calculate defaults."
+  ],
+  "parameters": [
+    {
+      "name": "TargetVoltage",
+      "type": "",
+      "description": "Value to be set."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

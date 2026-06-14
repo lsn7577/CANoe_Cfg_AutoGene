@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "diagGetActiveVariant",
+  "category": "Diagnostics",
+  "title": "diagGetActiveVariant",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetActiveVariant.htm",
+  "syntax": [
+    "long diagGetActiveVariant(char ecuQualifier[], char outputBuffer[], dword bufferSize);",
+    "long diagGetActiveVariant(char outputBuffer[], dword bufferSize);"
+  ],
+  "description": [
+    "Returns the currently active variant."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "If given, returns the active variant of this target. If omitted, the target formerly set by diagSetTarget is used."
+    },
+    {
+      "name": "outputBuffer",
+      "type": "",
+      "description": "Output field"
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Size of the output buffer"
+    }
+  ],
+  "return": "Length of qualifier written to buffer, may be truncated.\nError code",
+  "example": {
+    "description": [],
+    "code": "testcase SetActiveVariantFromSystemVariable()\n{\n  char variantName[100];\n  char outputBuffer[100];\n  long retVal;\n  diagSetTarget(\"ECU\");\n\n  retVal = sysGetVariableString(sysvar::VariantSwitch::VariantToUse,\n  variantName, elcount(variantName));\n\n  if( 0 > retVal)\n  {\n    testStepFail(\"\", \"Could not get variant name from system variable (%d)\", retVal);\n  }\n\n  retVal = testWaitForDiagChangedActiveVariant(variantName);\n\n  if(0 >= retVal)\n  {\n    diagGetErrorString(retVal, outputBuffer, elcount(outputBuffer));\n    testStepFail(\"\", \"Error %d when changing variant (%s)\", retVal, outputBuffer);\n  }\n}\n\ntestcase SwitchToIdentifiedVariant()\n{\n  char variantName[100];\n  char outputBuffer[100];\n  long retVal;\n\n  diagSetTarget(\"ECU\");\n\n  retVal = testWaitForDiagSetIdentifiedVariant();\n\n  if(0 >= retVal)\n  {\n    diagGetErrorString(retVal, outputBuffer, elcount(outputBuffer));\n    testStepFail(\"\", \"Error %d while setting identified variant (%s)\", retVal, outputBuffer);\n  }\n\n  retVal = diagGetActiveVariant(variantName, elcount(variantName));\n\n  if( 0 > retVal)\n  {\n    testStepFail(\"\", \"Could not get active Variant\");\n  }\n\n  sysSetVariableString(sysvar::VariantSwitch::ActiveVariant, variantName);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5",
+      "8.5",
+      "—",
+      "—",
+      "—",
+      "2.0"
+    ],
+    [
+      "Restricted To",
+      "Online mode",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔ (since 9.0)",
+      "✔ (since 9.0)",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

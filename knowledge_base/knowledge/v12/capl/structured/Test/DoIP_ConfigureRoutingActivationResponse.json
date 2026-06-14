@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_ConfigureRoutingActivationResponse",
+  "category": "Test",
+  "title": "DoIP_ConfigureRoutingActivationResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionDoIPConfigureRoutingActivationResponse.htm",
+  "syntax": [
+    "void DoIP_ConfigureRoutingActivationResponse(dword valueReserved);"
+  ],
+  "description": [
+    "Configures the routing activation response message sent by the vehicle simulation on the reception of a routing activation request message."
+  ],
+  "parameters": [
+    {
+      "name": "valueReserved",
+      "type": "",
+      "description": "The value of the reserved field in the message. ISO 13400 specifies a default value of 0x00000000."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Set the reserved field in the routing activation response message to 0x12345678\r\nDoIP_ConfigureRoutingActivationResponse(0x12345678);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

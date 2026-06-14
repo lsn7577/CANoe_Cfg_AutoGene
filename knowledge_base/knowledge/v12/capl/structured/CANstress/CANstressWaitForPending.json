@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressWaitForPending",
+  "category": "CANstress",
+  "title": "CANstressWaitForPending",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressWaitForPending.htm",
+  "syntax": [
+    "long CANstressWaitForPending( dword timeout);"
+  ],
+  "description": [
+    "Waits until the CANstress hardware is in the state Pending."
+  ],
+  "parameters": [
+    {
+      "name": "Note With timeout = 0 an infinite time is waited until the state Pending occurs. Thus the additional test procedure is blocked if the state Pending is not reached.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: If successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

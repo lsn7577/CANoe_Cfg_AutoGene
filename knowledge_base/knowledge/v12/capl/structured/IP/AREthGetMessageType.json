@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthGetMessageType",
+  "category": "IP",
+  "title": "AREthGetMessageType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthGetMessageType.htm",
+  "syntax": [
+    "dword AREthGetMessageType ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the Message Type from the SOME/IP message header."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the SOME/IP message (e.g. see OnAREthMessage)"
+    }
+  ],
+  "return": "Message Type\nIn the Event of an error, the function returns the value 0. The AREthGetLastError function can then be used to check whether the value is valid or an error has occurred.",
+  "example": {
+    "description": [],
+    "code": "void OnAREthMessage( dword messageHandle )\n{\n  dword msgType       = 0;\n  LONG  errorCode     = 0;\n  LONG  errorOccured  = 0;\n\n  // get data from SOME/IP message\n  if((msgType = AREthGetMessageType(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = AREthGetLastError()) != 0)\n    {\n      write(\"AUTOSAR Eth IL error occured: Error code: %d\", errorCode);\n      errorOccured = 1;\n    } // if\n  } // if\n\n  if(errorOccured == 0)\n  {\n    write(\"SOME/IP message with Message Type 0x%02x received\",msgType);\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

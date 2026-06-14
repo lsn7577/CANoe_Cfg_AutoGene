@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "setSignalStartValues",
+  "category": "CAN",
+  "title": "setSignalStartValues",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionSetSignalStartValues.htm",
+  "syntax": [
+    "setSignalStartValues(message msg); // form 1"
+  ],
+  "description": [
+    "Sets the values of the signals in the parameter to the start values defined in the database."
+  ],
+  "parameters": [
+    {
+      "name": "msg, frame, pdu, paramGroup, parameter",
+      "type": "",
+      "description": "Objects where the signals shall be set."
+    }
+  ],
+  "return": "0: function was successful",
+  "example": {
+    "description": [],
+    "code": "message LightState msg;\nsetSignalStartValues(msg);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

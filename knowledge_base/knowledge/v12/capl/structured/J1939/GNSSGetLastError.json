@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "GNSSGetLastError",
+  "category": "J1939",
+  "title": "GNSSGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSgetlasterror.htm",
+  "syntax": [
+    "dword GNSSGetLastError();"
+  ],
+  "description": [
+    "This function returns the error status of the last GNSS function of a node to be performed. The individual error states are described here."
+  ],
+  "parameters": [],
+  "return": "Error state of the last performed function",
+  "example": {
+    "description": [],
+    "code": "GNSSStartSimulation( 0 );\nif (GNSSGetLastError() != 0) {\n  write(„Start of simulation failed“);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

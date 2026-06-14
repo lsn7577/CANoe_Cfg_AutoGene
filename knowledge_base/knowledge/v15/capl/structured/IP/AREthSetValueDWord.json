@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "AREthSetValueDWord",
+  "category": "IP",
+  "title": "AREthSetValueDWord",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSetValueDWord.htm",
+  "syntax": [
+    "long AREthSetValueDWord( dword objectHandle, char valuePath[], dword value );"
+  ],
+  "description": [
+    "This function can be used to set a raw value in the object specified in the objectHandle parameter. The value is accessed in this case via symbolic access paths."
+  ],
+  "parameters": [
+    {
+      "name": "objectHandle",
+      "type": "",
+      "description": "Handle to a AUTOSAR Eth IL object, which must be completely described in the AUTOSAR database.The following objects are supported. Messages Fields Method calls: Handle to a method call that was created with AREthCreateMethodCall."
+    },
+    {
+      "name": "valuePath",
+      "type": "",
+      "description": "Access path of the value to be set."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "Raw Value"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void Initialize()\n{\n  dword aep; // application endpoint handle\n  dword psi; // provided service handle\n  dword peg; // provided eventgroup handle\n  dword pev; // provided event handle\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create service instance\n  psi = AREthCreateProvidedServiceInstance(aep,10,1);\n\n  // create eventgroup\n  peg = AREthAddProvidedEventGroup(psi,1);\n\n  // create event and add event to eventgroup\n  pev = AREthAddEvent(psi, 1, \"OnPrepareEvent1\");\n  AREthAddEventToEventgroup(peg, pev);\n\n  // ensure that event is sent cyclically\n  AREthSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1(dword eventHandle, dword messageHandle)\n{\n  // this function is called before the event is sent. Parameters\n  // can be specified here.\n  // set parameter \"value1\" of struct \"param1\"\n  AREthSetValueDWord(messageHandle,\"param1.value1\",7);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

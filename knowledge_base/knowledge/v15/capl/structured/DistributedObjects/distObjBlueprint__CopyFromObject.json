@@ -1,0 +1,128 @@
+{
+  "page_type": "method",
+  "name": "distObjBlueprint::CopyFromObject",
+  "category": "DistributedObjects",
+  "title": "distObjBlueprint::CopyFromObject",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Methods/CAPLfunctiondistObjBlueprintCopyFromObject.htm",
+  "syntax": [
+    "void distObjBlueprint <Interface>::CopyFromObject(distObjRef <Interface> object);"
+  ],
+  "description": [
+    "Recursively copies all attributes and virtual network from the given object and its members to the blueprint."
+  ],
+  "parameters": [
+    {
+      "name": "object",
+      "type": "",
+      "description": "Object from which to copy."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// vCDL\nversion 1.3;\nnamespace SomeNamespace {\n  interface SomeInterface {}\n\n  [IntegerAttribute=42, StringAttribute=\"test\"]\n  object Obj : SomeInterface {}\n\n  attribute int32 IntegerAttribute;\n  attribute string StringAttribute;\n}\n\n// CAPL\non key 'a' {\n  distObjBlueprint SomeInterface bp;\n  bp = SomeInterface.CreateObjectBlueprint();\n  bp.CopyFromObject(Obj);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "14",
+      "15",
+      "14",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

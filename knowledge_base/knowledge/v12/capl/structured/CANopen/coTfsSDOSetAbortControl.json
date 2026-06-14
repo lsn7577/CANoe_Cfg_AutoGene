@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOSetAbortControl",
+  "category": "CANopen",
+  "title": "coTfsSDOSetAbortControl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoSetAbortControl.htm",
+  "syntax": [
+    "long coTfsSDOSetAbortControl( dword controlValue);"
+  ],
+  "description": [
+    "The function defines which values are allowed for successful test completion."
+  ],
+  "parameters": [
+    {
+      "name": "controlValue",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* Accept correct answer or all SDO abort codes, which are in the list of accepted SDO abort codes to pass a test. */\nconst kSetAbortControlDefault = 1;\n\n/* Accept correct answer or any SDO abort code to pass a test. */\nconst kSetAbortControlAllSDOAborts = 2;\n\n/* Accept all SDO abort codes, which are in the list of accepted SDO abort codes to pass a test. The correct answer is not valid. */\nconst kSetAbortControlOnlySdoAbort = 3;\n\n/* Accept any SDO abort codes to pass a test. The correct answer is not valid. */\nconst kSetAbortControlOnlyAnySdoAbort = 4;\n\n/* Set internal handling of correct answers and SDO abort codes for level 2 SDO test functions.*/\nif (coTfsSDOSetAbortControl(kSetAbortControlDefault) != 1)\n{\n  /* command failed */\n} /* if */\n\n/* now run any SDO level 2 function like coTfsSDOUpload(), ... */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SendPreparedMessage",
+  "category": "SmartCharging",
+  "title": "SCC_SendPreparedMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SendPreparedMessage.htm",
+  "syntax": [
+    "long SCC_SendPreparedMessage ( ) // form 1"
+  ],
+  "description": [
+    "Sends a message created using one of the Create-functions. Use the function call with parameter ConfigSection to create a signed message using the certificate name from the XML config. Else an unsigned message is sent."
+  ],
+  "parameters": [
+    {
+      "name": "ConfigSection",
+      "type": "",
+      "description": "ID of the config section where the certificates can be found."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

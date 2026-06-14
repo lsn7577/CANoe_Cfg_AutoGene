@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCurrentDemandRes_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCurrentDemandRes_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCurrentDemandRes_Iso.htm",
+  "syntax": [
+    "long SCC_CreateCurrentDemandRes_ISO ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, char StatusCode[], char Notification[], float PresentValues[], byte LimitAchievedFlags[], char EVSEID[], long SAScheduleTupleID )"
+  ],
+  "description": [
+    "Creates a Current Demand Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

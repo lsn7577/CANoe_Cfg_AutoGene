@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostGenerateEclSequence",
+  "category": "MOST",
+  "title": "mostGenerateEclSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGenerateEclSequence.htm",
+  "syntax": [
+    "long mostGenerateEclSequence (long channel, long startstop)"
+  ],
+  "description": [
+    "Starts the generation of the signal sequence on the ECL which was prepared by mostConfigureEclSequence. Dominant levels will be set actively whereas during recessive phases the generator is passive and other devices connected to the ECL may pull the line to dominant level."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

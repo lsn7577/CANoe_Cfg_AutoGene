@@ -1,0 +1,151 @@
+{
+  "page_type": "function",
+  "name": "FDXEnableFreeRunningMode",
+  "category": "Other",
+  "title": "FDXEnableFreeRunningMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionFDXEnableFreeRunningMode.htm",
+  "syntax": [
+    "long FDXEnableFreeRunningMode(long fdxClientHandle, word groupID, word flags, dword cycleTime, dowrd firstDuration);"
+  ],
+  "description": [
+    "This function activates the Free Running mode for the specified FDX client. The behavior of the function corresponds to the reception of a FreeRunningRequest command via the CANoeFDX protocol.",
+    "You can find further information about the Free Running mode in the manual CANoe_FDX_Protocol_EN.pdf."
+  ],
+  "parameters": [
+    {
+      "name": "fdxClientHandle",
+      "type": "",
+      "description": "FDX client for which the Free Running mode should be activated."
+    },
+    {
+      "name": "groupID",
+      "type": "",
+      "description": "Identifies the data group inside the FDX description file."
+    },
+    {
+      "name": "flags",
+      "type": "",
+      "description": "The flags describe when the data group will be transmitted. 1 : Transmits data group at pre start phase of the CANoe measurement 2 : Transmits data group at stop of measurement 4 : Transmits the data group cyclically while the measurement is running. The transmit cycle is defined by the fields cycleTime and firstDuration. 8 : Transmits the data group if the function FDXTriggerDataGroup is called."
+    },
+    {
+      "name": "cycleTime",
+      "type": "",
+      "description": "Time period in nanoseconds for the free running mode."
+    },
+    {
+      "name": "firstDuration",
+      "type": "",
+      "description": "Time interval in nanoseconds for the first transmit cycle."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Coupling of two CANoe Instances using the FDX Protocol"
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 SP3",
+      "13.0",
+      "—",
+      "14",
+      "2.2 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

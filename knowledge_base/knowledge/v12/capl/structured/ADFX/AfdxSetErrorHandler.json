@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "AfdxSetErrorHandler",
+  "category": "ADFX",
+  "title": "AfdxSetErrorHandler",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxSetErrorHandler.htm",
+  "syntax": [
+    "long AfdxSetErrorHandler( char callback[] );"
+  ],
+  "description": [
+    "Use this function to register a CAPL callback to handle AFDX error events."
+  ],
+  "parameters": [
+    {
+      "name": "callback",
+      "type": "",
+      "description": "name of CAPL callback"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [
+      "Node System – PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  AfdxSetErrorHandler( \"OnAfdxError\");\n}\nvoid OnAfdxError( int64 time, long channel, long errorType, char errorText[], char errorAttributes[])\n{\n  if (errorType == AfdxError)\n  {\n    write( \"<%NODE_NAME%> Afdx Error on channel %d: %s\", channel, errorText);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

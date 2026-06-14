@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "title": "Knowledge Base Diff Summary: v12.0 -> v15.0",
+    "description": "High-level summary of all content block differences between CANoe 12.0 and 15.0.",
+    "generated": "2026/06/01"
+  },
+  "capl": {
+    "v12_total_categories": 41,
+    "v15_total_categories": 44,
+    "v12_total_functions": 4553,
+    "v15_total_functions": 5017,
+    "added_categories": [
+      "ADAS",
+      "CarMaker",
+      "DistributedObjects",
+      "MapWindowAPI"
+    ],
+    "removed_categories": [
+      "Availability"
+    ]
+  },
+  "panel": {
+    "v12_total_elements": 37,
+    "v15_total_elements": 33,
+    "added_elements": [],
+    "removed_elements": [
+      "",
+      "MethodCall",
+      "NMControl",
+      "NMControlRuntime"
+    ],
+    "common_elements": [
+      "AnalogGauge",
+      "Button",
+      "CAPLOutputView",
+      "CheckBox",
+      "Clinometer",
+      "ClockControl",
+      "ComboBox",
+      "Compass",
+      "DataTypes",
+      "GroupBox",
+      "HexTextEditor",
+      "InputOutputBox",
+      "LCDControl",
+      "LED",
+      "LEDBand",
+      "MOSTSendButton",
+      "MediaPlayer",
+      "MediaStream",
+      "Meter",
+      "NumericUpDown",
+      "PanelControlButton",
+      "PanelDesignerNetNodes",
+      "PanelFileButton",
+      "PathDialog",
+      "PictureBox",
+      "Pointer",
+      "ProgressBar",
+      "RadioButton",
+      "StartStop",
+      "StaticText",
+      "Switch",
+      "TabControl",
+      "TrackBar"
+    ]
+  },
+  "dbc": {
+    "v12_total_keywords": 15,
+    "v15_total_keywords": 20,
+    "added_keywords": [
+      "BO_TX_BU_",
+      "CAT_",
+      "CAT_DEF_",
+      "FILTER",
+      "SIG_VALTYPE_"
+    ],
+    "removed_keywords": [],
+    "common_keywords": [
+      "BA_",
+      "BA_DEF_",
+      "BA_DEF_SG_",
+      "BO_",
+      "BS_",
+      "BU_",
+      "CM_",
+      "EV_",
+      "NS_",
+      "RX_BU_",
+      "SG_",
+      "SIG_GROUP_",
+      "VAL_",
+      "VAL_TABLE_",
+      "VERSION"
+    ]
+  }
+}

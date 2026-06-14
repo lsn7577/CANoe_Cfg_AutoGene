@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FSIL_GetState",
+  "category": "ISO11783",
+  "title": "FSIL_GetState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILGetState.htm",
+  "syntax": [
+    "long FSIL_GetState(); // form 1"
+  ],
+  "description": [
+    "Returns the current state of the FS IL."
+  ],
+  "parameters": [
+    {
+      "name": "fs",
+      "type": "",
+      "description": "FS simulation node to apply the function"
+    }
+  ],
+  "return": "0: Initialized",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n  long state;\n  state = FSIL_GetState();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

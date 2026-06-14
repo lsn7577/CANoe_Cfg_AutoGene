@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnMostGroupAdr",
+  "category": "MOST",
+  "title": "OnMostGroupAdr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTGroupAdr.htm",
+  "syntax": [
+    "OnMostGroupAdr(long groupadr)"
+  ],
+  "description": [
+    "The group address of the hardware interface to the MOST bus has changed. The value of the new group address is in the groupadr parameter.",
+    "Within this event procedure the functions mostEventChannel, mostEventTime and mostEventOrigTime can be used to call up supplemental information.",
+    "CAPL nodes are transparent to the controller events. Please use the Multibus Filter or MOST Filter, to filter these events in nodal sequences."
+  ],
+  "parameters": [
+    {
+      "name": "groupadr",
+      "type": "",
+      "description": "New value of the group address."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

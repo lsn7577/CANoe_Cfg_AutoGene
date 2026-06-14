@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetW4Tester",
+  "category": "KLine",
+  "title": "KLine_SetW4Tester",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetW4Tester.htm",
+  "syntax": [
+    "long KLine_SetW4Tester( dword W4_us)"
+  ],
+  "description": [
+    "Sets the W4 timing of the tester between keybyte2 and keybyte2Not."
+  ],
+  "parameters": [
+    {
+      "name": "W4_us",
+      "type": "",
+      "description": "W4 time in us.Value range: 0 - 650000"
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,64 @@
+{
+  "page_type": "function",
+  "name": "ChkConfig_SetPrecision",
+  "category": "Test",
+  "title": "ChkConfig_SetPrecision",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkConfigSetPrecision.htm",
+  "syntax": [
+    "long ChkConfig_SetPrecision(unsigned int aPrecision);"
+  ],
+  "description": [
+    "This function configures the TSL time basis for the current node. The time basis (precision) affects all future times that are passed when creating checks (see check descriptions), and it affects the time basis for queries (status report functions).",
+    "This function allows you to configure the time basis for new checks to be created.The time bases of checks that have already been created are not changed by this function. They can be polled by a special query."
+  ],
+  "parameters": [
+    {
+      "name": "3",
+      "type": "",
+      "description": "10 –3 seconds = ms (default)"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "10 –4 seconds"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "10 –5 seconds = 10 us: e.g. used in trace export"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "10 –6 seconds = us"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "10 –7 seconds"
+    },
+    {
+      "name": "8",
+      "type": "",
+      "description": "10 –8 seconds"
+    },
+    {
+      "name": "9",
+      "type": "",
+      "description": "10 –9 seconds = ns"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// precision of the test is set to us\nchkConfig_SetPrecision(6);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TxAbort",
+  "category": "J1939",
+  "title": "J1939TxAbort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939TxAbort.htm",
+  "syntax": [
+    "dword J1939TxAbort( dword ecuHandle, dword pgn );"
+  ],
+  "description": [
+    "Interrupt of a transfer that has previously been started with J1939TxReqPG(). Please note in this regard that for technical reasons, it is only possible to interrupt PGs that are fragmented."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "J1939TxAbort(ecuHdl, \r\n 0xFE09)"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

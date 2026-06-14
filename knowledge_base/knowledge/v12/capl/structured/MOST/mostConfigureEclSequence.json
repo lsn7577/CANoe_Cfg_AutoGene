@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostConfigureEclSequence",
+  "category": "MOST",
+  "title": "mostConfigureEclSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTConfigureEclSequence.htm",
+  "syntax": [
+    "long mostConfigureEclSequence (long channel, long numIntervals, dword[] state, dword[] duration100us)"
+  ],
+  "description": [
+    "The function prepares VN2640 to generate a signal sequence on the ECL. The signal sequence can be started with the mostGenerateEclSeq function.",
+    "The sequence is defined in two arrays of dword. The first indicates the level (0: dominant, 1: recessive) of the generators output for each time interval. The second describes the duration for each time interval."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\n   // configure a rectangle wave with a period of 20 ms\n   const long kEclSequenceLength = 8;\n   dword eclSequenceStates[kEclSequenceLength] = { 0, 1, 0, 1, 0, 1, 0, 1};\n   dword eclSequenceDuration[kEclSequenceLength] = { 100, 100, 100, 100, 100, 100, 100, 100};\n   mostConfigureEclSequence(1, kEclSequenceLength, eclSequenceStates, eclSequenceDuration);\n   // start generation of the sequence\n   mostGenerateEclSequence(1, 1);\n}\n\nOnMostEclSequence(long state)\n{\n   if(state == 1)\n   {\n      write (\"ECL Sequence Started!\");\n   }\n   else\n   {\n   write (\"ECL Sequence Stopped or Finished!\");\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

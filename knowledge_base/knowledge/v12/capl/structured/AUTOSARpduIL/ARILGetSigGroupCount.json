@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILGetSigGroupCount",
+  "category": "AUTOSARpduIL",
+  "title": "ARILGetSigGroupCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILGetSigGroupCount.htm",
+  "syntax": [
+    "long ARILGetSigGroupCount (char aMsgName[]);"
+  ],
+  "description": [
+    "Evaluates how many signal groups are defined inside the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "aMsgName",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "≥ 0: The number of signal groups.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

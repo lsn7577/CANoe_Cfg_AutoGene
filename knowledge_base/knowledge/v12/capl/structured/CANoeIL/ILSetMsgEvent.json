@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ILSetMsgEvent",
+  "category": "CANoeIL",
+  "title": "ILSetMsgEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILSetMsgEvent.htm",
+  "syntax": [
+    "long ILSetMsgEvent (dbMessage msg)"
+  ],
+  "description": [
+    "Sends the transferred message directly to the bus if the network is active.",
+    "The send model is ignored."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message that should be sent."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_MostLightOff, ChkStart_MostLightOff",
+  "category": "Test",
+  "title": "ChkCreate_MostLightOff, ChkStart_MostLightOff",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateMostLightOff.htm",
+  "syntax": [
+    "dword ChkCreate_MostLightOff();"
+  ],
+  "description": [
+    "The check function monitors the occurrence of \"LightOff\" events.",
+    "A \"LightOff\" event occurs if the hardware connected to the channel no longer receives light at the input.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aCallback",
+      "type": "",
+      "description": "Name of the callback function, which should be called as soon as a \"LightOff\" event occurs."
+    }
+  ],
+  "return": "0: Check could not be created and must not be referenced",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

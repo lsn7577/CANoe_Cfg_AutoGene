@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::SetVlan",
+  "category": "IP",
+  "title": "ethernetPacket::SetVlan",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionSetVlan.htm",
+  "syntax": [
+    "long ethernetPacket.SetVlan(word tpid,word tci); // form 1"
+  ],
+  "description": [
+    "Sets the VLAN tag of an Ethernet packet. If the packets does not contain a VLAN tag, a new VLAN tag is added.",
+    "For double-tagged VLAN form 2 can be used."
+  ],
+  "parameters": [
+    {
+      "name": "tpid",
+      "type": "",
+      "description": "VLAN TPDI value to set."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  ethernetPacket pkt;\n\n  pkt.SetVlan( 0x8100, 0x5123 );\n\n  output( pkt );\n}\n\non key '2'\n{\n  ethernetPacket pkt;\n\n  // double tagged VLAN\n  pkt.SetVlan( 0, 0x8100, 0x5123 );\n  pkt.SetVlan( 1, 0x88A8, 0x6456 );\n\n  output( pkt );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

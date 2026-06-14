@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetEnergyTransferType",
+  "category": "SmartCharging",
+  "title": "SCC_SetEnergyTransferType",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_SetEnergyTransferType.htm",
+  "syntax": [
+    "long SCC_SetEnergyTransferType ( char EnergyTransferType[] ) //form 1 (EV only)",
+    "long SCC_SetEnergyTransferType ( char EnergyTransferType[], dword Force ) // form 2 (EV only)",
+    "long SCC_SetEnergyTransferType ( char EnergyTransferType[] ) // form 3 (EVSE only)"
+  ],
+  "description": [
+    "EV:",
+    "Sets the desired charging mode for a running SCC session. For the list of all valid charging modes, see the SCC specification.",
+    "EVSE:",
+    "Sets the offered energy transfer type (DIN 70121) resp. -mode (ISO 15118) for a running SCC session. In case of ISO 15118, a list with one element is created. For the list of all valid values, see the SCC specification."
+  ],
+  "parameters": [
+    {
+      "name": "EnergyTransferType (EV/EVSE)",
+      "type": "",
+      "description": "Desired charging mode as string. Please make sure the string entered is a valid according to the schema."
+    },
+    {
+      "name": "Force (EV)",
+      "type": "",
+      "description": "If set to 1, the vehicle is forced to set the charging mode even if the charge point hasn’t offered it previously. If set to 0, another mode may be selected if this one is unavailable."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3: form 1-2 12.0: form 3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3: form 1-2 4.0: form 3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

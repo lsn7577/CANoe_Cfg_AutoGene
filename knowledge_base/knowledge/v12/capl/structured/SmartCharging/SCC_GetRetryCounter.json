@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetRetryCounter",
+  "category": "SmartCharging",
+  "title": "SCC_GetRetryCounter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetRetryCounter.htm",
+  "syntax": [
+    "long SCC_Get Retry Counter ()"
+  ],
+  "description": [
+    "Gets the retry counter of a CertificationUpdateRes.",
+    "In case of failure, this denotes when the EVCC should try to get the new Certificate again (number of days)."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

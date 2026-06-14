@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetRoutingActivationOEMSpecific",
+  "category": "Diagnostics",
+  "title": "DoIP_SetRoutingActivationOEMSpecific",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPSetRoutingActivationOEMSpecific.htm",
+  "syntax": [
+    "void DoIP_SetRoutingActivationOEMSpecific(long sendOEMSpecific, dword OEMspecific);"
+  ],
+  "description": [
+    "Sets the OEM-specific parameters in the Routing Activation Request Message."
+  ],
+  "parameters": [
+    {
+      "name": "sendOEMSpecific",
+      "type": "",
+      "description": "0: Do not send the OEM specific field (default)1: Send the given value in the OEM specific field"
+    },
+    {
+      "name": "OEMspecific",
+      "type": "",
+      "description": "Value to send if the OEM specific field is activated."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The message can also be configured from the DoIP.INI file"
+    ],
+    "code": "// Send a constant in the RAR message\nDoIP_SetRoutingActivationOEMSpecific( 1, 0x31425927);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP4",
+      "—",
+      "—",
+      "—",
+      "1.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

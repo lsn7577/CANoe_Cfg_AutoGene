@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupProvidedField",
+  "category": "CommunicationObjects",
+  "title": "LookupProvidedField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupProvidedField.htm",
+  "syntax": [
+    "providedFieldRef * LookupProvidedField(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified provided field. The path must be complete including namespaces and both endpoints: (Namespace::)+Service.providerSide[consumer,provider].Field.",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the provided field."
+    }
+  ],
+  "return": "The provided field. An uninitialized object if the field is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "providedFieldRef MirrorAdjustment.Position positionField;\nchar path[200];\nchar service[50] = \"Mirrors::MirrorAdjustment\";\nchar consumer[20] = \"CANoe\";\nchar provider[20] = \"LeftMirror\";\nchar field[20] = \"Position\";\n\nsnprintf(path, elcount(path), \"%s.providerSide[%s,%s].%s\", service, consumer, provider, field);\npositionField = (providedFieldRef MirrorAdjustment.Position) lookupProvidedField(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

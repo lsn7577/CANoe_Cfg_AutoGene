@@ -1,0 +1,175 @@
+{
+  "page_type": "event",
+  "name": "on ethernetStatus",
+  "category": "IP",
+  "title": "on ethernetStatus",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/EventProcedures/CAPLfunctionOnEthernetStatus.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure is called on the change of the status of the Ethernet link.",
+    "To access the control information you would use selectors.",
+    "The key word this is available within an on ethernetStatus procedure, to access the information of the link status."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on ethernetStatus *\n{\n  switch(this.status)\n  {\n    case 0:\n      write(\"Ethernet link on Eth%d is down\", this.msgChannel );\n      break;\n    case 1:\n      write(\"Ethernet link on Eth%d is up with %dbit/sec\", this.msgChannel , this.bitrate );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5: form 1-2 9.0 SP3: selector hwChannel 11.0: selector time_ns 12.0 SP4: selector hwPort 13.0: form 3",
+      "8.5: form 1-2 9.0 SP3: selector hwChannel 11.0: selector time_ns 12.0 SP4: selector hwPort 13.0: form 3",
+      "13.0",
+      "—",
+      "—",
+      "2.0 SP2: form 1 2.1 SP3: selector hwChannel 3.0: selector time_ns 5.0: selector hwPort 5.0: form 3"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "status 0: Link down 1: Link up",
+        "long",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "bitrate Bit rate in kBit/sec",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "msgChannel Application channel, i.e. Eth 1",
+        "word"
+      ]
+    },
+    {
+      "row": [
+        "hwChannel Hardware channel. If not supported by network interface, value is 1.",
+        "word",
+        "Only with Vector Interfaces, i.e. VN5640, with operation mode with more than 1 hardware channel. Channel-based network access only"
+      ]
+    },
+    {
+      "row": [
+        "hwPort Port used for network-based access.",
+        "ethernetPort",
+        "network-based access only"
+      ]
+    },
+    {
+      "row": [
+        "time_ns Timestamp of the status change",
+        "int64",
+        "read only"
+      ]
+    },
+    {
+      "name": "network-based",
+      "link": "../../../CANoeCANalyzer/Ethernet/EthernetPortBasedNetworkAccess.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

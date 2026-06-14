@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedFieldRef::AbstractReleaseField",
+  "category": "CommunicationObjects",
+  "title": "consumedFieldRef::AbstractReleaseField",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedFieldRefAbstractReleaseField.htm",
+  "syntax": [
+    "int consumedFieldRef::AbstractReleaseField()"
+  ],
+  "description": [
+    "Releases the subscription of a specific service field if abstract binding is used: for the specified consumer from the specified provider. If the field is released, it will be unsubscribed and not automatically re-subscribed."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "MirrorAdjustment.consumerSide[CANoe,LeftMirror].CurrentPosition.AbstractReleaseField();\r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

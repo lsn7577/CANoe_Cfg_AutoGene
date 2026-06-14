@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ResetCanEx",
+  "category": "CAN",
+  "title": "ResetCanEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionResetCanEx.htm",
+  "syntax": [
+    "void ResetCanEx(long channel);"
+  ],
+  "description": [
+    "Resets the CAN controller for one specific CAN channel. Can be used to reset the CAN controller after a BUSOFF or to activate configuration changes. Since execution of the function takes a certain amount of time and the CAN controller is disconnected from the bus for a brief period messages may be lost."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "CAN channel"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key 'r' { // After BUSOFF the controller on Channel 2 is reset\nresetCanEx(2);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

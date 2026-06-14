@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetPowerModeInformation",
+  "category": "Diagnostics",
+  "title": "DoIP_SetPowerModeInformation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetPowerModeInformation.htm",
+  "syntax": [
+    "void DoIP_SetPowerModeInformation(long powerMode);"
+  ],
+  "description": [
+    "Sets the value returned automatically for a Power Mode Information Request."
+  ],
+  "parameters": [
+    {
+      "name": "powerMode",
+      "type": "",
+      "description": "-1: do not send a response for the request0: not ready1: ready2: not supported (default)Others: reserved"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// The ECU simulation will return “ready” if the power mode is requested\nDoIP_SetPowerModeInformation( 1);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

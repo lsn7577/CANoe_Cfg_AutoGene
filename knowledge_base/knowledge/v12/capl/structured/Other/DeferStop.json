@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "DeferStop",
+  "category": "Other",
+  "title": "DeferStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionDeferStop.htm",
+  "syntax": [
+    "void DeferStop(dword maxDeferTime)"
+  ],
+  "description": [
+    "Defers measurement stop.",
+    "The function can be called in the on preStop handler or even at an earlier time instance. Measurement is deferred until CompleteStop is called in the same node or the simulation time has advanced by the amount given in parameter maxDeferTime since the arrival of a stop request (and call of the on preStop handler).",
+    "DeferStop enables waiting for completion of activities that have to be carried out before measurement stop takes effect, e.g. a reset of an attached ECU."
+  ],
+  "parameters": [
+    {
+      "name": "maxDeferTime",
+      "type": "",
+      "description": "Indicates the time interval in milliseconds after which completion of pre-stop activities is indicated automatically if it has not yet been done explicitly via CompleteStop."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on preStop\n{\n   message ShutdownReq m;\n   output(m);\n   DeferStop(1000);\n}\non message ShutdownAck\n{\n   CompleteStop();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

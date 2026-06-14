@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetPMaxScheduleEntryCount",
+  "category": "SmartCharging",
+  "title": "SCC_GetPMaxScheduleEntryCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetPMaxScheduleEntryCount.htm",
+  "syntax": [
+    "long SCC_GetPMaxScheduleEntryCount ( long Index )"
+  ],
+  "description": [
+    "Get the number of entries in the PMaxSchedule."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Returns the number of PMaxScheduleEntries in the subelement PMaxSchedule of the SAScheduleTuple with the selected index.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

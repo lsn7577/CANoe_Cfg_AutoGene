@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "EthStartPacketGenerator",
+  "category": "Obsolete",
+  "title": "EthStartPacketGenerator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthStartPacketGenerator_.htm",
+  "syntax": [
+    "long EthStartPacketGenerator( );"
+  ],
+  "description": [
+    "This function starts the Ethernet packet generator that sends continuously the configured packets.",
+    "If you do not specify a number of Frames the generator sends until you call EthStopPacketGenerator.",
+    "To configure packets call EthConfigurePacketGenerator."
+  ],
+  "parameters": [
+    {
+      "name": "numberOfFrames",
+      "type": "",
+      "description": "The number of Frames that should be transmitted overall."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  LONG packetHandle;\n  char error[255];\n\n  // create packet and start packet generator\n  packetHandle = EthInitPacket(\"udp\");\n\n  if (EthGetLastError() == 0)\n  {\n  // set protocol fields\n  EthSetTokenInt( packetHandle, \"ipv4\", \"source\", 0xC0A80001 ); // 192.168.0.1\n  EthSetTokenInt( packetHandle, \"ipv4\", \"destination\", 0xFFFFFFFF ); // 255.255.255.255\n  EthSetTokenInt( packetHandle, \"udp\", \"source\", 23 );\n  EthSetTokenInt( packetHandle, \"udp\", \"destination\", 23 );\n\n  // set UDP payload\n  EthResizeToken( packetHandle, \"udp\", \"data\", 12*8 ); /*8 byte text, 4 byte   counter*/\n  EthSetTokenData( packetHandle, \"udp\", \"data\", 5, \"Counter \" );\n\n  // complete\n  EthCompletePacket( packetHandle );\n\n  // configure generator\n EthConfigurePacketGenerator(packetHandle, 10000, 38); //10000 fps\n\n  // release packet\n  EthReleasePacket( packetHandle );\n  }\n  else\n  {\n  EthGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n  }\n}\n\non key '1'\n{\n  // start generator\n EthStartPacketGenerator(1000000); //one million packets, should run about 100s\n}\n\non key '2'\n{\n  // stop generator before it is finished\n EthStopPacketGenerator();\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

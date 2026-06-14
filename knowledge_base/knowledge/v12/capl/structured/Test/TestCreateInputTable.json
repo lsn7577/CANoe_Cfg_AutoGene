@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestCreateInputTable",
+  "category": "Test",
+  "title": "TestCreateInputTable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCreateInputTable.htm",
+  "syntax": [
+    "TestCreateStringInputTable(char text[], char caption[], char info[]);"
+  ],
+  "description": [
+    "This function creates a selection dialog. To add a value table entry, use the command TestAddValueTableEntry or TestAddStringTableEntry. After all entries are added the dialog can be opened by the command TestWaitForInput."
+  ],
+  "parameters": [
+    {
+      "name": "Text",
+      "type": "",
+      "description": "Text to be displayed in the entry dialog"
+    }
+  ],
+  "return": "The handle of the dialog.",
+  "example": {
+    "description": [],
+    "code": "handle = TestCreateStringInputTable(\"Test Text\", \"Test Caption\", \"Test String Input Table Timeout\");\nTestAddStringTableEntry(handle, \"Test Entry\");\nTestWaitForInput(handle, 5000);\nTestGetStringInput(resultStr, elcount(resultStr));\n\nhandle = TestCreateValueInputTable(\"Test Text\", \"Test Caption\", \"Test Value Input Table Timeout\");\nTestAddValueTableEntry(handle, 9);\nTestWaitForInput(handle, 5000);\nwrite(\"Result: %f\", TestGetValueInput());"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_UnsubscribeEvent",
+  "category": "CommunicationObjects",
+  "title": "Abstract_UnsubscribeEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractUnsubscribeEvent.htm",
+  "syntax": [
+    "long Abstract_UnsubscribeEvent(consumedEventRef * event)"
+  ],
+  "description": [
+    "Unsubscribes for a service event if abstract binding is used. Note that this is more low-level; usually its more convenient to call consumedEventRef::AbstractReleaseEvent on the event."
+  ],
+  "parameters": [
+    {
+      "name": "event",
+      "type": "",
+      "description": "Event which shall be unsubscribed."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "Abstract_UnsubscribeEvent(MirrorAdjustment.consumerSide[0,0].Position);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

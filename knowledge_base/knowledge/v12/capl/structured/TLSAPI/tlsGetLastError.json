@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "tlsGetLastError",
+  "category": "TLSAPI",
+  "title": "tlsGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TLSAPI/Functions/CAPLfunctiontlsGetLastError.htm",
+  "syntax": [
+    "long tlsGetLastError(dword socket);"
+  ],
+  "description": [
+    "Returns the TLS error code of the last operation that failed on a specified socket."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "WSA_INVALID_PARAMETER (87): The specified socket was invalid.",
+  "example": {
+    "description": [],
+    "code": "void OnTcpListen( dword socket, long result)\n{\n  DWORD clientHandle;\n  // Accept the connection\n  clientHandle = TcpAccept( socket );\n\n  tlsOpen(clientHandle);\n  tlsAuthenticateAsServer(clientHandle, \"Server1\");\n\n  if ((tlsGetLastError(clientHandle) != 0) &&\n  (tlsGetLastError(clientHandle) != 997))\n  {\n    // an error occurred\n    return;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

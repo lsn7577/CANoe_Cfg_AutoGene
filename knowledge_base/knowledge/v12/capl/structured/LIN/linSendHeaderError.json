@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linSendHeaderError",
+  "category": "LIN",
+  "title": "linSendHeaderError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSendHeaderError.htm",
+  "syntax": [
+    "dword linSendHeaderError(byte syncByte, byte idWithParity, byte StopAfterError)"
+  ],
+  "description": [
+    "This function sends a header with the current sync break, sync delimiter and interbyte space settings and the specified sync byte and id byte.",
+    "If the LIN hardware is not in Master mode calling this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "syncByte",
+      "type": "",
+      "description": "Data value to be sent in the Synch Byte field."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "// Force an error in header of LIN frame with ID=0x33 by setting wrong protected ID\non key 'h'\n{\n   byte linID, protectedID, corParity, errParity, errPID;\n   // calculate protected ID with wrong parity bits\n   linID = 0x33; // use frame ID=0x33\n   protectedID = linGetProtectedID(linID); // get protected ID\n   corParity = (protectedID & 0xC0) >> 6; // extract parity (0xC=0=11000000)\n   errParity = (corParity ^ 0x2) & 0x3; // calculate wrong parity using XOR\n   errPID = linID | (errParity << 6); // calculate PID with wrong parity\n   linSendHeaderError(0x55, errPID, 0);\n}\n...\nor\n...\n// Force an error in header of LIN frame with ID=0x33 by setting wrong Synch byte\nlinSendHeaderError(0x50, linGetProtectedID(0x33), 0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

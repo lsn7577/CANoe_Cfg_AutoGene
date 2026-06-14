@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssAddMasterResponseSwitchStateSelective",
+  "category": "CANopen",
+  "title": "coTfsLssAddMasterResponseSwitchStateSelective",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssAddMasterResponseSwitchStateSelective.htm",
+  "syntax": [
+    "long coTfsLssAddMasterResponseSwitchStateSelective( dword vendorId, dword vendorIdMask, dword productCode, dword productCodeMask, dword revNo, dword revNoMask, dword serialNo, dword serialNoMask );"
+  ],
+  "description": [
+    "This function adds a single LSS Master request wait condition to the internal list of LSS Master request wait conditions and sends a response if a request is received."
+  ],
+  "parameters": [
+    {
+      "name": "vendorId",
+      "type": "",
+      "description": "Vendor-ID part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\n  write(\"Clear list failed\");\n  return;\n} \n\n/* add one or more test functions */\nif (coTfsLssAddMasterResponseSwitchStateSelective( 0x12341234, 0xFFFFFFFF, 0, 0, 0x0001, 0xFFFFFFFF, 0, 0 ) {\n  write(\"could not add request\");\n  return;\n} \n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\n  write(\"no event received\");\n} \nelse {\n  write(\"event received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSetMapObjectBmpIndex",
+  "category": "Car2x",
+  "title": "C2xSetMapObjectBmpIndex",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSetMapObjectBmpIndex.htm",
+  "syntax": [
+    "long C2xSetMapObjectBmpIndex( long handle, long bitmapIndex );"
+  ],
+  "description": [
+    "Sets the index of a bitmap in a multi bitmap file for a map object of the type bitmap which must be shown."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "Reference of the map object"
+    }
+  ],
+  "return": "0 if success, else the set went wrong",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

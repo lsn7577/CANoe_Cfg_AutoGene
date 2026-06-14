@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SomeIpRemoveValue",
+  "category": "IP",
+  "title": "SomeIpRemoveValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpRemoveValue.htm",
+  "syntax": [
+    "long SomeIpRemoveValue( dword objectHandle, char valuePath[]);"
+  ],
+  "description": [
+    "This function can be used to remove a value in the object specified in the objectHandle parameter. The value is removed in this case via symbolic access paths.",
+    "The function may be used on entries of dynamic arrays or optional values which shall be removed. In the case of arrays successive entries are moved forward."
+  ],
+  "parameters": [
+    {
+      "name": "objectHandle",
+      "type": "",
+      "description": "Handle to a SOME/IP IL object, which must be completely described in the FIBEX database.The following objects are supported."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

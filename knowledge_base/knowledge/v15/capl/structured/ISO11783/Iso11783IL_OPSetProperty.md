@@ -1,0 +1,46 @@
+# Iso11783IL_OPSetProperty
+
+> Category: `ISO11783` | Type: `function`
+
+## Syntax
+
+```c
+long Iso11783IL_OPSetProperty( char propertyName[], long newValue ); // form 1
+long Iso11783IL_OPSetProperty( dbNode implement, char propertyName[], long newValue ); // form 2
+```
+
+## Description
+
+The function sets a property of the Object Pool API, i.e. the supported Virtual Terminal version.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| Version | Supported version of the ISO11783 Virtual Terminal specification.Supported values: 2, 3 (default), 4 and 5If used, the version value obtained from the database (node attribute ISO11783OPVersion) is overwritten. |
+| SendPreferredAssignmentEvenIfEmpty | Enforces sending of the Preferred Assigning message to the Virtual Terminal, even if no of auxiliary function has a preferred assigned auxiliary input, i.e. the corresponding INI file (i.g. Sprayer.ini) contains following lines: [AuxAssignment]AuxAssignmentCount=0 Supported values: 0: Preferred Assigning message is sent to the Virtual Terminal if at least one preferred assignment exists 1: Preferred Assigning message is sent to the Virtual Terminal even if no preferred assignment exists |
+| VTFunctionInstance | On startup the node connects to the Virtual Terminal (VT) which has this function instance. By default the node connects to the primary VT with function instance zero (0). If value -1 is used then the node connects to the first visible VT. |
+| ModelIdentificationCode | Model identification code of the implement which is sent in the Auxiliary Input Type 2 Maintenance message. |
+| newValue | New value for the parameter. |
+| implement | Simulation node to apply the function. |
+
+## Example
+
+```c
+Iso11783IL_OPSetProperty( "Version", 3 );
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 8.0: form 1 9.0: form 2 | 13.0 | — | — | 2.1 |
+| Restricted To | — | ISO11783 | ISO11783 | — | — | form 2 ISO11783 |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ (form 1) | ✔ (form 1) | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ (form 2) | ✔ (form 2) | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ (form 2) | ✔ (form 2) | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

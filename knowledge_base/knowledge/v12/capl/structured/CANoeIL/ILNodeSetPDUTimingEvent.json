@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ILNodeSetPDUTimingEvent",
+  "category": "CANoeIL",
+  "title": "ILNodeSetPDUTimingEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILNodeSetPDUTimingEvent.htm",
+  "syntax": [
+    "long ILNodeSetPDUTimingEvent (dbMessage, long TrueOrFalse, long enable, long repetitionPeriod, long repetitionCount, long debounceDelay, long disturbanceCount, long flags)"
+  ],
+  "description": [
+    "Overrides the defined event timing from the database. Possibly two timings (False and True) exist in parallel and are selected upon the current transmission mode of the PDU.",
+    "Only when an enabled event timing exists, the PDU can be transmitted regardless of any cyclic timing if any transfer property of a signal or signal group is firing/triggering."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

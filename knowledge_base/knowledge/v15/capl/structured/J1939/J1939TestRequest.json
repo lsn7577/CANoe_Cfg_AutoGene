@@ -1,0 +1,184 @@
+{
+  "page_type": "function",
+  "name": "J1939TestRequest",
+  "category": "J1939",
+  "title": "J1939TestRequest",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestRequest.htm",
+  "syntax": [
+    "long J1939TestRequest( dword rqPGN, dword reqSA, dword respSA, dword timeout, dword options )",
+    "long J1939TestRequest( dbMsg msg, dword reqSA, dword respSA, dword timeout, dword options )",
+    "long J1939TestRequest( dbMsg msg, dbNode reqNode, dbNode respNode, dword timeout, dword options)",
+    "long J1939TestRequest( pg msgBuffer, dword maxRespSize, dword reqSA, dword respSA, dword timeout, dword options )",
+    "long J1939TestRequest( pg msgBuffer, dword maxRespSize, dbNode reqNode, dbNode respNode, dword timeout, dword options )"
+  ],
+  "description": [
+    "Sends a request from the address reqSA, then wait until the response is received. Within the time interval (timeout) the response or an acknowledgment must be received.",
+    "If the requested parameter group is received, the data is copied into the buffer (msgBuffer). The test module can verify the values in this buffer.",
+    "If a response is sent with the RTS/CTS transport protocol, with Bit 2 in options sending of CTS and EoMA can be activated"
+  ],
+  "parameters": [
+    {
+      "name": "rqPGN",
+      "type": "",
+      "description": "request this PGN"
+    },
+    {
+      "name": "msg",
+      "type": "",
+      "description": "message from database"
+    },
+    {
+      "name": "msgBuffer",
+      "type": "",
+      "description": "PG variable, the response is copied into this bufferIf the answer is an acknowledge message, the buffer is left untouched. Please use TestGetWaitJ1939PGData to query the information."
+    },
+    {
+      "name": "maxRespSize",
+      "type": "",
+      "description": "size of buffer for response"
+    },
+    {
+      "name": "reqSA",
+      "type": "",
+      "description": "source address for request, 0..253"
+    },
+    {
+      "name": "respSA",
+      "type": "",
+      "description": "source address of the response 0..253, with global requests the source address can be ignored by using 0xFE"
+    },
+    {
+      "name": "reqNode",
+      "type": "",
+      "description": "database node, which sends the request"
+    },
+    {
+      "name": "respNode",
+      "type": "",
+      "description": "database node, which sends the response"
+    },
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "timeout in [ms] (If this value is not set, it is not waited for the response.)"
+    },
+    {
+      "name": "Bit 1",
+      "type": "",
+      "description": "1: global request (DA=255) 0: specific request (DA=respAddr)"
+    },
+    {
+      "name": "Bit 2",
+      "type": "",
+      "description": "1: enable CTS and EoMA for reqSA 0: no RTS/CTS support"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "pg EC1 rxPG;\n\nif (J1939TestRequest( EC1, Tester, EMS, 250, 0x00 ) != 0) {\n  testFail( “EC1 not received after request” );\n}\n\nif (J1939TestRequest( rxPG, Tester, EMS, 250, 0x00 ) == 0) {\n  if (rxPG.AnyValue.phys > 100.0) {\n    testStepFail( “EC1.AnyValue hast wrong value” );\n  }\n}\nelse {  \n  testStepFail( “EC1 not received after request” );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.1",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GNSSSetCOGSOGVal",
+  "category": "J1939",
+  "title": "GNSSSetCOGSOGVal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSSetCOGSOGVal.htm",
+  "syntax": [
+    "dword GNSSSetCOGSOGVal ( dword fixSID, dword cogReference}"
+  ],
+  "description": [
+    "This function can be used to change values of the parameter group \"COG & SOG, Rapid Update\" (PGN 129026) which are not modified by the simulation automatically.",
+    "The same settings can be made via node attributes in the used database."
+  ],
+  "parameters": [
+    {
+      "name": "fixSID",
+      "type": "",
+      "description": "1 if fix sequence ID (255) has to be used, else 0"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "GNSSSetCOGSOGVal ( 0, 1 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

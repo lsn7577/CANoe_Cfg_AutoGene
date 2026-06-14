@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDObjectPoolDeactivate",
+  "category": "ISO11783",
+  "title": "Iso11783PDDObjectPoolDeactivate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDObjectPoolDeactivate.htm",
+  "syntax": [
+    "long Iso11783PDDObjectPoolDeactivate( dword ecuHandle );"
+  ],
+  "description": [
+    "The function sends an Object-pool Deactivate message to the Task Controller and disconnects the connection to the Task Controller."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783PDDObjectPoolDeactivate ( ecuHandle ) == 0) {\n  write( \"Node has disconnected from the Task Controller\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

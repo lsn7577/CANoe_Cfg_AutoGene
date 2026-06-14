@@ -1,0 +1,307 @@
+{
+  "schema_version": "0.1.0",
+  "agent": "SubAgent3_CAPL测试脚本编写专家",
+  "target_canoe_version": "v15",
+  "can_artifact": "F:\\Canoe_Gene\\generated_projects\\EQ07_workflow_test\\runs\\reevaluate_current\\EQ07_AutoTest_Project_TestModule.can",
+  "evidence_status": "complete",
+  "renderer": "kb_grounded_conservative_renderer",
+  "adapter_note_count": 7,
+  "adapter_notes": [
+    {
+      "severity": "info",
+      "message": "Step 1 declares period 100 ms; one-shot output is generated. Use a timer renderer for sustained periodic sending."
+    },
+    {
+      "severity": "warning",
+      "message": "XCP calibration Cal_RpmThreshold uses adapter stub until project XCP library binding is provided."
+    },
+    {
+      "severity": "warning",
+      "message": "Measurement check Meas_EngineSpeed uses XCP/measurement adapter."
+    },
+    {
+      "severity": "warning",
+      "message": "Measurement check Meas_State uses XCP/measurement adapter."
+    },
+    {
+      "severity": "warning",
+      "message": "Diagnostic request DiagnosticSessionControl uses adapter stub until CDD request objects are bound."
+    },
+    {
+      "severity": "warning",
+      "message": "Diagnostic response check DiagnosticSessionControl uses adapter wrapper."
+    },
+    {
+      "severity": "warning",
+      "message": "Diagnostic response check ReadDataByIdentifier uses adapter wrapper."
+    }
+  ],
+  "message_variables": {
+    "VehicleCtrl": "msg_VehicleCtrl"
+  },
+  "evidence_pages": [
+    {
+      "symbol": "CheckSignalMatch",
+      "page_id": "v15::capl::Test::CheckSignalMatch",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "TestCaseComment",
+      "page_id": "v15::capl::Test::TestCaseComment",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "TestCaseFail",
+      "page_id": "v15::capl::Test::TestCaseFail",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "TestWaitForMessage",
+      "page_id": "v15::capl::Test::TestWaitForMessage",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "TestWaitForSignalInRange",
+      "page_id": "v15::capl::Test::TestWaitForSignalInRange",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "TestWaitForSignalMatch",
+      "page_id": "v15::capl::Test::TestWaitForSignalMatch",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "TestWaitForTimeout",
+      "page_id": "v15::capl::Test::TestWaitForTimeout",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "diagGetParameter",
+      "page_id": "v15::capl::Diagnostics::diagGetParameter",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "diagSendRequest",
+      "page_id": "v15::capl::Diagnostics::diagSendRequest",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "diagSetParameter",
+      "page_id": "v15::capl::Diagnostics::diagSetParameter",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "diagSetTarget",
+      "page_id": "v15::capl::Diagnostics::diagSetTarget",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "on message",
+      "page_id": "v15::capl::CAN::on message",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "output (CAN)",
+      "page_id": "v15::capl::CAN::output (CAN)",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "setSignal",
+      "page_id": "v15::capl::CommunicationObjects::SetSignal",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "setTimer",
+      "page_id": "v15::capl::Other::setTimer",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "v15::capl::Test::SetSignal",
+      "page_id": "v15::capl::Test::SetSignal",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "xcpActivate",
+      "page_id": "v15::capl::XCP::xcpActivate",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "xcpConnect",
+      "page_id": "v15::capl::XCP::xcpConnect",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "xcpSetCalPage",
+      "page_id": "v15::capl::XCP::xcpSetCalPage",
+      "confidence": "exact"
+    },
+    {
+      "symbol": "team::CAPL_Internal_Coding_Standards",
+      "page_id": "extras::team::_root::CAPL_Internal_Coding_Standards",
+      "confidence": "team_override"
+    },
+    {
+      "symbol": "team::Common_Gotchas",
+      "page_id": "extras::team::_root::Common_Gotchas",
+      "confidence": "team_override"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "TC_001",
+      "name": "IGN_ON 后 ECU 发送状态报文",
+      "steps": [
+        {
+          "step_no": 1,
+          "operation_type": "CAN报文发送",
+          "generated_statement_count": 5,
+          "adapter_notes": [
+            {
+              "severity": "info",
+              "message": "Step 1 declares period 100 ms; one-shot output is generated. Use a timer renderer for sustained periodic sending."
+            }
+          ],
+          "condition": {
+            "type": "等待固定时间",
+            "object": "timer",
+            "operator": ">=",
+            "expected": "500ms",
+            "timeout_ms": 1000
+          },
+          "expected_result": {
+            "type": "接收CAN报文发送",
+            "object": "ECU_Status",
+            "operator": "exists",
+            "expected": "收到至少1帧",
+            "observe_ms": 1000
+          }
+        },
+        {
+          "step_no": 2,
+          "operation_type": "CAN信号赋值",
+          "generated_statement_count": 3,
+          "adapter_notes": [],
+          "condition": {
+            "type": "CAN信号变化",
+            "object": "ECU_Status.Ready",
+            "operator": "==",
+            "expected": "1",
+            "timeout_ms": 3000
+          },
+          "expected_result": {
+            "type": "CAN信号变化",
+            "object": "ECU_Status.Ready",
+            "operator": "==",
+            "expected": "1",
+            "observe_ms": 3000
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "TC_002",
+      "name": "修改转速阈值并观察状态",
+      "steps": [
+        {
+          "step_no": 1,
+          "operation_type": "XCP标定量赋值",
+          "generated_statement_count": 3,
+          "adapter_notes": [
+            {
+              "severity": "warning",
+              "message": "XCP calibration Cal_RpmThreshold uses adapter stub until project XCP library binding is provided."
+            },
+            {
+              "severity": "warning",
+              "message": "Measurement check Meas_EngineSpeed uses XCP/measurement adapter."
+            },
+            {
+              "severity": "warning",
+              "message": "Measurement check Meas_State uses XCP/measurement adapter."
+            }
+          ],
+          "condition": {
+            "type": "观测量变化",
+            "object": "Meas_EngineSpeed",
+            "operator": ">=",
+            "expected": "1500",
+            "timeout_ms": 5000
+          },
+          "expected_result": {
+            "type": "观测量变化",
+            "object": "Meas_State",
+            "operator": "==",
+            "expected": "ThresholdReached",
+            "observe_ms": 5000
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "TC_003",
+      "name": "进入扩展会话后读取 DID",
+      "steps": [
+        {
+          "step_no": 1,
+          "operation_type": "诊断服务请求",
+          "generated_statement_count": 3,
+          "adapter_notes": [
+            {
+              "severity": "warning",
+              "message": "Diagnostic request DiagnosticSessionControl uses adapter stub until CDD request objects are bound."
+            },
+            {
+              "severity": "warning",
+              "message": "Diagnostic response check DiagnosticSessionControl uses adapter wrapper."
+            },
+            {
+              "severity": "warning",
+              "message": "Diagnostic response check ReadDataByIdentifier uses adapter wrapper."
+            }
+          ],
+          "condition": {
+            "type": "诊断服务响应",
+            "object": "DiagnosticSessionControl",
+            "operator": "==",
+            "expected": "PositiveResponse",
+            "timeout_ms": 3000
+          },
+          "expected_result": {
+            "type": "诊断服务响应",
+            "object": "ReadDataByIdentifier",
+            "operator": "contains",
+            "expected": "DID=F190",
+            "observe_ms": 3000
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "TC_004",
+      "name": "人工切换开关后确认信号变化",
+      "steps": [
+        {
+          "step_no": 1,
+          "operation_type": "等待手动操作后确认",
+          "generated_statement_count": 5,
+          "adapter_notes": [],
+          "condition": {
+            "type": "等待手动操作后确认",
+            "object": "人工确认",
+            "operator": "==",
+            "expected": "已完成",
+            "timeout_ms": 60000
+          },
+          "expected_result": {
+            "type": "CAN信号变化",
+            "object": "ECU_Status.KL15",
+            "operator": "==",
+            "expected": "1",
+            "observe_ms": 3000
+          }
+        }
+      ]
+    }
+  ],
+  "retry_count": 1
+}

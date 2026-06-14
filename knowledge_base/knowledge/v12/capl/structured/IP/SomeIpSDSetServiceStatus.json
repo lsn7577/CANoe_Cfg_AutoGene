@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpSDSetServiceStatus",
+  "category": "IP",
+  "title": "SomeIpSDSetServiceStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpSDSetServiceStatus.htm",
+  "syntax": [
+    "long SomeIpSDSetServiceStatus( dword psiHandle, long up );"
+  ],
+  "description": [
+    "The status of the Provided Service Instance is set at the node (producer)."
+  ],
+  "parameters": [
+    {
+      "name": "psiHandle",
+      "type": "",
+      "description": "Handle of the required Consumed Service Instance (see SomeIpCreateProvidedServiceInstance)."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "dword appEndpointHandle;\ndword serviceHandle;\n\nappEndpointHandle = SomeIpOpenLocalApplicationEndpoint(kUDP, 30501);\nserviceHandle  = SomeIpCreateConsumedServiceInstance(appEndpointHandle, 1 /*serviceId*/, 1 /*instanceId*/);\nSomeIpSDSetServiceStatus(serviceHandle, 0); //do not offer this service"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

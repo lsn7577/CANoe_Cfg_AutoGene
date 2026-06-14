@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "id": "can_signal",
+  "name": "CAN Message And Signal Test Generation",
+  "version": "0.1.0",
+  "status": "active",
+  "owner": "workflow",
+  "domains": ["can", "signal"],
+  "compatible_canoe_versions": ["v12", "v15"],
+  "depends_on_packs": ["core", "team_eq07"],
+  "files": {
+    "scenarios": "packs/can_signal/scenarios.json",
+    "retrieval_profile": "packs/can_signal/retrieval_profile.json",
+    "validation_rules": "packs/can_signal/validation_rules.json"
+  },
+  "provided_capabilities": [
+    "CAN frame send/stop/period adjustment",
+    "CAN signal assignment",
+    "CAN message and signal observation"
+  ]
+}
+

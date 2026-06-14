@@ -1,0 +1,204 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_SetDelayForStateTransition",
+  "category": "J1939",
+  "title": "GBT27930IL_SetDelayForStateTransition",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILSetDelayForStateTransition.htm",
+  "syntax": [
+    "long GBT27930IL_SetDelayForStateTransition(double stateTransition, double delay); // form 1",
+    "long GBT27930IL_SetDelayForStateTransition(dbNode node , double stateTransition, double delay); // form 2"
+  ],
+  "description": [
+    "Defines delay for a state transition."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "Meaning for the Charger node",
+      "description": "Meaning for the BMS node"
+    },
+    {
+      "name": "11",
+      "type": "",
+      "description": "After the K3 and K4 are closed (resp. GBT27930IL_StartChargingSimulation() is called): Start sending of CHM"
+    },
+    {
+      "name": "0",
+      "type": "After the appearance of the BHM: Stop sending of CHM and start sending of CRM (BMS is not recognized)",
+      "description": "After the appearance of the CHM: Start sending of BHM"
+    },
+    {
+      "name": "1",
+      "type": "After the appearance of the BRM: Stop sending of CRM (BMS is not recognized) and start sending of CRM (BMS is recognized)",
+      "description": "After the appearance of the CRM (BMS is not recognized): Stop sending of BHM and start sending of BRM"
+    },
+    {
+      "name": "2",
+      "type": "After the appearance of the BCP: Stop sending of CRM (BMS is recognized) and start sending of CML",
+      "description": "After the appearance of the CRM (BMS is recognized): Stop sending of BRM and start sending of BCP"
+    },
+    {
+      "name": "3",
+      "type": "After the appearance of the BRO (Ready for charging): Stop sending of CML and start sending of CRO (Not ready for charging)",
+      "description": "After the appearance of the CML: Stop sending of BCP and start sending of BRO (Not ready for charging)"
+    },
+    {
+      "name": "4",
+      "type": "After the sending of CRO (Not ready for charging) is started: Stop sending of CRO (Not ready for charging) and start sending of CRO (Ready for charging)",
+      "description": "After the sending of BRO (Not ready for charging) is started: Stop sending of BRO (Not ready for charging) and start sending of BRO (Ready for charging)"
+    },
+    {
+      "name": "5",
+      "type": "After the appearance of the BCS: Stop sending of CRO (Ready for charging) and start sending of CCS",
+      "description": "After the appearance of the CRO (Not ready for charging): Stop sending of BRO (Ready for charging) and start sending of BCL"
+    },
+    {
+      "name": "15",
+      "type": "",
+      "description": "After the sending of BCL is started: In addition to sending BCL, start sending BCS"
+    },
+    {
+      "name": "6",
+      "type": "After the appearance of the BST: Stop sending of CCS and start sending of CST. This is used when the BMS suspends charging.",
+      "description": "After the appearance of the CCS: In addition to sending BCL and BCS, start sending BSM. If configured, BMV and BMT are also sent."
+    },
+    {
+      "name": "16",
+      "type": "",
+      "description": "After the appearance of the CST: Stop sending of BST and start sending of BSD. This is used when the BMS suspends charging."
+    },
+    {
+      "name": "7",
+      "type": "After the appearance of the BSD: Stop sending of CST and start sending of CSD",
+      "description": "After the appearance of the CST: Stop sending of BCL, BCS and BSM and start sending of BST. This is used when the Charger suspends charging."
+    },
+    {
+      "name": "8",
+      "type": "After the sending of the CSD is started: Stop sending of CSD, end of charging",
+      "description": "After the sending of the BST is started: Stop sending of BST and start sending of BSD. This is used when the Charger suspends charging."
+    },
+    {
+      "name": "9",
+      "type": "",
+      "description": "After the sending of the BSD is started: Stop sending of BSD, end of charging"
+    },
+    {
+      "name": "delay",
+      "type": "",
+      "description": "Time (in ms) for which the state transition is to be delayed."
+    },
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "After the K3 and K4 are",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "—",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 and Smart Charging",
+      "J1939 and Smart Charging",
+      "—",
+      "—",
+      "form 2 J1939 and Smart Charging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

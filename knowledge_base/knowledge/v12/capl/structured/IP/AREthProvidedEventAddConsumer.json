@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthProvidedEventAddConsumer",
+  "category": "IP",
+  "title": "AREthProvidedEventAddConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthProvidedEventAddConsumer.htm",
+  "syntax": [
+    "long AREthProvidedEventAddConsumer(dword pevHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort);"
+  ],
+  "description": [
+    "Adds a consumer to a provided event. Afterwards the event notifications will be sent to this consumer."
+  ],
+  "parameters": [
+    {
+      "name": "pevHandle",
+      "type": "",
+      "description": "Provided event handle (may be retrieved by AREthGetProvidedObjectHandle)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

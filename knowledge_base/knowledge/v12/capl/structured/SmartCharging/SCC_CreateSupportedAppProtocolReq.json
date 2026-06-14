@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateSupportedAppProtocolReq",
+  "category": "SmartCharging",
+  "title": "SCC_CreateSupportedAppProtocolReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateSupportedAppProtocolReq.htm",
+  "syntax": [
+    "long SCC_CreateSupportedAppProtocolReq ( dword ConfigSection )"
+  ],
+  "description": [
+    "Creates a SupportedAppProtocol Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "ConfigSection",
+      "type": "",
+      "description": "Number of the section from the test configuration file to use."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

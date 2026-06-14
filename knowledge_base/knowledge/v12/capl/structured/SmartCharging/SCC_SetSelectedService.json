@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetSelectedService",
+  "category": "SmartCharging",
+  "title": "SCC_SetSelectedService",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetSelectedService.htm",
+  "syntax": [
+    "long SCC_SetSelectedService ( long ServiceID, long ParameterSetID )"
+  ],
+  "description": [
+    "Adds a service to the SelectedServiceList of the PaymentService- SelectionReq (former ServicePaymentSelectionReq) message.",
+    "For a correct message, use one of the ServiceIDs sent by the charge point in the message ServiceDiscoveryRes. The charge service is always selected automatically by the vehicle."
+  ],
+  "parameters": [
+    {
+      "name": "ServiceID",
+      "type": "",
+      "description": "ID of the desired service"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

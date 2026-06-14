@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939ILSetMsgRawData",
+  "category": "J1939",
+  "title": "J1939ILSetMsgRawData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILSetMsgRawData.htm",
+  "syntax": [
+    "long J1939ILSetMsgRawData(dbMessage msg, long dataSize, byte data[] ); // form 1"
+  ],
+  "description": [
+    "Sets the data bytes of the message. The length of the parameter group is adjusted to size of parameter dataSize."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "message name from database, must be assigned to the node as Tx message"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  char data[10] = \"TPMS*V1.0*\";\n J1939ILSetMsgRawData( ECUID, elCount(data), data );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "AfdxOutputPacketWithSignals",
+  "category": "ADFX",
+  "title": "AfdxOutputPacketWithSignals",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxOutputPacketWithSignals.htm",
+  "syntax": [
+    "long AfdxOutputPacketWithSignals( long packet );"
+  ],
+  "description": [
+    "Sends a message and automatically updates the payload with the current Tx-signal values of the SignalServer.",
+    "Note: There are conceptually two distinct ways to apply send specific signal values:",
+    "Note: During PreStart-phase the SignalServer is not yet initialized"
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message to send that has been created with AfdxInitPacket."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  long packet;\n}\n\non preStart\n{\n  // initialize the frame header, don’t care for the payload\n  packet  = AfdxInitPacket(0, \"TESTMSG_ALLTYPES\", 0 );\n  if (packet == 0)\n  {\n    write( \"<%NODE_NAME%> AfdxInitPacket failed due to:%s\", errTxt );\n  }\n}\n\non key ‚1‘\n{\n  // update payload with current tx-signal values from\n  // signal server and then send the frame out\n  AfdxOutputPacketWithSignals(packet);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

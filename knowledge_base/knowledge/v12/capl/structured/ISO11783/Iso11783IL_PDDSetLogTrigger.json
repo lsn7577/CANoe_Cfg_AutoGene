@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDSetLogTrigger",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDSetLogTrigger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDSetLogTrigger.htm",
+  "syntax": [
+    "long Iso11783IL_PDDSetLogTrigger( dword command, ulong ddi, ulong elNum, ulong value ); // form 1"
+  ],
+  "description": [
+    "A measurement command can be executed with this function. It can be used in the callback function Iso11783IL_PDDOnDefaultLogRequest to activate the default logging."
+  ],
+  "parameters": [
+    {
+      "name": "command",
+      "type": "",
+      "description": "measurement command:"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_PDDOnDefaultLogRequest ( )\n{\n Iso11783IL_PDDSetLogTrigger( 4, 0x0100, 0, 1000 );\n Iso11783IL_PDDSetLogTrigger( 4, 0x0101, 0, 1000 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

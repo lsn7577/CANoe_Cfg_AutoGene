@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnAvbSend",
+  "category": "IP",
+  "title": "OnAvbSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionOnAvbSend.htm",
+  "syntax": [
+    "void OnAvbSend(dword talkerHandle, dword result, int buffer[], dword length); // form 1"
+  ],
+  "description": [
+    "This callback is dispatched when an asynchronous send operation on a Talker completes."
+  ],
+  "parameters": [
+    {
+      "name": "talkerHandle",
+      "type": "",
+      "description": "The Talker handle."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

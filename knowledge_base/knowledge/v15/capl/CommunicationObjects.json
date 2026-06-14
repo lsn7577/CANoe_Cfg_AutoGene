@@ -1,0 +1,1301 @@
+{
+  "category": "CommunicationObjects",
+  "function_count": 185,
+  "functions": [
+    {
+      "name": "Abstract_CreateAddress",
+      "file": "CAPLfunctionAbstractCreateAddress.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_CreateAddress.json",
+      "md": "structured\\CommunicationObjects\\Abstract_CreateAddress.md"
+    },
+    {
+      "name": "Abstract_GetConsumerId",
+      "file": "CAPLfunctionAbstractGetConsumerId.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_GetConsumerId.json",
+      "md": "structured\\CommunicationObjects\\Abstract_GetConsumerId.md"
+    },
+    {
+      "name": "Abstract_GetDisplayName",
+      "file": "CAPLfunctionAbstractGetDisplayName.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_GetDisplayName.json",
+      "md": "structured\\CommunicationObjects\\Abstract_GetDisplayName.md"
+    },
+    {
+      "name": "Abstract_GetProviderId",
+      "file": "CAPLfunctionAbstractGetProviderId.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_GetProviderId.json",
+      "md": "structured\\CommunicationObjects\\Abstract_GetProviderId.md"
+    },
+    {
+      "name": "Abstract_ReleaseAddress",
+      "file": "CAPLfunctionAbstractReleaseAddress.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_ReleaseAddress.json",
+      "md": "structured\\CommunicationObjects\\Abstract_ReleaseAddress.md"
+    },
+    {
+      "name": "Abstract_SubscribeEvent",
+      "file": "CAPLfunctionAbstractSubscribeEvent.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_SubscribeEvent.json",
+      "md": "structured\\CommunicationObjects\\Abstract_SubscribeEvent.md"
+    },
+    {
+      "name": "Abstract_SubscribeField",
+      "file": "CAPLfunctionAbstractSubscribeField.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_SubscribeField.json",
+      "md": "structured\\CommunicationObjects\\Abstract_SubscribeField.md"
+    },
+    {
+      "name": "Abstract_SubscribePdu",
+      "file": "CAPLfunctionAbstractSubscribePdu.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_SubscribePdu.json",
+      "md": "structured\\CommunicationObjects\\Abstract_SubscribePdu.md"
+    },
+    {
+      "name": "Abstract_UnsubscribeEvent",
+      "file": "CAPLfunctionAbstractUnsubscribeEvent.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_UnsubscribeEvent.json",
+      "md": "structured\\CommunicationObjects\\Abstract_UnsubscribeEvent.md"
+    },
+    {
+      "name": "Abstract_UnsubscribeField",
+      "file": "CAPLfunctionAbstractUnsubscribeField.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_UnsubscribeField.json",
+      "md": "structured\\CommunicationObjects\\Abstract_UnsubscribeField.md"
+    },
+    {
+      "name": "Abstract_UnsubscribePdu",
+      "file": "CAPLfunctionAbstractUnsubscribePdu.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\Abstract_UnsubscribePdu.json",
+      "md": "structured\\CommunicationObjects\\Abstract_UnsubscribePdu.md"
+    },
+    {
+      "name": "callContext",
+      "file": "CAPLfunctionCallContext.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\callContext.json",
+      "md": "structured\\CommunicationObjects\\callContext.md"
+    },
+    {
+      "name": "callcontext::CreatePermanentHandle",
+      "file": "CAPLfunctionCallcontextCreatePermanentHandle.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\callcontext__CreatePermanentHandle.json",
+      "md": "structured\\CommunicationObjects\\callcontext__CreatePermanentHandle.md"
+    },
+    {
+      "name": "callcontext::DeferAnswer",
+      "file": "CAPLfunctionCallcontextDeferAnswer.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\callcontext__DeferAnswer.json",
+      "md": "structured\\CommunicationObjects\\callcontext__DeferAnswer.md"
+    },
+    {
+      "name": "callcontext::FromHandle",
+      "file": "CAPLfunctionCallcontextFromHandle.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\callcontext__FromHandle.json",
+      "md": "structured\\CommunicationObjects\\callcontext__FromHandle.md"
+    },
+    {
+      "name": "callcontext::ReleaseHandle",
+      "file": "CAPLfunctionCallcontextReleaseHandle.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\callcontext__ReleaseHandle.json",
+      "md": "structured\\CommunicationObjects\\callcontext__ReleaseHandle.md"
+    },
+    {
+      "name": "callcontext::ReturnCall",
+      "file": "CAPLfunctionCallcontextReturnCall.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\callcontext__ReturnCall.json",
+      "md": "structured\\CommunicationObjects\\callcontext__ReturnCall.md"
+    },
+    {
+      "name": "callcontext::SetDefaultAnswer",
+      "file": "CAPLfunctionCallcontextSetDefaultAnswer.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\callcontext__SetDefaultAnswer.json",
+      "md": "structured\\CommunicationObjects\\callcontext__SetDefaultAnswer.md"
+    },
+    {
+      "name": "callcontext::SetTimeToAnswer",
+      "file": "CAPLfunctionCallcontextSetTimeToAnswer.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\callcontext__SetTimeToAnswer.json",
+      "md": "structured\\CommunicationObjects\\callcontext__SetTimeToAnswer.md"
+    },
+    {
+      "name": "Clear",
+      "file": "CAPLfunctionClear.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\Clear.json",
+      "md": "structured\\CommunicationObjects\\Clear.md"
+    },
+    {
+      "name": "Communication Objects CAPL Functions",
+      "file": "CAPLfunctionsCOOverview.htm",
+      "page_type": "notes",
+      "json": "structured\\CommunicationObjects\\Communication Objects CAPL Functions.json",
+      "md": "structured\\CommunicationObjects\\Communication Objects CAPL Functions.md"
+    },
+    {
+      "name": "consumedEventGroupRef::SOMEIPIsEventGroupRequested",
+      "file": "CAPLfunctionConsumedEventGroupRefSOMEIPIsEventGroupRequested.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedEventGroupRef__SOMEIPIsEventGroupRequested.json",
+      "md": "structured\\CommunicationObjects\\consumedEventGroupRef__SOMEIPIsEventGroupRequested.md"
+    },
+    {
+      "name": "consumedEventGroupRef::SOMEIPReleaseEventGroup",
+      "file": "CAPLfunctionConsumedEventGroupRefSOMEIPReleaseEventGroup.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedEventGroupRef__SOMEIPReleaseEventGroup.json",
+      "md": "structured\\CommunicationObjects\\consumedEventGroupRef__SOMEIPReleaseEventGroup.md"
+    },
+    {
+      "name": "consumedEventGroupRef::SOMEIPRequestEventGroup",
+      "file": "CAPLfunctionConsumedEventGroupRefSOMEIPRequestEventGroup.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedEventGroupRef__SOMEIPRequestEventGroup.json",
+      "md": "structured\\CommunicationObjects\\consumedEventGroupRef__SOMEIPRequestEventGroup.md"
+    },
+    {
+      "name": "consumedEventRef",
+      "file": "CAPLfunctionConsumedEventRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\consumedEventRef.json",
+      "md": "structured\\CommunicationObjects\\consumedEventRef.md"
+    },
+    {
+      "name": "consumedEventRef::AbstractIsEventRequested",
+      "file": "CAPLfunctionConsumedEventRefAbstractIsEventRequested.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedEventRef__AbstractIsEventRequested.json",
+      "md": "structured\\CommunicationObjects\\consumedEventRef__AbstractIsEventRequested.md"
+    },
+    {
+      "name": "consumedEventRef::AbstractReleaseEvent",
+      "file": "CAPLfunctionConsumedEventRefAbstractReleaseEvent.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedEventRef__AbstractReleaseEvent.json",
+      "md": "structured\\CommunicationObjects\\consumedEventRef__AbstractReleaseEvent.md"
+    },
+    {
+      "name": "consumedEventRef::AbstractRequestEvent",
+      "file": "CAPLfunctionConsumedEventRefAbstractRequestEvent.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedEventRef__AbstractRequestEvent.json",
+      "md": "structured\\CommunicationObjects\\consumedEventRef__AbstractRequestEvent.md"
+    },
+    {
+      "name": "consumedFieldRef",
+      "file": "CAPLfunctionConsumedFieldRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\consumedFieldRef.json",
+      "md": "structured\\CommunicationObjects\\consumedFieldRef.md"
+    },
+    {
+      "name": "consumedFieldRef::AbstractIsFieldRequested",
+      "file": "CAPLfunctionConsumedFieldRefAbstractIsFieldRequested.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedFieldRef__AbstractIsFieldRequested.json",
+      "md": "structured\\CommunicationObjects\\consumedFieldRef__AbstractIsFieldRequested.md"
+    },
+    {
+      "name": "consumedFieldRef::AbstractReleaseField",
+      "file": "CAPLfunctionConsumedFieldRefAbstractReleaseField.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedFieldRef__AbstractReleaseField.json",
+      "md": "structured\\CommunicationObjects\\consumedFieldRef__AbstractReleaseField.md"
+    },
+    {
+      "name": "consumedFieldRef::AbstractRequestField",
+      "file": "CAPLfunctionConsumedFieldRefAbstractRequestField.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedFieldRef__AbstractRequestField.json",
+      "md": "structured\\CommunicationObjects\\consumedFieldRef__AbstractRequestField.md"
+    },
+    {
+      "name": "consumedMethodRef",
+      "file": "CAPLfunctionConsumedMethodRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\consumedMethodRef.json",
+      "md": "structured\\CommunicationObjects\\consumedMethodRef.md"
+    },
+    {
+      "name": "consumedMethodRef::CallAsync",
+      "file": "CAPLfunctionConsumedMethodRefCallAsync.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedMethodRef__CallAsync.json",
+      "md": "structured\\CommunicationObjects\\consumedMethodRef__CallAsync.md"
+    },
+    {
+      "name": "consumedMethodRef::CallAsyncPhys",
+      "file": "CAPLfunctionConsumedMethodRefCallAsyncPhys.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedMethodRef__CallAsyncPhys.json",
+      "md": "structured\\CommunicationObjects\\consumedMethodRef__CallAsyncPhys.md"
+    },
+    {
+      "name": "consumedPDURef",
+      "file": "CAPLfunctionConsumedPDURef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\consumedPDURef.json",
+      "md": "structured\\CommunicationObjects\\consumedPDURef.md"
+    },
+    {
+      "name": "consumedPduRef::AbstractIsPduRequested",
+      "file": "CAPLfunctionConsumedPduRefAbstractIsPduRequested.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedPduRef__AbstractIsPduRequested.json",
+      "md": "structured\\CommunicationObjects\\consumedPduRef__AbstractIsPduRequested.md"
+    },
+    {
+      "name": "consumedPduRef::AbstractReleasePdu",
+      "file": "CAPLfunctionConsumedPduRefAbstractReleasePdu.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedPduRef__AbstractReleasePdu.json",
+      "md": "structured\\CommunicationObjects\\consumedPduRef__AbstractReleasePdu.md"
+    },
+    {
+      "name": "consumedPduRef::AbstractRequestPdu",
+      "file": "CAPLfunctionConsumedPduRefAbstractRequestPdu.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedPduRef__AbstractRequestPdu.json",
+      "md": "structured\\CommunicationObjects\\consumedPduRef__AbstractRequestPdu.md"
+    },
+    {
+      "name": "consumedServiceRef",
+      "file": "CAPLfunctionConsumedServiceRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\consumedServiceRef.json",
+      "md": "structured\\CommunicationObjects\\consumedServiceRef.md"
+    },
+    {
+      "name": "consumedServiceRef::IsServiceRequested",
+      "file": "CAPLfunctionConsumedServiceRefIsServiceRequested.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedServiceRef__IsServiceRequested.json",
+      "md": "structured\\CommunicationObjects\\consumedServiceRef__IsServiceRequested.md"
+    },
+    {
+      "name": "consumedServiceRef::ReleaseService",
+      "file": "CAPLfunctionConsumedServiceRefReleaseService.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedServiceRef__ReleaseService.json",
+      "md": "structured\\CommunicationObjects\\consumedServiceRef__ReleaseService.md"
+    },
+    {
+      "name": "consumedServiceRef::RequestService",
+      "file": "CAPLfunctionConsumedServiceRefRequestService.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\consumedServiceRef__RequestService.json",
+      "md": "structured\\CommunicationObjects\\consumedServiceRef__RequestService.md"
+    },
+    {
+      "name": "eventConsumerRef",
+      "file": "CAPLfunctionEventConsumerRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\eventConsumerRef.json",
+      "md": "structured\\CommunicationObjects\\eventConsumerRef.md"
+    },
+    {
+      "name": "eventProviderRef",
+      "file": "CAPLfunctionEventProviderRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\eventProviderRef.json",
+      "md": "structured\\CommunicationObjects\\eventProviderRef.md"
+    },
+    {
+      "name": "eventProviderRef::GetNrOfSubscribedConsumers",
+      "file": "CAPLfunctionEventProviderRefGetNrOfSubscribedConsumers.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\eventProviderRef__GetNrOfSubscribedConsumers.json",
+      "md": "structured\\CommunicationObjects\\eventProviderRef__GetNrOfSubscribedConsumers.md"
+    },
+    {
+      "name": "eventProviderRef::GetSubscribedConsumer",
+      "file": "CAPLfunctionEventProviderRefGetSubscribedConsumer.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\eventProviderRef__GetSubscribedConsumer.json",
+      "md": "structured\\CommunicationObjects\\eventProviderRef__GetSubscribedConsumer.md"
+    },
+    {
+      "name": "eventProviderRef::Trigger",
+      "file": "CAPLfunctionEventProviderRefTrigger.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\eventProviderRef__Trigger.json",
+      "md": "structured\\CommunicationObjects\\eventProviderRef__Trigger.md"
+    },
+    {
+      "name": "fieldConsumerRef",
+      "file": "CAPLfunctionFieldConsumerRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\fieldConsumerRef.json",
+      "md": "structured\\CommunicationObjects\\fieldConsumerRef.md"
+    },
+    {
+      "name": "fieldProviderRef",
+      "file": "CAPLfunctionFieldProviderRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\fieldProviderRef.json",
+      "md": "structured\\CommunicationObjects\\fieldProviderRef.md"
+    },
+    {
+      "name": "fieldProviderRef::GetNrOfSubscribedConsumers",
+      "file": "CAPLfunctionfieldProviderRefGetNrOfSubscribedConsumers.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\fieldProviderRef__GetNrOfSubscribedConsumers.json",
+      "md": "structured\\CommunicationObjects\\fieldProviderRef__GetNrOfSubscribedConsumers.md"
+    },
+    {
+      "name": "fieldProviderRef::GetSubscribedConsumer",
+      "file": "CAPLfunctionfieldProviderRefGetSubscribedConsumer.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\fieldProviderRef__GetSubscribedConsumer.json",
+      "md": "structured\\CommunicationObjects\\fieldProviderRef__GetSubscribedConsumer.md"
+    },
+    {
+      "name": "GetConsumedFieldRef",
+      "file": "CAPLfunctionGetConsumedFieldRef.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetConsumedFieldRef.json",
+      "md": "structured\\CommunicationObjects\\GetConsumedFieldRef.md"
+    },
+    {
+      "name": "GetConsumedServiceRef",
+      "file": "CAPLfunctionGetConsumedServiceRef.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetConsumedServiceRef.json",
+      "md": "structured\\CommunicationObjects\\GetConsumedServiceRef.md"
+    },
+    {
+      "name": "GetConsumer",
+      "file": "CAPLfunctionGetConsumer.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetConsumer.json",
+      "md": "structured\\CommunicationObjects\\GetConsumer.md"
+    },
+    {
+      "name": "GetConsumerIndex",
+      "file": "CAPLfunctionGetConsumerIndex.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetConsumerIndex.json",
+      "md": "structured\\CommunicationObjects\\GetConsumerIndex.md"
+    },
+    {
+      "name": "GetNrOfCOConsumers",
+      "file": "CAPLfunctionGetNrOfCOConsumers.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\GetNrOfCOConsumers.json",
+      "md": "structured\\CommunicationObjects\\GetNrOfCOConsumers.md"
+    },
+    {
+      "name": "GetNrOfCOProviders",
+      "file": "CAPLfunctionGetNrOfCOProviders.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\GetNrOfCOProviders.json",
+      "md": "structured\\CommunicationObjects\\GetNrOfCOProviders.md"
+    },
+    {
+      "name": "GetNrOfCOReceivers",
+      "file": "CAPLfunctionGetNrOfCOReceivers.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\GetNrOfCOReceivers.json",
+      "md": "structured\\CommunicationObjects\\GetNrOfCOReceivers.md"
+    },
+    {
+      "name": "GetNrOfCOSenders",
+      "file": "CAPLfunctionGetNrOfCOSenders.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\GetNrOfCOSenders.json",
+      "md": "structured\\CommunicationObjects\\GetNrOfCOSenders.md"
+    },
+    {
+      "name": "GetProvidedFieldRef",
+      "file": "CAPLfunctionGetProvidedFieldRef.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetProvidedFieldRef.json",
+      "md": "structured\\CommunicationObjects\\GetProvidedFieldRef.md"
+    },
+    {
+      "name": "GetProvidedServiceRef",
+      "file": "CAPLfunctionGetProvidedServiceRef.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetProvidedServiceRef.json",
+      "md": "structured\\CommunicationObjects\\GetProvidedServiceRef.md"
+    },
+    {
+      "name": "GetProvider",
+      "file": "CAPLfunctionGetProvider.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetProvider.json",
+      "md": "structured\\CommunicationObjects\\GetProvider.md"
+    },
+    {
+      "name": "GetProviderIndex",
+      "file": "CAPLfunctionGetProviderIndex.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetProviderIndex.json",
+      "md": "structured\\CommunicationObjects\\GetProviderIndex.md"
+    },
+    {
+      "name": "GetReceiver",
+      "file": "CAPLfunctionGetReceiver.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetReceiver.json",
+      "md": "structured\\CommunicationObjects\\GetReceiver.md"
+    },
+    {
+      "name": "GetReceiverIndex",
+      "file": "CAPLfunctionGetReceiverIndex.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetReceiverIndex.json",
+      "md": "structured\\CommunicationObjects\\GetReceiverIndex.md"
+    },
+    {
+      "name": "GetSender",
+      "file": "CAPLfunctionGetSender.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetSender.json",
+      "md": "structured\\CommunicationObjects\\GetSender.md"
+    },
+    {
+      "name": "GetSenderIndex",
+      "file": "CAPLfunctionGetSenderIndex.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\GetSenderIndex.json",
+      "md": "structured\\CommunicationObjects\\GetSenderIndex.md"
+    },
+    {
+      "name": "LookupConsumedEvent",
+      "file": "CAPLfunctionLookupConsumedEvent.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupConsumedEvent.json",
+      "md": "structured\\CommunicationObjects\\LookupConsumedEvent.md"
+    },
+    {
+      "name": "LookupConsumedField",
+      "file": "CAPLfunctionLookupConsumedField.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupConsumedField.json",
+      "md": "structured\\CommunicationObjects\\LookupConsumedField.md"
+    },
+    {
+      "name": "LookupConsumedMethod",
+      "file": "CAPLfunctionLookupConsumedMethod.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupConsumedMethod.json",
+      "md": "structured\\CommunicationObjects\\LookupConsumedMethod.md"
+    },
+    {
+      "name": "LookupConsumedPDU",
+      "file": "CAPLfunctionLookupConsumedPDU.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupConsumedPDU.json",
+      "md": "structured\\CommunicationObjects\\LookupConsumedPDU.md"
+    },
+    {
+      "name": "LookupConsumedService",
+      "file": "CAPLfunctionLookupConsumedService.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupConsumedService.json",
+      "md": "structured\\CommunicationObjects\\LookupConsumedService.md"
+    },
+    {
+      "name": "LookupEventConsumer",
+      "file": "CAPLfunctionLookupEventConsumer.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupEventConsumer.json",
+      "md": "structured\\CommunicationObjects\\LookupEventConsumer.md"
+    },
+    {
+      "name": "LookupEventProvider",
+      "file": "CAPLfunctionLookupEventProvider.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupEventProvider.json",
+      "md": "structured\\CommunicationObjects\\LookupEventProvider.md"
+    },
+    {
+      "name": "LookupFieldConsumer",
+      "file": "CAPLfunctionLookupFieldConsumer.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupFieldConsumer.json",
+      "md": "structured\\CommunicationObjects\\LookupFieldConsumer.md"
+    },
+    {
+      "name": "LookupFieldProvider",
+      "file": "CAPLfunctionLookupFieldProvider.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupFieldProvider.json",
+      "md": "structured\\CommunicationObjects\\LookupFieldProvider.md"
+    },
+    {
+      "name": "LookupMeasuredEvent",
+      "file": "CAPLfunctionLookupMeasuredEvent.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupMeasuredEvent.json",
+      "md": "structured\\CommunicationObjects\\LookupMeasuredEvent.md"
+    },
+    {
+      "name": "LookupMeasuredField",
+      "file": "CAPLfunctionLookupMeasuredField.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupMeasuredField.json",
+      "md": "structured\\CommunicationObjects\\LookupMeasuredField.md"
+    },
+    {
+      "name": "LookupMeasuredMethod",
+      "file": "CAPLfunctionLookupMeasuredMethod.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupMeasuredMethod.json",
+      "md": "structured\\CommunicationObjects\\LookupMeasuredMethod.md"
+    },
+    {
+      "name": "LookupMeasuredPDU",
+      "file": "CAPLfunctionLookupMeasuredPDU.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupMeasuredPDU.json",
+      "md": "structured\\CommunicationObjects\\LookupMeasuredPDU.md"
+    },
+    {
+      "name": "LookupMeasuredService",
+      "file": "CAPLfunctionLookupMeasuredService.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupMeasuredService.json",
+      "md": "structured\\CommunicationObjects\\LookupMeasuredService.md"
+    },
+    {
+      "name": "LookupPDUConsumer",
+      "file": "CAPLfunctionLookupPDUConsumer.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupPDUConsumer.json",
+      "md": "structured\\CommunicationObjects\\LookupPDUConsumer.md"
+    },
+    {
+      "name": "LookupPDUProvider",
+      "file": "CAPLfunctionLookupPDUProvider.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupPDUProvider.json",
+      "md": "structured\\CommunicationObjects\\LookupPDUProvider.md"
+    },
+    {
+      "name": "LookupProvidedEvent",
+      "file": "CAPLfunctionLookupProvidedEvent.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupProvidedEvent.json",
+      "md": "structured\\CommunicationObjects\\LookupProvidedEvent.md"
+    },
+    {
+      "name": "LookupProvidedField",
+      "file": "CAPLfunctionLookupProvidedField.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupProvidedField.json",
+      "md": "structured\\CommunicationObjects\\LookupProvidedField.md"
+    },
+    {
+      "name": "LookupProvidedMethod",
+      "file": "CAPLfunctionLookupProvidedMethod.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupProvidedMethod.json",
+      "md": "structured\\CommunicationObjects\\LookupProvidedMethod.md"
+    },
+    {
+      "name": "LookupProvidedPDU",
+      "file": "CAPLfunctionLookupProvidedPDU.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupProvidedPDU.json",
+      "md": "structured\\CommunicationObjects\\LookupProvidedPDU.md"
+    },
+    {
+      "name": "LookupProvidedService",
+      "file": "CAPLfunctionLookupProvidedService.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupProvidedService.json",
+      "md": "structured\\CommunicationObjects\\LookupProvidedService.md"
+    },
+    {
+      "name": "LookupRxPDU",
+      "file": "CAPLfunctionLookupRxPDU.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupRxPDU.json",
+      "md": "structured\\CommunicationObjects\\LookupRxPDU.md"
+    },
+    {
+      "name": "LookupRxSignal",
+      "file": "CAPLfunctionLookupRxSignal.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupRxSignal.json",
+      "md": "structured\\CommunicationObjects\\LookupRxSignal.md"
+    },
+    {
+      "name": "LookupServiceConsumer",
+      "file": "CAPLfunctionLookupServiceConsumer.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupServiceConsumer.json",
+      "md": "structured\\CommunicationObjects\\LookupServiceConsumer.md"
+    },
+    {
+      "name": "LookupServiceProvider",
+      "file": "CAPLfunctionLookupServiceProvider.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupServiceProvider.json",
+      "md": "structured\\CommunicationObjects\\LookupServiceProvider.md"
+    },
+    {
+      "name": "LookupTxPDU",
+      "file": "CAPLfunctionLookupTxPDU.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupTxPDU.json",
+      "md": "structured\\CommunicationObjects\\LookupTxPDU.md"
+    },
+    {
+      "name": "LookupTxSignal",
+      "file": "CAPLfunctionLookupTxSignal.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\LookupTxSignal.json",
+      "md": "structured\\CommunicationObjects\\LookupTxSignal.md"
+    },
+    {
+      "name": "measuredEventRef",
+      "file": "CAPLfunctionMeasuredEventRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\measuredEventRef.json",
+      "md": "structured\\CommunicationObjects\\measuredEventRef.md"
+    },
+    {
+      "name": "measuredFieldRef",
+      "file": "CAPLfunctionMeasuredFieldRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\measuredFieldRef.json",
+      "md": "structured\\CommunicationObjects\\measuredFieldRef.md"
+    },
+    {
+      "name": "measuredMethodRef",
+      "file": "CAPLfunctionMeasuredMethodRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\measuredMethodRef.json",
+      "md": "structured\\CommunicationObjects\\measuredMethodRef.md"
+    },
+    {
+      "name": "measuredPDURef",
+      "file": "CAPLfunctionMeasuredPDURef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\measuredPDURef.json",
+      "md": "structured\\CommunicationObjects\\measuredPDURef.md"
+    },
+    {
+      "name": "measuredServicePDURef",
+      "file": "CAPLfunctionMeasuredServicePDURef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\measuredServicePDURef.json",
+      "md": "structured\\CommunicationObjects\\measuredServicePDURef.md"
+    },
+    {
+      "name": "measuredServiceRef",
+      "file": "CAPLfunctionMeasuredServiceRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\measuredServiceRef.json",
+      "md": "structured\\CommunicationObjects\\measuredServiceRef.md"
+    },
+    {
+      "name": "on Abstract_EventSubscribed",
+      "file": "CAPLfunctionOnAbstractEventSubscribed.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on Abstract_EventSubscribed.json",
+      "md": "structured\\CommunicationObjects\\on Abstract_EventSubscribed.md"
+    },
+    {
+      "name": "on Abstract_EventUnsubscribed",
+      "file": "CAPLfunctionOnAbstractEventUnsubscribed.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on Abstract_EventUnsubscribed.json",
+      "md": "structured\\CommunicationObjects\\on Abstract_EventUnsubscribed.md"
+    },
+    {
+      "name": "on Abstract_FieldSubscribed",
+      "file": "CAPLfunctionOnAbstractFieldSubscribed.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on Abstract_FieldSubscribed.json",
+      "md": "structured\\CommunicationObjects\\on Abstract_FieldSubscribed.md"
+    },
+    {
+      "name": "on Abstract_FieldUnsubscribed",
+      "file": "CAPLfunctionOnAbstractFieldUnsubscribed.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on Abstract_FieldUnsubscribed.json",
+      "md": "structured\\CommunicationObjects\\on Abstract_FieldUnsubscribed.md"
+    },
+    {
+      "name": "on fct_Called",
+      "file": "CAPLfunctionOnfctCalled.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on fct_Called.json",
+      "md": "structured\\CommunicationObjects\\on fct_Called.md"
+    },
+    {
+      "name": "on fct_Calling",
+      "file": "CAPLfunctionOnfctCalling.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on fct_Calling.json",
+      "md": "structured\\CommunicationObjects\\on fct_Calling.md"
+    },
+    {
+      "name": "on fct_Returned",
+      "file": "CAPLfunctionOnfctReturned.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on fct_Returned.json",
+      "md": "structured\\CommunicationObjects\\on fct_Returned.md"
+    },
+    {
+      "name": "on fct_Returning",
+      "file": "CAPLfunctionOnfctReturning.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on fct_Returning.json",
+      "md": "structured\\CommunicationObjects\\on fct_Returning.md"
+    },
+    {
+      "name": "on PDU_change",
+      "file": "CAPLfunctionOnPDUChange.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on PDU_change.json",
+      "md": "structured\\CommunicationObjects\\on PDU_change.md"
+    },
+    {
+      "name": "on PDU_Subscribed",
+      "file": "CAPLfunctionOnPDUSubscribed.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on PDU_Subscribed.json",
+      "md": "structured\\CommunicationObjects\\on PDU_Subscribed.md"
+    },
+    {
+      "name": "on PDU_Unsubscribed",
+      "file": "CAPLfunctionOnPDUUnsubscribed.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on PDU_Unsubscribed.json",
+      "md": "structured\\CommunicationObjects\\on PDU_Unsubscribed.md"
+    },
+    {
+      "name": "on PDU_update",
+      "file": "CAPLfunctionOnPDUUpdate.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on PDU_update.json",
+      "md": "structured\\CommunicationObjects\\on PDU_update.md"
+    },
+    {
+      "name": "on SD_connection_established",
+      "file": "CAPLfunctionOnSDConnectionEstablished.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on SD_connection_established.json",
+      "md": "structured\\CommunicationObjects\\on SD_connection_established.md"
+    },
+    {
+      "name": "on SD_connection_failed",
+      "file": "CAPLfunctionOnSDConnectionFailed.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on SD_connection_failed.json",
+      "md": "structured\\CommunicationObjects\\on SD_connection_failed.md"
+    },
+    {
+      "name": "on SD_connection_requested",
+      "file": "CAPLfunctionOnSDConnectionRequested.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on SD_connection_requested.json",
+      "md": "structured\\CommunicationObjects\\on SD_connection_requested.md"
+    },
+    {
+      "name": "on SD_consumer_discovered",
+      "file": "CAPLfunctionOnSDConsumerDiscovered.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on SD_consumer_discovered.json",
+      "md": "structured\\CommunicationObjects\\on SD_consumer_discovered.md"
+    },
+    {
+      "name": "on SD_provider_discovered",
+      "file": "CAPLfunctionOnSDProviderDiscovered.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on SD_provider_discovered.json",
+      "md": "structured\\CommunicationObjects\\on SD_provider_discovered.md"
+    },
+    {
+      "name": "on SD_service_discovery",
+      "file": "CAPLfunctionOnSDServiceDiscovery.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on SD_service_discovery.json",
+      "md": "structured\\CommunicationObjects\\on SD_service_discovery.md"
+    },
+    {
+      "name": "on SOMEIP_EventGroupSubscribed",
+      "file": "CAPLfunctionOnSOMEIPEventGroupSubscribed.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on SOMEIP_EventGroupSubscribed.json",
+      "md": "structured\\CommunicationObjects\\on SOMEIP_EventGroupSubscribed.md"
+    },
+    {
+      "name": "on SOMEIP_EventGroupUnsubscribed",
+      "file": "CAPLfunctionOnSOMEIPEventGroupUnsubscribed.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on SOMEIP_EventGroupUnsubscribed.json",
+      "md": "structured\\CommunicationObjects\\on SOMEIP_EventGroupUnsubscribed.md"
+    },
+    {
+      "name": "on value_change",
+      "file": "CAPLfunctionOnValueChange.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on value_change.json",
+      "md": "structured\\CommunicationObjects\\on value_change.md"
+    },
+    {
+      "name": "on value_update",
+      "file": "CAPLfunctionOnValueUpdate.htm",
+      "page_type": "event",
+      "json": "structured\\CommunicationObjects\\on value_update.json",
+      "md": "structured\\CommunicationObjects\\on value_update.md"
+    },
+    {
+      "name": "pduConsumerRef",
+      "file": "CAPLfunctionPDUConsumerRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\pduConsumerRef.json",
+      "md": "structured\\CommunicationObjects\\pduConsumerRef.md"
+    },
+    {
+      "name": "pduProviderRef",
+      "file": "CAPLfunctionPDUProviderRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\pduProviderRef.json",
+      "md": "structured\\CommunicationObjects\\pduProviderRef.md"
+    },
+    {
+      "name": "pduProviderRef::GetNrOfSubscribedConsumers",
+      "file": "CAPLfunctionPduProviderRefGetNrOfSubscribedConsumers.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\pduProviderRef__GetNrOfSubscribedConsumers.json",
+      "md": "structured\\CommunicationObjects\\pduProviderRef__GetNrOfSubscribedConsumers.md"
+    },
+    {
+      "name": "pduProviderRef::GetSubscribedConsumer",
+      "file": "CAPLfunctionPduProviderRefGetSubscribedConsumer.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\pduProviderRef__GetSubscribedConsumer.json",
+      "md": "structured\\CommunicationObjects\\pduProviderRef__GetSubscribedConsumer.md"
+    },
+    {
+      "name": "providedEventRef",
+      "file": "CAPLfunctionProvidedEventRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\providedEventRef.json",
+      "md": "structured\\CommunicationObjects\\providedEventRef.md"
+    },
+    {
+      "name": "providedEventRef::Trigger",
+      "file": "CAPLfunctionProvidedEventRefTrigger.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\providedEventRef__Trigger.json",
+      "md": "structured\\CommunicationObjects\\providedEventRef__Trigger.md"
+    },
+    {
+      "name": "providedFieldRef",
+      "file": "CAPLfunctionProvidedFieldRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\providedFieldRef.json",
+      "md": "structured\\CommunicationObjects\\providedFieldRef.md"
+    },
+    {
+      "name": "providedMethodRef",
+      "file": "CAPLfunctionProvidedMethodRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\providedMethodRef.json",
+      "md": "structured\\CommunicationObjects\\providedMethodRef.md"
+    },
+    {
+      "name": "providedPDURef",
+      "file": "CAPLfunctionProvidedPDURef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\providedPDURef.json",
+      "md": "structured\\CommunicationObjects\\providedPDURef.md"
+    },
+    {
+      "name": "providedServiceRef",
+      "file": "CAPLfunctionProvidedServiceRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\providedServiceRef.json",
+      "md": "structured\\CommunicationObjects\\providedServiceRef.md"
+    },
+    {
+      "name": "rxPDURef",
+      "file": "CAPLfunctionRxPDURef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\rxPDURef.json",
+      "md": "structured\\CommunicationObjects\\rxPDURef.md"
+    },
+    {
+      "name": "rxSignalRef",
+      "file": "CAPLfunctionRxSignalRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\rxSignalRef.json",
+      "md": "structured\\CommunicationObjects\\rxSignalRef.md"
+    },
+    {
+      "name": "SD_AddConsumer",
+      "file": "CAPLfunctionSDAddConsumer.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_AddConsumer.json",
+      "md": "structured\\CommunicationObjects\\SD_AddConsumer.md"
+    },
+    {
+      "name": "SD_AddProvider",
+      "file": "CAPLfunctionSDAddProvider.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_AddProvider.json",
+      "md": "structured\\CommunicationObjects\\SD_AddProvider.md"
+    },
+    {
+      "name": "SD_AnnounceProvider",
+      "file": "CAPLfunctionSDAnnounceProvider.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_AnnounceProvider.json",
+      "md": "structured\\CommunicationObjects\\SD_AnnounceProvider.md"
+    },
+    {
+      "name": "SD_ConnectAsync",
+      "file": "CAPLfunctionSDConnectAsync.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_ConnectAsync.json",
+      "md": "structured\\CommunicationObjects\\SD_ConnectAsync.md"
+    },
+    {
+      "name": "SD_Disconnect",
+      "file": "CAPLfunctionSDDisconnect.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_Disconnect.json",
+      "md": "structured\\CommunicationObjects\\SD_Disconnect.md"
+    },
+    {
+      "name": "SD_DiscoverProviders",
+      "file": "CAPLfunctionSDDiscoverProviders.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_DiscoverProviders.json",
+      "md": "structured\\CommunicationObjects\\SD_DiscoverProviders.md"
+    },
+    {
+      "name": "SD_RemoveConsumer",
+      "file": "CAPLfunctionSDRemoveConsumer.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_RemoveConsumer.json",
+      "md": "structured\\CommunicationObjects\\SD_RemoveConsumer.md"
+    },
+    {
+      "name": "SD_RemoveProvider",
+      "file": "CAPLfunctionSDRemoveProvider.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_RemoveProvider.json",
+      "md": "structured\\CommunicationObjects\\SD_RemoveProvider.md"
+    },
+    {
+      "name": "SD_SetAddress",
+      "file": "CAPLfunctionSDSetAddress.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_SetAddress.json",
+      "md": "structured\\CommunicationObjects\\SD_SetAddress.md"
+    },
+    {
+      "name": "SD_UnnnounceProvider",
+      "file": "CAPLfunctionSDUnnnounceProvider.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SD_UnnnounceProvider.json",
+      "md": "structured\\CommunicationObjects\\SD_UnnnounceProvider.md"
+    },
+    {
+      "name": "serviceConsumerRef",
+      "file": "CAPLfunctionServiceConsumerRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\serviceConsumerRef.json",
+      "md": "structured\\CommunicationObjects\\serviceConsumerRef.md"
+    },
+    {
+      "name": "serviceProviderRef",
+      "file": "CAPLfunctionServiceProviderRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\serviceProviderRef.json",
+      "md": "structured\\CommunicationObjects\\serviceProviderRef.md"
+    },
+    {
+      "name": "serviceProviderRef::IsServiceProvided",
+      "file": "CAPLfunctionServiceProviderRefIsServiceProvided.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\serviceProviderRef__IsServiceProvided.json",
+      "md": "structured\\CommunicationObjects\\serviceProviderRef__IsServiceProvided.md"
+    },
+    {
+      "name": "serviceProviderRef::ProvideService",
+      "file": "CAPLfunctionServiceProviderRefProvideService.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\serviceProviderRef__ProvideService.json",
+      "md": "structured\\CommunicationObjects\\serviceProviderRef__ProvideService.md"
+    },
+    {
+      "name": "serviceProviderRef::ReleaseService",
+      "file": "CAPLfunctionServiceProviderRefReleaseService.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\serviceProviderRef__ReleaseService.json",
+      "md": "structured\\CommunicationObjects\\serviceProviderRef__ReleaseService.md"
+    },
+    {
+      "name": "SetConsumer",
+      "file": "CAPLfunctionSetConsumer.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetConsumer.json",
+      "md": "structured\\CommunicationObjects\\SetConsumer.md"
+    },
+    {
+      "name": "SetEvent",
+      "file": "CAPLfunctionSetEvent.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetEvent.json",
+      "md": "structured\\CommunicationObjects\\SetEvent.md"
+    },
+    {
+      "name": "SetField",
+      "file": "CAPLfunctionSetField.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetField.json",
+      "md": "structured\\CommunicationObjects\\SetField.md"
+    },
+    {
+      "name": "SetMethod",
+      "file": "CAPLfunctionSetMethod.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetMethod.json",
+      "md": "structured\\CommunicationObjects\\SetMethod.md"
+    },
+    {
+      "name": "SetPDU",
+      "file": "CAPLfunctionSetPDU.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetPDU.json",
+      "md": "structured\\CommunicationObjects\\SetPDU.md"
+    },
+    {
+      "name": "SetProvider",
+      "file": "CAPLfunctionSetProvider.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetProvider.json",
+      "md": "structured\\CommunicationObjects\\SetProvider.md"
+    },
+    {
+      "name": "SetReceiver",
+      "file": "CAPLfunctionSetReceiver.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetReceiver.json",
+      "md": "structured\\CommunicationObjects\\SetReceiver.md"
+    },
+    {
+      "name": "SetSender",
+      "file": "CAPLfunctionSetSender.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetSender.json",
+      "md": "structured\\CommunicationObjects\\SetSender.md"
+    },
+    {
+      "name": "SetService",
+      "file": "CAPLfunctionSetService.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetService.json",
+      "md": "structured\\CommunicationObjects\\SetService.md"
+    },
+    {
+      "name": "SetSignal",
+      "file": "CAPLfunctionSetSignal.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\SetSignal.json",
+      "md": "structured\\CommunicationObjects\\SetSignal.md"
+    },
+    {
+      "name": "SetSubscriptionStateIsolated",
+      "file": "CAPLfunctionSetSubscriptionStateIsolated.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SetSubscriptionStateIsolated.json",
+      "md": "structured\\CommunicationObjects\\SetSubscriptionStateIsolated.md"
+    },
+    {
+      "name": "SOMEIP_InjectPDU",
+      "file": "CAPLfunctionSOMEIPInjectPDU.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SOMEIP_InjectPDU.json",
+      "md": "structured\\CommunicationObjects\\SOMEIP_InjectPDU.md"
+    },
+    {
+      "name": "SOMEIP_SubscribeEventGroup",
+      "file": "CAPLfunctionSOMEIPSubscribeEventGroup.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SOMEIP_SubscribeEventGroup.json",
+      "md": "structured\\CommunicationObjects\\SOMEIP_SubscribeEventGroup.md"
+    },
+    {
+      "name": "SOMEIP_UnsubscribeEventGroup",
+      "file": "CAPLfunctionSOMEIPUnsubscribeEventGroup.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\SOMEIP_UnsubscribeEventGroup.json",
+      "md": "structured\\CommunicationObjects\\SOMEIP_UnsubscribeEventGroup.md"
+    },
+    {
+      "name": "TestWaitForAnswer",
+      "file": "CAPLfunctionTestWaitForAnswer.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForAnswer.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForAnswer.md"
+    },
+    {
+      "name": "TestWaitForChange",
+      "file": "CAPLfunctionTestWaitForChange.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForChange.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForChange.md"
+    },
+    {
+      "name": "TestWaitForChangeCountGreater",
+      "file": "CAPLfunctionTestWaitForChangeCountGreater.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForChangeCountGreater.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForChangeCountGreater.md"
+    },
+    {
+      "name": "TestWaitForChangeFlag",
+      "file": "CAPLfunctionTestWaitForChangeFlag.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForChangeFlag.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForChangeFlag.md"
+    },
+    {
+      "name": "TestWaitForNextCall",
+      "file": "CAPLfunctionTestWaitForNextCall.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForNextCall.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForNextCall.md"
+    },
+    {
+      "name": "TestWaitForUpdate",
+      "file": "CAPLfunctionTestWaitForUpdate.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForUpdate.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForUpdate.md"
+    },
+    {
+      "name": "TestWaitForUpdateCountGreater",
+      "file": "CAPLfunctionTestWaitForUpdateCountGreater.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForUpdateCountGreater.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForUpdateCountGreater.md"
+    },
+    {
+      "name": "TestWaitForUpdateFlag",
+      "file": "CAPLfunctionTestWaitForUpdateFlag.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForUpdateFlag.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForUpdateFlag.md"
+    },
+    {
+      "name": "TestWaitForValue",
+      "file": "CAPLfunctionTestWaitForValue.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForValue.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForValue.md"
+    },
+    {
+      "name": "TestWaitForValueFloat",
+      "file": "CAPLfunctionTestWaitForValueFloat.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForValueFloat.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForValueFloat.md"
+    },
+    {
+      "name": "TestWaitForValueSInt",
+      "file": "CAPLfunctionTestWaitForValueSInt.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForValueSInt.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForValueSInt.md"
+    },
+    {
+      "name": "TestWaitForValueString",
+      "file": "CAPLfunctionTestWaitForValueString.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForValueString.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForValueString.md"
+    },
+    {
+      "name": "TestWaitForValueUInt",
+      "file": "CAPLfunctionTestWaitForValueUInt.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\TestWaitForValueUInt.json",
+      "md": "structured\\CommunicationObjects\\TestWaitForValueUInt.md"
+    },
+    {
+      "name": "txPDURef",
+      "file": "CAPLfunctionTxPDURef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\txPDURef.json",
+      "md": "structured\\CommunicationObjects\\txPDURef.md"
+    },
+    {
+      "name": "txSignalRef",
+      "file": "CAPLfunctionTxSignalRef.htm",
+      "page_type": "function",
+      "json": "structured\\CommunicationObjects\\txSignalRef.json",
+      "md": "structured\\CommunicationObjects\\txSignalRef.md"
+    },
+    {
+      "name": "valueHandle::ClearChangeFlag",
+      "file": "CAPLfunctionValueClearChangeFlag.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\valueHandle__ClearChangeFlag.json",
+      "md": "structured\\CommunicationObjects\\valueHandle__ClearChangeFlag.md"
+    },
+    {
+      "name": "valueHandle::ClearUpdateFlag",
+      "file": "CAPLfunctionValueClearUpdateFlag.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\valueHandle__ClearUpdateFlag.json",
+      "md": "structured\\CommunicationObjects\\valueHandle__ClearUpdateFlag.md"
+    },
+    {
+      "name": "valueHandle::GetChangeCount",
+      "file": "CAPLfunctionValueGetChangeCount.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\valueHandle__GetChangeCount.json",
+      "md": "structured\\CommunicationObjects\\valueHandle__GetChangeCount.md"
+    },
+    {
+      "name": "valueHandle::GetUpdateCount",
+      "file": "CAPLfunctionValueGetUpdateCount.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\valueHandle__GetUpdateCount.json",
+      "md": "structured\\CommunicationObjects\\valueHandle__GetUpdateCount.md"
+    },
+    {
+      "name": "valueHandle::GetValueState",
+      "file": "CAPLfunctionValueGetValueState.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\valueHandle__GetValueState.json",
+      "md": "structured\\CommunicationObjects\\valueHandle__GetValueState.md"
+    },
+    {
+      "name": "valueHandle::ResetValueState",
+      "file": "CAPLfunctionValueResetValueState.htm",
+      "page_type": "method",
+      "json": "structured\\CommunicationObjects\\valueHandle__ResetValueState.json",
+      "md": "structured\\CommunicationObjects\\valueHandle__ResetValueState.md"
+    }
+  ]
+}

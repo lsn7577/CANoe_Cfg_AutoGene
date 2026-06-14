@@ -1,0 +1,166 @@
+{
+  "page_type": "function",
+  "name": "C2xGetTokenData",
+  "category": "Car2x",
+  "title": "C2xGetTokenData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xGetTokenData.htm",
+  "syntax": [
+    "long C2xGetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long length, char buffer[] );",
+    "long C2xGetTokenData( long packet, char protocolDesignator[], char tokenDesignatorl[], long length, byte buffer[] );",
+    "long C2xGetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long length, struct bufferStruct );",
+    "long C2xGetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long byteOffset, long length, char buffer[] );",
+    "long C2xGetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long byteOffset, long length, byte buffer[] );",
+    "long C2xGetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long byteOffset, long length, struct bufferStruct );"
+  ],
+  "description": [
+    "This function requests the data or a part of date of a token."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    },
+    {
+      "name": "protocolDesignator",
+      "type": "",
+      "description": "Name of the protocol, e.g. geo_cnh"
+    },
+    {
+      "name": "tokenDesignator",
+      "type": "",
+      "description": "Name of the token, e.g. data"
+    },
+    {
+      "name": "byteOffset",
+      "type": "",
+      "description": "Offset from the beginning of the token in byte"
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "Number of bytes to be copied Make sure size of destination (buffer or bufferStruct) is equal or larger than length."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer in which the data are copied"
+    },
+    {
+      "name": "bufferStruct",
+      "type": "",
+      "description": "Struct in which the data are copied"
+    }
+  ],
+  "return": "With C2xGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  C2xReceivePacket( \"OnC2xPacket\" );\n}\nvoid OnC2xPacket( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  byte data[5];\n  char error[100];\n\n  // get payload of the receive packet\n  C2xGetTokenData( packet, \"geo_cnh\", \"data\", 5, data );\n  if (C2xGetLastError() == 0)\n  {\n    // do something with data\n  }\n  else\n  {\n    C2xGetLastErrorText( elCount(error), error );\n    write(\"Error: %s\", error );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.6",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,83 @@
+{
+  "page_type": "function",
+  "name": "measuredFieldRef",
+  "category": "CommunicationObjects",
+  "title": "measuredFieldRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionMeasuredFieldRef.htm",
+  "syntax": [
+    "measuredFieldRef * <var>"
+  ],
+  "description": [
+    "References a field measurement point, which means measuring a specific connection between consumer and provider for a service field."
+  ],
+  "parameters": [
+    {
+      "name": "Field",
+      "type": "",
+      "description": "Field, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "measuredFieldRef MirrorAdjustment.Position field;\nfield = MirrorAdjustment.measure[CANoe,LeftMirror].Position;\nwrite(\"Latest x: %d\", $field.x);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the measurement endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the measurement endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "measuredService The measurement point at the service.",
+        "measuredServiceRef *",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SubscriptionState State of the field subscription: Unknown: the field subscription was not observed yet Unsubscribed: the field is not subscribed Subscribed: the field is subscribed",
+        "enum",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

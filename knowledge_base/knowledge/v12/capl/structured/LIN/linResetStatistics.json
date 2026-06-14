@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linResetStatistics",
+  "category": "LIN",
+  "title": "linResetStatistics",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINResetStatistics.htm",
+  "syntax": [
+    "void linResetStatistics();"
+  ],
+  "description": [
+    "Resets LIN channel statistics.",
+    "There are two ways to call this function:"
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "LIN channel (1-based)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key 'r' \n{ \n   // reset statistics on LIN 1\n   linResetStatistics(1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coGetLocalState",
+  "category": "Obsolete",
+  "title": "coGetLocalState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoGetLocalState.htm",
+  "syntax": [
+    "dword coGetLocalState( dword errCode[] );"
+  ],
+  "description": [
+    "This function returns the current communication state of the node. It is not necessary to determine the state permanently since a state change is signaled by the event function coOnNodeChangedState."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field"
+    }
+  ],
+  "return": "Current communication state of the node\n4 - stopped5 - operational6 - reset node7 - reset communication127 - pre-operational\nThe states reset node and reset communication are transient states. This means they are not static and are only run through. The node then automatically goes to state pre-operational.",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\nif (coGetLocalState( errCode ) == 5) {\n  /* change process data */\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

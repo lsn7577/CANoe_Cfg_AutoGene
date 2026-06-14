@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILSetPDUEvent",
+  "category": "AUTOSARpduIL",
+  "title": "ARILSetPDUEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILSetPDUEvent.htm",
+  "syntax": [
+    "long ARILSetPDUEvent (dbMessage);"
+  ],
+  "description": [
+    "A call of this function will lead to a transmission of the associated PDU. This function considers GenMsgDelayTime."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

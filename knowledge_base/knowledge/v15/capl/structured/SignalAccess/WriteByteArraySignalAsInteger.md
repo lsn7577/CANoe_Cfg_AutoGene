@@ -1,0 +1,53 @@
+# WriteByteArraySignalAsInteger
+
+> Category: `SignalAccess` | Type: `function`
+
+## Syntax
+
+```c
+dword WriteByteArraySignalAsInteger(signal aSignal, qword value, dword byteOrder, dword byteCutMode) // form 1
+dword WriteByteArraySignalAsInteger(pdu aPDU, char signalName[], qword value, dword byteOrder, dword byteCutMode) // form2
+```
+
+## Description
+
+Writes the value of a byte array signal, treating it as a 64-bit integer. Use this function if you previously wrote the value of a byte array signal with the .raw64 selector. This selector works only for integer signals, but byte array signals were treated incorrectly as integer signals in CANoe versions < 12.0 SP3.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| aSignal | A byte array signal |
+| aPDU | An AUTOSAR PDU with a byte array signal |
+| signalName | Name of the signal on the PDU |
+| value | The to be written value. |
+| byteOrder | Byte order for interpreting the signal bytes. 0: little-endian (intel) 1: big-endian (motorola) See examples below. |
+| byteCutMode | How the additional bits of the 64-bit value shall be cut if the signal has less than 64 bits. 0: ignore bits a the end 1: ignore bits at the beginning See examples below. |
+
+## Example
+
+If a signal has 56 bits (7 bytes) and the value shall be written in motorola (big-endian) byte order and the given value is 0x9123456789ABCDEF, depending on the byteCutMode parameter, the following bytes will be set in the signal:
+
+If the value shall be written in intel (little-endian) byte order, depending on the byteCutMode parameter, the following bytes will be set in the signal:
+
+```c
+byteCutMode == 0: 91 23 45 67 89 AB CD
+byteCutMode == 1: 23 45 67 89 AB CD EF
+byteCutMode == 0: EF CD AB 89 67 45 23
+byteCutMode == 1: CD AB 89 67 45 23 91
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 14 | 14 | — | — | 5.0 SP3 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

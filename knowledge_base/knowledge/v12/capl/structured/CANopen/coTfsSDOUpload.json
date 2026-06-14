@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOUpload",
+  "category": "CANopen",
+  "title": "coTfsSDOUpload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoUpload.htm",
+  "syntax": [
+    "long coTfsSDOUpload( dword index, dword subIndex ); // form 1"
+  ],
+  "description": [
+    "This function executes a complete SDO upload. Depending on the number of data, this is either an expedited upload (up to 4 bytes) or a segmented transfer. After a successful upload, the data received can be called up with the command coTfsGetSdoUploadData. (form 1)",
+    "Alternatively the function can return the received data automatically. (form 2)",
+    "This function syntax can only be used for expedited uploads. (form 3)"
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Object index"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword dataLength, i;\nbyte pReceiveData[2048];\n\nif ( coTfsSDOUpload(0x2000, 2) != 1) {\n  write(\"SDO upload failed\");\n  return;\n} // if\n\nif ((dataLength = coTfsSDOGetUploadData( pReceiveData, 2048)) > 0) {\n  write(\"datalength = %d\",dataLength);\n  for (i = 0; i< dataLength; i++) {\n    write(\"data %i = 0x%X\",i,pReceiveData[i]);\n  } // for\n} // if\nelse {\n  write(\"no data available\");\n} // else"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

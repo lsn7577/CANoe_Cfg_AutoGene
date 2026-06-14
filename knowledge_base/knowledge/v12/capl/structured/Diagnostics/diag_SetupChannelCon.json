@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "diag_SetupChannelCon",
+  "category": "Diagnostics",
+  "title": "diag_SetupChannelCon",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSetupChannelCon.htm",
+  "syntax": [
+    "long diag_SetupChannelCon ();"
+  ],
+  "description": [
+    "This function communicates to CANoe, that a communication channel is available to the communication partner and data can be sent.",
+    "For connectionless transport protocols this function can be called out of the callback _diag_SetupChannelReq."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

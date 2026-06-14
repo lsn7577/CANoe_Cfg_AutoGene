@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mbstrstr, mbstrstr_off",
+  "category": "Other",
+  "title": "mbstrstr, mbstrstr_off",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMbStrStr.htm",
+  "syntax": [
+    "long mbstrstr(char s1[], char s2[]);"
+  ],
+  "description": [
+    "Searches in s1 for s2."
+  ],
+  "parameters": [
+    {
+      "name": "s1",
+      "type": "",
+      "description": "First string"
+    }
+  ],
+  "return": "First position in characters of s2 in s1, or -1 if s2 is not found in s1.",
+  "example": {
+    "description": [],
+    "code": "long pos;\nchar s[50] = \"'Tür' is german for 'door'\";\npos = mbstrstr(s, \"german\");\nwrite(\"%d\", pos); // 9"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::GetPDU",
+  "category": "IP",
+  "title": "ethernetPacket::GetPDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionGetPDU.htm",
+  "syntax": [
+    "long ethernetPacket.GetPDU(long n, PDU * P);"
+  ],
+  "description": [
+    "Retrieves the PDU with index n in this packet."
+  ],
+  "parameters": [
+    {
+      "name": "n",
+      "type": "",
+      "description": "Index of the requestetd PDU."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "diagInterpretRespAs",
+  "category": "Diagnostics",
+  "title": "diagInterpretRespAs",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagInterpretRespAs.htm",
+  "syntax": [
+    "long diagInterpretRespAs( diagRequest response, char primitiveQualifier[]);"
+  ],
+  "description": [
+    "Treats the data of the request's response as the specified primitive. This will cause a reinterpretation of the data, but the data will not be changed.",
+    "The specified primitive must be defined for the service the response currently refers to! Please refer to diagnostic descriptions with overloaded responses for details."
+  ],
+  "parameters": [
+    {
+      "name": "request",
+      "type": "",
+      "description": "Request that has to contain a response object received by waiting for a response."
+    }
+  ],
+  "return": "0: No error, OK",
+  "example": {
+    "description": [
+      "A tester module tries to interpret the response received for a request."
+    ],
+    "code": "if( 1 == testWaitForDiagResponse( request, 2000))\n{ \n   if( 0 == diagInterpretRespAs( request, \"ServiEcu1PR\"))\n   {\n      if( 27.5 < diagGetRespParameter( request, \"Voltage\"))\n         TestStepPass( \"Voltage is high enough\");\n      else\n         TestStepFail( \"Voltage too low\");\n   } else\n   { \n      TestStepFail( \"Unexpected response version\");\n   }\n} else\n{ \n   TestStepFail( \"No response received\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

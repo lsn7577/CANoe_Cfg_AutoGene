@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "getThisMessage",
+  "category": "MOST",
+  "title": "getThisMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGetThisMessage.htm",
+  "syntax": [
+    "GetThisMessage(mostAMSMessage msg, long count);"
+  ],
+  "description": [
+    "Copies the data of a AMS message into the msg variable.",
+    "This function must be used exclusively within a an event procedure on mostAMSMessage."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Variable of the type mostAmsMessage."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "The following program section copies 1000 bytes of a message's useful data to the local variable msg on Channel 1. Afterwards the contents of byte 500 are output to the Write Window."
+    ],
+    "code": "on mostAMSMessage MsgChannel1.*\n{\n   mostAMSMessage * msg = { DLC = 1000 };\n   GetThisMessage(msg, 1000);\n   write(“Byte 500: %02X”, msg.byte(500));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

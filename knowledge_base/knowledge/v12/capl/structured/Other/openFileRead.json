@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "openFileRead",
+  "category": "Other",
+  "title": "openFileRead",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionOpenFileRead.htm",
+  "syntax": [
+    "dword openFileRead (char filename[], dword mode); // form 1"
+  ],
+  "description": [
+    "This function opens the file named filename for the read access.",
+    "If mode=0 the file is opened in text mode; if mode=1 the file is opened in binary mode."
+  ],
+  "parameters": [
+    {
+      "name": "filename",
+      "type": "",
+      "description": "file name"
+    }
+  ],
+  "return": "The return value is the file handle that must be used for read operations.\nIf an error occurs, the return value is 0.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

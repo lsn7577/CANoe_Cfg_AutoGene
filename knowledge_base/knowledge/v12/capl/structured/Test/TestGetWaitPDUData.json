@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitPDUData",
+  "category": "Test",
+  "title": "TestGetWaitPDUData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitPDUData.htm",
+  "syntax": [
+    "long TestGetWaitPDUData (PDU * aPDU); // form 1"
+  ],
+  "description": [
+    "If a valid PDU is the last event that triggers a wait instruction, the PDU’s content can be called up with form 1.",
+    "Form 2 can only be used for joined events. The number of the joined event (return value of TestJoin...) is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "aPDU",
+      "type": "",
+      "description": "PDU variable of type PDU that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

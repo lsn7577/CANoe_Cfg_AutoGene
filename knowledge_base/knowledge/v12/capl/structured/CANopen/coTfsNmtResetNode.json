@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsNmtResetNode",
+  "category": "CANopen",
+  "title": "coTfsNmtResetNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsNmtResetNode.htm",
+  "syntax": [
+    "long coTfsNmtResetNode( void );"
+  ],
+  "description": [
+    "This call triggers a NMT message that resets the DUT Device Under Test. After sending out the message, the boot-up message of the DUT is awaited. The reliable wait time corresponds to the general wait time, which is set with coTfsSetTimeoutValue.",
+    "If the heartbeat producer is already active, it will be restored at the end."
+  ],
+  "parameters": [
+    {
+      "name": "broadcastFlag",
+      "type": "",
+      "description": "!=0: NMT message is sent to all nodes (broadcast)"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if (coTfsNmtResetNode() != 1) {\n  write(\"reset node failed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

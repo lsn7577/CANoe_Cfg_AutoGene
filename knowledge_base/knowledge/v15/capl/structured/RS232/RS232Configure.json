@@ -1,0 +1,183 @@
+{
+  "page_type": "function",
+  "name": "RS232Configure",
+  "category": "RS232",
+  "title": "RS232Configure",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/RS232/Functions/CAPLfunctionRS232Configure.htm",
+  "syntax": [
+    "dword RS232Configure( dword port, dword baudrate, dword numberOfDataBits, dword numberOfStopBits, dword parity ); // form 1",
+    "dword RS232Configure( dword port, dword baudrate, dword numberOfDataBits, dword numberOfStopBits, dword parity, dword enableParityCheck); // form 2"
+  ],
+  "description": [
+    "Configures a serial port.",
+    "Without setting up a configuration explicitly, the default configuration is used.",
+    "Default baud rate: 9600, 8 data bits, 1 stop bit, no parity.",
+    "If a deprecated INI file exists, the data of the INI file will be used.",
+    "With form 2 of this function you can configure a serial port to use parity without letting the operating system verify parity correctness. This form should only be used if the communication to a device was not possible when using parity and form 1 of this function."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    },
+    {
+      "name": "baudrate",
+      "type": "",
+      "description": "The symbol rate to use for reception and transmission. Typically, 9600 is used. There is a list of possible values which depends on the serial port. Normally, 115.200 is the allowed maximum."
+    },
+    {
+      "name": "numberOfDataBits",
+      "type": "",
+      "description": "The number of data bits within a transmission frame. 8 is used at most. Only values between 5 and 8 are possible. Not all values and not all combinations with other frame parameters may be supported by the serial port."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "1 stop bit is used ( 1 has changed meaning compared to deprecated variant RS232SetCommState )"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "2 stop bits are used"
+    },
+    {
+      "name": "Note 1.5 stop bits are not supported any more.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "no parity used, i.e. frame contains no parity bit"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "odd parity"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "even parity"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "parity verification disabled"
+    },
+    {
+      "name": "!=0 (≠0)",
+      "type": "",
+      "description": "parity verification enabled"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if ( 0!=RS232Configure(1,9600,8,1,0) )\n   write(“Set typical default at port 1.”);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.1/8.0 SP2: form 2",
+      "7.1/8.0 SP2: form 2",
+      "—",
+      "—",
+      "14",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

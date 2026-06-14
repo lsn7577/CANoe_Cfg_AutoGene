@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "AfdxSetSignalStatus",
+  "category": "ADFX",
+  "title": "AfdxSetSignalStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxSetSignalStatus.htm",
+  "syntax": [
+    "long AfdxSetSignalStatus( long packet, char signalName[], long value ); // form 1"
+  ],
+  "description": [
+    "This function sets the functional status (FS) of a signal."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [
+      "Create and output an AFDX packet with two signals without DBC"
+    ],
+    "code": "long packet;\nlong srcIP = 0x0a022600;\nlong destIP = 0xe0e01a0f;\nlong srcUdpPort = 0x2b71;\nlong vlID = 0x1a0f;\nlong len = 640;\n\npacket = AfdxInitPacket(srcIP, destIP, srcUdpPort, vlID, len );\n\n// set oil temperature 21 to 78 degrees\nAfdxSetSignalInt( packet, 8, 78 ); // offset=8\n\n// set corresponding status byte to <NO>\nAfdxSetSignalStatus( packet, 4, 3 );\n\n// set oil temp 22 to 52 degree\nAfdxSetSignalInt( packet, 12, 52 );  // offset=12\n\n// set corresponding status byte to <NO>\nAfdxSetSignalStatus( packet, 5, 3 );\n\nAfdxOutputPacket( packet );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

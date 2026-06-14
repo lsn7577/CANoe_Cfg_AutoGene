@@ -1,0 +1,134 @@
+{
+  "page_type": "method",
+  "name": "distObjInterface::CreateObject",
+  "category": "DistributedObjects",
+  "title": "distObjInterface::CreateObject",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Methods/CAPLfunctiondistObjInterfaceCreateObject.htm",
+  "syntax": [
+    "distObjRef <Interface> distObjInterface <Interface>::CreateObject(distObjBlueprint <Interface> blueprint, char path[]);",
+    "distObjRef reverse<<Interface>> distObjInterface <Interface>::CreateObject(distObjBlueprint reverse<<Interface>> blueprint, char path[]);"
+  ],
+  "description": [
+    "Creates a dynamic object from the blueprint."
+  ],
+  "parameters": [
+    {
+      "name": "blueprint",
+      "type": "",
+      "description": "Blueprint which sets the attributes and virtual networks of the dynamic object."
+    },
+    {
+      "name": "path",
+      "type": "",
+      "description": "Fully qualified name of the dynamic object."
+    }
+  ],
+  "return": "New dynamic object.\nInvalid object if an error occurred.",
+  "example": {
+    "description": [],
+    "code": "// vCDL\nversion 1.3;\nnamespace SomeNamespace {\n  interface SomeInterface {}\n}\n\n// CAPL\non key 'a' {\n  distObjBlueprint SomeInterface bp;\n  distObjBlueprint reverse<SomeInterface> rev_bp;\n\n  bp = SomeInterface.CreateObjectBlueprint();\n  rev_bp = SomeInterface.CreateReverseBlueprint();\n\n  SomeInteface.CreateObject(bp, \"SomeNamespace::Obj\");\n  SomeInteface.CreateObject(rev_bp, \"SomeNamespace::RevObj\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "14",
+      "15",
+      "14",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

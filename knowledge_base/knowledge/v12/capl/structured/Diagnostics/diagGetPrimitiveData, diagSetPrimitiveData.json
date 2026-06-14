@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagGetPrimitiveData, diagSetPrimitiveData",
+  "category": "Diagnostics",
+  "title": "diagGetPrimitiveData, diagSetPrimitiveData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetPrimitiveData.htm",
+  "syntax": [
+    "long diagGetPrimitiveData (diagResponse obj, byte* buffer, DWORD buffersize)"
+  ],
+  "description": [
+    "Reads/sets the raw data of the complete service primitive (all data that is transmitted via the transport protocol).",
+    "When setting the data the length of the primitive is not changed."
+  ],
+  "parameters": [
+    {
+      "name": "objxt",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Number of bytes copied into the buffer or error code",
+  "example": {
+    "description": [],
+    "code": "// Print the length and first byte of a diagnostic request object\nPrintDiagRequestBytes( diagRequest * req)\n{\nBYTE primitiveRaw[4095];\nlong size;\nsize = DiagGetPrimitiveData( req, primitiveRaw, elcount( primitiveRaw));\nif( size > 0)\nwrite( \"Request = (%d)[%02x ...]\", size, primitiveRaw[0]);\nelse\nwrite( \"Request: error %d\", size);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,49 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSGetFileInfo",
+  "category": "ISO11783",
+  "title": "Iso11783FSGetFileInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fsgetfileinfo.htm",
+  "syntax": [
+    "long Iso11783FSGetFileInfo( dword fileHandle, dword infoCount, dword retInfo[] );"
+  ],
+  "description": [
+    "This function retrieves information about a file or directory. In the entry of the array, the following information is returned:",
+    "0",
+    "bit-field with valid entries, bit 1 set = index 1 is valid, ...",
+    "1",
+    "attributes of the file:",
+    "2",
+    "year",
+    "3",
+    "month",
+    "4",
+    "day",
+    "5",
+    "hour",
+    "6",
+    "minute",
+    "7",
+    "second"
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "File or directory handle, see also Iso11783FSOpenFile"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "LONG handle;\ndword info[8];\n\nhandle = Iso11783FSOpenFile( \"\\TEST.TXT\", 0x00 );\nif (handle > 0) {\n  if (Iso11783FSGetFileInfo( handle, elCount(info), info ) == 0) {\n    write( \"Date %d-%d-%d'\", info[2], info[3], info[4] );\n  }\n  Iso11783FSCloseFile( handle );\n} "
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

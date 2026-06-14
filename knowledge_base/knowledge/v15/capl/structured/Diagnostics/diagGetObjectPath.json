@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "diagGetObjectPath",
+  "category": "Diagnostics",
+  "title": "diagGetObjectPath",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetObjectPath.htm",
+  "syntax": [
+    "long diagGetObjectPath (diagResponse obj, char buffer[], dword buffersize)",
+    "long diagGetObjectPath (diagRequest obj, char buffer[], dword buffersize)"
+  ],
+  "description": [
+    "Delivers the qualifier path of the object that must be specified upon generation."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Input/output buffer"
+    },
+    {
+      "name": "buffersize",
+      "type": "",
+      "description": "Buffer size"
+    }
+  ],
+  "return": "Length of path written to buffer, may be truncated.\nError code",
+  "example": {
+    "description": [],
+    "code": "DumpReqParameterPaths( DiagRequest * req)\n{\n  DumpParameterPaths( req, 0);\n}\n\nDumpRespParameterPaths( DiagRequest * req)\n{\n  DumpParameterPaths( req, 1);\n}\n\nDumpParameterPaths( DiagRequest * req, long bDumpResponse)\n{\n  WORD i;\n  char parameterPath[100];\n\n  req.GetObjectPath( parameterPath, elcount( parameterPath));\n  write( \"Request is: %s\", parameterPath);\n  if( bDumpResponse)\n    write( \"Response parameters:\");\n  else\n    write( \"Request parameters:\");\n\n  i = 0;\n    while( bDumpResponse && req.GetRespParameterPath( i, parameterPath, elcount( parameterPath)) > 0\n    ||!bDumpResponse && req.GetParameterPath( i, parameterPath, elcount( parameterPath)) > 0)\n  {\n    write( \"%2i %s\", i, parameterPath);\n    ++i;\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5 SP2",
+      "5.0 7.0 SP5: methods",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "Online mode",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔ (since 9.0)",
+      "✔ (since 9.0)",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

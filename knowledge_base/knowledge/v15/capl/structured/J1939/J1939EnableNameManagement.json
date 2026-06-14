@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "J1939EnableNameManagement",
+  "category": "J1939",
+  "title": "J1939EnableNameManagement",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939EnableNameManagement.htm",
+  "syntax": [
+    "dword J1939EnableNameManagement( dword ecuHandle, dword enable )",
+    "dword J1939EnableNameManagement( dword ecuHandle, dword enable, dword bitMask )"
+  ],
+  "description": [
+    "This function activates the name management of a node.",
+    "Not until the name management is activated another node can change the device name of this node by sending a name management message."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    },
+    {
+      "name": "enable",
+      "type": "",
+      "description": "1: activate the name management 0: deactivates the name management"
+    },
+    {
+      "name": "bitMask",
+      "type": "",
+      "description": "parts of the device name that are allowed to be changed bit 0 (LSB): Arbitrary Address Capable bit 1: Industry Group bit 2: System Instance bit 3: System bit 4: Function bit 5: Function Instance bit 6: ECU Instance bit 7 (MSB): Manufacturer Code"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "LONG busHandle;\nLONG ecuAddress;\nLONG ecuHandle;\nchar deviceName[8]; // device name of the node\n\nbusHandle  = J1939GetBus( \"J1939\" );\necuAddress = dbNode.NmStationAddress; // dbNode must be configured in database\n\nJ1939MakeName(\n  deviceName, dbNode.NmJ1939AAC,\n  dbNode.NmJ1939IndustryGroup,\n  dbNode.NmJ1939SystemInstance,\n  dbNode.NmJ1939System,\n  dbNode.NmJ1939Function,\n  dbNode.NmJ1939FunctionInstance,\n  dbNode.NmJ1939ECUInstance,\n  dbNode.NmJ1939ManufacturerCode,\n  dbNode.NmJ1939IdentityNumber );\necuHandle = J1939CreateECU( busHandle, deviceName );\n\nif (ecuHandle != 0)\n{\n  /* allow every component to be changed except arbitrary address capable flag */\nJ1939EnableNameManagement(ecuHandle, 1, 0xFE);\n J1939ECUGoOnline( ecuHandle, ecuAddress );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

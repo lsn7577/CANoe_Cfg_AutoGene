@@ -1,0 +1,17 @@
+# Diagnostics: Access Mode
+
+> Category: `Diagnostics` | Type: `notes`
+
+## Description
+
+Parameter access functions can access the transmitted value as follows:
+
+diagGetComplexParameter | diagGetComplexRespParameter | diagGetParameter | diagGetRespParameter | diagSetComplexParameter | diagSetParameter
+
+| 0 | numerical: Access to the transmitted numerical value. |
+|---|---|
+| 1 | physical: Access to the value calculated from the transmitted numerical value (is also displayed symbolical as text). |
+| 2 | coded: Immediate transformation into a numeric type (up to 32 bit), i.e. floating point values will also be provided in their internal description (bit form). |
+
+| Version 15© Vector Informatik GmbH |
+|---|

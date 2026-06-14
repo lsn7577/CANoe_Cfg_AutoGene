@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthRemoveFieldFromEventgroup",
+  "category": "IP",
+  "title": "AREthRemoveFieldFromEventgroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthRemoveFieldFromEventgroup.htm",
+  "syntax": [
+    "long AREthRemoveFieldFromEventgroup( dword pevgHandle, dword pfHandle );"
+  ],
+  "description": [
+    "Removes a field created by AREthAddField from an Event Group which was created by AREthAddProvidedEventGroup. The field itself is not deleted."
+  ],
+  "parameters": [
+    {
+      "name": "pevgHandle",
+      "type": "",
+      "description": "Handle of the Event Group from which a field should be removed (see AREthAddProvidedEventGroup)."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD psi; // provided service handle\n  DWORD peg; // provided Eventgroup handle\n  DWORD pev; // provided Event handle\n}\n\non start()\n{\n  // open Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  psi = AREthCreateProvidedServiceInstance(aep,10,1);\n  // create Eventgroup\n  peg = AREthAddProvidedEventGroup(psi,1);\n  // create Event and add Event to Eventgroup\n  pev = AREthAddEvent(psi, 1, \"OnPrepareEvent1\");\n  AREthAddEventToEventgroup(peg, pev);\n  // ensure that Event is sent cyclically\n  AREthSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1(DWORD eventHandle, DWORD messageHandle)\n{\n  // this function is called before the Event is sent. Parameters can be specified here.\n}\n\non key 'r'\n{\n  AREthRemoveFieldFromEventGroup (peg, pev);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

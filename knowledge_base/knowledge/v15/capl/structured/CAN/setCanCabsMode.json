@@ -1,0 +1,223 @@
+{
+  "page_type": "function",
+  "name": "setCanCabsMode",
+  "category": "CAN",
+  "title": "setCanCabsMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Functions/CAPLfunctionSetCanCabsMode.htm",
+  "syntax": [
+    "long setCanCabsMode(long ntype,long nchannel,long nmode,long nflags);"
+  ],
+  "description": [
+    "Various CANcabs modes may be set. Replaces the setPortBits functions."
+  ],
+  "parameters": [
+    {
+      "name": "ntype",
+      "type": "",
+      "description": "Unused, must be set to 0"
+    },
+    {
+      "name": "nchannel",
+      "type": "",
+      "description": "CAN channel"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "NORMAL"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "SLEEP"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "HIVOLTAGE"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "HISPEED"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "DUAL_WIRE"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "SINGLE_WIRE_LOW"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "SINGLE_WIRE_HIGH"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "is reserved"
+    },
+    {
+      "name": "nMode",
+      "type": "Line 2",
+      "description": "Line 1"
+    },
+    {
+      "name": "8",
+      "type": "0",
+      "description": "0"
+    },
+    {
+      "name": "9",
+      "type": "0",
+      "description": "1"
+    },
+    {
+      "name": "10",
+      "type": "1",
+      "description": "0"
+    },
+    {
+      "name": "11",
+      "type": "1",
+      "description": "1"
+    },
+    {
+      "name": "Example Call the function with ntype = 0, nchannel = 1, nMode = 11, nflags = 0 setCanCabsMode(0,1,11,0); // sets both lines to 1",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "0x0",
+      "type": "",
+      "description": "HIGHPRIO is disabled"
+    },
+    {
+      "name": "0x1",
+      "type": "",
+      "description": "HIGHPRIO is enabled (clear tx-buffers)"
+    },
+    {
+      "name": "0x4",
+      "type": "",
+      "description": "HIGPRIO is enabled for one message (clear tx-buffers)"
+    },
+    {
+      "name": "Note Not all mode and flag values are valid for all CANcabs! (see also the hardware description for CANcabs)",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 'n'\n{\n   long ntype, nmode, nchannel, nflags;\n   ntype = 0;\n   nmode = 0;\n   nchannel = 1;\n   nflags = 0;\n   setCanCabsMode(ntype, nchannel, nmode, nflags);\n   write(\"normal mode\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "4.1",
+      "4.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "CAN",
+      "CAN",
+      "CAN",
+      "—",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

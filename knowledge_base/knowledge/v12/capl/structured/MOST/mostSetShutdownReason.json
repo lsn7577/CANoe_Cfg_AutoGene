@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostSetShutdownReason",
+  "category": "MOST",
+  "title": "mostSetShutdownReason",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetShutdownReason.htm",
+  "syntax": [
+    "mostSetShutdownReason(long channel, long reason)"
+  ],
+  "description": [
+    "Sets the shutdown reason value. This function is needed for resetting the shutdown reason value to 0x00 (No result available).",
+    "It is recommended to call this function from the OnMostShutdownReason event procedure."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "<0: See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

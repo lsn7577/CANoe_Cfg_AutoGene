@@ -1,0 +1,40 @@
+{
+  "page_type": "function",
+  "name": "TcpReceive",
+  "category": "TCPIPAPI",
+  "title": "TcpReceive",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionTCPReceive.htm",
+  "syntax": [
+    "long TcpReceive( dword socket, char buffer[], dword size);",
+    "socket.Receive( char buffer[], dword size);"
+  ],
+  "description": [
+    "The function receives data into the specified buffer.",
+    "If the receive operation does not complete immediately the operation is performed asynchronously and the function will return SOCKET_ERROR (-1).",
+    "Use IpGetLastSocketError to get a more specific error code.",
+    "If the specific error code is WSA_IO_PENDING (997), this confirms an asynchronous receiving and is no receive error.",
+    "The CAPL callback OnTcpReceive will be called on completion (successful or not), provided it is implemented in the same CAPL program."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [
+      "You can find a further example in the Ethernet sample configuration Chat: Open configuration (only with installed Ethernet option available)."
+    ],
+    "code": "void startReceive ( dword socket, char buffer[] )\n{\n  long result;\n  result = TcpReceive( socket, buffer, elcount(buffer) );\n  if (result == -1)\n  {\n    result = IpGetLastSocketError(socket);\n    if (result != 997)\n    {\n      // failure\n      writeLineEx( 1, 3, “TcpReceive error %d”, result);\n    }\n  }\n  else\n  {\n    // failure\n    writeLIneEx( 1, 3, “TcpReceive error %d”, result);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

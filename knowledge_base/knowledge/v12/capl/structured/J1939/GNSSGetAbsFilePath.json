@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GNSSGetAbsFilePath",
+  "category": "J1939",
+  "title": "GNSSGetAbsFilePath",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSGetAbsFilePath.htm",
+  "syntax": [
+    "long GNSSGetAbsFilePath( char file [], char fileNameWithAbsPath[], long absPathLen )"
+  ],
+  "description": [
+    "This function gets the absolute path of a file.",
+    "Functionality"
+  ],
+  "parameters": [
+    {
+      "name": "file",
+      "type": "",
+      "description": "The file can be defined:"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "on key 'x'\n{\n  char absPath[256];\n\n  GNSSGetAbsFilePath(\"Test.can\", absPath, 256);\n  write (\"absPath 1: %s \", absPath);\n\n  GNSSGetAbsFilePath(\"Nodes\\\\Test.can\", absPath, 256);\n  write (\"absPath 1: %s \", absPath);\n\n  GNSSGetAbsFilePath(\"C:\\\\Nodes\\\\Test.can\", absPath, 256);\n  write (\"absPath 1: %s \", absPath);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

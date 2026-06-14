@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpProvidedEventsAndFieldsRemoveConsumer",
+  "category": "IP",
+  "title": "SomeIpProvidedEventsAndFieldsRemoveConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpProvidedEventsAndFieldsRemoveConsumer.htm",
+  "syntax": [
+    "long SomeIpProvidedEventsAndFieldsAddConsumer(dword psiHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort);"
+  ],
+  "description": [
+    "Removes a consumer from a provided service instance that has been added by SomeIpProvidedEventsAndFieldsAddConsumer."
+  ],
+  "parameters": [
+    {
+      "name": "psiHandle",
+      "type": "",
+      "description": "Provided service instance handle (may be retrieved by SomeIpGetProvidedObjectHandle)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

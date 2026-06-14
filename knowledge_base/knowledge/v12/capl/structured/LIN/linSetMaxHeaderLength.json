@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetMaxHeaderLength",
+  "category": "LIN",
+  "title": "linSetMaxHeaderLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetMaxHeaderLength.htm",
+  "syntax": [
+    "dword linSetMaxHeaderLength(long bitTimes)"
+  ],
+  "description": [
+    "Sets the maximum header length in bit times."
+  ],
+  "parameters": [
+    {
+      "name": "bitTimes",
+      "type": "",
+      "description": "The new maximum header length in bit times. Headers longer than the maximum header length will be considered illegal. CANoe will not generate any response to these headers."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

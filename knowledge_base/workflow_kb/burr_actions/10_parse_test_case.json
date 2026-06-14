@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1.0",
+  "id": "parse_test_case",
+  "phase": "intake",
+  "description": "Normalize user input or source files into test_case_ir.",
+  "reads": [
+    "raw_test_case"
+  ],
+  "writes": [
+    "test_case_ir"
+  ],
+  "knowledge_inputs": [],
+  "pack_inputs": [
+    "packs/core/pack.json"
+  ],
+  "gates": [
+    "test_case_ir_schema_valid",
+    "target_canoe_version_present"
+  ],
+  "transitions": [
+    {
+      "to": "classify_intent",
+      "condition": "test_case_ir.status == 'parsed'"
+    }
+  ],
+  "extension_notes": [
+    "Document, spreadsheet, and plain-text parsers can be separate implementations behind this contract.",
+    "Do not classify CANoe APIs in this action; only extract user intent and test semantics."
+  ]
+}
+

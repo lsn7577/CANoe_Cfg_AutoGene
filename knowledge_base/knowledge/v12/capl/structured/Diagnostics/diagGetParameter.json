@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetParameter",
+  "category": "Diagnostics",
+  "title": "diagGetParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetParameter.htm",
+  "syntax": [
+    "long diagGetParameter (diagResponse obj, char parameterName[], double output[1])"
+  ],
+  "description": [
+    "Returns the value of the numeric parameter, either in an output field or as return value (without the possibility of checking the correct function)."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Error code or value of the parameter or 0.0 if this could not be acquired.",
+  "example": {
+    "description": [],
+    "code": "// e.g. used in a Tester module\non diagResponse *\n{\n  byte data[4096];\n  long size;\n  double param_value1=0xFF;\n  double param_value2=0xFF;\n  diagResponse * resp;       // declare response with no concrete interpretation\n  size=this.GetPrimitiveSize();             // get length of response\n  this.GetPrimitiveData(data, elcount(data));  // copy actual response from \"on diagResponse *\" into data array\n  switch(data[0]) \n  {\n    case 0x50:                                // UDS: DiagnosticSessionControl_Process positive Response\n      diagInitialize(resp, \"DiagnosticSessionControl_Process\");\n      resp.Resize(size);                           // make sure there is room for the received bytes\n      resp.SetPrimitiveData(data, size);           // initialize resp with actual response from data array\n      param_value1=diagGetParameter(resp, \"diagnosticSessionType\");\n      param_value2=diagGetParameter(resp, \"sessionParameterRecord\");\n      break;\n    case 0x51:                                // UDS: EcuReset_Process positive Response\n      diagInitialize(resp, \"EcuReset_Process\");\n      resp.Resize(size);                           // make sure there is room for the received bytes\n      resp.SetPrimitiveData(data, size);           // initialize resp with actual response from data array\n      param_value1=diagGetParameter(resp, \"resetType\");\n      param_value2=diagGetParameter(resp, \"powerDownTime\");\n      break;\n    default:\n      break;\n  }\n  write(\"Tester: Value of parameter according to chosen interpretation: 0x%x 0x%x %3.0lf %3.0lf\",data[0], data[1], param_value1, param_value2);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

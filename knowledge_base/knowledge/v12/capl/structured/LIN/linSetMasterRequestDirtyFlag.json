@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linSetMasterRequestDirtyFlag",
+  "category": "LIN",
+  "title": "linSetMasterRequestDirtyFlag",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetMasterRequestDirtyFlag.htm",
+  "syntax": [
+    "dword linSetMasterRequestDirtyFlag (dword dirty)"
+  ],
+  "description": [
+    "Sets the dirty flag for the LIN master request frame (frame identifier=0x3C). The master request only gets transmitted when the dirty flag is set.",
+    "The dirty flag also gets set implicitly with every data update on the master request."
+  ],
+  "parameters": [
+    {
+      "name": "dirty",
+      "type": "",
+      "description": "0: clear the dirty flag1: set the dirty flag"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

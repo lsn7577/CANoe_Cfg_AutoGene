@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILFaultInjectionSetMsgLength",
+  "category": "CANoeIL",
+  "title": "ILFaultInjectionSetMsgLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILFaultInjectionSetMsgLength.htm",
+  "syntax": [
+    "ILFaultInjectionSetMsgLength(dbMessage msg, dword msgLength)"
+  ],
+  "description": [
+    "Assigns a new message length (in bytes) to the message. To set the message length back to its original value, use ILFaultInjectionResetMsgLength."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message that should get a new message length."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

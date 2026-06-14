@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "workflow_kb/schemas/canoe_project_spec.schema.json",
+  "title": "CANoe Project Generation Specification",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "project_name",
+    "target_canoe_version",
+    "artifact_plan"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "needs_evidence",
+        "failed"
+      ]
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "target_canoe_version": {
+      "type": "string"
+    },
+    "networks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "databases": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "test_modules": {
+      "type": "array",
+      "items": {
+        "$ref": "capl_module_spec.schema.json"
+      }
+    },
+    "simulation_nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "capl_module_spec.schema.json"
+      }
+    },
+    "panels": {
+      "type": "array",
+      "items": {
+        "$ref": "panel_binding_spec.schema.json"
+      }
+    },
+    "ci": {
+      "type": "object"
+    },
+    "artifact_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "path"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "source_pattern": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+

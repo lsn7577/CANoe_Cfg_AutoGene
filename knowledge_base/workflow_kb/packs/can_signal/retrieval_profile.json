@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.1.0",
+  "id": "can_signal_retrieval",
+  "exact_symbols": ["output", "setSignal", "setTimer", "cancelTimer", "on message", "TestWaitForSignalMatch"],
+  "search_queries": [
+    "send CAN frame CAPL",
+    "wait for signal match CAPL test",
+    "CAN message selector DLC ID channel"
+  ],
+  "team_overrides": ["extras/team/canSetSignalDword.json", "extras/team/Common_Gotchas.json"]
+}
+

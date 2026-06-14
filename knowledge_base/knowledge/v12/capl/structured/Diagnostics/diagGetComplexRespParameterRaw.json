@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagGetComplexRespParameterRaw",
+  "category": "Diagnostics",
+  "title": "diagGetComplexRespParameterRaw",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetComplexRespParameterRaw.htm",
+  "syntax": [
+    "long diagGetComplexRespParameterRaw (diagRequest req, char parameterName[], dword iteration, char subParameter[], byte buffer[], dword bufferLen);"
+  ],
+  "description": [
+    "Reads/sets the complex parameter to the specified raw value.",
+    "This function offers access to parameters contained in a received response object, whereby the function is addressed directly by the request. This eliminates the need to generate a separate response object. If no response is available yet for the request, an error is reported."
+  ],
+  "parameters": [
+    {
+      "name": "req",
+      "type": "",
+      "description": "Request"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

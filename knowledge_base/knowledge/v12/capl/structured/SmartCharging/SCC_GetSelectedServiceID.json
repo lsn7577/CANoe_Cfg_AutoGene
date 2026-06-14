@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetSelectedServiceID",
+  "category": "SmartCharging",
+  "title": "SCC_GetSelectedServiceID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetSelectedServiceID.htm",
+  "syntax": [
+    "long SCC_ GetSelectedServiceID ( long Index )"
+  ],
+  "description": [
+    "Gets the service ID of a ServicePaymentSelectionReq message."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "ID of the selected service with the specified list index < ServiceCount.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

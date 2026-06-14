@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetPDUsTPIPv4DstAddr",
+  "category": "Other",
+  "title": "GetPDUsTPIPv4DstAddr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetPDUsTPIPv4DstAddr.htm",
+  "syntax": [
+    "long GetPDUsTPIPv4DstAddr(this, dword &IPv4DestinationAddress);"
+  ],
+  "description": [
+    "This function can only be used within a on PDU handler. If the PDU was received via IPv4, with this function the IPv4 destination address can be requested."
+  ],
+  "parameters": [
+    {
+      "name": "this",
+      "type": "",
+      "description": "Handle to the currently handled (received) PDU object."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

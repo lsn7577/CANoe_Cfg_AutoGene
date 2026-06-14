@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "canGetExtRemote",
+  "category": "Obsolete",
+  "title": "canGetExtRemote",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionCanGetExtRemote.htm",
+  "syntax": [
+    "long canGetExtRemote (long channel)"
+  ],
+  "description": [
+    "Returns the number of extended remote CAN messages on the specified channel since start of measurement."
+  ],
+  "parameters": [
+    {
+      "name": "Vector API driver",
+      "type": "",
+      "description": "Values 1 ... 32"
+    },
+    {
+      "name": "Softing API driver",
+      "type": "",
+      "description": "Values 1, 2"
+    }
+  ],
+  "return": "Number of extended remote CAN messages on the specified channel since start of measurement.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

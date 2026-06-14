@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "SCC_StopSession",
+  "category": "SmartCharging",
+  "title": "SCC_StopSession",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_StopSession.htm",
+  "syntax": [
+    "long SCC_StopSession ( dword CloseTcpConnection ) // form 1",
+    "long SCC_StopSession ( dword CloseTcpConnection, dword CloseDataLink ) // form 2"
+  ],
+  "description": [
+    "The function stops a connection immediately. If it is used within a message callback, a response to the message is not sent."
+  ],
+  "parameters": [
+    {
+      "name": "CloseTcpConnection",
+      "type": "",
+      "description": "If 1, an additional TCP close is executed"
+    },
+    {
+      "name": "CloseDataLink",
+      "type": "",
+      "description": "If 1, an additional data link close via CM_SetKey.Req is executed. This is the default behavior for CloseTcpConnection == 1"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3: form 1, 2",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3: form 1, 2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

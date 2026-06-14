@@ -1,0 +1,19 @@
+# RS232ByteCallback
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function Replaced by RS232Receive and RS232OnReceive. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | RS232ByteCallback( dword port, dword datum, dword note ) |  |  |  |
+| Function | Callback handler for reception of data from serial ports. Each node which implements this handler will receive data. The handler receives data from all opened ports (i.e. opened by CANoe/CANalyzer). It is cumbersome and slower by design since it gets one byte time by time. Block handlers receive blocks of data at an instant of time. |  |  |  |
+| Parameters | port A number between 1 and 255 identifying a serial port. |  |  |  |
+| datum Byte which has been received (lowest 8 bits). |  |  |  |  |
+| note Constant 1 (for sake of interface compatibility). |  |  |  |  |
+| Return Values | 0: error The error occurs if no serial port has been opened. |  |  |  |
+| 1: success |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 7.0 | — | — | • |  |
+| Example if ( 0!=RS232WriteByte(2,65) ) write(“Written byte to port 2.”);// port 2 may be connected with port 1...// at node which listens to port 1 is connected to port 2RS232ByteCallback(dword port, dword datum, dword note){ // receive value 65 with port==1} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

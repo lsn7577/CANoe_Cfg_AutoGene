@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_MsgSignalValueInvalid, ChkStart_MsgSignalValueInvalid",
+  "category": "Test",
+  "title": "ChkCreate_MsgSignalValueInvalid, ChkStart_MsgSignalValueInvalid",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateMsgSignalValueInvalid.htm",
+  "syntax": [
+    "dword ChkCreate_MsgSignalValueInvalid (Signal aObservedSignal, double aMinValue, double aMaxValue, Callback aCallback); // form 1"
+  ],
+  "description": [
+    "Check the value of a signal, of an environment variable or a system variable. The value should be outside the given value range (inclusive limits).",
+    "An event will be generated, if the value of the physical signal, the environment variable or the system variable is inside the given value range.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks the value of the signal (should be outside the given range)\ncheckId = ChkStart_MsgSignalValueInvalid (SignalToObserve, 2.5, 3.7);\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

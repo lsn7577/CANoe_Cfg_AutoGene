@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "RS232Close",
+  "category": "RS232",
+  "title": "RS232Close",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/RS232/Functions/CAPLfunctionRS232Close.htm",
+  "syntax": [
+    "dword RS232Close( dword port )"
+  ],
+  "description": [
+    "Closes a serial port.",
+    "The serial port will be closed for all nodes. One and the same port may be closed by several nodes (or repetitively). After closure other programs may use the serial port.",
+    "After closing the serial port the configuration of the port is lost. The next time the port is opened it will be configured with the system default."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    }
+  ],
+  "return": "0: error\nThe error occurs if the serial port with the given number does not exist on the system.",
+  "example": {
+    "description": [],
+    "code": "if ( 1==RS232Close(1) ) write(“It works with port 1.”);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

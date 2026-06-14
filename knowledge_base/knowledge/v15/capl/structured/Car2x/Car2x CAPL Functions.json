@@ -1,0 +1,557 @@
+{
+  "page_type": "notes",
+  "name": "Car2x CAPL Functions",
+  "category": "Car2x",
+  "title": "Car2x CAPL Functions",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/CAPLfunctionsCar2xOverview.htm",
+  "syntax": [],
+  "description": [
+    "Callback Functions",
+    "Car2x IL API",
+    "Car2x Stack API",
+    "Car2x Test Service Library",
+    "General Functions",
+    "Packet API",
+    "Scenario API",
+    "Security API",
+    "Station API",
+    "Time API",
+    "C2xTestGetWaitForMessage",
+    "Retrieves the Car2x message that has led to the resume of the last wait statement.",
+    "C2xTestJoinMessage",
+    "Joins a Car2x message to the current set of waiting events.",
+    "C2xTestWaitForMessage",
+    "Waits for a Car2x message.",
+    "Get packet handle.",
+    "C2xParsePacket",
+    "Reinterprets the packet after externally defined binary payload data has been assigned to the packet.",
+    "Validates the Service Specific Permission (SSP) bit mask of a certificate.",
+    "Returns the actual value of the floating point typed scenario sub-attribute.",
+    "C2xSetStationAttributeDouble",
+    "Sets an attribute value for a scenario station and a particular keypoint as double.",
+    "C2xSetStationAttributeInt64",
+    "Sets an attribute value for a scenario station and a particular keypoint as Int64.",
+    "A new CAPL function was implemented to convert a mod32 time stamp into a UTC time stamp as array of type long.",
+    "Car2x Error Codes"
+  ],
+  "parameters": [],
+  "return": "The Car2x Interaction",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Car2x Only available with option .Car2x. The Car2x Interaction Layer (Car2x IL) simplifies the simulation of a Car2x node with CAPL and allows to send and receive individual WLAN packets. To use the CAPL functions the C2X_IL.dll must be included."
+      ]
+    ],
+    [
+      [
+        "Callback Functions Car2x IL API Car2x Stack API Car2x Test Service Library General Functions",
+        "Packet API Scenario API Security API Station API Time API"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "<OnC2xPacket>",
+        "CAPL handler to receive data of WLAN packets."
+      ],
+      [
+        "<OnC2xTransmitPacket>",
+        "CAPL handler to modify database defined WLAN packets before transmission."
+      ],
+      [
+        "OnScenarioStateChanged",
+        "Is called when the state of the scenario was changed."
+      ],
+      [
+        "OnStartScenario",
+        "Is called at the time when the scenario start was triggered."
+      ],
+      [
+        "OnStationAttributeTrigger",
+        "Defines a reaction on triggerable attributes of a scenario station."
+      ],
+      [
+        "OnStationAttributeTriggerAll",
+        "Defines a reaction on all triggerable attributes of all stations in the scenario."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xConfigureChannel",
+        "Redefines some or all channel parameters on the fly."
+      ],
+      [
+        "C2xDisableMsg",
+        "Disables a message that is enabled."
+      ],
+      [
+        "C2xDispatchPacket",
+        "Dispatches a packet to CANoe application."
+      ],
+      [
+        "C2xEnableCV2xMode",
+        "Enables the CV2x protocol for a channel."
+      ],
+      [
+        "C2xEnableMsg",
+        "Enables a message that is disabled."
+      ],
+      [
+        "C2xGetChannelConfiguration",
+        "Retrieves the current configuration parameters of a specific hardware channel."
+      ],
+      [
+        "C2xGetCycleTime",
+        "Gets the cycle time for a message."
+      ],
+      [
+        "C2xGetMessageName",
+        "Get application layer name of a message."
+      ],
+      [
+        "C2xIsMsgEnabled",
+        "Check if a message is enabled."
+      ],
+      [
+        "C2xSendMsg",
+        "Send the message with the specified message name."
+      ],
+      [
+        "C2xSetCycleTime",
+        "Sets the cycle time for a message."
+      ],
+      [
+        "C2xSetSendParameters",
+        "Sets transmission relevant send parameters."
+      ],
+      [
+        "C2xSetSignal",
+        "Sets a signal in a packet."
+      ],
+      [
+        "C2xStartNode",
+        "Start transmission of messages for node."
+      ],
+      [
+        "C2xStopNode",
+        "Stop transmission of messages for node."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xAddGeoPos",
+        "Sets the current geographical position of the station."
+      ],
+      [
+        "C2xApplyPathHistory",
+        "Applies path history data to the packet."
+      ],
+      [
+        "C2xResetPathHistory",
+        "Clears previously stored path history data."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xTestGetWaitForMessage",
+        "Retrieves the Car2x message that has led to the resume of the last wait statement."
+      ],
+      [
+        "C2xTestJoinMessage",
+        "Joins a Car2x message to the current set of waiting events."
+      ],
+      [
+        "C2xTestJoinSignalInRange",
+        "Joins a Car2X message which has a signal that is inside or equals the given limits to the current set of waiting events"
+      ],
+      [
+        "C2xTestJoinSignalMatch",
+        "Joins a Car2X message which has a signal that matches the given value to the current set of waiting events"
+      ],
+      [
+        "C2xTestWaitForMessage",
+        "Waits for a Car2x message."
+      ],
+      [
+        "C2xTestWaitForSignalInRange",
+        "Waits for a Car2X message which has a signal that is inside or equals the given limits"
+      ],
+      [
+        "C2xTestWaitForSignalMatch",
+        "Waits for a Car2X message which has a signal that matches the given value."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xGetDefaultMacId",
+        "Returns the MAC-ID of a WLAN interface."
+      ],
+      [
+        "C2xGetLastError",
+        "Gets the last error code."
+      ],
+      [
+        "C2xGetLastErrorText",
+        "Gets the description of the last error code."
+      ],
+      [
+        "C2xRegisterCallback",
+        "Register a CAPL handler function."
+      ],
+      [
+        "C2xSetVerbosity",
+        "Sets the verbosity level of the Car2x IL."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xAddToken",
+        "Adds a token at the end of a protocol header."
+      ],
+      [
+        "C2xCompletePacket",
+        "Completes a WLAN packet for sending."
+      ],
+      [
+        "C2xGetMessageHandle",
+        "Get packet handle."
+      ],
+      [
+        "C2xGetThisData",
+        "Gets the payload data of the highest interpretable protocol."
+      ],
+      [
+        "C2xGetThisMotorolaValue16",
+        "Gets received 16 bit value (Motorola format)."
+      ],
+      [
+        "C2xGetThisMotorolaValue32",
+        "Gets received 32 bit value (Motorola format)."
+      ],
+      [
+        "C2xGetThisMotorolaValue64",
+        "Gets received 64 bit value (Motorola format)."
+      ],
+      [
+        "C2xGetThisTimeNS",
+        "Gets time stamp of a received WLAN packet."
+      ],
+      [
+        "C2xGetThisValue8",
+        "Gets received 8 bit value."
+      ],
+      [
+        "C2xGetThisValue16",
+        "Gets received 16 bit value (Intel format)."
+      ],
+      [
+        "C2xGetThisValue32",
+        "Gets received 32 bit value (Intel format)."
+      ],
+      [
+        "C2xGetThisValue64",
+        "Gets received 64 bit value (Intel format)."
+      ],
+      [
+        "C2xGetTokenBitOfBitString",
+        "Gets the value of a bit in a bit string."
+      ],
+      [
+        "C2xGetTokenBitString",
+        "Gets the bit string value of a token."
+      ],
+      [
+        "C2xGetTokenData",
+        "Gets the data of a token."
+      ],
+      [
+        "C2xGetTokenInt",
+        "Gets the integer value of a token."
+      ],
+      [
+        "C2xGetTokenInt64",
+        "Gets the 64 bit integer value of a token."
+      ],
+      [
+        "C2xGetTokenLengthBit",
+        "Gets the length of a token in bit."
+      ],
+      [
+        "C2xGetTokenPhys",
+        "Returns the physical value of the existing ASN.1 token in the packet"
+      ],
+      [
+        "C2xGetTokenString",
+        "Gets the string value of a token."
+      ],
+      [
+        "C2xGetTokenSubString",
+        "Gets a part of a string value of a token."
+      ],
+      [
+        "C2xInitPacket",
+        "Creates a new WLAN packet."
+      ],
+      [
+        "C2xInitProtocol",
+        "Initializes a protocol for a WLAN packet."
+      ],
+      [
+        "C2xIsPacketValid",
+        "Checks if a WLAN packet has protocol errors."
+      ],
+      [
+        "C2xIsTokenAvailable",
+        "Checks if a token is part of a packet."
+      ],
+      [
+        "C2xOutputPacket",
+        "Sends a WLAN packet."
+      ],
+      [
+        "C2xParsePacket",
+        "Reinterprets the packet after externally defined binary payload data has been assigned to the packet."
+      ],
+      [
+        "C2xReceivePacket",
+        "Registers a CAPL handler function to receive WLAN packets."
+      ],
+      [
+        "C2xReleasePacket",
+        "Deletes a WLAN packet."
+      ],
+      [
+        "C2xRemoveToken",
+        "Removes a token from a protocol header."
+      ],
+      [
+        "C2xResizeToken",
+        "Modifies the length of a token."
+      ],
+      [
+        "C2xSetTokenBitOfBitString",
+        "Sets the value of a bit in a bit string."
+      ],
+      [
+        "C2xSetTokenBitString",
+        "Sets the bit string value of a token."
+      ],
+      [
+        "C2xSetTokenData",
+        "Sets the data of a token."
+      ],
+      [
+        "C2xSetTokenInt",
+        "Sets the integer value of a token."
+      ],
+      [
+        "C2xSetTokenInt64",
+        "Sets the 64 bit integer value of a token."
+      ],
+      [
+        "C2xSetTokenPhys",
+        "Sets the physical value of the ASN.1 token in the packet."
+      ],
+      [
+        "C2xSetTokenString",
+        "Sets the string value of a token."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xIsScenarioStarted",
+        "Checks, if the scenario assigned to the current CANoe configuration is in the running state."
+      ],
+      [
+        "C2xLoadScenario",
+        "Loads the scenario from the file specified by a parameter."
+      ],
+      [
+        "C2xStartScenario",
+        "Starts the scenario assigned to the current CANoe configuration immediately."
+      ],
+      [
+        "C2xStopScenario",
+        "Stops the scenario execution immediately."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xSecCertificateCreate",
+        "Generate a certificate."
+      ],
+      [
+        "C2xSecCertificateGetHandle",
+        "Gets a certificate handle from a certificate."
+      ],
+      [
+        "C2xSecCertificateGetHashedId8",
+        "Gets HashedId8 digest of a certificate."
+      ],
+      [
+        "C2xSecCertificateGetName",
+        "Gets a certificate name."
+      ],
+      [
+        "C2xSecCertificateGetSignerHandle",
+        "Gets the signer (parent) certificate of a certificate."
+      ],
+      [
+        "C2xSecCertificateGetSignerHashedId8",
+        "Gets the signer (parent) certificate’s HashedId8 digest."
+      ],
+      [
+        "C2xSecCertificateGetStatus",
+        "Gets validity status of a certificate."
+      ],
+      [
+        "C2xSecCertificateValidAppSspBitmap",
+        "Validates the Service Specific Permission (SSP) bit mask of a certificate."
+      ],
+      [
+        "C2xSecCertificateValidIdentifiedRegion",
+        "Validates the validity of a certificate region."
+      ],
+      [
+        "C2xSecPacketGetSignerHandle",
+        "Gets the handle of the certificate used by the signer of the packet."
+      ],
+      [
+        "C2xSecPacketGetSignerHashedId8",
+        "Gets the HashedId8 of the certificate used by the signer of the packet."
+      ],
+      [
+        "C2xSecPacketGetSignerType",
+        "Retrieves how the message signer information is included in the message."
+      ],
+      [
+        "C2xSecPacketGetStatus",
+        "Gets validity status of a packet."
+      ],
+      [
+        "C2xSecPacketIsSecured",
+        "Check if a packet has a Security Layer."
+      ],
+      [
+        "C2xSecPacketSetSignerHandle",
+        "Assigns a certificate to a Tx packet."
+      ],
+      [
+        "C2xSecPacketSetSignerType",
+        "Specifies how the message signer information is included in the message."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xGetNodeName",
+        "Get the name of the station's assigned database node."
+      ],
+      [
+        "C2xGetStationAttributeDouble",
+        "Return the actual value of the floating point typed scenario attribute."
+      ],
+      [
+        "C2xGetStationAttributeInt64",
+        "Returns the actual value of the integer-typed scenario attribute."
+      ],
+      [
+        "C2xGetStationColor",
+        "Get the station's color."
+      ],
+      [
+        "C2xGetStationHandle",
+        "Get the handle of an ITS Station."
+      ],
+      [
+        "C2xGetStationName",
+        "Get the station's name."
+      ],
+      [
+        "C2xGetStationSubAttributeDouble",
+        "Returns the actual value of the floating point typed scenario sub-attribute."
+      ],
+      [
+        "C2xGetStationSubAttributeInt64",
+        "This function returns the actual value of the integer-typed scenario sub-attribute."
+      ],
+      [
+        "C2xSetStationAttributeDouble",
+        "Sets an attribute value for a scenario station and a particular keypoint as double."
+      ],
+      [
+        "C2xSetStationAttributeInt64",
+        "Sets an attribute value for a scenario station and a particular keypoint as Int64."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Short Description"
+      ],
+      [
+        "C2xConvertMod32TsToUTC",
+        "A new CAPL function was implemented to convert a mod32 time stamp into a UTC time stamp as array of type long."
+      ],
+      [
+        "C2xConvertTimeFromMSSinceUTC",
+        "Converts a time stamp in milliseconds since a reference time into a UTC time stamp."
+      ],
+      [
+        "C2xConvertTimeToMSSinceUTC",
+        "Returns the elapsed milliseconds between a reference time and a time stamp."
+      ],
+      [
+        "C2xGetITSTimeStamp",
+        "Returns the time in milliseconds since 1.1.1970 00:00:00 to measurement start plus the simulation time."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

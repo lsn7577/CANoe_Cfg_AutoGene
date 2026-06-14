@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "StandardRemoteFrameRate",
+  "category": "CAN",
+  "title": "StandardRemoteFrameRate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionStandardRemoteFrameRate.htm",
+  "syntax": [
+    "long StandardRemoteFrameRate ()",
+    "CANx.StandardRemoteFrameRate"
+  ],
+  "description": [
+    "Returns the current rate of standard remote CAN frames of channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Current rate of standard remote CAN frames of channel x in messages per second.",
+  "example": {
+    "description": [],
+    "code": "write (\"Rate of standard remote frames of CAN1 \r\n = %d\", CAN1.StandardRemoteFrameRate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsTimingSDOStop",
+  "category": "CANopen",
+  "title": "coTfsTimingSDOStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsTimingSdoStop.htm",
+  "syntax": [
+    "long coTfsTimingSDOStop( dword nodeId );"
+  ],
+  "description": [
+    "The function stops the monitoring of SDO response times. The already saved values are not lost. The monitoring can be resumed with coTfsTimingSDOStart()."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsTimingSDOStop( 0 ); // stop SDO time recording for all nodes"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "AvbGetLastErrorText",
+  "category": "IP",
+  "title": "AvbGetLastErrorText",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AVBIL/Functions/CAPLfunctionAvbGetLastErrorText.htm",
+  "syntax": [
+    "dword AvbGetLastErrorText(dword bufferLength, char buffer[]);"
+  ],
+  "description": [
+    "Function to retrieve the last error which occurs in the AVB IL as string.",
+    "The call of the AvbGetLastErrorText function does not reset the saved error text."
+  ],
+  "parameters": [
+    {
+      "name": "bufferLength",
+      "type": "",
+      "description": "Number of characters."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer receiving the error text."
+    }
+  ],
+  "return": "Number of copied characters.",
+  "example": {
+    "description": [],
+    "code": "char buffer[1024];\ndword listenerHandle;\n\n// open a listener\nlistenerHandle = AvbOpenListener();\n\n// check if last function was executed successfully\nif ((AvbGetLastErrorText(elcount(buffer), buffer)) != 0)\n{\n  write(\"AVB IL error occurred: %s\", buffer);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2 SP2",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

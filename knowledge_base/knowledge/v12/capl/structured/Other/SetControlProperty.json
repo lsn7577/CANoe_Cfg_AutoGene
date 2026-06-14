@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SetControlProperty",
+  "category": "Other",
+  "title": "SetControlProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetControlProperty.htm",
+  "syntax": [
+    "void SetControlProperty(char[] panel, char[] control, char[] property, long value);"
+  ],
+  "description": [
+    "Sets a property of a Panel Editor ActiveX control.For OCX panels properties can also be set. Therefore the property must be defined as property to be set in the OCX INI file.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Editor.",
+    "It is easier to access color properties by MakeRGB."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "SetControlProperty(\"Measurements\", \"StatusIndicator\", \"Caption\", \"running\");\nSetControlProperty(\"Measurements\", \"StatusIndicator\", \"BackColor\", MakeRGB(0,145,255));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

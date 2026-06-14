@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "<OnSomeIpMethodResponse>",
+  "category": "IP",
+  "title": "<OnSomeIpMethodResponse>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionOnSomeIpMethodResponse.htm",
+  "syntax": [
+    "void <OnSomeIpMethodResponse>(dword methodCallHandle, dword messageResponseHandle );"
+  ],
+  "description": [
+    "A callback function with this signature must be passed to the CAPL function SomeIpCreateMethodCall."
+  ],
+  "parameters": [
+    {
+      "name": "methodCallHandle",
+      "type": "",
+      "description": "Handle of the Event that triggered the callback, see SomeIpAddMethod."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the created method is contained in the FIBEX database that is assigned to the CANoe configuration. The method has the Method ID 31, two input parameters (Member_value1 and Member_value2), and a return parameter (Result)."
+    ],
+    "code": "variables\n{\n  DWORD gMc; // global method call handle\n}\n\nvoid Initialize()\n{\n  DWORD aep; // application endpoint handle\n  DWORD csi; // consumed Service Instance handle\n\n  // open application endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(0x11, 50002);\n\n  // cretae Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,11,1);\n\n  // create method call\n  gMc = SomeIpCreateMethodCall(csi,31,\"OnMethodResponse\");\n}\n\non key 's'\n{\n  // if this key is pressed the method should be called\n\n  // set the two input parameters of the method\n  SomeIpSetValueDWord(gMc,\"Member_value1\",11);\n  SomeIpSetValueDWord(gMc,\"Member_value2\",22);\n\n  // call the method\n  SomeIpCallMethod(gMc);\n}\n\nvoid OnMethodResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  DWORD res; // value of return parameter\n\n  // get the returned parameter values\n  res = SomeIpGetValueDWord(messageResponseHandle,\"Result\");\n\n  write(\"The method call returned value: %d\",res);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

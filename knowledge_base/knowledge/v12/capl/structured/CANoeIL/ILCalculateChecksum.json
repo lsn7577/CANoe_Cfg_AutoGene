@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILCalculateChecksum",
+  "category": "CANoeIL",
+  "title": "ILCalculateChecksum",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILCalculateChecksum.htm",
+  "syntax": [
+    "long ILCalculateChecksum (char pduNamme[], long type, BYTE payload[], long payloadLength, BYTE crc [])"
+  ],
+  "description": [
+    "Calculates the corresponding CRC checksum based on the payload. The correct offset is calculated from the database using the PDU name."
+  ],
+  "parameters": [
+    {
+      "name": "pduName",
+      "type": "",
+      "description": "Name of the PDU."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

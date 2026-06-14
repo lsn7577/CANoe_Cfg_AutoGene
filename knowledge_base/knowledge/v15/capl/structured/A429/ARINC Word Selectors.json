@@ -1,0 +1,475 @@
+{
+  "page_type": "notes",
+  "name": "ARINC Word Selectors",
+  "category": "A429",
+  "title": "ARINC Word Selectors",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/A429/CAPLfunctionsA429Selectors.htm",
+  "syntax": [],
+  "description": [
+    "The offsets used together with the selector address the following parts of the ARINC word.",
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [
+    {
+      "name": "time",
+      "description": "When an event handler (on a429Word/on a429Worderror) is triggered, the time stamp of the event is stored in the selector.",
+      "type": "unit: 10 s"
+    },
+    {
+      "name": "read-only",
+      "description": "time_ns",
+      "type": "When an event handler (on a429Word/on a429Worderror) is triggered, the time stamp of the event is stored in the selector."
+    },
+    {
+      "name": "unit: nanoseconds",
+      "description": "int64",
+      "type": "read-only"
+    },
+    {
+      "name": "msgChannel",
+      "description": "Transmission channel (output) or the channel which triggered an event handler (on a429Word/on a429Worderror)",
+      "type": "Value range: 1..32"
+    },
+    {
+      "name": "ID",
+      "description": "Label value",
+      "type": "Value range: 0..255"
+    },
+    {
+      "name": "name",
+      "description": "name of the ARINC word taken from the database (DBC)",
+      "type": "char[]"
+    },
+    {
+      "name": "read-only",
+      "description": "DIR",
+      "type": "This direction is related to the corresponding event. A dedicated ARINC-429 channel may be either an Rx or Tx channel, but not both."
+    },
+    {
+      "name": "Value range:",
+      "type": "byte"
+    },
+    {
+      "name": "read-only",
+      "description": "parity",
+      "type": "Overwrite the parity settings of a Tx channel for a specific ARINC word. The value may be change with the function a429SetParity."
+    },
+    {
+      "name": "Value range:",
+      "description": "word",
+      "type": "read-only"
+    },
+    {
+      "name": "TxCtrl",
+      "description": "Define the scheduling type for the ARINC word with a429SetScheduleTx and a429StopTx.",
+      "type": "Value range:"
+    },
+    {
+      "name": "read-only",
+      "description": "Error",
+      "type": "The type of error is available in this field."
+    },
+    {
+      "name": "-1",
+      "description": "a429NoError",
+      "type": "initialization value, no error"
+    },
+    {
+      "name": "1",
+      "description": "a429GapViolation",
+      "type": "Rx: gap error"
+    },
+    {
+      "name": "2",
+      "description": "a429ParityError",
+      "type": "Rx: parity violation"
+    },
+    {
+      "name": "3",
+      "description": "a429BitrateLow",
+      "type": "Rx: bit rate below the limit"
+    },
+    {
+      "name": "4",
+      "description": "a429BitrateHigh",
+      "type": "Rx: bit rate above the limit"
+    },
+    {
+      "name": "5",
+      "description": "a429FormatError",
+      "type": "Rx: edge detected after correctly received word"
+    },
+    {
+      "name": "6",
+      "description": "a429CodingError",
+      "type": "Rx: coding error during RZ coding"
+    },
+    {
+      "name": "7",
+      "description": "a429DutyFactor",
+      "type": "Rx: erroneous duty factor"
+    },
+    {
+      "name": "8",
+      "description": "a429AvgBitLength",
+      "type": "Rx: average bit length out of allowed range"
+    },
+    {
+      "name": "256",
+      "description": "a429LevelMismatch",
+      "type": "Tx: output short circuit"
+    },
+    {
+      "name": "257",
+      "description": "a429NotIdle",
+      "type": "Tx: no send access possible (after short circuit)"
+    },
+    {
+      "name": "You can find more detailed information about errors here.",
+      "type": "long"
+    },
+    {
+      "name": "read-only",
+      "description": "simulated",
+      "type": "If an ARINC event is detected this selector specifies whether the event was caused by CANoe or not."
+    },
+    {
+      "name": "Value range:",
+      "description": "byte",
+      "type": "read-only"
+    },
+    {
+      "name": "TxCycle",
+      "description": "This is the cycle time (in microseconds) which is given to the HW scheduler with output. The cycle time is set with a429SetScheduleTx.",
+      "type": "dword"
+    },
+    {
+      "name": "read-only",
+      "description": "FrameLen",
+      "type": "Length of the detected ARINC word in nanoseconds."
+    },
+    {
+      "name": "read-only",
+      "description": "BitRate",
+      "type": "Detected bit rate for the ARINC word."
+    },
+    {
+      "name": "read-only",
+      "description": "Gap",
+      "type": "Specify the minimum distance to be kept for a scheduled ARINC word. This may be combined with the hardware scheduler. The gap may be set with a429SetGap in combination with a429CalcBitLength. The value is given in nanoseconds."
+    },
+    {
+      "name": "read-only",
+      "description": "byte(x); char(x)",
+      "type": "access 8 bits in an ARINC word; x: 0..3"
+    },
+    {
+      "name": "word(x); int(x)",
+      "description": "access 16 bits in an ARINC word; x: 0..2"
+    },
+    {
+      "name": "dword(x); long(x)",
+      "description": "access 32 bits in an ARINC word; x: 0"
+    }
+  ],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Keyword",
+        "Description",
+        "Type",
+        "Access Limitation"
+      ],
+      [
+        "time",
+        "When an event handler (on a429Word/on a429Worderror) is triggered, the time stamp of the event is stored in the selector. unit: 10 µs",
+        "dword",
+        "read-only"
+      ],
+      [
+        "time_ns",
+        "When an event handler (on a429Word/on a429Worderror) is triggered, the time stamp of the event is stored in the selector. unit: nanoseconds",
+        "int64",
+        "read-only"
+      ],
+      [
+        "msgChannel",
+        "Transmission channel (output) or the channel which triggered an event handler (on a429Word/on a429Worderror) Value range: 1..32",
+        "word",
+        "—"
+      ],
+      [
+        "ID",
+        "Label value Value range: 0..255 Example on a429Word * { if (this.ID == 55) { write(\"label o%o received; triggering logging...\", this.ID); trigger(); }}",
+        "Example on a429Word * { if (this.ID == 55) { write(\"label o%o received; triggering logging...\", this.ID); trigger(); }}",
+        "dword",
+        "—"
+      ],
+      [
+        "Example on a429Word * { if (this.ID == 55) { write(\"label o%o received; triggering logging...\", this.ID); trigger(); }}"
+      ],
+      [
+        "name",
+        "name of the ARINC word taken from the database (DBC)",
+        "char[]",
+        "read-only"
+      ],
+      [
+        "DIR",
+        "This direction is related to the corresponding event. A dedicated ARINC-429 channel may be either an Rx or Tx channel, but not both. Value range: Rx (default) Tx Example on a429Word * { if (this.DIR == Rx) { write(\"label o%o received\", this.DIR); } if (this.DIR == Tx) { write(\"label o%o sent\", this.DIR); }}",
+        "Example on a429Word * { if (this.DIR == Rx) { write(\"label o%o received\", this.DIR); } if (this.DIR == Tx) { write(\"label o%o sent\", this.DIR); }}",
+        "byte",
+        "read-only"
+      ],
+      [
+        "Example on a429Word * { if (this.DIR == Rx) { write(\"label o%o received\", this.DIR); } if (this.DIR == Tx) { write(\"label o%o sent\", this.DIR); }}"
+      ],
+      [
+        "parity",
+        "Overwrite the parity settings of a Tx channel for a specific ARINC word. The value may be change with the function a429SetParity. Value range: 0: use channel configuration (default) 1: disable hardware parity support 2: generate odd parity 3: generate even parity",
+        "word",
+        "read-only"
+      ],
+      [
+        "TxCtrl",
+        "Define the scheduling type for the ARINC word with a429SetScheduleTx and a429StopTx. Value range: 0: on request 1: add to HW scheduler 2: remove from HW scheduler",
+        "byte",
+        "read-only"
+      ],
+      [
+        "Error",
+        "The type of error is available in this field. Value Enumeration Value Description -1 a429NoError initialization value, no error 1 a429GapViolation Rx: gap error 2 a429ParityError Rx: parity violation 3 a429BitrateLow Rx: bit rate below the limit 4 a429BitrateHigh Rx: bit rate above the limit 5 a429FormatError Rx: edge detected after correctly received word 6 a429CodingError Rx: coding error during RZ coding 7 a429DutyFactor Rx: erroneous duty factor 8 a429AvgBitLength Rx: average bit length out of allowed range 256 a429LevelMismatch Tx: output short circuit 257 a429NotIdle Tx: no send access possible (after short circuit) Cross Reference You can find more detailed information about errors here. Example on a429Worderror * { switch (this.Error) { case 1: /* do some error handling here */ break; case 2: /* do some error handling here */ break; … default: break; }}",
+        "Value",
+        "Enumeration Value",
+        "Description",
+        "-1",
+        "a429NoError",
+        "initialization value, no error",
+        "1",
+        "a429GapViolation",
+        "Rx: gap error",
+        "2",
+        "a429ParityError",
+        "Rx: parity violation",
+        "3",
+        "a429BitrateLow",
+        "Rx: bit rate below the limit",
+        "4",
+        "a429BitrateHigh",
+        "Rx: bit rate above the limit",
+        "5",
+        "a429FormatError",
+        "Rx: edge detected after correctly received word",
+        "6",
+        "a429CodingError",
+        "Rx: coding error during RZ coding",
+        "7",
+        "a429DutyFactor",
+        "Rx: erroneous duty factor",
+        "8",
+        "a429AvgBitLength",
+        "Rx: average bit length out of allowed range",
+        "256",
+        "a429LevelMismatch",
+        "Tx: output short circuit",
+        "257",
+        "a429NotIdle",
+        "Tx: no send access possible (after short circuit)",
+        "Cross Reference You can find more detailed information about errors here.",
+        "Example on a429Worderror * { switch (this.Error) { case 1: /* do some error handling here */ break; case 2: /* do some error handling here */ break; … default: break; }}",
+        "long",
+        "read-only"
+      ],
+      [
+        "Value",
+        "Enumeration Value",
+        "Description"
+      ],
+      [
+        "-1",
+        "a429NoError",
+        "initialization value, no error"
+      ],
+      [
+        "1",
+        "a429GapViolation",
+        "Rx: gap error"
+      ],
+      [
+        "2",
+        "a429ParityError",
+        "Rx: parity violation"
+      ],
+      [
+        "3",
+        "a429BitrateLow",
+        "Rx: bit rate below the limit"
+      ],
+      [
+        "4",
+        "a429BitrateHigh",
+        "Rx: bit rate above the limit"
+      ],
+      [
+        "5",
+        "a429FormatError",
+        "Rx: edge detected after correctly received word"
+      ],
+      [
+        "6",
+        "a429CodingError",
+        "Rx: coding error during RZ coding"
+      ],
+      [
+        "7",
+        "a429DutyFactor",
+        "Rx: erroneous duty factor"
+      ],
+      [
+        "8",
+        "a429AvgBitLength",
+        "Rx: average bit length out of allowed range"
+      ],
+      [
+        "256",
+        "a429LevelMismatch",
+        "Tx: output short circuit"
+      ],
+      [
+        "257",
+        "a429NotIdle",
+        "Tx: no send access possible (after short circuit)"
+      ],
+      [
+        "Cross Reference You can find more detailed information about errors here."
+      ],
+      [
+        "Example on a429Worderror * { switch (this.Error) { case 1: /* do some error handling here */ break; case 2: /* do some error handling here */ break; … default: break; }}"
+      ],
+      [
+        "simulated",
+        "If an ARINC event is detected this selector specifies whether the event was caused by CANoe or not. Value range: 0: real event caused outside from the tool 1: simulated event caused by the tool",
+        "byte",
+        "read-only"
+      ],
+      [
+        "TxCycle",
+        "This is the cycle time (in microseconds) which is given to the HW scheduler with output. The cycle time is set with a429SetScheduleTx.",
+        "dword",
+        "read-only"
+      ],
+      [
+        "FrameLen",
+        "Length of the detected ARINC word in nanoseconds.",
+        "dword",
+        "read-only"
+      ],
+      [
+        "BitRate",
+        "Detected bit rate for the ARINC word.",
+        "dword",
+        "read-only"
+      ],
+      [
+        "Gap",
+        "Specify the minimum distance to be kept for a scheduled ARINC word. This may be combined with the hardware scheduler. The gap may be set with a429SetGap in combination with a429CalcBitLength. The value is given in nanoseconds.",
+        "dword",
+        "read-only"
+      ]
+    ],
+    [
+      [
+        "Keyword",
+        "Description",
+        "Type",
+        "Access Limitation"
+      ],
+      [
+        "byte(x); char(x)",
+        "access 8 bits in an ARINC word; x: 0..3",
+        "—",
+        "—"
+      ],
+      [
+        "word(x); int(x)",
+        "access 16 bits in an ARINC word; x: 0..2",
+        "—",
+        "—"
+      ],
+      [
+        "dword(x); long(x)",
+        "access 32 bits in an ARINC word; x: 0",
+        "—",
+        "—"
+      ]
+    ],
+    [
+      [
+        "Offset",
+        "3",
+        "2",
+        "1",
+        "0"
+      ],
+      [
+        "Byte(0)/char(0)",
+        "0"
+      ],
+      [
+        "Byte(1)/char(1)"
+      ],
+      [
+        "Byte(2)/char(2)"
+      ],
+      [
+        "Byte(3)/char(3)"
+      ],
+      [
+        "Word(0)/int(0)",
+        "0"
+      ],
+      [
+        "Word(1)/int(1)"
+      ],
+      [
+        "Word(2)/int(2)"
+      ],
+      [
+        "Dword(0)/long(0)",
+        "0"
+      ],
+      [
+        "Meaning",
+        "Parity + SSM + Data",
+        "Data",
+        "Data + SDI",
+        "ARINC-Label"
+      ],
+      [
+        "Bit number",
+        "32",
+        "25",
+        "24",
+        "17",
+        "16",
+        "9",
+        "8",
+        "1"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

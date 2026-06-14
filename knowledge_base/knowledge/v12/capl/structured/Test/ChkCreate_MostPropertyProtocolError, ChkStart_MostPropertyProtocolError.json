@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_MostPropertyProtocolError, ChkStart_MostPropertyProtocolError",
+  "category": "Test",
+  "title": "ChkCreate_MostPropertyProtocolError, ChkStart_MostPropertyProtocolError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateMostPropertyProtocolError.htm",
+  "syntax": [
+    "dword ChkCreate_MostPropertyProtocolError(char[] aProperty, int aInstanceID, unsigned long aAnswerTimeout, Callback aCallback);"
+  ],
+  "description": [
+    "This check monitors MOST protocol compliance for a given property. This includes monitoring the response times along with the allowable message sequences.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aProperty",
+      "type": "",
+      "description": "Name of the property to be monitored in one of the following formats:"
+    }
+  ],
+  "return": "0: Check could not be created and must not be referenced",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

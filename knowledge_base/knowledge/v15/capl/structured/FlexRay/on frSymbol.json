@@ -1,0 +1,209 @@
+{
+  "page_type": "event",
+  "name": "on frSymbol",
+  "category": "FlexRay",
+  "title": "on frSymbol",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/EventProcedures/CAPLfunctionOnFRSymbol.htm",
+  "syntax": [],
+  "description": [
+    "The event procedure is called whenever a symbol (wake-up, CAS, MTS) is received."
+  ],
+  "parameters": [],
+  "return": "The symbol time stamp that has been synchronized with the global time \r\n base in the",
+  "example": {
+    "description": [
+      "The following program reacts on received symbols and prints them in the Write Window, Trace Window, and logging."
+    ],
+    "code": "variables\n{\n   const \r\n int cWriteTextSize = 512;\n   char \r\n writeTxt[cWriteTextSize];\n   const int cWriteTextSize2 = 40;\n   char writeTxt2[cWriteTextSize2];\n   const int writeSink_Trace           = \r\n -3;\n   const int writeSink_Logging         = \r\n -2;\n   const int writeSeverity_Information = 1;\n}\non frSymbol\n{\n   getFRSymbolName(this.FR_Symbol, \r\n cWriteTextSize2, writeTxt2);\n   snprintf(writeTxt, cWriteTextSize, \"%10.6f: on FRSymbol   %2d \r\n (%-32s) in cycle %3d on channel %2d with Mask %d, Length %d.\", getTime(0), this.FR_Symbol, writeTxt2, this.FR_Cycle, (int)this.MsgChannel, this.FR_ChannelMask, this.FR_Length);\n   myprint(writeTxt);\n   output(this); \r\n // only required in Measurement Setup\n}\nfloat getTime (float time)\n{\n   return TimeNowNS() / 1000000000.0;\n}\nvoid myprint(char text[])\n{\n   write(\"%s\", \r\n text);\n   writeLineEx(writeSink_Trace,   writeSeverity_Information, \"%s\", text);\n   writeLineEx(writeSink_Logging, \r\n writeSeverity_Information, \"%s\", text);\n}\nint getFRSymbolName (word symbol, word nameSize, char name[])\n{\n  int r = -1;\n  if (symbol == 0) {\n      snprintf(name, nameSize, \"Unknown\");\nr = symbol;\n  } \r\n else if (symbol == 1) { \n      snprintf(name, \r\n nameSize, \"CAS\");\nr = symbol;\n   } else if (symbol == 2) { \n      snprintf(name, \r\n nameSize, \"MTS\");\nr = symbol;\n  } \r\n else if (symbol == 3) { \n      snprintf(name, \r\n nameSize, \"Wakeup Symbol\");\nr = symbol;\n   } else { \n      snprintf(name, nameSize, \"Unspecified\");\nr = -1;\n   }\n   return r;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.1 SP2",
+      "6.1 SP2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Time (data type dword)",
+        "The symbol time stamp that has been synchronized with the global time base in the computer (CAN hardware or computer system clock). The time stamp must be used if time relations should be regarded with events from other sources. This time stamp is also output in the Trace Window when receiving a symbol.. Unit:10 microseconds Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "msgChannel",
+        "Channel in the tool that the FlexRay CC determines. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_ChannelMask",
+        "Identifies the FlexRay channel of the CC. With 1 the symbol was received on channel A, with 2 on channel B. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_Symbol",
+        "Identifies the symbol type (data type: WORD) 0 unknown 1 CAS 2 MTS 3 Wakeup 4 Undefined (used with VN interfaces in asynchronous mode) Caution! Any wake-up symbol will only be received, if the wake-up was initiated externally. Thus, if CANoe initiates a wake-up procedure, then use the handler on frPocState in order to observe the wake-up pattern transmission! Write-protected!",
+        "0",
+        "unknown",
+        "1",
+        "CAS",
+        "2",
+        "MTS",
+        "3",
+        "Wakeup",
+        "4",
+        "Undefined (used with VN interfaces in asynchronous mode)",
+        "Caution! Any wake-up symbol will only be received, if the wake-up was initiated externally. Thus, if CANoe initiates a wake-up procedure, then use the handler on frPocState in order to observe the wake-up pattern transmission!"
+      ]
+    },
+    {
+      "row": [
+        "0",
+        "unknown"
+      ]
+    },
+    {
+      "row": [
+        "1",
+        "CAS"
+      ]
+    },
+    {
+      "row": [
+        "2",
+        "MTS"
+      ]
+    },
+    {
+      "row": [
+        "3",
+        "Wakeup"
+      ]
+    },
+    {
+      "row": [
+        "4",
+        "Undefined (used with VN interfaces in asynchronous mode)"
+      ]
+    },
+    {
+      "row": [
+        "Caution! Any wake-up symbol will only be received, if the wake-up was initiated externally. Thus, if CANoe initiates a wake-up procedure, then use the handler on frPocState in order to observe the wake-up pattern transmission!"
+      ]
+    },
+    {
+      "row": [
+        "FR_Length",
+        "Indicates the length (data type: WORD) of the symbol in bit times. Write-protected!"
+      ]
+    },
+    {
+      "row": [
+        "FR_Cycle",
+        "Current FlexRay cycle number. Write-protected!"
+      ]
+    },
+    {
+      "name": "on frPocState",
+      "link": "CAPLfunctionOnFRPocState.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendConfigureBitTimingResponse",
+  "category": "CANopen",
+  "title": "coTfsLssSendConfigureBitTimingResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendConfBitTimingResp.htm",
+  "syntax": [
+    "long coTfsLssSendConfigureBitTimingResponse( dword errorCode, dword specificError );"
+  ],
+  "description": [
+    "This function sends the LSS Configure Bit-Timings Parameters response."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "Error code."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* send LSS configure bit timing response with error code and specific error = 0*/\n\nif (coTfsLssSendConfigureBitTimingResponse( 0, 0 ) != 1) {\n  /* message could not be sent */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

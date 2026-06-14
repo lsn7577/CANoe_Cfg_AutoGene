@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthGetData",
+  "category": "IP",
+  "title": "AREthGetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthGetData.htm",
+  "syntax": [
+    "dword AREthGetData( dword messageHandle, dword bufferLength, char buffer[] );"
+  ],
+  "description": [
+    "This function can be used to query the raw data of a SOME/IP message."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the received SOME/IP message (see OnAREthMessage)"
+    }
+  ],
+  "return": "0: An error occurred. The error can be evaluated using the AREthGetLastError function.",
+  "example": {
+    "description": [],
+    "code": "void OnAREthMessage( dword messageHandle )\n{\n  BYTE buffer[200];\n  BYTE bufferMsg[200];\n  dword count;\n  dword size;\n  CHAR dest[200];\n\n  count = 0;\n\n  // Check if message is a non Service Discovery message\n  if(AREthGetMessageId(messageHandle) != 0xFFFF8100)\n  {\n    // Check if message is a Notification message\n    if(AREthGetMessageType(messageHandle) == 0x2)\n    {\n      write(\"SOME/IP Notification message reveived!\\n\");\n\n      // write whole message data (including header and payload) to write window\n      size = AREthSerializeMessage(messageHandle,elcount(bufferMsg),bufferMsg);\n      write(\"Message size: %d\",size);\n      snprintf(dest, elcount(dest), \"%s\",\"\");\n      for(count = 0; count < size; count++)\n      {\n        snprintf(dest, elcount(dest), \"%s %02x\",dest,bufferMsg[count]);\n      }\n      write(\"Serialized Message: %s\",dest);\n\n      // write only message payload to write window\n      size = AREthGetData(messageHandle,elcount(buffer),buffer);\n      write(\"Payload size: %d\",size);\n      snprintf(dest, elcount(dest), \"%s\",\"\");\n      for(count = 0; count < size; count++)\n      {\n        snprintf(dest, elcount(dest), \"%s %02x\",dest,buffer[count]);\n      }\n      write(\"Serialized Payload: %s\\n\",dest);\n    } // if\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testWaitForScopeFitDataFr",
+  "category": "Test",
+  "title": "testWaitForScopeFitDataFr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForScopeFitDataFr.htm",
+  "syntax": [
+    "long testWaitForScopeFitDataFr(frFrame aMessage, dword msgFieldStart, dword msgFieldEnd); // form 1"
+  ],
+  "description": [
+    "The defined frame cutout is shown in the scope's Diagram view. The enlarged area is automatically scaled in time direction."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The frame to be fitted."
+    }
+  ],
+  "return": "1 = Success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

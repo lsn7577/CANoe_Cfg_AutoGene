@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "linGetMeasByteBitRates",
+  "category": "LIN",
+  "title": "linGetMeasByteBitRates",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINGetMeasByteBitRates.htm",
+  "syntax": [
+    "dword linGetMeasByteBitRates(dword arrSize, float byteBitRates[]);"
+  ],
+  "description": [
+    "This function calculates the bit rates for every byte which has been selected for edge time measurement. It uses the received data as well as the measured edge differences. Therefore, the function linMeasEdgeTimeDiffs must be called in advance. Note that for each measured byte a bit rate will be returned, although it might be 0 (this happens if there had been only one falling edge in the measured byte)."
+  ],
+  "parameters": [
+    {
+      "name": "arrSize",
+      "type": "",
+      "description": "The size of the byteBitRates array."
+    },
+    {
+      "name": "byteBitRates",
+      "type": "",
+      "description": "The array which will receive the measured byte bit rates. The unit of the measured bit rates is bits/second."
+    }
+  ],
+  "return": "Returns the number of bit rates copied into the byteBitRates-array.",
+  "example": {
+    "description": [],
+    "code": "testcase ByteBitRatesTest()\n\n{\n  long indices[2] = { -2, -1 };\n  float byteBitRates[2];\n  dword numByteBitRates, i;\n  char variableDesc[32];\n\n  // start a new edge difference measurement for the next frame\n  if (linMeasEdgeTimeDiffs(2, indices) == 0)\n  {\n    TestStepFail(\"ByteBitRatesTest\", \"Starting of edge measurement failed.\");\n    return;\n  }\n\n  // wait for any lin header\n  if (testWaitForLinHeader(1000) != 1)\n  {\n    TestStepFail(\"ByteBitRatesTest\", \"No LIN header received within 1000 ms.\");\n    return;\n  \n}\n  // receive the measured bit rates\n  numByteBitRates = linGetMeasByteBitRates(elCount(byteBitRates), byteBitRates);\n  if (numByteBitRates != elCount(indices))\n  {\n    TestStepFail(\"ByteBitRatesTest\", \"Received implausible number of bit rates.\");\n    return;\n  }\n  for (i = 0; i < numByteBitRates; i++)\n  {\n    snprintf(variableDesc, elCount(variableDesc), \"Bit rate of byte %d\", indices[i]);\n    testCaseReportMeasuredValue(variableDesc, byteBitRates[i], \"bit/s\");\n  }\n  TestStepPass(\"ByteBitRatesTest\", \"All byte bit rates have been received.\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "—",
+      "—",
+      "—",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN Real bus mode",
+      "—",
+      "—",
+      "—",
+      "LIN Real bus mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

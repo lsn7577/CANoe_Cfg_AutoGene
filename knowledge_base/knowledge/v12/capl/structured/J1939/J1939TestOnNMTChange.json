@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestOnNMTChange",
+  "category": "J1939",
+  "title": "J1939TestOnNMTChange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestOnNMTChange.htm",
+  "syntax": [
+    "void J1939TestOnNMTChange( long ecuHandle, long reason );"
+  ],
+  "description": [
+    "The function can be implemented in your CAPL program. The J1939 Test Service Library calls this function, if the NMT table changes. The CAPL program can react on this changes."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "handle of the ECU, which has changedUse this handle with J1939TestNmtQueryAddress and J1939TestNmtQueryDeviceName."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void J1939TestOnNMTChange( LONG ecuHandle, LONG reason ) {\n\n  char dn[8];\n  int address;\n\n  J1939TestNmtQueryDeviceName( ecuHandle, dn );\n  address = J1939TestNMTQueryAddress( ecuHandle );\n\n  switch(reason) {\n  case 1: // Begin claiming\n    break;\n  case 2: // Claiming completed successful (250ms after begin)\n    break;\n  case 3: // Lost address\n    break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,25 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForMasterRequestMessage",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForMasterRequestMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForMasterRequestMessage.htm",
+  "syntax": [
+    "long coTfsLssWaitForMasterRequestMessage( void );"
+  ],
+  "description": [
+    "This function waits for one of the LSS Master requests which have been configured before. Depending on the request, an appropriate response is sent.",
+    "If several requests occur during the wait process, all requests are handled. After a single event the function waits for a further event (standard timeout) if at least one wait condition is available. So the whole wait time of the function can exceed the standard timeout.",
+    "To configure LSS Master requests, you can use the following functions:"
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear internal check list */\nif (coTfsLssClearMasterResponseList() != 1) {\n  write(\"Clear list failed\");\n  return;\n} \n\n/* add one or more test functions */\n\nif (coTfsLssAddMasterResponseActivateBitTiming( 1000, 0xFFFFFFFF ) != 1) {\n  write(\"could not add request\");\n  return;\n} \n\n/* wait for any of the events configured before */\nif (coTfsLssWaitForMasterRequestMessage() != 1) {\n  write(\"no event received\");\n} \nelse {\n  write(\"event received\");\n} "
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

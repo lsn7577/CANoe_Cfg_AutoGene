@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939ILSetSignalRaw",
+  "category": "J1939",
+  "title": "J1939ILSetSignalRaw",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILSetSignalRaw.htm",
+  "syntax": [
+    "long J1939ILSetSignalRaw(dbSignal signal, long value ); // form 1"
+  ],
+  "description": [
+    "Sets the signal to the specified raw value. The message of the signal is sent according the configured send type."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "signal name from databaseThe signal must be assigned to the node as Tx signal."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n J1939ILSetSignalRaw( EEC1::EngSpeed, 12000 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

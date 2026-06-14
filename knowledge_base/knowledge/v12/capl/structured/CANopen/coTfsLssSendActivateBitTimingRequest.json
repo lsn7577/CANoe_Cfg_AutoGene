@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendActivateBitTimingRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendActivateBitTimingRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendActBitTimingParReq.htm",
+  "syntax": [
+    "long coTfsLssSendActivateBitTimingRequest( dword switchDelay );"
+  ],
+  "description": [
+    "This function sends a LSS Activate Bit-Timing Parameter request."
+  ],
+  "parameters": [
+    {
+      "name": "switchDelay",
+      "type": "",
+      "description": "Duration (in ms) of the two periods of time to wait until the bit timing parameters switch is done (first period) and before transmitting any CAN message with the new bit timing parameters after performing the switch (second period)."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* send LSS activate bit timing protocol request */\n\nif (coTfsLssSendActivateBitTimingRequest( 1000) != 1) {\n/* message could not be sent */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

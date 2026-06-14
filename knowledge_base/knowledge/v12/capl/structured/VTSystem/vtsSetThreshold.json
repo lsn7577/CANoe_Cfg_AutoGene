@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "vtsSetThreshold",
+  "category": "VTSystem",
+  "title": "vtsSetThreshold",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetThreshold.htm",
+  "syntax": [
+    "long vtsSetThreshold (char Target[], dword Group, double Threshold);"
+  ],
+  "description": [
+    "Sets the threshold value for differentiating between high and low levels of a group of channels on a VT2848 module.There is only one threshold setting for each group.Voltages at the input exceeding this threshold value are evaluated as high level and voltages undershooting it are evaluated as low level."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "The following example demonstrates how to configure the first channel of a VT2848 module for PWM measurement. The channel used in this example is called RPM_Sensor, the VT2848 is called Sensors."
+    ],
+    "code": "PWMMeasurement ()\n{\n   // Set the PWM thresholds of channels 1 to 8 to 2.5V\n   vtsSetThreshold(\"Sensors\", eVTSThresholdGroupChannels1To8, 2.5);\n\n   // Set the PWM measurement duration of the first channel to 100ms\n   vtsSetPWMMeasurementDuration(\"RPM_Sensor\", 0.1);\n\n   // Wait 500ms and output the measured PWM frequency and duty cycle\n   TestWaitForTimeout(500);\n   write(\"Measured frequency %fHz and DC %f\", @sysvar::VTS::RPM_Sensor::PWMFreq, @sysvar::VTS::RPM_Sensor::PWMDC);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

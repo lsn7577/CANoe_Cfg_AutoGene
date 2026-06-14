@@ -1,0 +1,25 @@
+# TestIso11783IL_PDDGetValue
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by: Iso11783IL_PDDGetValueRaw, Iso11783IL_PDDGetValuePhysical |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | float TestIso11783IL_PDDGetValue( dbNode node, dbSignal signal, dword elementNumber ); |  |  |  |
+| float TestIso11783IL_PDDGetValue( dbNode node, dword ddi, dword elementNumber ); |  |  |  |  |
+| Function | The function requests the value of a process variable. Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment. | Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment. |  |  |
+| Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment. |  |  |  |  |
+| Parameters | node Simulation node to apply the function. |  |  |  |
+| signal signal from the database The attribute DDI must be defined for the signal. The signal must be defined in the same database as the node! |  |  |  |  |
+| ddi Data Dictionary Identificator 0x000..0xFFFF |  |  |  |  |
+| elementNumber element number, 0x000..0xFFF |  |  |  |  |
+| Return Values | value of the process variable, 0 if the variable is not defined |  |  |  |
+| Availability | Since Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 8.5 | ISO11783 Test nodes | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

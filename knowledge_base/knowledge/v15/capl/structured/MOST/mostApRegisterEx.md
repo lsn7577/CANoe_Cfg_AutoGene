@@ -1,0 +1,43 @@
+# mostApRegisterEx
+
+> Category: `MOST` | Type: `function`
+
+## Syntax
+
+```c
+long mostApRegisterEx(long fblockID, long instID);
+```
+
+## Description
+
+mostApRegisterEx() registers the function block with the Application Socket using the functional address (fblockID, instID).
+
+It has to be checked in advance, if the functional address already exists (mostApIsRegisteredEx). If so, another instID has to be selected.
+
+In network status 'ConfigOk' the device's NetBlock reports the new Local FBlockList to the NetworkMaster.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| fblockID | Function block identifier to be registered. |
+| instID | Instance identifier to be registered. |
+
+## Return Values
+
+See error codes
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.0 | — | — | — | —✔ |
+| Restricted To | — | MOST25 MOST50 MOST150 While Application Socket is active | — | — | — | —✔ |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | — |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | —✔ |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | —✔ |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | —✔ |
+| 32-Bit | — | ✔ | — | N/A | — | —✔ |
+| 64-Bit | — | ✔ | — | — | — | —✔ |

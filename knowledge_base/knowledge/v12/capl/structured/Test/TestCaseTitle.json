@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestCaseTitle",
+  "category": "Test",
+  "title": "TestCaseTitle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCaseTitle.htm",
+  "syntax": [
+    "TestCaseTitle (char identifier[], char title[]);"
+  ],
+  "description": [
+    "The title of a test case is acquired automatically from the test case name in the CAPL program. It can also be set explicitly together with a test case identifier with the help of this function. The function may only be called within a test case and relates then to the respective test case."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "testcase CheckLockingOnCrash ()\n{\n   TestCaseTitle(\"TC 1.0\", \"Check unlock of central locking system on crash\");\n   TestCaseDescription(\"This test case simulates a crash during drive. The central locking system has to be unlocked on crash!\");\n   // Initialization of signals\n   $CrashDetected = 0;\n   $LockState = Locked;\n   TestWaitForTimeout(200);\n\n   TestCaseComment(\"Initialization of system completed.\");\n   ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

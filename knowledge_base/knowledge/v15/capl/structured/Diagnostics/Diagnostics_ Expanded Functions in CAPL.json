@@ -1,0 +1,43 @@
+{
+  "page_type": "notes",
+  "name": "Diagnostics: Expanded Functions in CAPL",
+  "category": "Diagnostics",
+  "title": "Diagnostics: Expanded Functions in CAPL",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/CAPLfunctionsDiagnosticsExpandedFunctions.htm",
+  "syntax": [],
+  "description": [
+    "As of CANoe 5.0 it is possible to access CANdela Studio diagnostic descriptions within CAPL programs:",
+    "Starting with CANoe 7.5 it is also possible to use basic diagnostic descriptions from within CAPL for the tester side, since CANoe 8.2 simulation of basic diagnostic ECUs is available. Details whether a function is supported for basic diagnostics can be found in the documentation of each function.",
+    "Please note the following limitations of the diagnostic functions:",
+    "The qualifier of a complex parameter can be found in CANdelaStudio with the Properties of the parameter.",
+    "Do not confuse the identifier with the language-dependent name of the object since then the object cannot be identified!",
+    "The length of the elements of a qualifier path from the CANdela description file is limited to 50 characters in the CAPL Compiler. Longer names may exceed this limit, but the CAPL program cannot be compiled. Nevertheless, it is possible to specify the qualifier path as a text string in quotation marks: \"<Qualifier Path>\". In this case the qualifier path may be up to 255 characters in length."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Note Do not confuse the identifier with the language-dependent name of the object since then the object cannot be identified!"
+      ]
+    ],
+    [
+      [
+        "Note The length of the elements of a qualifier path from the CANdela description file is limited to 50 characters in the CAPL Compiler. Longer names may exceed this limit, but the CAPL program cannot be compiled. Nevertheless, it is possible to specify the qualifier path as a text string in quotation marks: \"<Qualifier Path>\". In this case the qualifier path may be up to 255 characters in length."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

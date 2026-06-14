@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TCIL_CreatePeerControlAssignment",
+  "category": "ISO11783",
+  "title": "TCIL_CreatePeerControlAssignment",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILCreatePeerControlAssignment.htm",
+  "syntax": [
+    "long TCIL_CreatePeerControlAssignment(dword ddi, dbNode user, dword elementNumberUser, dbNode source, dword elementNumberSource) // form 1"
+  ],
+  "description": [
+    "The function creates an assignment of a settable process data object (setpoint value user) to a setpoint value source.",
+    "On each change of task status from inactive to active, the TC IL initiates assignment messages to both the setpoint value user and the setpoint value source.",
+    "The function fails if the Device Process Data (DPD) object of the setpoint value user does not have the property Settable or if the DPD object of the setpoint value user does not have the property Setpoint Source."
+  ],
+  "parameters": [
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "Combination of this DDI and an elementNumberUser resp. elementNumberSource specifies the setpoint value user resp. setpoint value source."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "// Trigger the simulated node ‘TC’ to arrange\n// the Device Process Data object with ddi=6 and elementNumber=2 belongs to the  Bailer\n// to receive the Value commands\n// from the Device Process Data object with ddi=6 and elementNumber=8 belongs to the Sensor\nresult = TCIL_CreatePeerControlAssignment(TC, 6, Bailer, 2, Sensor, 8);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2204: TestStepFail(\"Either node 'Sensor' or node 'Bailer' is no client device!\"); break;\n  case -2207: TestStepFail(\"A process variables is not available\"); break;\n  case -2212: TestStepFail(\"The setpoint value user data variable is not settable\"); break;\n  case -2213: TestStepFail(\"The setpoint value source variable doesn’t have the ‘control source’ property\"); break;\n  default : TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

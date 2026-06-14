@@ -1,0 +1,38 @@
+{
+  "page_type": "event",
+  "name": "on Abstract_EventSubscribed",
+  "category": "CommunicationObjects",
+  "title": "on Abstract_EventSubscribed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnAbstractEventSubscribed.htm",
+  "syntax": [
+    "on Abstract_EventSubscribed <Event>"
+  ],
+  "description": [
+    "The event procedure is called at the provider when an event is subscribed by a consumer and abstract binding is used."
+  ],
+  "parameters": [
+    {
+      "name": "<event>",
+      "type": "",
+      "description": "Designates the event on which the event procedure shall react. This must be a provider endpoint."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on Abstract_EventSubscribed MirrorAdjustment[LeftMirror].CurrentPosition\n{\n  // send the event to the consumer on subscription\n  providedEventRef long ev1;\n  ev1 = MirrorAdjustment.providerSide[this.consumer.ConsumerIndex,LeftMirror].CurrentPosition;\n  ev1.Trigger();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "eventConsumerRef *",
+      "link": "../Objects/CAPLfunctionEventConsumerRef.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

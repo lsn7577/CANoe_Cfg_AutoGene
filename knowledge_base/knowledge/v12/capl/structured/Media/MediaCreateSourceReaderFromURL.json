@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "MediaCreateSourceReaderFromURL",
+  "category": "Media",
+  "title": "MediaCreateSourceReaderFromURL",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaCreateSourceReaderFromURL.htm",
+  "syntax": [
+    "dword MediaCreateSourceReaderFromURL(char mediaFileUrl[]);"
+  ],
+  "description": [
+    "Creates the source reader from a URL.",
+    "For more information regarding the source reader see source reader."
+  ],
+  "parameters": [
+    {
+      "name": "mediaFileUrl",
+      "type": "",
+      "description": "The URL of a media file to open. For a list of supported media formats in files see supported media formats."
+    }
+  ],
+  "return": "0: The function failed. Call MediaGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

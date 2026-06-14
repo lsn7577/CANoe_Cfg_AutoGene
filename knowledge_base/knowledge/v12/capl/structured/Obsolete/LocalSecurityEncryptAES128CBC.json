@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LocalSecurityEncryptAES128CBC",
+  "category": "Obsolete",
+  "title": "LocalSecurityEncryptAES128CBC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLocalSecurityEncryptAES128CBC.htm",
+  "syntax": [
+    "long LocalSecurityEncryptAES128CBC(BYTE[] key, dword keyLength, BYTE[] data, dword dataLength, BYTE[] initVector, dword initVectorLength, BYTE[] cipheredData, dword cipheredDataLength)"
+  ],
+  "description": [
+    "Encrypts data with a given key and initialization vector. The encryption is AES128 (CBC), PKCS5 Padding."
+  ],
+  "parameters": [
+    {
+      "name": "key",
+      "type": "",
+      "description": "The key to be used for AES (128 bit)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

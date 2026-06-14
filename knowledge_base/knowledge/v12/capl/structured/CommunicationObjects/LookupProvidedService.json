@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupProvidedService",
+  "category": "CommunicationObjects",
+  "title": "LookupProvidedService",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupProvidedService.htm",
+  "syntax": [
+    "providedServiceRef * LookupProvidedService(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified provided service. The path must be complete including namespaces and both endpoints: (Namespace::)+Service.providerSide[consumer,provider].",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the provided service."
+    }
+  ],
+  "return": "The provided service. An uninitialized object if the service is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "providedServiceRef MirrorAdjustment mirrorSvc;\nchar path[200];\nchar service[50] = \"Mirrors::MirrorAdjustment\";\nchar consumer[20] = \"CANoe\";\nchar provider[20] = \"LeftMirror\";\n\nsnprintf(path, elcount(path), \"%s.providerSide[%s,%s]\", service, consumer, provider);\nmirrorSvc = (providedServiceRef MirrorAdjustment) lookupProvidedService(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

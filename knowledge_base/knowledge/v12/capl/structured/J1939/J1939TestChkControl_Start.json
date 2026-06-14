@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkControl_Start",
+  "category": "J1939",
+  "title": "J1939TestChkControl_Start",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestChkControlStart.htm",
+  "syntax": [
+    "long J1939TestChkControl_Start( long checkId );"
+  ],
+  "description": [
+    "Starts or continues checking the event condition. May work on a check stopped earlier, or on a check created in previously. Ignored for active checks."
+  ],
+  "parameters": [
+    {
+      "name": "checkId",
+      "type": "",
+      "description": "identifier of the check to start"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long cycleCheck;\ncycleCheck = J1939TestChkCreate_AbsCycleTimeViolation( 1, 2, 0xf123, 0.8, 1.2, \"CycleCallback\" );\nJ1939TestChkControl_Start( cycleCheck );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetStationHandle",
+  "category": "Car2x",
+  "title": "C2xGetStationHandle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetStationHandle.htm",
+  "syntax": [
+    "long C2xGetStationHandle(long packetHandle);"
+  ],
+  "description": [
+    "Retrieve an ITS Station handle associated with a received packet or a database node. The handle can be used as input for the other functions of the Station API."
+  ],
+  "parameters": [
+    {
+      "name": "packetHandle",
+      "type": "",
+      "description": "Handle of the received packet. This function is only usable in a CAPL callback that had been registered with C2xReceivePacket or with C2xRegisterCallback for Receive Indications."
+    }
+  ],
+  "return": "Station handle or 0 if not available or on failure.",
+  "example": {
+    "description": [],
+    "code": "void OnC2xPacket (LONG channel, LONG dir, LONG radioChannel, LONG signalStrength, LONG sigQuality, LONG packet)\n{\n  long rxStationHdl;\n  long dbStationHdl;\n\n  rxStationHdl = C2xGetStationHandle(packet);\n  dbStationHdl = C2xGetStationHandle(\"nodename\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

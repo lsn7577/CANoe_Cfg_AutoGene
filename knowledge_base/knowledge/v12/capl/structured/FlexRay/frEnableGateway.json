@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "frEnableGateway",
+  "category": "FlexRay",
+  "title": "frEnableGateway",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFREnableGateway.htm",
+  "syntax": [
+    "long frEnableGateway(long channelA, long channelB);"
+  ],
+  "description": [
+    "Activates the gateway.",
+    "Settings from the CANoe Network-Hardware-Configuration dialog will be overwritten with this function."
+  ],
+  "parameters": [
+    {
+      "name": "channelA",
+      "type": "",
+      "description": "Channel 1 of the gateway"
+    }
+  ],
+  "return": "0 = Error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

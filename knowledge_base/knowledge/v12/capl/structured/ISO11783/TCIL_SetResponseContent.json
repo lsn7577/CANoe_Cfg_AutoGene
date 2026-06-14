@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_SetResponseContent",
+  "category": "ISO11783",
+  "title": "TCIL_SetResponseContent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILSetResponseContent.htm",
+  "syntax": [
+    "long TCIL_SetResponseContent(dbNode client, dword command, dword subcommand, pg pgPD); // form 1"
+  ],
+  "description": [
+    "The function changes the content of the next TC response TC12 sent by the TC IL to allow fault injection."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\npg PD pgPD;\nInitJ1939PGData(pgPD);\npdgPD.Command = 1; // Subcommand for the transfer and management of device descriptors\npgPD.DeviceDescriptionMsgType = 5; // Request Object Pool Transfer response\npgPD.Status                   = 1; // Not enough memory available\nresult = TCIL_SetResponseContent(TC, Sprayer, 1, 5, pgPD);\nif (result < 0)\n{\n  TestStepFail(\"Failed to modify Request Object Pool response\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

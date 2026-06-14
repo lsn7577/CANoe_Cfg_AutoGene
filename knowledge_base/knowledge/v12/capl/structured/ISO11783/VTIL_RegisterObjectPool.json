@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "VTIL_RegisterObjectPool",
+  "category": "ISO11783",
+  "title": "VTIL_RegisterObjectPool",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILRegisterObjectPool.htm",
+  "syntax": [
+    "long VTIL_RegisterObjectPool(dbNode workingSetMaster, char[] objectPoolPath[], char[] versionLabel); // form 1"
+  ],
+  "description": [
+    "Registers an object pool file (iop).",
+    "A registered object pool can be loaded via the Load Version command.",
+    "For more information see chapter Save Object Pools in VT Storage."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_RegisterObjectPool( VT, Sprayer, \"iop\\\\sprayerV1.iop\", \"sprayV1\");\nif (result < 0)\n{\n  TestStepFail(\"Failed to register file!\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

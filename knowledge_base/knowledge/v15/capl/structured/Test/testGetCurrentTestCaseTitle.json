@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "testGetCurrentTestCaseTitle",
+  "category": "Test",
+  "title": "testGetCurrentTestCaseTitle",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestGetCurrentTestCaseTitle.htm",
+  "syntax": [
+    "testGetCurrentTestCaseTitle(char testCaseTitle[], long bufferSize);"
+  ],
+  "description": [
+    "Returns the name of the current test case. After your call of this function the name will be inside the character array testCaseTitle. The maximum length of the name is the length of the character array. This length will be saved in bufferSize."
+  ],
+  "parameters": [
+    {
+      "name": "testCaseTitle",
+      "type": "",
+      "description": "This character array contains the answer after calling the function."
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "This parameter saves the length of the character array."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "testcase TCExample()\n{\n  char title[100];\n\n  testCaseComment(\"Test Case:\");\n  testGetCurrentTestCaseTitle(title, elcount(title));\n  testCasecomment(title);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "—",
+      "14",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

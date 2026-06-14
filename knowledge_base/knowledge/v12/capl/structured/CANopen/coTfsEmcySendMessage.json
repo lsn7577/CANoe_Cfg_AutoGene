@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsEmcySendMessage",
+  "category": "CANopen",
+  "title": "coTfsEmcySendMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsEmcySendMessage.htm",
+  "syntax": [
+    "long coTfsEmcySendMessage( dword nodeID, dword emcyCode, dword errorReg, byte inMsCodeBuf[5], dword msCodeBufSize );"
+  ],
+  "description": [
+    "This function sends out an emergency message."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "Node-ID of the node that is sender of the message."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pMsCode[5] = {0,0,0,0,0};\nif (coTfsEmcySendMessage(112, 0x8220, 0x20, pMsCode, 5) != 1) {\n  write(\"coTfsSendEmcyMessage failed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

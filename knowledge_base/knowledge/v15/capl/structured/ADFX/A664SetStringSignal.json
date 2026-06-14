@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "A664SetStringSignal",
+  "category": "ADFX",
+  "title": "A664SetStringSignal",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionA664SetStringSignal.htm",
+  "syntax": [
+    "long A664SetStringSignal (dbSignal aSignal, char val[]) (1)",
+    "long A664SetStringSignal (dbSignal aSignal, char val[], a664Message aMessage) (2)"
+  ],
+  "description": [
+    "This function can be used to set a string-signal within a specific a664Message (form 2) or to set the Tx-signal of the CANoe-subsystem (form 1).",
+    "For AFDX the usual string format contains the string length information at the first 2 bytes of the signal position, so the usual string operations won’t work correct on string signal."
+  ],
+  "parameters": [
+    {
+      "name": "dbSignal",
+      "type": "",
+      "description": "The signal."
+    },
+    {
+      "name": "val",
+      "type": "",
+      "description": "The string to be used."
+    },
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The message object where the signal value should be set for variant 2."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "a664Message TESTMSG_ALLTYPES testMsg = { msgChannel = 1};\na664SetStringSignal(TEST_STRING14_CITY, \"STR126\"); // set signal value on signalServer\na664InitPayload (testMsg); \t// set payload to last known signal values\na664TriggerMessage(testMsg, 1);\na664Message TESTMSG_ALLTYPES testMsg = { msgChannel = 1};\ntestMsg.VFG_OIL_TEMP_AB_32 = 86;\na664SetStringSignal(TEST_STRING14_CITY, \"STR126\", testMsg);\na664TriggerMessage(testMsg, 1);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "9.0 SP4",
+      "9.0 SP4",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "AFDX",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

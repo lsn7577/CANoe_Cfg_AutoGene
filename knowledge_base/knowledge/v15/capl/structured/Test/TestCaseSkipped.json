@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "TestCaseSkipped",
+  "category": "Test",
+  "title": "TestCaseSkipped",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestCaseSkipped.htm",
+  "syntax": [
+    "TestCaseSkipped(char[] ident, char[] title);"
+  ],
+  "description": [
+    "This function can be used to mark a test case as unexecuted. This will then appear as a \"skipped\" test case in the Test Report.The verdict of the test module is not affected. This function may only be called in the context of the MainTest function."
+  ],
+  "parameters": [
+    {
+      "name": "ident",
+      "type": "",
+      "description": "Identifier of the test case, e.g. number."
+    },
+    {
+      "name": "title",
+      "type": "",
+      "description": "Title of the test case."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "test case \"tc3\" is only executed under certain conditions"
+    ],
+    "code": "MainTest\n{\n   tc1();\n   tc2();\n   if(condition)\n   {\n      tc3();\n   }\n   else\n   {\n      TestCaseSkipped(\"TC3\", \"Example\");\n   }\n   tc4();\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2",
+      "13.0",
+      "—",
+      "14",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

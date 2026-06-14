@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitLinSyncErrorData",
+  "category": "Test",
+  "title": "TestGetWaitLinSyncErrorData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitLinSyncErrorData.htm",
+  "syntax": [
+    "long TestGetWaitLinSyncErrorData (LinSyncError apEvent);"
+  ],
+  "description": [
+    "Retrieves the data of a synchronisation error that triggered the last wait instruction.The second function can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "apEvent",
+      "type": "",
+      "description": "Data structure that will be filled with the synchronisation error data."
+    }
+  ],
+  "return": "0: Data access was successful",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linSyncErrorEvent ()\n{\n   linSyncError linSyncErrorData;\n   if (testWaitForLinSyncError(5000) == 1)\n   {\n      if (testGetWaitLinSyncErrorData(linSyncErrorData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN Sync Error event occurred. SyncBreak=%d ns; SyncDel=%d ns\", linSyncErrorData.breaklen, linSyncErrorData.delimiterlen);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

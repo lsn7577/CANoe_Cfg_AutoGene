@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TcpGetRemoteEndpoint",
+  "category": "TCPIPAPI",
+  "title": "TcpGetRemoteEndpoint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionTCPGetRemoteEndpoint.htm",
+  "syntax": [
+    "TcpGetRemoteEndpoint( dword socket, IP_Endpoint remoteEndpoint );"
+  ],
+  "description": [
+    "The function retrieves the remote endpoint of the specified connected socket."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  TcpSocket gListenSocket;\n  TcpSocket gConnectionSocket;\n  char gRxBuffer[1000];\n}\n\non start\n{\n  gListenSocket = TcpSocket::Open( IP_Endpoint(0.0.0.0:40004) );\n\n  gListenSocket.Listen();\n}\n\nOnTcpListen( TcpSocket socket, long result)\n{\n  if (result == 0)\n  {\n    gConnectionSocket = TcpSocket::Accept( gListenSocket );\n\n    {\n      IP_Endpoint localEndpoint;\n      IP_Endpoint remoteEndpoint;\n      char localAddrStr[100];\n      char remoteAddrStr[100];\n\n      gConnectionSocket.GetSocketName( localEndpoint );\n      gConnectionSocket.GetRemoteEndpoint( remoteEndpoint );\n\n      localEndpoint.PrintEndpointToString( localAddrStr );\n      remoteEndpoint.PrintEndpointToString( remoteAddrStr );\n      write( \"Accepted local %s, remote %s\", localAddrStr, remoteAddrStr );\n    }\n\n    gConnectionSocket.Receive( gRxBuffer, elcount( gRxBuffer) );\n  }\n}\n\nOnTcpReceive( TcpSocket socket, long result, IP_Endpoint remoteEndpoint, char buffer[], dword size )\n{\n  if (result == 0)\n  {\n    write( \"Received: %s\", buffer );\n\n    gConnectionSocket.Send( \"Response\", 8 );\n\n    gConnectionSocket.Receive( gRxBuffer, elcount( gRxBuffer) );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

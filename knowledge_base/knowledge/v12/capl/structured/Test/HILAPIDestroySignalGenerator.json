@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "HILAPIDestroySignalGenerator",
+  "category": "Test",
+  "title": "HILAPIDestroySignalGenerator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionHILAPIDestroySignalGenerator.htm",
+  "syntax": [
+    "dword HILAPIDestroySignalGenerator(dword handle);"
+  ],
+  "description": [
+    "Destroys an instance of a Signal Generator."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "The handle of the Signal Generator."
+    }
+  ],
+  "return": "0: The handle of the Signal Generator is not valid",
+  "example": {
+    "description": [
+      "Destroys an instance of a ASAM HILAPI Signal Generator:"
+    ],
+    "code": "HILAPIDestroySignalGenerator( hGenerator);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

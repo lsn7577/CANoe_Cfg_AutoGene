@@ -1,0 +1,142 @@
+{
+  "page_type": "function",
+  "name": "SetReplayFileName",
+  "category": "Other",
+  "title": "SetReplayFileName",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionSetReplayFileName.htm",
+  "syntax": [
+    "dword setReplayFileName(char nameOfReplayBlock[], char fileName[], char fileType[]);"
+  ],
+  "description": [
+    "Replaces the source file of an existing Replay Block. The function call temporarily stops the replay and restarts the Replay Block with the new source file.",
+    "The function call temporarily stops the replay and restarts the Replay Block with the new source file, if replay is active before file change.",
+    "The function call will not modify the configuration of the Reply block in the Simulation Setup. The new file will not be stored when saving the configuration.",
+    "If you change the source file during measurement in the configuration dialog of the Reply block, the new file name will be stored in the configuration.",
+    "Note: If the function is executed in the on start handler, no replay is started. To start the replay together with the function, the function must be executed outside the on start handler. Alternatively, the replay can be started with ReplayStart."
+  ],
+  "parameters": [
+    {
+      "name": "nameOfReplayBlock",
+      "type": "",
+      "description": "Contents of the Replay name field in the replay configuration dialog."
+    },
+    {
+      "name": "fileName",
+      "type": "",
+      "description": "The new source file (as absolute or relative path to the configuration file)."
+    },
+    {
+      "name": "fileType",
+      "type": "",
+      "description": "The source file type (as string): ASC, BLF For all other source file types that are available in the selection dialog of the CANoe Replay Block, use BLF as fileType parameter."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "SetReplayFilename(\"R\", \"replay_test_capl1.asc\", \"asc\");\nSetReplayFilename(\"R\", \"replay_test_capl1.blf\", \"blf\");\nSetReplayFilename(\"R\", \"replay_test_capl1.mf4\", \"blf\");"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.0 SP3",
+      "8.0 SP3",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "Not in standalone mode",
+      "Not in standalone mode",
+      "—",
+      "—",
+      "Not in standalone mode",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

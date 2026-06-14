@@ -1,0 +1,19 @@
+# fileReadInt
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function Replaced by getProfileInt |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long fileReadInt(char section[], char entry[], long def, char file[]); |  |  |  |
+| Function | Searches for the variable entry in the section section of the file filename. If its value is a number, this number is returned as the functional result. If the file or entry is not found, or if entry does not contain a valid number, the default value def is returned as the functional result. |  |  |  |
+| Parameters | section Section of file |  |  |  |
+| entry Name of variable |  |  |  |  |
+| def Value |  |  |  |  |
+| file Name of file |  |  |  |  |
+| Return Values | Integer read |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 3.0 | — | • | • |  |
+| Example File TEST.INI:[DATA]NAME=FeldADDR=200FIELD=1,2,3,0x20,100...myAddress=fileReadInt("DATA", "ADDR", 0, "TEST.INI");... Result: The value 200 is assigned to the variable myAddress. If the entry ADDR does not exist in the file TEST.INI the default value 0 is assigned to myAddress. |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

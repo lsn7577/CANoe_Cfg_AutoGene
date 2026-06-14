@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "linSendSleepModFrm",
+  "category": "Obsolete",
+  "title": "linSendSleepModFrm",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSendSleepModFrm.htm",
+  "syntax": [
+    "long linSendSleepModFrm (long silent, long restartScheduler, long wakeupIdentifier)"
+  ],
+  "description": [
+    "This function leads to a transmission of a go-to-sleep-command. Frame identifier and data byte values of that command depend on the used LIN specification:",
+    "Frame length is 2 bytes. The data bytes remain not changed.",
+    "Frame length is 8 bytes. The first data byte is set to 0, the other data bytes remain not changed.",
+    "Calling this function in the event procedure on preStart (parameter silent = 1) leads to measurement start in Sleep mode."
+  ],
+  "parameters": [
+    {
+      "name": "silent",
+      "type": "",
+      "description": "When this flag is set the LIN hardware switches to Sleep mode without sending a go-to-sleep-command before. By this way the LIN hardware can be switched to Sleep mode even it is not the Master. So the BusIdle timeout is reduced."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "Start measurement in Sleep mode"
+    ],
+    "code": "on preStart\n{\nlinSendSleepModFrm(1, 0 , 0x1); // use 0x1 as wake-up \r\n identifier\n}\nor\n// send go-to-sleep-command during measurement\n...\nlinSendSleepModFrm(0, 0 , 0xFF); // explicit sleep frame, no wake-up identifier"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

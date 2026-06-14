@@ -1,0 +1,32 @@
+{
+  "page_type": "function",
+  "name": "stop",
+  "category": "Other",
+  "title": "stop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStop.htm",
+  "syntax": [
+    "void stop();"
+  ],
+  "description": [
+    "Programmed interrupt of the ongoing measurement.",
+    "If the function is called in an event procedure, the event procedure will always be executed completely before the measurement is stopped.",
+    "In offline mode this function interrupts but does not end the measurement. In offline mode the measurement can only be ended with <ESC>."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [
+      "Output in CANoe Write Window:",
+      "...CAPL / .NET oneCAPL / .NET twoCAPL / .NET threeSystem End of measurement 08:57:30.203 am"
+    ],
+    "code": "on key 'a'\n{ write (\"one\"); write (\"two\"); stop(); write (\"three\"); }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

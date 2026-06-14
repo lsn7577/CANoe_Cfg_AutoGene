@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetLastError",
+  "category": "ADFX",
+  "title": "AfdxGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxGetLastError.htm",
+  "syntax": [
+    "long AfdxGetLastError( void );"
+  ],
+  "description": [
+    "Returns the error code of the last called Afdx… function."
+  ],
+  "parameters": [],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "char error[100];\nlong value;\nlong packetHandle;\n\nvalue = AfdxGetTokenInt( packetHandle, \"eth\", \"type\" );\nif (AfdxGetLastError() == 0)\n{\n  write(\"Ethernet Type is 0x%x\", value );\n}\nelse\n{\n  AfdxGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

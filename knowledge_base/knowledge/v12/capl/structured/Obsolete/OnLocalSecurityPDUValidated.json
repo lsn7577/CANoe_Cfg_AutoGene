@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnLocalSecurityPDUValidated",
+  "category": "Obsolete",
+  "title": "OnLocalSecurityPDUValidated",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/OnLocalSecurityPDUValidated.htm",
+  "syntax": [
+    "void OnLocalSecurityPDUValidated(char pduName[], dword dataId, byte payload[], long payloadLength, qword authInfo, dword authInfoBitLength, qword freshness, dword freshnessBitLength, dword verificationResult)"
+  ],
+  "description": [
+    "This callback handler is called, when a secured PDU is received in the node. Besides to the verification result all values which have been used for verification can be analyzed."
+  ],
+  "parameters": [
+    {
+      "name": "duName",
+      "type": "",
+      "description": "PDU name."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,149 @@
+{
+  "page_type": "function",
+  "name": "mostMsgGetSymbols",
+  "category": "MOST",
+  "title": "mostMsgGetSymbols",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTMsgGetSymbols.htm",
+  "syntax": [
+    "long mostMsgGetSymbols(mostAmsMessage * msg, char[] fblock, char[] function, char[] optype, long bufferSize); // form 1",
+    "long mostMsgGetSymbols(mostMessage * msg, char[] fblock, char[] function, char[] optype, long bufferSize); // form 2"
+  ],
+  "description": [
+    "Determining the symbolic Names of the function block, the function and the Optype from an AMS or control message using the XML function catalog."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message from which the symbolic names are determined."
+    },
+    {
+      "name": "fblock",
+      "type": "",
+      "description": "Destination buffer for the function block name."
+    },
+    {
+      "name": "function",
+      "type": "",
+      "description": "Destination buffer for the function name."
+    },
+    {
+      "name": "optype",
+      "type": "",
+      "description": "Destination buffer for the optype name."
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Destination buffer size. Valid for fblock, function and optype!"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "6.0",
+      "6.0",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST50 MOST150",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

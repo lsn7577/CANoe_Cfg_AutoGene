@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coUpload",
+  "category": "Obsolete",
+  "title": "coUpload",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoUpload.htm",
+  "syntax": [
+    "void coUpload( dword nodeId, dword index, dword subIndex, dword flags, dword errCode[] );"
+  ],
+  "description": [
+    "Reading of an entry from the object dictionary of another node.",
+    "The function triggers a SDO upload. The response of the node is returned in the event function coOnUploadResponse or coOnError."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID, value range 1..127"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoUpload( 1, 0x1000, 0x00, 0, errCode );\nif (errCode[0] == 0) {\n  write( \"SDO Upload successfully initiated\" ); \n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

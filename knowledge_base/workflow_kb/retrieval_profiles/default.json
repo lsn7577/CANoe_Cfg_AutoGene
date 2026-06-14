@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "id": "default",
+  "description": "Default retrieval profile for Excel-template-driven CANoe test generation.",
+  "default_version": "v15",
+  "lookup_order": [
+    "exact_symbol",
+    "scenario_primary_pages",
+    "team_overrides",
+    "constrained_bm25_search"
+  ],
+  "required_agent_kb_files": [
+    "agent_kb/rules_doc.md",
+    "agent_kb/scenarios.json",
+    "agent_kb/symbol_aliases.json",
+    "agent_kb/unified_index.json"
+  ],
+  "domains": {
+    "can_signal": {
+      "topic_filters": ["capl"],
+      "candidate_symbols": ["output", "setSignal", "on message", "TestWaitForSignalMatch"]
+    },
+    "xcp": {
+      "topic_filters": ["capl", "xcp"],
+      "candidate_symbols": ["xcpConnect", "xcpActivate", "xcpGetCalPage"]
+    },
+    "diagnostics": {
+      "topic_filters": ["capl", "diagnostics"],
+      "candidate_symbols": ["diagSendRequest", "diagSetParameter", "diagSetTarget"]
+    }
+  }
+}
+

@@ -1,0 +1,75 @@
+{
+  "page_type": "notes",
+  "name": "J1939TestJoinPGEvent",
+  "category": "Obsolete",
+  "title": "J1939TestJoinPGEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionJ1939TestJoinPGEvent.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by TestJoinJ1939PGEvent"
+      ],
+      [
+        "Function Syntax",
+        "long J1939TestJoinPGEvent( dword sourceAddr, dword destAddr, dword pgn, )"
+      ],
+      [
+        "long J1939TestJoinPGEvent( dword sourceAddr, dword destAddr, dbMsg message )"
+      ],
+      [
+        "Function",
+        "Completes the current set of \"joined events\" with the transmitted event. This function does not wait."
+      ],
+      [
+        "Parameters",
+        "sourceAddr source address of the PG or Null address (0xFE) for wildcard"
+      ],
+      [
+        "destAddr destination address of the PG or Null address (0xFE) for wildcard. Ignored for broadcast PGs"
+      ],
+      [
+        "pgn parameter group number to wait for"
+      ],
+      [
+        "message parameter group definition from database"
+      ],
+      [
+        "Return Values",
+        "-3: Join error -1: General error, for example, functionality is not available >0: Number of the joined event"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "7.1-8.2 SP2",
+        "J1939",
+        "—",
+        "•"
+      ],
+      [
+        "Example long lret;J1939TestJoinPGEvent(20, 0xFF, 0xF123);J1939TestJoinPGEvent(10, 0xFF, 0xF123);lret = J1939TestWaitForAnyJoinedEvent ( 500 );switch(lret) {case 1: // first PG received break;case 2: // second PG received break;default: // error, timeout or constrain violation break;}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

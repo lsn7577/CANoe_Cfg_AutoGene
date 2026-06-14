@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "mostSetStressNodeParameterData",
+  "category": "MOST",
+  "title": "mostSetStressNodeParameterData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetStressNodeParameterData.htm",
+  "syntax": [
+    "long mostSetStressNodeParameterData(long channel, long id, long datalen, byte data[])"
+  ],
+  "description": [
+    "OptoLyzer G2 3150o:",
+    "The OptoLyzer G2 3150o for MOST150 provides stress functionality through an additional network interface controller (NIC).",
+    "With mostSetStressNodeParameterData the MOST node parameters of this additional NIC can be configured."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

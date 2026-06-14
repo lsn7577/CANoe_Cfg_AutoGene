@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "IpGetSocketOption",
+  "category": "TCPIPAPI",
+  "title": "IpGetSocketOption",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIpGetSocketOption.htm",
+  "syntax": [
+    "long IpGetSocketOption( dword socket, char level[], char name[], long &value);"
+  ],
+  "description": [
+    "The function reads the value of the given socket option.",
+    "The function is dependent on the selected stack."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    },
+    {
+      "name": "level",
+      "type": "",
+      "description": "The level at which the option is defined, e.g. SOL_SOCKET (0xFFFF). See Socket Options for all supported socket levels."
+    },
+    {
+      "name": "name",
+      "type": "",
+      "description": "The socket option name to be read, e.g. SO_BROADCAST (0x0020). See Socket Options for all supported socket options."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "The value of the socket option will be returned in this variable."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  char errorMessage[255];\n  long socket;\n  long result;\n  long value;\n\n  // open a udp socket\n  socket = udpOpen(0,0);\n  if( socket == ~0 )\n  {\n    write(\"open udp socket failed. Last error was %d\", ipGetLastError());\n  }\n  \n  // get the socket type (UDP = 2, TCP = 1)\n  result = ipGetSocketOption(socket, \"SOL_SOCKET\", \"SO_TYPE\", value);\n  if( result != 0 )\n  {\n    ipGetLastSocketErrorAsString(socket, errorMessage, elcount(errorMessage));\n    write(\"Failed to get socket option SO_TYPE. Error: %s\", errorMessage);\n  }\n  else\n  {\n    write(\"The socket type is %d\", value);\n  }\n  result = ipGetSocketOption(socket, \"IPPROTO_IP\", \"IP_TTL\", value);\n  if( result != 0 )\n  {\n    ipGetLastSocketErrorAsString(socket, errorMessage, elcount(errorMessage));\n    write(\"Failed to get socket option IP_TTL. Error: %s\", errorMessage);\n  }\n  else\n  {\n    write(\"The IP TTL of this socket is %d\", value);\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5",
+      "8.2 SP2",
+      "13.0",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPOnSelectInput",
+  "category": "ISO11783",
+  "title": "Iso11783OPOnSelectInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPOnSelectInput.htm",
+  "syntax": [
+    "void Iso11783OPOnSelectInput( dword ecuHandle, dword objectID, dword what );"
+  ],
+  "description": [
+    "The function is called by the node layer, if an input object is selected."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783OPOnSelectInput( dword handle, dword objectID, dword what )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventMessageContents",
+  "category": "Test",
+  "title": "ChkQuery_EventMessageContents",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkQueryEventMessageContents.htm",
+  "syntax": [
+    "long ChkQuery_EventMessageContents (dword CheckId, byte buffer[], dword bufferlen);"
+  ],
+  "description": [
+    "Stores the data bytes of the message, for which the event has been sent, in the buffer and returns the number of stored data bytes (DLC)."
+  ],
+  "parameters": [
+    {
+      "name": "CheckId",
+      "type": "",
+      "description": "Identifier of the queried Check."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "—"
+    },
+    {
+      "name": "bufferlen",
+      "type": "",
+      "description": "—"
+    }
+  ],
+  "return": "Number of stored data",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2 7.0 SP5: method",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN",
+      "LIN",
+      "—",
+      "LIN",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

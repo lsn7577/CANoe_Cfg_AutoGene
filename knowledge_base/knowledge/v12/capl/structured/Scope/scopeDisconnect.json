@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "scopeDisconnect",
+  "category": "Scope",
+  "title": "scopeDisconnect",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Scope/Functions/CAPLfunctionScopeDisconnect.htm",
+  "syntax": [
+    "long scopeDisconnect ()"
+  ],
+  "description": [
+    "Performs Disconnect Scope action for Scope Window. This action is equivalent to disconnecting Scope via the GUI.",
+    "The completion of this action is reported with an internal event which can be awaited via TFS-function testWaitForScopeEvent() in CAPL programs for test modules."
+  ],
+  "parameters": [],
+  "return": "2 (success): Scope is already disconnected. This might be a case when the disconnection has been done by a previous CAPL call or manually.",
+  "example": {
+    "description": [],
+    "code": "long res;\n\nres = scopeDisconnect();\nif (res <= 0 || res > 2)\n{\n   testStepFail(\"Initialization\",\"Call to scopeDisconnect() failed. Return code =%d\", res);\n   return;\n}\nelse if (res == 1)\n{ // wait till action done\n   if (testWaitForScopeEvent(eScopeDisconnected, 8000) != 1)\n   {\n      testStepFail(\"Initialization \",\"Scope event eScopeDisconnected was not received\");\n      return;\n   }\n}\ntestStep(\"Initialization\",\"USB connection with the scope hardware is interrupted\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

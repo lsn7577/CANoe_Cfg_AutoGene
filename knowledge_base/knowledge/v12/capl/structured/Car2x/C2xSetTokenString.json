@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSetTokenString",
+  "category": "Car2x",
+  "title": "C2xSetTokenString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSetTokenString.htm",
+  "syntax": [
+    "long C2xSetTokenString( long packet, char protocolDesignator[], char tokenDesignator[], char data[] );"
+  ],
+  "description": [
+    "This function copies the string value to the token without terminating \\0."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "long packetHandle;\n\n// create packet\npacketHandle = C2xInitPacket( \"geo_cnh\" );\n\n// set geo_cnh payload\nC2xResizeToken( packetHandle, \"geo_cnh\", \"data\", 5*8 /*bits*/ );\nC2xSetTokenString( packetHandle, \"geo_cnh\", \"data\", \"Hello\" );\n\n// complete and send packet\nC2xCompletePacket( packetHandle );\nC2xOutputPacket( packetHandle );\n\n// release packet\nC2xReleasePacket( packetHandle );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

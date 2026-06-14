@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "AvbILControlStop",
+  "category": "IP",
+  "title": "AvbILControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbILControlStop.htm",
+  "syntax": [
+    "dword AvbILControlStop();"
+  ],
+  "description": [
+    "Stops the AVB IL.",
+    "Disables sending and receiving of AVB/TSN related messages. Opened Talkers and Listeners are closed, and the associated handles become invalid.",
+    "Handles obtained via the Media API stay valid.",
+    "The AVB IL can be started again using the AvbILControlStart function."
+  ],
+  "parameters": [],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

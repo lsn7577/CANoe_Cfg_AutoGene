@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestCreateTesterAction",
+  "category": "Test",
+  "title": "TestCreateTesterAction",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCreateTesterAction.htm",
+  "syntax": [
+    "long TestCreateTesterAction(char[] actionText, char[] heading, char[] callback);"
+  ],
+  "description": [
+    "Creates a tester action. The condition is checked every time when the given trigger occurs. The check of the condition must be implemented in the given CAPL callback. The triggers have to be added with the TestAddTriggerTesterAction function.To execute the command call TestValidateTesterAction with the handle of the tester action."
+  ],
+  "parameters": [
+    {
+      "name": "actionText",
+      "type": "",
+      "description": "Tester instruction of the popup window."
+    }
+  ],
+  "return": "> 0: Handle of the tester action.",
+  "example": {
+    "description": [],
+    "code": "int CallbackTesterAction(long trigger)\n{\n  if (trigger == gTriggerCycle)\n  {\n    testStep(\"\", \"Triggered by cycle time\");\n  }\n  else if (trigger == gTriggerSig)\n  {\n    testStep(\"\", \"Triggered by signal\");\n  }\n  else if (trigger == gTriggerSV)\n  {\n    testStep(\"\", \"Triggered by system variable\");\n  }\n  else if (trigger == gTriggerEV)\n  {\n    testStep(\"\", \"Triggered by environment variable\");\n  }\n  else\n  {\n    testStep(\"\", \"Triggered before opening dialog or before closing dialog after timeout\");\n  }\n  if(@sysVarEngineStarted == 1)\n    return 1;\n\n  return 0;\n}\n\ntestcase TCTesterAction()\n{\n  long handle;\n\n  handle = TestCreateTesterAction(\"This is the tester action text\", \"Tester action heading\", \"Resource.jpg\", \"Resource Caption\", \"CallbackTesterAction\");\n\n  gTriggerCycle = TestAddTriggerTesterAction(handle, 1000);\n  gTriggerSig = TestAddTriggerTesterAction(handle, SigSigned16);\n  gTriggerSV = TestAddTriggerTesterAction(handle, sysvar::sysInt);\n  gTriggerEV = TestAddTriggerTesterAction(handle, EnvInt);\n\n  TestValidateTesterAction(handle, 10000, 3);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

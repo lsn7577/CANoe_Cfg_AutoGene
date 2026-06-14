@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagStartVariantIdentification",
+  "category": "Diagnostics",
+  "title": "diagStartVariantIdentification",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagStartVariantIdentification.htm",
+  "syntax": [
+    "long diagStartVariantIdentification();"
+  ],
+  "description": [
+    "Start the automatic variant identification algorithm for the given target, or the currently selected one if none is given. The algorithm will communicate via the built-in diagnostic channel, i.e. the CAPL callback functions are not used for the identification.",
+    "A tester module may wait for the completion of the algorithm with testWaitForDiagVariantIdentificationCompleted, or query the status of the identification with diagGetIdentifiedVariant."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "ECU the identification algorithm should run for, not the currently selected one. If given, diagSetTarget does not have to be called."
+    }
+  ],
+  "return": "0: No error, algorithm was started",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

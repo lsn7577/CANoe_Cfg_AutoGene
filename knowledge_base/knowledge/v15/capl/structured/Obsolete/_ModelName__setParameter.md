@@ -1,0 +1,39 @@
+# <ModelName>_setParameter
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+values
+
+This is a CAPL array which has to be declared before calling this function. This CAPL array will be set to the values retrieved from the model.
+
+nrOfValues
+
+Number of values. Specifies the size of the array.
+
+3: No model data available (internal error).
+
+4: Wrong parameter type: nrOfValues does not match or unsupported parameter value type (complex numbers for example).
+
+5: Wrong index: No parameter exists with the given index.
+
+See Also
+
+| Deprecated Function The parameterization functions are deprecated. It is much easier to use the generated System variables directly. Example: @myModel::Subsystem::Frequency = 1.0;Instead ofmyModel_setParamter(index, 1.0); Some parameters might not be configurable during measurement. This depends on the implementation of a Simulink block. If the <ModelName>_set functions are used in the preStart section of a CAPL program, all parameters will be configurable and will use the new values during measurement. Parameterization requires the C-API for data exchange which is available since MATLAB R14. <ModelName> = placeholder for Simulink model |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long <ModelName>_setParameter( dword index, float values[], dword nrOfValues); |  |  |  |
+| Function | Copies the values from an array to a model parameter. The array size must not be smaller than the number of values the parameter has. |  |  |  |
+| Parameters | index Model parameter. You can find the index of the model parameter in the file <ModelName>_M.csv which is located in the destination directory of the code generation, i.e the target directory of the model DLL. |  |  |  |
+| values This is a CAPL array which has to be declared before calling this function. This CAPL array will be set to the values retrieved from the model. |  |  |  |  |
+| nrOfValues Number of values. Specifies the size of the array. |  |  |  |  |
+| Return Values | 0: Success. |  |  |  |
+| 3: No model data available (internal error). |  |  |  |  |
+| 4: Wrong parameter type: nrOfValues does not match or unsupported parameter value type (complex numbers for example). |  |  |  |  |
+| 5: Wrong index: No parameter exists with the given index. |  |  |  |  |
+| Availability | Since Version | Restricted To | HIL / Simulation / Analysis | Offline / Synchronized |
+| 7.5 | MATLAB Integration | • | — |  |
+| Example float fArr[4];...// set parameter number 3 to the values to fArrmyControllerMdl_setParameter(3, fArr, elcount(fArr)); |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

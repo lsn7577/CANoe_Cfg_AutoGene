@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.1.0",
+  "id": "team_overrides",
+  "description": "Project/team documents that must be checked before generating code or CI artifacts.",
+  "required_for_generated_code": [
+    "extras/team/CAPL_Internal_Coding_Standards.json",
+    "extras/team/Common_Gotchas.json"
+  ],
+  "optional_by_domain": {
+    "can_signal": ["extras/team/canSetSignalDword.json"],
+    "panel": ["extras/team/panelGauges.json"],
+    "ci": ["extras/team/CI_Pipeline_Reference.json"]
+  }
+}
+

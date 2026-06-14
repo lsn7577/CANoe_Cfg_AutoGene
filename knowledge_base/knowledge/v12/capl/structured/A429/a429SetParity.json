@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "a429SetParity",
+  "category": "A429",
+  "title": "a429SetParity",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429SetParity.htm",
+  "syntax": [
+    "dword a429SetParity( a429word myA429word, int parity_value );"
+  ],
+  "description": [
+    "This function sets the selector parity of an ARINC word. So you may change the mode of parity generation for every single ARINC word.",
+    "Note: This modifies the ARINC word attributes only. For transmission call the function output."
+  ],
+  "parameters": [
+    {
+      "name": "myA429word",
+      "type": "",
+      "description": "ARINC word"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

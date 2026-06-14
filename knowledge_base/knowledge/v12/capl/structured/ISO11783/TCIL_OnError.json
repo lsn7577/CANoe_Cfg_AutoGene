@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_OnError",
+  "category": "ISO11783",
+  "title": "TCIL_OnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILOnError.htm",
+  "syntax": [
+    "void TCIL_OnError( long errorCode, long param );"
+  ],
+  "description": [
+    "This callback function is called from the TC IL if an error occurred."
+  ],
+  "parameters": [
+    {
+      "name": "TC IL Error Code",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void TCIL_OnError( long errorCode, long param )\n{\n  write( \"Error %d, parameter %d\", errorCode, param );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

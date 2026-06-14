@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILDisturbCounter",
+  "category": "Obsolete",
+  "title": "ILDisturbCounter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionILDisturbCounter.htm",
+  "syntax": [
+    "long ILDisturbCounter(char aMsgName[], long counterType, long disturbanceMode, long disturbanceCount, long disturbanceValue, long continueMode); // form 1"
+  ],
+  "description": [
+    "This function modifies the counter. Different fault injections are possible.This function influences a simulation node with an assigned CANoe interaction layer."
+  ],
+  "parameters": [
+    {
+      "name": "aMsgName",
+      "type": "",
+      "description": "Name of the message or PDU that should be modified."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": "// Disturbs the PDU counter, disturbance pattern: 100x random value,\n// after the disturbance the counters next value bases on\n// the last value before the disturbance has started.\n\nvariables {\n  long countertype =0;\n  long disturbanceMode= 2;  // A random value is transmitted as counter.\n  long disturbanceCoun=100;\n  long disturbanceValue=0;  // value will be ignored due to disturbance mode\n  long continueMode=1;      // The counters next value bases on the last value\n                            // before the disturbance has started.\n}\n\non key 'a'{\n  ILDisturbCounter(\"PDU_A\", counterType, disturbanceMode, disturbanceCount, disturbanceValue, continueMode);\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

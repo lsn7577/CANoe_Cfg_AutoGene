@@ -1,0 +1,177 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSReadFile",
+  "category": "ISO11783",
+  "title": "Iso11783FSReadFile",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fsreadfile.htm",
+  "syntax": [
+    "long Iso11783FSReadFile( dword fileHandle, dword bufferSize, char buffer[] );",
+    "long Iso11783FSReadFile( dword fileHandle, dword bufferSize, byte buffer[] );",
+    "long Iso11783FSReadFile( dword fileHandle, dword bufferSize, char buffer[], long flags);",
+    "long Iso11783FSReadFile( dword fileHandle, dword bufferSize, byte buffer[], long flags);"
+  ],
+  "description": [
+    "The function reads data from an open file and directory entries from an open directory respectively.",
+    "Whenever reading directory entries, ensure that handle consists of at least (n * 22 + 2) bytes (n = the number of directory entries to read passed in size. 22 bytes is a maximum length directory entry when the file name length is 12 characters (subject to the 8.3 naming convention). Two bytes are used for the word in buffer[0] and buffer[1] with the number of directory entries actually read)."
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "File or directory handle, see also Iso11783FSOpenFile"
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Size of buffer in Bytes (handle references file) or number of directory entries to read (handle references directory)"
+    },
+    {
+      "name": "Structure of a directory entry",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Byte 1",
+      "type": "",
+      "description": "length (bytes) of the file or directory name"
+    },
+    {
+      "name": "Byte 2-n",
+      "type": "",
+      "description": "file or directory name"
+    },
+    {
+      "name": "Byte n+1",
+      "type": "",
+      "description": "attributes (see Iso11783GetFileInfo)"
+    },
+    {
+      "name": "Bytes n+2, n+3",
+      "type": "",
+      "description": "date bits 1..5: day bits 6..9: month bits 10..16: year-1989"
+    },
+    {
+      "name": "Bytes m+4, n+5",
+      "type": "",
+      "description": "time bits 1..5: seconds/2 bits 6..11: minutes bits 12..16: hours"
+    },
+    {
+      "name": "Bytes n+6..n+9",
+      "type": "",
+      "description": "size of the file/directory"
+    },
+    {
+      "name": "flags",
+      "type": "",
+      "description": "Bit 0: if this bit is set hidden files are listed during reading directories"
+    }
+  ],
+  "return": "Size of buffer in",
+  "example": {
+    "description": [],
+    "code": "// Read data from file\nLONG handle;\nchar data[200];\n\nhandle = Iso11783FSOpenFile( \"\\test.TXT\", 0x00 );\nif (handle > 0) {\nIso11783FSReadFile( handle, elCount(data), data );\n  Iso11783FSCloseFile( handle );\n} \n\r\n                                \n// Read directory entries:\nLONG handle;\nchar data[200];\n\nhandle = Iso11783FSOpenFile( \"\\DIR1\", 0x03 );\nif (handle > 0) {\nIso11783FSReadFile( handle, (elCount(data)-2)/22, data );\n  Iso11783FSCloseFile( handle );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.1",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

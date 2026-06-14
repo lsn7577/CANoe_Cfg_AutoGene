@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_StatEventFreePeriodAvg",
+  "category": "Test",
+  "title": "ChkQuery_StatEventFreePeriodAvg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryStatEventFreePeriodAvg.htm",
+  "syntax": [
+    "double ChkQuery_StatEventFreePeriodAvg (dword aCheckId);",
+    "check.QueryStatEventFreePeriodAvg();"
+  ],
+  "description": [
+    "Returns the average timely distance between events and check starts/stops.",
+    "Among other things with this function the average cycle time of a cyclic message can be queried."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "< 0: Refers the query error codes\nNote\nThere is a meaningful value available and a positive return value is supplied even if the check has not generated any event.",
+  "example": {
+    "description": [],
+    "code": "double result;\ndword checkId;\ncheckId = ChkStart_MsgRelCycleTimeViolation(VehicleMotion, 0.9, 1.1);\n// ... execute test sequence\nresult = ChkQuery_StatEventFreePeriodAvg(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

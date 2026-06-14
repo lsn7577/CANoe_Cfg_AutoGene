@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpSetVerbosity",
+  "category": "IP",
+  "title": "SomeIpSetVerbosity",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpSetVerbosity.htm",
+  "syntax": [
+    "long SomeIpSetVerbosity( long verbosity);"
+  ],
+  "description": [
+    "Sets the verbosity level of SOME/IP IL messages in the Write Window."
+  ],
+  "parameters": [
+    {
+      "name": "verbosity",
+      "type": "",
+      "description": "Verbosity level:"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key '0'\n{\n  char buffer[1024];\n  // set verbosity level to \"Silent\" mode\n  if(SomeIpSetVerbosity(0) == 0)\n  {\n    write(\"SOME/IP IL verbosity level was set to mode \\\"silent\\\"\");\n  } // if\n  else\n  {\n    // check if last function was executed correct\n    SomeIpGetLastErrorText(elcount(buffer),buffer);\n    write(\"Error setting verbosity level if SOME/IP IL: %s\", buffer);\n  } // else\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

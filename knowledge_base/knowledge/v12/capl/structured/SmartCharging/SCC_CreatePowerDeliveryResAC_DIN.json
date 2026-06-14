@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreatePowerDeliveryResAC_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreatePowerDeliveryResAC_DIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreatePowerDeliveryResAC_Din.htm",
+  "syntax": [
+    "long SCC_CreatePowerDeliveryResAC_DIN ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, byte StatusFlags[], char Notification[] )"
+  ],
+  "description": [
+    "Creates a Power Delivery Response message for sending, using the AC syntax."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

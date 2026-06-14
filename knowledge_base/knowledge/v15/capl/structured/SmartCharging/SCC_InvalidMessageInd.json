@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "SCC_InvalidMessageInd",
+  "category": "SmartCharging",
+  "title": "SCC_InvalidMessageInd",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Callbacks/CAPLfunctionSCC_InvalidMessageInd.htm",
+  "syntax": [
+    "void SCC_InvalidMessageInd ( long MessageType, long ErrorCode )"
+  ],
+  "description": [
+    "The callback is called when a SDP or V2G message is received with an invalid content (i.e. it is rejected by the session layer)."
+  ],
+  "parameters": [
+    {
+      "name": "MessageType",
+      "type": "",
+      "description": "Type of the invalid message: 0: SDP (SECC Discovery Protocol) 1: V2G (Vehicle2Grid)"
+    },
+    {
+      "name": "ErrorCode",
+      "type": "",
+      "description": "Type of error: 0: Wrong version number, or version number format 1: Unknown payload type 2: Invalid payload length 3: Error while decoding (EXI or XML parsing failed) – V2G only 4: Invalid signature – V2G only"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOBlockDownloadSegmentRequest",
+  "category": "CANopen",
+  "title": "coTfsSDOBlockDownloadSegmentRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoBlockDownloadSegmentRequest.htm",
+  "syntax": [
+    "long coTfsSDOBlockDownloadSegmentRequest( dword cont, dword seqNumber, byte inValueBuf[], dword valueBufSize, dword isLastSegment );"
+  ],
+  "description": [
+    "This function sends a single segmented SDO block download message and waits for the corresponding response."
+  ],
+  "parameters": [
+    {
+      "name": "cont",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

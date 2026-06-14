@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableQWord",
+  "category": "SystemVariables",
+  "title": "sysGetVariableQWord",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableQWord.htm",
+  "syntax": [
+    "qword sysGetVariableQWord(char namespace[], char variable[]); // form 1"
+  ],
+  "description": [
+    "Returns the value of a variable of type unsigned 64 bit integer."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "Value of the variable or 0 in case of error (form 1 and 2)",
+  "example": {
+    "description": [],
+    "code": "sysGetVariableQWord(sysvar::MyNamespace::UInt64Var);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

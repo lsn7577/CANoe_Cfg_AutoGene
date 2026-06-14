@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "StmControl_Start, StmControl_Stop, StmControl_Reset, StmControl_Destroy",
+  "category": "Test",
+  "title": "StmControl_Start, StmControl_Stop, StmControl_Reset, StmControl_Destroy",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionStmControlStartStopResetDestroy.htm",
+  "syntax": [
+    "long StmControl_Start(Stimulus::TstimulusId); // form 1",
+    "stimulus.Start(); // form 1"
+  ],
+  "description": [
+    "The four control functions have the same Parameter. They only need an ID that refers to the specific stimulus."
+  ],
+  "parameters": [
+    {
+      "name": "Stimulus::TStimulusId",
+      "type": "",
+      "description": "Must exist"
+    }
+  ],
+  "return": "0: Successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

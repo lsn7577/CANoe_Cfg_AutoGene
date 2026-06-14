@@ -1,0 +1,150 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForJ1939PG",
+  "category": "Test",
+  "title": "TestWaitForJ1939PG",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForJ1939PG.htm",
+  "syntax": [
+    "long TestWaitForJ1939PG (dbMsg aMessage, dword aTimeout);",
+    "long TestWaitForJ1939PG (dword aPGN, dword aTimeout);",
+    "long TestWaitForJ1939PG (dword aPGN, dword aSourceAddress, dword aDestinationAddress, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of the specified message aMessage. Should the message not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message that should be awaited. Must be a J1939 parameter group."
+    },
+    {
+      "name": "aPGN",
+      "type": "",
+      "description": "Parameter Group Number (with data page) of the message that should be awaited."
+    },
+    {
+      "name": "aSourceAddress",
+      "type": "",
+      "description": "Source address of the message that should be awaited or 0xFFFFFFFF if source address is ignored."
+    },
+    {
+      "name": "aDestinationAddress",
+      "type": "",
+      "description": "Destination address of the message that should be awaited or 0xFFFFFFFF if destination address is ignored."
+    },
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms](Transmission of 0: no timeout controlling)."
+    }
+  ],
+  "return": "Parameter Group",
+  "example": {
+    "description": [],
+    "code": "long result;\n//wait for RQST PG (sent form SA=0x01 to DA=0xAA) for 2000 ms\nresult = TestWaitForJ1939PG(0xEA00, 0x01, 0xAA, 2000);\nif (result == 1)\n{\n  pg RQST pgRQST; //PG RQST has to be defined in the attached DBC file\n  if (TestGetWaitJ1939PGData(pgRQST) == 0)// obtain the received RQST PG\n  {\n    if (pgRQST.ParameterGroupNumber == 0x1234) //check content of the received PG\n    {\n      // do something, e.g. send response...\n    }\n  }\n  else\n  {\n    write(\"Failed to get data of received PG RQST\");\n  }\n}\nelse if(result == 0)\n{\n  write(\"Expected PG RQST is not received during 2000 ms\", result);\n}\nelse\n{\n  write(\"TestWaitForJ1939PG(0xEA00, 0x01, 0xAA, 2000): unexpecetd error %i\", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2 SP3",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

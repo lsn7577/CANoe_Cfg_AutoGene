@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetChargingProfileData",
+  "category": "SmartCharging",
+  "title": "SCC_GetChargingProfileData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetChargingProfileData.htm",
+  "syntax": [
+    "long SCC_GetChargingProfileData ( long Index, dword& Start, float& MaxPower, long& MaxNumberOfPhases )"
+  ],
+  "description": [
+    "Get the content of a charging profile within a ChargeParameterDiscoveryReq message."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Content of the ChargingProfile with the specified index via references.\nStart: Start time of charging, in seconds from the time the request is sent.\nMaxPower: Maximum line power of charging profile\nMaxNumberOfPhases: Maximum number of phases of charging profile",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

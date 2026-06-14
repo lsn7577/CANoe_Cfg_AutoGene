@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linResetManualChecksum",
+  "category": "LIN",
+  "title": "linResetManualChecksum",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINResetManualChecksum.htm",
+  "syntax": [
+    "void linResetManualChecksum(linFrame linFrame)"
+  ],
+  "description": [
+    "Sets the correct checksum of a LIN frame, whose checksum has been changed by using linSetManualChecksum() function. The checksum is calculated using the frame data."
+  ],
+  "parameters": [
+    {
+      "name": "linFrame",
+      "type": "",
+      "description": "LIN frame for which the correct checksum will be used again."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Reset checksum error caused by previously called linSetManualChecksum()"
+    ],
+    "code": "...\nlinFrame MotorControl frmMotorControl;\nlinResetManualChecksum(frmMotorControl);\noutput(frmMotorControl); // it is important to call output() to make the changes active"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

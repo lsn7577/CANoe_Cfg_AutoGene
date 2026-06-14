@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetObjectName",
+  "category": "Diagnostics",
+  "title": "diagGetObjectName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetObjectName.htm",
+  "syntax": [
+    "long diagGetObjectName( diagResponse obj, char nameBufferOut[], dword nameBufferLen);"
+  ],
+  "description": [
+    "Writes the language dependent name of the diagnostics object into the buffer. For ODX descriptions, this is the \"long name\"."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Length of service name written to buffer, may be truncated.",
+  "example": {
+    "description": [],
+    "code": "DiagRequest AirbaContr_Read req;\nchar name[100];\nDiagGetObjectName( req, name, elcount( name));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

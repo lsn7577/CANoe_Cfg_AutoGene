@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "canOutputErrorFrame",
+  "category": "CAN",
+  "title": "canOutputErrorFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctioncanOutputErrorFrame.htm",
+  "syntax": [
+    "long canOutputErrorFrame(errorFrame, long dominant, long recessive);"
+  ],
+  "description": [
+    "Outputs an Error Frame to the CAN bus. The number of dominant bits and the number of trailing recessive bits are given as arguments."
+  ],
+  "parameters": [
+    {
+      "name": "errorFrame",
+      "type": "",
+      "description": "Variable of type errorFrame."
+    }
+  ],
+  "return": "1: OK",
+  "example": {
+    "description": [],
+    "code": "canOutputErrorFrame(errorFrame, 12, 0); //output Error Frame with 12 dominant bits on CAN1\ncanOutputErrorFrame(CAN2.errorFrame, 6, 0); //output Error Frame with 6 dominant bits on CAN2"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

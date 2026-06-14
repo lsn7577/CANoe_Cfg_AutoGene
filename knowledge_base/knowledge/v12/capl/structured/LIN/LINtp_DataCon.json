@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LINtp_DataCon",
+  "category": "LIN",
+  "title": "LINtp_DataCon",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINtpDataCon.htm",
+  "syntax": [
+    "void LINtp_DataCon(long count);"
+  ],
+  "description": [
+    "This CAPL callback receives the number of data bytes successfully sent."
+  ],
+  "parameters": [
+    {
+      "name": "count",
+      "type": "",
+      "description": "Number of bytes sent."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void LINtp_DataCon(long count)\n{\n  write( \"sent %d byte\", count);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

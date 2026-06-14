@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "DeleteControlContent",
+  "category": "Other",
+  "title": "DeleteControlContent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionDeleteControlContent.htm",
+  "syntax": [
+    "void DeleteControlContent(char[] panel, char[] control);"
+  ],
+  "description": [
+    "Deletes the content of the Panel DesignerCAPL Output View.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    },
+    {
+      "name": "control",
+      "type": "",
+      "description": "Name of the CAPL Output View control, restricted to 128 characters.\"\" – references all CAPL Output View controls on the panel."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Deletes the contents of a specific CAPL Output View control in the panel motor\nDeleteControlContent(„motor“, „Outputview“);\n// Deletes the contents of all CAPL Output View controls in the panel motor\nDeleteControlContent(„motor“, „“);\n// Deletes the contents of all CAPL Output View controls in all panels\nDeleteControlContent(„“, „“);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5",
+      "7.5",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "CAPL Output View",
+      "CAPL Output View",
+      "CAPL Output View",
+      "—",
+      "—",
+      "CAPL Output View"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

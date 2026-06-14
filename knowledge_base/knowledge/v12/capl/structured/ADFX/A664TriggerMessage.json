@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "A664TriggerMessage",
+  "category": "ADFX",
+  "title": "A664TriggerMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664TriggerMessage.htm",
+  "syntax": [
+    "long A664TriggerMessage (a664Message aMessage, dword mode)"
+  ],
+  "description": [
+    "This function triggers the scheduling of the a664Message \"aMessage\". The message is either scheduled once or periodically. To forward an AFDX message in the analysis branch, use the function output()."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "the message object to be scheduled"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// define messages from database\na664Message DEMOMSG_INT1 msgInt1 = {msgChannel = 1};\na664Message DEMOMSG_ALLTYPES myMsg = {msgChannel = 1};\n\na664TriggerMessage(msgInt1, 0);\t// send DEMOMSG_INT1 immediately\na664TriggerMessage(msgInt1, 1);\t// send DEMOMSG_INT1 once respecting the BAG\na664TriggerMessage(msgInt1, 2);\t// send DEMOMSG_INT1 periodically\n\nmyMsg.TxCycle = 100;\t// change period from DBC to 100msec\na664InitPayload (myMsg); // set payload to last known signal values myMsg.VFG_OIL_TEMP_AB_32 = 33;  // overwrite signal value within the message\nmyMsg.FS_FDS_1_HSMU_DEMO_ALLTYPES = 3;  // set FS within the message\na664TriggerMessage(myMsg, 2);\t// send cyclic with 100msec period"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

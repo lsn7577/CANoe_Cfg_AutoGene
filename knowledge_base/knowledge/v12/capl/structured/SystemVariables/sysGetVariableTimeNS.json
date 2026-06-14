@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableTimeNS",
+  "category": "SystemVariables",
+  "title": "sysGetVariableTimeNS",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableTimeNS.htm",
+  "syntax": [
+    "int64 sysGetVariableTimeNS(SysVarName);"
+  ],
+  "description": [
+    "Returns the time stamp of the last update to the variable value.",
+    "Direct access to values from system variables."
+  ],
+  "parameters": [
+    {
+      "name": "SysVarName",
+      "type": "",
+      "description": "Name of the fully qualified name of the system variable, including all name spaces, separated by \"::\". The name must be preceded by \"sysVar::\"."
+    }
+  ],
+  "return": "Time stamp of the last update to the variable value, in nanoseconds since measurement start.",
+  "example": {
+    "description": [],
+    "code": "int64 timeStamp;\ntimeStamp = sysGetVariableTimeNS(sysvar::MyNamespace::FloatVar);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

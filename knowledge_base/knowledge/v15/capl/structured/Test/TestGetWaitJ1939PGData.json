@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitJ1939PGData",
+  "category": "Test",
+  "title": "TestGetWaitJ1939PGData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestGetWaitJ1939PGData.htm",
+  "syntax": [
+    "long TestGetWaitJ1939PGData (pg * aPG); // form 1",
+    "long TestGetWaitJ1939PGData (dword index, pg * aPG); // form 2"
+  ],
+  "description": [
+    "If a J1939 parameter group event is the last event that triggers a wait instruction, the message content can be called up with the first function.",
+    "The second function can only be used for joined events. The number of the joined event (return value of testJoin...) is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "aPG",
+      "type": "",
+      "description": "J1939 parameter group variable that should be filled with this function."
+    },
+    {
+      "name": "index",
+      "type": "",
+      "description": "Number of the joined event corresponds with the return value of testJoin...."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// add J1939 PG event to the current set of “joined events” and fill the parameter group data to parameter group ‘eventMessage’\n\npg TSC1 pgTSC1;\ndword index = 0;\nTestJoinJ1939PGEvent (TSC1);\n// ... other join events\nindex = TestWaitForAllJoinedEvents (2000);\n\nTestGetWaitJ1939PGData (index, pgTSC1);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2 SP3",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

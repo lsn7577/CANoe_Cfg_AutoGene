@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOCalcCrc",
+  "category": "CANopen",
+  "title": "coTfsSDOCalcCrc",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoCalcCrc.htm",
+  "syntax": [
+    "dword coTfsSDOCalcCrc( byte inValueBuf[], dword valueBufSize );"
+  ],
+  "description": [
+    "This function calculates the CRC checksum for a block transfer (SDO block upload or SDO block download)- necessary for the calculation of the CRC across several data ranges)."
+  ],
+  "parameters": [
+    {
+      "name": "inValueBuf[]",
+      "type": "",
+      "description": "In this data field are the data for which the CRC calculation is executed."
+    }
+  ],
+  "return": "CRC checksum",
+  "example": {
+    "description": [],
+    "code": "byte inValueBuf[4] = {0x1, 0x2, 0x3, 0x4};\ndword valueBufSize = 4;\ndword crc = 0; /* to store the return value of function */\n\ncrc = coTfsSDOCalcCrc( inValueBuf, valueBufSize );\n\n/* outputs a message to the 'write' window */\nwrite( \"coTfsSDOCalcCrc = %04X\", crc);\n\n/* The message will be appeared in report if it is enabled */\n/* testStep( \"CAPL text\", \"coTfsSDOCalcCrc = %04X\", crc); */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

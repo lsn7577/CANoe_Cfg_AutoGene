@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "fileWriteString",
+  "category": "Obsolete",
+  "title": "fileWriteString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionFileWriteString.htm",
+  "syntax": [
+    "long fileWriteString(char section[], char entry[], char value[], char filename[]);"
+  ],
+  "description": [
+    "Opens the file filename, finds the section section and writes the variable entry with the value value. If entry already exists, the old value is overwritten. The functional result is the number of characters written, or 0 for an error."
+  ],
+  "parameters": [
+    {
+      "name": "section",
+      "type": "",
+      "description": "Section of file"
+    }
+  ],
+  "return": "Number of written characters of 0 if an error has occurred.",
+  "example": {
+    "description": [],
+    "code": "...\nif(!fileWriteString(\"Device\",\"DeviceName\",\"LPT1\",\"test.ini\"))\nwrite(\"file error\");\n...\nThis call writes the following entry in the file TEST.INI:\n[Device]\nDeviceName=LPT1"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

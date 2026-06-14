@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LocalSecurityEncryptAES128ECB",
+  "category": "Obsolete",
+  "title": "LocalSecurityEncryptAES128ECB",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLocalSecurityEncryptAES128ECB.htm",
+  "syntax": [
+    "long LocalSecurityEncryptAES128ECB(BYTE[] key, dword keyLength, BYTE[] data, dword dataLength, BYTE[] cipheredData, dword cipheredDataLength)"
+  ],
+  "description": [
+    "Encrypts data with a given key and initialization vector. The encryption is AES128 (ECB), PKCS5 Padding. ECB Mode does not use an initialization vector."
+  ],
+  "parameters": [
+    {
+      "name": "key",
+      "type": "",
+      "description": "The key to be used for AES (128 bit)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

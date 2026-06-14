@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetLocalIPaddressVersion",
+  "category": "Diagnostics",
+  "title": "DoIP_SetLocalIPaddressVersion",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetLocalIPaddressVersion.htm",
+  "syntax": [
+    "void DoIP_SetLocalIPaddressVersion(dword addressIPVersion);"
+  ],
+  "description": [
+    "When no local IP address is given explicitly, select the local address according to the priority set with this function. For example, this will allow the selection of a specific address type when only the network adapter is configured."
+  ],
+  "parameters": [
+    {
+      "name": "addressIPVersion",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "// Use the IPv6 address configured for the selected network adapter\nchar buffer[256];\nDiagGetCommParameter( \"DoIP.TESTER_Adapter\", 0, buffer, elcount( buffer));\nDoIP_SetTesterAdapter( buffer);\nDoIP_SetLocalIPaddressVersion( 6);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

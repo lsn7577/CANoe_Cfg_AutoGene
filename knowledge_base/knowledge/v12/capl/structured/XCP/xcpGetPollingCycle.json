@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "xcpGetPollingCycle",
+  "category": "XCP",
+  "title": "xcpGetPollingCycle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionXCPGetPollingCycle.htm",
+  "syntax": [
+    "long xcpGetPollingCycle(char namespace[], char variable[]);"
+  ],
+  "description": [
+    "Returns the cycle time of a parameter, if the read mode of the parameter is set to polling."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Namespace of the corresponding system variable."
+    }
+  ],
+  "return": "> 0: Cycle time",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

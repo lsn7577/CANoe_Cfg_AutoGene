@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "<OnEthRawPacket>",
+  "category": "Obsolete",
+  "title": "<OnEthRawPacket>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionOnEthRawPacket.htm",
+  "syntax": [
+    "void <OnEthRawPacket>( long channel, long dir, long packetLength );"
+  ],
+  "description": [
+    "The function is called when a registered raw Ethernet packet is received.",
+    "Within this callback function the following functions can be used to retrieve the received packet data:",
+    "The functions access the raw Ethernet data. Offset 0 starts at the beginning of the Ethernet header."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel on which the packet was received"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "see example of EthReceiveRawPacket"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

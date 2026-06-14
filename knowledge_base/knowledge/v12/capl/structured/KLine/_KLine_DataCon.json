@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "_KLine_DataCon",
+  "category": "KLine",
+  "title": "_KLine_DataCon",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineDataCon.htm",
+  "syntax": [
+    "_KLine_DataCon(long count)"
+  ],
+  "description": [
+    "Called for a transmitted K-Line response.",
+    "This function models a K-Line TP layer which is required for a ECU simulation."
+  ],
+  "parameters": [
+    {
+      "name": "count",
+      "type": "",
+      "description": "Number of transmitted bytes."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_KLine_DataCon( long count)\n{\n   write(%d byte sent\", count);\n   diag_DataCon( count);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

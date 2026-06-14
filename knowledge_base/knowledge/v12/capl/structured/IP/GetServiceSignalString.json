@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "GetServiceSignalString",
+  "category": "IP",
+  "title": "GetServiceSignalString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionSomeIpGetServiceSignalString.htm",
+  "syntax": [
+    "long GetServiceSignalString(serviceSignalString qualifier, char buffer [], dword bufferLength); // form 1"
+  ],
+  "description": [
+    "Reads the string value of a Service Signal."
+  ],
+  "parameters": [
+    {
+      "name": "qualifier",
+      "type": "",
+      "description": "Qualifier of the Service Signal."
+    }
+  ],
+  "return": ">=0: Length of the string that has been fetched from the Service Signal.",
+  "example": {
+    "description": [
+      "The example shows access to parameter StringValue, which is contained in Event1 of service Service1 (Major Version 1, Instance ID 2). The service interface is defined in package PACKAGE1::PACKAGE2 of database DemoDatabase.",
+      "The service qualifier is specified without a leading $ sign."
+    ],
+    "code": "on key 'r'\n{\n  char buffer[255];\n  GetServiceSignalString(DemoDatabase::PACKAGE1::PACKAGE2::Service1::1::2::Event1::StringValue, buffer, elcount(buffer));\n\n  write(\"Actual value of Service Signal StringValue: %s\",buffer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

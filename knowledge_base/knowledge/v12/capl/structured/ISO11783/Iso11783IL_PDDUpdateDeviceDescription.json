@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDUpdateDeviceDescription",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDUpdateDeviceDescription",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDUpdateDeviceDescription.htm",
+  "syntax": [
+    "long Iso11783IL_PDDUpdateDeviceDescription( char deviceCfgPath [] ); // form 1"
+  ],
+  "description": [
+    "The function updates the current device description object pool at runtime.",
+    "Only the device object and objects of type DeviceValuePresentation of the specified file are transmitted."
+  ],
+  "parameters": [
+    {
+      "name": "deviceCfgPath",
+      "type": "",
+      "description": "filename of the device configuration file"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783IL_PDDUpdateDeviceDescription( \"Sprayer01.XML\" ) == 0) {\n  // after  the device value presentation has changed to English\n  // the designators are changed too\n  Iso11783IL_PDDChangeDesignator ( 1, \"Tank volume\" );\n  Iso11783IL_PDDChangeDesignator ( 2, \"App rate per area\" );\n}\nelse {\n  write( \"Error while update file\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

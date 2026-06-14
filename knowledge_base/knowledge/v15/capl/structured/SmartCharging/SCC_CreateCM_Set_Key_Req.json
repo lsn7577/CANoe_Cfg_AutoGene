@@ -1,0 +1,188 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_Set_Key_Req",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_Set_Key_Req",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_Set_Key_Req.htm",
+  "syntax": [
+    "void SCC_CreateCM_Set_Key_Req ( byte SourceMac[], byte TargetMac[], byte NID[], byte NMK[] )"
+  ],
+  "description": [
+    "Creates a CM_Set_Key.Req message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SourceMac",
+      "type": "",
+      "description": "Source address of the Ethernet frame."
+    },
+    {
+      "name": "TargetMac",
+      "type": "",
+      "description": "Destination address of the Ethernet frame."
+    },
+    {
+      "name": "NID",
+      "type": "",
+      "description": "Network ID given by the CCo (EVSE) (7 byte)."
+    },
+    {
+      "name": "NMK",
+      "type": "",
+      "description": "NMK to be set (16 byte)."
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "KeyType dword 0x00 = DAK (AES-128) 0x01 = NMK (AES-128) 0x02 = NEK (AES-128) 0x03 = TEK (AES-128) 0x04 = Hash Key (Random-3072) 0x05 = Nonce Only (no key) 0x06-0xFF = Reserved"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "MyNonce byte[] 4 byte random number."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "YourNonce byte[] Last received nonce (4 byte)."
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "PID dword Protocol ID."
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "PRN byte[] Protocol Run Number (2 byte)."
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "PMN dword Protocol Message Number."
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "CCoCapability dword STA’s CCo Capability."
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "NewEKS dword PEKS or EKS."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

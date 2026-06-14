@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetClientHeartbeatCounter",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetClientHeartbeatCounter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetClientHeartbeatCounter.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetClientHeartbeatCounter(dbNode server, byte hearbeatCounter); // form 1"
+  ],
+  "description": [
+    "Sets the heartbeat counter of message TIM_ClientStatus_Msg. The next status message uses the new heartbeat counter value.",
+    "If the new value is less than 251, then the counter is incremented as usual (after reaching the value 250 the counter restarts with value 0 again).",
+    "If the new value is 251 (0xFB), then after a single transmission of the status message with the value 251 the counter is reset to value 0 and incremented as usual.",
+    "If the new value of the counter is 252 or greater, then the status message is always sent with the same heartbeat counter value."
+  ],
+  "parameters": [
+    {
+      "name": "server",
+      "type": "",
+      "description": "The TIM_ClientStatus_Msg message to this TIM server is modified."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

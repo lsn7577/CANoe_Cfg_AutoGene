@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "ClockControlStop",
+  "category": "Other",
+  "title": "ClockControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionClockControlStop.htm",
+  "syntax": [
+    "void ClockControlStop(char[] panel, char[] control);"
+  ],
+  "description": [
+    "Stops the Clock Control designed as stop watch with the Panel Designer (setting Mode = StopWatch).",
+    "The displayed time stays unchanged unless the user starts the stop watch again or resets it.",
+    "If the stop watch is started again without resetting it, the start time is the current displayed time (not zero).",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Stop the clock control designed as stop watch.\non key 'a'\n{\nClockControlStop(\"ClockControl\", \"StoppWatch\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

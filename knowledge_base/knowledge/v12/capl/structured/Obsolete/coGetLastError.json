@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coGetLastError",
+  "category": "Obsolete",
+  "title": "coGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoGetLastError.htm",
+  "syntax": [
+    "dword coGetLastError( char buffer[], dword bufferSize );"
+  ],
+  "description": [
+    "The function returns the error code and error text of the last function call.",
+    "If after a failed call a function is called successfully, then the last error is deleted."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer for the error text"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\nchar errText[100];\n\ncoODCreateFloat( 0x2000, 0x0, 0x1, 1, 2.5894, errCode );\nif ( coGetLastError(errText, elcount(errText)) != 0){\n  write( \"Error %d occurred, ErrorText = %s\", errCode[0], errText );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

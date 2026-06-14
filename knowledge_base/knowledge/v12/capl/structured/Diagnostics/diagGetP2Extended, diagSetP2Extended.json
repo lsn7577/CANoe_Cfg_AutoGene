@@ -1,0 +1,45 @@
+{
+  "page_type": "function",
+  "name": "diagGetP2Extended, diagSetP2Extended",
+  "category": "Diagnostics",
+  "title": "diagGetP2Extended, diagSetP2Extended",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetP2ExtendedDiagSetP2Extended.htm",
+  "syntax": [
+    "long diagGetP2Extended (); // form 1: deprecated. Is equivalent to form 2 with source value 2."
+  ],
+  "description": [
+    "Returns the P2 extended timeout from the selected source, or sets it to the specified value.",
+    "This function can only be used in combination with the CAPL Callback Interface.In this case you can use diagSetTimeout to specify the request timeout.",
+    "When the built-in diagnostic channel is used, the function diagSetP2Timeouts must be used to set P2 and P2-extended together."
+  ],
+  "parameters": [
+    {
+      "name": "-1",
+      "type": "",
+      "description": "Deactivates \"Response Pending\" handling"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Resets P2ex to its preset value"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Sets P2ex to the value (in ms)"
+    }
+  ],
+  "return": "Error code or time in ms for DiagGetP2Extended.",
+  "example": {
+    "description": [],
+    "code": "diagSetTarget( \"ECU1\");\nwrite( \"Current P2 = %d\", diagGetP2Timeout(0));\nwrite( \"Original value at interface = %d\", diagGetP2Timeout(1));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

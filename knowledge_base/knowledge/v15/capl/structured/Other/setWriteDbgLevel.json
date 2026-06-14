@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "setWriteDbgLevel",
+  "category": "Other",
+  "title": "setWriteDbgLevel",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionSetWriteDbgLevel.htm",
+  "syntax": [
+    "void setWriteDbgLevel (unsigned int priority);"
+  ],
+  "description": [
+    "This function sets the priority level for the writeDbgLevel CAPL function. The output priority must be set for every network node."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Only write output with a priority of 0 are shown in the Write Window."
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Write output with a priority ranging from 0 to 5 are shown."
+    },
+    {
+      "name": "15",
+      "type": "",
+      "description": "All outputs are shown."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "int i = 10;\nint j = 12;\nsetWriteDbgLevel(7);\nwriteDbgLevel (4, \"This is shown: h= %lxh\",j);\n // Output: This is shown: h= 0ch\nwriteDbgLevel (9, \"This is not shown: d= %ld\",i);\n // No output"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "3.0",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

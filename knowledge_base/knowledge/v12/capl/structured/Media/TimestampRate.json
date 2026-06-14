@@ -1,0 +1,29 @@
+{
+  "page_type": "concept",
+  "name": "TimestampRate",
+  "category": "Media",
+  "title": "TimestampRate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Properties/CAPLfunctionTimestampRate.htm",
+  "syntax": [],
+  "description": [
+    "This property represents the event rate. An event is defined by the type of the clock.",
+    "See TimestampType: For example, for an audio clock, an event represents a sampling point, for a video clock, an event may represent the time a (full) frame is taken.",
+    "The value of this property is expressed as a ratio. The upper 32 bits of the property value contain the numerator and the lower 32 bits contain the denominator. For example, if the timestamp rate is 44100 Hz, the ratio is 44100/1. If the timestamp rate is 29.97 fps, the ratio is 30.000/1001.",
+    "To set the value, use the MediaSetPropertyRatio function. To get the value, use the MediaGetPropertyRatio function."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

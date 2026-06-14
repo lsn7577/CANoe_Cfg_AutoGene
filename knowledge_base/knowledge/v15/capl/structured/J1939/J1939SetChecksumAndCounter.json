@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "J1939SetChecksumAndCounter",
+  "category": "J1939",
+  "title": "J1939SetChecksumAndCounter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/Functions/CAPLfunctionJ1939SetChecksumAndCounter.htm",
+  "syntax": [
+    "long J1939SetChecksumAndCounter(pg * msg, char[] calculationMethod, dword counter)"
+  ],
+  "description": [
+    "This function calculates and sets the checksum of the given parameter group as well as the given counter. The available calculation algorithms are described in J1939 Functional Safety – Messages With Integrated Checksum and Counter."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "The parameter group to calculate and set the checksum for."
+    },
+    {
+      "name": "calculationMethod",
+      "type": "",
+      "description": "Two letters in the form [A-E][a-f] (e.g. “Bc”) that define the calculation rule and position of the checksum and message counter."
+    },
+    {
+      "name": "counter",
+      "type": "",
+      "description": "Current message counter to be set in the given parameter group."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n  long err;\n  pg * msg;\n  dword counter = 0;\n\n  msg.PGN = 0xF123; //DCDC4OS\n  msg.SA = 0x1;\n  msg.dlc = 8;\n  msg.byte(0) = 0x01;\n  msg.byte(1) = 0x02;\n  msg.byte(2) = 0x03;\n  msg.byte(3) = 0x04;\n  msg.byte(4) = 0x05;\n  msg.byte(5) = 0x06;\n  msg.byte(6) = 0x07; // Bits 4-8 will be overwritten with the message counter\n  msg.byte(7) = 0x08; // Will be overwritten with the checksum\n\n  if(J1939SetChecksumAndCounter(msg, \"Aa\", counter) != 0)\n  {\n    write(\"Error while setting checksum and counter\");\n  }\n  counter = (counter + 1) % 16;\n  output(msg);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "15",
+      "15",
+      "15",
+      "—",
+      "—",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "J1939",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

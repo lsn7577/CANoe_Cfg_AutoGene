@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "OnIpAddressRemoved",
+  "category": "TCPIPAPI",
+  "title": "OnIpAddressRemoved",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/EventProcedures/CAPLfunctionTCPIPOnIpAddressRemoved.htm",
+  "syntax": [
+    "void OnIpAddressRemoved(dword ifIndex, ip_address address, dword prefix, dword origin);"
+  ],
+  "description": [
+    "If the CAPL program implements this callback it is called when a address gets removed from a network interface.",
+    "The callback is only available for simulation nodes using the individual TCP/IP stack instance. Check this setting in the TCP/IP Stack configuration dialog."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnIpAddressRemoved(dword ifIndex, ip_Address address, dword prefix, dword origin)\n{\n  char addrString[50];\n  char originNames[6][25] = {\"ORIGIN_UNKNOWN\", \"ORIGIN_USER\", \"ORIGIN_SYSTEM\", \"ORIGIN_DHCPv4CLIENT\", \"ORIGIN_DHCPv6CLIENT\", \"ORIGIN_RFC3927CLIENT\"};\n  address.PrintAddressToString(addrString);\n  snprintf(addrString, elcount(addrString), \"%s/%d\", addrString, prefix);\n  write(\"removed ip address: %s from adapter nr: %d. Origin: %s\", addrString, ifIndex, originNames[origin]);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

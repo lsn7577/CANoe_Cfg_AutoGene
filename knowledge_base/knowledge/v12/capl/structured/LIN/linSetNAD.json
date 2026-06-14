@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetNAD",
+  "category": "LIN",
+  "title": "linSetNAD",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetNad.htm",
+  "syntax": [
+    "dword linSetNAD(dword nad)"
+  ],
+  "description": [
+    "Changes the node address of the calling simulated slave."
+  ],
+  "parameters": [
+    {
+      "name": "nad",
+      "type": "",
+      "description": "The new nad to be used by the simulated slave."
+    }
+  ],
+  "return": "On success zero, otherwise -1.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

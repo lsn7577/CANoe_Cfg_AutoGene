@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_ControlInit",
+  "category": "ISO11783",
+  "title": "Iso11783IL_ControlInit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILControlInit.htm",
+  "syntax": [
+    "long Iso11783IL_ControlInit();"
+  ],
+  "description": [
+    "This function can only be used in on preStart, to suppress the auto-start function of the IL.",
+    "If the device name is not specified, the node attributes with the device name must be defined (Exception: If NMT is not activate, the device name is not needed)."
+  ],
+  "parameters": [
+    {
+      "name": "deviceName",
+      "type": "",
+      "description": "ISO11783 64-Bit device name (optional)"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n Iso11783IL_ControlInit();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

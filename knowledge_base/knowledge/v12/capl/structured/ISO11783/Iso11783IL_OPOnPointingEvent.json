@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPOnPointingEvent",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPOnPointingEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPOnPointingEvent.htm",
+  "syntax": [
+    "void Iso11783IL_OPOnPointingEvent( long x, long y, dword state );"
+  ],
+  "description": [
+    "The function is called by the node layer, if the user clicks into the data mask."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "X position [pixel]"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_OPOnPointingEvent( LONG x, LONG y, dword touchState )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

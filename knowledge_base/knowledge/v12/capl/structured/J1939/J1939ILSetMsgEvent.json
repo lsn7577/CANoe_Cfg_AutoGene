@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939ILSetMsgEvent",
+  "category": "J1939",
+  "title": "J1939ILSetMsgEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILSetMsgEvent.htm",
+  "syntax": [
+    "long J1939ILSetMsgEvent( dbMessage msg ); // form 1"
+  ],
+  "description": [
+    "The message is send immediately, the send type is ignored. The J1939 IL must be in state active and the message must be assigned to the node as Tx message.",
+    "To modify signal values prior to message transmission the CAPL functions J1939ILSetSignal or J1939ILSetSignalRaw can be used."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "message name from database"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n J1939ILSetMsgEvent( EC1 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

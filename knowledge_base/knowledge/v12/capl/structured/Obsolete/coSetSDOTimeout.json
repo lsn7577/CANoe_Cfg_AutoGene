@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coSetSDOTimeout",
+  "category": "Obsolete",
+  "title": "coSetSDOTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoSetSdoTimeout.htm",
+  "syntax": [
+    "void coSetSDOTimeout( dword time, dword errCode[] );"
+  ],
+  "description": [
+    "The function sets the time after which a SDO transmission is aborted if the communication partner does not response. The default value is 2000 ms and applies globally for all SDO transmission."
+  ],
+  "parameters": [
+    {
+      "name": "time",
+      "type": "",
+      "description": "Time value in ms, value range 0..60000"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoSetSDOTimeout( 100, errCode );\nif (errCode[0] == 0) {\n  write( \"SDO time-out set to 100ms\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

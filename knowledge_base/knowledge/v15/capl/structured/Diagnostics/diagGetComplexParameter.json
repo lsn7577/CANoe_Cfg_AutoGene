@@ -1,0 +1,154 @@
+{
+  "page_type": "function",
+  "name": "diagGetComplexParameter",
+  "category": "Diagnostics",
+  "title": "diagGetComplexParameter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetComplexParameter.htm",
+  "syntax": [
+    "long diagGetComplexParameter (diagResponse obj, char parameterName[], dword iteration, char subParameter[], char buffer[], dword buffersize)",
+    "long diagGetComplexParameter (diagRequest obj, char parameterName[], dword iteration, char subParameter[], char buffer[], dword buffersize)"
+  ],
+  "description": [
+    "Returns the symbolic value of a complex parameter. This is possible for all parameters."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    },
+    {
+      "name": "parameterName",
+      "type": "",
+      "description": "Parameter qualifier"
+    },
+    {
+      "name": "iteration",
+      "type": "",
+      "description": "Iteration (beginning with 0)"
+    },
+    {
+      "name": "subParameter",
+      "type": "",
+      "description": "Sub parameter qualifier"
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Output buffer"
+    },
+    {
+      "name": "buffersize",
+      "type": "",
+      "description": "Buffer size"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "on diagResponse Door.FaultMemory_ReadAllIdentified\n{\n  dword DTC;\n  char DTCasText[100];\n  int i;\n\n  if(diagIsPositiveResponse(this))\n  {\n    // Iterate over the list of DTCs and retrieve the numeric and symbolic value of each DTC\n    for(i=0;i<DiagGetIterationCount(this,\"ListOfDTC\");i++)\n    {\n      DTC=DiagGetComplexParameter(this,\"ListOfDTC\",i,\"DTC\");\n      DiagGetComplexParameter(this,\"ListOfDTC\", i, \"DTC\" , DTCasText, elCount(DTCasText));\n      write(\"DTC %06X - %s\",DTC, DTCasText);\n    }\n  }\n  else\n  {\n    write(\"Negative response received.\\nNegative response code: 0x%02X\", (byte)DiagGetResponseCode(this));\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.0",
+      "5.0 7.0 SP5: methods",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "Online mode Not for basic diagnostics",
+      "Online mode Not for basic diagnostics",
+      "—",
+      "—",
+      "—",
+      "Online mode Not for basic diagnostics"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔ (since 9.0)",
+      "✔ (since 9.0)",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthControlInit",
+  "category": "Obsolete",
+  "title": "EthControlInit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthControlInit.htm",
+  "syntax": [
+    "long EthControlInit();"
+  ],
+  "description": [
+    "This function initializes the Ethernet Interaction Layer.",
+    "The function call is only possible in on preStart. Then the Ethernet Interaction Layer has to be started with EthControlStart. If it is not called, the Ethernet Interaction Layer automatically starts with the properties defined in the node attributes."
+  ],
+  "parameters": [
+    {
+      "name": "protocolDesignator",
+      "type": "",
+      "description": "protocol, which should be used with the IL - use IPv4 address (other values are not supported yet)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

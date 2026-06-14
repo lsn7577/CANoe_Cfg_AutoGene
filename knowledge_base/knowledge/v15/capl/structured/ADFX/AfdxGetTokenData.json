@@ -1,0 +1,155 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetTokenData",
+  "category": "ADFX",
+  "title": "AfdxGetTokenData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionAfdxGetTokenData.htm",
+  "syntax": [
+    "long AfdxGetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long offset, long length, byte buffer[] ); // form 1",
+    "long AfdxGetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long offset, long length, char buffer[] ); // form 2",
+    "long AfdxGetTokenData( long packet, char protocolDesignator[], char tokenDesignator[], long offset, long length, struct * buffer ); // form 3"
+  ],
+  "description": [
+    "This function copies a number of bytes from a token's data area to a destination buffer."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the message that has been created with AfdxInitPacket."
+    },
+    {
+      "name": "protocolDesignator",
+      "type": "",
+      "description": "Name of the protocol, e.g. \"afdx\"."
+    },
+    {
+      "name": "tokenDesignator",
+      "type": "",
+      "description": "Name of the token, e.g. \"data\"."
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "This is the offset from the beginning of the token's data area. If this is 0, data is copied starting at byte 0 of the token's data area."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "This is the number of bytes to be copied from the token's data area to the specified buffer."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "This is the destination buffer for the copied data. Make sure that the size of the buffer is at least length bytes."
+    }
+  ],
+  "return": "number of copied bytes or 0\nWith AfdxGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  AfdxRegisterReceiveCallback ( \"OnAfdxPacket\");\n}\nvoid OnAfdxPacket( long dir, long line, int64 timestamp, long bag, long afdxFlags, long packet )\n{\n  byte data[8];\n  char error[100];\n\n  // get first 8 byte (FS) of payload of the receive packet\n  AfdxGetTokenData( packet, \"afdx\", \"data\", 0, 8, data );\n  if (AfdxGetLastError() == 0)\n  {\n    // do something with data\n  }\n  else\n  {\n    AfdxGetLastErrorText( elCount(error), error );\n    write(\"Error: %s\", error );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0: form 1, 2, 3",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

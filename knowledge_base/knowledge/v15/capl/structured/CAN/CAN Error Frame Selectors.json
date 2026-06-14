@@ -1,0 +1,622 @@
+{
+  "page_type": "notes",
+  "name": "CAN Error Frame Selectors",
+  "category": "CAN",
+  "title": "CAN Error Frame Selectors",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/CAPLfunctionErrorFrameSelectors.htm",
+  "syntax": [],
+  "description": [
+    "You can access information of the error frame object using the following selectors:",
+    "not used",
+    "Segment",
+    "Direction1: RX",
+    "Error Code"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [
+    {
+      "name": "CAN",
+      "description": "Transmission channel or channel through which the frame error has been received.Value range: 1..32",
+      "type": "word"
+    },
+    {
+      "name": "●",
+      "description": "MsgChannel",
+      "type": "Transmission channel or channel through which the frame error has been received.Value range: 1..32"
+    },
+    {
+      "name": "●",
+      "description": "ID",
+      "type": "Message IdentifierThis value is only available for some CAN hardware."
+    },
+    {
+      "name": "DLC",
+      "description": "Data Length CodeThis value is only available for some CAN hardware.",
+      "type": "byte"
+    },
+    {
+      "name": "Time_ns",
+      "description": "Time stampUnit: nanoseconds",
+      "type": "Int64"
+    },
+    {
+      "name": "●",
+      "description": "Time",
+      "type": "Time stamp \r\nUnit: 10s"
+    },
+    {
+      "name": "SOF",
+      "description": "Start-of-Frame time stamp in ns.This value is only available for some CAN hardware.",
+      "type": "qword"
+    },
+    {
+      "name": "ErrorPosition_Bit",
+      "description": "Bit index where an error has been detected by the controller.This value is only available for some CAN hardware.",
+      "type": "dword"
+    },
+    {
+      "name": "ErrorPosition_Time",
+      "description": "Difference between the time stamp of the error frame and the start of frame.Unit: nanosecondsThis value is only available for some CAN hardware.",
+      "type": "dword"
+    },
+    {
+      "name": "FDF",
+      "description": "FD Format IndicatorThis value is only available for some CAN hardware and a specific driver.",
+      "type": "byte"
+    },
+    {
+      "name": "BRS",
+      "description": "CAN FD Bit Rate SwitchThis value is only available for some CAN hardware and a specific driver.",
+      "type": "byte"
+    },
+    {
+      "name": "ESI",
+      "description": "CAN FD Error State IndicatorThis value is only available for some CAN hardware and a specific driver.",
+      "type": "byte"
+    },
+    {
+      "name": "Phase",
+      "description": "CAN FD phase.This value is only available for some CAN hardware and a specific driver.",
+      "type": "0: Error occurred in arbitration phase1: Error occurred in data phase"
+    },
+    {
+      "name": "ErrorCode",
+      "description": "Error Code",
+      "type": "0-4"
+    },
+    {
+      "name": "5",
+      "description": "6-11"
+    },
+    {
+      "name": "0",
+      "description": "Bit Error"
+    },
+    {
+      "name": "Bit Error",
+      "description": "1",
+      "type": "Form Error"
+    },
+    {
+      "name": "1",
+      "description": "Form Error",
+      "type": "2"
+    },
+    {
+      "name": "Stuff Error",
+      "description": "2"
+    },
+    {
+      "name": "3",
+      "description": "Other Error"
+    },
+    {
+      "name": "Other Error",
+      "description": "4",
+      "type": "CRC Error"
+    },
+    {
+      "name": "5",
+      "description": "Ack Del Error",
+      "type": "6"
+    },
+    {
+      "name": "not used",
+      "description": "7",
+      "type": "Ack Error"
+    },
+    {
+      "name": "8",
+      "description": "Overload Frame",
+      "type": "9"
+    },
+    {
+      "name": "Protocol Exception Event",
+      "description": "12-13",
+      "type": "Extended Information"
+    },
+    {
+      "name": "Extended Information",
+      "type": "0"
+    },
+    {
+      "name": "RX NAK Error.Passive Error Flag, if Error Code is Ack Error.",
+      "description": "0",
+      "type": "not used"
+    },
+    {
+      "name": "1",
+      "description": "TX NAK Error.Passive Error Flag, if Error Code is Ack Error."
+    },
+    {
+      "name": "not used",
+      "description": "2",
+      "type": "RX Error.Active Error Flag, if Error Code is Ack Error."
+    },
+    {
+      "name": "2",
+      "description": "RX Error",
+      "type": "3"
+    },
+    {
+      "name": "TX Error.Active Error Flag, if Error Code is Ack Error.",
+      "description": "3",
+      "type": "TX Error"
+    },
+    {
+      "name": "14",
+      "description": "1: The error frame was send by CANoe/CANalyzer, for example with output(errorFrame)",
+      "type": "Not used"
+    },
+    {
+      "name": "15",
+      "description": "1: Protocol exception",
+      "type": "Not used"
+    },
+    {
+      "name": "CtrlType",
+      "description": "CAN-controller type.The error code format depends on the type of CAN controller.\r\n0: unknown1: SJA10002: CAN Core",
+      "type": "byte"
+    },
+    {
+      "name": "Byte(x)",
+      "description": "Message data byte (unsigned 8 bit); possible values for x*: 063",
+      "type": "byte"
+    },
+    {
+      "name": "●",
+      "description": "Word(x)",
+      "type": "Message data word (unsigned 16 bit); possible values for x*: 062"
+    },
+    {
+      "name": "●",
+      "description": "DWord(x)",
+      "type": "Message data word (unsigned 32 bit); possible values for x*: 060"
+    },
+    {
+      "name": "●",
+      "description": "QWord(x)",
+      "type": "Message data word (unsigned 64 bit); possible values for x*: 056"
+    },
+    {
+      "name": "qword",
+      "description": "●",
+      "type": "char(x)"
+    },
+    {
+      "name": "Message data byte (signed 8 bit); possible values for x*: 063",
+      "description": "char",
+      "type": "●"
+    },
+    {
+      "name": "int(x)",
+      "description": "Message data word (signed 16 bit); possible values for x*: 062",
+      "type": "The index is byte-oriented; for example, int(1) references to the data beginning at byte 1 and consists of byte 12 (16 bit)."
+    },
+    {
+      "name": "●",
+      "description": "long(x)",
+      "type": "Message data word (signed 32 bit); possible values for x*: 060"
+    },
+    {
+      "name": "●",
+      "description": "int64(x)",
+      "type": "Message data word (signed 64 bit); possible values for x*: 056"
+    },
+    {
+      "name": "int64",
+      "description": "●",
+      "type": "float(x)"
+    },
+    {
+      "name": "Message data interpreted as IEEE float (32 bit); possible values for x*: 060",
+      "description": "float",
+      "type": "●"
+    },
+    {
+      "name": "double(x)",
+      "description": "Message data interpreted as IEEE double (64 bit); possible values for x*: 056",
+      "type": "double"
+    }
+  ],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Keyword",
+        "Description",
+        "Type",
+        "CAPL-on-Board"
+      ],
+      [
+        "Identification Note: The validity of ID and DLC depends on the error type and the error position!"
+      ],
+      [
+        "CAN",
+        "Transmission channel or channel through which the frame error has been received.Value range: 1..32",
+        "word",
+        "●"
+      ],
+      [
+        "MsgChannel",
+        "Transmission channel or channel through which the frame error has been received.Value range: 1..32",
+        "word",
+        "●"
+      ],
+      [
+        "ID",
+        "Message IdentifierThis value is only available for some CAN hardware.",
+        "dword",
+        "—"
+      ],
+      [
+        "DLC",
+        "Data Length CodeThis value is only available for some CAN hardware.",
+        "byte",
+        "—"
+      ],
+      [
+        "Message Times and Lengths"
+      ],
+      [
+        "Time_ns",
+        "Time stampUnit: nanoseconds",
+        "Int64",
+        "●"
+      ],
+      [
+        "Time",
+        "Time stamp Unit: 10µs",
+        "dword",
+        "—"
+      ],
+      [
+        "SOF",
+        "Start-of-Frame time stamp in ns.This value is only available for some CAN hardware.",
+        "qword",
+        "—"
+      ],
+      [
+        "ErrorPosition_Bit",
+        "Bit index where an error has been detected by the controller.This value is only available for some CAN hardware.",
+        "dword",
+        "—"
+      ],
+      [
+        "ErrorPosition_Time",
+        "Difference between the time stamp of the error frame and the start of frame.Unit: nanosecondsThis value is only available for some CAN hardware.",
+        "dword",
+        "—"
+      ],
+      [
+        "Flags"
+      ],
+      [
+        "FDF",
+        "FD Format IndicatorThis value is only available for some CAN hardware and a specific driver.",
+        "byte",
+        "—"
+      ],
+      [
+        "BRS",
+        "CAN FD Bit Rate SwitchThis value is only available for some CAN hardware and a specific driver.",
+        "byte",
+        "—"
+      ],
+      [
+        "ESI",
+        "CAN FD Error State IndicatorThis value is only available for some CAN hardware and a specific driver.",
+        "byte",
+        "—"
+      ],
+      [
+        "Phase",
+        "CAN FD phase.This value is only available for some CAN hardware and a specific driver. 0: Error occurred in arbitration phase1: Error occurred in data phase",
+        "char",
+        "—"
+      ],
+      [
+        "Error Code"
+      ],
+      [
+        "ErrorCode",
+        "Error Code Bit Interfaces with CAN Core Interfaces with SJA1000 0-4 not used Segment 5 Direction1: RX Direction1: RX 6-11 Error Code Error Code Value Description Value Description 0 Bit Error 0 Bit Error 1 Form Error 1 Form Error 2 Stuff Error 2 Stuff Error 3 Other Error 3 Other Error 4 CRC Error 5 Ack Del Error 6 not used 7 Ack Error 8 Overload Frame 9 Protocol Exception Event 12-13 Extended Information Extended Information Value Description Value Description 0 RX NAK Error.Passive Error Flag, if Error Code is Ack Error. 0 not used 1 TX NAK Error.Passive Error Flag, if Error Code is Ack Error. 1 not used 2 RX Error.Active Error Flag, if Error Code is Ack Error. 2 RX Error 3 TX Error.Active Error Flag, if Error Code is Ack Error. 3 TX Error 14 1: The error frame was send by CANoe/CANalyzer, for example with output(errorFrame) Not used 15 1: Protocol exception Not used",
+        "Bit",
+        "Interfaces with CAN Core",
+        "Interfaces with SJA1000",
+        "0-4",
+        "not used",
+        "Segment",
+        "5",
+        "Direction1: RX",
+        "Direction1: RX",
+        "6-11",
+        "Error Code",
+        "Error Code",
+        "Value",
+        "Description",
+        "Value",
+        "Description",
+        "0",
+        "Bit Error",
+        "0",
+        "Bit Error",
+        "1",
+        "Form Error",
+        "1",
+        "Form Error",
+        "2",
+        "Stuff Error",
+        "2",
+        "Stuff Error",
+        "3",
+        "Other Error",
+        "3",
+        "Other Error",
+        "4",
+        "CRC Error",
+        "5",
+        "Ack Del Error",
+        "6",
+        "not used",
+        "7",
+        "Ack Error",
+        "8",
+        "Overload Frame",
+        "9",
+        "Protocol Exception Event",
+        "12-13",
+        "Extended Information",
+        "Extended Information",
+        "Value",
+        "Description",
+        "Value",
+        "Description",
+        "0",
+        "RX NAK Error.Passive Error Flag, if Error Code is Ack Error.",
+        "0",
+        "not used",
+        "1",
+        "TX NAK Error.Passive Error Flag, if Error Code is Ack Error.",
+        "1",
+        "not used",
+        "2",
+        "RX Error.Active Error Flag, if Error Code is Ack Error.",
+        "2",
+        "RX Error",
+        "3",
+        "TX Error.Active Error Flag, if Error Code is Ack Error.",
+        "3",
+        "TX Error",
+        "14",
+        "1: The error frame was send by CANoe/CANalyzer, for example with output(errorFrame)",
+        "Not used",
+        "15",
+        "1: Protocol exception",
+        "Not used",
+        "word",
+        "—"
+      ],
+      [
+        "Bit",
+        "Interfaces with CAN Core",
+        "Interfaces with SJA1000"
+      ],
+      [
+        "0-4",
+        "not used",
+        "Segment"
+      ],
+      [
+        "5",
+        "Direction1: RX",
+        "Direction1: RX"
+      ],
+      [
+        "6-11",
+        "Error Code",
+        "Error Code"
+      ],
+      [
+        "Value",
+        "Description",
+        "Value",
+        "Description"
+      ],
+      [
+        "0",
+        "Bit Error",
+        "0",
+        "Bit Error"
+      ],
+      [
+        "1",
+        "Form Error",
+        "1",
+        "Form Error"
+      ],
+      [
+        "2",
+        "Stuff Error",
+        "2",
+        "Stuff Error"
+      ],
+      [
+        "3",
+        "Other Error",
+        "3",
+        "Other Error"
+      ],
+      [
+        "4",
+        "CRC Error"
+      ],
+      [
+        "5",
+        "Ack Del Error"
+      ],
+      [
+        "6",
+        "not used"
+      ],
+      [
+        "7",
+        "Ack Error"
+      ],
+      [
+        "8",
+        "Overload Frame"
+      ],
+      [
+        "9",
+        "Protocol Exception Event"
+      ],
+      [
+        "12-13",
+        "Extended Information",
+        "Extended Information"
+      ],
+      [
+        "Value",
+        "Description",
+        "Value",
+        "Description"
+      ],
+      [
+        "0",
+        "RX NAK Error.Passive Error Flag, if Error Code is Ack Error.",
+        "0",
+        "not used"
+      ],
+      [
+        "1",
+        "TX NAK Error.Passive Error Flag, if Error Code is Ack Error.",
+        "1",
+        "not used"
+      ],
+      [
+        "2",
+        "RX Error.Active Error Flag, if Error Code is Ack Error.",
+        "2",
+        "RX Error"
+      ],
+      [
+        "3",
+        "TX Error.Active Error Flag, if Error Code is Ack Error.",
+        "3",
+        "TX Error"
+      ],
+      [
+        "14",
+        "1: The error frame was send by CANoe/CANalyzer, for example with output(errorFrame)",
+        "Not used"
+      ],
+      [
+        "15",
+        "1: Protocol exception",
+        "Not used"
+      ],
+      [
+        "CtrlType",
+        "CAN-controller type.The error code format depends on the type of CAN controller. 0: unknown1: SJA10002: CAN Core",
+        "byte",
+        "—"
+      ],
+      [
+        "Data Access"
+      ],
+      [
+        "Byte(x)",
+        "Message data byte (unsigned 8 bit); possible values for x*: 0…63",
+        "byte",
+        "●"
+      ],
+      [
+        "Word(x)",
+        "Message data word (unsigned 16 bit); possible values for x*: 0…62 The index is byte-oriented; for example, word(1) references to the data beginning at byte 1 and consists of byte 1…2 (16 bit).",
+        "word",
+        "●"
+      ],
+      [
+        "DWord(x)",
+        "Message data word (unsigned 32 bit); possible values for x*: 0…60 The index is byte-oriented; for example, dword(1) references to the data beginning at byte 1 and consists of byte 1…4 (32 bit).",
+        "dword",
+        "●"
+      ],
+      [
+        "QWord(x)",
+        "Message data word (unsigned 64 bit); possible values for x*: 0…56",
+        "qword",
+        "●"
+      ],
+      [
+        "char(x)",
+        "Message data byte (signed 8 bit); possible values for x*: 0…63",
+        "char",
+        "●"
+      ],
+      [
+        "int(x)",
+        "Message data word (signed 16 bit); possible values for x*: 0…62 The index is byte-oriented; for example, int(1) references to the data beginning at byte 1 and consists of byte 1…2 (16 bit).",
+        "int",
+        "●"
+      ],
+      [
+        "long(x)",
+        "Message data word (signed 32 bit); possible values for x*: 0…60 The index is byte-oriented; for example, long(1) references to the data beginning at byte 1 and consists of byte 1…4 (32 bit).",
+        "long",
+        "●"
+      ],
+      [
+        "int64(x)",
+        "Message data word (signed 64 bit); possible values for x*: 0…56",
+        "int64",
+        "●"
+      ],
+      [
+        "float(x)",
+        "Message data interpreted as IEEE float (32 bit); possible values for x*: 0…60",
+        "float",
+        "●"
+      ],
+      [
+        "double(x)",
+        "Message data interpreted as IEEE double (64 bit); possible values for x*: 0…56",
+        "double",
+        "●"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

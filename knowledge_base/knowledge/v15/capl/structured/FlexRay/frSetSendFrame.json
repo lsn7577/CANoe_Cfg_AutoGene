@@ -1,0 +1,203 @@
+{
+  "page_type": "function",
+  "name": "frSetSendFrame",
+  "category": "FlexRay",
+  "title": "frSetSendFrame",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Functions/CAPLfunctionFrSetSendFrame.htm",
+  "syntax": [
+    "void frSetSendFrame( <frame name>, dword flags ); // form 1",
+    "void frSetSendFrame( int slotId, int channelMask, int len, int cycleStart, int cycleRepetition, dword flags, int channel ); // form 2",
+    "void frSetSendFrame( <frame object> ); // form 3"
+  ],
+  "description": [
+    "Configures the hardware for sending the specified message.",
+    "The call must take place in the On preStart routine in the Simulation Setup / transmission branch."
+  ],
+  "parameters": [
+    {
+      "name": "<frame name>",
+      "type": "",
+      "description": "String that corresponds to a frame name of the database.The necessary parameters slotId, channelMask, len, cycleStart and cycleRepetition are taken from the corresponding frame definition of the database."
+    },
+    {
+      "name": "slotId",
+      "type": "",
+      "description": "Identifier of the time slot in which the message should be sent."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Channel A"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Channel B"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Channel A+B"
+    },
+    {
+      "name": "len",
+      "type": "",
+      "description": "Number of databytes (maximum 254 bytes)."
+    },
+    {
+      "name": "cycleStart",
+      "type": "",
+      "description": "This number designates the base cycle. This value must be smaller than the repetition factor and lie in the range between 0 and 63.This value together with the repetition factor determines the \"Cycle Multiplexing\" of the frame. The slot ID and the cycle multiplexing (and the cluster allocation of the FlexRay bus) uniquely identify the message in a FIBEX database."
+    },
+    {
+      "name": "cycleRepetition",
+      "type": "",
+      "description": "This number designates the cycle repetition factor. The value must be between 1 and 64 and be a multiple of 2 (e.g. 1, 2, 4, 8, 16, 32 or 64).This value, together with the base cycle, determines the \"Cycle Multiplexing\" of the frame. The slot ID and the cycle multiplexing (and the cluster allocation of the FlexRay bus) uniquely identify the message in a FIBEX database."
+    },
+    {
+      "name": "Bit Mask",
+      "type": "",
+      "description": "Meaning"
+    },
+    {
+      "name": "Caution! This flag is deprecated (for CANoe ≥ 7.2)! Use instead function FRSetKeySlot.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Caution! This flag is deprecated (for CANoe ≥ 7.2)! Use instead function FRSetKeySlot.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "0x10",
+      "type": "",
+      "description": "Sets the send mode to event-triggered. If not set, the frame will be transmitted in time-triggered mode."
+    },
+    {
+      "name": "0x20",
+      "type": "",
+      "description": "Sets the payload preamble bit. With static frames, the initial data bytes then contain the local NM vector; with dynamic frames, the first two bytes then designate the expanded message ID."
+    },
+    {
+      "name": "Caution! This flag is deprecated (for CANoe ≥ 7.2)! Use instead function FRSetKeySlot.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel number (or cluster number)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "For an example see functions frUpdateStatFrame and frSendFrame."
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "event",
+  "name": "on SD_provider_discovered",
+  "category": "CommunicationObjects",
+  "title": "on SD_provider_discovered",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnSDProviderDiscovered.htm",
+  "syntax": [
+    "on SD_provider_discovered <Service>"
+  ],
+  "description": [
+    "The event procedure is called when a new service provider is discovered."
+  ],
+  "parameters": [
+    {
+      "name": "<Service>",
+      "type": "",
+      "description": "Designates the service on which the event procedure shall react. In this case, the procedure is called for any simulated consumer that has discovered a new provider."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on SD_provider_discovered Mirrors::MirrorAdjustment\n{\n  char buffer[100];\n  Abstract_GetDisplayName(this.address, buffer);\n  write(\"New provider: %s\", buffer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

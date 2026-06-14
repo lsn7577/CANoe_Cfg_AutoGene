@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SetPWMVoltageLow",
+  "category": "VTSystem",
+  "title": "SetPWMVoltageLow",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSetPWMVoltageLow.htm",
+  "syntax": [
+    "long SysVarNamespace.SetPWMVoltageLow (double Voltage);"
+  ],
+  "description": [
+    "Specifies the low level on output of a digital output signal, especially a PWM signal."
+  ],
+  "parameters": [
+    {
+      "name": "Voltage",
+      "type": "",
+      "description": "Voltage of the low level in volts in the range 0 ... 27 V (VT2004), 0... 40V (VT2004A) resp. 0 ... 25 V (VT2516)."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

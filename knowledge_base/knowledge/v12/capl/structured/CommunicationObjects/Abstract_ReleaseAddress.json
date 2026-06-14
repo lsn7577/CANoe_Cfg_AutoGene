@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_ReleaseAddress",
+  "category": "CommunicationObjects",
+  "title": "Abstract_ReleaseAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractReleaseAddress.htm",
+  "syntax": [
+    "void Abstract_ReleaseAddress(addressHandle address)"
+  ],
+  "description": [
+    "Releases a pseudo address for abstract binding. You should call this for addresses which you do not need any more (because the endpoint will be removed) so that resources are freed."
+  ],
+  "parameters": [
+    {
+      "name": "address",
+      "type": "",
+      "description": "Address of the endpoint."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "Abstract_ReleaseAddress(newProvider.Address);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "C2xSecCertificateCreate",
+  "category": "Car2x",
+  "title": "C2xSecCertificateCreate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSecCertificateCreate.htm",
+  "syntax": [
+    "long C2xSecCertificateCreate(long originalCertificateHandle, dword validityInSeconds);"
+  ],
+  "description": [
+    "Generate a new certificate based on another certificate.",
+    "The certificate is only valid while the measurement is running and it is automatically discarded afterwards.",
+    "The certificate is only known to the real-time part of CANoe. The analysis part only gets knowledge of it when it is transmitted in a message."
+  ],
+  "parameters": [
+    {
+      "name": "originalCertificateHandle",
+      "type": "",
+      "description": "Handle of a certificate which is used as a template.The new certificate inherits all properties of the original certificate except the key pair and those properties specified by the other parameters below."
+    }
+  ],
+  "return": "Handle of the new certificate or 0 on failure",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,42 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINWakeupReqLengthViolation",
+  "category": "Test",
+  "title": "ChkStart_LINWakeupReqLengthViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartLinWakeupReqLengthViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINWakeupReqLengthViolation (duration MinLength, duration MaxLength);"
+  ],
+  "description": [
+    "Checks the length of LIN wake-up request.",
+    "An event will be generated, if a measured length of the wake-up request is out of the specified range.",
+    "According to the LIN specification the wake-up request is a dominant signal in the range of a minimum of 250µs and a maximum of 5ms.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Minimum length shall not be checked"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Minimum allowed length"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\nChkConfig_SetPrecision(6); // switch to µs precision\n// Create and start the check for LIN wake-up request\ncheckId = ChkStart_LINWakeupReqLengthViolation(250, 1000, \"LINWakeupLenCallback\");\nChkConfig_SetPrecision(3); // switch to ms precision (default)\n...\n// CAPL callback for violation notification\nvoid LINWakeupLenCallback (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

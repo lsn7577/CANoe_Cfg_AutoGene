@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostSetRetryParameter, mostGetRetryParameter",
+  "category": "MOST",
+  "title": "mostSetRetryParameter, mostGetRetryParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLFunctionMOSTSetGetRetryParameter.htm",
+  "syntax": [
+    "long mostSetRetryParameter(long channel, long id, long value)"
+  ],
+  "description": [
+    "The functions provide access to the transceiver chip parameters for message transmission. The number of low-level transmission attempts and delay between attempts can be set and retrieved."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "mostSetRetryParameter: See error codes.",
+  "example": {
+    "description": [],
+    "code": "// configure MOST transceiver for 5 low-level transmission attempts on Control channel\nmostSetRetryParameter(1, 0, 5);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coLssInqNodeId",
+  "category": "Obsolete",
+  "title": "coLssInqNodeId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssInqNodeId.htm",
+  "syntax": [
+    "void coLssInqNodeId( dword errCode[] );"
+  ],
+  "description": [
+    "This service causes the determination of the node-ID of a LSS slave. It is available in configuration mode only and there may only be one LSS slave in this mode."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoLssInqNodeId( errCode );\nif (errCode[0] == 0) {\n  write( \"LSS inquire node-ID commanded\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

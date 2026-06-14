@@ -1,0 +1,40 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableData",
+  "category": "SystemVariables",
+  "title": "sysGetVariableData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableData.htm",
+  "syntax": [
+    "long sysGetVariableData(char namespace[], char variable[], byte buffer[], long& copiedBytes); // form 1"
+  ],
+  "description": [
+    "Returns the value of a variable of the type data, string, struct or generic array."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "0: no error, function successful",
+  "example": {
+    "description": [
+      "This example shows the use of system variable types as a return value of functions and as a local variable.",
+      "The user-defined CAPL function getSysVarData returns any system variable of type Data. The function is therefore defined with the system variable type sysvarData as the return value.",
+      "The system variable sv1 (defined with system variable type Data) represents any system variable depending on the counter of the getSysVarData function.",
+      "The value of a system variable is set with the CAPL function sysSetVariableData.",
+      "The value of the system variable is get with the CAPL function sysGetVariableData and output in the Write Window.",
+      "You must define the system variables FMW1::KeyData, DCM::SpeedSignalData, and Engine::EngineData in the System Variables Configuration dialog first."
+    ],
+    "code": "on key 'e'\n{\n  sysvarData * svData1;\n  char valueSysVarData[100];\n  byte buf[2];\n  long size = 2;\n  long copiedBytes;\n  byte data[2] = {0xAF, 0xEF};\n  svData1 = getSysVarData(0);\n  sysGetVariableData(svData1, buf, copiedBytes);\n  write(\"Variable is %s, Value is %x\", svData1.name, buf[0]);\n  sysSetVariableData(svData1, data, size);\n  sysGetVariableData(svData1, buf, copiedBytes);\n  write(\"Variable is %s, Value is now: %x\", svData1.name, buf[0]);\n  svData1 = getSysVarData(1);\n  sysGetVariableData(svData1, buf, copiedBytes);\n  write(\"Variable is %s, Value is %x\", svData1.name, buf[0]);\n  svData1 = getSysVarData(2);\n  sysGetVariableData(svData1, buf, copiedBytes);\n  write(\"Variable is %s, Value is %x\", svData1.name, buf[0]);\n}\n\nsysvarData * getSysVarData(int eKey)\n  {\n  switch (eKey)\n  {\n  case 0:\n    return sysvar::FMW1::KeyData;\n  case 1:\n    return sysvar::DCM::SpeedSignalData;\n  default:\n    return sysvar::Engine::EngineStateData;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

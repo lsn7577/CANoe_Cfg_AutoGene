@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetObjectPath",
+  "category": "Diagnostics",
+  "title": "diagGetObjectPath",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetObjectPath.htm",
+  "syntax": [
+    "long diagGetObjectPath (diagResponse obj, char buffer[], dword buffersize)"
+  ],
+  "description": [
+    "Delivers the qualifier path of the object that must be specified upon generation."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Length of path written to buffer, may be truncated.",
+  "example": {
+    "description": [],
+    "code": "DumpReqParameterPaths( DiagRequest * req)\n{\n  DumpParameterPaths( req, 0);\n}\n\nDumpRespParameterPaths( DiagRequest * req)\n{\n  DumpParameterPaths( req, 1);\n}\n\nDumpParameterPaths( DiagRequest * req, long bDumpResponse)\n{\n  WORD i;\n  char parameterPath[100];\n\n  req.GetObjectPath( parameterPath, elcount( parameterPath));\n  write( \"Request is: %s\", parameterPath);\n  if( bDumpResponse)\n    write( \"Response parameters:\");\n  else\n    write( \"Request parameters:\");\n\n  i = 0;\n    while( bDumpResponse && req.GetRespParameterPath( i, parameterPath, elcount( parameterPath)) > 0\n    ||!bDumpResponse && req.GetParameterPath( i, parameterPath, elcount( parameterPath)) > 0)\n  {\n    write( \"%2i %s\", i, parameterPath);\n    ++i;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

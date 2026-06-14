@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkCreate_PGDistanceViolation",
+  "category": "J1939",
+  "title": "J1939TestChkCreate_PGDistanceViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestChkCreatePGDistanceViolation.htm",
+  "syntax": [
+    "long J1939TestChkCreate_PGDistanceViolation(dword refSource, dword refDest, dword refPgn, dword obsrvSource, dword obsrvDest, dword obsrvPgn, dword aMinDistance, dword aMaxDistance, char callback[] )"
+  ],
+  "description": [
+    "An event is generated if the time interval that starts on receipt of the reference message and ends with the receipt of the observed message is smaller than aMinDistance or is larger than aMaxDistance."
+  ],
+  "parameters": [
+    {
+      "name": "refPgn",
+      "type": "",
+      "description": "referenced parameter group number"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long distCheck ;\ndistCheck = J1939TestChkCreate_PGDistanceViolation( 1, 2, 0xf100, 2, 1, 0xf101, 80, 120, \"PGDistanceCallback\" );J1939TestChkControl_Start( distCheck );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

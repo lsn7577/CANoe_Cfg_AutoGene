@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILSetPowerState",
+  "category": "AUTOSARpduIL",
+  "title": "ARILSetPowerState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILSetPowerState.htm",
+  "syntax": [
+    "long ARILSetPowerState (long value);"
+  ],
+  "description": [
+    "Activates or deactivates the power status globally. Modifying the global power state of the IL is similar to calling ARILControlSimulationOn or ILControlSimulationOff at all nodes."
+  ],
+  "parameters": [
+    {
+      "name": "value",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

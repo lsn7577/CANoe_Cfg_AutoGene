@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "convertUTCDateToUnixTimestamp",
+  "category": "Other",
+  "title": "convertUTCDateToUnixTimestamp",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionConvertUTCDateToUnixTimestamp.htm",
+  "syntax": [
+    "Int64 convertUTCDateToUnixTimestamp(dword year, byte month, byte day, byte hour, byte minute, byte second);"
+  ],
+  "description": [
+    "Converts the given UTC time and date into a UNIX timestamp (seconds since 1970-01-01)."
+  ],
+  "parameters": [
+    {
+      "name": "year",
+      "type": "",
+      "description": "The year."
+    },
+    {
+      "name": "month",
+      "type": "",
+      "description": "The month (between 1 and 12)."
+    },
+    {
+      "name": "day",
+      "type": "",
+      "description": "The day (between 1 and 31)."
+    },
+    {
+      "name": "hour",
+      "type": "",
+      "description": "The hour (between 0 and 23)."
+    },
+    {
+      "name": "minute",
+      "type": "",
+      "description": "The minute (between 0 and 59)."
+    },
+    {
+      "name": "second",
+      "type": "",
+      "description": "The second (between 0 and 60, since leap seconds are supported)."
+    }
+  ],
+  "return": "UNIX timestamp (seconds since 1970-01-01) corresponding to the input parameters.\n-1 if input parameters are invalid",
+  "example": {
+    "description": [],
+    "code": "stack Int64 unixTimestamp;\nunixTimestamp = convertUTCDateToUnixTimestamp(2033, 05, 18, 03, 33, 20);\nwrite(\"The unix timestamp will be %I64d\", unixTimestamp);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "13.0",
+      "13.0",
+      "13.0",
+      "—",
+      "14",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

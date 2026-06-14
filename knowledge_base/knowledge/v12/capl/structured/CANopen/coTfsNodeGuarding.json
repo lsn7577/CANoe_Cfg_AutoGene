@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsNodeGuarding",
+  "category": "CANopen",
+  "title": "coTfsNodeGuarding",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsNodeGuarding.htm",
+  "syntax": [
+    "long coTfsNodeGuarding( dword maxResponseTime );"
+  ],
+  "description": [
+    "After that, 20 guarding remote frames are sent to the target device. The target device must respond to all queries within the maxResponseTime."
+  ],
+  "parameters": [
+    {
+      "name": "maxResponseTime",
+      "type": "",
+      "description": "Maximum permissible response time in milliseconds."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if ( coTfsNodeGuarding (40) != 1) {  // maxResponseTime\n  write(\"Node guarding test  failed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestStmCreate_Toggle",
+  "category": "J1939",
+  "title": "J1939TestStmCreate_Toggle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestStmCreateToggle.htm",
+  "syntax": [
+    "long J1939TestStmCreate_Toggle( pg aPg, dbSignal aSignal, dword cycleTime, float value1, float value2 );"
+  ],
+  "description": [
+    "Creates a Toggle Stimulus. The Stimulus toggles the signal between the two given values."
+  ],
+  "parameters": [
+    {
+      "name": "aPg",
+      "type": "",
+      "description": "This parameter group is used for sending. If no sender or receiver is specified, the addresses from this PG is used. The signal of the PG can be modified during active Stimulus."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long toggleStm;\npg MyPG myPG;\n\nmyPG.SA = 1;\nmyPG.DA = 2;\n\ntoggleStm = J1939TestStmCreate_Toggle( myPG, MyPg::SignalA, 100, 10, 20 );\nJ1939TestStmControl_Start(toggleStm);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

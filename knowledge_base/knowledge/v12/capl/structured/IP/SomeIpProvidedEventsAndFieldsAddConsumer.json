@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpProvidedEventsAndFieldsAddConsumer",
+  "category": "IP",
+  "title": "SomeIpProvidedEventsAndFieldsAddConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpProvidedEventsAndFieldsAddConsumer.htm",
+  "syntax": [
+    "long SomeIpProvidedEventsAndFieldsAddConsumer(dword psiHandle, dword remoteIPv4Address, dword remoteUDPPort, dword remoteTCPPort);"
+  ],
+  "description": [
+    "Adds a consumer to a provided service instance. Afterwards all event/field notifications belonging to this service instance will be sent to this consumer."
+  ],
+  "parameters": [
+    {
+      "name": "psiHandle",
+      "type": "",
+      "description": "Provided service instance handle (may be retrieved by SomeIpGetProvidedObjectHandle)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

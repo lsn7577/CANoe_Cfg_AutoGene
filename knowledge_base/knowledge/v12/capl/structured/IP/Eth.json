@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "Eth",
+  "category": "IP",
+  "title": "Eth",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Objects/CAPLfunctionEth.htm",
+  "syntax": [
+    "Eth <Ethernet Channel Number>;"
+  ],
+  "description": [
+    "Can be used to get the status and statistics of the Ethernet link.",
+    "Use ethResetStatistics to reset the statistics values."
+  ],
+  "parameters": [
+    {
+      "name": "Ethernet Channel Number",
+      "type": "",
+      "description": "Channel number 1..32."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "switch(Eth1.status)\n{\n  case 0:\n    write(\"Ethernet link on Eth1 is down” );\n    break;\n  case 1:\n    write(\"Ethernet link on Eth1 is up with %dMBit/sec“, Eth1.bitrate/1000);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "status 0 – Link down 1 – Link up",
+        "long",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "bitrate Bit rate in kBit/sec",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "TxBitrate Current TX bitrate in [kBit/sec]",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "RxBitrate Current TX bitrate in [kBit/sec]",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "TxPacketRate Current TX packet rate [pkt/sec]",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "RxPacketRate Current TX packet rate [pkt/sec]",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "TxPacketCount Number of transmitted Ethernet packets",
+        "qword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "RxPacketCount Number of received Ethernet packets",
+        "qword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "TxByteCount Number of transmitted bytes",
+        "qword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "RxByteCount Number of received bytes",
+        "qword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "TxErrorCount Number of transmitted error packets",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "RxErrorCount Number of received error packets",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SQI Current Service Quality Indicator: 0 – Error Occurring 1 – No Margin 2 – Marginal 3 – Acceptable 4 – Good 5 – Excellent 6 - not available",
+        "dword",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

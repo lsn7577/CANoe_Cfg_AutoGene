@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "QueueSerialFrames",
+  "category": "Sensor",
+  "title": "QueueSerialFrames",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionQueueSerialFrames.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueSerialFrames(char[] data, dword dataCount);"
+  ],
+  "description": [
+    "Queues one frame for each given datum."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "The array of values or characters that shall be sent (one datum per frame)."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Send three frames with different payloads\ndword data[3] = {0x01, 0x02, 0x03};\nsysvar::SENSOR::UART::ExampleChannel.QueueSerialFrames(data, 3);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

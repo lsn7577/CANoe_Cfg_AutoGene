@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_max",
+  "category": "Other",
+  "title": "_max",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMax.htm",
+  "syntax": [
+    "long _max(long x, long y); // form 1"
+  ],
+  "description": [
+    "Returns the maximum of the parameters."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "First operand"
+    }
+  ],
+  "return": "y > x ? y : x",
+  "example": {
+    "description": [],
+    "code": "float result;\nresult = _max(1.0, _max(-3.0, 5.2)); // result == 5.2"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

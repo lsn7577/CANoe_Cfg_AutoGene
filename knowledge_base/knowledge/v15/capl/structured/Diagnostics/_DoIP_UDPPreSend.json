@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_UDPPreSend",
+  "category": "Diagnostics",
+  "title": "_DoIP_UDPPreSend",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPUDPPreSend.htm",
+  "syntax": [
+    "long _DoIP_UDPPreSend( BYTE DoIPVersion[], BYTE inverseVersion[], WORD payloadType[], DWORD payloadLen[], BYTE payload[]);"
+  ],
+  "description": [
+    "The DoIP implementation is about to send an UDP DoIP packet with the given content. It is possible to change the values in header and data, and to change the total length of the UDP packet."
+  ],
+  "parameters": [
+    {
+      "name": "DoIPVersion",
+      "type": "",
+      "description": "Protocol version value to send, defaults to configured value."
+    },
+    {
+      "name": "inverseVersion",
+      "type": "",
+      "description": "Inverse protocol version value to send."
+    },
+    {
+      "name": "payloadType",
+      "type": "",
+      "description": "Type of the PDU sent. The value is converted from and to network byte order automatically."
+    },
+    {
+      "name": "payloadLen",
+      "type": "",
+      "description": "Length of the payload as indicated in the header. The value is converted from and to network byte order automatically."
+    },
+    {
+      "name": "payload",
+      "type": "",
+      "description": "Payload itself. Elcount( payload) indicates the maximum number of bytes that can be accessed in the callback which might be longer than payloadLen, i.e. more bytes might be available than used for DoIP."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// Patch the UDP packet send depending on a global control variable\nlong _DoIP_UDPPreSend( BYTE DoIPVersion[], BYTE inverseVersion[], WORD payloadType[], DWORD payloadLen[], BYTE payload[])\n{\n  long retVal;\n  write( \"UDPPreSend( version=%02x, invVersion=%02x, payloadtype=%04x, payloadLen=%d, [%d]<%02x ...>)\"\n  , DoIPVersion[0], inverseVersion[0], payloadType[0], payloadLen[0], elcount( payload)\n  , elcount( payload) > 0 ? payload[0] : 0);\n  retVal = 0;\n  switch( sNextUDPFault)\n  {\n    case 1: // increase payload by 2 bytes and patch type to force a UDP response\n      payload[payloadLen[0]] = 0xFF;\n      payload[payloadLen[0] + 1] = 0xFF;\n      payloadLen[0] += 2;       // increase payload length!\n      payloadType[0] += 0x200;  // patch type\n      break;\n\n    case 2: // increase packet length\n      retVal = 1000;\n      break;\n\n    case 3: // drop packet\n      retVal = -1;\n      break;\n    default:\n      return 0;\n  }\n  sNextUDPFault = 0;\n  return retVal;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP4",
+      "—",
+      "—",
+      "—",
+      "1.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPChangeListItem",
+  "category": "ISO11783",
+  "title": "Iso11783OPChangeListItem",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPChangeListItem.htm",
+  "syntax": [
+    "long Iso11783OPChangeListItem( dword ecuHandle, dword inputID, dword index, dword itemID );"
+  ],
+  "description": [
+    "The function changes an item in an input list object. A Change List Item command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPChangeListItem( handle, 1200, 1, 1250 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

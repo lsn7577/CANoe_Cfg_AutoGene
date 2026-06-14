@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "linIsChannelMatserMode",
+  "category": "LIN",
+  "title": "linIsChannelMatserMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINIsChannelMasterMode.htm",
+  "syntax": [
+    "long linIsChannelMasterMode()"
+  ],
+  "description": [
+    "This function returns 1 if the network channel given by the current bus context is running in master mode, 0 otherwise. See SetBusContext for how to change the current bus context.",
+    "The channel’s master mode setting can be changed at any time using the function linSetChannelMasterMode.",
+    "See also Master Mode of the LIN Hardware for details on the LIN channel master mode."
+  ],
+  "parameters": [],
+  "return": "1 if the current bus context’s LIN channel is in master mode, 0 otherwise",
+  "example": {
+    "description": [],
+    "code": "if (!linIsChannelMasterMode())\n{\n  // manually activate Master mode on LIN hardware\n  linSetChannelMasterMode(1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

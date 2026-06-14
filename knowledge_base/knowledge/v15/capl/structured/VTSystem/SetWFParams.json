@@ -1,0 +1,151 @@
+{
+  "page_type": "method",
+  "name": "SetWFParams",
+  "category": "VTSystem",
+  "title": "SetWFParams",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSSetWFParams.htm",
+  "syntax": [
+    "long SysVarNamespace.SetWFParams (double timeIncrement, double pause, dword numOfRepeats); // form 1",
+    "long SysVarNamespace.SetWFParams (double timeIncrement, double pause, dword numOfRepeats, double startDelay, dword startPoint); // form 2"
+  ],
+  "description": [
+    "The function configures the parameters for the output of a voltage or resistance curve or bitstream."
+  ],
+  "parameters": [
+    {
+      "name": "timeIncrement",
+      "type": "",
+      "description": "Specifies how long the value of a specified interpolation point is to be stimulated before transitioning to the next interpolation point.Depending on the module and the wave form different ranges for timeIncrement are valid: Voltage curves on a VT7001 module: timeIncrement can be 0.000001(1 µs)…0.065 (65 ms). Note that output accuracy depends highly on environmental conditions for values between 0.000001(1 µs) and 0.00001 (10 µs).Transfer to VT System is performed with microsecond resolution. Voltage curves on a VT2816 or VT2004 module: timeIncrement can be -0.065 (-65 ms)…0.065 (65 ms). If the value is negative, the wave form is output backwards. Note that output accuracy depends highly on environmental conditions for values between -0.00001(-10 µs) and 0.00001 (10 µs).Transfer to VT System is performed with nanosecond resolution. Resistance curves: 0.0005 (500 µs)…0.065 (65 ms) in R> mode and 0.001 (1 ms)…0.065 (65 ms) in R< mode.Transfer to VT System is performed with nanosecond resolution. BitStreams on a VT2516 module: timeIncrement can be 0.000002 (2 µs)…0.065 (65 ms).Transfer to VT System is performed with microsecond resolution. BitStreams on a VT2848 module: timeIncrement can be -0.065 (-65 ms)…0.065 (65 ms). If the value is negative, the bit stream is output backwards.Transfer to VT System is performed with nanosecond resolution.Note that output accuracy depends highly on environmental conditions for values between -0.00001(-10 µs) and 0.00001 (10 µs)."
+    },
+    {
+      "name": "pause",
+      "type": "",
+      "description": "Specifies how long the stimulation is interrupted between two repetitions of the wave form. Transfer to VT System is performed with nanosecond resolution. Valid values: 0.0…4294.0 (4294 s)."
+    },
+    {
+      "name": "numOfRepeats",
+      "type": "",
+      "description": "Specifies how many times in a row the curve is to be stimulated.Valid values: 0…65535 (0 means unlimited repetition of the curve)"
+    },
+    {
+      "name": "startDelay",
+      "type": "",
+      "description": "Specifies a delay for the start of the stimulation in seconds. This makes it possible to start multiple curves in a defined sequence. This parameter is only supported by the VT2004, VT2816 and VT2848 modules. Transfer to VT System is performed with nanosecond resolution. Valid values: 0.0..4.0 (4 s)"
+    },
+    {
+      "name": "startPoint",
+      "type": "",
+      "description": "Specifies the point of the stimulated curve the stimulation should begin with. This makes it possible e.g. to start multiple curves with different phase shifts without changing the curves. This parameter is only supported by the VT2004, VT2816 and VT2848 modules. Valid values: 0..4096"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following example demonstrates how to use the waveform resistance output of a VT2004 channel to simulate a sensor. In the example a waveform called WaveForm.TXT is loaded and replayed on channel Temp_Sensor. More details on waveforms can be found on CANoe online help topic VT2004: Arbitrary Wave Forms."
+    ],
+    "code": "// Example of an arbitrary wave form for resistance stimulation\n100\n120 ; 2\n140 ; 1\n100\n160 ; 4\n100\nSimulateSensorResistanceWF ()\n{\n   // Choose resistor stimulation and waveform curve type\n   sysvar::VTS::Temp_Sensor.SetStimulationMode(3);\n   sysvar::VTS::Temp_Sensor.SetCurveType(2);\n\n   // Load waveform (the contents of waveform.TXT are listed below)\n   sysvar::VTS::Temp_Sensor.LoadWFResistance(\"C:\\\\WaveForm.TXT\");\n\n   // Configure waveform. Parameters:\n   // TimeIncrement (time to hold each sample)       = 65ms\n   // Pause (pause between two waveform repetitions) = 2s\n   // NumberOfRepeats (number of repetitions)        = 3\n   sysvar::VTS::Temp_Sensor.SetWFParams(0.065, 2.0, 3);\n\n   // Start stimulation with the previously configured waveform\n   sysvar::VTS::Temp_Sensor.StartStimulation();\n}\npublic void SimulateSensorResistanceWF()\n   {\n      // Get VTS interface and VT2004 channel\n      IVTSystem vts = VTSystem.Instance;\n      IVT2004Channel tempSensor = vts.GetChannel(\"Temp_Sensor\") as IVT2004Channel;\n\n      // Choose voltage stimulation and a constant curve type\n      tempSensor.SetStimulationMode(StimulationMode.ResistanceLower, CurveType.AnalogWaveform);\n\n      // Load waveform (the contents of waveform.TXT are listed below)\n      tempSensor.LoadWFResistance(\"C:\\\\WaveForm.TXT\");\n\n      // Configure waveform. Parameters:\n      // TimeIncrement (time to hold each sample)       = 65ms\n      // Pause (pause between two waveform repetitions) = 2s\n      // NumberOfRepeats (number of repetitions)        = 3\n      tempSensor.SetWFParams(0.065, 2.0, 3);\n\n      // Start stimulation with the previously configured waveform\n      tempSensor.StartStimulation();\n   }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.1 SP3",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

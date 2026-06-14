@@ -1,0 +1,246 @@
+{
+  "page_type": "function",
+  "name": "ARILSetOperationMode",
+  "category": "AUTOSARpduIL",
+  "title": "ARILSetOperationMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/AUTOSARpduIL/Functions/CAPLfunctionARILSetOperationMode.htm",
+  "syntax": [
+    "long ARILSetOperationMode (long mode, long param); // form 1",
+    "long ARILSetOperationMode (dbSignal, long mode, long param); // form 2",
+    "long ARILSetOperationMode (dbMsg dbMessage, char signalGroupName[], long mode, long param); // form 3"
+  ],
+  "description": [
+    "Influences the behavior of the update bits and counters. The function without a signal or a signal group parameter has potentially impact on all possible signals and signal groups.",
+    "Influences the sending behavior of multiplexed I-PDUs. For each multiplexed I-PDU, which is specified in the database, the IL automatically creates two schedule tables. The first schedule table defines a sending pattern, which is based on the timings of the Sub I-PDUs from the database. Thus cannot be modified. The second schedule table is created with a default number of empty slots and can be modified by IL functions. Each slot can be assigned a multiplexer selector value or be marked as empty (no PDU transmission in this slot). If a schedule table is active, the PDU will be sent according to it."
+  ],
+  "parameters": [
+    {
+      "name": "dbSignal",
+      "type": "",
+      "description": "The symbolic name of an (UB/Mux) signal in the database."
+    },
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    },
+    {
+      "name": "signalGroupName",
+      "type": "",
+      "description": "The symbolic full name of the signal group."
+    },
+    {
+      "name": "mode",
+      "type": "",
+      "description": "Defines which mode is to be influenced."
+    },
+    {
+      "name": "Mode",
+      "type": "Parameter",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "0",
+      "description": "Enables the Normal/Real mode for UBs. Signals follow the on update semantic for setting the UB. After transmission of the PDU its UBs are reset. This is the default for this mode."
+    },
+    {
+      "name": "0",
+      "type": "1",
+      "description": "Enables the Plug&Play mode for UBs. Thus, the UBs are always set."
+    },
+    {
+      "name": "1",
+      "type": "0",
+      "description": "Enables the Normal/Real mode only for UBs of signal groups that have a counter. Signals follow the on update semantic for setting the UB. After transmission of the PDU its UBs are reset. This is the default for this mode."
+    },
+    {
+      "name": "1",
+      "type": "1",
+      "description": "Enables the Plug&Play mode only for UBs of signal groups that have a counter. Thus, those UBs are always set."
+    },
+    {
+      "name": "2",
+      "type": "0",
+      "description": "The specified signal or all signals of the specified PDU will not be able to awake the bus. (NWM-WakeupAllowed is set to false)."
+    },
+    {
+      "name": "2",
+      "type": "1",
+      "description": "The specified signal or all signals of the specified PDU will possibly awake the bus on changing its value. (NWM-WakeupAllowed is set to true)."
+    },
+    {
+      "name": "16",
+      "type": "0",
+      "description": "Disables scheduling for a specific multiplexed I-PDU. (form 2)"
+    },
+    {
+      "name": "16",
+      "type": "1",
+      "description": "Enables scheduling for a specific multiplexed I-PDU. Schedule table created from database timings is used. (form 2)"
+    },
+    {
+      "name": "16",
+      "type": "2",
+      "description": "Enables scheduling for a specific multiplexed I-PDU. User-defined schedule table is used. (form 2)"
+    },
+    {
+      "name": "17",
+      "type": "0",
+      "description": "Disables scheduling for all multiplexed I-PDUs. (form 1)"
+    },
+    {
+      "name": "17",
+      "type": "1",
+      "description": "Enables scheduling for all multiplexed I-PDUs. Schedule table created from database timings is used. (form 1)"
+    },
+    {
+      "name": "18",
+      "type": "Number of slots (default: 50)",
+      "description": "Resizes the user-defined schedule table for a specific multiplexed I-PDU with the passed number. (form 2)"
+    },
+    {
+      "name": "19",
+      "type": "0",
+      "description": "Clears/Removes all multiplexer selector values from the user-defined schedule table of a specific multiplexed I-PDU. (form 2)"
+    },
+    {
+      "name": "20",
+      "type": "Mux selector value",
+      "description": "Adds a multiplexer selector value (param) at the next free slot of the user-defined schedule table for a specific multiplexed I-PDU. (form 2)"
+    },
+    {
+      "name": "21",
+      "type": "Slot number (0…n)",
+      "description": "Marks a slot in the user-defined schedule table of the multiplexed I-PDU as empty slot. Thus no PDU will be sent in this slot. (form 2)"
+    },
+    {
+      "name": "200",
+      "type": "<OEM specific ID>",
+      "description": "Activates an OEM-specific E2E calculation. For affected OEMs, you will find the corresponding documentation in the OEM-specific help. To activate the OEM-specific calculation, the SetOperationMode function must be called in on preStart as first function. Available with CANoe starting with version 15."
+    },
+    {
+      "name": "2000",
+      "type": "0",
+      "description": "For signal groups with UB and SQC: The SQC and UB are triggered by signal updates. Changing the SQC will also trigger the UB. Signals follow the on update semantic for triggering the UB and SQC. SQC follows the on change semantic for triggering the UB. The SQC may have impact on the UB. The UB has not any impact on the SQC"
+    },
+    {
+      "name": "2000",
+      "type": "1",
+      "description": "For signal groups with UB and SQC: The SQC is always incremented before sending regardless of the signal group UB. Signals follow the on update semantic for triggering the UB. The UB has not any impact on the SQC. The SQC has not any impact on the UB. This is the default for this mode."
+    },
+    {
+      "name": "2000",
+      "type": "2",
+      "description": "For signal groups with UB and SQC: The SQC will only be incremented when the update bit is set. If the UB is 1 before transmission, then the SQC will be incremented once (for this transmission). Signals follow the on update semantic for triggering the UB. An UB disturbance lets increment the SQC as long as the disturbance sets the UB. The UB has impact on the SQC. The SQC has not any impact on the UB."
+    }
+  ],
+  "return": "The symbolic name of",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "14",
+      "14",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN Ethernet FlexRay",
+      "CAN Ethernet FlexRay",
+      "CAN Ethernet FlexRay",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

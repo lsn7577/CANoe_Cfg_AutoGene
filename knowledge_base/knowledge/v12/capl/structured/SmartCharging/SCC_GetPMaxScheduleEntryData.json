@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetPMaxScheduleEntryData",
+  "category": "SmartCharging",
+  "title": "SCC_GetPMaxScheduleEntryData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetPMaxScheduleEntryData.htm",
+  "syntax": [
+    "void SCC_GetPMaxScheduleEntryData ( long i1, long i2, long& Start, long& Duration, float& PMax )"
+  ],
+  "description": [
+    "Get various data of a PMaxScheduleEntry."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "The start time, duration, and maximum power of the entry with the selected indices, where\nIf the optional element Duration is not present, a value of -1 is returned.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

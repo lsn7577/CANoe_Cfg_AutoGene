@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "fileReadInt",
+  "category": "Obsolete",
+  "title": "fileReadInt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionFileReadInt.htm",
+  "syntax": [
+    "long fileReadInt(char section[], char entry[], long def, char file[]);"
+  ],
+  "description": [
+    "Searches for the variable entry in the section section of the file filename. If its value is a number, this number is returned as the functional result. If the file or entry is not found, or if entry does not contain a valid number, the default value def is returned as the functional result."
+  ],
+  "parameters": [
+    {
+      "name": "section",
+      "type": "",
+      "description": "Section of file"
+    }
+  ],
+  "return": "Integer read",
+  "example": {
+    "description": [
+      "Result:",
+      "The value 200 is assigned to the variable myAddress. If the entry ADDR does not exist in the file TEST.INI the default value 0 is assigned to myAddress."
+    ],
+    "code": "File TEST.INI:\n[DATA]\nNAME=Feld\nADDR=200\nFIELD=1,2,3,0x20,100\n...\nmyAddress=fileReadInt(\"DATA\", \"ADDR\", 0, \"TEST.INI\");\n..."
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

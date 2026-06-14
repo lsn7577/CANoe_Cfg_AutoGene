@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxIsTokenAvailable",
+  "category": "ADFX",
+  "title": "AfdxIsTokenAvailable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxIsTokenAvailable.htm",
+  "syntax": [
+    "long AfdxIsTokenAvailable( long packet, char protocolDesignator[], char tokenDesignator[] );"
+  ],
+  "description": [
+    "This function checks, if the specified token is part of the packet."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long packet;\nbyte seqNo = 0;\n\npacket = AfdxInitPacket(0x0a022600, 0xe0e01a0f, 11121, 0x1a0f, 640);\n//check if Sequence number is available already\nif (!AfdxIsTokenAvailable(packet, \"afdx\",\"seqNo\"))\n{\n  write(\"error!  SeqNo  is not available in AFDX-packet\");\n}\nelse\n{\n  // set SeqNo to specific value\n  if (AfdxSetTokenInt(packet, \"afdx\", \"SeqNo\", 0, 1, 1, seqNo) != 0)\n  {\n    write(\"error! AfdxSetTokenInt failed\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

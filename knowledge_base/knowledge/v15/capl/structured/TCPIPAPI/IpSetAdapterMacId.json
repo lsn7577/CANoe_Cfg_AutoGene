@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "IpSetAdapterMacId",
+  "category": "TCPIPAPI",
+  "title": "IpSetAdapterMacId",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIPSetAdapterMacId.htm",
+  "syntax": [
+    "long IpSetAdapterMacId( dword ifIndex, qword macId);"
+  ],
+  "description": [
+    "Sets the mac id of the given interface."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index. All adapter addresses including the local loopback address are taken into account in the stack of the operating system. The order depends on how the operating system lists the adapters. All assigned addresses including the VLAN addresses are taken into account in the CANoe stack."
+    },
+    {
+      "name": "macId",
+      "type": "",
+      "description": "The MAC address as qword."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  dword result;\n  dword channel = 1;\n  dword ifIndex;\n  qword macId;\n\n  ifIndex = ipGetAdapter(channel);\n  if(ifIndex > 0)\n  {\n    macId = ethGetMacAddressAsNumber(\"02:11:22:33:44:55\");\n    result = ipSetAdapterMacId(ifIndex, macId);\n    if(result != 0)\n    {\n      write(\"ipSetAdapterMacId for interface %d failed\", ifIndex);\n    }\n  }\n  else\n  {\n    write(\"No interface found for channel %d\", channel);\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "13.0",
+      "13.0",
+      "13.0",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

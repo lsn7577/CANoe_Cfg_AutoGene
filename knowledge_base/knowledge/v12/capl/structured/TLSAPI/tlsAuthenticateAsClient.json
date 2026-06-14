@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "tlsAuthenticateAsClient",
+  "category": "TLSAPI",
+  "title": "tlsAuthenticateAsClient",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TLSAPI/Functions/CAPLfunctiontlsAuthenticateAsClient.htm",
+  "syntax": [
+    "long tlsAuthenticateAsClient(dword socket, char serverName[]);"
+  ],
+  "description": [
+    "Starts the authentication handshake as client."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "void OnTcpConnect( dword socket, long result)\n{\n  if (result == 0)\n  {\n    socket = tlsOpen(socket);\n    tlsAuthenticateAsClient(socket, \"\");\n\n    if ((tlsGetLastError(socket) != 0) &&\n    (tlsGetLastError(socket) != 997))\n    {\n      // an error occurred\n      return;\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

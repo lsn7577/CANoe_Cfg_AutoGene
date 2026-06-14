@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "coStartUp",
+  "category": "Obsolete",
+  "title": "coStartUp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoStartup.htm",
+  "syntax": [
+    "void coStartUp( dword nodeId, dword errCode[] );"
+  ],
+  "description": [
+    "Starts the CANopen® communication of the node.",
+    "If no object 1200h is found at start up, the default SDO server (according to DS301) is created. Furthermore all default SDO clients are created When no objects of the range 1280h..128Fh are found.",
+    "The start procedure occurs according to the specifications in the object dictionary. If the node is configured as NMT master (Bit 0 in 1F80 set) and if additional nodes are assigned to this NMT master, then these are started automatically (depending on the configuration). If the node was able to send its boot-up message, then it changes automatically to the state pre-operational. Only after this function has been executed successfully it is possible to access the object dictionary of this node via the network.",
+    "The event function coOnNodeChangedState is called several times during the start procedure.",
+    "After the call of this function, the node needs some time in order to start and be initialized completely. Therefore, it is recommended not to call CAPL functions before the event function coOnConfigReady was called with the event type 1 or 4! Otherwise the completeness and consistency of the data cannot be guaranteed.",
+    "If the node is configured as NMT master, then prior the call of coOnConfigReady with the event type 1 a call with the event type 4 will occur."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID that should be used by the node"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoStartUp( 1, errCode );\nif (errCode[0] == 0) {\n  write( \"StartUp node\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

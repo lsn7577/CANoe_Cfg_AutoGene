@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssSendStoreConfigurationRequest",
+  "category": "CANopen",
+  "title": "coTfsLssSendStoreConfigurationRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssSendStoreConfReq.htm",
+  "syntax": [
+    "long coTfsLssSendStoreConfigurationRequest( byte[] pErrorCode, byte[] pSpecificError );"
+  ],
+  "description": [
+    "The function sends a LSS Store Configuration request and waits for the response."
+  ],
+  "parameters": [
+    {
+      "name": "pErrorCode",
+      "type": "",
+      "description": "Error code."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "byte pErrorCode[1];\nbyte pSpecificError[1];\n\n/* send LSS store configuration request */\n\nif (coTfsLssSendStoreConfigurationRequest( pErrorCode, pSpecificError) == 1) {\n  /* sent LSS store configuration request and received response */\n  /* received values can be found in pErrorCode[0], pSpecificError[0] */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,77 @@
+{
+  "page_type": "notes",
+  "name": "coEmergency",
+  "category": "Obsolete",
+  "title": "coEmergency",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoEmergency.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by CANopen Basic Functions."
+      ],
+      [
+        "Function Syntax",
+        "void coEmergency( dword active, dword emcyError, byte specificData[], dword dataSize, dword errCode[] );"
+      ],
+      [
+        "Function",
+        "The function activates or deactivates an emergency error code. The error register [0x1003,0] and the 'Predefined error field' object are set. An emergency message is also sent."
+      ],
+      [
+        "Parameters",
+        "active Specifies whether an error code should be activated or deactivated0 - deactivates emergency state1 - activates emergency state2 - activates and deactivates automatically after a few seconds"
+      ],
+      [
+        "emcyError Emergency error code, value range 0..65.535"
+      ],
+      [
+        "specificData Manufacturer-specific data (maximum 5 bytes are copied)"
+      ],
+      [
+        "dataSize Length of the specific data in bytes"
+      ],
+      [
+        "errCode Error code buffer (is entered in index 0 of the field)"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "6.0-9.0 SP6",
+        "CANopen",
+        "—",
+        "•"
+      ],
+      [
+        "Example dword errCode[1];byte data[5] = { 0, 0, 0, 0 };coEmergency ( 1, 0x8120, data, elcount(data), errCode );if (errCode[0] == 0) { write( \"Error passive mode entered\" );}coEmergency ( 0, 0x8120, data, elcount(data), errCode );if (errCode[0] == 0) { write( \"Error active mode entered\" );}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

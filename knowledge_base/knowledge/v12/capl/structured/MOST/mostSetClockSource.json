@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "mostSetClockSource",
+  "category": "MOST",
+  "title": "mostSetClockSource",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetClockSource.htm",
+  "syntax": [
+    "long mostSetClockSource(long channel, long source)"
+  ],
+  "description": [
+    "Sets the clock source for the MOST timing master. The function has no effect if the bus interface is configured as MOST timing slave."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [
+      "Use case: External S/PDIF source device connected to the S/PDIF In connector of the VN2610",
+      "Typically the internal oscillator is used as clock source, since most S/PDIF source devices do not generate a S/PDIF signal with the same clock as the MOST clock (44,1 / 48 kHz).",
+      "In some special cases, e.g. for testing purpose it is possible to synchronize the timing master clock to S/PDIF input signal.",
+      "More S/PDIF examples see CANoe online help MOST Access to Digital Audio Channels (S/PDIF In and Out)."
+    ],
+    "code": "// use internal oscillators timing master clock\non key 's'\n{\n  long channel = 1;\n\n  // configure hardware interface as S/PDIF slave\n  mostSetSyncSpdifMode( channel, 0 );\n  mostSetSyncSpdifLock( channel, 1 );\n\n  // set the clock source\n  mostSetClockSource( channel, 0 );\n}\n\n// synchronize the timing master clock to the S/PDIF input signal\non key 's'\n{\n  long channel = 1;\n\n  // configure hardware interface as S/PDIF slave\n  mostSetSyncSpdifMode( channel, 0 );\n\n  // set the clock source\n  mostSetClockSource( channel, 1 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

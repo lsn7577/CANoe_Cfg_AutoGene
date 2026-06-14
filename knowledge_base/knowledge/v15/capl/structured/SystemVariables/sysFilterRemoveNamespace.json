@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "sysFilterRemoveNamespace",
+  "category": "SystemVariables",
+  "title": "sysFilterRemoveNamespace",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SystemVariables/Functions/CAPLfunctionSysFilterRemoveNamespace.htm",
+  "syntax": [
+    "long sysFilterRemoveNamespace(char namespace[]); // form 1",
+    "long sysFilterRemoveNamespace(char namespace[], char filterName[]); // form 2"
+  ],
+  "description": [
+    "Removes a namespace from the variable filter. If no filterName is given, the namespace is removed from the default filter."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "The namespace to remove."
+    },
+    {
+      "name": "Note An empty filterName refers to the default filter and can be omitted completely.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long result;\n//remove a namespace from the default filter.\nresult = sysFilterRemoveNamespace(“myNamespace”);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.1",
+      "8.1",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔ (also standalone mode)",
+      "✔ (also standalone mode)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

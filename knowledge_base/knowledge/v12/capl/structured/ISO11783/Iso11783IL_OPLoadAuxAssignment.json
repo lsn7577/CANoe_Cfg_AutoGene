@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPLoadAuxAssignment",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPLoadAuxAssignment",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPLoadAuxAssignment.htm",
+  "syntax": [
+    "long Iso11783IL_OPLoadAuxAssignment( char filename[] ); // form 1"
+  ],
+  "description": [
+    "This function loads the Preferred Auxiliary Input Assignment from an INI file. If the ECU is active the Preferred Assignment Message is sent immediately. Otherwise it is sent if the ECU gets active.",
+    "The Preferred Assignment must be saved with Iso11783IL_OPSaveAuxAssignment before."
+  ],
+  "parameters": [
+    {
+      "name": "filename",
+      "type": "",
+      "description": "File name of an INI file"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPLoad( \"ObjectPool.iop\", \"pool001\"  );\nIso11783IL_OPLoadAuxAssignment( \"Sprayer.INI\");\nIso11783IL_OPActivate( );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

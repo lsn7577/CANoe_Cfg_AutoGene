@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "mostConfigureBusloadAsync",
+  "category": "MOST",
+  "title": "mostConfigureBusloadAsync",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTConfigureBusloadAsync.htm",
+  "syntax": [
+    "long mostConfigureBusloadAsync (long channel, long rate, long countertype, long counterpos, long destadr, long pktdatalen, BYTE pktdata[])"
+  ],
+  "description": [
+    "The function configures the bus load generator for the asynchronous channel. With the specified rate the generator tries to send packets.Due to arbitration delays, the bus load actually generated can deviate from the specified rate.",
+    "As an option, the packets can be supplied with a sequence counter.",
+    "Load generation can be started with the mostGenerateBusloadAsync() function.",
+    "Bus load can also be generated without CAPL programming using the MOST Stress Window."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected MOST hardware."
+    }
+  ],
+  "return": "<= 0: See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

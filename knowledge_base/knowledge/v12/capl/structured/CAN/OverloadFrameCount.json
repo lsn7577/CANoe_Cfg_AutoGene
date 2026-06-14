@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "OverloadFrameCount",
+  "category": "CAN",
+  "title": "OverloadFrameCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionOverloadFrameCount.htm",
+  "syntax": [
+    "long OverloadFrameCount ()",
+    "CANx.OverloadFrameCount"
+  ],
+  "description": [
+    "Returns the number of CAN overload frames on channel x since start of measurement.",
+    "Valid x values: 1 ... 32"
+  ],
+  "parameters": [],
+  "return": "Number of CAN overload frames on channel x since start of measurement.",
+  "example": {
+    "description": [],
+    "code": "write (\"Number of overload frames on CAN1 = %d\", CAN1.OverloadFrameCount);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

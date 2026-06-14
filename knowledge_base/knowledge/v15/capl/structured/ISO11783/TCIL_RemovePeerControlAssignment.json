@@ -1,0 +1,142 @@
+{
+  "page_type": "function",
+  "name": "TCIL_RemovePeerControlAssignment",
+  "category": "ISO11783",
+  "title": "TCIL_RemovePeerControlAssignment",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILRemovePeerControlAssignment.htm",
+  "syntax": [
+    "long TCIL_RemovePeerControlAssignment(dword ddi, dbNode user, dword elementNumberUser,) // form 1",
+    "long TCIL_RemovePeerControlAssignment(node tc, dword ddi, dbNode user, dword elementNumberUser) // form 2"
+  ],
+  "description": [
+    "The function separates a setpoint value user from the setpoint value source.",
+    "If the task status and the assignment is active the TC IL sends the unassignment messages to both the setpoint value user and the assigned setpoint value source."
+  ],
+  "parameters": [
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "This DDI of the setpoint value user that has to be separated from the setpoint value source."
+    },
+    {
+      "name": "user",
+      "type": "",
+      "description": "Peer control capable device which acts as a setpoint value user."
+    },
+    {
+      "name": "elementNumberUser",
+      "type": "",
+      "description": "The elementNumber of the setpoint value user that has to be separated from the setpoint value source."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example form 2"
+    ],
+    "code": "// Trigger the simulated node ‘TC’ to disconnect the assignment of\n// the setpoint value user with ddi=6 and elementNumber=2, belongs to the node ‘Bailer’,\n// to the previously assigned setpoint value source\nresult = TCIL_RemovePeerControlAssignment(TC, 6, Bailer, 2);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2204: TestStepFail(\"Node 'Bailer' is no client device!\"); break;\n  case -2207: TestStepFail(\"The process variables is not available\"); break;\n  default : TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP4",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP4"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 2 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

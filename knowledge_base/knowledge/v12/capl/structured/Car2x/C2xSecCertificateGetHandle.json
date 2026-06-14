@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSecCertificateGetHandle",
+  "category": "Car2x",
+  "title": "C2xSecCertificateGetHandle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSecCertificateGetHandle.htm",
+  "syntax": [
+    "long C2xSecCertificateGetHandle( char name[] );"
+  ],
+  "description": [
+    "Gets a certificate handle from a certificate listed in the Car2x Certificate Manager"
+  ],
+  "parameters": [
+    {
+      "name": "name",
+      "type": "",
+      "description": "Name of the certificate as it is given in the Car2x Certificate Manager."
+    }
+  ],
+  "return": "Handle of the certificate or 0 on failure",
+  "example": {
+    "description": [],
+    "code": "// assumes a certificate with name \"MyCert\" was added to the configuration in the Car2x Certificate Manager dialog\n\nlong certificateHandle;\ncertificateHandle = C2xSecCertificateGetHandle( \"MyCert\" );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestValidateTesterAction",
+  "category": "Test",
+  "title": "TestValidateTesterAction",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestValidateTesterAction.htm",
+  "syntax": [
+    "long TestValidateTesterAction(char[] actionText, char[] heading, char[] callback, DWORD timeout, long resultOnAbort, Signal callbackTrigger); //form 1"
+  ],
+  "description": [
+    "Creates a popup window with the given tester instruction. The window closes automatically when the needed condition is fulfilled or after user cancel. The condition is checked every time when the given trigger occurs. The check of the condition must be implemented in the given CAPL callback. The window contains a field for entering a comment which is automatically adopted into the test report.The result of the command is reported.",
+    "The function is not allowed in CANoe standalone mode. Errors are reported as error in test system or fail in case of 2-valued verdict concept.",
+    "Form 5 is used with the functions TestCreateTesterAction and TestAddTriggerTesterAction to create complex tester actions with multiple triggers."
+  ],
+  "parameters": [
+    {
+      "name": "actionText",
+      "type": "",
+      "description": "Tester instruction of the popup window."
+    }
+  ],
+  "return": "0: Timeout occurs.",
+  "example": {
+    "description": [],
+    "code": "int CallbackSignal()\n{\n  if(@sysVarEngineStarted == 1)\n    return 1;\n\n  return 0;\n}\n\ntestcase TCTesterAction()\n{\n  TestValidateTesterAction(\"This is the tester action text\", \"Tester action heading\", \"CallbackSignal\", 10000, 3, SigSigned16);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

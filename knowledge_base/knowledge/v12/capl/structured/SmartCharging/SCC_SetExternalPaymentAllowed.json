@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetExternalPaymentAllowed",
+  "category": "SmartCharging",
+  "title": "SCC_SetExternalPaymentAllowed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetExternalPaymentAllowed.htm",
+  "syntax": [
+    "long SCC_SetExternalPaymentAllowed ( dword Allowed )"
+  ],
+  "description": [
+    "Changes the available PaymentOptions to be sent in the ServiceDiscovery response message."
+  ],
+  "parameters": [
+    {
+      "name": "Allowed",
+      "type": "",
+      "description": "1 to allow the PaymentOption, 0 to disallow. The other option will automatically be activated if an option is disallowed."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

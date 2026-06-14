@@ -1,0 +1,18 @@
+# Compactify subobjects
+
+> Category: `DBC` | Subcategory: `windows` | Type: `concept`
+
+If the sub objects of have to be stored compact (check box Compact Storage is selected in the main object) this dialog appears.
+
+If you click button [Yes], all sub objects are deleted and a name section object is created. The names of the sub objects are shown in the attribute window of this object and can be restored if you deactivate the check box Compact Storage.
+
+Pressing [No] deletes all sub objects without creating other objects.
+
+Pressing [Cancel] will abort the creation of a compact storage. Your sub objects including their signals will be left unmodified.
+
+Caution!
+
+By creating a compact storage sub objects with their signals will be deleted. The signal definitions are not stored within the compact storage, so they cannot be re-created!
+
+| Caution! By creating a compact storage sub objects with their signals will be deleted. The signal definitions are not stored within the compact storage, so they cannot be re-created! |
+|---|

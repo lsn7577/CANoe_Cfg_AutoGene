@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostSetEcl, mostGetEcl",
+  "category": "MOST",
+  "title": "mostSetEcl, mostGetEcl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetGetEcl.htm",
+  "syntax": [
+    "long mostSetEcl(long channel, long eclState)"
+  ],
+  "description": [
+    "mostSetEcl switches the Electrical Control Line which can be used for wake-up and diagnosis purposes.",
+    "mostGetEcl returns the current state of the Electrical Control Line."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "mostSetEcl\nSee error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

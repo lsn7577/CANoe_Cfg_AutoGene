@@ -1,0 +1,96 @@
+# Output Level
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+This table shows the usage of the various output levels, level n+1 contains all outputs of level n:
+
+Output Level
+
+Output Message
+
+0
+
+only fatal CAPL function errors can be called up with coGetLastError
+
+1
+
+only CAPL function errors can be called up with coGetLastError
+
+2
+
+API error - internal problem
+
+3
+
+API error - resource problem
+
+CAN error - the send buffer is full
+
+Boot error - incorrect object value, required node not available
+
+4
+
+SDO error - protocol problem, e.g. time-out, invalid command
+
+LSS error - resource problem
+
+Boot error - resource problem or time-out
+
+5
+
+API error - error in mapping or CMT error
+
+SDO error - memory problem or non-supported access to the object dictionary
+
+LSS error - unknown command
+
+Boot error - internal problem (unexpected index, sub index, node-ID)
+
+6
+
+SDO error - general access error, resource problem
+
+Monitoring error - node monitoring failed
+
+7
+
+SDO error - specific access error
+
+Monitoring error - activation information, status problem, toggle problem
+
+8
+
+SDO error - error during still-outstanding transfer
+
+Monitoring error - guarding response of a node is missing
+
+LSS error - time-out
+
+9
+
+LSS error - another service is not yet ended
+
+10
+
+all errors (default value)
+
+CANopen Node Layer Functions | See Also
+
+| Output Level | Output Message |
+|---|---|
+| 0 | only fatal CAPL function errors can be called up with coGetLastError |
+| 1 | only CAPL function errors can be called up with coGetLastError |
+| 2 | API error - internal problem |
+| 3 | API error - resource problem CAN error - the send buffer is full Boot error - incorrect object value, required node not available |
+| 4 | SDO error - protocol problem, e.g. time-out, invalid command LSS error - resource problem Boot error - resource problem or time-out |
+| 5 | API error - error in mapping or CMT error SDO error - memory problem or non-supported access to the object dictionary LSS error - unknown command Boot error - internal problem (unexpected index, sub index, node-ID) |
+| 6 | SDO error - general access error, resource problem Monitoring error - node monitoring failed |
+| 7 | SDO error - specific access error Monitoring error - activation information, status problem, toggle problem |
+| 8 | SDO error - error during still-outstanding transfer Monitoring error - guarding response of a node is missing LSS error - time-out |
+| 9 | LSS error - another service is not yet ended |
+| 10 | all errors (default value) |
+
+| Version 15© Vector Informatik GmbH |
+|---|

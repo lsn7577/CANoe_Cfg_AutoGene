@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linInvertRespBit",
+  "category": "LIN",
+  "title": "linInvertRespBit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINInvertRespBit.htm",
+  "syntax": [
+    "dword linInvertRespBit (long frameID, dword byteIndex, dword bitIndex)"
+  ],
+  "description": [
+    "This function inverts the specified bit when the next bus event for the specified ID occurs, provided that the bus event contains the specified data byte."
+  ],
+  "parameters": [
+    {
+      "name": "frameID",
+      "type": "",
+      "description": "ID of the bus event to be manipulated."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "Invert response bits on keyboard event"
+    ],
+    "code": "on key 'i'\n{\n...\n// Invert first bit of byte field 8 for LIN frame \r\n with ID=0x33\nlinInvertRespBit(0x33, 7, 0);\n...\n// Invert bit 7 of checksum byte field for LIN frame \r\n with ID=0x33\nlinInvertRespBit(0x33, 8, 6);\n...\n// Invert stop bit of byte field 8 for LIN frame \r\n with ID=0x33\nlinInvertRespBit(0x33, 7, 8);\n...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

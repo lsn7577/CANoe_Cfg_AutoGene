@@ -1,0 +1,18 @@
+# linSlFSMSetState
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function No replacement. |  |  |  |  |
+|---|---|---|---|---|
+| Note This function does not have any effect in the event procedure on preStart. A Slave always starts in the 0 state. |  |  |  |  |
+| Function Syntax | void linSlFSMSetState(unsigned int slaveId, unsigned int stateId); |  |  |  |
+| Function | Switches the Slave with identifier slaveId to the state stateId. |  |  |  |
+| Parameters | slaveId Identifier of the relevant Slave. Corresponds to the slaveId, that was defined with linSlSimulate. |  |  |  |
+| stateId Identifier of the relevant state of the Finite State Machine (FSM). Lies in the range that was defined by linSlFSMSetGlobal. |  |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 3.1 - 5.1 | LIN | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

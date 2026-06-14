@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "A664TriggerFrame",
+  "category": "ADFX",
+  "title": "A664TriggerFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664TriggerFrame.htm",
+  "syntax": [
+    "long A664TriggerFrame (a664Frame aFrame, dword mode)"
+  ],
+  "description": [
+    "This function triggers the transmission of a single a664Frame \"aFrame\" either immediately or respecting the BAG. To forward an AFDX frame in the analysis branch, use the function output()."
+  ],
+  "parameters": [
+    {
+      "name": "aFrame",
+      "type": "",
+      "description": "the frame object to be scheduled"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "a664Message DEMOMSG_ALLTYPES myMsg = {msgChannel = 1};\na664Frame * myFrame;\nmyMsg.TxCycle = 100;\nmyMsg.VFG_OIL_TEMP_AB_32 = 33;\nmyMsg.FS_FDS_1_HSMU_DEMO_ALLTYPES = 3;\n\n// use myMsg as source to define a frame for manipulations\nmyFrame = myMsg;\nmyFrame.UdpDstPort = 3333;\t// change UDP destination port\na664TriggerFrame(myFrame, 1);  // transmit the frame respecting the BAG"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

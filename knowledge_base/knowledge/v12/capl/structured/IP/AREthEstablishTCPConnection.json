@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AREthEstablishTCPConnection",
+  "category": "IP",
+  "title": "AREthEstablishTCPConnection",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthEstablishTCPConnection.htm",
+  "syntax": [
+    "dword AREthEstablishTCPConnection (); // form 1"
+  ],
+  "description": [
+    "Establishes one or multiple database defined TCP connection(s).",
+    "A TCP connection can be closed using the AREthCloseEstablishedTCPConnection function."
+  ],
+  "parameters": [
+    {
+      "name": "aepHandle",
+      "type": "",
+      "description": "Source application endpoint, which initiates the connection(s).Has to be defined in the database."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  dword aep; // application Endpoint handle\n  dword tcp = 6;\n  dword clientIP; // numerical representation of client IP\n  dword clientPort = 40000; // TCP client port\n  dword serverIP; // numerical representation of server IP\n  dword serverPort = 50000; // TCP server port\n}\n\non start\n{\n  clientIP = ipGetAddressAsNumber(\"192.168.1.1\");\n  serverIP = ipGetAddressAsNumber(\"192.168.1.2\");\n  // handle has to have a valid database application endpoint description\n  aep = AREthOpenLocalApplicationEndpoint(tcp, clientPort, clientIP);\n}\n\non key 'o'\n{ \n  // opens connection to specific endpoint\n  if (AREthEstablishTCPConnection(aep, serverIP, serverPort) != 0)\n  {\n    write(\"connection not established\");\n  }\n}\n\non key 'c'\n{\n  // close all connections within node context\n  if (AREthCloseEstablishedTCPConnection () == 0)\n  {\n    write(\"connection(s) closed\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

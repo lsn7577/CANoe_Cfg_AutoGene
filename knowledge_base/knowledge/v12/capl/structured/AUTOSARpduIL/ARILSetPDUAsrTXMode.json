@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILSetPDUAsrTXMode",
+  "category": "AUTOSARpduIL",
+  "title": "ARILSetPDUAsrTXMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILSetPDUAsrTXMode.htm",
+  "syntax": [
+    "long ARILSetPDUAsrTXMode (dbMessage, long mode, long disturbanceCount, long flags);"
+  ],
+  "description": [
+    "Overrides the current valid transmission mode of the PDU. The transmission mode can be False or True. The current transmission mode is defined by or-ing the current data filter condition value of all signal values of the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

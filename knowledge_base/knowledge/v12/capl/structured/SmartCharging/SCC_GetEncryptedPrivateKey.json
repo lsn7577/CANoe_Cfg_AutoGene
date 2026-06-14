@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetEncryptedPrivateKey",
+  "category": "SmartCharging",
+  "title": "SCC_GetEncryptedPrivateKey",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetEncryptedPrivateKey.htm",
+  "syntax": [
+    "void SCC_GetEncryptedPrivateKey ( byte Key[], char IdAttr[] )"
+  ],
+  "description": [
+    "Gets the encrypted private key of the new contract certificate."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Gets the encrypted private key (48 byte) of the new contract certificate and its Id attribute (to the output buffers).",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

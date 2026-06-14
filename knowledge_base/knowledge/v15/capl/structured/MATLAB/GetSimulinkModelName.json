@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "GetSimulinkModelName",
+  "category": "MATLAB",
+  "title": "GetSimulinkModelName",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MATLAB/Functions/CAPLfunctionGetSimulinkModelName.htm",
+  "syntax": [
+    "long GetSimulinkModelName( char[] buffer, dword bufferSize);"
+  ],
+  "description": [
+    "Gets the name of the Simulink model."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "The name of the Simulink model will be written to this buffer."
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "The size of buffer in bytes."
+    }
+  ],
+  "return": "On success 0, otherwise a value unequal to zero.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  char buffer[30];\n  if (GetSimulinkModelName(buffer, 30) == 0)\n  {\n    write(“Simulink model: %s”, buffer);\n  }\n}"
+  },
+  "availability": [
+    "Availability"
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

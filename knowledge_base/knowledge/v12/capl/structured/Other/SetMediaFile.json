@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "SetMediaFile",
+  "category": "Other",
+  "title": "SetMediaFile",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetMediaFile.htm",
+  "syntax": [
+    "SetMediaFile(panel, control, mediafile);"
+  ],
+  "description": [
+    "Replaces the media file of the Panel Designer Media Player control during runtime.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Setting media file using absolute path.",
+      "Setting media file using relative path. The media file is in the Videos folder and this folder is parallel to the panel folder."
+    ],
+    "code": "on key 'x'\n{\nSetMediaFile(\"Movie\", \"Media Player\", \"D:\\\\Example\\\\MediaPlayerProject\\\\Videos\\\\song.mpg\");\n}\non key 'y'\n{\nSetMediaFile(\"Movie\", \"Media Player\", \"..\\\\Videos\\\\song.mpg\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

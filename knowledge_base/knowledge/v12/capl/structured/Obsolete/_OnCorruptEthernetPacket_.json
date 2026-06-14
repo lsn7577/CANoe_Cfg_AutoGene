@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "<OnCorruptEthernetPacket>",
+  "category": "Obsolete",
+  "title": "<OnCorruptEthernetPacket>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionOnCorruptEthernetPacket.htm",
+  "syntax": [
+    "void <OnCorruptEthernetPacket>( long channel, long errorCode, long packetLength );"
+  ],
+  "description": [
+    "This callback function is called when a corrupt Ethernet packet is received.",
+    "Within this callback function the following functions can be used to retrieve the received packet data:",
+    "The functions access the raw Ethernet data. Offset 0 starts at the beginning of the Ethernet header."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel number of the adapter that has been changed."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

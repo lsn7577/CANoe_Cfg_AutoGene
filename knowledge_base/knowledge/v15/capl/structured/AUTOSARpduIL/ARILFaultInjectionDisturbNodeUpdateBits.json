@@ -1,0 +1,213 @@
+{
+  "page_type": "function",
+  "name": "ARILFaultInjectionDisturbNodeUpdateBits",
+  "category": "AUTOSARpduIL",
+  "title": "ARILFaultInjectionDisturbNodeUpdateBits",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/AUTOSARpduIL/Functions/CAPLfunctionARILFaultInjectionDisturbNodeUpdateBits.htm",
+  "syntax": [
+    "long ARILFaultInjectionDisturbNodeUpdateBits (long flags, long disturbanceMode, long disturbanceCount, long disturbanceValue);"
+  ],
+  "description": [
+    "Disturbs the Update Bit of all signals and/or signal groups that are sent by the current node (see Update Bit)."
+  ],
+  "parameters": [
+    {
+      "name": "Mask",
+      "type": "Value",
+      "description": "Description"
+    },
+    {
+      "name": "0x3",
+      "type": "0",
+      "description": "Disturbs signal and signal group update bits of node."
+    },
+    {
+      "name": "0x3",
+      "type": "1",
+      "description": "Disturbs only signal update bits of node."
+    },
+    {
+      "name": "0x3",
+      "type": "2",
+      "description": "Disturbs only signal group update bits of node."
+    },
+    {
+      "name": "0x3",
+      "type": "3",
+      "description": "reserved"
+    },
+    {
+      "name": "0xFFFFFFFC",
+      "type": "all",
+      "description": "reserved"
+    },
+    {
+      "name": "Value",
+      "type": "Mode",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "Value",
+      "description": "Sets the update bit fix to the value of parameter disturbanceValue."
+    },
+    {
+      "name": "1",
+      "type": "Freeze",
+      "description": "Current signal value is used (disturbanceValue is not used)."
+    },
+    {
+      "name": "2",
+      "type": "Random",
+      "description": "Random value is used for setting and resetting the update bit (disturbanceValue is not used)."
+    },
+    {
+      "name": "3",
+      "type": "Opposite",
+      "description": "Signal value is set when update bit should be cleared and is cleared when update bit should be set."
+    },
+    {
+      "name": "4",
+      "type": "Random Set",
+      "description": "The update bit will randomly be not set but will always after transmission be cleared (disturbanceValue is not used)."
+    },
+    {
+      "name": "5",
+      "type": "Random Reset",
+      "description": "The update bit will always correctly be set but randomly not reset (disturbanceValue is not used)."
+    },
+    {
+      "name": "Value",
+      "type": "Repetition",
+      "description": "Description"
+    },
+    {
+      "name": "-1",
+      "type": "Infinite",
+      "description": "Disturbance is continuously applied."
+    },
+    {
+      "name": "0",
+      "type": "Stop",
+      "description": "An active disturbance is stopped and the CRC will be calculated again appropriately."
+    },
+    {
+      "name": "n > 0",
+      "type": "Count",
+      "description": "Do exactly n disturbances."
+    },
+    {
+      "name": "disturbanceValue",
+      "type": "",
+      "description": "According to the disturbance mode the CRC will optionally be set to this value."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "14",
+      "14",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN Ethernet FlexRay",
+      "CAN Ethernet FlexRay",
+      "CAN Ethernet FlexRay",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

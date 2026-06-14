@@ -1,0 +1,171 @@
+{
+  "page_type": "function",
+  "name": "mostSyncAlloc",
+  "category": "MOST",
+  "title": "mostSyncAlloc",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTSyncAlloc.htm",
+  "syntax": [
+    "long mostSyncAlloc(long numChannels);",
+    "Callback: void OnMostSyncAllocResult(long allocResult, long numChannels, long channels[]);"
+  ],
+  "description": [
+    "MOST25:",
+    "This function reserves synchronous bandwidth by sending an Alloc system message to the MOST TimingMaster.",
+    "The result is reported by means of the callback function OnMostSyncAllocResult(). This requires defining OnMostSyncAllocResult() in the CAPL program using the following signature: OnMostSyncAllocResult(long allocResult, long numChannels, long channels[])",
+    "MOST150:",
+    "Allocates synchronous bandwidth on MOST150.",
+    "Callback:",
+    "This function is called on completion of the allocation of channels triggered by the call of the function.",
+    "Whether the allocation was successful and if so, which channels were allocated, is indicated in the parameters described below."
+  ],
+  "parameters": [
+    {
+      "name": "numChannels",
+      "type": "",
+      "description": "The number of channels to be reserved: MOST25: 1 <= numChannels <= 8 MOST150: 1 <= numChannels <= MaxSyncBandwidth (depends on boundary settings - max. value: 372)"
+    },
+    {
+      "name": "kGrant = 0x01",
+      "type": "",
+      "description": "The channels were reserved"
+    },
+    {
+      "name": "kBusy = 0x02",
+      "type": "",
+      "description": "The channels were not reserved, because the TimingMaster is busy processing another request"
+    },
+    {
+      "name": "kDeny = 0x03",
+      "type": "",
+      "description": "The channels were not reserved, because there are no more channels available"
+    },
+    {
+      "name": "kWrong = 0x04",
+      "type": "",
+      "description": "The reservation request contains invalid parameters"
+    },
+    {
+      "name": "kUnknown = 0xFF",
+      "type": "",
+      "description": "Unspecified error (e.g. a timeout while waiting for the TimingMaster to respond)"
+    },
+    {
+      "name": "numChannels",
+      "type": "",
+      "description": "The number of reserved channels. (1 <= numChannels <= 8)."
+    },
+    {
+      "name": "channels[]",
+      "type": "",
+      "description": "The values contained in this parameter are valid for allocResult = 0x01 only. It passes numChannels channel numbers reserved via mostSyncAlloc(). The value in channels[0] designates the label used for administration of the reserved channels."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.0",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "MOST25 MOST150 After measurement start Not in Stopmeasurement",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

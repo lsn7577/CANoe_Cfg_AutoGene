@@ -1,0 +1,129 @@
+# Symbol Explorer
+
+> Category: `Panel` | Subcategory: `Windows` | Type: `concept`
+
+In the Symbol Explorer, you select the symbol you wish to assign via drag and drop to a control. In the database defined minimum/maximum values used for the value range (min/max) or for the alarm display of the control are taken over.
+
+Note
+
+If you assign a symbol to a control that have been already assigned a symbol, the minimum and maximum values and the alarm state settings defined in the database will only be taken over when the Shift key is pressed.
+
+The Symbol Explorer supports several options for accessing the same symbol. For example, you can select a symbol directly from the symbol or message list or find the corresponding symbol via a specific node.
+
+| Note If you assign a symbol to a control that have been already assigned a symbol, the minimum and maximum values and the alarm state settings defined in the database will only be taken over when the Shift key is pressed. |
+|---|
+
+## Selecting Symbols
+
+Use the toolbar to change the display of the tree view in the Symbol Explorer. Depending on the selection you make, either the available network symbols , variables , application layer objects (CO, DO) , diagnostic classes or diagnostic services will be displayed. With you can select for the diagnostic classes and services if the names (longname) or qualifiers (shortname) should be displayed. Select the desired symbol in the tree view and drag and drop to assign it to the desired window.Only those application layer objects are displayed that you switched to on or simulated in the CANoe System and Communication Setup or that you measure.
+
+With you can collapse the tree view.
+
+## Search Options
+
+You can search for a word or part of a word using the input field of the search . All existing texts in all columns are taken into account.
+
+The tree view will be filtered by matches during entry. The filtered matches are highlighted in color. The tree view does not contain any entries if no match is found in it. You can delete the search entry using . The tree view will be shown completely.
+
+The most recently used search terms can be selected again via a selection list.
+
+The wildcards * and ? are supported. The texts will be searched for character strings.
+
+## Partially Canceling the Search
+
+When you search for an element in the Symbol Explorer, only the matches (Phase on the image) will be shown in the tree view.
+
+If you would like to know which element is located Console_2 for example, you can use the context menu Suspend Search to partially cancel the search. That means all the sub-elements for Console_2 will now be displayed.
+
+If you have partially canceled a search, the search term will no longer be highlighted. The element from which the search was canceled is marked with the symbol.
+
+With the context menu Resume Search you can resume the partial search.
+
+You can cancel and resume the partial search for several subtrees.
+
+## Navigation Path
+
+Beneath the search area, the path to the currently selected element (Mirror_l2d on the image) is shown. This path is especially helpful for (vertically) very long lists, if the superordinate elements are not located in visible area.
+
+In the tree view, you can click on an element in the navigation path to navigate to this element.
+
+In the tree view, you can navigate to the sub-elements of the selected elements by clicking the arrows in the navigation path.On the image Console_1, Console_2, NM_Console and TP_Console are sub-elements of Tx Frames.
+
+All currently invisible elements of the path can be displayed by clicking on the double arrows.
+
+The navigation path may not be completely displayed due to the width of the Symbol Explorer.
+
+## Available Columns
+
+In the according selection dialog there are columns available for a more detailed description of each object. These columns can be enabled/disabled by a right mouse click in the column title. In the following menu you can enable/disable the desired columns. You may sort the selectable objects by double-clicking the column title.
+
+## Aggregations
+
+For simplified usage the following elements are merged to form aggregations:
+
+The following editors are available for selecting the elements to be included in an aggregation.
+
+## List Editor
+
+The List Editor can be used to select one or more elements. For networks and special arrays for selecting a point in time multiple elements can be selected.
+
+For selecting a single element, click with the mouse on the desired element.
+
+For selecting multiple elements, proceed as follows:
+
+Example for List Editors
+
+Network
+
+Array
+
+| Example for List Editors Network Array | Network | Array |
+|---|---|---|
+| Network | Array |  |
+
+| Network | Array |
+|---|---|
+
+## Combined Array Selection
+
+In addition to selecting individual or multiple arrays using the mouse button, you can also specify individual elements as text separated by a comma, specify several successive elements joined by a hyphen (e. g. 5-7), or you can use a combination of both options.
+
+Example
+
+| Example |
+|---|
+
+## Unspecified Array Selection
+
+For Some/IP there are arrays whose number of elements is unknown when elements are selected. For these arrays, you can only determine the index via a text field and not via multi-selection. The arrays may be multi-dimensional as well. In this case, you can specify individual dimensions separated by a comma.
+
+Example
+
+| Example |
+|---|
+
+## Dynamic Arrays
+
+For communication objects and distributed objects there are arrays whose number of elements can be dynamic. For these arrays, the length of the array is displayed as file in the tree view. This allows you to drag this property onto a panel and edit it.
+
+Example
+
+| Example |
+|---|
+
+## General
+
+For arrays, you can click on [Collapse Items]/[Expand Items] to collapse/expand the aggregated view.
+
+Aggregations can also be nested. This allows for selecting a comprehensive set of elements according to the individual needs.
+
+Example
+
+Drag and drop the selected elements:
+
+The following elements are moved when using drag and drop:
+
+Data Types of Assigned Symbols
+
+| Example Drag and drop the selected elements: The following elements are moved when using drag and drop: StructVars/ArrayOfArrayStructVar[0]/arrayOfStructs[0]/floatMember StructVars/ArrayOfArrayStructVar[0]/arrayOfStructs[0]/shortMember StructVars/ArrayOfArrayStructVar[0]/arrayOfStructs[1]/floatMember StructVars/ArrayOfArrayStructVar[0]/arrayOfStructs[1]/shortMember StructVars/ArrayOfArrayStructVar[1]/arrayOfStructs[0]/floatMember StructVars/ArrayOfArrayStructVar[1]/arrayOfStructs[0]/shortMember StructVars/ArrayOfArrayStructVar[1]/arrayOfStructs[1]/floatMember StructVars/ArrayOfArrayStructVar[1]/arrayOfStructs[1]/shortMember |
+|---|

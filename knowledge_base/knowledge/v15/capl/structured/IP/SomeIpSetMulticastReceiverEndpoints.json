@@ -1,0 +1,150 @@
+{
+  "page_type": "function",
+  "name": "SomeIpSetMulticastReceiverEndpoints",
+  "category": "IP",
+  "title": "SomeIpSetMulticastReceiverEndpoints",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpSetMulticastReceiverEndpoints.htm",
+  "syntax": [
+    "long SomeIpSetMulticastReceiverEndpoints(dword cevgHandle, dword multicastIPv4Address, dword udpPort); // form 1",
+    "long SomeIpSetMulticastReceiverEndpoints(dword cevgHandle, byte multicastIPv6Address[], dword udpPort); // form 2",
+    "long SomeIpSetMulticastReceiverEndpoints(dword cevgHandle, IP_Endpoint multicastIPEndpoint); // form 3"
+  ],
+  "description": [
+    "Sets the multicast endpoint that is used for the consumed event group to receive field/event notification per multicast."
+  ],
+  "parameters": [
+    {
+      "name": "cevgHandle",
+      "type": "",
+      "description": "Consumed event group handle (may be retrieved by SomeIpGetConsumedObjectHandle)"
+    },
+    {
+      "name": "multicastIPv4Address",
+      "type": "",
+      "description": "Multicast IPv4 address receiving the events/fields. In network byte order."
+    },
+    {
+      "name": "multicastIPv6Address",
+      "type": "",
+      "description": "Multicast IPv6 address receiving the events/fields."
+    },
+    {
+      "name": "udpPort",
+      "type": "",
+      "description": "An UDP port number receiving the events/fields. May be zero if the events/fields shall not be received by multicast anymore."
+    },
+    {
+      "name": "multicastIPEndpoint",
+      "type": "",
+      "description": "Object of type IP_Endpoint that contains the address/port of the multicast endpoint. An IP_Endpoint with port number zero may be passed to delete a previously set IP_Endpoint."
+    }
+  ],
+  "return": "Consumed event group",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3: form 1-2 12.0 SP2: form 3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3: form 1-2 4.0 SP2: form 3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

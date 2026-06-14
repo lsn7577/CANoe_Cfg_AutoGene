@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDOnStateChanged",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDOnStateChanged",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDOnStateChanged.htm",
+  "syntax": [
+    "void Iso11783IL_PDDOnStateChanged( dword state );"
+  ],
+  "description": [
+    "Is called up when the interaction layer changes its state."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": "task state:"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_PDDOnStateChanged( dword state )\n{\n  switch(state) {\n  case 0: // Uninitialized\n    break;\n  case 1: // Initialized\n    break;\n  case 2: // StartUpDelay\n    break;\n  case 3: // Wait For Task Controller \r\n Status\n    break;\n  case 4: // Query Info\n    break;\n  case 5: // Transfer Object Pool\n    break;\n  case 6: // Activate Object Pool\n    break;\n  case 7: // Online\n    break;\n  case 8: // Task active\n    break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

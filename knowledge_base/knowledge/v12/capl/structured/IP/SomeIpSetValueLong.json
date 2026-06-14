@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpSetValueLong",
+  "category": "IP",
+  "title": "SomeIpSetValueLong",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpSetValueLong.htm",
+  "syntax": [
+    "long SomeIpSetValueLong( dword objectHandle, char valuePath[], long value );"
+  ],
+  "description": [
+    "This function can be used to set a raw value in the object specified in the objectHandle parameter. The value is accessed in this case via symbolic access paths."
+  ],
+  "parameters": [
+    {
+      "name": "objectHandle",
+      "type": "",
+      "description": "Handle to a SOME/IP IL object, which must be completely described in the FIBEX database.The following objects are supported."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

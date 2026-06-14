@@ -1,0 +1,60 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMostNetState",
+  "category": "Test",
+  "title": "TestWaitForMostNetState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForMostNetState.htm",
+  "syntax": [
+    "long TestWaitForMostNetState(long aOldState, long aNewState, unsigned long aTimeout);"
+  ],
+  "description": [
+    "The function waits until the expiration of the time aTimeout for a transfer of the MOST NetState from the state aOldState into the state aNewState.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "MostNetState_Undefined"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "MostNetState_PowerOff"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "MostNetState_NetInterfaceInit"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "MostNetState_ConfigNotOk"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "MostNetState_ConfigOk"
+    },
+    {
+      "name": "-1",
+      "type": "",
+      "description": "Wildcard, any NetState state"
+    }
+  ],
+  "return": "-2: Resume based on Constraint Violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagStartAuth, diagStartAuthGeneric, _Diag_AuthResult",
+  "category": "Diagnostics",
+  "title": "diagStartAuth, diagStartAuthGeneric, _Diag_AuthResult",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctiondiagStartAuthGenericResult.htm",
+  "syntax": [
+    "long diagStartAuth(char ecuQualifier[], char jobQualifier[]); // form 1"
+  ],
+  "description": [
+    "Starts the diagnostics authentication process. The result is indicated to the callback function _Diag_AuthResult."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description."
+    }
+  ],
+  "return": "0 on success otherwise error code",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n  result = diagStartAuth(\"Ecu\", \"Developer\");\n  write(\"Start 'diagStartAuth' for %s with result = %ld\", gEcu, result);\n}\n\nvoid _Diag_AuthResult(long result)\n{\n  write(\"On '_Diag_AuthResult' for %s with result = %d\", gEcu, result);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

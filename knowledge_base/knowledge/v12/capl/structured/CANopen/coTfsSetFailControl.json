@@ -1,0 +1,32 @@
+{
+  "page_type": "function",
+  "name": "coTfsSetFailControl",
+  "category": "CANopen",
+  "title": "coTfsSetFailControl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSetFailControl.htm",
+  "syntax": [
+    "long coTfsSetFailControl( dword controlValue );"
+  ],
+  "description": [
+    "Determines the behavior of CANopen test feature set tests. The entries in the test report can be switched with this function, that is, a test that in the default setting 0 has passed also receives the note \"passed\" in the test protocol. Conversely, a failed test receives the note \"failed\".",
+    "The call of this function with the parameter 1 reverses the behavior. If the device should pass a test, failed is in the test report and vice-versa. This behavior can be used to create a negative test.",
+    "After measurement start, the setting 0 is always active.",
+    "The return value of the test functions themselves in the CAPL program is never changed, only the protocol is adjusted."
+  ],
+  "parameters": [
+    {
+      "name": "controlValue",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsSetFailControl (1); // invert report behavior\n\n// run some negative tests\n\ncoTfsSetFailControl (0); // switch back to normal behavior"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

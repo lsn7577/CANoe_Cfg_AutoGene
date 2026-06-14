@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "linSetWakeupTimings",
+  "category": "LIN",
+  "title": "linSetWakeupTimings",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINSetWakeupTimings.htm",
+  "syntax": [
+    "linSetWakeupTimings(long ttobrk, long wakeupSignalcount, dword widthInMicSec); // form 1",
+    "linSetWakeupTimings(long ttobrk, long wakeupSignalcount, dword widthInMicSec, char nodeName[]); // form 2"
+  ],
+  "description": [
+    "Configures wake-up timings. Wake-up timings can be configured per node for nodes defined in a LIN database."
+  ],
+  "parameters": [
+    {
+      "name": "ttobrk",
+      "type": "",
+      "description": "This parameter specifies the time difference between the transmissions of two consecutive Wakeup frames, i.e. the time between end of one wakeup frame and start of the next one. Units of this parameter as well as default value depend on the hardware settings (see Hardware Configuration: LIN). Value range (for units expected in bit times): 20..50000 Value range (for units expected in ms): 1..65536"
+    },
+    {
+      "name": "wakeupSignalCount",
+      "type": "",
+      "description": "Sets the number of Wakeup frame retransmissions. Value range: 1..255 Default value depends on the hardware settings (see Hardware Configuration: LIN)."
+    },
+    {
+      "name": "widthInMicSec",
+      "type": "",
+      "description": "This parameter sets the width of the wakeup frame to be sent in microseconds. The resolution is 50 µs. This parameter is only used by LIN2.0 slave nodes. Value range: 250..5000 µs Default value depends on the hardware settings (see Hardware Configuration: LIN)."
+    },
+    {
+      "name": "nodeName",
+      "type": "",
+      "description": "Name of a LIN node defined in the database."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "// Configures the wake up timings for the database node \"LINMaster\".\nlinSetWakeupTimings(150, 3, 250, “LINMaster”)\n\n// send a wakeup signal via a keyboard event within the CAPL programe of the node \n// \"LINMaster\". The configured timings will be used.\non key 'w'\n{\n  linWakeup();\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5",
+      "8.5",
+      "13.0",
+      "13.0",
+      "—",
+      "2.0"
+    ],
+    [
+      "Restricted To",
+      "LIN",
+      "LIN",
+      "LIN",
+      "LIN",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

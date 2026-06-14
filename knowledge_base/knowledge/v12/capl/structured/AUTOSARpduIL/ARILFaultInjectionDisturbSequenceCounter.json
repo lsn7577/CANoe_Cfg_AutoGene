@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ARILFaultInjectionDisturbSequenceCounter",
+  "category": "AUTOSARpduIL",
+  "title": "ARILFaultInjectionDisturbSequenceCounter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILFaultInjectionDisturbSequenceCounter.htm",
+  "syntax": [
+    "long ARILFaultInjectionDisturbSequenceCounter (dbMessage, long type, long disturbanceMode, long disturbanceCount, long disturbanceValue, long continueMode);"
+  ],
+  "description": [
+    "Disturbs the SQC or TGL of a PDU or signal group (see Supported Features).",
+    "The function without the parameter for the signal group will only disturb SQCs or TGLs that are not part of a signal group."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForFrPOCState",
+  "category": "Test",
+  "title": "TestWaitForFrPOCState",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForFrPOCState.htm",
+  "syntax": [
+    "long TestWaitForFrPOCState (dword aTimeout);",
+    "long TestWaitForFrPOCState (dword aPOCState, dword aTimeout);",
+    "long TestWaitForFrPOCState (dword aPOCState, dword aWUState, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of change of state on the FlexRay Communication Controller's protocol operation state machine. Should the change not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms] (Transmission of 0: no timeout controlling)"
+    },
+    {
+      "name": "aPOCState",
+      "type": "",
+      "description": "The POC state the function will wait for (see selector 'FR_POCState' in event procedure on FrPOCState). If set to '-1' in combination with a 'WUState' the function will wait only for a Wakeup state (any POC state will be accepted). Available from CANoe 7.2."
+    },
+    {
+      "name": "aWUState",
+      "type": "",
+      "description": "The Wakeup state the function will wait for (see selector 'FR_Info2' in event procedure on FrPOCState). Available from CANoe 7.2."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following test program waits for the occurrence of one of two different POC state events.",
+      "It is assumed that the test is executed at the cluster FlexRay A."
+    ],
+    "code": "variables\n{\n   dword gBusContextFr1;\n   long resTestWaitFor, resTestGetData, resTestJoin;\n   dword timeToWait  = 1000; // in ms\n   const int flexrayChannel = %CHANNEL%; // used by CAPL functions stimulating events\n}\nvoid InitBusContext ()\n{\n   gBusContextFr1 = getBusNameContext(\"FlexRay A\");\n   SetBusContext(gBusContextFr1);\n}\ntestcase WaitForJoinedFrPOCState_Any()\n{\n   FrPOCState frPOCStateData;\n   InitBusContext();\n   // join events\n   {\n      TestStepPass(\"Call TFS function\", \"TestJoinFrPOCState()\");\n      resTestJoin = TestJoinFrPOCState();\n      if (resTestJoin <= 0)\n      {\n         TestStepFail(\"Join event\", \"resTestJoin = %d, Failure on joining first multi-cycle event\", resTestJoin);\n         return;\n      }\n      else\n      {\n         TestStepPass(\"Join event\", \"Joining first multi-cycle event ok. Event number = %d\", resTestJoin);\n      }\n      TestStepPass(\"Call TFS function\", \"TestJoinFrPOCState()\");\n      resTestJoin = TestJoinFrPOCState();\n      if (resTestJoin <= 0)\n      {\n         TestStepFail(\"Join event\", \"resTestJoin = %d, Failure on joining second multi-cycle event\", resTestJoin);\n         return;\n      }\n      else\n      {\n         TestStepPass(\"Join event\", \"Joining second multi-cycle event ok. Event number = %d\", resTestJoin);\n      }\n   }\n   StimulatePOCEvent();\n   // wait for any event\n   TestStepPass(\"Call TFS function\", \"TestWaitForAnyJoinedEvent(timeout=%d)\", timeToWait);\n   resTestWaitFor = TestWaitForAnyJoinedEvent(timeToWait);\n   if (resTestWaitFor > 0) // Resume due to event occurred\n   {\n      TestStepPass(\"Wait condition\", \"Waiting for any joined event is ok. Resume event number = %d\", resTestWaitFor);\n      TestStepPass(\"Call TFS function\", \"TestGetWaitFrPOCStateData(index=%d, frPOCStateData)\", resTestWaitFor);\n      \n      // extract resume event's data\n      resTestGetData = TestGetWaitFrPOCStateData(resTestWaitFor, frPOCStateData);\n      if (0 != resTestGetData)\n      {\n         TestStepFail(\"Data extraction\", \"resTestGetData = %d, Data access to data of event %d could not be executed!\", resTestGetData, resTestWaitFor);\n      }\n      else\n      {\n         TestStepPass(\"Data extraction\", \"Data of event %d succefully extracted. StateCode=%d\", resTestWaitFor, frPOCStateData.FR_POCState);\n      }\n   }\n   else\n   {\n      TestStepFail(\"Wait condition\", \"resTestWaitFor = %d, Waiting for any joined event failed!\", resTestWaitFor);\n   }\n}\nvoid StimulatePOCEvent ()\n{\n  ResetFlexRayCC(flexrayChannel); // stimulate one POC event\n  TestStepPass(\"Event stimulation\", \"POC event(s) stimulated with ResetFlexRayCC(channel=%d)\", flexrayChannel);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.0 SP4 7.2: extended",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "linDeactivateSlot",
+  "category": "LIN",
+  "title": "linDeactivateSlot",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINDeactivateSlot.htm",
+  "syntax": [
+    "long linDeactivateSlot(dword tableIndex, dword slotIndex);"
+  ],
+  "description": [
+    "This function deactivates the specified slot of schedule table. For example, it can be used to turn slots off in a diagnostic table.",
+    "By calling this function in the event procedure on preStart, it is possible to configure initial state of schedule table."
+  ],
+  "parameters": [
+    {
+      "name": "tableIndex",
+      "type": "",
+      "description": "Index of the schedule table to be configured. Value range: 0..N-1, where N is a total number of defined schedule tables"
+    },
+    {
+      "name": "slotIndex",
+      "type": "",
+      "description": "Index of slot to be deactivated within the specified schedule table. Value range: 0..Y-1, where Y is a total number of slots in the specified schedule table"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.1",
+      "5.1",
+      "13.0",
+      "13.0",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "LIN",
+      "LIN",
+      "LIN",
+      "LIN",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

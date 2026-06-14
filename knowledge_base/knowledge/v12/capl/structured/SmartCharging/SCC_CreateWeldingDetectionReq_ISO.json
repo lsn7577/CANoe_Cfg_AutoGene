@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateWeldingDetectionReq_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateWeldingDetectionReq_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateWeldingDetectionReq_Iso.htm",
+  "syntax": [
+    "long SCC_CreateWeldingDetectionReq_ISO ( byte SessionID[], byte StatusFlags[], char ErrorCode[] )"
+  ],
+  "description": [
+    "Creates a Welding Detection Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

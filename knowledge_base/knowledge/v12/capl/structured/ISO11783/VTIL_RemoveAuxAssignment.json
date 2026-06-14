@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "VTIL_RemoveAuxAssignment",
+  "category": "ISO11783",
+  "title": "VTIL_RemoveAuxAssignment",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILRemoveAuxAssignment.htm",
+  "syntax": [
+    "long VTIL_RemoveAuxAssignment(dbNode auxiliaryFunctionWSM, word auxiliaryFunctionId); // form 1"
+  ],
+  "description": [
+    "Removes an auxiliary assignment. As a result the Auxiliary Assignment Type 2 command is sent to the Auxiliary Function Working Set Master. If there are no assignments for the Auxiliary Input an Auxiliary Input Status Type 2 Enable command (Disable) is sent to the Auxiliary Input Working Set Master.",
+    "If the participants are using VT Version 0, 1 or 2 only an Auxiliary Assignment Type 1 command is sent to the Auxiliary Input."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_RemoveAuxAssignment (VT, Loader, 1001);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2109: TestStepFail(\"The Working Set is not available!\"); break;\n  case -2118: TestStepFail(\"Object is not Auxiliary Function!\"); break;\n  case -2119: TestStepFail(\"The assignment failed!\"); break;\n  default: TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

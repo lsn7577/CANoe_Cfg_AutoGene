@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "EthGetTokenInt64",
+  "category": "Obsolete",
+  "title": "EthGetTokenInt64",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetTokenInt64.htm",
+  "syntax": [
+    "int64 EthGetTokenInt64( long packet, char protocolDesignator[], char tokenDesignator[] ); // form 1"
+  ],
+  "description": [
+    "The function requests the integer value of a token.",
+    "Form 2 with byte offset returns a part of the token data as integer."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "integer value of the token or 0\nWith EthGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  EthReceivePacket( \"OnEthPacket\" );\n}\nvoid OnEthPacket( LONG channel, LONG dir, LONG packetHandle )\n{\n  INT64 destPort;\n  CHAR error[100];\n\n  // get destination port of the received packet\n  destPort = EthGetTokenInt64( packetHandle, \"udp\", \"destination\" );\n\n  if (EthGetLastError() == 0)\n  {\n    // do something with destPort\n  }\n  else\n  {\n    EthGetLastErrorText( elCount(error), error );\n    write(\"Error: %s\", error );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

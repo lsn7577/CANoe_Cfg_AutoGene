@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_min",
+  "category": "Other",
+  "title": "_min",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMin.htm",
+  "syntax": [
+    "long _min(long x, long y); // form 1"
+  ],
+  "description": [
+    "Returns the minimum of the parameters."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "First operand"
+    }
+  ],
+  "return": "y < x ? y : x",
+  "example": {
+    "description": [],
+    "code": "float result;\nresult = _min(1.0, _min(-3.0, 5.2)); // result == -3.0"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

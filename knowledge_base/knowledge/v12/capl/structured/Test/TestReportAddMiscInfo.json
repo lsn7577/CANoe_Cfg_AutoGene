@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestReportAddMiscInfo",
+  "category": "Test",
+  "title": "TestReportAddMiscInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestReportAddMiscInfo.htm",
+  "syntax": [
+    "TestReportAddMiscInfo (char name[], char description[], ...);"
+  ],
+  "description": [
+    "With these functions, information pairs of name and description (e.g. \"parameter value V0\" and \"3.7 V\") can be taken up into an additional information area in the report. The additional information area must be created previously with TestReportAddMiscInfoBlock. If this function is used and there is no corresponding information area, then a warning will be generated in the Write Window and a new information area will be created automatically. In this information area, any number of information pairs can be written with this function."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

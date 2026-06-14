@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IP_Address::PrintAddressToString",
+  "category": "IP",
+  "title": "IP_Address::PrintAddressToString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionPrintAddressToString.htm",
+  "syntax": [
+    "long IP_Address::PrintAddressToString(char ipAddr[]);"
+  ],
+  "description": [
+    "Converts the IP address to a character string."
+  ],
+  "parameters": [
+    {
+      "name": "ipAddr",
+      "type": "",
+      "description": "String buffer where the string representing an IPv4 or IPv6 address is printed to."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Address 192.168.1.1 addr;\n  char addrStr[20];\n  if (addr.PrintAddressToString( addrStr ) == 0)\n  {\n    write( \"Address is %s\", addrStr );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

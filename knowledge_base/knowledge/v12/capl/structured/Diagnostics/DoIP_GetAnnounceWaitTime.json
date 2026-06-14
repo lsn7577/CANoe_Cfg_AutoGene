@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetAnnounceWaitTime",
+  "category": "Diagnostics",
+  "title": "DoIP_GetAnnounceWaitTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetAnnounceWaitTime.htm",
+  "syntax": [
+    "dword DoIP_GetAnnounceWaitTime();"
+  ],
+  "description": [
+    "Gets the delay before the sending of Vehicle Announcement Messages starts in a vehicle simulation (in milliseconds)."
+  ],
+  "parameters": [],
+  "return": "The delay before the sending of vehicle announcement messages starts in a vehicle simulation (configured in the DoIP.INI or via DoIP_ConfigureVehicleAnnouncement).",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

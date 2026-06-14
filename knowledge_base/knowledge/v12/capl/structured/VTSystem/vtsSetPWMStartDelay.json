@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "vtsSetPWMStartDelay",
+  "category": "VTSystem",
+  "title": "vtsSetPWMStartDelay",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetPWMStartDelay.htm",
+  "syntax": [
+    "long vtsSetPWMStartDelay (char Target[], double StartDelay);"
+  ],
+  "description": [
+    "Specifies a delay for the start of a curve stimulation or PWM stimulation. This function is supported by the modules VT2004 and VT2848."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "In the following example the PWM output of two VT2004 channels is simulating two sensors with PWM output. The SetPWMStartDelay command ensures that the PWM output on channel Sensor2 is starting 2ms later to produce the corresponding phase shift."
+    ],
+    "code": "// Set up PWM stimulation for sensor 1\n\n// Set voltage stimulation mode\nvtsSetStimulationMode( \"VTS::Sensor1\", 1);\n// Set curve type PWM\nvtsSetCurveType(\"VTS::Sensor1\", 1);\n// Set the low voltage of the PWM signal to 10V\nvtsSetPWMVoltageLow(\"VTS::Sensor1\", 10);\n// Set the high voltage of the PWM signal to 14V\nvtsSetPWMVoltageHigh(\"VTS::Sensor1\", 14);\n// Set duty cycle to 40%\n@sysvar::VTS::Sensor1::PWMDC = 40;\n// Set frequency to 100Hz\n@sysvar::VTS::Sensor1::PWMFreq = 100;\n\n// Set up PWM stimulation for sensor 2\n\n// Set voltage stimulation mode\nvtsSetStimulationMode(\"VTS::Sensor2\", 1);\n// Set curve type PWM\nvtsSetCurveType(\"VTS::Sensor2\", 1);\n// Set the low voltage of the PWM signal to 10V\nvtsSetPWMVoltageLow(\"VTS::Sensor2\", 10);\n// Set the high voltage of the PWM signal to 14V\nvtsSetPWMVoltageHigh(\"VTS::Sensor2\", 14);\n// Set duty cycle to 40%\n@sysvar::VTS::Sensor2::PWMDC = 40;\n// Set frequency to 100Hz\n@sysvar::VTS::Sensor2::PWMFreq = 100;\n\n// set a start delay of 2ms for Sensor2\n// -> PWM signals have a slight phase shift\nvtsSetPWMStartDelay(\"VTS::Sensor2\",  0.002);\n\n// Start stimulation\nvtsStartStimulation(\"VTS::Sensor1\");\nvtsStartStimulation(\"VTS::Sensor2\");\n  <testgroup title=\"PWMStartDelay\">\n  <testcase title=\"PWM measurement example\" ident=\"\">\n    <vtsystem_configure title=\"Set PWM parameters for Sensor 1\">\n      <stimulation_mode channel=\"Sensor1\" mode=\"voltage\"/>\n      <curve_type channel=\"Sensor1\" type=\"pwm\"/>\n      <pwm_voltage_low channel=\"Sensor1\">10</pwm_voltage_low>\n      <pwm_voltage_high channel=\"Sensor1\">14</pwm_voltage_high>\n    </vtsystem_configure>\n    <initialize title=\"Set Frequency and Duty Cycle for Sensor 1\" wait=\"5\">\n      <sysvar name=\"PWMFreq\" namespace=\"VTS::Sensor1\">100</sysvar>\n      <sysvar name=\"PWMDC\" namespace=\"VTS::Sensor1\">40</sysvar>\n    </initialize>\n    <vtsystem_configure title=\"Set PWM parameters for Sensor 2\">\n      <stimulation_mode channel=\"Sensor2\" mode=\"voltage\"/>\n      <curve_type channel=\"Sensor2\" type=\"pwm\"/>\n      <pwm_voltage_low channel=\"Sensor2\">10</pwm_voltage_low>\n      <pwm_voltage_high channel=\"Sensor2\">14</pwm_voltage_high>\n    </vtsystem_configure>\n    <initialize title=\"Set Frequency and Duty Cycle for Sensor 2\" wait=\"5\">\n      <sysvar name=\"PWMFreq\" namespace=\"VTS::Sensor2\">100</sysvar>\n      <sysvar name=\"PWMDC\" namespace=\"VTS::Sensor2\">40</sysvar>\n    </initialize>\n    <vtsystem_configure title=\"Start Stimulation\">\n      <start_stimulation channel=\"Sensor1\"/>\n      <start_stimulation channel=\"Sensor2\" start_delay=\"0.002\"/>\n    </vtsystem_configure>\n  </testcase>\n</testgroup>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

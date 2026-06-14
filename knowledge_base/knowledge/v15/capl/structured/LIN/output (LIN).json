@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "output (LIN)",
+  "category": "LIN",
+  "title": "output (LIN)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINOutput.htm",
+  "syntax": [
+    "void output(linFrame msg);"
+  ],
+  "description": [
+    "This function can be used for two purposes:"
+  ],
+  "parameters": [
+    {
+      "name": "Msgext",
+      "type": "",
+      "description": "Variable of type linFrame. List of available selectors for this type of objects can be found under linFrame selectors."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "linFrame MotorControl frameMotorControl;\n...\n// Reconfigure response of the frame defined in database \r\n   linFrame MotorControl frameMotorControl;\nframeMotorControl.RTR = 0;\nframeMotorControl.byte(0)=0xDF;\nframeMotorControl.byte(1)=0x20;\noutput(frameMotorControl);\n...\n// Send the frame header\nframeMotorControl.RTR = 1;\noutput(frameMotorControl);\n...\n// Function to set response on channel 2 for any frame.\n// The specified frame might not be defined in database.\nvoid SetFrameResponse(byte frameID, byte frameSize)\n{\nint index;\nlinFrame 0x0 frame = {msgChannel=2}; // define frame object on channel 2\n// Setting frame size in run-time possible only with this function\nlinChangeDLC(frameID, frameSize);\nframe.ID = frameID;           // set specified frame ID\n// initialize data byte fields\nfor (index=0; index < frameSize; ++index)\n{\nframe.byte(index) = 0xFF;\n}\n// issue request to update the configured response\nframe.RTR = 0;\noutput(frame);\nlinSetRespCounter(frameID, -1); // enable unlimited number of responses\n}\n...\n// Configuring a message in on preStart when \r\n working without database.\nlinFrame 0x20 aLinMsg;\noutput(aLinMsg);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "3.2",
+      "3.2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "LIN",
+      "LIN",
+      "LIN",
+      "—",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

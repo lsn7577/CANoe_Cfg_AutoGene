@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestFRILEnableTimingCyclic",
+  "category": "Test",
+  "title": "TestFRILEnableTimingCyclic",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestFRILEnableTimingCyclic.htm",
+  "syntax": [
+    "long TestFRILEnableTimingCyclic(char pduName[], int enable);"
+  ],
+  "description": [
+    "Controls the cyclic timing of PDUs. The cyclic timing can be enabled/ disabled.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aPDUName",
+      "type": "",
+      "description": "Name of the PDU that should be modified."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": "int enable;\n.....\nIf( stopCyclicSending == 1 )\n{\n   enable = 0;\n}\nelse\n{\n   enable = 1;\n}\nTestFRILEnableTimingCyclic(pduXY, enable);\n....."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

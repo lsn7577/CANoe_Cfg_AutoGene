@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnScenarioStateChanged",
+  "category": "Car2x",
+  "title": "OnScenarioStateChanged",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Callbacks/CAPLfunctionC2xOnScenarioStateChanged.htm",
+  "syntax": [
+    "void OnScenarioStateChanged(long newState);"
+  ],
+  "description": [
+    "This callback function is called when the state of the scenario was changed in Scenario Manager Window or by calling Scenario API CAPL functions."
+  ],
+  "parameters": [
+    {
+      "name": "newState",
+      "type": "",
+      "description": "Actual state of the scenario"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnScenarioStateChanged(long newState)\n{\n  write (\"New state %d\", newState);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

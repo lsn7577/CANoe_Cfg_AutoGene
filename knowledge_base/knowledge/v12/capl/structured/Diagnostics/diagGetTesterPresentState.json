@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "diagGetTesterPresentState",
+  "category": "Diagnostics",
+  "title": "diagGetTesterPresentState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetTesterPresentState.htm",
+  "syntax": [
+    "diagGetTesterPresentState(char ecuQualifier[])"
+  ],
+  "description": [
+    "Returns the state of autonomous/cyclical Tester Present requests from CANoe to the specified or current ECU.",
+    "This function only returns the correct state if in the calling CAPL node no CAPL Callback interface for diagnostics is used.",
+    "Status:",
+    "0: sending Tester Present disabled for target ECU1: sending Tester Present enabled for target ECU"
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU as specified in the diagnostic configuration dialog, for which the Tester Present state shall be queried."
+    }
+  ],
+  "return": "Error code or status",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,40 @@
+# diagGetSuppressResp, diagSetSuppressResp
+
+> Category: `Diagnostics` | Type: `function`
+
+## Syntax
+
+```c
+long diagSetSuppressResp (diagRequest req, long flag); // form 1
+long diagGetSuppressResp (diagRequest req); // form 2
+```
+
+## Description
+
+Under UDS (Unified Diagnostics Services), in certain requests it is possible to set the "suppressPosRspMsgIndicationBit" ("suppress positive response message indication bit"). This means that the receiver must not send any positive response. These two functions make it possible to poll and set this bit.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| req | Request |
+| flag | 0: Clear, else: Set |
+
+## Return Values
+
+Error code or value of the parameter.
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | 7.5 SP2: form 1 9.0: form 2 | 5.1: form 1 7.0 SP5: method form 1 9.0: form 2 | — | — | — | 1.0 |
+| Restricted To | Online mode | Online mode | — | — | — | Online mode |
+| CANalyzer Measurement Setup (Transmit Branch) | ✔ | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | ✔ (since 9.0) | ✔ (since 9.0) | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | ✔ | ✔ | — | N/A | — | N/A |
+| 64-Bit | ✔ | ✔ | — | — | — | N/A |

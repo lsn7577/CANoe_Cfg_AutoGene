@@ -1,0 +1,21 @@
+# linSendWakeup
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function Replaced by linWakeup and linSetWakeupTimings |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long linSendWakeup() |  |  |  |
+| long linSendWakeup(long ttobrk, long count) |  |  |  |  |
+| long linSendWakeup(long ttobrk, long count, dword length) |  |  |  |  |
+| Function | This command is used to send Wakeup frames. Wakeup frames can only be sent while the LIN hardware is in Sleep mode. If no parameters are given, the default values of the parameters are used. Note When LIN hardware is not in Sleep mode calling this function will have no effect. | Note When LIN hardware is not in Sleep mode calling this function will have no effect. |  |  |
+| Note When LIN hardware is not in Sleep mode calling this function will have no effect. |  |  |  |  |
+| Parameters | ttobrk This parameter specifies the time difference between the transmissions of two consecutive Wakeup frames, i.e. the time between end of one wake-up frame and start of the next one. Units of this parameter as well as default value depend on the hardware settings (see Hardware Configuration: LIN). Value range (for units expected in bit times): 20 .. 50000 Value range (for units expected in ms): 1 .. 65536 |  |  |  |
+| count Sets the number of Wakeup frame retransmissions. Value range: 1…255 Default value depends on the hardware settings: see Hardware Configuration: LIN |  |  |  |  |
+| length This parameter sets the length of the wake-up frame to be sent in microseconds. The resolution is 50 µs. This parameter is only used by LIN2.x slave nodes. Value range: 250...5000 µs Default value depends on the hardware settings: see Hardware Configuration: LIN |  |  |  |  |
+| Return Values | On success, a value unequal to zero, otherwise zero. |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 8.2 SP4 | LIN | — | • |  |
+| Example Send wake-up frame on keyboard event on key 'w'{linSendWakeup(); }or// simulate LIN 2.0 “slow” Master...// configure LIN hardware to wake-up after 3 wake-up frames and to send first header// 100 ms after wake-up linSetWakeupParams(100, 3);// send wake-up frame 3 times with 150 ms delay between 2 consecutive frameslinSendWakeup(150, 3);... |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::SetData",
+  "category": "IP",
+  "title": "ethernetPacket::SetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionSetData.htm",
+  "syntax": [
+    "word ethernetPacket.SetData(word offset, char source[], word length); // form 1"
+  ],
+  "description": [
+    "Copies bytes from a char array, byte array, CAPL struct or system variable struct to the data of an Ethernet packet."
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Byte offset of the data in the ethernetPacket. Offset 0 is the byte directly after the Ethertype."
+    }
+  ],
+  "return": "Number of bytes copied to the ethernetPacket.",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  _align(1) struct MyMsgLayout\n  {\n    word  valueA;\n    dword valueB;\n  };\n\n  ethernetPacket pkt;\n  struct MyMsgLayout myData;\n\n  myData.valueA = 1;\n  myData.valueB = 2;\n\n  pkt.source      = ethGetMacAddressAsNumber( \"20:00:00:00:00:01\" );\n  pkt.destination = ethGetMacAddressAsNumber( \"FF:FF:FF:FF:FF:FF\" );\n  pkt.type        = 0xF123; // proprietary Ethertype\n  pkt.Length      = __size_of(struct MyMsgLayout);\n  pkt.SetData( 0, myData );\n\n  output( pkt );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

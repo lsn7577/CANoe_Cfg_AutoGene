@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "HILAPIGetSignalGeneratorElapsedTime",
+  "category": "Test",
+  "title": "HILAPIGetSignalGeneratorElapsedTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionHILAPIGetSignalGeneratorElapsedTime.htm",
+  "syntax": [
+    "double HILAPIGetSignalGeneratorElaspedTime(dword handle);"
+  ],
+  "description": [
+    "Returns the elapsed time of a Signal Generator."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "The handle of the Signal Generator."
+    }
+  ],
+  "return": "0: The handle of the Signal Generator is not valid. Note: If the Signal Generator has not been started at the time of this call 0 is returned as well.",
+  "example": {
+    "description": [
+      "Gets the elapsed time of the Signal Generator:"
+    ],
+    "code": "double time;\ntime = HILAPIGetSignalGeneratorElaspedTime(hGenerator);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

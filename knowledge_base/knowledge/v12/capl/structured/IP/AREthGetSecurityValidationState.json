@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthGetSecurityValidationState",
+  "category": "IP",
+  "title": "AREthGetSecurityValidationState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthGetSecurityValidationState.htm",
+  "syntax": [
+    "long AREthGetSecurityValidationState ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the Security-Validation-State of a received SOME/IP message."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of a received SOME/IP message (e.g. see OnAREthMessage)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

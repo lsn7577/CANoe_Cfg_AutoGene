@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ResetAllManipulatedMessages",
+  "category": "ISO11783",
+  "title": "VTIL_ResetAllManipulatedMessages",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILResetAllManipulatedMessages.htm",
+  "syntax": [
+    "long VTIL_ResetAllManipulatedMessages(); // form 1"
+  ],
+  "description": [
+    "Resets the changes of all VTIL_ManipulateMessage calls."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "0: Manipulation of all messages has been stopped successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

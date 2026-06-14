@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPSetStringValue",
+  "category": "ISO11783",
+  "title": "Iso11783OPSetStringValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPSetStringValue.htm",
+  "syntax": [
+    "long Iso11783OPSetStringValue( dword ecuHandle, dword objectID, char stringValue[] );"
+  ],
+  "description": [
+    "The functions set the string value of an object in the object pool. The object must exist in the object pool and must support a string value. If the Object Pool API is active, a Change String Value command is sent to the Virtual Terminal. This can be suppressed with Bit 0 in options."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPSetStringValue( handle, 1000, “Hello World” );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

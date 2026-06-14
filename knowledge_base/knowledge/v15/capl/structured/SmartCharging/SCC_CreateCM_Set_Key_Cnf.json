@@ -1,0 +1,173 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_Set_Key_Cnf",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_Set_Key_Cnf",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_Set_Key_Cnf.htm",
+  "syntax": [
+    "void SCC_CreateCM_Set_Key_Cnf ( byte SourceMac[], byte TargetMac[], dword Result )"
+  ],
+  "description": [
+    "Creates a CM_Set_Key.Cnf message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SourceMac",
+      "type": "",
+      "description": "Source address of the Ethernet frame."
+    },
+    {
+      "name": "TargetMac",
+      "type": "",
+      "description": "Destination address of the Ethernet frame."
+    },
+    {
+      "name": "Result",
+      "type": "",
+      "description": "Result code: 0x00 = success 0x01 = failure 0x02-0xFF = reserved"
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "MyNonce byte[] 4 byte random number."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "YourNonce byte[] Last received nonce (4 byte)."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "PID dword Protocol ID."
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "PRN byte[] Protocol Run Number (2 byte)."
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "PMN dword Protocol Message Number."
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "CCoCapability dword STA’s CCo Capability."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

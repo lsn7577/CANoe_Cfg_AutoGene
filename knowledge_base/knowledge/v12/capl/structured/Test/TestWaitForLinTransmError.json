@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForLinTransmError",
+  "category": "Test",
+  "title": "TestWaitForLinTransmError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForLinTransmError.htm",
+  "syntax": [
+    "long TestWaitForLinTransmError (dword aFrameId, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of LIN Transmission Error event. Should the event not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aFrameId",
+      "type": "",
+      "description": "Numeric ID of a frame whose Transmission Error should be awaited."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linNoResponseEvent ()\n{\n   linTransmError linTransmErrorData;\n\n   if (testWaitForLinTransmError(5000) == 1)\n   {\n      if (testGetWaitLinTransmErrData(linTransmErrorData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN No-Response event occurred for FrameId=0x%X\", linTransmErrorData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

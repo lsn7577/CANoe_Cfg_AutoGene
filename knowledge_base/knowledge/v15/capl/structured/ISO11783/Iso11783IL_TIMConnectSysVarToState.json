@@ -1,0 +1,149 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMConnectSysVarToState",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMConnectSysVarToState",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimConnectSysVarToState.htm",
+  "syntax": [
+    "long Iso11783IL_TIMConnectSysVarToState(dbNode counterpart, char[] sysVarNameWithPath); // form 1",
+    "long Iso11783IL_TIMConnectSysVarToState(byte counterpartAddress, char[] sysVarNameWithPath); // form 2",
+    "long Iso11783IL_TIMConnectSysVarToState(dbNode participant, dbNode counterpart, char[] sysVarNameWithPath); // form 3",
+    "long Iso11783IL_TIMConnectSysVarToState(dbNode participant, byte counterpartAddress, char[] sysVarNameWithPath); // form 4"
+  ],
+  "description": [
+    "Connects the state of a TIM client/server connection to a system variable.",
+    "You find the possible states in the tables of Client States (TIM Component - ISO11783) or Server States (TIM Component - ISO11783).",
+    "By means of the function you can wait for a specific state (e.g. using TestWaitForSignalMatch) and with Iso11783IL_TIMFreezeConnection you can stay in this state.",
+    "To release connection between the system variable and a state, just call the same method again, but with the empty string instead of the name of system variable."
+  ],
+  "parameters": [
+    {
+      "name": "counterpart",
+      "type": "",
+      "description": "TIM counterpart of the client/server connection."
+    },
+    {
+      "name": "counterpartAddress",
+      "type": "",
+      "description": "Address of the TIM counterpart of the client/server connection. Value range: 0..253"
+    },
+    {
+      "name": "sysVarNameWithPath",
+      "type": "",
+      "description": "Name of the system variable, all name spaces inclusive."
+    },
+    {
+      "name": "participant",
+      "type": "",
+      "description": "TIM participant (TIM server or TIM client)."
+    }
+  ],
+  "return": "TIM",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_TIMConnectSysVarToState(TIMClient, \"sysvarTIMClientState\"); \r"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0: form 1, 3 11.0 SP2: form 2, 4",
+      "13.0",
+      "—",
+      "—",
+      "3.0: form 2 3.0 SP2: form 4"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "form 3, 4 ISO11783"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1, 2)",
+      "✔ (form 1, 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 3, 4)",
+      "✔ (form 3, 4)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 3, 4)",
+      "✔ (form 3, 4)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

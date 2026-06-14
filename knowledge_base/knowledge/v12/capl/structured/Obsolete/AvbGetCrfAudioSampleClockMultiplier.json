@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AvbGetCrfAudioSampleClockMultiplier",
+  "category": "Obsolete",
+  "title": "AvbGetCrfAudioSampleClockMultiplier",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionAvbGetCrfAudioSampleClockMultiplier.htm",
+  "syntax": [
+    "dword AvbGetCrfAudioSampleClockMultiplier(dword listenerOrTalkerHandle, dword& retClockMultiplier);"
+  ],
+  "description": [
+    "The function retrieves the audio sample clock multiplier of the CRF stream received by the Listener or originated by the Talker.",
+    "The nominal frequency of the audio sample clock is the clock frequency (see AvbGetCrfAudioSampleClockFrequency) multiplied by the multiplier returned by this function."
+  ],
+  "parameters": [
+    {
+      "name": "listenerOrTalkerHandle",
+      "type": "",
+      "description": "The handle of the Listener or Talker."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

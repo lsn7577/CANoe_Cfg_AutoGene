@@ -1,0 +1,44 @@
+# coTfsLssAddMasterResponseIdentifyRemoteSlave
+
+> Category: `CANopen` | Type: `function`
+
+## Syntax
+
+```c
+long coTfsLssAddMasterResponseIdentifyRemoteSlave( dword vendorId, dword productCode, dword revisionNoLow, dword revisionNoHigh, dword serialNoLow, dword serialNoHigh );
+```
+
+## Description
+
+This function adds a single LSS Master request wait condition to the internal list of LSS Master request wait conditions and sends a response if a request is received.
+
+## Return Values
+
+Error code
+
+## Example
+
+```c
+/* clear internal check list */
+if (coTfsLssClearMasterResponseList() != 1) {
+  write("Clear list failed");
+  return;
+} 
+
+/* add one or more test functions */
+
+if (coTfsLssSetMasterResponseIdentifyRemoteSlaveMask( 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF ) {
+  if (coTfsLssAddMasterResponseIdentifyRemoteSlave( 0x1234, 0x43214321, 0, 0xFFFFFFFF, 0, 1000 ) {
+    write("could not add request");
+    return;
+  }
+} 
+
+/* wait for any of the events configured before */
+if (coTfsLssWaitForMasterRequestMessage() != 1) {
+  write("no event received");
+} 
+else {
+  write("event received");
+}
+```

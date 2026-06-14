@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMostShortUnlock",
+  "category": "Test",
+  "title": "TestWaitForMostShortUnlock",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForMostShortUnlock.htm",
+  "syntax": [
+    "long TestWaitForMostShortUnlock(dword aTimeout);"
+  ],
+  "description": [
+    "The function waits until the expiration of the time aTimout for the occurrence of a LightLock event indicating \"Light & no Lock\" state.",
+    "A LightLock event with a \"Light & no Lock\" state is generated, when there is no interpretable signal at the Optical Receiver (FOR) of the hardware for a brief moment (< tUnlock, see also MOST specification) and the ring has been in a \"Light & Lock\" state previously.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum wait time [ms] (Specification of 0: no timeout controlling)"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

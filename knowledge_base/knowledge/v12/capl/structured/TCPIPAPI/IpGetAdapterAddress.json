@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterAddress",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterAddress.htm",
+  "syntax": [
+    "long IpGetAdapterAddress( dword ifIndex, dword ipv4address[],dword ipv4AddressSize); // form 1"
+  ],
+  "description": [
+    "The function retrieves the addresses associated with a network interface. The interface is specified by it's 1-based index in the list of network interfaces, i.e. the first interface has index 1.",
+    "All adapter addresses including the local loopback address are taken into account in the stack of the operating system. The order depends on how the operating system lists the adapters.All assigned addresses including the VLAN addresses are taken into account in the CANoe stack."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  IP_Address addresses[10];\n  dword addressesCount;\n  IP_Address addrMasks[10];\n  dword addrMasksCount;\n  long addrIdx;\n  long ifIdx;\n\n  write( \"IP Configuration\" );\n\n  for( ifIdx = 1; ifIdx <= ipGetAdapterCount(); ifIdx++)\n  {\n    ipGetAdapterAddress( ifIdx, addresses, addressesCount );\n    ipGetAdapterMask( ifIdx, addrMasks, addrMasksCount );\n    for( addrIdx = 0; addrIdx < addressesCount; addrIdx++ )\n    {\n      char addrStr[30];\n      char maskStr[30];\n      addresses[addrIdx].PrintAddressToString( addrStr );\n      addrMasks[addrIdx].PrintAddressToString( maskStr );\n\n      write( \"  %d. %s | %s\", addrIdx+1, addrStr, maskStr );\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "IpLeaveMulticastGroup",
+  "category": "TCPIPAPI",
+  "title": "IpLeaveMulticastGroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPLeaveMulticastGroup.htm",
+  "syntax": [
+    "long IpLeaveMulticastGroup( dword socket, dword ifIndex, dword ipv4address ); // form 1"
+  ],
+  "description": [
+    "Leaves a previously joined multicast group on the given socket.",
+    "After that no multicast messages are received anymore.",
+    "To receive multicast messages, the multicast group has to be joined with IpJoinMulticastGroup before.",
+    "Before multicast messages can be sent, IpSetMulticastInterface has to be called before.",
+    "The function is dependent on the selected stack.",
+    "This functionality cannot be used in connection with the operating system TCP/IP stack."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket gSocket;\n}\n\non start\n{\n  gSocket = UdpSocket::Open( IP_Endpoint(0.0.0.0:40001) );\n  gSocket.JoinMulticastGroup( 1, IP_Address(239.0.0.123) );\n}\n\non key '2'\n{\n  gSocket.LeaveMulticastGroup( 1, IP_Address(239.0.0.123) );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

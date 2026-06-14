@@ -1,0 +1,132 @@
+{
+  "page_type": "function",
+  "name": "triggerEx",
+  "category": "Other",
+  "title": "triggerEx",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionTriggerEx.htm",
+  "syntax": [
+    "void triggerEx(char name[]);"
+  ],
+  "description": [
+    "Sends a trigger event to a CANoe Logging or Trigger Block specified by name.",
+    "For a Logging Block, the trigger event starts and stops logging, depending on",
+    "set in the Trigger Configuration dialog of this block.",
+    "For a Trigger Block, the trigger event starts and stops the data stream (like a filter) for the whole analysis branch or a single analysis window, depending also on trigger mode and trigger conditions in the Trigger Configuration dialog.",
+    "If you enter no name, the event will be sent to all Trigger and Logging Blocks that are located behind the CAPL node with the CAPL function triggerEx() in the Measurement Setup. If you want the CAPL node to have effect on all Trigger Blocks, the CAPL node has to be placed directly after the online/offline switch."
+  ],
+  "parameters": [
+    {
+      "name": "Note If you use the function in standalone mode and if you activated logging and Trigger Block in the standalone mode configuration settings you can address the (single) Trigger Block available in this case by passing an empty string as parameter.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on message 100 \n{\n  write(\"logging starts in Logging Block \"\"Logging\"\"\");\n  triggerEx(\"Logging\"); // start logging\n  setTimer(logging,1000); // for 1000 ms\n}\n\non timer logging\n{\n  triggerEx(\"Logging\"); // Stop logging\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "4.0",
+      "4.0",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

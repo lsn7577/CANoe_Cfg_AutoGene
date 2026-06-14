@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetGlobalTimeoutPrevention",
+  "category": "LIN",
+  "title": "linSetGlobalTimeoutPrevention",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetGlobalTimeoutPrevention.htm",
+  "syntax": [
+    "dword linSetGlobalTimeoutPrevention(dword on);"
+  ],
+  "description": [
+    "Activates/deactivates the global timeout prevention for transceivers with a dominant timeout. If active, the cab/piggy will use an inbuilt transistor to keep the bus signal at a dominant level after the dominant timeout stopped the transceiver from transmitting a dominant signal."
+  ],
+  "parameters": [
+    {
+      "name": "on",
+      "type": "",
+      "description": "0: Disable1: Enable"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

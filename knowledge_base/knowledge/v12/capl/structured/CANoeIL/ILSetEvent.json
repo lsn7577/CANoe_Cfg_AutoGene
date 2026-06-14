@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ILSetEvent",
+  "category": "CANoeIL",
+  "title": "ILSetEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILSetEvent.htm",
+  "syntax": [
+    "long ILSetEvent (dbSignal sig)"
+  ],
+  "description": [
+    "Sends the transferred signal directly to the bus if the network is active.",
+    "The send model is ignored."
+  ],
+  "parameters": [
+    {
+      "name": "sig",
+      "type": "",
+      "description": "Signal that should be sent. Specify as follows 'Message::Signal'."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

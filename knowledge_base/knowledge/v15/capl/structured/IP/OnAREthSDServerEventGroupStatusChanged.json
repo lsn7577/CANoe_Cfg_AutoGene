@@ -1,0 +1,160 @@
+{
+  "page_type": "function",
+  "name": "OnAREthSDServerEventGroupStatusChanged",
+  "category": "IP",
+  "title": "OnAREthSDServerEventGroupStatusChanged",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthSDServerEventGroupStatusChanged.htm",
+  "syntax": [
+    "void OnAREthSDServerEventGroupStatusChanged( dword serviceId, dword instanceId, dword eventGroupId, long status, dword newIpAddress, dword newPort ); // form 1",
+    "void OnAREthSDServerEventGroupStatusChanged( dword serviceId, dword majorVersion, dword instanceId, dword eventGroupId, long status, dword newIpAddress, dword newPort ); // form 2"
+  ],
+  "description": [
+    "This callback function can be implemented in the CAPL program if a Service Server wants to be notified whenever a Subscriber is added.",
+    "This function is called when a Client executes a subscribe eventgroup command."
+  ],
+  "parameters": [
+    {
+      "name": "serviceId",
+      "type": "",
+      "description": "ID of the service whose status has changed."
+    },
+    {
+      "name": "instanceId",
+      "type": "",
+      "description": "Instance ID"
+    },
+    {
+      "name": "eventGroupId",
+      "type": "",
+      "description": "ID of the Event Group."
+    },
+    {
+      "name": "status",
+      "type": "",
+      "description": "0: not subscribed 1: subscribed"
+    },
+    {
+      "name": "newIpAddress",
+      "type": "",
+      "description": "IPv4 address via which the subscription was received."
+    },
+    {
+      "name": "newPort",
+      "type": "",
+      "description": "Source port via which the subscription was received."
+    },
+    {
+      "name": "majorVersion",
+      "type": "",
+      "description": "Service interface major version."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnAREthSDServerEventGroupStatusChanged( dword serviceId, dword instanceId, dword eventGroupId, long status, dword newIpAddress, dword newPort)\n{\n  char buffer[100];\n  if(status == 0)\n  {\n    snprintf(buffer,elcount(buffer),\"not subscribed\");\n  }\n  else if(status == 1)\n  {\n    snprintf(buffer,elcount(buffer),\"subscribed\");\n  }\n  else\n  {\n    snprintf(buffer,elcount(buffer),\"Undefined status\");\n  }\n  write(\"Event group (ID %d), of service %d (instance %d): %s\",eventGroupId,serviceId,instanceId,buffer);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

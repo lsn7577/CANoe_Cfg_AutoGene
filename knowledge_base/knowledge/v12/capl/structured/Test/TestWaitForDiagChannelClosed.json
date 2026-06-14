@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDiagChannelClosed",
+  "category": "Test",
+  "title": "TestWaitForDiagChannelClosed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDiagChannelClosed.htm",
+  "syntax": [
+    "long TestWaitForDiagChannelClosed(dword timeout_ms) // form 1"
+  ],
+  "description": [
+    "Waits for the occurrence of the state change of a diagnostic channel to the state Closed. Should the closing not occur before the expiration of the time timeout_ms, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "timeout_ms",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "if (0 == DiagCloseChannel())\n{\n   TestStepPass(t\"Channel close called successfully\");\n}\nelse\n{\n   TestStepFail(\"Call to channel close returned an error.\");\n}\n\nif (1 == TestWaitForDiagChannelClosed(1000))\n{\n   TestStepPass( \"Channel closed successfully.\");\n}\nelse\n{\n   TestStepFail( \"Channel could not be closed.\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

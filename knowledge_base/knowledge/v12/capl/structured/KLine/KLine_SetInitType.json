@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetInitType",
+  "category": "KLine",
+  "title": "KLine_SetInitType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetInitType.htm",
+  "syntax": [
+    "long KLine_SetInitType(long initType)"
+  ],
+  "description": [
+    "Configures the used initialization pattern.",
+    "Restriction: It is only possible to change the init type between the pre-configured init type an no init pattern. It is not possible to change between fast init and 5 baud init or vice versa."
+  ],
+  "parameters": [
+    {
+      "name": "initType",
+      "type": "",
+      "description": "Initialization pattern"
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [
+      "Example shows a test case that makes sure that an ECU does not respond to a request after a S3 timeout."
+    ],
+    "code": "DiagRequest TesterPresent req;\nlong timeout_ms;\nint status;\nDiagSetTarget(“DUT”);\n\n// Connect Channel\nDiagConnectChannel()\nstatus = TestWaitForDiagChannelConnected(2000);\n   if (1 == status)\n   {\n      TestStepPass(\"Connected to target ECU\");\n   }\n   else\n   {\n      TestStepFail(\"Error connecting to target ECU.”);\n   }\n\nreq.SendRequest();\n   if (1 != TestWaitForDiagRequestSent(req, 1000))\n   {\n      TestStepFail(“Request was not sent.”);\n   }\n   if (1 != TestWaitForDiagResponse(req, 1000))\n   {\n      TestStepFail(“No response received.”);\n   }\n\n// StopCommunication command shall NOT be  send after closing the channel.\nKLine_SuppressAutomaticStopCommunication(1);\nDiagCloseChannel();\n   if (1== TestWaitForDiagChannelClosed(1000))\n   {\n      TestStepPass( \"Channel closed successfully.\");\n   }\n   else\n   {\n      TestStepFail( \"Channel could not be closed.\");\n   }\n   KLine_SetInitType(3);   // No Init\n\n// Wait for a S3 timout\ntimeout_ms = 6000;\nTestWaitForTimeout(timeout_ms);\n\n// Send again a tester present request\nreq.SendRequest();\nTestWaitForDiagRequestSent(req, 1000);\n   if  (1 == TestWaitForDiagResponse(req, 1000))\n   {\n      TestStepFail(“Request answered in spite of  a S3 timeout ”);\n   }\n   else\n   {\n      TestStepPass(“Request not answered due to S3 timeout.”);\n   }\n\nDiagCloseChannel();\n   if (1== TestWaitForDiagChannelClosed(1000))\n   {\n      TestStepPass( \"Channel closed successfully.\");\n   }\n   else\n   {\n   TestStepFail( \"Channel could not be closed.\");\n   }\n\n// Reset Settings\nKLine_SetInitType(2); // Fast Init\nKLine_SuppressAutomaticStopCommunication(0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

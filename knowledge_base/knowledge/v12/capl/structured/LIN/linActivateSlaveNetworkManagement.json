@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linActivateSlaveNetworkManagement",
+  "category": "LIN",
+  "title": "linActivateSlaveNetworkManagement",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINActivateSlaveNetworkManagement.htm",
+  "syntax": [
+    "long linActivateSlaveNetworkManagement(long active)"
+  ],
+  "description": [
+    "Activates/deactivates network management for the calling Slave node.",
+    "Network management is responsible for the automatic setting and resetting of response error signals in the simulated Slave nodes."
+  ],
+  "parameters": [
+    {
+      "name": "active",
+      "type": "",
+      "description": "0: deactivate1: activate"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

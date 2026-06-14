@@ -1,0 +1,92 @@
+{
+  "page_type": "notes",
+  "name": "LocalSecurityCalculateAuthenticator",
+  "category": "Obsolete",
+  "title": "LocalSecurityCalculateAuthenticator",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionLocalSecurityCalculateAuthenticator.htm",
+  "syntax": [],
+  "description": [
+    "Replaced by SecurityLocalCalculateAuthenticator.",
+    "Calculates the authenticator (CMAC) for the given payload and freshness. This function can be used for testing.",
+    "Length of the data array in byte.",
+    "Contains the calculated truncated CMAC.",
+    "Length of the truncated CMAC in bit.",
+    "A value <= 0 means error",
+    "Value 1 means action was successful."
+  ],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by SecurityLocalCalculateAuthenticator."
+      ],
+      [
+        "Function Syntax",
+        "long LocalSecurityCalculateAuthenticator (dword DATAID, byte[] Payload, dword PayloadLength, qword TruncatedAuthenticator, dword TruncatedAuthenticatorBitLength, qword Freshness, dword TruncatedFreshnessBitLength, dword FreshnessValueBitLength)"
+      ],
+      [
+        "Function",
+        "Calculates the authenticator (CMAC) for the given payload and freshness. This function can be used for testing."
+      ],
+      [
+        "Parameters",
+        "DATAID Id to lookup the desired key in the security source."
+      ],
+      [
+        "Payload Data array."
+      ],
+      [
+        "PayloadLength Length of the data array in byte."
+      ],
+      [
+        "TruncatedAuthenticator Contains the calculated truncated CMAC."
+      ],
+      [
+        "TruncatedAuthenticatorBitLength Length of the truncated CMAC in bit."
+      ],
+      [
+        "Freshness [In/Out]: In: Contains the freshness value for MAC calculation. Out: Truncated freshness."
+      ],
+      [
+        "TruncatedFreshnessBitLength Length of the truncated freshness in bit."
+      ],
+      [
+        "FreshnessValueBitLength Length of the freshness in bit."
+      ],
+      [
+        "Return Values",
+        "A value <= 0 means error Value 1 means action was successful. 1: Success 0: Error, no details -1: Invalid handle -2: data incomplete -3: signal length does not fit -4: Security source error, no details -6: Not supported -10: Security is not usable. Reasons can be: Security Manager version is too old. Tool Version is too old. Security Profile is invalid."
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "11.0 SP2",
+        "CAN CAN FD FlexRay Ethernet",
+        "—",
+        "•"
+      ],
+      [
+        "Example /// The Method LocalSecurityCalculateAuthenticator can be used to calculate the Authenticator on your own with an own maintained freshness value/// It is used for testing the local algorithm and to calculate an authanticator with a given freshness, payload and data id/// With LocalSecurityVerifyAuthenticationInformation the information generated with LocalSecurityCalculateAuthenticator can be verified./// OnLocalSecurityQueryLocalFreshness in not called./// OnLocalSecurityPDUPreTx is not called./// OnLocalSecurityPDUValidated is not called.on key 'a'{ long bytesCopied = 0; qword freshnessCopy; dword dataID; byte payload[8] = {0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08}; qword authenticator; dword authenticatorBitLength = 24; qword freshness; dword freshnessLength = 48; dword freshnessTxBitLength = 8; dword freshnessTxMask = 0xF; dword verificationResult; dword result; result = LocalSecurityCalculateAuthenticator(dataID, payload, elCount(payload), authenticator, authenticatorBitLength, freshness, freshnessTxBitLength, freshnessLength); Write(\"LocalSecurityCalculateAuthenticator result:%d\", result); result = LocalSecurityVerifyAuthenticationInformation(dataID, payload, elCount(payload), authenticator, authenticatorBitLength, (freshness & freshnessTxMask), freshnessTxBitLength, freshness, freshnessLength, verificationResult); Write(\"LocalSecurityVerifyAuthenticationInformation result:%d, verificationResult:%d\", result, verificationResult); // 1: verification successful, 0: verification failed}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

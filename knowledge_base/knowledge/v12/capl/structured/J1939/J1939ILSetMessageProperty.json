@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939ILSetMessageProperty",
+  "category": "J1939",
+  "title": "J1939ILSetMessageProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILSetMessageProperty.htm",
+  "syntax": [
+    "long J1939ILSetMessageProperty( dbMessage msg, char propertyName[], long propertyValue); // form 1"
+  ],
+  "description": [
+    "This function sets the internal property of a message."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "message name as defined in the database"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if (J1939ILSetMessageProperty(TSC1, \"MessageCounterToContinue\", 12) < 0)\n{\n  write(\"Can’t set message property ‘MessageCounterToContinue‘\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

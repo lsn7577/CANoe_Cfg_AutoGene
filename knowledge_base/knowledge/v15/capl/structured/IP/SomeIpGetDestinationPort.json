@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetDestinationPort",
+  "category": "IP",
+  "title": "SomeIpGetDestinationPort",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetDestinationPort.htm",
+  "syntax": [
+    "dword SomeIpGetDestinationPort ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the destination port (UDP/TCP)."
+  ],
+  "parameters": [
+    {
+      "name": "Note This function can only be called within the OnSomeIpMessage callback function.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void OnSomeIpMessage( DWORD messageHandle )\n{\n  DWORD dstPort       = 0;\n  LONG  errorCode     = 0;\n  LONG  errorOccured  = 0;\n\n  // get data from SOME/IP message\n  if((dstPort = SomeIpGetDestinationPort(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = SomeIpGetLastError()) != 0)\n    {\n      write(\"SOME/IP IL error occured: Error code: %d\", errorCode);\n      errorOccured = 1;\n    } // if\n  } // if\n\n  if(errorOccured == 0)\n  {\n    write(\"SOME/IP message received. Destination Port: %d\",dstPort);\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

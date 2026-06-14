@@ -1,0 +1,131 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventSignalValueMin, ChkQuery_EventSignalValueMax",
+  "category": "Test",
+  "title": "ChkQuery_EventSignalValueMin, ChkQuery_EventSignalValueMax",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkQueryEventSignalValueMinMax.htm",
+  "syntax": [
+    "long ChkQuery_EventSignalValueMin(dword checkId, int64& value);",
+    "long ChkQuery_EventSignalValueMax(dword checkId, int64& value);",
+    "long ChkQuery_EventSignalValueMin(dword checkId, double& value);",
+    "long ChkQuery_EventSignalValueMax(dword checkId, double& value);"
+  ],
+  "description": [
+    "Enables access to the minimal and maximal measured values within a check."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "double maxValue;\nint checkId;\n\ncheckId = ChkStart_MsgSignalValueInvalid (singalToObserve, 5.5, 10.5);    TestAddCondition(checkId)\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nChkQuery_EventSignalValueMax(checkID, maxValue);\n\nwrite(\"Max signal value=%f\", maxValue);\n\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0",
+      "13.0",
+      "—",
+      "14",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

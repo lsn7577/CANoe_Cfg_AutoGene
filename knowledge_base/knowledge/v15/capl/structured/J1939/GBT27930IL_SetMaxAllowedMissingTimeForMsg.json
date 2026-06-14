@@ -1,0 +1,188 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_SetMaxAllowedMissingTimeForMsg",
+  "category": "J1939",
+  "title": "GBT27930IL_SetMaxAllowedMissingTimeForMsg",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILSetMaxAllowedMissingTimeForMsg.htm",
+  "syntax": [
+    "long GBT27930IL_SetMaxAllowedMissingTimeForMsg(dword msgCode, dword maxAllowedMissingTime); // form 1",
+    "long GBT27930IL_SetMaxAllowedMissingTimeForMsg(dbNode node, dword msgCode, dword maxAllowedMissingTime); // form 2"
+  ],
+  "description": [
+    "For simulated BMS node: defines the maximum time during which the specified message from the Charger may be missing. After this time the simulated BMS stops charging and starts sending the BEM message.",
+    "For simulated Charger node: defines the maximum time during which the specified message from the BMS may be missing. After this time the simulated Charger stops charging and starts sending the CEM message."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "Meaning for BMS Node",
+      "description": "Meaning for Charger Node"
+    },
+    {
+      "name": "0",
+      "type": "CRM (BMS is not recognized)",
+      "description": "—"
+    },
+    {
+      "name": "1",
+      "type": "CRM (BMS is recognized)",
+      "description": "BRM"
+    },
+    {
+      "name": "2",
+      "type": "CML",
+      "description": "BCP"
+    },
+    {
+      "name": "3",
+      "type": "CRO (not ready for charging)",
+      "description": "BRO (not ready for charging)"
+    },
+    {
+      "name": "4",
+      "type": "CRO (ready for charging)",
+      "description": "BRO (ready for charging)"
+    },
+    {
+      "name": "5",
+      "type": "CCS",
+      "description": "BCL"
+    },
+    {
+      "name": "6",
+      "type": "CST",
+      "description": "BCS"
+    },
+    {
+      "name": "7",
+      "type": "CSD",
+      "description": "BST"
+    },
+    {
+      "name": "8",
+      "type": "CHM",
+      "description": "BSD"
+    },
+    {
+      "name": "maxAllowedMissingTime",
+      "type": "",
+      "description": "Time in milliseconds. If the respective message is missing longer than defined, the simulated node switches to sending the BEM or CEM message with the corresponding content."
+    },
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1 (simulated BMS node, form 1)",
+      "Example 2 (simulated Charger node, form 1)"
+    ],
+    "code": "variables\n{\n  enum AllowedMissingTimeOfChargerMsgs\n  {\n    crm_not_recognized  = 0,\n    crm_recognized      = 1,\n    cml                 = 2,\n    cro_not_ready       = 3,\n    cro_ready           = 4,\n    ccs                 = 5,\n    cst                 = 6,\n    csd                 = 7,\n    chm                 = 8\n  };\n}\n\nSetMaxAllowedMissingTimeOfChargerMsgs()\n{\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(chm,                60000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(crm_not_recognized, 30000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(crm_recognized,      5000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(cml,                 5000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(cro_not_ready,       5000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(cro_ready,          60000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(ccs,                 1000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(cst,                 5000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(csd,                10000);\n}\nenum AllowedMissingTimeOfBmsMsgs\n{\n    brm        = 0,\n    bcp        = 1,\n    broNotReady= 2,\n    broReady   = 3,\n    bcl        = 4,\n    bcs        = 5,\n    bst        = 6,\n    bsd        = 7\n  };\n\nSetMaxAllowedMissingTimeOfBmsMsgs()\n{\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(brm        ,5000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(bcp        , 5000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(broNotReady, 5000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(broReady   , 60000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(bcl        , 1000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(bcs        , 5000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(bst        , 5000);\n  GBT27930IL_SetMaxAllowedMissingTimeForMsg(bsd        , 10000);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "13.0",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939 and Smart Charging Simulation BMS and Charger nodes",
+      "J1939 and Smart Charging Simulation BMS and Charger nodes",
+      "—",
+      "—",
+      "form 2 J1939 and Smart Charging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 1)",
+      "✔ (form 1)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

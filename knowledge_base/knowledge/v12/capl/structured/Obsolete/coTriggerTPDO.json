@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "coTriggerTPDO",
+  "category": "Obsolete",
+  "title": "coTriggerTPDO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoTriggertPdo.htm",
+  "syntax": [
+    "dword coTriggerTPDO( dword pdoNumber, dword errCode[] );"
+  ],
+  "description": [
+    "Generally a simulated node is used with a defined cycle time. The default value is 5 ms, but it can be changed with the function coSetOperatingMode() for each node. The cycle time also defines the reaction time on data changes of the PDOs. Consider that a decrease of the node processing time leads to a higher load of the simulated system.",
+    "If it is necessary to transmit the PDO directly after the data change, this function can be used. It triggers the immediate transmission of a TPDO.",
+    "The following conditions have to be fulfilled to allow the transmission of a TPDO with this function:",
+    "If one of this conditions is not fulfilled, the transmission of the relating TPDO will not be triggered and the function returns with an error."
+  ],
+  "parameters": [
+    {
+      "name": "pdoNumber",
+      "type": "",
+      "description": "Number of the transmitted PDO, value range 1..512"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\nputValue(MyProcessData, 0x1234);\ncoTriggerTPDO( 1, errCode );\n\nif (errCode[0] == 0) {\n  write( \"TPDO 1 triggered successfully\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

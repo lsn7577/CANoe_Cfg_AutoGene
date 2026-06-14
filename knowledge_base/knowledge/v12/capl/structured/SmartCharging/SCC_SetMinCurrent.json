@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetMinCurrent",
+  "category": "SmartCharging",
+  "title": "SCC_SetMinCurrent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetMinCurrent.htm",
+  "syntax": [
+    "long SCC_SetMinCurrent ( float MinCurrent )"
+  ],
+  "description": [
+    "Sets the minimum current for the message ChargeParameterDiscoveryReq. A default value can be set using the configuration file."
+  ],
+  "parameters": [
+    {
+      "name": "MinCurrent",
+      "type": "",
+      "description": "Minimum current value to be set."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

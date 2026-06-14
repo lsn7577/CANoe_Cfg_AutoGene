@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "strlen",
+  "category": "Other",
+  "title": "strlen",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStrLen.htm",
+  "syntax": [
+    "long strlen(char s[]);"
+  ],
+  "description": [
+    "The functional result is the length of the string s in bytes.",
+    "A character may need several bytes depending on the string encoding, e.g. Japanese characters in Windows ANSI (932) encoding or any special characters in UTF-8 encoding. In that case, you may want to use mbstrlen instead."
+  ],
+  "parameters": [
+    {
+      "name": "string",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Length of the string in bytes.",
+  "example": {
+    "description": [
+      "Result:"
+    ],
+    "code": "long length;\nchar buffer[100] = \"CANalyzer\";\nlength = strlen(buffer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "lookupNode",
+  "category": "Other",
+  "title": "lookupNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionlookupNode.htm",
+  "syntax": [
+    "dbNode * lookupNode(char nodeName[]);"
+  ],
+  "description": [
+    "Searches for a node definition in the database(s). If the node is not found or if the name is not unique, test modules/units report an error in test system while simulation/analysis nodes write a warning into the Write Window, and the function returns an invalid dbNode.",
+    "It is recommended to use this function only in special cases or during measurement start, since searching for the database definition may impact real-time performance."
+  ],
+  "parameters": [
+    {
+      "name": "nodeName",
+      "type": "",
+      "description": "The qualified name of the node. The syntax is [NetworkName::]NodeName, i.e. the network name is optional."
+    }
+  ],
+  "return": "The found unique node definition or an invalid object.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

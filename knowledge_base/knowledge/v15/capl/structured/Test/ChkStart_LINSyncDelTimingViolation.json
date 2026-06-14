@@ -1,0 +1,150 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_LINSyncDelTimingViolation",
+  "category": "Test",
+  "title": "ChkStart_LINSyncDelTimingViolation",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkStartLinSyncDelTimingViolation.htm",
+  "syntax": [
+    "dword ChkStart_LINSyncDelTimingViolation (float MinDelLen, float MaxDelLen);",
+    "dword ChkStart_LINSyncDelTimingViolation (float MinDelLen, float MaxDelLen, char[] CaplCallback);"
+  ],
+  "description": [
+    "Checks the timing of the synchronization break field in LIN headers.",
+    "An event will be generated, if the measured length [in bit times] of break delimiter is outside of the specified range."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Minimum length of break delimiter shall not be checked"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Minimum allowed length of break delimiter"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Maximum length of break delimiter shall not be checked"
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "Maximum allowed length of break delimiter"
+    },
+    {
+      "name": "CaplCallback",
+      "type": "",
+      "description": "Name of CAPL callback function to be called on generated event. In simulation nodes this parameter has to be set. In test modules this parameter is optional."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\nChkConfig_SetPrecision(9); // switch to ns precision\n// Create and start the check for LIN Synch Delimiter violation\ncheckId = ChkStart_LINSyncDelTimingViolation(1, 5, \"LINSyncDelimiterCallback\"); \nChkConfig_SetPrecision(3); // switch to ms precision (default)\n...\n// CAPL callback for violation notification\nvoid LINSyncDelimiterCallback (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.2 7.0 SP5: method",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN",
+      "LIN",
+      "—",
+      "LIN",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

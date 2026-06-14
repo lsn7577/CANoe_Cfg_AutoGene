@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MediaWrite",
+  "category": "Media",
+  "title": "MediaWrite",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaWrite.htm",
+  "syntax": [
+    "long MediaWrite(dword sinkWriterHandle, dword streamIndex, int64 timestamp, byte buffer[], dword length);"
+  ],
+  "description": [
+    "Delivers sample data to the sink writer. The buffer can be reused immediately after the function returns."
+  ],
+  "parameters": [
+    {
+      "name": "sinkWriterHandle",
+      "type": "",
+      "description": "The sink writer handle."
+    }
+  ],
+  "return": "0: The function succeeded",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

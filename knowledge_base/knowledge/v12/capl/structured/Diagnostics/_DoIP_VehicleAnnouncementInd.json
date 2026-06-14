@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_VehicleAnnouncementInd",
+  "category": "Diagnostics",
+  "title": "_DoIP_VehicleAnnouncementInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPVehicleAnnouncementInd.htm",
+  "syntax": [
+    "void _DoIP_VehicleAnnouncementInd(char VIN[], WORD logAddr, BYTE entityIdent[], BYTE groupIdent[], BYTE furtherActionRequired, BYTE VINGIDsyncStatus)"
+  ],
+  "description": [
+    "A Vehicle Announcement Message (VAM) has been received, possibly as a Vehicle Identification Response for a Vehicle Identification Request (VIR) Message. The responding vehicle indicates its presence.",
+    "If the responding vehicle’s VIN or EID has been selected as VIR parameter, this vehicle will be selected for communication."
+  ],
+  "parameters": [
+    {
+      "name": "VIN",
+      "type": "",
+      "description": "Vehicle Identification Number (typically 17 characters). It is possible that a responding vehicle does not have a VIN yet."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void _DoIP_VehicleAnnouncementInd( char VIN[], WORD logAddr, BYTE entityIdent[], BYTE groupIdent[], BYTE furtherActionReq, BYTE VINGIDsyncStatus)\n{\n  WORD i;\n  write( \"[%.3f] Vehicle Announcement Message from '%s'\", timenow()/100000.0, VIN);\n\n  // Store the VIN of the responding vehicle in a table,\n  // if it is not known already\n\n  for( i = 0; i < gVehiclesFound; ++i)\n  {\n    if( 0 == strncmp( VIN, gVehicleAnswered[i], elcount(VIN)))\n    return; // vehicle already registered, so do not store it again\n  }\n\n  if( gVehiclesFound < elcount( gVehicleAnswered))\n  {\n    strncpy( gVehicleAnswered[ gVehiclesFound], VIN, elcount( gVehicleAnswered[ gVehiclesFound]));\n    ++gVehiclesFound;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

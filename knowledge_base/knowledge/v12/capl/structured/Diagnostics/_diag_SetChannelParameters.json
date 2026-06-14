@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "_diag_SetChannelParameters",
+  "category": "Diagnostics",
+  "title": "_diag_SetChannelParameters",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagSetChannelParameters.htm",
+  "syntax": [
+    "void _Diag_SetChannelParameters ();"
+  ],
+  "description": [
+    "This function will be called after measurement start (in ECU simulations) or after diagSetTarget() (in test nodes) and enables the CAPL program to configure the transport protocol.",
+    "If the protocol is configured by the data base nothing has to be done."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

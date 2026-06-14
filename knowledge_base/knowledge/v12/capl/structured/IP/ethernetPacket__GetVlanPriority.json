@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::GetVlanPriority",
+  "category": "IP",
+  "title": "ethernetPacket::GetVlanPriority",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionGetVlanPriority.htm",
+  "syntax": [
+    "dword ethernetPacket.GetVlanPriority(); // form 1"
+  ],
+  "description": [
+    "Returns the VLAN priority, if the Ethernet packet contains a VLAN tag.For double-tagged VLAN form 2 can be used to access a specific VLAN priority."
+  ],
+  "parameters": [
+    {
+      "name": "vlanIndex",
+      "type": "",
+      "description": "Index of the VLAN tag for double-tagged VLANs. Index 0 is the inner VLAN, index 1 the outer VLAN.Range: 0..2"
+    }
+  ],
+  "return": "ID of the VLAN or 0xFFFF if no VLAN is available.",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if (this.hasVlan())\n  {\n    word vlanPrio;\n\n    vlanPrio = this.GetVlanPriority();\n\n    write( \"Received Ethernet packet with VLAN priority %d\", vlanPrio );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

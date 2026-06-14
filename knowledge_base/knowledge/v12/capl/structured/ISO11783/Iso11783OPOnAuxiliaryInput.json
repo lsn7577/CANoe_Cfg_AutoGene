@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPOnAuxiliaryInput",
+  "category": "ISO11783",
+  "title": "Iso11783OPOnAuxiliaryInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPOnAuxiliaryInput.htm",
+  "syntax": [
+    "void Iso11783OPOnAuxiliaryInput( dword ecuHandle, dword objectID, dword value1, dword value2 );"
+  ],
+  "description": [
+    "The function is called by the node layer, if an Auxiliary Input Status is received and a Auxiliary Function in the object pool is assigned."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783OPOnAuxiliaryInput(dword handle, dword objectID, dword value1, dword value2 \r\n )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

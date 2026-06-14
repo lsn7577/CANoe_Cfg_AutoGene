@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPChangeChildPosition",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPChangeChildPosition",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPChangeChildPosition.htm",
+  "syntax": [
+    "long Iso11783IL_OPChangeChildPosition( dword parentID, dword objectID, long x, long y ); // form 1"
+  ],
+  "description": [
+    "The function changes the absolute position of an object inside its parent object. A Change Child Position command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "parentID",
+      "type": "",
+      "description": "Parent object"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPChangeChildPosition( 1000, 1200, 10, 10 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

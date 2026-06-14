@@ -1,0 +1,152 @@
+{
+  "page_type": "concept",
+  "name": "Media Stream Control",
+  "category": "Panel",
+  "subcategory": "Elements",
+  "title": "Media Stream Control",
+  "source": "chm_extract_v15/VectorToolsEnvironment/Topics/PanelDesigner/Elements/PanelDesignerControlsMediaStream.htm",
+  "intro": [],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Use Cases",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The Media Stream Control is used to play streaming media received from the network (audio and video).",
+          "The following use cases are possible with the Media Stream Control:"
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Configuration",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The capability of the control to render streaming media depends on the format of the streaming content on the network and the availability of a codec used for decoding this streaming content.",
+          "The following network protocols are supported:"
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Ribbon|Properties Tab",
+      "level": 2,
+      "content": {
+        "paragraphs": [],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Ribbon|Properties Tab / Properties Window",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Here all settings are listed that you can change in the ribbon and/or in the Properties Window.",
+          "General Group",
+          "General",
+          "Name",
+          "Control Name",
+          "Here you change the name of the control. This name and the name of the panel is required for access from CAPL.",
+          "—",
+          "Is Visible At Runtime",
+          "Specifies whether the control is to be displayed during runtime."
+        ],
+        "tables": [
+          [
+            [
+              "Ribbon",
+              "Properties Window",
+              "Description"
+            ],
+            [
+              "General Group",
+              "General"
+            ],
+            [
+              "Name",
+              "Control Name",
+              "Here you change the name of the control. This name and the name of the panel is required for access from CAPL."
+            ],
+            [
+              "—",
+              "Is Visible At Runtime",
+              "Specifies whether the control is to be displayed during runtime. CAPL Access With the function setControlVisibility, you can set, if the control is displayed during runtime or not."
+            ],
+            [
+              "More Group",
+              "—"
+            ],
+            [
+              "—",
+              "Show Properties With a click on the symbol you open the Properties Window."
+            ],
+            [
+              "Group: —",
+              "Appearance"
+            ],
+            [
+              "—",
+              "Border Style",
+              "Here you change the frame of the control: Fixed 3D3D frame Fixed SingleSingle frame NoneNo frame"
+            ],
+            [
+              "—",
+              "Media Streams",
+              "Here, you configure the network media streams that should be played. Once the stream with the configured Stream ID is received during the measurement it is automatically played."
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "With the function setControlVisibility, you can set, if the control is displayed during runtime or not.",
+          "More Group",
+          "—",
+          "Show Properties",
+          "With a click on the symbol you open the Properties Window.",
+          "Group: —",
+          "Appearance",
+          "Border Style",
+          "Here you change the frame of the control:",
+          "Media Streams",
+          "Here, you configure the network media streams that should be played. Once the stream with the configured Stream ID is received during the measurement it is automatically played.",
+          "Assigning Controls"
+        ],
+        "tables": [
+          [
+            [
+              "Version 2.0© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ],
+  "property_references": {
+    "properties": [
+      "Control Name",
+      "—",
+      "Is Visible At Runtime",
+      "Border Style",
+      "Media Streams"
+    ],
+    "symbols": [],
+    "groups": [
+      "General",
+      "Appearance"
+    ],
+    "syntax_patterns": []
+  }
+}

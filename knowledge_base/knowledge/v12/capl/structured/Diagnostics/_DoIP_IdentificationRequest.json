@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_IdentificationRequest",
+  "category": "Diagnostics",
+  "title": "_DoIP_IdentificationRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPIdentificationRequest.htm",
+  "syntax": [
+    "long _DoIP_IdentificationRequest(long type, BYTE VINorEID[]);"
+  ],
+  "description": [
+    "A vehicle simulation has received a Vehicle Identification Request Message. The value returned will determine the reaction of the DoIP.DLL.",
+    "Note that requests not targeted at the ECU will be ignored."
+  ],
+  "parameters": [
+    {
+      "name": "type",
+      "type": "",
+      "description": "1: No argument, VINorEID is empty2: Argument contains the EID (6 byte)3: Argument contains the VIN (17 byte/characters)"
+    }
+  ],
+  "return": "-2: Ignore Vehicle Identification Request, i.e. do nothing",
+  "example": {
+    "description": [],
+    "code": "long _DoIP_IdentificationRequest(long type, BYTE VINorEID[])\n{\n  if( type == 1)\n    write( \"Received VIR without argument\");\n  else if( type == 2)\n    write( \"Received VIR with EID: %02x:%02x:%02x:%02x:%02x:%02x\"\n    , VINorEID[0], VINorEID[1], VINorEID[2]\n    , VINorEID[3], VINorEID[4], VINorEID[5]);\n  else if( type == 3)\n  {\n    char textVIN[17];\n    int i;\n    for( i = 0; i < elcount(VINorEID); ++i)\n      textVIN[i] = VINorEID[i];\n    write( \"Received VIR with VIN: %s\", textVIN);\n  }\n  // The response message shall be sent after waiting between 100 and 500 ms\n  return 100 + random(400);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

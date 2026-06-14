@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnAREthSDClientEventGroupStatusChanged",
+  "category": "IP",
+  "title": "OnAREthSDClientEventGroupStatusChanged",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthSDClientEventGroupStatusChanged.htm",
+  "syntax": [
+    "void OnAREthSDClientEventGroupStatusChanged( dword serviceId, dword instanceId, dword eventGroupId, long status );"
+  ],
+  "description": [
+    "This callback function can be implemented in the CAPL program if an Event Consumer (Client) wants to be notified of status changes to Event Groups.",
+    "The function is called whenever the status of an Event Group changes.",
+    "The callback function can only be called for status changes related to an Event Group that is consumed by this node."
+  ],
+  "parameters": [
+    {
+      "name": "serviceId",
+      "type": "",
+      "description": "ID of the service whose status has changed."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnAREthSDClientEventGroupStatusChanged( dword serviceId, dword instanceId, dword eventGroupId, long status)\n{\n  char buffer[100];\n  if(status == 0)\n  {\n    snprintf(buffer,elcount(buffer),\"not subscribed\");\n  }\n  else if(status == 1)\n  {\n    snprintf(buffer,elcount(buffer),\"subscribed\");\n  }\n  else\n  {\n    snprintf(buffer,elcount(buffer),\"Undefined status\");\n  }\n  write(\"Event group (ID %d), of service %d (instance %d): %s\",eventGroupId,serviceId,instanceId,buffer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

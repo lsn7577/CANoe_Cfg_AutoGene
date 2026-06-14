@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "RS232Receive",
+  "category": "RS232",
+  "title": "RS232Receive",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/RS232/Functions/CAPLfunctionRS232Receive.htm",
+  "syntax": [
+    "dword RS232Receive( dword port, byte buffer[], dword size )"
+  ],
+  "description": [
+    "Receive blocks of bytes from a serial port."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    }
+  ],
+  "return": "0: error\nThe error occurs if\nAn error is only given if a problem is issued directly by the system.\nTo get informed about errors occurring in later stages of the operation use RS232OnError.",
+  "example": {
+    "description": [],
+    "code": "byte mybuffer[20];\nint mysize=20;\nif ( 1==RS232Receive(1,mybuffer,mysize) )\n  write(“It works with port 1.”);\n...\nRS232OnReceive( dword port, dword buffer[], dword number )\n{\n   // works after first RS232Receive !\n   // buffer == mybuffer, 1<number<=mysize\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

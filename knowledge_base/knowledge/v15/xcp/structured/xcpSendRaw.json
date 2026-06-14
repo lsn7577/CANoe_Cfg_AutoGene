@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "xcpSendRaw",
+  "category": "XCP",
+  "title": "xcpSendRaw",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/XCP/Functions/CAPLfunctionXCPSendRaw.htm",
+  "syntax": [
+    "void OnXcpSendRaw(char ecuQualifier[], byte data[], long dataSize);"
+  ],
+  "description": [
+    "Sends any data as control command to an XCP/CCP device. The first data byte defines the control command code.",
+    "The callback is called with the response to a raw XCP command sent by xcpSendRaw."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Name of the device, configured within the CANoeXCP/CCP Window."
+    },
+    {
+      "name": "data",
+      "type": "",
+      "description": "Byte array of the data to be sent."
+    },
+    {
+      "name": "dataSize",
+      "type": "",
+      "description": "Length of the data to be sent."
+    },
+    {
+      "name": "expectResponse",
+      "type": "",
+      "description": "0: The XCP slave will not respond to this command 1: The XCP slave is expected to respond to this command and the callback will be called"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "//This example shows an upload of 4 bytes from address 0x21A1B4 of the XCP slave device \"XCPsim\" when the user presses the key 't'.\n//Please note that this device is a PC application, hence the address is given in Intel format.\n\non key 't'\n{\n  byte data[8] = {0xF4, 4, 0, 0, 0xB4, 0xA1, 0x21, 0};\n  xcpSendRaw(\"XcpSim\", data, 8, 1);\n}\n\nOnXcpSendRaw(char ecuQualifier[], byte data[], long dataSize)\n{\n  char buffer[200];\n  long i;\n  buffer[0] = 0;\n  for (i = 0; i < dataSize; i++)\n  {\n    snprintf(buffer, elcount(buffer), \"%s 0x%2X\", buffer, data[i]);\n  }\n  write(\"Raw response: %d bytes:%s\", dataSize, buffer);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0",
+      "13.0",
+      "—",
+      "—",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "XCP",
+      "XCP",
+      "—",
+      "—",
+      "XCP"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

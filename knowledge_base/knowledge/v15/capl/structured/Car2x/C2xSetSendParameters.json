@@ -1,0 +1,151 @@
+{
+  "page_type": "function",
+  "name": "C2xSetSendParameters",
+  "category": "Car2x",
+  "title": "C2xSetSendParameters",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xSetSendParameters.htm",
+  "syntax": [
+    "C2xSetSendParameters(LONG appChannel, LONG txPower, LONG antenna, LONG dataRate, LONG expiry)"
+  ],
+  "description": [
+    "Set transmission relevant send parameters.",
+    "This method allows to redefine some or all transmission related parameters on the fly; for all following transmissions on a specific VN4610 channel those new default values will be used.",
+    "In fact the method overwrites the corresponding internal configuration settings provided by the setup-dialog.",
+    "To set just a subset of the parameters the value <-1> can be used for antenna, dataRate and expiry to leave the corresponding parameters of the configuration unchanged."
+  ],
+  "parameters": [
+    {
+      "name": "appChannel",
+      "type": "",
+      "description": "Channel to apply settings to (1 .. n), n = available hardware channels (1=Ath1, 2=Ath2,…)"
+    },
+    {
+      "name": "txPower",
+      "type": "",
+      "description": "Transmission power in dBm; use -100 to keep the original setting."
+    },
+    {
+      "name": "antenna",
+      "type": "",
+      "description": "Antenna used for Tx: 1: Ant1 2: Ant2 3: both -1: keep the original setting"
+    },
+    {
+      "name": "dataRate",
+      "type": "",
+      "description": "Data rate [Mbps] to be used (use 4 to set 4.5Mbps); Allowed values: 3,4,6,9,12,18,24,27 -1: keep the original setting"
+    },
+    {
+      "name": "expiry",
+      "type": "",
+      "description": "MAC expiry time [µs] 0: never -1: keep the original setting"
+    }
+  ],
+  "return": "Channel to apply settings",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  Write(\"Set SendParameters for Ch1 to -10dBm  Ant2, 9Mbps; don’t change expiry \");\n  C2xSetSendParameters(1, -10, 2, 9, -1);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "—",
+      "—",
+      "—",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

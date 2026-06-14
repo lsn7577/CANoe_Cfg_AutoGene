@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthInitProtocol",
+  "category": "Obsolete",
+  "title": "EthInitProtocol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthInitProtocol.htm",
+  "syntax": [
+    "long EthInitProtocol( long packet, char protocolDesignator[] ); // form 1"
+  ],
+  "description": [
+    "The function initializes the protocol for a packet. If necessary further needed lower protocols are initialized, e.g. IPv4. Already initialized higher protocols are deleted.",
+    "Protocol fields that are marked as InitProtocol in the protocol overview are initialized."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "LONG packetHandle;\n\n// create packet\npacketHandle = EthInitPacket(\"ipv4\");\n\n// init UDP protocol\nEthInitProtocol(packetHandle, \"udp\" );\n\n// set protocol fields\nEthSetTokenInt( packetHandle, \"ipv4\", \"source\", 0xC0A80001 ); // 192.168.0.1\nEthSetTokenInt( packetHandle, \"ipv4\", \"destination\", 0xFFFFFFFF ); // 255.255.255.255\nEthSetTokenInt( packetHandle, \"udp\", \"source\", 23 );\nEthSetTokenInt( packetHandle, \"udp\", \"destination\", 23 );\n\n// set UDP payload\nEthResizeToken( packetHandle, \"udp\", \"data\", 5*8 /*bits*/ );\nEthSetTokenData( packetHandle, \"udp\", \"data\", 5, \"Hello\" );\n\n// Complete and send packet\nEthCompletePacket( packetHandle );\nEthOutputPacket( packetHandle );\n\n// release packet\nEthReleasePacket( packetHandle );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

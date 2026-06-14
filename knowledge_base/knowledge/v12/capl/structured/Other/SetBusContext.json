@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "SetBusContext",
+  "category": "Other",
+  "title": "SetBusContext",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetBusContext.htm",
+  "syntax": [
+    "dword SetBusContext( dword context)"
+  ],
+  "description": [
+    "Sets the bus context of the CAPL block."
+  ],
+  "parameters": [
+    {
+      "name": "context",
+      "type": "",
+      "description": "The new bus context to be set."
+    }
+  ],
+  "return": "The bus context that was valid before the call was made is returned.",
+  "example": {
+    "description": [
+      "This is an example for a simulation node. Test nodes should copy the bus context to a CAPL variable in the Main() function because all global variables are cleared when the test module is started."
+    ],
+    "code": "variables\n{\ndword ibus_context = 0;\ndword motbus_context = 0;\n}\non preStart\n{\nibus_context = GetBusNameContext( \"ibus\");\nmotbus_context = GetBusNameContext( \"motbus\");\n}\nvoid apCanOn()\n{\ndword context;\n// activate the CAN channel on the \"current\" context\nCanOnline();\n// determine the \"other\" context\ncontext = ibus_context == GetBusContext() ? motbus_context : ibus_context;\n// set the context to the \"other\" bus...\nSetBusContext( context);\n// ...and activate its CAN chip as well\nCanOnline();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

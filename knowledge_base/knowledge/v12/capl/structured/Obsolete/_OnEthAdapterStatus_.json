@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "<OnEthAdapterStatus>",
+  "category": "Obsolete",
+  "title": "<OnEthAdapterStatus>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionOnEthAdapterStatus.htm",
+  "syntax": [
+    "void <OnEthAdapterStatus>( long channel, long status);"
+  ],
+  "description": [
+    "This callback function is called when the state of the Ethernet adapter has changed."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel number of the adapter that has been changed"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "OnEthAdapterStatus( LONG channel, LONG status)\n{\n  switch(status)\n  {\n  case 1:   // adapter disconnected\n    write(\"ETH%d disconnected\", channel );\n    break;\n  case 2:   // adapter connected\n    write(\"ETH%d connected\", channel );\n    break;\n  default:\n    break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

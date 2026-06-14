@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMostRawSpyMessage",
+  "category": "Test",
+  "title": "TestWaitForMostRawSpyMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForMostRawSpyMessage.htm",
+  "syntax": [
+    "long TestWaitForMostRawSpyMessage(long aSourceAddress, long aDestinationAddress, long aRType, BYTE aMsgData [], dword aMsgDataLength, dword aTimeout);"
+  ],
+  "description": [
+    "This function waits for the occurrence of the specified MOST raw spy control message. Should the message not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "aSourceAddress",
+      "type": "",
+      "description": "Source address"
+    }
+  ],
+  "return": "-6: Parse Error; on specification of a message data description string that contains other characters than hexadecimal digits or wildcards (\"_\").",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

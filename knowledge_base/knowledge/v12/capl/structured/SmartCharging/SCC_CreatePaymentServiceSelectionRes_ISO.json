@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreatePaymentServiceSelectionRes_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreatePaymentServiceSelectionRes_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreatePaymentServiceSelectionRes_ISO.htm",
+  "syntax": [
+    "long SCC_CreatePaymentServiceSelectionRes_ISO ( byte SessionID[], char ResponseCode[] )"
+  ],
+  "description": [
+    "Creates a Payment Service Selection Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

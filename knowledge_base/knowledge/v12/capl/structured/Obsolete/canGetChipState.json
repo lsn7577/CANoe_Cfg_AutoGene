@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "canGetChipState",
+  "category": "Obsolete",
+  "title": "canGetChipState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionCanGetChipState.htm",
+  "syntax": [
+    "long canGetChipState (long channel)"
+  ],
+  "description": [
+    "Returns the current chip state of the specified CAN controller."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "CAN channel."
+    }
+  ],
+  "return": "Chip state of the specified CAN controller. See the following table for a description of the return values.\n0\nValue not available\n1\nSimulated\n3\nError Active\n4\nWarning Level\n5\nError Passive\n6\nBus Off",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

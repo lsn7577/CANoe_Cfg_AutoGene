@@ -1,0 +1,1708 @@
+{
+  "page_type": "notes",
+  "name": "MOST CAPL Functions",
+  "category": "MOST",
+  "title": "MOST CAPL Functions",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/CAPLfunctionsMOSTOverview.htm",
+  "syntax": [],
+  "description": [
+    "Further Topics",
+    "Application socket API",
+    "Evaluation of Event Procedures",
+    "Event Procedures",
+    "Fault Injection",
+    "Function Catalogue",
+    "Hardware API",
+    "Message Access",
+    "Message Transmission",
+    "Selectors",
+    "Test Functions",
+    "Trace Highlighting",
+    "Transmission and Receipt Settings of Nodes",
+    "The registries of the Application Socket may be read-out during the entire measurement cycle.",
+    "For this purpose CAPL provides the following functions:",
+    "The 'regsel' parameter is used to select the desired registry:",
+    "Please note: The Bus Registry is created in each device during MOST system configuration. It is only valid during network status 'ConfigOk'. Generally the NetworkMaster administers the Central Bus Registry. The Network Slaves mirror it in their De-Central Bus Registry.",
+    "Changes to registries are signaled in CAPL by the OnMostAsRegistry() event procedure.",
+    "Example",
+    "If more than one MOST channel is allocated to a CAPL node (MOST-MOST gateway) the bus context must be defined before Application Socket functions are used.",
+    "See SetBusContext() regarding this.",
+    "Changes the ring scan behavior of CANoe’s NetworkMaster.",
+    "Provide access to the timing parameters of CANoe’s NetworkMaster implementation.",
+    "Further links | TestWaitForAllJoinedEvents | TestWaitForAnyJoinedEvent |",
+    "Option .MOST | MOST Simulation Concept | PowerMaster |Error Codes of CAPL functions | Initialization of message variables | Symbolic identification of parameters | Symbolic identification of messages | General tips on XML function catalog support in CAPL | MOST high observer and combiner"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "MOST Only available with option .MOST."
+      ]
+    ],
+    [
+      [
+        "Further Topics Application socket API Evaluation of Event Procedures Event Procedures Fault Injection",
+        "Function Catalogue Hardware API Message Access Message Transmission",
+        "Selectors Test Functions Trace Highlighting Transmission and Receipt Settings of Nodes"
+      ]
+    ],
+    [
+      [
+        "Function Blocks",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "Registering/ Unregistering"
+      ],
+      [
+        "mostApRegister",
+        "—",
+        "Registers a CAPL node at the Application Socket as function block."
+      ],
+      [
+        "mostApRegisterEx",
+        "—",
+        "Registers a function block at the local function block list."
+      ],
+      [
+        "mostApUnregister",
+        "—",
+        "Removes the function block assigned to a CAPL node from the Application Socket."
+      ],
+      [
+        "mostApUnregisterEx",
+        "—",
+        "Removes a function block from the local function block list."
+      ],
+      [
+        "Status"
+      ],
+      [
+        "mostApGetFBlockID",
+        "—",
+        "Returns the function block identifier (FBlockID) of the CAPL node."
+      ],
+      [
+        "mostApGetInstID",
+        "—",
+        "Returns the instance identifier (InstID) of the CAPL node."
+      ],
+      [
+        "mostApIsAddressed",
+        "—",
+        "Checks whether the functional MOST address {fblockID, instID} matches the CAPL node function blocks."
+      ],
+      [
+        "mostApIsRegistered",
+        "—",
+        "Checks whether a function block assigned to the CAPL node is registered at the Application Socket."
+      ],
+      [
+        "mostApIsRegisteredEx",
+        "—",
+        "Checks whether a function block is registered at the Application Socket."
+      ],
+      [
+        "Read-Out of the Registries",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "The registries of the Application Socket may be read-out during the entire measurement cycle. For this purpose CAPL provides the following functions:"
+      ],
+      [
+        "mostAsRgGetSize",
+        "—",
+        "Returns the number of entries in the desired registry."
+      ],
+      [
+        "mostAsRgGetRxTxLog",
+        "—",
+        "Returns the logical node address of a specific entry in the desired registry."
+      ],
+      [
+        "mostAsRgGetFBlockID",
+        "—",
+        "Returns the FBlockID of a specific entry in the desired registry."
+      ],
+      [
+        "mostAsRgGetInstID",
+        "—",
+        "Returns the InstID of a specific entry in the desired registry."
+      ],
+      [
+        "The 'regsel' parameter is used to select the desired registry: regsel = 1: Local FBlockList regsel = 2: Bus Registry Please note: The Bus Registry is created in each device during MOST system configuration. It is only valid during network status 'ConfigOk'. Generally the NetworkMaster administers the Central Bus Registry. The Network Slaves mirror it in their De-Central Bus Registry. Changes to registries are signaled in CAPL by the OnMostAsRegistry() event procedure. Example"
+      ],
+      [
+        "Network State",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostGetNetState",
+        "—",
+        "Returns the current network state of the MOST interface."
+      ],
+      [
+        "MOST PowerMaster",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostPMResetOverTemperature",
+        "—",
+        "Signalizes the PowerMaster that the device has reached operating temperature again."
+      ],
+      [
+        "mostPMSetOverTemperature",
+        "—",
+        "Signalizes the PowerMaster that an over-temperature in its own device will be simulated."
+      ],
+      [
+        "mostPMShutDownStart",
+        "—",
+        "Initiates a system shutdown by the PowerMaster."
+      ],
+      [
+        "mostPMShutDownCancel",
+        "—",
+        "Aborts system shutdown of the PowerMaster."
+      ],
+      [
+        "mostPMTempShutdownWakeupTimeout",
+        "—",
+        "Sets the timeout duration, after which the PowerMaster tries to wake-up the ring after an over-temperature shutdown."
+      ],
+      [
+        "Gateway Node"
+      ],
+      [
+        "If more than one MOST channel is allocated to a CAPL node (MOST-MOST gateway) the bus context must be defined before Application Socket functions are used. See SetBusContext() regarding this."
+      ],
+      [
+        "Notification Service",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostAsNtfDeviceIDListGetSize",
+        "—",
+        "Returns the list size of all notification clients registered to a specific the function."
+      ],
+      [
+        "mostAsNtfDeviceIDListGetDeviceID",
+        "—",
+        "Returns the deviceID of a specific entry in the notification list."
+      ],
+      [
+        "mostAsNtfEnable, mostAsNtfDisable",
+        "—",
+        "Enables or disables the notification service for the function block assigned to the CAPL node."
+      ],
+      [
+        "mostAsNtfEnableEx",
+        "—",
+        "Enables the notification service for a function block."
+      ],
+      [
+        "mostAsNtfDisableEx",
+        "—",
+        "Disables the notification service for a function block."
+      ],
+      [
+        "mostAsNtfFunctionCheck",
+        "—",
+        "Checks whether a notification client (deviceID) is registered in the notification matrix for a function."
+      ],
+      [
+        "mostAsNtfFunctionClear",
+        "—",
+        "Clears a notification client entry from the notification matrix of a specific function."
+      ],
+      [
+        "mostAsNtfFunctionClearAll",
+        "—",
+        "Clears all notification clients from the notification matrix of a specific function."
+      ],
+      [
+        "mostAsNtfFunctionEnable",
+        "—",
+        "Enables the notification service for a specific function."
+      ],
+      [
+        "mostAsNtfFunctionDisable",
+        "—",
+        "Disables the notification service for a specific function."
+      ],
+      [
+        "mostAsNtfFunctionIsEnabled",
+        "—",
+        "Checks whether the notification service is enabled for a specific function."
+      ],
+      [
+        "mostAsNtfFunctionEnableEx",
+        "—",
+        "Enables the notification service for a specific function of a function block not exclusively assigned to the CAPL node."
+      ],
+      [
+        "mostAsNtfFunctionDisableEx",
+        "—",
+        "Disables the notification service for a specific function of a function block not exclusively assigned to the CAPL node."
+      ],
+      [
+        "mostAsNtfFunctionIsEnabledEx",
+        "—",
+        "Checks whether the notification service is enabled for a specific function of a function block not exclusively assigned to the CAPL node."
+      ],
+      [
+        "mostAsNtfFunctionListGetSize",
+        "—",
+        "Returns the list size of the functions for which a specific notification client is registered."
+      ],
+      [
+        "mostAsNtfFunctionListGetFunction",
+        "—",
+        "Returns the function at a given index in the function list for which a specific notification client is registered."
+      ],
+      [
+        "mostAsNtfFunctionSet",
+        "—",
+        "Registers a notification client in the notification matrix."
+      ],
+      [
+        "mostAsNtfOutput",
+        "—",
+        "Sends a message via the notification service to a stated address."
+      ],
+      [
+        "Shadow Service",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostAsShdDisable",
+        "—",
+        "Removes an entry from the list of shadowed function blocks."
+      ],
+      [
+        "mostAsShdEnable",
+        "—",
+        "Adds an entry to the list of shadowed function blocks."
+      ],
+      [
+        "Notification Shadow Service",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostAsNtfShdFunctionEnable",
+        "—",
+        "Registers a function to the notification shadow service."
+      ],
+      [
+        "mostAsNtfShdFunctionDisable",
+        "—",
+        "Removes a function from the notification shadow service."
+      ],
+      [
+        "Function Service",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostAsFsDisable",
+        "—",
+        "Disables the function service for a function block assigned to the CAPL node."
+      ],
+      [
+        "mostAsFsDisableEx",
+        "—",
+        "Disables the function service for a function block."
+      ],
+      [
+        "mostAsFsEnable",
+        "—",
+        "Enables the function service for a function block assigned to the CAPL node."
+      ],
+      [
+        "mostAsFsEnableEx",
+        "—",
+        "Enables the function service for a function block."
+      ],
+      [
+        "mostAsFsFunctionEnable",
+        "—",
+        "Registers a function of the function block assigned to the CAPL node to the function service."
+      ],
+      [
+        "mostAsFsFunctionEnableEx",
+        "—",
+        "Registers a function of a given function block to the function service."
+      ],
+      [
+        "NetBlock",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostNBSetAbilityToWake",
+        "—",
+        "Sets the AbilityToWake flag in the NetBlock."
+      ],
+      [
+        "NetworkMaster",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostNwmFunctionEnable",
+        "—",
+        "Registers and unregisters a function and its operations with the NetworkMaster."
+      ]
+    ],
+    [
+      [
+        "Functions for MOST Controller Events",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostEventChannel",
+        "—",
+        "Returns the channel of a MOST controller event."
+      ],
+      [
+        "mostEventTime",
+        "—",
+        "Returns the time stamp of a MOST controller event."
+      ],
+      [
+        "mostEventOrigTime",
+        "—",
+        "Returns the hardware-generated time stamp of a MOST controller event."
+      ],
+      [
+        "Functions for OnMostPkt()",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostPktArbitration",
+        "—",
+        "Returns the packet arbitration value."
+      ],
+      [
+        "mostPktDestAdr",
+        "—",
+        "Returns the destination address of the packet event."
+      ],
+      [
+        "mostPktDir",
+        "—",
+        "Returns the direction of transmission."
+      ],
+      [
+        "mostPktDlc",
+        "—",
+        "Number of transported data bytes of the packet."
+      ],
+      [
+        "mostPktGetData",
+        "—",
+        "Copies the data bytes to a provided buffer."
+      ],
+      [
+        "mostPktGetSelData",
+        "—",
+        "Copies the data bytes starting at a given position to a provided buffer."
+      ],
+      [
+        "mostPktIsSpy",
+        "—",
+        "Returns wether the packet was received over the Spy of the asynchronous channel."
+      ],
+      [
+        "mostPktMsgChannel",
+        "—",
+        "Returns the channel of the packet event."
+      ],
+      [
+        "mostPktMsgTime",
+        "—",
+        "Returns the time stamp of the packet event."
+      ],
+      [
+        "mostPktOrigTime",
+        "—",
+        "Returns the hardware generated time stamp of the packet event."
+      ],
+      [
+        "mostPktSrcAdr",
+        "—",
+        "Returns the source address of the packet event."
+      ],
+      [
+        "mostPktTelID",
+        "—",
+        "Returns the TelID of the packet."
+      ],
+      [
+        "mostPktTelLen",
+        "—",
+        "Returns the TelLen of the packet."
+      ],
+      [
+        "Functions for OnMostReg()",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostRegChip",
+        "MOST25",
+        "Returns the chip identifier."
+      ],
+      [
+        "mostRegDataLen",
+        "MOST25",
+        "Returns the number of bytes."
+      ],
+      [
+        "mostRegGetByteAbs",
+        "MOST25",
+        "Returns the byte value at a given positon."
+      ],
+      [
+        "mostRegGetData",
+        "MOST25",
+        "Copies the data bytes to a provided buffer."
+      ],
+      [
+        "mostRegGetWordAbs",
+        "MOST25",
+        "Returns the word value at a given positon."
+      ],
+      [
+        "mostRegOffset",
+        "MOST25",
+        "Returns the start address of the register."
+      ]
+    ],
+    [
+      [
+        "Event Procedures",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "General Message / Packet Event Procedures"
+      ],
+      [
+        "on mostAMSMessage",
+        "—",
+        "Is called when a message is received from the Application Message Service (AMS)."
+      ],
+      [
+        "OnMostEthPkt",
+        "MOST150",
+        "Is called when an Ethernet packet is received over the Packet Data channel."
+      ],
+      [
+        "OnMostEthPktFragment",
+        "MOST150",
+        "Is called when the spy detects an incomplete Ethernet packet transmission."
+      ],
+      [
+        "on mostMessage",
+        "—",
+        "Is called on the receipt of a function catalog conform MOST frame."
+      ],
+      [
+        "OnMostMsgFragment",
+        "MOST50, MOST150",
+        "Is called when the spy detects an incomplete transmission on the Control channel."
+      ],
+      [
+        "OnMostPkt",
+        "—",
+        "Is called when a packet is received over the Asynchronous Channel."
+      ],
+      [
+        "OnMostPktFragment",
+        "MOST50, MOST150",
+        "Is called when the spy detects an incomplete transmission on the Packet Data channel."
+      ],
+      [
+        "on mostRawMessage",
+        "MOST25",
+        "Is called on the receipt of MOST frames whose type isn't Normal."
+      ],
+      [
+        "MOST High Protocol Observer and Combiner Event Procedures"
+      ],
+      [
+        "OnMostMHPBlock",
+        "—",
+        "Is called up as soon as a block from a MOST High connection has been fully transmitted."
+      ],
+      [
+        "OnMostMHPPacket",
+        "—",
+        "Is called up as soon as a MOST High packet is finished."
+      ],
+      [
+        "OnMostMHPConnection",
+        "—",
+        "Is called as soon as a MOST High connection version 2.2 or higher is terminated."
+      ],
+      [
+        "OnMostMHPError",
+        "—",
+        "Is called up as soon as a MOST High protocol violation is observed."
+      ],
+      [
+        "MOST Controller Event"
+      ],
+      [
+        "OnMostAllBypass",
+        "—",
+        "Is called if the bypass of the MOST chip was opened or closed."
+      ],
+      [
+        "OnMostAllocTable",
+        "—",
+        "Is called as soon as the hardware interface detects a change in the MOST Allocation Table."
+      ],
+      [
+        "OnMostCriticalUnlock",
+        "—",
+        "Is called when a critical unlock is detected."
+      ],
+      [
+        "OnMostEcl",
+        "MOST150",
+        "Is called when the state of the Electrical Control Line changed."
+      ],
+      [
+        "OnMostEclSequence",
+        "MOST150",
+        "Is called before the beginning and after the end of a sequence on the Electrical Control Line."
+      ],
+      [
+        "OnMostGroupAdr",
+        "—",
+        "Is called when the group address changed."
+      ],
+      [
+        "on mostLightLockError",
+        "—",
+        "Is called on controller events."
+      ],
+      [
+        "OnMostMacAdr",
+        "MOST150",
+        "Is called when the MAC address changed."
+      ],
+      [
+        "OnMostMPR",
+        "—",
+        "Is called when the value of the MPR register changed (network change event (NCE))."
+      ],
+      [
+        "OnMostMPRDelayed",
+        "—",
+        "Is called if the value of the MPR register has not changed since the last network change event (NCE) for t_MPRDelayed."
+      ],
+      [
+        "OnMostNodeAdr",
+        "—",
+        "Is called when the node address changed."
+      ],
+      [
+        "OnMostNPR",
+        "—",
+        "Is called when the value of node position register changed."
+      ],
+      [
+        "OnMostReg",
+        "MOST25",
+        "Is called in response to read or write requests to registers of a MOST hardware interface chip."
+      ],
+      [
+        "OnMostSBC",
+        "—",
+        "Is called when the value of the synchronous bandwidth control register changed."
+      ],
+      [
+        "OnMostShutdownFlag",
+        "MOST150",
+        "Is called each time the state of the Shutdown flag changes."
+      ],
+      [
+        "OnMostShutdownReason",
+        "MOST150",
+        "Is called each time when the shutdown reason changes."
+      ],
+      [
+        "OnMostStableLock",
+        "—",
+        "Is called when stable lock is detected."
+      ],
+      [
+        "OnMostStress",
+        "—",
+        "Is called before the beginning and after the end of the stress generation."
+      ],
+      [
+        "OnMostSyncAudio",
+        "—",
+        "Is called after routing of audio input or output of the bus interface."
+      ],
+      [
+        "OnMostSyncSpdif",
+        "MOST25, MOST150",
+        "Is called after routing of S/PDIF input or output of the bus interface."
+      ],
+      [
+        "OnMostSystemLock",
+        "MOST150",
+        "Is called each time the state of the System-Lock flag changes."
+      ],
+      [
+        "OnMostTimingMode",
+        "—",
+        "Is called if the timing mode of the MOST hardware has been changed."
+      ],
+      [
+        "OnMostTxLight",
+        "—",
+        "Is called as soon as the light at the output goes on/off."
+      ],
+      [
+        "MOST Application Events"
+      ],
+      [
+        "OnMostNetOn, OnMostInitReady",
+        "—",
+        "Is called when the NetOn / InitReady event (first \"Stable Lock\" after he loop has been woken up) has occurred."
+      ],
+      [
+        "OnMostNetState",
+        "—",
+        "Is called when the network status is changed."
+      ],
+      [
+        "OnMostApInstID",
+        "—",
+        "Is called when the InstID of the associated function block changes."
+      ],
+      [
+        "OnMostAsRegistry",
+        "—",
+        "Is called when the Local FBlockList or Bus Registry is changed."
+      ],
+      [
+        "Fault Injection"
+      ],
+      [
+        "OnMostFiAmsPreReceive",
+        "—",
+        "Is called before an AMS message is received."
+      ],
+      [
+        "OnMostFiAmsPreSend",
+        "—",
+        "Is called before an AMS message is sent."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostAsFiEnable",
+        "—",
+        "Enables/disables fault injection for CANoe’s Application Socket services."
+      ],
+      [
+        "mostFiAmsReceive",
+        "—",
+        "Pretends an AMS message reception to the Application Socket or CAPL node."
+      ],
+      [
+        "mostNwmFiEnableRingScan",
+        "—",
+        "Changes the ring scan behavior of CANoe’s NetworkMaster."
+      ],
+      [
+        "mostNwmFiSetConfigState",
+        "—",
+        "Forces the network configuration status to be set in CANoe’s NetworkMaster."
+      ],
+      [
+        "mostNwmFiSetParameter mostNwmFiGetParameter",
+        "—",
+        "Provide access to the timing parameters of CANoe’s NetworkMaster implementation."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostAmsOutput",
+        "—",
+        "Definition and direct dispatch of an AMS message using the syntax from the MOST specification and the description in the XML function catalog."
+      ],
+      [
+        "mostMsgDecodeRLE",
+        "—",
+        "Decodes the data area of a message and saves the function IDs in a list."
+      ],
+      [
+        "mostMsgEncodeRLE",
+        "—",
+        "Encodes a list of function IDs and saves it in the data area of a message."
+      ],
+      [
+        "mostMsgGetSymbols",
+        "—",
+        "Determining the symbolic Names of the function block, the function and the Optype from an AMS or control message using the XML function catalog."
+      ],
+      [
+        "mostMsgSet",
+        "—",
+        "Populating an AMS message using the syntax from the MOST specification and the description in the XML function catalog."
+      ],
+      [
+        "mostParamGet",
+        "—",
+        "Query of a parameter value from an AMS message using the parameter name from the XML function catalog."
+      ],
+      [
+        "mostParamGetData",
+        "—",
+        "Query of parameters of the String type or RawStream from an AMS message using the parameter name from the XML function catalog."
+      ],
+      [
+        "mostParamGetString",
+        "—",
+        "Query of parameters of the String type from an AMS message using the parameter name from the XML function catalog."
+      ],
+      [
+        "mostParamGetStringAscii",
+        "—",
+        "Query of parameters of the String type from an AMS message and decode to ASCII format."
+      ],
+      [
+        "mostParamIsAvailable",
+        "—",
+        "Check whether a described parameter with the parameter name from the XML function catalog is in an AMS message."
+      ],
+      [
+        "mostParamSet",
+        "—",
+        "Setting of a parameter value in an AMS message using the parameter name from the XML function catalog."
+      ],
+      [
+        "mostParamSetData",
+        "—",
+        "Setting of parameters of the String type or RawStream in an AMS message using the parameter name from the XML function catalog."
+      ],
+      [
+        "mostParamSetString",
+        "—",
+        "Setting of parameters of the String type (for ASCII-coded strings only) or of the 'Enum' type in an AMS message using the parameter name from the XML function catalog."
+      ],
+      [
+        "mostParamSetStringEnc",
+        "—",
+        "Encoding and setting of parameters of the String type (for ASCII-coded strings only)."
+      ],
+      [
+        "mostStringToAscii",
+        "—",
+        "Convert MOST string to ASCII string."
+      ]
+    ],
+    [
+      [
+        "Electrical Control Line",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostConfigureEclSequence",
+        "MOST150",
+        "Defines a signal sequence for the Electrical Control Line and prepares the hardware to start the generation."
+      ],
+      [
+        "mostGenerateEclSequence",
+        "MOST150",
+        "Starts the generation of a signal sequence on the Electrical Control Line."
+      ],
+      [
+        "mostGetEcl",
+        "MOST150",
+        "Returns the current state of the Electrical Control Line."
+      ],
+      [
+        "mostSetEcl",
+        "MOST150",
+        "Switches the Electrical Control Line."
+      ],
+      [
+        "mostGetEclTermination",
+        "MOST150",
+        "Returns the current setting of the Electrical Control Line resistor."
+      ],
+      [
+        "mostSetEclGlitchFilter",
+        "MOST150",
+        "Configures the timing of the glitch filter for the ECL line."
+      ],
+      [
+        "mostSetEclTermination",
+        "MOST150",
+        "Switches the Electrical Control Line resistor."
+      ],
+      [
+        "Node Addresses - Node Mode",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostGetAltPktAdr",
+        "MOST25",
+        "Returns the current alternative packet address of the MOST interface."
+      ],
+      [
+        "mostGetGroupAdr",
+        "—",
+        "Returns the current group address of the MOST interface."
+      ],
+      [
+        "mostGetNodeAdr",
+        "—",
+        "Returns the current node address of the MOST interface."
+      ],
+      [
+        "mostGetNodePosAdr",
+        "—",
+        "Returns the current node position address of the MOST interface."
+      ],
+      [
+        "mostSetAltPktAdr",
+        "MOST25",
+        "Sets the alternative packet address of the MOST interface."
+      ],
+      [
+        "mostSetGroupAdr",
+        "—",
+        "Sets the group address of the MOST interface."
+      ],
+      [
+        "mostSetNodeAdr",
+        "—",
+        "Sets the node address of the MOST interface."
+      ],
+      [
+        "mostSetOwnAdr",
+        "MOST25, MOST150",
+        "Sets the node and group address of the MOST interface."
+      ],
+      [
+        "mostSetMacAdr, mostGetMacAdr",
+        "MOST150",
+        "Sets/gets the MAC address of the MOST interface."
+      ],
+      [
+        "Ring State",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostAllocTableGetCL",
+        "MOST50, MOST150",
+        "Returns the connection label of the respective entry in the allocation table."
+      ],
+      [
+        "mostAllocTableGetSize",
+        "MOST50, MOST150",
+        "Returns the number of entries (connection labels) in the allocation table."
+      ],
+      [
+        "mostAllocTableGetWidth",
+        "MOST50, MOST150",
+        "Returns the number of channels of the respective entry (connection label) in the allocation table."
+      ],
+      [
+        "mostGetAllocTable",
+        "MOST25",
+        "Copies the MOST Allocation Table to a local buffer."
+      ],
+      [
+        "mostGetCodingErrors",
+        "MOST25, MOST150",
+        "Returns the number of coding errors."
+      ],
+      [
+        "mostGetLock",
+        "—",
+        "Returns the current lock status (unlock, lock)"
+      ],
+      [
+        "mostGetLockEx",
+        "—",
+        "Returns the current lock status (unlock, lock, stable lock, critical unlock)."
+      ],
+      [
+        "mostGetMPR",
+        "—",
+        "Returns the current value of the MPR register (number of nodes in the ring)."
+      ],
+      [
+        "mostGetNPR",
+        "—",
+        "Returns the current value of the NPR register (current node position in the ring)."
+      ],
+      [
+        "mostGetNceType",
+        "—",
+        "Returns the type of NCE (can only be called within OnMostMPR)."
+      ],
+      [
+        "mostGetRxLight",
+        "—",
+        "Returns the current light status at the FOT input."
+      ],
+      [
+        "mostGetSBC",
+        "—",
+        "Returns the current value of the SBC register."
+      ],
+      [
+        "mostGetShutdownReason",
+        "MOST150",
+        "Retrieves the last shutdown reason value."
+      ],
+      [
+        "mostGetShutdownFlag",
+        "MOST150",
+        "Returns the current state of the Shutdown flag."
+      ],
+      [
+        "mostGetSystemLock",
+        "MOST150",
+        "Returns the current state of the System Lock Flag."
+      ],
+      [
+        "mostGetTxLight",
+        "—",
+        "Returns the current light status at the FOT output."
+      ],
+      [
+        "mostSetCorrectStartupSBC",
+        "MOST25",
+        "Activates or deactivates the correct setting of the 'Synchronous Bandwidth Control' register (SBC) in the MOST chip."
+      ],
+      [
+        "mostSetShutdownReason",
+        "MOST150",
+        "Sets the shutdown reason value."
+      ],
+      [
+        "mostSetSBC",
+        "—",
+        "Sets the value of the SBC register."
+      ],
+      [
+        "mostSetTxLight",
+        "—",
+        "Sets the light status at the FOT output."
+      ],
+      [
+        "mostShutDown",
+        "MOST50, MOST150",
+        "Performs a network shutdown."
+      ],
+      [
+        "mostWakeup",
+        "—",
+        "Generates an optical wake-up signal."
+      ],
+      [
+        "Register Access",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostReadReg",
+        "MOST25",
+        "Initiates read-out of the registers of a MOST hardware chip."
+      ],
+      [
+        "mostWriteReg",
+        "MOST25",
+        "Writes to one or more registers of a MOST hardware chip."
+      ],
+      [
+        "Synchronous Channel Allocation Service",
+        "Restricted To",
+        "Short Description"
+      ],
+      [
+        "mostSyncAlloc",
+        "MOST25, MOST150",
+        "Reserves bandwidth for sending data on the synchronous channel."
+      ],
+      [
+        "mostSyncDealloc",
+        "MOST25, MOST150",
+        "Releases reserved bandwidth on the synchronous channel."
+      ],
+      [
+        "Operating Modes",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "Bypass Mode"
+      ],
+      [
+        "mostGetAllBypass",
+        "MOST25",
+        "Returns the current bypass status of the MOST interface."
+      ],
+      [
+        "mostSetAllBypass",
+        "MOST25",
+        "Disables or enables the bypass of the MOST interface."
+      ],
+      [
+        "Timing Mode"
+      ],
+      [
+        "mostSetMasterMode, mostGetMasterMode",
+        "MOST150",
+        "Configures the timing master as static or non-static master."
+      ],
+      [
+        "mostGetTimingMode",
+        "—",
+        "Returns the current timing mode of the MOST interface."
+      ],
+      [
+        "mostSetTimingMode",
+        "—",
+        "Sets the timing mode of the MOST interface."
+      ],
+      [
+        "Spy Mode"
+      ],
+      [
+        "mostGetSpyAsync",
+        "MOST25, MOST150",
+        "Returns the current asynchronous spy status of the MOST interface."
+      ],
+      [
+        "mostGetSpyCtrl",
+        "MOST25, MOST150",
+        "Returns the current control spy status of the MOST interface."
+      ],
+      [
+        "mostGetSpyEthPkt",
+        "MOST150",
+        "Returns the current Ethernet packet spy status of the MOST interface."
+      ],
+      [
+        "mostSetSpyAsync",
+        "MOST25, MOST150",
+        "Disables or enables the asynchronous spy of the MOST interface."
+      ],
+      [
+        "mostSetSpyCtrl",
+        "MOST25, MOST150",
+        "Disables or enables the control spy of the MOST interface."
+      ],
+      [
+        "mostSetSpyEthPkt",
+        "MOST150",
+        "Disables or enables the Ethernet packet spy of the MOST interface."
+      ],
+      [
+        "Stress Mode"
+      ],
+      [
+        "mostConfigureBusloadAsync",
+        "—",
+        "Configures the bus load generator for the asynchronous channel."
+      ],
+      [
+        "mostConfigureBusloadCtrl",
+        "—",
+        "Configures the bus load generator for the control channel."
+      ],
+      [
+        "mostConfigureBusloadEthPkt",
+        "MOST150",
+        "Configures the bus load generator for the Ethernet channel."
+      ],
+      [
+        "mostGenerateBusloadAsync",
+        "—",
+        "Sends cyclical packets to the asynchronous channel."
+      ],
+      [
+        "mostGenerateBusloadCtrl",
+        "—",
+        "Sends cyclical messages to the control channel."
+      ],
+      [
+        "mostGenerateBusloadEthPkt",
+        "MOST150",
+        "Configures the bus load generator for the Ethernet channel."
+      ],
+      [
+        "mostGenerateBypassToggle",
+        "MOST150",
+        "Starts or stops generation of Bypass-open-close transitions."
+      ],
+      [
+        "mostSetRxBufferAsync",
+        "MOST150",
+        "Starts or stops draining of the asynchronous receive buffer and allows to provoke low level retries."
+      ],
+      [
+        "mostSetShutDownFlagUsage, mostGetShutDownFlagUsage",
+        "MOST150",
+        "Switches usage of shutdown flag."
+      ],
+      [
+        "mostSetStressNodeParameter, mostGetStressNodeParameter",
+        "MOST50, MOST150",
+        "Configures the stress network interface controller."
+      ],
+      [
+        "mostSetStressNodeParameterData",
+        "MOST150",
+        "Configures the stress network interface controller with a byte sequence."
+      ],
+      [
+        "mostSetSystemLockFlagUsage, mostGetSystemLockFlagUsage",
+        "MOST150",
+        "Switches usage of system lock flag."
+      ],
+      [
+        "mostSetTxLightPower",
+        "MOST25, MOST150",
+        "Sets the intensity of the light at the Fiber Optical Transmitter (FOT)."
+      ],
+      [
+        "mostSetRxBufferCtrl",
+        "—",
+        "Disables or enables the Rx buffer for messages of the control channel."
+      ],
+      [
+        "mostGenerateLightError",
+        "MOST25, MOST150",
+        "Starts or stops generation of Light-ON-OFF transitions."
+      ],
+      [
+        "mostGenerateLockError",
+        "—",
+        "Starts or stops generation of Light Unmodulated-Modulated transitions."
+      ],
+      [
+        "mostSetRetryParameter, mostGetRetryParameter",
+        "MOST25, MOST150",
+        "Provides access to the transceiver chip parameters for message transmission."
+      ],
+      [
+        "Audio"
+      ],
+      [
+        "mostGetSyncMute",
+        "—",
+        "Returns the current mute status of the audio input or output of the MOST interface."
+      ],
+      [
+        "mostGetSyncVolume",
+        "—",
+        "Returns the current volume of the audio input or output of the MOST interface."
+      ],
+      [
+        "mostSetSyncAudio",
+        "—",
+        "Programs the routing engine for the audio input or output of the MOST interface."
+      ],
+      [
+        "mostSetSyncMute",
+        "—",
+        "Activates or deactivates the audio input or output of the MOST interface."
+      ],
+      [
+        "mostSetSyncVolume",
+        "—",
+        "Sets the volume of the audio input or output of the MOST interface."
+      ],
+      [
+        "S/PDIF"
+      ],
+      [
+        "mostGetSyncSpdifMode",
+        "MOST25, MOST150",
+        "Returns the timing mode of the S/PDIF signal."
+      ],
+      [
+        "mostGetClockSource",
+        "MOST25",
+        "Returns the clock source of the timing master."
+      ],
+      [
+        "mostSetSyncSpdif",
+        "—",
+        "Programs the routing engine for S/PDIF input or output of the MOST interface."
+      ],
+      [
+        "mostSetSyncSpdifLock",
+        "MOST25",
+        "Locks the internal S/PDIF timing generator on the S/PDIF input data stream."
+      ],
+      [
+        "mostSetSyncSpdifMode",
+        "MOST25, MOST150",
+        "Sets the timing mode for the S/PDIF signal."
+      ],
+      [
+        "mostSetClockSource",
+        "MOST25",
+        "Sets the clock source for the timing master."
+      ],
+      [
+        "Other"
+      ],
+      [
+        "mostGetHWCapability",
+        "—",
+        "Returns specific properties of the attached MOST interface."
+      ],
+      [
+        "mostGetHWInfo",
+        "—",
+        "Returns specific information of the attached MOST interface (e.g. hardware type)."
+      ],
+      [
+        "mostGetSpecVersion",
+        "—",
+        "Returns the applied specification version of a MOST channel."
+      ],
+      [
+        "mostGetSpeedGrade",
+        "—",
+        "Returns the configured speed grade of a MOST channel."
+      ],
+      [
+        "mostTwinklePowerLed",
+        "—",
+        "Twinkles the power LED."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostPrepareReport",
+        "—",
+        "Preparation of an AMS message as response (OpType>=9) to a received command message (OpType<9)."
+      ],
+      [
+        "getThisMessage",
+        "—",
+        "Copies the data of an AMS message into a message variable - Deprecated - see Initialization of Message Variables!"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "output",
+        "—",
+        "Sends a message on the MOST ring."
+      ],
+      [
+        "outputMostEthPkt",
+        "MOST150",
+        "Sends out an Ethernet packet over the asynchronous channel."
+      ],
+      [
+        "outputMostEthPktThis",
+        "MOST150",
+        "Passes the Ethernet packet on to the next node in the nodal sequence."
+      ],
+      [
+        "outputMostPkt",
+        "—",
+        "Sends a packet on the MOST ring."
+      ],
+      [
+        "outputMostPktThis",
+        "—",
+        "Passes the packet on to the next node in the nodal sequence."
+      ],
+      [
+        "mostAmsOutput",
+        "—",
+        "Definition and direct dispatch of an AMS message using the syntax from the MOST specification and the description in the XML function catalog."
+      ],
+      [
+        "mostAmsClearTxQueue",
+        "—",
+        "Clears all entries in the AMS send buffer."
+      ],
+      [
+        "mostAmsSetSizePrefixed",
+        "MOST50, MOST150",
+        "Configures the minimum length of an AMS message above which the size prefixed mode is used."
+      ],
+      [
+        "mostSendError",
+        "—",
+        "Generates and sends an error message directly based on a received command message."
+      ]
+    ],
+    [
+      [
+        "Selectors",
+        "Short Description"
+      ],
+      [
+        "mostMessage and mostAMSmessage",
+        "Detailed description of the mostMessage and mostAMSmessage selectors"
+      ],
+      [
+        "mostRawMessage",
+        "Detailed description of the mostRawMessage selectors"
+      ],
+      [
+        "mostLightLockError",
+        "Detailed description of the mostLightLockError selectors"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "Message Events"
+      ],
+      [
+        "TestGetWaitEventMostAMSMsgData",
+        "—",
+        "Retrieves the AMS message data of a waiting condition."
+      ],
+      [
+        "TestGetWaitEventMostPkt",
+        "—",
+        "Provides access to packet data of a waiting condition."
+      ],
+      [
+        "TestGetWaitEventMostRawMsgData",
+        "—",
+        "Retrieves the CMS raw message data of a waiting condition."
+      ],
+      [
+        "TestGetWaitEventMostMsgData",
+        "—",
+        "Retrieves the CMS message data of a waiting condition."
+      ],
+      [
+        "TestJoinMostAMSMessageEvent",
+        "—",
+        "Adds an AMS message to the set of joined events."
+      ],
+      [
+        "TestJoinMostAMSReportEvent",
+        "—",
+        "Adds an AMS report message (OpType > 8) to the set of joined events."
+      ],
+      [
+        "TestJoinMostAMSSpyMessageEvent",
+        "—",
+        "Adds an AMS spy message to the set of joined events."
+      ],
+      [
+        "TestJoinMostAMSSpyReportEvent",
+        "—",
+        "Adds an AMS spy report message (OpType > 8) to the set of joined events."
+      ],
+      [
+        "TestJoinMostMessageEvent",
+        "—",
+        "Adds a CMS message to the set of joined events."
+      ],
+      [
+        "TestJoinMostPktEvent",
+        "—",
+        "Adds a packet to the set of joined events."
+      ],
+      [
+        "TestJoinMostReportEvent",
+        "—",
+        "Adds a CMS report message (OpType > 8) to the set of joined events."
+      ],
+      [
+        "TestJoinMostSpyMessageEvent",
+        "—",
+        "Adds a CMS spy message to the set of joined events."
+      ],
+      [
+        "TestJoinMostSpyPktEvent",
+        "—",
+        "Adds a spy packet to the set of joined events."
+      ],
+      [
+        "TestJoinMostSpyReportEvent",
+        "—",
+        "Adds a CMS spy report message (OpType > 8) to the set of joined events."
+      ],
+      [
+        "TestSendMostAMSMessage",
+        "—",
+        "Sends an AMS message an waits for Tx acknowledgment result."
+      ],
+      [
+        "TestSendMostRawMessage",
+        "—",
+        "Send a CMS raw message and waits for Tx acknowledgment result."
+      ],
+      [
+        "TestWaitForMostAMSMessage",
+        "—",
+        "Waits for specific AMS message."
+      ],
+      [
+        "TestWaitForMostAMSReport",
+        "—",
+        "Waits for specific AMS report message (OpType > 8)."
+      ],
+      [
+        "TestWaitForMostAMSRespons",
+        "—",
+        "Sends a symbolically defined AMS message and waits for the appropriate response message."
+      ],
+      [
+        "TestWaitForMostAMSResult",
+        "—",
+        "Sends a symbolically defined AMS message with OpType ‘StartResult’ or ‘StartResultAck’ and waits for the reception of the appropriate ‘Result’ or ‘ResultAck’ message."
+      ],
+      [
+        "TestWaitForMostAMSSpyMessage",
+        "—",
+        "Waits for specific AMS spy message."
+      ],
+      [
+        "TestWaitForMostAMSSpyReport",
+        "—",
+        "Waits for specific AMS spy report message (OpType > 8)."
+      ],
+      [
+        "TestWaitForMostMessage",
+        "—",
+        "Waits for specific CMS message."
+      ],
+      [
+        "TestWaitForMostPkt",
+        "—",
+        "Waits for a specific packet."
+      ],
+      [
+        "TestWaitForMostRawSpyMessage",
+        "—",
+        "Waits for specific CMS raw spy message."
+      ],
+      [
+        "TestWaitForMostReport",
+        "—",
+        "Waits for specific CMS report message (OpType > 8)."
+      ],
+      [
+        "TestWaitForMostSpyMessage",
+        "—",
+        "Waits for specific CMS spy message."
+      ],
+      [
+        "TestWaitForMostSpyPkt",
+        "—",
+        "Waits for a specific spy or node packet."
+      ],
+      [
+        "TestWaitForMostSpyReport",
+        "—",
+        "Waits for specific CMS spy report message (OpType > 8)."
+      ],
+      [
+        "Controller Events"
+      ],
+      [
+        "TestWaitForMostAllBypass",
+        "—",
+        "Wait for a bypass change event."
+      ],
+      [
+        "TestWaitForMostCriticalUnlock",
+        "—",
+        "Wait for the occurrence of a LightLock event indicating a critical unlock state."
+      ],
+      [
+        "TestWaitForMostGroupAdr",
+        "—",
+        "Waits for group address change event."
+      ],
+      [
+        "TestWaitForMostLightOff",
+        "—",
+        "Wait for the occurrence of a LightLock event indicating a no Light & no Lock state."
+      ],
+      [
+        "TestWaitForMostMPR",
+        "—",
+        "Waits for a MPR event (NCE)."
+      ],
+      [
+        "TestWaitForMostNetState",
+        "—",
+        "Waits for NetState change event."
+      ],
+      [
+        "TestWaitForMostNodeAdr",
+        "—",
+        "Waits for a node address change event."
+      ],
+      [
+        "TestWaitForMostNPR",
+        "—",
+        "Waits for a NPR change event."
+      ],
+      [
+        "TestWaitForMostSBC",
+        "—",
+        "Wait for SBC change event."
+      ],
+      [
+        "TestWaitForMostShortUnlock",
+        "—",
+        "Wait for the occurrence of a LightLock event indicating a Light & no Lock state."
+      ],
+      [
+        "TestWaitForMostStableLock",
+        "—",
+        "Wait for the occurrence of a LightLock event indicating a stable unlock state."
+      ],
+      [
+        "TestMostReadReg",
+        "MOST25",
+        "Reads one or several MOST chip registers and waits for the result."
+      ],
+      [
+        "TestMostRegGetData",
+        "MOST25",
+        "Retrieve the register values after a TestMostReadReg or TestMostWriteReg function was called."
+      ],
+      [
+        "TestMostWriteReg",
+        "MOST25",
+        "Writes one or several MOST chip registers and waits for the result."
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostEthPktSetTraceColors",
+        "MOST150",
+        "Sets the text and background color for displaying the MOST event in the Trace Window."
+      ],
+      [
+        "mostMHPBlockSetTraceColors",
+        "—"
+      ],
+      [
+        "mostMHPConnectionSetTraceColors",
+        "—"
+      ],
+      [
+        "mostMHPConnectionSetTraceColors",
+        "—"
+      ],
+      [
+        "mostMHPPacketSetTraceColors",
+        "—"
+      ],
+      [
+        "mostPktSetTraceColors",
+        "—"
+      ],
+      [
+        "traceSetEventColors",
+        "—"
+      ]
+    ],
+    [
+      [
+        "Functions",
+        "Restricted to Speed Grade",
+        "Short Description"
+      ],
+      [
+        "mostApplicationNode",
+        "—",
+        "Switches the CAPL node into application mode - only messages (no spy!) are received/sent fom/on channels to which the CAPL node is connected to."
+      ],
+      [
+        "mostGetChannel",
+        "—",
+        "Returns the channel number to which the CAPL node is connected to."
+      ],
+      [
+        "mostRcvSpyMessagesOnly",
+        "—",
+        "The MOST message handling routines of this node are only called if the message was received by the Spy of the bus interfaces."
+      ],
+      [
+        "mostStrictChannelMapping",
+        "—",
+        "The MOST sending and receiving behavior of the node is strictly based on the configuration in the Simulation Setup."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

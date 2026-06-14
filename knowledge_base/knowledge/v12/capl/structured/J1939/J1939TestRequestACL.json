@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestRequestACL",
+  "category": "J1939",
+  "title": "J1939TestRequestACL",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestRequestACL.htm",
+  "syntax": [
+    "long J1939TestRequestACL( dword requestSA, dbNode aclSender, dword timeout, dword options )"
+  ],
+  "description": [
+    "A request for ACL is sent. The configured node must respond with the ACL message (0xEE00)."
+  ],
+  "parameters": [
+    {
+      "name": "requestSA",
+      "type": "",
+      "description": "the request is sent from this source address"
+    }
+  ],
+  "return": ">0: ACL was received from the configured node (aclSender); return value is equal to the number of received ACLs",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = J1939TestRequestACL( 254, EMS, 250, 0x00 );\n\nif (result == 1) {\n  TestStepPass( \"ACL received\" );\n}\nelse if (result == 0) {\n  TestStepFail( “Timeout, ACL message not receive” );\n}\nelse {  \n  TestStepFail( “Error during Request for ACL test“);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

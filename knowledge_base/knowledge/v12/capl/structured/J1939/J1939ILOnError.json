@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939ILOnError",
+  "category": "J1939",
+  "title": "J1939ILOnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILOnError.htm",
+  "syntax": [
+    "void J1939ILOnError( long errorCode, long param )"
+  ],
+  "description": [
+    "This callback function is called from the J1939 IL if an error occurred."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "error code"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void J1939ILOnError( LONG errorCode, LONG param )\n{\n  write( \"Error %d, parameter %d\", errorCode, param );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

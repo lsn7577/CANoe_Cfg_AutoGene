@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForSignalOutsideRange",
+  "category": "Test",
+  "title": "TestWaitForSignalOutsideRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForSignalOutsideRange.htm",
+  "syntax": [
+    "long TestWaitForSignalOutsideRange (sysvar aSysVar, float aLowLimit, float aHighLimit, dword aTimeout); // form 1"
+  ],
+  "description": [
+    "Checks the signal, the system or the environment variable value against the condition:",
+    "If this condition is already met when this function is called, it returns immediately without waiting.",
+    "The test step is evaluated as passed or failed depending on the results."
+  ],
+  "parameters": [
+    {
+      "name": "Note Use the int64 parameters for system variables of UInt64 and Int64 type to cover the whole value range. The int64 parameter is interpreted for system variables of UInt64 type as qword (uint64).",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "-1: General error.",
+  "example": {
+    "description": [],
+    "code": "// waits for a specified value range of signal ‘Velocity’\nlong result;\nresult = TestWaitForSignalOutsideRange(Velocity, 80, 100, 2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

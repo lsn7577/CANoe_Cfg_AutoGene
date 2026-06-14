@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coOnUploadResponse",
+  "category": "Obsolete",
+  "title": "coOnUploadResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOnUploadResponse.htm",
+  "syntax": [
+    "void coOnUploadResponse( dword nodeId, dword index, dword subIndex, dword size );"
+  ],
+  "description": [
+    "This function is called when the response to an SDO upload was received (see coUpload). Now the data can be accessed with coThisGetSigned, coThisGetUnsigned, coThisGetFloat, coThisGetData, and coThisGetSize.",
+    "The access to the transmitted data is only possible within this function."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID, value range 1..127"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnUploadResponse( dword nodeId, dword index, dword subIndex, dword size ){\n  dword errCode[1];\n  dword value;\n  value = coThisGetUnsigned( errCode );\n  write( \"Upload Response Data 0x%X\", value );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

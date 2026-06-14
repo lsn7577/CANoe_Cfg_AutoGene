@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_VS_Nw_Info_Cnf",
+  "category": "SmartCharging",
+  "title": "SCC_VS_Nw_Info_Cnf",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_VS_Nw_Info_Cnf.htm",
+  "syntax": [
+    "void SCC_VS_Nw_Info_Cnf ( byte SourceMacAddress[], long NumAvLn, byte NID[] )"
+  ],
+  "description": [
+    "The callback is called as soon as a VS_Nw_Info.Cnf message is received. This is a response of the QCA9000 chip when using link status polling. (Additional data cannot be queried at the moment.)"
+  ],
+  "parameters": [
+    {
+      "name": "SourceMacAddress",
+      "type": "",
+      "description": "MAC address of sender"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

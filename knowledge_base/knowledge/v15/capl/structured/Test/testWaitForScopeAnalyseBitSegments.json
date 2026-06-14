@@ -1,0 +1,183 @@
+{
+  "page_type": "function",
+  "name": "testWaitForScopeAnalyseBitSegments",
+  "category": "Test",
+  "title": "testWaitForScopeAnalyseBitSegments",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForScopeAnalyseBitSegments.htm",
+  "syntax": [
+    "long testWaitForScopeAnalyseBitSegments(message aMessage, ScopeAnalyseBitSegment bitSegments[], dword noOfSegments, dword referenceVoltagePoint, dword flags, dword msgFieldStart, dword msgFieldEnd);"
+  ],
+  "description": [
+    "Starts an analysis for the defined bit segments for each bit, which is within the defined range. The result of the analysis can be requested with the function testWaitScopeGetAnalysedBitSegments."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The message where the bits should be analyzed."
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "SegmentStart",
+      "type": "Start of the bit segment in percent of the bit length (100% = nominal bit length)",
+      "description": "dword"
+    },
+    {
+      "name": "SegmentEnd",
+      "type": "End of the bit segment in percent of the bit length (100% = nominal bit length)",
+      "description": "dword"
+    },
+    {
+      "name": "noOfSegments",
+      "type": "",
+      "description": "Number of the bit segments used for the analysis."
+    },
+    {
+      "name": "referenceVoltagePoint",
+      "type": "",
+      "description": "The reference voltage point within the bit in %."
+    },
+    {
+      "name": "Bits",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "CAN high signal used for analysis"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "CAN low signal used for analysis"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "CAN diff signal used for analysis"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "CAN common mode voltage (CMV) used for analysis"
+    },
+    {
+      "name": "msgFieldStart, msgFieldEnd",
+      "type": "",
+      "description": "Start and end field of the bit range. See ScopeBitAnalyse.cin"
+    }
+  ],
+  "return": "Array that defines the bit segments of a bit for the",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 SP3",
+      "13.0",
+      "—",
+      "—",
+      "2.2 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN Scope",
+      "CAN Scope",
+      "—",
+      "—",
+      "CAN Scope"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

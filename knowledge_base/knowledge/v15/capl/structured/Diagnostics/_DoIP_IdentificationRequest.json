@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_IdentificationRequest",
+  "category": "Diagnostics",
+  "title": "_DoIP_IdentificationRequest",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPIdentificationRequest.htm",
+  "syntax": [
+    "long _DoIP_IdentificationRequest(long type, BYTE VINorEID[]);"
+  ],
+  "description": [
+    "A vehicle simulation has received a Vehicle Identification Request Message. The value returned will determine the reaction of the DoIP.DLL.",
+    "Note that requests not targeted at the ECU will be ignored."
+  ],
+  "parameters": [
+    {
+      "name": "type",
+      "type": "",
+      "description": "1: No argument, VINorEID is empty2: Argument contains the EID (6 byte)3: Argument contains the VIN (17 byte/characters)"
+    },
+    {
+      "name": "VINorEID",
+      "type": "",
+      "description": "The argument from the request message."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long _DoIP_IdentificationRequest(long type, BYTE VINorEID[])\n{\n  if( type == 1)\n    write( \"Received VIR without argument\");\n  else if( type == 2)\n    write( \"Received VIR with EID: %02x:%02x:%02x:%02x:%02x:%02x\"\n    , VINorEID[0], VINorEID[1], VINorEID[2]\n    , VINorEID[3], VINorEID[4], VINorEID[5]);\n  else if( type == 3)\n  {\n    char textVIN[17];\n    int i;\n    for( i = 0; i < elcount(VINorEID); ++i)\n      textVIN[i] = VINorEID[i];\n    write( \"Received VIR with VIN: %s\", textVIN);\n  }\n  // The response message shall be sent after waiting between 100 and 500 ms\n  return 100 + random(400);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP4",
+      "—",
+      "—",
+      "—",
+      "1.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

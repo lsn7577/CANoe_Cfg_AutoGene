@@ -1,0 +1,499 @@
+# Test Feature Set CAPL Functions
+
+> Category: `Test` | Type: `notes`
+
+## Description
+
+Further Topics
+
+ADAS
+
+AUTOSAR PDU
+
+Collection of Event Information
+
+Composed Wait Points
+
+Constraints and Conditions
+
+Diagnostic Test Support
+
+Fault Injection Functions
+
+OEM Package based Fault Injection Functions
+
+Signaling of User-defined Events
+
+Signal Oriented Tests
+
+Test Controlling
+
+Test Feature Set for K-Line
+
+Test Report
+
+Test Status
+
+Test Structuring
+
+Transmission Commands
+
+Verdict Interaction
+
+Wait Instructions
+
+TestGetWaitADASDetectedObject
+
+Retrieves the name of the Detected Object that triggered the wait function.
+
+TestWaitForADASSpeed
+
+Waits for a Detected Object for with a speed above/below a specified value.
+
+TestGetWaitPDUsFrameData
+
+Calls up the frame content.
+
+Calls up the message content.
+
+testWaitScopePerformEdgeAnalysis
+
+Measures different edge parameters for falling or rising edges of a frame or node.
+
+TestWaitForJ1939DTC
+
+TestWaitForJ1939PG
+
+Waits for the current set of joined events.
+
+TestJoinFrFrameErrorEvent
+
+TestJoinFrFrameEvent
+
+TestJoinFrNullFrameEvent
+
+TestJoinFrPDUEvent
+
+TestJoinFrPOCState
+
+TestJoinFrStartCycleEvent
+
+TestJoinFrSymbolEvent
+
+Checks the value of the signal, the system variable or the environment variable against a condition.
+
+Information pairs of name and description can be taken up into the report in the areas TestEngineer, TestSetUp, and device (SUT).
+
+TestWaitForLinBitStreamStatus
+
+TestWaitForLinScheduleChange
+
+TestWaitForMostApInstID
+
+Signal Oriented Access | Test Functionality | Test Concept | Test Report: External References Definition of MOST Packets | Symbolic Definition of MOST Messages
+
+| TEST FEATURE SET For the formulation of tests the following CAPL functions are available. |
+|---|
+
+| Further Topics ADAS AUTOSAR PDU Collection of Event Information Composed Wait Points Constraints and Conditions | Diagnostic Test Support Fault Injection Functions OEM Package based Fault Injection Functions Signaling of User-defined Events Signal Oriented Tests Test Controlling | Test Feature Set for K-Line Test Report Test Status Test Structuring Transmission Commands Verdict Interaction Wait Instructions |
+|---|---|---|
+
+| Functions | Short Description |
+|---|---|
+| TestGetWaitADASDetectedObject | Retrieves the name of the Detected Object that triggered the wait function. |
+| TestWaitForADASDistance | Waits for a Detected Object for which the distance is above/below a specified value |
+| TestWaitForADASSpeed | Waits for a Detected Object for with a speed above/below a specified value. |
+
+| Functions | Short Description |
+|---|---|
+| TestGetWaitPDUData | Calls up the content of a PDU. |
+| TestGetWaitPDUsFrameData | Calls up the content of a message, packet or frame of a PDU. |
+| TestJoinPDUEvent | Completes the current set of "joined events" with the transmitted event. |
+| TestWaitForPDU | Waits for the occurrence of the specified PDU. |
+| TestGetWaitPDUsTPIPv4DstAddr | Requests the IPv4 destination address. |
+| TestGetWaitPDUsTPIPv4SrcAddr | Requests the IPv4 source address. |
+| TestGetWaitPDUsTPIPv6DstAddr | Requests the IPv6 destination address. |
+| TestGetWaitPDUsTPIPv6SrcAddr | Requests the IPv6 source address. |
+| TestGetWaitPDUsTPTCPDstPort | Requests the TCP destination port. |
+| TestGetWaitPDUsTPTCPSrcPort | Requests the TCP source port. |
+| TestGetWaitPDUsTPUDPDstPort | Requests the UDP destination port. |
+| TestGetWaitPDUsTPUDPSrcPort | Requests the UDP source port. |
+
+| Functions | Short Description |
+|---|---|
+| testGetJoinedEventOccured | Retrieves the occurrence and the occurrence time of a joined event. |
+| TestGetLastWaitElapsedTimeNS | Indicates the period of time for which the last wait function executed had to wait until being triggered. |
+| TestGetLastWaitResult | Makes he last occurred return value of a TestWait instruction available. |
+| TestGetStringInput | Returns the result of the last successful call of TestWaitForStringInput. |
+| TestGetValueInput | Returns the result of the last successful call of TestWaitForValueInput. |
+| testGetWaitEventEnvVarData | Retrieves the environment variable value that has led to the resume of a joined wait statement. |
+| TestGetWaitEventMsgData | Calls up the message content. |
+| TestGetWaitEventSysVarData | Retrieves the system variable value that has led to the resume of a joined wait statement. |
+| Ethernet Functions | Short Description |
+| testGetWaitEthernetPacketData | If a Ethernet packet is the last event that triggers a wait instruction, the packet's content can be called up. |
+| FlexRay Functions | Short Description |
+| TestGetWaitFrFrameData | If a valid FlexRay frame is the last event that triggers a wait instruction, the frame’s content can be called up. |
+| TestGetWaitFrFrameErrorData | If a FlexRay frame error is the last event that triggers a wait instruction, the event’s content can be called up. |
+| TestGetWaitFrNullFrameData | If a FlexRay Null Frame is the last event that triggers a wait instruction, the frame’s content can be called up. |
+| TestGetWaitFrPDUData | If a valid FlexRay PDU is the last event that triggers a wait instruction, the PDU’s content can be called up. |
+| TestGetWaitFrPOCStateData | If an event indicating a change of state on the FlexRay Communication Controller's protocol operation state machine is the last event that triggers a wait instruction, the event’s content can be called up. |
+| TestGetWaitFrStartCycleData | If a FlexRay start cycle is the last event that triggers a wait instruction, the event’s content can be called up. |
+| TestGetWaitFrSymbolData | If a FlexRay symbol event is the last event that triggers a wait instruction, the event’s content can be called up. |
+| LIN Functions | Short Description |
+| TestGetWaitLinCSErrorData | Retrieves the data of a checksum error. |
+| TestGetWaitLinLongDominantSignalData | If LIN LongDominantSignal is the last event that triggers a wait instruction, the frame content can be called up with this function. |
+| TestGetWaitLinETFSingleResponseData | Calls up the event content. |
+| TestGetWaitLinHdrData | Calls up the header content. |
+| TestGetWaitLinReceiveErrData | Calls up the error content. |
+| TestGetWaitLinSpikeData | If LIN Spike is the last event that triggers a wait instruction, the frame content can be called up with tis function. |
+| TestGetWaitLinSyncErrorData | Retrieves the data of a synchronization error. |
+| TestGetWaitLinTransmErrData | Calls up the frame content. |
+| TestGetWaitLinWakeupData |  |
+| MOST Functions | Short Description |
+| TestGetWaitEventMostAMSMsgData | Calls up the message content. |
+| TestGetWaitEventMostMsgData |  |
+| Scope Functions | Short Description |
+| testGetWaitScopeEventData | Retrieves the data of CANoe Scope event. |
+| testGetWaitScopeSignalTransitionTime | Measures the transition time of rising and falling edges of a message within the defined area. |
+| testWaitForScopeAnalyseBitSegments | Starts an analysis for the defined bit segments for each bit, which is within the defined range. |
+| testWaitForScopeEvent | Waits for the occurrence of CANoe Scope event. |
+| testWaitForScopeFitData | The defined frame cutout is shown in the scope's graph view. (CAN) |
+| testWaitForScopeFitDataFr | The defined frame cutout is shown in the scope's graph view. (FlexRay) |
+| testWaitForScopeShowEdges | The defined frame cutout of the previously transition time measurement frame together with a bit mask is shown in the scope's graph view. |
+| testWaitScopeGetSerialBitAnalysisData | Get specific data for a serial bit analysis. |
+| testWaitScopeGetSerialBitAnalyseViolationData | If the serial bit analysis has found errors, the violations can be requested with this function. |
+| testWaitScopeAnalyseSignal | Checks the bits of a message against the defined bit mask. |
+| testWaitScopeExportData | Export the scope measurement. |
+| testWaitScopeGetAnalysedBitSegments | Request the analysis data for a single bit. |
+| testWaitScopeGetBitInfo | After a signal was analyzed, the average values of the voltages of CAN_H, CAN_L, and CAN_Diff are calculated for a defined bit range. |
+| testWaitScopeGetEyeDiagramAnalysis | Used to request the analysis data for a violation found with the eye diagram analysis |
+| testWaitScopeGetMaskViolation | Retrieve the data of the bit mask violations. |
+| testWaitScopeGetMessageBits | Gets specific bit values from a message. |
+| testWaitScopePerformEdgeAnalysis | Measures different edge parameters for falling or rising edges of a frame or node. |
+| testWaitScopePerformEyeDiagramAnalysis | Used to check bits against a defined bit mask. |
+| testWaitScopePerformSerialBitAnalysis | Checks the bits of a message against the defined bit mask. |
+| testWaitScopePerformSignalTransitionTime | Measures the transition time of rising and falling edges of a message within the defined area on bit level. |
+| testWaitScopeShowMask | The defined frame cutout together with a previously defined bit mask is shown in the scope's graph view. |
+| J1939 Functions | Short Description |
+| TestGetWaitJ1939PGData | If a J1939 parameter group event is the last event that triggers a wait instruction, the message content can be called up. |
+| TestWaitForJ1939DTC | Waits until a defined Parameter Group and a defined Diagnostic Trouble Code (DTC) is received or a timeout occurred. |
+| TestWaitForJ1939PG | Waits for the occurrence of the specified message aMessage. |
+| A429 Functions | Short Description |
+| TestWaitForA429Word | Waits for the occurrence of the valid specified A429 message. |
+
+| Functions | Short Description |
+|---|---|
+| TestJoinAuxEvent | Completes the current set of joined events with the transmitted event. Events: auxiliary event, system variable, environment variable, message, message ID, text, signal (or system or environment variable) with value condition |
+| TestJoinEnvVarEvent |  |
+| TestJoinMessageEvent |  |
+| TestJoinSysVarEvent |  |
+| TestJoinTextEvent |  |
+| TestJoinRawSignalMatch |  |
+| TestJoinSignalInRange |  |
+| TestJoinSignalOutsideRange |  |
+| TestJoinSignalMatch |  |
+| TestWaitForAllJoinedEvents | Waits for the current set of joined events. |
+| TestWaitForAnyJoinedEvent |  |
+| Ethernet Functions | Short Description |
+| TestJoinEthernetPacket | Completes the current set of joined events with the transmitted event. |
+| TestJoinEthernetLinkStatus | Completes the current set of joined events with the transmitted event. |
+| TestJoinEthernetPhyState | Completes the current set of joined events with the transmitted event. |
+| FlexRay Functions | Short Description |
+| TestJoinFrFrameErrorEvent | Completes the current set of joined events with the transmitted event. Events: FlexRay frame error, FlexRay frame, FlexRay Null Frame, FlexRay PDU, change of state on the FlexRay Communication Controller's protocol operation state machine, FlexRay start cycle and FlexRay symbol. |
+| TestJoinFrFrameEvent | Completes the current set of joined events with the transmitted event. Events: FlexRay frame error, FlexRay frame, FlexRay Null Frame, FlexRay PDU, change of state on the FlexRay Communication Controller's protocol operation state machine, FlexRay start cycle and FlexRay symbol. |
+| TestJoinFrFrameEvent | Completes the current set of joined events with the transmitted event. Events: FlexRay frame error, FlexRay frame, FlexRay Null Frame, FlexRay PDU, change of state on the FlexRay Communication Controller's protocol operation state machine, FlexRay start cycle and FlexRay symbol. |
+| TestJoinFrNullFrameEvent | Completes the current set of joined events with the transmitted event. Events: FlexRay frame error, FlexRay frame, FlexRay Null Frame, FlexRay PDU, change of state on the FlexRay Communication Controller's protocol operation state machine, FlexRay start cycle and FlexRay symbol. |
+| TestJoinFrPDUEvent | Completes the current set of joined events with the transmitted event. Events: FlexRay frame error, FlexRay frame, FlexRay Null Frame, FlexRay PDU, change of state on the FlexRay Communication Controller's protocol operation state machine, FlexRay start cycle and FlexRay symbol. |
+| TestJoinFrPOCState | Completes the current set of joined events with the transmitted event. Events: FlexRay frame error, FlexRay frame, FlexRay Null Frame, FlexRay PDU, change of state on the FlexRay Communication Controller's protocol operation state machine, FlexRay start cycle and FlexRay symbol. |
+| TestJoinFrStartCycleEvent | Completes the current set of joined events with the transmitted event. Events: FlexRay frame error, FlexRay frame, FlexRay Null Frame, FlexRay PDU, change of state on the FlexRay Communication Controller's protocol operation state machine, FlexRay start cycle and FlexRay symbol. |
+| TestJoinFrSymbolEvent | Completes the current set of joined events with the transmitted event. Events: FlexRay frame error, FlexRay frame, FlexRay Null Frame, FlexRay PDU, change of state on the FlexRay Communication Controller's protocol operation state machine, FlexRay start cycle and FlexRay symbol. |
+| MOST Functions | Short Description |
+| TestJoinMostAMSMessageEvent | Completes the current set of joined events with the transmitted event. Events: MOST AMS message, MOST AMS response message, MOST AMS Spy message, MOST AMS spy response message, MOST message, MOST response message, MOST Spy message, MOST Spy response message |
+| TestJoinMostAMSReportEvent |  |
+| TestJoinMostAMSSpyMessageEvent |  |
+| TestJoinMostAMSSpyReportEvent |  |
+| TestJoinMostMessageEvent |  |
+| TestJoinMostReportEvent |  |
+| TestJoinMostSpyMessageEvent |  |
+| TestJoinMostSpyReportEvent |  |
+| LIN Functions | Short Description |
+| TestJoinLinCSErrorEvent | Adds an event to the set of joined events. Events: checksum error, LIN event-triggered frame single response, synchronization error |
+| TestJoinLinETFSingleResponseEvent | Adds an event of type LIN Event-triggered Frame Single Response to the set of joined events. |
+| TestJoinLinLongDominantSignal | Completes the current set of joined events with the transmitted event. |
+| TestJoinLinSpike | Completes the current set of joined events with the transmitted event. |
+| TestJoinLinSyncErrorEvent | Adds an event of type synchronization error to the set of joined events. |
+| TestJoinLinHeaderEvent | Completes the current set of joined events with the transmitted event. Events: frame, frame ID (header, receive error, transmission error) |
+| TestJoinLinReceiveErrorEvent |  |
+| TestJoinLinTransmErrorEvent |  |
+| TestJoinLinWakeupEvent |  |
+| J1939 Functions | Short Description |
+| TestJoinJ1939DTCEvent | Completes the current set of joined events with the transmitted J1939 Suspect Parameter Number event. |
+| TestJoinJ1939PGEvent | Completes the current set of joined events with the transmitted event. |
+| A429 Functions | Short Description |
+| TestJoinA429WordEvent | Completes the current set of joined events with the transmitted event. |
+
+| Functions | Short Description |
+|---|---|
+| TestAddCondition | Adds an event object or an event text as a condition. |
+| TestAddConstraint | Adds an event object or an event text as a constraint. |
+| TestCheckCondition | Checks whether the specified condition was already injured. |
+| TestCheckConstraint | Checks whether the specified constraint was already injured. |
+| TestRemoveCondition | Removes an event object or an event text that was added as a condition. |
+| TestRemoveConstraint | Removes an event object or an event text that was added as a constraint. |
+| TestSetParseErrorConstraint | Sets the behavior of the symbolic variants of TestWaitForMost... and TestJoinMost... functions. |
+
+| Functions | Short Description |
+|---|---|
+| TestCollectDiagEcuInformation | Sends diagnostic requests to the currently selected diagnostic target and writes the responses to the report file. |
+| TestJoinDiagResponseFromEcu | Adds an event to the set of joined events. Events: Arrival of a diagnostic response from a specific or any ECU. |
+| TestJoinDiagVariantIdentificationCompleted | Adds an event to the set of joined events that will fire when the variant identification started for the given ECU is completed. |
+| TestReportWriteDiagObject | Writes the specified object in the test report as a HTML table. |
+| TestReportWriteDiagResponse | Writes the received response of the request in the test report as a HTML table. |
+| TestValidateDiagAuth | Initiates the diagnostics authentication process and waits until this process has completed. |
+| TestValidateDiagAuthGeneric | Initiates the diagnostics authentication process and waits until this process has generic completed. |
+| TestWaitForDiagAuthCompleted | Initiates the diagnostics authentication process and waits until this process has completed. |
+| TestWaitForDiagAuthGenericCompleted | Initiates the diagnostics authentication process and waits until this process has generic completed. |
+| TestWaitForDiagChangedActiveVariant | Changes the active variant for the current target. |
+| TestWaitForDiagECUVariantIdentificationCompleted | Waits for the completion of the automatic variant identification algorithm. |
+| TestWaitForDiagRequestSent | Waits until the previously sent request has been sent to the ECU. |
+| TestWaitForDiagResponse | Waits for arrival of the response to the given request. |
+| TestWaitForDiagResponseStart | Waits for the arrival of the response to a sent request. |
+| TestWaitForDiagSetIdentifiedVariant | Performs a variant identification and activates the found variant. |
+| TestWaitForDiagVariantIdentificationCompleted | Waits for the completion of the automatic variant identification algorithm. |
+| TestWaitForDoIPActivationLineStartup | Waits until DoIP Activation Line start-up time has passed. |
+| TestWaitForGenerateKeyFromSeed | Generates the security key from the seed using the configured Seed and Key DLL. |
+| TestWaitForUnlockEcu | Tries to unlock an ECU. |
+
+| Functions | Short Description |
+|---|---|
+| TestDisableMsg | Prevents all sending of the message except the sending by calling the function testSetMsgEvent. |
+| TestDisableMsgAllTx | Prevents all sendings of tx messages of the node except the sending with testSetMsgEvent. |
+| TestEnableMsg | Enables the sending of the message. |
+| TestEnableMsgAllTx | Enables the sending of all tx messages of a node. |
+| testILSetMessageProperty | Sets the internal property of a message, assigned to the node. |
+| testILSetNodeProperty | Changes an internal property of the specified node. |
+| TestResetAllFaultInjections | Reset all fault injection settings. |
+| TestResetMsgCycleTime | Resets the cycle time of the message to the database cycle time. |
+| TestResetMsgDlc | Resets the Dlc of the message to the Dlc of the database. |
+| TestSetMsgCycleTime | Assigns a new cycle time to the message. |
+| TestSetMsgDlc | Assigns a new DLC to the message. |
+| TestSetMsgEvent | Sends the message once. |
+
+| Note These functions are not available for all OEM packages, the availability depends on the CANoe Interaction Layer. |
+|---|
+
+| Functions | Short Description |
+|---|---|
+| TestDisableCRCCalculation | Disables the CRC calculation of a message. |
+| TestDisableMsgSequenceCounter | Disables the message sequence counter. |
+| TestDisableUpdateBit | Disables the standard behaviour of the update bit and sets the value of the update bit to a constant value. |
+| TestEnableCRCCalculation | Enables the CRC calculation of a message. |
+| TestEnableMsgSequenceCounter | Enables the message sequence counter. |
+| TestEnableUpdateBit | Enables the standard behaviour of the update bit. |
+| TestFRILCalculateChecksum | Calculates the corresponding CRC checksum based on the payload. |
+| TestFRILEnableTimingCyclic | Controls the cyclic timing of PDUs. The cyclic timing can be enabled/ disabled. |
+| TestFRILEnableTimingEvtTrg | Controls the event triggered timing of PDUs. The event triggered timing can be enabled/ disabled. |
+| TestFRILEnableTimingImmed | Controls the immediate timing of PDUs. The immediate timing can be enabled/ disabled. |
+
+| Functions | Short Description |
+|---|---|
+| TestSupplyTextEvent | Signals the specified event. |
+
+| Functions | Short Description |
+|---|---|
+| checkSignalInRange | Checks the value of the signal, the system variable or the environment variable against a condition. |
+| testValidateSignalInRange |  |
+| testValidateSignalOutsideRange |  |
+| CheckSignalMatch | Checks a given value against the value of the signal, the system variable or the environment variable. |
+| TestValidateSignalMatch | Checks a given value against the value of the signal, the system variable or the environment variable. |
+| GetRawSignal | Retrieves the current raw value of a signal. |
+| getSignal | Gets the value of a signal. |
+| getSignalTime | Gets the time point when the signal value has been changed to the current value. |
+| RegisterSignalDriver | Registers the given callback as a 'signal driver' for the signal. |
+| SetRawSignal | Sets the raw value of a signal. |
+| SetSignal | Sets the transmitted signal to the accompanying value. |
+| TestResetEnvVarValue | Resets an environment variable to initial value. |
+| TestResetNamespaceSysVarValues | Resets all system variables of the given namespace (and all sub-namespaces) to their initial value. |
+| TestResetNodeSignalValues | Resets all tx-signals of a node to their initial value. |
+| TestResetSignalValue | Resets a signal to initial value. |
+| TestResetSysVarValue | Resets a system variable to initial value. |
+
+| Functions | Short Description |
+|---|---|
+| TestSetEcuOffline | Disconnects the ECU from the bus. |
+| TestSetEcuOnline | Connects the ECU to the bus. |
+
+| Functions | Short Description |
+|---|---|
+| TestGetWaitEventKLineByte | If a byte is the last event that triggers a wait instruction, the content can be called up with this function. |
+| TestGetWaitEventKLineFrame | If a K-Line frame is the last event that triggers a wait instruction, the content can be called up with this function. |
+| TestWaitForDiagChannelClosed | Waits for the occurrence of the state change of a diagnostic channel to the state Closed. |
+| TestWaitForDiagChannelConnected | Waits for the occurrence of the state change of a diagnostic channel to the state Connected. |
+| TestWaitForDiagKLineByteReceived | Waits for the occurrence of a received byte. |
+| TestWaitForDiagKLineByteTransmitted | Waits for the occurrence of a transmitted byte. |
+| TestWaitForDiagKLineFrameReceived | Waits for the occurrence of a received valid message. |
+| TestWaitForDiagKLineFrameTransmitted | Waits for the occurrence of a transmitted valid message. |
+
+| Functions | Short Description |
+|---|---|
+| TestCaseComment | Within a test case a commentary can be taken over into the report. |
+| testGetCurrentTestCaseTitle | Returns the name of the current test case. |
+| testGetTestConfigurationName | Returns the name of the test configuration. |
+| testGetTestUnitName | Returns the name of the test unit. |
+| TestReportAddEngineerInfo | Information pairs of name and description can be taken up into the report in the areas TestEngineer, TestSetUp, and device (SUT). |
+| TestReportAddSetupInfo |  |
+| TestReportAddSUTInfo |  |
+| TestReportAddExtendedInfo | Takes over information into the protocol that is not subject to processing by CANoe. |
+| TestReportAddExternalRef | Adds an external reference to the report. |
+| TestReportAddImage | Takes over the reference to a file that contains an image into the protocol. |
+| TestReportAddMiscInfo | Information pairs of name and description can be taken up into an additional information area in the report. |
+| TestReportAddMiscInfoBlock | Generates a new information block for additional information pairs in the report. |
+| TestReportAddWindowCapture | Creates a screen capture of a Graphics, Statistics, Data or Trace Window. |
+| TestReportFileName | Sets the name of the report file using the user interface. |
+| TestReportWriteDiagObject | Writes the specified object in the test report as a HTML table. |
+| TestReportWriteDiagResponse | Writes the received response of the request in the test report as a HTML table. |
+
+| Functions | Short Description |
+|---|---|
+| testGetCurrentCycle | Returns the current cycle of the test. |
+| TestAcquireStatusLED | Assigns the test module state to an LED (standalone mode). |
+
+| Note The user can display structured data in the test report. The data is formatted as a table that can contain multiple rows and columns. A header row can be specified by the function TestInfoHeadingBegin and TestInfoHeadingEnd. Other table rows can be specified by the function TestInfoRow. A row and a header row can be divided into multiple columns using the function TestInfoCell. The content of the table will be displayed using one of the test step functions: TestStep, TestStepPass, TestStepFail, TestStepWarning. |
+|---|
+
+| Functions | Short Description |
+|---|---|
+| TestCaseDescription | Writes a description text for a test case into the report. |
+| TestCaseSkipped | Marks a test case as unexecuted. |
+| TestCaseTitle | The title of a test case is acquired automatically from the test case name in the CAPL program. |
+| TestCaseReportMeasuredValue | Adds a report entry in the measured values table. |
+| TestGroupBegin | Opens a test group. |
+| TestGroupEnd | Closes a test group. |
+| TestModuleDescription | Writes a description text for the test module into the report. |
+| TestModuleTitle | The title of the test module is acquired automatically from the name of the test node in the simulation structure. |
+| TestStep | Reports a test step without influence on the result. |
+| TestStep, TestStepPass, TestStepFail, TestStepWarning, TestStepInconclusive, TestStepErrorInTestSystem | Describes a test step that causes an error in test system. |
+| TestStepFail | Describes a test step that causes an error. |
+| TestStep, TestStepPass, TestStepFail, TestStepWarning, TestStepInconclusive, TestStepErrorInTestSystem | Describes a test step which can not clearly marked as passed or failed . |
+| TestStepPass | Reports a test step that was executed as expected. |
+| TestStepWarning | Describes a test case that was executed without errors but whose result could contribute to a problem later on. |
+| TestInfoTable | Creates a new table to display structured data in the test report. |
+| TestInfoHeadingBegin | Starts a header row into a table. |
+| TestInfoHeadingEnd | Ends a header row. |
+| TestInfoRow | Starts a row in a table. |
+| TestInfoCell | Adds a cell to a previous row or header row. |
+
+| Functions | Short Description |
+|---|---|
+| TestSetSendTimeout | Sets the timeout. |
+| MOST Functions | Short Description |
+| TestSendMostAMSMessage | Sends a symbolically-defined MOST message. |
+
+| Functions | Short Description |
+|---|---|
+| TestCaseFail | Sets the verdict of the current test case to fail. |
+| TestGetVerdictLastTestCase | Returns the verdict of the last elapsed or current test case. |
+| TestGetVerdictModule | Returns the current verdict out of the test module. |
+| TestSetVerdictModule | Sets the verdict of the test module. |
+| TestStepFail | Describes a test step that causes an error. |
+
+| Functions | Short Description |
+|---|---|
+| TestAddRange | Adds a new range that is allowed for dialog input. |
+| TestAddTriggerTesterAction | Creates a trigger for a tester action. |
+| TestAddValueTableEntry | Adds a new value table entry. |
+| TestCreateInputRange | Creates an input dialog. |
+| TestCreateInputTable | Creates a selection dialog. |
+| TestCreateTesterAction | Creates a tester action. |
+| TestGetByteInput | After a dialog with byte input is closed you can use this function to get the input. |
+| TestValidateSystemCall | Starts an external application and reports the result. |
+| TestValidateSystemCallWithExitCode | Starts an external application and checks its exit code. The result is reported. |
+| TestValidateTesterAction | Creates a popup window with given tester instruction. |
+| TestValidateTesterConfirmation | Creates a popup window that presents the given string to the tester. The result is reported. |
+| TestWaitForAuxEvent | Waits for the signaling of the specified auxiliary event from a connected NodeLayer module. |
+| TestWaitForByteInput | Opens a dialog for byte array input. |
+| TestWaitForEnvVar | Waits for the description of the specified environment variable aEnvVar. |
+| testWaitForHILAPISignalGeneratorFinished | Waits until a running generator has finished. |
+| testWaitForHILAPISignalGeneratorLoaded | Waits until a signal generator is fully loaded and ready to start. |
+| TestWaitForInput | After you have created a value table or range dialog use this function to open the dialog. |
+| TestWaitForMeasurementEnd | Waits for the end of the measurement. |
+| TestWaitForReplay | Starts playing the replay file and waits until the execution has been finished. |
+| TestWaitForRawSignalMatch | Checks the given raw value against the value of the signal. The resolution of the signal is considered. |
+| TestWaitForSignalInRange | Checks if the signal, the system or the environment variable value is within or outside a defined value range. |
+| TestWaitForSignalOutsideRange |  |
+| TestWaitForSignalMatch | Checks if a given value matches the value of the signal, the system variable or the environment variable. |
+| TestWaitForSysVar | Waits for the next system variable. |
+| TestWaitForStringInput | Creates a dialog in which the tester can enter a text. |
+| TestWaitForSyscall | Starts an external application and check its exit code. |
+| TestWaitForTesterConfirmation | Creates a popup window and waits for tester confirmation. |
+| TestWaitForTextEvent | Waits for the signaling of the specified textual event from the individual test module. |
+| TestWaitForTimeout | Waits until the expiration of the specified timeout time. |
+| TestWaitForUserFileSync | Starts synchronization of user files between client and server system in a distributed environment. |
+| TestWaitForValueInput | Creates a dialog in which the tester can enter a number. |
+| CAN Functions | Short Description |
+| TestWaitForMessage | Waits for the occurrence of a specified message. |
+| TestWaitForSignalAvailable | Tests the availability of a specific signal and waits if necessary until its availability. |
+| TestWaitForSignalsAvailable | Tests the availability of all the send signals of a node and waits if necessary until all the send signals of the node are available. |
+| Ethernet Functions | Short Description |
+| TestWaitForEthernetLinkStatus | Waits for an Ethernet link status. |
+| TestWaitForEthernetPacket | Waits for the occurrence of the first Ethernet packet matching the conditions passed as arguments. |
+| TestWaitForEthernetPhyState | Waits for the occurrence of the specified Ethernet PHY state. |
+| FlexRay Functions | Short Description |
+| TestWaitForFrFrame | Waits for the occurrence of the valid specified FlexRay frame. |
+| TestWaitForFrFrameError | Waits for the occurrence of FlexRay frame error event. |
+| TestWaitForFrNullFrame | Waits for the occurrence of the specified FlexRay Null Frame. |
+| TestWaitForFrPDU | Waits for the occurrence of the valid specified FlexRay PDU event. |
+| TestWaitForFrPOCState | Waits for the occurrence of change of state on the FlexRay Communication Controller's protocol operation state machine. |
+| TestWaitForFrStartCycle | Waits for the occurrence of the specified FlexRay start cycle event. |
+| TestWaitForFrSymbol | Waits for the occurrence of a FlexRay symbol on the bus. |
+| TestWaitForSignalAvailable | Tests the availability of a specific signal and waits if necessary until its availability. |
+| TestWaitForSignalsAvailable | Tests the availability of all the send signals of a node and waits if necessary until all the send signals of the node are available. |
+| LIN Functions | Short Description |
+| TestWaitForLinBitStreamStatus | Waits until the sending of a LIN bit stream is started or stopped. |
+| TestWaitForLinCSError | Waits for a checksum error for the specified amount of time. |
+| TestWaitForLinETFSingleResponse | Waits for the occurrence of a LIN Event-triggered frame with a single response for the specified associated frame. |
+| TestWaitForLinHeader | Waits for the Header occurrence of the specified LIN frame. |
+| TestWaitForLinLongDominantSignal | Waits for the occurrence of a LIN long dominant signal. |
+| TestWaitForLinReceiveError | Waits for the occurrence of LIN Receive Error event. |
+| TestWaitForLinScheduleChange | Waits until the LIN scheduler reaches the specified table and slot index. |
+| TestWaitForLinSpike | Waits for the occurrence of a LIN Spike event. |
+| TestWaitForLinTransmError | Waits for the occurrence of LIN Transmission Error event. |
+| TestWaitForLinWakeupFrame | Waits for the occurrence of LIN Wakeup frame. |
+| TestWaitForMessage | Waits for the occurrence of a specified message. |
+| TestWaitForSignalAvailable | Tests the availability of a specific signal and waits if necessary until its availability. |
+| TestWaitForSignalsAvailable | Tests the availability of all the send signals of a node and waits if necessary until all the send signals of the node are available. |
+| MOST Functions | Short Description |
+| TestMostReadReg | Reads one or several MOST chip registers and waits for the result. |
+| TestMostRegGetData | Retrieve the register values after a TestMostReadReg or TestMostWriteReg function was called. |
+| TestMostWriteReg | Writes one or several MOST chip registers and waits for the result. |
+| TestWaitForMostAllBypass | Waits for specific bypass change event (opened/closed). |
+| TestWaitForMostAMSMessage | Waits for specific AMS message. |
+| TestWaitForMostAMSReport | Waits for specific AMS report message (OpType > 8). |
+| TestWaitForMostAMSResponse | Waits for specific AMS response message. |
+| TestWaitForMostAMSResult | Waits for the ‚Result’ or ‚ResultAck’ report of a method. |
+| TestWaitForMostAMSSpyMessage | Waits for specific AMS spy message. |
+| TestWaitForMostAMSSpyReport | Waits for specific AMS spy report message (OpType > 8). |
+| TestWaitForMostApInstID | Waits for a special change event of the application socket. |
+| TestWaitForMostAsRegistry | Waits for a registry change. |
+| TestWaitForMostCriticalUnlock | Waits for the occurrence of a LightLock event indicating a critical unlock state. |
+| TestWaitForMostGroupAdr | Waits for group address change event. |
+| TestWaitForMostLightOff | Waits for the occurrence of a LightLock event indicating a no Light & no Lock state. |
+| TestWaitForMostMessage | Waits for specific CMS message. |
+| TestWaitForMostMPR | Waits for a MPR event (NCE). |
+| TestWaitForMostNetState | Waits for NetState change event. |
+| TestWaitForMostNodeAdr | Waits for a node address change event. |
+| TestWaitForMostNPR | Waits for a NPR change event. |
+| TestWaitForMostReport | Waits for specific CMS report message (OpType > 8). |
+| TestWaitForMostSBC | Wait for SBC change event. |
+| TestWaitForMostShortUnlock | Waits for the occurrence of a LightLock event indicating a Light & no Lock state. |
+| TestWaitForMostSpyMessage | Waits for specific CMS spy message. |
+| TestWaitForMostSpyReport | Waits for specific CMS spy report message (OpType > 8). |
+| TestWaitForMostStableLock | Waits for the occurrence of a LightLock event indicating a stable unlock state. |
+| Scope Functions | Short Description |
+| testWaitForScopeEvent | Waits for the occurrence of CANoe Scope event. |
+| J1939 Functions | Short Description |
+| TestWaitForJ1939DTC | Waits until a defined parameter group and a defined Suspect Parameter Number (SPN) is received or a timeout occurred. |
+| TestWaitForJ1939PG | Waits for the occurrence of the specified message. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

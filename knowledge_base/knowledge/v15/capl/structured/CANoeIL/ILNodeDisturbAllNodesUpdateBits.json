@@ -1,0 +1,173 @@
+{
+  "page_type": "function",
+  "name": "ILNodeDisturbAllNodesUpdateBits",
+  "category": "CANoeIL",
+  "title": "ILNodeDisturbAllNodesUpdateBits",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANoeIL/Functions/CAPLfunctionILNodeDisturbAllNodesUpdateBits.htm",
+  "syntax": [
+    "long ILNodeDisturbAllNodesUpdateBits(long flags, long disturbanceMode, long disturbanceCount, long disturbanceValue);"
+  ],
+  "description": [
+    "Modifies all update bits of signals/signal groups of all nodes in the current bus context. Different fault injections are possible.This function influences a simulation node with an assigned CANoe interaction layer."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Update bits of signals and signal groups are disturbed."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Only signal update bits are disturbed."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Only signal group update bits are disturbed."
+    },
+    {
+      "name": "0",
+      "type": "Value",
+      "description": "The disturbance uses the value in disturbanceValue as update bit."
+    },
+    {
+      "name": "1",
+      "type": "Freeze",
+      "description": "The current update bit value is transmitted."
+    },
+    {
+      "name": "2",
+      "type": "Random",
+      "description": "A random value is transmitted as update bit."
+    },
+    {
+      "name": "-1",
+      "type": "",
+      "description": "Infinite."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Stops the disturbance, e.g.a infinite disturbance."
+    },
+    {
+      "name": "n",
+      "type": "",
+      "description": "Number of disturbances."
+    },
+    {
+      "name": "disturbanceValue",
+      "type": "",
+      "description": "This value is used in combination with the disturbanceMode."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2 SP4",
+      "14",
+      "14",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN FlexRay",
+      "CAN FlexRay",
+      "CAN FlexRay",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

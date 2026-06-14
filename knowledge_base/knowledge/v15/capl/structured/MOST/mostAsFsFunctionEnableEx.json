@@ -1,0 +1,232 @@
+{
+  "page_type": "function",
+  "name": "mostAsFsFunctionEnableEx",
+  "category": "MOST",
+  "title": "mostAsFsFunctionEnableEx",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTAsFsFunctionEnableEx.htm",
+  "syntax": [
+    "long mostAsFsFunctionEnableEx(long fblockId, long instId, long functionId, long opTypes); // form 1",
+    "long mostAsFsFunctionEnableEx(long fblockId, long instId, long functionId, long opTypes, char cbSendStatus[]); // form 2"
+  ],
+  "description": [
+    "mostAsFsFunctionEnableEx() registers a function and its operations with the function service. The service must have been previously enabled for the function block with mostAsFsEnableEx.",
+    "The second option registers a function with the notification service simultaneously. For this to be achieved, the function must be of the \"Property\" type and the notification service of the function block must have been previously enabled with mostAsNtfEnableEx.",
+    "Database support",
+    "The special value functionID=-1 triggers the execution of the CAPL function for all MOST functions and operations of the function block from the function catalog."
+  ],
+  "parameters": [
+    {
+      "name": "fblockId",
+      "type": "",
+      "description": "Function block ID"
+    },
+    {
+      "name": "instId",
+      "type": "",
+      "description": "Instance ID"
+    },
+    {
+      "name": "functionId",
+      "type": "",
+      "description": "Function ID or -1 for all functions of the function block from the database."
+    },
+    {
+      "name": "cbSendStatus[]",
+      "type": "",
+      "description": "Name of the CAPL function that generates and sends the status message. If functionID=-1, cbSendStatus designates the prefix of the CAPL send functions to be defined. If an empty character string is specified, the default prefix \"SendStatus_\" is used."
+    },
+    {
+      "name": "Bit 0",
+      "type": "",
+      "description": "OpType = 0x0 (Set/Start)"
+    },
+    {
+      "name": "Bit 1",
+      "type": "",
+      "description": "OpType = 0x1 (Get/Abort)"
+    },
+    {
+      "name": "Bit 2",
+      "type": "",
+      "description": "OpType = 0x2 (SetGet/StartResult)"
+    },
+    {
+      "name": "Bit 3",
+      "type": "",
+      "description": "OpType = 0x3 (Increment/-)"
+    },
+    {
+      "name": "Bit 4",
+      "type": "",
+      "description": "OpType = 0x4 (Decrement/-)"
+    },
+    {
+      "name": "Bit 5",
+      "type": "",
+      "description": "OpType = 0x5 (GetInterface/GetInterface)"
+    },
+    {
+      "name": "Bit 6",
+      "type": "",
+      "description": "OpType = 0x6 (-/StartResultAck)"
+    },
+    {
+      "name": "Bit 7",
+      "type": "",
+      "description": "OpType = 0x7 (-/AbortAck)"
+    },
+    {
+      "name": "Bit 8",
+      "type": "",
+      "description": "OpType = 0x8 (-/StartAck)"
+    },
+    {
+      "name": "Bit 9",
+      "type": "",
+      "description": "OpType = 0x9 (-/ErrorAck)"
+    },
+    {
+      "name": "Bit 10",
+      "type": "",
+      "description": "OpType = 0xA (-/ProcessingAck)"
+    },
+    {
+      "name": "Bit 11",
+      "type": "",
+      "description": "OpType = 0xB (-/Processing)"
+    },
+    {
+      "name": "Bit 12",
+      "type": "",
+      "description": "OpType = 0xC (Status/Result)"
+    },
+    {
+      "name": "Bit 13",
+      "type": "",
+      "description": "OpType = 0xD (-/ResultAck)"
+    },
+    {
+      "name": "Bit 14",
+      "type": "",
+      "description": "OpType = 0xE (Interface/Interface)"
+    },
+    {
+      "name": "Bit 15",
+      "type": "",
+      "description": "OpType = 0xF (Error)"
+    },
+    {
+      "name": "Bit 16",
+      "type": "",
+      "description": "All OpTypes corresponding to 0-15, if they are defined in the XML function catalog."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.0",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "MOST25 MOST50 MOST150 While Application Socket is active",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

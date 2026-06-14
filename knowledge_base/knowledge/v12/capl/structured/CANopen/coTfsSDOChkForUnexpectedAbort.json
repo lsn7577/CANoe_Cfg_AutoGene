@@ -1,0 +1,24 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOChkForUnexpectedAbort",
+  "category": "CANopen",
+  "title": "coTfsSDOChkForUnexpectedAbort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoChkForUnexpectedAbort.htm",
+  "syntax": [
+    "dword coTfsSDOChkForUnexpectedAbort( void );"
+  ],
+  "description": [
+    "This functions checks for unexpected SDO abort codes that are not in the list of accepted SDO abort codes. Therefore the function compares the list of received SDO abort codes with the list of accepted SDO abort codes.",
+    "The user has to reset both SDO abort code lists: the list of received SDO abort codes and the list of accepted SDO abort codes."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear list with received SDO abort codes first */\ncoTfsSDOResetAbortList();\n\n/* no SDO abort code is accepted to pass this test, configured accepted SDO abort codes are treated like expected responses */\ncoTfsSDOResetAccAbortList();\n\n/* Try to read a non-existing object. The DUT will answer with an SDO abort code */\ncoTfsSdoUpload(0x999,0);\n\nif (coTfsSDOChkForUnexpectedAbort() != 1)\n{\n  /* no SDO abort code occured: object exists or device is not connected ? */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

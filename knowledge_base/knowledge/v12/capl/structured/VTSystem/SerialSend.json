@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SerialSend",
+  "category": "VTSystem",
+  "title": "SerialSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSerialSend.htm",
+  "syntax": [
+    "long SysVarNamespace.SerialSend( byte buffer[], dword number);"
+  ],
+  "description": [
+    "Sends a block of bytes to the serial port of the specified VT7001 channel"
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "An array of bytes that contains the data to be sent."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitJ1939PGData",
+  "category": "Test",
+  "title": "TestGetWaitJ1939PGData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitJ1939PGData.htm",
+  "syntax": [
+    "long TestGetWaitJ1939PGData (pg * aPG); // form 1"
+  ],
+  "description": [
+    "If a J1939 parameter group event is the last event that triggers a wait instruction, the message content can be called up with the first function.",
+    "The second function can only be used for joined events. The number of the joined event (return value of testJoin...) is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "aPG",
+      "type": "",
+      "description": "J1939 parameter group variable that should be filled with this function."
+    }
+  ],
+  "return": "0: Data access successful.",
+  "example": {
+    "description": [],
+    "code": "// add J1939 PG event to the current set of “joined events” and fill the parameter group data to parameter group ‘eventMessage’\n\npg TSC1 pgTSC1;\ndword index = 0;\nTestJoinJ1939PGEvent (TSC1);\n// ... other join events\nindex = TestWaitForAllJoinedEvents (2000);\n\nTestGetWaitJ1939PGData (index, pgTSC1);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

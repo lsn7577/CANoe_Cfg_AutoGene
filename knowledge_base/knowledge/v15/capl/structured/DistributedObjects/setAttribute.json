@@ -1,0 +1,149 @@
+{
+  "page_type": "function",
+  "name": "setAttribute",
+  "category": "DistributedObjects",
+  "title": "setAttribute",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Functions/CAPLfunctionSetAttribute.htm",
+  "syntax": [
+    "setAttribute(attributable object, attribute int32 attribute, long value); // form 1",
+    "setAttribute(attributable object, attribute uint32 attribute, dword value); // form 2",
+    "setAttribute(attributable object, attribute int64 attribute, int64 value); // form 3",
+    "setAttribute(attributable object, attribute uint64 attribute, qword value); // form 4",
+    "setAttribute(attributable object, attribute double attribute, double value); // form 5",
+    "setAttribute(attributable object, attribute string attribute, char value[]); // form 6",
+    "setAttribute(attributable object, char attribute[], long value); // form 7",
+    "setAttribute(attributable object, char attribute[], dword value); // form 8",
+    "setAttribute(attributable object, char attribute[], int64 value); // form 9",
+    "setAttribute(attributable object, char attribute[], qword value); // form 10",
+    "setAttribute(attributable object, char attribute[], double value); // form 11",
+    "setAttribute(attributable object, char attribute[], char value[]); // form 12"
+  ],
+  "description": [
+    "Writes an attribute value at an attributable object."
+  ],
+  "parameters": [
+    {
+      "name": "object",
+      "type": "",
+      "description": "Attributable object at which the attribute value is written."
+    },
+    {
+      "name": "attribute",
+      "type": "",
+      "description": "Attribute or attribute name for which the value is written."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "Attribute value."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// vCDL\nversion 1.4;\nnamespace SomeNamespace\n{\n[Binding=\"Abstract\"]\nobject SomeObject {}\nattribute int32 MyAttribute { mutable; }\n}\n\n// CAPL\non start\n{\nsetAttribute(SomeObject, SomeNamespace::MyAttribute, 42);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "15",
+      "15",
+      "15",
+      "15",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

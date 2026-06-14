@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mbsubstr_cpy, mbsubstr_cpy_off",
+  "category": "Other",
+  "title": "mbsubstr_cpy, mbsubstr_cpy_off",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMbSubStrCpy.htm",
+  "syntax": [
+    "void mbsubstr_cpy(char dest[], char src[], long srcStart, long len);"
+  ],
+  "description": [
+    "mbsubstr_cpy copies a substring of src to dest. len indicates the number of characters that shall be copied; use -1 to indicate that as much shall be copied into dest as will fit (maximum until the end of src). The function ensures that there is a terminating 0 byte; but in contrast to substr_cpy/substr_cpy_off, that byte is not counted into len.",
+    "mbsubstr_cpy_off overwrites characters in the destination buffer starting at the character offset destOffset."
+  ],
+  "parameters": [
+    {
+      "name": "dest",
+      "type": "",
+      "description": "Destination buffer"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "char s1[50] = \"eine grüne \"; // german for 'a green'\nchar s2[20] = \"schöne Türen\"; // german for 'beautiful doors'\nmbsubstr_cpy_off(s1, 11, s2, 7, 3);\nwrite(\"%s\", s1); // eine grüne Tür (german for 'a green door')"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

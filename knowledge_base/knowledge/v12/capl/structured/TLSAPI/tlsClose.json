@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "tlsClose",
+  "category": "TLSAPI",
+  "title": "tlsClose",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TLSAPI/Functions/CAPLfunctiontlsClose.htm",
+  "syntax": [
+    "long tlsClose(dword socket, dword closeUnderlyingSocket);"
+  ],
+  "description": [
+    "Closes the given TLS connection. This sends a TLS alert message to the peer node. The underlaying socket will be closed automatically if the parameter closeUnderlyingSocket is set to a value greater 0."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "void ClientStop()\n{\n  //\n  // Close TLS socket and underlying socket\n  //\n\n  tlsClose(gTlsClientSocket, 1);\n  gTlsClientSocket = 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

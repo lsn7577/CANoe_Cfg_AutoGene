@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_UnsubscribePdu",
+  "category": "CommunicationObjects",
+  "title": "Abstract_UnsubscribePdu",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractUnsubscribePdu.htm",
+  "syntax": [
+    "long Abstract_UnsubscribePDU(consumedPDURef * pdu)"
+  ],
+  "description": [
+    "Unsubscribes for a service PDU if abstract binding is used. Note that this is more low-level; usually its more convenient to call consumedPduRef::AbstractReleasePdu on the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "pdu",
+      "type": "",
+      "description": "PDU which shall be unsubscribed."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "Abstract_UnsubscribePDU(MirrorAdjustment.consumerSide[0,0].PositionPDU);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

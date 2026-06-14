@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetSimulationState",
+  "category": "SmartCharging",
+  "title": "SCC_GetSimulationState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetSimulationState.htm",
+  "syntax": [
+    "long SCC_GetSimulationState ( )"
+  ],
+  "description": [
+    "This function checks if the simulation is running, waiting (in pause state) or stopped."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: Simulation is deactivated\n1: Simulation is running in passive mode\n2: Simulation is running in active mode\n3: Simulation is running in active mode and waiting\n(SCC_SimulationWait() has been called)",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

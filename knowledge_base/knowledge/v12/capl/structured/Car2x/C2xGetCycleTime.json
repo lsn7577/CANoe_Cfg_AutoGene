@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetCycleTime",
+  "category": "Car2x",
+  "title": "C2xGetCycleTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetCycleTime.htm",
+  "syntax": [
+    "Int64 C2xGetCycleTime(char* dbMessage);"
+  ],
+  "description": [
+    "Gets the cycle time for a message in milliseconds."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "Name of the message"
+    }
+  ],
+  "return": "Cycle time in milliseconds or -1 for error.",
+  "example": {
+    "description": [],
+    "code": "Int64 cycleTime;\n\ncycleTime = C2xGetCycleTime(\"CAM\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

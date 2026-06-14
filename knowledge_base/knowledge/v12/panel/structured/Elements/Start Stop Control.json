@@ -1,0 +1,163 @@
+{
+  "page_type": "concept",
+  "name": "Start Stop Control",
+  "category": "Panel",
+  "subcategory": "Elements",
+  "title": "Start Stop Control",
+  "source": "chm_extract/PanelDesigner/Topics/Elements/PanelDesignerControlsStartStop.htm",
+  "intro": [],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Use Case",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "With the Start Stop Control, you can start and stop a measurement in both online and offline modes."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Configuration",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "You can configure the control via the ribbon or the Properties Window.",
+          "If you start or stop the measurement from the CANoe/CANalyzer toolbar, the control indicates the current status.",
+          "If you start the measurement via CANoe/CANaylzer step-wise () or if you interrupt the measurement (), you can only stop the measurement using the control. If you want to restart the measurement after the step-wise measurement start or after the measurement interruption, you can only do this via the toolbar."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Keyboard Operations",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The function that is focused (Start or Stop) can be initiated with the space bar."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Ribbon|Properties Tab / Properties Window",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Here all settings are listed that you can change in the ribbon and/or in the Properties Window.",
+          "General Group",
+          "General",
+          "Name",
+          "Control Name",
+          "Here you change the name of the control. This name and the name of the panel is required for access from CAPL.",
+          "—",
+          "Is Visible At Runtime",
+          "Specifies whether the control is to be displayed during runtime."
+        ],
+        "tables": [
+          [
+            [
+              "Ribbon",
+              "Properties Window",
+              "Description"
+            ],
+            [
+              "General Group",
+              "General"
+            ],
+            [
+              "Name",
+              "Control Name",
+              "Here you change the name of the control. This name and the name of the panel is required for access from CAPL."
+            ],
+            [
+              "—",
+              "Is Visible At Runtime",
+              "Specifies whether the control is to be displayed during runtime. CAPL Access With the function setControlVisibility, you can set, if the control is displayed during runtime or not."
+            ],
+            [
+              "—",
+              "Tab Index",
+              "Defines the order in which the various controls on a panel are to be navigated with the Tab key during runtime."
+            ],
+            [
+              "Border Style Group",
+              "Appearance"
+            ],
+            [
+              "Border Style",
+              "Here you change the frame of the control: Fixed 3D3D frame Fixed SingleSingle frame NoneNo frame"
+            ],
+            [
+              "More Group",
+              "—"
+            ],
+            [
+              "—",
+              "Show Properties With a click on the symbol you open the Properties Window."
+            ],
+            [
+              "Group: —",
+              "Layout"
+            ],
+            [
+              "—",
+              "Location/Size",
+              "Here you can enter settings relating to the size and position of the control. Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.",
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ],
+            [
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "With the function setControlVisibility, you can set, if the control is displayed during runtime or not.",
+          "—",
+          "Tab Index",
+          "Defines the order in which the various controls on a panel are to be navigated with the Tab key during runtime.",
+          "Border Style Group",
+          "Appearance",
+          "Border Style",
+          "Here you change the frame of the control:",
+          "More Group",
+          "Show Properties",
+          "With a click on the symbol you open the Properties Window.",
+          "Group: —",
+          "Layout",
+          "Location/Size",
+          "Here you can enter settings relating to the size and position of the control.",
+          "Note",
+          "You can also resize the control by dragging its markers.",
+          "Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.",
+          "Assigning Controls"
+        ],
+        "tables": [
+          [
+            [
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ]
+          ],
+          [
+            [
+              "Version 12.0© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

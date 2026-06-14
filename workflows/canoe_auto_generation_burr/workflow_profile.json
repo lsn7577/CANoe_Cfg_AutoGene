@@ -1,0 +1,160 @@
+{
+  "schema_version": "0.2.0",
+  "name": "canoe_auto_generation_burr",
+  "entrypoint": "load_test_case_template",
+  "halt_after": [
+    "package_outputs",
+    "emit_test_case_corrections"
+  ],
+  "state_keys": [
+    "test_case_excel_path",
+    "base_output_root",
+    "output_root",
+    "run_id",
+    "input_sha256",
+    "requirements_path",
+    "dbc_paths",
+    "a2l_paths",
+    "cdd_paths",
+    "strict_source_validation",
+    "canoe_validation_mode",
+    "raw_test_case",
+    "project_config",
+    "test_case_rows",
+    "source_files",
+    "template_contract_status",
+    "template_contract_report",
+    "source_models",
+    "source_model_file",
+    "source_model_issues",
+    "source_check_status",
+    "structured_test_case",
+    "structured_test_case_file",
+    "correction_items",
+    "test_case_check_status",
+    "evidence_bundle",
+    "evidence_bundle_file",
+    "evidence_status",
+    "evidence_gate_status",
+    "evidence_gate_report",
+    "canoe_config_plan",
+    "cfg_artifact",
+    "config_eval_status",
+    "config_eval_report",
+    "capl_script_plan",
+    "can_artifact",
+    "test_report_plan",
+    "capl_eval_status",
+    "capl_eval_report",
+    "repair_plan",
+    "repair_plan_file",
+    "repair_next_action",
+    "final_outputs"
+  ],
+  "actions": [
+    {
+      "id": "load_test_case_template",
+      "sub_agent": "input_adapter",
+      "reads": ["test_case_excel_path", "requirements_path", "dbc_paths", "a2l_paths", "cdd_paths"],
+      "writes": ["raw_test_case", "project_config", "test_case_rows", "source_files"]
+    },
+    {
+      "id": "validate_template_contract",
+      "sub_agent": "template_contract_gate",
+      "reads": ["raw_test_case", "test_case_rows", "output_root"],
+      "writes": ["template_contract_status", "template_contract_report", "template_contract_report_file"]
+    },
+    {
+      "id": "parse_source_files",
+      "sub_agent": "source_model_adapter",
+      "reads": ["raw_test_case", "project_config", "source_files", "strict_source_validation", "output_root"],
+      "writes": ["source_models", "source_model_file", "source_model_issues", "source_check_status"]
+    },
+    {
+      "id": "validate_test_cases",
+      "sub_agent": "SubAgent1_测试用例专家",
+      "reads": ["raw_test_case", "project_config", "test_case_rows", "source_files", "source_models", "source_model_issues", "strict_source_validation", "output_root"],
+      "writes": ["structured_test_case", "structured_test_case_file", "correction_items", "test_case_check_status"]
+    },
+    {
+      "id": "retrieve_evidence",
+      "sub_agent": "knowledge_grounding",
+      "reads": ["structured_test_case", "project_config", "output_root"],
+      "writes": ["evidence_bundle", "evidence_bundle_file", "evidence_status"]
+    },
+    {
+      "id": "validate_evidence_gate",
+      "sub_agent": "capl_api_evidence_gate",
+      "reads": ["evidence_bundle", "project_config", "output_root"],
+      "writes": ["evidence_gate_status", "evidence_gate_report", "evidence_gate_report_file"]
+    },
+    {
+      "id": "plan_repair",
+      "sub_agent": "repair_planner",
+      "reads": ["template_contract_status", "test_case_check_status", "evidence_gate_status", "config_eval_status", "capl_eval_status", "max_retries"],
+      "writes": ["repair_plan", "repair_plan_file", "repair_next_action"]
+    },
+    {
+      "id": "emit_test_case_corrections",
+      "sub_agent": "SubAgent1_测试用例专家",
+      "reads": ["correction_items", "structured_test_case_file", "test_case_correction_file", "repair_plan_file", "output_root"],
+      "writes": ["final_outputs"]
+    },
+    {
+      "id": "generate_canoe_config",
+      "sub_agent": "SubAgent2_Canoe工程配置专家",
+      "reads": ["structured_test_case", "project_config", "source_models", "evidence_bundle", "config_retry_count", "output_root"],
+      "writes": ["canoe_config_plan", "cfg_artifact", "config_retry_count"]
+    },
+    {
+      "id": "evaluate_canoe_config",
+      "sub_agent": "SubAgent4_Canoe工程评估专家",
+      "reads": ["canoe_config_plan", "cfg_artifact", "project_config", "canoe_validation_mode"],
+      "writes": ["config_eval_status", "config_eval_report"]
+    },
+    {
+      "id": "generate_capl_script",
+      "sub_agent": "SubAgent3_CAPL测试脚本编写专家",
+      "reads": ["structured_test_case", "project_config", "canoe_config_plan", "evidence_bundle", "capl_retry_count", "output_root"],
+      "writes": ["capl_script_plan", "can_artifact", "test_report_plan", "capl_retry_count"]
+    },
+    {
+      "id": "evaluate_capl_script",
+      "sub_agent": "SubAgent5_Canoe_CAPL脚本专家",
+      "reads": ["capl_script_plan", "can_artifact", "structured_test_case", "project_config", "canoe_validation_mode"],
+      "writes": ["capl_eval_status", "capl_eval_report"]
+    },
+    {
+      "id": "package_outputs",
+      "sub_agent": "delivery",
+      "reads": ["cfg_artifact", "can_artifact", "structured_test_case_file", "source_model_file", "evidence_bundle_file", "config_eval_report", "capl_eval_report", "output_root"],
+      "writes": ["final_outputs"]
+    }
+  ],
+  "transitions": [
+    ["load_test_case_template", "validate_template_contract"],
+    ["validate_template_contract", "plan_repair", "template_contract_status == 'fail'"],
+    ["validate_template_contract", "parse_source_files", "template_contract_status != 'fail'"],
+    ["parse_source_files", "validate_test_cases"],
+    ["validate_test_cases", "plan_repair", "test_case_check_status == 'fail'"],
+    ["validate_test_cases", "retrieve_evidence", "test_case_check_status != 'fail'"],
+    ["retrieve_evidence", "validate_evidence_gate"],
+    ["validate_evidence_gate", "plan_repair", "evidence_gate_status == 'fail'"],
+    ["validate_evidence_gate", "generate_canoe_config", "evidence_gate_status != 'fail'"],
+    ["generate_canoe_config", "evaluate_canoe_config"],
+    ["evaluate_canoe_config", "plan_repair", "config_eval_status == 'fail'"],
+    ["evaluate_canoe_config", "generate_capl_script", "config_eval_status != 'fail'"],
+    ["generate_capl_script", "evaluate_capl_script"],
+    ["evaluate_capl_script", "plan_repair", "capl_eval_status == 'fail'"],
+    ["evaluate_capl_script", "package_outputs", "capl_eval_status != 'fail'"],
+    ["plan_repair", "generate_canoe_config", "repair_next_action == 'generate_canoe_config'"],
+    ["plan_repair", "generate_capl_script", "repair_next_action == 'generate_capl_script'"],
+    ["plan_repair", "emit_test_case_corrections", "repair_next_action == 'emit_test_case_corrections'"]
+  ],
+  "extension_points": {
+    "cfg_renderer": "Replace adapter_plan generation with a base-CFG template renderer or CANoe COM automation.",
+    "source_parsers": "Replace lightweight DBC/A2L/CDD parsers with team-owned parsers when available.",
+    "capl_adapters": "Bind CanoeGene_* adapter stubs to project-specific XCP and diagnostics libraries.",
+    "external_validation": "Implement vector_canoe_adapter.py for automated CANoe/vTESTstudio validation."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "seqFileGetBlock",
+  "category": "Obsolete",
+  "title": "seqFileGetBlock",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionSeqFileGetBlock.htm",
+  "syntax": [
+    "long seqFileGetBlock(char buffer[], dword bufferSize, long file);"
+  ],
+  "description": [
+    "The function reads at most bufferSize characters from the file specified by handle file into the array buffer. The file position indicator is advanced by the number of characters successfully read. It is indeterminate after an error."
+  ],
+  "parameters": [],
+  "return": "The return value is the number of characters successfully read, which may be less than bufferSize, if an error or end-of-file is encountered.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

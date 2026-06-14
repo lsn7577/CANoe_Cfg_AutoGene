@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthRegisterCallback",
+  "category": "IP",
+  "title": "AREthRegisterCallback",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthRegisterCallback.htm",
+  "syntax": [
+    "LONG AREthRegisterCallback( dword objHandle, char callbackName[] );"
+  ],
+  "description": [
+    "Enables to register/unregister a CAPL callback function for an object which has been created separately."
+  ],
+  "parameters": [
+    {
+      "name": "objHandle",
+      "type": "",
+      "description": "Handle of an already existing AUTOSAR Eth IL object for which a new CAPL callback function should be registered/unregistered . The following objects and their corresponding callbacks are supported:"
+    }
+  ],
+  "return": "0: The function was successfully executed.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

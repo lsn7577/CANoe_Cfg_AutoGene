@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939GetRxData",
+  "category": "J1939",
+  "title": "J1939GetRxData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939GetRxData.htm",
+  "syntax": [
+    "dword J1939GetRxData( dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "An auxiliary function for receiving PG data within a callback function.",
+    "The DLL interface will not permit you to transfer data arrays via callback. Therefore it serves the purpose of \"retrieving\" data from the node layer. Since this function is called within a callback, there is no need to transfer an ECU handle. If the function is called from outside of a callback, the call has no effect."
+  ],
+  "parameters": [
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "size of the buffer"
+    }
+  ],
+  "return": "number of bytes copied",
+  "example": {
+    "description": [],
+    "code": "char data[100];\ndword count;\n\ncount = J1939GetRxData( elCount(data), data );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

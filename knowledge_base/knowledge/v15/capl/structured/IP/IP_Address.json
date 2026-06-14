@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "IP_Address",
+  "category": "IP",
+  "title": "IP_Address",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Objects/CAPLfunctionIPAdredress.htm",
+  "syntax": [
+    "IP_Address(192.168.1.1);",
+    "IP_Address(192.168.1.1) );"
+  ],
+  "description": [
+    "Initializes a variable of type IP_Address with a concrete IP address (form 1) or without an IP Address (form 2)."
+  ],
+  "parameters": [
+    {
+      "name": "addr",
+      "type": "",
+      "description": "An IPv4 or IPv6 address."
+    },
+    {
+      "name": "var name",
+      "type": "",
+      "description": "Character string defining the object's variable name."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  IP_Address 192.168.0.1 ipv4Addr;\n  IP_Address ff::1       ipv6Addr;\n  IP_Address [ff::2]     ipv6Addr2;\n  IP_Address 0.0.0.0     ipv4AnyAddr;\n  IP_Address ::          ipv6AnyAddr;\n}\non start\n{\n  IP_Address addr;\n  addr = IP_Address(192.168.1.1);\n  // ... do something with addr\n}\non start\n{\n  DoSomething( IP_Address(192.168.1.1) );\n}\n\nvoid DoSomething( IP_Address addr )\n{\n  // ... do something with addr\n}\non start\n{\n  IP_Address 192.168.1.1 addr1;\n  IP_Address 192.168.1.2 addr2;\n  if (addr1 == addr2)\n  {\n    write( \"Addresses are equal!\" );\n  }\n  else\n  {\n    write( \"Addresses are not equal!\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "12.0",
+      "12.0",
+      "13.0",
+      "—",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_example"
+}

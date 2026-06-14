@@ -1,0 +1,130 @@
+{
+  "page_type": "method",
+  "name": "SetInterconnectionMode",
+  "category": "VTSystem",
+  "title": "SetInterconnectionMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSSetInterconnectionMode.htm",
+  "syntax": [
+    "Long SysVarNamespace.SetInterconnectionMode (eVTSInterconnectionMode Mode);"
+  ],
+  "description": [
+    "Sets the mode for interconnection of the three possible power supplies and the two power outputs of the power module VT7001."
+  ],
+  "parameters": [
+    {
+      "name": "Mode",
+      "type": "",
+      "description": "Values see eVTSInterconnectionMode"
+    }
+  ],
+  "return": "The function can only be called on system variable namespaces of the VT System power module",
+  "example": {
+    "description": [
+      "The internal power supply unit delivers power and the ECU is connected to OUT1 (clamp 30), OUT2 (clamp 15) and GND1 (clamp 31). In this example, the channel for the internal power sup-ply unit is named “IntSupply”, the two output channels are named “Clamp30” and “Clamp15”, and the VT7001 module is named “PowerSupply”."
+    ],
+    "code": "InternalPowerSupply ()\n{\n   // Set mode to one power supply only -> internal power supply\n   sysvar::VTS::PowerSupply.SetInterconnectionMode(eVTSInterconnectionModeSupInt);\n\n   // Set voltage to 12.0 V\n   sysvar::VTS::IntSupply.SetRefVoltageMode(1);\n   @sysvar::VTS::IntSupply::RefVoltage = 12.0;\n\n   // Switch both outputs on\n   @sysvar::VTS::Clamp30::Active = eVTSOutputModeActive;\n   @sysvar::VTS::Clamp15::Active = eVTSOutputModeActive;\n\n   // Measure the current consumed by the ECU via clamp 15\n   // after 2 seconds (result is written to the Write Window)\n   TestWaitForTimeOut(2000);\n   write(\"ECU is consuming %fmA.\", @sysvar::VTS::Clamp30::AvgCurrent);\n}\npublic void InternalPowerSupply()\n   {\n      // Get VTS interface, VT7001 module, internal supply and two output channels\n      IVTSystem vts = VTSystem.Instance;\n      IVT7001 powerSupply = vts.GetModule(\"PowerSupply\") as IVT7001;\n      IVT7001SupplyInternal intSupply = vts.GetChannel(\"IntSupply\") as IVT7001SupplyInternal;\n      IVT7001Channel clamp30 = vts.GetChannel(\"Clamp30\") as IVT7001Channel;\n      IVT7001Channel clamp15 = vts.GetChannel(\"Clamp15\") as IVT7001Channel;\n\n      // Set mode to one power supply only -> external power supply 1\n      powerSupply.InterconnectionMode.Value = InterconnectionMode.SupInt;\n\n      // Set voltage to 12.0 V\n      intSupply.SetRefVoltageMode(RefVoltageMode.Constant);\n      intSupply.RefVoltage.Value = 12.0;\n\n      // Switch both outputs on\n      clamp30.Active.Value = OutputMode.Active;\n      clamp15.Active.Value = OutputMode.Active;\n\n      // Measure the current consumed by the ECU via clamp 15\n      // after 2 seconds (result is written to the Write Window)\n      Vector.CANoe.Threading.Execution.Wait(2000);\n      Vector.Tools.Output.WriteLine(\"ECU is consuming \" + clamp30.AvgCurrent.Value + \"mA\");\n   }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

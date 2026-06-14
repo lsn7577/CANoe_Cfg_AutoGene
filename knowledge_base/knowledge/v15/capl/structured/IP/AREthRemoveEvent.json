@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "AREthRemoveEvent",
+  "category": "IP",
+  "title": "AREthRemoveEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthRemoveEvent.htm",
+  "syntax": [
+    "long AREthRemoveEvent( dword pevHandle );"
+  ],
+  "description": [
+    "Removes an Event from a Provided Service Instance. The Event was previously added by AREthAddEvent.",
+    "Afterwards, the callback registered with AREthAddEvent is no longer called. The Event is no longer sent by the AUTOSAR Eth IL."
+  ],
+  "parameters": [
+    {
+      "name": "pevHandle",
+      "type": "",
+      "description": "Handle of the Event that is to be removed. The handle must have been created with AREthAddEvent."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  dword aep;  // Application Endpoint handle\n  dword psi;  // provided service handle\n  dword peg1; // provided Eventgroup handle\n  dword peg2; // provided Eventgroup handle\n  dword pev;  // provided Event handle\n\n  // open an Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create service\n  psi = AREthCreateProvidedServiceInstance(aep,10,1);\n\n  // create Eventgroups\n  peg1 = AREthAddProvidedEventGroup(psi,1);\n  peg2 = AREthAddProvidedEventGroup(psi,1);\n\n  // create Event and add Event to both Eventgroups\n  pev = AREthAddEvent(psi, 1, \"OnPrepareEvent1\");\n  AREthAddEventToEventgroup(peg1, pev);\n  AREthAddEventToEventgroup(peg2, pev);\n\n  // ensure that Event is sent cyclically\n  AREthSetProperty(pev,\"CycleTimeMs\",1000);\n\n  // ... do something here\n\n  // remove the Event\n  AREthRemoveEvent(pev);\n\n  // ... Event is removed from both Eventgroups and is not sent anymore\n  // ... Application Endpoint, provided Service Instance and Eventgroup can still be used here\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,147 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_CRCObservationAsrPDU, ChkStart_CRCObservationAsrPDU",
+  "category": "Test",
+  "title": "ChkCreate_CRCObservationAsrPDU, ChkStart_CRCObservationAsrPDU",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLFunctionChkCreateCRCObservationAsrPDU.htm",
+  "syntax": [
+    "dword ChkCreate_CRCObservationAsrPDU(PDU aPDU);",
+    "dword ChkStart_CRCObservationAsrPDU(PDU aPDU);",
+    "dword ChkCreate_CRCObservationAsrPDU(PDU aPDU, char [] signalGroup);",
+    "dword ChkStart_CRCObservationAsrPDU(PDU aPDU, char [] signalGroup);",
+    "dword ChkCreate_CRCObservationAsrPDU(long aHeaderId);",
+    "dword ChkStart_CRCObservationAsrPDU(long aHeaderId);",
+    "dword ChkCreate_CRCObservationAsrPDU(long aHeaderId, char [] signalGroup);",
+    "dword ChkStart_CRCObservationAsrPDU(long aHeaderId, char [] signalGroup);"
+  ],
+  "description": [
+    "This check monitors the CRC of a PDU or a single signal group of a PDU. The check condition is violated if the calculated CRC does not match the value of the CRC signal contained in the PDU or signal group. The check can be set up for a single PDU or a single signal group within a PDU.",
+    "The functions/constructors without the parameter signalGroup monitors all specified CRC´s within the given PDU.",
+    "The numeric functions/constructors with the parameter aHeaderId cannot be used for FlexRay."
+  ],
+  "parameters": [
+    {
+      "name": "aPDU",
+      "type": "",
+      "description": "Must exist in the database."
+    },
+    {
+      "name": "aHeaderId",
+      "type": "",
+      "description": "PDU header ID to be observed. The corresponding PDU shall be defined in the database."
+    },
+    {
+      "name": "signalGroup",
+      "type": "",
+      "description": "CRC of signal group to be observed."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks the payload gaps of the message\ncheckId = ChkStart_CRCObservationAsrPDU (PDUToObserve, “signalGroup1”);\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 SP4",
+      "13.0",
+      "—",
+      "14",
+      "3.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "PDU-Network",
+      "PDU-Network",
+      "—",
+      "PDU-Network",
+      "PDU-Network"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

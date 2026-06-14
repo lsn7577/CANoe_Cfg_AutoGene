@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_diag_PhysicalRequest, _diag_FunctionalRequest",
+  "category": "Diagnostics",
+  "title": "_diag_PhysicalRequest, _diag_FunctionalRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagPhysicalFunctionalRequest.htm",
+  "syntax": [
+    "void _Diag_PhysicalRequest(char target[], byte rawRequest[]);"
+  ],
+  "description": [
+    "The given bytes shall be sent as a physical or functional diagnostic request to the ECU or functional group with the given qualifier."
+  ],
+  "parameters": [
+    {
+      "name": "target",
+      "type": "",
+      "description": "Qualifier of the ECU or functional group to send to."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

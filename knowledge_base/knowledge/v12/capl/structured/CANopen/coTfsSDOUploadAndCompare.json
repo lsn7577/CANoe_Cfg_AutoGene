@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOUploadAndCompare",
+  "category": "CANopen",
+  "title": "coTfsSDOUploadAndCompare",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoUploadAndCompare.htm",
+  "syntax": [
+    "long coTfsSDOUploadAndCompare( dword index, dword subIndex, dword size, byte inValueBuf[], dword valueBufSize, byte inMaskBuf[], dword maskBufSize, dword useBitMask ); // form 1"
+  ],
+  "description": [
+    "This function executes a complete SDO upload. Depending on the number of data, this is either an expedited upload (up to 4 bytes) or a segmented transfer. Afterwards the received data is compared against the data supplied.",
+    "It is not possible to fetch the received data using coTfsGetSdoUploadData after this function was called.",
+    "(4) and (5) can be used for maximum 4 byte objects only."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Object index"
+    }
+  ],
+  "return": "error code or",
+  "example": {
+    "description": [],
+    "code": "dword dataLength = 2;\nbyte compareMask[2];\nbyte receiveData[2];\nreceiveData[0] = 0x01;\nreceiveData[1] = 0x02;\ncompareMask[0] = 0x0F; /* compare only lower nibble of byte 0 */\ncompareMask[1] = 0xFF; /* compare complete byte 1 */\n\nif (coTfsSDOUploadAndCompare( 0x1017, 0x2, dataLength, receiveData, 2, compareMask, 2, 1 ) != 1)\n{\n  write(\" SDO upload failed or data mismatch\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

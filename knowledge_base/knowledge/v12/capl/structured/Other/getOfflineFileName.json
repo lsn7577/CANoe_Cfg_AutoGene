@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getOfflineFileName",
+  "category": "Other",
+  "title": "getOfflineFileName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetOfflineFileName.htm",
+  "syntax": [
+    "long getOfflineFileName(char[] buffer, dword bufferSize); //form 1"
+  ],
+  "description": [
+    "Returns the complete path of one file of the currently used offline source files. If form 1 is used, the first file is returned, otherwise the index of the file to return is passed as parameter."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Space for the returned string."
+    }
+  ],
+  "return": "0: If no error",
+  "example": {
+    "description": [],
+    "code": "long isActive;\nchar buffer[256];\nlong numFiles;\nlong i;\n\nwrite(\"Offline source files:\");\nnumFiles = getNumOfflineFiles();\nfor (i = 0; i < numFiles; ++i)\n{\n  getOfflineFileName(i, buffer, 256);\n  write(\"%s\", buffer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

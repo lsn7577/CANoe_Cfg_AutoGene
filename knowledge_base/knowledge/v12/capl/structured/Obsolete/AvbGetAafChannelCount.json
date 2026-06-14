@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbGetAafChannelCount",
+  "category": "Obsolete",
+  "title": "AvbGetAafChannelCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionAvbGetAafChannelCount.htm",
+  "syntax": [
+    "dword AvbGetAafChannelCount(dword listenerOrTalkerHandle, dword& retChannelCount);"
+  ],
+  "description": [
+    "The function retrieves the number of channels contained in an AAF frame in the stream received by the Listener or originated by the Talker."
+  ],
+  "parameters": [
+    {
+      "name": "listenerOrTalkerHandle",
+      "type": "",
+      "description": "The handle of the Listener or Talker."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

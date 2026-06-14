@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetMeterReading",
+  "category": "SmartCharging",
+  "title": "SCC_SetMeterReading",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetMeterReading.htm",
+  "syntax": [
+    "long SCC_SetMeterReading( float CurrentMeter )"
+  ],
+  "description": [
+    "Sets the current consumption in the charge point."
+  ],
+  "parameters": [
+    {
+      "name": "CurrentMeter",
+      "type": "",
+      "description": "Meter reading to be set in Wh."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

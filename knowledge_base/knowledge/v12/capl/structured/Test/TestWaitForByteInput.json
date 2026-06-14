@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForByteInput",
+  "category": "Test",
+  "title": "TestWaitForByteInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForByteInput.htm",
+  "syntax": [
+    "TestWaitForByteInput(char text[], char caption[], char info[]);"
+  ],
+  "description": [
+    "This function opens a dialog for byte array input. Optionally you can set some timeout in ms. Afterwards the dialog will be closed. You can optionally define some default input for the dialog."
+  ],
+  "parameters": [
+    {
+      "name": "Text",
+      "type": "",
+      "description": "Text to be displayed in the entry dialog."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "handle = TestWaitForByteInput(\"Test Text\", \"Test Caption\", \"Test Byte Input\", 0);\nTestGetByteInput(resultByte, elcount(resultByte));\n\nhandle = TestWaitForByteInput(\"Test Text\", \"Test Caption\", \"Test Byte Input Timeout\", 5000);\nTestGetByteInput(resultByte, elcount(resultByte));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

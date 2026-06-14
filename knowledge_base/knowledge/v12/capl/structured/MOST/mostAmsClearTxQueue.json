@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostAmsClearTxQueue",
+  "category": "MOST",
+  "title": "mostAmsClearTxQueue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAmsClearTxQueue.htm",
+  "syntax": [
+    "long mostAmsClearTxQueue(long channel)"
+  ],
+  "description": [
+    "Clears all entries in the AMS send buffer.",
+    "This command can be used to stop further sending of AMS messages in case of errors (e.g. critical unlock or light off) or if the system state changes to \"NotOk\"."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "<= 0: See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

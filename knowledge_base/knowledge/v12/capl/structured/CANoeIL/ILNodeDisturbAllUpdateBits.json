@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILNodeDisturbAllUpdateBits",
+  "category": "CANoeIL",
+  "title": "ILNodeDisturbAllUpdateBits",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILNodeDisturbAllUpdateBits.htm",
+  "syntax": [
+    "long ILNodeDisturbAllUpdateBits(dbNode aNode, long flags, long disturbanceMode, long disturbanceCount, long disturbanceValue);"
+  ],
+  "description": [
+    "Modifies all update bits of signals/signal groups of a node. Different fault injections are possible.This function influences a simulation node with an assigned CANoe interaction layer."
+  ],
+  "parameters": [
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "The symbolic name of a node in the database, whose update bits will be disturbed."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

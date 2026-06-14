@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventStatusToLog",
+  "category": "Test",
+  "title": "ChkQuery_EventStatusToLog",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventStatusToLog.htm",
+  "syntax": [
+    "long ChkQuery_EventStatusToLog (dword aCheckId);",
+    "check.QueryEventStatusToLog();"
+  ],
+  "description": [
+    "Uses the output of ChkQuery_EventStatus and writes the result to the logging file."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "< 0: Refers the query error codes",
+  "example": {
+    "description": [],
+    "code": "long result;\ndword checkId;\ncheckId = ChkStart_MsgRelCycleTimeViolation(VehicleMotion, 0.9, 1.1);\n// ... execute test sequence\nresult = ChkQuery_EventStatusToLog(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

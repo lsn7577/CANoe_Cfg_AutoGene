@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "RS232SetSignalLine",
+  "category": "RS232",
+  "title": "RS232SetSignalLine",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/RS232/Functions/CAPLfunctionRS232SetSignalLine.htm",
+  "syntax": [
+    "dword RS232SetSignalLine( dword port, dword line, dword state );"
+  ],
+  "description": [
+    "Sets signal lines on serial port."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "RTS"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "DTR"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "disabled"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "enabled"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.1",
+      "7.1",
+      "—",
+      "—",
+      "14",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

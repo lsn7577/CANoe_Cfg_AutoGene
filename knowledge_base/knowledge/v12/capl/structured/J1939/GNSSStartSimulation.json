@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GNSSStartSimulation",
+  "category": "J1939",
+  "title": "GNSSStartSimulation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSstartsimulation.htm",
+  "syntax": [
+    "dword GNSSStartSimulation( dword simType )"
+  ],
+  "description": [
+    "This function starts the simulation. At least one waypoint must be set for a start to be successful.",
+    "Simulation modes:"
+  ],
+  "parameters": [
+    {
+      "name": "simType",
+      "type": "",
+      "description": "simulation mode"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "if ( GNSSStartSimulation(0) == 0 ) {\n  write(\"Start simulation\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

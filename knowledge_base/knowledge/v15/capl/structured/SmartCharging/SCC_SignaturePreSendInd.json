@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "SCC_SignaturePreSendInd",
+  "category": "SmartCharging",
+  "title": "SCC_SignaturePreSendInd",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Callbacks/CAPLfunctionSCC_SignaturePreSendInd.htm",
+  "syntax": [
+    "void SCC_SignaturePreSendInd(byte SessionId[], dword MessageId, byte Signature[], dword& SigLength)"
+  ],
+  "description": [
+    "This callback is called when a signature for a message has been created. It allows to peek for the signature and its length before it is sent with the indicated message. Also, both signature and length may be changed for the purpose of fault injection."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "MessageID",
+      "type": "",
+      "description": "Type of the message that will use the signature."
+    },
+    {
+      "name": "Signature",
+      "type": "",
+      "description": "The signature data."
+    },
+    {
+      "name": "sigLength",
+      "type": "",
+      "description": "The number of signature data bytes."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "SCC_SignaturePreSendInd( byte SessionID[], dword MessageID, byte Signature[], dword& SignatureLength)\n{\n  WriteLineEx(writeTab, 1, \"SCC: Signature of length %i created for message %d\", SignatureLength, MessageID);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "—",
+      "—",
+      "—",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      ".SmartCharging",
+      "—",
+      "—",
+      "—",
+      ".SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

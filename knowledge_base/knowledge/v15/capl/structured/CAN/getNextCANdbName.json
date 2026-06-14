@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "getNextCANdbName",
+  "category": "CAN",
+  "title": "getNextCANdbName",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Functions/CAPLfunctionGetNextCANdbName.htm",
+  "syntax": [
+    "dword getNextCANdbName( dword pos, char buffer[], dword size)"
+  ],
+  "description": [
+    "Finds out the names of the other assigned databases with pos."
+  ],
+  "parameters": [
+    {
+      "name": "pos",
+      "type": "",
+      "description": "Position number of the database to be found."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer in which the database name is written."
+    },
+    {
+      "name": "size",
+      "type": "",
+      "description": "Size of the buffer in Byte."
+    }
+  ],
+  "return": "If successful unequal 0, otherwise 0.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\nchar buffer[256];\ndword pos;\n\npos = getFirstCANdbName( buffer, elcount( buffer));\n//Finds the name of the first database.\n//If a database is found, \"pos\" contains the value 1.\n//If none is found \"pos\" contains 0.\n\nwhile ( 0 != pos)\n{\nwrite( \"CANdb: %s\", buffer);\npos = getNextCANdbName( pos, buffer, elcount( buffer));\n//Finds the names of other databases.\n//If any other databases are found\n//\"pos\" contains the value 2, 3, etc\n//If no further databases are found\n//\"pos\" contains 0 and the loop is exited\n}\n}\n\nExample to find the third database\n\non key '3'\n{\nchar buffer[256];\ndword pos;\ndword DbcNumber = 2; //Position number of the second database\npos = getNextCANdbName(DbcNumber, buffer, elcount(buffer));\n//Returns the name of the third database.\n//Return value \"pos\" contains the value 3.\n//If no third database is found \"pos\" contains 0.\n\nwrite( \"Database position number : %d Database name : %s\",pos, buffer);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "4.0",
+      "4.0",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "CAN",
+      "CAN",
+      "CAN",
+      "—",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

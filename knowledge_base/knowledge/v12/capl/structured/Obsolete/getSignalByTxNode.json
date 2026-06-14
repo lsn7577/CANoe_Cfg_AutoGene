@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getSignalByTxNode",
+  "category": "Obsolete",
+  "title": "getSignalByTxNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionGetSignalByTxNode.htm",
+  "syntax": [
+    "float getSignalByTxNode (dbSignal aSignal, dbNode aTxNode);"
+  ],
+  "description": [
+    "Gets the value of a signal."
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "The signal to be polled."
+    }
+  ],
+  "return": "Value of the signal or 0 if the signal was not on the bus yet.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

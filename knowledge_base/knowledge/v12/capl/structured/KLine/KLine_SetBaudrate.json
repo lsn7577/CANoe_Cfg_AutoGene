@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetBaudrate",
+  "category": "KLine",
+  "title": "KLine_SetBaudrate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetBaudrate.htm",
+  "syntax": [
+    "long KLine_SetBaudrate(dword baudrate)"
+  ],
+  "description": [
+    "Allows changing the baud rate during the measurement."
+  ],
+  "parameters": [
+    {
+      "name": "baudrate",
+      "type": "",
+      "description": "Value range: 200 baud - 115200 baud."
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

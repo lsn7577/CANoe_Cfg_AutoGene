@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "DoIP_UDPSend",
+  "category": "Diagnostics",
+  "title": "DoIP_UDPSend",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPUDPSend.htm",
+  "syntax": [
+    "long DoIP_UDPSend(dword payloadType, byte payload[], dword payloadLen);",
+    "long DoIP_UDPSend(char IPaddress[], dword payloadType, byte payload[], dword payloadLen);"
+  ],
+  "description": [
+    "Sends a DoIP PDU with valid layout to peer(s) as UDP frame. The configured DoIP version is used."
+  ],
+  "parameters": [
+    {
+      "name": "IPaddress",
+      "type": "",
+      "description": "If given, do not send to the selected peer, but to this address."
+    },
+    {
+      "name": "payloadType",
+      "type": "",
+      "description": "Type to send, i.e. this can be any value. [0; 0xFFFF]"
+    },
+    {
+      "name": "payload",
+      "type": "",
+      "description": "The data following the generic DoIP header."
+    },
+    {
+      "name": "payloadLen",
+      "type": "",
+      "description": "Payload length."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "// Send a DoIP PDU with valid layout but non-standard type\n// to a specific vehicle\nBYTE payload[3] = { 0x12, 0x34, 0x45};\nDoIP_UDPSend( \"169.254.123.45\", 0xF333, payload, elcount( payload));"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP4",
+      "—",
+      "—",
+      "—",
+      "1.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

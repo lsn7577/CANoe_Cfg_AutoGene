@@ -1,0 +1,141 @@
+{
+  "page_type": "function",
+  "name": "linSetMasterNode",
+  "category": "LIN",
+  "title": "linSetMasterNode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINSetMasterNode.htm",
+  "syntax": [
+    "long linSetMasterNode(); // form 1",
+    "long linSetMasterNode(long nodeId); // form 2",
+    "long linSetMasterNode(char nodeNameOrTitle[]); // form 3"
+  ],
+  "description": [
+    "Changes the LIN master node of the channel given by the current node’s bus context and restricts sending LIN headers solely to the assigned master node. See SetBusContext for how to change the current bus context.",
+    "LIN Header’s can now be sent:",
+    "The restriction can later be repealed by calling linResetMasterNode.",
+    "Using this function allows to include alternative implementations of a LIN master in a CANoe simulation setup, and switch between them during measurement. Only the currently assigned LIN master node will be able to output LIN headers. Header transmitted by other (non-master) nodes will be suppressed.",
+    "If a node assigned to the LDF master has no longer the master role, the LIN scheduler defined in the LDF will be automatically stopped. If the LDF master node is reassigned by calling linSetMasterNode, the LIN scheduler will be restored to its previous state.",
+    "The first prototype of this function assigns the calling simulation node as the LIN master. The value returned is an internal, unique identifier for the previous master node, which can be specified as argument to the second form.",
+    "The third prototype specifies a node by its title string (which can be changed in the node configuration). A Replay Block can be assigned to Master mode by its name. The currently assigned master node can be identified by observing the node descriptions in CANoe’s simulation setup window."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "This parameter specifies a node identifier, which has been returned by an earlier call to linSetMasterNode."
+    },
+    {
+      "name": "nodeNameOrTitle",
+      "type": "",
+      "description": "The database name (if assigned) or title string of a node."
+    }
+  ],
+  "return": "Node ID of the previous master node. If the return value is 0 (zero), the function failed, or there was no previous LIN master node.",
+  "example": {
+    "description": [],
+    "code": "Variables {\nlong prevMasterNode = 0;\n}\n\non key ‘1’:\n{\n  // sets the node executing  this CAPL snippet as master\n  prevMasterNode = linSetMasterNode();\n}\n\non key ‘2’:\n{\n  // sets the named replay block as master\n  prevMasterNode = linSetMasterNode(”Replay1”);\n}\n\non key ‘3’:\n{\n  // change back to the previous master node\n  linSetMasterNode(prevMasterNode);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0",
+      "13.0",
+      "13.0",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN",
+      "LIN",
+      "LIN",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

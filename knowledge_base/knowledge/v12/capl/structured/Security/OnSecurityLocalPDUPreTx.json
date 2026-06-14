@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnSecurityLocalPDUPreTx",
+  "category": "Security",
+  "title": "OnSecurityLocalPDUPreTx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Security/CallbackHandler/CAPLfunctionOnSecurityLocalPDUPreTx.htm",
+  "syntax": [
+    "void OnSecurityLocalPDUPreTx(char pduName[], dword dataId, byte payload[], dword payloadLength, qword& authInfo, dword authInfoBitLength, qword& freshness, dword freshnessBitLength)"
+  ],
+  "description": [
+    "This callback handler is called, after all data updates and the automatic Authenticator (CMAC) calculation has be done. Payload, AuthInfo and freshness can be modified in this handler before the transmission starts. Fault injection and evaluation of new algorithm are typical examples."
+  ],
+  "parameters": [
+    {
+      "name": "char pduName[]",
+      "type": "",
+      "description": "The name of the PDU."
+    }
+  ],
+  "return": "byte payload[]\nThe payload of the PDU.",
+  "example": {
+    "description": [],
+    "code": "// this example modifies the MAC of PDU with Data ID 1\nvoid OnSecurityLocalPDUPreTx(char pduName[], dword dataId, byte payload[], dword payloadLength, qword& authInfoHigh, qword& authInfo, dword authInfoBitLength, qword& freshness, dword freshnessBitLength, dword freshnessValueId)\n{\n  if (dataId == 1)\n  {\n    authInfo = 0x123456; // change cmac\n    // freshness = 0x02; // change freshness\n    // payload[0] = 0xFF; // change payload;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

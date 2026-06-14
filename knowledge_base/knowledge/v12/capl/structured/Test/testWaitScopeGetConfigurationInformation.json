@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetConfigurationInformation",
+  "category": "Test",
+  "title": "testWaitScopeGetConfigurationInformation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopeGetConfigurationInformation.htm",
+  "syntax": [
+    "long testWaitScopeGetConfigurationInformation (char deviceNames[][], dword deviceCount, char configurationNames[][], dword configurationCount);"
+  ],
+  "description": [
+    "Returns the available oscilloscopes and possible configurations.",
+    "The returned device names and function can be used with the function testWaitScopeSetConfiguration."
+  ],
+  "parameters": [
+    {
+      "name": "deviceNames",
+      "type": "",
+      "description": "The names of the scope device."
+    }
+  ],
+  "return": "1 - Successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

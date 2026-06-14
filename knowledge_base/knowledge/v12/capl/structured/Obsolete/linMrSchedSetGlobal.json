@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linMrSchedSetGlobal",
+  "category": "Obsolete",
+  "title": "linMrSchedSetGlobal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINMrSchedSetGlobal.htm",
+  "syntax": [
+    "void linMrSchedSetGlobal(unsigned int cycleTime, unsigned int numberOfModes);"
+  ],
+  "description": [
+    "Configures the basic parameters of the Scheduler."
+  ],
+  "parameters": [
+    {
+      "name": "cycleTime",
+      "type": "",
+      "description": "Frequency with which the Scheduler works through its task lists. With a value of 0 it arranges the working steps directly after one another. Entries are made in milliseconds."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

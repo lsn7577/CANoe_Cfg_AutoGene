@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "scopeActivateTrigger",
+  "category": "Scope",
+  "title": "scopeActivateTrigger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Scope/Functions/CAPLfunctionScopeActivateTrigger.htm",
+  "syntax": [
+    "long scopeActivateTrigger ()"
+  ],
+  "description": [
+    "Performs Activate Trigger action for Scope window. This action is equivalent to activating the trigger via the GUI.",
+    "The completion of this action is reported with an internal event which can be awaited via TFS-function testWaitForScopeEvent() in CAPL programs for test modules."
+  ],
+  "parameters": [],
+  "return": "2 (success): Trigger is already active. This might be a case when the trigger has been activated by a previous CAPL call or manually.",
+  "example": {
+    "description": [],
+    "code": "long res;\n\nres = scopeActivateTrigger();\nif (res <= 0 || res > 2)\n{\n   testStepFail(\"Initialization\",\"Call to scopeActivateTrigger() failed. Return code =%d\", res);\n   return;\n}\nelse if (res == 1)\n{ // wait till action done\n   if (testWaitForScopeEvent(eScopeTriggerActivated, 8000) != 1)\n   {\n      testStepFail(\"Initialization \",\"Scope event eScopeTriggerActivated was not received\");\n      return;\n   }\n}\ntestStep(\"Initialization\",\"Scope trigger activation succeeded\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

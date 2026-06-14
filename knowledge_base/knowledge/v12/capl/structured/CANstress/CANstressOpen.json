@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressOpen",
+  "category": "CANstress",
+  "title": "CANstressOpen",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressOpen.htm",
+  "syntax": [
+    "void CANstressOpen( char fileName[] );"
+  ],
+  "description": [
+    "Opens a CANstress configuration file."
+  ],
+  "parameters": [
+    {
+      "name": "fileName",
+      "type": "",
+      "description": "If the passed configuration file is configured as a User File, only the file name is passed here. Otherwise either an absolute path or a relative path relating to the folder of the CANoe configuration must be passed."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

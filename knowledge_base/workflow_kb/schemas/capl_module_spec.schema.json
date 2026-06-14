@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "workflow_kb/schemas/capl_module_spec.schema.json",
+  "title": "CAPL Module Specification",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "module_name",
+    "module_type",
+    "target_canoe_version"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "module_name": {
+      "type": "string"
+    },
+    "module_type": {
+      "type": "string",
+      "enum": [
+        "test_module",
+        "simulation_node",
+        "include"
+      ]
+    },
+    "target_canoe_version": {
+      "type": "string"
+    },
+    "includes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "variables": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "test_cases": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "required_symbols": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "team_wrappers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+

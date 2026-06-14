@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANstressSetContinuousDisturbanceTimeLimited",
+  "category": "CANstress",
+  "title": "CANstressSetContinuousDisturbanceTimeLimited",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANstress/Functions/CAPLfunctionCANstressSetContinuousDisturbanceTimelimited.htm",
+  "syntax": [
+    "void CANstressSetContinuousDisturbanceTimeLimited (dword duration, dword type);"
+  ],
+  "description": [
+    "Sets the Continuous disturbance (time limited) mode. If the disturbance has not previously been terminated by means of an explicit command such as CANstressStop, the end of the test module or the end of the measurement, it will prevail for the period of time set in duration."
+  ],
+  "parameters": [
+    {
+      "name": "time",
+      "type": "",
+      "description": "Defines the maximum length of the continuous disturbance. The length is specified in ms and must be greater than 0."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

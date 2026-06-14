@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MediaEnumVideoCapturers",
+  "category": "Media",
+  "title": "MediaEnumVideoCapturers",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaEnumVideoCapturers.htm",
+  "syntax": [
+    "dword MediaEnumVideoCapturers(dword& count, dword videoCapturerHandles[]);"
+  ],
+  "description": [
+    "Enumerates a list of video capture devices."
+  ],
+  "parameters": [
+    {
+      "name": "count",
+      "type": "",
+      "description": "Count of elements provided in videoCapturerHandles.Caller: Set to elCount(videoCapturerHandles)."
+    }
+  ],
+  "return": "0: The function succeeded.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

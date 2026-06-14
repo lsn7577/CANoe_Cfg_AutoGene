@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "KLine_Init5BaudEcuParams",
+  "category": "KLine",
+  "title": "KLine_Init5BaudEcuParams",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineInit5BaudEcuParams.htm",
+  "syntax": [
+    "long KLine_Init5BaudEcuParams(dword 5BaudAddress, dword rate_10thBd, dword W1_us, dword W2_us, dword W3_us, dword W4_us, dword W4Min_us, dword W4Max_us, dword addressNot);"
+  ],
+  "description": [
+    "Initialize K-Line channel for reception of the 5 baud pattern.",
+    "Must be called in on prestart handler after KLine_CreateECURepresentation."
+  ],
+  "parameters": [
+    {
+      "name": "5BaudAddress",
+      "type": "",
+      "description": "The 5 Baud address to accept on the active channel."
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

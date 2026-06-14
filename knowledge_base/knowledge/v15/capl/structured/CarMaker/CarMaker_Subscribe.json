@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "CarMaker_Subscribe",
+  "category": "CarMaker",
+  "title": "CarMaker_Subscribe",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CarMaker/Functions/CAPLfunctionCarMakerSubscribe.htm",
+  "syntax": [
+    "long CarMaker_Subscribe(char group[], double freq_hz);"
+  ],
+  "description": [
+    "Subscribes a group of CarMaker quantities as CANoe system variables. The CANoe system variables are defined in the CarMaker system variable namespace. Each call to this function automatically unsubscribes any previous subscription."
+  ],
+  "parameters": [
+    {
+      "name": "group",
+      "type": "",
+      "description": "Name of the group of quantities to subscribe."
+    },
+    {
+      "name": "freq_hz",
+      "type": "",
+      "description": "The frequency at which the values are to be sent. The reception is then processed inside the polling function."
+    }
+  ],
+  "return": "APO return code",
+  "example": {
+    "description": [],
+    "code": "// subscribe to quantities of CarMaker\ngErrorState = CarMaker_Subscribe(\"TC1_Group\", gFreq_Hz);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "—",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CarMaker",
+      "—",
+      "—",
+      "—",
+      "CarMaker"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

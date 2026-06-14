@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateServicePaymentSelectionReq_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreateServicePaymentSelectionReq_DIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateServicePaymentSelectionReq_Din.htm",
+  "syntax": [
+    "long SCC_CreateServicePaymentSelectionReq_DIN ( byte SessionID[], char SelectedPaymentOption[], byte SelectedServiceIDs[], byte SelectedParameterSetIDs[], dword ServiceIDCount )"
+  ],
+  "description": [
+    "Creates a Service Payment Selection Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

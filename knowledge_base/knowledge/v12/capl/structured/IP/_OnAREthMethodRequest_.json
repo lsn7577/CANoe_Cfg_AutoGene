@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "<OnAREthMethodRequest>",
+  "category": "IP",
+  "title": "<OnAREthMethodRequest>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthMethodRequest.htm",
+  "syntax": [
+    "void <OnAREthMethodRequest>( dword methodHandle, dword messageHandle, dword messageResponseHandle ); // form 1"
+  ],
+  "description": [
+    "A callback function with this signature must be passed to the CAPL function AREthAddMethod.",
+    "The syntax of the callback function specified in form 2 must be used if the fireAndForget parameter was used when the method was created by the provider (see also AREthAddMethod).",
+    "This callback is called when a consumer has called the method created with AREthAddMethod."
+  ],
+  "parameters": [
+    {
+      "name": "methodHandle",
+      "type": "",
+      "description": "Handle of the Event that triggered the callback, see AREthAddMethod."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the created method is contained in the FIBEX database that is assigned to the CANoe configuration. The method has the Method ID 31, two input parameters (Member_value1 and Member_value2), and a return parameter (Result)."
+    ],
+    "code": "variables\n{\n  dword gPm; // provided method handle\n}\n\nvoid Initialize()\n{\n  dword aep; // application endpoint handle\n  dword psi; // provided Service Instance handle\n\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = AREthCreateProvidedServiceInstance(aep,11,1);\n\n  // create method\n  gPm = AREthAddMethod(psi,31,\"OnMethodRequest\");\n}\n\nvoid OnMethodRequest(dword methodHandle,dword messageHandle,dword messageResponseHandle)\n{\n  WORD val1; // value of input parameter 1\n  WORD val2; // value of input parameter 2\n  dword res; // value of return parameter\n\n  // get value from request\n  val1 = (WORD)AREthGetValueDWord(messageHandle,\"Member_value1\");\n  val2 = (WORD)AREthGetValueDWord(messageHandle,\"Member_value2\");\n\n  // calculate result\n  res = val1 + val2;\n\n  // set response value\n  AREthSetValueDWord(messageResponseHandle,\"Result\",(val1 + val2));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

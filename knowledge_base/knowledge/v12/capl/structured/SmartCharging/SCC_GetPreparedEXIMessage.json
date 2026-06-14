@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetPreparedEXIMessage",
+  "category": "SmartCharging",
+  "title": "SCC_GetPreparedEXIMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetPreparedEXIMessage.htm",
+  "syntax": [
+    "long SCC_GetPreparedEXIMessage ( byte data[], dword& dataLength ) // form 1"
+  ],
+  "description": [
+    "Finalizes a message without sending. The message data is returned to an output buffer instead. Usually this data consists of the V2G header and the EXI encoded V2G payload."
+  ],
+  "parameters": [
+    {
+      "name": "Data",
+      "type": "",
+      "description": "Output buffer for the message. Make sure to use a buffer that is large enough (some messages may take up to 10 kB)."
+    }
+  ],
+  "return": "The Id attribute of the message body, if existing (to the output buffer)",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostSetShutDownFlagUsage, mostGetShutDownFlagUsage",
+  "category": "MOST",
+  "title": "mostSetShutDownFlagUsage, mostGetShutDownFlagUsage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSetGetShutDownFlagUsage.htm",
+  "syntax": [
+    "long mostSetShutDownFlagUsage(long channel, long mode)"
+  ],
+  "description": [
+    "For test purposes the stress network interface controller in the OptoLyzer G2 3150o is able to suppress the shutdown flag for the next node by calling.",
+    "mostSetShutDownFlagUsage with mode 0."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface"
+    }
+  ],
+  "return": "mostSetShutDownFlagUsage: See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

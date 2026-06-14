@@ -1,0 +1,130 @@
+{
+  "page_type": "method",
+  "name": "ethernetPacket::protocol::ResizeData",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::ResizeData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Methods/CAPLfunctionProtocolResizeData.htm",
+  "syntax": [
+    "long ethernetPacket.<protocol>.ResizeData( word newLength );"
+  ],
+  "description": [
+    "Resizes the payload of a protocol within an Ethernet packet.",
+    "If the newLength is greater than the length of the Ethernet packet, the Ethernet packet is enlarged.",
+    "If <protocol> is not available in the packet, an error is returned."
+  ],
+  "parameters": [
+    {
+      "name": "newLength",
+      "type": "",
+      "description": "New length in bytes"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "word i;\nethernetPacket pkt;\n\npkt.udp.Init();\npkt.udp.ResizeData( 200 );\n\nfor (i = 0; i < 200; i++ )\n{\n  pkt.udp.Byte(i) = 0;\n}\n\npkt.CompletePacket();\noutput( pkt );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "11.0 SP3",
+      "11.0 SP3",
+      "13.0",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

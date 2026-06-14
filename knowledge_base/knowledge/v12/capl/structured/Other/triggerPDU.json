@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "triggerPDU",
+  "category": "Other",
+  "title": "triggerPDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionTriggerPDU.htm",
+  "syntax": [
+    "void triggerPDU(pdu myPDU);"
+  ],
+  "description": [
+    "Triggers a PDU to be sent. If the PDU has an update bit it will be set. After the PDU was sent the update bit will be reset."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on timer cyclic100ms\n{\n  PDU randomPDU myPDU;\n  myPDU.signal1 = 10;\n  myPDU.signal2 = 20;\n  triggerPDU(myPDU);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

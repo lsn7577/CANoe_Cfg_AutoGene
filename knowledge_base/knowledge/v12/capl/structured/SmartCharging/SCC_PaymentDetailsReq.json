@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_PaymentDetailsReq",
+  "category": "SmartCharging",
+  "title": "SCC_PaymentDetailsReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_PaymentDetailsReq.htm",
+  "syntax": [
+    "void SCC_PaymentDetailsReq ( byte SessionID[], char ContractID[] )"
+  ],
+  "description": [
+    "The callback is called as soon as a Payment Details Request is received."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

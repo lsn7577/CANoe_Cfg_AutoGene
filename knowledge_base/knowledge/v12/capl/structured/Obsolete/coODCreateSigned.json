@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "coODCreateSigned",
+  "category": "Obsolete",
+  "title": "coODCreateSigned",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOdCreateSigned.htm",
+  "syntax": [
+    "void coODCreateSigned( dword index, dword subIndex, dword dataType, dword access, long initValue, dword errCode[] );"
+  ],
+  "description": [
+    "Generates a new object in the local object dictionary of the specified type and with a start value provided with leading sign. If the length of the available start value (maximum 32 bits) is smaller than the size of the object, the remaining part is initialized with null.",
+    "If the object already exists, then it is replaced by the new object."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Index of the object, value range 1..65.535"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoODCreateSigned( 0x2000, 0x0, 0x4, 1, -255, errCode );\nif (errCode[0] == 0) {\n  write( \"Object [0x2000,0] created\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "testGetWaitEthernetPacketData",
+  "category": "Test",
+  "title": "testGetWaitEthernetPacketData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitEthernetPacketData.htm",
+  "syntax": [
+    "long testGetWaitEthernetPacketData( ethernetPacket aPacket); // form 1"
+  ],
+  "description": [
+    "If a valid Ethernet packet is the last event that triggers a wait instruction, the packet's content can be called up with form 1.",
+    "Form 2 can only be used for \"joined events\". The number of the \"joined event\" (return value of \"testJoin...\") is here being used as an index."
+  ],
+  "parameters": [
+    {
+      "name": "aPacket",
+      "type": "",
+      "description": "An ethernetPacket variable that should be filled in with this function."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthResizeToken",
+  "category": "Obsolete",
+  "title": "EthResizeToken",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthResizeToken.htm",
+  "syntax": [
+    "long EthResizeToken( long packet, char protocolDesignator[], char tokenDesignator[], long newBitLength );"
+  ],
+  "description": [
+    "The function sets the length of a token.",
+    "In case the token length is increased by full bytes, the additional bytes are initialized with 0."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "see example of EthInitPacket"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

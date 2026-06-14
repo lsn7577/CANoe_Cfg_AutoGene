@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "RS232ByteCallback",
+  "category": "Obsolete",
+  "title": "RS232ByteCallback",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionRS232ByteCallback.htm",
+  "syntax": [
+    "RS232ByteCallback( dword port, dword datum, dword note )"
+  ],
+  "description": [
+    "Callback handler for reception of data from serial ports.",
+    "Each node which implements this handler will receive data. The handler receives data from all opened ports (i.e. opened by CANoe/CANalyzer).",
+    "It is cumbersome and slower by design since it gets one byte time by time. Block handlers receive blocks of data at an instant of time."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    }
+  ],
+  "return": "0: error\nThe error occurs if no serial port has been opened.",
+  "example": {
+    "description": [],
+    "code": "if ( 0!=RS232WriteByte(2,65) )\n   write(“Written byte to port 2.”);\n// port 2 may be connected with port 1\n...\n// at node which listens to port 1 is connected to port 2\nRS232ByteCallback(dword port, dword datum, dword note)\n{\n   // receive value 65 with port==1\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

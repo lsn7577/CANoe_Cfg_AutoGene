@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILNodeSetAllNodesOperationMode",
+  "category": "CANoeIL",
+  "title": "ILNodeSetAllNodesOperationMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILNodeSetAllNodesOperationMode.htm",
+  "syntax": [
+    "long ILNodeSetAllNodesOperationMode(long mode, long param)"
+  ],
+  "description": [
+    "Sets specific operation mode in the interaction layer of all nodes in the current bus context."
+  ],
+  "parameters": [
+    {
+      "name": "mode",
+      "type": "",
+      "description": "mode - 0: influences update bits; other values have currently no effect and are reserved."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

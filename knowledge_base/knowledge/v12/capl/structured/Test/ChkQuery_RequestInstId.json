@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_RequestInstId",
+  "category": "Test",
+  "title": "ChkQuery_RequestInstId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryRequestInstId.htm",
+  "syntax": [
+    "long ChkQuery_RequestInstId(dword aCheckId);",
+    "check.QueryRequestInstId();"
+  ],
+  "description": [
+    "Returns the InstanceId of the request message, which last led to a protocol violation."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Reference to check context."
+    }
+  ],
+  "return": "< 0: Refers the query error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "lookupEthernetPort",
+  "category": "IP",
+  "title": "lookupEthernetPort",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Functions/CAPLfunctionLookupEthernetPort.htm",
+  "syntax": [
+    "ethernetPort lookupEthernetPort(char[] ethernetPortName);"
+  ],
+  "description": [
+    "Gets the Ethernet port for a port qualification string."
+  ],
+  "parameters": [
+    {
+      "name": "ethernetPortName",
+      "type": "",
+      "description": "The port qualification string <NetworkName>::<PortName>."
+    }
+  ],
+  "return": "Ethernet port",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  if (this.hwPort == lookupEthernetPort(\"Ethernet1::ChatClient1\"))\n  {\n    write(\"Received a packet on %s\", \"Ethernet1::ChatClient1\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "12.0 SP4",
+      "12.0 SP4",
+      "13.0",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethGetLinkStatus",
+  "category": "IP",
+  "title": "ethGetLinkStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionEthGetLinkStatus.htm",
+  "syntax": [
+    "long ethGetLinkStatus( long channel ); // form 1"
+  ],
+  "description": [
+    "Returns the link status of the channel."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel number."
+    }
+  ],
+  "return": "0: Link down",
+  "example": {
+    "description": [],
+    "code": "on key 'i'\n{\n  write(\"Link status has the value: %d\", ethGetLinkStatus(ethernetPort::MyNetworkName::MyPortName));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

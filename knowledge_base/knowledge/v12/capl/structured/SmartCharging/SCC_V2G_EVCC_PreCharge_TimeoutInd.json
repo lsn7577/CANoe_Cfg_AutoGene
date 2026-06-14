@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_V2G_EVCC_PreCharge_TimeoutInd",
+  "category": "SmartCharging",
+  "title": "SCC_V2G_EVCC_PreCharge_TimeoutInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_V2G_EVCC_PreCharge_TimeoutInd.htm",
+  "syntax": [
+    "void SCC_V2G_EVCC_PreCharge_TimeoutInd ( byte SessionID )"
+  ],
+  "description": [
+    "The callback is called as soon as an V2G_EVCC_PreCharge_Timeout occurs."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of the SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

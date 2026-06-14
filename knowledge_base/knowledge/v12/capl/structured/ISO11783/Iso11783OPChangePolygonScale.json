@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPChangePolygonScale",
+  "category": "ISO11783",
+  "title": "Iso11783OPChangePolygonScale",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPChangePolygonScale.htm",
+  "syntax": [
+    "long Iso11783OPChangePolygonScale( dword ecuHandle, dword polygonID, dword width, dword height );"
+  ],
+  "description": [
+    "The function changes the size of a polygon object. A Change Polygon Scale command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPChangePolygonScale( handle, 1200, 80, 40 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

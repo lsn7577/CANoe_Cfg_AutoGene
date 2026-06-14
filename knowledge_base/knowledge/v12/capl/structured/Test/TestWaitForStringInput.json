@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForStringInput",
+  "category": "Test",
+  "title": "TestWaitForStringInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForStringInput.htm",
+  "syntax": [
+    "long TestWaitForStringInput (char aQuery[]); // form 1"
+  ],
+  "description": [
+    "It creates a dialog which displays the transferred string. The tester can enter a text in this dialog. This entry can be queried with the command TestGetStringInput after a successful call, i.e. with the return value \"1\". It is also possible to enter a comment in the dialog which is automatically adopted into the test report.",
+    "The first wait function without timeout waits until the confirmation by the tester. If the second wait function is used with the timeout, the dialog is automatically closed after the timeout. Whether the dialog was closed due to a timeout or by the tester, can be determined by using the return value.",
+    "The function TestGetLastWaitResult can be queried after calling the return value of the function if no other TestWaitForStringInput call occurred in the interim.",
+    "Only one dialog is open at a time, even though TestWaitForStringInput is called by different test modules.You can optionally define some default input for the dialog or a regular expression for checking the input."
+  ],
+  "parameters": [
+    {
+      "name": "aQuery",
+      "type": "",
+      "description": "Text to be displayed in the entry dialog. Up to 255 characters can be displayed in the dialog."
+    }
+  ],
+  "return": "<0: General error, e.g. by calling outside of a test sequence",
+  "example": {
+    "description": [],
+    "code": "// ask for the users name and report it in the Write Window\nchar answer[100];\nif (1== TestWaitForStringInput(\"Please enter your name\", 5000))\n{\n   TestGetStringInput(answer, 100);\n   Write(\"name = %s\", answer);\n}\n\nhandle = TestWaitForStringInput(\"Test Text\", \"Test Caption\", \"TestString Input\", \"\");\nTestGetStringInput(resultStr, elcount(resultStr));\n\nhandle = TestWaitForStringInput(\"Test Text\", \"Test Caption\", \"Test String Input Timeout\", \"\", \"\", 5000);\nTestGetStringInput(resultStr, elcount(resultStr));\n\nhandle = TestWaitForStringInput(\"Test Text\", \"Test Caption\", \"Test String Input RegEx\", \"^(\\\\d)\", \"\", 0);\nTestGetStringInput(resultStr, elcount(resultStr));\nh\nandle = TestWaitForStringInput(\"Test Text\", \"Test Caption\", \"Test String Input RegEx Timeout\", \"^(\\\\d)\", \"\", 5000);\nTestGetStringInput(resultStr, elcount(resultStr));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

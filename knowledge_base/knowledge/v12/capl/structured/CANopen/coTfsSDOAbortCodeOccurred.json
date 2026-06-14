@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOAbortCodeOccurred",
+  "category": "CANopen",
+  "title": "coTfsSDOAbortCodeOccurred",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoAbortCodeOccured.htm",
+  "syntax": [
+    "long coTfsSDOAbortCodeOccurred( dword resetAbortList );"
+  ],
+  "description": [
+    "This function checks if a previously executed coTfsSDO… command can be finished with a received and accepted SDO abort code."
+  ],
+  "parameters": [
+    {
+      "name": "resetAbortList",
+      "type": "",
+      "description": "!=0: resets the list with received and accepted SDO abort codes (see coTfsSDOResetAbortList)"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* clear list with received SDO abort codes first */\ncoTfsSDOResetAbortList();\n\n/* Try to read a non-existing object. The DUT will answer with an SDO abort code */\ncoTfsSdoUpload(0x999,0);\n\n/* perform other SDO accesses ... */\n/* did any SDO abort code occur ? */\nif (coTfsSDOAbortCodeOccurred(1) != 1)\n{\n  /*\n   * no SDO abort code occurred\n   * object exists or device is not connected ?\n  */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

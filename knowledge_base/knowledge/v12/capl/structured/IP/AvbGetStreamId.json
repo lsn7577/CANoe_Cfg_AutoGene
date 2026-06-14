@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbGetStreamId",
+  "category": "IP",
+  "title": "AvbGetStreamId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbGetStreamId.htm",
+  "syntax": [
+    "dword AvbGetStreamId(dword listenerOrTalkerHandle, byte retStreamId[]);"
+  ],
+  "description": [
+    "The function retrieves the Stream Identifier (ID) of the Listener or Talker."
+  ],
+  "parameters": [
+    {
+      "name": "listenerOrTalkerHandle",
+      "type": "",
+      "description": "The handle of the Listener or Talker."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

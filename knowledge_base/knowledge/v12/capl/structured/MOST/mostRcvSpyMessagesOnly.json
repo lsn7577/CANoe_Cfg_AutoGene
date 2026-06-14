@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "mostRcvSpyMessagesOnly",
+  "category": "MOST",
+  "title": "mostRcvSpyMessagesOnly",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTRCVSpyMessagesOnly.htm",
+  "syntax": [
+    "mostRcvSpyMessagesOnly ()"
+  ],
+  "description": [
+    "The MOST message handling routines of this node are only called if the message was received by the Spy of the bus interfaces.",
+    "This mode is especially useful for nodes that act as pure observers or – with the help of the Spy – are used to perform cross-node analyses.",
+    "Queries such as \"if (!this.MOST_IsSpy) return;\" have been eliminated in the message handling routines, because the message handling routines are no longer called by node and Spy messages."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

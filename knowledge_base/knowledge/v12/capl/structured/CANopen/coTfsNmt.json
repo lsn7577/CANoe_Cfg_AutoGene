@@ -1,0 +1,26 @@
+{
+  "page_type": "function",
+  "name": "coTfsNmt",
+  "category": "CANopen",
+  "title": "coTfsNmt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsNmt.htm",
+  "syntax": [
+    "coTfsNmt () != 1);"
+  ],
+  "description": [
+    "This function attempts to set the following device states in the DUT Device Under Test sequentially: Stop, Reset, Operational, Pre-Operational, Reset Communication, Start, Pre-Operational and Reset.",
+    "After this test, the DUT is in the pre-operational state.",
+    "If the heartbeat producer is already active, it will be restored at the end."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if ( coTfsNmt () != 1) { \n  write (\"coTfsNMT failed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "syntax_status": "inferred_from_example"
+}

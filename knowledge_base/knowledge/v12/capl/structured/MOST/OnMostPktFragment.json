@@ -1,0 +1,44 @@
+{
+  "page_type": "function",
+  "name": "OnMostPktFragment",
+  "category": "MOST",
+  "title": "OnMostPktFragment",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTPktFragment.htm",
+  "syntax": [
+    "OnMostPktFragment()"
+  ],
+  "description": [
+    "The event procedure OnMostPktFragment is called when the spy detects an incomplete transmission on the Packet Data channel.",
+    "The following functions are available for evaluating the event:",
+    "Returns the channel of the packet event.",
+    "Returns the time stamp of the event (Units: 10 µs).",
+    "Returns the time stamp of the event (Units: 1 ns).",
+    "Returns the hardware generated time stamp of the event (Units: 10 µs).",
+    "Number of transported data bytes.",
+    "Tries to copy cnt data bytes to a provided buffer. Returns the actual number of copied bytes.",
+    "Due to performance reasons only the first transmitted data bytes are stored in the fragment event.",
+    "All following functions return -1 if the corresponding data field is invalid (i.e. event was too short to contain the information).",
+    "Returns the source or destination address.",
+    "Returns the acknowledge code.",
+    "Returns the preemptive acknowledge from the potential packet receiver(s) to the packet transmitter.",
+    "Returns the packet index. The packet index increments by one per message from a node.",
+    "Returns the CRC value.",
+    "Returns the CRC acknowledge code.",
+    "Returns the announced data length at start of transmission. In general, the announced length is not equal to the actual number of transmitted data bytes for fragments.",
+    "In nodal sequences (Measurement Setup) a fragment can be passed to the next node by the outputMostPktFragmentThis command."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

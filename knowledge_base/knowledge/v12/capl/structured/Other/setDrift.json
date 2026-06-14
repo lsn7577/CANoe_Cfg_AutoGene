@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "setDrift",
+  "category": "Other",
+  "title": "setDrift",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetDrift.htm",
+  "syntax": [
+    "void setDrift(int drift)"
+  ],
+  "description": [
+    "A constant deviation can be set for the timers of a network node with this function. Inputs for the two values may lie between –10000 and 10000 (corresponds to –100.00% to 100.00%). If the value does not lie within this range, a message is output in the Write Window.",
+    "Setting of a Drift causes any existing Jitter to be reset."
+  ],
+  "parameters": [
+    {
+      "name": "drift",
+      "type": "",
+      "description": "Integer for the constant deviation."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "...\n// Sets the Drift to 35.5 percent\nsetDrift(3550);\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

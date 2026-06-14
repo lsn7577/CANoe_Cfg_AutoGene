@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "SomeIpOpenLocalApplicationEndpoint",
+  "category": "IP",
+  "title": "SomeIpOpenLocalApplicationEndpoint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpOpenLocalApplicationEndpoint.htm",
+  "syntax": [
+    "dword SomeIpOpenLocalApplicationEndpoint( dword transportProtocol, dword port ); // form 1"
+  ],
+  "description": [
+    "Opens an endpoint for SOME/IP Remote Procedure CallRPC messages.",
+    "An endpoint represents a socket. The IP address is the IP address of the current interface, which is determined by the bus context.",
+    "Services can be assigned to an Application Endpoint using the SomeIpCreateProvidedServiceInstance or SomeIpCreateConsumedServiceInstance function. An Application Endpoint can be closed again using the SomeIpCloseLocalApplicationEndpoint function.",
+    "This only works with the node TCP/IP stack; in the Windows TCP/IP stack the interface cannot be determined by the bus context.",
+    "The SOME/IP Service DiscoverySD endpoints can be configured using the properties of SOME/IP IL (see also: SomeIpSetProperty)."
+  ],
+  "parameters": [
+    {
+      "name": "transportProtocol",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: An error occurred. The error can be evaluated using the SomeIpGetLastError function.",
+  "example": {
+    "description": [],
+    "code": "void Initialize()\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD psi; // provided service handle\n  DWORD peg; // provided Eventgroup handle\n  DWORD pev; // provided Event handle\n\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = SomeIpCreateProvidedServiceInstance(aep,10,1);\n  // create Eventgroup\n  peg = SomeIpAddProvidedEventGroup(psi,1);\n\n  // create Event and add Event to Eventgroup\n  pev = SomeIpAddEvent(psi, 1, \"OnPrepareEvent1\");\n  SomeIpAddEventToEventgroup(peg, pev);\n\n  // ensure that Event is sent cyclically\n  SomeIpSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1(DWORD eventHandle, DWORD messageHandle)\n{\n  // this function is called before the Event is sent. Parameters\n  // can be specified here.\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

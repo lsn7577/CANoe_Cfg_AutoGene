@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "GNSSGetCurAlt",
+  "category": "J1939",
+  "title": "GNSSGetCurAlt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSgetcuralt.htm",
+  "syntax": [
+    "double GNSSGetCurAlt();"
+  ],
+  "description": [
+    "The function returns the current altitude at which the receiver is located. If a value of 0.0 is returned, the GNSSGetLastError function must be used to check whether the value is valid (see error codes).",
+    "The unit of the altitude depends on the system of measurement units selected with the GNSSSetUnits function."
+  ],
+  "parameters": [],
+  "return": "current altitude (in m or ft)",
+  "example": {
+    "description": [],
+    "code": "double alt;\nalt = GNSSGetCurAlt();\n\nif (alt == 0 && GNSSGetLastError() != 0 ) {\n  write(“Error: Invalid current altitude”);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

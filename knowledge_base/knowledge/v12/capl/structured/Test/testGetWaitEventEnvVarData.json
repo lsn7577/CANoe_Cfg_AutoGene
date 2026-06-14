@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testGetWaitEventEnvVarData",
+  "category": "Test",
+  "title": "testGetWaitEventEnvVarData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitEventEnvVarData.htm",
+  "syntax": [
+    "long testGetWaitEventEnvVarData(dword index, float & value); // form 1"
+  ],
+  "description": [
+    "Retrieves the environment variable value that has led to the resume of a joined wait statement."
+  ],
+  "parameters": [
+    {
+      "name": "value",
+      "type": "",
+      "description": "The variable will be filled with the current value of the environment variable value."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": "// add envVar event to the current set of “joined events” and get the envVar value\ndword index = 0;\nfloat evValue = 0;\nTestJoinEnvVarEvent(MyEnvVar);\n// ... other join events\nindex = TestWaitForAnyJoinedEvent(2000);\n\nTestGetWaitEventEnvVarData(index, evValue);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

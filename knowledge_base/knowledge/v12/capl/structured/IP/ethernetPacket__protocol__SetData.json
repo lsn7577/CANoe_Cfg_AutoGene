@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::protocol::SetData",
+  "category": "IP",
+  "title": "ethernetPacket::protocol::SetData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionProtocolSetData.htm",
+  "syntax": [
+    "word ethernetPacket.<protocol>.SetData( word offset, char[]data, word length ); // form 1"
+  ],
+  "description": [
+    "Sets payload data of a protocol within an Ethernet packet.",
+    "If <protocol> is not available in the packet, no data is set and 0 is returned.",
+    "For form 1-4 (with parameter offset)",
+    "If the data is greater than the length of the Ethernet packet, the Ethernet packet is enlarged. If data is smaller as the current length of the payload the length is not changed.",
+    "For form 5-8 (without parameter offset)",
+    "The length of the data is resized to the given length of the new data."
+  ],
+  "parameters": [
+    {
+      "name": "data",
+      "type": "",
+      "description": "Buffer where the data is copied from."
+    }
+  ],
+  "return": "Number of bytes copied to the Ethernet packet.",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  ethernetPacket pkt;\n \n  _align(1) struct MyData\n  {\n    long value1;\n    long value2;\n  } buffer;\n\n  buffer.value1 = 1;\n  buffer.value2 = 2;\n\n  pkt.udp.Init();\n  pkt.udp.SetData( 0, buffer );\n  pkt.CompletePacket();\n  output( pkt );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

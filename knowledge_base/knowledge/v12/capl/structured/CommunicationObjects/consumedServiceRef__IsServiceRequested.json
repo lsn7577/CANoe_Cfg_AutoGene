@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedServiceRef::IsServiceRequested",
+  "category": "CommunicationObjects",
+  "title": "consumedServiceRef::IsServiceRequested",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedServiceRefIsServiceRequested.htm",
+  "syntax": [
+    "dword consumedServiceRef::IsServiceRequested()"
+  ],
+  "description": [
+    "Returns whether the service is currently requested by the consumer."
+  ],
+  "parameters": [],
+  "return": "0: Service is not currently requested",
+  "example": {
+    "description": [],
+    "code": "val = MirrorAdjustment.consumerSide[CANoe,LeftMirror].IsServiceRequested();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

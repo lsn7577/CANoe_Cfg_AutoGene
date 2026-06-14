@@ -1,0 +1,163 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateWeldingDetectionRes_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateWeldingDetectionRes_ISO",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateWeldingDetectionRes_Iso.htm",
+  "syntax": [
+    "long SCC_CreateWeldingDetectionRes_ISO ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, char StatusCode[], char Notification[], float PresentVoltage )"
+  ],
+  "description": [
+    "Creates a Welding Detection Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "ResponseCode",
+      "type": "",
+      "description": "Acknowledgement status of the message."
+    },
+    {
+      "name": "NotificationMaxDelay",
+      "type": "",
+      "description": "Time until the vehicle is expected to reaction the notification (for DC_EVSEStatus)."
+    },
+    {
+      "name": "StatusCode",
+      "type": "",
+      "description": "Internal state of the EVSE (for DC_EVSEStatus)."
+    },
+    {
+      "name": "Notification",
+      "type": "",
+      "description": "Notification about an action that the charge point wants the vehicle to perform (for DC_EVSEStatus)."
+    },
+    {
+      "name": "PresentVoltage",
+      "type": "",
+      "description": "EVSEPresentVoltage"
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "IsolationStatus char[] Current isolation condition."
+    }
+  ],
+  "return": "Time until the vehicle is expected to reaction the",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

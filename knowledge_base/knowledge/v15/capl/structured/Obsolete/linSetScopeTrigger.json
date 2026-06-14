@@ -1,0 +1,211 @@
+{
+  "page_type": "notes",
+  "name": "linSetScopeTrigger",
+  "category": "Obsolete",
+  "title": "linSetScopeTrigger",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionLINSetScopeTrigger.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "long",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by the function scopeTriggerNow."
+      ],
+      [
+        "Function Syntax",
+        "long linSetScopeTrigger (long ID, long Position)"
+      ],
+      [
+        "long linSetScopeTrigger (long eventCount, long triggerCount, long triggerMask, byte idMask[8])"
+      ],
+      [
+        "Function",
+        "With these functions it is possible to define trigger conditions for an oscilloscope. If the trigger conditions are satisfied, the LIN hardware will send an impulse on the sync cable. The first function defines a single trigger condition for a valid frame or an error in a response. The second function defines a set of trigger conditions. Note If this function is called from on preStart part of the CAPL program, then this function will have no effect.",
+        "Note If this function is called from on preStart part of the CAPL program, then this function will have no effect."
+      ],
+      [
+        "Note If this function is called from on preStart part of the CAPL program, then this function will have no effect."
+      ],
+      [
+        "Parameters",
+        "ID Identifier of the frame to be triggered on. The parameter is only evaluated for trigger conditions after the ID field."
+      ],
+      [
+        "Position 0 Trigger on end of header 1-9 Trigger on databyte 1 - 8 or checksum (5 will trigger on the checksum if the length of the frame is 4) 10 Trigger on detection of receive error in response 11 Trigger on detection of checksum error 12 Trigger on detection of transmission error",
+        "0",
+        "Trigger on end of header",
+        "1-9",
+        "Trigger on databyte 1 - 8 or checksum (5 will trigger on the checksum if the length of the frame is 4)",
+        "10",
+        "Trigger on detection of receive error in response",
+        "11",
+        "Trigger on detection of checksum error",
+        "12",
+        "Trigger on detection of transmission error"
+      ],
+      [
+        "0",
+        "Trigger on end of header"
+      ],
+      [
+        "1-9",
+        "Trigger on databyte 1 - 8 or checksum (5 will trigger on the checksum if the length of the frame is 4)"
+      ],
+      [
+        "10",
+        "Trigger on detection of receive error in response"
+      ],
+      [
+        "11",
+        "Trigger on detection of checksum error"
+      ],
+      [
+        "12",
+        "Trigger on detection of transmission error"
+      ],
+      [
+        "eventCount Number of occurred/fulfilled trigger conditions, which activate the triggering. E.g. a number of 5 will activate the triggering, after the trigger condition was fulfilled 5 times. A number of 0 is not allowed."
+      ],
+      [
+        "triggerCount Number n, how often the trigger will be activated. For every trigger activation the number of fulfilled trigger conditions (EventCount) has been occurred before, i.e. the triggering starts after 1 time of EventCount, 2 times of EventCount...n times of EventCount. If the triggerCount is 0, the trigger will run indefinitely."
+      ],
+      [
+        "triggerMask Definition of trigger conditions.Meaning of the bits in the mask: 0 Sync break detection (about 9.6 bit times after start of sync break) 1 Start of sync delimiter 2 Start of sync field (beginning of start bit if sync break could not have been a 2.0 wake-up frame, end of start bit otherwise) 3 End of sync field 4 Start of lin identifie 5 End of lin identifier 6 End of any data or checksum byte 7-15 End of data byte 1 - 8 or checksum byte (depending on dlc) 16 Detection of sync error 17 Detection of receive error in header/bus idle phase/sleep mode 18 Detection of receive error in response 19 Detection of checksum error 20 Detection of transmission error 21 Detection of sleep mode frame 22 Detection of sleep mode event 23 Detection of wake-up frame",
+        "0",
+        "Sync break detection (about 9.6 bit times after start of sync break)",
+        "1",
+        "Start of sync delimiter",
+        "2",
+        "Start of sync field (beginning of start bit if sync break could not have been a 2.0 wake-up frame, end of start bit otherwise)",
+        "3",
+        "End of sync field",
+        "4",
+        "Start of lin identifie",
+        "5",
+        "End of lin identifier",
+        "6",
+        "End of any data or checksum byte",
+        "7-15",
+        "End of data byte 1 - 8 or checksum byte (depending on dlc)",
+        "16",
+        "Detection of sync error",
+        "17",
+        "Detection of receive error in header/bus idle phase/sleep mode",
+        "18",
+        "Detection of receive error in response",
+        "19",
+        "Detection of checksum error",
+        "20",
+        "Detection of transmission error",
+        "21",
+        "Detection of sleep mode frame",
+        "22",
+        "Detection of sleep mode event",
+        "23",
+        "Detection of wake-up frame"
+      ],
+      [
+        "0",
+        "Sync break detection (about 9.6 bit times after start of sync break)"
+      ],
+      [
+        "1",
+        "Start of sync delimiter"
+      ],
+      [
+        "2",
+        "Start of sync field (beginning of start bit if sync break could not have been a 2.0 wake-up frame, end of start bit otherwise)"
+      ],
+      [
+        "3",
+        "End of sync field"
+      ],
+      [
+        "4",
+        "Start of lin identifie"
+      ],
+      [
+        "5",
+        "End of lin identifier"
+      ],
+      [
+        "6",
+        "End of any data or checksum byte"
+      ],
+      [
+        "7-15",
+        "End of data byte 1 - 8 or checksum byte (depending on dlc)"
+      ],
+      [
+        "16",
+        "Detection of sync error"
+      ],
+      [
+        "17",
+        "Detection of receive error in header/bus idle phase/sleep mode"
+      ],
+      [
+        "18",
+        "Detection of receive error in response"
+      ],
+      [
+        "19",
+        "Detection of checksum error"
+      ],
+      [
+        "20",
+        "Detection of transmission error"
+      ],
+      [
+        "21",
+        "Detection of sleep mode frame"
+      ],
+      [
+        "22",
+        "Detection of sleep mode event"
+      ],
+      [
+        "23",
+        "Detection of wake-up frame"
+      ],
+      [
+        "idMask An array specifying the LIN identifiers on which to trigger. Bit 0 in byte 0 specifies id 0, bit 0 in byte 1 specifies id 8, bit 3 in byte 5 specifies id 5 * 8 + 3 = 43, etc. The parameter is only evaluated for trigger conditions after the ID field."
+      ],
+      [
+        "Return Values",
+        "On success, a value unequal to zero, otherwise zero."
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "9.0 SP2",
+        "LIN Real bus mode",
+        "—",
+        "•"
+      ],
+      [
+        "Example on key 'a'{long lresp;long position=0;// The fourth parameter is a Byte Array (8 Bytes).// -> 64 Bits for the setting of 64 Ids.byte idmask[8] = {0,0,0,0,0,0,0,0};byte identifier = 0x30;// Byte Position: 6 // Bit Position: 0 idmask[identifier / 8] |= 1 << (identifier % 8);lresp = linSetScopeTrigger (0x30, position);lresp = linSetScopTrigger (1, 1, 1, idmaks);}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnIpGetHostByName",
+  "category": "TCPIPAPI",
+  "title": "OnIpGetHostByName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/EventProcedures/CAPLfunctionTCPIPOnIpGetHostByName.htm",
+  "syntax": [
+    "void OnIpGetHostByName(long result, char hostname[], dword ipv4Address[], dword count);"
+  ],
+  "description": [
+    "The callback is called if a previous call of IpGetHostByName is returned with error code WSAEWOULDBLOCK (10035) and the dissolve of the address is completed."
+  ],
+  "parameters": [
+    {
+      "name": "result",
+      "type": "",
+      "description": "The result of the function. See the Winsock 2 Error Codes for possible errors."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

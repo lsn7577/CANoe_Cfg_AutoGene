@@ -1,0 +1,164 @@
+{
+  "page_type": "concept",
+  "name": "NM Control: Controlling during Run-Time",
+  "category": "Panel",
+  "subcategory": "Elements",
+  "title": "NM Control: Controlling during Run-Time",
+  "source": "chm_extract/PanelDesigner/Topics/Elements/PanelDesignerControlsNMControlRuntime.htm",
+  "intro": [
+    "With the NM Control you can control the OSEK NM DLL (oseknm01.dll) or the AutoSAR NM DLLs (AsrNM30.dll, AsrNM33.dll) on a simulated CAN bus in CANoe.",
+    "The NM control lists all nodes that have a corresponding DLL assigned for the node in the Simulation Setup."
+  ],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Columns",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "●",
+          "ID",
+          "Node address relevant for the NM.",
+          "—",
+          "RM",
+          "With this button you activate the Repeat Message Mode (only possible with own Bus Request).",
+          "IL",
+          "A green LED indicates that the Interaction Layer was activated.",
+          "A gray LED indicates that the Interaction Layer was not activated.",
+          "Act",
+          "This LED can be used as an operator control element. Here you can activate/deactivate the Application Activity in the NM with a click. This normally prevents the bus from being released even if an internal request is not present (see first column).",
+          "A yellow LED indicates that the Application Activity was activated in the NM.",
+          "NM",
+          "This LED can be used as an operator control element. Here you can stop the simulation of the NM DLL (CtrlSimulationOff) or start it (CtrlSimulationOn) with a click.",
+          "A red LED indicates that the simulation of the NM DLL was stopped.",
+          "State",
+          "State of the respective state machine of the NM DLL.",
+          "* PN: Partial Networks"
+        ],
+        "tables": [
+          [
+            [
+              "Column",
+              "Description",
+              "NM",
+              "AUTOSAR without PN*",
+              "AUTOSAR with PN*"
+            ],
+            [
+              "In the first column you specify whether the bus will be requested by the NM (Bus Request) or not (Bus Release).",
+              "●",
+              "●",
+              "●"
+            ],
+            [
+              "Node",
+              "Name of the respective node from the Simulation Setup.",
+              "●",
+              "●",
+              "●"
+            ],
+            [
+              "ID",
+              "Node address relevant for the NM.",
+              "—",
+              "●",
+              "●"
+            ],
+            [
+              "RM",
+              "With this button you activate the Repeat Message Mode (only possible with own Bus Request).",
+              "—",
+              "●",
+              "●"
+            ],
+            [
+              "IL",
+              "A green LED indicates that the Interaction Layer was activated. A gray LED indicates that the Interaction Layer was not activated.",
+              "●",
+              "●",
+              "●"
+            ],
+            [
+              "Act",
+              "This LED can be used as an operator control element. Here you can activate/deactivate the Application Activity in the NM with a click. This normally prevents the bus from being released even if an internal request is not present (see first column). A yellow LED indicates that the Application Activity was activated in the NM.",
+              "●",
+              "●",
+              "●"
+            ],
+            [
+              "NM",
+              "This LED can be used as an operator control element. Here you can stop the simulation of the NM DLL (CtrlSimulationOff) or start it (CtrlSimulationOn) with a click. A red LED indicates that the simulation of the NM DLL was stopped.",
+              "●",
+              "●",
+              "●"
+            ],
+            [
+              "State",
+              "State of the respective state machine of the NM DLL.",
+              "●",
+              "●",
+              "●"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Buttons",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The buttons at the bottom edge of the panel initiate actions on all nodes.",
+          "[NM Request All]",
+          "[NM Release All]",
+          "[IL Request All]",
+          "[IL Release All]"
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "AutoSAR NM with PN",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "For the AutoSAR NM with Partial Networks (AsrNM33.dll), the panel has a splitter on the right side.",
+          "With the splitter you open/close a Detail view with display and control elements for the node that you have selected on the left side under Nodes."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Detail view",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The Detail view displays all Partial Networks of the node with name and network ID.",
+          "On the far right it is indicated whether the node",
+          "The green LED indicates that the corresponding Partial Network is currently being requested for this node (internally or externally).",
+          "The control field indicates (or controls) whether or not the node requests this network with a Bus Request (control field on the left side).",
+          "Note",
+          "If the control fields and LEDs of a node are not visible, either the node is deactivated in the Simulation Setup or its NM state is passive.",
+          "You will find additional information about the behavior and special features/functions of the NM DLL and its states here:"
+        ],
+        "tables": [
+          [
+            [
+              "Note If the control fields and LEDs of a node are not visible, either the node is deactivated in the Simulation Setup or its NM state is passive. You will find additional information about the behavior and special features/functions of the NM DLL and its states here: OSEK NM AUTOSAR NM CAN 3.0.0 AUTOSAR NM CAN 3.3.0"
+            ]
+          ],
+          [
+            [
+              "Version 12.0© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

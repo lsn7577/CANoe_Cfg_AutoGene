@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbGetCrfType",
+  "category": "Obsolete",
+  "title": "AvbGetCrfType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionAvbGetCrfType.htm",
+  "syntax": [
+    "dword AvbGetCrfType(dword listenerOrTalkerHandle, dword& retType);"
+  ],
+  "description": [
+    "The function retrieves the type of time stamp contained in the CRF stream received by the Listener or originated by the Talker."
+  ],
+  "parameters": [
+    {
+      "name": "listenerOrTalkerHandle",
+      "type": "",
+      "description": "The handle of the Listener or Talker."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

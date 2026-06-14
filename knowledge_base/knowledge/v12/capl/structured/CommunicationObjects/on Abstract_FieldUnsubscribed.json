@@ -1,0 +1,38 @@
+{
+  "page_type": "event",
+  "name": "on Abstract_FieldUnsubscribed",
+  "category": "CommunicationObjects",
+  "title": "on Abstract_FieldUnsubscribed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/EventProcedures/CAPLfunctionOnAbstractFieldUnsubscribed.htm",
+  "syntax": [
+    "on Abstract_FieldUnsubscribed <Field>"
+  ],
+  "description": [
+    "The event procedure is called at the provider when a field is unsubscribed by a consumer and abstract binding is used."
+  ],
+  "parameters": [
+    {
+      "name": "<field>",
+      "type": "",
+      "description": "Designates the field on which the event procedure shall react. This must be a provider endpoint."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on Abstract_FieldUnsubscribed MirrorAdjustment[LeftMirror].CurrentPosition\n{\n  write(\"Field unsubscribed by %s\", this.consumer.Name);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "fieldConsumerRef *",
+      "link": "../Objects/CAPLfunctionFieldConsumerRef.htm"
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

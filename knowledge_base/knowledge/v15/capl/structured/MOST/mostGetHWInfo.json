@@ -1,0 +1,169 @@
+{
+  "page_type": "function",
+  "name": "mostGetHWInfo",
+  "category": "MOST",
+  "title": "mostGetHWInfo",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTGetHWInfo.htm",
+  "syntax": [
+    "long mostGetHWInfo(long channel, long infoID); // form 1",
+    "long mostGetHWInfo(long channel, long infoID, char infostring[], long buffersize); // form 2"
+  ],
+  "description": [
+    "Provides information about the MOST interface used."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    },
+    {
+      "name": "ID",
+      "type": "Return Value",
+      "description": "Description of the Return Value"
+    },
+    {
+      "name": "kMostHWInfo_Type = 0",
+      "type": ">0",
+      "description": "Interface type: 1: VN2600/VN26102: OptoLyzer3: —4: OptoLyzer G2 3150o5: VN26406: OptoLyzer G2 3050e7: —8: OptoLyzer MOCCA compact 50e9: Logger10: OptoLyzer MOCCA compact 150c"
+    },
+    {
+      "name": "kMostHWInfo_SimulationMode = 1",
+      "type": "0, 1",
+      "description": "0: real1: simulated"
+    },
+    {
+      "name": "kMostHWInfo_Manufacturer = 2",
+      "type": "",
+      "description": "Manufacturer: \"Vector\", \"K2L\""
+    },
+    {
+      "name": "kMostHWInfo_SyncMode = 3",
+      "type": ">=0",
+      "description": "Synchronization mode: 0: off1: SW Sync active2: HW Sync active (bus interface on <channel> is Sync Master)3: HW Sync active (bus interface on <channel> is Sync Slave)"
+    },
+    {
+      "name": "kMostHWInfo_SyncStatus = 4",
+      "type": ">=0",
+      "description": "Synchronization status: 0: HW Sync not active1: HW Sync active2: HW Sync works correctly"
+    },
+    {
+      "name": "infostring",
+      "type": "",
+      "description": "Target buffer to which text information is copied."
+    },
+    {
+      "name": "buffersize",
+      "type": "",
+      "description": "Size of the target buffer."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST50 MOST150",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linActivateSlot",
+  "category": "LIN",
+  "title": "linActivateSlot",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINActivateSlot.htm",
+  "syntax": [
+    "long linActivateSlot(dword tableIndex, dword slotIndex)"
+  ],
+  "description": [
+    "Reactivates a schedule table slot defined in the LIN database file (LDF), after having been previously deactivated by linDeactivateSlot().",
+    "Schedule slots containing MasterRequests are automatically sent only if their data is updated i.e. using output().",
+    "If the Master node is not simulated or no schedule tables are defined, then this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "tableIndex",
+      "type": "",
+      "description": "Schedule table index according to the LIN database file (LDF). First table in the LDF has the index 0."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

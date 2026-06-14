@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_SetNodeProperty",
+  "category": "ISO11783",
+  "title": "TCIL_SetNodeProperty",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILSetNodeProperty.htm",
+  "syntax": [
+    "long TCIL_SetNodeProperty( char propertyName[], long propertyValue); // form 1"
+  ],
+  "description": [
+    "Changes an internal property of the node."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": "void SetLanguageToEnglish()\n{\n  TCIL_SetNodeProperty(TC, \"languageCode\", 0x656E); // 'en'\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

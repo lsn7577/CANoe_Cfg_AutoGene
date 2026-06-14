@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILFaultInjectionResetMsgDlc",
+  "category": "CANoeIL",
+  "title": "ILFaultInjectionResetMsgDlc",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILFaultInjectionResetMsgDlc.htm",
+  "syntax": [
+    "long ILFaultInjectionResetMsgDlc (dbMessage msg)"
+  ],
+  "description": [
+    "Resets the DLC of the message to the database DLC, after having manipulated the DLC with ILFaultInjectionSetMsgDlc."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message that should get the database DLC."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

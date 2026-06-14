@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPChangeSize",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPChangeSize",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPChangeSize.htm",
+  "syntax": [
+    "long Iso11783IL_OPChangeSize( dword objectID, dword width, dword height ); // form 1"
+  ],
+  "description": [
+    "The function changes the size of an object. A Change Size command to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "object ID of the object"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPChangeSize( \r\n 1200, 80, 40 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

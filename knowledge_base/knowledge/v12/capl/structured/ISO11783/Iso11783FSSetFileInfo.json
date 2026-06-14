@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSSetFileInfo",
+  "category": "ISO11783",
+  "title": "Iso11783FSSetFileInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fssetfileinfo.htm",
+  "syntax": [
+    "long Iso11783FSSetFileInfo( dword fileHandle, dword infoCount, dword info[] );"
+  ],
+  "description": [
+    "This function sets file or directory attributes."
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "File or directory handle, see also Iso11783FSOpenFile"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "LONG handle;\ndword info[2];\n\nhandle = Iso11783FSSetFileInfo( \"\\TEST.TXT\", 0x00 );\nif (handle > 0) {\n  info[0] = 0x01; // Entry 1 is valid\n  info[1] = 0x04; // Hide file\n  if (Iso11783FSSetFileInfo( handle, elCount(info), info ) == 0) {\n    write( \"Changed attributes successfully\" );\n  }\n  Iso11783FSCloseFile( handle );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

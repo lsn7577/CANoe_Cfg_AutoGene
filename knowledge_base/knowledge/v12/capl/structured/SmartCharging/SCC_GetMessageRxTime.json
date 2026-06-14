@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetMessageRxTime",
+  "category": "SmartCharging",
+  "title": "SCC_GetMessageRxTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetMessageRxTime.htm",
+  "syntax": [
+    "qword SCC_GetMessageRxTime ( ) // form 1"
+  ],
+  "description": [
+    "Queries the CANoe internal timestamp of the message receipt event, i.e. the CANoe simulation time, via references. The function is available for all kinds of message callbacks."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Timestamp in nanoseconds",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

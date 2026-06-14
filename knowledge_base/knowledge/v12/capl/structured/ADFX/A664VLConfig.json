@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "A664VLConfig",
+  "category": "ADFX",
+  "title": "A664VLConfig",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionA664VLConfig.htm",
+  "syntax": [
+    "long A664VLConfig (a664Frame aFrame, dword RxFlags, dword TxFlags, dword BagValue, dword MaxFrameSize, dword SkewMax) (1)"
+  ],
+  "description": [
+    "Configure a Virtual-Link for a given a664Frame or a664Message."
+  ],
+  "parameters": [
+    {
+      "name": "RxFlags",
+      "type": "",
+      "description": "control integrity checking (IntChk: bit position 0) and redundancy management (RMA: bit position 1)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

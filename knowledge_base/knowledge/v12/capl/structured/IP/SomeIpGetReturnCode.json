@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetReturnCode",
+  "category": "IP",
+  "title": "SomeIpGetReturnCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetReturnCode.htm",
+  "syntax": [
+    "dword SomeIpGetReturnCode ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the Return Code from the SOME/IP message header."
+  ],
+  "parameters": [
+    {
+      "name": "messageHandle",
+      "type": "",
+      "description": "Handle of the SOME/IP message (e.g. see OnSomeIpMessage)"
+    }
+  ],
+  "return": "Return Code\nIf message type is REQUEST, REQUEST_NO_RETURN or NOTIFICATION return code is N/A and set to 0x00 (E_OK).\nIn the Event of an error, the function returns the value 0. The SomeIpGetLastError function can then be used to check whether the value is valid or an error has occurred.",
+  "example": {
+    "description": [],
+    "code": "void OnSomeIpMessage( DWORD messageHandle )\n{\n  DWORD retCode       = 0;\n  LONG  errorCode     = 0;\n  LONG  errorOccured  = 0;\n\n  // get data from SOME/IP message\n  if((retCode = SomeIpGetReturnCode(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = SomeIpGetLastError()) != 0)\n    {\n      write(\"SOME/IP IL error occured: Error code: %d\", errorCode);\n      errorOccured = 1;\n    } // if\n  } // if\n\n  if(errorOccured == 0)\n  {\n    write(\"SOME/IP message with Return Code 0x%02x received\",retCode);\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

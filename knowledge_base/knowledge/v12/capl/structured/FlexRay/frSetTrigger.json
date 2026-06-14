@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "frSetTrigger",
+  "category": "FlexRay",
+  "title": "frSetTrigger",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRTriggerOut.htm",
+  "syntax": [
+    "long frSetTrigger( long channel, long portNo )"
+  ],
+  "description": [
+    "This function activates the Trigger output of the selected VN interface. The VN interfaces provide three different trigger ports. The ports can be set separately."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "FlexRay channel (cluster number). The channel number identifies the VN interfaces in case several interfaces are active."
+    }
+  ],
+  "return": "0: Error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

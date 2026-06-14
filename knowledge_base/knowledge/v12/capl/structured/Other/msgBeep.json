@@ -1,0 +1,58 @@
+{
+  "page_type": "function",
+  "name": "msgBeep",
+  "category": "Other",
+  "title": "msgBeep",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMsgBeep.htm",
+  "syntax": [
+    "void msgBeep (long soundType)"
+  ],
+  "description": [
+    "The msgBeep function plays back a sound predefined by the Windows system. It replaces the previous beep function."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "MB_ICONASTERISK SystemAsterisk"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "MB_ICONEXCLAMATION SystemExclamation"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "MB_ICONHAND SystemHand"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "MB_ICONQUESTION SystemQuestion"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "MB_OK SystemDefault"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Standard beep using the PC speaker (default)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void sound() {\n// Standard signal question\nmsgBeep (3);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

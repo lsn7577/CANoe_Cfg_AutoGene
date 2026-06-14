@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDObjectPoolDeactivate",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDObjectPoolDeactivate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDObjectPoolDeactivate.htm",
+  "syntax": [
+    "long Iso11783IL_PDDObjectPoolDeactivate( ); // form 1"
+  ],
+  "description": [
+    "The function sends an Object-pool Deactivate message to the Task Controller and disconnects the connection to the Task Controller."
+  ],
+  "parameters": [
+    {
+      "name": "implement",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783IL_PDDObjectPoolDeactivate ( ) == 0) {\n  write( \"Node has disconnected from the Task Controller\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

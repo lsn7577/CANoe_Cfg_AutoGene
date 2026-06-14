@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "StandaloneGetCurrentConfig",
+  "category": "Other",
+  "title": "StandaloneGetCurrentConfig",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStandaloneGetCurrentConfig.htm",
+  "syntax": [
+    "dword StandaloneGetCurrentConfig(char cfgNameBuffer[], dword cfgNameBufferLength)"
+  ],
+  "description": [
+    "Returns the file name of the currently loaded configuration in standalone mode. It includes the file extension, but no path information, for example CANSystemDemo.rtcfg.",
+    "The function can be used in standalone mode. It is also useful to determine whether standalone mode is active or not.",
+    "There are two kinds of configurations in standalone mode:",
+    "These two file names may well differ (even though normally they are the same except for the file extension).",
+    "StandaloneGetCurrentConfig returns the standalone configuration file name, whereas getConfigurationName returns the normal configuration file name."
+  ],
+  "parameters": [
+    {
+      "name": "cfgNameBuffer",
+      "type": "",
+      "description": "Space for the returned name."
+    }
+  ],
+  "return": "0: Successful operation",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  char cfgName[200];\n  DWORD cfgRet;\n  cfgName[0]=0;\n  cfgRet=StandaloneGetCurrentConfig(cfgName,elcount(cfgName));\n  write(\"StandaloneGetCurrentConfig returns %d %s\",cfgRet,cfgName);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

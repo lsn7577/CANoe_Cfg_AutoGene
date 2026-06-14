@@ -1,0 +1,463 @@
+{
+  "page_type": "notes",
+  "name": "Object Pool XML Elements",
+  "category": "ISO11783",
+  "title": "Object Pool XML Elements",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/ObjectPoolXMLElements.htm",
+  "syntax": [],
+  "description": [
+    "The object pool component supports the loading and saving of binary IOP files. The content of the file is identical to the data sent to the Virtual Terminal with the Object Pool Transfer message.",
+    "Furthermore, object pool files can also be processed in a proprietary XML format (*.iopx) defined by Vector. The XML format allows easy editing of the object pool, e.g. to test a changed display in the Virtual Terminal. With the sample configuration Object Pool Checker an IOP file can be easily converted into an IOPX file (and vice versa).",
+    "In the following the XML elements and the XML attributes of the individual objects are described. Unless otherwise specified, the attributes are of type xs:integer.",
+    "Object",
+    "All objects that can contain macros are defined by the subelement <macro>.",
+    "To define an extended macro, two <macro> elements are used, where the eventID attribute of the first element must be 255. The true event ID is defined in the second element. The macroID attribute of the first element contains the low byte of the macro ID. The macroID attribute of the second element contains the high byte.",
+    "<scaledGraphic id=\"9000\" width=\"20\" height=\"30\" scaleType=\"0\" options=\"0\" value=\"7000\"> <!-- extended macro (macro id 30002, event id 9 (on change attribute) --> <macro macroID=\"50\" eventID=\"255\"/> <macro macroID=\"117\" eventID=\"9\"/></scaledGraphic>"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Object",
+        "XML Element",
+        "XML Subelement",
+        "XML Attribute"
+      ],
+      [
+        "Working Set",
+        "<workingSet>",
+        "—",
+        "id backgroundColor selectable activeMask"
+      ],
+      [
+        "Data Mask",
+        "<dataMask>",
+        "—",
+        "id backgroundColor softKeyMask"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID x y[GH1]"
+      ],
+      [
+        "Alarm Mask",
+        "<alarmMask>",
+        "—",
+        "id backgroundColor softKeyMask priority signal"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID x y"
+      ],
+      [
+        "Container",
+        "—",
+        "—",
+        "id width height hidden"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID x y"
+      ],
+      [
+        "Window Mask",
+        "—",
+        "—",
+        "id width height windowType backgroundColor options name windowTitle windowIcon"
+      ],
+      [
+        "—",
+        "—",
+        "<objref>",
+        "objectID"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID x y"
+      ],
+      [
+        "Soft Key Mask",
+        "<softkeyMask>",
+        "—",
+        "id backgroundColor"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID"
+      ],
+      [
+        "Key",
+        "<key>",
+        "—",
+        "id backgroundColor keyCode"
+      ],
+      [
+        "Button",
+        "<button>",
+        "—",
+        "iId width height backgroundColor borderColor keycode options"
+      ],
+      [
+        "Key Group",
+        "<keyGroup>",
+        "—",
+        "id options name keyGroupIcon"
+      ],
+      [
+        "Input Boolean",
+        "<inputBool>",
+        "—",
+        "id backgroundColor width foregroundColor variable value enabled"
+      ],
+      [
+        "Input String",
+        "<inputString>",
+        "—",
+        "id width height backgroundColor font input options variable justification value (xs:string) enabled"
+      ],
+      [
+        "Input Number",
+        "<inputNumber>",
+        "—",
+        "id width height backgroundColor font options variable min max offset scale (xs:decimal) nrOfDecimals format justification value options2"
+      ],
+      [
+        "Input List",
+        "<inputList>",
+        "—",
+        "id width height variable value options"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID"
+      ],
+      [
+        "Output String",
+        "<outputString>",
+        "—",
+        "id width height backgroundColor font options variable justification value (xs:string)"
+      ],
+      [
+        "Output Number",
+        "<outputNumber>",
+        "—",
+        "id width height backgroundColor font options variable offset scale nrOfDecimales format justification value"
+      ],
+      [
+        "Output List",
+        "<outputList>",
+        "—",
+        "id width height variable value"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID"
+      ],
+      [
+        "Output Line",
+        "<line>",
+        "—",
+        "id line width height direction"
+      ],
+      [
+        "Output Rectangle",
+        "<rectangle>",
+        "—",
+        "id line width height suppression fill"
+      ],
+      [
+        "Output Ellipse",
+        "<ellipse>",
+        "—",
+        "id line width height type startAngle endAngle fill"
+      ],
+      [
+        "Output Polygon",
+        "<polygon>",
+        "—",
+        "id width height line fill type"
+      ],
+      [
+        "—",
+        "—",
+        "<point>",
+        "x y"
+      ],
+      [
+        "Output Meter",
+        "<meter>",
+        "—",
+        "id width needleColor borderColor tickColor options nrOfTicks startAngle endAngle min max variable value"
+      ],
+      [
+        "Output Linear Bar Graph",
+        "<lineBarGraph>",
+        "—",
+        "id width height color targetColor options nrOfTicks min max variable targetRef targetValue value"
+      ],
+      [
+        "Output Arched Bar Graph",
+        "<archedBarGraph>",
+        "—",
+        "id width height color targetColor options startAngle endAngle barWidth min max variable targetRef targetValue value"
+      ],
+      [
+        "Graphics Context",
+        "<graphicsContext>",
+        "—",
+        "id viewportWidth viewportHeight viewportX viewportY canvasWidth canvasHeight viewportZoom (xs:decimal) cursorX cursorY foregroundColor backgroundColor font line fill format options transparentColor"
+      ],
+      [
+        "Animation",
+        "<animation>",
+        "—",
+        "id width height refreshInterval value enabled firstChildIndex lastChildIndex defaultChildIndex options"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID x y"
+      ],
+      [
+        "Picture Graphic",
+        "<picture> The data of the image is defined by the content of the element. (xs:hexBinar)",
+        "—",
+        "id width options transparentColor actualWidth actualHeight format"
+      ],
+      [
+        "Graphic Data",
+        "<graphicData> The data of the graphic is defined by the content of the element. (xs:hexBinar)",
+        "—",
+        "id format"
+      ],
+      [
+        "Scaled Graphic",
+        "<scaledGraphic>",
+        "—",
+        "id width height scaleType options value"
+      ],
+      [
+        "Number Variable",
+        "<numberVariable>",
+        "—",
+        "id value"
+      ],
+      [
+        "String Variable",
+        "<stringVariable>",
+        "—",
+        "id value (xs:string)"
+      ],
+      [
+        "Font Attributes",
+        "<fontAttribute>",
+        "—",
+        "id color size type style"
+      ],
+      [
+        "Line Attributes",
+        "<lineAttribute>",
+        "—",
+        "id color width art"
+      ],
+      [
+        "Fill Attributes",
+        "<fillAttribute>",
+        "—",
+        "id type color pattern"
+      ],
+      [
+        "Input Attributes",
+        "inputAttribute",
+        "—",
+        "id type validation (xs:string)"
+      ],
+      [
+        "Extended Input Attributes",
+        "<inputAttributeEx> The attributes Number of code planes and Code planes are defined by the content of the element. (xs:hexBinar)",
+        "—",
+        "id type"
+      ],
+      [
+        "Colour Map",
+        "<colorMap>",
+        "—",
+        "—"
+      ],
+      [
+        "—",
+        "—",
+        "<map>",
+        "index"
+      ],
+      [
+        "Object Label Reference List",
+        "<labelRefList>",
+        "—",
+        "id"
+      ],
+      [
+        "—",
+        "—",
+        "<label>",
+        "objectID stringVarID fontType graphicID"
+      ],
+      [
+        "Colour Palette",
+        "<colorPalette>",
+        "—",
+        "id options"
+      ],
+      [
+        "—",
+        "—",
+        "<palette>",
+        "argb (xs:hexBinar)"
+      ],
+      [
+        "Working Set Special Controls",
+        "<workingSetSpecialControls>",
+        "—",
+        "id numOfBytesToFollow colorMapId colorPaletteId"
+      ],
+      [
+        "—",
+        "—",
+        "<languagePair>",
+        "languageCode (xs:string) countryCode (xs:string)"
+      ],
+      [
+        "External Object Definition",
+        "<externalObjectDefinition>",
+        "—",
+        "id options name0 (untere 4 Bytes des NAME) name1(obere 4 Bytes des NAME)"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID"
+      ],
+      [
+        "External Reference NAME",
+        "<externalReferenceName>",
+        "—",
+        "id options name0 (untere 4 Bytes des NAME) name1 (obere 4 Bytes des NAME)"
+      ],
+      [
+        "External Object Pointer",
+        "<externalObjectPointer>",
+        "—",
+        "id defaultObjectID externalRefNameID externalObjectID"
+      ],
+      [
+        "Macro",
+        "<macro> The attributes Number of bytes to follow and Command data are defined by the content of the element. (xs:hexBinar)",
+        "—",
+        "id"
+      ],
+      [
+        "Auxiliary Function Type 1",
+        "<auxiliaryFunctionType1>",
+        "—",
+        "id backgroundColor functionType"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID x y"
+      ],
+      [
+        "Auxiliary Input Type 1",
+        "<auxiliaryInputType1>",
+        "—",
+        "id backgroundColor functionType inputID"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID x y"
+      ],
+      [
+        "Auxiliary Function Type 2",
+        "<auxiliaryFunctionType2>",
+        "—",
+        "id backgroundColor functionType"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID x y"
+      ],
+      [
+        "Auxiliary Input Type 2",
+        "<auxiliaryInputType2>",
+        "—",
+        "id backgroundColor functionType"
+      ],
+      [
+        "—",
+        "—",
+        "<ref>",
+        "objectID x y"
+      ],
+      [
+        "Auxiliary Control Designator Type 2 Object Pointer",
+        "<auxiliaryCtrlDesignatorPointer>",
+        "—",
+        "id type objectID"
+      ]
+    ],
+    [
+      [
+        "Object",
+        "XML Element",
+        "XML Subelement",
+        "XML Attribute"
+      ],
+      [
+        "Object that can contain macros",
+        "—",
+        "<macro>",
+        "macroID eventID"
+      ]
+    ],
+    [
+      [
+        "Example <scaledGraphic id=\"9000\" width=\"20\" height=\"30\" scaleType=\"0\" options=\"0\" value=\"7000\"> <!-- extended macro (macro id 30002, event id 9 (on change attribute) --> <macro macroID=\"50\" eventID=\"255\"/> <macro macroID=\"117\" eventID=\"9\"/></scaledGraphic>"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

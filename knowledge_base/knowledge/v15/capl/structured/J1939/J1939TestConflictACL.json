@@ -1,0 +1,150 @@
+{
+  "page_type": "function",
+  "name": "J1939TestConflictACL",
+  "category": "J1939",
+  "title": "J1939TestConflictACL",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestConflictACL.htm",
+  "syntax": [
+    "long J1939TestConflictACL( dbNode aclSender, dword timeout, dword options )",
+    "long J1939TestConflictACL( pg aclMsg, dword timeout, dword options )"
+  ],
+  "description": [
+    "An ACL parameter group (0xEE00) is send with the source address of the configured node. The device name is increased or decreased by one priority level. After sending the pattern waits for the ACL parameter group of the node.",
+    "The low byte of the return value contains the source address from which the ACL parameter group was sent."
+  ],
+  "parameters": [
+    {
+      "name": "aclSender",
+      "type": "",
+      "description": "node, which device name and address is used"
+    },
+    {
+      "name": "aclMsg",
+      "type": "",
+      "description": "device name and address of this ACL parameter group is used"
+    },
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "timeout in [ms]"
+    },
+    {
+      "name": "Bit 0",
+      "type": "",
+      "description": "1: higher priority 0: lower priority"
+    },
+    {
+      "name": "Bit 1",
+      "type": "",
+      "description": "1: uses NMT Address table to identify the nodes actual address (dynamic) 0: uses NmStationAddress attribute in the database to get the nodes address (static)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = J1939TestConflictACL( EMS, 250, 0x00 );\n\nif (result >= 0x100) {\n  // check address\n  if ((result & 0xff) == EMS.NmStationAddress)) {\n    TestStepPass( \"ACL conflict test OK\" );\n  }\n  else {\n    TestStepFail( \"Received ACL from wrong SA\" );\n  }\n}\nelse if (result == 0) {\n  TestStepFail( \"Timeout, ACL message not receive\" );\n}\nelse {\n  TestStepFail( \"Error during ACL conflict test\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.1",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

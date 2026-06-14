@@ -1,0 +1,141 @@
+{
+  "page_type": "function",
+  "name": "diagGetTargetGroupQualifier",
+  "category": "Diagnostics",
+  "title": "diagGetTargetGroupQualifier",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagGetTargetGroupQualifier.htm",
+  "syntax": [
+    "long DiagGetTargetGroupQualifier(char ecuQualifier[], dword bitPos, char groupQualOut[]);",
+    "long DiagGetTargetGroupQualifier(dword bitPos, char groupQualOut[]);"
+  ],
+  "description": [
+    "Returns the qualifier of the diagnostic target group for which the bit at the given position is used by diagGetAssignedTargetGroups. If the target ECU is not specified explicitly, the target selected with diagSetTarget is used."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Use this diagnostic target, not that selected with DiagSetTarget."
+    },
+    {
+      "name": "bitPos",
+      "type": "",
+      "description": "Position of the bit in the bit mask returned by DiagGetAssignedTargetGroups."
+    },
+    {
+      "name": "groupQualOut",
+      "type": "",
+      "description": "The qualifier of the target group is written to this field, ASCII characters only."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "See diagGetAssignedTargetGroups"
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "9.0 SP4",
+      "9.0 SP4",
+      "—",
+      "—",
+      "—",
+      "2.1 SP4"
+    ],
+    [
+      "Restricted To",
+      "Online mode",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

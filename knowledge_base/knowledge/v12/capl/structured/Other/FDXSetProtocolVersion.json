@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "FDXSetProtocolVersion",
+  "category": "Other",
+  "title": "FDXSetProtocolVersion",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionFDXSetProtocolVersion.htm",
+  "syntax": [
+    "long FDXSetProtocolVersion(long fdxClientHandle, byte majorVersion, byte minorVersion);"
+  ],
+  "description": [
+    "This function configures the version of the FDX protocol that should be used for the communication with the specified client.",
+    "With each received FDX datagram, CANoe automatically adapts to the protocol version from the received datagram. The function FDXSetProtocolVersion is therefore only relevant in the rare case that CANoe should send datagrams to an FDX client without having received a datagram from this client."
+  ],
+  "parameters": [
+    {
+      "name": "fdxClientHandle",
+      "type": "",
+      "description": "FDX client for which the protocol version should be set."
+    }
+  ],
+  "return": "0: Successful function call",
+  "example": {
+    "description": [
+      "See also: Coupling of two CANoe Instances using the FDX Protocol"
+    ],
+    "code": "// Configure FDX protocol version 1.2 for the given client\nFDXSetProtocolVersion(fdxClientHandle, 1, 2);\n\n// Configure FDX protocol version 2.0 for the given client\nFDXSetProtocolVersion(fdxClientHandle, 2, 0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

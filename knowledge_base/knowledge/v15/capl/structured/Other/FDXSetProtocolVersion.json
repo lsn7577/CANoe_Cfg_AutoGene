@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "FDXSetProtocolVersion",
+  "category": "Other",
+  "title": "FDXSetProtocolVersion",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionFDXSetProtocolVersion.htm",
+  "syntax": [
+    "long FDXSetProtocolVersion(long fdxClientHandle, byte majorVersion, byte minorVersion);"
+  ],
+  "description": [
+    "This function configures the version of the FDX protocol that should be used for the communication with the specified client."
+  ],
+  "parameters": [
+    {
+      "name": "fdxClientHandle",
+      "type": "",
+      "description": "FDX client for which the protocol version should be set."
+    },
+    {
+      "name": "majorVersion",
+      "type": "",
+      "description": "Major version of the FDX protocol"
+    },
+    {
+      "name": "minorVersion",
+      "type": "",
+      "description": "Minor version of the FDX protocol"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "See also: Coupling of two CANoe Instances using the FDX Protocol"
+    ],
+    "code": "// Configure FDX protocol version 1.2 for the given client\nFDXSetProtocolVersion(fdxClientHandle, 1, 2);\n\n// Configure FDX protocol version 2.0 for the given client\nFDXSetProtocolVersion(fdxClientHandle, 2, 0);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 SP3",
+      "13.0",
+      "—",
+      "14",
+      "2.2 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

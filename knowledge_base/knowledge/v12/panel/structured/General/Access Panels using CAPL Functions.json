@@ -1,0 +1,169 @@
+{
+  "page_type": "concept",
+  "name": "Access Panels using CAPL Functions",
+  "category": "Panel",
+  "subcategory": "General",
+  "title": "Access Panels using CAPL Functions",
+  "source": "chm_extract/PanelDesigner/Topics/General/PanelDesignerCaplFunctions.htm",
+  "intro": [
+    "You can access panels or panel elements using following CAPL functions.",
+    "openPanel",
+    "Opens a panel or all panels.",
+    "—",
+    "closePanel",
+    "Closes a panel or all panels.",
+    "clockControlReset",
+    "Resets the Clock Control designed as stop watch.",
+    "Clock Control",
+    "clockControlStart",
+    "Starts the Clock Control designed as stop watch.",
+    "clockControlStop",
+    "Stops the Clock Control designed as stop watch.",
+    "deleteControlContent",
+    "Deletes the contents of the CAPL Output View.",
+    "CAPL Output View",
+    "enableControl",
+    "Activates or deactivates specific elements.",
+    "Button; Check Box; Combo Box; Hex/Text Editor; Input/Output Box; MOST Send Button; Numeric Up/Down; Panel Control Button; Path Dialog; Radio Button; Switch/Indicator; Track Bar",
+    "putValue",
+    "Transfers defined values to the symbol assigned to the control.",
+    "Analog Gauge, Button, Check Box, Clock Control, Combo Box, Hex/Text Editor, Input/Output Box, LCD Control, Media Player, Meter, Numeric Up/Down, Path Dialog, Progress Bar, Radio Button, Switch/Indicator, Track Bar",
+    "putValueToControl",
+    "Transfers defined values to the control.",
+    "Note",
+    "Since CANoe/CANalyzer version 7.5 for the putValueToControl function additional parameters can be set to change the format of the output, e.g. the text should be displayed in a new paragraph or the value should be displayed hexadecimal.",
+    "setClockControlTime",
+    "Sets the time of the Clock Control.",
+    "setControlBackColor",
+    "Sets the background color of panel elements. The color value is determined using the MakeRGB function.",
+    "Analog Gauge, Check Box, Clinometer, Clock Control, Combo Box, Compass, Group Box, Hex/Text Editor, Input/Output Box, LCD Control, Meter, MOST Send Button, Numeric Up/Down, Panel Control Button, Radio Button, Static Text, Track Bar",
+    "setControlColors",
+    "Sets the background and text color of panel elements.",
+    "Analog Gauge, Button, CAPL Output View, Check Box, Clock Control, Combo Box, Hex/Text Editor, Input/Output Box, LCD Control, MOST Send Button, Numeric Up/Down, Panel Control Button, Radio Button, Static Text",
+    "setControlForeColor",
+    "Sets the foreground color of panel elements. The color value is determined using the MakeRGB function.",
+    "Analog Gauge, Button, CAPL Output View, Check Box, Clock Control, Combo Box, Compass, Hex/Text Editor, Input/Output Box, LCD Control, LED Band, LED Control, MOST Send Button, Numeric Up/Down, Panel Control Button, Radio Button, Static Text",
+    "setDefaultControlColors",
+    "Sets back the background and text color of panel elements as defined in the Panel Designer.",
+    "Analog Gauge, Button, CAPL Output View, Check Box, Clock Control, Combo Box, Group Box, Hex/Text Editor, Input/Output Box, LCD Control, Meter, MOST Send Button, Numeric Up/Down, Panel Control Button, Radio Button, Static Text, Track Bar",
+    "setControlVisibility",
+    "Sets the visibility at runtime.",
+    "All controls.",
+    "setMediaFile",
+    "Replaces the media file of the Media Player.",
+    "Media Player",
+    "setPictureBoxImage",
+    "Replaces the image of the Picture Box.",
+    "Picture Box"
+  ],
+  "intro_tables": [
+    [
+      [
+        "CAPL Function",
+        "Description",
+        "Panel Designer Controls"
+      ],
+      [
+        "openPanel",
+        "Opens a panel or all panels.",
+        "—"
+      ],
+      [
+        "closePanel",
+        "Closes a panel or all panels.",
+        "—"
+      ],
+      [
+        "clockControlReset",
+        "Resets the Clock Control designed as stop watch.",
+        "Clock Control"
+      ],
+      [
+        "clockControlStart",
+        "Starts the Clock Control designed as stop watch.",
+        "Clock Control"
+      ],
+      [
+        "clockControlStop",
+        "Stops the Clock Control designed as stop watch.",
+        "Clock Control"
+      ],
+      [
+        "deleteControlContent",
+        "Deletes the contents of the CAPL Output View.",
+        "CAPL Output View"
+      ],
+      [
+        "enableControl",
+        "Activates or deactivates specific elements.",
+        "Button; Check Box; Combo Box; Hex/Text Editor; Input/Output Box; MOST Send Button; Numeric Up/Down; Panel Control Button; Path Dialog; Radio Button; Switch/Indicator; Track Bar"
+      ],
+      [
+        "putValue",
+        "Transfers defined values to the symbol assigned to the control.",
+        "Analog Gauge, Button, Check Box, Clock Control, Combo Box, Hex/Text Editor, Input/Output Box, LCD Control, Media Player, Meter, Numeric Up/Down, Path Dialog, Progress Bar, Radio Button, Switch/Indicator, Track Bar"
+      ],
+      [
+        "putValueToControl",
+        "Transfers defined values to the control. Note Since CANoe/CANalyzer version 7.5 for the putValueToControl function additional parameters can be set to change the format of the output, e.g. the text should be displayed in a new paragraph or the value should be displayed hexadecimal.",
+        "Note Since CANoe/CANalyzer version 7.5 for the putValueToControl function additional parameters can be set to change the format of the output, e.g. the text should be displayed in a new paragraph or the value should be displayed hexadecimal.",
+        "CAPL Output View"
+      ],
+      [
+        "Note Since CANoe/CANalyzer version 7.5 for the putValueToControl function additional parameters can be set to change the format of the output, e.g. the text should be displayed in a new paragraph or the value should be displayed hexadecimal."
+      ],
+      [
+        "setClockControlTime",
+        "Sets the time of the Clock Control.",
+        "Clock Control"
+      ],
+      [
+        "setControlBackColor",
+        "Sets the background color of panel elements. The color value is determined using the MakeRGB function.",
+        "Analog Gauge, Check Box, Clinometer, Clock Control, Combo Box, Compass, Group Box, Hex/Text Editor, Input/Output Box, LCD Control, Meter, MOST Send Button, Numeric Up/Down, Panel Control Button, Radio Button, Static Text, Track Bar"
+      ],
+      [
+        "setControlColors",
+        "Sets the background and text color of panel elements.",
+        "Analog Gauge, Button, CAPL Output View, Check Box, Clock Control, Combo Box, Hex/Text Editor, Input/Output Box, LCD Control, MOST Send Button, Numeric Up/Down, Panel Control Button, Radio Button, Static Text"
+      ],
+      [
+        "setControlForeColor",
+        "Sets the foreground color of panel elements. The color value is determined using the MakeRGB function.",
+        "Analog Gauge, Button, CAPL Output View, Check Box, Clock Control, Combo Box, Compass, Hex/Text Editor, Input/Output Box, LCD Control, LED Band, LED Control, MOST Send Button, Numeric Up/Down, Panel Control Button, Radio Button, Static Text"
+      ],
+      [
+        "setDefaultControlColors",
+        "Sets back the background and text color of panel elements as defined in the Panel Designer.",
+        "Analog Gauge, Button, CAPL Output View, Check Box, Clock Control, Combo Box, Group Box, Hex/Text Editor, Input/Output Box, LCD Control, Meter, MOST Send Button, Numeric Up/Down, Panel Control Button, Radio Button, Static Text, Track Bar"
+      ],
+      [
+        "setControlVisibility",
+        "Sets the visibility at runtime.",
+        "All controls."
+      ],
+      [
+        "setMediaFile",
+        "Replaces the media file of the Media Player.",
+        "Media Player"
+      ],
+      [
+        "setPictureBoxImage",
+        "Replaces the image of the Picture Box.",
+        "Picture Box"
+      ]
+    ],
+    [
+      [
+        "Note Since CANoe/CANalyzer version 7.5 for the putValueToControl function additional parameters can be set to change the format of the output, e.g. the text should be displayed in a new paragraph or the value should be displayed hexadecimal."
+      ]
+    ],
+    [
+      [
+        "Version 12.0© Vector Informatik GmbH"
+      ]
+    ]
+  ],
+  "intro_code_blocks": [],
+  "sections": []
+}

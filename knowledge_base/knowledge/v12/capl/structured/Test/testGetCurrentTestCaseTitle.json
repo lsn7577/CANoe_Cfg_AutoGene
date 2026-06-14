@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testGetCurrentTestCaseTitle",
+  "category": "Test",
+  "title": "testGetCurrentTestCaseTitle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetCurrentTestCaseTitle.htm",
+  "syntax": [
+    "testGetCurrentTestCaseTitle(char testCaseTitle[], long bufferSize);"
+  ],
+  "description": [
+    "Returns the name of the current test case. After your call of this function the name will be inside the character array testCaseTitle. The maximum length of the name is the length of the character array. This length will be saved in bufferSize."
+  ],
+  "parameters": [
+    {
+      "name": "testCaseTitle",
+      "type": "",
+      "description": "This character array contains the answer after calling the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "testcase TCExample()\n{\n  char title[100];\n\n  testCaseComment(\"Test Case:\");\n  testGetCurrentTestCaseTitle(title, elcount(title));\n  testCasecomment(title);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

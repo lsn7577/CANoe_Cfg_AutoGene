@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMostMPR",
+  "category": "Test",
+  "title": "TestWaitForMostMPR",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForMostMPR.htm",
+  "syntax": [
+    "long TestWaitForMostMPR(long aValue, unsigned long aTimeout);"
+  ],
+  "description": [
+    "The function waits until the expiration of the time aTimeout for the occurrence of the MOST event of a change of the Maximum Position Registers (MPR).",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aValue",
+      "type": "",
+      "description": "Expected value of the maximum position register that should be in the MOST event. The specification -1 (wildcard) stands for any values."
+    }
+  ],
+  "return": "-2: Resume based on Constraint Violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

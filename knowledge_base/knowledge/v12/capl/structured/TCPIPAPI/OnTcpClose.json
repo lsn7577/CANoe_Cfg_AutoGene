@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "OnTcpClose",
+  "category": "TCPIPAPI",
+  "title": "OnTcpClose",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/EventProcedures/CAPLfunctionTCPIPOnTcpClose.htm",
+  "syntax": [
+    "void OnTcpClose( dword socket, long result);"
+  ],
+  "description": [
+    "If the CAPL program implements this callback it is called when a TCP socket receives a close notification, when the remote station terminates the connection with TcpClose or TcpShutdown.",
+    "To release the resources of the socket, TcpClose must be called."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// ---------------------------------------------------\n// TCP socket receives a close notification\n// ( remote disconnected )\n// ---------------------------------------------------\n\nvoid OnTcpClose( dword socket, long result)\n{\n  writeLineEx(1, 1, \" [ OnTcpClose called. (socket: %d, result: %d) ]\", socket, result);\n  TcpClose(socket);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupFieldProvider",
+  "category": "CommunicationObjects",
+  "title": "LookupFieldProvider",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupFieldProvider.htm",
+  "syntax": [
+    "fieldProviderRef * LookupFieldProvider(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified field provider. The path must be complete including namespaces, endpoint and field: (Namespace::)Service[provider].field.",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the field provider."
+    }
+  ],
+  "return": "The field provider. An uninitialized object if the field provider is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "fieldProviderRef MirrorAdjustment.Position positionField;\nchar path[200];\nchar service[50] = \"Mirrors::MirrorAdjustment\";\nchar provider[20] = \"LeftMirror\";\nchar fieldName[20] = \"Position\";\n\nsnprintf(path, elcount(path), \"%s[%s].%s\", service, provider, fieldName);\npositionField = (fieldProviderRef MirrorAdjustment.Position) lookupFieldProvider(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

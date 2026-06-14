@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "mostApRegisterEx",
+  "category": "MOST",
+  "title": "mostApRegisterEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTApRegisterEx.htm",
+  "syntax": [
+    "long mostApRegisterEx(long fblockID, long instID)"
+  ],
+  "description": [
+    "mostApRegisterEx() registers the function block with the Application Socket using the functional address (fblockID, instID).",
+    "It has to be checked in advance, if the functional address already exists (mostApIsRegisteredEx). If so, another instID has to be selected.",
+    "In network status 'ConfigOk' the device's NetBlock reports the new Local FBlockList to the NetworkMaster."
+  ],
+  "parameters": [
+    {
+      "name": "fblockID",
+      "type": "",
+      "description": "Function block identifier to be registered."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,149 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetSignalString",
+  "category": "ADFX",
+  "title": "AfdxGetSignalString",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ADFX/Functions/CAPLfunctionAfdxGetSignalString.htm",
+  "syntax": [
+    "long AfdxGetSignalString( long packet, char signalName[], long bufSize, char buffer[] ); // form 1",
+    "long AfdxGetSignalString( long packet, long offset, long bufSize, char buffer[] ); // form 2"
+  ],
+  "description": [
+    "This function copies up to bufSize characters of an AFDX string to the specified buffer. The AFDX string structure consists of a 16-bit length code n and a sequence of n ASCII characters."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of the message."
+    },
+    {
+      "name": "signalName",
+      "type": "",
+      "description": "Name of the signal. Note: The signal and the message need to be defined in the assigned DBC file."
+    },
+    {
+      "name": "offset",
+      "type": "",
+      "description": "The offset value points to the starting byte of the AFDX string."
+    },
+    {
+      "name": "bufSize",
+      "type": "",
+      "description": "Size of available buffer area."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer containing the read string value."
+    }
+  ],
+  "return": "number of copied data bytes.\nIf this value is > bufSize an error occurred.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0 SP3",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "AFDX",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "xcpSetCalPage",
+  "category": "XCP",
+  "title": "xcpSetCalPage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionXCPSetCalPage.htm",
+  "syntax": [
+    "void xcpSetCalPage(char ecuQualifier[], byte mode, byte segmentNr, byte pageNr);"
+  ],
+  "description": [
+    "If the XCP slave device supports calibration data page switching, this command sets the current page and access mode.",
+    "The callback returns that the ECU switched the calibration data page."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n   long mMode;\n   long mSegmentNr;\n}\n\nvoid OnXcpConnect(char ecuName[])\n{\n   mMode = 255;\n   mSegmentNr = 0;\n   write(\"Connect callback! ECU: %s\", ecuName);\n   XcpGetCalPage(ecuName, mMode, mSegmentNr);\n}\n\nvoid OnXcpGetCalPage(char ecu[], long reserved1, long reserved2, long pageNumber)\n{\n   Write(\"OnXcpGetCalPage callback! ECU: %s. Current PageNumber: %d\", ecu, pageNumber);\n   if (pageNumber == 0)\n   {\n      pageNumber = 1;\n   }\n   else\n   {\n      pageNumber = 0;\n   }\n   XcpSetCalPage(ecu, mMode, mSegmentNr, pageNumber);\n}\n\nvoid OnXcpSetCalPage(char ecu[])\n{\n   Write(\"OnXcpSetCalPage callback! ECU: %s\", ecu);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

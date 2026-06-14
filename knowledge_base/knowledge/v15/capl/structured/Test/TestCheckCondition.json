@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "TestCheckCondition",
+  "category": "Test",
+  "title": "TestCheckCondition",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestCheckCondition.htm",
+  "syntax": [
+    "long TestCheckCondition (dword aAuxHandle);",
+    "long TestCheckCondition (char aEventText[]);"
+  ],
+  "description": [
+    "Checks whether the specified condition was already injured.",
+    "This function can be used both within a test case and also on test module level."
+  ],
+  "parameters": [
+    {
+      "name": "aAuxHandle",
+      "type": "",
+      "description": "Event object, for example a check from the TestService Library. Specified is the handle that is returned on creation of a check. This function can be used both within a test case and also on the test module level."
+    },
+    {
+      "name": "aEventText",
+      "type": "",
+      "description": "Textual name of an event whose occurrence should be monitored. This event can be triggered with the function TestSupplyTextEvent."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1",
+      "Add check as condition",
+      "Example 2",
+      "Add text event as condition"
+    ],
+    "code": "// checks the maximum duration of a sequence of actions\ncheckId = ChkStart_Timeout (1000);\nTestAddCondition(checkId);\nTestWaitForTimeout(1500);\nresult = TestCheckCondition(checkId);\nif (result == 1)\n   TestStepFail(\"Timeout already occurred after 1500 ms.\");\n// sequence of different actions and waiting conditions\nTestRemoveCondition(checkId);\n// test case to check if Error Frames occur\ntestcase CheckErrorFrameReceived ()\n{\n   TestAddCondition(\"ErrorFrameReceived\");\n   TestWaitForTimeout(1000);\n   result = TestCheckCondition(\"ErrorFrameReceived\");\n   if (result == 1)\n      TestStepFail(\"Error Frame already occurred after 1000 ms.\");\n   // sequence of different actions and waiting conditions\n   TestRemoveCondition(\"ErrorFrameReceived\");\n}\n// handler to supply text event\non errorFrame\n{\n   TestSupplyTextEvent(\"ErrorFrameReceived\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

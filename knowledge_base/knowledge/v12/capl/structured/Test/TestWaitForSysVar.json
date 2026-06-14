@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForSysVar",
+  "category": "Test",
+  "title": "TestWaitForSysVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForSysVar.htm",
+  "syntax": [
+    "long TestWaitForSysVar(sysvar aSysVar, dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the next system variable aSysVar. Should the event not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "Note Not available for a single element of a double or integer array.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "-2: Resume due to constraint violation.",
+  "example": {
+    "description": [],
+    "code": "// waits for the occurrence of SysVar ‚MySysVar’\nlong result;\nresult = TestWaitForSysVar(sysvar::Test::MySysVar, 2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

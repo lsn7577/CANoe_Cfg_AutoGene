@@ -1,0 +1,45 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForMostAsRegistry",
+  "category": "Test",
+  "title": "TestWaitForMostAsRegistry",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForMostAsRegistry.htm",
+  "syntax": [
+    "long TestWaitForMostAsRegistry(long aRegistry, unsigned long aTimeout);"
+  ],
+  "description": [
+    "The function waits for the specified time period for any change to a registry in the application socket.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "1",
+      "type": "",
+      "description": "Wait for changes in the local registry"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Wait for changes in the global registry"
+    },
+    {
+      "name": "-1",
+      "type": "",
+      "description": "Wait for changes in all registries"
+    }
+  ],
+  "return": "-2: Resume based on Constraint Violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

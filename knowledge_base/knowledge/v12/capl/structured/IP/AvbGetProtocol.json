@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbGetProtocol",
+  "category": "IP",
+  "title": "AvbGetProtocol",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbGetProtocol.htm",
+  "syntax": [
+    "dword AvbGetProtocol(dword listenerOrTalkerHandle, dword& retProtocol);"
+  ],
+  "description": [
+    "The function retrieves the AVTP protocol of the Listener or Talker."
+  ],
+  "parameters": [
+    {
+      "name": "listenerOrTalkerHandle",
+      "type": "",
+      "description": "The handle of the Listener or Talker."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

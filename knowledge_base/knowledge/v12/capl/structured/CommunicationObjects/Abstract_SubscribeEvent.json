@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_SubscribeEvent",
+  "category": "CommunicationObjects",
+  "title": "Abstract_SubscribeEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractSubscribeEvent.htm",
+  "syntax": [
+    "long Abstract_SubscribeEvent(consumedEventRef * event)"
+  ],
+  "description": [
+    "Subscribes for a service event if abstract binding is used. Note that this is more low-level; usually its more convenient to call consumedEventRef::AbstractRequestEvent on the event."
+  ],
+  "parameters": [
+    {
+      "name": "event",
+      "type": "",
+      "description": "Event which shall be subscribed."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "Abstract_SubscribeEvent(MirrorAdjustment.consumerSide[0,0].Position);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

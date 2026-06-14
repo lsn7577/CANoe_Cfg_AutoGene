@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1.0",
+  "id": "retrieve_evidence",
+  "phase": "grounding",
+  "description": "Resolve exact symbols, load scenario pages, perform constrained search, and write an evidence bundle.",
+  "reads": [
+    "test_case_ir",
+    "intent_profile",
+    "retrieval_plan"
+  ],
+  "writes": [
+    "evidence_bundle"
+  ],
+  "knowledge_inputs": [
+    {
+      "kind": "python_module",
+      "path": "agent_kb/kb_lookup.py",
+      "functions": [
+        "resolve_symbol",
+        "load_page",
+        "match_scenario",
+        "load_scenario_pages",
+        "search"
+      ]
+    },
+    {
+      "kind": "extras",
+      "path": "extras/team",
+      "required_when": "code_generation"
+    }
+  ],
+  "pack_inputs": [
+    "packs/*/retrieval_profile.json",
+    "retrieval_profiles/team_overrides.json"
+  ],
+  "gates": [
+    "every_known_symbol_resolved_or_marked_unknown",
+    "team_overrides_checked_for_generated_code",
+    "evidence_bundle_schema_valid"
+  ],
+  "transitions": [
+    {
+      "to": "plan_project",
+      "condition": "evidence_bundle.status in ['complete', 'partial']"
+    }
+  ],
+  "extension_notes": [
+    "Search hits are candidates until grounded facts or loaded pages are recorded.",
+    "Never emit CAPL syntax from memory in this action."
+  ]
+}
+

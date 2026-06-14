@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedEventGroupRef::SOMEIPRequestEventGroup",
+  "category": "CommunicationObjects",
+  "title": "consumedEventGroupRef::SOMEIPRequestEventGroup",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedEventGroupRefSOMEIPRequestEventGroup.htm",
+  "syntax": [
+    "int consumedEventGroupRef::SOMEIPRequestEventGroup()"
+  ],
+  "description": [
+    "Requests the subscription of a specific event group: for the specified consumer from the specified provider. If the event group is requested, it will be subscribed as soon as the provider is connected with the consumer."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "MirrorAdjustment.consumerSide[CANoe,LeftMirror].AllEvents.SOMEIPRequestEventGroup();\r"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

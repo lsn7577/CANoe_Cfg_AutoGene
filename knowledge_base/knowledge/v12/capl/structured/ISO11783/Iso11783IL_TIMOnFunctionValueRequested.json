@@ -1,0 +1,69 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMOnFunctionValueRequested",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMOnFunctionValueRequested",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimOnFunctionValueRequested.htm",
+  "syntax": [
+    "void Iso11783IL_TIMOnFunctionValueRequested(dword functionID, dword requestedRawValue, dword& calculatedRawValue, dword& calculcatedExitReasonCode dword& calculatedAutomationStatus )"
+  ],
+  "description": [
+    "This callback function is called if a function request message is received for an assigned function.",
+    "The Interaction Layer checks the requested value and calls this callback with the value and the exit reason code the IL would use. You can change the value and the exit reason code in the callback."
+  ],
+  "parameters": [
+    {
+      "name": "Function ID",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1-32 (1h-20h)",
+      "type": "",
+      "description": "Auxiliary Value 1 – 32"
+    },
+    {
+      "name": "64 (40h)",
+      "type": "",
+      "description": "Front PTO"
+    },
+    {
+      "name": "65 (41h)",
+      "type": "",
+      "description": "Rear PTO"
+    },
+    {
+      "name": "66 (42h)",
+      "type": "",
+      "description": "Front hitch"
+    },
+    {
+      "name": "67 (43h)",
+      "type": "",
+      "description": "Rear hitch"
+    },
+    {
+      "name": "68 (44h)",
+      "type": "",
+      "description": "Vehicle speed"
+    },
+    {
+      "name": "70 (46h)",
+      "type": "",
+      "description": "External guidance"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_TIMOnFunctionValueRequested (\n  dword fctID,\n  dword requestedRawValue,\n  dword& calculatedRawValue,\n  dword& calculcatedExitReasonCode,\n  dword& calculcatedAutomationStatus)\n{\n  switch (fctID)\n  {\n   case cRearPTO:\n      if ((calculatedRawValue >= 0x0001) && (calculatedRawValue <= 0x7D7F)) // speed counter-clockwise\n      {\n        if (calculatedRawValue < 0x1FC0)\n        {\n          calculatedRawValue = 0x1FC0; // -3000 1/min\n          calculcatedExitReasonCode = cReasonRemoteCommandOutOfRange;\n          calculcatedAutomationStatus = cActiveLimitedLow;\n        }\n      }\n      else if ((calculatedRawValue >= 0x7D81) && (calculatedRawValue <= 0xFAFF)) // speed clockwise\n      {\n        if (calculatedRawValue > 0xDB40) // 3000 1/min\n        {\n          calculatedRawValue = 0xDB40;\n          calculcatedExitReasonCode = cReasonRemoteCommandOutOfRange;\n          calculcatedAutomationStatus = cActiveLimitedHigh;\n        }\n      }\n      break;\n    case cVehicleSpeed:\n      if ((calculatedRawValue >= 0x0001) && (calculatedRawValue <= 0x7D7F)) // reverse speed\n      {\n        if (calculatedRawValue < 0x1BD8)\n      {\n        calculatedRawValue = 0x1BD8;\n        calculcatedExitReasonCode = cReasonRemoteCommandOutOfRange;\n        calculcatedAutomationStatus = cActiveLimitedLow;\n      }\n    }\n    else if ((calculatedRawValue >= 0x7D81) && (calculatedRawValue <= 0xFAFF)) // forward speed\n    {\n      if (calculatedRawValue > 0xDF25)\n      {\n        calculatedRawValue = 0xDF25; // 25 m/s\n        calculcatedExitReasonCode = cReasonRemoteCommandOutOfRange;\n        calculcatedAutomationStatus = cActiveLimitedHigh;\n      }\n    }\n    break;\n  default:\n    break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

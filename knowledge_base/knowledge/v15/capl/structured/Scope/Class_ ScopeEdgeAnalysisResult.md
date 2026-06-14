@@ -1,0 +1,57 @@
+# Class: ScopeEdgeAnalysisResult
+
+> Category: `Scope` | Type: `notes`
+
+## Description
+
+This structure holds the minimal, maximal, standard deviation and average values which are measured by calling the function testWaitScopePerformEdgeAnalysis.
+
+The figure shows the measured values for a recessive to dominant change for the differential signal.
+
+To measure the delay and compensation time a secant is used. The secant points are by 10% and 90% of the voltage swing between the sample points of the recessive and dominant voltage. The secant is also used to measure the transition time (TT) and the slew rate (SR).
+
+—
+
+char[32]
+
+Read-only
+
+Avg
+
+The average value of the parameter
+
+StdDeviation
+
+The standard deviation of the parameter
+
+ScopeSamplePeriod
+
+The sample period of the used scope device.
+
+CountAnalyzedEdges
+
+The count of measured edges
+
+CountAnalyzedFrames
+
+The count of measured frames
+
+testWaitScopePerformEdgeAnalysis
+
+| Note To measure the delay and compensation time a secant is used. The secant points are by 10% and 90% of the voltage swing between the sample points of the recessive and dominant voltage. The secant is also used to measure the transition time (TT) and the slew rate (SR). |
+|---|
+
+| Keyword | Description | Type | Access Limitations |
+|---|---|---|---|
+| ParameterUnit | The unit the parameter is measured | char[32] | Read-only |
+| ParameterUnit | The type of the parameter. Possible values are: 0 – TransitionTime (TT) 1 – Slew Rate (SR) 2 - Delay Time (TD) 3 – Half Value Time (TH) 4 – Compensation Time (TC) 5 – Response Time(TR) 6 – Settling Time (TS) | long | Read/Write |
+| Min | Minimal value of the parameter | double | Read-only |
+| Max | Maximal value of the parameter | double | Read-only |
+| Avg | The average value of the parameter | double | Read-only |
+| StdDeviation | The standard deviation of the parameter | double | Read-only |
+| ScopeSamplePeriod | The sample period of the used scope device. | double | Read-only |
+| CountAnalyzedEdges | The count of measured edges | double | Read-only |
+| CountAnalyzedFrames | The count of measured frames | double | Read-only |
+
+| Version 15© Vector Informatik GmbH |
+|---|

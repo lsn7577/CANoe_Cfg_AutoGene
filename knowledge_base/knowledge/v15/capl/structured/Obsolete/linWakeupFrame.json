@@ -1,0 +1,66 @@
+{
+  "page_type": "notes",
+  "name": "linWakeupFrame",
+  "category": "Obsolete",
+  "title": "linWakeupFrame",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionLINWakeupFrame.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by the event procedure on linWakeupFrame."
+      ],
+      [
+        "Function Syntax",
+        "void linWakeupFrame(long syncTimeStamp, long origTimeStamp, byte signal, int external)"
+      ],
+      [
+        "Function",
+        "Is called whenever a Wakeup frame is recognized. The time stamps are the same as by LINRcvFrame."
+      ],
+      [
+        "Parameters",
+        "signal The actually received byte (0x00, 0x80 or 0xC0) when the baud rate is correct. Signals (Wakeup frames) with different byte values will not be recognized.The bytes 0x00 and 0xC0 are the result of a deviation in their baud rate (caused by Sleep mode)."
+      ],
+      [
+        "external If this flag is set, the Wakeup frame has been sent from an external device.If not, the LIN hardware sent the Wakeup frame."
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "3.2",
+        "LIN",
+        "•",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

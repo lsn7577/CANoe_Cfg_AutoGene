@@ -1,0 +1,146 @@
+{
+  "page_type": "function",
+  "name": "SecurityLocalStopControlSimulationNode",
+  "category": "Security",
+  "title": "SecurityLocalStopControlSimulationNode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/Functions/CAPLfunctionSecurityLocalStopControlSimulationNode.htm",
+  "syntax": [
+    "long SecurityLocalStopControlSimulationNode(char nodeName[], char networkName[]) // form 1",
+    "long SecurityLocalStopControlSimulationNode(char nodeId[], dword nodeIdType, char networkName[]) // form 2"
+  ],
+  "description": [
+    "Stops controlling (deregistration) the specified simulation node on the specified network.",
+    "After a successful deregistration, you cannot call any SecurityOfNode…() functions at the previously registered node, neither you will receive any OnSecurityOfNode… callbacks.",
+    "You have to call SecurityLocalStartControlSimulationNode to register."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node to deregister from. This refers to the name declared in the database. (Form 1)"
+    },
+    {
+      "name": "char nodeId[]",
+      "type": "",
+      "description": "The name or title of the node to deregister from. Use either the node name of a network node declared in the database or the node title declared in the Simulation Setup of CANoe and set parameter nodeIdType accordingly. (Form 2) (see Simulation Setup: Network Node Configuration for further details on the difference between node title and node name)"
+    },
+    {
+      "name": "dword nodeIdType",
+      "type": "",
+      "description": "Configure how the parameter nodeId shall be interpreted. Possible Values: 1: nodeId refers to node name of a network node declared in the database 2: nodeId refers to node title declared in the Simulation Setup of CANoe (If Network Node is set to <<default>>) (Form 2) (see Simulation Setup: Network Node Configuration for further details on the difference between node title and node name)"
+    },
+    {
+      "name": "char networkName[]",
+      "type": "",
+      "description": "The name of the network the node to deregister from is on."
+    }
+  ],
+  "return": "A Value of 1 means that the action was successful. A value less than or equal to 0 means error. A value larger than 1 means warning.",
+  "example": {
+    "description": [],
+    "code": "//form 1\non start\n{\n  dword result = 0;\n  result = SecurityLocalStartControlSimulationNode(\"DatabaseNode\", \"CAN\", 2);\n  Write(\"SecurityLocalStartControlSimulationNode for network node with name DatabaseNode returned %i\", result);\n}\n\non stopMeasurement\n{\n  dword result = 0;\n  result = SecurityLocalStopControlSimulationNode(\"DatabaseNode\", \"CAN\");\n  Write(\"SecurityLocalStopControlSimulationNode for network node with name DatabaseNode returned %i\", result);\n}\n\n//form 2\non start\n{\n  dword result = 0;\n  result = SecurityLocalStartControlSimulationNode(\"MyNode\", 2, \"CAN\", 2); //Use the node title, if the node is not declared in the database (Network Node is set to <<default>>)\n  Write(\"SecurityLocalStartControlSimulationNode for node with title MyNode returned %i\", result);\n}\n\non stopMeasurement\n{\n  dword result = 0;\n  result = SecurityLocalStopControlSimulationNode(\"MyNode\", 2, \"CAN\"); //Use the node title, if the node is not declared in the database (Network Node is set to <<default>>)\n  Write(\"SecurityLocalStopControlSimulationNode for node with title MyNode returned %i\", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3: form 1 13.0: form 1",
+      "11.0 SP3: form 1 13.0: form 1",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN CAN FD FlexRay Ethernet",
+      "CAN CAN FD FlexRay Ethernet",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

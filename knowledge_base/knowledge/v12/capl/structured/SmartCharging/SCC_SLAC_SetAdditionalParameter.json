@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_SetAdditionalParameter",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_SetAdditionalParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_SetAdditionalParameter.htm",
+  "syntax": [
+    "long SCC_SLAC_SetAdditionalParameter ( dword Parameter, dword ParameterValue ) // form 1"
+  ],
+  "description": [
+    "Sets an additional parameter after creating a message, thus overwriting a value predefined by the specification (DIN 70121:2014-12)."
+  ],
+  "parameters": [
+    {
+      "name": "Parameter",
+      "type": "",
+      "description": "ID number of the parameter, as denoted in the lists of optional parameters below each Create-function"
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

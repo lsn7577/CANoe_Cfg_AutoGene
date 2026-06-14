@@ -1,0 +1,38 @@
+# TestGetWaitEventMostRawMsgData
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+long TestGetWaitEventMostRawMsgData(mostRawMessage aRawMsg);
+long TestGetWaitEventMostRawMsgData(dword aIndex, mostRawMessage aRawMessage);
+```
+
+## Description
+
+If the last (single) wait condition was resolved by a MOST control message, the function copies the data of that message into the provided CAPL variable.
+
+The second signature can only be used for "joined events". The number of the "joined event" (return value of "testJoin...") is here being used as an index.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| aMessage | Message variable that should be filled with this function. |
+| aIndex | Number of the "joined event" that was resumed by a MOST (raw) control message. The number corresponds to return value of the "testJoin..." function call, by which the event was added to a joined condition. |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 7.1 | 13.0 | — | — | — |
+| Restricted To | — | MOST25 | MOST25 | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | — | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

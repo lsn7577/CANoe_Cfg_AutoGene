@@ -1,0 +1,133 @@
+# TCP/IP CAPL Functions
+
+> Category: `TCPIPAPI` | Type: `notes`
+
+## Description
+
+Further Topics
+
+IP API
+
+IPsec API
+
+UDP API
+
+TCP API
+
+The IP API consists of general functions for network information retrieval such as the querying for installed network interface cards (NIC), IP addresses, address conversion functions, error handling and so on. In addition, the IP API has some special functions for socket manipulations such as setting socket options or binding.
+
+The UDP API is used for UDP communications. It provides a high level interface for implementing connectionless, datagram-oriented communications.
+
+Winsock 2 Error Codes | Technical Details | Socket Options
+
+| TCP/IP The TCP/IP API provides access to TCP/IP networking features. It is implemented on top of the native Winsock 2 API of the Windows operating system. The API falls into the following categories. These CAPL functions are supported by Windows and Linux. The functionality under Linux has not been fully tested yet. |
+|---|
+
+| Further Topics | IP API IPsec API UDP API TCP API |
+|---|---|
+
+| Functions | Short Description |
+|---|---|
+| IpAddAdapterAddress | Adds an address to the network interface with the given index. |
+| IpBind | Associates an address and a port with a specified socket. |
+| IpGetAdapter | Get the interface index of the given channel. |
+| IpGetAdapterAddress | Retrieves the addresses associated with a network interface. |
+| IpGetAdapterAddressAsString | Retrieves the string representation of the first address associated with a specified network interface. |
+| IpGetAdapterChannel | Get the channel number of the given adapter. |
+| IpGetAdapterAddressCount | Gets the count of addresses assigned to a adapter. |
+| IpGetAdapterCount | Returns the number of network interfaces for the local computer. |
+| IpGetAdapterDescription | Retrieves the description of a specified network interface. |
+| IpGetAdapterGateway | Retrieves the default gateway address associated with a specified network interface. |
+| IpGetAdapterGatewayAsString | Retrieves the string representation of the default gateway address associated with a specified network interface. |
+| IpGetAdapterMacId | Gets the MAC id of a interface. |
+| IpGetAdapterMask | Retrieves the address masks associated with a specified network interface. |
+| IpGetAdapterMaskAsString | Retrieves the string representation of the first address mask associated with a specified network interface. |
+| IpGetAdapterVlanDefaultPriority | Get the VLAN priority of the given adapter. |
+| IpGetAdapterVlanId | Get the VLAN id of the given adapter. |
+| IpGetAddressAsArray | Converts an address string in colon notation to a 16 byte array with the address bytes in network order. |
+| IpGetAddressAsNumber | Converts an address string in dot notation to it's numerical value. |
+| IpGetAddressAsString | Converts a numeric address in to a address string in dot notation. |
+| IpGetHostByName | Get the address for the given host name. |
+| IpGetLastError | Returns the Winsock 2 error code of the last operation that failed. |
+| IpGetLastSocketError | Returns the Winsock 2 error code of the last operation that failed on a specified socket. |
+| IpGetLastSocketErrorAsString | Retrieves the error message of the last operation that failed on a specified socket. |
+| IpGetSocketAddressFamily | Gets the address family of a socket. |
+| IpGetSocketName | Gets the local address and port of a socket. |
+| IpGetSocketOption | Reads the value of the given socket option. |
+| IpGetStackParameter | Gets the value of the given parameter of the TCP/IP Stack. |
+| IpJoinMulticastGroup | Joins a multicast group on the given socket. |
+| IpLeaveMulticastGroup | Leaves a previously joined multicast group. |
+| IpRemoveAdapterAddress | Removes an address from the network interface with the given index. |
+| IPRouteAddGateway | Add a gateway route to the TCP/IP Stack. |
+| IPRouteAddHost | Add a host route to the TCP/IP Stack. |
+| IPRouteAddInterface | Add a interface route to the TCP/IP Stack. |
+| IPRouteDeleteGateway | Delete a gateway route from the TCP/IP Stack. |
+| IPRouteDeleteHost | Delete a host route from the TCP/IP Stack. |
+| IPRouteDeleteInterface | Delete an interface route from the TCP/IP Stack. |
+| IpSetAdapterGateway | Sets the default gateway address. |
+| IpSetAdapterMacId | Sets the MAC id of an interface. |
+| IPSetAdapterStatus | Set a specific adapter of the TCP/IP stack up or down |
+| IpSetMulticastInterface | Set the interface for outgoing multicast messages. |
+| IpSetSocketOption | Modifies a socket option. |
+| IpSetStackParameter | Sets the value of the given parameter of the TCP/IP Stack. |
+| The IP API Supports the Following CAPL Callbacks: |  |
+| OnIpAddressAdded | It is called when a address gets added to a network interface. |
+| OnIpAddressRemoved | It is called when a address gets removed from a network interface. |
+| OnIpGetHostByName | It is called when a blocking IpGetHostByName function completes. |
+| OnIpReceivePrepare | It is dispatched before a received packet will be dispatched to the TCP/IP stack. |
+| OnIpSendPrepare | It is called before a packet will be send by the TCP/IP stack. |
+
+| Functions | Short Description |
+|---|---|
+| ipsecAssociationDatabaseAdd | Adds a security association to the security association database. |
+| ipsecAssociationDatabaseDelete | Deletes a single spi from the security association database. |
+| ipsecAssociationDatabaseDeleteAll | Deletes all dedicated spis from the security association database. |
+| ipsecAssociationDatabaseFlush | Flushes the security association database. |
+| ipsecAssociationDatabaseGetSpi | Creates a security association in the database. |
+| ipsecAssociationDatabaseUpdate | Updates an existing security association in the database. |
+| ipsecAssociationGetParameter | Gets a parameter value from the security association record. |
+| ipsecAssociationInit | Creates and initializes a security association record. |
+| ipsecAssociationRelease | Releases the given security association record. |
+| ipsecAssociationSetParameter | Sets a parameter in a security association record. |
+| ipsecPolicyDatabaseAdd | Adds a policy to the security policy database. |
+| ipsecPolicyDatabaseDelete | Deletes a single policy from the security policy database. |
+| ipsecPolicyDatabaseFlush | Deletes all policies in the security policy database. |
+| ipsecPolicyGetParameter | Gets a parameter value from a security policy record. |
+| The IPsec API Supports the Following CAPL Callbacks: |  |
+| OnIpsecSadbAcquire | It is called when ipsec is acquired. |
+
+| Functions | Short Description |
+|---|---|
+| UdpClose | Closes the UDP socket. |
+| UdpConnect | Connects a UDP socket to the given remote address. |
+| UdpSend | Creates an UDP socket for use in connectionless, datagram-oriented communications. |
+| UdpReceiveFrom | Receives data into a specified buffer. |
+| UdpSend | Sends on a connected UDP socket. |
+| UdpSendTo | Sends data to a specified location. |
+| The UDP API Supports the Following CAPL Callbacks: |  |
+| OnUdpReceiveFrom | It is called when an asynchronous receive operation on an UDP socket completes. |
+| OnUdpSendTo | It is called when an asynchronous send operation on an UDP socket completes. |
+
+| Functions | Short Description |
+|---|---|
+| TcpAbort | Closes the TCP socket immediately and sends a RST. The socket is no longer valid. |
+| TcpAccept | Accepts an incoming connection request on a specified socket resulting in a new socket. |
+| TcpClose | Closes the TCP socket. |
+| TcpConnect | Establishes a connection with a specified location. |
+| TCPGetRemoteAddress | Retrieves the remote address of the specified socket. |
+| TCPGetRemoteAddressAsString | Retrieves the remote address of the specified socket in Internet standard dotted-decimal format. |
+| TcpGetRemoteEndpoint | Retrieves the remote endpoint of the specified connected socket. |
+| TcpListen | Causes the socket to listen for incoming connection requests. |
+| TcpOpen | Creates a TCP socket for use in connection-based, message-oriented communications. |
+| TcpReceive | Receives data into a specified buffer. |
+| TcpSend | Sends data on a specified socket. |
+| TcpShutdown | Disables send operations on a specified socket. |
+| The TCP API Supports the Following CAPL Callbacks: |  |
+| OnTcpClose | It is called when a TCP socket receives a close notification. |
+| OnTcpConnect | It is called when an asynchronous connection operation completes. |
+| OnTcpListen | It is called when a connection request for a specified socket is received. |
+| OnTcpReceive | It is called when an asynchronous receive operation on a TCP socket completes. |
+| OnTcpSend | It is called when an asynchronous send operation on a TCP socket completes. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

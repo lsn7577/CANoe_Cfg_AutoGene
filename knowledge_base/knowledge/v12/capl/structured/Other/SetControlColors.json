@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SetControlColors",
+  "category": "Other",
+  "title": "SetControlColors",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetControlColors.htm",
+  "syntax": [
+    "void SetControlColors(char[] panel, char[] control, long backcolor, long textcolor);"
+  ],
+  "description": [
+    "Sets the background and text color of panel elements.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "//Set the background and text color for a specific control of a panel\nSetControlColors(\"motor\", \"PedalPos\", MakeRGB(255,0,0), MakeRGB(0,0,255));\n//All controls of the panel are set to the same background and text color\nSetControlColors(\"motor\", \"\", MakeRGB(255,0,0), MakeRGB(0,0,255));\n//All controls of all panels are set to the same background and text color\nSetControlColors(\"\", \"\", MakeRGB(255,0,0), MakeRGB(0,0,255));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "TestSetMsgEvent",
+  "category": "Test",
+  "title": "TestSetMsgEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestSetMsgEvent.htm",
+  "syntax": [
+    "long TestSetMsgEvent (dbMessage aMessage);"
+  ],
+  "description": [
+    "Sends the transferred message directly to the bus if the network is active.",
+    "The send model is ignored.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message that should be sent."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": "// send a message event for the disabled message ‘MsgToManipulate’\nTestDisableMsg(MsgToManipulate);\nTestWaitForTimeout(5000);\nTestSetMsgEvent(MsgToManipulate);\nTestWaitForTimeout(5000);\nTestEnableMsg(MsgToManipulate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

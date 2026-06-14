@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "RS232OnSend",
+  "category": "RS232",
+  "title": "RS232OnSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/RS232/Functions/CAPLfunctionRS232OnSend.htm",
+  "syntax": [
+    "RS232OnSend( dword port, byte buffer[], dword number )"
+  ],
+  "description": [
+    "Callback handler for completion of send operation to a serial port.",
+    "Will be called only at the node which issued the send operation.",
+    "The handler will only be called for success. For errors RS232OnError will be called."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    }
+  ],
+  "return": "0: error\nThe error occurs if no send operation will be used.",
+  "example": {
+    "description": [],
+    "code": "char text[20] = “Hello World !”;\nbyte block[20];\nint i;\nint length;\nlength=strlen(text)+1;\nfor (i=0;i<length;i++) block[i]=text[i];\n\nif ( 0!=RS232Send(1,block,length) )\n   write(“Written block of bytes to port 1.”);\n...\n// at node which issued the send request\nRS232OnSend(dword port, byte buffer[], dword number)\n{\n   // send completed now, it may time to issue the next send\n   // buffer==block, number==length\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

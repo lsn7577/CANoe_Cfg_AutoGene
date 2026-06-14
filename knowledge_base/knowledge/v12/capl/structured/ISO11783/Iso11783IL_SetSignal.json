@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_SetSignal",
+  "category": "ISO11783",
+  "title": "Iso11783IL_SetSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILSetSignal.htm",
+  "syntax": [
+    "long Iso11783IL_SetSignal( dbSignal signal, double value );"
+  ],
+  "description": [
+    "Sets the signal to the specified physical value. The message of the signal is sent according the configured send type."
+  ],
+  "parameters": [
+    {
+      "name": "signal",
+      "type": "",
+      "description": "signal name from databaseThe signal must be assigned to the node as Tx signal."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n Iso11783IL_SetSignal( EEC1::EngSpeed, 1200.0 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

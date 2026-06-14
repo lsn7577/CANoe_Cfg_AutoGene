@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForAnyJoinedEvent",
+  "category": "Test",
+  "title": "TestWaitForAnyJoinedEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForAnyJoinedEvent.htm",
+  "syntax": [
+    "long TestWaitForAnyJoinedEvent(dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the current set of \"joined events.\" Each individual of these events can resolve the wait state.",
+    "Should none of the events occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms](Transmission of 0: no timeout controlling)"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  long EventHandle1, EventHandle2, lReturn;\n  int64 mEventTime;\n  long Res;\n}\n\nMainTest()\n{\n  _WaitForAnyEvent();\n}\n\non errorFrame\n{\n  Res = TestSupplyTextEvent(\"ErrorFrame occurred!\");\n}\n\n\ntestcase _WaitForAnyEvent()\n{\n  TestCaseTitle(\"Demo\",\"WaitForAnyJoinedEvents\");\n\n  EventHandle1 = testJoinSysVarEvent(sysvar::Sysvar1);\n  EventHandle2 = TestJoinTextEvent(\"ErrorFrame occurred!\");\n\n  lReturn = TestWaitForAnyJoinedEvent (5000);\n\n\n  if (lReturn > 0)\n  {\n    if (lReturn == EventHandle1)\n    {\n      Res = testGetJoinedEventOccured(lReturn, mEventTime);\n      write(\"mEventTime = %I64d ; Res = %ld ; lReturn = %ld\",mEventTime,Res,lReturn);\n    }\n    if (lReturn == EventHandle2)\n    {\n      Res = testGetJoinedEventOccured(lReturn, mEventTime);\n      write(\"mEventTime = %I64d ; Res = %ld ; lReturn = %ld\",mEventTime,Res,lReturn);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939AppRxIndication",
+  "category": "J1939",
+  "title": "J1939AppRxIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939AppRxIndication.htm",
+  "syntax": [
+    "dword J1939AppRxIndication( long ecuHandle, long srcAddr, long dstAddr, long length, long pgnum );"
+  ],
+  "description": [
+    "The callback function indicates to the user that a parameter group has been received. It is not possible in CAPL to receive PG data through a callback function. For this reason, the data must be explicitly requested within the callback function with J1939GetRxData().",
+    "It should be noted that this function is only called once for each logical ECU within a node when global PGs are received."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword J1939AppRxIndication( LONG ecuHdl, LONG srcAddr, LONG dstAddr, LONG len, LONG pgNumber)\n{\n  char data[50];\n  J1939GetRxData( elCount(data), data );\n  /* user code */\n  return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,58 @@
+# ChkStart_LINRespToleranceViolation
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+dword ChkStart_LINRespToleranceViolation (Message Frame, float Tolerance);
+dword ChkStart_LINRespToleranceViolation (Node ObservedNode, float Tolerance);
+dword ChkStart_LINRespToleranceViolation (Message Frame, float Tolerance, char[] CaplCallback);
+dword ChkStart_LINRespToleranceViolation (Node ObservedNode, float Tolerance, char[] CaplCallback);
+```
+
+## Description
+
+Checks the LIN response transmission time.
+
+An event will be generated, if the measured response transmission time is over allowed tolerance.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| Frame | Unconditional LIN frame to verify |
+| ObservedNode | Node, whose published frames shall be verified. |
+| CaplCallback | Name of CAPL callback function to be called on generated event. In simulation nodes this parameter has to be set. In test modules this parameter is optional. |
+
+## Example
+
+```c
+...
+dword checkId;
+ChkConfig_SetPrecision(9); // switch to ns precision
+// Create and start the check for LIN response tolerance violation in “Motor1” node
+checkId = ChkStart_LINRespToleranceViolation(LIN20db::Motor1, 40.0 , "LINRespToleranceCallback");
+ChkConfig_SetPrecision(3); // switch to ms precision (default)
+...
+// CAPL callback for violation notification
+void LINRespToleranceCallback (dword aCheckId)
+{
+   ChkQuery_EventStatusToWrite(aCheckId);
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.2 7.0 SP5: method | 13.0 | — | 14 | 1.0 |
+| Restricted To | — | LIN | LIN | — | LIN | LIN |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | — | ✔ | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | ✔ | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | ✔ | N/A |
+| 64-Bit | — | ✔ | ✔ | — | ✔ | N/A |

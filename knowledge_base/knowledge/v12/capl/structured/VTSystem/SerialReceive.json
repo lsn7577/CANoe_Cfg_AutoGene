@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SerialReceive",
+  "category": "VTSystem",
+  "title": "SerialReceive",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSerialReceive.htm",
+  "syntax": [
+    "long SysVarNamespace.SerialReceive( byte buffer[], dword size);"
+  ],
+  "description": [
+    "Starts receiving blocks of bytes from the serial port of the specified VT7001 channel. Received data is copied to the specified buffer. The data can only be accessed in the OnSerialReceive callback.",
+    "The used serial port has to be opened first."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "An array of bytes where received data is copied to."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

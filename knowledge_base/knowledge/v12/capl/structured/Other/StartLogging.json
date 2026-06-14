@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "StartLogging",
+  "category": "Other",
+  "title": "StartLogging",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStartLogging.htm",
+  "syntax": [
+    "void startLogging();"
+  ],
+  "description": [
+    "Starts all Logging Blocks immediately bypassing all logging trigger settings."
+  ],
+  "parameters": [
+    {
+      "name": "Note If you use the function in standalone mode with VN8900/CANoe RT and if you activated logging and Trigger Block in the standalone mode configuration settings you can address the (single) Logging Block available in this case by passing an empty string as parameter.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "startLogging();\n// starts all Logging Blocks\nstopLogging();\n// stops all Logging Blocks\nstartLogging( \"Logging 1\");\n// starts the Logging Block \"Logging 1\"\nstopLogging( \"Logging 1\");\n// stops the Logging Block \"Logging 1\"\nstartLogging( \"Logging 1\", 2000);\n// starts the Logging Block \"Logging 1\" with pre-trigger time 2000 milliseconds.\nstopLogging( \"Logging 1\", 1000);\n// stops the Logging Block \"Logging 1\" with post-trigger time 1000 milliseconds."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

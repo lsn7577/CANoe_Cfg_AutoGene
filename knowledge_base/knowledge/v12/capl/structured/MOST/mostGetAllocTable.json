@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostGetAllocTable",
+  "category": "MOST",
+  "title": "mostGetAllocTable",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGetAllocTable.htm",
+  "syntax": [
+    "long mostGetAllocTable(long channel, byte buffer[], long buffersize)"
+  ],
+  "description": [
+    "The mostGetAllocTable() function copies the MOST Allocation Table (max. 60 bytes) to a local CAPL buffer. It must be verified that the buffer has the required size (buffersize).",
+    "The Allocation Table contains the reservation status of the synchronous MOST channels."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected Interface."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": "byte allocTable[60];\n// copy allocation table to local buffer\nmostGetAllocTable(mostGetChannel(), allocTable, elcount(allocTable));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

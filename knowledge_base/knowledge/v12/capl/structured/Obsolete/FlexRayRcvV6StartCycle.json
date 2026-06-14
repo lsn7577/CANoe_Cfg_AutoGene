@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FlexRayRcvV6StartCycle",
+  "category": "Obsolete",
+  "title": "FlexRayRcvV6StartCycle",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionFlexrayRcvV6StartCycle.htm",
+  "syntax": [
+    "FlexRayRcvV6StartCycle(long msgTime, byte nmlen, byte nmdata[])"
+  ],
+  "description": [
+    "A function defined in CAPL with this signature receives all FlexRay StartCycle events.The event is generated at the beginning of a communication cycle.It contains the NM vector that is valid for this round."
+  ],
+  "parameters": [
+    {
+      "name": "msgTime",
+      "type": "",
+      "description": "Time stamp of the FlexRay frame."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

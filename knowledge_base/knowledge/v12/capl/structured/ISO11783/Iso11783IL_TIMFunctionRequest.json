@@ -1,0 +1,74 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMFunctionRequest",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMFunctionRequest",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimFunctionRequest.htm",
+  "syntax": [
+    "long Iso11783IL_TIMFunctionRequest(byte functionId, word requestValue); // form 1"
+  ],
+  "description": [
+    "The function sends a function request value to the TIM server to control a TIM function.",
+    "The function fails if the TIM function is not assigned to the TIM client.",
+    "By default, the request counter is set to 15 (request counter is not used).",
+    "If the property useRequestCounter (see Iso11783IL_TIMSetProperty) is set to 1 then the counter is incremented each time the request value for this function is sent (up to value 13, then start with 0 again).",
+    "You can use form 2 to set the request counter directly.",
+    "The function value request is sent with a maximum repetition rate of 100 ms even this CAPL function is called more frequently.",
+    "The last request value is transmitted with repetition rate 2000 ms periodically if this function is not called."
+  ],
+  "parameters": [
+    {
+      "name": "Function ID",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "1-32 (1h-20h)",
+      "type": "",
+      "description": "Auxiliary Value 1 – 32"
+    },
+    {
+      "name": "64 (40h)",
+      "type": "",
+      "description": "Front PTO"
+    },
+    {
+      "name": "65 (41h)",
+      "type": "",
+      "description": "Rear PTO"
+    },
+    {
+      "name": "66 (42h)",
+      "type": "",
+      "description": "Front hitch"
+    },
+    {
+      "name": "67 (43h)",
+      "type": "",
+      "description": "Rear hitch"
+    },
+    {
+      "name": "68 (44h)",
+      "type": "",
+      "description": "Vehicle speed"
+    },
+    {
+      "name": "70 (46h)",
+      "type": "",
+      "description": "External guidance"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetBaudrateDetectionRange",
+  "category": "LIN",
+  "title": "linSetBaudrateDetectionRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetBaudrateDetectionRange.htm",
+  "syntax": [
+    "long linSetBaudrateDetectionRange(long rangeInPercent)"
+  ],
+  "description": [
+    "With this function the baud rate detection range can be increased or decreased. The default range is +/- 15%. Note that the detection range will always be symmetrical."
+  ],
+  "parameters": [
+    {
+      "name": "rangeInPercent",
+      "type": "",
+      "description": "The detection range in percent."
+    }
+  ],
+  "return": "If successful a value unequal to zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,72 @@
+# coTfsSDOUploadAndCompare
+
+> Category: `CANopen` | Type: `function`
+
+## Syntax
+
+```c
+long coTfsSDOUploadAndCompare( dword index, dword subIndex, dword size, byte inValueBuf[], dword valueBufSize, byte inMaskBuf[], dword maskBufSize, dword useBitMask ); // form 1
+long coTfsSDOUploadAndCompare( dword index, dword subIndex, dword size, byte inValueBuf[], dword valueBufSize, byte inMaskBuf[], dword maskBufSize ); // form 2
+long coTfsSDOUploadAndCompare( dword index, dword subIndex, dword size, byte inValueBuf[][], dword valueBufSize ); // form 3
+long coTfsSDOUploadAndCompare( dword index, dword subIndex, dword size, qword inValue ); // form 4
+long coTfsSDOUploadAndCompare( dword index, dword subIndex, dword size, qword inValue, qword mask ); // (5)
+```
+
+## Description
+
+This function executes a complete SDO upload. Depending on the number of data, this is either an expedited upload (up to 4 bytes) or a segmented transfer. Afterwards the received data is compared against the data supplied.
+
+It is not possible to fetch the received data using coTfsGetSdoUploadData after this function was called.
+
+(4) and (5) can be used for maximum 4 byte objects only.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| index | Object index |
+| subindex | Object sub index |
+| size | Expected data length. |
+| inValueBuf[] | Data pointer for expected data. |
+| valueBufSize | Buffer size in byte of inValueBuf. |
+| inMaskBuf[] | Data pointer for compare data. |
+| maskBufSize | Buffer size in byte of inMaskBuf. |
+| useBitMask | 0: don't use bit mask for comparison !=0: use bit mask for comparison |
+| inValue | Data to be compared. |
+| mask | Mask that is used for comparison. |
+
+## Return Values
+
+error code or
+
+## Example
+
+```c
+dword dataLength = 2;
+byte compareMask[2];
+byte receiveData[2];
+receiveData[0] = 0x01;
+receiveData[1] = 0x02;
+compareMask[0] = 0x0F; /* compare only lower nibble of byte 0 */
+compareMask[1] = 0xFF; /* compare complete byte 1 */
+
+if (coTfsSDOUploadAndCompare( 0x1017, 0x2, dataLength, receiveData, 2, compareMask, 2, 1 ) != 1)
+{
+  write(" SDO upload failed or data mismatch");
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 8.2 | 13.0 | — | — | 2.1 SP3 |
+| Restricted To | — | CANopen | CANopen | — | — | CANopen |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

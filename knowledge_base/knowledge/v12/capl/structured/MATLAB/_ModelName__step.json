@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "<ModelName>_step",
+  "category": "MATLAB",
+  "title": "<ModelName>_step",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MATLAB/Functions/CAPLfunctionMODELstep.htm",
+  "syntax": [
+    "long <ModelName>_step();"
+  ],
+  "description": [
+    "Executes a simulation step."
+  ],
+  "parameters": [],
+  "return": "On success 0, otherwise a value unequal to zero.",
+  "example": {
+    "description": [],
+    "code": "on timer modelTimer\n{\nmyControllerMdl_step();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetPreparedMsgFaultNotification",
+  "category": "SmartCharging",
+  "title": "SCC_SetPreparedMsgFaultNotification",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetPreparedMsgFaultNotification.htm",
+  "syntax": [
+    "long SCC_SetPreparedMsgFaultNotification( char FaultCode[], char FaultMessage[] )"
+  ],
+  "description": [
+    "Sets the fault code and fault message for a prepared message"
+  ],
+  "parameters": [
+    {
+      "name": "FaultCode",
+      "type": "",
+      "description": "Desired fault code, which must be a valid enum value according to the specification"
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

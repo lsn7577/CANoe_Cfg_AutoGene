@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCPGetRemoteAddressAsString",
+  "category": "TCPIPAPI",
+  "title": "TCPGetRemoteAddressAsString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionTCPGetRemoteAddressAsString.htm",
+  "syntax": [
+    "long TcpGetRemoteAddressAsString(dword socket, char buffer[], dword size);"
+  ],
+  "description": [
+    "This function retrieves the remote address of the specified connected socket in Internet standard dotted-decimal format."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

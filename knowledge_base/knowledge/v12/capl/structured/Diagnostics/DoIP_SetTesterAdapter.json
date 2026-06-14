@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetTesterAdapter",
+  "category": "Diagnostics",
+  "title": "DoIP_SetTesterAdapter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetTesterAdapter.htm",
+  "syntax": [
+    "void DoIP_SetTesterAdapter(char adapter[]);"
+  ],
+  "description": [
+    "Sets the network interface to be used by the DoIP layer. This function must be called in on preStart."
+  ],
+  "parameters": [
+    {
+      "name": "adapter",
+      "type": "",
+      "description": "The name of the network adapter."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Set the network adapter\nchar buffer[256];\nDiagGetCommParameter( \"DoIP.TESTER_Adapter\", 0, buffer, elcount( buffer));\nDoIP_SetTesterAdapter( buffer);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

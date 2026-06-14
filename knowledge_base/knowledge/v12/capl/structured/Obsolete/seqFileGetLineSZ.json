@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "seqFileGetLineSZ",
+  "category": "Obsolete",
+  "title": "seqFileGetLineSZ",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionSeqFileGetLineSZ.htm",
+  "syntax": [
+    "long seqFileGetLineSZ(char buffer[], dword bufferSize, long file, long cStyle);"
+  ],
+  "description": [
+    "The function reads at most bufferSize-1 characters from the file with the handle file into the array buffer. No additional characters are read after a newline character or after end-of-file.The function retains the newline character. If cStyle is set to 1 the line is terminated by a null character, if cStyle is set to 0 not."
+  ],
+  "parameters": [],
+  "return": "Return value is the number of characters successfully read, or a negative error code, if the operation fails.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

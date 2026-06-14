@@ -1,0 +1,152 @@
+{
+  "page_type": "function",
+  "name": "linSetRespBitStream",
+  "category": "LIN",
+  "title": "linSetRespBitStream",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINSetRespBitStream.htm",
+  "syntax": [
+    "long linSetRespBitStream (long frameId, byte bitStream[], long numberOfBits); // form 1",
+    "long linSetRespBitStream (long frameId, byte bitStream[], long numberOfBits, long timeoutPrevention); // form 2",
+    "long linSetRespBitStream (long frameId, byte bitStream[], long numberOfBits, long timeoutPrevention, long count); // form 3"
+  ],
+  "description": [
+    "Sets up a bit stream as the response to the specified frame."
+  ],
+  "parameters": [
+    {
+      "name": "frameId",
+      "type": "",
+      "description": "LIN frame identifier in the range 0 .. 63"
+    },
+    {
+      "name": "bitStream",
+      "type": "",
+      "description": "The bit stream array to be sent as a response. Maximum number of bits: 2^31-1."
+    },
+    {
+      "name": "numberOfBits",
+      "type": "",
+      "description": "Number of bits in the bitStream array to be sent."
+    },
+    {
+      "name": "timeoutPrevention",
+      "type": "",
+      "description": "0: deactivates the timeout prevention for the 7259-transceiver. 1: activates the timeout prevention for the 7259-transceiver."
+    },
+    {
+      "name": "count",
+      "type": "",
+      "description": "Number of times, the bit stream shall be sent as a response before deactivating itself."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "Send LIN response for the frame MotorControl as a bit stream."
+    ],
+    "code": "// The response consists of 8 data bytes and checksum \r\n byte. There are no interbyte spaces.\n// Response: [D0=0x1, D1=0x2, D2=0x4, D3=0x8, D4=0x10, D5=0x20, D6=0x40, D7=0x80, CS=0x52]\non key 'r'\n{\nlinFrame MotorControl mMotorControl;\nbyte bitStream[12];\nlong numberOfBits;\n// binary stream = 0100000001 0010000001 0001000001 0000100001 0000010001\n// binary stream (continue) = 0000001001 0000000101 0000000011 0010010101\nbitStream[0] = 0x2;\nbitStream[1] = 0x12;\nbitStream[2] = 0x88;\nbitStream[3] = 0x20;\nbitStream[4] = 0x84;\nbitStream[5] = 0x20;\nbitStream[6] = 0x2;\nbitStream[7] = 0x9;\nbitStream[8] = 0x28;\nbitStream[9] = 0xC0;\nbitStream[10] = 0xA4;\nbitStream[11] = 0x2;\nnumberOfBits = 90; // Each byte requires 10 bits (start bit + data bits + stop bit)\nif (0!=linSetRespBitStream(mMotorControl.id, bitStream, numberOfBits))\n{\n// for the next response of frame \"MotorControl\" is as specified\n}\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.0",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "LIN Real bus mode",
+      "—",
+      "—",
+      "—",
+      "LIN Real bus mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

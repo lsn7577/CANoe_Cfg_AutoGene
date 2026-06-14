@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "canFlushTxQueue",
+  "category": "CAN",
+  "title": "canFlushTxQueue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Functions/CAPLfunctionCanFlushTxQueue.htm",
+  "syntax": [
+    "long canFlushTxQueue(long channel);"
+  ],
+  "description": [
+    "Flushes the Tx queue for the defined channel."
+  ],
+  "parameters": [
+    {
+      "name": "Channel",
+      "type": "",
+      "description": "The CAN channel."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 'f'\n{\n  int result;\n  //flush Tx queue for CAN channel 1\n\n  result = canFlushTxQueue(1);\n  if(result == 1)\n    write(\"Tx queue flushed \");\n  else\n    write(\"Tx queue flush failed Result =%d \", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0 SP2",
+      "10.0 SP2",
+      "13.0",
+      "—",
+      "—",
+      "2.2 SP2"
+    ],
+    [
+      "Restricted To",
+      "CAN",
+      "CAN",
+      "CAN",
+      "—",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

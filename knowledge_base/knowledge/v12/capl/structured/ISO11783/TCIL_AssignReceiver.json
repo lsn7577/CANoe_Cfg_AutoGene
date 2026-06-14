@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_AssignReceiver",
+  "category": "ISO11783",
+  "title": "TCIL_AssignReceiver",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILAssignReceiver.htm",
+  "syntax": [
+    "long TCIL_AssignReceiver(dword ddi, dbNode user, dword elementNumberUser, dbNode source) // form 1"
+  ],
+  "description": [
+    "The functions sends an Assign Receiver message to the setpoint value user device."
+  ],
+  "parameters": [
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "This DDI and the element number specify the setpoint value user."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

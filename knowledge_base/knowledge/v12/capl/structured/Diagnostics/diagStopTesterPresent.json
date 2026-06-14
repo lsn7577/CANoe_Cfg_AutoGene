@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagStopTesterPresent",
+  "category": "Diagnostics",
+  "title": "diagStopTesterPresent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagStopTesterPresent.htm",
+  "syntax": [
+    "long diagStopTesterPresent (char ecuQualifier[])"
+  ],
+  "description": [
+    "Stops sending autonomous/cyclical Tester Present requests from CANoe to the specified or current ECU."
+  ],
+  "parameters": [
+    {
+      "name": "Note This function will only stop the Tester Present service if in the calling CAPL node no CAPL Callback interface for diagnostics is used.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

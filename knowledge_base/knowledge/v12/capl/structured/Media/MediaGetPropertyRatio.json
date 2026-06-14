@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MediaGetPropertyRatio",
+  "category": "Media",
+  "title": "MediaGetPropertyRatio",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaGetPropertyRatio.htm",
+  "syntax": [
+    "long MediaGetPropertyRatio(dword objHandle, char propertyName[], dword& numerator, dword& denominator);"
+  ],
+  "description": [
+    "Retrieves a property whose value is a ratio. Properties can be retrieved on an object specific basis for a media type object (e.g. returned by MediaGetMediaType)."
+  ],
+  "parameters": [
+    {
+      "name": "propertyName",
+      "type": "",
+      "description": "Name of the property to be retrieved."
+    }
+  ],
+  "return": "0: The function succeeded.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,150 @@
+{
+  "page_type": "function",
+  "name": "enableControl",
+  "category": "Other",
+  "title": "enableControl",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionEnableControl.htm",
+  "syntax": [
+    "void enableControl(char panel[], char control[], long enable);"
+  ],
+  "description": [
+    "Selective activation and deactivation of:",
+    "certain panel controls",
+    "If a control and display element is configured as a simple display, this command will have no effect on the element in question.The turned on or turned off state of an element remains intact at the start/end of the measurement. Because of this, a defined state should be created for the beginning of the measurement for the elements involved (for example in the CAPL program under System->Start)."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Name of the panel, restricted to 128 characters. If an empty string is transferred, the action will affect all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    },
+    {
+      "name": "Note Symbol assignment is not case sensitive. If you want to access all elements of a panel the notation \"\" is used, see example below. When a GroupBox or TabControl is activated/deactivated, all controls in the GroupBox or TabControl are also activated/deactivated. See example below.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "Example \"Signal:SleepInd\"\"Signal:easy/MotorState/EngineSpeed\"\"SysVar:SysVarTester\" (for a system variable defined with name space TestSysvar in the configuration)",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "turn off (disable)"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "turn on (enable)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n// enables a specific control of the \"motor\" panel\nenableControl(\"motor\", \"PedalPos\", 1);\n\n// enables all controls of the panel\nenableControl(\"motor\", \"\", 1);\n\n//disables the GroupBox and all controls in the GroupBox:\nenableControl(\"Controlpanel\", \"LightGroupBox\", 0);\n\n//disables the TabControl and all controls on the TabControl:\nenableControl(\"DisplayPanel\", \"TabControl1\", 0);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5",
+      "4.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "certain panel controls",
+      "certain panel controls",
+      "certain panel controls",
+      "—",
+      "—",
+      "certain panel controls"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

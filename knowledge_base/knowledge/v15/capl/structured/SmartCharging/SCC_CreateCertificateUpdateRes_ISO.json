@@ -1,0 +1,163 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCertificateUpdateRes_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCertificateUpdateRes_ISO",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCertificateUpdateRes_Iso.htm",
+  "syntax": [
+    "long SCC_CreateCertificateUpdateRes_ISO ( byte SessionID[], dword ConfigSection, char ResponseCode[], byte EncryptedPrivateKey[], byte DHParams[], char ContractID[] )"
+  ],
+  "description": [
+    "Creates a Certificate Update Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "ConfigSection",
+      "type": "",
+      "description": "Number of the section from the test configuration file to use."
+    },
+    {
+      "name": "ResponseCode",
+      "type": "",
+      "description": "Acknowledgement status of the message."
+    },
+    {
+      "name": "EncryptedPrivateKey",
+      "type": "",
+      "description": "The private key that belongs to the new certificate for signature purposes."
+    },
+    {
+      "name": "DHParams",
+      "type": "",
+      "description": "Diffie Hellman parameter string."
+    },
+    {
+      "name": "ContractID",
+      "type": "",
+      "description": "ID string of the contract (eMAID)."
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "RetryCounter long In case of failure, this denotes when the EVCC should try to get the new Certificate again (number of days)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

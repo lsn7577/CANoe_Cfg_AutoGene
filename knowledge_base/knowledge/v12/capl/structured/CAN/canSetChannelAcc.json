@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "canSetChannelAcc",
+  "category": "CAN",
+  "title": "canSetChannelAcc",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionCanSetChannelAcc.htm",
+  "syntax": [
+    "long canSetChannelAcc(long channel, dword code, dword mask);"
+  ],
+  "description": [
+    "Via an acceptance filter the CAN controllers control which received messages are sent through to CANoe.Some controller chips, such as the SJA 1000, expect partitioning into acceptance mask and acceptance code."
+  ],
+  "parameters": [
+    {
+      "name": "CAN channel",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: ok",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n/*\nTo distinguish whether the filter is for standard or extended identifier. For extended identifiers the MSB of the code and mask are set.\nDescription:\nDifferent ports may have different filters for a channel. If the CAN hardware cannot implement the filter, the driver virtualises filtering.\nAccept if ((id ^ code) & mask) == 0). \n*/\n   long channel =2;\n   dword code=0x10;\n   dword mask=0x10;\n   canSetChannelAcc(channel,code,mask);\n   write(\"channel mask set\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

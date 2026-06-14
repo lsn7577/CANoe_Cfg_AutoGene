@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_StopSession",
+  "category": "SmartCharging",
+  "title": "SCC_StopSession",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_StopSession.htm",
+  "syntax": [
+    "long SCC_StopSession ( dword CloseTcpConnection ) // form 1"
+  ],
+  "description": [
+    "The function stops a connection immediately. If it is used within a message callback, a response to the message is not sent."
+  ],
+  "parameters": [
+    {
+      "name": "CloseTcpConnection",
+      "type": "",
+      "description": "If 1, an additional TCP close is executed"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

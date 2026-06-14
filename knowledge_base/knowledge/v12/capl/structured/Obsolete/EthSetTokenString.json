@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "EthSetTokenString",
+  "category": "Obsolete",
+  "title": "EthSetTokenString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthSetTokenString.htm",
+  "syntax": [
+    "long EthSetTokenString( long packet, char protocolDesignator[], char tokenDesignator[], char data[] );"
+  ],
+  "description": [
+    "The function copies the string value to the token without terminating \"\\0\"."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of a packet that has been created with EthInitPacket"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "LONG packetHandle;\n\n// create packet\npacketHandle = EthInitPacket( \"udp\" );\n\n// set protocol fields\nEthSetTokenInt( packetHandle, \"ipv4\", \"source\", 0xC0A80001 ); // 192.168.0.1\nEthSetTokenInt( packetHandle, \"ipv4\", \"destination\", 0xFFFFFFFF ); // 255.255.255.255\nEthSetTokenInt( packetHandle, \"udp\", \"source\", 23 );\nEthSetTokenInt( packetHandle, \"udp\", \"destination\", 23 );\n\n// set UDP payload\nEthResizeToken( packetHandle, \"udp\", \"data\", 5*8 /*bits*/ );\nEthSetTokenString( packetHandle, \"udp\", \"data\", \"Hello\" );\n\n// Complete and send packet\nEthCompletePacket( packetHandle );\nEthOutputPacket( packetHandle );\n\n// release packet\nEthReleasePacket( packetHandle );"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

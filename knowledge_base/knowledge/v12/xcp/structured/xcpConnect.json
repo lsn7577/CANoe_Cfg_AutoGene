@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "xcpConnect",
+  "category": "XCP",
+  "title": "xcpConnect",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionXCPConnect.htm",
+  "syntax": [
+    "long xcpConnect (char ecuQualifier[]);"
+  ],
+  "description": [
+    "Establishes a connection to the XCP/CCP device and starts the configured DAQ measurement.",
+    "If the connection is successfully depends on the response of the device.",
+    "Use xcpIsConnected to be aware of the connection.",
+    "After establishing the connection and before start of the DAQ measurement the callback function OnXcpConnect is called."
+  ],
+  "parameters": [],
+  "return": "0: OK",
+  "example": {
+    "description": [],
+    "code": "testcase TC_ConnectToECU ()\n{\n  xcpConnect(\"ECU\");\n....\n}\n\n//Callback function:\nvoid OnXcpConnect (char ecuQualifier[])\n{\n  //Set calibration page to RAM\n  xcpSetCalPage(ecuQualifier, 0x83, 0, 0);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

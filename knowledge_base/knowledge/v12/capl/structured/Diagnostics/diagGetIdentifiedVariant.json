@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetIdentifiedVariant",
+  "category": "Diagnostics",
+  "title": "diagGetIdentifiedVariant",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetIdentifiedVariant.htm",
+  "syntax": [
+    "long diagGetIdentifiedVariant(char identifiedVariantOut[], dword bufferLen);"
+  ],
+  "description": [
+    "Retrieve the qualifier of the variant that has been identified by the last successful run of the automatic variant identification algorithm for given target, or the current target if no target is given. The function can also be used to determine whether the algorithm has finished."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "ECU the identification algorithm should run for, not the currently selected one. If given, diagSetTarget does not have to be called."
+    }
+  ],
+  "return": ">=0: Number of characters written into the buffer",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

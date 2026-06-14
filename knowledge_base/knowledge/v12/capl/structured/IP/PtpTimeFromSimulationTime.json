@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "PtpTimeFromSimulationTime",
+  "category": "IP",
+  "title": "PtpTimeFromSimulationTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionPtpTimeFromSimulationTime.htm",
+  "syntax": [
+    "qword PtpTimeFromSimulationTime(int64 simulationTime);"
+  ],
+  "description": [
+    "Returns the global PTP time corresponding to the simulation time."
+  ],
+  "parameters": [
+    {
+      "name": "simulationTime",
+      "type": "",
+      "description": "Simulation time (ns)."
+    }
+  ],
+  "return": "Global PTP time (ns).",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

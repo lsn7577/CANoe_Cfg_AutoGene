@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "sensorQueueSerialFrames",
+  "category": "Sensor",
+  "title": "sensorQueueSerialFrames",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionSensorQueueSerialFrames.htm",
+  "syntax": [
+    "SensorErrorCode sensorQueueSerialFrames(char[] sysVarNamespace, char[] data, dword dataCount);"
+  ],
+  "description": [],
+  "parameters": [
+    {
+      "name": "sysVarNamespace",
+      "type": "",
+      "description": "The namespace of the UART/RS-485/LVDS channel the data shall be queued in."
+    }
+  ],
+  "return": "This function returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Send three frames with different payloads\ndword data[3] = {0x01, 0x02, 0x03};\nsensorQueueSerialFrames(“SENSOR::UART::ExampleChannel”, data, 3);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

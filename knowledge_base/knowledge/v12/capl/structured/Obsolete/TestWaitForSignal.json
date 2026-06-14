@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForSignal",
+  "category": "Obsolete",
+  "title": "TestWaitForSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionTestWaitForSignal.htm",
+  "syntax": [
+    "long TestWaitForSignal (Signal aSignal, dword aTimeout)"
+  ],
+  "description": [
+    "Tests the availability of a specific signal and waits if necessary until its availability.A signal that is received at least once from the bus after the measurement starts is classified as \"available\".",
+    "This function is useful when you want to assure that single signals are available before starting a signal-oriented test, i.e. to synchronize the tester with the bus."
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "Signal whose availability is being tested or for which is waited"
+    }
+  ],
+  "return": "-2: Wait state is exited due to a constraint/condition violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GPIBDevOpen",
+  "category": "GPIB",
+  "title": "GPIBDevOpen",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBDevOpen.htm",
+  "syntax": [
+    "long GPIBDevOpen (long boardIdx, long primAddr, long secAddr, long timeout, long eot, long eos);"
+  ],
+  "description": [
+    "Opens a GPIB device and returns a device ID."
+  ],
+  "parameters": [
+    {
+      "name": "boardIdx",
+      "type": "",
+      "description": "Index of the GPIB board (e.g.0)"
+    }
+  ],
+  "return": "Device ID",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,145 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_FSGetFileInfo",
+  "category": "ISO11783",
+  "title": "Iso11783IL_FSGetFileInfo",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILfsgetfileinfo.htm",
+  "syntax": [
+    "long Iso11783IL_FSGetFileInfo( dword fileHandle, dword infoCount, dword retInfo[] );",
+    "long Iso11783IL_FSGetFileInfo( char fileName[], dword infoCount, dword retInfo[] );"
+  ],
+  "description": [
+    "This function retrieves information about a file or directory.",
+    "In the entry of the array, the following information is returned:"
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "File or directory handle, see also Iso11783IL_FSOpenFile"
+    },
+    {
+      "name": "fileName",
+      "type": "",
+      "description": "Name of file or directory"
+    },
+    {
+      "name": "infoCount",
+      "type": "",
+      "description": "Number of elements in retInfo"
+    },
+    {
+      "name": "retInfo",
+      "type": "",
+      "description": "Contains the information about the file or directory"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "LONG handle;\ndword info[8];\n\nhandle = Iso11783IL_FSOpenFile( \"\\TEST.TXT\", 0x00 );\nif (handle > 0) {\n  if (Iso11783IL_FSGetFileInfo( handle, elCount(info), info ) == 0) {\n    write( \"Date %d-%d-%d'\", info[2], info[3], info[4] );\n  }\n  Iso11783IL_FSCloseFile( handle );\n} "
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

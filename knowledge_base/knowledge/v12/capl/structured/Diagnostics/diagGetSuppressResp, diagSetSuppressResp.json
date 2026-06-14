@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetSuppressResp, diagSetSuppressResp",
+  "category": "Diagnostics",
+  "title": "diagGetSuppressResp, diagSetSuppressResp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetSuppressRespDiagSetSuppressResp.htm",
+  "syntax": [
+    "long diagGetSuppressResp (diagRequest req);"
+  ],
+  "description": [
+    "Under UDS (Unified Diagnostics Services), in certain requests it is possible to set the \"suppressPosRspMsgIndicationBit\" (\"suppress positive response message indication bit\"). This means that the receiver must not send any positive response. These two functions make it possible to poll and set this bit."
+  ],
+  "parameters": [
+    {
+      "name": "req",
+      "type": "",
+      "description": "Request"
+    }
+  ],
+  "return": "1: The bit is set.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

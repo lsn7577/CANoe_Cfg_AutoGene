@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939AppNmtIndication",
+  "category": "J1939",
+  "title": "J1939AppNmtIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939AppNmtIndication.htm",
+  "syntax": [
+    "dword J1939AppNmtIndication( long busHandle, long address, long flag );"
+  ],
+  "description": [
+    "This function is called when an ECU claims n address or an ECU loses its address. The function is also called, if no ECU was created yet.",
+    "With J1939GetRxData() the device name can be copied to a buffer."
+  ],
+  "parameters": [
+    {
+      "name": "busHandle",
+      "type": "",
+      "description": "bus handle"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword J1939AppNmtIndication( LONG busHandle, LONG address, LONG flag )\n{\n  char deviceName[8];\n  J1939GetRxData( elCount(deviceName), deviceName ); \n  /* user code */\n  return 0; \n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

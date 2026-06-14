@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CreateGlobalMarker",
+  "category": "Other",
+  "title": "CreateGlobalMarker",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionCreateGlobalMarker.htm",
+  "syntax": [
+    "long createGlobalMarker (char markerName[], char makerDesc []);"
+  ],
+  "description": [
+    "Sets a marker in CANoe Trace Window, Graphics Window and State Tracker. The set marker can be displayed with the shortcut menu Show in the marker bar of these windows."
+  ],
+  "parameters": [
+    {
+      "name": "markerName",
+      "type": "",
+      "description": "Name of the marker."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n// sets a marker by pressing key <a>\n{\n  createGlobalMarker(\"speed\", \"speedDesc\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

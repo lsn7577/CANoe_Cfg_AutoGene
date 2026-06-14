@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPSelectInput",
+  "category": "ISO11783",
+  "title": "Iso11783OPSelectInput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPSelectInput.htm",
+  "syntax": [
+    "long Iso11783OPSelectInput( dword ecuHandle, dword objectID, dword select );"
+  ],
+  "description": [
+    "The function selects an input object. A Select Input command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPSelectInput( handle, 1200, 1 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

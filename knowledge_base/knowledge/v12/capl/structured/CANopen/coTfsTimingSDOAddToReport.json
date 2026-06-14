@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsTimingSDOAddToReport",
+  "category": "CANopen",
+  "title": "coTfsTimingSDOAddToReport",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsTimingSdoAddToReport.htm",
+  "syntax": [
+    "long coTfsTimingSDOAddToReport( dword nodeId );"
+  ],
+  "description": [
+    "The minimum, maximum and average SDO response time of the specified node are added to the test protocol. The statistic values are not reset."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsTimingSDOAddToReport( 0 ); // add all available time statistics to test report"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,145 @@
+{
+  "page_type": "function",
+  "name": "vFlashGetCustomActionAttributeConfigValue, vFlashGetCustomActionAttributeLastRunValue, vFlashSetCustomActionAttribute",
+  "category": "Diagnostics",
+  "title": "vFlashGetCustomActionAttributeConfigValue, vFlashGetCustomActionAttributeLastRunValue, vFlashSetCustomActionAttribute",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagvFlashGetGetSetCustomActionAttribute.htm",
+  "syntax": [
+    "long vFlashGetCustomActionAttributeConfigValue(char customActionAttributeName[], char valueOut[], dword maxLen); // form 1",
+    "long vFlashGetCustomActionAttributeLastRunValue(char customActionAttributeName[], char valueOut[], dword maxLen); // form 2",
+    "long vFlashSetCustomActionAttribute(char customActionAttributeName[], char attributeValue[]); // form 3"
+  ],
+  "description": [
+    "Get the value of a vFlash CustomAction attribute, either as configured in the vFlash project (form 1), or the value set by the CustomAction script the last time the flash project was executed (form 2). It is also possible to set the value of the CustomAction attribute (form 3) used for next execution (not persistently in project)."
+  ],
+  "parameters": [
+    {
+      "name": "customActionAttributeName",
+      "type": "",
+      "description": "Name of the attribute as shown in vFlash."
+    },
+    {
+      "name": "valueOut",
+      "type": "",
+      "description": "Buffer for returning the value of the attribute."
+    },
+    {
+      "name": "maxLen",
+      "type": "",
+      "description": "Length of the buffer provided."
+    },
+    {
+      "name": "attributeValue",
+      "type": "",
+      "description": "New value of the attribute, as text. Note that it must be possible to convert the text into the type defined for the attribute. For example, integer attributes accept only values in the form 1234 or 0xABC, otherwise an error is returned."
+    }
+  ],
+  "return": "With the following",
+  "example": {
+    "description": [],
+    "code": "char valueOut[200];\nchar attributeName[30] = \"Custom Action Attribute 1\";\n\n// Read the value configured in the project\nvFlashGetCustomActionAttributeConfigValue(attributeName, valueOut, elcount\nvalueOut));\n\n// Set the value to use the next time\nvFlashSetCustomActionAttribute(attributeName, \"1234\");\n\n// perform flashing\nTestWaitForvFlashReprogrammed();\n\n// Retrieve the value the custom action script might have set during the last run\nvFlashGetCustomActionAttributeLastRunValue(attributeName, valueOut, elcount(valueOut));"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "15 + DLL 6.0.4100",
+      "—",
+      "—",
+      "—",
+      "6 + DLL 6.0.4100"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

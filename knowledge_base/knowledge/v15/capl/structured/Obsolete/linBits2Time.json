@@ -1,0 +1,75 @@
+{
+  "page_type": "notes",
+  "name": "linBits2Time",
+  "category": "Obsolete",
+  "title": "linBits2Time",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionLINBits2Time.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "dword",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by linBits2Time_ns."
+      ],
+      [
+        "Function Syntax",
+        "dword linBits2Time(dword bitTimes)"
+      ],
+      [
+        "dword linBits2Time(dword channel, dword bitTimes)"
+      ],
+      [
+        "Function",
+        "Converts specified bit time to an absolute time. The absolute time is calculated using the current baud rate on the channel determined by the CAPL program context."
+      ],
+      [
+        "Parameters",
+        "bitTimes Time in bits."
+      ],
+      [
+        "channel Channel number, whose baud rate will be used."
+      ],
+      [
+        "Return Values",
+        "Absolute time in 10 µs."
+      ],
+      [
+        "Availability",
+        "Since Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "5.1",
+        "LIN",
+        "—",
+        "•"
+      ],
+      [
+        "6.0",
+        "LIN",
+        "•",
+        "•"
+      ],
+      [
+        "Example Convert header bit time of a LIN frame to µs on linFrame *{dword headerTimeInMicroSeconds; // time in µsheaderTimeInMicroSeconds = linBits2Time(this.LIN_HeaderTime)*10;}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

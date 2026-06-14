@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "timeDiff",
+  "category": "Other",
+  "title": "timeDiff",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionTimeDiff.htm",
+  "syntax": [
+    "long timeDiff(message m1, NOW);"
+  ],
+  "description": [
+    "Time difference between messages or between a message and the current time in ms (msg2 - msg1 or now - msg1). Starting with CANalyzer 2.xx this difference can be calculated directly (Units of 10 microseconds)."
+  ],
+  "parameters": [],
+  "return": "Time difference in ms.",
+  "example": {
+    "description": [],
+    "code": "diff = timeDiff(m100, now); // CANalyzer 1.x & 2.x\ndiff = this.time - m100.time; // CANalyzer 2.xx"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

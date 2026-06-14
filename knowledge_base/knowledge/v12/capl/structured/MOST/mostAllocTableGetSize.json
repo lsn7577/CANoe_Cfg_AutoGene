@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostAllocTableGetSize",
+  "category": "MOST",
+  "title": "mostAllocTableGetSize",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTAllocTableGetSize.htm",
+  "syntax": [
+    "long mostAllocTableGetSize(long channel)"
+  ],
+  "description": [],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Application channel number."
+    }
+  ],
+  "return": ">= 0: Number of entries.",
+  "example": {
+    "description": [
+      "List all connection labels in the Write Window on change of the allocation table."
+    ],
+    "code": "OnMostAllocTable()\n{\n   long numEntries, labelWidth, label, i;\n   numEntries = mostAllocTableGetSize(mostEventChannel());\n   write(\"%f s: OnMostAllocTable(): Number of allocated labels: %d\", mostEventTimeNs()/1.0e9, numEntries);\n   for(i = 0; i < numEntries; ++i)\n   {\n      write(\"  Label: %03X  Width: %d\", mostAllocTableGetCL(mostEventChannel(), i), mostAllocTableGetWidth(mostEventChannel(), i));\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

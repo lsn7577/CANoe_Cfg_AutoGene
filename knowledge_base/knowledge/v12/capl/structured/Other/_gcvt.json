@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "_gcvt",
+  "category": "Other",
+  "title": "_gcvt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctiongcvt.htm",
+  "syntax": [
+    "void _gcvt(double val, int digits, char s[]);"
+  ],
+  "description": [
+    "The number val is converted to a string s containing a decimal point and a possible sign byte."
+  ],
+  "parameters": [
+    {
+      "name": "val",
+      "type": "",
+      "description": "Number to be converted."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Result:"
+    ],
+    "code": "char s[15];\n\nfloat val1 = 3.1415926535;\nfloat val2 = 271828.18284;\n_gcvt(val1, 10, s);\nwriteToLogEx(\"val1: %f: s: %s\", val1, s);\n_gcvt(val2, 9, s);\nwriteToLogEx(\"val2: %f: s: %s\", val2, s);\n_gcvt(val2, 5, s);\nwriteToLogEx(\"val2: %f: s: %s\", val2, s);\n_gcvt(val2, 20, s); // String size too small, string stays unchanged\nwriteToLogEx(\"val2: %f: s: %s\", val2, s);\n...\nval1: 3.141593: s: 3.141592654\nval2: 271828.182840: s: 271828.182\nval2: 271828.182840: s: 2.7183e+005\nval2: 271828.182840: s: 2.7183e+005"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

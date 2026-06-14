@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "frUpdatePDU",
+  "category": "FlexRay",
+  "title": "frUpdatePDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRUpdatePDU.htm",
+  "syntax": [
+    "void frUpdatePDU(<PDU var>, dword flags, int updateCounter);"
+  ],
+  "description": [
+    "This function updates the PDU payload in the assigned FlexRay frames.",
+    "The update bit can also be set."
+  ],
+  "parameters": [
+    {
+      "name": "<PDU var>",
+      "type": "",
+      "description": "Name of the variable referenced by the PDU object."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Example",
+      "The following example assumes that the database defines a PDU that is named PDU_CNT_02 and that this PDU contains a signal that is named counter.",
+      "This program sends the PDU once every 64 cycles. The update is made on the beginning of cycle 0."
+    ],
+    "code": "variables\n{\n   frPDU MsgChannel%CHANNEL%.PDU_CNT_02 gPDU1;\n   BYTE gCycle; // remember current FlexRay cycle\n}\non preStart\n{\n   // Optionally prepare buffer for PDU gPDU1:\n   frSetSendPDU(gPDU1);\n}\non frStartCycle 0\n{\n   if (this.MsgChannel != %CHANNEL%) return;\n   gCycle = this.FR_Cycle;\n   gPDU1.counter = gCycle;\n   frUpdatePDU(gPDU1, 1, 1); // set update bit and send only once\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

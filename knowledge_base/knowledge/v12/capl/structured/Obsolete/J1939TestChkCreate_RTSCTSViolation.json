@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkCreate_RTSCTSViolation",
+  "category": "Obsolete",
+  "title": "J1939TestChkCreate_RTSCTSViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionJ1939TestChkCreateRTSCTSViolation.htm",
+  "syntax": [
+    "long J1939TestChkCreate_RTSCTSViolation(dword senderAddr, dword receiverAddr, dword timeouts[5], dword options);"
+  ],
+  "description": [
+    "Observes the RTS/CTS transport protocol. It is possible to observer all RTS/CTS transmissions or only the transmission of a specific send node."
+  ],
+  "parameters": [
+    {
+      "name": "sender",
+      "type": "",
+      "description": "send node from database, optional"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long rtsCheck;\ndword timeouts[5] = { 750, 1250, 1250, 1050, 500};\n\nrtsCheck = J1939TestChkCreate_RTSCTSViolation( timeouts, 0 );\n\nJ1939TestChkControl_Start(rtsCheck);\nTestAddConstraint(rtsCheck);"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

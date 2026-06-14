@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sensorQueueMosiData",
+  "category": "Sensor",
+  "title": "sensorQueueMosiData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionSensorQueueMosiData.htm",
+  "syntax": [
+    "SensorErrorCode sensorQueueMosiData(char[] sysVarNamespace, byte buffer[], dword bitCount);"
+  ],
+  "description": [
+    "This function is intended to be used for SPI master simulation. It inserts the given MOSI data into the send queue from the master to the given slave."
+  ],
+  "parameters": [
+    {
+      "name": "sysVarNamespace",
+      "type": "",
+      "description": "The namespace of the slave the data shall be queued for."
+    }
+  ],
+  "return": "This function returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "  // Some example values\n  dword value1 = 7;\n  dword value2 = 13;\n\n  // Byte array used to prepare the master request\n  byte requestData[2] = {0x00, 0x00};\n\n  // Insert two 6 bit values\n  SensorInsertInteger(requestData, 2, value1, 0, 6, 1);\n  SensorInsertInteger(requestData, 2, value2, 6, 6, 1);\n\n  // Send the prepared 12 bits to the ExampleSlave\n\nsensorQueueMosiData(“SENSOR::SPI::ExampleChannel::ExampleSlave”, requestData, 12);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

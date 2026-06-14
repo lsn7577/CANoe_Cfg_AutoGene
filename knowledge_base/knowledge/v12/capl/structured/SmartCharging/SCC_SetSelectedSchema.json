@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetSelectedSchema",
+  "category": "SmartCharging",
+  "title": "SCC_SetSelectedSchema",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetSelectedSchema.htm",
+  "syntax": [
+    "long SCC_SetSelectedSchema ( long SchemaID )"
+  ],
+  "description": [
+    "Sets the ID of the schema to be selected in the SupportedAppProtocolRes message. This overrides the automatic selection done based on the vehicle’s priority values.",
+    "Due to technical reasons, the schema ID must belong to a schema actually offered by the vehicle (the charge point cannot continue with an undefined schema)."
+  ],
+  "parameters": [
+    {
+      "name": "SchemaID",
+      "type": "",
+      "description": "ID of the selected schema, based on the vehicle’s list"
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "DecodeString",
+  "category": "Other",
+  "title": "DecodeString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionDecodeString.htm",
+  "syntax": [
+    "long DecodeString(char output[], long outputSize, byte input[], long inputSize, dword codepage);"
+  ],
+  "description": [
+    "Decodes the byte array input from the encoding codepage to the current CAPL string encoding.",
+    "The length of the decoded string depends on the given encoding. If the size of the output array outputSize is not sufficient to hold the decoded string and a terminating “\\0”, the functions returns an error and the content of output is undefined. Characters that cannot be represented in the current encoding, are replaced with the best matching character, selected by the Windows function WideCharToMultiByte."
+  ],
+  "parameters": [
+    {
+      "name": "output",
+      "type": "",
+      "description": "Target char array."
+    }
+  ],
+  "return": "0: Success, the byte array output is valid.",
+  "example": {
+    "description": [],
+    "code": "includes\n{\n  #include \"Encoding.cin\"\n}\n\n...\n{\n  int result;\n  char text[10];\n  byte stream[6] = {0xC3, 0xA4, 0xC3, 0xB6, 0xC3, 0xBC};\n  result = DecodeString(text, 10, stream, 6, CP_UTF8);\n  // on German Windows, text is now {‘ä’, ‘ö’, ‘ü’, 0}\n  if (result == 0) {\n    write(text);\n    // Output (on a German Windows): äöü\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_GetLastErrorText",
+  "category": "ISO11783",
+  "title": "VTIL_GetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILGetLastErrorText.htm",
+  "syntax": [
+    "long VTIL_GetLastErrorText( dword bufferSize, char buffer[] ); // form 1"
+  ],
+  "description": [
+    "Returns the result of the last VT IL function as string."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

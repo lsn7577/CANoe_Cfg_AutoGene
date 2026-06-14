@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "_gcvt",
+  "category": "Other",
+  "title": "_gcvt",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctiongcvt.htm",
+  "syntax": [
+    "void _gcvt(double val, int digits, char s[]);"
+  ],
+  "description": [
+    "The number val is converted to a string s containing a decimal point and a possible sign byte."
+  ],
+  "parameters": [
+    {
+      "name": "val",
+      "type": "",
+      "description": "Number to be converted."
+    },
+    {
+      "name": "digits",
+      "type": "",
+      "description": "Number of significant digits."
+    },
+    {
+      "name": "s",
+      "type": "",
+      "description": "String, which contains the converted number. If the string size is too small, the string stays unchanged."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Result:"
+    ],
+    "code": "char s[15];\n\nfloat val1 = 3.1415926535;\nfloat val2 = 271828.18284;\n_gcvt(val1, 10, s);\nwriteToLogEx(\"val1: %f: s: %s\", val1, s);\n_gcvt(val2, 9, s);\nwriteToLogEx(\"val2: %f: s: %s\", val2, s);\n_gcvt(val2, 5, s);\nwriteToLogEx(\"val2: %f: s: %s\", val2, s);\n_gcvt(val2, 20, s); // String size too small, string stays unchanged\nwriteToLogEx(\"val2: %f: s: %s\", val2, s);\n...\nval1: 3.141593: s: 3.141592654\nval2: 271828.182840: s: 271828.182\nval2: 271828.182840: s: 2.7183e+005\nval2: 271828.182840: s: 2.7183e+005"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5 SP2",
+      "7.5 SP2",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

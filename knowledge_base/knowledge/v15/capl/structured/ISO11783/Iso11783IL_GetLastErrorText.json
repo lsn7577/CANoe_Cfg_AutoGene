@@ -1,0 +1,141 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_GetLastErrorText",
+  "category": "ISO11783",
+  "title": "Iso11783IL_GetLastErrorText",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILGetLastErrorText.htm",
+  "syntax": [
+    "long Iso11783IL_GetLastErrorText( dword bufferSize, char buffer[] ); // form 1: deprecated.",
+    "long Iso11783IL_GetLastErrorText( char buffer[] ); // form 2",
+    "long Iso11783IL_GetLastErrorText( dbNode node, dword bufferSize, char buffer[] ); // form 3: deprecated.",
+    "long Iso11783IL_GetLastErrorText( dbNode node, char buffer[] ); // form 4"
+  ],
+  "description": [
+    "Returns the result of the last called ISO11783 IL function as string."
+  ],
+  "parameters": [
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "size of the return buffer"
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "return buffer"
+    },
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 't' \n{\n  char error[64];\n  BYTE date = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 };\n  ISO11783ILSetSignalRaw( EEC1::EngSpeed, 6, data );\n\n  Iso11783IL_GetLastErrorText( error );\n  write( \"Errorcode:  %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔ (form 2)",
+      "✔ (form 2",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔ (form 4)",
+      "✔ (form 4)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔ (form 4)",
+      "✔ (form 4)",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

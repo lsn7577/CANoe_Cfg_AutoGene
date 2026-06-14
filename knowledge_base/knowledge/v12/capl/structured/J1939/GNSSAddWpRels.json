@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "GNSSAddWpRels",
+  "category": "J1939",
+  "title": "GNSSAddWpRels",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSaddwprels.htm",
+  "syntax": [
+    "dword GNSSAddWpRels( double latLength, double lonLength, double altLength, double speed )"
+  ],
+  "description": [
+    "This function inserts a new waypoint at a given speed at the end of the waypoint list. The new point is derived by adding the path differences and the last waypoint to be inserted.",
+    "When the new waypoint is reached, the GNSS receiver moves on at the assigned speed. The speed will be maintained until a waypoint with another speed is reached or the speed is changed by the GNSSSetSpeed function.",
+    "The unit of the parameters depends on the system of measurement units selected with the GNSSSetUnits function."
+  ],
+  "parameters": [
+    {
+      "name": "latLength",
+      "type": "",
+      "description": "difference in length along the latitude in reference to the last waypoint to be inserted (in m or yd)"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "// set a waypoint\nGNSSAddWaypoint( 54.0, 8.0, 0 ) ; \n\n// add a new waypoint 200 yd southerly \r\n of the last waypoint and set a new speed of 10 kn when this waypoint is \r\n reached\nGNSSSetUnits( 2 );\nGNSSAddWpRels( 0.0, -200.0, 0, 10 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

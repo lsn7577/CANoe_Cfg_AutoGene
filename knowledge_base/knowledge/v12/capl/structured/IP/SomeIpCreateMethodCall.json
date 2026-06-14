@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "SomeIpCreateMethodCall",
+  "category": "IP",
+  "title": "SomeIpCreateMethodCall",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpCreateMethodCall.htm",
+  "syntax": [
+    "dword SomeIpCreateMethodCall( dword csiHandle, dword methodId, char onSomeIpMethodResponse [] ); // form 1"
+  ],
+  "description": [
+    "This function creates a method call for the consumer. By means of the return value of the function, the method parameters can be set using SomeIpSetValue.... The method is then called using SomeIpCallMethod.",
+    "If the function is called with the syntax specified in form 1, the method call takes place asynchronously. At the same time, the client is not blocked after the method call until the corresponding response. A synchronous method call is not supported by SOME/IP IL.",
+    "The syntax specified in form 2 must be used if the fireAndForget parameter was used when the method was created for the provider (see also SomeIpAddMethod).",
+    "The method call can be removed again using the SomeIpRemoveMethodCall function."
+  ],
+  "parameters": [
+    {
+      "name": "csiHandle",
+      "type": "",
+      "description": "Handle of the Consumed Service Instance that was created by SomeIpCreateConsumedServiceInstance."
+    }
+  ],
+  "return": "0: An error occurred. The error can be evaluated using the SomeIpGetLastError function.",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the created method is contained in the FIBEX database that is assigned to the CANoe configuration. The method has the Method ID 31, two input parameters Member_value1 and Member_value2, and a return parameter Result."
+    ],
+    "code": "variables\n{\n  DWORD gMc; // global method call handle\n}\n\nvoid Initialize()\n{\n  DWORD aep; // Application Endpoint handle\n  DWORD csi; // consumed Service Instance handle\n\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(0x11, 50002);\n\n  // cretae Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,11,1);\n\n  // create method call\n  gMc = SomeIpCreateMethodCall(csi,31,\"OnMethodResponse\");\n}\n\non key 's'\n{\n  // if this key is pressed the method should be called\n\n  // set the two input parameters of the method\n  SomeIpSetValueDWord(gMc,\"Member_value1\",11);\n  SomeIpSetValueDWord(gMc,\"Member_value2\",22);\n\n  // call the method\n  SomeIpCallMethod(gMc);\n}\n\nvoid OnMethodResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  DWORD res; // value of return parameter\n\n  // get the returned parameter values\n  res = SomeIpGetValueDWord(messageResponseHandle,\"Result\");\n\n  write(\"The method call returned value: %d\",res);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

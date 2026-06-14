@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestCreateInputRange",
+  "category": "Test",
+  "title": "TestCreateInputRange",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCreateInputRange.htm",
+  "syntax": [
+    "TestCreateStringInputRange(char text[], char caption[], char info[]);"
+  ],
+  "description": [
+    "This function creates an input dialog. For adding a new range to define the input use the command TestAddRange. After all ranges are added the dialog can be opened by the command TestWaitForInput."
+  ],
+  "parameters": [
+    {
+      "name": "Text",
+      "type": "",
+      "description": "Text to be displayed in the entry dialog."
+    }
+  ],
+  "return": "The handle of the dialog.",
+  "example": {
+    "description": [],
+    "code": "handle = TestCreateStringInputRange(\"Test Text\", \"Test Caption\", \"Test String Input Range Timeout\");\nTestAddRange(handle, 0, 5);\nTestWaitForInput(handle, 5000);\nTestGetStringInput(resultStr, elcount(resultStr));\n\nhandle = TestCreateValueInputRange(\"Test Text\", \"Test Caption\", \"Test Value Input Range Timeout\");\nTestAddRange(handle, 0, 5);\nTestWaitForInput(handle, 5000);\n\nhandle = TestCreateByteInputRange(\"Test Text\", \"Test Caption\", \"Test Byte Input Range Timeout\");\nTestAddRange(handle, 0, 5);\nTestWaitForInput(handle, 5000);\nTestGetByteInput(resultByte, elcount(resultByte));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,154 @@
+{
+  "page_type": "method",
+  "name": "Binding::ValueReceived",
+  "category": "DistributedObjects",
+  "title": "Binding::ValueReceived",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Methods/CAPLfunctionBindingValueReceived.htm",
+  "syntax": [
+    "long Binding::ValueReceived(distObjDataRef * member, double value);",
+    "long Binding::ValueReceived(distObjDataRef * member, long value);",
+    "long Binding::ValueReceived(distObjDataRef * member, dword value);",
+    "long Binding::ValueReceived(distObjDataRef * member, int64 value);",
+    "long Binding::ValueReceived(distObjDataRef * member, qword value);",
+    "long Binding::ValueReceived(distObjDataRef * member, char value[]);",
+    "long Binding::ValueReceived(distObjDataRef * member, dataTypeHandle value);",
+    "long Binding::ValueReceived(distObjEventRef * member, double value);",
+    "long Binding::ValueReceived(distObjEventRef * member, long value);",
+    "long Binding::ValueReceived(distObjEventRef * member, dword value);",
+    "long Binding::ValueReceived(distObjEventRef * member, int64 value);",
+    "long Binding::ValueReceived(distObjEventRef * member, qword value);",
+    "long Binding::ValueReceived(distObjEventRef * member, char value[]);",
+    "long Binding::ValueReceived(distObjEventRef * member, dataTypeHandle value);",
+    "long Binding::ValueReceived(distObjFieldRef * member, double value);",
+    "long Binding::ValueReceived(distObjFieldRef * member, long value);",
+    "long Binding::ValueReceived(distObjFieldRef * member, dword value);",
+    "long Binding::ValueReceived(distObjFieldRef * member, int64 value);",
+    "long Binding::ValueReceived(distObjFieldRef * member, qword value);",
+    "long Binding::ValueReceived(distObjFieldRef * member, char value[]);",
+    "long Binding::ValueReceived(distObjFieldRef * member, dataTypeHandle value);"
+  ],
+  "description": [
+    "Sets a value of a consumed data, event, or field member value that uses the CAPL binding.",
+    "The called overload must correspond to the member value type. Otherwise an error code is returned."
+  ],
+  "parameters": [
+    {
+      "name": "member",
+      "type": "",
+      "description": "Member which receives a value via the CAPL binding."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "Value to be received."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// Transmit an event via CAN messages.\n\n// example.vcdl\nversion 1.3;\nnamespace SomeNamespace {\n  interface Example {\n    [Binding=\"CAPL\", CommunicationPattern=SendReceive]\n    consumed event int32 SomeEvent;\n  }\n  object Consumer : Example {}\n  object Provider : reverse<Example> {}\n}\n\n// provider.can\non key 'a' {\n  $Provider.SomeEvent++;\n}\n\n// provider_binding.can\non transmit_value Provider.SomeEvent {\n  message SomeEvent_Value msg;\n  msg.value = $this;\n  output(msg);\n}\n\n// consumer.can\non value_update Consumer.SomeEvent {\n  write(\"received %d\", $this);\n}\n\n// consumer_binding.can\non message SomeEvent_Value {\n  Binding::ValueReceived(Consumer.SomeEvent, (long)this.value);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "14",
+      "15",
+      "15",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

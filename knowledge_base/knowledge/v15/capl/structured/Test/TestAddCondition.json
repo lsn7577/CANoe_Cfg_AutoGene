@@ -1,0 +1,157 @@
+{
+  "page_type": "function",
+  "name": "TestAddCondition",
+  "category": "Test",
+  "title": "TestAddCondition",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestAddCondition.htm",
+  "syntax": [
+    "long TestAddCondition (dword aAuxHandle);",
+    "long TestAddCondition (dword aAuxHandle, long aBehavior);",
+    "long TestAddCondition (char aEventText[]);",
+    "long TestAddCondition (char aEventText[], long aBehavior);"
+  ],
+  "description": [
+    "Adds an event object or an event text as a condition. Checks from the Test Service Library are suitable as event objects.",
+    "This function can be used within a test case and also on the main test level."
+  ],
+  "parameters": [
+    {
+      "name": "aAuxHandle",
+      "type": "",
+      "description": "Event object, for example a check from the TestService Library. Specified is the handle that is returned when a check is created."
+    },
+    {
+      "name": "aEventText",
+      "type": "",
+      "description": "Textual name of an event whose occurrence should be monitored. This event can be triggered with the function TestSupplyTextEvent."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Default behavior, entry in test report and setting of the verdict to \"fail\""
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Only an entry in the test report is made, the verdict remains unchanged"
+    },
+    {
+      "name": "2, 3",
+      "type": "",
+      "description": "reserved"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1",
+      "Add check as condition",
+      "Example 2",
+      "Add text event as condition"
+    ],
+    "code": "dword checkId;\ndword numCheckEvents;\n\n// start the Error Frame observation\ncheckId = ChkStart_ErrorFramesOccured();\n// Add check as condition,\n// that means that check violations are reported and\n// the verdict of the test case is set to \"failed\"\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\n// Remove check as condition\nTestRemoveCondition(checkId);\n\n// stop the check\nChkControl_Stop(checkId);\n// reset stored values of the check\nChkControl_Reset(checkId);\n\n// start the check again without adding as condition,\n// that means that Error Frames are observed, but violations\n// are not reported and do not set the test case verdict to \"failed\"\nChkControl_Start(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\n// stop the check\nChkControl_Stop(checkId);\n\n// analysis of check\nnumCheckEvents = ChkQuery_NumEvents(checkId);\nif (numCheckEvents > 0)\nTestStepFail(\"Error Frame occurred!\");\n\n// destroy check\nChkControl_Destroy(checkId);\n// test case to check if Error Frames occur\ntestcase CheckErrorFrameReceived ()\n{\n   TestAddCondition(\"ErrorFrameReceived\");\n   // sequence of different actions and waiting conditions\n   TestWaitForTimeout(1000);\n   TestRemoveCondition(\"ErrorFrameReceived\");\n}\n\n// handler to supply text event\non errorFrame\n{\n   TestSupplyTextEvent(\"ErrorFrameReceived\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Test nodes",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

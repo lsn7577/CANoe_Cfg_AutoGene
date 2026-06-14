@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_RoutingActivationRequest",
+  "category": "Diagnostics",
+  "title": "_DoIP_RoutingActivationRequest",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDoIPRoutingActivationRequest.htm",
+  "syntax": [
+    "long _DoIP_RoutingActivationRequest(dword sourceAddress, dword activationType, dword reserved, dword OEM, BYTE sendResponse[], BYTE responseCodeOut[]);"
+  ],
+  "description": [
+    "A request for routing activation was received in a vehicle simulation. It is possible to ignore, accept or deny the request, and to specify if a response message is sent."
+  ],
+  "parameters": [
+    {
+      "name": "sourceAddress",
+      "type": "",
+      "description": "Logical address of the tester that sent the request."
+    },
+    {
+      "name": "activationType",
+      "type": "",
+      "description": "The tester has requested this type of connection, e.g. WWH-OBD or default."
+    },
+    {
+      "name": "reserved",
+      "type": "",
+      "description": "The value of the reserved field in the request message."
+    },
+    {
+      "name": "OEM",
+      "type": "",
+      "description": "The value of the OEM field in the request, or 0, if field is not present."
+    },
+    {
+      "name": "sendResponse",
+      "type": "",
+      "description": "Output parameter to indicate whether the simulation shall send a routing activation response message: 0: Do not send a response message 1: Send a response message other: reserved"
+    },
+    {
+      "name": "responseCodeOut",
+      "type": "",
+      "description": "If a response is sent, this value will be used as response code."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long _DoIP_RoutingActivationRequest(dword sourceAddress, dword activationType,dword reserved, dword OEM, BYTE sendResponse[], BYTE responseCodeOut[])\n{\n  write(\"_DoIP_RoutingActivationRequest(%04x, 0x%02x, reserved=%08x, OEM=%08x)\"\n  , sourceAddress, activationType, reserved, OEM);\n  // sendResponse[0]    is always 1    (default: send response)\n  // responseCodeOut[0] is always 0x10\n\n  // Accept default or WWH-OBD\n  if(activationType <= 0x01)\n    return 0;  // continue with default behavior\n\n  // Ignore a specific activation type, i.e. do not even send a response\n  if(activationType == 0x99)\n  {\n    sendResponse[0] = 0;\n    return 1;  // deny routing activation\n  }\n\n  // Accept a specific activation type only if reserved value is correct\n  if(IsValidForActivationType( activationType, reserved))\n    return 2;  // allow routing activation\n\n  // All other activation types shall be denied\n  responseCodeOut[0] = 0x06; // UnsupportedActivationType\n  return 1; // deny routing activation\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 SP3",
+      "—",
+      "—",
+      "—",
+      "2.2 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Test Nodes",
+      "—",
+      "—",
+      "—",
+      "Test Nodes"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

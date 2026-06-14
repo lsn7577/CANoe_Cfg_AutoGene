@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "linSetHeaderError",
+  "category": "Obsolete",
+  "title": "linSetHeaderError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSetHeaderError.htm",
+  "syntax": [
+    "dword linSetHeaderError(byte syncByte, byte idwithParity, byte StopAfterError)"
+  ],
+  "description": [
+    "With this function it is possible to set invalid parameters in a transmitted LIN header. These invalid parameters will be used until changed by another call to linSetHeaderError() for the same identifier (specified by the lower 6 bits of idWithParity). Setting the correct values with this function will of course disable all header errors for the specified id.",
+    "This function will not be supported with the CANCard XLe.",
+    "If the LIN hardware is not in Master mode calling this function will have no effect.",
+    "The invalid header is not reported on the transmitting channel. To get the error notified an additional channel has to be configured and connected to the transmitting channel."
+  ],
+  "parameters": [
+    {
+      "name": "syncByte",
+      "type": "",
+      "description": "Data value to be sent in the Synch byte field."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [
+      "// Force an error in header of LIN frame with ID=0x33 by setting wrong protected ID"
+    ],
+    "code": "on key 'h'\n{\nbyte linID, protectedID, corParity, errParity, errPID;\n// calculate protected ID with wrong parity bits\nlinID       = 0x33;                      // use frame ID=0x33\nprotectedID = linGetProtectedID(linID);  // get protected ID\ncorParity   = (protectedID & 0xC0) >> 6; // extract parity (0xC=0=11000000)\nerrParity   = (corParity ^ 0x2) & 0x3;   // calculate wrong parity using XOR\nerrPID      = linID | (errParity << 6);  // calculate PID with wrong parity\nlinSetHeaderError(0x55, errPID, 0);\n}\n...\nor\n...\n// Force an error in header of LIN frame with ID=0x33 by setting wrong Synch byte\nlinSetHeaderError(0x50, linGetProtectedID(0x33), 0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

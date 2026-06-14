@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coSetBlockSize",
+  "category": "Obsolete",
+  "title": "coSetBlockSize",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoSetBlockSize.htm",
+  "syntax": [
+    "void coSetBlockSize( dword blockSize, dword errCode[] );"
+  ],
+  "description": [
+    "This function sets the block size that is used for SDO block transfers. The default value is 7 and applies globally for all SDO transmission."
+  ],
+  "parameters": [
+    {
+      "name": "blockSize",
+      "type": "",
+      "description": "Block size to be used for SDO block transfers, 1..127"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoSetBlockSize( 14, errCode );\nif (errCode[0] == 0) {\n  write( \"SDO block size successfully set\" ); \n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

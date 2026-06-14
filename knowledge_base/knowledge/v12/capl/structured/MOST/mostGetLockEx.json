@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostGetLockEx",
+  "category": "MOST",
+  "title": "mostGetLockEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGetLockEx.htm",
+  "syntax": [
+    "long mostGetLockEx (long channel)"
+  ],
+  "description": [
+    "The function returns the lock status of the connected MOST hardware. In contrast to mostGetLock(), the additional states \"Stable Lock\" and \"Critical Unlock\" are considered according to MOST specification 2.3."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected MOST hardware."
+    }
+  ],
+  "return": "0: Unlock",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

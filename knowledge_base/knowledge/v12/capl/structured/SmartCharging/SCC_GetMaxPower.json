@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetMaxPower",
+  "category": "SmartCharging",
+  "title": "SCC_GetMaxPower",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetMaxPower.htm",
+  "syntax": [
+    "float SCC_GetMaxPower ( )"
+  ],
+  "description": [
+    "Gets the vehicle's or the charge point's maximum power."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Returns Maximum power of vehicle (AC: EVMaxPower, DC: EVMaximumPowerLimit) or charge point EVSEMaximumPowerLimit.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

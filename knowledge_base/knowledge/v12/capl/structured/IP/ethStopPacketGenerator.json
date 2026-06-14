@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethStopPacketGenerator",
+  "category": "IP",
+  "title": "ethStopPacketGenerator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionEthStopPacketGenerator.htm",
+  "syntax": [
+    "long ethStopPacketGenerator( ethernetPacket txPacket );"
+  ],
+  "description": [
+    "Stops the Ethernet packet generator, which was started with EthStartPacketGenerator."
+  ],
+  "parameters": [
+    {
+      "name": "txPacket",
+      "type": "",
+      "description": "The Ethernet packet which was used to start the generator."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  ethernetPacket txPacket;\n}\n\non key '1'\n{\n  txPacket.msgChannel  = 1;\n  txPacket.source      = EthGetMacAddressAsNumber( \"20:00:00:00:00:01\" );\n  txPacket.destination = EthGetMacAddressAsNumber( \"FF:FF:FF:FF:FF:FF\" );\n  txPacket.Length      = 100;\n  txPacket.type        = 0xF123;\n  EthStartPacketGenerator( txPacket, 1000 );\n}\n\non key '2'\n{\n  ethStopPacketGenerator(txPacket);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

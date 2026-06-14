@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_MessageTxInd",
+  "category": "SmartCharging",
+  "title": "SCC_MessageTxInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_MessageTxInd.htm",
+  "syntax": [
+    "void SCC_MessageTxInd ( byte SessionOrRunID[], dword MessageID, long Error )"
+  ],
+  "description": [
+    "The callback is called each time a Vehicle2Grid, SECC Discovery or SLAC message is sent by the simulation DLL."
+  ],
+  "parameters": [
+    {
+      "name": "SessionOrRunID",
+      "type": "",
+      "description": "8-byte long SessionID (V2G) or RunID (SLAC) of the connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

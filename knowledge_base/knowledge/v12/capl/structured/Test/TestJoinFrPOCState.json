@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestJoinFrPOCState",
+  "category": "Test",
+  "title": "TestJoinFrPOCState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinFrPOCState.htm",
+  "syntax": [
+    "long TestJoinFrPOCState ()"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event.",
+    "This function does not wait.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aPOCState",
+      "type": "",
+      "description": "The POC state the function will wait for (see selector 'FR_POCState' in event procedure on FrPOCState)."
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

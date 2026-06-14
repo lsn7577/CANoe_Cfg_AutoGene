@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetFaultNotification",
+  "category": "SmartCharging",
+  "title": "SCC_GetFaultNotification",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetFaultNotification.htm",
+  "syntax": [
+    "long SCC_GetFaultNotification ( char FaultCode[], char FaultMsg[] )"
+  ],
+  "description": [
+    "Returns the fault code and fault message (optional) of the V2G message header."
+  ],
+  "parameters": [
+    {
+      "name": "FaultCode",
+      "type": "",
+      "description": "Desired fault code, which must be a valid enum value according to the specification"
+    }
+  ],
+  "return": "0 if no fault code is contained in the V2G header",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

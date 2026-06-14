@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostGetNodeAdr, mostGetGroupAdr, mostGetAltPktAdr, mostGetNodePosAdr",
+  "category": "MOST",
+  "title": "mostGetNodeAdr, mostGetGroupAdr, mostGetAltPktAdr, mostGetNodePosAdr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGetNodeAdr.htm",
+  "syntax": [
+    "long mostGetNodeAdr(long channel)"
+  ],
+  "description": [
+    "Return of the node address, group address, alternative packet address or node position address of the MOST hardware associated with the specified channel."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "NodeAdr: Logical node address",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

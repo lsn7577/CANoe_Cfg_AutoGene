@@ -1,0 +1,150 @@
+{
+  "page_type": "function",
+  "name": "TestJoinEthernetLinkStatus",
+  "category": "Test",
+  "title": "TestJoinEthernetLinkStatus",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestJoinEthernetLinkStatus.htm",
+  "syntax": [
+    "long TestJoinEthernetLinkStatus(long channel, long status); // form 1",
+    "long TestJoinEthernetLinkStatus(long channel, Int64 hwChannel, long status); // form 2",
+    "long TestJoinEthernetLinkStatus(ethernetport hwport, long status); // form 3"
+  ],
+  "description": [
+    "Completes the current set of joined events with the transmitted event. This function does not wait."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel number.Value range: 1..32"
+    },
+    {
+      "name": "hwChannel",
+      "type": "",
+      "description": "Ethernet hardware channel number.Value range: 1..64"
+    },
+    {
+      "name": "hwPort",
+      "type": "",
+      "description": "Hardware port qualifier."
+    },
+    {
+      "name": "Status",
+      "type": "",
+      "description": "Wait for this status: 0 = link down 1 = link up"
+    },
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms] (Transmission of 0: no timeout controlling)."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "13.0",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

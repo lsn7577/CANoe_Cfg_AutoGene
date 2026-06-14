@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "HILAPIPauseSignalGenerator",
+  "category": "Test",
+  "title": "HILAPIPauseSignalGenerator",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionHILAPIPauseSignalGenerator.htm",
+  "syntax": [
+    "dword HILAPIPauseSignalGenerator(dword handle);"
+  ],
+  "description": [
+    "Pauses a Signal Generator."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "The handle of the Signal Generator."
+    }
+  ],
+  "return": "0: The handle of the Signal Generator is not valid",
+  "example": {
+    "description": [
+      "Pauses the Signal Generator:"
+    ],
+    "code": "HILAPIPauseSignalGenerator( hGenerator);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

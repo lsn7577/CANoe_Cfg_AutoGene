@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "title": "Agent Retrieval Contract Test Report",
+    "total": 12,
+    "pass": 12,
+    "warn": 0,
+    "fail": 0,
+    "overall": "PASS"
+  },
+  "results": [
+    {
+      "test": "T001 contract files present",
+      "status": "PASS",
+      "message": "contract and policy files present"
+    },
+    {
+      "test": "T002 policy schema and relative paths",
+      "status": "PASS",
+      "message": "8 tools, model-free default"
+    },
+    {
+      "test": "T003 default index is model-free",
+      "status": "PASS",
+      "message": "bm25_docs=10075, vector_backend=disabled"
+    },
+    {
+      "test": "T004 exact symbol lookup gate",
+      "status": "PASS",
+      "message": "v15::capl::CommunicationObjects::SetSignal -> long txSignalRef::SetSignal(Signal signal);"
+    },
+    {
+      "test": "T005 scenario routing send CAN",
+      "status": "PASS",
+      "message": "send_can_frame -> output (CAN)"
+    },
+    {
+      "test": "T006 constrained search CAN send",
+      "status": "PASS",
+      "message": "top=v15/capl/CAN/output (CAN), route=semantic"
+    },
+    {
+      "test": "T007 panel concept search",
+      "status": "PASS",
+      "message": "top=v15/panel/Elements/Analog Gauge"
+    },
+    {
+      "test": "T008 team override pages available",
+      "status": "PASS",
+      "message": "team override docs resolve through aliases"
+    },
+    {
+      "test": "T009 answer gate for generated code",
+      "status": "PASS",
+      "message": "answer gate blocks ungrounded generated code"
+    },
+    {
+      "test": "T010 combined signal-test retrieval",
+      "status": "PASS",
+      "message": "scenario + exact symbols + team override loaded"
+    },
+    {
+      "test": "T011 combined diagnostics retrieval",
+      "status": "PASS",
+      "message": "diagnostics scenario pages + constrained search grounded"
+    },
+    {
+      "test": "T012 combined panel-binding retrieval",
+      "status": "PASS",
+      "message": "panel scenario + concept search + team gauge override grounded"
+    }
+  ]
+}

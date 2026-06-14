@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCM_Atten_Char_Ind",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCM_Atten_Char_Ind",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCM_Atten_Char_Ind.htm",
+  "syntax": [
+    "void SCC_CreateCM_Atten_Char_Ind ( byte RunId[], byte SourceMac[], byte TargetMac[], byte SourceAddress[], dword NumSounds, dword NumGroups, byte AAG[] )"
+  ],
+  "description": [
+    "Creates a CM_Atten_Char.Ind message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "RunId",
+      "type": "",
+      "description": "Random Run Identifier of sender (8 byte)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

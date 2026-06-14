@@ -1,0 +1,172 @@
+{
+  "page_type": "function",
+  "name": "J1939TestCommand",
+  "category": "J1939",
+  "title": "J1939TestCommand",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestCommand.htm",
+  "syntax": [
+    "long J1939TestCommand( pg* command, pg* response, dword responseSize, dword timeout, dword options )//form 1",
+    "long J1939TestCommand( dbNode commandNode, dbNode responseNode, pg* command, pg* response, dword responseSize, dword timeout, dword options )//form 2"
+  ],
+  "description": [
+    "A command message is sent from the test module. The DUT must respond with the response message.",
+    "For the form 1, the source address of the configured command message is used as a destination address of the expected response message, and the source address of the configured response message is used as the destination address of the sent command message. This shortens the parameter list, but results in only the source addresses of the command and response message are used; destination addresses being automatically calculated.",
+    "For the form 2, the address of the commandNode is used as a source address of the sent command message and as a destination address of the expected response message, and the address of the responseNode is used as the destination address of the sent command message and as the source address of the expected response message. The both database nodes commandNode and responseNode need a defined NmStationAddress attribute.",
+    "J1939TestCommand is not able to send a command message as a broadcast. This function can only stimulate point-to-point communication."
+  ],
+  "parameters": [
+    {
+      "name": "command",
+      "type": "",
+      "description": "PG variable, which should be sent"
+    },
+    {
+      "name": "response",
+      "type": "",
+      "description": "PG variable, to which the response is copied"
+    },
+    {
+      "name": "responseSize",
+      "type": "",
+      "description": "size of the response buffer"
+    },
+    {
+      "name": "commandNode",
+      "type": "",
+      "description": "database node name of the command send node"
+    },
+    {
+      "name": "responseNode",
+      "type": "",
+      "description": "database node name of the response send node"
+    },
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "timeout in [ms]"
+    },
+    {
+      "name": "Bit 1",
+      "type": "",
+      "description": "not used"
+    },
+    {
+      "name": "Bit 2",
+      "type": "",
+      "description": "1: enable CTS and EoMA for req SA 0: no RTS/CTS support"
+    },
+    {
+      "name": "Bit 3",
+      "type": "",
+      "description": "1: check DLC of response PG 0: do not check DLC of response PG"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "pg VTtoECU vt_to_ecu;\npg ECUtoVT ecu_to_vt;\n\nvt_to_ecu.command = 12;\nif (J1939TestCommand( VT, Sprayer, vt_to_ecu, ecu_to_vt, 100, 8, 0 ) != 1) {\n  testFail( \"Response from Sprayer not received\" );\n}\nif (ecu_to_vt.Signal != 100) {\n  testStepFail( \"Wrong response from Sprayer\" );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.1",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getFirstCANdbFilename",
+  "category": "CAN",
+  "title": "getFirstCANdbFilename",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionGetFirstCANdbFileName.htm",
+  "syntax": [
+    "dword getFirstCANdbFilename( char buffer[], dword size);"
+  ],
+  "description": [
+    "Finds out the file name of the first assigned database."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer in which the database file name is written."
+    }
+  ],
+  "return": "If successful unequal 0, otherwise 0.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\nchar buffer[256];\ndword pos;\n\npos = GetFirstCANdbFilename( buffer, elcount( buffer));\n//Finds the file name of the first database.\n//If a database is found, \"pos\" contains the value 1.\n//If none is found \"pos\" contains 0.\n\nwhile ( 0 != pos)\n{\nwrite( \"CANdb: %s\", buffer);\npos = GetNextCANdbFilename( pos, buffer, elcount( buffer));\n//Finds the file names of other databases.\n//If any other databases are found\n//\"pos\" contains the value 2, 3, etc\n//If no further databases are found\n//\"pos\" contains 0 and the loop is exited\n}\n}\n\nExample to find the third database\n\non key '3'\n{\nchar buffer[256];\ndword pos;\ndword DbcNumber = 2; //Position number of the second database\npos = GetNextCANdbFilename(DbcNumber, buffer, elcount(buffer));\n//Returns the file name of the third database.\n//Return value \"pos\" contains the value 3.\n//If no third database is found \"pos\" contains 0.\n\nwrite( \"Database position number : %d Database file name : %s\",pos, buffer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

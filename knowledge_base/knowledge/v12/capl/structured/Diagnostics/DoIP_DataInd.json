@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_DataInd",
+  "category": "Diagnostics",
+  "title": "DoIP_DataInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPDataInd.htm",
+  "syntax": [
+    "void DoIP_DataInd( byte buffer[], dword count, dword ecuAddress, dword testerAddress);"
+  ],
+  "description": [
+    "This callback is called from the DoIP layer when new data is received."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer containing the received data."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void DoIP_DataInd( byte buffer[], dword count,\n                   dword ecuAddress, dword testerAddress)\n{\n   // gateway processing here…\n   // pass data up to the diagnostics layer\n   Diag_DataInd( buffer, count, 0);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

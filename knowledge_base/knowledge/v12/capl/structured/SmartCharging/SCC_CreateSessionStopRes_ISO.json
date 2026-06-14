@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateSessionStopRes_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateSessionStopRes_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateSessionStopRes_Iso.htm",
+  "syntax": [
+    "long SCC_CreateSessionStopRes_ISO ( byte SessionID[], char ResponseCode[] )"
+  ],
+  "description": [
+    "Creates a Session Stop Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

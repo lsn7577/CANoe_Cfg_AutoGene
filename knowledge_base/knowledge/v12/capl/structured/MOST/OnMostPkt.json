@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "OnMostPkt",
+  "category": "MOST",
+  "title": "OnMostPkt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTPkt.htm",
+  "syntax": [
+    "OnMostPkt(long pktdatalen)"
+  ],
+  "description": [
+    "When a packet is received over the Asynchronous Channel the OnMostPkt() event procedure is called.",
+    "The following functions are available for evaluating the event:",
+    "In nodal sequences (Measurement Setup) a received packet can be passed to the next node by the outputMostPktThis command."
+  ],
+  "parameters": [
+    {
+      "name": "pktdatalen",
+      "type": "",
+      "description": "Number of data bytes of the packet."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "Access to packet data:"
+    ],
+    "code": "OnMostPkt(long pktDataLen)\n{\n   byte data[1524];\n   long i, bytesdisp;\n   write(\"Packet detected on channel %d\", mostPktMsgChannel());\n   // copy packet data to local buffer\n   mostPktGetData(data, pktDataLen);\n   // output first data bytes\n   bytesdisp = pktDataLen > 10 ? 10 : pktDataLen;\n   for(i = 0; i < bytesdisp; i++)\n   {\n      write(\"Byte %03d: %02X\", i, data[i]);\n   }\n   // forward packet to the next node\n   outputMostPktThis();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

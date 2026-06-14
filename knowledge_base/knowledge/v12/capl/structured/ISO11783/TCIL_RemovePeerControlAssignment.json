@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TCIL_RemovePeerControlAssignment",
+  "category": "ISO11783",
+  "title": "TCIL_RemovePeerControlAssignment",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILRemovePeerControlAssignment.htm",
+  "syntax": [
+    "long TCIL_RemovePeerControlAssignment(dword ddi, dbNode user, dword elementNumberUser,) // form 1"
+  ],
+  "description": [
+    "The function separates a setpoint value user from the setpoint value source.",
+    "If the task status and the assignment is active the TC IL sends the unassignment messages to both the setpoint value user and the assigned setpoint value source."
+  ],
+  "parameters": [
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "This DDI of the setpoint value user that has to be separated from the setpoint value source."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "// Trigger the simulated node ‘TC’ to disconnect the assignment of\n// the setpoint value user with ddi=6 and elementNumber=2, belongs to the node ‘Bailer’,\n// to the previously assigned setpoint value source\nresult = TCIL_RemovePeerControlAssignment(TC, 6, Bailer, 2);\nswitch (result)\n{\n  case 0: TestStepPass(); break;\n  case -2204: TestStepFail(\"Node 'Bailer' is no client device!\"); break;\n  case -2207: TestStepFail(\"The process variables is not available\"); break;\n  default : TestStepFail(\"Unexpected error!\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

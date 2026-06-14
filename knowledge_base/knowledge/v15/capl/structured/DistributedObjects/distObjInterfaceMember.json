@@ -1,0 +1,131 @@
+{
+  "page_type": "function",
+  "name": "distObjInterfaceMember",
+  "category": "DistributedObjects",
+  "title": "distObjInterfaceMember",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Objects/CAPLfunctiondistObjInterfaceMember.htm",
+  "syntax": [
+    "distObjInterfaceMember *",
+    "distObjInterfaceMember <Interface Member>"
+  ],
+  "description": [
+    "The types of distributed object interface members. They are only useful for specifying value sets at type handlers (i.e. any_value_update, …) and for accessing attributes at distributed object interface members.",
+    "All distObjInterfaceMember types are singleton types.",
+    "The types are not available for user declarations."
+  ],
+  "parameters": [
+    {
+      "name": "<Interface Member>",
+      "type": "",
+      "description": "The path of the interface member."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// vCDL\nversion 1.4;\nnamespace SomeNamespace\n{\n  [Binding=\"Abstract\", AutoSubscribe=false]\n  interface SomeInterface \n  {\n    consumed data int32 SomeData;\n  }\n  SomeInterface SomeObject;\n  reverse<SomeInterface> OtherObject;\n}\n\n// CAPL\non start \n{\n  char str[100];\n  getAttribute(SomeInterface.SomeData, _SystemAttributes::Binding, str);\n  write(\"Binding: %s\", str);\n}\non key 'a'\n{\n  SomeObject.SomeData.subscribe();\n}\non key 'b'\n{\n  $OtherObject.SomeData += 1;\n}\non any_value_update SomeInterface.SomeData\n{\n  write(\"value of %s.SomeData updated to %d\", this.object.Path, $this.value);\n}\non any_value_update SomeInterface.SomeData.SubscriptionState\n{\n  write(\"subscription state of %s.SomeData updated\", this.object.Path);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0",
+      "13.0",
+      "13.0",
+      "14",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

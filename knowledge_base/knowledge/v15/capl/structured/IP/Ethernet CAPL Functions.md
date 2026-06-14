@@ -1,0 +1,149 @@
+# Ethernet CAPL Functions
+
+> Category: `IP` | Type: `notes`
+
+## Description
+
+Event Procedures
+
+General Functions
+
+Methods
+
+Objects
+
+Stress Generator
+
+lookupEthernetPort
+
+Information on the protocol and field designators can be found on the protocol’s help page.
+
+ethernetPacket::Clear
+
+ethernetPacket::protocol::Init
+
+Resizes the payload of a protocol within a ethernetPacket.
+
+ethernetPort
+
+Functions for Ethernet Stress Generator are only available with Vector Ethernet network interfaces.
+
+| ETHERNET Only available with option .Ethernet. With option .Ethernet several APIs are provided for receiving and transmitting Ethernet frames. These CAPL functions are supported by Windows and Linux. The functionality under Linux has not been fully tested yet.Overview of tested functions for Linux. |
+|---|
+
+| Event Procedures General Functions Methods | Objects Stress Generator |
+|---|---|
+
+| Functions | Short Description |
+|---|---|
+| on ethernetErrorPacket | Is called if an erroneous Ethernet packet is received. |
+| on ethernetPacket | Is called up after an Ethernet packet has been received. |
+| on ethernetPacketForwarded | Is called up after a the network interface has forwarded a received Ethernet packet. |
+| on ethernetPhyState | Is called when the state of an ethernet PHY has changed or any relevant activity has been triggered. |
+| on ethernetStatus | Is called if the status of an Ethernet link is changed. |
+| on serviceSignal | Is called if value of received Service Signal has changed. |
+| on serviceSignal_update | Is called if Service Signal is received. |
+
+| Functions | Short Description |
+|---|---|
+| GetServiceSignal | Reads the value of a Service Signal. |
+| GetServiceSignalData | Reads the data of a Service Signal. |
+| GetServiceSignalString | Reads the string value of a Service Signal. |
+| SetServiceSignal | Sets the value of a Service Signal. |
+| SetServiceSignalData | Sets the data of a Service Signal. |
+| SetServiceSignalString | Sets the string value of a Service Signal. |
+| ethClearMacAddressTable | Clears MAC address table of network interface. |
+| ethGetLinkStatus | Returns the link status of the channel. |
+| ethSetLinkStatus | Configures the channel of the Vector hardware to establish or destablish a link. |
+| ethGetMacAddressAsNumber | Converts a MAC address from string to a number. |
+| ethGetMacAddressAsString | Converts a MAC address to a string. |
+| ethGetPhyState | Gets the PHY state. |
+| ethSetPhyState | Sets the PHY state. |
+| ethResetStatistics | Rest the statistics values of Eth<channel> object |
+| output | Outputs an Ethernet packet. |
+| Network-based |  |
+| ethGetEthernetPort | Gets the Ethernet port for the current simulation node. |
+| ethGetEthernetPortInfos | Retrieves port related information of all connected network-based Ethernet devices. |
+| ethInjectPacket | Transmits an Ethernet packet by a specific Ethernet port. |
+| lookupEthernetPort | Gets the Ethernet port for a port qualification string. |
+
+| Functions | Short Description |
+|---|---|
+| ethernetPacket::Clear | Clears data and reset length. |
+| ethernetPacket::CompletePacket | Calculates the checksum and length field for all protocols contained in the packet. |
+| ethernetPacket::FaultInjectDisableLengthPadding | Sends Ethernet packet, which is smaller than minimal allowed length. |
+| ethernetPacket::FaultInjectFCS | Sends Ethernet packet with invalid frame checksum. |
+| ethernetPacket::GetData | Copies the data of an ethernetPacket to a byte array, char array, CAPL struct or system variable struct. |
+| ethernetPacket::GetBitLength | Returns the number of bits of the specified field as dword. |
+| ethernetPacket::GetInt | Returns the value of the specified field as int. |
+| ethernetPacket::GetInt64 | Returns the value of the specified field as int64. |
+| ethernetPacket::IsAvailable | Checks whether the protocol and the protocol field are present in the Ethernet packet. |
+| ethernetPacket::GetDestinationIPAddress | Returns the destination IP address as IP_Address. |
+| ethernetPacket::GetDestinationIPEndpoint | Returns the destination IP address and UDP/TCP port as IP_Endoint. |
+| ethernetPacket::GetPDU | Retrieves the PDU with index n in this packet. |
+| ethernetPacket::GetProtocolErrorText | Copies an error text to the buffer for invalid Ethernet packets. |
+| ethernetPacket::GetSourceIPAddress | Returns the source IP address as IP_Address. |
+| ethernetPacket::GetSourceEndpoint | Returns the source IP address and UDP/TCP port as IP_Endoint. |
+| ethernetPacket::GetVlan | Returns the VLAN tag, if the Ethernet packet contains a VLAN tag. |
+| ethernetPacket::GetVlanId | Returns the VLAN ID, if the Ethernet packet contains a VLAN tag. |
+| ethernetPacket::GetVlanPriority | Returns the VLAN priority, if the Ethernet packet contains a VLAN tag. |
+| ethernetPacket::HasProtocolError | Checks protocol errors. |
+| ethernetPacket::HasVlan | Returns number of VLAN tags. |
+| ethernetPacket::PDUCount | Returns the number of all PDUs in this message. |
+| ethernetPacket::PDUOffset | Returns the byte offset of the start of the PDU. |
+| ethernetPacket::protocol::field::GetData | Gets data of a protocol field within an Ethernet packet. |
+| ethernetPacket::protocol::field::IsAvailable | Returns if a protocol field is available in the Ethernet packet. |
+| ethernetPacket::protocol::field::ParseAddress | Sets the protocol field, which has type IPv4 or IPv6 address. |
+| ethernetPacket::protocol::field::SetData | Sets payload data of a protocol within an Ethernet packet. |
+| ethernetPacket::protocol::GetData | Gets payload data of a protocol within an Ethernet packet. |
+| ethernetPacket::protocol::Init | Initializes the protocol within a ethernetPacket. |
+| ethernetPacket::protocol::IsAvailable | Returns 1, if the ethernetPacket contains the protocol. |
+| ethernetPacket::protocol::optional-structure::Clear | Removes a protocol option from the Ethernet packet. |
+| ethernetPacket::protocol::optional-structure::Init | Adds a protocol option for a specific protocol to the Ethernet packet. |
+| ethernetPacket::protocol::ResizeData | Resizes the payload of a protocol within a ethernetPacket. |
+| ethernetPacket::protocol::SetData | Sets payload data of a protocol within an Ethernet packet. |
+| ethernetPacket::RemoveVlan | Remove a VLAN tag from an ethernetPacket. |
+| ethernetPacket::SetData | Copies bytes from a char array, byte array, CAPL struct or system variable struct to the data of an ethernetPacket. |
+| ethernetPacket::SetDestinationIPAddress | Sets the destination IP address. |
+| ethernetPacket::SetDestinationIPEndpoint | Sets the destination IP address an the UDP/TCP port. |
+| ethernetPacket::SetSourceIPAddress | Sets the source IP address. |
+| ethernetPacket::SetSourceIPEndpoint | Sets the source IP address an the UDP/TCP port. |
+| ethernetPacket::SetVlan | Sets the VLAN tag of an ethernetPacket. |
+| ethernetPacket::SetVlanId | Sets the VLAN ID of an ethernetPacket. |
+| ethernetPacket::SetVlanPriority | Sets the VLAN priority of an ethernetPacket. |
+| ethernetPacket::source::ParseAddress | Sets the source or destination MAC address. |
+| IP_Address::IsIPv4Address | Checks if the current address is an IPv4 address. |
+| IP_Address::IsIPv6Address | Checks if the current address is an IPv6 address |
+| IP_Address::IsBroadcast | Checks if the current address is a broadcast address. |
+| IP_Address::IsMulticast | Checks if the current address is a multicast address. |
+| IP_Address::GetAddressAsArray | Copies the current IP address to the byte. |
+| IP_Address::MatchesAddress | Compares two addresses. |
+| IP_Address::ParseAddressFromString | Converts the character string to an IPv4 or IPv6 address and sets this address to the IP address value. |
+| IP_Address::PrintAddressToString | Converts the IP address to a character string. |
+| IP_Address::SetAddressAsArray | Copies the byte array to the IP address value. |
+| IP_Endpoint::IsTCP | Checks if the current transport protocol of this endpoint is TCP. |
+| IP_Endpoint::IsUDP | Checks if the current transport protocol of this endpoint is UDP. |
+| IP_Endpoint::MatchesEndpoint | Compares two endpoints. |
+| IP_Endpoint::ParseEndpointFromString | Converts the character string to an endpoint. |
+| IP_Endpoint::PrintEndpointToString | Converts the endpoint to a character string. |
+| IP_Endpoint::SetToTCP | Sets the transport protocol to TCP. |
+| IP_Endpoint::SetToUDP | Sets the transport protocol to UDP. |
+| IP_Endpoint::SetTransportProtocolToUnknown | Invalidates the transport protocol. |
+
+| Functions | Short Description |
+|---|---|
+| ethernetErrorPacket | Access information in on ethernetErrorPacket. |
+| ethernetPacket | Creates an Ethernet packet object. |
+| Eth | Access to Ethernet link status and statistics. |
+| IP_Address | Variable type for IPv4 and IPv6 address. |
+| IP_Endpoint | Variable type for IP endpoints. |
+| Network-based |  |
+| ethernetPort | Basic type used for port qualification. |
+
+| Functions | Short Description |
+|---|---|
+| ethStartPacketGenerator | Starts Ethernet Stress Generator. |
+| ethStopPacketGenerator | Stops Ethernet Stress Generator. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

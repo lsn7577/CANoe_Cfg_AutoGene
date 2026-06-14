@@ -1,0 +1,242 @@
+# SOME/IP Interaction Layer
+
+> Category: `IP` | Type: `notes`
+
+## Description
+
+To use the CAPL functions the SomeIP_IL.dll must be included.
+
+Callback Functions
+
+Client-Side API
+
+Control API
+
+Endpoints
+
+General Functions
+
+Low-level API
+
+Raw Data Access
+
+Server-Side API
+
+Service Discovery
+
+Static Configuration
+
+Symbolic Database Access
+
+TCP Handling
+
+Value Access
+
+<OnSomeIpMethodError>
+
+OnSomeIpClosedIPv6TCPConnection
+
+OnSomeIpEstablishedIPv6TCPConnection
+
+SomeIpProvidedEventGroupAddConsumer
+
+Adds a consumer to a provided event group
+
+SomeIpProvidedEventGroupRemoveConsumer
+
+Removes a consumer from a provided event group
+
+SomeIpProvidedEventsAndFieldsAddConsumer
+
+Adds a consumer to a provided service instance
+
+SomeIpProvidedEventsAndFieldsRemoveConsumer
+
+Removes a consumer from a provided service instance
+
+SomeIpProvidedEventAddConsumer
+
+Adds a consumer to a provided event
+
+SomeIpProvidedEventRemoveConsumer
+
+Removes a consumer from a provided event
+
+SomeIpProvidedFieldAddConsumer
+
+Adds a consumer to a provided field
+
+SomeIpProvidedFieldRemoveConsumer
+
+Removes a consumer from a provided field
+
+SomeIpSetMulticastReceiverEndpoints
+
+Sets the multicast endpoint of a consumed event group
+
+Sets the remote endpoints of a consumed service instance
+
+SomeIpTCPListen
+
+Listen on application endpoint
+
+| ETHERNET Only available with option .Ethernet. To use the CAPL functions the SomeIP_IL.dll must be included. |
+|---|
+
+| Callback Functions Client-Side API Control API Endpoints General Functions | Low-level API Raw Data Access Server-Side API Service Discovery | Static Configuration Symbolic Database Access TCP Handling Value Access |
+|---|---|---|
+
+| Functions | Short Description |
+|---|---|
+| <OnSomeIpEventReceived> | CAPL handler to receive events. |
+| <OnSomeIpFieldNotification> | CAPL handler to receive field change notifications. |
+| <OnSomeIpMethodError> | A callback function with this signature must be passed to the CAPL function SomeIpCreateMethodCall. |
+| <OnSomeIpMethodRequest> | CAPL handler to request a method. |
+| <OnSomeIpMethodResponse> | CAPL handler to response a method. |
+| <OnSomeIpPrepareEvent> | CAPL handler to prepare an event before sending. |
+| OnSomeIpClosedIPv6TCPConnection | CAPL handler to be called after a IL’s TCP connection has been closed |
+| OnSomeIpEstablishedIPv6TCPConnection | CAPL handler to be called after an incoming or outgoing TCP connection. |
+| OnSomeIpMessage | CAPL handler to receive SOME/IP messages. |
+| OnSomeIpProcessRxMessage | CAPL handler to be called when the IL has received a SOME/IP message. |
+| OnSomeIpProcessTxMessage | CAPL handler to be called when the IL wants to send a SOME/IP message. |
+| OnSomeIpSDClientEventGroupStatusChanged | CAPL handler to be called when the status of an Event Group changes. |
+| OnSomeIpSDClientServiceStatusChanged | CAPL handler to be called when the status of a service changes. |
+| OnSomeIpSDServerEventGroupStatusChanged | CAPL handler to be called when a Client executes the Require Service or Release Service. |
+| OnSomeIpSDServerEventGroupStatusChangedIPv6 | CAPL handler to be called when a Client executes the Require Service or Release Service. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpAddConsumedEventGroup | Adds an Event Group to a Consumed Service Instance |
+| SomeIpCallMethod | Sends a request to the server. |
+| SomeIpCreateConsumedServiceInstance | Creates a Consumed Service Instance. |
+| SomeIpCreateEventConsumer | Adds an Event Consumer to a Consumed Service Instance. |
+| SomeIpCreateFieldConsumer | Adds a Field Consumer to a Consumed Service Instance. |
+| SomeIpCreateMethodCall | Creates a method call. |
+| SomeIpReleaseConsumedServiceInstance | Deletes a Consumed Service Instance. |
+| SomeIpRemoveConsumedEventGroup | Removes an Event Group. |
+| SomeIpRemoveEventConsumer | Deletes an Event Consumer. |
+| SomeIpRemoveFieldConsumer | Deletes a Field Consumer. |
+| SomeIpRemoveMethodCall | Deletes a method call. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpILControlGetStatus | Returns current status of SOME/IP IL. |
+| SomeIpILControlInit | Initializes the SOME/IP IL. |
+| SomeIpILControlResume | Starts to send periodic messages |
+| SomeIpILControlStart | Starts the SOME/IP IL. |
+| SomeIpILControlStop | Stops the SOME/IP IL. |
+| SomeIpILControlWait | Stops sending cyclic messages. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpCloseLocalApplicationEndpoint | Closes an application endpoint. |
+| SomeIpOpenLocalApplicationEndpoint | Opens an endpoint for SOME/IP. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpGetLastError | Interface to retrieve the last error which occurs in the SOME/IP IL. |
+| SomeIpGetLastErrorText | Interface to retrieve the last error that occurred in the SOME/IP IL as string. |
+| SomeIpGetSecurityValidationState | Returns the Security-Validation-State of a received SOME/IP message. |
+| SomeIpSetProperty | Sets a property of the SOME/IP IL. |
+| SomeIpSetVerbosity | Sets the verbosity level of the SOME/IP IL. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpCreateMessage | Creates a SOME/IP message. |
+| SomeIpOutputMessage | Sends a SOME/IP message. |
+| SomeIpPostMessage | Posts a SOME/IP message. |
+| SomeIpReleaseMessage | Deletes a SOME/IP message. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpGetData | Queries the raw data of a SOME/IP message. |
+| SomeIpSerializeMessage | Serializes the SOME/IP message including the header into a buffer. |
+| SomeIpSetData | Sets the raw data of a SOME/IP message. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpAddEvent | Adds an event to a Provided Service Instance. |
+| SomeIpAddEventToEventgroup | Assigns an event to an Event Group. |
+| SomeIpAddField | Adds a Field to a Provided Service Instance. |
+| SomeIpAddFieldToEventgroup | Assigns a Field to an Event Group. |
+| SomeIpAddMethod | Adds a method to a Provided Service Instance. |
+| SomeIpAddProvidedEventGroup | Adds an Event Group to a Provided Service Instance. |
+| SomeIpCommitField | Commit field changes and send a field notification. |
+| SomeIpCreateProvidedServiceInstance | Creates a Provided Service Instance. |
+| SomeIpReleaseProvidedServiceInstance | Deletes a Provided Service Instance. |
+| SomeIpRemoveEvent | Removes an event from a Provided Service Instance. |
+| SomeIpRemoveEventFromEventgroup | Removes an event from an Event Group. |
+| SomeIpRemoveField | Removes a field from a Provided Service Instance. |
+| SomeIpRemoveFieldFromEventgroup | Removes a Field from an Event Group. |
+| SomeIpRemoveMethod | Removes a method from a Provided Service Instance. |
+| SomeIpRemoveProvidedEventGroup | Removes an Event Group from a Provided Service Instance. |
+| SomeIpTriggerEvent | Triggers sending of an event. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpSDDesubscribeEventGroup | Informs the Remote-SD that Event Group is no longer needed. |
+| SomeIpSDReleaseService | Informs the local SD that the Remote Service is no longer needed. |
+| SomeIpSDRequireService | Informs the local SD that the Remote Service is needed. |
+| SomeIpSDSetServiceStatus | Informs the Service Discovery of the current status of a provided Service Instance. |
+| SomeIpSDSubscribeEventGroup | Sends a Subscribe message. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpProvidedEventGroupAddConsumer | Adds a consumer to a provided event group |
+| SomeIpProvidedEventGroupRemoveConsumer | Removes a consumer from a provided event group |
+| SomeIpProvidedEventsAndFieldsAddConsumer | Adds a consumer to a provided service instance |
+| SomeIpProvidedEventsAndFieldsRemoveConsumer | Removes a consumer from a provided service instance |
+| SomeIpProvidedEventAddConsumer | Adds a consumer to a provided event |
+| SomeIpProvidedEventRemoveConsumer | Removes a consumer from a provided event |
+| SomeIpProvidedFieldAddConsumer | Adds a consumer to a provided field |
+| SomeIpProvidedFieldRemoveConsumer | Removes a consumer from a provided field |
+| SomeIpSetMulticastReceiverEndpoints | Sets the multicast endpoint of a consumed event group |
+| SomeIpSetProviderEndpoints | Sets the remote endpoints of a consumed service instance |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpGetConsumedObjectHandle | Enables to search for a consumed object which has been created separately. |
+| SomeIpGetProvidedObjectHandle | Enables to search for a provided object which has been created separately. |
+| SomeIpRegisterCallback | Enables to register/unregister a CAPL callback function for an object which has been created separately. |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpCloseEstablishedTCPConnection | Closes one or multiple database defined TCP connection(s). |
+| SomeIpEstablishTCPConnection | Establishes one or multiple database defined TCP connection(s). |
+| SomeIpTCPListen | Listen on application endpoint |
+
+| Functions | Short Description |
+|---|---|
+| SomeIpGetDestinationAddress | Returns the IPv4 destination address. |
+| SomeIpGetDestinationPort | Returns the destination port (UDP/TCP). |
+| SomeIpGetInterfaceVersion | Returns the Interface Version from the SOME/IP header. |
+| SomeIpGetLength | Returns the length in bytes that is in the SOME/IP header. |
+| SomeIpGetMessageId | Returns the Message ID from the SOME/IP header. |
+| SomeIpGetMessageType | Returns the Message Type from the SOME/IP header. |
+| SomeIpGetProtocol | Returns the protocol (UDP/TCP) the SOME/IP message was transmitted with. |
+| SomeIpGetProtocolVersion | Returns the Protocol Version from the SOME/IP header. |
+| SomeIpGetRequestId | Returns the Request ID from the SOME/IP header. |
+| SomeIpGetReturnCode | Returns the Return Code from the SOME/IP header. |
+| SomeIpGetSourceAddress | Returns the IPv4 sender address. |
+| SomeIpGetSourcePort | Returns the Source Port (UDP/TCP). |
+| SomeIpGetValueDWord | Gets the parameters of a SOME/IP message. |
+| SomeIpGetValueFloat | Gets the parameters of a SOME/IP message. |
+| SomeIpGetValueInt64 | Gets the parameters of a SOME/IP message. |
+| SomeIpGetValueLong | Gets the parameters of a SOME/IP message. |
+| SomeIpGetValuePhys | Gets the physical parameters of a SOME/IP message. |
+| SomeIpGetValueQWord | Gets the parameters of a SOME/IP message. |
+| SomeIpGetValueString | Gets the string parameters of a SOME/IP message. |
+| SomeIpIsOptional | Reads out if a parameter or member of the object is optional or mandatory. |
+| SomeIpRemoveValue | Removes the parameters of a SOME/IP message. |
+| SomeIpSetRequestId | Sets the Request ID. |
+| SomeIpSetReturnCode | Sets the return code. |
+| SomeIpSetValueDWord | Sets the parameters of a SOME/IP message. |
+| SomeIpSetValueFloat | Sets the parameters of a SOME/IP message. |
+| SomeIpSetValueInt64 | Sets the parameters of a SOME/IP message. |
+| SomeIpSetValueLong | Sets the parameters of a SOME/IP message. |
+| SomeIpSetValuePhys | Sets the physical parameters of a SOME/IP message. |
+| SomeIpSetValueQWord | Sets the parameters of a SOME/IP message. |
+| SomeIpSetValueString | Sets the string parameters of a SOME/IP message. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

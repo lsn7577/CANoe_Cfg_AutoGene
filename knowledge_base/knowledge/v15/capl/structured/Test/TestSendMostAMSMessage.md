@@ -1,0 +1,42 @@
+# TestSendMostAMSMessage
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+long TestSendMostAMSMessage(int aDestinationAddress, char[] aSymbolicMessage, int aInstanceId);
+long TestSendMostAMSMessage(char[] aSymbolicMessage, int aInstanceId);
+long TestSendMostAMSMessage(char[] aSymbolicMessage);
+```
+
+## Description
+
+This function immediately sends a symbolically-defined MOST message and waits for the associated Tx acknowledgment from the recipient. The AckNack bit is evaluated and the return value specifies whether the creation and sending of the message was successful or not.
+
+The symbolically-defined messages must be complete, that is, all absolutely necessary details must be specified explicitly (without the use of wildcards) since a concrete message will be sent. However, a parameter list may be shorter than specified in the function catalog in order to be able to generate incomplete messages purposefully.
+
+If possible, the message is always sent using the AMS service. However, if this is not activated, the message, if short enough, will be sent as a normal control message (with TelID = 0).
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| Note If -1 is given, the address handler (if active) searches for the correct node address based on the functional address {FBlockID, InstID} from the Bus Registry. If no node address is found the message is sent to 0xFFFF. This is also the standard for not explicit set values. |  |
+| aSymbolicMessage | Symbolic MOST message definition in one of the following formats: FBlock.Instance.Function.OpType(parameter list) FBlock.Instance.Function.OpType FBlock.Function.OpType(parameter list) FBlock.FunctionId.OpType |
+| Note If -1 is given, the corresponding field can get any value. This is also the standard for not explicit set values. |  |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.1 | 13.0 | — | — | — |
+| Restricted To | — | MOST25, MOST50, MOST150 | MOST25, MOST50, MOST150 | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | — | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

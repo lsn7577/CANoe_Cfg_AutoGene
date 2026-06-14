@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthGetSourcePort",
+  "category": "IP",
+  "title": "AREthGetSourcePort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthGetSourcePort.htm",
+  "syntax": [
+    "dword AREthGetSourcePort ( dword messageHandle );"
+  ],
+  "description": [
+    "This function returns the source port (UDP/TCP)."
+  ],
+  "parameters": [
+    {
+      "name": "Note This function can only be called within the OnAREthMessage callback function.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Source Port\nIn the Event of an error, the function returns the value 0. The AREthGetLastError function can then be used to check whether the value is valid or an error has occurred.",
+  "example": {
+    "description": [],
+    "code": "void OnAREthMessage( dword messageHandle )\n{\n  dword srcPort       = 0;\n  LONG  errorCode     = 0;\n  LONG  errorOccured  = 0;\n\n  // get data from SOME/IP message\n  if((srcPort = AREthGetSourcePort(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = AREthGetLastError()) != 0)\n    {\n      write(\"AUTOSAR Eth IL error occured: Error code: %d\", errorCode);\n      errorOccured = 1;\n    } // if\n  } // if\n\n  if(errorOccured == 0)\n  {\n    write(\"SOME/IP message from Source Port %d received\",srcPort);\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "PtpSimulationTimespanFromPtpTimespan",
+  "category": "IP",
+  "title": "PtpSimulationTimespanFromPtpTimespan",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionPtpSimulationTimespanFromPtpTimespan.htm",
+  "syntax": [
+    "int64 PtpSimulationTimespanFromPtpTimespan(qword ptpTimespan);"
+  ],
+  "description": [
+    "Returns the simulation timespan equivalent to the corresponding PTP timespan. A timespan is the difference of two time values."
+  ],
+  "parameters": [
+    {
+      "name": "ptpTimespan",
+      "type": "",
+      "description": "PTP timespan (ns)."
+    }
+  ],
+  "return": "Simulation timespan (ns).",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

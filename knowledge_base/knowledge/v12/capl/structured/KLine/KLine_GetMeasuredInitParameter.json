@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "KLine_GetMeasuredInitParameter",
+  "category": "KLine",
+  "title": "KLine_GetMeasuredInitParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineGetMeasuredInitParameter.htm",
+  "syntax": [
+    "long KLine_GetMeasuredValue(dword parameterID)"
+  ],
+  "description": [
+    "Retrieves the different parameters of the init patterns."
+  ],
+  "parameters": [],
+  "return": "Parameter value or error code.",
+  "example": {
+    "description": [],
+    "code": "DiagRequest StartDiagnosticSession req;\nenum eMeasuredValues\n{\n   KeyByte1            = 0,\n   KeyByte2            = 1,\n   TiniL               = 2,\n   Twup                = 3,\n   W4Time1             = 4,\n   InvertedAddressByte = 5,\n   W1Time              = 6,\n   W2Time              = 7,\n   W3Time              = 8,\n   W4Time2             = 9,\n   BaudRateSyncByte    = 10\n};\n\nlong pKeyByte1;\nlong pKeyByte2;\nlong pW4Time1;\nlong pInvertedAddressByte;\nlong pW1Time;\nlong pW2Time;\nlong pW3Time;\nlong pW4Time2;\nlong pBaudRateSyncByte;\n\nDiagSetTarget(“DUT”);\nDiagConnectChannel();\n   if (1 == TestWaitForDiagChannelConnected(3000))\n   {\n      TestStepPass(\"Channel connected successfully\");\n   }\n   else\n   {\n      TestStepFail(\"Could not connect channel\");\n   }\n\nreq.SendRequest();\n   if (1 == testWaitForDiagKLineFrameTransmitted(1000))\n   {\n      TestStepPass(\"Request transmitted successfully.\");\n   }\n   else\n   {\n      TestStepFail(\"No request transmitted.\");\n   }\n\npKeyByte1 = KLine_GetMeasuredInitParameter(KeyByte1);\npKeyByte2 = KLine_GetMeasuredInitParameter(KeyByte2);\npW4Time1 = KLine_GetMeasuredInitParameter(W4Time1);\npInvertedAddressByte = KLine_GetMeasuredInitParameter(InvertedAddressByte);\npW1Time = KLine_GetMeasuredInitParameter(W1Time);\npW2Time = KLine_GetMeasuredInitParameter(W2Time);\npW3Time = KLine_GetMeasuredInitParameter(W3Time);\npW4Time2 = KLine_GetMeasuredInitParameter(W4Time2);\npBaudRateSyncByte = KLine_GetMeasuredInitParameter(BaudRateSyncByte);\n\nwrite(\"KeyByte1: 0x%x\", pKeyByte1);\nwrite(\"KeyByte2: 0x%x\", pKeyByte2);\nwrite(\"W4Time 1: %.2f\", pW4Time1/toMs);\nwrite(\"InvertedAddressByte: 0x%x\", pInvertedAddressByte);\nwrite(\"W1Time: %.2f\", pW1Time/toMs);\nwrite(\"W2Time: %.2f\", pW2Time/toMs);\nwrite(\"W3Time: %.2f\", pW3Time/toMs);\nwrite(\"W4Time 2: %.2f\", pW4Time2/toMs);\nwrite(\"BaudRateSyncByte: %d\", pBaudRateSyncByte);\n\nDiagCloseChannel();\n   if (1 == testWaitforDiagChannelClosed(1000))\n   {\n      TestStepPass(\"Diag channel closed successfully\");\n   }\n   else\n   {\n      TestStepFail(\"Diag channel could not be closed.\");\n   }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

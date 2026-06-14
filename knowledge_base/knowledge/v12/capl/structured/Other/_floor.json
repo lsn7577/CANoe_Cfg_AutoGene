@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_floor",
+  "category": "Other",
+  "title": "_floor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionFloor.htm",
+  "syntax": [
+    "float _floor(float x);"
+  ],
+  "description": [
+    "Calculates the floor of a value, i.e. the largest integer smaller or equal to the value."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "Value of which the floor shall be calculated."
+    }
+  ],
+  "return": "Floor of x.",
+  "example": {
+    "description": [],
+    "code": "float x;\nx = _floor(3.6); // x == 3.0"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

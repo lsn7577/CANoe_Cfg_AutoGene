@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "C2xGetLastError",
+  "category": "Car2x",
+  "title": "C2xGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetLastError.htm",
+  "syntax": [
+    "long C2xGetLastError( void );"
+  ],
+  "description": [
+    "Returns the error code of the last called C2x… function."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "char error[100];\nlong value;\nlong packetHandle;\n\nvalue = C2xGetTokenInt( packetHandle, \"eth\", \"type\" );\nif (C2xGetLastError() == 0)\n{\n  write(\"Ethernet Type is 0x%x\", value );\n}\nelse\n{\n  C2xGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

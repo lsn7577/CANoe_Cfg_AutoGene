@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "linSetInterByteSpace",
+  "category": "LIN",
+  "title": "linSetInterByteSpace",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetInterByteSpace.htm",
+  "syntax": [
+    "dword linSetInterByteSpace (long frameID, long index, dword sixteenthBits)"
+  ],
+  "description": [
+    "With this function it is possible to set an inter-byte space for a specified frame and a specified byte filed. The byte field may belong to the frame header as well as to the frame response.",
+    "Inter-byte space is the period between the end of the stop bit of the preceding byte and the start bit of the following byte.",
+    "By default the inter-byte space is 0."
+  ],
+  "parameters": [
+    {
+      "name": "frameID",
+      "type": "",
+      "description": "LIN frame identifier whose inter-byte space should be changed"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "on key 's'\n{\nif ( linSetInterByteSpace(0x33, 9, 32) != 0)\n{\n// from now on for frame ID=0x33 the inter-byte space \r\n between last data byte field\n// and Checksum byte is 2 bit times\n...\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

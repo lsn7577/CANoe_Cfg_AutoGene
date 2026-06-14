@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetAddress",
+  "category": "J1939",
+  "title": "J1939GetAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939GetAddress.htm",
+  "syntax": [
+    "dword J1939GetAddress( char[] busName, dword componentMask, char eviceName[8] );"
+  ],
+  "description": [
+    "This function returns a network address with which a device that is described by the function parameters logged onto the network."
+  ],
+  "parameters": [
+    {
+      "name": "busName",
+      "type": "",
+      "description": "bus name or \"default\""
+    }
+  ],
+  "return": "address of the node or Null Address (0xFE) if no device is found or FFFFFFFFh if the functions fails.",
+  "example": {
+    "description": [],
+    "code": "char deviceName[8] = { 0, 0, 0, 0, 0 ,0, 0, 0};\naddress = J1939GetAddress( \"default\", \r\n 0x1ff, deviceName);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

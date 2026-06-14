@@ -1,0 +1,23 @@
+# Class: CanDisturbanceTriggerRepetitions
+
+> Category: `CANDisturbance` | Type: `notes`
+
+## Description
+
+The repetition of a defined trigger can be configured with this class.
+
+The repetitions are configurable via a cycle and repetitions within a cycle. It is also possible to define a hold-off time between cycles and repetitions.
+
+—
+
+You can access control information of a CanDisturbanceTriggerRepetitions object with the following attributes:
+
+| Keyword | Description | Type | Access Limitations |
+|---|---|---|---|
+| Cycles | Number of cycles by which the trigger conditions should be repeated. A value of 0 means infinitely. Possible values: 0 - 1023 | dword | — |
+| HoldOffCycles | Defines the time in milliseconds between two cycles during which the trigger condition is not raised. Possible values: 0 - 65535 | dword | — |
+| Repetitions | Number of repetitions after which the trigger condition should be activated again. A value of 0 means infinitely. Possible values: 0 - 1023 The value 0 means infinite repetitions. | dword | — |
+| HoldOffRepetitions | Defines the time in milliseconds between two repetitions during which the trigger condition is not raised.Possible values: 0 - 65535 | dword | — |
+
+| Version 15© Vector Informatik GmbH |
+|---|

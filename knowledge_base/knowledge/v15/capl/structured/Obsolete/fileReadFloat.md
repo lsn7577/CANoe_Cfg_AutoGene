@@ -1,0 +1,19 @@
+# fileReadFloat
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function Replaced by getProfileFloat |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | float fileReadFloat(char section[], char entry[], float def, char ile); |  |  |  |
+| Function | Analogous to fileReadInt for floats. |  |  |  |
+| Parameters | section Section of file |  |  |  |
+| entry Name of variable |  |  |  |  |
+| def Value |  |  |  |  |
+| file Name of file |  |  |  |  |
+| Return Values | Number of characters read. |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 3.0 | — | • | • |  |
+| Example File TEST.INI:[DATA]FIELD=1,2,3,0x20,100.. int len;char buf[20];len = fileReadArray("DATA", "FIELD", buf, elCount(buf), "TEST.INI");... Result: len = 5. The array buf is filled with the values 1,2,3,32,100. |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

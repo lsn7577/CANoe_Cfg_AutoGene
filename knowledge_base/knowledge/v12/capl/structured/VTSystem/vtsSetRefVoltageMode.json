@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "vtsSetRefVoltageMode",
+  "category": "VTSystem",
+  "title": "vtsSetRefVoltageMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetRefVoltageMode.htm",
+  "syntax": [
+    "long vtsSetRefVoltageMode (char Target[], eVTSRefVoltageMode Mode); // form 1"
+  ],
+  "description": [
+    "Sets the mode for the reference voltage output to control the power supply's output voltage."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "In order to output a control voltage (VControl) which leads to the desired output voltage VOut, the VT7001 must know the power supply factor.",
+      "In the following example, the factor of the external power supply is 0.1 and the desired output voltage VOut is 15 V.",
+      "To achieve the desired output voltage (VOut), the VT7001 calculates and sets the control voltage (VControl) automatically (1.5 V =15 * 0.1), which results in an output voltage of 15 V."
+    ],
+    "code": "SetRefVoltageMode ()\n{\n   // Set mode to one power supply only -> external power supply 1\n   vtsSetInterconnectionMode(\"VTS::PowerSupply\", eVTSInterconnectionModeSup1);\n\n   // The factor 0.1 of the external power supply is transmitted to the VT7001\n   vtsSetRefVoltageMode(\"VTS::ExtSupply\", eVTSRefVoltageModeConstant, 0.1);\n\n   // The following line sets the output voltage to 15 V,\n   // VControl (1.5 V) is calculated with the given factor automatically\n   @sysvar::VTS::ExtSupply::RefVoltage = 15;\n\n   // Switch output on\n   @sysvar::VTS::Clamp30::Active = eVTSOutputModeActive;\n}\npublic void SetRefVoltageMode()\n   {\n   // Get VTS interface, VT7001 module, internal supply and a output channel\n   IVTSystem vts = VTSystem.Instance;\n   IVT7001 powerSupply = vts.GetModule(\"PowerSupply\") as IVT7001;\n   IVT7001SupplyExternal extSupply = vts.GetChannel(\"ExtSupply\") as IVT7001SupplyExternal;\n   IVT7001Channel clamp30 = vts.GetChannel(\"Clamp30\") as IVT7001Channel;\n\n   // Set mode to one power supply only -> external power supply 1\n   powerSupply.InterconnectionMode.Value = InterconnectionMode.Sup1;\n\n   // Activate the reference voltage mode with constant value mode\n   // and a factor of 0.1\n   extSupply.SetRefVoltageMode(RefVoltageMode.Constant, 0.1);\n\n   // The following line sets the output voltage to 15 V,\n   // VControl (1.5 V) is calculated with the given factor automatically\n   extSupply.RefVoltage.Value = 15.0;\n\n   // Switch output on\n   clamp30.Active.Value = OutputMode.Active;\n   }\n<testcase title=\"RefVoltageMode\" ident=\"\">\n      <vtsystem_configure title=\"Initialize\">\n         <ref_voltage_mode channel=\"VTS::ExtSupply\" mode=\"static\" factor=\"0.1\" />\n         <interconnection_mode channel=\"VTS::PowerSupply\" mode=\"sup1\" />\n      </vtsystem_configure>\n      <set title=\"Set reference voltage\">\n         <sysvar name=\"MaxCurrent\" namespace=\"VTS::ExtSupply\">15</sysvar>\n      </set>\n      <set title=\"Activate output\">\n         <sysvar name=\"Active\" namespace=\"VTS::Clamp30\">1</sysvar>\n      </set>\n   </testcase>"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

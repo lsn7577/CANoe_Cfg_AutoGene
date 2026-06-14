@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "canGetRxErrorCount",
+  "category": "Obsolete",
+  "title": "canGetRxErrorCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionCanGetRxErrorCount.htm",
+  "syntax": [
+    "long canGetRxErrorCount (long channel)"
+  ],
+  "description": [
+    "Returns the current RX error count in the receiver of the specified CAN channel."
+  ],
+  "parameters": [
+    {
+      "name": "Vector API driver",
+      "type": "",
+      "description": "Values 1 ... 32"
+    },
+    {
+      "name": "Softing API driver",
+      "type": "",
+      "description": "Values 1, 2"
+    }
+  ],
+  "return": "Current error count in the receiver of the specified CAN channel.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,24 @@
+{
+  "page_type": "function",
+  "name": "coTfsNmtWaitForBootupMessage",
+  "category": "CANopen",
+  "title": "coTfsNmtWaitForBootupMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsNmtWaitForBootupMessage.htm",
+  "syntax": [
+    "long coTfsNmtWaitForBootupMessage( void ):"
+  ],
+  "description": [
+    "This function waits for the boot-up message.",
+    "If the heartbeat producer is already active, it will be restored at the end."
+  ],
+  "parameters": [],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* wait for a bootup message */\nif (coTfsNmtWaitForBootupMessage() == 1) {\n  write(\"Bootup message received\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestNmtDump",
+  "category": "J1939",
+  "title": "J1939TestNmtDump",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestNmtDump.htm",
+  "syntax": [
+    "dword J1939TestNmtDump(dword bufferSize, char buffer[]);"
+  ],
+  "description": [
+    "The current state of the network table is copied into a buffer."
+  ],
+  "parameters": [
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "size of the buffer"
+    }
+  ],
+  "return": "> 0 - successful, returned value is size of buffer0 - function call failed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

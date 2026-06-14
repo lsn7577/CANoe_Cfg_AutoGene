@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "SetVideoOfflineSource",
+  "category": "Other",
+  "title": "SetVideoOfflineSource",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionSetVideoOfflineSource.htm",
+  "syntax": [
+    "SetVideoOfflineSource(char windowName[], long sourceType, char sourcePath[]);"
+  ],
+  "description": [
+    "Sets the offline source (type and path) for a CANoeVideo Window."
+  ],
+  "parameters": [
+    {
+      "name": "windowName",
+      "type": "",
+      "description": "The name of the Video Window."
+    },
+    {
+      "name": "sourceType",
+      "type": "",
+      "description": "The type of offline source: 0|cNoVideoInput 1|cVideoFile 2|cImageFolder For details see the Offline Source in the CANoeVideo Configuration dialog."
+    },
+    {
+      "name": "sourcePath",
+      "type": "",
+      "description": "The corresponding source path: For cNoVideoInput the path will be ignored. For cVideoFile this must be a existing video file. For cImageFolder this must be a existing folder."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n  //Configure offline source (video file)\n  SetVideoOfflineSource(\"Video Window\", 1, \"MyVideoFile.avi\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 SP3",
+      "13.0",
+      "—",
+      "14",
+      "2.2 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

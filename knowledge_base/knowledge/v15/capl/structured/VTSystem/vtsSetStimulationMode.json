@@ -1,0 +1,135 @@
+{
+  "page_type": "function",
+  "name": "vtsSetStimulationMode",
+  "category": "VTSystem",
+  "title": "vtsSetStimulationMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSvtsSetStimulationMode.htm",
+  "syntax": [
+    "long vtsSetStimulationMode (char Target[],eVTSStimulationMode Mode);"
+  ],
+  "description": [
+    "Sets the mode for internal voltage or resistance stimulation."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Name of the system variable/namespace that will be affected by this function call."
+    },
+    {
+      "name": "Mode",
+      "type": "",
+      "description": "Values see eVTSStimulationMode"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "The following example demonstrates how to use the PWM output of a VT2004 channel to simulate a PWM based sensor (e.g. a RPM sensor). The channel used in this example is called RPM_Sensor."
+    ],
+    "code": "SimulateSensorPWM ()\n{\n   // The current value of the frequency (100Hz)\n   float currentFrequency = 100.0;\n\n   // Choose voltage stimulation and a PWM curve type\n   vtsSetStimulationMode(\"VTS::RPM_Sensor\", eVTSStimulationModeVoltage);\n   vtsSetCurveType(\"VTS::RPM_Sensor\", eVTSCurveTypePWM);\n\n   // PWM signal will toggle between 0V and 5V\n   vtsSetPWMVoltageLow(\"VTS::RPM_Sensor\", 0.0);\n   vtsSetPWMVoltageHigh(\"VTS::RPM_Sensor\", 5.0);\n\n   // Set the number of repeats to unlimited\n   vtsSetPWMRepeats(\"VTS::RPM_Sensor\", 0);\n\n   // Set initial frequency (100Hz) and duty cycle (50%) values\n   @sysvar::VTS::RPM_Sensor::PWMFreq = currentFrequency;\n   @sysvar::VTS::RPM_Sensor::PWMDC = 50.0;\n\n   // Start the stimulation\n   vtsStartStimulation(\"VTS::RPM_Sensor\");\n\n   // To stimulate different sensor readings increase\n   // frequency of the PWM signal over time\n   while(currentFrequency < 200)\n   {\n      // Increase the frequency by 1Hz every 100ms\n      TestWaitForTimeOut(100);\n      currentFrequency += 1;\n      @sysvar::VTS::RPM_Sensor::PWMFreq = currentFrequency;\n   }\n\n   // Stop the stimulation\n   vtsStopStimulation(\"VTS::RPM_Sensor\");\n}\npublic void SimulateSensorPWM()\n   {\n   // Get VTS interface and VT2004 channel\n   IVTSystem vts = VTSystem.Instance;\n   IVT2004Channel rpmSensor = vts.GetChannel(\"RPM_Sensor\") as IVT2004Channel;\n\n   // The current value of the frequency (100Hz)\n   double currentFrequency = 100.0;\n\n   // Choose voltage stimulation and a PWM curve type\n   rpmSensor.SetStimulationMode(StimulationMode.Voltage, CurveType.PWM);\n\n   // PWM signal will toggle between 0V and 5V\n   rpmSensor.PWMVoltageLow.Value = 0.0;\n   rpmSensor.PWMVoltageHigh.Value = 5.0;\n\n   // Set the number of repeats to unlimited\n   rpmSensor.PWMRepeats.Value = 0;\n\n   // Set initial frequency (100Hz) and duty cycle (50%) values\n   rpmSensor.PWMFreq.Value = currentFrequency;\n   rpmSensor.PWMDC.Value = 50.0;\n\n   // Start the stimulation\n   rpmSensor.StartStimulation();\n\n   // To stimulate different sensor readings increase\n   // frequency of the PWM signal over time\n   while(currentFrequency < 200)\n   {\n      // Increase the frequency by 1Hz every 100ms\n      Vector.CANoe.Threading.Execution.Wait(100);\n      currentFrequency += 1;\n      rpmSensor.PWMFreq.Value = currentFrequency;\n   }\n\n   // Stop the stimulation\n   rpmSensor.StopStimulation();\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.5 SP2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

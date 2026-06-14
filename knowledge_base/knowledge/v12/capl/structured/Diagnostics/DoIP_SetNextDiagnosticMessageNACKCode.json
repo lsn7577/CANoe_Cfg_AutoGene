@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetNextDiagnosticMessageNACKCode",
+  "category": "Diagnostics",
+  "title": "DoIP_SetNextDiagnosticMessageNACKCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetNextDiagnosticMessageNACKCode.htm",
+  "syntax": [
+    "void DoIP_SetNextDiagnosticMessageNACKCode(long NACKCode);"
+  ],
+  "description": [
+    "Sets the next return code sent in the acknowledgment for a diagnostic message received. The code is reset to 0 (positive) after usage.",
+    "Values other than 0 let the peer assume that transmission failed, i.e. error handling is necessary by the peer."
+  ],
+  "parameters": [
+    {
+      "name": "NACKCode",
+      "type": "",
+      "description": "ISO 13400 defines these values (amongst others):"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on key 'n' {\n  write( “The next diagnostics message will get a negative ack”);\n  DoIP_SetNextDiagnosticMessageNACKCode(3);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

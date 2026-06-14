@@ -1,0 +1,48 @@
+{
+  "page_type": "function",
+  "name": "SCC_SuspendTx",
+  "category": "SmartCharging",
+  "title": "SCC_SuspendTx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SuspendTx.htm",
+  "syntax": [
+    "void SCC_SuspendTx ( long NumberOfMessages )"
+  ],
+  "description": [
+    "Skips the sending of the following messages depending on the parameter value."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Behavior"
+    },
+    {
+      "name": "-1",
+      "type": "",
+      "description": "Sending of all further messages is suspended."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Resume. Starting from current state messages are send."
+    },
+    {
+      "name": ">0",
+      "type": "",
+      "description": "The following NumberOfMessages are suspended."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

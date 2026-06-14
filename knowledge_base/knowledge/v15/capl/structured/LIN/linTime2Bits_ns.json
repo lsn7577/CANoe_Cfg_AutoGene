@@ -1,0 +1,136 @@
+{
+  "page_type": "function",
+  "name": "linTime2Bits_ns",
+  "category": "LIN",
+  "title": "linTime2Bits_ns",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/LIN/Functions/CAPLfunctionLINTime2BitsNS.htm",
+  "syntax": [
+    "dword linTime2Bits_ns(int64 time): // form 1",
+    "dword linTime2Bits_ns(dword channel, int64 time); // form 2"
+  ],
+  "description": [
+    "This function converts specified system times to bit times. The conversion is done using the current baud rate on the channel determined by the CAPL program context."
+  ],
+  "parameters": [
+    {
+      "name": "time",
+      "type": "",
+      "description": "System time to be converted [in ns]."
+    },
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel number, whose baud rate will be used."
+    }
+  ],
+  "return": "Resulting bit time.",
+  "example": {
+    "description": [
+      "Extract sync break length of LIN frames"
+    ],
+    "code": "on linFrame *\n{\n..dword bitTimeSyncBreak;\n  bitTimeSyncBreak = linTime2Bits_ns(this.breakLen);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.0",
+      "7.0",
+      "13.0",
+      "13.0",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "LIN",
+      "LIN",
+      "LIN",
+      "LIN",
+      "—",
+      "LIN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagGetFunctionalGroupExt",
+  "category": "Diagnostics",
+  "title": "diagGetFunctionalGroupExt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetFunctionalGroupExt.htm",
+  "syntax": [
+    "long diagGetFunctionalGroupExt ()"
+  ],
+  "description": [
+    "Returns the value of the \"address extension\" byte (extended address information for ISO TP \"extended addressing mode\").",
+    "If the functional group is not specified, the destination set with diagSetTarget is used."
+  ],
+  "parameters": [
+    {
+      "name": "groupQualifier",
+      "type": "",
+      "description": "Functional group's qualifier."
+    }
+  ],
+  "return": "-1: Extended addressing is not used.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

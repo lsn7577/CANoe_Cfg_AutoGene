@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "C2xGetChannelConfiguration",
+  "category": "Car2x",
+  "title": "C2xGetChannelConfiguration",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetChannelConfiguration.htm",
+  "syntax": [
+    "long C2xGetChannelConfiguration(long appChannel, long radioChannel, long txPower, long maxTxPower, long layout, long dataRate, long bandWidth, long txAntenna, long rxAntenna)"
+  ],
+  "description": [
+    "Retrieve the current configuration parameters of a specific hardware channel.",
+    "This method allows to readout all relevant channel parameters opposite to C2xConfigureChannel",
+    "Note: This method can only be used with VN4610 hardware."
+  ],
+  "parameters": [],
+  "return": "0 or error code according to the following.",
+  "example": {
+    "description": [],
+    "code": "on key 'g'\n{\n  long radioChannel, txPower, maxTxPower, layout, dataRate, bandWidth, txAntenna, rxAntenna, i;\n  i = C2xGetChannelConfiguration(1, radioChannel, txPower, maxTxPower, layout, dataRate, bandWidth, txAntenna, rxAntenna);\n  if (i != 0)\n    Write(\"C2xGetChannelConfiguration 1 failed with err=%d\", i);\n  else\n    Write(\"ChannelConfig#1: radio:%d layout:%d txPow:%d maxTxPow:%d rate:%d bandWidth:%d txAnt:%d rxAnt:%d\",\n      radioChannel, layout, txPower, maxTxPower, dataRate, bandWidth, txAntenna, rxAntenna);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

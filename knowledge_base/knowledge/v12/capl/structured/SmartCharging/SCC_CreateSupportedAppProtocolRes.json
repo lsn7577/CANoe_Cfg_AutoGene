@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateSupportedAppProtocolRes",
+  "category": "SmartCharging",
+  "title": "SCC_CreateSupportedAppProtocolRes",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateSupportedAppProtocolRes.htm",
+  "syntax": [
+    "long SCC_CreateSupportedAppProtocolRes ( char ResponseCode[] )"
+  ],
+  "description": [
+    "Creates a SupportedAppProtocol Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "ResponseCode",
+      "type": "",
+      "description": "Acknowledgement status of the message"
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

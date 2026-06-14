@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "ILNodeSetSigGroupOperationMode",
+  "category": "CANoeIL",
+  "title": "ILNodeSetSigGroupOperationMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANoeIL/Functions/CAPLfunctionILNodeSetSigGroupOperationMode.htm",
+  "syntax": [
+    "long ILNodeSetSigGroupOperationMode(char signalGroupName[], long mode, long param);"
+  ],
+  "description": [
+    "Sets specific operation mode in the interaction layer for the specified signal group."
+  ],
+  "parameters": [
+    {
+      "name": "signalGroupName",
+      "type": "",
+      "description": "Name of the signal group."
+    },
+    {
+      "name": "mode",
+      "type": "",
+      "description": "mode - 0: influences update bits; other values have currently no effect and are reserved."
+    },
+    {
+      "name": "Syntax form",
+      "type": "Mode Value",
+      "description": "Param Value"
+    },
+    {
+      "name": "1",
+      "type": "0",
+      "description": "0: all update bits will be set or reset depending on the signal updates 1: all update bits will always be sent with value = 1"
+    },
+    {
+      "name": "2",
+      "type": "0",
+      "description": "0: the update bit of the signal group will be set or reset depending on the signal updates 1: the update bit of the signal group will always be sent with value = 1"
+    },
+    {
+      "name": "3",
+      "type": "0",
+      "description": "0: the update bit will be set or reset depending on the signal updates 1: the update bit will always be sent with value = 1"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.5",
+      "14",
+      "14",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN FlexRay",
+      "CAN FlexRay",
+      "CAN FlexRay",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

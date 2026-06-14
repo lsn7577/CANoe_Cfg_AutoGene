@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "QueueReadFrame",
+  "category": "Sensor",
+  "title": "QueueReadFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionQueueReadFrame.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueReadFrame(dword readByteCount);"
+  ],
+  "description": [
+    "This method is intended to be used for I2C master simulation. It queues a frame to read the given number of bytes from the given slave."
+  ],
+  "parameters": [
+    {
+      "name": "readByteCount",
+      "type": "",
+      "description": "The number of bytes to read from the slave."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Queue a request to read 4 bytes from the slave\nsysvar::SENSOR::I2C::ExampleChannel::ExampleSlave.QueueReadFrame (4);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

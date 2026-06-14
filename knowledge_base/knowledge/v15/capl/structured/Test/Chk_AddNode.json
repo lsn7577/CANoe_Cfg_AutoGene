@@ -1,0 +1,183 @@
+{
+  "page_type": "function",
+  "name": "Chk_AddNode",
+  "category": "Test",
+  "title": "Chk_AddNode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkAddNode.htm",
+  "syntax": [
+    "dword Chk_AddNode (dword aCheckId, Node aNode, dword aAddress, dword aac, dword ig, dword sys, dword sysi, dword fct, dword fcti, dword ecui, dword mc, dword in);"
+  ],
+  "description": [
+    "Adds a J1939 node to an existing check."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Check Id of an existing check."
+    },
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "Name of the node to be checked. Must exist in database."
+    },
+    {
+      "name": "aAddress",
+      "type": "",
+      "description": "Address of the node.0-253 or 0xFFFFFFFF if value of the node in database is used."
+    },
+    {
+      "name": "aac",
+      "type": "",
+      "description": "Arbitrary Address Capable0..1 or 0xFFFFFFFF if value of the node in database is used."
+    },
+    {
+      "name": "ig",
+      "type": "",
+      "description": "Industry Group0..7 or 0xFFFFFFFF if value of the node in database is used."
+    },
+    {
+      "name": "sys",
+      "type": "",
+      "description": "Vehicle System Instance0..15 or 0xFFFFFFFF if value of database is used."
+    },
+    {
+      "name": "sysi",
+      "type": "",
+      "description": "Vehicle System0..127 or 0xFFFFFFFF if value of the node in database is used"
+    },
+    {
+      "name": "fct",
+      "type": "",
+      "description": "Function0..255 or 0xFFFFFFFF if value of the node in database is used."
+    },
+    {
+      "name": "fcti",
+      "type": "",
+      "description": "Function Instance0..31 or 0xFFFFFFFF if value of the node in database is used."
+    },
+    {
+      "name": "ecui",
+      "type": "",
+      "description": "ECU Instance0..7 or 0xFFFFFFFF if value of the node in database is used."
+    },
+    {
+      "name": "mc",
+      "type": "",
+      "description": "Manufacturer Code 0..2047 or 0xFFFFFFFF if value of the node in database is used."
+    },
+    {
+      "name": "in",
+      "type": "",
+      "description": "Identity Number0.. 209715 or 0xFFFFFFFF if value of the node in database is used."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks the address claim violation of node N1\ncheckId = ChkCreate_J1939AddressClaimViolation ( N1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 200, 0x01);\n\n// add node N2 to the check\nChk_AddNode (checkId, N2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);\nTestAddCondition(checkId);\n\n// Start check\nChkControl_Start(checkId);\n\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2 SP3",
+      "13.0",
+      "—",
+      "14",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "J1939",
+      "J1939",
+      "—",
+      "J1939",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

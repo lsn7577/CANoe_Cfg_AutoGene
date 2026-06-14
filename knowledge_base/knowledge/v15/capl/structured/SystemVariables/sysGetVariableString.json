@@ -1,0 +1,159 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableString",
+  "category": "SystemVariables",
+  "title": "sysGetVariableString",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableString.htm",
+  "syntax": [
+    "long sysGetVariableString(char namespace[], char variable[], char buffer[], long bufferSize); // form 1",
+    "long sysGetVariableString(SysVarName,char buffer[], long bufferSize); // form 2"
+  ],
+  "description": [
+    "Returns the value of a variable of the String (char[]) type."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    },
+    {
+      "name": "variable",
+      "type": "",
+      "description": "Name of the variable."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer that takes the value of the variable."
+    },
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "Size of the buffer."
+    },
+    {
+      "name": "SysVarName",
+      "type": "",
+      "description": "Name of the fully qualified name of the system variable, including all name spaces, separated by \"::\". The name must be preceded by \"sysVar::\"."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1",
+      "Example 2",
+      "This example shows the use of system variable types as a return value of functions and as a local variable.",
+      "The user-defined CAPL function getSysVarString returns any system variable of type String. The function is therefore defined with the system variable type sysvarString as the return value.",
+      "The system variable sv1 (defined with system variable type String) represents any system variable depending on the counter of the getSysVarString function.",
+      "The value of a system variable is set with the CAPL function sysSetVariableString.",
+      "The value of the system variable is get with the CAPL function sysGetVariableString and output in the Write Window.",
+      "Note",
+      "You must define the system variables FMW1::KeyString, DCM::SpeedSignalString, and Engine::EngineString in the System Variables Configuration dialog first."
+    ],
+    "code": "sysGetVariableString(sysvar::MyNamespace::StringVar, buf, elcount(buf));\non key 'd'\n{\n  sysvarString * svString1;\n  char valueSysVarString[100];\n  char buf[100];\n  svString1 = getSysVarString(0);\n  sysGetVariableString(svString1, buf, elcount(buf));\n  write(\"Variable is %s, Value is %s\", svString1.name, buf);\n  sysSetVariableString(svString1, \"OFF\");\n  sysGetVariableString(svString1, buf, elcount(buf));\n  write(\"Variable is %s, Value is now: %s\", svString1.name, buf);\n  svString1 = getSysVarString(1);\n  sysGetVariableString(svString1, buf, elcount(buf));\n  write(\"Variable is %s, Value is %s\", svString1.name, buf);\n  svString1 = getSysVarString(2);\n  sysGetVariableString(svString1, buf, elcount(buf));\n  write(\"Variable is %s, Value is %s\", svString1.name, buf);\n}\n\nsysvarString * getSysVarString(int cKey)\n{\n  switch (cKey)\n  {\n  case 0:\n    return sysvar::FMW1::KeyString;\n  case 1:\n    return sysvar::DCM::SpeedSignalString;\n  default:\n    return sysvar::Engine::EngineStateString;\n  }\n}\nsysGetVariableString(sysvar::MyNamespace::StringVar, buf, elcount(buf));"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.1/5.2: form 1 7.2 SP3: form 2",
+      "5.1/5.2: form 1 7.0: form 2",
+      "13.0",
+      "13.0: form 2",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔ (since version 7.2 SP3)",
+      "✔ (since version 7.0)",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

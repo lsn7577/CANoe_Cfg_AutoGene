@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetCertificateChainData",
+  "category": "SmartCharging",
+  "title": "SCC_GetCertificateChainData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetCertificateChainData.htm",
+  "syntax": [
+    "void SCC_GetCertificateChainData ( long Target, char IdAttr[], long& SubCertificateCount )"
+  ],
+  "description": [
+    "Reads Id (to the output buffer) and number of sub certificates (via reference) of the target certificate chain. The ID is only available for ISO 15118."
+  ],
+  "parameters": [
+    {
+      "name": "Target",
+      "type": "",
+      "description": "Set this according to the type of certificate chain that is queried:"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

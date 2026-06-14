@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterMacId",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterMacId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIpGetAdapterMacId.htm",
+  "syntax": [
+    "long IpGetAdapterMacId( dword ifIndex, byte macId[]); // form 1"
+  ],
+  "description": [
+    "The function returns the MAC ID of the given interface."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "Form 1: 0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  long result;\n  long ifIndex;\n  char adapterDesc[255];\n  byte macId[6];\n\n  ifIndex = 1;\n\n  result = ipGetAdapterDescription(ifIndex, adapterDesc, elcount(adapterDesc));\n  if( result != 0 )\n  {\n    writeLineEx(1, 3, \"Failed to get the adapter description. Result: %d\", result);\n  }\n\n  result = IpGetAdapterMacId(ifIndex, macId);\n  if( result != 0 )\n  {\n    writeLineEx(1, 3, \"Failed to get the adapter MAC ID. Result: %d\", result);\n  }\n  else\n  {\n    writeLineEx(1, 0, \"The Mac Id of Adapter %s is %02x:%02x:%02x:%02x:%02x:%02x\",\n    adapterDesc, macId[0], macId[1], macId[2], macId[3], macId[4], macId[5]);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

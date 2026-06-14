@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "OnMediaRead",
+  "category": "Media",
+  "title": "OnMediaRead",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/EventProcedures/CAPLfunctionOnMediaRead.htm",
+  "syntax": [
+    "void OnMediaRead(dword sourceReaderHandle, long result, dword streamIndex, dword streamFlags, int64 timestamp, byte buffer[], dword length);"
+  ],
+  "description": [
+    "This callback is dispatched when an asynchronous read operation on a source reader completes."
+  ],
+  "parameters": [
+    {
+      "name": "sourceReaderHandle",
+      "type": "",
+      "description": "The source reader handle."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,253 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetBitInfo",
+  "category": "Test",
+  "title": "testWaitScopeGetBitInfo",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitScopeGetBitInfo.htm",
+  "syntax": [
+    "long testWaitScopeGetBitInfo(ScopeAnalyseHandle handle, dword msgFieldStart,long startBitNo, dword msgFieldEnd, long EndBitNo, ScopeMaskViolationData data);"
+  ],
+  "description": [
+    "After a signal was analyzed with the function testWaitScopeAnalyseSignal, the average values of the voltages of CAN_H, CAN_L, and CAN_Diff are calculated for a defined bit range."
+  ],
+  "parameters": [
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    },
+    {
+      "name": "msgFieldStart, startBitNo, msgFieldEnd, EndBitNo",
+      "type": "",
+      "description": "The cutout of the frame to be analyzed. msgFieldStart, msgFieldEnd: See ScopeBitAnalyse.cin startBitNo, endBitNo: A bit index in the message field"
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "bitField",
+      "type": "field type, see ScopeBitAnalyse.cin",
+      "description": "long"
+    },
+    {
+      "name": "bitNo",
+      "type": "bit number within bit field",
+      "description": "dword"
+    },
+    {
+      "name": "errorType",
+      "type": "reserved",
+      "description": "dword"
+    },
+    {
+      "name": "bitStartTime",
+      "type": "bit start in ns",
+      "description": "long"
+    },
+    {
+      "name": "samplePointVoltage",
+      "type": "voltage at sampling point in mV",
+      "description": "long"
+    },
+    {
+      "name": "domVoltageCANH",
+      "type": "voltage at sampling point for dominant bit for signal CAN High",
+      "description": "long"
+    },
+    {
+      "name": "recVoltageCANH",
+      "type": "voltage at sampling point for recessive bit for signal CAN High",
+      "description": "long"
+    },
+    {
+      "name": "domVoltageCANL",
+      "type": "voltage at sampling point for dominant bit for signal CAN Low",
+      "description": "long"
+    },
+    {
+      "name": "recVoltageCANL",
+      "type": "voltage at sampling point for recessive bit for signal CAN Low",
+      "description": "long"
+    },
+    {
+      "name": "domVoltageDiff",
+      "type": "voltage at sampling point for dominant bit for signal CAN Diff",
+      "description": "long"
+    },
+    {
+      "name": "recVoltageDiff",
+      "type": "voltage at sampling point for recessive bit for signal CAN Diff",
+      "description": "long"
+    },
+    {
+      "name": "V2_V3",
+      "type": "reserved",
+      "description": "long"
+    },
+    {
+      "name": "thresholdVoltage",
+      "type": "threshold level in mV relative to scope ground",
+      "description": "long"
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "bitField",
+      "type": "field type, see ScopeBitAnalyse.cin",
+      "description": "long"
+    },
+    {
+      "name": "bitNo",
+      "type": "bit number within bit field",
+      "description": "long"
+    },
+    {
+      "name": "errorType",
+      "type": "reserved",
+      "description": "dword"
+    },
+    {
+      "name": "bitStartTime",
+      "type": "bit start in ns",
+      "description": "dword"
+    },
+    {
+      "name": "disturbanceTimeStart",
+      "type": "distance of disturbance to bit start in ns",
+      "description": "long"
+    },
+    {
+      "name": "disturbanceTimeEnd",
+      "type": "distance of end of disturbance to bit start in ns",
+      "description": "long"
+    },
+    {
+      "name": "Vdist",
+      "type": "measured voltage at the point of the maximum disturbance in mV",
+      "description": "long"
+    },
+    {
+      "name": "Vgiven",
+      "type": "expected voltage at the point of the maximum disturbance in mV",
+      "description": "long"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN FlexRay Scope",
+      "CAN FlexRay Scope",
+      "—",
+      "—",
+      "CAN FlexRay Scope"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

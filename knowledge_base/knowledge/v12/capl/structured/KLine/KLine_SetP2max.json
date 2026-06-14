@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetP2max",
+  "category": "KLine",
+  "title": "KLine_SetP2max",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetP2max.htm",
+  "syntax": [
+    "long KLine_SetP2max(dword P2max_us)"
+  ],
+  "description": [
+    "Sets the maximum time between the client (tester) request and the server (ECU) response, or between 2 server (ECU) responses."
+  ],
+  "parameters": [
+    {
+      "name": "P2max_us",
+      "type": "",
+      "description": "P2max in usValue range: 0 – 100000000 (100 s)."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n   KLine_SetP2Max(10000000); // P2max == 10 s\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

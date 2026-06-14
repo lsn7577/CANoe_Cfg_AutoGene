@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "SetServiceSignalData",
+  "category": "IP",
+  "title": "SetServiceSignalData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionSomeIpSetServiceSignalData.htm",
+  "syntax": [
+    "long SetServiceSignalData(serviceSignal qualifier, byte buffer [], dword bufferLength); // form 1"
+  ],
+  "description": [
+    "Sets the data of a Service Signal."
+  ],
+  "parameters": [
+    {
+      "name": "qualifier",
+      "type": "",
+      "description": "Qualifier of the Service Signal."
+    }
+  ],
+  "return": "0: no error, function successful.",
+  "example": {
+    "description": [
+      "The example shows access to parameter StringValue, which is contained in Event1 of service Service1 (Major Version 1, Instance ID 2). The service interface is defined in package PACKAGE1::PACKAGE2 of database DemoDatabase.",
+      "The service qualifier is specified without a leading $ sign."
+    ],
+    "code": "on key 's'\n{\n  byte buffer[1] = {0x12};\n\nSetServiceSignalData(DemoDatabase::PACKAGE1::PACKAGE2::Service1::1::2::Event1::StringValue, buffer, elcount(buffer));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

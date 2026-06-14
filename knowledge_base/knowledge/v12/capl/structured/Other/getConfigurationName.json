@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "getConfigurationName",
+  "category": "Other",
+  "title": "getConfigurationName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetConfigurationName.htm",
+  "syntax": [
+    "long getConfigurationName(char buffer[], dword bufferLength);"
+  ],
+  "description": [
+    "Returns the file name of the currently loaded configuration. It includes neither the file extension nor any path information, for example CANSystemDemo.",
+    "There are two kinds of configurations in standalone mode:",
+    "These two file names may well differ (even though normally they are the same except for the file extension).",
+    "StandaloneGetCurrentConfig returns the standalone configuration file name, whereas getConfigurationName returns the normal configuration file name."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Space for the returned name."
+    }
+  ],
+  "return": "-1 Buffer too small",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  char cfgName[260];\n  dword ret;\n  ret = getConfigurationName(cfgName,elcount(cfgName));\n  write(\"getConfigurationName returns %d %s\", ret, cfgName);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

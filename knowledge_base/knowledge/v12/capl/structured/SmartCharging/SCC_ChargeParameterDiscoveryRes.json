@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SCC_ChargeParameterDiscoveryRes",
+  "category": "SmartCharging",
+  "title": "SCC_ChargeParameterDiscoveryRes",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_ChargeParameterDiscoveryRes.htm",
+  "syntax": [
+    "void SCC_ChargeParameterDiscoveryRes ( byte SessionID[], long ResponseCode, long SAScheduleTupleCount )"
+  ],
+  "description": [
+    "The callback is called as soon as a Charge Parameter Discovery Response is received.",
+    "Further details that are transmitted in this request can be queried with the following functions:"
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

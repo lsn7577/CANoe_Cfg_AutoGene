@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssWaitForSwitchStateSelectiveSequence",
+  "category": "CANopen",
+  "title": "coTfsLssWaitForSwitchStateSelectiveSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssWaitForSwitchStateSelectiveSeq.htm",
+  "syntax": [
+    "long coTfsLssWaitForSwitchStateSelectiveSequence( dword[] pVendorId, dword[] pProductCode, dword[] pRevisionNo, dword[] pSerialNo );"
+  ],
+  "description": [
+    "The function waits for a switch state selective messages and sends the response. For a successful test all parameters are to be received within a defined time-out."
+  ],
+  "parameters": [
+    {
+      "name": "pVendorId",
+      "type": "",
+      "description": "Vendor-ID part of the LSS address."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "dword pVendorId[1];\ndword pProductCode[1];\ndword pRevisionNo[1];\ndword pSerialNo[1];\n\n/* waits for LSS switch state selective request */\nif (coTfsLssWaitForSwitchStateSelectiveSequence( pVendorId, pProductCode, pRevisionNo, pSerialNo) == 1) {\n  /* received LSS switch state selective request */\n  /* received values can be found in pVendorId[0], pProductCode[0], pRevisionNo[0], pSerialNo[0] */\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

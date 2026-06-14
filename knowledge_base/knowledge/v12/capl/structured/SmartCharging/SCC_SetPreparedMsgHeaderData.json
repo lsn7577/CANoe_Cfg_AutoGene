@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetPreparedMsgHeaderData",
+  "category": "SmartCharging",
+  "title": "SCC_SetPreparedMsgHeaderData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetPreparedMsgHeaderData.htm",
+  "syntax": [
+    "void SCC_SetPreparedMsgHeaderData ( byte Header[] )"
+  ],
+  "description": [
+    "Overwrites the SDP/V2G header for a prepared message. (Refer to the DIN / ISO specifications for the header layout.)"
+  ],
+  "parameters": [
+    {
+      "name": "Header",
+      "type": "",
+      "description": "8 byte V2G header"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

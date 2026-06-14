@@ -1,0 +1,45 @@
+{
+  "page_type": "notes",
+  "name": "MOST: General Tips on XML Function Catalog Support in CAPL",
+  "category": "MOST",
+  "title": "MOST: General Tips on XML Function Catalog Support in CAPL",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/CAPLfunctionsMOSTXMLSupport.htm",
+  "syntax": [],
+  "description": [
+    "Tips for using XML-based CAPL functions for the symbolic description of messages and parameters.",
+    "There are two different access formats when using XML function catalogs in CAPL:",
+    "mostAmsMessage AudioDiskPlayer.TrackPosition.Status msg;",
+    "msg.Track = 3;",
+    "mostAmsOutput(1, \"AudioDiskPlayer.SourceActivity.StartResult(1,On)\", 1);",
+    "testWaitForMostAMSMessage(\"AudioDiskPlayer.TrackPosition.Status(5)\", 1, 200);",
+    "mostParamSet(msg, \"Data.Record[].LastTrack\", idx, 10);",
+    "Symbolic Identification of Messages | Symbolic Identification of Parameters | Input Assistance | MOST Database Support in CAPL"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Example mostAmsMessage AudioDiskPlayer.TrackPosition.Status msg; msg.Track = 3;"
+      ]
+    ],
+    [
+      [
+        "Example mostAmsOutput(1, \"AudioDiskPlayer.SourceActivity.StartResult(1,On)\", 1); testWaitForMostAMSMessage(\"AudioDiskPlayer.TrackPosition.Status(5)\", 1, 200); mostParamSet(msg, \"Data.Record[].LastTrack\", idx, 10);"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

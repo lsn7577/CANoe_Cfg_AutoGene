@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventInterval",
+  "category": "Test",
+  "title": "ChkQuery_EventInterval",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventInterval.htm",
+  "syntax": [
+    "long ChkQuery_EventInterval (dword checkId);",
+    "check.QueryEventInterval();"
+  ],
+  "description": [
+    "Returns the last time-interval that has led to the event."
+  ],
+  "parameters": [
+    {
+      "name": "checkId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "-101: The interval for the last event has been started but not yet terminated.",
+  "example": {
+    "description": [],
+    "code": "long result;\ndword checkId;\ncheckId = ChkStart_MsgRelCycleTimeViolation(VehicleMotion, 0.9, 1.1);\n// ... execute test sequence\nresult = ChkQuery_EventInterval(checkId);\nWrite(\"result = %d\", result);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

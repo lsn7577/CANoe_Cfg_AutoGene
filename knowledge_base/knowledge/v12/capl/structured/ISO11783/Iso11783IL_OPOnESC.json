@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPOnESC",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPOnESC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPOnESC.htm",
+  "syntax": [
+    "void Iso11783IL_OPOnESC( dword objectID, dword error );"
+  ],
+  "description": [
+    "The function is called by the node layer, when the user aborts an input action."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "Object ID of the input object"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_OPOnESC( dword objectID, dword error )\n{\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthGetThisMotorolaValue32",
+  "category": "Obsolete",
+  "title": "EthGetThisMotorolaValue32",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetThisMotorolaValue32.htm",
+  "syntax": [
+    "long EthGetThisMotorolaValue32( long offset );"
+  ],
+  "description": [
+    "This function reads the data of a received packet in Motorola format.",
+    "It is only usable in a CAPL callback function that had been registered with EthReceiveRawPacket or EthReceivePacket. It depends on the callback function, which part of the packet data is accessed by the function:"
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "byte offset relative to the beginning of a data packet or the payload (see description above)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void OnEthRawPacket( LONG channel, LONG dir, LONG packetLength )\n{\r\n\n  switch(EthGetThisMotorolaValue32( 14 ))\n  {\r\n\n  case 0x00000001:\r\n        write( \"Value 1\" );\r\n        break;\r\n\n  case 0x00000002:\r\n        write( \"Value 2\" );\r\n        break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

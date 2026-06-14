@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDSetValue",
+  "category": "ISO11783",
+  "title": "Iso11783PDDSetValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDsetvalue.htm",
+  "syntax": [
+    "long Iso11783PDDSetValue( dword ecuHandle, dbSignal signal, dword elementNumber, float alue );"
+  ],
+  "description": [
+    "Sets the value of a process variable."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783PDDSetValue( Sprayer, 0x200. 3, value );\nIso11783PDDSetValue( Sprayer, 0x200. 4, value );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

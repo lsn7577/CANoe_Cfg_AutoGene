@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ISO11783IL_PDDConnectSysVarWithSection",
+  "category": "ISO11783",
+  "title": "ISO11783IL_PDDConnectSysVarWithSection",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDConnectSysVarWithSection.htm",
+  "syntax": [
+    "long ISO11783IL_PDDConnectSysVarWithSection(dword ddiOfCondensedState, dword elementNumber, dword sectionNumber, char[] sysVarNameWithPath); // form 1"
+  ],
+  "description": [
+    "Connects a single section state to a system variable.",
+    "If a section state is changed the new value is put into the system variable.",
+    "To release connection between the system variable and the condensed state, just call the same method again, but with the empty string instead of the name of system variable."
+  ],
+  "parameters": [
+    {
+      "name": "ddiOfCondensedState",
+      "type": "",
+      "description": "Data dictionary identifier the condensed state belongs to, e.g.:"
+    }
+  ],
+  "return": "0: function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nchar text[256];\nresult = Iso11783IL_PDDConnectSysVarWithSection(290, 10, 1, \"ConnectedSysVars::svSection1\");\nif (result < 0)\n{\n  Iso11783IL_GetLastErrorText ( elCount(text), text );\n  write( \"ERROR: %s\", text);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MCDGetCurrentValue",
+  "category": "Obsolete",
+  "title": "MCDGetCurrentValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMCDGetCurrentValue.htm",
+  "syntax": [
+    "double MCDGetCurrentValue( char moduleName[], char parameterName[])"
+  ],
+  "description": [
+    "Get one of the values which was configured with the data acquisition."
+  ],
+  "parameters": [
+    {
+      "name": "ModuleName",
+      "type": "",
+      "description": "Name of the module that is configured in the global options dialog External Programs|MCD 3D Server."
+    }
+  ],
+  "return": "The value of the requested parameter.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

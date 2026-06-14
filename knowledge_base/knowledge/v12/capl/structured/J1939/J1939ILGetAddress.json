@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939ILGetAddress",
+  "category": "J1939",
+  "title": "J1939ILGetAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILGetAddress.htm",
+  "syntax": [
+    "long J1939ILGetAddress(); // form 1"
+  ],
+  "description": [
+    "Returns the address that is used by the J1939 IL."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n  LONG addr;\n  addr = J1939ILGetAddress();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

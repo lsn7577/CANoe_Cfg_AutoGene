@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "writeProfileFloat",
+  "category": "Other",
+  "title": "writeProfileFloat",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWriteProFileFloat.htm",
+  "syntax": [
+    "long writeProfileFloat(char section[], char entry[], float value, char filename[]); // form 1"
+  ],
+  "description": [
+    "Opens the file filename, searches the section section and writes the variable entry with the value value. If entry already exists the old value is overwritten."
+  ],
+  "parameters": [
+    {
+      "name": "section",
+      "type": "",
+      "description": "Section of the file as a string."
+    }
+  ],
+  "return": "The functional result is 0 in case of an error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

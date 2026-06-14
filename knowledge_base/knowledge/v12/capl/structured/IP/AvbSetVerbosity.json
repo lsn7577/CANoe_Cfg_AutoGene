@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbSetVerbosity",
+  "category": "IP",
+  "title": "AvbSetVerbosity",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbSetVerbosity.htm",
+  "syntax": [
+    "dword AvbSetVerbosity(long verbosity);"
+  ],
+  "description": [
+    "Sets the verbosity level of AVB IL messages in the Write Window."
+  ],
+  "parameters": [
+    {
+      "name": "verbosity",
+      "type": "",
+      "description": "Verbosity level:"
+    }
+  ],
+  "return": "Number of copied characters.",
+  "example": {
+    "description": [],
+    "code": "on key '0'\n{\n  char buffer[1024];\n  // set verbosity level to \"Silent\" mode\n  if (AvbSetVerbosity(0) == 0)\n  {\n    write(\"AVB IL verbosity level was set to mode\n    \\\"silent\\\"\");\n  }\n  else\n  {\n    // check if last function was successfully executed\n    AvbGetLastErrorText(elcount(buffer), buffer);\n    write(\"Error setting verbosity level if AVB IL: %s\", buffer);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

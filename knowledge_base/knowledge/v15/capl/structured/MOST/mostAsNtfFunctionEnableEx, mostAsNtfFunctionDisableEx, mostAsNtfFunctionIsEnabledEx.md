@@ -1,0 +1,43 @@
+# mostAsNtfFunctionEnableEx, mostAsNtfFunctionDisableEx, mostAsNtfFunctionIsEnabledEx
+
+> Category: `MOST` | Type: `function`
+
+## Syntax
+
+```c
+long mostAsNtfFunctionEnableEx(long fblockID, long instID, long functionID, char cbSendStatus[]);
+long mostAsNtfFunctionDisableEx(long fblockID, long instID, long functionID);
+long mostAsNtfFunctionIsEnabledEx(long fblockID, long instID, long functionID);
+```
+
+## Description
+
+The behavior corresponds to the functions mostAsNtfFunctionEnable, mostAsNtfFunctionDisable, mostAsNtfFunctionIsEnabled. The functions ending with 'Ex' can also be used, if the CAPL node is not assigned to a function block exclusively.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| fblockID | Function block ID |
+| instID | Instance ID |
+| functionID | Function ID or -1 for all functions of the function block from the database. |
+| cbSendStatus[] | Name of the CAPL function that generates and sends the status message. If functionID=-1, cbSendStatus designates the prefix of the CAPL send functions to be defined. If an empty character string is specified, the default prefix "SendStatus_" is used. |
+
+## Return Values
+
+See error codes
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 5.2 | — | — | — | —✔ |
+| Restricted To | — | MOST25 MOST50 MOST150 While Application Socket is active | — | — | — | —✔ |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | — |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | —✔ |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | —✔ |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | —✔ |
+| 32-Bit | — | ✔ | — | N/A | — | —✔ |
+| 64-Bit | — | ✔ | — | — | — | —✔ |

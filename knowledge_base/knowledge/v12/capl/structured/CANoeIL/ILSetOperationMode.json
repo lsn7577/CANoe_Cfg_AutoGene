@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "ILSetOperationMode",
+  "category": "CANoeIL",
+  "title": "ILSetOperationMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILSetOperationMode.htm",
+  "syntax": [
+    "long ILSetOperationMode(long mode, long param); // form 1"
+  ],
+  "description": [
+    "Form 1:",
+    "Sets specific operation mode in the interaction layer of the specified simulation node. The specified node must be in the current bus context. In all other cases the function has no effect and will return with an error.",
+    "Form 2:",
+    "Sets specific operation mode in the interaction layer for the specified signal group of the specified message.",
+    "Form 3:",
+    "Sets specific operation mode in the interaction layer for the specified signal."
+  ],
+  "parameters": [
+    {
+      "name": "aNodeName",
+      "type": "",
+      "description": "Name of the node of which the specific operation mode should be set."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

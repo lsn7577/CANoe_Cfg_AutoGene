@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOGetUploadData",
+  "category": "CANopen",
+  "title": "coTfsSDOGetUploadData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoGetUploadData.htm",
+  "syntax": [
+    "long coTfsSDOGetUploadData( byte outValueBuf[], dword valueBufSize );"
+  ],
+  "description": [
+    "This function makes available the data of the last successful SDO upload procedure. This can be an expedited, segmented or block transfer.",
+    "The data field outValueBuf must always be able to accommodate the received data."
+  ],
+  "parameters": [
+    {
+      "name": "outValueBuf[]",
+      "type": "",
+      "description": "Received SDO upload data."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "see example of coTfsSDOInit"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

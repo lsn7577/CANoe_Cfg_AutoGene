@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetVerificationStatus",
+  "category": "SmartCharging",
+  "title": "SCC_GetVerificationStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetVerificationStatus.htm",
+  "syntax": [
+    "dword SCC_GetVerificationStatus ( )"
+  ],
+  "description": [
+    "Returns the state of the received message regarding the validity of its signature."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0 = Verification failed\n1 = Verification successful\n2 = Not verified (unsigned message or not required)",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

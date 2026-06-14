@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FRSEnableTrigDist",
+  "category": "FRStress",
+  "title": "FRSEnableTrigDist",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/Functions/CAPLfunctionFRSEnableTrigDist.htm",
+  "syntax": [
+    "long FRSEnableTrigDist(int triggerCondition, int iEnable)"
+  ],
+  "description": [
+    "Activates a trigger/disturbance page of FRstress. This function can be called out of a measurement session."
+  ],
+  "parameters": [
+    {
+      "name": "triggerCondition",
+      "type": "",
+      "description": "Values: 1-4"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "CANopenEmergency",
+  "category": "CANopen",
+  "title": "CANopenEmergency",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/CANopenBasic/Functions/CAPLfunctionsCANopenEmergency.htm",
+  "syntax": [
+    "dword CANopenEmergency(dword nodeId, dword active, dword errorCode, byte[] specificData, dword dataSize);"
+  ],
+  "description": [
+    "Activates/deactivates an emergency error code."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "CANopen node ID."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

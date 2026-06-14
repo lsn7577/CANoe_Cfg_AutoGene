@@ -1,0 +1,134 @@
+{
+  "page_type": "method",
+  "name": "Binding::CallReceived",
+  "category": "DistributedObjects",
+  "title": "Binding::CallReceived",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/DistributedObjects/Methods/CAPLfunctionBindingCallReceived.htm",
+  "syntax": [
+    "long Binding::CallReceived(distObjMethodRef * member, callContext * value);"
+  ],
+  "description": [
+    "Sets the in-parameters for a call at a provided method member that uses the CAPL binding.",
+    "The function prototype of the call context must match the function prototype of the method member. Otherwise an error code is returned."
+  ],
+  "parameters": [
+    {
+      "name": "member",
+      "type": "",
+      "description": "Method member which receives a call via the CAPL binding."
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "Call context which contains the in-parameters to be received."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// Transmit a method call via CAN messages.\n// This example requires a CAN message \"SomeMethod_Call\" with\n// signals \"x\", \"y\", and \"RequestID\" as well as a CAN\n// message \"SomeMethod_Return\" with signals \"y\", \"z\", \"Result\",\n// and \"RequestID\".\n\n// example.vcdl\nversion 1.3;\nnamespace SomeNamespace {\n  interface Example {\n    [Binding=\"CAPL\"]\n    consumed method int32 SomeMethod(in int32 x, inout int32 y, out int32 z);\n  }\n  object Consumer : Example {}\n  object Provider : reverse<Example> {}\n}\n\n// consumer.can\non key 'a' {\n  long x, y;\n  Consumer.SomeMethod.CallAsync(x++, y--);\n}\n\n// consumer_binding.can\non transmit_call Consumer.SomeMethod {\n  message SomeMethod_Call msg;\n  msg.x = this.x;\n  msg.y = this.y;\n  msg.RequestID = this.ReqID;\n  output(msg);\n}\non message SomeMethod_Return {\n  callContext Consumer.SomeMethod cco;\n  Binding::CreateCallContext(Consumer.SomeMethod, this.RequestID, cco);\n  cco.y = this.y;\n  cco.z = this.z;\n  cco.Result = this.ReturnValue;\n  Binding::ReturnReceived(Consumer.SomeMethod, cco);\n}\n\n// provider.can\non fct_Called Provider.SomeMethod {\n  this.z = 2*this.x;\n  this.Result = 2*this.y;\n}\n\n// provider_binding.can\non message SomeMethod_Call {\n  callContext Provider.SomeMethod cco;\n  Binding::CreateCallContext(Provider.SomeMethod, this.RequestID, cco);\n  cco.x = this.x;\n  Binding::SetInParameter(cco, \"y\", (long)this.y);\n  Binding::CallReceived(Provider.SomeMethod, cco);\n}\non transmit_return Provider.SomeMethod {\n  message SomeMethod_Return msg;\n  msg.RequestID = this.ReqID;\n  msg.y = this.y;\n  msg.z = this.z;\n  msg.ReturnValue = this.Result;\n  output(msg);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "14",
+      "14",
+      "15",
+      "15",
+      "5.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "J1939ECUGoOnline",
+  "category": "J1939",
+  "title": "J1939ECUGoOnline",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939ECUGoOnline.htm",
+  "syntax": [
+    "dword J1939ECUGoOnline( dword ecuHandle, dword newAddress );"
+  ],
+  "description": [
+    "After this function has been called, the logical ECU logs on onto the CAN bus. It must be called separately for each logical ECU.",
+    "If it is not possible to log on the first time with Address Claiming, or if the node is \"rejected\" with a higher priority Address Claiming by the bus at a later point in time, the corresponding error message must be evaluated in J1939AppErrorIndication(). If you want to make a network assignment over the network, the PG \"CommandedAddress\" can be sent to an ECU.",
+    "Use the Null Address (0xFE) to switch the ECU to offline mode. In that explicit case a \"Cannot Claim\" message (\"Address Claim\" PG from source address 0xFE) is sent once.",
+    "It is not possible to claim the broadcast address 0xFF."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "J1939ECUGoOnline(ecuHdl, 0x06);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "fieldProviderRef::GetNrOfSubscribedConsumers",
+  "category": "CommunicationObjects",
+  "title": "fieldProviderRef::GetNrOfSubscribedConsumers",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionfieldProviderRefGetNrOfSubscribedConsumers.htm",
+  "syntax": [
+    "dword fieldProviderRef::GetNrOfSubscribedConsumers()"
+  ],
+  "description": [
+    "Returns the number of currently subscribed consumers for the service field."
+  ],
+  "parameters": [],
+  "return": "The number of currently subscribed consumers.",
+  "example": {
+    "description": [],
+    "code": "// output all subscribed consumers\r\n                                \ndword i, nrOfConsumers;\nserviceConsumerRef * consumer;\nfieldProviderRef * provider;\n\nprovider = MirrorAdjustment.providerSide[LeftMirror].CurrentPosition;\nnrOfConsumers = provider.GetNrOfSubscribedConsumers();\nwrite(\"Nr of consumers is %d\", nrOfConsumers);\nfor (i = 0; i < nrOfConsumers; ++i)\n{\n  consumer = provider.GetSubscribedConsumer(i);\n  write(\"Consumer %d is %s\", i, consumer.Name);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

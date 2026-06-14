@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DiagSendResponsePDU",
+  "category": "KLine",
+  "title": "DiagSendResponsePDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionDiagSendResponsePDU.htm",
+  "syntax": [
+    "long DiagSendResponsePDU(BYTE rawPDU[], WORD rawPDULength)"
+  ],
+  "description": [
+    "Sends a raw byte buffer. E.g. this allows sending responses with invalid protocol headers."
+  ],
+  "parameters": [
+    {
+      "name": "rawPDU",
+      "type": "",
+      "description": "Byte buffer to be transmitted."
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n   const cTesterAddress = 0xF1;\n   const cEcuAddress = 0x86;\n}\n\n_Diag_DataRequest( BYTE data[], dword count, long furtherSegments)\n{\n   long status;\n   // Replace Frame\n   BYTE FI_Response[6] = { 0x82, cTesterAddress, cEcuAddress, 0x99, 0xff, 0x01 };\n   FI_Response[3] = data[0];\n   DiagSendResponsePDU( FI_Response, elcount( FI_Response));\n   return;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

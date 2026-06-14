@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetStateName",
+  "category": "SmartCharging",
+  "title": "SCC_GetStateName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetStateName.htm",
+  "syntax": [
+    "void SCC_GetStateName ( dword State, char Buffer[], int BufferLength )"
+  ],
+  "description": [
+    "Gets a string representation of a state enum value obtained with SCC_StateTransitionInd."
+  ],
+  "parameters": [
+    {
+      "name": "State",
+      "type": "",
+      "description": "State enum to be translated"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetBusName",
+  "category": "J1939",
+  "title": "J1939GetBusName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionj1939getbusname.htm",
+  "syntax": [
+    "dword J1939GetBusName( dword busHandle, dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "Gets a bus name."
+  ],
+  "parameters": [
+    {
+      "name": "busHandle",
+      "type": "",
+      "description": "bus handle, see also J1939GetBus"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "char busName[32];\nJ1939GetBusName( busHandle, \r\n elCount(busName), busName );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

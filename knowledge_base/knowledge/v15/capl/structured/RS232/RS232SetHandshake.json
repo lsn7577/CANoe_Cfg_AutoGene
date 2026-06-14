@@ -1,0 +1,194 @@
+{
+  "page_type": "function",
+  "name": "RS232SetHandshake",
+  "category": "RS232",
+  "title": "RS232SetHandshake",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/RS232/Functions/CAPLfunctionRS232SetHandshake.htm",
+  "syntax": [
+    "dword RS232SetHandshake( dword port, dword handshake, dword XonLimit, dword XoffLimit, dword XonChar, dword XoffChar );",
+    "dword RS232SetHandshake( dword port, dword handshake, dword XonLimit, dword XoffLimit, dword XonChar, dword XoffChar, dword timeout ); // deprecated"
+  ],
+  "description": [
+    "Sets handshake parameters on serial port."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "no handshake at all"
+    },
+    {
+      "name": "10",
+      "type": "",
+      "description": "hardware handshake, use DTR<->DSR"
+    },
+    {
+      "name": "33",
+      "type": "",
+      "description": "hardware handshake, use RTS<->CTS"
+    },
+    {
+      "name": "65",
+      "type": "",
+      "description": "hardware handshake, use RTS<->CTS, use “toggle” variant"
+    },
+    {
+      "name": "128",
+      "type": "",
+      "description": "software handshake, use Xon and Xoff characters"
+    },
+    {
+      "name": "Note Mixtures of hardware and software handshake are not supported. For sake of compatibility, it is possible to set signal lines to fixed levels with this function. Please prefer for that purpose RS232SetSignalLine.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "XonLimit",
+      "type": "",
+      "description": "Parameter for software flow control. Specifies the minimum number of bytes allowed in the input buffer before the XonChar is sent."
+    },
+    {
+      "name": "Note XonLimit and XoffLimit must be set properly to prevent errors, i.e. XonLimit < (input buffer size – XoffLimit) must apply.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "XonChar",
+      "type": "",
+      "description": "Parameter for software flow control. It specifies the value of the XON character to start an operation (transmission as well as reception)."
+    },
+    {
+      "name": "Note The transmitted data must not contain the XON and XOFF characters if software flow control is used. XON and XOFF are sent only once for each transition.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "-1",
+      "type": "",
+      "description": "infinite"
+    },
+    {
+      "name": "<10",
+      "type": "",
+      "description": "not allowed"
+    },
+    {
+      "name": "Note A timeout should not be used as it might stop a transmission that is not completed.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.1",
+      "7.1",
+      "—",
+      "—",
+      "14",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

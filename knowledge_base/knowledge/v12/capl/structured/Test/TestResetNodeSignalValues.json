@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestResetNodeSignalValues",
+  "category": "Test",
+  "title": "TestResetNodeSignalValues",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestResetNodeSignalValues.htm",
+  "syntax": [
+    "long TestResetNodeSignalValues (dbNode aNode);"
+  ],
+  "description": [
+    "Resets all tx-signals of the given node to their initial value. The sending of the messages depends on the messages send typ.",
+    "The reset-function does not contain a waiting time which guarantees that all signals are sent out on the bus. If a waiting time is desired, the TestWaitForTimeout function has additionally been executed.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "Node which tx-signals should be reset."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": "// check reaction of signal “LockState” after crash\n$CrashDetected = 1;\nTestWaitForTimeout(100);\nif ($LockState !=  Unlocked)\n    TestStepFail(“Doors are locked after crash is detected!”);\n\n// reset test signals of node “SUT”\nTestResetNodeSignalValues(SUT);\nTestWaitForTimeout(200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

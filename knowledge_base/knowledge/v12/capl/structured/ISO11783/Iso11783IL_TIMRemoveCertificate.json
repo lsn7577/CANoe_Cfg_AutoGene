@@ -1,0 +1,63 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMRemoveCertificate",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMRemoveCertificate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimRemoveCertificate.htm",
+  "syntax": [
+    "long Iso11783IL_TIMRemoveCertificate(byte certificateType); // form 1"
+  ],
+  "description": [
+    "Removes a certificate file which has been loaded Iso11783IL_TIMAddCertificate."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "AEF Root certificate"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Testlab certificate"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Manufacturer certificate"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Manufacturer series certificate"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Device certificate"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "CRL signing certificate"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

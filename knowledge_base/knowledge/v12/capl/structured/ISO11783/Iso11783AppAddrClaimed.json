@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783AppAddrClaimed",
+  "category": "ISO11783",
+  "title": "Iso11783AppAddrClaimed",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783AppAddrClaimed.htm",
+  "syntax": [
+    "dword Iso11783AppAddrClaimed( long ecuHandle );"
+  ],
+  "description": [
+    "Indicates that Address Claiming was performed successfully, which means that the control device is permitted to communicate on the CAN bus."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword Iso11783AppAddrClaimed( LONG ecuHandle )\n{\n  /* user code */\n  return 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

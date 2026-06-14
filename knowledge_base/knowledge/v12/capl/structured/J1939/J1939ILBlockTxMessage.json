@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "J1939ILBlockTxMessage",
+  "category": "J1939",
+  "title": "J1939ILBlockTxMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939InteractionLayer/Functions/CAPLfunctionJ1939ILBlockTxMessage.htm",
+  "syntax": [
+    "long J1939ILBlockTxMessage(dword pgn, dword destinationAddress, qword filterMask, qword filterValue); // form 1"
+  ],
+  "description": [
+    "Prevents transmitting of a message generated and sent by the interaction layer.",
+    "The message to block is specified by PGN, destination address and a part of the first eight data bytes.",
+    "To revert this command you can use J1939ILResetBlockedTxMessage or J1939ILResetAllBlockedTxMessages."
+  ],
+  "parameters": [
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "The message with this PGN shall be blocked."
+    }
+  ],
+  "return": "0: Manipulation is set successfully",
+  "example": {
+    "description": [],
+    "code": "—"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,72 @@
+{
+  "page_type": "concept",
+  "name": "Function Overview",
+  "category": "Panel",
+  "subcategory": "General",
+  "title": "Function Overview",
+  "source": "chm_extract_v15/VectorToolsEnvironment/Topics/PanelDesigner/General/PanelDesignerFunctionOverview.htm",
+  "intro": [
+    "You can use the Panel Designer to create graphic panels on which the values of symbols can be modified and displayed interactively by the user during simulation.",
+    "As the working area has been designed to work on the basis of tabs, multiple panels can be opened simultaneously in parallel.",
+    "A symbol from the database must be assigned to each display and control.",
+    "The panels are saved in xvp (extended vector panel) format and can subsequently be loaded in CANalyzer configurations.",
+    "All controls can be assigned to an open panel directly from the toolbox:",
+    "To facilitate alignment of the controls, snaplines on which controls can be aligned appear when you start the assignment process. Supplementing the guide lines, the Home ribbon tab features additional edit options.",
+    "The following control types are available for the configuration of the panels:",
+    "The available symbols can be assigned directly to a control by dragging and dropping from the Symbol Explorer. If you drag and drop a Symbols to a panel directly, this symbol is assigned to the default control set in the Options dialog.",
+    "Supported symbols depend on the CANalyzer program variant.",
+    "When a signal is assigned, the minimum/maximum values from the database are used for the value range (min/max) or for the alarm display of the control. The value range must be set in the database for this purpose. Otherwise, the value range will be calculated for the control according to the number of bits and the data type.",
+    "Note",
+    "If you assign a symbol to a control that have been already assigned a symbol by drag and drop, the minimum and maximum values and the alarm state settings defined in the database will only be taken over when the Shift key is pressed."
+  ],
+  "intro_tables": [
+    [
+      [
+        "Creating and saving panels"
+      ],
+      [
+        "You can use the Panel Designer to create graphic panels on which the values of symbols can be modified and displayed interactively by the user during simulation. As the working area has been designed to work on the basis of tabs, multiple panels can be opened simultaneously in parallel. A symbol from the database must be assigned to each display and control. The panels are saved in xvp (extended vector panel) format and can subsequently be loaded in CANalyzer configurations."
+      ],
+      [
+        "Assigning and aligning controls"
+      ],
+      [
+        "All controls can be assigned to an open panel directly from the toolbox: Using drag and drop By double-clicking By clicking with the left mouse button to select the required control and then clicking again with the left mouse button on the panel To facilitate alignment of the controls, snaplines on which controls can be aligned appear when you start the assignment process. Supplementing the guide lines, the Home ribbon tab features additional edit options. The following control types are available for the configuration of the panels: Display elements Control elements Static elements"
+      ],
+      [
+        "Panel and control configuration"
+      ],
+      [
+        "Individual panels and controls are configured via the ribbon or the Properties Window. All significant settings for one or a number of selected elements can be made in this window. You can use the Input/Output Box or the Combo Box to display and enter values in hexadecimal or binary format."
+      ],
+      [
+        "Assigning symbols"
+      ],
+      [
+        "The available symbols can be assigned directly to a control by dragging and dropping from the Symbol Explorer. If you drag and drop a Symbols to a panel directly, this symbol is assigned to the default control set in the Options dialog. Supported symbols depend on the CANalyzer program variant. When a signal is assigned, the minimum/maximum values from the database are used for the value range (min/max) or for the alarm display of the control. The value range must be set in the database for this purpose. Otherwise, the value range will be calculated for the control according to the number of bits and the data type. Note If you assign a symbol to a control that have been already assigned a symbol by drag and drop, the minimum and maximum values and the alarm state settings defined in the database will only be taken over when the Shift key is pressed.",
+        "Note If you assign a symbol to a control that have been already assigned a symbol by drag and drop, the minimum and maximum values and the alarm state settings defined in the database will only be taken over when the Shift key is pressed."
+      ],
+      [
+        "Note If you assign a symbol to a control that have been already assigned a symbol by drag and drop, the minimum and maximum values and the alarm state settings defined in the database will only be taken over when the Shift key is pressed."
+      ]
+    ],
+    [
+      [
+        "Note If you assign a symbol to a control that have been already assigned a symbol by drag and drop, the minimum and maximum values and the alarm state settings defined in the database will only be taken over when the Shift key is pressed."
+      ]
+    ],
+    [
+      [
+        "Version 2.0© Vector Informatik GmbH"
+      ]
+    ]
+  ],
+  "intro_code_blocks": [],
+  "sections": [],
+  "property_references": {
+    "properties": [],
+    "symbols": [],
+    "groups": [],
+    "syntax_patterns": []
+  }
+}

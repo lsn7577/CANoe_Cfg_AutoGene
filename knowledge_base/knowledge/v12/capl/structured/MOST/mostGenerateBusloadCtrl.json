@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostGenerateBusloadCtrl",
+  "category": "MOST",
+  "title": "mostGenerateBusloadCtrl",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTGenerateBusloadCtrl.htm",
+  "syntax": [
+    "long mostGenerateBusloadCtrl (long channel, long msgs)"
+  ],
+  "description": [
+    "The function sends cyclical messages to the control channel. Use the mostConfigureBusloadCtrl() function to specify the send parameters and contents of the message.",
+    "This function shows no effect if the StressNIC is not set to slave mode. For that purpose use mostSetStressNodeParameter function with the proper parameter."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected MOST hardware."
+    }
+  ],
+  "return": "<= 0: See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

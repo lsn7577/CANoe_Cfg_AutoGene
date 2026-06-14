@@ -1,0 +1,32 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_NumRequests",
+  "category": "Test",
+  "title": "ChkQuery_NumRequests",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryNumRequests.htm",
+  "syntax": [
+    "long ChkQuery_NumRequests (dword aCheckId);",
+    "check.QueryNumRequests();"
+  ],
+  "description": [],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Reference to check context."
+    }
+  ],
+  "return": "< 0: Refer the query error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "AREthSDSubscribeEventGroup",
+  "category": "IP",
+  "title": "AREthSDSubscribeEventGroup",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSDSubscribeEventGroup.htm",
+  "syntax": [
+    "long AREthSDSubscribeEventGroup( dword cevgHandle, LONG tillReboot );"
+  ],
+  "description": [
+    "An Event Group that was unregistered at the node (consumer) using the AREthSDDesubscribeEventGroup function can be registered again with this function. The associated Service Discovery message (Subscribe Eventgroup) is then sent."
+  ],
+  "parameters": [
+    {
+      "name": "cevgHandle",
+      "type": "",
+      "description": "Handle of the Consumed Event Group (see AREthAddConsumedEventGroup)."
+    },
+    {
+      "name": "tillReboot",
+      "type": "",
+      "description": "1: The TTL is set to the value infinite when registered. The registration of the Eventgroup (Subscribe Eventgroup) is performed once and is retained until a communication partner (producer or consumer) is restarted. 0: The TTL is set to the preset value (see AREthSetProperty). The registration of the Event Group is sent multiple times."
+    }
+  ],
+  "return": "Handle of the Consumed Event",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD aep; // application endpoint handle\n  DWORD csi; // consumed Service Instance handle\n  DWORD ceg; // consumed Eventgroup handle\n  DWORD cev; // consumed Event handle\n}\n\non start()\n{\n  // open application endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  csi = AREthCreateConsumedServiceInstance(aep,10,1);\n  // create Eventgroup\n  ceg = AREthAddConsumedEventGroup(csi,1);\n  // create Event Consumer\n  cev = AREthCreateEventConsumer(csi,1,\"CallbackEvent1\");\n}\n\nvoid CallbackEvent1(DWORD cevHandle, DWORD messageHandle)\n{\n  // this function is called if the Event was sent. Parameters can be evaluated here.\n}\n\non key 'd'\n{\n  AREthSDDesubscribeEventGroup(ceg);\n  write(\"Event Group is no longer subscribed\");\n}\n\non key 's'\n{\n  AREthSDSubscribeEventgroup (ceg,1);\n  write(\"Event Group will now be subscribed again\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

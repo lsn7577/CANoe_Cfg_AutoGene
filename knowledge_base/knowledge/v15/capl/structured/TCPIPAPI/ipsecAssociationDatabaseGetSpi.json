@@ -1,0 +1,163 @@
+{
+  "page_type": "function",
+  "name": "ipsecAssociationDatabaseGetSpi",
+  "category": "TCPIPAPI",
+  "title": "ipsecAssociationDatabaseGetSpi",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIpsecAssociationDatabaseGetSpi.htm",
+  "syntax": [
+    "long ipsecAssociationDatabaseGetSpi(IP_Endpoint source, IP_Endpoint destination, char[] protocol, char[] mode);"
+  ],
+  "description": [
+    "With this function it is possible to create a security association in the security association database of the current network stack. The stack will assign a free SPI to the security association. After the creation it is possible to modify the security association record with ipsecAssociationSetParameter and the update the security association in the database by calling ipsecAssociationDatabaseUpdate."
+  ],
+  "parameters": [
+    {
+      "name": "source",
+      "type": "",
+      "description": "Source endpoint of the security association."
+    },
+    {
+      "name": "destination",
+      "type": "",
+      "description": "Destination endpoint of the security association."
+    },
+    {
+      "name": "UNSPEC",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "ESP",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "AH",
+      "type": "",
+      "description": "2"
+    },
+    {
+      "name": "ANY",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "TRANSPORT",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "TUNNEL",
+      "type": "",
+      "description": "2"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  dword socket;\n  long association;\n  dword addressCount;\n  ip_Address adapterAddress[1];\n  ip_Endpoint localEndpoint;\n\n  // add a policy\n  IpSecPolicyDatabaseAdd(ip_Endpoint(0.0.0.0:0), 0, ip_Endpoint(192.168.1.10:0), 24, \"any\", \"out ipsec ah/transport//require\");\n\n  // create a security associaton in the database from the current node to the node 192.168.1.10\n  ipGetAdapterAddress(1, adapterAddress, addressCount);\n  localEndpoint.Address = adapterAddress[0];\n  association = ipsecAssociationDatabaseGetSpi(localEndpoint, ip_Endpoint(192.168.1.10), \"ah\", \"any\");\n\n  // set the ah algorithm and key\n  ipsecAssociationSetParameter(association, \"ahalgorithm\", \"sha\");\n  ipsecAssociationSetParameter(association, \"ahkey\", \"0123456789ABCDEF\");\n\n  // update the security association in the database\n  ipsecAssociationDatabaseUpdate(association);\n\n  // release the association object when it isn't needed anymore\n  ipsecAssociationRelease(association);\n\n  // send data which maches the policy\n  socket = udpOpen(ip_Endpoint(0.0.0.0:0));\n  udpSendTo(socket, ip_Endpoint(192.168.1.10:23), \"hello world\", 11);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "—",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

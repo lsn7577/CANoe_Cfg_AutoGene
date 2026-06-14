@@ -1,0 +1,39 @@
+# Copyright/Contact
+
+> Category: `DBC` | Subcategory: `Help` | Type: `concept`
+
+© Vector Informatik GmbH
+
+Vector Informatik GmbH – Support
+
+Our business hours are Monday to Friday from 9:00 am to 5:00 pm (CET):
+
+Phone:
+
+Fax:
+
+E-Mail:
+
+Online Report Form:
+
++49.711.80670.200
+
++49.711.80670.111
+
+support@vector.com
+
+https://vector.com/support/
+
+International Subsidiaries
+
+Depending on your location or language you may select the corresponding phone or e-mail support contact under https://vector.com/support/.
+
+| Vector Informatik GmbH – Support Our business hours are Monday to Friday from 9:00 am to 5:00 pm (CET): Phone: Fax: E-Mail: Online Report Form: +49.711.80670.200 +49.711.80670.111 support@vector.com https://vector.com/support/ | Phone: Fax: E-Mail: Online Report Form: | +49.711.80670.200 +49.711.80670.111 support@vector.com https://vector.com/support/ |
+|---|---|---|
+| Phone: Fax: E-Mail: Online Report Form: | +49.711.80670.200 +49.711.80670.111 support@vector.com https://vector.com/support/ |  |
+
+| Phone: Fax: E-Mail: Online Report Form: | +49.711.80670.200 +49.711.80670.111 support@vector.com https://vector.com/support/ |
+|---|---|
+
+| International Subsidiaries Depending on your location or language you may select the corresponding phone or e-mail support contact under https://vector.com/support/. |
+|---|

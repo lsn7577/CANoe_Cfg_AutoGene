@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "MediaCreateAudioCapturer",
+  "category": "Media",
+  "title": "MediaCreateAudioCapturer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaCreateAudioCapturer.htm",
+  "syntax": [
+    "dword MediaCreateAudioCapturer();"
+  ],
+  "description": [
+    "Creates a streaming audio capturer which is a media source that captures audio from an input device, e.g. a microphone.",
+    "The audio capturer provides uncompressed audio in either PCM or IEEE floating-point format."
+  ],
+  "parameters": [],
+  "return": "0: The function failed. Call MediaGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

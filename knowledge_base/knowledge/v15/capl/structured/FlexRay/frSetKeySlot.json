@@ -1,0 +1,179 @@
+{
+  "page_type": "function",
+  "name": "frSetKeySlot",
+  "category": "FlexRay",
+  "title": "frSetKeySlot",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Functions/CAPLfunctionFrSetKeySlot.htm",
+  "syntax": [
+    "void frSetKeySlot (long channel, long channelMask, long keySlotIndex, long keySlotId, long keySlotUsage);"
+  ],
+  "description": [
+    "Configures one of two possible key slots that are to be sent for a FlexRay bus.",
+    "The change will be applied with the next reset of the interface hardware (e.g. by resetFlexRayCC or resetFlexRayCCEx)."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel number (or cluster number)"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Channel A"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Channel B"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Channel A+B"
+    },
+    {
+      "name": "keySlotIndex",
+      "type": "",
+      "description": "Addresses the desired key slot (1 or 2)."
+    },
+    {
+      "name": "keySlotId",
+      "type": "",
+      "description": "This number designates a specific FlexRay slot in the static segment. Its value must be between 1 and 1023."
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Meaning"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Off"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Startup/Sync (Allowing Leading Coldstart)"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Sync"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Startup/Sync"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.2",
+      "7.2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

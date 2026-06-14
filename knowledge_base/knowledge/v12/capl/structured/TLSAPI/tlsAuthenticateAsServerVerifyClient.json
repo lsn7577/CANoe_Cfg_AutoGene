@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "tlsAuthenticateAsServerVerifyClient",
+  "category": "TLSAPI",
+  "title": "tlsAuthenticateAsServerVerifyClient",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TLSAPI/Functions/CAPLfunctiontlsAuthenticateAsServerVerifyClient.htm",
+  "syntax": [
+    "long tlsAuthenticateAsServerVerifyClient(dword socket, char certificate[]);"
+  ],
+  "description": [
+    "Starts the authentication handshake as server and verify the client certificate."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "void OnTcpListen( dword socket, long result)\n{\n  DWORD clientHandle;\n  // Accept the connection\n  clientHandle = TcpAccept( socket );\n\n  tlsOpen(clientHandle);\n  tlsAuthenticateAsServerVerifyClient(clientHandle, \"Server1\");\n\n  if ((tlsGetLastError(clientHandle) != 0) &&\n  (tlsGetLastError(clientHandle) != 997))\n  {\n    // an error occurred\n    return;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

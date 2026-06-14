@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestNmtRefresh",
+  "category": "J1939",
+  "title": "J1939TestNmtRefresh",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestNmtRefresh.htm",
+  "syntax": [
+    "long J1939TestNmtRefresh( dword waitTime );"
+  ],
+  "description": [
+    "Sends a ‘Request for Address Claim’ from Null Address (0xFE) and updates the NMT table. The function waits until the specified time is elapsed."
+  ],
+  "parameters": [
+    {
+      "name": "waitTime",
+      "type": "",
+      "description": "wait until this time elapses, in milliseconds"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "char deviceName[8];\nJ1939TestNmtRefresh( 250 );\nJ1939TestNmtQueryDeviceName( 1, deviceName );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

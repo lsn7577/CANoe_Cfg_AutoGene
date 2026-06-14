@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateServiceDetailRes_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateServiceDetailRes_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateServiceDetailRes_Iso.htm",
+  "syntax": [
+    "long SCC_CreateServiceDetailRes_ISO ( byte SessionID[], char ResponseCode[], dword ServiceID )"
+  ],
+  "description": [
+    "Creates a Service Detail Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

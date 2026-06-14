@@ -1,0 +1,34 @@
+# SetLoadControlTimeout
+
+> Category: `VTSystem` | Type: `function`
+
+## Syntax
+
+```c
+long SysVarNamespace.SetLoadControlTimeout (double Timeout);
+```
+
+## Description
+
+When signals with brief interruptions are created (especially PWM signals), it is possible to set a hold time (a control timeout) so that the electronic load does not have be corrected again on every signal edge. Thus, if the input voltage rises again before the timeout expires, the electronic load is still adjusted to the old value and only has to be corrected minimally, if at all. Because the settling time is eliminated, very rapidly changing PWM signals can also be operated with the electronic load.
+
+The timeout time selected should be approximately 10 to 100 times higher than the frequency of the control unit output signal. For a PWM signal with a frequency starting from 10 Hz, a timeout time of 1 to 10 seconds is sufficient. If this functionality is not required, the timeout time should be set to 0, because it slows down the corrections.
+
+## Return Values
+
+0: Successful call
+
+## Example
+
+The following figure illustrates the control response using an example:
+
+A timeout of 2 s was set here. The input voltage (yellow) and the current flowing at the input (red) are presented qualitatively. At the first pulse, the input voltage is not applied for only approximately 1 s. In this case, a timeout does not occur and the set current continues flowing when the input voltage is applied again. At the second pulse, a timeout occurs. In this case, the input voltage is not applied for a period lasting more than 2 s. The internal load is then connected with high resistance. If the input voltage is restored, the internal load must first adjust to the set current, which is apparent from the slow rise in the current.
+
+```c
+sysvar::VTS::LowBeamRight.SetLoadControlTimeout (10.0);
+```
+
+## Availability
+
+| Since Version |
+|---|

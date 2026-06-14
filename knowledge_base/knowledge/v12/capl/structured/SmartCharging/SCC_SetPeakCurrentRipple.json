@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetPeakCurrentRipple",
+  "category": "SmartCharging",
+  "title": "SCC_SetPeakCurrentRipple",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetPeakCurrentRipple.htm",
+  "syntax": [
+    "long SCC_SetPeakCurrentRipple ( float PeakCurrentRipple)"
+  ],
+  "description": [
+    "Sets lower limits and other electrical values for the message ChargeParameterDiscoveryRes. These limits are used in various messages for both AC and DC mode (the actual element name depends on the charging mode and the procotol version). Defaults can be set using the respective configuration file."
+  ],
+  "parameters": [
+    {
+      "name": "Parameter",
+      "type": "",
+      "description": "Value to be set."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

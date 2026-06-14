@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "VTIL_GetAddress",
+  "category": "ISO11783",
+  "title": "VTIL_GetAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILGetAddress.htm",
+  "syntax": [
+    "long VTIL_GetAddress();"
+  ],
+  "description": [
+    "Returns the address that is used by the VT IL."
+  ],
+  "parameters": [],
+  "return": ">=0: Address of the VT IL",
+  "example": {
+    "description": [],
+    "code": "on key 'a'\n{\n  long addr;\n  addr = VTIL_GetAddress();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

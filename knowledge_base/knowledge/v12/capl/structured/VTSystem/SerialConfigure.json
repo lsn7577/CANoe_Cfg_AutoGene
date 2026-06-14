@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "SerialConfigure",
+  "category": "VTSystem",
+  "title": "SerialConfigure",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSerialConfigure.htm",
+  "syntax": [
+    "long SysVarNamespace.SerialConfigure(eVTSBaudRate baudrate, eVTSDataBits numberOfDataBits, eVTSStopBits numberOfStopBits, eVTSParity parity );"
+  ],
+  "description": [
+    "Configures the serial port of the VT System channel that is specified by the system variable namespace.",
+    "Without setting up a configuration explicitly, the default configuration is used.Default baud rate: 1200, 8 data bits, 1 stop bit, no parity."
+  ],
+  "parameters": [
+    {
+      "name": "baudrate",
+      "type": "",
+      "description": "The symbol rate to use for reception and transmission.Serial ports of the VT7001 : Values see eVTSBaudRate"
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [
+      "This example shows how to use the RS232 functionality of the VT7001 module. It is assumed, that power supply 1 of the VT7001 is connected to a proper counterpart (e.g. a PC) via a serial connection. In this example the string “Hello World!” is sent by the VT7001. After that all incoming characters are output to the Write Window. After 10 seconds the connection is closed.",
+      "—"
+    ],
+    "code": "RS232Example ()\n{\n   // Declare variables for RS232 communication\n   char stringToSend[20] = \"Hello World !\"; // String to send\n   byte sendBuffer[20];                     // Byte array to hold send data\n   byte receiveBuffer[20];                  // Buffer for received data\n   int i;                                   // Counter variable\n\n   // Register the RS232 callback functions\n   sysvar::VTS::ECUPowerSupply.SerialSetOnErrorHandler(\"OnRS232Error\");\n   sysvar::VTS::ECUPowerSupply.SerialSetOnReceiveHandler(\"OnRS232Receive\");\n   sysvar::VTS::ECUPowerSupply.SerialSetOnSendHandler(\"OnRS232Sent\");\n\n   // Configure the serial port i.e. for communication with an external\n   // ECU power supply to 9600 baud, 8 data bits, 1 stop bit, no parity\n   sysvar::VTS::ECUPowerSupply.SerialConfigure(eVTSBaudRate9600, eVTSDataBitsEight, eVTSStopBitsOne, eVTSParityNone);\n\n   // Open the serial port i.e. for communication with an external ECU power supply\n   sysvar::VTS::ECUPowerSupply.SerialOpen();\n\n // Wait briefly to make sure settings are applied and port is ready\n   TestWaitForTimeOut(10);\n\n   // **** Send data ****\n\n   // Copy the string to a byte array and send it\n   for (i=0; i<strlen(stringToSend); ++i) sendBuffer[i] = stringToSend[i];\n   sysvar::VTS::ECUPowerSupply.SerialSend(sendBuffer, strlen(stringToSend));\n\n   // **** Receive data ****\n\n   // For 10s output all received data to the Write Window\n   Write(\"Waiting for incomming data...\");\n   sysvar::VTS::ECUPowerSupply.SerialReceive(receiveBuffer, elcount(receiveBuffer));\n   TestWaitForTimeOut(10000);\n\n   // Close the serial port\n   sysvar::VTS::ECUPowerSupply.SerialClose();\n}\n\nvoid OnRS232Error(dword flags)\n{\n   // Write error details to the Write Window\n  if((flags & (dword) eVTSSerialErrorsSendOperationFailed) != 0)\n  {\n    Write(\"Error occurred on serial port of VT7001 module: eVTSSerialErrorsSendOperationFailed\");\n  }\n  if((flags & (dword) eVTSSerialErrorsFrameError) != 0)\n  {\n    Write(\"Error occurred on serial port of VT7001 module: eVTSSerialErrorsFrameError\");\n  }\n}\n\nvoid OnRS232Receive(byte buffer[], dword number)\n{\n   long i;\n   char string[256];\n   // Create a string from the given byte array\n   for(i=0; i<elcount(buffer); ++i)\n      string[i] = buffer[i];\n\n   // Write received data to the Write Window\n   Write(\"Received '%s' (%d bytes) on ECU power supply port.\", string, number);\n}\n\nvoid OnRS232Sent(byte buffer[], dword number)\n{\n   long i;\n   char string[256];\n\n   // Create a string from the given byte array\n   for(i=0; i<elcount(buffer); ++i)\n      string[i] = buffer[i];\n\n   // Write sent data to the Write Window\n   Write(\"Sent '%s' (%d bytes) on ECU power supply port.\", string, number);\n}\npublic void RS232Example()\n   {\n      // Get VTS interface and external power supply 1\n      IVTSystem vts = VTSystem.Instance;\n      IVT7001Supply1 ecuPowerSupply = vts.GetChannel(\"ECUPowerSupply\") as IVT7001Supply1;\n\n      // Register the event handlers\n      ecuPowerSupply.OnSerialSentEvent += new OnSerialSentHandler(this.SendHandler);\n      ecuPowerSupply.OnSerialReceivedEvent += new OnSerialReceivedHandler(this.ReceiveHandler);\n      ecuPowerSupply.OnSerialErrorEvent += new OnSerialErrorHandler(this.ErrorHandler);\n\n      // Configure the serial port i.e. for communication with an external\n      // ECU power supply to 9600 baud, 8 data bits, 1 stop bit, no parity\n      ecuPowerSupply.SerialConfigure(BaudRate.BaudRate9600, DataBits.Eight, StopBits.One, Parity.None);\n\n      // Open the serial port i.e. for communication with an external ECU power supply\n      ecuPowerSupply.SerialOpen();\n\n // Wait briefly to make sure settings are applied and port is ready\n      Vector.CANoe.Threading.Execution.Wait(10);\n\n      // **** Send data ****\n\n      // Send a string via RS232\n      ecuPowerSupply.SerialSend(\"Hello world!\");\n\n      // **** Receive data ****\n\n      // For 10s output all received data to the Write Window\n      byte[] receiveBuffer = new byte[32];\n      ecuPowerSupply.SerialReceive(receiveBuffer);\n      Vector.CANoe.Threading.Execution.Wait(10000);\n\n      // Close the serial port\n      ecuPowerSupply.SerialClose();\n   }\n\n   public void SendHandler(object sender, SerialSentEventArgs e)\n   {\n      // Print sent data to Write Window\n      System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();\n      Vector.Tools.Output.WriteLine(\"The following data was sent: \" + enc.GetString(e.Buffer));\n   }\n\n   public void ReceiveHandler(object sender, SerialReceivedEventArgs e)\n   {\n      // Print received data to Write Window\n      System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();\n      Vector.Tools.Output.WriteLine(\"Received the following data: \" + enc.GetString(e.Buffer));\n   }\n\n   public void ErrorHandler(object sender, SerialErrorEventArgs e)\n   {\n      // Print error to Write Window\n      Vector.Tools.Output.WriteLine(\"An error occurred in the serial connection: \" + e.ErrorFlags.ToString());\n   }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

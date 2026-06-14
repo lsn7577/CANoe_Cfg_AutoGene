@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coSetNMTState",
+  "category": "Obsolete",
+  "title": "coSetNMTState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoSetNmtState.htm",
+  "syntax": [
+    "void coSetNMTState( dword nodeId, dword newState,dword errCode[] );"
+  ],
+  "description": [
+    "Sets the state of a node on the network. The node for which this function is called must previously have been started with coStartUp(). Furthermore, the node must be configured as NMT master (Bit 0 in 1F80 set) and the object 1F82 must exist in the object dictionary."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID, value range 0..127, 0 - all nodes"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoSetNMTState( 0, 5, errCode );\nif (errCode[0] == 0) {\n  write( \"NMT state change to Operational for all nodes commanded\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

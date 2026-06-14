@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Open",
+  "category": "Other",
+  "title": "Open",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionOpen.htm",
+  "syntax": [
+    "file(char [] filename, dword access, dword mode); // form 1"
+  ],
+  "description": [
+    "This function opens the file named filename.",
+    "If access = 0, the file is opened for write access; if access = 1 the file is opened for read access.",
+    "If mode = 0 the file is opened in text mode; if mode = 1 the file is opened in binary mode."
+  ],
+  "parameters": [
+    {
+      "name": "filename",
+      "type": "",
+      "description": "The name of the file"
+    }
+  ],
+  "return": "— (constructor)",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

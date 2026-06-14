@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSetNodeId",
+  "category": "CANopen",
+  "title": "coTfsSetNodeId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSetNodeId.htm",
+  "syntax": [
+    "long coTfsSetNodeId( dword nodeID );"
+  ],
+  "description": [
+    "The internal node-ID for the simplified test functions is set."
+  ],
+  "parameters": [
+    {
+      "name": "nodeID",
+      "type": "",
+      "description": "0 < node-ID < 128"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsSetNodeId (2); // set node-ID = 2"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,241 @@
+# Switch/Indicator
+
+> Category: `Panel` | Subcategory: `Elements` | Type: `concept`
+
+## Use Case
+
+The Switch/Indicator can be used as a control and display element for selecting and displaying defined states. The individual states are graphically illustrated with pictures.
+
+The following use cases are possible with the Switch/Indicator:
+
+## Special Features
+
+The values entered during a state change can be concrete values and value ranges.
+
+During a state change, you can enter concrete symbol values to map, for example a classic ignition lock. Sort the corresponding symbol values to the states.The symbol value is used both for sending (control element) and receiving (display element). For one state, only one value can be configured for sending and receiving.
+
+During a state change, you can also enter value ranges to map, for example a digital fuel indicator. Sort the value ranges to the states.
+
+## Configuration
+
+Assign a symbol to the control in the Panel Designer.
+
+You can assign a symbol to the control
+
+You can configure the control via the ribbon or the Properties Window.
+
+## Control Element
+
+During runtime of CANalyzer, you can actuate the Switch/Indicator; the corresponding switching value is assigned to the symbol and the Switch/Indicator displays the associated image.
+
+## Display Element
+
+The symbol is not set manually to a defined condition. Rather it is set by simulation or CAPL programs, for example. In the Switch/Indicator the associated image is displayed.
+
+## Ribbon|Properties Tab / Properties Window
+
+Here all settings are listed that you can change in the ribbon and/or in the Properties Window.
+
+General Group
+
+General
+
+Name
+
+Control Name
+
+Here you change the name of the control. This name and the name of the panel is required for access from CAPL.
+
+Display Only
+
+With a click on the symbol you switch between control and display element.
+
+With activated option the control is used as display element.
+
+—
+
+Is Visible At Runtime
+
+Specifies whether the control is to be displayed during runtime.
+
+| Ribbon | Properties Window | Description |  |  |
+|---|---|---|---|---|
+| General Group | General |  |  |  |
+| Name | Control Name | Here you change the name of the control. This name and the name of the panel is required for access from CAPL. |  |  |
+| Display Only | Display Only With a click on the symbol you switch between control and display element. With activated option the control is used as display element. |  |  |  |
+| — | Is Visible At Runtime | Specifies whether the control is to be displayed during runtime. CAPL Access With the function setControlVisibility, you can set, if the control is displayed during runtime or not. |  |  |
+| — | Tab Index | Defines the order in which the various controls on a panel are to be navigated with the Tab key during runtime. |  |  |
+| Image Group | Appearance |  |  |  |
+| Image File | Image File | Change the image for the control. You must assign an image with image sequences to the Switch/Indicator according to the number of statuses. A maximum image size (height/width) of 32767 pixels is supported. For larger images, the image size must be reduced in an image processing program. |  |  |
+| Transparency | Transparent Color | Change the transparent color. The picture transparency is always active. You must only define the color for which the picture should be transparent. |  |  |
+| Resize Proportionally | Resize Proportionally With a click on the symbol you activate/deactivate the proportional increase/decrease (height = width). |  |  |  |
+| — | Fit Image Size With a click on the symbol you reset the selected image to its original size. |  |  |  |
+| — | Border Style | Here you change the frame of the control: Fixed 3D3D frame Fixed SingleSingle frame NoneNo frame |  |  |
+| Switch Values Group | Switch Values |  |  |  |
+| Initialization | Initialization Increment/Initialization Start Value | Automatic calculation of the state values The values for the state change are calculated from the following two values and the number of states: Use Start Value to set the value for the first state. Use Increment to set the distance between two states. |  |  |
+| State Count | State Count | Here you change the number of states. |  |  |
+| Switch Values | Switch Values | Here you change the value for the status change. The values entered during a state change can be concrete values and value ranges. Concrete values The symbol value is used both for sending (control element) and receiving (display element). For one state, only one value can be configured for sending and receiving. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value. Value ranges When receiving (display element) the symbol, the system checks in which value range the symbol value lies and the corresponding state is displayed. For sending (control element), still a concrete value is required. If required, you can configure it in the Tx column. Notation of a Value Range Input using .. or - between the start value and the end value: for example a..b Input using square brackets: for example [a..b]Closed interval, i.e. the values are within the value range. Input using round brackets: for example (a..b)Open interval, i.e. the values are not within the value range. Input using a round and a square bracket: for example (a..b] or [a..b)(a..b]: the first value is not within the value range and the second value is within it[a..b): the first value is within the value range and the second value is not within it Note If you enter the value range without brackets, square brackets will be added automatically. The value for sending is automatically set to the mean value of the value range and is recalculated only when it lies outside the value range. In the meantime you must adjust it, if required. If the value is assigned to two states, the first state (the state with the smaller index) is displayed. | Note If you enter the value range without brackets, square brackets will be added automatically. The value for sending is automatically set to the mean value of the value range and is recalculated only when it lies outside the value range. In the meantime you must adjust it, if required. If the value is assigned to two states, the first state (the state with the smaller index) is displayed. |  |
+| Note If you enter the value range without brackets, square brackets will be added automatically. The value for sending is automatically set to the mean value of the value range and is recalculated only when it lies outside the value range. In the meantime you must adjust it, if required. If the value is assigned to two states, the first state (the state with the smaller index) is displayed. |  |  |  |  |
+| — | Epsilon | If the linked symbol is a double value, then a value may not be detected if it differs from the expected value because of an approximation of the decimal.Via the Epsilon property, you may set in the Panel Designer a value that specifies up to which tolerated inaccuracy a value is detected. Note The control has been configured with a Value = 2 and an Epsilon = 0.01. If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status. Note This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values. | Note The control has been configured with a Value = 2 and an Epsilon = 0.01. If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status. | Note This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values. |
+| Note The control has been configured with a Value = 2 and an Epsilon = 0.01. If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status. |  |  |  |  |
+| Note This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values. |  |  |  |  |
+| Settings Group | Settings |  |  |  |
+| Button Behavior | Here you change the behavior of the Switch/Indicator. As button exactly two Switch Values must be defined. One value for pressing the button and one value for the release of the button.If you click the Switch/Indicator state 1 will be set and if you release it state 0 is set again. CAPL Access With the function setControlProperty, you can set this property of the control. |  |  |  |
+| Mouse Activation Type | Here you change the setting which mouse button triggers a status change: Left and RightStatus change when pressing the left or right mouse button Only LeftStatus change when pressing the left mouse button |  |  |  |
+| — | Show Initial Picture | Show Initial Picture (only available with assigned signal) Specifies if the initial picture (inactive state) should be displayed as long as the assigned signal will be received. False: The initial picture is displayed on the panel when no signal has been assigned to the element. True: The initial picture is displayed as long as the assigned signal will be received. |  |  |
+| More Group | — |  |  |  |
+| — | Show Properties With a click on the symbol you open the Properties Window. |  |  |  |
+| Group: — | Layout |  |  |  |
+| — | Location/Size | Here you can enter settings relating to the size and position of the control. Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. | Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |  |
+| Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |  |  |  |  |
+| Group: — | Symbol |  |  |  |
+| — | Symbol | You can assign a symbol to the control. With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter. Valid Data Types of Symbols |  |  |
+| — | Symbol Filter | Here you select the type of the symbol you want to assign to your control. |  |  |
+
+## CAPL Access
+
+With the function setControlVisibility, you can set, if the control is displayed during runtime or not.
+
+—
+
+Tab Index
+
+Defines the order in which the various controls on a panel are to be navigated with the Tab key during runtime.
+
+Image Group
+
+Appearance
+
+Image File
+
+Change the image for the control.
+
+You must assign an image with image sequences to the Switch/Indicator according to the number of statuses.
+
+A maximum image size (height/width) of 32767 pixels is supported. For larger images, the image size must be reduced in an image processing program.
+
+Transparency
+
+Transparent Color
+
+Change the transparent color.
+
+The picture transparency is always active. You must only define the color for which the picture should be transparent.
+
+Resize Proportionally
+
+With a click on the symbol you activate/deactivate the proportional increase/decrease (height = width).
+
+Fit Image Size
+
+With a click on the symbol you reset the selected image to its original size.
+
+Border Style
+
+Here you change the frame of the control:
+
+Switch Values Group
+
+Switch Values
+
+Initialization
+
+Initialization Increment/Initialization Start Value
+
+Automatic calculation of the state values
+
+The values for the state change are calculated from the following two values and the number of states:
+
+State Count
+
+Here you change the number of states.
+
+Here you change the value for the status change.
+
+The values entered during a state change can be concrete values and value ranges.
+
+The symbol value is used both for sending (control element) and receiving (display element). For one state, only one value can be configured for sending and receiving. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value.
+
+Note
+
+Epsilon
+
+If the linked symbol is a double value, then a value may not be detected if it differs from the expected value because of an approximation of the decimal.Via the Epsilon property, you may set in the Panel Designer a value that specifies up to which tolerated inaccuracy a value is detected.
+
+The control has been configured with a Value = 2 and an Epsilon = 0.01.
+
+If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status.
+
+This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values.
+
+Settings Group
+
+Settings
+
+Button Behavior
+
+Here you change the behavior of the Switch/Indicator.
+
+As button exactly two Switch Values must be defined. One value for pressing the button and one value for the release of the button.If you click the Switch/Indicator state 1 will be set and if you release it state 0 is set again.
+
+| Note If you enter the value range without brackets, square brackets will be added automatically. The value for sending is automatically set to the mean value of the value range and is recalculated only when it lies outside the value range. In the meantime you must adjust it, if required. If the value is assigned to two states, the first state (the state with the smaller index) is displayed. |
+|---|
+
+| Note The control has been configured with a Value = 2 and an Epsilon = 0.01. If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status. |
+|---|
+
+| Note This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values. |
+|---|
+
+## CAPL Access
+
+With the function setControlProperty, you can set this property of the control.
+
+Mouse Activation Type
+
+Here you change the setting which mouse button triggers a status change:
+
+—
+
+Show Initial Picture
+
+Show Initial Picture (only available with assigned signal)
+
+Specifies if the initial picture (inactive state) should be displayed as long as the assigned signal will be received.
+
+More Group
+
+Show Properties
+
+With a click on the symbol you open the Properties Window.
+
+Group: —
+
+Layout
+
+Location/Size
+
+Here you can enter settings relating to the size and position of the control.
+
+Note
+
+You can also resize the control by dragging its markers.
+
+Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.
+
+Symbol
+
+You can assign a symbol to the control.
+
+With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter.
+
+Valid Data Types of Symbols
+
+Symbol Filter
+
+Here you select the type of the symbol you want to assign to your control.
+
+Assigning Controls | Transparency Color
+
+| Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel. |
+|---|

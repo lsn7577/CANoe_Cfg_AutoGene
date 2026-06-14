@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GNSSAddWpMeander",
+  "category": "J1939",
+  "title": "GNSSAddWpMeander",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSaddwpmeander.htm",
+  "syntax": [
+    "dword GNSSAddWpMeander( double latitudeRef, double longitudeRef, double altitudeRef, double width, double height, double radius, dword numOfLoops);"
+  ],
+  "description": [
+    "This function can be used to describe a meander with rounded off corners. To do this, the points that describe the meander are inserted at the end of the waypoint list. The unit of the parameters depends on the system of measurement units selected with the GNSSSetUnits function.",
+    "The following illustrations describe the effect of the prefixed sign on the values for height and width (assuming that radius = 0). The thicker point identifies the reference point."
+  ],
+  "parameters": [
+    {
+      "name": "latitudeRef",
+      "type": "",
+      "description": "latitude of the reference point (in degrees)"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "// meander with 3 loops, every loop has \r\n a width of 100 yd and a height of 200 yd\nGNSSSetUnits( 1 );\nGNSSAddWpMeander( 48.46, 9.11, 225, 100, 200, \r\n 10, 3 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

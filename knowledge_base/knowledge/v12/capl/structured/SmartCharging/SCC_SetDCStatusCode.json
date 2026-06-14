@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetDCStatusCode",
+  "category": "SmartCharging",
+  "title": "SCC_SetDCStatusCode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetDCStatusCode.htm",
+  "syntax": [
+    "long SCC_SetDCStatusCode ( char StatusCode[] )"
+  ],
+  "description": [
+    "Sets the DC status."
+  ],
+  "parameters": [
+    {
+      "name": "StatusCode",
+      "type": "",
+      "description": "String buffer that is written to the status code."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

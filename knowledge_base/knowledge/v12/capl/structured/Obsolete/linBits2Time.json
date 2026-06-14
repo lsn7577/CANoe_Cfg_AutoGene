@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linBits2Time",
+  "category": "Obsolete",
+  "title": "linBits2Time",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINBits2Time.htm",
+  "syntax": [
+    "dword linBits2Time(dword bitTimes)"
+  ],
+  "description": [
+    "Converts specified bit time to an absolute time.",
+    "The absolute time is calculated using the current baud rate on the channel determined by the CAPL program context."
+  ],
+  "parameters": [
+    {
+      "name": "bitTimes",
+      "type": "",
+      "description": "Time in bits."
+    }
+  ],
+  "return": "Absolute time in 10 µs.",
+  "example": {
+    "description": [
+      "Convert header bit time of a LIN frame to µs"
+    ],
+    "code": "on linFrame *\n{\ndword headerTimeInMicroSeconds; // time in µs\nheaderTimeInMicroSeconds = linBits2Time(this.LIN_HeaderTime)*10;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

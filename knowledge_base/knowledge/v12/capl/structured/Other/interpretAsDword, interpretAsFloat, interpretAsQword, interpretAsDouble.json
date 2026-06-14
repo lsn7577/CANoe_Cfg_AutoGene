@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "interpretAsDword, interpretAsFloat, interpretAsQword, interpretAsDouble",
+  "category": "Other",
+  "title": "interpretAsDword, interpretAsFloat, interpretAsQword, interpretAsDouble",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionInterpretAs.htm",
+  "syntax": [
+    "dword interpretAsDword(float x);"
+  ],
+  "description": [
+    "These functions interpret the actual bytes of a value as if the value was of another data type.",
+    "InterpretAsFloat for example takes the four bytes or a dword, interprets them as if they were four bytes of an IEEE single precision floating point number, and returns that number.",
+    "InterpretAsDouble interprets eight bytes as if they were an IEEE double precision floating point number.",
+    "InterpretAsDword and InterpretAsQword are the inverse functions."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "The number which shall be interpreted."
+    }
+  ],
+  "return": "The interpreted value.",
+  "example": {
+    "description": [],
+    "code": "// take a message with 8 bytes representing a double number\non message MessageWithDoubleSignal\n{\n  qword rawBytes;\n  double value;\n  rawBytes = this.qword(0);\n  value = interpretAsDouble(rawBytes);\n  write(\"The value is %g\", value);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

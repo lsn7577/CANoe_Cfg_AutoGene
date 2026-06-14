@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "testValidateSignalInRangeByTxNode",
+  "category": "Obsolete",
+  "title": "testValidateSignalInRangeByTxNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionTestValidateSignalInRangeByTxNode.htm",
+  "syntax": [
+    "long testValidateSignalInRangeByTxNode (char aTestStep[], dbSignal aSignal, dbNode aTxNode, float aLowLimit, float aHighLimit)"
+  ],
+  "description": [
+    "Checks the signal value against the condition:",
+    "aLowLimit <= Value <= aHighLimit",
+    "The test step is then evaluated as passed or failed, depending on the results"
+  ],
+  "parameters": [
+    {
+      "name": "aTestStep",
+      "type": "",
+      "description": "Name of the test step for the test report"
+    }
+  ],
+  "return": "-1: General error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_FSGetVolumeInfo",
+  "category": "ISO11783",
+  "title": "Iso11783IL_FSGetVolumeInfo",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILfsgetvolumeinfo.htm",
+  "syntax": [
+    "long Iso11783IL_FSGetVolumeInfo( dword infoCount, dword retInfo[] );"
+  ],
+  "description": [
+    "This function returns information about the current volume. The current volume is the volume where the configuration is stored."
+  ],
+  "parameters": [
+    {
+      "name": "infoCount",
+      "type": "",
+      "description": "Number of elements in retInfo"
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Bit filled with valid elements, Bit 1 set = Index 1 is valid, ..."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Total space of the volume in 512 byte blocks"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Free space in 512 byte blocks"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "dword info[3];\n\nIso11783IL_FSGetVolumeInfo( elCount(info), info );\nwrite( \"Total \r\n size %d blocks\", info[1] );\nwrite( \"Free size \r\n %d blocks\", info[2] );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

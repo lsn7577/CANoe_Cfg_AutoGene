@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diag_RequestDone",
+  "category": "Diagnostics",
+  "title": "diag_RequestDone",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagRequestDone.htm",
+  "syntax": [
+    "long diag_RequestDone(); // form 1"
+  ],
+  "description": [
+    "The processing of the current diagnostic request completed. This function can be called if the diagnostic communication layer detected a timeout, i.e. the ECU did not respond in time. Calling this function allows the CAPL program to abort waiting for a response on the request."
+  ],
+  "parameters": [
+    {
+      "name": "target",
+      "type": "",
+      "description": "Stop processing of the current request sent to the ECU with this qualifier."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "on timer tP2\n{\n  // No response was received within P2\n  diag_RequestDone( gCurrentECU);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

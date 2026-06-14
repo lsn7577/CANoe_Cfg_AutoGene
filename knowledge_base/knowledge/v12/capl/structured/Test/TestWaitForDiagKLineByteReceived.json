@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDiagKLineByteReceived",
+  "category": "Test",
+  "title": "TestWaitForDiagKLineByteReceived",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDiagKLineByteReceived.htm",
+  "syntax": [
+    "long TestWaitForDiagKLineByteReceived(dword timeout_ms); // form 1"
+  ],
+  "description": [
+    "Waits for the occurrence of a received byte. Should the byte not occur before the expiration of the time timeout_ms, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "StandardFrameCount",
+  "category": "CAN",
+  "title": "StandardFrameCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionStandardFrameCount.htm",
+  "syntax": [
+    "long StandardFrameCount ()",
+    "CANx.StandardFrameCount"
+  ],
+  "description": [
+    "Returns the number of standard CAN messages on channel x since start of measurement.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Number of standard CAN messages on channel x since start of measurement.",
+  "example": {
+    "description": [],
+    "code": "write (\"Number of standard frames on CAN1 = %d\", CAN1.StandardFrameCount);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

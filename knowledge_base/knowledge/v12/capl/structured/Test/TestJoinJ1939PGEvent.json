@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestJoinJ1939PGEvent",
+  "category": "Test",
+  "title": "TestJoinJ1939PGEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinJ1939PGEvent.htm",
+  "syntax": [
+    "long TestJoinJ1939PGEvent (dbMessage aMessage)"
+  ],
+  "description": [
+    "Completes the current set of joined events with the transmitted event.This function does not wait.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message that should be awaited. Must be a J1939 parameter group."
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": "// add J1939 PG event to the current set of “joined events” and fill the parameter group data to parameter group ‘eventMessage’\n\npg TSC1 pgTSC1;\ndword index = 0;\nTestJoinJ1939PGEvent (TSC1);\n// ... other join events\nindex = TestWaitForAllJoinedEvents (2000);\n\nTestGetWaitJ1939PGData (index, pgTSC1);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

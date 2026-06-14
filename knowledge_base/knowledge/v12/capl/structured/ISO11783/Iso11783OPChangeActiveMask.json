@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPChangeActiveMask",
+  "category": "ISO11783",
+  "title": "Iso11783OPChangeActiveMask",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPChangeActiveMask.htm",
+  "syntax": [
+    "long Iso11783OPChangeActiveMask( dword ecuHandle, dword maskID );"
+  ],
+  "description": [
+    "This function changes the active data mask. The Change Active Mask command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPChangeActiveMask( handle, 1000 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

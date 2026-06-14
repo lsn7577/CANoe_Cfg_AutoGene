@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SomeIpSDReleaseService",
+  "category": "IP",
+  "title": "SomeIpSDReleaseService",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpSDReleaseService.htm",
+  "syntax": [
+    "long SomeIpSDReleaseService( dword csiHandle );"
+  ],
+  "description": [
+    "The service is unregistered at the node (consumer). The associated Service Discovery message (Find Service) is then no longer sent by the node.",
+    "The Service Instance and all assigned Eventgroups, Events, Fields, and Methods are not deleted when the Service Instance is unregistered."
+  ],
+  "parameters": [
+    {
+      "name": "csiHandle",
+      "type": "",
+      "description": "Handle of the Consumed Service Instance to be released (see SomeIpCreateConsumedServiceInstance)."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  DWORD aep; // application endpoint handle\n  DWORD csi; // consumed Service Instance handle\n  DWORD ceg; // consumed Eventgroup handle\n  DWORD cev; // consumed Event handle\n}\n\non start()\n{\n  // open application endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,10,1);\n  // create Eventgroup\n  ceg = SomeIpAddConsumedEventGroup(csi,1);\n  // create Event Consumer\n  cev = SomeIpCreateEventConsumer(csi,32770,\"CallbackEvent1\");\n}\n\nvoid CallbackEvent1(DWORD cevHandle, DWORD messageHandle)\n{\n  // this function is called if the Event was sent. Parameters can be evaluated here.\n}\n\non key 'r'\n{\n  SomeIpSDRequireService (csi);\n}\n\non key 'x'\n{\n  SomeIpSDReleaseService (csi);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

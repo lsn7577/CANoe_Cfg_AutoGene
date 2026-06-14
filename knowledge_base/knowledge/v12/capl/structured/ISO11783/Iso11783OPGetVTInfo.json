@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPGetVTInfo",
+  "category": "ISO11783",
+  "title": "Iso11783OPGetVTInfo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPGetVTInfo.htm",
+  "syntax": [
+    "long Iso11783OPGetVTInfo( dword ecuHandle, char key[] );"
+  ],
+  "description": [
+    "During initialization phase the Object Pool API request some information about the capabilities from Virtual Terminal. These information can be get with this function."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "LONG vtWidth;\nvtWidth = Iso11783OPGetVTInfo( handle, \"Width\" );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

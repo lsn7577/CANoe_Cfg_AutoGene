@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "sysCreateVariableFilter",
+  "category": "SystemVariables",
+  "title": "sysCreateVariableFilter",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SystemVariables/Functions/CAPLfunctionSysCreateVariableFilter.htm",
+  "syntax": [
+    "long sysCreateVariableFilter(long filterType); // form 1",
+    "long sysCreateVariableFilter(long filterType, char filterName[]); // form 2"
+  ],
+  "description": [
+    "Creates a new variable filter behind the node calling the function. If no filterName is given, the default filter with an empty name is created."
+  ],
+  "parameters": [
+    {
+      "name": "filterType",
+      "type": "",
+      "description": "Specifies the filter behavior: 0: Stop Filter. Stops all variables that are added to it. 1: Pass Filter. Stops all variables that are not added to it."
+    },
+    {
+      "name": "Note An empty filterName refers to the default filter and can be omitted completely.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long result;\n//create the default filter as a Stop Filter.\nresult = sysCreateVariableFilter(0);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.1",
+      "8.1",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔ (also standalone mode)",
+      "✔ (also standalone mode)",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "callcontext::ReturnCall",
+  "category": "CommunicationObjects",
+  "title": "callcontext::ReturnCall",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionCallcontextReturnCall.htm",
+  "syntax": [
+    "void callContext::ReturnCall()"
+  ],
+  "description": [
+    "Returns the call immediately, sending an answer to the caller. Note that many function calls require an answer per protocol even if the function has neither a return value nor an out parameter.",
+    "Immediately means in effect after the current handler has been processed or when the current test procedures reaches a wait instruction, but at the same point of (simulation) time.",
+    "You can optionally set the return value (if the function does not return void).",
+    "This call is equivalent to callcontext::SetTimeToAnswer(0)."
+  ],
+  "parameters": [
+    {
+      "name": "returnValue",
+      "type": "",
+      "description": "Return value for the call."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on fctCalled MirrorAdjustment.providerSide[all,LeftMirror].Adjust\n{\n  // return the call always only after 2 other calls have been received\n  const dword nrOfCalls = 3;\n  long ccHandles[nrOfCalls];\n  dword nextCallSlot = 0;\n  dword nrOfCallsReceived = 0;\n\n  this.Result = Mirrors::AdjustResult::OK;\n  this.DeferAnswer();\n  ccHandles[nextCallSlot] = this.CreatePermanentHandle();\n  nextCallSlot = (nextCallSlot + 1) % nrOfCalls;\n\n  if (++nrOfCallsReceived >= nrOfCalls)\n  {\n    callContext * cco;\n    dword returnSlot;\n    returnSlot = nrOfCallsReceived % nrOfCalls;\n    cco = cco::FromHandle(ccHandles[returnSlot]);\n    cco.ReturnCall();\n    cco::ReleaseHandle(ccHandles[returnSlot]);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

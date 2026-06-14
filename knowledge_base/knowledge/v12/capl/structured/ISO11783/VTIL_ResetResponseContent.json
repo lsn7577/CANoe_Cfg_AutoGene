@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "VTIL_ResetResponseContent",
+  "category": "ISO11783",
+  "title": "VTIL_ResetResponseContent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerVT/Functions/CAPLfunctionIso11783VTILResetResponseContent.htm",
+  "syntax": [
+    "long VTIL_ResetResponseContent(dbNode workingSetMaster, byte vtFunction); // form 1"
+  ],
+  "description": [
+    "The function resets the response modification of VTIL_SetResponseContent. Afterwards the default response is sent by the VT IL."
+  ],
+  "parameters": [
+    {
+      "name": "vt",
+      "type": "",
+      "description": "VT simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = VTIL_ResetResponseContent(VT, Sprayer, 168);\nif (result < 0)\n{\n  TestStepFail(\"Failed to reset fault injection\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

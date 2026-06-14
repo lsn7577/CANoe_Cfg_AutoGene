@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostApIsRegisteredEx",
+  "category": "MOST",
+  "title": "mostApIsRegisteredEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTApIsRegisteredEx.htm",
+  "syntax": [
+    "long mostApIsRegisteredEx(long fblockID, long instID)"
+  ],
+  "description": [
+    "This function can be used to poll whether the function block with functional address {fblockID, instID} is entered in the Local FBlockList."
+  ],
+  "parameters": [
+    {
+      "name": "fblockID",
+      "type": "",
+      "description": "Function block identifier to be queried."
+    }
+  ],
+  "return": "1: Function block is registered.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

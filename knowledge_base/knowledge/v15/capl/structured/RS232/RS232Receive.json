@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "RS232Receive",
+  "category": "RS232",
+  "title": "RS232Receive",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/RS232/Functions/CAPLfunctionRS232Receive.htm",
+  "syntax": [
+    "dword RS232Receive( dword port, byte buffer[], dword size );"
+  ],
+  "description": [
+    "Receive blocks of bytes from a serial port."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "A number between 1 and 255 identifying a serial port."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "An array of bytes."
+    },
+    {
+      "name": "size",
+      "type": "",
+      "description": "Maximum number of bytes which can be received."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "byte mybuffer[20];\nint mysize=20;\nif ( 1==RS232Receive(1,mybuffer,mysize) )\n  write(“It works with port 1.”);\n...\nRS232OnReceive( dword port, dword buffer[], dword number )\n{\n   // works after first RS232Receive !\n   // buffer == mybuffer, 1<number<=mysize\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.1",
+      "7.1",
+      "—",
+      "—",
+      "14",
+      "2.1"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

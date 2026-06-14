@@ -1,0 +1,31 @@
+# J1939AppErrorIndication
+
+> Category: `J1939` | Type: `function`
+
+## Syntax
+
+```c
+dword J1939AppErrorIndication( long ecuHandle, long errorClass, long errorNumber, long addCode );
+```
+
+## Description
+
+Indicates that errors have occurred during a transfer or else during the initialization of ECUs (for example timeout during the transport protocol). If an Address Claiming procedure has failed, that will also be reported by means of this function.
+
+## Return Values
+
+—
+
+## Example
+
+```c
+dword J1939AppErrorIndication( LONG ecuHdl, LONG errClass, LONG errNum, LONG addCode )
+{
+  /* user code */
+}
+```
+
+## Availability
+
+| Since Version |
+|---|

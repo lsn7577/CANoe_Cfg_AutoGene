@@ -1,0 +1,54 @@
+{
+  "page_type": "concept",
+  "name": "UDS Overview",
+  "category": "diagnostics",
+  "subcategory": "UDS",
+  "title": "Unified Diagnostic Services (UDS) Overview",
+  "source": "synthetic_v1",
+  "intro": [
+    "UDS (Unified Diagnostic Services, ISO 14229) is the standard diagnostic communication protocol used in modern road vehicles.",
+    "It is an application-layer protocol that runs over various transport layers: CAN (ISO 15765 / DoCAN), Ethernet (DoIP), K-Line (KWP2000 over K-line), and FlexRay."
+  ],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Service Identifier (SID) Ranges",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "UDS uses 1-byte Service Identifiers (SID). Request SID is base, response SID is base+0x40."
+        ],
+        "tables": [
+          [
+            ["SID Range", "Category", "Examples"],
+            ["0x10-0x1F", "DiagnosticSessionControl", "0x10 = DefaultSession"],
+            ["0x20-0x2F", "DataTransmission", "0x22 = ReadDataByIdentifier, 0x2E = WriteDataByIdentifier"],
+            ["0x27", "SecurityAccess", "Seed & Key exchange"],
+            ["0x31", "RoutineControl", "Start/stop/test routines"],
+            ["0x34-0x37", "Download/Upload", "RequestDownload, TransferData"],
+            ["0x3E", "TesterPresent", "Keep-alive"]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Typical Diagnostic Session",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "A standard UDS session follows: open session -> security access -> read/write/test -> close session."
+        ],
+        "tables": [],
+        "code_blocks": [
+          "// CAPL example: UDS basic flow\non key 'd' {\n  DiagSetSession(0x01);   // DefaultSession\n  DiagRequestSeed(0x01);  // SecurityAccess Level 1\n  // ... receive seed, send key ...\n  DiagSendRequest(0x22, 0xF1, 0x90); // Read VIN (DID 0xF190)\n  DiagSetSession(0x01);   // Back to Default\n}"
+        ]
+      }
+    }
+  ],
+  "property_references": {
+    "services": ["0x10 DiagnosticSessionControl", "0x22 ReadDataByIdentifier", "0x27 SecurityAccess", "0x2E WriteDataByIdentifier", "0x31 RoutineControl", "0x34 RequestDownload", "0x36 TransferData", "0x37 RequestTransferExit", "0x3E TesterPresent"],
+    "transport_layers": ["DoCAN (ISO 15765)", "DoIP (ISO 13400)", "K-Line", "FlexRay"]
+  }
+}

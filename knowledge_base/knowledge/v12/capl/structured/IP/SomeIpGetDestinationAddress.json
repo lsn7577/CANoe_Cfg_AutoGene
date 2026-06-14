@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetDestinationAddress",
+  "category": "IP",
+  "title": "SomeIpGetDestinationAddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetDestinationAddress.htm",
+  "syntax": [
+    "dword SomeIpGetDestinationAddress ( dword messageHandle ); // form 1"
+  ],
+  "description": [
+    "This function returns the IPv4 destination address."
+  ],
+  "parameters": [
+    {
+      "name": "Note This function can only be called within the OnSomeIpMessage callback function.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "IPv4 destination address (Network Byte Order)\nIn the Event of an error, the function returns the value 0. The SomeIpGetLastError function can then be used to check whether the value is valid or an error has occurred.\nNote\nThe IpGetAddressAsString function can be used to convert the numerical return value to a character string in shorthand notation.",
+  "example": {
+    "description": [],
+    "code": "void OnSomeIpMessage( DWORD messageHandle )\n{\n  DWORD dstAddress    = 0;\n  LONG  errorCode     = 0;\n  LONG  errorOccured  = 0;\n  char  buffer[100];\n\n  // get data from SOME/IP message\n  if((dstAddress = SomeIpGetDestinationAddress(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = SomeIpGetLastError()) != 0)\n    {\n       write(\"SOME/IP IL error occured: Error code: %d\", errorCode);\n       errorOccured = 1;\n    } // if\n  } // if\n\n  if(errorOccured == 0)\n  {\n    IpGetAddressAsString(dstAddress, buffer, elcount(buffer));\n    write(\"SOME/IP message received. Destination address: %s\",buffer);\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

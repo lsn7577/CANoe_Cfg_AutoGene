@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "OnUdpReceiveFrom",
+  "category": "TCPIPAPI",
+  "title": "OnUdpReceiveFrom",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/EventProcedures/CAPLfunctionTCPIPOnUdpReceiveFrom.htm",
+  "syntax": [
+    "void OnUdpReceiveFrom( dword socket, long result, dword address, dword port, char buffer[], dword size); // form 1"
+  ],
+  "description": [
+    "If the CAPL program implements this callback it is called when an asynchronous receive operation on an UDP socket completes.",
+    "The stack contains a data queue that is reduced by UdpReceiveFrom as soon as data are located there.",
+    "So that additional data from the data queue will be received in the future for the socket, UdpReceiveFrom must be called up again within the callback."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket gSocket;\n  char gRxBuffer[1000];\n}\n\non start\n{\n  gSocket = UdpSocket::Open( IP_Endpoint(0.0.0.0:40001) );\n  gSocket.SendTo( IP_Endpoint(192.168.0.2:40002), \"Hello\", 5 );\n  gSocket.ReceiveFrom( gRxBuffer, elcount( gRxBuffer) );\n}\n\nOnUdpReceiveFrom( UdpSocket socket, long result, IP_Endpoint remoteEndpoint, char buffer[], dword size)\n{\n  if (result == 0)\n  {\n    write( \"Received: %s\", buffer );\n    gSocket.ReceiveFrom( gRxBuffer, elcount( gRxBuffer) );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

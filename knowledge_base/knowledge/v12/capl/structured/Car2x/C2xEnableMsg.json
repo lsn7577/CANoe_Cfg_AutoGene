@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xEnableMsg",
+  "category": "Car2x",
+  "title": "C2xEnableMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xEnableMsg.htm",
+  "syntax": [
+    "long C2xEnableMsg (char* dbMessage);"
+  ],
+  "description": [
+    "Enables a message for which the database attribute Send Type is Cyclic or CyclicIfActive in the database for cyclic sending. The function has no effect for messages with Send Type NoMsgSendType."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "Name of the message to be enabled"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

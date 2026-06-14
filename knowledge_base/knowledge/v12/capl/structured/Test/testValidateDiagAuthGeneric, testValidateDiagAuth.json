@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "testValidateDiagAuthGeneric, testValidateDiagAuth",
+  "category": "Test",
+  "title": "testValidateDiagAuthGeneric, testValidateDiagAuth",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestValidateDiagAuthGeneric.htm",
+  "syntax": [
+    "long testValidateDiagAuthGeneric( const char ecuQualifier, const char genericString); // form 1"
+  ],
+  "description": [
+    "Initiates the diagnostics authentication process and waits until this process has (generic) completed. The test step is then evaluated as passed or failed, depending on the result, and documented in the report."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "Qualifier of the ECU or target as set in the diagnostic configuration dialog for the respective diagnostic description."
+    }
+  ],
+  "return": "On success 0, otherwise error code",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "DoIP_GetInitialTimeout, DoIP_SetInitialTimeout",
+  "category": "Diagnostics",
+  "title": "DoIP_GetInitialTimeout, DoIP_SetInitialTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPGetSetInitialTimeout.htm",
+  "syntax": [
+    "void DoIP_SetInitialTimeout( dword toInitial_ms)"
+  ],
+  "description": [
+    "Sets or returns the initial timeout, started when a tester connects to the ECU (in milliseconds). A route activation request must be received in this interval, otherwise the TCP connection is closed.",
+    "If routing activation requests are switched off in the DoIP.INI via DisableRouteActivation, this timeout is not checked."
+  ],
+  "parameters": [
+    {
+      "name": "toInitial_ms",
+      "type": "",
+      "description": "The timeout parameter in milliseconds."
+    }
+  ],
+  "return": "Form 1: —Form 2: Initial timeout",
+  "example": {
+    "description": [
+      "This value can also be configured in the DoIP.INI file."
+    ],
+    "code": "// Set T_TCP_Initial_Inactivity to 3s\nDoIP_SetInitialTimeout( 3000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

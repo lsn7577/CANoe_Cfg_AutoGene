@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "DecodeString",
+  "category": "Other",
+  "title": "DecodeString",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionDecodeString.htm",
+  "syntax": [
+    "long DecodeString(char output[], long outputSize, byte input[], long inputSize, dword codepage);"
+  ],
+  "description": [
+    "Decodes the byte array input from the encoding codepage to the current CAPL string encoding.",
+    "The length of the decoded string depends on the given encoding. If the size of the output array outputSize is not sufficient to hold the decoded string and a terminating “\\0”, the functions returns an error and the content of output is undefined. Characters that cannot be represented in the current encoding, are replaced with the best matching character, selected by the Windows function WideCharToMultiByte."
+  ],
+  "parameters": [
+    {
+      "name": "output",
+      "type": "",
+      "description": "Target char array."
+    },
+    {
+      "name": "outputSize",
+      "type": "",
+      "description": "Size of the output array."
+    },
+    {
+      "name": "input",
+      "type": "",
+      "description": "The input string in encoding codepage, without BOM."
+    },
+    {
+      "name": "codepage",
+      "type": "",
+      "description": "Windows code page number for input.The include file Encoding.cin defines the following code pages: CP_UTF8 CP_UTF16 CP_LATIN1 CP_SHIFT_JIS"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "includes\n{\n  #include \"Encoding.cin\"\n}\n\n...\n{\n  int result;\n  char text[10];\n  byte stream[6] = {0xC3, 0xA4, 0xC3, 0xB6, 0xC3, 0xBC};\n  result = DecodeString(text, 10, stream, 6, CP_UTF8);\n  // on German Windows, text is now {‘ä’, ‘ö’, ‘ü’, 0}\n  if (result == 0) {\n    write(text);\n    // Output (on a German Windows): äöü\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.1 SP3",
+      "8.1 SP3",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "MediaCreateSinkWriterFromURL",
+  "category": "Media",
+  "title": "MediaCreateSinkWriterFromURL",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Media/Functions/CAPLfunctionMediaCreateSinkWriterFromURL.htm",
+  "syntax": [
+    "dword MediaCreateSinkWriterFromURL(char mediaFileUrl[]);"
+  ],
+  "description": [
+    "Creates the sink writer from a URL.",
+    "For more information regarding the sink writer see sink writer."
+  ],
+  "parameters": [
+    {
+      "name": "mediaFileUrl",
+      "type": "",
+      "description": "A null-terminated string that contains the URL of the output file. For a list of supported media formats in files see supported media formats."
+    }
+  ],
+  "return": "0: The function failed. Call MediaGetLastError to get a more specific error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

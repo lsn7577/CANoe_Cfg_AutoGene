@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783PDDConnectEnvVar",
+  "category": "ISO11783",
+  "title": "Iso11783PDDConnectEnvVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783PDDconnectenvvar.htm",
+  "syntax": [
+    "long Iso11783PDDConnectEnvVar( dword ecuHandle, dbSignal signal, dword elementNumber, char envVarName[] );"
+  ],
+  "description": [
+    "The function connects a process variable with an environment variable."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783PDDLoadDeviceDescription( ecuHandle, \"Sprayer.XML\" ) == 0) {\n  Iso11783PDDConnectEnvVar( ecuHandle, 0x0060, 1, \"EvSprayer_TankVolume\" );\n  Iso11783PDDConnectEnvVar( ecuHandle, 0x0048, 2, \"EvSprayer_AppRatePerArea\" );\n}\nelse {\n  write( \"Error while load task file\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "TestCaseDescription",
+  "category": "Test",
+  "title": "TestCaseDescription",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestCaseDescription.htm",
+  "syntax": [
+    "TestCaseDescription (char description[]);"
+  ],
+  "description": [
+    "With this function, a description test for a test case can be written into the report. The function can be called several times in a row, the transmitted texts are then added to one another without additional separation. The function may only be called within a test case and relates then to the respective test case.",
+    "To obtain line breaks (in form of <br /> tags) in the test report, \"\\n\" may be inserted at any place."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// add description with line break to report\nTestCaseDescription(\"In this test case\\nthe occurrence of Error Frames is tested.\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

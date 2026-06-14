@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_ControlInit",
+  "category": "J1939",
+  "title": "GBT27930IL_ControlInit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILControlInit.htm",
+  "syntax": [
+    "long GBT27930IL_ControlInit(); // form 1"
+  ],
+  "description": [
+    "This function can only be used in on preStart, to suppress the auto-start function of the IL."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "on preStart\n{\n GBT27930IL_ControlInit();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,200 @@
+# Message ID
+
+> Category: `SmartCharging` | Type: `notes`
+
+## Description
+
+The following table applies to all callback functions where a message ID is included.
+
+—
+
+0
+
+Req
+
+1
+
+Res
+
+3
+
+5
+
+ChargeParameterDiscovery
+
+PowerDelivery
+
+ChargingStatus
+
+MeteringReceipt
+
+CableCheck
+
+PreCharge
+
+CurrentDemand
+
+WeldingDetection
+
+SessionStop
+
+CertificateUpdate
+
+CertificateInstallation
+
+CmSLACParm
+
+Cnf
+
+CmStartAttenChar
+
+Ind
+
+CmMNBCSound
+
+CmAttenProfile
+
+VsAttenChar
+
+Qualcomm
+
+CmAttenChar
+
+Rsp
+
+CmValidate
+
+CmSLACMatch
+
+Cnd
+
+CmSetKey
+
+VsSetKey
+
+CmAmpMap
+
+VsPlLnkStatus
+
+StLinkStatus
+
+126
+
+STMicroelectronics
+
+VsNwInfo
+
+The following table applies to SCC_StateTransitionInd of the vehicle simulation.
+
+2
+
+4
+
+The following table applies to SCC_StateTransitionInd of the charge point simulation.
+
+| Vendor/Hardware |  |  |  |  |  |
+|---|---|---|---|---|---|
+| Invalid message | — | 0 | — |  |  |
+| SECCDiscovery | Req | 1 | Res | 2 |  |
+| SupportedAppProtocol | Req | 3 | Res | 4 |  |
+| SessionSetup | Req | 5 | Res | 6 |  |
+| ServiceDiscovery | Req | 7 | Res | 8 |  |
+| ServiceDetail | Req | 9 | Res | 10 |  |
+| PaymentServiceSelection ServicePaymentSelection | Req | 11 | Res | 12 |  |
+| PaymentDetails | Req | 13 | Res | 14 |  |
+| Authorization ContractAuthentication | Req | 15 | Res | 16 |  |
+| ChargeParameterDiscovery | Req | 17 | Res | 18 |  |
+| PowerDelivery | Req | 19 | Res | 20 |  |
+| ChargingStatus | Req | 21 | Res | 22 |  |
+| MeteringReceipt | Req | 23 | Res | 24 |  |
+| CableCheck | Req | 25 | Res | 26 |  |
+| PreCharge | Req | 27 | Res | 28 |  |
+| CurrentDemand | Req | 29 | Res | 30 |  |
+| WeldingDetection | Req | 31 | Res | 32 |  |
+| SessionStop | Req | 33 | Res | 34 |  |
+| CertificateUpdate | Req | 35 | Res | 36 |  |
+| CertificateInstallation | Req | 37 | Res | 38 |  |
+| CmSLACParm | Req | 101 | Cnf | 102 |  |
+| CmStartAttenChar | Ind | 103 | — |  |  |
+| CmMNBCSound | Ind | 105 | — |  |  |
+| CmAttenProfile | Ind | 107 | — |  |  |
+| VsAttenChar | — | 109 | — | Qualcomm |  |
+| CmAttenChar | Ind | 111 | Rsp | 112 |  |
+| CmValidate | Req | 113 | Cnf | 114 |  |
+| CmSLACMatch | Req | 115 | Cnd | 116 |  |
+| CmSetKey | Req | 117 | Cnf | 118 |  |
+| VsSetKey | Req | 119 | Cnf | 120 | Qualcomm |
+| CmAmpMap | Req | 121 | Cnf | 122 |  |
+| VsPlLnkStatus | Req | 123 | Cnf | 124 | Qualcomm |
+| StLinkStatus | Req | 125 | Cnf | 126 | STMicroelectronics |
+| VsNwInfo | Req | 127 | Cnf | 128 | Qualcomm |
+| UnassociatedSta | Ind | 201 | — | CCS Listener (Passive) |  |
+| CcAssoc | Req | 203 | Cnf | 204 | CCS Listener (Passive) |
+| CcSetTeiMap | Ind | 205 | — | CCS Listener (Passive) |  |
+| CmEncryptedPayload | Ind | 207 | — | CCS Listener (Passive) |  |
+| CmStaIndentify | Ind | 209 | Rsp | 210 | CCS Listener (Passive) |
+| CmBridgeInfo | Req | 211 | Cnf | 212 | CCS Listener (Passive) |
+| CcLinkInfo | Ind | 213 | Rsp | 214 | CCS Listener (Passive) |
+| CmHFID | Req | 215 | Cnf | 216 | CCS Listener (Passive) |
+| VsGetPWMStats | Req | 217 | Cnf | 218 | CCS Listener (Active) |
+| VsGetPWMStats | Ind | 219 | — | CCS Listener (Active) |  |
+| VsGetPWMConf | Req | 221 | Cnf | 222 | CCS Listener (Active) |
+| VsSetPWMConf | Req | 223 | Cnf | 224 | CCS Listener (Active) |
+| VsGetStatus | — | Cnf | 226 | CCS Listener (Active) |  |
+| VsGetEthPhy | Req | 301 | Cnf | 302 | MediaTek |
+| VsGetNwInfo | Req | 303 | Cnf | 304 | MediaTek |
+| VsEthStats | Req | 305 | Cnf | 306 | MediaTek |
+| VsGetVersion | Req | 307 | Cnf | 308 | MediaTek |
+| VsReset | Req | 309 | Cnf | 310 | MediaTek |
+
+| General States |  |
+|---|---|
+| Initial | 0 |
+| Error | 200 |
+| Message related states |  |
+| Session Setup | 1 |
+| Service Discovery | 2 |
+| Service Details | 3 |
+| Service / Payment Selection | 4 |
+| Payment Details | 5 |
+| Authentication / Authorization | 6 |
+| Charge Parameter Discovery | 7 |
+| Power Delivery | 8 |
+| Charging Status | 9 |
+| Metering Receipt | 10 |
+| Cable Check | 11 |
+| PreCharge | 12 |
+| Current Demand | 13 |
+| Welding Detection | 14 |
+| Session Stop | 15 |
+| CertificateUpdate | 16 |
+| CertificateInstallation | 17 |
+
+| General States |  |
+|---|---|
+| Initial | 0 |
+| Error | 200 |
+| Waiting for new session | 201 |
+| Reconnecting | 300 |
+| Message related states |  |
+| Session Setup | 1 |
+| Service Discovery | 2 |
+| Service / Payment Selection | 3 |
+| Payment Details | 4 |
+| Payment Details / Certificate transfer | 5 |
+| Authentication / Authorization | 6 |
+| Charge Parameter Discovery | 7 |
+| Power Delivery | 8 |
+| Charging Status | 9 |
+| Metering Receipt | 10 |
+| Cable Check | 11 |
+| PreCharge | 12 |
+| Current Demand | 13 |
+| Welding Detection | 14 |
+| Welding Detection or Renegotiation | 15 |
+| Renegotiation | 16 |
+| Session Stop | 17 |
+| Session Stop or Renegotiation | 18 |
+
+| Version 15© Vector Informatik GmbH |
+|---|

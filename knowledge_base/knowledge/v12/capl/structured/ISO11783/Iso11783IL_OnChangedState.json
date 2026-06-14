@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OnChangedState",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OnChangedState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOnChangedState.htm",
+  "syntax": [
+    "void Iso11783IL_OnChangedState( long state );"
+  ],
+  "description": [
+    "This callback function is called from the ISO11783 IL if it has changed its state."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_OnChangedState( LONG state )\n{\n  switch(state) {\n    case 1: // Claiming\n      break;\n    case 2: // Active\n      break;\n    case 3: // Stopped\n      break;\n    case 4: // Suspended\n      break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

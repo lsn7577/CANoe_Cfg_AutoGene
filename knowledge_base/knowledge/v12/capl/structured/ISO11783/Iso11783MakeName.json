@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783MakeName",
+  "category": "ISO11783",
+  "title": "Iso11783MakeName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783MakeName.htm",
+  "syntax": [
+    "void Iso11783MakeName( char[] retDeviceName, long selfConfiguring, long industryGroup, long deviceClassInstance, long deviceClass, long function, long functionInstance, long ECUInstance, long manufacturerCode, long identityNumber );"
+  ],
+  "description": [
+    "This function creates a Iso11783 device name.",
+    "The parameter retDeviceName must be an array with size 8. It will be filled with the device name."
+  ],
+  "parameters": [
+    {
+      "name": "retDeviceName",
+      "type": "",
+      "description": "Device name is copied in this buffer (must be 8 bytes)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "char name[8];\nIso11783MakeName( name, 1, 2, 3, 4, 5, 6, 7, 8, 9);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

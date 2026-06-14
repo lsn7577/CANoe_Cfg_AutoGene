@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SomeIpCloseLocalApplicationEndpoint",
+  "category": "IP",
+  "title": "SomeIpCloseLocalApplicationEndpoint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpCloseLocalApplicationEndpoint.htm",
+  "syntax": [
+    "LONG SomeIpCloseLocalApplicationEndpoint( dword aepHandle );"
+  ],
+  "description": [
+    "Closes an Application Endpoint that was previously opened with SomeIpOpenLocalApplicationEndpoint.",
+    "Services and the objects assigned to the services (Eventgroups, Events, Fields, and Methods) are removed when the Application Endpoint is closed. If the Application Endpoint has to be reopened, all objects must be created again."
+  ],
+  "parameters": [
+    {
+      "name": "aepHandle",
+      "type": "",
+      "description": "Handle of the Application Endpoint that should be closed (see SomeIpOpenLocalApplicationEndpoint)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  DWORD aep; // Application Endpoint handle\n\n  // open an Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // ... do something here\n\n  // close the Application Endpoint\n  SomeIpCloseLocalApplicationEndpoint(aep);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

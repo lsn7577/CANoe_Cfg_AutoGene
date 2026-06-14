@@ -1,0 +1,160 @@
+{
+  "page_type": "function",
+  "name": "mostSetSyncMute",
+  "category": "MOST",
+  "title": "mostSetSyncMute",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTSetSyncMute.htm",
+  "syntax": [
+    "long mostSetSyncMute(long channel, long device, long mute);"
+  ],
+  "description": [
+    "Activates or deactivates the audio input or output of the bus interface."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Line-In"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Line-Out"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "S/PDIF In (VN2640 only)"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "S/PDIF Out (VN2640 only)"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Active (mute off)"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Inactive (mute on)"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [
+      "See CANoe online help MOST Access to Analog Audio Channels (Line In/ Headphone Out)."
+    ],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST50 MOST150 Not in StopMeasurement",
+      "MOST25 MOST50 MOST150 Not in StopMeasurement",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

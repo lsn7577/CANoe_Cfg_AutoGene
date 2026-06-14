@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDiagRequestSent",
+  "category": "Test",
+  "title": "TestWaitForDiagRequestSent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForDiagRequestSent.htm",
+  "syntax": [
+    "long TestWaitForDiagRequestSent (diagRequest request, dword timeout);"
+  ],
+  "description": [
+    "Waits until the previously sent request has been sent to the ECU. This might be triggered by a call of the function Diag_DataCon() at the CAPL Callback Interface."
+  ],
+  "parameters": [
+    {
+      "name": "request",
+      "type": "",
+      "description": "Sent request"
+    },
+    {
+      "name": "timeout [ms]",
+      "type": "",
+      "description": "Maximum wait time"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "DiagRequest SerialNumber_Read req;\nlong result;\n\nDiagSetTarget(\"Door\");\nreq.SendRequest();\n// waits until request is completely sent\nif (TestWaitForDiagRequestSent(req, 2000)== 1)\n  TestStepPass(\"Request was sent successfully!\");\nelse\n  TestStepFail(\"Request could not be sent!\");\nTestWaitForDiagResponse(req, 2000);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1",
+      "—",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Test mode",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

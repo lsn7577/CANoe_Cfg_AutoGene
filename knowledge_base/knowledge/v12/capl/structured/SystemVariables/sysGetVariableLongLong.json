@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableLongLong",
+  "category": "SystemVariables",
+  "title": "sysGetVariableLongLong",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableLongLong.htm",
+  "syntax": [
+    "int64 sysGetVariableLongLong(char namespace[], char variable[]); // form 1"
+  ],
+  "description": [
+    "Returns the value of a variable of a 64 bit integer type.",
+    "The function can also be used for variables of type unsigned 64bit integer. You can simply cast the result to qword."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space."
+    }
+  ],
+  "return": "Value of the variable or 0 in case of error (form 1 and 2)",
+  "example": {
+    "description": [],
+    "code": "sysGetVariableLongLong(sysvar::MyNamespace::Int64Var);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linMeasEdgeTimeDiffs",
+  "category": "LIN",
+  "title": "linMeasEdgeTimeDiffs",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINMeasEdgeTimeDiffs.htm",
+  "syntax": [
+    "dword linMeasEdgeTimeDiffs(dword numIndices, long indices[]); // form 1"
+  ],
+  "description": [
+    "This function activates the measurement of the falling edges of the specified bytes in the next frame with the correct id if specified. If the first form is used (without specifying an id), or by specifying the id 0xff/-1, the measurement takes place in the next frame.",
+    "The measured values can be queried with linGetMeasEdgeTimeDiffs. The bit rates of the measured bytes can be queried via linGetMeasByteBitRates."
+  ],
+  "parameters": [
+    {
+      "name": "numIndices",
+      "type": "",
+      "description": "The number of specified byte indices."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "// Test case for measuring edges of a number of data bytes of a LIN frame.\n// Note: This test case can only be used in the context of test module nodes\ntestcase tcMeasureEdges(int byteIndex)\n{\n   long indices[1];\n   float timeDiffs[4];\n   dword numDiffs;\n   indices[0] = byteIndex;\n   // \r\n set request to measure the edges of the specified byte of the frame with ID=0x33\n   linMeasEdgeTimeDiffs(1, indices, 0x33);\n   // \r\n wait maximum 1000 [ms] for frame with ID=0x33\n   waitResult = TestWaitForMessage(0x33, 1000);\n   // declare failure if Wait has resumed not due to expected event\n   if (1 != waitResult)\n   {\n      TestStepFail(\"Test1.1\",\"Expected frame has not occurred during 1000 ms!\");\n   }\n   // retrieve measured edges\n   numDiffs = LINGetMeasEdgeTimeDiffs(4, timeDiffs);\n   if (numDiffs == 0)\n   {\n      TestStepFail(\"Test1.1\", \"Failed to measure edges!\");\n   }\n   else\n   {\n      TestStepPass(\"Test 1.1\", \"Edge measurement done...\");\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

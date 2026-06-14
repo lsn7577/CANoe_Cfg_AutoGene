@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "TestJoinDiagVariantIdentificationCompleted",
+  "category": "Test",
+  "title": "TestJoinDiagVariantIdentificationCompleted",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestJoinDiagVariantIdentificationCompleted.htm",
+  "syntax": [
+    "long testJoinDiagVariantIdentificationCompleted(char ecuQualifier[]);"
+  ],
+  "description": [
+    "Adds an event to the set of joined events that will fire when the variant identification started for the given ECU is completed."
+  ],
+  "parameters": [
+    {
+      "name": "ecuQualifier",
+      "type": "",
+      "description": "The event will fire on the completion of the variant identification for this ECU."
+    }
+  ],
+  "return": "Number of conditions in stock:\nError code",
+  "example": {
+    "description": [],
+    "code": "testcase TC_ParallelIdentification()\n{\n  // Perform variant identification for 3 ECUs in parallel\n  diagStartVariantIdentification(\"ECU1\");\n  testJoinDiagVariantIdentificationCompleted(\"ECU1\");\n  diagStartVariantIdentification(\"ECU2\");\n  testJoinDiagVariantIdentificationCompleted(\"ECU2\");\n  diagStartVariantIdentification(\"ECU3\");\n  testJoinDiagVariantIdentificationCompleted(\"ECU3\");\n\n  if( 0 < TestWaitForAllJoinedEvents(5000))\n  TestStepPass( \"All variant identification tasks completed in time.\");\n  else\n  TestStepFail( \"Not all variant identification tasks completed in time!\");\n\n  {\n    char identifiedVariant[100];\n    diagGetIdentifiedVariant( \"ECU1\", identifiedVariant, elcount(identifiedVariant));\n    if( 0 == strncmp( identifiedVariant, \"Beta\", 5))\n      TestStepFail( \"Should not run this test with beta version!\");\n  }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 SP3",
+      "—",
+      "—",
+      "—",
+      "2.2 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

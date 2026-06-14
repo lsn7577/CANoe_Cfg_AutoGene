@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetTokenLengthBit",
+  "category": "ADFX",
+  "title": "AfdxGetTokenLengthBit",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxGetTokenLengthBit.htm",
+  "syntax": [
+    "long AfdxGetTokenLengthBit( long packet, char protocolDesignator[], char tokenDesignator[] );"
+  ],
+  "description": [
+    "This function returns the length of a token in bit."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message that has been created with AfdxInitPacket"
+    }
+  ],
+  "return": "length of the token in bit\nWith AfdxGetLastError you have to check if the function has been processed successfully.",
+  "example": {
+    "description": [],
+    "code": "long packet = 0;\nlong len = 0;\nchar error[100];\n\npacket = AfdxInitPacket( \"afdx\" );\nlen = AfdxGetTokenLengthBit( packet, \"afdx\", \"data\" );\nif (AfdxGetLastError() == 0)\n{\n  // do something with len\n}\nelse\n{\n  AfdxGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

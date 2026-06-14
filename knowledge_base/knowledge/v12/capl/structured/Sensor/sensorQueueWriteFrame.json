@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sensorQueueWriteFrame",
+  "category": "Sensor",
+  "title": "sensorQueueWriteFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Sensor/Functions/CAPLfunctionSensorQueueWriteFrame.htm",
+  "syntax": [
+    "SensorErrorCode sensorQueueWriteFrame(char[] sysVarNamespace, byte[] writeBuffer, dword writeByteCount);"
+  ],
+  "description": [
+    "This function is intended to be used for I2C master simulation. It queues a frame to wite the given bytes to the given slave."
+  ],
+  "parameters": [
+    {
+      "name": "sysVarNamespace",
+      "type": "",
+      "description": "The namespace of the slave the data shall be queued in."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Byte array to be sent to the slave\nbyte sendData[2] = {0x42, 0x21};\n\n// Queue the request to the slave\nsensorQueueWriteFrame (\"SENSOR::I2C::ExampleChannel::ExampleSlave\", sendData, 2);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

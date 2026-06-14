@@ -1,0 +1,63 @@
+{
+  "page_type": "notes",
+  "name": "resetManualChecksum",
+  "category": "Obsolete",
+  "title": "resetManualChecksum",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionResetManualChecksum.htm",
+  "syntax": [],
+  "description": [],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by linResetManualChecksum."
+      ],
+      [
+        "Function Syntax",
+        "void resetManualChecksum(linFrame msg)"
+      ],
+      [
+        "Function",
+        "Turns the correct checksum back on for a LIN frame, automatically adjusted to match the message data."
+      ],
+      [
+        "Parameters",
+        "msg The LIN frame for which the correct checksum will be used again."
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "3.2 - 5.2",
+        "LIN",
+        "•",
+        "•"
+      ],
+      [
+        "Example —"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

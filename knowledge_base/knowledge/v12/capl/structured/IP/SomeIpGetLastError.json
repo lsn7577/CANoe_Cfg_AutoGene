@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "SomeIpGetLastError",
+  "category": "IP",
+  "title": "SomeIpGetLastError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpGetLastError.htm",
+  "syntax": [
+    "long SomeIpGetLastError();"
+  ],
+  "description": [
+    "This function can be used to check whether the last called function of SOME/IP IL has been successfully executed. The call of this function does not reset the saved error.",
+    "In the Event of an error, a detailed error description can be read out using the SomeIpGetLastErrorText function."
+  ],
+  "parameters": [],
+  "return": "0: The last called function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "long retVal;\n\n// resume sending messages\nSomeIpILControlResume();\n\n// check if last function was executed correct\nif((retVal = SomeIpGetLastError()) != 0)\n{\n  write(\"SOME/IP IL error occured: Error code: %d\", retVal);\n} // if"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

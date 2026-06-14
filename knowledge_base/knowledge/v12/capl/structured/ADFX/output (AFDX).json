@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "output (AFDX)",
+  "category": "ADFX",
+  "title": "output (AFDX)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxOutput.htm",
+  "syntax": [
+    "void output (a664Message aMessage) (1)"
+  ],
+  "description": [
+    "This function outputs the object from the program block of the analysis branch. Use output inside the appropriate event procedure in order to forward the event to the next block in the analysis branch. If the function is not called, then the event is not forwarded. Thus, events will be filtered by the CAPL program when omitting this function.",
+    "The function must not be used in the Simulation Setup branch. For transmitting an object of type a664Frame or a664Message use the functions A664TriggerFrame and A664TriggerMessage."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "on a664Message * {\n  #if MEASUREMENT_SETUP\n  output(this);\n  #endif\n}\n\n// or on frame level\n\non a664Frame * {\n  #if MEASUREMENT_SETUP\n  output(this);\n  #endif\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

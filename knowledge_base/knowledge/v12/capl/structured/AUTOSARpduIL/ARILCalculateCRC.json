@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILCalculateCRC",
+  "category": "AUTOSARpduIL",
+  "title": "ARILCalculateCRC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILCalculateCRC.htm",
+  "syntax": [
+    "long ARILCalculateCRC (char aMsgName[], cahr sigGroupName[], BYTE payload[], dword aPayloadLength, dword crc[]);"
+  ],
+  "description": [
+    "Calculates the CRC of the PDU according to the given payload."
+  ],
+  "parameters": [
+    {
+      "name": "aMsgName",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

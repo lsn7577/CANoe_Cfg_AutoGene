@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "a429ResetEx",
+  "category": "A429",
+  "title": "a429ResetEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429ResetEx.htm",
+  "syntax": [
+    "long a429ResetEx( long channel );"
+  ],
+  "description": [
+    "Re-initialize the selected channel with the active channel parameters. The active channel parameters are read with a429GetConfiguration and modified with a429SetConfiguration.",
+    "Note, that the channel is reset. The transmit queue and the hardware schedule table is emptied for this channel."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "valid channel number"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key 'r'\n{\n  if (a429ResetEx(RxChannel)) {\n    write(\"reset channel '%d' OK\", RxChannel);\n  }\n  else {\n    write(\"reset channel '%d' failed\", RxChannel);\n  }\n\n  if (a429ResetEx(TxChannel)) {\n    write(\"reset channel '%d' OK\", TxChannel);\n  }\n  else {\n    write(\"reset channel '%d' failed\", TxChannel);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

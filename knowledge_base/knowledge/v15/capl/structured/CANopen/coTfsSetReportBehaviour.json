@@ -1,0 +1,129 @@
+{
+  "page_type": "function",
+  "name": "coTfsSetReportBehaviour",
+  "category": "CANopen",
+  "title": "coTfsSetReportBehaviour",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSetReportBehaviour.htm",
+  "syntax": [
+    "long coTfsSetReportBehaviour( dword reportSetting );"
+  ],
+  "description": [
+    "With this function, the report behavior of the node layer can be set. In contrast to the function coTfsSetFailControl outputs were not interchanged but enabled/disabled selective.",
+    "The parameter reportSetting is a bit field and sets the behavior of the node layer. Per default all outputs are enabled (reportSettings=0x3FFFDFFF)"
+  ],
+  "parameters": [
+    {
+      "name": "Note If the output is disabled for test step pass/fail (bit 2 and bit 3), the verdict of the test function is not set by the CANopen® test module. It shall be set by the user test.",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "[globals section]\nconst kTestStepInit    = 0x00000001;\nconst kTestStep      = 0x00000002;\nconst kTestStepPass    = 0x00000004;\nconst kTestStepFail    = 0x00000008;\nconst kTestStepWarning   = 0x00000010;\nconst kTestStepResume   = 0x00000020;\nconst kTestStepInfo    = 0x00000040;\nconst kTestStepNone    = 0x00000000;\nconst kTestStepDefault = 0x3FFFDFFF;\nconst kTestStepAll = 0x3FFFDFFF;\n\n[test case]\ncoTfsSetReportBehaviour( kTestStepAll );"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

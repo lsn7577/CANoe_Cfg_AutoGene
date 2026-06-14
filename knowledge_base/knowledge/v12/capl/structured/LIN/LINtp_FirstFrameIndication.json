@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "LINtp_FirstFrameIndication",
+  "category": "LIN",
+  "title": "LINtp_FirstFrameIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINtpFirstFrameIndication.htm",
+  "syntax": [
+    "void LINtp_FirstFrameIndication(long sender, long receiver, long announcedLen);"
+  ],
+  "description": [
+    "Indicates the start of a segmented reception."
+  ],
+  "parameters": [
+    {
+      "name": "sender",
+      "type": "",
+      "description": "Address of sender node, or 0 for master."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "LINtp_FirstFrameIndication(long sender, long receiver, long announcedLen)\n{\n  write( \"Start reception of %d bytes\", announcedLen);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

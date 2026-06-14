@@ -1,0 +1,23 @@
+# EthInitProtocol
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by: ethernetPacket::protocol::Init |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long EthInitProtocol( long packet, char protocolDesignator[] ); // form 1 |  |  |  |
+| long EthInitProtocol( long packet, char protocolDesignator[], char packetTypeDesignator[] ); // form 2 |  |  |  |  |
+| Function | The function initializes the protocol for a packet. If necessary further needed lower protocols are initialized, e.g. IPv4. Already initialized higher protocols are deleted. Protocol fields that are marked as InitProtocol in the protocol overview are initialized. |  |  |  |
+| Parameters | packet handle of a packet that has been created with EthInitPacket |  |  |  |
+| protocolDesignator name of the protocol, taken from the protocol overview |  |  |  |  |
+| packetTypeDesignator type of the packet, taken from the protocol overview |  |  |  |  |
+| Return Values | 0 or error code |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 7.2-12.0 | Ethernet | — | • |  |
+| Example LONG packetHandle;// create packetpacketHandle = EthInitPacket("ipv4");// init UDP protocolEthInitProtocol(packetHandle, "udp" );// set protocol fieldsEthSetTokenInt( packetHandle, "ipv4", "source", 0xC0A80001 ); // 192.168.0.1EthSetTokenInt( packetHandle, "ipv4", "destination", 0xFFFFFFFF ); // 255.255.255.255EthSetTokenInt( packetHandle, "udp", "source", 23 );EthSetTokenInt( packetHandle, "udp", "destination", 23 );// set UDP payloadEthResizeToken( packetHandle, "udp", "data", 5*8 /*bits*/ );EthSetTokenData( packetHandle, "udp", "data", 5, "Hello" );// Complete and send packetEthCompletePacket( packetHandle );EthOutputPacket( packetHandle );// release packetEthReleasePacket( packetHandle ); |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

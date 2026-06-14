@@ -1,0 +1,168 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateMeteringReceiptReq_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateMeteringReceiptReq_ISO",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateMeteringReceiptReq_Iso.htm",
+  "syntax": [
+    "long SCC_CreateMeteringReceiptReq_ISO ( byte SessionID[], long SAScheduleTupleId, char MeterID[], char ReceiptID[] )"
+  ],
+  "description": [
+    "Creates a Metering Receipt Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    },
+    {
+      "name": "SAScheduleTupleId",
+      "type": "",
+      "description": "Unique ID of a SAScheduleTuple which identifies the selected Tariff."
+    },
+    {
+      "name": "MeterID",
+      "type": "",
+      "description": "Unique ID of the meter."
+    },
+    {
+      "name": "ReceiptID",
+      "type": "",
+      "description": "Unique ID of the MeteringReceiptReq message."
+    },
+    {
+      "name": "Index",
+      "type": "",
+      "description": "Name Type Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "MeterReading long Current meter reading in Wh"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "SigMeterReading byte [] Signature of the meter reading (length 64)"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "MeterStatus long Current status of the meter"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "TMeter long Timestamp of the current SECC time"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet .SmartCharging",
+      "—",
+      "—",
+      "—",
+      "Ethernet .SmartCharging"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

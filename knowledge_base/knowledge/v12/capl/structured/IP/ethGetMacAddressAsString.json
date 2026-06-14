@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ethGetMacAddressAsString",
+  "category": "IP",
+  "title": "ethGetMacAddressAsString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionEthGetMacAddressAsString.htm",
+  "syntax": [
+    "long ethGetMacAddressAsString( qword macAddr, char buffer[], dword bufferLength );"
+  ],
+  "description": [
+    "Converts a MAC address from qword to string. The function is helpful with ethernetPacket.source and ethernetPacket.destination."
+  ],
+  "parameters": [
+    {
+      "name": "macAddr",
+      "type": "",
+      "description": "MAC address as qword, i.e. from ethernetPacket.source."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on ethernetPacket *\n{\n  char macAddrStr[18];\n  if (ethGetMacAddressAsString( this.source, macAddrStr, elcount(macAddrStr) ) == 0)\n  {\n    write(\"Received Ethernet packet from %s\", macAddrStr );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

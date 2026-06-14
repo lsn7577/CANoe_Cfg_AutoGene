@@ -1,0 +1,38 @@
+# EthInitPacket
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by: ethernetPacket::protocol::Init |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | long EthInitPacket( ); // form 1 |  |  |  |
+| long EthInitPacket( char protocolDesignator[] ); // form 2 |  |  |  |  |
+| long EthInitPacket( char protocolDesignator[], char packetTypeDesignator[] ); // form 3 |  |  |  |  |
+| long EthInitPacket( struct srcMacAddressStruct, struct dstMacAddressStruct, long ethernetType ); // form 4 |  |  |  |  |
+| long EthInitPacket( byte srcMacAddress[6], byte dstMacAddress[6], long ethernetType ); // form 5 |  |  |  |  |
+| long EthInitPacket( long packetToCopy ); // form 6 |  |  |  |  |
+| long EthInitPacket( long rawDataLength, byte rawData[] ); // form 7 |  |  |  |  |
+| long EthInitPacket( ethernetPacket caplEthernetPacket ); // form 8 |  |  |  |  |
+| Function | This function creates a new Ethernet packet. Other functions can access to the newly created packet with the returned handle. Protocol fields that are marked as InitProtocol in the protocol description are initialized. |  |  |  |
+| Parameters | srcMacAddressStruct source MAC address as struct |  |  |  |
+| dstMacAddressStruct destination MAC address as struct |  |  |  |  |
+| srcMacAddress source MAC address |  |  |  |  |
+| dstMacAddress destination MAC address |  |  |  |  |
+| ethernetType Ethernet type (16 Bit) |  |  |  |  |
+| protocolDesignator designator of the protocol, which should be used for initialization |  |  |  |  |
+| packetTypeDesignator designator of the packet type |  |  |  |  |
+| packetToCopy handle of a packet which was created with EthInitPacket before or handle of a packet which has been received within a callback function (<OnEthPacket>) The header and the data of this packet are copied to the new created packet. |  |  |  |  |
+| rawDataLength length of rawData in byte |  |  |  |  |
+| rawData raw data of an Ethernet packet that is used to initialized the new packet |  |  |  |  |
+| caplEthernetPacket Ethernet packet that is used to initialized the new packet |  |  |  |  |
+| Return Values | handle of the created packet or 0 With EthGetLastError you can check if the function has been processed successfully. |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 7.2-12.0: form 1-7 | Ethernet | — | • |  |
+| 10.0-12.0: form 8 | Ethernet | — | • |  |
+| Example LONG packetHandle;CHAR error[100];// create packetpacketHandle = EthInitPacket("udp");if (EthGetLastError() == 0){ // set protocol fields EthSetTokenInt( packetHandle, "ipv4", "source", 0xC0A80001 ); // 192.168.0.1 EthSetTokenInt( packetHandle, "ipv4", "destination", 0xFFFFFFFF ); // 255.255.255.255 EthSetTokenInt( packetHandle, "udp", "source", 23 ); EthSetTokenInt( packetHandle, "udp", "destination", 23 ); // set UDP payload EthResizeToken( packetHandle, "udp", "data", 5*8 /*bits*/ ); EthSetTokenData( packetHandle, "udp", "data", 5, "Hello" ); // Complete and send packet EthCompletePacket( packetHandle ); EthOutputPacket( packetHandle ); // release packet EthReleasePacket( packetHandle );}else{ EthGetLastErrorText( elCount(error), error ); write("Error: %s", error );} |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

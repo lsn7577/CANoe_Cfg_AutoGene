@@ -1,0 +1,139 @@
+{
+  "page_type": "function",
+  "name": "J1939FillSHM",
+  "category": "J1939",
+  "title": "J1939FillSHM",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/J1939/Functions/CAPLfunctionJ1939FillSHM.htm",
+  "syntax": [
+    "long J1939FillSHM(pg pgSDM, byte sequenceNumber, pg* pgSHM);"
+  ],
+  "description": [
+    "This function uses the PGN, addresses, priority and payload of a Safety Data Message (SDM) as well as a sequence number to set the payload, priority and addresses of a Safety Header Message (SHM).",
+    "The payload of the SDM consist of following signals (see SAE J1939-76):"
+  ],
+  "parameters": [
+    {
+      "name": "pgSDM",
+      "type": "",
+      "description": "The data of SDM is used to fill the SHM. DLC of SDM shall be 8."
+    },
+    {
+      "name": "sequenceNumber",
+      "type": "",
+      "description": "New sequence number of the SHM."
+    },
+    {
+      "name": "pgSHM",
+      "type": "",
+      "description": "SHM message to be filled. DLC of SHM shall be 8."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void SendSHM(pg* sdm, byte sequenceNumber)\n{\n  pg SHM shm;\n  long result;\n  result = J1939FillSHM(sdm, sequenceNumber, shm);\n  if (result < 0)\n  {\n    write(\"J1939FillSHM failed with error %i\", result);\n  }\n  else\n  {\n    output(shm);\n  }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "15",
+      "15",
+      "15",
+      "—",
+      "—",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "J1939",
+      "J1939",
+      "J1939",
+      "—",
+      "—",
+      "J1939"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsODChkSingleEntryNotExist",
+  "category": "CANopen",
+  "title": "coTfsODChkSingleEntryNotExist",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsOdChkSingleEntryNotExist.htm",
+  "syntax": [
+    "long coTfsODChkSingleEntryNotExist( dword index, dword subIndex );"
+  ],
+  "description": [
+    "The function checks with a SDO upload if the given object does not exist in the object dictionary. The device must answer with one of these SDO abort codes: 0x08000000, 0x06020000 or 0x06090011.",
+    "If the entry exists and the sub index is 0, the functions checks automatically the sub indexes 1..255."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Object index"
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "long retValFunc = kTestStepPassed; /* to store the return value of function */\nlong nodeId = 112;                 /* Node-Id of DUT */\ndword index = 0x9999;\ndword subIndex = 0x0;\nchar msg[100]; /* message */\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* call test function */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsODChkSingleEntryNotExist\", elCount(msg));\n  retValFunc = coTfsODChkSingleEntryNotExist( index /*dword index*/, subIndex /*dword subIndex*/ );\n} /* if */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

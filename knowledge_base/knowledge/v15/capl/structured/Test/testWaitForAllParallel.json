@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "testWaitForAllParallel",
+  "category": "Test",
+  "title": "testWaitForAllParallel",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForAllParallel.htm",
+  "syntax": [
+    "long testWaitForAllParallel(dword timeout);"
+  ],
+  "description": [
+    "Waits until execution of all parallel threads finished. In case all threads already finished execution, the function returns instantly."
+  ],
+  "parameters": [
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "Maximum time to wait [ms]. Specify 0 to wait without timeout."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "export testcase TestParallelExecution()\n{\n  write(\"Start parallel execution.\");\n  testStartParallel(ParallelFunction, 500);\n  teststartParallel(ParallelFunctionTwo);\n\ntestWaitForAllParallel(2000);\n\nwrite(\"End parallel execution\");\n}\n\ntestfunction ParallelFunction(dword aTimeout)\n{\n  testWaitForTimeout(aTimeout);\n  write(\"Wait in parallel.\");\n}\n\ntestfunction ParallelFunctionTwo()\n{\n  testWaitForTimeout(400);\n  write(\"Wait in parallel again.\");\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "—✔",
+      "—✔",
+      "—",
+      "—✔",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—✔",
+      "—✔",
+      "—",
+      "—✔",
+      "Test units"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "—✔",
+      "—✔",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—✔",
+      "—✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—✔",
+      "—✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—✔",
+      "—✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—✔",
+      "—✔",
+      "—",
+      "—✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—✔",
+      "—✔",
+      "—",
+      "—✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "—✔",
+      "—✔",
+      "N/A",
+      "—✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "—✔",
+      "—✔",
+      "—",
+      "—✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

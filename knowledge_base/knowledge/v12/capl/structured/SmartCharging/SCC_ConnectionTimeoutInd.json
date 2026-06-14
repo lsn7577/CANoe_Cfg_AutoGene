@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_ConnectionTimeoutInd",
+  "category": "SmartCharging",
+  "title": "SCC_ConnectionTimeoutInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_ConnectionTimeoutInd.htm",
+  "syntax": [
+    "void SCC_ConnectionTimeoutInd ( byte SessionID[] )"
+  ],
+  "description": [
+    "The callback is called when a connection is closed due to inactivity."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

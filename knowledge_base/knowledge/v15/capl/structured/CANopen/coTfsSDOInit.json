@@ -1,0 +1,164 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOInit",
+  "category": "CANopen",
+  "title": "coTfsSDOInit",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoInit.htm",
+  "syntax": [
+    "long coTfsSDOInit( dword index, dword subIndex, dword ccs, dword expedited, dword sizeIndicated, dword notUsed, byte inValueBuf[], dword valueBufSize );"
+  ],
+  "description": [
+    "This function sends an initialization message for",
+    "The protocol is described in detail in DS-301."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Object index"
+    },
+    {
+      "name": "subIndex",
+      "type": "",
+      "description": "Object sub index"
+    },
+    {
+      "name": "ccs (client command specifier)",
+      "type": "",
+      "description": "1: download 2: upload, other values can cause unexpected behavior"
+    },
+    {
+      "name": "expedited",
+      "type": "",
+      "description": "0: normal transfer 1: expedited transfer"
+    },
+    {
+      "name": "sizeIndicated",
+      "type": "",
+      "description": "0: size unknown 1: size known (recommended value)"
+    },
+    {
+      "name": "notUsed",
+      "type": "",
+      "description": "Number of data bytes that contain no reference data."
+    },
+    {
+      "name": "inValueBuf[]",
+      "type": "",
+      "description": "Data field, at least 4 bytes large reference data assigned."
+    },
+    {
+      "name": "valueBufSize",
+      "type": "",
+      "description": "Buffer size in byte of inValueBuf."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "const int kTestStepPassed = 1;     /* to indicate a successfuly execution */\nlong retValFunc = kTestStepPassed; /* to store the return value of function */\n\nlong nodeId = 112;            /* Node-Id of DUT */\ndword index = 0x1017;         /* object index, manufacturer device name */\ndword subIndex = 0;           /* object sub-index */\ndword ccs = kClientCommandSpecifier_InitiateUploadRequest;\ndword expedited = 0;          /* it does not matter for upload */\ndword sizeIndicated = 0;     /* it does not matter for upload */\ndword notUsed = 0;           /* it does not matter for upload */\nbyte inValueBuf[1] = {0x0};  /* it does not matter for upload */\ndword valueBufSize = 1;      /* it does not matter for upload */\ndword dataLength = 0;        /* to store the return value of coTfsSDOGetUploadSize */\ndword dataLengthCounter = 0; /* to store the remain length of data to be uploaded */\nbyte outValueBuf[100];       /* to store the uploaded data */\ndword outvalueBufSize = 100; /* buffer size */\ndword cont = 1;              /* continue bit */\ndword toggleBit = 0;         /* toggle bit */\nchar msg[100];               /* message */\nretValFunc = kTestStepPassed;\nmsg[0] = '\\0';\n\n/* Set the node-ID of DUT */\nstrncpy(msg,\"Set node-ID\", elCount(msg));\nretValFunc = coTfsSetNodeId(nodeId);\n\n/* Tip:\n  * Using the level 2 function for upload :\n  * dword size = 2; // size of data in bytes\n  * coTfsSDOUpload( index, subIndex );\n*/\n\n/* initiate upload trasnfer */\nif (retValFunc == kTestStepPassed)\n{\n  strncpy(msg,\"coTfsSDOInit\", elCount(msg));\n  ccs = kClientCommandSpecifier_InitiateUploadRequest;\n  expedited = 0;       /* it does not matter for upload */\n  sizeIndicated = 0;   /* it does not matter for upload */\n  notUsed = 0;         /* it does not matter for upload */\n  inValueBuf[0] = 0x0; /* it does not matter for upload */\n  valueBufSize = 1;    /* it does not matter for upload */\n  retValFunc = coTfsSDOInit( index /*dword index*/, subIndex /*dword subIndex*/, ccs /*dword ccs*/, expedited /*dword expedited, it does not matter for upload */, sizeIndicated /*dword sizeIndicated, it does not matter for upload */, notUsed /*dword notUsed, it does not matter for upload */, inValueBuf /*byte inValueBuf[], it does not matter for upload */, 0 /*dword valueBufSize, it does not matter for upload */ );\n} /* if */\n\n/* request segment if the size of data is greater then 4 bytes */\nif (retValFunc == kTestStepPassed)\n{\n  /* get the size data coming from SDO server */\n  dataLength = coTfsSDOGetUploadSize();\n  /* outputs a message to the 'write' window */\n  write( \"coTfsSDOGetUploadSize = %X\", dataLength);\n  /* determinate if a segmented transfer has to be started */\n  /* normal transfer - request segment */\n  if (dataLength > 4)\n  {\n    strncpy(msg,\"coTfsSDOSegmentRequest\", elCount(msg));\n    dataLengthCounter = dataLength;\n    toggleBit = 0; /* toggle bit */\n\n    /* get the data */\n    while ((retValFunc == kTestStepPassed) && (dataLengthCounter > 0))\n    {\n      /* normal transfer */\n      ccs = kClientCommandSpecifier_UploadSegmentRequest;\n      toggleBit &= 0x0001; /* toggle bit */\n      notUsed = 0; /* it does not matter for upload */\n      inValueBuf[0] = 0x0; /* it does not matter for upload */\n      valueBufSize = 1; /* it does not matter for upload */\n      retValFunc = coTfsSDOSegmentRequest( ccs /*dword ccs*/, cont /*dword cont*/, toggleBit /*dword toggleBit*/, notUsed /*dword notUsed*/, inValueBuf /*byte inValueBuf[]*/, valueBufSize /*dword valueBufSize*/ );\n\n      /* set next toggle */\n      toggleBit++;\n\n      /* This example assumes, that the SDO server does not send empty segments, n=0*/\n      /* determinate remain length */\n      if (dataLengthCounter - 7 >= 0)\n      {\n        dataLengthCounter -= 7;\n      }\n      else\n      {\n        dataLengthCounter = 0;\n      } /* else*/\n    } /* while */\n  } /* if */\n} /* if */\n\n/* request segment if the size of data is greater then 4 bytes */\nif (retValFunc == kTestStepPassed)\n{\n  /* get the size data coming from SDO server */\n  dataLength = coTfsSDOGetUploadSize();\n  /* outputs a message to the 'write' window */\n  write( \"coTfsSDOGetUploadSize = %X\", dataLength);\n  /* determinate if a segmented transfer has been started */\n  dataLength = coTfsSDOGetUploadData( outValueBuf /*byte outValueBuf[]*/, outvalueBufSize /*dword valueBufSize*/ );\n  if (dataLength > 0)\n  {\n    /* outputs a failure message to the 'write' window */\n    write( \"Length of data bytes returned with coTfsSDOGetUploadData = 0x%X\", dataLength);\n    write( \"First received data byte = 0x%X\", outValueBuf[0]);\n    write( \"Last received data byte = 0x%X\", outValueBuf[dataLength-1]);\n  }\n  else\n  {\n    strncpy(msg,\"coTfsSDOGetUploadData\", elCount(msg));\n    retValFunc = (!kTestStepPassed);\n  } /* else */\n} /* else */\n\n/* evaluation of returned value */\nif (retValFunc != kTestStepPassed)\n{\n  /* outputs a failure message to the Write Window */\n  write(\"%s failed\", msg);\n  /* Set testfunction or test case as failed; The message will be appeared in report if it is enabled */\n  /* testStepFail( \"CAPL text\", \"%s failed\", msg); */\n} /* if */"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

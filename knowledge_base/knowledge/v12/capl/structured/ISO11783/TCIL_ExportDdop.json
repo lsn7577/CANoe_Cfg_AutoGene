@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_ExportDdop",
+  "category": "ISO11783",
+  "title": "TCIL_ExportDdop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILExportDdop.htm",
+  "syntax": [
+    "long TCIL_ExportDdop(dbNode client, char[] ddopPath[]); // form 1"
+  ],
+  "description": [
+    "Exports the device descriptor object pool of the Task Controller client into a file."
+  ],
+  "parameters": [
+    {
+      "name": "client",
+      "type": "",
+      "description": "Task Controller client which provides the device descriptor object pool with corresponding sections."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Example (*)\nlong result;\nresult =  TCIL_ExportDdop( TC, \"xml\\\\sprayerV1.xml\");\nif (result < 0)\n{\n  TestStepFail(\"Failed to export DDOP!\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetIsolationStatus",
+  "category": "SmartCharging",
+  "title": "SCC_SetIsolationStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetIsolationStatus.htm",
+  "syntax": [
+    "long SCC_SetIsolationStatus ( char IsolationStatus[] )"
+  ],
+  "description": [
+    "Sets the isolation status enum."
+  ],
+  "parameters": [
+    {
+      "name": "IsolationStatus",
+      "type": "",
+      "description": "String buffer that is written to the isolation status. The string should be a valid enum value according the schema."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

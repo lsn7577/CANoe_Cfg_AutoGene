@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetServiceSignal",
+  "category": "IP",
+  "title": "GetServiceSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionSomeIpGetServiceSignal.htm",
+  "syntax": [
+    "double GetServiceSignal(serviceSignalNumber qualifier); // form 1"
+  ],
+  "description": [
+    "Reads the value of a Service Signal."
+  ],
+  "parameters": [
+    {
+      "name": "qualifier",
+      "type": "",
+      "description": "Qualifier of the Service Signal."
+    }
+  ],
+  "return": "Return value form 1: Always the signal value.\nThe return values below are valid for form 2.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

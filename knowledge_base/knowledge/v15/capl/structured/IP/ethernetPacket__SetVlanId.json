@@ -1,0 +1,135 @@
+{
+  "page_type": "method",
+  "name": "ethernetPacket::SetVlanId",
+  "category": "IP",
+  "title": "ethernetPacket::SetVlanId",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Methods/CAPLfunctionSetVlanId.htm",
+  "syntax": [
+    "long ethernetPacket.SetVlanId(word vlanId); // form 1",
+    "long ethernetPacket.SetVlanId(dword vlanIndex, word vlanId); // form 2"
+  ],
+  "description": [
+    "Sets the VLAN ID of an Ethernet packet. If the packets does not contain a VLAN tag, a new VLAN tag is added.",
+    "For double-tagged VLAN form 2 can be used."
+  ],
+  "parameters": [
+    {
+      "name": "vlanId",
+      "type": "",
+      "description": "The VLAN ID to set.Range: 0..0FFFh"
+    },
+    {
+      "name": "vlanIndex",
+      "type": "",
+      "description": "Index of the VLAN tag for double-tagged VLANs. Index 0 is the inner VLAN, index 1 the outer VLAN.Range 0..2"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  ethernetPacket pkt;\n\n  pkt.SetVlanId( 10 );\n  pkt.SetVlanPriority( 1 );\n\n  output( pkt );\n}\n\non key '2'\n{\n  ethernetPacket pkt;\n\n  // double tagged VLAN\n  pkt.SetVlanId( 0, 10 );\n  pkt.SetVlanPriority( 0, 1 );\n  pkt.SetVlanId( 1, 20 );\n  pkt.SetVlanPriority( 1, 2 );\n\n  output( pkt );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "10.0",
+      "10.0",
+      "13.0",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

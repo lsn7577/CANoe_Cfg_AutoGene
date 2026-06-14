@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "writeProfileString",
+  "category": "Other",
+  "title": "writeProfileString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWriteProFileString.htm",
+  "syntax": [
+    "long writeProfileString(char section[], char entry[], char value[], char filename[]); form 1"
+  ],
+  "description": [
+    "Opens the file filename, searches the section section and writes the variable entry with the value value. If entry already exists the old value is overwritten. The functional result is the number of characters written or 0 in case of an error."
+  ],
+  "parameters": [
+    {
+      "name": "section",
+      "type": "",
+      "description": "Section of the file as a string."
+    }
+  ],
+  "return": "0: Write error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

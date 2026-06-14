@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_ResetTCStatus",
+  "category": "ISO11783",
+  "title": "TCIL_ResetTCStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILResetTCStatus.htm",
+  "syntax": [
+    "long TCIL_ResetTCStatus( ); // form 1"
+  ],
+  "description": [
+    "This function reverts changes made by TCIL_SetTCStatus and turns back to the default behavior of the Task Controller IL."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "TC simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "pg TC12 tc12;\ntc12.TCFunctionTCtoECU = 254;\ntc12.SourceAdressOfActiveWSM = 1;\ntc12.VisibleDataAlarmMaskID = 1000;\ntc12.VisibleSoftKeyMaskID = 2000;\ntc12.TCBusyCode1 = 0;\ntc12.TCBusyCode2 = 0;\ntc12.TCBusyCode3 = 0;\ntc12.TCBusyCode4 = 0;\ntc12.TCBusyCode8 = 0;\ntc12.TCFunctionCode = 0;\nif (TCIL_SetTCStatus( TC, 1000, tc12 ) < 0)\n{\n  TestStepFail(\"Failed to set TC Status\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_FSSeekFile",
+  "category": "ISO11783",
+  "title": "Iso11783IL_FSSeekFile",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILfsseekfile.htm",
+  "syntax": [
+    "long Iso11783IL_FSSeekFile( dword fileHandle, dword mode, dword offset );"
+  ],
+  "description": [
+    "This function moves the current write/read position of an open file or the read position of directory entries within a directory."
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "File or directory handle, see also Iso11783IL_FSOpenFile"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_FSSeekFile( handle, 0, 10 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

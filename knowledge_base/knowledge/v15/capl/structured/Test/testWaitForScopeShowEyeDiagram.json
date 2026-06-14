@@ -1,0 +1,266 @@
+{
+  "page_type": "function",
+  "name": "testWaitForScopeShowEyeDiagram",
+  "category": "Test",
+  "title": "testWaitForScopeShowEyeDiagram",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitForScopeShowEyeDiagram.htm",
+  "syntax": [
+    "long testWaitForScopeShowEyeDiagram(message frame, dword groupNumber, ScopeAnalyseHandle handle); // form 1",
+    "long testWaitForScopeShowEyeDiagram (linFrame frame, dword groupNumber, ScopeAnalyseHandle handle); // form 2",
+    "long testWaitForScopeShowEyeDiagram(frFrame frame, dword groupNumber, ScopeAnalyseHandle handle); // form 3",
+    "long testWaitForScopeShowEyeDiagram(char nodeName[],dword groupNumber, ScopeAnalyseHandle handle); // form 4"
+  ],
+  "description": [
+    "Show the eye diagram for a single frame or a node without analysis."
+  ],
+  "parameters": [
+    {
+      "name": "frame",
+      "type": "",
+      "description": "The used CAN, LIN or FlexRay frame for the eye diagram."
+    },
+    {
+      "name": "nodeName",
+      "type": "",
+      "description": "The node should be used to display the eye diagram."
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Standard Range for a CAN Frame"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Arbitration Range for a CAN Frame"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Acknowledge Field CAN Frame"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Entire CAN Frame"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Standard Range for a CAN FD Frame"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Arbitration Range for a CAN FD Frame"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "Acknowledge Field CAN FD Frame"
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Standard Range for LIN frame (Header and Response)"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Only Header for LIN frame"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Only Response for LIN Frame"
+    },
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "Entire FlexRay frame"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "FSS Field"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Header Segment"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "ProtocolFlags"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Frame ID"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "Payload Length"
+    },
+    {
+      "name": "6",
+      "type": "",
+      "description": "Header CRC"
+    },
+    {
+      "name": "7",
+      "type": "",
+      "description": "Cycle Count"
+    },
+    {
+      "name": "8",
+      "type": "",
+      "description": "Payload Segment"
+    },
+    {
+      "name": "9",
+      "type": "",
+      "description": "Frame CRC"
+    },
+    {
+      "name": "handle",
+      "type": "",
+      "description": "A unique ID."
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN LIN FlexRay Scope",
+      "—",
+      "—",
+      "—",
+      "CAN LIN FlexRay Scope"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

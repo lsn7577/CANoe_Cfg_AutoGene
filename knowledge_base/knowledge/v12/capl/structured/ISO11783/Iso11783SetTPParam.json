@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783SetTPParam",
+  "category": "ISO11783",
+  "title": "Iso11783SetTPParam",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783SetTPParam.htm",
+  "syntax": [
+    "dword Iso11783SetTPParam( dword ecuHandle, dword what, dword value );"
+  ],
+  "description": [
+    "Changing transport protocol settings."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783SetTPParam(ecuHdl, \r\n 1, 32*1024 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

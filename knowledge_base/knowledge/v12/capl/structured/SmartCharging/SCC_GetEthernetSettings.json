@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_GetEthernetSettings",
+  "category": "SmartCharging",
+  "title": "SCC_GetEthernetSettings",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_GetEthernetSettings.htm",
+  "syntax": [
+    "void SCC_GetEthernetSettings(byte MacAddress[], byte IPv4Address[], dword& IPv4Available, byte IPv6Address[], dword& IPv6Available, long UDPPort, long TCPPort)"
+  ],
+  "description": [
+    "Retrieves the configured addresses and ports for the SCC node. These values may originate from the CANoe configuration or from the DLL’s XML configuration"
+  ],
+  "parameters": [
+    {
+      "name": "MacAddress",
+      "type": "",
+      "description": "6 byte MAC address"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

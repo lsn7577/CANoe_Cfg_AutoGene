@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AREthCloseLocalApplicationEndpoint",
+  "category": "IP",
+  "title": "AREthCloseLocalApplicationEndpoint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthCloseLocalApplicationEndpoint.htm",
+  "syntax": [
+    "LONG AREthCloseLocalApplicationEndpoint( dword aepHandle );"
+  ],
+  "description": [
+    "Closes an Application Endpoint that was previously opened with AREthOpenLocalApplicationEndpoint.",
+    "Services and the objects assigned to the services (Eventgroups, Events, Fields, and Methods) are removed when the Application Endpoint is closed. If the Application Endpoint has to be reopened, all objects must be created again."
+  ],
+  "parameters": [
+    {
+      "name": "aepHandle",
+      "type": "",
+      "description": "Handle of the Application Endpoint that should be closed (see AREthOpenLocalApplicationEndpoint)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "on key 't'\n{\n  dword aep; // Application Endpoint handle\n\n  // open an Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // ... do something here\n\n  // close the Application Endpoint\n  AREthCloseLocalApplicationEndpoint(aep);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

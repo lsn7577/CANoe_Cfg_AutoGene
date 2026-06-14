@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AvbSetMediaType",
+  "category": "IP",
+  "title": "AvbSetMediaType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AVBIL/Functions/CAPLfunctionAvbSetMediaType.htm",
+  "syntax": [
+    "long AvbSetMediaType(dword talkerHandle, dword mediaTypeHandle);"
+  ],
+  "description": [
+    "Sets the media type for a Talker. Setting the media type means the Talker can expects data that conforms to that media type passed to its AvbSend function."
+  ],
+  "parameters": [
+    {
+      "name": "mediaTypeHandle",
+      "type": "",
+      "description": "The media type handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

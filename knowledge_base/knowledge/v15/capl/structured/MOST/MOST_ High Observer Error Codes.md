@@ -1,0 +1,62 @@
+# MOST: High Observer Error Codes
+
+> Category: `MOST` | Type: `notes`
+
+## Description
+
+OnMostMHPError | MOST High Observer and Combiner
+
+| Error Code | Description | Erroneous Value | Expected Value |
+|---|---|---|---|
+| 0 | Data Frame has unexpected FrameID. | yes | yes |
+| 1 | 0-Frame has an unexpected Block Nr. | yes | yes |
+| 2 | Data Frames without prior 0-Frame. | no | no |
+| 3 | FrameID of Ack/Nack Frame does not match FrameID of the last Data Frame. | yes | yes |
+| 4 | Block Nr of Ack/Nack Frame does not match Nr of the block. | yes | yes |
+| 5 | Frame acknowledge in Block Acknowledge mode. | no | no |
+| 6 | (Multiple) Frame or Block Request not allowed. | no | no |
+| 7 | MHP message without existing connection. | no | no |
+| 8 | Observer Timeout, observing of connection stopped. | no | no |
+| 9 | Invalid MHP message. | no | no |
+| 10 | Too many REQUEST CONNECTION retries (R_Request). | yes | yes |
+| 11 | Timeout violation between REQUEST CONNECTION attempts (T_Send). | yes (ms) | yes (ms) |
+| 12 | Too many START CONNECTION retries (R_Start). | yes | yes |
+| 13 | Timeout violation between START CONNECTION attempts (T_Ready). | yes (ms) | yes (ms) |
+| 14 | Illegal value of Options field in 0-Frame. | yes | no |
+| 15 | Timeout of 0-Frame retry (T_Frame). | yes (ms) | yes (ms) |
+| 16 | Timeout violation sending NegAck on missing 0-Frame (T_Frame). | yes (ms) | yes (ms) |
+| 17 | Too many NegAck retries on missing 0-Frame (R_NegAck). | yes | yes |
+| 18 | Too many retransmission attempts (R_Trans). | yes | yes |
+| 19 | Timeout violation between retransmission attempts (T_Retrans). | yes (ms) | yes (ms) |
+| 20 | Timeout transmitting one block (T_Trans). | yes (ms) | yes (ms) |
+| 21 | Timeout violation between Data Frames (T_AIR_Delay). | yes (ms) | yes (ms) |
+| 22 | Too many END CONNECTION Tx retries (R_End). | yes | yes |
+| 23 | Timeout violation between END CONNECTION attempts (T_End). | yes (ms) | yes (ms) |
+| 24 | Timeout violation closing the connection (T_Delay_End). | yes (ms) | yes (ms) |
+| 25 | Timeout violation between HOLD CONNECTION messages (T_Hold_Resend). | yes (ms) | yes (ms) |
+| 26 | Timeout after last HOLD CONNECTION message (T_Hold). | yes (ms) | yes (ms) |
+| 27 | Timeout of HOLD CONNECTION cycle (T_Hold_Max_Buf). | yes (ms) | yes (ms) |
+| 28 | Timeout violation sending NegAck (T_Receive). | yes (ms) | yes (ms) |
+| 29 | Timeout violation between Data Frame and NegAck (T_dwn_NegAck). | yes (ms) | yes (ms) |
+| 30 | Illegal value of NDF_Ack: Value must not exceed NDF. | yes | yes |
+| 31 | Scale * NDF_Ack exceeds maximum block size. | yes (block size) | yes (block size) |
+| 32 | Timeout violation between ADJUST TRANSMISSION RATE (increase) messages (T_TxSpeedRecovery). | yes (ms) | yes (ms) |
+| 33 | ADJUST TRANSMISSION RATE is only allowed for block acknowledge mode using the asynchronous channel. | no | no |
+| 34 | Total number of frames changed. | yes | yes |
+| 35 | MHP message not expected. | no | no |
+| 40 | Usage of control channel not allowed with MHP 2.3 or newer | no | no |
+| 41 | Field MaxBlkSize not allowed in MHP version < 2.3 | no | no |
+| 42 | Illegal value of MaxBlkSize: Value must be between Scale * NDF_ACK and (Scale+1) * NDF_ACK | yes | yes (Scale << 16 + NDF_ACK) |
+| 43 | Frame Interleave not allowed for connections with different priorities | no | no |
+| 44 | Frame Interleave not allowed for multiple connections to one device | no | no |
+| 45 | Field HoldFlag not allowed in MHP version < 2.3 or Negative Acknowledge frames | no | no |
+
+| Error Code | Description | Erroneous Value | Expected Value |
+|---|---|---|---|
+| 36 | Negative Acknowledge frame observed. | yes (block no.) | no |
+| 37 | (Multiple) Frame Request observed. | no | no |
+| 38 | Block Request observed. | no | no |
+| 39 | Receiver refused connection by sending PrioAck with higher value than Prio. | yes | yes |
+
+| Version 15© Vector Informatik GmbH |
+|---|

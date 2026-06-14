@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "frGwBypassDynamic",
+  "category": "FlexRay",
+  "title": "frGwBypassDynamic",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRGwBypassDynamic.htm",
+  "syntax": [
+    "long frGwBypassDynamic(long bypass, long channel)"
+  ],
+  "description": [
+    "Activates/deactivates the automatic routing for the dynamic part. The function can not be used during a measurement.",
+    "Settings from the Network Hardware Configuration dialog are overwritten with this function."
+  ],
+  "parameters": [
+    {
+      "name": "bypass",
+      "type": "",
+      "description": "0 = Routing deactivated1 = Routing activated"
+    }
+  ],
+  "return": "0 = Error",
+  "example": {
+    "description": [],
+    "code": "...\nfrGwBypassDynamic (0,1)\n// The gateway routing for the dynamic part will be deactivated \n// for the gateway that uses channel 1.\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

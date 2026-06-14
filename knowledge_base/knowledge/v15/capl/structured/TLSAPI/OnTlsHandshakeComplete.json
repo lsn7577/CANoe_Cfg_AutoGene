@@ -1,0 +1,133 @@
+{
+  "page_type": "function",
+  "name": "OnTlsHandshakeComplete",
+  "category": "TLSAPI",
+  "title": "OnTlsHandshakeComplete",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TLSAPI/EventProcedures/CAPLfunctionOnTlsHandshakeComplete.htm",
+  "syntax": [
+    "void OnTlsHandshakeComplete(dword socket, long result);"
+  ],
+  "description": [
+    "If the CAPL program implements this callback it is called when a TLS handshake is completed."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The TLS socket handle. If the handle is valid (not equal to ~0), it corresponds to the socket that was used for tlsOpen."
+    },
+    {
+      "name": "result",
+      "type": "",
+      "description": "The specific result code of the operation. If the operation completed successfully the value is zero. Otherwise the value is an error code."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void OnTlsHandshakeComplete(dword socket, long result)\n{\n  LONG retVal;\n  if (result == 0)\n  {\n    gConnectionSecured = 1;\n\n    //\n    // Send first message\n    //\n    retVal = TcpSend( socket, \"The TLS connection is up\", 25 );\n    \nif (retVal != 0)\n    {\n      // an error occurred\n      return;\n    }\n\n    //\n    // Receive\n    //\n    TcpReceive( socket, gRecBuffer, elcount(gRecBuffer) );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "11.0 SP3",
+      "11.0 SP3",
+      "13.0",
+      "—",
+      "—",
+      "3.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,40 @@
+# OnMostSyncAudio
+
+> Category: `MOST` | Type: `function`
+
+## Syntax
+
+```c
+OnMostSyncAudio(long label, long device, long mode);
+```
+
+## Description
+
+The event procedure OnMostSyncAudio will be called after routing of audio input or output of the bus interface (see mostSetSyncAudio).
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| label | Connection label. |
+| device | 0: Line-In: Audio input signals are put on synchronous channels. 1: Line-Out: Synchronous channel signals are grabbed for audio output. |
+| mode | 0: Routing canceled. 1: Routing executed. |
+
+## Return Values
+
+—
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | 7.1 SP4 | 7.1 SP4 | — | — | — | —✔ |
+| Restricted To | MOST25 MOST50 MOST150 | MOST25 MOST50 MOST150 | — | — | — | —✔ |
+| CANalyzer Measurement Setup (Transmit Branch) | ✔ | N/A | N/A | N/A | N/A | — |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | ✔ | ✔ | — | — | N/A | —✔ |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | —✔ |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | —✔ |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | —✔ |
+| 32-Bit | ✔ | ✔ | — | N/A | — | —✔ |
+| 64-Bit | ✔ | ✔ | — | — | — | —✔ |

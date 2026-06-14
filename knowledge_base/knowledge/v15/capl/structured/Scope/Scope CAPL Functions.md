@@ -1,0 +1,123 @@
+# Scope CAPL Functions
+
+> Category: `Scope` | Type: `notes`
+
+## Description
+
+Eye Diagram
+
+General Functions
+
+Test Feature Set
+
+Acquisition Control Classes and Functions
+
+Configuration
+
+Duty Cycle Measurement Classes
+
+Edge/Transition Time Measurement Functions
+
+Export Functions
+
+Fit Functions
+
+Serial Bit Analysis Functions and Classes
+
+In case of an bit mask error, holds the information for this error
+
+ScopeEdgeAnalyseResult
+
+testWaitScopePerformEdgeAnalysis
+
+Measures different edge parameters for falling or rising edges of a frame or node.
+
+Scope Window | Classes in CAPL
+
+| SCOPE |
+|---|
+
+| Eye Diagram General Functions | Test Feature Set Acquisition Control Classes and Functions Configuration Duty Cycle Measurement Classes Edge/Transition Time Measurement Functions Export Functions Fit Functions Serial Bit Analysis Functions and Classes |
+|---|---|
+
+| Classes | Short Description |
+|---|---|
+| ScopeSinglePolygonBitMask | Defines the bit mask for the eye diagram. |
+| ScopeSerialBitAnalysisViolationData | In case of an bit mask error, holds the information for this error |
+
+| Functions | Short Description |
+|---|---|
+| testWaitForScopeShowEyeDiagram | Create an eye diagram for a message (or part of a message) or for a complete node. |
+| testWaitScopeGetEyeDiagramAnalysis | Used to request the analysis data for a violation found with the eye diagram analysis |
+| testWaitScopePerformEyeDiagramAnalysis | Used to check bits against a defined bit mask. |
+
+| Functions | Short Description |
+|---|---|
+| scopeActivateTrigger | Performs Activate Trigger action for Scope Window. |
+| scopeConnect | Performs Connect Scope action for Scope Window. |
+| scopeDeactivateTrigger | Performs Deactivate Trigger action for Scope Window. |
+| scopeDisconnect | Performs Disconnect Scope action for Scope Window. |
+| scopeTriggerNow | Performs Trigger Now action for Scope Window. |
+
+| Classes | Short Description |
+|---|---|
+| ScopeEvent | Detailed description of occurred scope event. Used together with the testGetWaitScopeEventData function. |
+
+| Functions | Short Description |
+|---|---|
+| testWaitScopeSetConfiguration | Set the configuration for the scope device. |
+| testWaitScopeGetConfigurationInformation | Get the scope devices and configuration names. |
+
+| Functions | Short Description |
+|---|---|
+| testGetWaitScopeEventData | Retrieves the data of CANoe Scope event. |
+| testWaitForScopeEvent | Waits for the occurrence of CANoe Scope event. |
+
+| Classes | Short Description |
+|---|---|
+| ScopeDutyCycleDefinition | Defines the thresholds for the duty cycle measurement. |
+| ScopeBitDataDutyCycle | Used to request the duty cycle measurement data. |
+| ScopeSerialBitAnalysisViolationData | Used to request the duty cycle measurement violation data. |
+
+| Classes | Short Description |
+|---|---|
+| ScopeEdgeAnalyseResult | Can contain the information for e.g. slew rate, transition time, settling time for a bit. |
+
+| Functions | Short Description |
+|---|---|
+| testGetWaitScopeSignalTransitionTime | Measures the transition time of rising and falling edges of a message within the defined area. |
+| testWaitForScopeShowEdges | The defined frame cutout of the previously transition time measurement frame together with a bit mask is shown in the scope's Diagram view. |
+| testWaitScopePerformEdgeAnalysis | Measures different edge parameters for falling or rising edges of a frame or node. |
+| testWaitScopePerformSignalTransitionTime | Measures the transition time of rising and falling edges of a message within the defined area on bit level. |
+
+| Functions | Short Description |
+|---|---|
+| testWaitScopeExportData | Export the scope measurement. |
+
+| Fit Functions | Short Description |
+|---|---|
+| testWaitForScopeFitData | The defined frame cutout is shown in the scope's Diagram view. (CAN) |
+| testWaitForScopeFitDataFr | The defined frame cutout is shown in the scope's Diagram view. (FlexRay) |
+
+| Classes | Short Description |
+|---|---|
+| ScopeFieldLengthData | Contains information e.g. bit time, start time for a bit. |
+| ScopeAnalyseRange | Defines the analyze range for a bit analysis. |
+
+| Functions | Short Description |
+|---|---|
+| testWaitForScopeAnalyseBitSegments | Starts an analysis for the defined bit segments for each bit, which is within the defined range. |
+| testWaitForScopeGetFieldLengthData | Gets the bit time of one bit if the field length measurement was used for a field range. |
+| testWaitForScopePerformFieldLengthMeasurement | Measures the time of a field range or the bit time of one bit. |
+| testWaitScopeAnalyseSignal | Checks the bits of a message against the defined bit mask. |
+| testWaitScopeGetAnalysedBitSegments | Request the analysis data for a single bit. |
+| testWaitScopeGetBitInfo | After a signal was analyzed, the average values of the voltages of CAN_H, CAN_L, and CAN_Diff are calculated for a defined bit range. |
+| testWaitScopeGetMaskViolation | Retrieve the data of the bit mask violations. |
+| testWaitScopeGetMessageBits | Gets specific bit values from a message. |
+| testWaitScopeGetSerialBitAnalysisData | Get specific data for a serial bit analysis. |
+| testWaitScopeGetSerialBitAnalyseViolationData | If the serial bit analysis has found errors, the violations can be requested with this function. |
+| testWaitScopePerformSerialBitAnalysis | Checks the bits of a message against the defined bit mask. |
+| testWaitScopeShowMask | The defined frame cutout together with a previously defined bit mask is shown in the scope's Diagram view. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

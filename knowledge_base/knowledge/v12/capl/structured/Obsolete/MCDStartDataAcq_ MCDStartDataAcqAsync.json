@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "MCDStartDataAcq/ MCDStartDataAcqAsync",
+  "category": "Obsolete",
+  "title": "MCDStartDataAcq/ MCDStartDataAcqAsync",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMCDStartDataAcq.htm",
+  "syntax": [
+    "long MCDStartDataAcq( char moduleName[], int taskId, int pollingRate, char parameters[])"
+  ],
+  "description": [
+    "Configure and start the data acquisition. After a data acquisition is started the configured parameters are transferred to CANoe with the specified polling rate. The values can be obtained with MCDGetCurrentValue.",
+    "Using MCDStartDataAcqAsync the data acquisition is started asynchronous. This means that the current measuring is not interrupted during the call of this function."
+  ],
+  "parameters": [
+    {
+      "name": "ModuleName",
+      "type": "",
+      "description": "Name of the module that is configured in the global options dialog External Programs|MCD 3D Server."
+    }
+  ],
+  "return": "0",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

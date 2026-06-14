@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "vFlashGetLastErrorMessage",
+  "category": "Diagnostics",
+  "title": "vFlashGetLastErrorMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagvFlashGetLastErrorMessage.htm",
+  "syntax": [
+    "void vFlashGetLastErrorMessage();"
+  ],
+  "description": [
+    "Requests a call to the CAPL callback vFlashErrorMessage containing information on the error that occurred."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "  // ...Error occurred...\n  vFlashGetLastErrorMessage();\n}\n\nvoid vFlashErrorMessage(char errorMsg[])\n{\n  write(\"Error %s\", errorMsg);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_TCPDataInd",
+  "category": "Diagnostics",
+  "title": "_DoIP_TCPDataInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPTCPDataInd.htm",
+  "syntax": [
+    "void _DoIP_TCPDataInd( BYTE DoIPVersion, WORD payloadType, BYTE pay-load[]);"
+  ],
+  "description": [
+    "A DoIP PDU was received from the connected peer that cannot be interpreted by this implementation."
+  ],
+  "parameters": [
+    {
+      "name": "DoIPVersion",
+      "type": "",
+      "description": "Protocol version as sent in the header."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void _DoIP_TCPDataInd( BYTE DoIPVersion, WORD payloadType, BYTE payload[])\n{\n  write( \"_DoIP_TCPDataInd( version=%d, type %04x, [%d]<%02x...>)\"\n  , DoIPVersion, payloadType\n  , elcount( payload), elcount(payload) > 0 ? payload[0] : 0);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

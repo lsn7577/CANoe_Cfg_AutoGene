@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetThisValue16",
+  "category": "Car2x",
+  "title": "C2xGetThisValue16",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetThisValue16.htm",
+  "syntax": [
+    "long C2xGetThisValue16( long offset );"
+  ],
+  "description": [
+    "This function reads the data of a received packet in Intel format."
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "Byte offset relative to the beginning of a data packet or the payload (see description above)."
+    }
+  ],
+  "return": "Read value.",
+  "example": {
+    "description": [],
+    "code": "void OnC2xPacket( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  word value16;\n  value16 = C2xGetThisValue16( 14 );\n  write( \"Value %d\", value16 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

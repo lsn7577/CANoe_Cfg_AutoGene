@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForValueString",
+  "category": "CommunicationObjects",
+  "title": "TestWaitForValueString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionTestWaitForValueString.htm",
+  "syntax": [
+    "long TestWaitForValueString(COValue value, char[] awaitedValue, dword timeoutMs)"
+  ],
+  "description": [
+    "Waits for a communication object value to reach a certain value. This function can only be used for communication object values with a string data type. It cannot be used for system variables or bus system signals."
+  ],
+  "parameters": [
+    {
+      "name": "COValue",
+      "type": "",
+      "description": "Value of a communication object."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "long ret;\nret = testWaitForValueString(ErrorSignal[LeftMirror], \"GeneralError\", 200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

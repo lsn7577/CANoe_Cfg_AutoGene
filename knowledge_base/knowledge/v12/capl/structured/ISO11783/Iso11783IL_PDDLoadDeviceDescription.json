@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDLoadDeviceDescription",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDLoadDeviceDescription",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILpddloaddevicedescription.htm",
+  "syntax": [
+    "long Iso11783IL_PDDLoadDeviceDescription( char deviceCfgPath[] ); // form 1"
+  ],
+  "description": [
+    "The function creates a process data dictionary from a machine configuration file (XML)."
+  ],
+  "parameters": [
+    {
+      "name": "deviceCfgPath",
+      "type": "",
+      "description": "filename of the machine configuration file"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "if (Iso11783IL_PDDLoadDeviceDescription( \"Sprayer.XML\" ) == 0) {\n  Iso11783IL_PDDConnectEnvVar ( 0x0060, 1, \"EvSprayer_TankVolume\" );\n  Iso11783IL_PDDConnectEnvVar ( 0x0048, 2, \"EvSprayer_AppRatePerArea\" );\n}\nelse {\n  write( \"Error while load task file\" );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

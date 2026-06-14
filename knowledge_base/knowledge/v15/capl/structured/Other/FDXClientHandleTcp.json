@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "FDXClientHandleTcp",
+  "category": "Other",
+  "title": "FDXClientHandleTcp",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionFDXClientHandleTcp.htm",
+  "syntax": [
+    "long FDXClientHandleTcp(dword ipv4Address, dword port); // form 1",
+    "long FDXClientHandleTcp(byte ipv6Address[], dword port); // form 2"
+  ],
+  "description": [
+    "This function creates an FDX client handle for the FDX client with the specified address.",
+    "Prerequisite for the function is to configure TCP/IPv4 or TCP/IPv6 as transport layer for the FDX feature."
+  ],
+  "parameters": [
+    {
+      "name": "ipv4Address",
+      "type": "",
+      "description": "IPv4 address of the FDX clients"
+    },
+    {
+      "name": "ipv6Address",
+      "type": "",
+      "description": "IPv6 address of the FDX clients"
+    },
+    {
+      "name": "port",
+      "type": "",
+      "description": "TCP port number of the FDX clients."
+    }
+  ],
+  "return": "If successful, the function returns a value greater than 0, which means the FDX client handle. Values smaller than or equal to zero indicate an error.",
+  "example": {
+    "description": [
+      "Example for TCP/IPv4",
+      "Example for TCP/IPv6"
+    ],
+    "code": "long fdxClientHandle = 0;\ndword fdxClientPort = 0;\ndword fdxClientAddr = 0;\n\nfdxClientAddr = IpGetAddressAsNumber(\"127.0.0.1\");\nfdxClientPort = 2810;\nfdxClientHandle = FDXClientHandleTcp(fdxClientAddr, fdxClientPort);\nlong  fdxClientHandle = 0;\ndword fdxClientPort = 0;\nbyte  fdxClientAddr[16];\n\nIpGetAddressAsArray(\"::1\", fdxClientAddr);\nfdxClientPort = 2820;\nfdxClientHandle = FDXClientHandleTcp(fdxClientAddr, fdxClientPort);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0 SP4",
+      "13.0",
+      "—",
+      "14",
+      "2.2 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

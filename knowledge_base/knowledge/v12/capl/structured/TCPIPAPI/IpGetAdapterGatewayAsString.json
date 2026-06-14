@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IpGetAdapterGatewayAsString",
+  "category": "TCPIPAPI",
+  "title": "IpGetAdapterGatewayAsString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPGetAdapterGatewayAsString.htm",
+  "syntax": [
+    "long IpGetAdapterGatewayAsString( dword ifIndex, char address[], dword count);"
+  ],
+  "description": [
+    "The function retrieves the string representation of the default gateway address associated with the specified network interface.",
+    "Gateway information is not yet available before the start of the measurement (on pre-start). Rather it is first available at the start of the measurement (on start) as soon as the stack has been completely initialized."
+  ],
+  "parameters": [
+    {
+      "name": "ifIndex",
+      "type": "",
+      "description": "The 1-based network interface index."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  const dword IPV4_STR_SIZE = 16;    // IPv4 string size\n  dword ifIdx;                       // interface index\n  char ipv4GwAddrStr[IPV4_STR_SIZE]; // human readably IPv4 Gateway address.\n  long result;                       // function result.\n\n  for (ifIdx = 1; ifIdx <= IpGetAdapterCount(); ifIdx++)\n  {\n    result = IpGetAdapterGatewayAsString( ifIdx, ipv4GwAddrStr, elcount(ipv4GwAddrStr) );\n    if (result == 0)\n    {\n      // success.\n      write(\"IpGetAdapterGatewayAsString for adapter %d returned IPv4 gateway address: %s\", ifIdx, ipv4GwAddrStr);\n    }\n    else\n    {\n      writeLineEx(1, 3, \"IpGetAdapterGatewayAsString: Error %d\", result);\n    }\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,70 @@
+{
+  "page_type": "function",
+  "name": "measuredPDURef",
+  "category": "CommunicationObjects",
+  "title": "measuredPDURef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionMeasuredPDURef.htm",
+  "syntax": [
+    "measuredPDURef * <var>"
+  ],
+  "description": [
+    "References a PDU measurement point, which means measuring a specific connection between sender and receiver for a PDU.",
+    "Not used for service PDUs, the data type of these is measuredServicePDURef."
+  ],
+  "parameters": [
+    {
+      "name": "PDU",
+      "type": "",
+      "description": "PDU, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "measuredPDURef StatusPDU pdu1;\npdu1 = StatusPDU.measure[LeftMirror,CANoe];\nwrite(\"Latest x: %d\", $pdu1.Position.x);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the measurement endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the measurement endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SenderIndex Index of the sender. Note that the index may change if senders are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ReceiverIndex Index of the receiver. Note that the index may change if receivers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupMeasuredMethod",
+  "category": "CommunicationObjects",
+  "title": "LookupMeasuredMethod",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupMeasuredMethod.htm",
+  "syntax": [
+    "measuredMethodRef * LookupMeasuredMethod(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified measured method. The path must be complete including namespaces and both endpoints: (Namespace::)+Service.measure[consumer,provider].Method.",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the measured method."
+    }
+  ],
+  "return": "The measured method. An uninitialized object if the method is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "measuredMethodRef MirrorAdjustment.Adjust adjustMethod;\nchar path[200];\nchar service[50] = \"Mirrors::MirrorAdjustment\";\nchar consumer[20] = \"CANoe\";\nchar provider[20] = \"LeftMirror\";\nchar method[20] = \"Adjust\";\n\nsnprintf(path, elcount(path), \"%s.measure[%s,%s].%s\", service, consumer, provider, method);\nadjustMethod = (measuredMethodRef MirrorAdjustment.Adjust) lookupMeasuredMethod(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

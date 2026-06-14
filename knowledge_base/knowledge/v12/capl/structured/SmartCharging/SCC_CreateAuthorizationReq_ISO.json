@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateAuthorizationReq_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateAuthorizationReq_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateAuthorizationReq_ISO.htm",
+  "syntax": [
+    "long SCC_CreateAuthorizationReq_ISO ( byte SessionID[] )"
+  ],
+  "description": [
+    "Creates an Authorization Request message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

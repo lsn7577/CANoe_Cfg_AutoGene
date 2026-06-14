@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventMessageContents",
+  "category": "Test",
+  "title": "ChkQuery_EventMessageContents",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventMessageContents.htm",
+  "syntax": [
+    "long ChkQuery_EventMessageContents (dword CheckId, byte buffer[], dword bufferlen);",
+    "check.QueryEventMessageContents (byte buffer[], dword bufferlen);"
+  ],
+  "description": [
+    "Stores the data bytes of the message, for which the event has been sent, in the buffer and returns the number of stored data bytes (DLC)."
+  ],
+  "parameters": [
+    {
+      "name": "CheckId",
+      "type": "",
+      "description": "Identifier of the queried Check."
+    }
+  ],
+  "return": "< 0: Refers the query error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

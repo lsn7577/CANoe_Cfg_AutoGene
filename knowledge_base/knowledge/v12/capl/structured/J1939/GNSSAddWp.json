@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GNSSAddWp",
+  "category": "J1939",
+  "title": "GNSSAddWp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSaddwp.htm",
+  "syntax": [
+    "dword GNSSAddWp( double latitude, double longitude, double altitude )"
+  ],
+  "description": [
+    "This function inserts a new waypoint at the end of the waypoint list. The unit of the altitude parameter depends on the system of measurement units selected with the GNSSSetUnits function."
+  ],
+  "parameters": [
+    {
+      "name": "latitude",
+      "type": "",
+      "description": "latitude of the new waypoint in degrees"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "GNSSAddWp( 48.46, 9.11, 225.0 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

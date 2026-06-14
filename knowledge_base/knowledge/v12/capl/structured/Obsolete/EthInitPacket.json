@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthInitPacket",
+  "category": "Obsolete",
+  "title": "EthInitPacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthInitPacket.htm",
+  "syntax": [
+    "long EthInitPacket( ); // form 1"
+  ],
+  "description": [
+    "This function creates a new Ethernet packet. Other functions can access to the newly created packet with the returned handle.",
+    "Protocol fields that are marked as InitProtocol in the protocol description are initialized."
+  ],
+  "parameters": [
+    {
+      "name": "srcMacAddressStruct",
+      "type": "",
+      "description": "source MAC address as struct"
+    }
+  ],
+  "return": "handle of the created packet or 0\nWith EthGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [],
+    "code": "LONG packetHandle;\nCHAR error[100];\n\n// create packet\npacketHandle = EthInitPacket(\"udp\");\n\nif (EthGetLastError() == 0)\n{\n  // set protocol fields\n  EthSetTokenInt( packetHandle, \"ipv4\", \"source\", 0xC0A80001 ); // 192.168.0.1\n  EthSetTokenInt( packetHandle, \"ipv4\", \"destination\", 0xFFFFFFFF ); // 255.255.255.255\n  EthSetTokenInt( packetHandle, \"udp\", \"source\", 23 );\n  EthSetTokenInt( packetHandle, \"udp\", \"destination\", 23 );\n\n  // set UDP payload\n  EthResizeToken( packetHandle, \"udp\", \"data\", 5*8 /*bits*/ );\n  EthSetTokenData( packetHandle, \"udp\", \"data\", 5, \"Hello\" );\n\n  // Complete and send packet\n  EthCompletePacket( packetHandle );\n  EthOutputPacket( packetHandle );\n\n  // release packet\n  EthReleasePacket( packetHandle );\n}\nelse\n{\n  EthGetLastErrorText( elCount(error), error );\n  write(\"Error: %s\", error );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "mostSetFBlockID, mostSetFunctionID, mostSetOpType",
+  "category": "Obsolete",
+  "title": "mostSetFBlockID, mostSetFunctionID, mostSetOpType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMOSTSet.htm",
+  "syntax": [
+    "void mostSetFBlockID(mostMessage msg, long value)"
+  ],
+  "description": [
+    "Set the FBlockID, FunctionID or OpType of the message.",
+    "Since the FBlockID, FunctionID and OpType are part of the message ID these functions change the ID as well."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Variable of type mostMessage or mostAMSMessage."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

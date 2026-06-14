@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "fileReadString",
+  "category": "Obsolete",
+  "title": "fileReadString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionFileReadString.htm",
+  "syntax": [
+    "long fileReadString(char section[], char entry[], char def[], char buffer[], long bufferlen, char filename[]);"
+  ],
+  "description": [
+    "Searches for the variable entry in the section section of the file filename. Its content (value) is written to the buffer buffer. Its length must be passed correctly to bufferlen. If the file or entry is not found, the default value def is copied to buffer."
+  ],
+  "parameters": [
+    {
+      "name": "section",
+      "type": "",
+      "description": "Section of file"
+    }
+  ],
+  "return": "Number of bytes read",
+  "example": {
+    "description": [
+      "Result:",
+      "buf is filled with the characters \"Feld\"."
+    ],
+    "code": "ile TEST.INI:\n[DATA]\nNAME=Feld\nADDR=200\nFIELD=1,2,3,0x20,100\n...\nint len;\nchar buf[20];\nfileReadString(\"DATA\", \"NAME\", \"DefaultString\", buf, elCount(buf), \"TEST.INI\");\n..."
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

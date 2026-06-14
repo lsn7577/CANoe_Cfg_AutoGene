@@ -1,0 +1,44 @@
+{
+  "page_type": "function",
+  "name": "TestILDisturbAllNodeUpdateBits",
+  "category": "Obsolete",
+  "title": "TestILDisturbAllNodeUpdateBits",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionTestILDisturbAllNodeUpdateBits.htm",
+  "syntax": [
+    "long TestILDisturbAllNodeUpdateBits (long flags, long disturbanceMode, long disturbanceCount, long disturbanceValue);"
+  ],
+  "description": [
+    "Modifies all update bits of signals/signal groups of all nodes in the current bus context. Different fault injections are possible.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "Update bits of signals and signal groups are disturbed."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Only signal update bits are disturbed."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Only signal group update bits are disturbed."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

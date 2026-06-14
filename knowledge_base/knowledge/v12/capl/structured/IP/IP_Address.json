@@ -1,0 +1,55 @@
+{
+  "page_type": "function",
+  "name": "IP_Address",
+  "category": "IP",
+  "title": "IP_Address",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Objects/CAPLfunctionIPAdredress.htm",
+  "syntax": [
+    "IP_Address <addr> <var name>; // form 1"
+  ],
+  "description": [
+    "Initializes a variable of type IP_Address with a concrete IP address (form 1) or without an IP Address (form 2)."
+  ],
+  "parameters": [
+    {
+      "name": "addr",
+      "type": "",
+      "description": "An IPv4 or IPv6 address."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  IP_Address 192.168.0.1 ipv4Addr;\n  IP_Address ff::1       ipv6Addr;\n  IP_Address [ff::2]     ipv6Addr2;\n  IP_Address 0.0.0.0     ipv4AnyAddr;\n  IP_Address ::          ipv6AnyAddr;\n}\non start\n{\n  IP_Address addr;\n  addr = IP_Address(192.168.1.1);\n  // ... do something with addr\n}\non start\n{\n  DoSomething( IP_Address(192.168.1.1) );\n}\n\nvoid DoSomething( IP_Address addr )\n{\n  // ... do something with addr\n}\non start\n{\n  IP_Address 192.168.1.1 addr1;\n  IP_Address 192.168.1.2 addr2;\n  if (addr1 == addr2)\n  {\n    write( \"Addresses are equal!\" );\n  }\n  else\n  {\n    write( \"Addresses are not equal!\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "IPv4Address Accesses the IPv4 address’ value. The byte order is network byte order.",
+        "dword",
+        "—"
+      ]
+    },
+    {
+      "row": [
+        "ScopeID ScopeID for an IPv6 address.",
+        "dword",
+        "—"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

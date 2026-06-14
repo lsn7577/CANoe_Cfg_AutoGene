@@ -1,0 +1,199 @@
+{
+  "page_type": "function",
+  "name": "FlexRayRcvStatusEvent",
+  "category": "FlexRay",
+  "title": "FlexRayRcvStatusEvent",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Functions/CAPLfunctionFRRCVStatusEvent.htm",
+  "syntax": [
+    "FlexRayRcvStatusEvent (long msgTime, int channel, long statusType, long infomask1, long infomask2, long infomask3);"
+  ],
+  "description": [
+    "This function is a callback and is called by the tool!",
+    "The callback occurs when the FlexRay Communication Controller (CC) has synchronized with the bus or the synchronization fails."
+  ],
+  "parameters": [
+    {
+      "name": "msgTime",
+      "type": "",
+      "description": "Event time stamp."
+    },
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel in the tool that selects the CC. Should be set to 1 by default (since the tool currently only supports one FlexRay CC)."
+    },
+    {
+      "name": "Type",
+      "type": "",
+      "description": "Meaning"
+    },
+    {
+      "name": "0x0001",
+      "type": "",
+      "description": "\"Bus Synchronization\" status is included."
+    },
+    {
+      "name": "0x0002",
+      "type": "",
+      "description": "Received symbol"
+    },
+    {
+      "name": "Type",
+      "type": "Bit Value",
+      "description": "Meaning"
+    },
+    {
+      "name": "0x0001",
+      "type": "0",
+      "description": "CC unable to synchronize with the bus."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "CC is synchronized to the bus."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "CAS"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "MTS"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Wakeup"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Not specified"
+    },
+    {
+      "name": "Example 0x00260004: not specified signal with the length 38.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "infomask2",
+      "type": "",
+      "description": "If statusType == 1: Not used. If statusType == 2: Symbol receiving cycle."
+    },
+    {
+      "name": "infomask3",
+      "type": "",
+      "description": "If statusType == 1: Not used. If statusType == 2: Channel mask (A=1 / B=2 / AB = 3): Channel the symbol was received."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n   int busIsSynchronized = 0;\n}\nFlexRayRcvStatusEvent (long msgTime, int channel, long statusType, long infomask1, long infomask2, long infomask3)\n{\n   if (statusType & 0x00000001)\n   {\n      if (infomask1 & 0x00000001)\n      {\n         busIsSynchronized = 1;\n         Write(\"FR StatusEvent: Bus (channel %d) is synchronized.\", channel);\n      }\n      else\n      {\n         Write(\"FR StatusEvent: Bus (channel %d) lost synchronization.\", channel);\n         if (busIsSynchronized == 1) ResetFlexRayCC(channel);\n         busIsSynchronized = 0;\n      }\n    }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

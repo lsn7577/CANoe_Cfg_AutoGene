@@ -1,0 +1,117 @@
+# Typographical conventions
+
+> Category: `DBC` | Subcategory: `Help` | Type: `concept`
+
+On this page we present to you the typographic and symbolic elements of our Help system together with their meanings.
+
+Caution!
+
+Note
+
+Example
+
+Step by Step Procedure
+
+FAQ
+
+Introduction
+
+Basic Knowledge
+
+Expert Knowledge
+
+Changes
+
+Cross Reference
+
+Definition
+
+Multimedia Link
+
+Edit
+
+Do not edit manually!
+
+Obsolete Function
+
+/
+
+This symbols flags (expandable/closeable) drop-down sections.
+
+Typography
+
+Links to a help page or a help pop up window.
+
+»CAPL
+
+Links to a glossary entry.
+
+Vector Knowledgebase
+
+Links to an external page/application.
+
+This symbol flags cross references/conceptual links; a window will pop up.
+
+CANoe
+
+Notation for product names and trademarks.
+
+[OK]
+
+Notation for buttons in dialogs.
+
+<F5>
+
+Notation for keys on the computer keyboard.
+
+<Ctrl>+<z>
+
+Notation for keys on the computer keyboard that should be pressed simultaneously.
+
+Add…
+
+File|Save file…
+
+Notation for commands, menu names, dialog names and screen/dialog elements.Here Save file… refers to a command within the File menu.
+
+Notation for syntax (CAPL, MS-DOS, XML, C#…).
+
+Notation for sample code (CAPL, MS-DOS, XML, C#…).
+
+| Element | Short Description |
+|---|---|
+| Caution! |  |
+| Note |  |
+| Example |  |
+| Step by Step Procedure |  |
+| FAQ |  |
+| Introduction |  |
+| Basic Knowledge |  |
+| Expert Knowledge |  |
+| Changes |  |
+| Cross Reference |  |
+| Definition |  |
+| Multimedia Link |  |
+| Edit |  |
+| Do not edit manually! |  |
+| Obsolete Function |  |
+| / | This symbols flags (expandable/closeable) drop-down sections. |
+| Typography | Links to a help page or a help pop up window. |
+| »CAPL | Links to a glossary entry. |
+| Vector Knowledgebase | Links to an external page/application. |
+| This symbol flags cross references/conceptual links; a window will pop up. |  |
+| CANoe | Notation for product names and trademarks. |
+| [OK] | Notation for buttons in dialogs. |
+| <F5> | Notation for keys on the computer keyboard. |
+| <Ctrl>+<z> | Notation for keys on the computer keyboard that should be pressed simultaneously. |
+| Add… File\|Save file… | Notation for commands, menu names, dialog names and screen/dialog elements.Here Save file… refers to a command within the File menu. |
+| on message <msg id> | Notation for syntax (CAPL, MS-DOS, XML, C#…). |
+| on message 0x100 | Notation for sample code (CAPL, MS-DOS, XML, C#…). |
+
+```c
+on message <msg id>
+```
+
+```c
+on message 0x100
+```

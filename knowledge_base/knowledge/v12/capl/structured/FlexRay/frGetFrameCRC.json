@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "frGetFrameCRC",
+  "category": "FlexRay",
+  "title": "frGetFrameCRC",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRGetFrameCRC.htm",
+  "syntax": [
+    "dword frGetFrameCRC(this);"
+  ],
+  "description": [
+    "This function returns the CRC of a received FlexRay frame.",
+    "The Header CRC can be determined with a special selector of the event procedure."
+  ],
+  "parameters": [
+    {
+      "name": "this",
+      "type": "",
+      "description": "The function can only be used in the context of the following event procedures:"
+    }
+  ],
+  "return": "Frame CRC (data type WORD).\nThe return value is only valid if the frame was received by a Vector FlexRay hardware interface in asynchronous monitor mode. In any other case 0 will be sent back.",
+  "example": {
+    "description": [
+      "The following example writes the CRC into the Write Window for all received frames."
+    ],
+    "code": "on frFrame *\n{\n   dword \r\n crc;\n   crc \r\n = frGetFrameCRC(this);\n   Write(“Frame %d in Cycle %d has CRC 0x%x”, this.FR_SlotID, this.FR_Cycle, crc);\n   output(this); // only required in Measurement Setup\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

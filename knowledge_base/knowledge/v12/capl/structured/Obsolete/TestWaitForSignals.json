@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForSignals",
+  "category": "Obsolete",
+  "title": "TestWaitForSignals",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionTestWaitForSignals.htm",
+  "syntax": [
+    "long TestWaitForSignals (dbNode aNode, dword aTimeout)"
+  ],
+  "description": [
+    "Tests the availability of all the send signals of a node and waits if necessary until all the send signals of the node are available. Signals that are received at least once from the bus after the measurement starts are classified as \"available\".",
+    "This function is useful when you want to assure that all signals are available before starting a signal-oriented test, i.e. to synchronize the tester with the bus."
+  ],
+  "parameters": [
+    {
+      "name": "aNode",
+      "type": "",
+      "description": "Node whose send signals should all be available"
+    }
+  ],
+  "return": "-2: Wait state is exited due to a constraint/condition violation",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

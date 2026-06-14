@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "C2xSecCertificateValidAppSspBitmap",
+  "category": "Car2x",
+  "title": "C2xSecCertificateValidAppSspBitmap",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xSecCertificateValidAppSspBitmap.htm",
+  "syntax": [
+    "long C2xSecCertificateValidAppSspBitmap(long certHdl, dword aid, dword sspLen, byte ssp[], byte msk[], dword checkChain)"
+  ],
+  "description": [
+    "Validates the Service Specific Permission (SSP) bit mask of a certificate."
+  ],
+  "parameters": [
+    {
+      "name": "certHdl",
+      "type": "",
+      "description": "Handle of the certificate to be tested."
+    },
+    {
+      "name": "aid",
+      "type": "",
+      "description": "Application ID / PSID."
+    },
+    {
+      "name": "sspLen",
+      "type": "",
+      "description": "Length of the byte arrays ssp and msk (mask)."
+    },
+    {
+      "name": "ssp Byte Array",
+      "type": "",
+      "description": "The SSP to be tested."
+    },
+    {
+      "name": "msk Byte Array",
+      "type": "",
+      "description": "Mask of the bits in the SSP array to be compared."
+    },
+    {
+      "name": "checkChain",
+      "type": "",
+      "description": "If set to 1, the whole certificate chain is tested (recommended)."
+    }
+  ],
+  "return": "Length of the byte arrays ssp and",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  dword myCertHdl;\n\n  struct SspBitmap\n  {\n    char  name[16];\n    dword aid;\n    dword len;\n    byte  ssp[10];\n    byte  msk[10];\n    byte  chain;\n  };\n\n  struct SspBitmap ssp =\n  {\n    \"CAM\",\n    0x24,\n    3,\n    { 0x01, 0x02, 0x00 },\n    { 0xff, 0x02, 0x00 },\n    1\n  };\n}\n\non start\n{\n  myCertHdl = C2xSecCertificateGetHandle(\"MyCert\");\n\n  write(\"SSP %s: %d\", ssp.name,\n    C2xSecCertificateValidAppSspBitmap(myCertHdl, ssp.aid,\n    ssp.len, ssp.ssp, ssp.msk, ssp.chain)) ;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "—",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

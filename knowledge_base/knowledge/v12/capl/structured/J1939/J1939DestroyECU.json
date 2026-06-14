@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939DestroyECU",
+  "category": "J1939",
+  "title": "J1939DestroyECU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939DestroyECU.htm",
+  "syntax": [
+    "dword J1939DestroyECU( dword ecuHandle );"
+  ],
+  "description": [
+    "This function deletes a logical node that was generated with J1939CreateECU() from the network.",
+    "You should therefore avoid allowing this function to be called within a CAPL callback function, since otherwise data consistency of the node layer could be violated."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "0 on success or error code",
+  "example": {
+    "description": [],
+    "code": "J1939DestroyECU(ecuHandle);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

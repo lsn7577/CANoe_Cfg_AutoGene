@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "mostSendError",
+  "category": "MOST",
+  "title": "mostSendError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTSendError.htm",
+  "syntax": [
+    "mostSendError_Code (mostAmsMessage * msgcmd, byte code)"
+  ],
+  "description": [
+    "Generates and sends an error message directly based on a received command message.",
+    "The various signatures make it easy to transfer the most common error codes with their ancillary information.",
+    "Any wildcard InstId in the command message is transferred to a concrete value in the error message with the help of the device’s Local FBlock list."
+  ],
+  "parameters": [
+    {
+      "name": "msgcmd",
+      "type": "",
+      "description": "Received command message to be responded to"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

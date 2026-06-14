@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_EventStatus",
+  "category": "Test",
+  "title": "ChkQuery_EventStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryEventStatus.htm",
+  "syntax": [
+    "long ChkQuery_EventStatus (dword aCheckId, char aBuffer[], dword aBufferLength);",
+    "check.QueryEventStatus (char aBuffer[], dword aBufferLength);"
+  ],
+  "description": [
+    "Converts the status into a string that can be printed. Returns the number of characters written (<= length)."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "< 0: Refers the query error codes",
+  "example": {
+    "description": [],
+    "code": "long result;\ndword checkId;\nchar eventStatus[256];\ncheckId = ChkStart_MsgRelCycleTimeViolation(VehicleMotion, 0.9, 1.1);\n// ... execute test sequence\nresult = ChkQuery_EventStatus(checkId, eventStatus, 256);\nWrite(\"result = %d\", result);\nWrite(\"Event Status = %s\", eventStatus);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

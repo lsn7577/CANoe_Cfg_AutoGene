@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coOnBootUp",
+  "category": "Obsolete",
+  "title": "coOnBootUp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOnBootUp.htm",
+  "syntax": [
+    "void coOnBootUp( dword nodeId );"
+  ],
+  "description": [
+    "This function is called if a boot-up message was registered on the bus. Each CANopen® node sends this message after the reset during the transition into the state pre-operational."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID, value range 1..127"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnBootUp(dword nodeId){\n  write( \"BootUp of node %d recognized\", nodeId );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSetTimeoutValue",
+  "category": "CANopen",
+  "title": "coTfsSetTimeoutValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSetTimeOutValue.htm",
+  "syntax": [
+    "long coTfsSetTimeoutValue( dword timeout );"
+  ],
+  "description": [
+    "This function sets the general time-out of all test functions, insofar as individual functions do not make a separate parameter available for this. The default value at measurement start is 2500 ms. If the value is set to 0, the function waits endlessly."
+  ],
+  "parameters": [
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "Time-out in ms."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsSetTimeoutValue (300); // set time-out to 300 ms"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

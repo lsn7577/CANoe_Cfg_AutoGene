@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SD_DiscoverProviders",
+  "category": "CommunicationObjects",
+  "title": "SD_DiscoverProviders",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionSDDiscoverProviders.htm",
+  "syntax": [
+    "void SD_DiscoverProviders(serviceConsumerRef * consumer)"
+  ],
+  "description": [
+    "Starts service discovery by requesting over the network to be informed of all running providers of a service. You can react to the response(s) with an on SD_provider_discovered handler."
+  ],
+  "parameters": [
+    {
+      "name": "consumer",
+      "type": "",
+      "description": "Consumer endpoint."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "SD_DiscoverProviders(MirrorAdjustment[CANoe]);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

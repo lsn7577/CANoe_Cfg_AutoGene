@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForDiagChannelConnected",
+  "category": "Test",
+  "title": "TestWaitForDiagChannelConnected",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForDiagChannelConnected.htm",
+  "syntax": [
+    "long TestWaitForDiagChannelConnected(dword timeout_ms); // form 1"
+  ],
+  "description": [
+    "Waits for the occurrence of the state change of a diagnostic channel to the state Connected. Should the connection not occur before the expiration of the time timeout_ms, the wait condition is resolved nevertheless."
+  ],
+  "parameters": [
+    {
+      "name": "timeout_ms",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]"
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "long status;\n   if (0 == DiagConnectChannel())\n   {\n      TestStepPass( \"Channel connect called successfully.\");\n   }\n   else\n   {\n      TestStepFail( \"Channel connect returned with an error.\");\n      success = kRetFail;\n   }\n\nstatus = TestWaitForDiagChannelConnected(2000);\n   if (1 == status)\n   {\n      TestStepPass(\"Connected to target ECU\");\n   }\n   else\n   {\n      TestStepFail( \"Error connecting to target ECU\");\n   }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

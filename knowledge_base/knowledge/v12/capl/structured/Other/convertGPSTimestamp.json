@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "convertGPSTimestamp",
+  "category": "Other",
+  "title": "convertGPSTimestamp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionConvertGPSTimestamp.htm",
+  "syntax": [
+    "void convertGPSTimestamp(dword timestamp, dword& year, byte& month, byte & day, byte & hour, byte & minute, byte & second);"
+  ],
+  "description": [
+    "Converts a GPS time stamp into UTC based date and time information."
+  ],
+  "parameters": [
+    {
+      "name": "timestamp",
+      "type": "",
+      "description": "The GPS time stamp (seconds since 1970-01-01 00:00)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

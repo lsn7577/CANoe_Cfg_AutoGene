@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TCIL_GetSectionState",
+  "category": "ISO11783",
+  "title": "TCIL_GetSectionState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILGetSectionState.htm",
+  "syntax": [
+    "long TCIL_GetSectionState (dbNode client, dword ddiOfCondensedState, dword elementNumber, dword sectionNumber, dword& sectionState); // form 1"
+  ],
+  "description": [
+    "These functions return the current state of a single section.",
+    "For the already specified DDIs (currently in range DDI=0 and DDI=520), the functions check if the sectionNumber fits to the DDI."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "Task Controller simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "dword IsSectionEnabled(dword elementNumber, dword sectionNumber)\n{\n  long result;\n  dword state;\n  result = TCIL_GetSectionState(TC, Sprayer, 161, elementNumber, sectionNumber, state);\n  if (result < 0)\n  {\n    TestStepFail(\"Failed to get current state!\");\n    return result;\n  }\n  return (state == 1);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

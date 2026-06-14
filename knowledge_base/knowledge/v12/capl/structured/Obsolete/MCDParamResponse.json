@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "MCDParamResponse",
+  "category": "Obsolete",
+  "title": "MCDParamResponse",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionMCDParamResponse.htm",
+  "syntax": [
+    "long MCDParamResponse ( char moduleName[], char parameterName[], double value)"
+  ],
+  "description": [
+    "Callback handler on a MCDGetECUParam request. This function must be defined in the CAPL program to get a response on a read request."
+  ],
+  "parameters": [
+    {
+      "name": "moduleName",
+      "type": "",
+      "description": "Name of the module that is configured in the global options dialog External Programs|MCD 3D Server."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

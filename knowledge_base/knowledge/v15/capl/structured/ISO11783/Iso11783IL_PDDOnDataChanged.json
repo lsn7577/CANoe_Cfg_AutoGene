@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDOnDataChanged",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDOnDataChanged",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILPDDOnDataChanged.htm",
+  "syntax": [
+    "void Iso11783IL_PDDOnDataChanged( dword ddi, dword elNum, double value );"
+  ],
+  "description": [
+    "This function can be implemented in the CAPL program. The function is called up by the interaction layer if a process variable has been changed with a value command via the CAN Bus."
+  ],
+  "parameters": [
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "data dictionary identifier of the changed process variables"
+    },
+    {
+      "name": "elementNumber",
+      "type": "",
+      "description": "element number of the changed process variables"
+    },
+    {
+      "name": "value",
+      "type": "",
+      "description": "new value of the process variables"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void Iso11783IL_PDDOnDataChanged( dword ddi, dword elNum, double value ){\n  switch( ddi) {\n    case 0x200:\n      switch(elNum) {\n        case 2:\n          // set values of sections\n          Iso11783IL_PDDSetValue( Sprayer, 0x200. 3, value );\n          Iso11783IL_PDDSetValue( Sprayer, 0x200. 4, value );\n          Iso11783IL_PDDSetValue( Sprayer, 0x200. 5, value );\n          gOutputPerArea[0] = value;\n          gOutputPerArea[1] = value;\n          gOutputPerArea[2] = value;\n          break;\n        case 3:\n          gOutputPerArea[0] = value;\n          break;\n        case 4:\n          gOutputPerArea[1] = value;\n          break;\n        case 5:\n          gOutputPerArea[2] = value;\n          break;\n      }\n      break;\n    case 0x402: // volume count\n       switch(elNum) {\n        case 1:\n          gVolumeCount = value;\n          break;\n      }\n      break;\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.0",
+      "13.0",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "ISO11783",
+      "ISO11783",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

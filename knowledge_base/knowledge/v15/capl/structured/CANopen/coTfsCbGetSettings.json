@@ -1,0 +1,143 @@
+{
+  "page_type": "function",
+  "name": "coTfsCbGetSettings",
+  "category": "CANopen",
+  "title": "coTfsCbGetSettings",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsCbGetSettings.htm",
+  "syntax": [
+    "long coTfsCbGetSettings( dword type, dword nodeId, dword cycleTime[1], dword tolerance[1] );"
+  ],
+  "description": [
+    "This function gets the set parameter of an active monitor."
+  ],
+  "parameters": [
+    {
+      "name": "type",
+      "type": "",
+      "description": "0 - Heartbeat message1 - Sync message2 - Sync PDO message3 - Guarding RTR message for request"
+    },
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Monitored node-ID for request."
+    },
+    {
+      "name": "cycleTime[]",
+      "type": "",
+      "description": "Set cycle time."
+    },
+    {
+      "name": "tolerance[]",
+      "type": "",
+      "description": "Set tolerance."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "const kMonitorTypeHeartbeat   = 0;\nconst kMonitorTypeSyncMsg    = 1;\nconst kMonitorTypeSyncPdoMsg   = 2;\nconst kMonitorTypeGuardingRtrMsg = 3;\ndword cycleTime[1];\ndword tolerance[1];\n\n/* assume the selected monitor is active */\n/* get settings of the active monitor */\nif (coTfsCbGetSettings(kMonitorTypeHeartbeat, 112, cycleTime, tolerance) != 1)\n{\n  ; /* failure, monitor not active?, incorrect nodeId? */\n} /* if */\nelse\n{\n  write (\"tolerance = %d ms, cycleTime = %d ms\", tolerance[0], cycleTime[0]);\n} /* else */"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

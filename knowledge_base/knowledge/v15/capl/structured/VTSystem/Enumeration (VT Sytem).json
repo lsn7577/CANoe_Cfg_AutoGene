@@ -1,0 +1,795 @@
+{
+  "page_type": "notes",
+  "name": "Enumeration (VT Sytem)",
+  "category": "VTSystem",
+  "title": "Enumeration (VT Sytem)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/CAPLfunctionsVTSystemEnumeration.htm",
+  "syntax": [],
+  "description": [
+    "Working with Symbolic Identifiers"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSLoadModeInactive",
+        "Internal load not active"
+      ],
+      [
+        "1",
+        "eVTSLoadModeCurrentControl",
+        "Current control"
+      ],
+      [
+        "2",
+        "eVTSLoadModeResistanceControl",
+        "Resistance control"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSMeasurementModeDirect",
+        "Differential voltage, unfiltered"
+      ],
+      [
+        "1",
+        "eVTSMeasurementModeFiltered",
+        "Differential voltage, 10 kHz filter active"
+      ],
+      [
+        "2",
+        "eVTSMeasurementModeLineAToGnd",
+        "Voltage line A to ground"
+      ],
+      [
+        "3",
+        "eVTSMeasurementModeLineBToGnd",
+        "Voltage line B to ground"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSImpedanceModeHigh",
+        "High impedance (default state)"
+      ],
+      [
+        "1",
+        "eVTSImpedanceModeLow",
+        "Low impedance (advantageous for measurement of PWM frequency and duty cycle)"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "1",
+        "eVTSTrigger1",
+        "Trigger 1"
+      ],
+      [
+        "2",
+        "eVTSTrigger2",
+        "Trigger 2"
+      ],
+      [
+        "3",
+        "eVTSTrigger3",
+        "Trigger 3"
+      ],
+      [
+        "4",
+        "eVTSTrigger4",
+        "Trigger 4"
+      ],
+      [
+        "5",
+        "eVTSTrigger5",
+        "Trigger 5"
+      ],
+      [
+        "6",
+        "eVTSTrigger6",
+        "Trigger 6"
+      ],
+      [
+        "7",
+        "eVTSTrigger7",
+        "Trigger 7"
+      ],
+      [
+        "8",
+        "eVTSTrigger8",
+        "Trigger 8"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSTriggerSourceChannelInactive",
+        "Source Channel inactive"
+      ],
+      [
+        "1",
+        "eVTSTriggerSourceChannel1",
+        "Source Channel 1"
+      ],
+      [
+        "2",
+        "eVTSTriggerSourceChannel2",
+        "Source Channel 2"
+      ],
+      [
+        "3",
+        "eVTSTriggerSourceChannel3",
+        "Source Channel 3"
+      ],
+      [
+        "4",
+        "eVTSTriggerSourceChannel4",
+        "Source Channel 4"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSTriggerEdgeTypeRising",
+        "Edge Mode: Trigger detects only rising edgesLevel Mode: Trigger detects high state"
+      ],
+      [
+        "1",
+        "eVTSTriggerEdgeTypeFalling",
+        "Edge Mode: Trigger detects only falling edgesLevel Mode: Trigger detects low state"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSTriggerTypeEdge",
+        "Edge"
+      ],
+      [
+        "1",
+        "eVTSTriggerTypeLevel",
+        "Level"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSCurveTypeConstant",
+        "Constant value, determined by the corresponding output system variable. Nevertheless, this value can also be used dynamically by changing the value of the variable in CANoe."
+      ],
+      [
+        "1",
+        "eVTSCurveTypePWM",
+        "PWM"
+      ],
+      [
+        "2",
+        "eVTSCurveTypeAnalogWaveform",
+        "Analog wave form; loaded using LoadWFVoltage (for VT2004 and VT2816 only) or LoadWFResistance (for VT2004 only), then started using StartStimulation."
+      ],
+      [
+        "3",
+        "eVTSCurveTypeBitStream",
+        "Bit stream (= digital wave form); loaded using LoadWFBitStream, then started using StartStimulation (for VT2516 and VT2848 only)."
+      ],
+      [
+        "4",
+        "eVTSCurveTypeUserFPGA",
+        "User FPGA. If the output of a module shall be controlled by a user-programmable FPGA this type has to be set. This type can only be used if the module contains a user programmable FPGA."
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSStimulationModeNone",
+        "Internal stimulation not active"
+      ],
+      [
+        "1",
+        "eVTSStimulationModeVoltage",
+        "Voltage stimulation"
+      ],
+      [
+        "2",
+        "eVTSStimulationModePotentiometer",
+        "Potentiometer stimulation (VT2004 only)"
+      ],
+      [
+        "3",
+        "eVTSStimulationModeResistanceGreater",
+        "Resistance stimulation R> (on switching between resistance values, only intermediate states with resistance values higher than the output or target resistance will occur) (VT2004 only)"
+      ],
+      [
+        "4",
+        "eVTSStimulationModeResistanceLower",
+        "Resistance stimulation R< (on switching between resistance values, only intermediate states with lower resistance values will occur) (VT2004 only)"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTS2816MeasurementModeVoltageDifferential60V",
+        "Differential voltage, range ±60V"
+      ],
+      [
+        "1",
+        "eVTS2816MeasurementModeVoltageDifferential10V",
+        "Differential voltage, range ±10V"
+      ],
+      [
+        "2",
+        "eVTS2816MeasurementModeVoltageLineAToGnd60V",
+        "Voltage line A to ground (single-ended), range ±60V"
+      ],
+      [
+        "3",
+        "eVTS2816MeasurementModeVoltageLineAToGnd10V",
+        "Voltage line A to ground (single-ended), range ±10V"
+      ],
+      [
+        "4",
+        "eVTS2816MeasurementModeCurrent",
+        "Current, range ±5A"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSOutputRangeZeroTo28V",
+        "0…28V"
+      ],
+      [
+        "1",
+        "eVTSOutputRangePlusMinus10V",
+        "-10V…+10V"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSOutputSourceGroupChannels1To4",
+        "Channels 1–4"
+      ],
+      [
+        "1",
+        "eVTSOutputSourceGroupChannels5To8",
+        "Channels 5–8"
+      ],
+      [
+        "2",
+        "eVTSOutputSourceGroupChannels9To12",
+        "Channels 9–12"
+      ],
+      [
+        "3",
+        "eVTSOutputSourceGroupChannels13To16",
+        "Channels 13–16"
+      ],
+      [
+        "4",
+        "eVTSOutputSourceGroupChannels17To20",
+        "Channels 17–20"
+      ],
+      [
+        "5",
+        "eVTSOutputSourceGroupChannels21To24",
+        "Channels 21-24"
+      ],
+      [
+        "6",
+        "eVTSOutputSourceGroupChannels25To28",
+        "Channels 25-28"
+      ],
+      [
+        "7",
+        "eVTSOutputSourceGroupChannels29To32",
+        "Channels 29-32"
+      ],
+      [
+        "8",
+        "eVTSOutputSourceGroupChannels33To36",
+        "Channels 33-36"
+      ],
+      [
+        "9",
+        "eVTSOutputSourceGroupChannels37To40",
+        "Channels 37-40"
+      ],
+      [
+        "10",
+        "eVTSOutputSourceGroupChannels41To44",
+        "Channels 41-44"
+      ],
+      [
+        "11",
+        "eVTSOutputSourceGroupChannels45To48",
+        "Channels 45-48"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSOutputSourceVExt",
+        "Vext"
+      ],
+      [
+        "1",
+        "eVTSOutputSourceVBat",
+        "Vbatt"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTS2848OutputModeInactive",
+        "Output off"
+      ],
+      [
+        "1",
+        "eVTS2848OutputModeHighsideSwitch",
+        "High side switch"
+      ],
+      [
+        "2",
+        "eVTS2848OutputModeLowsideSwitch",
+        "Low side switch"
+      ],
+      [
+        "3",
+        "eVTS2848OutputModePushPull",
+        "Push pull"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSThresholdGroupChannels1To8",
+        "Channels 1–8"
+      ],
+      [
+        "1",
+        "eVTSThresholdGroupChannels9To16",
+        "Channels 9–16"
+      ],
+      [
+        "2",
+        "eVTSThresholdGroupChannels17To24",
+        "Channels 17–24"
+      ],
+      [
+        "3",
+        "eVTSThresholdGroupChannels25To32",
+        "Channels 25–32"
+      ],
+      [
+        "4",
+        "eVTSThresholdGroupChannels33To40",
+        "Channels 33–40"
+      ],
+      [
+        "5",
+        "eVTSThresholdGroupChannels41To48",
+        "Channels 41–48"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSOutputModeInactive",
+        "inactive"
+      ],
+      [
+        "1",
+        "eVTSOutputModeActive",
+        "output active"
+      ],
+      [
+        "-1",
+        "eVTSOutputModeShortCircuit",
+        "short circuit"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "1200",
+        "eVTSBaudRate1200",
+        "The symbol rate to use for reception and transmission 1200 baud"
+      ],
+      [
+        "2400",
+        "eVTSBaudRate2400",
+        "The symbol rate to use for reception and transmission 2400 baud"
+      ],
+      [
+        "4800",
+        "eVTSBaudRate4800",
+        "The symbol rate to use for reception and transmission 4800 baud"
+      ],
+      [
+        "9600",
+        "eVTSBaudRate9600",
+        "The symbol rate to use for reception and transmission 9600 baud"
+      ],
+      [
+        "19200",
+        "eVTSBaudRate19200",
+        "The symbol rate to use for reception and transmission 19200 baud"
+      ],
+      [
+        "38400",
+        "eVTSBaudRate38400",
+        "The symbol rate to use for reception and transmission 38400 baud"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSParityNone",
+        "no parity used, i.e. frame contains no parity bit"
+      ],
+      [
+        "1",
+        "eVTSParityOdd",
+        "odd parity"
+      ],
+      [
+        "2",
+        "eVTSParityEven",
+        "even parity"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "7",
+        "eVTSDataBitsSeven",
+        "7 Data Bits"
+      ],
+      [
+        "8",
+        "eVTSDataBitsEight",
+        "8 Data Bits"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "1",
+        "eVTSStopBitsOne",
+        "1 StopBit"
+      ],
+      [
+        "2",
+        "eVTSStopBitsTwo",
+        "2 StopBits"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSInterconnectionModeSupInt",
+        "Internal Power Supply only (mode supint)"
+      ],
+      [
+        "1",
+        "eVTSInterconnectionModeSup1",
+        "Power Supply 1 only (mode sup1)"
+      ],
+      [
+        "2",
+        "eVTSInterconnectionModeSup2",
+        "Power Supply 2 only (mode sup2)"
+      ],
+      [
+        "3",
+        "eVTSInterconnectionModeSupIntSup1",
+        "Two independent power supplies for OUT1 and OUT2: internal power supply and power supply 1 (mode supint_sup1)"
+      ],
+      [
+        "4",
+        "eVTSInterconnectionModeSupIntSup2",
+        "Two independent power supplies for OUT1 and OUT2: internal power supply and power supply 2 (mode supint_sup2)"
+      ],
+      [
+        "5",
+        "eVTSInterconnectionModeSup1SupInt",
+        "Two independent power supplies for OUT1 and OUT2: power supply 1 and internal power supply (mode sup1_supint)"
+      ],
+      [
+        "6",
+        "eVTSInterconnectionModeSup1Sup2",
+        "Two independent power supplies for OUT1 and OUT2: power supply 1 and power supply 2 (mode sup1_sup2)"
+      ],
+      [
+        "7",
+        "eVTSInterconnectionModeSup2SupInt",
+        "Two independent power supplies for OUT1 and OUT2: power supply 2 and internal power supply (mode sup2_supint)"
+      ],
+      [
+        "8",
+        "eVTSInterconnectionModeSup2Sup1",
+        "Two independent power supplies for OUT1 and OUT2: power supply 2 and power supply 1 (mode sup2_sup1)"
+      ],
+      [
+        "9",
+        "eVTSInterconnectionModeSupSeries",
+        "Power supply 1 and power supply 2 are connected in series (sup_series)"
+      ],
+      [
+        "10",
+        "eVTSInterconnectionModeSupParallel",
+        "Power supply 1 and power supply 2 are connected parallel (sup_parallel)"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSMaxCurrentModeInactive",
+        "Max current control voltage output not active"
+      ],
+      [
+        "1",
+        "eVTSMaxCurrentModeConstant",
+        "Constant value, determined by the corresponding output system variable"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSCurrentMeasurementRange100uA",
+        "All measuring ranges will be used."
+      ],
+      [
+        "1",
+        "eVTSCurrentMeasurementRange1mA",
+        "Lowermost used range: 100µA…1mA"
+      ],
+      [
+        "2",
+        "eVTSCurrentMeasurementRange10mA",
+        "Lowermost used range: 1mA…10mA"
+      ],
+      [
+        "3",
+        "eVTSCurrentMeasurementRange100mA",
+        "Lowermost used range: 10mA…100mA"
+      ],
+      [
+        "4",
+        "eVTSCurrentMeasurementRange1A",
+        "Lowermost used range: 100mA…1A"
+      ],
+      [
+        "5",
+        "eVTSCurrentMeasurementRange10A",
+        "Lowermost used range: 1A…10A"
+      ],
+      [
+        "6",
+        "eVTSCurrentMeasurementRange100A",
+        "Lowermost used range: 10A…100A"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTS2808CurrentMeasurementRange50mA",
+        "All measuring ranges will be used"
+      ],
+      [
+        "1",
+        "eVTS2808CurrentMeasurementRange1A",
+        "Lowermost used range: 50mA…1A"
+      ],
+      [
+        "2",
+        "eVTS2808CurrentMeasurementRange20A",
+        "Lowermost used range: 1A…20A"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "0",
+        "eVTSRefVoltageModeInactive",
+        "Reference voltage output not active"
+      ],
+      [
+        "1",
+        "eVTSRefVoltageModeConstant",
+        "Constant value, determined by the corresponding output system variable"
+      ],
+      [
+        "2",
+        "eVTSRefVoltageModeAnalogWaveForm",
+        "Analog wave form; loaded using LoadWFVoltage, then started using StartStimulation"
+      ]
+    ],
+    [
+      [
+        "Value",
+        "Enum",
+        "Short Description"
+      ],
+      [
+        "1",
+        "eVTSSerialErrorsSendOperationFailed",
+        "Send operation failed"
+      ],
+      [
+        "2",
+        "eVTSSerialErrorsReceiveOperationFailed",
+        "Receive operation failed"
+      ],
+      [
+        "4",
+        "eVTSSerialErrorsFrameError",
+        "Frame error. May be caused by parity mismatch or any other frame mismatch (e.g. number of stop bits)"
+      ],
+      [
+        "8",
+        "eVTSSerialErrorsFrameParityError",
+        "Frame parity error. Is caused by parity mismatch"
+      ],
+      [
+        "16",
+        "eVTSSerialErrorsBufferOverrun",
+        "Buffer overrun. It is not specified if the driver of the sender cannot send fast enough, if it is up to the receiver which got too much data in too short time or anything else"
+      ],
+      [
+        "32",
+        "eVTSSerialErrorsBufferOverrunReceiver",
+        "Buffer overrun at receiver"
+      ],
+      [
+        "64",
+        "eVTSSerialErrorsBreakState",
+        "Break state. Other end requested to pause"
+      ],
+      [
+        "128",
+        "eVTSSerialErrorsTimeout",
+        "Timeout. May be caused by wrongly set too short timeout"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

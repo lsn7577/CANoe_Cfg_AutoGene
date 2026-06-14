@@ -1,0 +1,131 @@
+# Distributed Objects CAPL Functions
+
+> Category: `DistributedObjects` | Type: `notes`
+
+## Description
+
+Event Procedures
+
+Functions
+
+Methods
+
+Objects
+
+Communication Concept | Programming with Communication Concept
+
+| DISTRIBUTED OBJECTS Overview of objects and methods to work with distributed objects. |
+|---|
+
+| Event Procedures Functions Methods Objects |
+|---|
+
+| Event Procedures | Short Description |
+|---|---|
+| on any_fct_called | This handler is called whenever a provided method of a distributed object derived from the given interface is called. |
+| on any_fct_calling | This handler is called whenever a method of a distributed object derived from the given interface is about to be called. |
+| on any_fct_retured | This handler is called whenever a method of a distributed object derived from the given interface has returned at the consumer. |
+| on any_fct_returning | This handler is called whenever a method of a distributed object derived from the given interface is about to return its answer at the provider. |
+| on any_value_change | This handler is called whenever a value of the given set changes. |
+| on any_value_update | This handler is called whenever a value of the given set is updated. |
+| on transmit_announce | This handler is called whenever a provided data, event, or field member transmits an announce via the CAPL binding. |
+| on transmit_any_announce | This handler is called whenever an instance of a provided data, event, or field member transmits an announce via the CAPL binding. |
+| on transmit_any_call | This handler is called whenever an instance of a consumed method member transmits a value via the CAPL binding. |
+| on transmit_any_return | This handler is called whenever an instance of a provided method member transmits a return via the CAPL binding. |
+| on transmit_any_subscribe | This handler is called whenever an instance of a consumed data, event, or field member transmits a subscribe via the CAPL binding. |
+| on transmit_any_unannounce | This handler is called whenever an instance of a provided data, event, or field member transmits an unannounce via the CAPL binding. |
+| on transmit_any_unsubscribe | This handler is called whenever an instance of a consumed data, event, or field member transmits an unsubscribe via the CAPL binding. |
+| on transmit_any_value | This handler is called whenever an instance of a provided data, event, or field interface member transmits a value via the CAPL binding. |
+| on transmit_call | This handler is called whenever a consumed method member transmits a value via the CAPL binding. |
+| on transmit_return | This handler is called whenever a provided method member transmits a value via the CAPL binding. |
+| on transmit_subscribe | This handler is called whenever a consumed data, event, or field member transmits a subscribe via the CAPL binding. |
+| on transmit_unannounce | This handler is called whenever a provided data, event, or field member transmits an unannounce via the CAPL binding. |
+| on transmit_unsubscribe | This handler is called whenever a consumed data, event, or field member transmits an unsubscribe via the CAPL binding. |
+| on transmit_value | This handler is called whenever a provided data, event, or field member transmits a value via the CAPL binding. |
+
+| Functions | Short Description |
+|---|---|
+| lookupDistObj | Obtains an object by using a string. |
+| lookupDistObjContainer | Obtains a container by using a string. |
+| lookupDistObjReference | Obtains a reference by using a string. |
+| lookupVirtNet | Obtains a virtual network by using a string. |
+| getAttribute | Reads an attribute value from an attributable object. |
+| setAttribute | Writes an attribute value at an attributable object. |
+
+| Methods | Short Description |
+|---|---|
+| Binding::AnnouncementStateReceived | Sets the announcement state of a provided data, event, or field member value that uses the CAPL binding and PublishSubscribe communication pattern with announcements. |
+| Binding::CallReceived | Sets the in-parameters for a call at a provided method member that uses the CAPL binding. |
+| Binding::CreateCallContext | Creates a new call context with the given method member prototype and request ID. |
+| Binding::ReturnReceived | Sets the out-parameters for a returning call at a consumed method member that uses the CAPL binding. |
+| Binding::SetInParameter | Sets the value of an in-parameter. It is required because the normal assignment for inout-parameters only writes to the out-value. |
+| Binding::SubscriptionStateReceived | Sets the subscription state of a consumed data, event, or field member value that uses the CAPL binding and PublishSubscribe communication pattern. |
+| Binding::ValueReceived | Sets a value of a consumed data, event, or field member value that uses the CAPL binding. |
+| distObjBlueprint::AddVirtualNetwork | Adds a virtual network to the blueprint. |
+| distObjBlueprint::Clear | Removes all attributes and virtual networks from the blueprint. |
+| distObjBlueprint::CopyFromObject | Recursively copies all attributes and virtual network from the given object and its members to the blueprint. |
+| distObjBlueprint::CreateObject | Creates a dynamic object from the blueprint. |
+| distObjBlueprint::GetAttribute | Gets the value of an attribute that is set at the blueprint. |
+| distObjBlueprint::RemoveAttribute | Removes an attribute from the blueprint. |
+| distObjBlueprint::RemoveVirtualNetwork | This method removes a virtual network from the blueprint. |
+| distObjBlueprint::SetAttribute | Sets an attribute at the blueprint. |
+| distObjContainerRef::Create | Creates a new object at the given index. |
+| distObjContainerRef::Erase | Replaces an object at the given index with an invalid object. |
+| distObjContainerRef::PopBack | Removes an element at the end of the container. |
+| distObjContainerRef::PushBack | Adds an element at the end of the container. |
+| distObjContainerRef::Resize | Resizes the container. |
+| distObjEventRef::Trigger | Triggers an update event on the member value. |
+| distObjInterface::CreateObject | Creates a dynamic object from the blueprint. |
+| distObjInterface::CreateObjectBlueprint | Creates a blueprint for the given interface. |
+| distObjInterface::CreateObjectBlueprint | Creates a blueprint for the reverse of the given interface. |
+| distObjInterface::DestroyObject | Destroys a dynamic object. |
+| distObjMemberBlueprint::GetAttribute | Gets the value of an attribute that is set at the member blueprint. |
+| distObjMemberBlueprint::RemoveAttribute | Removes an attribute from the member blueprint. |
+| distObjMemberBlueprint::RemoveVirtualNetwork | Removes the virtual network from the member blueprint. |
+| distObjMemberBlueprint::SetAttribute | Sets an attribute at the member blueprint. |
+| distObjMemberBlueprint::SetVirtualNetwork | Sets the virtual network of the member blueprint. |
+| distObjMemberRef::Announce | Announces the member. |
+| distObjMemberRef::IsConnected | Checks if the object member is connected to its assigned virtual network. |
+| distObjMemberRef::Subscribe | Subscribes the member. |
+| distObjMemberRef::Unannounce | Unannounces the member. |
+| distObjMemberRef::Unsubscribe | Unsubscribes the member. |
+| distObjMethodRef::Call | Synchronous call to a method member. |
+| distObjMethodRef::CallAsync | Asynchronous call to a method member. |
+| distObjMethodRef::Call_Phys | Synchronous call to a method member. |
+| distObjMethodRef::CallAsync_Phys | Asynchronous call to a method member. |
+| distObjRef::AnnounceAll | This is a collective operation that announces all provided members which use the publish-subscribe pattern with announcements. |
+| distObjRef::Connect | This is a collective operation that connects every member of the object with its virtual network. |
+| distObjRef::ConnectTo | This is a collective operation that connects every member of the object, if it is assigned to the given virtual network. |
+| distObjRef::Disconnect | This is a collective operation that disconnects every member of the object from its virtual network. |
+| distObjRef::DisconnectFrom | This is a collective operation that disconnects every member of the object, if it is assigned to the given virtual network. |
+| distObjRef::IsConnected | Checks if every member of the object is connected to its virtual network. |
+| distObjRef::IsConnectedTo | Checks if every member of the object is connected, if it is assigned to the given virtual network. |
+| distObjRef::SubscribeAll | This is a collective operation that subscribes all consumed members which use the publish-subscribe pattern. |
+| distObjRef::UnannounceAll | This is a collective operation that unannounces all provided members which use the publish-subscribe pattern with announcements. |
+| distObjRef::UnsubscribeAll | This is a collective operation that unsubscribes all consumed members which use the publish-subscribe pattern. |
+| distObjReferenceRef::ResetTarget | Resets the target object of the reference. |
+| distObjReferenceRef::SetTarget | Sets the target object of the reference. |
+| distObjReferenceRef::SetTargetByPath | Sets the target object of the reference. |
+
+| Objects | Short Description |
+|---|---|
+| attributable | The type of objects that can have attributes. |
+| attribute | The types of attributes for distributed objects. |
+| Binding | This type provides static methods which are used for implementing a CAPL binding. |
+| bytes | The corresponding CAPL type for the bytes type in vCDL. |
+| distObjBlueprint | A blueprint type for dynamically creating distributed objects. |
+| distObjContainerRef | References a container of distributed objects or references. |
+| distObjDataRef | References a distributed object data member. |
+| distObjEventRef | References a distributed object event member. |
+| distObjFieldRef | References a distributed object field member. |
+| distObjInterface | A type for creating blueprints and dynamic distributed objects. |
+| distObjInterfaceMember | The types of distributed object interface members. |
+| distObjMemberBlueprint | A type for configuring the attributes and virtual network of an object blueprint member. |
+| distObjMemberRef | References a distributed object member. |
+| distObjMethodRef | References a distributed object method member. |
+| distObjRef | References a distributed object that is derived from the denoted interface. |
+| distObjReferenceRef | References a reference to a distributed object that is derived from the given interface. |
+| virtNet | References a virtual network. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

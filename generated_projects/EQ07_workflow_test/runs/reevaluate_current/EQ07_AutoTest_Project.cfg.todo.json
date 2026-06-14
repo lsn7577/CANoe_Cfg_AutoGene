@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "generator": "SubAgent2_Canoe工程配置专家",
+  "target_canoe_version": "v15",
+  "project_name": "EQ07_AutoTest_Project",
+  "generation_mode": "adapter_plan",
+  "base_cfg_template": "",
+  "channels": [
+    {
+      "通道ID": "CAN1",
+      "启用": "是",
+      "总线类型": "CANFD",
+      "CANoe通道名": "CAN 1",
+      "仲裁波特率": 500000,
+      "数据波特率(CANFD)": 2000000,
+      "采样点%": 80,
+      "数据采样点%": 70,
+      "DBC路径": "./dbc/EQ07_CAN1.dbc",
+      "A2L路径": "./a2l/EQ07.a2l",
+      "CDD路径": "./cdd/EQ07.cdd",
+      "节点/网络名": "Powertrain",
+      "诊断目标": "ECU",
+      "备注": "示例，可删除"
+    }
+  ],
+  "mounted_files": {
+    "dbc": [
+      "./dbc/EQ07_CAN1.dbc"
+    ],
+    "a2l": [
+      "./a2l/EQ07.a2l"
+    ],
+    "cdd": [
+      "./cdd/EQ07.cdd"
+    ]
+  },
+  "source_model_status": {
+    "requirements": "not_declared",
+    "dbc": "missing",
+    "a2l": "missing",
+    "cdd": "missing"
+  },
+  "test_modules": [
+    {
+      "name": "EQ07_AutoTest_Project_TestModule",
+      "source": "EQ07_AutoTest_Project_TestModule.can",
+      "mount_strategy": "add as CAPL test module in generated or template CANoe configuration"
+    }
+  ],
+  "evidence_status": "complete",
+  "notes": [
+    "This is a deterministic CANoe configuration plan, not a binary .cfg renderer.",
+    "Use vector_canoe_adapter.py or a project-template renderer to turn this plan into a real CANoe .cfg.",
+    "External Vector/CANoe validation is tracked separately by evaluate_canoe_config."
+  ],
+  "retry_count": 1
+}

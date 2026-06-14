@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestJoinAuxEvent",
+  "category": "Test",
+  "title": "TestJoinAuxEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinAuxEvent.htm",
+  "syntax": [
+    "long TestJoinAuxEvent(dword aAuxEventId)"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait."
+  ],
+  "parameters": [
+    {
+      "name": "aAuxEventId",
+      "type": "",
+      "description": "Auxiliary event id that should be awaited"
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": "// wait is resumed on check event\ndword index = 0;\ndword checkId = 0;\ncheckId = ChkStart_Timeout(1000);\nTestJoinAuxEvent(checkId);\n// … other join events\nTestJoinEnvVarEvent(MyEnvVar);\nTestJoinSignalInRange(Velocity, 80, 100);\nTestJoinTextEvent(\"ErrorFrame occurred!\");\n\nindex = TestWaitForAnyJoinedEvent(2000);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

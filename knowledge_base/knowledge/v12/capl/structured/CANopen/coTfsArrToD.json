@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsArrToD",
+  "category": "CANopen",
+  "title": "coTfsArrToD",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsArrToD.htm",
+  "syntax": [
+    "dword coTfsArrToD( byte inByteArray[], dword arraysize );"
+  ],
+  "description": [
+    "The function converts the content of a byte array into a dword value."
+  ],
+  "parameters": [
+    {
+      "name": "inByteArray[]",
+      "type": "",
+      "description": "Array containing the bytes to be converted, recommended array size: 4 byte."
+    }
+  ],
+  "return": "Converted value or 0 if parameters are invalid.",
+  "example": {
+    "description": [],
+    "code": "/* converts data from a byte array to a dword */\nByte inDataArr[4] = {4,3,2,1};\nDword outValue;\n\noutValue = coTfsArrToD(inDataArr, 4);"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

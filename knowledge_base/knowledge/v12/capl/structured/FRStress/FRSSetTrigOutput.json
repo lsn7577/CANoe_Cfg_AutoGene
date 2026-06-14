@@ -1,0 +1,58 @@
+{
+  "page_type": "function",
+  "name": "FRSSetTrigOutput",
+  "category": "FRStress",
+  "title": "FRSSetTrigOutput",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/Functions/CAPLfunctionFRSSetTrigOutput.htm",
+  "syntax": [
+    "FRSSetTrigOutput (int triggermask, int triggerlevel);"
+  ],
+  "description": [
+    "Activates the trigger output of FRsstress. The trigger output can react to individual trigger lowerings or to a combination of sources."
+  ],
+  "parameters": [
+    {
+      "name": "1",
+      "type": "",
+      "description": "Trigger1"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Trigger2"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Trigger3"
+    },
+    {
+      "name": "8",
+      "type": "",
+      "description": "Trigger4"
+    },
+    {
+      "name": "16",
+      "type": "",
+      "description": "SW Trigger"
+    },
+    {
+      "name": "32",
+      "type": "",
+      "description": "External Trigger"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "EthReceivePacket",
+  "category": "Obsolete",
+  "title": "EthReceivePacket",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthReceivePacket.htm",
+  "syntax": [
+    "long EthReceivePacket( char *onPacketCallback );"
+  ],
+  "description": [
+    "Use this function to register a CAPL callback function to receive Ethernet packets. The callback has a packet handle as parameter and the functions to access the tokens can be used. The EthGetThis-functions can be used to access the payload of the highest interpretable protocol.",
+    "The callback must have the following signature:",
+    "The difference to EthReceiveRawPacket is, that the callback function gets a packet handle as parameter and the EthGetThis-Functions access the payload of the highest protocol instead the raw Ethernet data."
+  ],
+  "parameters": [
+    {
+      "name": "onPacketCallback",
+      "type": "",
+      "description": "name of CAPL callback function"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  EthReceivePacket( \"OnEthPacket\");\n}\nvoid OnEthPacket( LONG channel, LONG dir, LONG packet )\n{\n  BYTE rx_data[100];\n  LONG rx_length;\n\n  // get the payload of the packet\n  rx_length = EthGetThisData( 0, elCount(rx_data), rx_data );\n\n  // do something with rx_data\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

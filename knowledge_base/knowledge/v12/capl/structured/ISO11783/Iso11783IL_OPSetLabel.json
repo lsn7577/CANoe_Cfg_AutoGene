@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPSetLabel",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPSetLabel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPSetLabel.htm",
+  "syntax": [
+    "long Iso11783IL_OPSetLabel( dword objectID, dword stringVarIdD, dword fontType, dword graphID ); // form 1"
+  ],
+  "description": [
+    "A Set Label command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "object ID which is assigned to the label"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPSetLabel( \r\n 1200, 1250, 1, 1260 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

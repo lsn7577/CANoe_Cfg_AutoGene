@@ -1,0 +1,78 @@
+{
+  "page_type": "notes",
+  "name": "coOnUploadResponse",
+  "category": "Obsolete",
+  "title": "coOnUploadResponse",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOnUploadResponse.htm",
+  "syntax": [],
+  "description": [
+    "See Also"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by CANopen Basic Functions."
+      ],
+      [
+        "Function Syntax",
+        "void coOnUploadResponse( dword nodeId, dword index, dword subIndex, dword size );"
+      ],
+      [
+        "Function",
+        "This function is called when the response to an SDO upload was received (see coUpload). Now the data can be accessed with coThisGetSigned, coThisGetUnsigned, coThisGetFloat, coThisGetData, and coThisGetSize. Note The access to the transmitted data is only possible within this function.",
+        "Note The access to the transmitted data is only possible within this function."
+      ],
+      [
+        "Note The access to the transmitted data is only possible within this function."
+      ],
+      [
+        "Parameters",
+        "nodeId Node-ID, value range 1..127"
+      ],
+      [
+        "index Index of the object, value range 1..65.535"
+      ],
+      [
+        "subIndex Sub index of the object, value range 0..255"
+      ],
+      [
+        "size Size of the data byte, value range 0..4.294.967.295"
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "6.0-9.0 SP6",
+        "CANopen",
+        "—",
+        "•"
+      ],
+      [
+        "Example void coOnUploadResponse( dword nodeId, dword index, dword subIndex, dword size ){ dword errCode[1]; dword value; value = coThisGetUnsigned( errCode ); write( \"Upload Response Data 0x%X\", value );}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

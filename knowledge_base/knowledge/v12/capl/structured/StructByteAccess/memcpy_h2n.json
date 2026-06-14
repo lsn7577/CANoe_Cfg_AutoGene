@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "memcpy_h2n",
+  "category": "StructByteAccess",
+  "title": "memcpy_h2n",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/StructByteAccess/Functions/CAPLfunctionMemCpyH2n.htm",
+  "syntax": [
+    "void memcpy_h2n(byte dest[], struct source); // form 1"
+  ],
+  "description": [
+    "Copies the bytes from the struct into the array, and translates the byte order of the elements from little-endian to big-endian (h2n stands for \"host to network\")."
+  ],
+  "parameters": [
+    {
+      "name": "source",
+      "type": "",
+      "description": "Struct whose bytes shall be copied"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "byte data[4];\nstruct WrapDword\n{\n   dword dw;\n} dwordWrapper;\n\nint i;\nfor (i = 0; i < elcount(data); ++i)\n   data[i] = i;\nmemcpy_n2h(dwordWrapper, data);\nwrite(\"Bytes as dword: %0#10lx\", dwordWrapper.dw);\ndwordWrapper.dw = 0x12345678;\nmemcpy_h2n(data, dwordWrapper);\nwrite(\"dword as bytes: %#lx %#lx %#lx %#lx\", data[0], data[1], data[2], data[3]);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

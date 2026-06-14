@@ -1,0 +1,156 @@
+{
+  "page_type": "function",
+  "name": "C2xGetTokenSubString",
+  "category": "Car2x",
+  "title": "C2xGetTokenSubString",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xGetTokenSubString.htm",
+  "syntax": [
+    "long C2xGetTokenSubString( long packet, char protocolDesignator[], char tokenDesignator[], long byteOffset, long length, char buffer[] );"
+  ],
+  "description": [
+    "This function copies a specified number of characters from a given position inside the token and adds a terminating \\0."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Handle of a packet that has been created with C2xInitPacket"
+    },
+    {
+      "name": "protocolDesignator",
+      "type": "",
+      "description": "Name of the protocol, e.g. geo_cnh"
+    },
+    {
+      "name": "tokenDesignator",
+      "type": "",
+      "description": "Name of the token, e.g. data"
+    },
+    {
+      "name": "byteOffset",
+      "type": "",
+      "description": "Offset from the beginning of the token in byte"
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "Number of characters to be copied"
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Buffer in which the characters are copied This function adds a terminating \\0. Thus, the size of the buffer must be at least one byte larger than length."
+    }
+  ],
+  "return": "With C2xGetLastError you can check if the function has been processed successfully.",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  C2xReceivePacket(\"OnC2xPacket\");\n}\nvoid OnC2xPacket( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  char rx_str[100];\n  char error[100];\n\n  // get the payload of the packet\n  C2xGetTokenSubString( packet, \"geo_cnh\", \"data\", 8, elCount(rx_str), rx_str );\n  // would access payload of a cnh packet\n\n  if (C2xGetLastError() == 0)\n  {\n    write(rx_str);\n  }\n  else\n  {\n    C2xGetLastErrorText( elCount(error), error );\n    write(\"Error: %s\", error );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "7.6",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

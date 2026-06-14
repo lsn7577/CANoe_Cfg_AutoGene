@@ -1,0 +1,130 @@
+{
+  "page_type": "method",
+  "name": "SetImpedanceMode",
+  "category": "VTSystem",
+  "title": "SetImpedanceMode",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/VTSystem/Functions/CAPLfunctionVTSSetImpedanceMode.htm",
+  "syntax": [
+    "Long SysVarNamespace.SetImpedanceMode (eVTSImpedanceMode Mode);"
+  ],
+  "description": [
+    "Switches for VT1004A/VT1104 between the mode with high impedance (default state) and low impedance. The behavior of a channel in mode with high impedance is the same as the behavior of a channel in older VT1004 modules. In the mode with lower impedance the accurateness of the measurement of PWM frequency and duty cycle. This provides significant advantages especially for measurement of very low or high duty cycles. The input resistance is lower in this mode and thus the load on ECU output is higher. Details you find in the VT System Manual."
+  ],
+  "parameters": [
+    {
+      "name": "Mode",
+      "type": "",
+      "description": "Sets the active impedance mode.Values see eVTSImpedanceMode"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "PWM measurement with switching of the impedance mode."
+    ],
+    "code": "double frequency;\ndouble dutyCycle;\n\n  // Set PWM threshold to 12V\n  sysvar::VTS::LowBeamLeft.SetPWMThreshold(12);\n  // Set PWM measurement duration to 100ms\n  sysvar::VTS::LowBeamLeft.SetPWMMeasurementDuration(0.1);\n  // Enable low impedance mode to improve PWM measurement accuracy\n  sysvar::VTS::LowBeamLeft.SetImpedanceMode(eVTSImpedanceModeLow);\n\n  // Wait a bit until the PWM measurement has finished\n  testWaitForTimeout(200);\n\n  // Get measured values\n  frequency = @sysvar::VTS::LowBeamLeft::PWMFreq;\n  dutyCycle = @sysvar::VTS::LowBeamLeft::PWMDC;\n\n  // Check the frequency and duty cycle\n  if( frequency > 50 && dutyCycle > 20 )\n  {\n    testStepPass();\n  }\n  else\n  {\n    testStepFail();\n  }"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "VT offline",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,39 @@
+{
+  "page_type": "function",
+  "name": "linMeasHeaderBaudrate",
+  "category": "LIN",
+  "title": "linMeasHeaderBaudrate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINMeasHeaderBaudrate.htm",
+  "syntax": [
+    "long linMeasHeaderBaudrate(int index)"
+  ],
+  "description": [
+    "With this function it is possible to set request to measure the baud rate value for next LIN header event. Channel, where the baud rate is measured, is determined by the CAPL program context.",
+    "This function only initiates the baud rate measurement. The result becomes available when the next LIN header occurs and it remains valid until next measurement request. To retrieve the result the function linGetMeasBaudrate() shall be used.",
+    "When LIN hardware is in Master mode calling this function will have no effect.",
+    "The baud rate can only be measured if the specified byte (PID or Sync Byte) contains at least one \"0\"-bit followed by a \"1\"-bit. This means that bytes with the following values cannot be measured:",
+    "0x0 (binary: 00000000)0x80 (binary: 10000000)0xC0 (binary: 11000000)0xE0 (binary: 11100000)0xF0 (binary: 11110000)0xF8 (binary: 11111000)0xFC (binary: 11111100)0xFE (binary: 11111110)0xFF (binary: 11111111)"
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "This parameter specifies a field of LIN header which will be used for baud rate measurement."
+    }
+  ],
+  "return": "On successful request returns zero, otherwise -1.",
+  "example": {
+    "description": [
+      "Test case for measuring baud rate using LIN header event"
+    ],
+    "code": "testcase tcMeasureHeaderBaudrate ()\n{\nlong waitResult, measBaudrate;\n// set request to measure baud rate according to Synch \r\n field of a LIN header\nlinMeasHeaderBaudrate(0);\n// wait maximum 1000 [ms] for LIN header with identifier 0x33\nwaitResult = TestWaitForLinHeader(0x33, 1000);\n// declare failure if Wait has resumed not due to \r\n expected event\nif (1 != waitResult)\n{\nTestStepFail(\"Test 1.1\",\"No LIN header \r\n with ID=0x33 occurred during 1000 ms!\");\n}\n// retrieve measured baudrate\nmeasBaudrate = linGetMeasBaudrate();\nif (-1 == measBaudrate)\n{\nTestStepFail(\"Test 1.1\", \"Failed to measure header baudrate!\");\n}\nTestStepPass(\"Test 1.1\", \"Header baudrate measurement done...\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

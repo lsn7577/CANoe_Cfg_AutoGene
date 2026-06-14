@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateChargeParameterDiscoveryResAC_ISO",
+  "category": "SmartCharging",
+  "title": "SCC_CreateChargeParameterDiscoveryResAC_ISO",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateChargeParameterDiscoveryResAC_Iso.htm",
+  "syntax": [
+    "long SCC_CreateChargeParameterDiscoveryResAC_ISO ( byte SessionID[], char ResponseCode[], long NotificationMaxDelay, byte StatusFlags[], char Notification[], long EVSEProcessing, float NominalVoltage, float MaxCurrent )"
+  ],
+  "description": [
+    "Creates a Charge Parameter Discovery Response message for sending, using the AC syntax."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

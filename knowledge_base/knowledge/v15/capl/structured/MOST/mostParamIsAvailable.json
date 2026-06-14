@@ -1,0 +1,144 @@
+{
+  "page_type": "function",
+  "name": "mostParamIsAvailable",
+  "category": "MOST",
+  "title": "mostParamIsAvailable",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/MOST/Functions/CAPLfunctionMOSTParamIsAvailable.htm",
+  "syntax": [
+    "long mostParamIsAvailable(mostAmsMessage * msg, char paramadr[]); // form 1",
+    "long mostParamIsAvailable(mostAmsMessage * msg, char paramadr[], long arrayIndex); // form 2"
+  ],
+  "description": [
+    "Check whether a described parameter with the parameter name from the XML function catalog is in an AMS message.",
+    "PosDescription, TelLen and StreamCases are checked in addition to FblockID, FunktionID and OpType.",
+    "This function can be used to prevent erroneous access to messages that can be first identified at run time of a CAPL program."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message to which parameter access should be applied."
+    },
+    {
+      "name": "paramAdr",
+      "type": "",
+      "description": "Identification of parameters (see Symbolic Identification of Parameters)."
+    },
+    {
+      "name": "arrayIndex",
+      "type": "",
+      "description": "Parameter index in arrays or sequences. This declaration overwrites the indexing in the brackets of <paramAdr>."
+    }
+  ],
+  "return": "Identification of",
+  "example": {
+    "description": [
+      "Assure access to a parameter",
+      "In the following sample, access to a parameter is assured in a received message. If the status message is partially transmitted, either through targeted use of the Pos parameter or erroneous assignment of TelLen, it can happen that StartTrack is not part of the received message."
+    ],
+    "code": "On mostAmsMessage DiskPlayer.MediaInfo.Status\n{\n   int firstTrack;\n   // check whether message was transmitted including FirstTrack of third array element (third media here)\n   if(mostParamIsAvailable(this, “Data.Record[].FirstTrack”, 3))\n   {\n      // read FirstTrack from message\n      firstTrack = mostParamGet (this, “Data.Record[].FirstTrack”, 3);\n   }\n   else\n   {\n      // do error handling, either \n      // a) Pos did not indicate existence of FirstTrack (only subset transmitted)\n      // b) TelLen was not sufficient (erroneous message transmission)\n      // c) Message is no MediaInfo (would only be applicable if ‘On mostAmsMessage’ handler\n      //    were not so specific as in this example, error in implementation of model)\n      // d) Parameter description was erroneous (error in implementation of model)\n      // (Hint: Check if an appropriate XML Function Catalog is assigned to the configuration)\n   }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "Restricted To",
+      "MOST25 MOST50 MOST150",
+      "MOST25 MOST50 MOST150",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "—"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "—✔"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "—✔"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "—✔"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

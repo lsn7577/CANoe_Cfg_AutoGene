@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DiagSendRequestPDU",
+  "category": "KLine",
+  "title": "DiagSendRequestPDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionDiagSendRequestPDU.htm",
+  "syntax": [
+    "long DiagSendRequestPDU(BYTE rawPDU[], WORD rawPDULength)"
+  ],
+  "description": [
+    "Sends a raw byte buffer. Allows also to send invalid requests."
+  ],
+  "parameters": [
+    {
+      "name": "rawPDULength",
+      "type": "",
+      "description": "Length of the raw buffer"
+    }
+  ],
+  "return": "On success 0, otherwise a value less than 0.",
+  "example": {
+    "description": [],
+    "code": "BYTE request[5];\nwrite (\"EXECUTE: Send Tester Present request\");\nrequest[0] = 0x81;\nrequest[1] = 0x12;\nrequest[2] = 0xF1;\nrequest[3] = 0x3E;\nrequest[4] = 0xC2;\n   if (0 == DiagSendRequestPDU(request, elcount(request)))\n   {\n      TestStepPass( \"Test DiagSendRequestPDU()\", \"Sending of raw request PDU reports OK.\");\n   }\n   else\n   {\n      TestStepFail( \"Test DiagSendRequestPDU()\", \"Sending of raw request PDU did not work!\");\n   }\n   if (1 == TestWaitForDiagKLineFrameTransmitted( 1000))\n   {\n      TestStepPass(\"Raw request was sent\");\n   }\n   else\n   {\n      TestStepFail(\"Error sending raw request\");\n   }"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

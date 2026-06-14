@@ -1,0 +1,41 @@
+# ChkCreate_NodeBabbling, ChkStart_NodeBabbling
+
+> Category: `Test` | Type: `function`
+
+## Syntax
+
+```c
+dword ChkCreate_NodeBabbling (Node n, Duration aMinQuietTime, char [] CaplCallback); // form 1
+```
+
+## Description
+
+This check supervises the end of a communication: There is a time interval where node-transmissions are tolerated. After the interval has been passed, the node may no longer send messages. From now on, each transmission of the node is reported.
+
+If the min. quiet time is 0, then each message sent by the node leads to the event.
+
+Use Cases:Supervise the transition of nodes’ or busses’ state to 'sleep active'.
+
+Gateway nodes require that the bus context corresponds to the bus that is being observed. This means that the check only works correctly if the current bus context corresponds to the database in which the node is defined.
+
+For FlexRay only valid data frames and PDUs are recognized as communication, Null Frames and Erroneous frames are ignored.
+
+Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.
+
+Further information on site MultiBus Environment.
+
+## Example
+
+```c
+// checks that after 300 ms no transmission of the node is available
+checkId = ChkStart_NodeBabbling(NodeToObserve, 300);
+TestAddCondition(checkId);
+// sequence of different actions and waiting conditions
+TestWaitForTimeout(1000);
+TestRemoveCondition(checkId);
+```
+
+## Availability
+
+| Since Version |
+|---|

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ChkQuery_StatAvResponseTime",
+  "category": "Test",
+  "title": "ChkQuery_StatAvResponseTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkQueryStatAvResponseTime.htm",
+  "syntax": [
+    "long ChkQuery_StatAvResponseTime (dword aCheckId);",
+    "check.QueryStatAvResponseTime();"
+  ],
+  "description": [
+    "Returns the average time lag between the request and corresponding response messages. Only those requests that were resolved within the specified maximum response time are taken into consideration here."
+  ],
+  "parameters": [
+    {
+      "name": "aCheckId",
+      "type": "",
+      "description": "Reference to check context."
+    }
+  ],
+  "return": "< 0: Refer the query error codes.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

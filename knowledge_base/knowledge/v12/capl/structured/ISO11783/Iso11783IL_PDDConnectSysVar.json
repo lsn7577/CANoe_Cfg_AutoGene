@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_PDDConnectSysVar",
+  "category": "ISO11783",
+  "title": "Iso11783IL_PDDConnectSysVar",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILpddconnectSysVar.htm",
+  "syntax": [
+    "long Iso11783IL_PDDConnectSysVar( dword ddi, dword elementNumber, char sysVarNameWithPath[] ); // form 1"
+  ],
+  "description": [
+    "Connects an object from the loaded Process Data Descripton (PDD) (on Implement side) with a system variable.",
+    "The connected system variable receives the value that was sent by the Task Controller to the ECU via Set Value and Acknowledge command or Set Value command and modified the object value in the object pool on the implement side.",
+    "If the system variable in CANoe itself is modified (e.g., in CAPL or in a panel), the value of the process variable in the PDD on implement side is modified. This value can then be requested by the Task Controller with a Request Value command or transferred to the Task Controller by the implement itself as logging.",
+    "To release connection between the system variable and an object from the PDD, just call the same method again, but with the empty string instead of the name of system variable."
+  ],
+  "parameters": [
+    {
+      "name": "ddi",
+      "type": "",
+      "description": "Data dictionary identifier 0x000..0xFFFF"
+    }
+  ],
+  "return": "0: function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "int ret;\nret = Iso11783IL_PDDConnectSysVar(0x6, 0x1, \"ConnectedSysVars::svIntVar\");//connect\n...\nret = Iso11783IL_PDDConnectSysVar(0x6, 0x1, \"\");//release"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

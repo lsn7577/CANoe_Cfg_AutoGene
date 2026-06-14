@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GetNrOfCOConsumers",
+  "category": "CommunicationObjects",
+  "title": "GetNrOfCOConsumers",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionGetNrOfCOConsumers.htm",
+  "syntax": [
+    "dword GetNrOfCOConsumers(communicationObject co)"
+  ],
+  "description": [
+    "Returns the current number of consumer endpoints at a (service-oriented) communication object. Note the number of endpoints may vary over time for some objects. The function is particularly useful to iterate over all consumers."
+  ],
+  "parameters": [
+    {
+      "name": "co",
+      "type": "",
+      "description": "Communication object."
+    }
+  ],
+  "return": "The current number of consumer endpoints.",
+  "example": {
+    "description": [],
+    "code": "for (i = 0; i < GetNrOfCOConsumers(MirrorAdjustment); ++i)\n{\n  svc = MirrorAdjustment.providerSide[i,LeftMirror];\n  // ...\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linETFSetDirtyFlag",
+  "category": "LIN",
+  "title": "linETFSetDirtyFlag",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINETFSetDirtyFlag.htm",
+  "syntax": [
+    "long linETFSetDirtyFlag(long assocId, long dirty)"
+  ],
+  "description": [
+    "With this function it is possible to set/clear the dirty flag of an associated frame. If the dirty flag of an associated frame is set when the corresponding event-triggered frame is being requested, then the LIN hardware will try to transmit the associated frame's data. The dirty flag gets reset automatically when the associated frame has been sent successfully – either via the event-triggered frame or unconditionally."
+  ],
+  "parameters": [
+    {
+      "name": "assocId",
+      "type": "",
+      "description": "Identifier of unconditional frame"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "StandaloneGetDefaultConfig",
+  "category": "Other",
+  "title": "StandaloneGetDefaultConfig",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionStandaloneGetDefaultConfig.htm",
+  "syntax": [
+    "dword StandaloneGetDefaultConfig(char cfgNameBuffer[], dword cfgNameBufferLength)"
+  ],
+  "description": [
+    "Gets the name of the default configuration in standalone mode. This is the standalone configuration, which gets loaded when standalone mode is activated or the runtime kernel is started after reboot.",
+    "The command can be used while standalone mode is running. It is also useful to determine whether standalone mode is running or not.",
+    "A returned configuration name consists of the file name and the extension, for example CANSystemDemo.rtcfg."
+  ],
+  "parameters": [
+    {
+      "name": "cfgNameBuffer",
+      "type": "",
+      "description": "Space for the returned name."
+    }
+  ],
+  "return": "0: Successful operation",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  char cfgName[200];\n  DWORD cfgRet;\n  cfgName[0]=0;\n  cfgRet=StandaloneGetDefaultConfig(cfgName,elcount(cfgName));\n  write(\"StandaloneGetDefaultConfig returns %d %s\",cfgRet,cfgName);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

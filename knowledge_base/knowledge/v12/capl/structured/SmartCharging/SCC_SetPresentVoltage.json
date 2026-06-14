@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SetPresentVoltage",
+  "category": "SmartCharging",
+  "title": "SCC_SetPresentVoltage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SetPresentVoltage.htm",
+  "syntax": [
+    "long SCC_SetPresentCurrent ( float PresentCurrent )"
+  ],
+  "description": [
+    "Sets the current voltage / current output for the respective connection. These values are used in various DC messages, and for the MeterInfo in AC mode. If no values are set, the charge point will automatically calculate defaults."
+  ],
+  "parameters": [
+    {
+      "name": "PresentCurrent",
+      "type": "",
+      "description": "Value to be set."
+    }
+  ],
+  "return": "0: Not successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

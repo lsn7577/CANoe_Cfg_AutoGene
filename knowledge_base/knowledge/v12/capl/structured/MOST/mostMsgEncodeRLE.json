@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "mostMsgEncodeRLE",
+  "category": "MOST",
+  "title": "mostMsgEncodeRLE",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTMsgEncodeRLE.htm",
+  "syntax": [
+    "long mostMsgEncodeRLE(mostAmsMessage * msg, long fktIds[], long size)"
+  ],
+  "description": [
+    "mostMsgEncodeRLE() encodes a list of function IDs and saves it in the data area of a message. Run Length Encoding in accordance with MOST Specification 2.4 Para. 2.3.9 is used. This function is suitable for compiling messages of the FBlock.FktIds.Status type."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Message, which is to have data input into it."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

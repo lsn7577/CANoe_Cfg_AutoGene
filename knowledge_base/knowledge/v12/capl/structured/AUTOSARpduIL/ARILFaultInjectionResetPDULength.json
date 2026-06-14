@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ARILFaultInjectionResetPDULength",
+  "category": "AUTOSARpduIL",
+  "title": "ARILFaultInjectionResetPDULength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/AUTOSARpduIL/Functions/CAPLfunctionARILFaultInjectionResetPDULength.htm",
+  "syntax": [
+    "long ARILFaultInjectionResetPDULength (dbMessage);"
+  ],
+  "description": [
+    "Resets the payload length back to its original value from the database."
+  ],
+  "parameters": [
+    {
+      "name": "dbMessage",
+      "type": "",
+      "description": "The symbolic name of a PDU in the database."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

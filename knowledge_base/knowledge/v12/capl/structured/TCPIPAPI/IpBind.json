@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "IpBind",
+  "category": "TCPIPAPI",
+  "title": "IpBind",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPBind.htm",
+  "syntax": [
+    "long IpBind( dword socket, dword address, dword port); // form 1",
+    "socket.Bind( dword address, dword port); // form 1"
+  ],
+  "description": [
+    "The function associates an address and a port with the specified socket, after an unbound socket has been generated with TcpOpen(0, 0).",
+    "Do not use IpBind when you are working with TcpConnect or TcpListen because these two commands bind the socket implicitly."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle of the socket to be bound."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  UdpSocket gSocket;\n  char gRxBuffer[1000];\n}\n\non start\n{\n  gSocket = UdpSocket::Open( IP_Endpoint(0.0.0.0) );\n}\n\non key '1'\n{\n  gSocket.Bind( IP_Endpoint(192.168.0.7:40007) );\n  gSocket.SendTo( IP_Endpoint(192.168.0.100:40100), \"Hello\", 5 );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

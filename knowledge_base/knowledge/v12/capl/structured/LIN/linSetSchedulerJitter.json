@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "linSetSchedulerJitter",
+  "category": "LIN",
+  "title": "linSetSchedulerJitter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetSchedulerJitter.htm",
+  "syntax": [
+    "long linSetSchedulerJitter (long mode)"
+  ],
+  "description": [
+    "Sets/resets the jitter mode and the jitter of the LIN hardware scheduler. (the channel is determined by the CAPL program context).",
+    "If the Master node is not simulated or no schedule tables are defined, then this function will have no effect."
+  ],
+  "parameters": [
+    {
+      "name": "mode",
+      "type": "",
+      "description": "0: deactivates the jitter;1: sets the min-/max-mode; the minimum (0) and the maximum (specified value) jitter will be used alternatively2: sets the random jitter-mode; the jitter-offset will be equally distributed in the min/max range"
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "on key 'j'\n{\nif (0!=linSetSchedulerJitter(1))\n{\n// for the next LIN hardware scheduler will use jitter specified in the LDF\n}\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

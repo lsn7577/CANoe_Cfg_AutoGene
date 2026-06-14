@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783FSMakeAbsolutePath",
+  "category": "ISO11783",
+  "title": "Iso11783FSMakeAbsolutePath",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783fsmakeabsolutepath.htm",
+  "syntax": [
+    "long Iso11783FSMakeAbsolutePath( char relPath[], char absPath[], dword mustExist, dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "This function converts an relative path into an absolute path including a conversion to uppercase characters. An absolute path begins with \\ and refers to the root directory (see also Iso11783SetPath). A relative path could contain .. and ..",
+    "A path must follow the 8.3 format (8 character identifier with 4 character extension)."
+  ],
+  "parameters": [
+    {
+      "name": "relPath",
+      "type": "",
+      "description": "Relative path which could contain .. and ."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "char defaultDirectory[64] = \"\\IMPL\";\nchar newPath[255];\n\nif (Iso11783FSMakeAbsolutePath( \"..\\DATA\", defaultDirectory, 1, elCount(newPath), newPath ) == 0) {\n  write( \"Path '%s'\", newPath );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

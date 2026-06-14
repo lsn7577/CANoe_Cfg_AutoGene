@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "frSendFrame",
+  "category": "FlexRay",
+  "title": "frSendFrame",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FlexRay/Functions/CAPLfunctionFRSendFrame.htm",
+  "syntax": [
+    "frSendFrame( <frame name>, dword flags, byte dataBytes[] );"
+  ],
+  "description": [
+    "This function generates a FlexRay frame and sends it on the bus. The FlexRay communication controller sends the message at the next possible point in time.The message must be registered before sending (see frSetSendFrame function)."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n        // Bit mask meaning in flags:\n        // bit | mask | for\n        //----------------------------------------------------------------\n        // 0   | 1 | sync flag (1 == set)\n        // 1   | 2 | startup flag (1 == set)\n        // 4   | 16 | TT flag (1 == event-triggered, 0 = time-triggered)\n        //\n   BYTE gSta1Id      = 9;  // slot ID for frame to send\n   BYTE gSta1Flags   = 16; // event-triggered\n   BYTE gSta1Dlc     = 4;  // bytes\n   BYTE gSta1Chan    = 3;  // send on channel A+B\n   BYTE gSta1Base    = 0;  // base cycle\n   BYTE gSta1Rep     = 1;  // cycle repetition\n   BYTE gSta1Channel = %CHANNEL%;  // FR interface\n   const long gPeriodSine     = 8000;\n   const long gPeriodRect     = 1000;\n   const long gAmplitudeSine  = 1000;\n   const int cMaxFRBufSize = 254;\n  BYTE gSta1Msg[cMaxFRBufSize]; // message buffer\n}\non preStart\n{\n   int i;\n   // Declare Tx buffer in interface:\n   frSetSendFrame(gSta1Id /*frameId*/, gSta1Chan /*channelMask*/, gSta1Dlc /*len*/, gSta1Base /*cycleStart*/, gSta1Rep /*cycleRepetition*/, gSta1Flags /*flags*/, gSta1Channel /*cluster*/);\n   // Initialize payload:\n   for(i=0; i<gSta1Dlc; ++i)\n   {\n      gSta1Msg[i] = i;\n   }\n}\non FRStartCycle *\n{\n   if (this.FR_Cycle % gSta1Rep == gSta1Base)\n   {\n      doCalc();\n      FRSend();\n   }\n}\nFRSend ()\n{\n   frSendFrame(gSta1Id /*frameId*/, gSta1Chan /*channelMask*/, gSta1Dlc /*len*/, gSta1Base /*cycleStart*/, gSta1Rep /*cycleRepetition*/, gSta1Flags /*flags*/, gSta1Msg /*dataBytes*/, gSta1Channel /*cluster*/);\n}\ndoCalc ()\n{\n   float sine\n   BYTE  rect;\n   long sinel;\n   // Calculating sine wave and rectangle values:\n   sine = gAmplitudeSine*sin((timeNow()/100)*2*PI/gPeriodSine);\n   if (sin((timeNow()/100)*2*PI/gPeriodRect)<0)\n      rect = 0;\n   else \n      rect = 1;\n   sinel = sine;\n   // assigning values to message buffer:\n   gSta1Msg[0] = (sinel & 0x000000FF);\n   gSta1Msg[1] = (sinel & 0x0000FF00) >> 8;\n   gSta1Msg[2] = rect;\n   gSta1Msg[3] = 0;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

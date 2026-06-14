@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetWSMaster",
+  "category": "J1939",
+  "title": "J1939GetWSMaster",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939GetWSMaster.htm",
+  "syntax": [
+    "dword J1939GetWSMaster(char busName[], dword ecuAddress)"
+  ],
+  "description": [
+    "This function returns the address of the Working Set Master, which is assigned to an ECU with the address ecuAddress."
+  ],
+  "parameters": [
+    {
+      "name": "busName",
+      "type": "",
+      "description": "name of the bus"
+    }
+  ],
+  "return": "address of the Working Set Master",
+  "example": {
+    "description": [],
+    "code": "wsmAddr = J1939GetWSMaster( \"default\", 10 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

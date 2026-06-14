@@ -1,0 +1,41 @@
+{
+  "page_type": "notes",
+  "name": "Technical Details",
+  "category": "TCPIPAPI",
+  "title": "Technical Details",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/CAPLfunctionsTCPIPTechnicalDetails.htm",
+  "syntax": [],
+  "description": [
+    "Except for the network information functions of the IP API most of the CAPL Socket API functions take a socket handle of type dword as a first parameter.",
+    "All sockets are created as overlapped sockets and are operated in non-blocking mode. All functions, which cannot complete immediately, are performed in an overlapped and asynchronous manner. Upon completion (successful or not) the CAPL program receives a callback provided that it implements the required completion routine.",
+    "Almost all of the functions have a return value of type long. The value returned indicates the status of the operation (successful or not) and is – in almost all cases - identical to the return value of the underlying Winsock 2 API. That means that the return value is typically either zero if no error occurs or SOCKET_ERROR (-1) otherwise. To get a specific error code for the last socket operation, use the IpGetLastSocketError function. If an invalid socket handle is passed to a CAPL Socket API function the value WSA_INVALID_PARAMETER (87) is returned.",
+    "Winsock 2 Error Codes"
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Note This handle parameter is not the underlying WIN32 SOCKET handle and thus of no general use. You should treat this parameter as an opaque handle."
+      ]
+    ],
+    [
+      [
+        "Note Because the entire Winsock 2 API is used in an overlapped, asynchronous manner, functions such as UdpReceiveFrom, TcpReceive and TcpConnect will almost always return the value SOCKET_ERROR. Use the IpGetLastSocketError function to determine whether the operation is just pending or a real error has occurred."
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

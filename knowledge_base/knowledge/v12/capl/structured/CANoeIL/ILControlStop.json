@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "ILControlStop",
+  "category": "CANoeIL",
+  "title": "ILControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILControlStop.htm",
+  "syntax": [
+    "long ILControlStop()"
+  ],
+  "description": [
+    "Sending is completely stopped. In this state the interaction layer is inoperative. Neither function calls, nor signal changes are considered during its inactivity and on its activation (by ILControlStart)."
+  ],
+  "parameters": [],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

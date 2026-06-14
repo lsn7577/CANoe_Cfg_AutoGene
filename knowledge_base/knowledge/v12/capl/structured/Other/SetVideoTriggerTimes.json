@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SetVideoTriggerTimes",
+  "category": "Other",
+  "title": "SetVideoTriggerTimes",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetVideoTriggerTimes.htm",
+  "syntax": [
+    "SetVideoTriggerTimes(char windowName[], dword preTriggerTime, dword postTriggerTime);"
+  ],
+  "description": [
+    "Sets the trigger times for a CANoe Video Window."
+  ],
+  "parameters": [
+    {
+      "name": "windowName",
+      "type": "",
+      "description": "The name of the Video Window."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// set trigger times for \"VideoWindow\"\nSetVideoTriggerTimes(\"VideoWindow\", 0, 2500);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

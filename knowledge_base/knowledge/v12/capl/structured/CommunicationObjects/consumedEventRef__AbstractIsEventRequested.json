@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "consumedEventRef::AbstractIsEventRequested",
+  "category": "CommunicationObjects",
+  "title": "consumedEventRef::AbstractIsEventRequested",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionConsumedEventRefAbstractIsEventRequested.htm",
+  "syntax": [
+    "dword consumedEventRef::AbstractIsEventRequested()"
+  ],
+  "description": [
+    "Returns whether the specified event is currently requested (if abstract binding is used)."
+  ],
+  "parameters": [],
+  "return": "0: Event is not currently requested",
+  "example": {
+    "description": [],
+    "code": "val = MirrorAdjustment.consumerSide[CANoe,LeftMirror].CurrentPosition.AbstractIsEventRequested();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

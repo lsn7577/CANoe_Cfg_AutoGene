@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xGetStationAttributeInt64",
+  "category": "Car2x",
+  "title": "C2xGetStationAttributeInt64",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetStationAttributeInt64.htm",
+  "syntax": [
+    "int64 C2xGetStationAttributeInt64(char[] attributeName); // form 1"
+  ],
+  "description": [
+    "This function returns the actual value of the integer-typed scenario attribute. Form 1 of the function returns values of an attribute of the calling (current) station. Form 2 allows to get values of all attributes of any station in the scenario, even if the scenario station does not have an assigned database node."
+  ],
+  "parameters": [
+    {
+      "name": "stationName",
+      "type": "",
+      "description": "Scenario station name."
+    }
+  ],
+  "return": "The integer value of the attribute at the time of function call.",
+  "example": {
+    "description": [],
+    "code": "void OnStartScenario()\n{\nwrite(\"OnStartScenario - Doors locked = %d\", C2xGetStationAttributeInt64(\"MyAttrDoorLocked\"));\nwrite(\"OnStartScenario - LeftTurnAllowed = %d\", C2xGetStationAttributeInt64(\"TrafficLightStation\",\"Lane1State\"));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

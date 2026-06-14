@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939GetLastErrorText",
+  "category": "J1939",
+  "title": "J1939GetLastErrorText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939NodeLayer/Functions/CAPLfunctionJ1939Getlasterrortext.htm",
+  "syntax": [
+    "dword J1939GetLastErrorText( dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "This function gets the description of the last occurred error."
+  ],
+  "parameters": [
+    {
+      "name": "bufferSize",
+      "type": "",
+      "description": "size of buffer for error description"
+    }
+  ],
+  "return": "number of characters that are copied to buffer",
+  "example": {
+    "description": [],
+    "code": "dword size = 100;\nchar errText[size];\n\nJ1939GetLastErrorText( size, errText );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

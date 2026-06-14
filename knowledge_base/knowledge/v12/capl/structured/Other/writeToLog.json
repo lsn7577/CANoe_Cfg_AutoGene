@@ -1,0 +1,95 @@
+{
+  "page_type": "function",
+  "name": "writeToLog",
+  "category": "Other",
+  "title": "writeToLog",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWriteToLog.htm",
+  "syntax": [
+    "void writeToLog(char format[], ...);"
+  ],
+  "description": [
+    "Writes an output string to an ASCII logging file. Write is based on the C function printf.",
+    "The compiler cannot check the format string. Illegal format entries will lead to undefined results. Different to the writeToLogEx function, comment characters (\"//\") and a time stamp at the beginning of each line will be printed.",
+    "The maximum length of the resulting string is limited to 1024 characters."
+  ],
+  "parameters": [
+    {
+      "name": "\"%ld\",\"%d\"",
+      "type": "",
+      "description": "decimal display"
+    },
+    {
+      "name": "\"%lx\",\"%x\"",
+      "type": "",
+      "description": "hexadecimal display"
+    },
+    {
+      "name": "\"%lX\",\"%X\"",
+      "type": "",
+      "description": "hexadecimal display (upper case)"
+    },
+    {
+      "name": "\"%lu\",\"%u\"",
+      "type": "",
+      "description": "unsigned display"
+    },
+    {
+      "name": "\"%lo\",\"%o\"",
+      "type": "",
+      "description": "octal display"
+    },
+    {
+      "name": "\"%s\"",
+      "type": "",
+      "description": "display a string"
+    },
+    {
+      "name": "\"%g\",\"%lf\"",
+      "type": "",
+      "description": "floating point display"
+    },
+    {
+      "name": "\"%c\"",
+      "type": "",
+      "description": "display a character"
+    },
+    {
+      "name": "\"%%\"",
+      "type": "",
+      "description": "display %-character"
+    },
+    {
+      "name": "\"%I64d\"",
+      "type": "",
+      "description": "decimal display of a 64 bit value"
+    },
+    {
+      "name": "\"%I64x\"",
+      "type": "",
+      "description": "hexadecimal display of a 64 bit value"
+    },
+    {
+      "name": "\"%I64X\"",
+      "type": "",
+      "description": "hexadecimal display of a 64 bit value (upper case)"
+    },
+    {
+      "name": "\"%I64u\"",
+      "type": "",
+      "description": "unsigned display of a 64 bit value"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void MarkLogFile(int marker) {\n// marks line of ASCII logging file with an integer\nwriteToLog(\"===> %d\",marker);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

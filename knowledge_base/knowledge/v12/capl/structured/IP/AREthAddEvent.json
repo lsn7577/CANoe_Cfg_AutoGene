@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "AREthAddEvent",
+  "category": "IP",
+  "title": "AREthAddEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthAddEvent.htm",
+  "syntax": [
+    "dword AREthAddEvent( dword psiHandle, dword eventId, char onPrepareEventCallback[] );"
+  ],
+  "description": [
+    "This function adds an Event to a Provided Service Instance that was created by AREthCreateProvidedServiceInstance.",
+    "AREthTriggerEvent is used to trigger sending of the Event. Then, the CAPL Callback function <OnAREthPrepareEvent> is called, and the application has the opportunity to change or update the values of the SOME/IP Event.",
+    "An Event can be removed again using the AREthRemoveEvent function."
+  ],
+  "parameters": [
+    {
+      "name": "psiHandle",
+      "type": "",
+      "description": "Handle of the Provided-Service Instance"
+    }
+  ],
+  "return": "0: An error occurred. The error can be evaluated using the AREthGetLastError function.",
+  "example": {
+    "description": [],
+    "code": "void Initialize()\n{\n  dword aep; // Application Endpoint handle\n  dword psi; // provided service handle\n  dword peg; // provided Eventgroup handle\n  dword pev; // provided Event handle\n\n  // open Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = AREthCreateProvidedServiceInstance(aep,10,1);\n\n  // create Eventgroup\n  peg = AREthAddProvidedEventGroup(psi,1);\n\n  // create Event and add Event to Eventgroup\n  pev = AREthAddEvent(psi, 1, \"OnPrepareEvent1\");\n  AREthAddEventToEventgroup(peg, pev);\n\n  // ensure that Event is sent cyclically\n  AREthSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1(dword eventHandle, dword messageHandle)\n{\n  // this function is called before the Event is sent. Parameters can be specified here.\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "coTfsLoadDeviceDescription",
+  "category": "CANopen",
+  "title": "coTfsLoadDeviceDescription",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLoadDeviceDescription.htm",
+  "syntax": [
+    "long coTfsLoadDeviceDescription( dword nodeId, char fileName[] );"
+  ],
+  "description": [
+    "This function reads an EDS, DCF or XML file. This allows the interpretation of index and sub index during SDO accesses, so that object names can be displayed in plain text.",
+    "The object names can be deleted with coTfsClearObjectName."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID of the relevant node or 0 if all nodes are used."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "/* load for CANopen device with node ID 112 the eds file \"coslave.eds\" (path is relative to configuration folder) */\nif (coTfsLoadDeviceDescription(112, \"coslave.eds\") != 1)\n{\n  /* file could not be loaded, either it does not exist or it is faulty */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

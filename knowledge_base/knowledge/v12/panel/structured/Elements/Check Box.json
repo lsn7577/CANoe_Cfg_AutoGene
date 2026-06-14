@@ -1,0 +1,373 @@
+{
+  "page_type": "concept",
+  "name": "Check Box",
+  "category": "Panel",
+  "subcategory": "Elements",
+  "title": "Check Box",
+  "source": "chm_extract/PanelDesigner/Topics/Elements/PanelDesignerControlsCheckBox.htm",
+  "intro": [],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Use Case",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The Check Box can be used as a control and display element, with which an option can be initiated or displayed.",
+          "The following uses cases are possible with the Check Box:"
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Configuration",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Assign a symbol to the control in the Panel Designer.",
+          "You can assign a symbol to the control",
+          "You can configure the control via the ribbon or the Properties Window."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Control Element",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "If you activate the Check Box during runtime of CANoe/CANalyzer, the value that you set in the Switch Value 'Checked' property in the Settings category will be assigned to the symbol. Setting this value causes a stored action to be triggered.",
+          "If you deactivate the Check Box, the symbol receives the value that you have set in the Switch Value 'Unchecked' property. This symbol value can also be used to trigger an action."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Display Element",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The symbol is not set manually. Rather it is set to the Switch Value 'Checked' or Switch Value 'Unchecked' values by simulation or CAPL programs, for example. The Check Box responds accordingly, e.g., by appearing to be activated."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Ribbon|Properties Tab / Properties Window",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Here all settings are listed that you can change in the ribbon and/or in the Properties Window.",
+          "General Group",
+          "General",
+          "Name",
+          "Control Name",
+          "Here you change the name of the control. This name and the name of the panel is required for access from CAPL.",
+          "Text",
+          "Here you change the description of the control.",
+          "Display Only",
+          "With a click on the symbol you switch between control and display element.",
+          "With activated option the control is used as display element.",
+          "—",
+          "Is Visible At Runtime",
+          "Specifies whether the control is to be displayed during runtime."
+        ],
+        "tables": [
+          [
+            [
+              "Ribbon",
+              "Properties Window",
+              "Description"
+            ],
+            [
+              "General Group",
+              "General"
+            ],
+            [
+              "Name",
+              "Control Name",
+              "Here you change the name of the control. This name and the name of the panel is required for access from CAPL."
+            ],
+            [
+              "Text",
+              "Text",
+              "Here you change the description of the control."
+            ],
+            [
+              "Display Only",
+              "Display Only With a click on the symbol you switch between control and display element. With activated option the control is used as display element."
+            ],
+            [
+              "—",
+              "Is Visible At Runtime",
+              "Specifies whether the control is to be displayed during runtime. CAPL Access With the function setControlVisibility, you can set, if the control is displayed during runtime or not."
+            ],
+            [
+              "—",
+              "Tab Index",
+              "Defines the order in which the various controls on a panel are to be navigated with the Tab key during runtime."
+            ],
+            [
+              "More Group",
+              "Font"
+            ],
+            [
+              "Font",
+              "Font|Name/Size",
+              "Here you change the font and the font size."
+            ],
+            [
+              "—",
+              "With a click on the symbol you increase the font size."
+            ],
+            [
+              "—",
+              "With a click on the symbol you reduce the font size."
+            ],
+            [
+              "Font|Bold",
+              "With a click on the symbol you format the text bold."
+            ],
+            [
+              "Font|Italic",
+              "With a click on the symbol you format the text italic."
+            ],
+            [
+              "Font|Underline",
+              "With a click on the symbol you underline the text."
+            ],
+            [
+              "—",
+              "Font|Strikeout",
+              "Here you strikeout the text."
+            ],
+            [
+              "—",
+              "Font|Unit",
+              "Here you change the unit of the font size."
+            ],
+            [
+              "Text Color",
+              "Here you change the color of the text. CAPL Access With the function setControlForeColor, you can change the Text Color of the label. With the function setControlColors, you can set the text and background colors in one step With the function setDefaultControlColors, you can reset the text and background colors to the default values defined in the Panel Designer."
+            ],
+            [
+              "Background Color",
+              "Here you change the background color of the text. CAPL Access With the function setControlBackColor, you can change the Background Color of the label. With the function setControlColors, you can set the text and background colors in one step With the function setDefaultControlColors, you can reset the text and background colors to the default values defined in the Panel Designer."
+            ],
+            [
+              "Text Align",
+              "With a click on the symbol you align the text on the left site of the control."
+            ],
+            [
+              "Text Align",
+              "With a click on the symbol you align the text in the middle of the control."
+            ],
+            [
+              "Text Align",
+              "With a click on the symbol you align the text on the right site of the control."
+            ],
+            [
+              "Switch Values Group",
+              "Switch Values"
+            ],
+            [
+              "Activated",
+              "Activated",
+              "Here you change the symbol value that is set when the check box is activated. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value."
+            ],
+            [
+              "Deactivated",
+              "Deactivated",
+              "Here you change the symbol value that is set when the check box is deactivated. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value."
+            ],
+            [
+              "—",
+              "Epsilon",
+              "If the linked symbol is a double value, then a value may not be detected if it differs from the expected value because of an approximation of the decimal.Via the Epsilon property, you may set in the Panel Designer a value that specifies up to which tolerated inaccuracy a value is detected. Note The control has been configured with a Value = 2 and an Epsilon = 0.01. If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status. Note This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values.",
+              "Note The control has been configured with a Value = 2 and an Epsilon = 0.01. If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status.",
+              "Note This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values."
+            ],
+            [
+              "Note The control has been configured with a Value = 2 and an Epsilon = 0.01. If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status."
+            ],
+            [
+              "Note This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values."
+            ],
+            [
+              "Appearance Group",
+              "Appearance"
+            ],
+            [
+              "Appearance",
+              "Here you change the control/display: Check Box (normal)Control/display as Check Box ButtonControl as Button"
+            ],
+            [
+              "Check Position Group",
+              "Appearance"
+            ],
+            [
+              "Check Position",
+              "Here you change the alignment of the Check Box (not of the description) within the control: Top LeftAlign Check Box at the top left Top RightAlign Check Box at the top right Middle LeftAlign Check Box center left Middle Right Align Check Box center right"
+            ],
+            [
+              "More Group",
+              "—"
+            ],
+            [
+              "—",
+              "Show Properties With a click on the symbol you open the Properties Window."
+            ],
+            [
+              "Group: —",
+              "Layout"
+            ],
+            [
+              "—",
+              "Location/Size",
+              "Here you can enter settings relating to the size and position of the control. Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.",
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ],
+            [
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ],
+            [
+              "Group: —",
+              "Symbol"
+            ],
+            [
+              "—",
+              "Symbol",
+              "You can assign a symbol to the control. With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter. See also Configuration of the control. Valid Data Types of Symbols"
+            ],
+            [
+              "—",
+              "Symbol Filter",
+              "Here you select the type of the symbol you want to assign to your control."
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "With the function setControlVisibility, you can set, if the control is displayed during runtime or not.",
+          "—",
+          "Tab Index",
+          "Defines the order in which the various controls on a panel are to be navigated with the Tab key during runtime.",
+          "More Group",
+          "Font",
+          "Font|Name/Size",
+          "Here you change the font and the font size.",
+          "With a click on the symbol you increase the font size.",
+          "With a click on the symbol you reduce the font size.",
+          "Font|Bold",
+          "With a click on the symbol you format the text bold.",
+          "Font|Italic",
+          "With a click on the symbol you format the text italic.",
+          "Font|Underline",
+          "With a click on the symbol you underline the text.",
+          "Font|Strikeout",
+          "Here you strikeout the text.",
+          "Font|Unit",
+          "Here you change the unit of the font size.",
+          "Text Color",
+          "Here you change the color of the text."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Background Color",
+          "Here you change the background color of the text."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "CAPL Access",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Text Align",
+          "With a click on the symbol you align the text on the left site of the control.",
+          "With a click on the symbol you align the text in the middle of the control.",
+          "With a click on the symbol you align the text on the right site of the control.",
+          "Switch Values Group",
+          "Switch Values",
+          "Activated",
+          "Here you change the symbol value that is set when the check box is activated. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value.",
+          "Deactivated",
+          "Here you change the symbol value that is set when the check box is deactivated. If the assigned symbol is linked to a value table, you can assign a value from the value table to the switch value.",
+          "—",
+          "Epsilon",
+          "If the linked symbol is a double value, then a value may not be detected if it differs from the expected value because of an approximation of the decimal.Via the Epsilon property, you may set in the Panel Designer a value that specifies up to which tolerated inaccuracy a value is detected.",
+          "Note",
+          "The control has been configured with a Value = 2 and an Epsilon = 0.01.",
+          "If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status.",
+          "This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values.",
+          "Appearance Group",
+          "Appearance",
+          "Here you change the control/display:",
+          "Check Position Group",
+          "Check Position",
+          "Here you change the alignment of the Check Box (not of the description) within the control:",
+          "More Group",
+          "Show Properties",
+          "With a click on the symbol you open the Properties Window.",
+          "Group: —",
+          "Layout",
+          "Location/Size",
+          "Here you can enter settings relating to the size and position of the control.",
+          "You can also resize the control by dragging its markers.",
+          "Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel.",
+          "Symbol",
+          "You can assign a symbol to the control.",
+          "With a click on [...] you open the Symbol Selection dialog. Note your setting in Symbol filter.",
+          "See also Configuration of the control.",
+          "Valid Data Types of Symbols",
+          "Symbol Filter",
+          "Here you select the type of the symbol you want to assign to your control.",
+          "Assigning Controls"
+        ],
+        "tables": [
+          [
+            [
+              "Note The control has been configured with a Value = 2 and an Epsilon = 0.01. If the control receives a symbol value of 2.000000001 or 1.99999999997, then the value 2 is detected as valid and the control changes its status.If the value 2.05 is received, the control does not change its status."
+            ]
+          ],
+          [
+            [
+              "Note This setting shall explicitly not be used for displaying ranges of values. The maximum epsilon value is therefore limited to a tenth of the difference between two expected values."
+            ]
+          ],
+          [
+            [
+              "Note You can also resize the control by dragging its markers. Once selected, a control can be positioned anywhere on the panel. Snaplines appear on the working area to help you to line up the controls on the panel."
+            ]
+          ],
+          [
+            [
+              "Version 12.0© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

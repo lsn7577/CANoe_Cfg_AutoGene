@@ -1,0 +1,137 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_AllNodesDead, ChkStart_AllNodesDead",
+  "category": "Test",
+  "title": "ChkCreate_AllNodesDead, ChkStart_AllNodesDead",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionChkCreateAllNodesDead.htm",
+  "syntax": [
+    "dword ChkCreate_AllNodesDead (Duration aMaxQuietTime, char [] CaplCallback);",
+    "dword ChkStart_AllNodesDead (Duration aMaxQuietTime, char [] CaplCallback);"
+  ],
+  "description": [
+    "All monitored nodes must send at least one of their Tx messages within a specified interval. Otherwise an event will be triggered.",
+    "Each node is checked separately, so a dead node is recognized even if others are alive.",
+    "Gateway nodes require that the bus context corresponds to the network that is being observed.",
+    "For FlexRay only valid data frames and PDUs are recognized as communication, Null Frames and Erroneous frames are ignored."
+  ],
+  "parameters": [
+    {
+      "name": "aMaxQuietTime",
+      "type": "",
+      "description": "Upper limit of time interval. > 0; default unit [ms], if not changed with ChkConfig_SetPrecision."
+    },
+    {
+      "name": "CaplCallback",
+      "type": "",
+      "description": "In simulation nodes this parameter has to be set.In test modules this parameter is optional."
+    }
+  ],
+  "return": "Node",
+  "example": {
+    "description": [],
+    "code": "// checks that at least one message is sent in each 100 ms\ncheckId = ChkStart_AllNodesDead (100);\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "5.1 7.0 SP5: method 7.2: extended",
+      "13.0",
+      "—",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN FlexRay",
+      "CAN FlexRay",
+      "—",
+      "CAN FlexRay",
+      "CAN FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

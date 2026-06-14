@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SetControlForeColor",
+  "category": "Other",
+  "title": "SetControlForeColor",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionSetControlForeColor.htm",
+  "syntax": [
+    "void SetControlForeColor(char[] panel, char[] control, long color);"
+  ],
+  "description": [
+    "Sets the foreground color of panel elements.",
+    "The panel is accessed by its individual panel name that is entered in the Panel Designer/Panel Editor."
+  ],
+  "parameters": [
+    {
+      "name": "panel",
+      "type": "",
+      "description": "Panel name, restricted to 128 characters.\"\" – references all loaded panelsIf you open a panel the first time, the panel is loaded. If you close the panel, it remains loaded."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// Set the foreground color for a specific control of a panel\nSetControlForeColor(\"motor\", \"PedalPos\", MakeRGB(255,0,0));\n// All controls of the panel are set to the same foreground color\nSetControlForeColor(\"motor\", \"\", MakeRGB(255,0,0));\n// All controls of all panels are set to the same foreground color\nSetControlForeColor(\"\", \"\", MakeRGB(255,0,0));"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

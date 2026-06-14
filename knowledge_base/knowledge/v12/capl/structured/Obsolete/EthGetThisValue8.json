@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "EthGetThisValue8",
+  "category": "Obsolete",
+  "title": "EthGetThisValue8",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetThisValue8.htm",
+  "syntax": [
+    "long EthGetThisValue8( long offset );"
+  ],
+  "description": [
+    "This function reads the data of a received packet.",
+    "It is only usable in a CAPL callback function that had been registered with EthReceiveRawPacket or EthReceivePacket. It depends on the callback function, which part of the packet data is accessed by the function:"
+  ],
+  "parameters": [
+    {
+      "name": "offset",
+      "type": "",
+      "description": "byte offset relative to the beginning of a data packet or the payload (see description above)"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "void OnEthRawPacket( LONG channel, LONG dir, LONG packetLength )\r\n  \n{\r\n\n  BYTE value;\r\n\n  value = EthGetThisValue8( 14 );\r\n\r\n\n     write( \"Value %d\", value );\r\n  \n}\r"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

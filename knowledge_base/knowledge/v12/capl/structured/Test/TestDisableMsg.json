@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "TestDisableMsg",
+  "category": "Test",
+  "title": "TestDisableMsg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestDisableMsg.htm",
+  "syntax": [
+    "long TestDisableMsg (dbMessage aMessage);"
+  ],
+  "description": [
+    "Disables the sending of the message except by calling the function TestSetMsgEvent. Use TestEnableMsg to re-enable the message.",
+    "This function influences a simulation node with an assigned CANoe Interaction Layer.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "Message that should be disabled."
+    }
+  ],
+  "return": "0: No error.",
+  "example": {
+    "description": [],
+    "code": "// send a message event for the disabled message ‘MsgToManipulate’\nTestDisableMsg(MsgToManipulate);\nTestWaitForTimeout(5000);\nTestSetMsgEvent(MsgToManipulate);\nTestWaitForTimeout(5000);\nTestEnableMsg(MsgToManipulate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

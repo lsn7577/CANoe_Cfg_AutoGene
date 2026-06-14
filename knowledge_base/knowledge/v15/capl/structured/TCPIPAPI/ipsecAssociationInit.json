@@ -1,0 +1,199 @@
+{
+  "page_type": "function",
+  "name": "ipsecAssociationInit",
+  "category": "TCPIPAPI",
+  "title": "ipsecAssociationInit",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/TCPIPAPI/Functions/CAPLfunctionIpsecAssociationInit.htm",
+  "syntax": [
+    "long ipsecAssociationInit(IP_Endpoint source, IP_Endpoint destination, char[] protocol, char[] mode, dword spi);"
+  ],
+  "description": [
+    "With this function it is possible to create a security association record. The record gets initialized with the given parameters.",
+    "A security association record is needed to modify the security association database of a network stack."
+  ],
+  "parameters": [
+    {
+      "name": "source",
+      "type": "",
+      "description": "Source endpoint of the security association."
+    },
+    {
+      "name": "destination",
+      "type": "",
+      "description": "Destination endpoint of the security association."
+    },
+    {
+      "name": "UNSPEC",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "ESP",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "AH",
+      "type": "",
+      "description": "2"
+    },
+    {
+      "name": "ahalgorithm",
+      "type": "",
+      "description": "sha"
+    },
+    {
+      "name": "ahkey",
+      "type": "",
+      "description": "0123456789ABCDEF"
+    },
+    {
+      "name": "espalgorithm",
+      "type": "",
+      "description": "null"
+    },
+    {
+      "name": "ahalgorithm",
+      "type": "",
+      "description": "sha"
+    },
+    {
+      "name": "ahkey",
+      "type": "",
+      "description": "0123456789ABCDEF"
+    },
+    {
+      "name": "espalgorithm",
+      "type": "",
+      "description": "none"
+    },
+    {
+      "name": "ANY",
+      "type": "",
+      "description": "0"
+    },
+    {
+      "name": "TRANSPORT",
+      "type": "",
+      "description": "1"
+    },
+    {
+      "name": "TUNNEL",
+      "type": "",
+      "description": "2"
+    },
+    {
+      "name": "spi",
+      "type": "",
+      "description": "The security parameter index of the security association."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  long association;\n\n  // create and init a security association record\n  association = ipsecAssociationInit(ip_Endpoint(192.168.1.1), ip_Endpoint(192.168.1.10), \"ah\", \"any\", 30000);\n  if(association < 0)\n  {\n    write(\"failed to create a security association\");\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "12.0 SP3",
+      "—",
+      "—",
+      "—",
+      "4.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

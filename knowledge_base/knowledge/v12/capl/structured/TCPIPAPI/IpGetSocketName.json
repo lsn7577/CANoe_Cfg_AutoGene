@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "IpGetSocketName",
+  "category": "TCPIPAPI",
+  "title": "IpGetSocketName",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIpGetSocketName.htm",
+  "syntax": [
+    "long IpGetSocketName( dword socket, dword &ipv4Address, dword &port); // form 1",
+    "socket.GetSocketName(dword &ipv4Address, dword &port); // form 1"
+  ],
+  "description": [
+    "The function returns the local bound address and port of a socket."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  LONG  ipv4SocketHandle;\n  DWORD port;\n  DWORD ipv4Address[1];\n  CHAR  data[255];\n  CHAR  addressStr[49];\n\n  // open a IPv4 UDP socket. This will lead to an implicit bind\n  ipGetAdapterAddress(1,ipv4Address, elcount(ipv4Address));\n  ipv4SocketHandle = udpOpen(ipv4Address[0], 123);\n  if(ipv4SocketHandle == ~0)\n  {\n    writeLineEx(1, 3, \"%BASE_FILE_NAME%: failed to open the socket. Error code: %d\", ipGetLastError());\n  }\n\n  // get the local bound address and port\n  ipGetSocketName(ipv4SocketHandle, ipv4Address[0], port);\n  ipGetAddressAsString(ipv4Address[0], addressStr, elcount(addressStr));\n  writeLineEx(1, 1, \"%BASE_FILE_NAME%: The IPv4 socket is bound to address %s and port %d\", addressStr, port);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

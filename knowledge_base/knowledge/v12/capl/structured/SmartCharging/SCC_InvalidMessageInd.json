@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_InvalidMessageInd",
+  "category": "SmartCharging",
+  "title": "SCC_InvalidMessageInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_InvalidMessageInd.htm",
+  "syntax": [
+    "void SCC_InvalidMessageInd ( long MessageType, long ErrorCode )"
+  ],
+  "description": [
+    "The callback is called when a SDP or V2G message is received with an invalid content (i.e. it is rejected by the session layer)."
+  ],
+  "parameters": [
+    {
+      "name": "MessageType",
+      "type": "",
+      "description": "Type of the invalid message:"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

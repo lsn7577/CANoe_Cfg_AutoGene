@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "diagGetComplexParameterRaw, diagSetComplexParameterRaw",
+  "category": "Diagnostics",
+  "title": "diagGetComplexParameterRaw, diagSetComplexParameterRaw",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetComplexParameterRaw.htm",
+  "syntax": [
+    "long diagGetComplexParameterRaw (diagResponse obj, char parameterName[], dword iteration, char subParameter[], BYTE* buffer, dword buffersize)"
+  ],
+  "description": [
+    "Reads/sets the complex parameter to the specified raw value."
+  ],
+  "parameters": [
+    {
+      "name": "obj",
+      "type": "",
+      "description": "Diagnostics object"
+    }
+  ],
+  "return": "Number of bytes copied into the buffer or error code.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

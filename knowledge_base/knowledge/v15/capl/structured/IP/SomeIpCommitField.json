@@ -1,0 +1,131 @@
+{
+  "page_type": "function",
+  "name": "SomeIpCommitField",
+  "category": "IP",
+  "title": "SomeIpCommitField",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpCommitField.htm",
+  "syntax": [
+    "long SomeIpCommitField( DWORD pfHandle );"
+  ],
+  "description": [
+    "Applies changes that were performed on a field with the access functions SomeIpSetValue….",
+    "If the value of the field has been changed, the notification message of the field is sent. An actual value change must exist for this. If the same value previously contained in the field is set, a notification message is not sent."
+  ],
+  "parameters": [
+    {
+      "name": "pfHandle",
+      "type": "",
+      "description": "Handle of the field that was created by SomeIpAddField."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "In this example, it is assumed that the utilized field is contained in the FIBEX database that is assigned to the CANoe configuration. The field has the Notification ID 30, the Getter ID 31, and the Setter ID 32. The data type of the field is a standard data type (for example, UINT8)."
+    ],
+    "code": "variables\n{\n  DWORD gPfld_A; // provided field handle\n}\n\nvoid Initialize()\n{\n  CONST DWORD FieldNotificationID = 30;\n  CONST DWORD FieldGetterID       = 31;\n  CONST DWORD FieldSetterID       = 32;\n\n  DWORD aep;   // Application Endpoint handle\n  DWORD psi;   // provided service handle\n  DWORD peg;   // provided Eventgroup handle\n\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = SomeIpCreateProvidedServiceInstance(aep,12,1);\n\n  // create Eventgroup\n  peg = SomeIpAddProvidedEventGroup(psi,300);\n\n  // create field and add field to Eventgroup\n  gPfld_A = SomeIpAddField(psi, FieldNotificationID, FieldGetterID, FieldSetterID);\n  SomeIpAddFieldToEventGroup(peg,gPfld_A);\n}\n\non key 'n'\n{\n  // set value of field content (field has a common data type so no value path is needed)\n  SomeIpSetValueDWord(gPfld_A,\"\",100);\n\n  // commit field content ... notification is sent\n  SomeIpCommitField(gPfld_A);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.1 SP2",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

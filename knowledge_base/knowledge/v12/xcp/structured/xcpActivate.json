@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "xcpActivate",
+  "category": "XCP",
+  "title": "xcpActivate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/XCP/Functions/CAPLfunctionXCPActivate.htm",
+  "syntax": [
+    "long xcpActivate (char namespace[], char variable[]);"
+  ],
+  "description": [
+    "Activates an a2l parameter for upload and DAQ measurement.",
+    "Using system variables structs, the function must be used for the variable valid for the entire struct but not for single members."
+  ],
+  "parameters": [],
+  "return": "0: OK",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n   if(0 == XcpActivate(sysvar::XCP::XcpSim::ampl))\n   {\n      write(„Parameter ampl activated for measurement“);\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

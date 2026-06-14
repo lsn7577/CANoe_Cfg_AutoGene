@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "mbstrncmp, mbstrncmp_off",
+  "category": "Other",
+  "title": "mbstrncmp, mbstrncmp_off",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionMbStrnCmp.htm",
+  "syntax": [
+    "long mbstrncmp(char s1[], char s2[], long len); // form 1"
+  ],
+  "description": [
+    "This function compares s1 with s2 for a maximum of len characters.",
+    "If they are identical the functional result is 0. If s1 is less than s2 the result is -1, else +1.",
+    "Comparison starts in s1 at s1offset (form 3) and in s2 at s2offset (form 2 and form 3)."
+  ],
+  "parameters": [
+    {
+      "name": "s1",
+      "type": "",
+      "description": "First string"
+    }
+  ],
+  "return": "-1 if s1 is less than s2.",
+  "example": {
+    "description": [],
+    "code": "char s[50] = \"'Tür' is the german word for 'door'.\";\nwrite(\"%d\", mbstrncmp_off(s, 13, \"german\", 0, 6)); // 0"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

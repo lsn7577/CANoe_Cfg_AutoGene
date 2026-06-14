@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783GetWSMAddr",
+  "category": "ISO11783",
+  "title": "Iso11783GetWSMAddr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783GetWSMAddr.htm",
+  "syntax": [
+    "dword Iso11783GetWSMAddr( dword ecuHandle );"
+  ],
+  "description": [
+    "This function returns the address of the Working Set Master, which is assigned to this ECU."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "Address of the Working Set Master for this ECU or the Null-Address (0xFE)",
+  "example": {
+    "description": [],
+    "code": "addr = Iso11783GetWSMAddr( ecuHdl );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

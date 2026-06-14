@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SupportedAppProtocolRes",
+  "category": "SmartCharging",
+  "title": "SCC_SupportedAppProtocolRes",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_SupportedAppProtocolRes.htm",
+  "syntax": [
+    "void SCC_SupportedAppProtocolRes ( long ResponseCode, dword SchemaID )"
+  ],
+  "description": [
+    "The callback is called as soon as a Supported App Protocol Response is received. Further details that are transmitted in this request can be queried with:"
+  ],
+  "parameters": [
+    {
+      "name": "ResponseCode",
+      "type": "",
+      "description": "1 if OK, 0 if FAILED"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,200 @@
+{
+  "page_type": "function",
+  "name": "frSendFrame",
+  "category": "FlexRay",
+  "title": "frSendFrame",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/FlexRay/Functions/CAPLfunctionFRSendFrame.htm",
+  "syntax": [
+    "frSendFrame( <frame name>, dword flags, byte dataBytes[] ); // form 1",
+    "frSendFrame( int slotId, int channelMask, int len, int cycleStart, int cycleRepetition, dword flags, byte dataBytes[], int channel ); // form 2"
+  ],
+  "description": [
+    "This function generates a FlexRay frame and sends it on the bus. The FlexRay communication controller sends the message at the next possible point in time.",
+    "The message must be registered before sending (see frSetSendFrame function)."
+  ],
+  "parameters": [
+    {
+      "name": "slotId",
+      "type": "",
+      "description": "Identifier of the time slot in which the message should be sent."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Channel A"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Channel B"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Channel A+B (should correspond to the registered value; see frSetSendFrame function)"
+    },
+    {
+      "name": "len",
+      "type": "",
+      "description": "Number of data bytes (maximum 254 bytes)."
+    },
+    {
+      "name": "cycleStart",
+      "type": "",
+      "description": "This number designates the base cycle. This value must be smaller than the repetition factor and lies in the range between 0 and 63.This value, together with the repetition factor, determines the \"Cycle Multiplexing\" of the frame. The slot ID, channel mask, and cycle multiplexing uniquely identify the message in a FIBEX database."
+    },
+    {
+      "name": "cycleRepetition",
+      "type": "",
+      "description": "This number designates the cycle repetition factor. The value must be between 1 and 64 and must be a power of 2 (e.g. 1, 2, 4, 8, 16, 32 or 64).This value, together with the base cycle, determines the \"Cycle Multiplexing\" of the frame. The slot ID and the cycle multiplexing (and the cluster allocation of the FlexRay bus) uniquely identify the message in a FIBEX database."
+    },
+    {
+      "name": "Bit Mask",
+      "type": "",
+      "description": "Meaning"
+    },
+    {
+      "name": "0x10",
+      "type": "",
+      "description": "Sets the send mode to event triggered (if bit not set then time-triggered mode)."
+    },
+    {
+      "name": "0x20",
+      "type": "",
+      "description": "Sets the payload preamble bit (with static frames, the initial databytes then contain the local NM vector; with dynamic frames, the first two bytes then designate the expanded message ID)."
+    },
+    {
+      "name": "0x80",
+      "type": "",
+      "description": "Tx OFF The frame is no longer sent, the corresponding slots remain empty. The flag can only be used with VN interfaces."
+    },
+    {
+      "name": "0x200",
+      "type": "",
+      "description": "Disable use of In-Cycle-Repetition Flag has only effect on In-Cycle-Repetition frames. Is the flag set (1), then the frame can be sent in the slot given by the parameter slotID. Is the flag not set (0 = default), then the frame will be sent in the next slot of any of the slots that are given by the In-Cycle-Repetition definition in the database. CANoe Version ≥ 7.1 SP3"
+    },
+    {
+      "name": "0x400",
+      "type": "",
+      "description": "Sets the Null Frame indicator in the header. The flag can only be used with VN interfaces."
+    },
+    {
+      "name": "databytes",
+      "type": "",
+      "description": "Array of data bytes (payload)"
+    },
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel number (or cluster number)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n        // Bit mask meaning in flags:\n        // bit | mask | for\n        //----------------------------------------------------------------\n        // 0   | 1 | sync flag (1 == set)\n        // 1   | 2 | startup flag (1 == set)\n        // 4   | 16 | TT flag (1 == event-triggered, 0 = time-triggered)\n        //\n   BYTE gSta1Id      = 9;  // slot ID for frame to send\n   BYTE gSta1Flags   = 16; // event-triggered\n   BYTE gSta1Dlc     = 4;  // bytes\n   BYTE gSta1Chan    = 3;  // send on channel A+B\n   BYTE gSta1Base    = 0;  // base cycle\n   BYTE gSta1Rep     = 1;  // cycle repetition\n   BYTE gSta1Channel = %CHANNEL%;  // FR interface\n   const long gPeriodSine     = 8000;\n   const long gPeriodRect     = 1000;\n   const long gAmplitudeSine  = 1000;\n   const int cMaxFRBufSize = 254;\n  BYTE gSta1Msg[cMaxFRBufSize]; // message buffer\n}\non preStart\n{\n   int i;\n   // Declare Tx buffer in interface:\n   frSetSendFrame(gSta1Id /*frameId*/, gSta1Chan /*channelMask*/, gSta1Dlc /*len*/, gSta1Base /*cycleStart*/, gSta1Rep /*cycleRepetition*/, gSta1Flags /*flags*/, gSta1Channel /*cluster*/);\n   // Initialize payload:\n   for(i=0; i<gSta1Dlc; ++i)\n   {\n      gSta1Msg[i] = i;\n   }\n}\non FRStartCycle *\n{\n   if (this.FR_Cycle % gSta1Rep == gSta1Base)\n   {\n      doCalc();\n      FRSend();\n   }\n}\nFRSend ()\n{\n   frSendFrame(gSta1Id /*frameId*/, gSta1Chan /*channelMask*/, gSta1Dlc /*len*/, gSta1Base /*cycleStart*/, gSta1Rep /*cycleRepetition*/, gSta1Flags /*flags*/, gSta1Msg /*dataBytes*/, gSta1Channel /*cluster*/);\n}\ndoCalc ()\n{\n   float sine\n   BYTE  rect;\n   long sinel;\n   // Calculating sine wave and rectangle values:\n   sine = gAmplitudeSine*sin((timeNow()/100)*2*PI/gPeriodSine);\n   if (sin((timeNow()/100)*2*PI/gPeriodRect)<0)\n      rect = 0;\n   else \n      rect = 1;\n   sinel = sine;\n   // assigning values to message buffer:\n   gSta1Msg[0] = (sinel & 0x000000FF);\n   gSta1Msg[1] = (sinel & 0x0000FF00) >> 8;\n   gSta1Msg[2] = rect;\n   gSta1Msg[3] = 0;\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "5.2",
+      "5.2",
+      "13.0",
+      "—",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "FlexRay",
+      "FlexRay",
+      "FlexRay",
+      "—",
+      "—",
+      "FlexRay"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

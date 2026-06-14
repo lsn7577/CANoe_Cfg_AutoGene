@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkStart_SignalCycleTimeViolation",
+  "category": "Test",
+  "title": "ChkStart_SignalCycleTimeViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkStartSignalCycleTimeViolation.htm",
+  "syntax": [
+    "dword ChkStart_SignalCycleTimeViolation (Signal ObservedSignal, duration MinCycleTime, duration MaxCycleTime);"
+  ],
+  "description": [
+    "Checks the occurrences of a signal.",
+    "An event will be generated, if the time between two consecutive signal occurrences is out of the specified range.",
+    "Limit set to 0 is considered as \"cycle time is undefined\"; at least one limit has to be more than 0."
+  ],
+  "parameters": [
+    {
+      "name": "ObservedSignal",
+      "type": "",
+      "description": "Signal to observe. It must exist in DB"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "...\ndword checkId;\n// Create and start the check for LIN wake-up request\ncheckId = ChkStart_SignalCycleTimeViolation(Motor1State_Cycl::Motor1Temp,\n            29,   // min. cycle time in ms\n            32,   // max cycle time in ms\n            \"SigCycleTimeCallback\"); \n...\n// CAPL callback for violation notification\nvoid SigCycleTimeCallback (dword aCheckId)\n{\n   ChkQuery_EventStatusToWrite(aCheckId);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

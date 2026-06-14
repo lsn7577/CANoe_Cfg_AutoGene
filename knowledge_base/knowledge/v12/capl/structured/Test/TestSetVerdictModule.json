@@ -1,0 +1,54 @@
+{
+  "page_type": "function",
+  "name": "TestSetVerdictModule",
+  "category": "Test",
+  "title": "TestSetVerdictModule",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestSetVerdictModule.htm",
+  "syntax": [
+    "void TestSetVerdictModule (Verdict aVerdict);"
+  ],
+  "description": [
+    "This function sets the verdict of the test module. With this function the automatic verdict propagation of test cases to the test module can be influenced later.",
+    "E.g. this function can be used within the test controlling to conduct a test case \"on probe\" and to reset the verdict to \"pass\" in case \"fail\"."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "pass"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "fail"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "none"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "inconclusive"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "error in test sytem"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

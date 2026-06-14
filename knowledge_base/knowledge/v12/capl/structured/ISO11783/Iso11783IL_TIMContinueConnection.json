@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMContinueConnection",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMContinueConnection",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimContinueConnection.htm",
+  "syntax": [
+    "long Iso11783IL_TIMContinueConnection(dbNode counterpart); // form 1"
+  ],
+  "description": [
+    "Continues a connection which has been frozen by Iso11783IL_TIMFreezeConnection.",
+    "Form 1, 3, 5, and 7 continues the state of the currently frozen connection by execution the action of this state.",
+    "Form 2, 4, 6 and 8 continues with the specified state and executes the action of this state."
+  ],
+  "parameters": [
+    {
+      "name": "counterpart",
+      "type": "",
+      "description": "TIM counterpart of the client/server connection."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

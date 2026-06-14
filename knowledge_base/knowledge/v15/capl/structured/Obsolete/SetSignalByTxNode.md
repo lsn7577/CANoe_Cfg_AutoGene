@@ -1,0 +1,18 @@
+# SetSignalByTxNode
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function Replaced by SetSignal. |  |  |  |  |
+|---|---|---|---|---|
+| Function Syntax | void SetSignalByTxNode(dbSignal aSignal, dbNode aNode, double aValue) |  |  |  |
+| Function | Sets the transmitted signal aSignal to the accompanying value. If no suitable signal driver exists and thus no signal can be stimulated, then the verdict of the test module is set to "fail". GM special (several send nodes) |  |  |  |
+| Parameters | aSignal Signal to be set. |  |  |  |
+| aNode Send node. |  |  |  |  |
+| aValue Physical value to be accepted. |  |  |  |  |
+| Return Values | — |  |  |  |
+| Availability | Since Version | Restricted To | Measurement Setup | Simulation/Test Setup |
+| 5.1 | Test nodes | — | • |  |
+| Example — |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

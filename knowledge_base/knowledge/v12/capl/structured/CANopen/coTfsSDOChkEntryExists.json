@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOChkEntryExists",
+  "category": "CANopen",
+  "title": "coTfsSDOChkEntryExists",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoChkEntryExists.htm",
+  "syntax": [
+    "long coTfsSDOChkEntryExists( dword index, dword subindex );"
+  ],
+  "description": [
+    "This function checks with a SDO upload if the object is readable."
+  ],
+  "parameters": [
+    {
+      "name": "index",
+      "type": "",
+      "description": "Object index in the object dictionary."
+    }
+  ],
+  "return": "Error code or one of the following values",
+  "example": {
+    "description": [],
+    "code": "/* check if object [1000,0] is readable. This function is mainly a SDO upload function, but the test report output differs to make it more useful to check if an optional object exists */\nif (coTfsSDOChkEntryExists(0x1000, 0) != 1)\n{\n  /* entry does not exist, 0x1000 is mandatory, so something serious is wrong here */\n} /* if */"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

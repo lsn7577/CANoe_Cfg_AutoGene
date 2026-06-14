@@ -1,0 +1,159 @@
+{
+  "page_type": "function",
+  "name": "OnAREthProcessTxARPDU",
+  "category": "IP",
+  "title": "OnAREthProcessTxARPDU",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionOnAREthProcessTxARPDU.htm",
+  "syntax": [
+    "long OnAREthProcessTxARPDU(dword sourceAddress, dword sourcePort, dword destinationAddress, dword destinationPort, dword length, char buffer[], dword headerID ); // form 1",
+    "long OnAREthProcessTxARPDU(dword sourceAddress, dword sourcePort, dword destinationAddress, dword destinationPort, dword length, byte buffer[], dword headerID ); // form 2"
+  ],
+  "description": [
+    "This callback is called before the interaction layer wants to send an AUTOSAR PDU. This makes it possible to suppress the transmission."
+  ],
+  "parameters": [
+    {
+      "name": "sourceAddress",
+      "type": "",
+      "description": "IPv4 address of the local application endpoint."
+    },
+    {
+      "name": "sourcePort",
+      "type": "",
+      "description": "UDP or TCP port of the local application endpoint."
+    },
+    {
+      "name": "destinationAddress",
+      "type": "",
+      "description": "IPv4 address of the target."
+    },
+    {
+      "name": "destinationPort",
+      "type": "",
+      "description": "UDP or TCP port of the target."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "Length of the data."
+    },
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "Data to transmit."
+    },
+    {
+      "name": "headerId",
+      "type": "",
+      "description": "ID which is to be written in the header before the AUTOSAR PDU."
+    }
+  ],
+  "return": "The AUTOSAR PDU is sent by the interaction layer, if the callback sends back 1. Otherwise the transmission is suppressed.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "EthGetThisFrameCheckSequence",
+  "category": "Obsolete",
+  "title": "EthGetThisFrameCheckSequence",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/EthernetIL/CAPLfunctionEthGetThisFrameCheckSequence.htm",
+  "syntax": [
+    "dword EthGetThisFrameCheckSequence();"
+  ],
+  "description": [
+    "The function returns the frame check sequence (fcs) of a received Ethernet packet.",
+    "It is only usable in a CAPL callback function that had been registered with EthReceiveRawPacket or EthReceivePacket."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  BYTE emptyMacId[6] = { 0x00,0x00,0x00,0x00,0x00, 0x00};\n  EthReceiveRawPacket( 0x7, emptyMacId, emptyMacId, 0x0000, \"OnEthRawPacket\");\n}\nvoid OnEthRawPacket( LONG channel, LONG dir, LONG packetLength)\n{\ndword fcs;\nfcs = EthGetThisFrameCheckSequence();\nwrite(\"Received packet with fcs %d\", fcs );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,51 @@
+# callcontext::SetTimeToAnswer
+
+> Category: `CommunicationObjects` | Type: `method`
+
+## Syntax
+
+```c
+long callContext::SetTimeToAnswer(dword timeMs);
+```
+
+## Description
+
+Tells the simulation when it shall return the answer for the call. The answer will be returned after the given time.
+
+Note that you can also use the AutoAnswerTimeNS property of a method provider endpoint to set the answer delay for all following calls.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| timeMs | Relative time in milliseconds after which the call shall be returned. |
+
+## Return Values
+
+—
+
+## Example
+
+```c
+on fct_Called MirrorAdjustment.providerSide[all,LeftMirror].Adjust
+{
+  this.Result = Mirrors::AdjustResult::OK;
+  // return the call after 10 ms
+  this.SetTimeToAnswer(10);
+}
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 12.0 | 13.0 | 15 | 14 | 4.0 |
+| Restricted To | — | — | — | — | — | — |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | ✔ | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | ✔ | ✔ | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | ✔ | N/A |
+| 64-Bit | — | ✔ | ✔ | ✔ | ✔ | N/A |

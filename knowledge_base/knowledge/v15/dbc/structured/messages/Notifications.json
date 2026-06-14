@@ -1,0 +1,54 @@
+{
+  "page_type": "concept",
+  "name": "Notifications",
+  "category": "DBC",
+  "subcategory": "messages",
+  "title": "Notifications",
+  "source": "chm_extract_v15/CANeds/Topics/messages/HID_MSG_GENERAL.htm",
+  "intro": [
+    "The notifications are divided into error, warning and status notifications. The notification number indicates the type of notification:"
+  ],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "0000 - 0999: Notifications of the EDS checker",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "These notifications are generated if an EDS is checked (see command Check EDS)."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "1000 - 1099: Database comparison notifications",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "These notifications are generated if are compared via command Compare Object or attributes of an object have changed."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "1100 - 1200: Notifications while an EDS is loaded",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "These notifications are generated if an EDS file is loaded."
+        ],
+        "tables": [
+          [
+            [
+              "Version 15© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

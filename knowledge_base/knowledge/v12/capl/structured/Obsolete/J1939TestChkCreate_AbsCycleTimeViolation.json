@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkCreate_AbsCycleTimeViolation",
+  "category": "Obsolete",
+  "title": "J1939TestChkCreate_AbsCycleTimeViolation",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionJ1939TestChkCreateAbsCycleTimeViolation.htm",
+  "syntax": [
+    "long J1939TestChkCreate_AbsCycleTimeViolation( dword sourceAddr, dword destAddr, dword pgn, dword aMinCycleTime, dword aMaxCycleTime"
+  ],
+  "description": [
+    "Checks the occurrences of cyclic messages.",
+    "An event is generated if the time between the transmission of the messages is smaller than minCycleTime or larger than maxCycleTime. Not to be checked limits are set to 0; there must be at least one limit specified."
+  ],
+  "parameters": [
+    {
+      "name": "pgn",
+      "type": "",
+      "description": "parameter group number to wait for"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

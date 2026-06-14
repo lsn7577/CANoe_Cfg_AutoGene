@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "ethSetLinkStatus",
+  "category": "IP",
+  "title": "ethSetLinkStatus",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Functions/CAPLfunctionEthSetLinkStatus.htm",
+  "syntax": [
+    "long ethSetLinkStatus( long channel, long status ); // form 1",
+    "long ethSetLinkStatus( long channel, long hwChannel, long status ); // form 2",
+    "long ethSetLinkStatus( ethernetPort port, long status ); // form 3"
+  ],
+  "description": [
+    "Configures the channel of the Vector hardware to establish or terminate a link."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Ethernet channel number. Value range: 1..32"
+    },
+    {
+      "name": "status",
+      "type": "",
+      "description": "0 = link down1 = link up"
+    },
+    {
+      "name": "hwChannel",
+      "type": "",
+      "description": "Hardware channel number. Vector network interface must support more than 1 hardware channel to use.Value range: 1..16"
+    },
+    {
+      "name": "port",
+      "type": "",
+      "description": "Ethernet port, described by network name and port name. Only supported for network-based configurations and physical measurement ports."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1",
+      "Example 2"
+    ],
+    "code": "//link up\non key 'u'\n{\n  ethSetLinkStatus(1, 1);\n}\n\n//link down\non key 'd'\n{\n  ethSetLinkStatus(1, 0);\n}\non key 'u'\n{\n  ethSetLinkStatus(ethernetPort::MyNetworkName::MyPortName, 1);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.2: form 1 9.0 SP3: form 2 12.0: form 3",
+      "8.2: form 1 9.0 SP3: form 2 12.0: form 3",
+      "—",
+      "—",
+      "—",
+      "2.0 SP2: form 1 2.1 SP3: form 2 4.0: form 3"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

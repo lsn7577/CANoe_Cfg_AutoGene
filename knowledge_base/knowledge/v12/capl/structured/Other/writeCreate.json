@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "writeCreate",
+  "category": "Other",
+  "title": "writeCreate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWriteCreate.htm",
+  "syntax": [
+    "dword writeCreate(char name[])"
+  ],
+  "description": [
+    "Generates a new page in the Write Window with the specified name.",
+    "The page is automatically deleted the next time a measurement starts."
+  ],
+  "parameters": [
+    {
+      "name": "name",
+      "type": "",
+      "description": "Name of the page to be generated."
+    }
+  ],
+  "return": "Sink identifier that is valid for output to the new page.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

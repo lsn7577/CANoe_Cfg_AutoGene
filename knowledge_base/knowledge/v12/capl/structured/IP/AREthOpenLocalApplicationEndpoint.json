@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "AREthOpenLocalApplicationEndpoint",
+  "category": "IP",
+  "title": "AREthOpenLocalApplicationEndpoint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthOpenLocalApplicationEndpoint.htm",
+  "syntax": [
+    "dword AREthOpenLocalApplicationEndpoint( dword transportProtocol, dword port ); // form 1"
+  ],
+  "description": [
+    "Opens an application endpoint. An endpoint represents a socket. The IP address is the IP address of the current interface, which is determined by the bus context.",
+    "Services can be assigned to an Application Endpoint using the AREthCreateProvidedServiceInstance or AREthCreateConsumedServiceInstance function. An Application Endpoint can be closed again using the AREthCloseLocalApplicationEndpoint function.",
+    "This only works with the node TCP/IP stack; in the Windows TCP/IP stack the interface cannot be determined by the bus context.",
+    "The Service DiscoverySD endpoints can be configured using the properties of AUTOSAR Eth IL (see also: AREthSetProperty)."
+  ],
+  "parameters": [
+    {
+      "name": "transportProtocol",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "0: An error occurred. The error can be evaluated using the AREthGetLastError function.",
+  "example": {
+    "description": [
+      "Example"
+    ],
+    "code": "void Initialize()\n{\n  dword aep; // Application Endpoint handle\n  dword psi; // provided service handle\n  dword peg; // provided Eventgroup handle\n  dword pev; // provided Event handle\n\n  // open Application Endpoint\n  aep = AREthOpenLocalApplicationEndpoint(17, 50002);\n\n  // create Service Instance\n  psi = AREthCreateProvidedServiceInstance(aep,10,1);\n  // create Eventgroup\n  peg = AREthAddProvidedEventGroup(psi,1);\n\n  // create Event and add Event to Eventgroup\n  pev = AREthAddEvent(psi, 1, \"OnPrepareEvent1\");\n  AREthAddEventToEventgroup(peg, pev);\n\n  // ensure that Event is sent cyclically\n  AREthSetProperty(pev,\"CycleTimeMs\",1000);\n}\n\nvoid OnPrepareEvent1(dword eventHandle, dword messageHandle)\n{\n  // this function is called before the Event is sent. Parameters\n  // can be specified here.\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

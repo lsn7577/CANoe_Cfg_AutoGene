@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_KLine_ByteReceptionInd",
+  "category": "KLine",
+  "title": "_KLine_ByteReceptionInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineByteReceptionInd.htm",
+  "syntax": [
+    "_KLine_ByteReceptionInd(BYTE byteIn, int64 endOfByteTimes_ns)"
+  ],
+  "description": [
+    "Is called when a byte has been received."
+  ],
+  "parameters": [
+    {
+      "name": "byteIn",
+      "type": "",
+      "description": "Received byte"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "_KLine_ByteReceptionInd(BYTE byteIn, int64 endOfByteTimes_ns)\n{\n   int64 endOfByteCorrection_ns;\n   dword systemBaudRate;\n   float uartSamplePoint;\n   systemBaudRate  = 10400;\n   uartSamplePoint = 0.5;\n   write(\"Byte Value: %x\", byteIn);\n   write(\"End of Byte Time: [%.9f]\", endOfByteTimes_ns/1000000000.0);\n   // UART sample point corrected end of byte time. UART samples in the middle of a bit.\n   endOfByteCorrection_ns = ((1.0/systemBaudRate) * uartSamplePoint) * 1000000000;\n   write(\"Corrected End of Byte Time: [%.9f]\", (endOfByteTimes_ns + endOfByteCorrection_ns)/1000000000.0);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "output (Ethernet)",
+  "category": "IP",
+  "title": "output (Ethernet)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Functions/CAPLfunctionOutputEthernet.htm",
+  "syntax": [
+    "void output(ethernetPacket packet); // form 1"
+  ],
+  "description": [
+    "Outputs an Ethernet packet (form 1) from the program block.Form 2 can be used to output Ethernet packets with an invalid frame checksum."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "Variable of type ethernetPacket."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "ethernetPacket txPacket;\n\ntxPacket.msgChannel = 1;\ntxPacket.source      = EthGetMacAddressAsNumber( \"20:00:00:00:00:01\" );\ntxPacket.destination = EthGetMacAddressAsNumber( \"FF:FF:FF:FF:FF:FF\" );\ntxPacket.Length = 100;\ntxPacket.type = 0xF123;\n\noutput( txPacket, 0x1234 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

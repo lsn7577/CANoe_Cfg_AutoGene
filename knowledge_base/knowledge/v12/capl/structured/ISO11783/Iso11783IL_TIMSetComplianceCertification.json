@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMSetComplianceCertification",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMSetComplianceCertification",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimSetComplianceCertification.htm",
+  "syntax": [
+    "long Iso11783IL_TIMSetComplianceCertification(dword testProtocolPublicationYear, dword testProtocolRevision, dword laboratoryType, dword laboratoryID, dword referenceNumber); // form 1"
+  ],
+  "description": [
+    "Sets the content of message ISOBUS Compliance Certification (see ISO11783-7 B.27).",
+    "If the ISOBUS Compliance Certification message is in the Tx list of the TIM node and a Request for PGN 64834 (FD42h) is received then the ISOBUS Compliance Certification message is sent using the specified parameter (ISOBUS Compliance Certification message revision is always 1)."
+  ],
+  "parameters": [
+    {
+      "name": "testProtocolPublicationYear",
+      "type": "",
+      "description": "The publication year of the compliance test protocol to which the certification test was performed."
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

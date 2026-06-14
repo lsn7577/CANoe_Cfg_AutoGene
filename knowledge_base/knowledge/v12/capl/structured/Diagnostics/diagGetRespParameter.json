@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagGetRespParameter",
+  "category": "Diagnostics",
+  "title": "diagGetRespParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetRespParameter.htm",
+  "syntax": [
+    "long diagGetRespParameter (diagRequest req, char parameterName[], double output[]);"
+  ],
+  "description": [
+    "Returns the value of the numeric parameter, either in an output field or as return value (without the possibility of checking the correct function).",
+    "This function offers access to parameters contained in a received response object, whereby the function is addressed directly by the request. This eliminates the need to generate a separate response object. If no response is available yet for the request, an error is reported."
+  ],
+  "parameters": [
+    {
+      "name": "req",
+      "type": "",
+      "description": "Request"
+    }
+  ],
+  "return": "Error code or value of the parameter.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

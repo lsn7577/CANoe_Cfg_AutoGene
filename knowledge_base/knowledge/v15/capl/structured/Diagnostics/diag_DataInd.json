@@ -1,0 +1,148 @@
+{
+  "page_type": "function",
+  "name": "diag_DataInd",
+  "category": "Diagnostics",
+  "title": "diag_DataInd",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Diagnostics/Functions/CAPLfunctionDiagDataInd.htm",
+  "syntax": [
+    "void diag_DataInd (byte rxBuffer [], long count, long sender); // form 1",
+    "void diag_DataInd (char target[], byte rxBuffer[], dword count); // form 2"
+  ],
+  "description": [
+    "Passes count bytes of the transmitter address sender from the rxBuffer buffer to the diagnostic layer.",
+    "Alternatively, the transmitter can be identified using its ECU qualifier target.",
+    "This function is typically called in a transport layer callback after a message, which may be segmented, has been received in its entirety. The transport layer removes all protocol information (segmentation, flow control, etc.) and forwards only the payload data (e.g. the ECU diagnostic response starting at the service ID and including all response parameters) to the diagnostic layer."
+  ],
+  "parameters": [
+    {
+      "name": "rxBuffer",
+      "type": "",
+      "description": "Byte buffer to be passed to the diagnostic layer."
+    },
+    {
+      "name": "sender",
+      "type": "",
+      "description": "Address of the transmitter from which the diagnostic message was received."
+    },
+    {
+      "name": "count",
+      "type": "",
+      "description": "Number of bytes to be passed."
+    },
+    {
+      "name": "target",
+      "type": "",
+      "description": "Qualifier of the responding ECU."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [
+      "See DoIP_DataInd"
+    ],
+    "code": "// This callback shall be called by an example TP layer\nTPLayer_ReceivedData( long connectionHandle, byte data[])\n{\n  char ecuQualifier[20];\n  TPLayerGetECUQualifierForHandle(connectionHandle, ecuQualifier);\n  diag_DataInd(ecuQualifier, data, elcount(data));\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "6.0: form 1 11.0: form 2",
+      "—",
+      "—",
+      "—",
+      "1.0: form 1 3.0: form 2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Online mode",
+      "—",
+      "—",
+      "—",
+      "Online mode"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

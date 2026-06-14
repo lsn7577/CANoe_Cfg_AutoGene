@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GPIBWriteNum",
+  "category": "GPIB",
+  "title": "GPIBWriteNum",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBWriteNum.htm",
+  "syntax": [
+    "long GPIBWriteNum (long deviceDescriptor, char cmdStr[], double value);"
+  ],
+  "description": [
+    "Writes cmdStr + numeric value to the device.",
+    "The function returns immediately and does not wait for the end of the command transmission."
+  ],
+  "parameters": [
+    {
+      "name": "deviceDescriptor",
+      "type": "",
+      "description": "Device ID"
+    }
+  ],
+  "return": "Status",
+  "example": {
+    "description": [],
+    "code": "Setting of a voltage of 1.23 V: GPIBWriteStr(myDev, \"V\", 1.23)"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

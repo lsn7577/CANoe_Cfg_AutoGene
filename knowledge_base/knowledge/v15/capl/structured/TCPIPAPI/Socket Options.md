@@ -1,0 +1,23 @@
+# Socket Options
+
+> Category: `TCPIPAPI` | Type: `notes`
+
+## Description
+
+This section describes the socket options which are applicable in the CAPL interface of CANoe. There are some differences in the socket options depending on the TCP/IP stack selection of the simulation node.
+
+If the CANoe internal or individual node network stack is selected all socket options marked with C are applicable.If the TCP/IP stack of the operating system is selected, all socket options marked with a W are applicable.
+
+The socket options are grouped to different socket option levels. The following levels are available:
+
+| Option Level | Description |
+|---|---|
+| IPPROTO_IP 0 | Socket options for the IPv4 protocol level. |
+| IPPROTO_TCP 6 | Socket options for the TCP protocol level. |
+| IPPROTO_UDP 17 | Socket options for the UDP protocol level. |
+| IPPROTO_IPV6 41 | Socket options for the IPv6 protocol level. |
+| SOL_SOCKET 0xFFFF | Socket options applicable at socket level. |
+| SOL_VECTOR 0x10002 | Special socket option. Only available if the CANoe global or node network stack is used. |
+
+| Version 15© Vector Informatik GmbH |
+|---|

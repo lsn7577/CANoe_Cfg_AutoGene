@@ -1,0 +1,35 @@
+{
+  "page_type": "concept",
+  "name": "ethernetPacket Selectors: <protocol>.<optional-structure>.<field>",
+  "category": "IP",
+  "title": "ethernetPacket Selectors: <protocol>.<optional-structure>.<field>",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Selectors/CAPLfunctionProtocolOptionalStructureField.htm",
+  "syntax": [],
+  "description": [
+    "Read or write access to protocol-option fields within optional-structures.",
+    "See protocol overview for protocol and field designators.",
+    "If <protocol>, <optional-structure> or <field> is not contained in the packet, the measurement is stopped with a runtime error. ethernetPacket::<protocol>::<optional-structure>::IsAvailable can be used to find out if the field is available.",
+    "The data type depends on the protocol field. The bit length is rounded up to next larger CAPL data type, i.e. a 4-bit protocol field will use byte and a 12-bit protocol field will use word.",
+    "This selector is available for protocol field of type integer. For protocol fields, which are not integer values, the method GetData and SetData can be used."
+  ],
+  "parameters": [],
+  "return": "Value of the protocol field.",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  ethernetPacket pkt;\n  pkt.ipv6.Init();// initialize a packet IPv6\n  pkt.udp.Init(); // and UDP\n  pkt.ipv6.fragment.Init();\n  pkt.ipv6.fragment.offset = 100;\n  pkt.ipv6.framgent.flag  = 1;\n  pkt.ipv6.fragment.identification = 0x1234;\n  pkt.CompletePacket();\n  output( pkt );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "name": "ethernetPacket",
+      "link": "../Objects/CAPLfunctionEthernetPacket.htm"
+    }
+  ],
+  "note": [],
+  "complexity": "",
+  "original_page_type": "function"
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPSave",
+  "category": "ISO11783",
+  "title": "Iso11783OPSave",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPSave.htm",
+  "syntax": [
+    "long Iso11783OPSave( dword ecuHandle, char filename[] );"
+  ],
+  "description": [
+    "The function saves an object pool file (*.iop)."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU."
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "dword handle = 0;\nhandle = Iso11783CreateECU( gECUName );\n\nIso11783OPSave( \r\n handle, \"ObjectPool.iop\");"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

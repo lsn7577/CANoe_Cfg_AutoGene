@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagGetComplexRespParameter",
+  "category": "Diagnostics",
+  "title": "diagGetComplexRespParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetComplexRespParameter.htm",
+  "syntax": [
+    "long diagGetComplexRespParameter (diagRequest req, char parameterName[], dword iteration, char subParameter[], double output[]);"
+  ],
+  "description": [
+    "Returns the value of a numeric complex parameter.",
+    "This function offers access to parameters contained in a received response object, whereby the function is addressed directly by the request. This eliminates the need to generate a separate response object. If no response is available yet for the request, an error is reported."
+  ],
+  "parameters": [
+    {
+      "name": "req",
+      "type": "",
+      "description": "Request"
+    }
+  ],
+  "return": "Error code,\nor value of the parameter or 0.0 if this could not be acquired.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

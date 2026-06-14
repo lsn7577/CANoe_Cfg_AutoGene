@@ -1,0 +1,150 @@
+{
+  "page_type": "function",
+  "name": "str_replace",
+  "category": "Other",
+  "title": "str_replace",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionStrReplace.htm",
+  "syntax": [
+    "long str_replace(char s[], char searched[], char replacement[]); // form 1",
+    "long str_replace(char s[], long startoffset, char replacement[], long length); // form 2"
+  ],
+  "description": [
+    "Form 1: Replaces all occurrences of a text in a string with another string.",
+    "Form 2: Replaces a part of a string with another string."
+  ],
+  "parameters": [
+    {
+      "name": "s",
+      "type": "",
+      "description": "String to be modified."
+    },
+    {
+      "name": "searched",
+      "type": "",
+      "description": "Text which shall be replaced."
+    },
+    {
+      "name": "startoffset",
+      "type": "",
+      "description": "Offset at which to start replacing characters."
+    },
+    {
+      "name": "replacement",
+      "type": "",
+      "description": "Text which replaces the original characters."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "Maximum number of characters to replace."
+    }
+  ],
+  "return": "1 if successful, 0 if the resulting string would be too long for the buffer s.",
+  "example": {
+    "description": [],
+    "code": "char buffer[70] = \"Vector Informatik\";\nstr_replace(buffer, \"Informatik\", \"CANoe\");\nwrite(buffer);\nstr_replace(buffer, 7, \"CANalyzer\", 10);\nwrite(buffer);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "7.5 SP2",
+      "7.5 SP2",
+      "13.0",
+      "13.0",
+      "14",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

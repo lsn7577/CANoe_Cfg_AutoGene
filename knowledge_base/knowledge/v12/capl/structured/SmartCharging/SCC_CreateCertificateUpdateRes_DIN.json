@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CreateCertificateUpdateRes_DIN",
+  "category": "SmartCharging",
+  "title": "SCC_CreateCertificateUpdateRes_DIN",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_CreateCertificateUpdateRes_Din.htm",
+  "syntax": [
+    "long SCC_CreateCertificateUpdateRes_DIN ( byte SessionID[], dword ConfigSection, char ResponseCode[], char EncryptedPrivateKey[], char DHParams[], char ContractID[], long RetryCounter, char MessageID[] )"
+  ],
+  "description": [
+    "Creates a Certificate Installation Response message for sending."
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 - 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "1 if successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

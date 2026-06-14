@@ -1,0 +1,158 @@
+{
+  "page_type": "function",
+  "name": "ConvertString",
+  "category": "Other",
+  "title": "ConvertString",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionConvertString.htm",
+  "syntax": [
+    "long ConvertString(byte output[], long& encodedSize, long maxOutputSize, dword outputCodepage, byte input[], long inputSize, dword inputCodepage);"
+  ],
+  "description": [
+    "Converts a string from one encoding to another encoding. The length of the converted string depends on the requested encoding. The number of bytes used in the output byte array is written to encodedSize. If the size of the output array maxOutputSize is not sufficient to hold the converted string and a terminating “\\0”, the function returns an error and the content of output is undefined. Characters that cannot be represented in the requested encoding, are replaced with the best matching character, selected by the Windows function WideCharToMultiByte."
+  ],
+  "parameters": [
+    {
+      "name": "output",
+      "type": "",
+      "description": "Target byte array."
+    },
+    {
+      "name": "encodedSize",
+      "type": "",
+      "description": "ConvertString writes the number of bytes used in output (including the terminating “\\0”) to this parameter."
+    },
+    {
+      "name": "maxOutputSize",
+      "type": "",
+      "description": "Size of the output array."
+    },
+    {
+      "name": "outputCodepage",
+      "type": "",
+      "description": "Windows code page number for output.The include file Encoding.cin defines the following code pages: CP_UTF8 CP_UTF16 CP_LATIN1 CP_SHIFT_JIS"
+    },
+    {
+      "name": "input",
+      "type": "",
+      "description": "The input string in encoding codepage, without BOM."
+    },
+    {
+      "name": "inputSize",
+      "type": "",
+      "description": "Length of the input string in bytes."
+    },
+    {
+      "name": "inputCodepage",
+      "type": "",
+      "description": "Windows code page number for input.The include file Encoding.cin defines the following code pages: CP_UTF8 CP_UTF16 CP_LATIN1 CP_SHIFT_JIS"
+    }
+  ],
+  "return": "ConvertString writes the number of bytes used in",
+  "example": {
+    "description": [],
+    "code": "// Convert a system variable string value (e.g. input from a panel) into UTF-16 and vice versa\nincludes\n{\n  #include \"Encoding.cin\"\n}\n\n// handle input of a string, e.g. from a panel\non sysvar TestVars::StringSV\n{\n  byte data[100]; long nrOfBytes; byte data2[200]; long res;\n  // get the string in UTF-8\n  sysGetVariableData(sysvar::TestVars::StringSV, data, nrOfBytes);\n  // convert it to UTF-16\n  res = ConvertString(data2, nrOfBytes, elcount(data2), CP_UTF16, data, nrOfBytes, CP_UTF8);\n  // now use the UTF-16 bytes, e.g. send them over a network\n  // here simulated by using a system variable of type data\n  sysSetVariableData(sysvar::TestVars::DataVar, data2, nrOfBytes);\n}\n\n// receive UTF-16 data, e.g. from a network\n// here simulated by using a system variable of type data\non sysvar TestVars::DataVar\n{\n  byte data[200]; long nrOfBytes; byte data2[100]; long res;\n  sysGetVariableData(sysvar::TestVars::DataVar, data, nrOfBytes);\n  // data is the string in UTF-16; convert it to UTF-8\n  res = ConvertString(data2, nrOfBytes, elcount(bytes), CP_UTF8, data, nrOfBytes, CP_UTF16);\n  // copy the string into a system variable of type string, e.g. to display it in a panel\n  sysSetVariableData(sysvar::TestVars::OutStringVar, data2, nrOfBytes);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5 SP4",
+      "8.5 SP4",
+      "13.0",
+      "—",
+      "14",
+      "2.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

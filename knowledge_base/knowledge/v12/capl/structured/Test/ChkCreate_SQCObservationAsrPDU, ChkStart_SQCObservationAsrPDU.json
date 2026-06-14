@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_SQCObservationAsrPDU, ChkStart_SQCObservationAsrPDU",
+  "category": "Test",
+  "title": "ChkCreate_SQCObservationAsrPDU, ChkStart_SQCObservationAsrPDU",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateSQCObservationAsrPDU.htm",
+  "syntax": [
+    "dword ChkCreate_SQCObservationAsrPDU(PDU aPDU);"
+  ],
+  "description": [
+    "Monitors the SQC of a PDU or a single signal group of a PDU. The check condition is violated if the last SQC does not match to the current contained in the PDU or signal group. The check can be set up for a single PDU or a single signal group within a PDU.",
+    "The functions/constructors without the parameter signalGroup monitors all specified SQC's within the given PDU.",
+    "The numeric functions/constructors with the parameter aHeaderId cannot be used for FlexRay.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aPDU",
+      "type": "",
+      "description": "Must exist in DB"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "// checks the payload gaps of the message\ncheckId = ChkStart_SQCObservationAsrPDU (PDUToObserve, “signalGroup1”);\nTestAddCondition(checkId);\n// sequence of different actions and waiting conditions\nTestWaitForTimeout(1000);\nTestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

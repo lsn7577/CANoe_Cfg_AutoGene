@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getGPSTimeString",
+  "category": "Other",
+  "title": "getGPSTimeString",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetGPSTimeString.htm",
+  "syntax": [
+    "void getGPSTimeString(char timeBuffer[], dword timestamp);"
+  ],
+  "description": [
+    "Copies a printed representation of the GPS time stamp represented as UTC date and time into the supplied character buffer. The format of the string is ddd mmm dd hh:mm:ss jjjj (e.g. \"Fri Aug 21 15:22:24 1998\")."
+  ],
+  "parameters": [
+    {
+      "name": "timeBuffer",
+      "type": "",
+      "description": "The buffer the string will be written in.This buffer must be at least 26 characters long."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  char UTC_time_and_date_buffer[30]; // needs min. 26 chars\n  dword UnixTimestamp;\n}\n\non start\n{\n  getGPSTimeString(UTC_time_and_date_buffer, UnixTimestamp);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

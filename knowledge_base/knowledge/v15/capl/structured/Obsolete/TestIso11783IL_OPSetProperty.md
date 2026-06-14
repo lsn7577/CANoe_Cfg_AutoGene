@@ -1,0 +1,30 @@
+# TestIso11783IL_OPSetProperty
+
+> Category: `Obsolete` | Type: `notes`
+
+## Description
+
+See Also
+
+| Deprecated Function Replaced by: Iso11783IL_OPSetProperty |  |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|
+| Function Syntax | long TestIso11783IL_OPSetProperty( dbNode node, char propertyName[], long newValue ); |  |  |  |  |  |  |  |
+| Function | The function sets a property of the Object Pool API, i.e. the supported Virtual Terminal version. Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment. | Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment. |  |  |  |  |  |  |
+| Note Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous. Further information on site MultiBus Environment. |  |  |  |  |  |  |  |  |
+| Parameters | node Simulation node to apply the function. |  |  |  |  |  |  |  |
+| propertyName Key of the information to set: Version Supported version of the ISO11783 Virtual Terminal specification.Supported values: 2, 3 (default), 4 and 5If used, the version value obtained from the database (node attribute ISO11783OPVersion) is overwritten. DebugLevel Controls the output to the Write Window. Supported values: 0: No output 1: Only errors 2: Warnings and errors 3: Information, warnings and errors SendPreferredAssignmentEvenIfEmpty Enforces sending of the Preferred Assigning message to the Virtual Terminal, even if no of auxiliary function has a preferred assigned auxiliary input, i.e. the corresponding INI file (i.g. Sprayer.ini) contains following lines: [AuxAssignment]AuxAssignmentCount=0 Supported values: 0: Preferred Assigning message is sent to the Virtual Terminal if at least one preferred assignment exists 1: Preferred Assigning message is sent to the Virtual Terminal even if no preferred assignment exists VTFunctionInstance On startup the node connects to the Virtual Terminal (VT) which has this function instance. By default the node connects to the primary VT with function instance zero (0). | Version | Supported version of the ISO11783 Virtual Terminal specification.Supported values: 2, 3 (default), 4 and 5If used, the version value obtained from the database (node attribute ISO11783OPVersion) is overwritten. | DebugLevel | Controls the output to the Write Window. Supported values: 0: No output 1: Only errors 2: Warnings and errors 3: Information, warnings and errors | SendPreferredAssignmentEvenIfEmpty | Enforces sending of the Preferred Assigning message to the Virtual Terminal, even if no of auxiliary function has a preferred assigned auxiliary input, i.e. the corresponding INI file (i.g. Sprayer.ini) contains following lines: [AuxAssignment]AuxAssignmentCount=0 Supported values: 0: Preferred Assigning message is sent to the Virtual Terminal if at least one preferred assignment exists 1: Preferred Assigning message is sent to the Virtual Terminal even if no preferred assignment exists | VTFunctionInstance | On startup the node connects to the Virtual Terminal (VT) which has this function instance. By default the node connects to the primary VT with function instance zero (0). |
+| Version | Supported version of the ISO11783 Virtual Terminal specification.Supported values: 2, 3 (default), 4 and 5If used, the version value obtained from the database (node attribute ISO11783OPVersion) is overwritten. |  |  |  |  |  |  |  |
+| DebugLevel | Controls the output to the Write Window. Supported values: 0: No output 1: Only errors 2: Warnings and errors 3: Information, warnings and errors |  |  |  |  |  |  |  |
+| SendPreferredAssignmentEvenIfEmpty | Enforces sending of the Preferred Assigning message to the Virtual Terminal, even if no of auxiliary function has a preferred assigned auxiliary input, i.e. the corresponding INI file (i.g. Sprayer.ini) contains following lines: [AuxAssignment]AuxAssignmentCount=0 Supported values: 0: Preferred Assigning message is sent to the Virtual Terminal if at least one preferred assignment exists 1: Preferred Assigning message is sent to the Virtual Terminal even if no preferred assignment exists |  |  |  |  |  |  |  |
+| VTFunctionInstance | On startup the node connects to the Virtual Terminal (VT) which has this function instance. By default the node connects to the primary VT with function instance zero (0). |  |  |  |  |  |  |  |
+| newValue New value for the parameter |  |  |  |  |  |  |  |  |
+| Return Values | 0: Unction has been executed successfully |  |  |  |  |  |  |  |
+| <0: An error has occurred, see error codes |  |  |  |  |  |  |  |  |
+| -102: Invalid parameter |  |  |  |  |  |  |  |  |
+| -1113: Unknown property |  |  |  |  |  |  |  |  |
+| Availability | Since Version | Restricted To | Measurement Setup | Simulation/Test Setup |  |  |  |  |
+| 8.5 | ISO11783 Test nodes | — | • |  |  |  |  |  |
+| Example — |  |  |  |  |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

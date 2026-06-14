@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "diagGetTargetCount",
+  "category": "Diagnostics",
+  "title": "diagGetTargetCount",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagGetTargetCount.htm",
+  "syntax": [
+    "long diagGetTargetCount();"
+  ],
+  "description": [
+    "Returns the number /n/ of possible diagnostic targets configured. For indices /i/ with 0 ≤ i ≤ n you can retrieve the target qualifier with DiagGetTargetQualifier.",
+    "Diagnostic descriptions that cannot work as diagnostic targets are not counted, e.g. descriptions configured as interpretation only are ignored."
+  ],
+  "parameters": [
+    {
+      "name": "—",
+      "type": "",
+      "description": ""
+    }
+  ],
+  "return": "Error code or number of diagnostic targets.",
+  "example": {
+    "description": [],
+    "code": "long i;\nchar ecuQual[100];\ni = diagGetTargetCount();\nwhile( i-- > 0)\n{\n   diagGetTargetQualifier( i, ecuQual, elcount(ecuQual));\n   write( \"Target %d: %s\", i, ecuQual);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+# TestILDisturbCounter
+
+> Category: `Obsolete` | Type: `notes`
+
+| Deprecated Function This function is deprecated and has been replaced by ILNodeDisturbCounter |  |  |  |  |  |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Note This function is not available for all OEM packages - depends on the CANoeIL. |  |  |  |  |  |  |  |  |  |  |  |  |
+| Function Syntax | long TestILDisturbCounter(dbMsg aMsg, long counterType, long disturbanceMode, long disturbanceCount, long disturbanceValue, long continueMode); |  |  |  |  |  |  |  |  |  |  |  |
+| long TestILDisturbCounter(dbMsg aMsg, char aSigGroupName[], long counterType, long disturbanceMode, long disturbanceCount, long disturbanceValue, long continueMode); |  |  |  |  |  |  |  |  |  |  |  |  |
+| Function | Modifies the counter. Different fault injections are possible. This function influences a simulation node with an assigned CANoe Interaction Layer. |  |  |  |  |  |  |  |  |  |  |  |
+| Parameters | aMsg Name of the message that should be modified. |  |  |  |  |  |  |  |  |  |  |  |
+| aSigGroupName Some systems assign a counter to signal group. With this variant you can apply the disturbance to a dedicated signal group within a PDU. |  |  |  |  |  |  |  |  |  |  |  |  |
+| counterType The possible values are described in the corresponding OEM Package manual. |  |  |  |  |  |  |  |  |  |  |  |  |
+| disturbanceMode Identifies the disturbance mode. 0 Value The disturbance uses the value in disturbanceValue as counter. 1 Freeze The current counter value is transmitted. 2 Random A random value is transmitted as counter. 3 Offset The counter is incremented with the value in disturbanceValue. | 0 | Value | The disturbance uses the value in disturbanceValue as counter. | 1 | Freeze | The current counter value is transmitted. | 2 | Random | A random value is transmitted as counter. | 3 | Offset | The counter is incremented with the value in disturbanceValue. |
+| 0 | Value | The disturbance uses the value in disturbanceValue as counter. |  |  |  |  |  |  |  |  |  |  |
+| 1 | Freeze | The current counter value is transmitted. |  |  |  |  |  |  |  |  |  |  |
+| 2 | Random | A random value is transmitted as counter. |  |  |  |  |  |  |  |  |  |  |
+| 3 | Offset | The counter is incremented with the value in disturbanceValue. |  |  |  |  |  |  |  |  |  |  |
+| disturbanceCount The number of disturbances. -1 Infinite 0 Stops the disturbance, e.g.a infinite disturbance. n Number of disturbances. | -1 | Infinite | 0 | Stops the disturbance, e.g.a infinite disturbance. | n | Number of disturbances. |  |  |  |  |  |  |
+| -1 | Infinite |  |  |  |  |  |  |  |  |  |  |  |
+| 0 | Stops the disturbance, e.g.a infinite disturbance. |  |  |  |  |  |  |  |  |  |  |  |
+| n | Number of disturbances. |  |  |  |  |  |  |  |  |  |  |  |
+| disturbanceValue This value is used in combination with the disturbanceMode. |  |  |  |  |  |  |  |  |  |  |  |  |
+| continueMode Defines the behavior of the counter after the disturbances are finished. 0 CorrectCounter The counter will be incremented with counter value + number of disturbances. 1 LastValidCounter The counters next value bases on the last value before the disturbance has started. 2 LastValue The counter increments the last counter value (last disturbance value). | 0 | CorrectCounter | The counter will be incremented with counter value + number of disturbances. | 1 | LastValidCounter | The counters next value bases on the last value before the disturbance has started. | 2 | LastValue | The counter increments the last counter value (last disturbance value). |  |  |  |
+| 0 | CorrectCounter | The counter will be incremented with counter value + number of disturbances. |  |  |  |  |  |  |  |  |  |  |
+| 1 | LastValidCounter | The counters next value bases on the last value before the disturbance has started. |  |  |  |  |  |  |  |  |  |  |
+| 2 | LastValue | The counter increments the last counter value (last disturbance value). |  |  |  |  |  |  |  |  |  |  |
+| Return Values | 0: No error |  |  |  |  |  |  |  |  |  |  |  |
+| -1: General error |  |  |  |  |  |  |  |  |  |  |  |  |
+| Availability | Up to Version | Restricted To | Measurement Setup | Simulation/Test Setup |  |  |  |  |  |  |  |  |
+| 7.6 SP4 - 8.2 SP3 | CAN Test nodes | — | • |  |  |  |  |  |  |  |  |  |
+| Example — |  |  |  |  |  |  |  |  |  |  |  |  |
+
+| Version 15© Vector Informatik GmbH |
+|---|

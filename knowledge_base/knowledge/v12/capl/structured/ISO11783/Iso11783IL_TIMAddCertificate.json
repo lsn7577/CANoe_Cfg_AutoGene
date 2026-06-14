@@ -1,0 +1,63 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_TIMAddCertificate",
+  "category": "ISO11783",
+  "title": "Iso11783IL_TIMAddCertificate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILtimAddCertificate.htm",
+  "syntax": [
+    "long Iso11783IL_TIMAddCertificate(byte certificateType, char certificateFilePath[]); // form 1"
+  ],
+  "description": [
+    "Loads a certificate file which is used for TIM authentication. If there is already a loaded certificate file for a certificate type these file is overwritten."
+  ],
+  "parameters": [
+    {
+      "name": "Value",
+      "type": "",
+      "description": "Description"
+    },
+    {
+      "name": "0",
+      "type": "",
+      "description": "AEF Root certificate"
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "Testlab certificate"
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Manufacturer certificate"
+    },
+    {
+      "name": "3",
+      "type": "",
+      "description": "Manufacturer series certificate"
+    },
+    {
+      "name": "4",
+      "type": "",
+      "description": "Device certificate"
+    },
+    {
+      "name": "5",
+      "type": "",
+      "description": "CRL signing certificate"
+    }
+  ],
+  "return": "0: Property has been set successfully",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

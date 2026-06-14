@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "C2xGetNodeName",
+  "category": "Car2x",
+  "title": "C2xGetNodeName",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Car2x/Functions/CAPLfunctionC2xGetNodeName.htm",
+  "syntax": [
+    "long C2xGetNodeName(long stationHandle, long length, char name[]);"
+  ],
+  "description": [
+    "Get the name of the database node which is assigned to the ITS Station in the StationManager."
+  ],
+  "parameters": [
+    {
+      "name": "stationHandle",
+      "type": "",
+      "description": "Handle of the ITS station."
+    },
+    {
+      "name": "length",
+      "type": "",
+      "description": "Maximum number of bytes to be copied."
+    },
+    {
+      "name": "name",
+      "type": "",
+      "description": "Buffer in which the name is copied. In case no database node is assigned to the ITS station the returned string is empty."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "char   nodeName[1024];\nlong   stationHdl ;\n\nstationHdl = C2xGetStationHandle(packet) ;\nif (C2xGetNodeName(stationHdl, elcount(nodeName), nodeName) == 0)\n{\n  if (nodeName[0] != 0)\n  {\n    write(\"Node: %s\", nodeName) ;\n  }\n  else\n  {\n    write(\"Node: no database node assigned\") ;\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0",
+      "—",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Car2x",
+      "—",
+      "—",
+      "—",
+      "Car2x"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

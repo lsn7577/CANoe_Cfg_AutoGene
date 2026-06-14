@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPChangeLineAttribute",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPChangeLineAttribute",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPChangeLineAttr.htm",
+  "syntax": [
+    "long Iso11783IL_OPChangeLineAttribute( dword objectID, dword color, dword width, dword art ); // form 1"
+  ],
+  "description": [
+    "The function changes the properties of a line attribute object. A Change Line Attribute command is sent to the Virtual Terminal."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "Object ID of a line attribute object"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "Iso11783IL_OPChangeLineAttribute( 1100, 10, 3, 0xaa );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

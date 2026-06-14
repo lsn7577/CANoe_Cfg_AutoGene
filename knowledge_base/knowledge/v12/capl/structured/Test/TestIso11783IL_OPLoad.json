@@ -1,0 +1,38 @@
+{
+  "page_type": "function",
+  "name": "TestIso11783IL_OPLoad",
+  "category": "Test",
+  "title": "TestIso11783IL_OPLoad",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestIso11783ILOPLoad.htm",
+  "syntax": [
+    "long TestIso11783IL_OPLoad( dbNode node, char filename[] );"
+  ],
+  "description": [
+    "The function loads an object pool file (*.iop). All other object pool access functions can only be used, if an object pool is loaded.",
+    "If the activation of the object pool was already done, the object pool is transmitted to the Virtual Terminal immediately. If not, this happens when the activation is done with Iso11873IL_OPActivate.",
+    "Optional a version designator for the object pool can be specified. The node layer tries to load the version with the Load Version command. If this is successful the object pool must not be transmitted to the Virtual Terminal.",
+    "This function is not necessary if a node was configured completely in the database (DBC):ISO11783IOPFilename and ISO11783IOPVersion are defined and VT21 message is assigned to the node.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "testcase StructuredDataSample()\n{\n  long table = 0;\n  TestCaseDescription(\"Shows how to display a user-defined info table.\");\n  TestStepPass(0, \"1\", \"First Step\");\n\n  // begin table\n  table = TestInfoTable(\"User Structured Data\");\n\n  // header\n  TestInfoHeadingBegin(table, 0);\n  TestInfoCell(table, \"Left part\");\n  TestInfoCell(table, \"Operation\");\n  TestInfoCell(table, \"Right part\");\n  TestInfoCell(table, \"Result\");\n  TestInfoHeadingEnd(table);\n\n  // row 1\n  TestInfoRow(table, 0);\n  TestInfoCell(table, \"Frequency\");\n  TestInfoCell(table, \"<\");\n  TestInfoCell(table, \"50\");\n  TestInfoCell(table, \"warning\");\n\n  // row 2\n  TestInfoRow(table, 0);\n  TestInfoCell(table, \"Temperature\");\n  TestInfoCell(table, \"in range\");\n  TestInfoCell(table, \"90-100\");\n  TestInfoCell(table, \"pass\");\n\n  // intermediate header\n  TestInfoHeadingBegin(table, 1);\n  TestInfoCell(table, \"Additional conditions\", 4);\n  TestInfoHeadingEnd(table);\n\n  // row 4\n  TestInfoRow(table, 1);\n  TestInfoCell(table, \"Test Duration\", 2);\n  TestInfoCell(table, \"60s\");\n  TestInfoCell(table, \"fail\");\n\n  // output table\n  TestStepFail(0, \"2\", table);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "mostConfigureBusloadEthPkt",
+  "category": "MOST",
+  "title": "mostConfigureBusloadEthPkt",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTConfigureBusloadEthPkt.htm",
+  "syntax": [
+    "long mostConfigureBusloadEthPkt(long channel, long rate, long countertype, long counterpos, int64 srcadr, int64 destadr, long datalen, BYTE data[])"
+  ],
+  "description": [
+    "The function configures the bus load generator for the Ethernet channel.",
+    "As an option, the packets can be supplied with a sequence counter.",
+    "Load generation can be started with the mostGenerateBusloadEthPkt function.",
+    "Bus load can also be generated without CAPL programming using the MOST Stress Window."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "Channel of the connected interface."
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

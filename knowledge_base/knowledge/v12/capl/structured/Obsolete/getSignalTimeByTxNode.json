@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "getSignalTimeByTxNode",
+  "category": "Obsolete",
+  "title": "getSignalTimeByTxNode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionGetSignalTimeByTxNode.htm",
+  "syntax": [
+    "dword getSignalTimeByTxNode (dbSignal aSignal, dbNode aTxNode);"
+  ],
+  "description": [
+    "Gets the time point relative to the measurement start at which the signal was last sent on the bus."
+  ],
+  "parameters": [
+    {
+      "name": "aSignal",
+      "type": "",
+      "description": "The signal to be polled."
+    }
+  ],
+  "return": "Time point or 0 if the signal was not sent yet.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

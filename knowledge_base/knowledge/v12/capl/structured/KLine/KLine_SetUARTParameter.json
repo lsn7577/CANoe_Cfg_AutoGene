@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "KLine_SetUARTParameter",
+  "category": "KLine",
+  "title": "KLine_SetUARTParameter",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/KLine/Functions/CAPLfunctionKLineSetUARTParameter.htm",
+  "syntax": [
+    "long KLine_SetUARTParameter(dword dataBits, dword parity, dword stopBits);"
+  ],
+  "description": [
+    "Configures the way bytes are sent on K-Line, by setting the parameters the UART (universal asynchronous receiver/transmitter) uses."
+  ],
+  "parameters": [
+    {
+      "name": "dataBits",
+      "type": "",
+      "description": "Number of bits a byte consists of.Possible values: 7, 8, 9.Note: 7 bits in a byte will not allow standard K-Line communication."
+    }
+  ],
+  "return": "On success 0, otherwise error code.",
+  "example": {
+    "description": [],
+    "code": "KLine_CreateECURepresentation( gMsgChannel);\nKLine_SetUARTParameter( 9, 1, 2); // 9 data bytes, odd parity, 2 stop bits => 13 bit/byte (including start bit)"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

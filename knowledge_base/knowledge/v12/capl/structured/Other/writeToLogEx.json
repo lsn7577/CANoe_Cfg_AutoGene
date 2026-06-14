@@ -1,0 +1,94 @@
+{
+  "page_type": "function",
+  "name": "writeToLogEx",
+  "category": "Other",
+  "title": "writeToLogEx",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWriteToLogEx.htm",
+  "syntax": [
+    "void writeToLogEx(char format[], ...);"
+  ],
+  "description": [
+    "Writes an output string to an ASCII logging file. Write is based on the C function printf.",
+    "The compiler cannot check the format string. Illegal format entries will lead to undefined results. Different to the writeToLog function, neither comment characters (\"//\") nor time stamps will be printed at the beginning of a line."
+  ],
+  "parameters": [
+    {
+      "name": "\"%ld\",\"%d\"",
+      "type": "",
+      "description": "decimal display"
+    },
+    {
+      "name": "\"%lx\",\"%x\"",
+      "type": "",
+      "description": "hexadecimal display"
+    },
+    {
+      "name": "\"%lX\",\"%X\"",
+      "type": "",
+      "description": "hexadecimal display (upper case)"
+    },
+    {
+      "name": "\"%lu\",\"%u\"",
+      "type": "",
+      "description": "unsigned display"
+    },
+    {
+      "name": "\"%lo\",\"%o\"",
+      "type": "",
+      "description": "octal display"
+    },
+    {
+      "name": "\"%s\"",
+      "type": "",
+      "description": "display a string"
+    },
+    {
+      "name": "\"%g\",\"%lf\"",
+      "type": "",
+      "description": "floating point display"
+    },
+    {
+      "name": "\"%c\"",
+      "type": "",
+      "description": "display a character"
+    },
+    {
+      "name": "\"%%\"",
+      "type": "",
+      "description": "display %-character"
+    },
+    {
+      "name": "\"%I64d\"",
+      "type": "",
+      "description": "decimal display of a 64 bit value"
+    },
+    {
+      "name": "\"%I64x\"",
+      "type": "",
+      "description": "hexadecimal display of a 64 bit value"
+    },
+    {
+      "name": "\"%I64X\"",
+      "type": "",
+      "description": "hexadecimal display of a 64 bit value (upper case)"
+    },
+    {
+      "name": "\"%I64u\"",
+      "type": "",
+      "description": "unsigned display of a 64 bit value"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "// write marker with current date and time to logging file\nvoid MarkLogFileWithTimeString(void)\n{\nchar timeBuffer[64];\ngetLocalTimeString(timeBuffer);\nwriteToLogEx(\"===> %s\",timeBuffer);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

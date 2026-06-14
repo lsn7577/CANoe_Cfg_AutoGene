@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "ethernetPacket::SetVlanId",
+  "category": "IP",
+  "title": "ethernetPacket::SetVlanId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionSetVlanId.htm",
+  "syntax": [
+    "long ethernetPacket.SetVlanId(word vlanId); // form 1"
+  ],
+  "description": [
+    "Sets the VLAN ID of an Ethernet packet. If the packets does not contain a VLAN tag, a new VLAN tag is added.",
+    "For double-tagged VLAN form 2 can be used."
+  ],
+  "parameters": [
+    {
+      "name": "vlanId",
+      "type": "",
+      "description": "The VLAN ID to set.Range: 0..0FFFh"
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  ethernetPacket pkt;\n\n  pkt.SetVlanId( 10 );\n  pkt.SetVlanPriority( 1 );\n\n  output( pkt );\n}\n\non key '2'\n{\n  ethernetPacket pkt;\n\n  // double tagged VLAN\n  pkt.SetVlanId( 0, 10 );\n  pkt.SetVlanPriority( 0, 1 );\n  pkt.SetVlanId( 1, 20 );\n  pkt.SetVlanPriority( 1, 2 );\n\n  output( pkt );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

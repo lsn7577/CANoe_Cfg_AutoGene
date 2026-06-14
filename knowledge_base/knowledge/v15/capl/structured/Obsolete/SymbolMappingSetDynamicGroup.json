@@ -1,0 +1,65 @@
+{
+  "page_type": "notes",
+  "name": "SymbolMappingSetDynamicGroup",
+  "category": "Obsolete",
+  "title": "SymbolMappingSetDynamicGroup",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Obsolete/Functions/CAPLfunctionSymbolMappingSetDynamicGroup.htm",
+  "syntax": [],
+  "description": [
+    "Name of a dynamic set which shall be activated."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": "",
+  "tables": [
+    [
+      [
+        "Deprecated Function Replaced by SymbolMappingSetDynamicMappingSet."
+      ],
+      [
+        "Function Syntax",
+        "void SymbolMappingSetDynamicGroup(char mappingSetName[]);"
+      ],
+      [
+        "Function",
+        "Changes the dynamic mapping set that will be used for mapping in the CANoe Symbol Mapping dialog. Only the mapping relations contained in the given dynamic mapping set and in the static mapping set are considered."
+      ],
+      [
+        "Parameters",
+        "mappingSetName Name of a dynamic set which shall be activated."
+      ],
+      [
+        "Return Values",
+        "—"
+      ],
+      [
+        "Availability",
+        "Up to Version",
+        "Restricted To",
+        "Measurement Setup",
+        "Simulation/Test Setup"
+      ],
+      [
+        "11.0 - 11.0 SP2",
+        "—",
+        "—",
+        "•"
+      ],
+      [
+        "Example on key '3'{ // Activate RT 3 and map RT 3 SymbolMappingSetDynamicGroup(\"RT 3\");}on key '4'{ // Activate RT 4 and map RT 4 SymbolMappingSetDynamicGroup(\"RT 4\");}"
+      ]
+    ],
+    [
+      [
+        "Version 15© Vector Informatik GmbH"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestChkControl_Stop",
+  "category": "J1939",
+  "title": "J1939TestChkControl_Stop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestChkControlStop.htm",
+  "syntax": [
+    "long J1939TestChkControl_Stop( long checkId );"
+  ],
+  "description": [
+    "Turns off the checking of the event condition."
+  ],
+  "parameters": [
+    {
+      "name": "checkId",
+      "type": "",
+      "description": "identifier of the check to stop"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long cycleCheck;\ncycleCheck = J1939TestChkCreate_AbslCycleTimeViolation( 1, 2, 0xf123, 0.8, 1.2, \"CycleCallback\" );\n\nJ1939TestChkControl_Start( cycleCheck );\n//...\nJ1939TestChkControl_Stop( cycleCheck );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

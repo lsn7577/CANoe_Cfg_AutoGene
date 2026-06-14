@@ -1,0 +1,30 @@
+{
+  "page_type": "function",
+  "name": "C2xGetThisTimeNS",
+  "category": "Car2x",
+  "title": "C2xGetThisTimeNS",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xGetThisTimeNS.htm",
+  "syntax": [
+    "qword C2xGetThisTimeNS( void );"
+  ],
+  "description": [
+    "This function returns the time stamp of an received WLAN packet in nanoseconds."
+  ],
+  "parameters": [],
+  "return": "Time stamp in nanoseconds",
+  "example": {
+    "description": [
+      "Node System - PreStart in CAPL Browser",
+      "Node Callback Function in CAPL Browser"
+    ],
+    "code": "on preStart\n{\n  C2xReceivePacket(\"OnC2xPacket\");\n}\nvoid OnC2xPacket( long channel, long dir, long radioChannel, long signalStrength, long signalQuality, long packet )\n{\n  float t;\n  t = (float)C2xGetThisTimeNS();\n  write(\"Received packet at %f [ns]\", t );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,64 @@
+# AvbSetProperty
+
+> Category: `IP` | Type: `function`
+
+## Syntax
+
+```c
+dword AvbSetProperty(char propertyName[], long value); //form 1
+dword AvbSetProperty(char propertyName[], qword value); // form 2
+dword AvbSetProperty(dword objHandle, char propertyName[], long value); // form 3
+dword AvbSetProperty(dword objHandle, char propertyName[], dword length, byte value[]); // form 4
+dword AvbSetProperty(dword objHandle, char propertyName[], qword value); // form 5
+```
+
+## Description
+
+The behavior of the AVB IL can be configured using properties.
+
+Properties can be set for the current bus context (form 1-2) as well as on an object-specific basis for talkers (form 3-4). The default settings for the properties can be obtained from the table below.
+
+## Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| Name | Default Value | Description |
+| Current bus context |  |  |
+| StreamReservation | 1 | Stream Reservation is not supported. Set this property to 0. |
+| Listener/Talker |  |  |
+| VlanId | 2 | The VLAN ID to be used for sending or receiving AVB packets. |
+| Listener |  |  |
+| RtpPort | 1024 | Local client port used for RTP via UDP. RTP is always used in conjunction with RTCP. The RTCP UDP port number is one higher than the RTP port number. |
+| RtspAddress | Not set/0 | Remote server address used for RT(S)P via TCP. If not set, no connection attempt to an RTSP server is made when AvbListen is called. |
+| Talker |  |  |
+| FramesPerPacket | Deduced from SR class and frame rate (if possible). | Constant number of frames per AVTPDU. |
+| VlanPriority | 2 | The VLAN Priority to be used for sending AVB packets. |
+| PresentationTimeOffset | Deduced from SR class and frame rate (if possible) | Presentation Time Offset in [ns]. The Presentation Time Offset is the time difference between the Presentation Time and the time the sample is handed over to the MAC's egress buffer as part of an AVB packet that is automatically filled with the corresponding Presentation Timestamp. This time must account for the Max Transit Time inherent to the SR class of the network as illustrated in IEEE 1722-2011, Figure 6 - AVTP Timing Reference Planes. |
+| RtpPayloadType | Automatically deduced from Media Type | The RTP Payload Type describes the media encoding of the RTP stream's payload samples. This parameter is automatically set according to the first entry defined in the mapping table in the CANoeOptions dialog for a specific media type. If a distinct type should be used set this property on the talker. |
+| objHandle |  | Handle of a talker or listener. |
+| length |  | Length of the value buffer passed. |
+| value |  | New value of the property. |
+
+## Example
+
+```c
+dword talkerHandle;
+
+talkerHandle = AvbOpenTalker();
+AvbSetProperty(talkerHandle, "FramesPerPacket", 64);
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 8.2 SP2: form 1, 3 10.0: form 2, 4, property VlanId 10.0 SP3: property RtspAddress 12.0 SP4: form 5, property PresentationTimeOffset 14: property RtpPayloadType | — | — | — | 2.0 SP2: form 1, 3 2.2: form 3, 4, property VlanId 2.2 SP3: property RtspAddress 5.0: form 5, property PresentationTimeOffset 5.0 SP3: property RtpPayloadType |
+| Restricted To | — | Ethernet | — | — | — | Ethernet |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | — | — | N/A |

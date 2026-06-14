@@ -1,0 +1,40 @@
+{
+  "page_type": "function",
+  "name": "sysGetVariableFloat",
+  "category": "SystemVariables",
+  "title": "sysGetVariableFloat",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysGetVariableFloat.htm",
+  "syntax": [
+    "double sysGetVariableFloat(char namespace[], char variable[]); // form 1"
+  ],
+  "description": [
+    "Returns the value of a variable of the double type."
+  ],
+  "parameters": [
+    {
+      "name": "namespace",
+      "type": "",
+      "description": "Name of the name space (form 1)."
+    }
+  ],
+  "return": "Value of the variable or 0 in case of error (form 1 and 2)",
+  "example": {
+    "description": [
+      "This example shows the use of system variable types as a return value of functions and as a local variable.",
+      "The user-defined CAPL function getSysVarFloat returns any system variable of type Float. The function is therefore defined with the system variable type sysvarFloat as the return value.",
+      "The system variable sv1 (defined with system variable type Float) represents any system variable depending on the counter of the getSysVarFloat function.",
+      "The value of a system variable is set with the CAPL function sysSetVariableFloat.",
+      "The value of the system variable is get with the CAPL function sysGetVariableFloat and output in the Write Window.",
+      "You must define the system variables FMW1::KeyFloat, DCM::SpeedSignalFloat, and Engine::EngineFloat in the System Variables Configuration dialog first."
+    ],
+    "code": "on key 'c'\n{\n  sysvarFloat * svFloat1;  //defines a local system variable 'sv1Float' with the system variable type 'sysvarFloat'\n  float valueSysVar;\n  svFloat1 = getSysVarFloat(0);\n  //@svFloat1 = 1.5;\n  write(\"Variable is %s, Value is %7.3f\", svFloat1.name, @svFloat1);\n  //@svFloat1 = @svFloat1*2.5;\n  sysSetVariableFloat(svFloat1, @svFloat1*2.5);\n  write(\"Variable is %s, Value is higher: %7.3f\", svFloat1.name, @svFloat1);\n  svFloat1 = getSysVarFloat(1);\n  write(\"Variable is %s, Value is %7.3f\", svFloat1.name, @svFloat1);\n  svFloat1 = getSysVarFloat(2);\n  valueSysVar = sysGetVariableFloat(svFloat1);\n  write(\"Variable is %s, Value is %d\", svFloat1.name, valueSysVar);\n}\n\nsysvarFloat * getSysVarFloat(int cKey)\n{\n  switch (cKey)\n  {\n  case 0:\n    return sysvar::FMW1::KeyFloat;\n  case 1:\n    return sysvar::DCM::SpeedSignalFloat;\n  default:\n    return sysvar::Engine::EngineFloat;\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

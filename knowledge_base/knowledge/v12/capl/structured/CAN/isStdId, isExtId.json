@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "isStdId, isExtId",
+  "category": "CAN",
+  "title": "isStdId, isExtId",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionIsStdLd.htm",
+  "syntax": [
+    "long isStdId(dword id);"
+  ],
+  "description": [
+    "Checks parameter for extended identifier (29 bit) or standard identifier (11 Bit)."
+  ],
+  "parameters": [],
+  "return": "1 if check was successful, else 0",
+  "example": {
+    "description": [],
+    "code": "...\nif(isExtId(this))\nwrite(\"extended identifier\");\nelse\nwrite(\"standard identifier\");\nor\nstd = isStdId(m100.id);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "_DoIP_TCPPreSend",
+  "category": "Diagnostics",
+  "title": "_DoIP_TCPPreSend",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPTCPPreSend.htm",
+  "syntax": [
+    "long _DoIP_TCPPreSend( BYTE DoIPVersion[], WORD payloadType[], DWORD payloadLen[], BYTE payload[]);"
+  ],
+  "description": [
+    "The DoIP implementation is about to send a TCP DoIP PDU with the given content. It is possible to change the values in header and data, to drop the PDU, and to reduce the length of the payload. Only DoIP PDUs with valid layout are sent."
+  ],
+  "parameters": [
+    {
+      "name": "DoIPVersion",
+      "type": "",
+      "description": "Protocol version value to send, defaults to configured value."
+    }
+  ],
+  "return": "-1: Drop this PDU. This might violate the DoIP protocol.",
+  "example": {
+    "description": [],
+    "code": "long _DoIP_TCPPreSend( BYTE DoIPVersion[], WORD payloadType[], DWORD payloadLen[], BYTE payload[])\n{\n  long retVal;\n  write( \"TCPPreSend( version=%02x, payloadtype=%04x, payloadLen=%d, [%d]<%02x ...>)\",\n  , DoIPVersion[0], payloadType[0], payloadLen[0], elcount( payload)\n  , elcount( payload) > 0 ? payload[0] : 0);\n  retVal = 0;\n  switch( sNextTCPFault)\n  {\n    case 1: // Cut off 1 byte of data, if present\n    if( payloadLen[0] > 0)\n    {\n      --payloadLen[0];\n    }\n    break;\n    case 2: // patch payload type and DoIP version\n    DoIPVersion[0] = 0x7;\n    payloadType[0] += 0x100;\n    break;\n    case 3: // drop packet\n    retVal = -1;\n    break;\n    default:\n    return 0;\n  }\n  sNextTCPFault = 0;\n  return retVal;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

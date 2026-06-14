@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coOnEmergency",
+  "category": "Obsolete",
+  "title": "coOnEmergency",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoOnEmergency.htm",
+  "syntax": [
+    "void coOnEmergency( dword nodeId, dword errorCode, dword errorRegister );"
+  ],
+  "description": [
+    "This function is called if an emergency message was received. Data of manufacturer emergency codes can be read with coThisGetData."
+  ],
+  "parameters": [
+    {
+      "name": "nodeId",
+      "type": "",
+      "description": "Node-ID, value range 1..127"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void coOnEmergency( dword nodeId, dword errorCode, dword errorRegister ){\n  write( \"Emergency message from node %d with error code 0x%X received\", nodeId, errorCode );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "coTfsLssFastScanTestSlave",
+  "category": "CANopen",
+  "title": "coTfsLssFastScanTestSlave",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsLssFastScanTestSlave.htm",
+  "syntax": [
+    "long coTfsLssFastScanTestSlave( void );"
+  ],
+  "description": [
+    "This function executes a LSS FastScan test for CANopen® slaves."
+  ],
+  "parameters": [
+    {
+      "name": "maxSlaveToDetect",
+      "type": "",
+      "description": "Number of LSS tests which shall be detected during the FastScan test (does not include devices with fixed node-ID)."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "if (coTfsLssFastScanTestSlave() == 1) {\n  write (\"LSS Fast Scan of slaves successfully executed\");\n}"
+  },
+  "availability": [],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

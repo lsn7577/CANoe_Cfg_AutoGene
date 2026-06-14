@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FRSSetTrigPort",
+  "category": "FRStress",
+  "title": "FRSSetTrigPort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/Functions/CAPLfunctionFRSSetTrigPort.htm",
+  "syntax": [
+    "long FRSSetTrigPort (int triggerCondition, int portMask);"
+  ],
+  "description": [
+    "Adds a bit sequence to the the respective trigger condition as a trigger value. A complex trigger condition can be created through multiple calls."
+  ],
+  "parameters": [
+    {
+      "name": "triggerCondition",
+      "type": "",
+      "description": "Values: 1-4"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

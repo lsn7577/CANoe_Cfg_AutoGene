@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "openFileWrite",
+  "category": "Other",
+  "title": "openFileWrite",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionOpenFileWrite.htm",
+  "syntax": [
+    "dword openFileWrite (char filename[], dword mode); // form 1"
+  ],
+  "description": [
+    "This function opens the file named filename for the write access.",
+    "If mode=0 writing can be executed in text mode; if mode=1 writing can be executed in binary mode. An already existing file will be overwritten.",
+    "mode=2 to append data at the end of the file use for text mode.mode=3 to append data at the end of the file for binary mode."
+  ],
+  "parameters": [
+    {
+      "name": "filename",
+      "type": "",
+      "description": "file name"
+    }
+  ],
+  "return": "The return value is the file handle that must be used for write operations.\nIf an error occurs, the return value is 0.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

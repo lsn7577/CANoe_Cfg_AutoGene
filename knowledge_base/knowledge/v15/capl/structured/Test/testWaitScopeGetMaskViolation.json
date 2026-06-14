@@ -1,0 +1,269 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopeGetMaskViolation",
+  "category": "Test",
+  "title": "testWaitScopeGetMaskViolation",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestWaitScopeGetMaskViolation.htm",
+  "syntax": [
+    "long testWaitScopeGetMaskViolation (ScopeAnalyseHandle handle, long errorIndex, ScopeMaskViolationData maskViolationData); // form 1",
+    "long testWaitScopeGetMaskViolation (ScopeAnalyseHandle handle, long errorIndex, frFrame frame, ScopeMaskViolationData2 maskViolationData); // form 2"
+  ],
+  "description": [
+    "Retrieve the data of the bit mask violations found with testWaitScopeAnalyseSignal."
+  ],
+  "parameters": [
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "handle",
+      "type": "A unique ID",
+      "description": "long"
+    },
+    {
+      "name": "errorIndex",
+      "type": "",
+      "description": "The number of the bit mask error for which the error description shall be returned."
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "bitField",
+      "type": "field type, see ScopeBitAnalyse.cin",
+      "description": "long"
+    },
+    {
+      "name": "bitNo",
+      "type": "bit number within bit field",
+      "description": "dword"
+    },
+    {
+      "name": "errorType",
+      "type": "reserved",
+      "description": "dword"
+    },
+    {
+      "name": "bitStartTime",
+      "type": "bit start in ns",
+      "description": "int64"
+    },
+    {
+      "name": "thresholdTimeOffset",
+      "type": "distance to bit start in ns",
+      "description": "long"
+    },
+    {
+      "name": "disturbanceTimeStart",
+      "type": "distance of disturbance to bit start in ns",
+      "description": "long"
+    },
+    {
+      "name": "disturbanceTimeEnd",
+      "type": "distance of end of disturbance to bit start in ns",
+      "description": "long"
+    },
+    {
+      "name": "samplePointVoltage",
+      "type": "voltage at sampling point in mV",
+      "description": "long"
+    },
+    {
+      "name": "domVoltageCANH",
+      "type": "voltage at sampling point for dominant bit for signal CAN High",
+      "description": "long"
+    },
+    {
+      "name": "recVoltageCANH",
+      "type": "voltage at sampling point for recessive bit for signal CAN High",
+      "description": "long"
+    },
+    {
+      "name": "domVoltageCANL",
+      "type": "voltage at sampling point for dominant bit for signal CAN Low",
+      "description": "long"
+    },
+    {
+      "name": "recVoltageCANL",
+      "type": "voltage at sampling point for recessive bit for signal CAN Low",
+      "description": "long"
+    },
+    {
+      "name": "domVoltageDiff",
+      "type": "voltage at sampling point for dominant bit for signal CAN Diff",
+      "description": "long"
+    },
+    {
+      "name": "recVoltageDiff",
+      "type": "voltage at sampling point for recessive bit for signal CAN Diff",
+      "description": "long"
+    },
+    {
+      "name": "V2_V3",
+      "type": "reserved",
+      "description": "long"
+    },
+    {
+      "name": "thresholdVoltage",
+      "type": "threshold level in mV relative to scope ground",
+      "description": "long"
+    },
+    {
+      "name": "Keyword",
+      "type": "Description",
+      "description": "Type"
+    },
+    {
+      "name": "bitField",
+      "type": "field type, see ScopeBitAnalyse.cin",
+      "description": "long"
+    },
+    {
+      "name": "bitNo",
+      "type": "bit number within bit field",
+      "description": "long"
+    },
+    {
+      "name": "errorType",
+      "type": "reserved",
+      "description": "dword"
+    },
+    {
+      "name": "bitStartTime",
+      "type": "bit start in ns",
+      "description": "dword"
+    },
+    {
+      "name": "disturbanceTimeStart",
+      "type": "distance of disturbance to bit start in ps",
+      "description": "long"
+    },
+    {
+      "name": "disturbanceTimeEnd",
+      "type": "distance of end of disturbance to bit start in ps",
+      "description": "long"
+    },
+    {
+      "name": "Vdist",
+      "type": "measured voltage at the point of the maximum disturbance in mV",
+      "description": "long"
+    },
+    {
+      "name": "Vgiven",
+      "type": "expected voltage at the point of the maximum disturbance in mV",
+      "description": "long"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "1.1 SP2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN FlexRay Scope",
+      "CAN FlexRay Scope",
+      "—",
+      "—",
+      "CAN FlexRay Scope"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

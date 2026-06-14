@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GNSSAddWpRel",
+  "category": "J1939",
+  "title": "GNSSAddWpRel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSaddwprel.htm",
+  "syntax": [
+    "dword GNSSAddWpRel( double latLength, double lonLength, double altLength )"
+  ],
+  "description": [
+    "This function inserts a new waypoint at the end of the waypoint list. The new point is derived by adding the path differences and the last waypoint to be inserted.",
+    "The unit of the parameters depends on the system of measurement units selected with the GNSSSetUnits function."
+  ],
+  "parameters": [
+    {
+      "name": "latLength",
+      "type": "",
+      "description": "difference in length along the latitude in reference to the last waypoint to be inserted (in m or yd)"
+    }
+  ],
+  "return": "error code",
+  "example": {
+    "description": [],
+    "code": "// set a waypoint\nGNSSAddWp( 48.46, 9.11, 255 ) ; \n\n// add a new waypoint 200 yd easterly of \r\n the last waypoint\nGNSSSetUnits( 1 );\nGNSSAddWpRel( 200.0, 0.0, 0.0 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

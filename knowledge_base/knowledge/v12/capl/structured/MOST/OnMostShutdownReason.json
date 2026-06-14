@@ -1,0 +1,43 @@
+{
+  "page_type": "function",
+  "name": "OnMostShutdownReason",
+  "category": "MOST",
+  "title": "OnMostShutdownReason",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMostShutdownReason.htm",
+  "syntax": [
+    "OnMostShutdownReason(long oldReason, long newReason)"
+  ],
+  "description": [
+    "This event procedure is called each time when the shutdown reason changes.",
+    "Within this event procedure the functions mostEventChannel, mostEventTime and mostEventOrigTime can be used to call up supplemental information.",
+    "The following reason values are defined based on the MOST Specification 3.0:",
+    "0",
+    "No result available",
+    "1",
+    "No fault saved",
+    "2",
+    "Failure ‘Sudden Signal Off’",
+    "3",
+    "Failure ‘Critical Unlock’"
+  ],
+  "parameters": [
+    {
+      "name": "oldReason",
+      "type": "",
+      "description": "The reason value for the second last shutdown."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

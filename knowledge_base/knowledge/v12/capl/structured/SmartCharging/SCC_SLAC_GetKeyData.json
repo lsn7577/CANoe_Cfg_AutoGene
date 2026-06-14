@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GetKeyData",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GetKeyData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GetKeyData.htm",
+  "syntax": [
+    "void SCC_SLAC_GetKeyData ( byte NID[],byte NMK[] )"
+  ],
+  "description": [
+    "Gets the currently stored NID and NMK values (when automatic SLAC is used)."
+  ],
+  "parameters": [
+    {
+      "name": "NID",
+      "type": "",
+      "description": "Network ID (7 byte hexadecimal number)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

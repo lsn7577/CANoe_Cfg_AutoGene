@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "C2xSetMapObjectText",
+  "category": "Car2x",
+  "title": "C2xSetMapObjectText",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Car2x/Functions/CAPLfunctionC2xSetMapObjectText.htm",
+  "syntax": [
+    "long C2xSetMapObjectText( long handle, char text[] ); // form 1"
+  ],
+  "description": [
+    "Sets text (form 1) or formatted text (form 2) for a map object of the type text."
+  ],
+  "parameters": [
+    {
+      "name": "handle",
+      "type": "",
+      "description": "Reference of the map object"
+    }
+  ],
+  "return": "0 if success, else the set went wrong",
+  "example": {
+    "description": [],
+    "code": "void DrawTextObject()\n{\n  long handle;\n  float timeRemaining = 5.8;\n\n  handle = C2xCreateMapObject( 8 );\n\n  // set position: Motorstraße/Hemminger Straße, D-70499 Stuttgart\n  C2xSetMapObjectPosition(handle, 48.825230, 9.095580);\n  C2xSetMapObjectText(handle, \"Traffic Light: time remaining %5.1f s\", timeRemaining);\n  C2xSetMapObjectFillColor(handle, makeRGB(0, 0, 0));\n  C2xDrawMapObject(handle);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

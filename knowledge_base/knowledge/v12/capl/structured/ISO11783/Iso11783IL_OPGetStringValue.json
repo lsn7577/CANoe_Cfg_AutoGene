@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_OPGetStringValue",
+  "category": "ISO11783",
+  "title": "Iso11783IL_OPGetStringValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILOPGetStringValue.htm",
+  "syntax": [
+    "long Iso11783IL_OPGetStringValue( dword objectID, dword bufferSize, char buffer[] ); // form 1"
+  ],
+  "description": [
+    "The function copies a string value of an object in the object pool into a buffer. The object must exist in the object pool and support a string value."
+  ],
+  "parameters": [
+    {
+      "name": "objectID",
+      "type": "",
+      "description": "object Identifier of the object"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "char buffer[100];\nIso11783IL_OPGetStringValue( 1000, elCount(buffer), buffer );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

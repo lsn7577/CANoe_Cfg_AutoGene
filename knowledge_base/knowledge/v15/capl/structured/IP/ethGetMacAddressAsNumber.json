@@ -1,0 +1,128 @@
+{
+  "page_type": "function",
+  "name": "ethGetMacAddressAsNumber",
+  "category": "IP",
+  "title": "ethGetMacAddressAsNumber",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Functions/CAPLfunctionEthGetMacAddressAsNumber.htm",
+  "syntax": [
+    "qword ethGetMacAddressAsNumber( char macAddrStr[] );"
+  ],
+  "description": [
+    "Converts a MAC address string, i.e. \"02:00:00:00:00:01\", to a qword-number, which can be used with ethernetPacket.source and ethernetPacket.destination."
+  ],
+  "parameters": [
+    {
+      "name": "macAddrStr",
+      "type": "",
+      "description": "MAC address as string, i.e. \"02:00:00:00:00:01\"."
+    }
+  ],
+  "return": "The MAC address as qword or 0, if failed",
+  "example": {
+    "description": [],
+    "code": "on key '1'\n{\n  ethernetPacket txPacket;\n  txPacket.msgChannel = 1;\n  txPacket.source      = ethGetMacAddressAsNumber( \"20:00:00:00:00:01\" );\n  txPacket.destination = ethGetMacAddressAsNumber( \"FF:FF:FF:FF:FF:FF\" );\n  txPacket.Length      = 100;\n  txPacket.type        = 0xF123;\n  output( txPacket );\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5",
+      "8.5",
+      "13.0",
+      "13.0",
+      "—",
+      "2.0 SP2"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

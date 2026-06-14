@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "FSIL_ControlStop",
+  "category": "ISO11783",
+  "title": "FSIL_ControlStop",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerFS/Functions/CAPLfunctionIso11783FSILControlStop.htm",
+  "syntax": [
+    "long FSIL_ControlStop(); // form 1"
+  ],
+  "description": [
+    "Deactivates the File Server and stops sending cyclic messages.",
+    "A Cannot Claim Address message is sent, if the NMT is activated and the message is not suppressed with the parameter option set to 1.",
+    "Removes all device descriptor object pools (DDOPs) too."
+  ],
+  "parameters": [
+    {
+      "name": "fs",
+      "type": "",
+      "description": "FS simulation node to apply the function"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "void SetDataMaskSize(dword newSize)\n{\n  // data mask size can only be changed if FS is stopped\n  FSIL_ControlStop(FS, 1);\n  // wait until Working Sets have detected that FS is offline\n  TestWaitForTimeout(3500);\n  // change size and restart FS\n  FSIL_SetNodeProperty(FS,\"dataMaskSize\", newSize);\n  FSIL_ControlStart(FS);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_OnError",
+  "category": "J1939",
+  "title": "GBT27930IL_OnError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILOnError.htm",
+  "syntax": [
+    "void GBT27930IL_OnError( long errorCode, long param )"
+  ],
+  "description": [
+    "This callback function is called from the GBT27930 IL if an error occurred."
+  ],
+  "parameters": [
+    {
+      "name": "errorCode",
+      "type": "",
+      "description": "error code"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void GBT27930IL_OnError( LONG errorCode, LONG param )\n{\n  write( \"Error %d, parameter %d\", errorCode, param );\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

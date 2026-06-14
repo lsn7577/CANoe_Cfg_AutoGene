@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SerialSetOnReceiveHandler",
+  "category": "VTSystem",
+  "title": "SerialSetOnReceiveHandler",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/VTSystem/Functions/CAPLfunctionVTSSerialSetOnReceiveHandler.htm",
+  "syntax": [
+    "long SysVarNamespace.SerialSetOnReceiveHandler( char onReceiveCallback[]);"
+  ],
+  "description": [
+    "Sets the callback that notifies when data has been received on the serial port of the specified channel.",
+    "The set callback has to have following signature: void <OnSerialReceive>( byte bffer[], dword number)"
+  ],
+  "parameters": [
+    {
+      "name": "onReceiveCallback",
+      "type": "",
+      "description": "CAPL callback function name."
+    }
+  ],
+  "return": "0: Successful call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

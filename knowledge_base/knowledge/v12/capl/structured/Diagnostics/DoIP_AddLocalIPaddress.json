@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "DoIP_AddLocalIPaddress",
+  "category": "Diagnostics",
+  "title": "DoIP_AddLocalIPaddress",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPAddLocalIPaddress.htm",
+  "syntax": [
+    "long DoIP_AddLocalIPaddress(char ipAddress[])"
+  ],
+  "description": [
+    "Adds another IP address this vehicle simulation can be reached under."
+  ],
+  "parameters": [
+    {
+      "name": "ipAddress",
+      "type": "",
+      "description": "Textual representation of the numeric IP address, e.g. 192.168.123.45 for an IPv4 address, or 2001::7654 for an IPv6 address."
+    }
+  ],
+  "return": "0: OK< 0: ErrorOthers: reserved",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

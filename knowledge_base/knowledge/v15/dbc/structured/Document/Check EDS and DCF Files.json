@@ -1,0 +1,57 @@
+{
+  "page_type": "concept",
+  "name": "Check EDS and DCF Files",
+  "category": "DBC",
+  "subcategory": "Document",
+  "title": "Check EDS and DCF Files",
+  "source": "chm_extract_v15/CANeds/Topics/Document/HID_DOC_CHECK.htm",
+  "intro": [
+    "The application allows to check EDS and DCF file in different ways."
+  ],
+  "intro_tables": [],
+  "intro_code_blocks": [],
+  "sections": [
+    {
+      "heading": "Check while file is read",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "When a file is read after a file open command few simple test are done to inform the user if faulty values can not be read."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Compare objects with database objects",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "Single objects can be compared with the database. If a value differs the object is marked with the icon .",
+          "An object is compared with its database by selecting it in the EDS Window and start command Compare Database. An object is also compared after a value in the attribute window has changed and another object is selected.",
+          "All objects are compared with the selected database after a file is read."
+        ],
+        "tables": [],
+        "code_blocks": []
+      }
+    },
+    {
+      "heading": "Check a file with CANchkEDS",
+      "level": 2,
+      "content": {
+        "paragraphs": [
+          "The command Check EDS starts the big EDS check. All objects are checked according to the Electronic Data Sheet Specification for CANopen (CiA306) and test description for CANopen Devices (Appendix to CiA301 V4.0).",
+          "If the check detect an error the corresponding object is marked with the icon ."
+        ],
+        "tables": [
+          [
+            [
+              "Version 15© Vector Informatik GmbH"
+            ]
+          ]
+        ],
+        "code_blocks": []
+      }
+    }
+  ]
+}

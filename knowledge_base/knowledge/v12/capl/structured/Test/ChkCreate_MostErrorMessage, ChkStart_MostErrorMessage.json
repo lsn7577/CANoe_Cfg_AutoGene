@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_MostErrorMessage, ChkStart_MostErrorMessage",
+  "category": "Test",
+  "title": "ChkCreate_MostErrorMessage, ChkStart_MostErrorMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateMostErrorMessage.htm",
+  "syntax": [
+    "dword ChkCreate_MostErrorMessage(dword aSourceDeviceAddress, char[] aName, dword aInstanceId, dword aErrorCode, Callback aCallback);"
+  ],
+  "description": [
+    "This check can be used to monitor the occurrence of MOST error messages (OpType 0xF or 0x9).",
+    "The check can be implemented for a MOST device address, function block or function. In addition, monitoring can be limited to error messages with a specific error code.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aSourceDeviceAddress",
+      "type": "",
+      "description": "Device node address for which the occurrence of error messages is to be monitored, i.e., only those error messages with a source address equal to the value specified here are taken into consideration."
+    }
+  ],
+  "return": "0: Check was not created and may not be referenced.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,138 @@
+{
+  "page_type": "function",
+  "name": "output (CAN)",
+  "category": "CAN",
+  "title": "output (CAN)",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CAN/Functions/CAPLfunctionOutput.htm",
+  "syntax": [
+    "void output(message msg); // form 1",
+    "void output(errorFrame); // form 2"
+  ],
+  "description": [
+    "Outputs a message (form 1) or an Error Frame (form 2) from the program block."
+  ],
+  "parameters": [
+    {
+      "name": "msg",
+      "type": "",
+      "description": "Variable of type message."
+    },
+    {
+      "name": "errorFrame",
+      "type": "",
+      "description": "Variable of type errorFrame."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [
+      "output(msg) Example",
+      "output(errorFrame) Example",
+      "Except for the first channel for all other channels the key word errorFrame has to be qualified with the number of the CAN channel."
+    ],
+    "code": "variables {\nmessage can2.125 msg = { // define CAN message \ndlc = 1,\nbyte(0) = 1\n};\n}\non key F1 {\noutput (msg); // output Message\n}\non key F10 {\noutput(errorFrame); // output Error Frame on CAN channel 1\n}\non CAN2.errorFrame {\noutput (CAN3.errorFrame); // output Error Frame on CAN channel 3\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "All",
+      "All",
+      "13.0",
+      "13.0",
+      "—",
+      "1.0"
+    ],
+    [
+      "Restricted To",
+      "CAN",
+      "CAN",
+      "CAN",
+      "CAN",
+      "—",
+      "CAN"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

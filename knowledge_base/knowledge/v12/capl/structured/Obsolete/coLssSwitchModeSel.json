@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coLssSwitchModeSel",
+  "category": "Obsolete",
+  "title": "coLssSwitchModeSel",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssSwitchModeSel.htm",
+  "syntax": [
+    "void coLssSwitchModeSel( dword vendorId, dword productCode, dword revisionNo, dword serialNo, dword errCode[] );"
+  ],
+  "description": [
+    "This service puts the LSS slave whose LSS address matches the transmitted parameters into the configuration mode."
+  ],
+  "parameters": [
+    {
+      "name": "vendorId",
+      "type": "",
+      "description": "Vendor-ID of the slave"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoLssSwitchModeSel( 0x1020304, 0x5060708, 0x90a0b0c, 0xd0e0f10, errCode );\nif (errCode[0] == 0) {\n  write( \"Switch to configuration mode for one slave commanded\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

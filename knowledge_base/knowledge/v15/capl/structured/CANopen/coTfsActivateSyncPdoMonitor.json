@@ -1,0 +1,140 @@
+{
+  "page_type": "function",
+  "name": "coTfsActivateSyncPdoMonitor",
+  "category": "CANopen",
+  "title": "coTfsActivateSyncPdoMonitor",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsActivateSyncPdoMonitor.htm",
+  "syntax": [
+    "long coTfsActivateSyncPdoMonitor( dword syncCanId, dword pdoCanId, dword transmissionType );"
+  ],
+  "description": [
+    "This function checks if the DUT Device Under Test sends a synchronous PDO with the given CAN-ID. The check is only available if the sync check was activated with coTfsActivateSyncMonitor.",
+    "For each correct occurrence, the callback void coTfsOnSyncPdoMsg(dword canId) is called. The synchronous PDO must occur in the defined time slot. If the time is not adhered to, then the callback void coTfsOnSyncPdoFail(dword canId) is called once. After an error has occurred, the callback system is automatically disabled.",
+    "This check can be switched off again with coTfsDeactivateSyncPdoMonitor."
+  ],
+  "parameters": [
+    {
+      "name": "syncCanId",
+      "type": "",
+      "description": "Sync CAN-ID to be used."
+    },
+    {
+      "name": "pdoCanId",
+      "type": "",
+      "description": "CAN-ID of the PDO to be monitored."
+    },
+    {
+      "name": "transmissionType",
+      "type": "",
+      "description": "PDO transmission type, range 1..240."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "coTfsActivateSyncMonitor(0x80, 1000000, 500000, 50000); // 1s, 500 ms, 50 ms\ncoTfsActivateSyncPdoMonitor(0x181);\ncoTfsActivateSyncPdoMonitor(0x182);\ncoTfsActivateSyncPdoMonitor(0x183);\n\n// ... callbacks are active ...\ncoTfsDeactivateSyncPDOMonitor(0x181); // disables one sync pdo callback\n\n// ... others are still active ...\ncoTfsDeactivateSyncPDOMonitor(); // remove all checks\ncoTfsDeactivateSyncMonitor(); // disable sync check"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

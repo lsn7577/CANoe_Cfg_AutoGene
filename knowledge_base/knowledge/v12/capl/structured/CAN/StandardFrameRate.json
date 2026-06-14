@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "StandardFrameRate",
+  "category": "CAN",
+  "title": "StandardFrameRate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionStandardFrameRate.htm",
+  "syntax": [
+    "long StandardFrameRate ()",
+    "CANx.StandardFrameRate"
+  ],
+  "description": [
+    "Returns the current rate of standard CAN messages on channel x.",
+    "Valid x values: 1…32"
+  ],
+  "parameters": [],
+  "return": "Current rate of standard CAN frames on channel x in messages per second.",
+  "example": {
+    "description": [],
+    "code": "write (\"Rate of standard frames on CAN1 = %d\", CAN1.StandardFrameRate);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "Iso11783IL_FSWriteFile",
+  "category": "ISO11783",
+  "title": "Iso11783IL_FSWriteFile",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayer/Functions/CAPLfunctionIso11783ILfswritefile.htm",
+  "syntax": [
+    "long Iso11783IL_FSWriteFile( dword fileHandle, dword bufferSize, char buffer[] );"
+  ],
+  "description": [
+    "This function writes data to an open file.",
+    "Contrary to the other file operations, this function does not provide any functionality for a passed directory handle."
+  ],
+  "parameters": [
+    {
+      "name": "fileHandle",
+      "type": "",
+      "description": "File handle, see also Iso11783IL_FSOpenFile"
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "LONG handle;\nchar data[200];\n\nhandle = Iso11783IL_FSOpenFile( \"\\test.TXT\", 0x02 );\nif (handle > 0) {\n  Iso11783IL_FSWriteFile( handle, 12, \"Hello World!\" );\n  Iso11783IL_FSCloseFile( handle );\n} "
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

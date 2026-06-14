@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1.0",
+  "id": "package_project",
+  "phase": "delivery",
+  "description": "Package validated CANoe project artifacts and write final trace metadata.",
+  "reads": [
+    "project_spec",
+    "generated_artifacts",
+    "validation_report",
+    "evidence_bundle"
+  ],
+  "writes": [
+    "final_package"
+  ],
+  "knowledge_inputs": [],
+  "pack_inputs": [
+    "generation_patterns/canoe_project_layout/pattern.json"
+  ],
+  "gates": [
+    "validation_report_status_pass",
+    "final_package_has_manifest",
+    "final_package_has_evidence_trace"
+  ],
+  "transitions": [],
+  "extension_notes": [
+    "The package manifest should include workflow manifest version, pack versions, and knowledge snapshot id.",
+    "Do not claim CANoe compilation success unless actual compilation was performed."
+  ]
+}
+

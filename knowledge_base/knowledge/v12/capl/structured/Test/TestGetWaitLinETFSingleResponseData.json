@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "TestGetWaitLinETFSingleResponseData",
+  "category": "Test",
+  "title": "TestGetWaitLinETFSingleResponseData",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestGetWaitLinEtfSingleResponseData.htm",
+  "syntax": [
+    "long TestGetWaitLinETFSingleResponseData (linFrame apEvent);"
+  ],
+  "description": [
+    "If LIN Event-triggered frame with a single response for the specified associated frame is the last event that triggers a wait instruction, the event content can be called up with this function.",
+    "When the triggering event is a part of a wait instruction for joined events, the index parameter has to correspond to the return value of \"testJoin...\" function."
+  ],
+  "parameters": [
+    {
+      "name": "apEvent",
+      "type": "",
+      "description": "Event variable that is filled with current data from the bus."
+    }
+  ],
+  "return": "0: Data access successful",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linETFSingleResponse ()\n{\n   linFrame 0 linETFSingleResponseData;\n   if (testWaitForLinETFSingleResponse(0x3A, 0x36, 5000) == 1)\n   {\n      if (testGetWaitLinETFSingleResponseData(linETFSingleResponseData) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN Event-triggered frame with a single response occurred for FrameId=0x%X\", linETFSingleResponseData.ID);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "GNSSAppErrorIndication",
+  "category": "J1939",
+  "title": "GNSSAppErrorIndication",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GNSSNodeLayer/Functions/CAPLfunctionGNSSapperrorindication.htm",
+  "syntax": [
+    "void GNSSAppErrorIndication( long errNum, long errClass, long addInfo )"
+  ],
+  "description": [
+    "This function identifies errors that occurred during a transfer or else during the initialization of the node (for example timeout during the transport protocol). If an Address Claiming procedure has failed, that will also be reported by means of this function.",
+    "The error classes and error codes are described here."
+  ],
+  "parameters": [
+    {
+      "name": "errNum",
+      "type": "",
+      "description": "Error number"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "void GNSSAppErrorIndication( LONG errorClass, LONG errorCode, LONG addInfo )\n{\n  write( „Error code = %d“,errCode);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

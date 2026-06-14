@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_MeteringReceiptReq",
+  "category": "SmartCharging",
+  "title": "SCC_MeteringReceiptReq",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_MeteringReceiptReq.htm",
+  "syntax": [
+    "void SCC_MeteringReceiptReq ( byte SessionID[], byte MessageSessionID[], long ScheduleTableEntryID )"
+  ],
+  "description": [
+    "The callback is called as soon as a Metering Receipt Request is received. With this request, the vehicle confirms receipt of the metering information sent by the charge point. Further details that are transmitted in this request can be queried with the helper function SCC_GetMeterInfoData"
+  ],
+  "parameters": [
+    {
+      "name": "SessionID",
+      "type": "",
+      "description": "8-byte long SessionID of SCC connection, range: 0 – 0xFF FF FF FF FF FF FF FF."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

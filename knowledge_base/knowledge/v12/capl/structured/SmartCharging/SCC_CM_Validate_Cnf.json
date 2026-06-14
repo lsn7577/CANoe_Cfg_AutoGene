@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_CM_Validate_Cnf",
+  "category": "SmartCharging",
+  "title": "SCC_CM_Validate_Cnf",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Callbacks/CAPLfunctionSCC_CM_Validate_Cnf.htm",
+  "syntax": [
+    "void SCC_CM_Validate_Cnf ( byte RunId[], byte SourceMacAddress[], dword Result, dword ToggleNum )"
+  ],
+  "description": [
+    "The callback is called as soon as a CM_Validate.Cnf message is received. Further details (signal type) that are transmitted in this request can be queried with SCC_SLAC_GetSignalType."
+  ],
+  "parameters": [
+    {
+      "name": "RunId",
+      "type": "",
+      "description": "Random Run Identifier of sender (8 byte)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,133 @@
+{
+  "page_type": "method",
+  "name": "QueueMisoData",
+  "category": "Sensor",
+  "title": "QueueMisoData",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionQueueMisoData.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.QueueMisoData(byte buffer[], dword bitCount);"
+  ],
+  "description": [
+    "This method is intended to be used for SPI slave simulation in basic mode. It inserts the given MISO data into the response queue of the given slave."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "The array of bytes that shall be put into the slave’s response queue. The bytes of the array will be output in the order they are specified. The bits of the bytes will be output MSB first. Example: The byte array { 0xD1, 0x3B } will be output as 11010001 00111011."
+    },
+    {
+      "name": "bitCount",
+      "type": "",
+      "description": "The length of the data in bits. Must be at least 2."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "  // Some example values\n  dword value1 = 7;\n  dword value2 = 13;\n\n  // Byte array used to prepare the slave's 12 bit response\n  byte responseData[2] = {0x00, 0x00};\n\n  // Insert two 6 bit values\n  SensorInsertInteger(responseData, 2, value1, 0, 6, 1);\n  SensorInsertInteger(responseData, 2, value2, 6, 6, 1);\n\n  // Queue the resonse in the slave\n\nsysvar::SENSOR::SPI::ExampleChannel::ExampleSlave.QueueMisoData(responseData, 12);"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "10.0",
+      "—",
+      "—",
+      "—",
+      "2.2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

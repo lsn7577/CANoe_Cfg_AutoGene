@@ -1,0 +1,146 @@
+{
+  "page_type": "function",
+  "name": "MakeARGB",
+  "category": "Other",
+  "title": "MakeARGB",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Other/Functions/CAPLfunctionMakeARGB.htm",
+  "syntax": [
+    "long MakeARGB(long Alpha, long Red, long Green, long Blue);"
+  ],
+  "description": [
+    "Calculates the color value from the alpha value and the three primary color components.",
+    "The value is interpreted as 4 bytes and the color results from which value is contained in which byte:",
+    "[0] = Alpha (transparency), [1] = Red, [2] = Green, [3] = Blue",
+    "See also availability for panel controls"
+  ],
+  "parameters": [
+    {
+      "name": "Alpha",
+      "type": "",
+      "description": "The transparency of the color (0 - 255) 0: 0% opacity of the color, totally transparent 255: 100% opacity of the color"
+    },
+    {
+      "name": "Red",
+      "type": "",
+      "description": "Red color component (0 - 255)"
+    },
+    {
+      "name": "Green",
+      "type": "",
+      "description": "Green color component (0 - 255)"
+    },
+    {
+      "name": "Blue",
+      "type": "",
+      "description": "Blue color component (0 - 255)"
+    }
+  ],
+  "return": "The transparency of the",
+  "example": {
+    "description": [],
+    "code": "MakeARGB(64, 255, 128, 0); // 25% opacity of orange color"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "8.5 SP4",
+      "8.5 SP4",
+      "13.0",
+      "—",
+      "—",
+      "2.0 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

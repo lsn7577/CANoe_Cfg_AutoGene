@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "getCardType",
+  "category": "Obsolete",
+  "title": "getCardType",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionGetCardType.htm",
+  "syntax": [
+    "long getCardType();"
+  ],
+  "description": [
+    "Determines the type of CAN platform being used. Is needed e.g. to program the BTR / OCR values."
+  ],
+  "parameters": [],
+  "return": "17: for Vector drivers",
+  "example": {
+    "description": [],
+    "code": "...\nswitch(getCardType()) {\ncase 6: setOcr(0,0x02);\n   break;\ncase ...\ndefault:\n   write(\"Unknown driver %d\", getCardType());\n   break;\n}\n..."
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

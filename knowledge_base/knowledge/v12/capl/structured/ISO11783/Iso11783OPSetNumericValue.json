@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783OPSetNumericValue",
+  "category": "ISO11783",
+  "title": "Iso11783OPSetNumericValue",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783OPSetNumericValue.htm",
+  "syntax": [
+    "long Iso11783OPSetNumericValue( dword ecuHandle, dword objectID, long numericValue );"
+  ],
+  "description": [
+    "The function sets the numerical value of an object. The object must exist in the object pool and must support a numerical value. If the Object Pool API is active, a Change Numeric Value command is sent to the Virtual Terminal. This can be suppress with Bit 0 in options."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "Handle of the ECU (must be created with Iso11783CreateECU)"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "Iso11783OPSetNumericValue( handle, 1000, 100 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

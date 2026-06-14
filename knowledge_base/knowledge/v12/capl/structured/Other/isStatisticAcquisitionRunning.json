@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "isStatisticAcquisitionRunning",
+  "category": "Other",
+  "title": "isStatisticAcquisitionRunning",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionIsAcqui.htm",
+  "syntax": [
+    "int isStatisticAcquisitionRunning()"
+  ],
+  "description": [
+    "This function is used to test whether an acquisition range has already been started."
+  ],
+  "parameters": [],
+  "return": "The function returns 1 if an evaluation is already running. Otherwise it returns 0.",
+  "example": {
+    "description": [
+      "Statistical Evaluation (StatisticAcquisition)"
+    ],
+    "code": "...\n// Tests for running acquisition range and stops it.\n// If no statistical data acquisition is active a new one is started.\nif(isStatisticAcquisitionRunning())\n{\n// Stops the running acquisition range\nstopStatisticAcquisition();\n}\nelse\n{\n// Starts a new acquisition range\nstartStatisticAcquisition();\n}..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

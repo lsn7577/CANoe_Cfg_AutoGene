@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "coLssInqSerialNo",
+  "category": "Obsolete",
+  "title": "coLssInqSerialNo",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/CANopenNodeLayer/Functions/CAPLfunctionCoLssInqSerialNo.htm",
+  "syntax": [
+    "void coLssInqSerialNo( dword errCode[] );"
+  ],
+  "description": [
+    "This service causes the determination of the serial number of a LSS slave. It is available in configuration mode only and there may only be one LSS slave in this mode."
+  ],
+  "parameters": [
+    {
+      "name": "errCode",
+      "type": "",
+      "description": "Error code buffer (is entered in index 0 of the field)"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword errCode[1];\n\ncoLssInqSerialNo( errCode );\nif (errCode[0] == 0) {\n  write( \"LSS inquire Serial-Number commanded\" );\n}"
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

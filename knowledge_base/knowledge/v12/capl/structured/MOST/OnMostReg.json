@@ -1,0 +1,29 @@
+{
+  "page_type": "function",
+  "name": "OnMostReg",
+  "category": "MOST",
+  "title": "OnMostReg",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTReg.htm",
+  "syntax": [
+    "OnMostReg()"
+  ],
+  "description": [
+    "OnMostReg() is called in response to read or write requests to registers of a MOST hardware interface chip.",
+    "The following functions are available for evaluating the event:",
+    "For further information on this event see Supplemental Information on Event Procedures for MOST Controller Events."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "OnMostReg()\n{\n  byte regData[16];\n  long i, offset;\n  // get register contents\n  mostRegGetData(regData, 16);\n  // get offset\n  offset = mostRegOffset();\n  // output register contents to Write Window\n  write(\"OnMostReg() called for chip %d on channel %d\", mostRegChip(), mostEventChannel());\n  write(\"Map   Value\");\n  for(i = 0; i < mostRegDataLen(); i++)\n  {\n    write(\"%04X  %02X\", offset + i, regData[i]);\n  }\n}\n\nOnMostReg() called for chip 1 on channel 1\nMap   Value\n0080  E2\n0081  42\n0082  16\n..."
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "linSlFSMSetStMFUp",
+  "category": "Obsolete",
+  "title": "linSlFSMSetStMFUp",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Obsolete/Functions/CAPLfunctionLINSlFSMSetStMFUp.htm",
+  "syntax": [
+    "unsigned long linSlFSMSetStMFUp (unsigned int slaveId, unsigned int stateId, unsigned int uniqueKey, unsigned int patternRequestId, unsigned long dlc, unsigned char maskBytes[], unsigned char patternBytes[], unsigned int followUpState);"
+  ],
+  "description": [
+    "Sets up a comparison operation for the state stateId of the Slave slaveId.",
+    "DLC value range: 0 ... 8 (bytes)",
+    "The functionality to set the DLC is only available with LIN specification 1.2 (or above)!",
+    "LIN specification 1.1 presets the DLC of an identifier."
+  ],
+  "parameters": [
+    {
+      "name": "slaveId",
+      "type": "",
+      "description": "Identifier of the relevant Slave. Corresponds to the slaveId, that was defined with linSlSimulate."
+    }
+  ],
+  "return": "Nonzero if the comparison operator was configured; else 0.\nThe contents of messages with the identifier pattern RequestId that are sent on the LIN bus are linked bitwise with maskBytes by an AND operation. If the result of this comparison is identical to patternBytes, the Slave transitions to the state followUpState.\nSince multiple comparisons may be configured for the same message identifier for a given Slave state, a code uniqueKey is also necessary to permit identification of the various comparison operations.\nThis code must be unique within the Slave state. If there are multiple comparison operations for a message identifier within a state of a Slave, they are processed in the order of their specification until all comparisons have been performed or a comparison was successful.\nDuring a measurement this function can be used to change the following data of a comparison operation already configured in the on preStart event procedure:",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Up to Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,134 @@
+{
+  "page_type": "function",
+  "name": "AREthGetDestinationAddress",
+  "category": "IP",
+  "title": "AREthGetDestinationAddress",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthGetDestinationAddress.htm",
+  "syntax": [
+    "dword AREthGetDestinationAddress ( dword messageHandle ); // form 1",
+    "long AREthGetDestinationAddress ( dword messageHandle, byte ipv6Address[] ); // form 2"
+  ],
+  "description": [
+    "This function returns the IPv4 destination address."
+  ],
+  "parameters": [
+    {
+      "name": "Note This function can only be called within the OnAREthMessage callback function.",
+      "type": "",
+      "description": ""
+    },
+    {
+      "name": "ipv6Address",
+      "type": "",
+      "description": "The parameter to which the IPv6 address will be written to."
+    }
+  ],
+  "return": "IPv4 destination address (Network Byte Order)\nIn the Event of an error, the function returns the value 0. The AREthGetLastError function can then be used to check whether the value is valid or an error has occurred.",
+  "example": {
+    "description": [],
+    "code": "void OnAREthMessage( dword messageHandle )\n{\n  dword dstAddress    = 0;\n  LONG  errorCode     = 0;\n  LONG  errorOccured  = 0;\n  char  buffer[100];\n\n  // get data from SOME/IP message\n  if((dstAddress = AREthGetDestinationAddress(messageHandle)) == 0)\n  {\n    // check if last function was executed correct\n    if((errorCode = AREthGetLastError()) != 0)\n    {\n       write(\"AUTOSAR Eth IL error occured: Error code: %d\", errorCode);\n       errorOccured = 1;\n    } // if\n  } // if\n\n  if(errorOccured == 0)\n  {\n    IpGetAddressAsString(dstAddress, buffer, elcount(buffer));\n    write(\"SOME/IP message received. Destination address: %s\",buffer);\n  } // if\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP2: form 1 10.0 SP4: form 2",
+      "—",
+      "—",
+      "—",
+      "2.1 SP3: form 1 2.2 SP4: form 2"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Ethernet",
+      "—",
+      "—",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

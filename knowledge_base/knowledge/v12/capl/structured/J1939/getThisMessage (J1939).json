@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "getThisMessage (J1939)",
+  "category": "J1939",
+  "title": "getThisMessage (J1939)",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/Functions/CAPLfunctionJ1939GetThisMessage.htm",
+  "syntax": [
+    "getThisMessage(pg pg_variable, int length);"
+  ],
+  "description": [
+    "Transfers the parameter group to the indicated parameter group pg. The number of bytes of the transmitted parameter group data is given by length.",
+    "This function must be used exclusively within the program block."
+  ],
+  "parameters": [
+    {
+      "name": "pg_variable",
+      "type": "",
+      "description": "Variable of the type \"pg\""
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "pg TC1 pg_tc1; // Definition of a parameter group\n\non pg * { // Event procedure for all parameter groups\nif (pg.pgn == TC1) { // If the received parameter group is TC1\n// Transfer the received parameter group to the variable\nGetThisMessage(pg_tc1, pg_tc1.dlc);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

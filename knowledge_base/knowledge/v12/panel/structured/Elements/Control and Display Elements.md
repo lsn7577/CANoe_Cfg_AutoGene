@@ -1,0 +1,54 @@
+# Control and Display Elements
+
+> Category: `Panel` | Subcategory: `Elements` | Type: `concept`
+
+The following control types are differentiated:
+
+Display Element
+
+With display elements value changes of assigned symbols can be displayed.
+
+CANoe pex/pro
+
+CANoe run
+
+CANalyzer pro/exp
+
+CANalyzer fun
+
+Control Element
+
+With control elements values of assigned symbols can be changed.
+
+Static Element
+
+Static elements are used for graphic representation or explanatory purposes.No symbols can be assigned to them:
+
+—
+
+Special Element
+
+With special elements predefined actions can be performed. No symbols are assigned to them:
+
+CANoe pro
+
+Note
+
+Many controls can be utilized as both control and display elements.
+
+In CANoe run and CANalyzer fun only display elements can be created and configured. Combined control and display elements can only be used as display element.
+
+Restricted Mode
+
+| Control Type | Supported Symbols | Program Variants |
+|---|---|---|
+| Display Element With display elements value changes of assigned symbols can be displayed. | Signals Diagnostics parameters Diagnostic DTC parameters System variables Environment variables | CANoe pex/pro CANoe run |
+| Signals Diagnostics parameters Diagnostic DTC parameters System variables | CANalyzer pro/exp |  |
+| Signals | CANalyzer fun |  |
+| Control Element With control elements values of assigned symbols can be changed. | Signals System variables Environment variables | CANoe pex/pro |
+| System variables | CANalyzer pro/exp |  |
+| Static Element Static elements are used for graphic representation or explanatory purposes.No symbols can be assigned to them: | — | CANoe pex/pro CANoe run CANalyzer pro/exp CANalyzer fun |
+| Special Element With special elements predefined actions can be performed. No symbols are assigned to them: File Button MOST Send Button Panel Control Button Start Stop Control | — | CANoe pro CANalyzer pro/exp |
+
+| Note Many controls can be utilized as both control and display elements. In CANoe run and CANalyzer fun only display elements can be created and configured. Combined control and display elements can only be used as display element. |
+|---|

@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "AfdxSetVerbosity",
+  "category": "ADFX",
+  "title": "AfdxSetVerbosity",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxSetVerbosity.htm",
+  "syntax": [
+    "long AfdxSetVerbosity( long verbosity );"
+  ],
+  "description": [
+    "This function sets the verbosity level of the AFDX IL.",
+    "The default setting is that only error messages are written to the Write Window of CANoe."
+  ],
+  "parameters": [
+    {
+      "name": "verbosity",
+      "type": "",
+      "description": "verbosity level"
+    }
+  ],
+  "return": "0 or error code",
+  "example": {
+    "description": [],
+    "code": "// do not print AFDX IL messages to Write Window\nAfdxSetVerbosity( 0 );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

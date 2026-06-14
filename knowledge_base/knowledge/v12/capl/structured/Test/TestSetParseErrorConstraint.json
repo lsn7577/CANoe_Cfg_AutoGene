@@ -1,0 +1,44 @@
+{
+  "page_type": "function",
+  "name": "TestSetParseErrorConstraint",
+  "category": "Test",
+  "title": "TestSetParseErrorConstraint",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestSetParseErrorConstraint.htm",
+  "syntax": [
+    "void TestSetParseErrorConstraint (long mode);"
+  ],
+  "description": [
+    "The function sets the behavior of the symbolic variants of TestWaitForMost... and TestJoinMost... functions on the occurrence of errors during the parsing of the message definitions.",
+    "Depending on whether the function is called within or outside of a test case, the setting either has an effect on only all subsequent TestWaitForMost... and TestJoinMost... function calls within the test case or generally on all subsequent calls. Therefore, the behavior specified within a test case loses its validity with the end of the test case and will be, if necessary, replaced by a previously externally-set behavior."
+  ],
+  "parameters": [
+    {
+      "name": "0",
+      "type": "",
+      "description": "The return value of the relevant function call indicates the problem that has occurred and a corresponding note is entered in the report. This is the pre-set default behavior."
+    },
+    {
+      "name": "1",
+      "type": "",
+      "description": "The relevant test case is aborted and the verdict set to \"fail\". The aborting of the test case is noted with the error in the report."
+    },
+    {
+      "name": "2",
+      "type": "",
+      "description": "Measurement will be stopped. The relevant test case is aborted and the verdict set to \"fail\". The aborting of the test case is noted with the error in the report."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

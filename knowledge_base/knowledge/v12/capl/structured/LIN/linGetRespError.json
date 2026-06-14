@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linGetRespError",
+  "category": "LIN",
+  "title": "linGetRespError",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGetRespError.htm",
+  "syntax": [
+    "long linGetRespError()"
+  ],
+  "description": [
+    "With this function it’s possible to query the response error flag of the calling Slave node or of the Slave node specified by its node address (NAD) as last seen on the LIN bus."
+  ],
+  "parameters": [
+    {
+      "name": "NAD",
+      "type": "",
+      "description": "Configured node address of the Slave node to be queried."
+    }
+  ],
+  "return": "Returns one if the queried response_error flag is set, zero if it is not set and -1 if it has not been sent yet.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "SCC_SLAC_GetMSoundTarget",
+  "category": "SmartCharging",
+  "title": "SCC_SLAC_GetMSoundTarget",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SmartCharging/Functions/CAPLfunctionSCC_SLAC_GetMSoundTarget.htm",
+  "syntax": [
+    "void SCC_SLAC_GetMSoundTarget ( byte MSoundTarget[] )"
+  ],
+  "description": [
+    "Queries the target MAC Address for the M-Sounds (mandatory value: broadcast address)."
+  ],
+  "parameters": [
+    {
+      "name": "MSoundTarget",
+      "type": "",
+      "description": "Buffer to which the address is written (6 byte)."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

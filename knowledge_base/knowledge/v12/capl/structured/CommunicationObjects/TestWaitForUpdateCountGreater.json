@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForUpdateCountGreater",
+  "category": "CommunicationObjects",
+  "title": "TestWaitForUpdateCountGreater",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionTestWaitForUpdateCountGreater.htm",
+  "syntax": [
+    "long TestWaitForUpdateCountGreater(COValue value, qword count, dword timeoutMs)"
+  ],
+  "description": [
+    "Waits for the update counter of a communication object value to reach a certain value. Each CO value contains an update counter which is reset to 0 at measurement start and with explicit calls to valueEntity::ResetValueState. You can read out the counter with valueEntity::GetUpdateCount."
+  ],
+  "parameters": [
+    {
+      "name": "COValue",
+      "type": "",
+      "description": "Value of a communication object."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "long ret;\nconsumedEventRef * anEvent;\nanEvent = lookupConsumedEvent(path);\n// ...\nret = testWaitForUpdateCountGreater(anEvent, anEvent.GetUpdateCount() + 3, 200);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

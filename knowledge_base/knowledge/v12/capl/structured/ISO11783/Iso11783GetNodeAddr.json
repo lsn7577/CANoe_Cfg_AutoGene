@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Iso11783GetNodeAddr",
+  "category": "ISO11783",
+  "title": "Iso11783GetNodeAddr",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISONodeLayer/Functions/CAPLfunctionIso11783GetNodeAddr.htm",
+  "syntax": [
+    "dword Iso11783GetNodeAddr( dword ecuHandle );"
+  ],
+  "description": [
+    "This function returns the current address of a logical ECU."
+  ],
+  "parameters": [
+    {
+      "name": "ecuHandle",
+      "type": "",
+      "description": "ECU handle"
+    }
+  ],
+  "return": "Current ECU address\n0xFE if the address is the ISO11783 NULL address. If this function is called with an invalid handle, the function returns 0xFFFF.",
+  "example": {
+    "description": [],
+    "code": "addr = Iso11783GetNodeAddr(ecuHandle);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

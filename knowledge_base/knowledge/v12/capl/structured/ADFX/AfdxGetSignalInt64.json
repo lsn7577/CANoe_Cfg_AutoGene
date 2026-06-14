@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AfdxGetSignalInt64",
+  "category": "ADFX",
+  "title": "AfdxGetSignalInt64",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ADFX/Functions/CAPLfunctionAfdxGetSignalInt64.htm",
+  "syntax": [
+    "long AfdxGetSignalInt64( long packet, char* signalName ); // form 1"
+  ],
+  "description": [
+    "This function returns the value of a 64-bit integer signal."
+  ],
+  "parameters": [
+    {
+      "name": "packet",
+      "type": "",
+      "description": "handle of the message"
+    }
+  ],
+  "return": "signal value (call AfdxGetLastErrror() to check for errors in the call)",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

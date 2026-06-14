@@ -1,0 +1,76 @@
+{
+  "page_type": "function",
+  "name": "providedServiceRef",
+  "category": "CommunicationObjects",
+  "title": "providedServiceRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionProvidedServiceRef.htm",
+  "syntax": [
+    "providedServiceRef * <var>"
+  ],
+  "description": [
+    "References a provided service endpoint, which means a specific combination of consumer and provider for a service on provider side."
+  ],
+  "parameters": [
+    {
+      "name": "Service",
+      "type": "",
+      "description": "Service, determining the data type of the object."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "providedServiceRef MirrorAdjustment service1;\nservice1 = MirrorAdjustment.providerSide[CANoe,LeftMirror];\nwrite(\"State: %d\", $service1.ConnectionState);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the provided endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the provided endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConnectionState State of the connection between consumer and provider. Unavailable: consumer and provider cannot currently connect. Connectable: consumer and provider can connect, but are not connected. Connected: consumer and provider are connected.",
+        "enum",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

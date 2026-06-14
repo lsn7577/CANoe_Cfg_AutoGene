@@ -1,0 +1,99 @@
+{
+  "page_type": "function",
+  "name": "write",
+  "category": "Other",
+  "title": "write",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionWrite.htm",
+  "syntax": [
+    "void write(char format[], ...);"
+  ],
+  "description": [
+    "Outputs a text message to the Write Window. Write is based on the C function printf.",
+    "The compiler cannot check the format string. Illegal format entries will lead to undefined results. Messages output with the write function will be displayed on separate lines."
+  ],
+  "parameters": [
+    {
+      "name": "\"%ld\",\"%d\"",
+      "type": "",
+      "description": "decimal display"
+    },
+    {
+      "name": "\"%lx\",\"%x\"",
+      "type": "",
+      "description": "hexadecimal display"
+    },
+    {
+      "name": "\"%lX\",\"%X\"",
+      "type": "",
+      "description": "hexadecimal display (upper case)"
+    },
+    {
+      "name": "\"%lu\",\"%u\"",
+      "type": "",
+      "description": "unsigned display"
+    },
+    {
+      "name": "\"%lo\",\"%o\"",
+      "type": "",
+      "description": "octal display"
+    },
+    {
+      "name": "\"%s\"",
+      "type": "",
+      "description": "display a string"
+    },
+    {
+      "name": "\"%g\",\"%f\"",
+      "type": "",
+      "description": "floating point display e.g. %5.3f means, 5 digits in total (decimal point inclusive) and 3 digits after the decimal point. 5 is the minimum of digits in this case."
+    },
+    {
+      "name": "\"%c\"",
+      "type": "",
+      "description": "display a character"
+    },
+    {
+      "name": "\"%%\"",
+      "type": "",
+      "description": "display %-character"
+    },
+    {
+      "name": "\"%I64d\",\"%lld\"",
+      "type": "",
+      "description": "decimal display of a 64 bit value"
+    },
+    {
+      "name": "\"%I64x\",\"%llx",
+      "type": "",
+      "description": "hexadecimal display of a 64 bit value"
+    },
+    {
+      "name": "\"%I64X\",\"%llX\"",
+      "type": "",
+      "description": "hexadecimal display of a 64 bit value (upper case)"
+    },
+    {
+      "name": "\"%I64u\",\"%llu\"",
+      "type": "",
+      "description": "unsigned display of a 64 bit value"
+    },
+    {
+      "name": "\"%I64o\",\"%llo\"",
+      "type": "",
+      "description": "octal display of a 64 bit value"
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "float f=123.456;\non key 'h'\n{\n   write(\"Hello World!\");\n   write(\"f = %5.3f\",f);\n   write(\"format is not supported for the given variable\");\n   write(\"f = %7.3f\",f);\n   write(\"f = %9.3f\",f);\n}\non key 'q'\n{\n   qword q = 0x1234567890ABCDEFLL;\n   write(\"Decimal: %I64u\", q);\n   write(\"Hexadecimal: %I64X\", q);\n}\non key 'd'\n{\n   dword d = 0x1234;\n   write(\"Decimal: %u\", d);\n   write(\"Hexadecimal: %X\", d);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

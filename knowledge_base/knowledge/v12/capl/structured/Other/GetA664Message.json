@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "GetA664Message",
+  "category": "Other",
+  "title": "GetA664Message",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionGetA664Message.htm",
+  "syntax": [
+    "long GetA664Message (PDUobject aPDU, a664Message aMessage)"
+  ],
+  "description": [
+    "This function can be used within an “ON PDU”-handler to retrieve the A664Message object, to which the PDU corresponds.",
+    "The a664Message object then allows to retrieve the various runtime parameters like BAG or error flags via message selectors.",
+    "Note: the message ID is available, but not the message name."
+  ],
+  "parameters": [
+    {
+      "name": "<aPDU>",
+      "type": "",
+      "description": "The <this> object of the PDU-handler"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

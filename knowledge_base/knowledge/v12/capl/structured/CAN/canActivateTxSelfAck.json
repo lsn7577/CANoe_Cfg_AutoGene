@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "canActivateTxSelfAck",
+  "category": "CAN",
+  "title": "canActivateTxSelfAck",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CAN/Functions/CAPLfunctionCanActivateTxSelfAck.htm",
+  "syntax": [
+    "int canActivateTxSelfAck (int channel, int activate);"
+  ],
+  "description": [
+    "Activates/deactivates the transmit self ack feature in CANoe for the defined channel."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "CAN channel"
+    }
+  ],
+  "return": "0 = device does not support self ack",
+  "example": {
+    "description": [],
+    "code": "on key a'\n{\n  int channel\n  int activate;\n  // Activate TX Self-ACK for CAN channel 1\n  channel = 1;\n  activate = 1;\n  canActivateTXSelfAck(channel, activate);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

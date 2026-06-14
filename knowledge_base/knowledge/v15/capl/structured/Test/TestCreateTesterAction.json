@@ -1,0 +1,149 @@
+{
+  "page_type": "function",
+  "name": "TestCreateTesterAction",
+  "category": "Test",
+  "title": "TestCreateTesterAction",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Test/Functions/CAPLfunctionTestCreateTesterAction.htm",
+  "syntax": [
+    "long TestCreateTesterAction(char[] actionText, char[] heading, char[] callback);",
+    "long TestCreateTesterAction(char[] actionText, char[] heading, char[] resourceFile, char[] resourceCaption, char[] callback);"
+  ],
+  "description": [
+    "Creates a tester action. The condition is checked every time when the given trigger occurs. The check of the condition must be implemented in the given CAPL callback. The triggers have to be added with the TestAddTriggerTesterAction function.To execute the command call TestValidateTesterAction with the handle of the tester action."
+  ],
+  "parameters": [
+    {
+      "name": "actionText",
+      "type": "",
+      "description": "Tester instruction of the popup window."
+    },
+    {
+      "name": "heading",
+      "type": "",
+      "description": "Heading of the popup window."
+    },
+    {
+      "name": "callback",
+      "type": "",
+      "description": "CAPL callback which is called every time to check the condition when the trigger occurs. The callback is also automatically called once before the popup opens and once before the popup closes after timeout occurs.Callback function must have the following signature: int mycallback(long trigger); The parameter trigger is the handle of the trigger which triggers the callback. The return value describes the result of the condition: 0: condition is not fulfilled. Continue waiting ≠0: condition is fulfilled. Stop waiting and end command"
+    },
+    {
+      "name": "resourceFile",
+      "type": "",
+      "description": "The path of the resource image to show on the popup window."
+    },
+    {
+      "name": "resourceCaption",
+      "type": "",
+      "description": "The caption to show below the resource image."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "int CallbackTesterAction(long trigger)\n{\n  if (trigger == gTriggerCycle)\n  {\n    testStep(\"\", \"Triggered by cycle time\");\n  }\n  else if (trigger == gTriggerSig)\n  {\n    testStep(\"\", \"Triggered by signal\");\n  }\n  else if (trigger == gTriggerSV)\n  {\n    testStep(\"\", \"Triggered by system variable\");\n  }\n  else if (trigger == gTriggerEV)\n  {\n    testStep(\"\", \"Triggered by environment variable\");\n  }\n  else\n  {\n    testStep(\"\", \"Triggered before opening dialog or before closing dialog after timeout\");\n  }\n  if(@sysVarEngineStarted == 1)\n    return 1;\n\n  return 0;\n}\n\ntestcase TCTesterAction()\n{\n  long handle;\n\n  handle = TestCreateTesterAction(\"This is the tester action text\", \"Tester action heading\", \"Resource.jpg\", \"Resource Caption\", \"CallbackTesterAction\");\n\n  gTriggerCycle = TestAddTriggerTesterAction(handle, 1000);\n  gTriggerSig = TestAddTriggerTesterAction(handle, SigSigned16);\n  gTriggerSV = TestAddTriggerTesterAction(handle, sysvar::sysInt);\n  gTriggerEV = TestAddTriggerTesterAction(handle, EnvInt);\n\n  TestValidateTesterAction(handle, 10000, 3);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "9.0 SP3",
+      "13.0",
+      "—",
+      "14",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "✔",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "✔",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

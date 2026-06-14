@@ -1,0 +1,122 @@
+{
+  "page_type": "method",
+  "name": "ClearQueue",
+  "category": "Sensor",
+  "title": "ClearQueue",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionClearQueue.htm",
+  "syntax": [
+    "SensorErrorCode SysVarNamespace.ClearQueue();"
+  ],
+  "description": [
+    "Clears the send queue of the given sensor system variable."
+  ],
+  "parameters": [],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Clears the send queue of a simulated PSI5 sensor channel\nsysvar::SENSOR::PSI5::SensorChannel.ClearQueue();\n\n// Clears the send queue of a simulated SENT sensor channel\nsysvar::SENSOR::SENT::SensorChannel.ClearQueue();\n\n// Clears queued read frames in case of I2C slave simulation or clears\n// queued write / combined frames in case of I2C master simulation\nsysvar::SENSOR::I2C::ExampleChannel::Slave1.ClearQueue();\n\n// Clears MOSI send queue in case of SPI master simulation or MISO\n// send queue in case of SPI slave simulation\nsysvar::SENSOR::SPI::ExampleChannel::Slave1.ClearQueue();\n\n// Clears send queue of UART channel\nsysvar::SENSOR::UART::UARTChannel.ClearQueue();\n\n// Clears send queue of LVDS channel\nsysvar::SENSOR::LVDS::LVDSChannel.ClearQueue();\n\n// Clears send queue of RS-485 channel\nsysvar::SENSOR::RS485::RS485Channel.ClearQueue();"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "13.0",
+      "—",
+      "—",
+      "—",
+      "5.0"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

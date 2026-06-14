@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GPIBGetFloatResult",
+  "category": "GPIB",
+  "title": "GPIBGetFloatResult",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/GPIB/Functions/CAPLfunctionGPIBGetFloatResult.htm",
+  "syntax": [
+    "double GPIBGetFloatResult (char[] buffer);"
+  ],
+  "description": [
+    "Helper functions for extracting numeric values from GPIB response strings."
+  ],
+  "parameters": [
+    {
+      "name": "buffer",
+      "type": "",
+      "description": "The string in buffer, which may have been obtained by the GPIBResponse function, is searched for a floating-point number, using the function strtod of C/C++. If a space character is present in the string, the search for the number starts at the first such character."
+    }
+  ],
+  "return": "Extracted float value.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

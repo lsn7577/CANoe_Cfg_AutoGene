@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "id": "team_eq07",
+  "name": "EQ07 Team Conventions",
+  "version": "0.1.0",
+  "status": "active",
+  "owner": "team",
+  "domains": ["team", "style", "ci"],
+  "compatible_canoe_versions": ["v15"],
+  "depends_on_packs": ["core"],
+  "files": {
+    "team_docs": [
+      "extras/team/CAPL_Internal_Coding_Standards.json",
+      "extras/team/Common_Gotchas.json",
+      "extras/team/CI_Pipeline_Reference.json",
+      "extras/team/canSetSignalDword.json",
+      "extras/team/panelGauges.json"
+    ]
+  },
+  "provided_capabilities": ["team code style", "common pitfalls", "CI expectations", "internal wrappers"]
+}
+

@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "a429CalcBitLength",
+  "category": "A429",
+  "title": "a429CalcBitLength",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/A429/Functions/CAPLfunctionA429CalcBitLength.htm",
+  "syntax": [
+    "dword a429CalcBitLength( long channel, dword BitTimes );"
+  ],
+  "description": [
+    "For every channel there is a relation between a bit time and the length of a bit time. This relation is determined by the channel bit rate. In order to make it easier to provide the gap length a429SetGap in bit times this function converts these values for a given channel."
+  ],
+  "parameters": [
+    {
+      "name": "channel",
+      "type": "",
+      "description": "valid Tx channel"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

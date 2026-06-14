@@ -1,0 +1,51 @@
+# coTfsSDOBlockEnd
+
+> Category: `CANopen` | Type: `function`
+
+## Syntax
+
+```c
+long coTfsSDOBlockEnd( dword ccs, dword cs, dword notUsed, dword crc ); // form 1
+long coTfsSDOBlockEnd( dword ccs, dword cs, dword notUsed, dword crc, dword crcSetting ); // form 2
+```
+
+## Description
+
+This function sends a SDO block end response/request message (depending on a SDO block upload and SDO block download) and awaits the corresponding response.
+
+(2) The parameter crcSetting is used for SDO block upload only.
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| ccs (client command specifier) | 5: block upload 6: block download |
+| cs (client subcommand) | 1: end block download |
+| notUsed | Number of bytes in the last segment that contains no data. |
+| crc | CRC checksum, can be calculated with coTfsCalcSdoCrc, is 0 if client and/or server offer no CRC support. |
+| crcSetting | 0: no CRC support, the expected CRC is 0 1: CRC is supported, the expected CRC must be specified in parameter crc 2: no information about CRC support, received CRC are not evaluated, default setting for form 1 |
+
+## Return Values
+
+Error code
+
+## Example
+
+```c
+see example of coTfsSDOBlockInit
+```
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 8.2 | 13.0 | — | — | 2.1 SP3 |
+| Restricted To | — | CANopen | CANopen | — | — | CANopen |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | — | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | ✔ | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | ✔ | — | — | N/A |
+| 32-Bit | — | ✔ | ✔ | N/A | — | N/A |
+| 64-Bit | — | ✔ | ✔ | — | — | N/A |

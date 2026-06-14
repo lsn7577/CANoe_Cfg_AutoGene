@@ -1,0 +1,45 @@
+# AvbReceive
+
+> Category: `IP` | Type: `function`
+
+## Syntax
+
+```c
+dword AvbReceive(dword listenerHandle, int buffer[], dword& length, char onReceiveCallback[]); // form 1
+dword AvbReceive(dword listenerHandle, long buffer[], dword& length, char onReceiveCallback[]); // form 2
+dword AvbReceive(dword listenerHandle, byte buffer[], dword& length, char onReceiveCallback[]); // form 3
+```
+
+## Description
+
+The function receives data into the specified buffer.
+
+If the receive operation completes immediately the function returns the number of received elements in the length parameter and the passed CAPL callback OnAvbReceive will not be called.
+
+If the receive operation does not complete immediately the operation is performed asynchronously and the function will return 460609.
+
+In this case the CAPL callback OnAvbReceive will be called on completion (successful or not).
+
+## Parameters
+
+| Name | Description |
+|---|---|
+| listenerHandle | The Listener handle. |
+| buffer | The buffer used to store the incoming data. |
+| length | The length of the data buffer. |
+| onReceiveCallback | The name of the CAPL callback function (see OnAvbReceive). |
+
+## Availability
+
+| CANalyzer | CANoe | CANoe4SW Server Edition (Windows) | CANoe4SW Server Edition (Linux) | CANoe4SW | vTESTstudio |  |
+|---|---|---|---|---|---|---|
+| Since Version | — | 8.2 SP2: form 1-2 8.5: form 3 | — | — | — | 2.0 SP2 |
+| Restricted To | — | Ethernet | — | — | — | Ethernet |
+| CANalyzer Measurement Setup (Transmit Branch) | — | N/A | N/A | N/A | N/A | N/A |
+| CANoe Measurement Setup / CANalyzer Analysis Branch | — | — | — | — | N/A | N/A |
+| CANoe Simulation Setup | N/A | ✔ | — | — | N/A | N/A |
+| CANoe System and Communication Setup | N/A | ✔ | — | — | — | N/A |
+| CANoe Test Setup for Test Modules | N/A | ✔ | — | — | N/A | N/A |
+| CANoe Test Setup for Test Units | N/A | ✔ | — | — | — | N/A |
+| 32-Bit | — | ✔ | — | N/A | — | N/A |
+| 64-Bit | — | ✔ | — | — | — | N/A |

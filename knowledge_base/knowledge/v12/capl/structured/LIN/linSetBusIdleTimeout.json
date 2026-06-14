@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linSetBusIdleTimeout",
+  "category": "LIN",
+  "title": "linSetBusIdleTimeout",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINSetBusIdleTimeout.htm",
+  "syntax": [
+    "dword linSetBusIdleTimeout(dword timeout)"
+  ],
+  "description": [
+    "This function sets a new bus idle timeout. Depending on the protocol version, the timeout will be specified in bit times (LIN 1.x and Cooling) or in milliseconds (all others)."
+  ],
+  "parameters": [
+    {
+      "name": "timeout",
+      "type": "",
+      "description": "The timeout in bit times (LIN 1.x and Cooling) or milliseconds (all other LIN protocols)."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

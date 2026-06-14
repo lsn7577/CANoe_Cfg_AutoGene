@@ -1,0 +1,153 @@
+{
+  "page_type": "function",
+  "name": "coTfsSDOBlockUploadSegmentResponse",
+  "category": "CANopen",
+  "title": "coTfsSDOBlockUploadSegmentResponse",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/CANopen/NodeLayerTFS/Functions/CAPLfunctionCoTfsSdoBlockUploadSegmentResponse.htm",
+  "syntax": [
+    "long coTfsSDOBlockUploadSegmentResponse( dword ccs, dword cs, dword ackSeq, dword blkSize, dword expMsgNumber, dword startSeqNumber );"
+  ],
+  "description": [
+    "This function waits for a SDO segmented upload request and sends the corresponding response. Before the call of this function, no time-delay functions should be inserted in order to prevent a loss of the request message."
+  ],
+  "parameters": [
+    {
+      "name": "ccs (client command specifier)",
+      "type": "",
+      "description": "5: block upload"
+    },
+    {
+      "name": "cs (client subcommand)",
+      "type": "",
+      "description": "2: block upload response"
+    },
+    {
+      "name": "ackSeq",
+      "type": "",
+      "description": "Sequence number of the message that should be confirmed."
+    },
+    {
+      "name": "blkSize",
+      "type": "",
+      "description": "Block size"
+    },
+    {
+      "name": "expMsgNumber",
+      "type": "",
+      "description": "Number of requests awaited (generally corresponds to the value ackSeq), deviations can be used in order to provoke protocol violations."
+    },
+    {
+      "name": "startSeqNumber",
+      "type": "",
+      "description": "SDO block number of the first block expected."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [],
+    "code": "see example of coTfsSDOBlockInit"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "8.2",
+      "13.0",
+      "—",
+      "—",
+      "2.1 SP3"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CANopen",
+      "CANopen",
+      "—",
+      "—",
+      "CANopen"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1.0",
+  "id": "health_check_kb",
+  "phase": "preflight",
+  "description": "Verify that the knowledge base, indexes, required Python packages, and workflow manifests are usable before the Burr run starts.",
+  "reads": [
+    "raw_test_case"
+  ],
+  "writes": [
+    "validation_report"
+  ],
+  "knowledge_inputs": [
+    {
+      "kind": "file",
+      "path": "artifacts/manifest.json",
+      "required": true
+    },
+    {
+      "kind": "file",
+      "path": "agent_kb/unified_index.json",
+      "required": true
+    },
+    {
+      "kind": "python_package",
+      "name": "rank_bm25",
+      "required_for": "free_form_retrieval"
+    }
+  ],
+  "pack_inputs": [
+    "packs/core/pack.json"
+  ],
+  "gates": [
+    "workflow_kb_json_valid",
+    "retriever_dependencies_available",
+    "manifest_paths_resolve"
+  ],
+  "transitions": [
+    {
+      "to": "parse_test_case",
+      "condition": "validation_report.status in ['pass', 'warn']"
+    }
+  ],
+  "extension_notes": [
+    "Keep this action small and deterministic.",
+    "Use it to fail early when a new pack references missing files."
+  ]
+}
+

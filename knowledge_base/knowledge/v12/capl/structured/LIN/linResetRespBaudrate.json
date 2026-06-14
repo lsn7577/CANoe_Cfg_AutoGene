@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "linResetRespBaudrate",
+  "category": "LIN",
+  "title": "linResetRespBaudrate",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINResetRespBaudrate.htm",
+  "syntax": [
+    "long linResetRespBaudrate(long frameId)"
+  ],
+  "description": [
+    "Resets a response baud rate for a specified frame to the master baud rate."
+  ],
+  "parameters": [
+    {
+      "name": "frameId",
+      "type": "",
+      "description": "The identifier of the frame for which the response baud rate will be reset."
+    }
+  ],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

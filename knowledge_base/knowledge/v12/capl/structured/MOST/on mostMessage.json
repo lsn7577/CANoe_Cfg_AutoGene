@@ -1,0 +1,27 @@
+{
+  "page_type": "event",
+  "name": "on mostMessage",
+  "category": "MOST",
+  "title": "on mostMessage",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/EventProcedures/CAPLfunctionOnMOSTMessage.htm",
+  "syntax": [
+    "on mostMessage"
+  ],
+  "description": [
+    "The event procedure on mostMessage is called on the receipt of a function catalog conform MOST frame (RType=Normal).The key word this and the message selectors (see Selectors) are available within the event procedures, to access the data of the message that has just been received. The command output(this) can be used for forwarding the message in a node chain."
+  ],
+  "parameters": [],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

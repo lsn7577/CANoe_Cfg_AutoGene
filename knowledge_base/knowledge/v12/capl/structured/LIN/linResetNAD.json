@@ -1,0 +1,31 @@
+{
+  "page_type": "function",
+  "name": "linResetNAD",
+  "category": "LIN",
+  "title": "linResetNAD",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINResetNad.htm",
+  "syntax": [
+    "long linResetNAD()"
+  ],
+  "description": [
+    "This function resets NAD (Node Address for Diagnostic) of the Slave node determined by the CAPL program context to its initial NAD.",
+    "See Option .LIN: Notes to the way initial NAD is determined to understand how initial NAD is determined in CANoe.",
+    "If the CAPL program calling this function, does not model a LIN 2.x Slave node, then this function will have no effect."
+  ],
+  "parameters": [],
+  "return": "On success this function returns a value unequal to -1, otherwise -1.",
+  "example": {
+    "description": [
+      "CAPL program modeling Slave node"
+    ],
+    "code": "// Force NAD reset on a keyboard event\non key 'r'\n{\nlinFrame 0x3C frameMasterReq;\nlinFrame 0x3D frameSlaveResp;\n// reset NAD of the modeled Slave node \n// we assume that by default initial NAD differs from configured NAD\nlinResetNAD();\n}\nCAPL program modeling Master node\n...\n// Test Slave node reaction after its NAD has been \r\n reset.\n// Prepare AssignFrameId command for one of the Slave's configurable frames\n// In this example it is assumed that the configured NAD differs from the initial \n// NAD\n// set command's data\nframeMasterReq.byte(0) = 0x02; // configured NAD\nframeMasterReq.byte(1) = 0x06; // PCI\nframeMasterReq.byte(2) = 0xB1; // SID\nframeMasterReq.byte(3) = 0x1E; // Supplier Id LSB\nframeMasterReq.byte(4) = 0x0;  // Supplier Id MSB\nframeMasterReq.byte(5) = 0x22; // Message Id LSB\nframeMasterReq.byte(6) = 0x22; // Message Id MSB\nframeMasterReq.byte(7) = linGetProtectedID(0x33); // Protected ID\n// update response data\nframeMasterReq.RTR = 0;\noutput(frameMasterReq);\n// send the command (issue request header)\nframeMasterReq.RTR = 1;\noutput(frameMasterReq);\n// send header of SlaveResponse frame\nframeSlaveResp.RTR = 1;\noutput(frameSlaveResp);\n// In Trace Window transmission error shall occur for SlaveResponse frame because\n// Slave doesn’t know the configured NAD yet"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

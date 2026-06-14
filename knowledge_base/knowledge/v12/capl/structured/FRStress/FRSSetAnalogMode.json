@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "FRSSetAnalogMode",
+  "category": "FRStress",
+  "title": "FRSSetAnalogMode",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/FRStress/Functions/CAPLfunctionFRSSetAnalogMode.htm",
+  "syntax": [
+    "long FRSSetAnalogMode (float baudrate, int channel, int payloadLength)"
+  ],
+  "description": [
+    "Activates the analog disturbance mode of FRstress.Configuration functions that belong to another operating mode are ignored."
+  ],
+  "parameters": [
+    {
+      "name": "baudrate",
+      "type": "",
+      "description": "Values: 10, 5, 2.5, 1.25 Mbit/s"
+    }
+  ],
+  "return": "0: successful",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

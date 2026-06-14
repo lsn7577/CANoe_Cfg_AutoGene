@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TestJoinTextEvent",
+  "category": "Test",
+  "title": "TestJoinTextEvent",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestJoinTextEvent.htm",
+  "syntax": [
+    "long TestJoinTextEvent(char[]aText)"
+  ],
+  "description": [
+    "Completes the current set of \"joined events\" with the transmitted event. This function does not wait."
+  ],
+  "parameters": [
+    {
+      "name": "aText",
+      "type": "",
+      "description": "Textual event that should be awaited"
+    }
+  ],
+  "return": "-3: Join error",
+  "example": {
+    "description": [],
+    "code": "// waits for a specified text event\nlong result;\ndword index = 0;\nresult = TestJoinTextEvent(\"ErrorFrame occurred!\");\n// ... other join events\nTestJoinEnvVarEvent(MyEnvVar);\nTestJoinSignalInRange(Velocity, 80, 100);\n\nindex = TestWaitForAnyJoinedEvent(2000);\n\n// on ErrorFrame handler\non errorFrame\n{\n   TestSupplyTextEvent(\"ErrorFrame occurred!\");\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

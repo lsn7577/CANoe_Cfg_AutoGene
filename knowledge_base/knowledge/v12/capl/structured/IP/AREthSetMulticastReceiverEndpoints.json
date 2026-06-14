@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthSetMulticastReceiverEndpoints",
+  "category": "IP",
+  "title": "AREthSetMulticastReceiverEndpoints",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSetMulticastReceiverEndpoints.htm",
+  "syntax": [
+    "long AREthSetMulticastReceiverEndpoints(dword cevgHandle, dword multicastIPv4Address, dword udpPort)"
+  ],
+  "description": [
+    "Sets the multicast endpoint that is used for the consumed event group to receive field/event notification per multicast."
+  ],
+  "parameters": [
+    {
+      "name": "cevgHandle",
+      "type": "",
+      "description": "Consumed event group handle (may be retrieved by AREthGetConsumedObjectHandle)"
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

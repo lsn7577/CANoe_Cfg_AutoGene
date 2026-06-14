@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SetVehicleTcpPort",
+  "category": "Diagnostics",
+  "title": "DoIP_SetVehicleTcpPort",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSetVehicleTcpPort.htm",
+  "syntax": [
+    "void DoIP_SetVehicleTcpPort( dword port);"
+  ],
+  "description": [
+    "Sets the TCP port (TCP_DATA) to be used by the DoIP layer.",
+    "This function must be called in on preStart."
+  ],
+  "parameters": [
+    {
+      "name": "port",
+      "type": "",
+      "description": "The TCP_DATA port of the DoIP layer."
+    }
+  ],
+  "return": "—",
+  "example": {
+    "description": [],
+    "code": "dword port;\nport = DiagGetCommParameter( \"DoIP.VEHICLE_TCP_Data\");\n// Set the vehicle TCP port\nDoIP_SetVehicleTcpPort( port);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

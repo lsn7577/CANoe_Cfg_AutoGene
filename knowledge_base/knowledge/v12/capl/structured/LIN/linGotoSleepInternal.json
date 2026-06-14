@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "linGotoSleepInternal",
+  "category": "LIN",
+  "title": "linGotoSleepInternal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/LIN/Functions/CAPLfunctionLINGotoSleepInternal.htm",
+  "syntax": [
+    "long linGotoSleepInternal();"
+  ],
+  "description": [
+    "Sets the LIN hardware to Sleep mode without sending a go-to-sleep-command on the network.",
+    "Calling this function in the event procedure on prestart leads to measurement start in sleep mode."
+  ],
+  "parameters": [],
+  "return": "On success, a value unequal to zero, otherwise zero.",
+  "example": {
+    "description": [],
+    "code": "// start measurement in Sleep mode\non preStart\n{\n  linGotoSleepInternal();\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

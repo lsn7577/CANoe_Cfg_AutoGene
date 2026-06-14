@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "J1939TestStmControl_Destroy",
+  "category": "J1939",
+  "title": "J1939TestStmControl_Destroy",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/J1939TestServiceLibrary/Functions/CAPLfunctionJ1939TestStmControlDestroy.htm",
+  "syntax": [
+    "long J1939TestStmControl_Destroy( long stimulusId );"
+  ],
+  "description": [
+    "The Stimulus is destroyed and cannot be accessed anymore."
+  ],
+  "parameters": [
+    {
+      "name": "stimulusId",
+      "type": "",
+      "description": "identifier of the Stimulus to delete"
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "long toggleStm;\npg MyPG myPG;\n\nmyPG.SA = 1;\nmyPG.DA = 2;\n\ntoggleStm = J1939TestStmCreate_Toggle( myPG, MyPg::SignalA, 100, 10, 20 );\nJ1939TestStmControl_Start( toggleStm );\n//...\nJ1939TestStmControl_Destroy( toggleStm );"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

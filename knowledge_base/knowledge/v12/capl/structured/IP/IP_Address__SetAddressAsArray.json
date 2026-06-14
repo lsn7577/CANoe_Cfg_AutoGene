@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "IP_Address::SetAddressAsArray",
+  "category": "IP",
+  "title": "IP_Address::SetAddressAsArray",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/Methods/CAPLfunctionSetAddressAsArray.htm",
+  "syntax": [
+    "long IP_Address::SetAddressAsArray(byte ipAddr[]); // form 1"
+  ],
+  "description": [
+    "Copies the byte array to the IP address value."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  byte addrData[16] = { 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01 };\n  IP_Address addr;\n\n  if(addr.SetAddressAsArray( addrData ) == 0)\n  {\n    // do something with addrData\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

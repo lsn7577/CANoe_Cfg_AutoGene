@@ -1,0 +1,70 @@
+{
+  "page_type": "function",
+  "name": "providedFieldRef",
+  "category": "CommunicationObjects",
+  "title": "providedFieldRef",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Objects/CAPLfunctionProvidedFieldRef.htm",
+  "syntax": [
+    "providedFieldRef * <var>"
+  ],
+  "description": [
+    "References a provided field endpoint, which means a specific combination of consumer and provider for a service field on provider side."
+  ],
+  "parameters": [],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "providedFieldRef long field1;\nfield1 = MirrorAdjustment.providerSide[CANoe,LeftMirror].CurrentPosition;\n$field1 = newValue;"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [
+    {
+      "row": [
+        "Selector",
+        "Type",
+        "Access Limitation"
+      ]
+    },
+    {
+      "row": [
+        "Name Name of the provided endpoint",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "Path Full path of the provided endpoint (including namespaces)",
+        "char[]",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ConsumerIndex Index of the consumer. Note that the index may change if consumers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "ProviderIndex Index of the provider. Note that the index may change if providers are added or removed.",
+        "dword",
+        "Read only"
+      ]
+    },
+    {
+      "row": [
+        "SubscriptionState State of the field subscription: Unavailable: there’s no connection between consumer and provider, the field cannot be subscribed. Available: the field can be subscribed, but currently is not subscribed. Subscribed: the field is subscribed.",
+        "enum",
+        "Read only"
+      ]
+    }
+  ],
+  "note": [],
+  "complexity": ""
+}

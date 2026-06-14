@@ -1,0 +1,139 @@
+{
+  "page_type": "method",
+  "name": "IP_Address::MatchesAddress",
+  "category": "IP",
+  "title": "IP_Address::MatchesAddress",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/IP/Methods/CAPLfunctionMatchesAddress.htm",
+  "syntax": [
+    "long IP_Address::MatchesAddress (IP_Address ipAddr); // form 1",
+    "long IP_Address::MatchesAddress (IP_Address ipAddr, long prefix); // form 2"
+  ],
+  "description": [
+    "Compares two addresses whereas wildcards matches always. If no address type is set or the address is set to 0.0.0.0 (IPv4) or ::0 (IPv6) this is considered as wildcard.",
+    "With form 2 only the network address of the IP address will be considered."
+  ],
+  "parameters": [
+    {
+      "name": "ipAddr",
+      "type": "",
+      "description": "An IP_Address object which may contain wildcards."
+    },
+    {
+      "name": "prefix",
+      "type": "",
+      "description": "Prefix in number of bits. Only the first bits specified by prefix are considered."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [
+      "Example 1",
+      "Example 2",
+      "Example 3"
+    ],
+    "code": "on start\n{\n  IP_Address 192.168.1.1 addr1;\n  IP_Address 192.168.1.2 addr2;\n  if (addr1.MatchesAddress( addr2 ) == 1)\n  {\n    write( \"Address match!\" );\n  }\n}\non start\n{\n  IP_Address 192.168.1.1 addr1;\n  IP_Address 192.168.1.2 addr2;\n  if (addr1.MatchesAddress( addr2, 24 ) == 1)\n  {\n    write( \"Address match!\" );\n  }\n}\non start\n{\n  IP_Address 192.168.1.1 addr1;\n  IP_Address 192.168.1.2 addr2;\n  if (addr1 == addr2)\n  {\n    write( \"Addresses are equal!\" );\n  }\n  else\n  {\n    write( \"Addresses are not equal!\" );\n  }\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "12.0",
+      "12.0",
+      "13.0",
+      "13.0: form 1",
+      "—",
+      "4.0"
+    ],
+    [
+      "Restricted To",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "Ethernet",
+      "—",
+      "Ethernet"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "✔",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "✔",
+      "✔",
+      "✔",
+      "✔",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

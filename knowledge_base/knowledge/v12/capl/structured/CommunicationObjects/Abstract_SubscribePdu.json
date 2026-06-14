@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "Abstract_SubscribePdu",
+  "category": "CommunicationObjects",
+  "title": "Abstract_SubscribePdu",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionAbstractSubscribePdu.htm",
+  "syntax": [
+    "long Abstract_SubscribePDU(consumedPDURef * pdu)"
+  ],
+  "description": [
+    "Subscribes for a service PDU if abstract binding is used. Note that this is more low-level; usually its more convenient to call consumedPduRef::AbstractRequestPdu on the PDU."
+  ],
+  "parameters": [
+    {
+      "name": "pdu",
+      "type": "",
+      "description": "PDU which shall be subscribed."
+    }
+  ],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "Abstract_SubscribePDU(MirrorAdjustment.consumerSide[0,0].PositionPDU);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

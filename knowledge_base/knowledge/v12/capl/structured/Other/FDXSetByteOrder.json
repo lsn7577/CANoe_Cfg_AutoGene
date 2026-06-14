@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "FDXSetByteOrder",
+  "category": "Other",
+  "title": "FDXSetByteOrder",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionFDXSetByteOrder.htm",
+  "syntax": [
+    "long FDXSetByteOrder(long fdxClientHandle, long byteOrder);"
+  ],
+  "description": [
+    "This function configures the byte order of the FDX protocol that should be used for the communication with the specified client. The default is Little Endian.",
+    "With each received FDX datagram, CANoe automatically takes over the byte order from the datagram for the further communication with this client. The function FDXSetByteOrder is therefore only relevant in the rare case that CANoe should send datagrams to an FDX client without having received a datagram from this client."
+  ],
+  "parameters": [
+    {
+      "name": "fdxClientHandle",
+      "type": "",
+      "description": "FDX client for which the byte order should be set."
+    }
+  ],
+  "return": "0: Successful function call",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

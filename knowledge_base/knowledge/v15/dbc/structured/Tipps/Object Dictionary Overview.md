@@ -1,0 +1,11 @@
+# Object Dictionary Overview
+
+> Category: `DBC` | Subcategory: `Tipps` | Type: `concept`
+
+By selecting the Object Dictionary pageand clicking the tree object Object Dictionary the right window shows all objects of the EDS file.
+
+To get the best view click into the window and then press the key comtination <Ctrl> and <+> of number block. Now all columns are resized so that all text is visible. The same result you achieve with a double click on the divider of the column in the window header.
+
+To sort a single column the header of the column has to be clicked.
+
+Object Dictionary

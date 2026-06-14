@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "TCIL_StopTask",
+  "category": "ISO11783",
+  "title": "TCIL_StopTask",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/ISO11783/ISOInteractionLayerTC/Functions/CAPLfunctionIso11783TCILStopTask.htm",
+  "syntax": [
+    "long TCIL_StopTask( ); // form 1"
+  ],
+  "description": [
+    "This function stops a task."
+  ],
+  "parameters": [
+    {
+      "name": "tc",
+      "type": "",
+      "description": "Task Controller simulation node to apply the function."
+    }
+  ],
+  "return": "0: Function has been executed successfully",
+  "example": {
+    "description": [],
+    "code": "long result;\nresult = TCIL_StopTask(TC);\nswitch (result)\n{\n  case     0: TestStepPass(); break;\n  case -2202: TestStepFail(\"Function is not available in passive mode of the TC IL!\"); break;\n  case -2208: TestStepFail(\"Cannot stop task in the current state of the TC IL!\"); break;\n  default:    TestStepFail(\"Unexpected error\"); break;\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

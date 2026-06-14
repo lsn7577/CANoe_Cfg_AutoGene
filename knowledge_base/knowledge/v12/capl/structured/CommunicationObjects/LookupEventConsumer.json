@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "LookupEventConsumer",
+  "category": "CommunicationObjects",
+  "title": "LookupEventConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Functions/CAPLfunctionLookupEventConsumer.htm",
+  "syntax": [
+    "eventConsumerRef * LookupEventConsumer(char[] path)"
+  ],
+  "description": [
+    "Searches for the specified event consumer. The path must be complete including namespaces, endpoint and event: (Namespace::)+Service[consumer].Event.",
+    "You can downcast the result to a concrete type, see the example."
+  ],
+  "parameters": [
+    {
+      "name": "path",
+      "type": "",
+      "description": "Path of the field consumer."
+    }
+  ],
+  "return": "The event consumer. An uninitialized object if the event consumer is not found, which will also be reported in the Write Window or as an error in test system (if the function is called in a test routine).",
+  "example": {
+    "description": [],
+    "code": "eventConsumerRef MirrorAdjustment.Position positionEvent;\nchar path[200];\nchar service[50] = \"Mirrors::MirrorAdjustment\";\nchar consumer[20] = \"CANoe\";\nchar eventName[20] = \"Position\";\n\nsnprintf(path, elcount(path), \"%s[%s].%s\", service, consumer, eventName);\npositionEvent = (eventConsumerRef MirrorAdjustment.Position) lookupEventConsumer(path);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

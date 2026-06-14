@@ -1,0 +1,36 @@
+{
+  "page_type": "function",
+  "name": "testWaitScopePerformSignalTransitionTime",
+  "category": "Test",
+  "title": "testWaitScopePerformSignalTransitionTime",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitScopePerformSignalTransitionTime.htm",
+  "syntax": [
+    "long testWaitScopePerformSignalTransitionTime (message aMessage, ScopeAnalyseRange range, dword flags, long thresholdStart, long thresholdEnd, ScopeBitTransitionTimeResult result, ScopeAnalyseHandle handle); // form 1"
+  ],
+  "description": [
+    "Form 1: Measures the transition time of rising and falling edges of a CAN message within the defined area.",
+    "Form 2: Measures the transition time of rising and falling edges of all Tx messages of an ECU node within the defined area.",
+    "Form 3: Measures the transition time of rising and falling edges of a LIN message within the defined area.",
+    "Form 4: Measures the transition time of rising and falling edges of a FlexRay message within the defined area."
+  ],
+  "parameters": [
+    {
+      "name": "aMessage",
+      "type": "",
+      "description": "The message to be analyzed."
+    }
+  ],
+  "return": "1 = success",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

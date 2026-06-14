@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "ILNodeControlSimulationOff",
+  "category": "CANoeIL",
+  "title": "ILNodeControlSimulationOff",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CANoeIL/Functions/CAPLfunctionILNodeControlSimulationOff.htm",
+  "syntax": [
+    "long ILNodeControlSimulationOff(char aNodeName[])"
+  ],
+  "description": [
+    "Stops the simulation of the interaction layer of the specified simulation node. In this state the interaction layer does not react on any function besides turning the simulation on again. The specified node must be in the current bus context. In all other cases the function has no effect and will return with an error."
+  ],
+  "parameters": [
+    {
+      "name": "aNodeName",
+      "type": "",
+      "description": "Name of the node of which the interaction layer should be turned off."
+    }
+  ],
+  "return": "0: No error",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

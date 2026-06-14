@@ -1,0 +1,34 @@
+{
+  "page_type": "function",
+  "name": "SomeIpRemoveFieldConsumer",
+  "category": "IP",
+  "title": "SomeIpRemoveFieldConsumer",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/SOMEIPIL/Functions/CAPLfunctionSomeIpRemoveFieldConsumer.htm",
+  "syntax": [
+    "long SomeIpRemoveFieldConsumer( dword cfHandle );"
+  ],
+  "description": [
+    "Removes a Field from a Consumed Service Instance. The Field was previously added by SomeIpCreateFieldConsumer.",
+    "Afterwards, the callback registered with SomeIpCreateFieldConsumer is no longer called."
+  ],
+  "parameters": [
+    {
+      "name": "cfHandle",
+      "type": "",
+      "description": "Handle of the field that was created by SomeIpCreateFieldConsumer."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "variables\n{\n  CONST DWORD FieldNotificationID = 30;\n  CONST DWORD FieldGetterID = 31;\n  CONST DWORD FieldSetterID = 32;\n  DWORD aep; // Application Endpoint handle\n  DWORD csi; // consumed Service Instance handle\n  DWORD ceg; // consumed Eventgroup handle\n  DWORD cfHandle; // consumed field handle\n  DWORD gMcGetter; // getter method call\n  DWORD gMcSetter; // setter method call\n}\n\non start()\n{\n  // open Application Endpoint\n  aep = SomeIpOpenLocalApplicationEndpoint(17, 50002);\n  // create Service Instance\n  csi = SomeIpCreateConsumedServiceInstance(aep,12,1);\n  // create Eventgroup\n  ceg = SomeIpAddConsumedEventGroup(csi,300);\n  // create field consumer as well as getter and setter method calls\n  cfHandle = SomeIpCreateFieldConsumer(csi,FieldNotificationID,FieldGetterID,FieldSetterID,\"OnFieldNotification\");\n  gMcGetter = SomeIpCreateMethodCall(csi,FieldGetterID,\"OnFieldGetterResponse\");\n  gMcSetter = SomeIpCreateMethodCall(csi,FieldSetterID,\"OnFieldSetterResponse\");\n}\n\nvoid OnFieldNotification(DWORD pfHandle,DWORD messageHandle)\n{\n  write (\"Field Notification Received\");\n  // do something here\n}\n\nvoid OnFieldGetterResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  write (\"Field Getter Response Received\");\n  // do something here\n}\n\nvoid OnFieldSetterResponse(dword methodCallHandle, dword messageResponseHandle )\n{\n  write (\"Field Setter Response Received\");\n  // do something here\n}\n\non key 'g'\n{\n  // call getter method\n  SomeIpCallMethod(gMcGetter);\n}\n\non key 's'\n{\n  // set value of field content (field has common data type so no value path is needed)\n  SomeIpSetValueDWord(gMcSetter,\"\",200);\n  // call setter method\n  SomeIpCallMethod(gMcSetter);\n}\n\non key 'r'\n{\n  SomeIpRemoveFieldConsumer (cfHandle);\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

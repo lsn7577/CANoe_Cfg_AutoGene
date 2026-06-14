@@ -1,0 +1,190 @@
+{
+  "page_type": "function",
+  "name": "SecurityOfNodeCalculateAuthenticator",
+  "category": "Security",
+  "title": "SecurityOfNodeCalculateAuthenticator",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Security/Functions/CAPLfunctionSecurityOfNodeCalculateAuthenticator.htm",
+  "syntax": [
+    "long SecurityOfNodeCalculateAuthenticator(char nodeName[], char networkName[], dword dataId, byte payload[], dword payloadLength, qword truncatedAuthenticatorHigh, qword truncatedAuthenticator, dword truncatedAuthenticatorBitLength, qword freshness, dword truncatedFreshnessBitLength, dword freshnessValueBitLength, dword freshnessValueId)"
+  ],
+  "description": [
+    "Calculate the authenticator from arbitrary data. The (complete) freshness value must be provided in the function call. Other freshness sources will be ignored. The method returns the truncated freshness via freshness' parameter. The calculated authenticator is returned via the TruncatedAuthenticator parameter. The truncated bit lengths of the authenticator and freshness can be modified.",
+    "The result of this method depends on the security profile which is mapped on the network.",
+    "You have to call SecurityLocalStartControlSimulationNode before this callback is called."
+  ],
+  "parameters": [
+    {
+      "name": "char nodeName[]",
+      "type": "",
+      "description": "The name of the node."
+    },
+    {
+      "name": "networkName",
+      "type": "",
+      "description": "The name of the network the node is on."
+    },
+    {
+      "name": "char networkName[]",
+      "type": "",
+      "description": "The name of the network the node is on."
+    },
+    {
+      "name": "dword dataId",
+      "type": "",
+      "description": "The data ID of the PDU to lookup the desired key in the security source."
+    },
+    {
+      "name": "byte payload[]",
+      "type": "",
+      "description": "The payload of the PDU."
+    },
+    {
+      "name": "dword payloadLength",
+      "type": "",
+      "description": "The payload length of the PDU in bytes."
+    },
+    {
+      "name": "qword truncatedAuthenticatorHigh [Out]",
+      "type": "",
+      "description": "Upper 64 bits of the authenticator (MAC), if authenticator is larger than 64 bits.Otherwise 0;"
+    },
+    {
+      "name": "qword truncatedAuthenticator [Out]",
+      "type": "",
+      "description": "The full authenticator value or the lower 64 bits of the authenticator (MAC), if authenticator is larger than 64 bits."
+    },
+    {
+      "name": "dword truncatedAuthenticatorBitLength [In/Out]",
+      "type": "",
+      "description": "Length of complete authenticator to transmit( length of authInfo if the authenticator is <= 64 bit, otherwise length of authInfo + authInfoHigh)"
+    },
+    {
+      "name": "qword freshness [In/Out]",
+      "type": "",
+      "description": "In: The freshness value for CMAC calculation. Out: Truncated freshness."
+    },
+    {
+      "name": "dword truncatedFreshnessBitLength [In/Out]",
+      "type": "",
+      "description": "The length of the truncated freshness in bits."
+    },
+    {
+      "name": "dword freshnessValueBitLength",
+      "type": "",
+      "description": "The freshness value length in bits."
+    },
+    {
+      "name": "dword freshnessValueId",
+      "type": "",
+      "description": "The freshness value ID of the PDU."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "11.0 SP3",
+      "11.0 SP3",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "CAN CAN FD FlexRay Ethernet",
+      "CAN CAN FD FlexRay Ethernet",
+      "—",
+      "—",
+      "—"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "✔",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "✔",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

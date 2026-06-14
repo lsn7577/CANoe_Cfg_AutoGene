@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "IpSetSocketOption",
+  "category": "TCPIPAPI",
+  "title": "IpSetSocketOption",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/TCPIPAPI/Functions/CAPLfunctionIPSetSocketOption.htm",
+  "syntax": [
+    "long IpSetSocketOption( dword socket, long level, long name, long value); // form 1",
+    "socket.SetSocketOption( long level, long name, long value); // form 1"
+  ],
+  "description": [
+    "The function modifies a socket option.",
+    "The function is dependent on the selected stack."
+  ],
+  "parameters": [
+    {
+      "name": "socket",
+      "type": "",
+      "description": "The socket handle."
+    }
+  ],
+  "return": "0: The function completed successfully.",
+  "example": {
+    "description": [],
+    "code": "on start\n{\n  CHAR errorMessage[255];\n  LONG tcpSocket;\n  LONG result;\n  LONG value;\n\n  // open a tcp socket\n  tcpSocket = tcpOpen(0,0);\n  if( tcpSocket == ~0 )\n  {\n    write(\"open tcp socket failed. Last error was %d\", ipGetLastError());\n  }\n\n  // activate SO_KEEPALIVE on the tcp socket\n  result = ipSetSocketOption(tcpSocket, \"SOL_SOCKET\", \"SO_KEEPALIVE\", 1);\n  if( result != 0 )\n  {\n    ipGetLastSocketErrorAsString(tcpSocket, errorMessage, elcount(errorMessage));\n    write(\"Failed to set socket option SO_KEEPALIVE. Error: %s\", errorMessage);\n  }\n\n  // set Time to live it is greater than 32\n  result = ipGetSocketOption(tcpSocket, \"IPPROTO_IP\", \"IP_TTL\", value);\n  if( result != 0 )\n  {\n    ipGetLastSocketErrorAsString(tcpSocket, errorMessage, elcount(errorMessage));\n    write(\"Failed to get socket option IP_TTL. Error: %s\", errorMessage);\n  }\n  if( value > 32 )\n  {\n    result = ipSetSocketOption(tcpSocket, \"IPPROTO_IP\", \"IP_TTL\", 32);\n    if( result != 0 )\n    {\n      ipGetLastSocketErrorAsString(tcpSocket, errorMessage, elcount(errorMessage));\n      write(\"Failed to set socket option IP_TTL. Error: %s\", errorMessage);\n    }\n  }\n\n  // avoid tcp to use the nagle algorithm\n  result = ipSetSocketOption(tcpSocket, \"IPPROTO_TCP\", \"TCP_NODELAY\", 1);\n  if( result != 0 )\n  {\n    ipGetLastSocketErrorAsString(tcpSocket, errorMessage, elcount(errorMessage));\n    write(\"Failed to get socket option TCP_NODELAY. Error: %s\", errorMessage);\n  }\n\n  // connect the socket\n  result = tcpConnect(tcpSocket, IpGetAddressAsNumber(\"192.168.1.2\"), 21);\n  if( result != 0 )\n  {\n    ipGetLastSocketErrorAsString(tcpSocket, errorMessage, elcount(errorMessage));\n    write(\"Failed to get socket option TCP_NODELAY. Error: %s\", errorMessage);\n  }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

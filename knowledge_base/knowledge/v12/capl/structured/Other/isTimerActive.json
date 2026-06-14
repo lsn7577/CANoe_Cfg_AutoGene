@@ -1,0 +1,28 @@
+{
+  "page_type": "function",
+  "name": "isTimerActive",
+  "category": "Other",
+  "title": "isTimerActive",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionIsTimerActive.htm",
+  "syntax": [
+    "int isTimerActive(timer t)"
+  ],
+  "description": [
+    "Return value indicates whether a specific timer is active.",
+    "This is the case between the call to the setTimer function and the call to the on timer event procedure."
+  ],
+  "parameters": [],
+  "return": "1, if the timer is active; otherwise 0.",
+  "example": {
+    "description": [],
+    "code": "timer t;\nwrite(\"Active? %d\", isTimerActive(t)); // writes 0\nsetTimer(t, 5);\nwrite(\"Active? %d\", isTimerActive(t)); // writes 1"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

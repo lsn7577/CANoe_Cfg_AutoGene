@@ -1,0 +1,37 @@
+{
+  "page_type": "function",
+  "name": "diag_DataInd",
+  "category": "Diagnostics",
+  "title": "diag_DataInd",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDiagDataInd.htm",
+  "syntax": [
+    "void diag_DataInd (byte rxBuffer [], long count, long sender); // form 1"
+  ],
+  "description": [
+    "Passes count bytes of the transmitter address sender from the rxBuffer buffer to the diagnostic layer.",
+    "Alternatively, the transmitter can be identified using its ECU qualifier target.",
+    "This function is typically called in a transport layer callback after a message, which may be segmented, has been received in its entirety. The transport layer removes all protocol information (segmentation, flow control, etc.) and forwards only the payload data (e.g. the ECU diagnostic response starting at the service ID and including all response parameters) to the diagnostic layer."
+  ],
+  "parameters": [
+    {
+      "name": "rxBuffer",
+      "type": "",
+      "description": "Byte buffer to be passed to the diagnostic layer."
+    }
+  ],
+  "return": "Error code",
+  "example": {
+    "description": [
+      "See DoIP_DataInd"
+    ],
+    "code": "// This callback shall be called by an example TP layer\nTPLayer_ReceivedData( long connectionHandle, byte data[])\n{\n  char ecuQualifier[20];\n  TPLayerGetECUQualifierForHandle(connectionHandle, ecuQualifier);\n  diag_DataInd(ecuQualifier, data, elcount(data));\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

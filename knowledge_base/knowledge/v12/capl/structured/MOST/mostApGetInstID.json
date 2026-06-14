@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "mostApGetInstID",
+  "category": "MOST",
+  "title": "mostApGetInstID",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTApGetInstID.htm",
+  "syntax": [
+    "long mostApGetInstID()"
+  ],
+  "description": [
+    "Returns the InstID of the CAPL node. The function block must be assigned to the CAPL program exclusively via mostApRegister (fblockID, instIDDefault) or the database."
+  ],
+  "parameters": [],
+  "return": ">0: Valid InstID",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "ChkCreate_J1939Request2, ChkStart_J1939Request2",
+  "category": "Test",
+  "title": "ChkCreate_J1939Request2, ChkStart_J1939Request2",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionChkCreateJ1939Request2.htm",
+  "syntax": [
+    "dword ChkCreate_J1939Request2(Node requestNode, Node responseNode, Message requestedMessage, dword expected, dword options, dword timeout, dword requestInhibitTime, dword retryInhibitTime, char[] callback1);"
+  ],
+  "description": [
+    "Observes the J1939 Request2 (C900h). It is possible to observe all Request2 messages or only the Request2 message for a specific send node.",
+    "Dependent on the used parameter type the appropriate bus context in a multibus environment has only to be set before the function is called if the corresponding database object will be ambiguous.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "requestNode",
+      "type": "",
+      "description": "Requesting node from database."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "TestCheck check;\n  // checks the if a response from N2 is received after a J1939 Request2 from node N1\n  checkId = ChkStart_J1939Request2(N1, N2, GBSD, 0x01, 0, 1250, 50, 0);\n  TestAddCondition(checkId);\n\n  // sequence of different actions and waiting conditions\n  TestWaitForTimeout(1000);\n  TestRemoveCondition(checkId);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

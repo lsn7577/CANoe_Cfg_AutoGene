@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "GBT27930IL_SuspendCharging",
+  "category": "J1939",
+  "title": "GBT27930IL_SuspendCharging",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/J1939/GBT27930InteractionLayer/Functions/CAPLfunctionGBT27930ILSuspendCharging.htm",
+  "syntax": [
+    "long GBT27930IL_SuspendCharging( ); // form 1"
+  ],
+  "description": [
+    "Node suspends the charging. This function is only effective if the simulated node is in the Charging state. The Charger node stops sending the CCS message and starts sending the CST message. The BMS node stops sending the BCL, BCS and MSM messages and starts sending the BST message."
+  ],
+  "parameters": [
+    {
+      "name": "node",
+      "type": "",
+      "description": "Simulation node to apply the function."
+    }
+  ],
+  "return": "",
+  "example": {
+    "description": [],
+    "code": "—"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "serviceProviderRef::ReleaseService",
+  "category": "CommunicationObjects",
+  "title": "serviceProviderRef::ReleaseService",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/CommunicationObjects/Methods/CAPLfunctionServiceProviderRefReleaseService.htm",
+  "syntax": [
+    "int serviceProviderRef::ReleaseService()"
+  ],
+  "description": [
+    "Releases the service at the endpoint. This means that the binding will stop announcing the service or unregister it from a central registry (depending on the binding) and that connection requests from consumers will be denied."
+  ],
+  "parameters": [],
+  "return": "0: Success",
+  "example": {
+    "description": [],
+    "code": "MirrorAdjustment.providerSide[LeftMirror].ReleaseService();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "mostNwmFiSetConfigState",
+  "category": "MOST",
+  "title": "mostNwmFiSetConfigState",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/MOST/Functions/CAPLfunctionMOSTNwmFiSetConfigState.htm",
+  "syntax": [
+    "long mostNwmFiSetConfigState(long state, long sendConfigStatusMsg)"
+  ],
+  "description": [
+    "Forces the network configuration status to be set in CANoe’s NetworkMaster.",
+    "Use the function with care since the state machine of the NetworkMaster is not guaranteed to work properly afterwards. (A shutdown of the network will reset the NetworkMaster’s state machine.)",
+    "The function is available for CAPL programs assigned to the NetworkMaster block in the Simulation Setup."
+  ],
+  "parameters": [
+    {
+      "name": "state",
+      "type": "",
+      "description": "0: ConfigNotOk1: ConfigOK"
+    }
+  ],
+  "return": "See error codes",
+  "example": {
+    "description": [],
+    "code": ""
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

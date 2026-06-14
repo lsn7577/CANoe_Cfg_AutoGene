@@ -1,0 +1,27 @@
+{
+  "page_type": "function",
+  "name": "DoIP_SendPDUCombination",
+  "category": "Diagnostics",
+  "title": "DoIP_SendPDUCombination",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Diagnostics/Functions/CAPLfunctionDoIPSendPDUCombination.htm",
+  "syntax": [
+    "long DoIP_SendPDUCombination();"
+  ],
+  "description": [
+    "Send the combined PDUs on the open TCP connection in one block. Typically, the PDUs will be sent in one IP packet, depending on the PDU size of the transporting medium."
+  ],
+  "parameters": [],
+  "return": "-11: Sending data on the TCP connection failed",
+  "example": {
+    "description": [],
+    "code": "BYTE rawReq[7] = {\n  0x01, 0x01 // target address (ECU)\n, 0x0E, 0x80 // source address (tester)\n, 0x22, 0x01, 0x05 // diagnostics service Read Data By Identifier\n};\n\n// Initialize the PDU combination, i.e. drop previous combination\nDoIP_CreatePDUCombination();\n\n// Add diagnostics message PDUs, changing the target address for each PDU\nDoIP_AddCombinedPDU( 0x8001, rawReq, 7);\nrawReq[1] = 0x02;\nDoIP_AddCombinedPDU( 0x8001, rawReq, 7);\nrawReq[1] = 0x03;\nDoIP_AddCombinedPDU( 0x8001, rawReq, 7);\nrawReq[1] = 0x04;\nDoIP_AddCombinedPDU( 0x8001, rawReq, 7);\n\n// Send the PDU combination. On Ethernet all four PDUs will be put into the\n// same frame and arrive together at the DoIP gateway\nDoIP_SendPDUCombination();"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

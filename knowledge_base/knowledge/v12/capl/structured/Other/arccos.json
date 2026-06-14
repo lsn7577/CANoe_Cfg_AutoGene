@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "arccos",
+  "category": "Other",
+  "title": "arccos",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Other/Functions/CAPLfunctionarccos.htm",
+  "syntax": [
+    "double arccos(double x);"
+  ],
+  "description": [
+    "Calculates arccosine of x."
+  ],
+  "parameters": [
+    {
+      "name": "x",
+      "type": "",
+      "description": "Value between –1 and 1 whose arccosine is to be calculated. Values outside this range cause a CAPL runtime error."
+    }
+  ],
+  "return": "Arcus Cosine of x.",
+  "example": {
+    "description": [],
+    "code": "double x;\nx = arccos(0); // result PI/2\nx = arccos(1); // result 0"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

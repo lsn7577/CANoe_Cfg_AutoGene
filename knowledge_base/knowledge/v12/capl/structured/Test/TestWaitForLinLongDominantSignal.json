@@ -1,0 +1,35 @@
+{
+  "page_type": "function",
+  "name": "TestWaitForLinLongDominantSignal",
+  "category": "Test",
+  "title": "TestWaitForLinLongDominantSignal",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/Test/Functions/CAPLfunctionTestWaitForLinLongDominantSignal.htm",
+  "syntax": [
+    "long TestWaitForLinLongDominantSignal (dword aTimeout);"
+  ],
+  "description": [
+    "Waits for the occurrence of a LIN long dominant signal. Should the frame not occur before the expiration of the time aTimeout, the wait condition is resolved nevertheless.",
+    "Consider to set always the appropriate bus context in a multibus environment before the function is called.",
+    "Further information on site MultiBus Environment."
+  ],
+  "parameters": [
+    {
+      "name": "aTimeout",
+      "type": "",
+      "description": "Maximum time that should be waited [ms]."
+    }
+  ],
+  "return": "-2: Resume due to constraint violation",
+  "example": {
+    "description": [],
+    "code": "testcase tcTFS_linLongDominantSignal ()\n{\n   linLongDominantSignal linLongDominantSignal;\n   if (testWaitForLinLongDominantSignal (5000) == 1)\n   {\n      if (testGetWaitLinLongDominantSignalData(linLongDominantSignal) == 0)\n      {\n         testStep(\"Evaluation\", \"LIN LongDominantSignal event occurred. Signal length is %d ns\", linLongDominantSignalData.length_ns);\n      }\n   }\n}"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

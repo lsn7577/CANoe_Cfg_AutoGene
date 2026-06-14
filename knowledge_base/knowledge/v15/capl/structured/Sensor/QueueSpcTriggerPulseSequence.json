@@ -1,0 +1,143 @@
+{
+  "page_type": "method",
+  "name": "QueueSpcTriggerPulseSequence",
+  "category": "Sensor",
+  "title": "QueueSpcTriggerPulseSequence",
+  "source": "chm_extract_v15/CANoeCANalyzer/Topics/CAPLFunctions/Sensor/Functions/CAPLfunctionQueueSpcTriggerPulseSequence.htm",
+  "syntax": [
+    "SensorErrorCode sysvarSensorNamespace.QueueSpcTriggerPulseSequence (dword[] triggerLengthsNs, dword[] responseSpaceLengthsNs, dword sequenceLength, dword periodic);"
+  ],
+  "description": [
+    "Queues a sequence of SPC trigger pulses on the specified ECU channel."
+  ],
+  "parameters": [
+    {
+      "name": "triggerLengthNs",
+      "type": "",
+      "description": "Array of trigger pulse lengths in nanoseconds."
+    },
+    {
+      "name": "responseSpaceLengthNs",
+      "type": "",
+      "description": "Array of sensor response space lengths in nanoseconds."
+    },
+    {
+      "name": "sequenceLength",
+      "type": "",
+      "description": "The length of the trigger pulse sequence."
+    },
+    {
+      "name": "periodic",
+      "type": "",
+      "description": "1 = periodic transmission, otherwise single transmission."
+    }
+  ],
+  "return": "This method returns a SensorErrorCode.",
+  "example": {
+    "description": [],
+    "code": "// Sensor configurations\nconst dword cNumSpcSensors = 2;\ndouble cSensorTickLengthUs[cNumSpcSensors] = { 3.0, 3.0 };\ndouble cSensorMinTriggerLenTicks[cNumSpcSensors] = { 1.5, 5.0 };\ndouble cSensorTotalTriggerLenTicks[cNumSpcSensors] = { 13.0, 13.0 };\ndword cSensorNumLowTicks[cNumSpcSensors] = { 5, 5 };\ndword cSensorNumDataNibbles[cNumSpcSensors] = { 6, 4 };\n\ndword i;\ndword triggerLensNs[cNumSpcSensors];\ndword responseSpaceLensNs[cNumSpcSensors];\n\nenum sensorErrorCode result;\n\nfor (i = 0; i < cNumSpcSensors; i++)\n{\n  double maxSensorResponseTicks;\n\n  // Calculate length of SPC trigger pulse in nanoseconds\n  triggerLensNs[i] = cSensorTickLengthUs[i] * cSensorMinTriggerLenTicks[i] * 1000;\n\n  // Calculate length of the sensor's response space in ticks\n  maxSensorResponseTicks = cSensorTotalTriggerLenTicks[i] - cSensorMinTriggerLenTicks[i]; // Total trigger time high ticks\n  maxSensorResponseTicks += 56; // Sync pulse\n  maxSensorResponseTicks += (cSensorNumDataNibbles[i] + 2) * 27; // Status + data + crc nibbles\n  maxSensorResponseTicks += cSensorNumLowTicks[i]; // SPC end pulse\n\n  // Calculate length of the sensor's response space in nanoseconds\n  responseSpaceLensNs[i] = maxSensorResponseTicks * cSensorTickLengthUs[i] * 1000;\n}\n\n// Queue a periodic SPC trigger pulse sequence with the calculated lengths\nresult = sysvar::SENSOR::SENT::ECUSIM.QueueSpcTriggerPulseSequence(triggerLensNs, responseSpaceLensNs, cNumSpcSensors, 1);\nif (result == eSensorNoError)\n{\n  write(\"Queuing of periodic SPC trigger pulse sequence succeeded.\");\n}\nelse\n{\n  write(\"Queuing of periodic SPC trigger pulse sequence failed with code: %d.\", result);\n}"
+  },
+  "availability": [
+    [
+      "CANalyzer",
+      "CANoe",
+      "CANoe4SW Server Edition (Windows)",
+      "CANoe4SW Server Edition (Linux)",
+      "CANoe4SW",
+      "vTESTstudio"
+    ],
+    [
+      "Since Version",
+      "—",
+      "15",
+      "—",
+      "—",
+      "—",
+      "6"
+    ],
+    [
+      "Restricted To",
+      "—",
+      "Sensor",
+      "—",
+      "—",
+      "—",
+      "Sensor"
+    ],
+    [
+      "CANalyzer Measurement Setup (Transmit Branch)",
+      "—",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Measurement Setup / CANalyzer Analysis Branch",
+      "—",
+      "—",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Simulation Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe System and Communication Setup",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Modules",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "CANoe Test Setup for Test Units",
+      "N/A",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ],
+    [
+      "32-Bit",
+      "—",
+      "✔",
+      "—",
+      "N/A",
+      "—",
+      "N/A"
+    ],
+    [
+      "64-Bit",
+      "—",
+      "✔",
+      "—",
+      "—",
+      "—",
+      "N/A"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

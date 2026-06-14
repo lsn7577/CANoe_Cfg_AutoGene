@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "sysSetVariableFilterActive",
+  "category": "SystemVariables",
+  "title": "sysSetVariableFilterActive",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/SystemVariables/Functions/CAPLfunctionSysSetVariableFilterActive.htm",
+  "syntax": [
+    "long sysSetVariableFilterActive(dword active); // form 1"
+  ],
+  "description": [
+    "Activates or deactivates a variable filter. If no filterName is given, the default filter is affected."
+  ],
+  "parameters": [
+    {
+      "name": "active",
+      "type": "",
+      "description": "Specifies the new filter status: 0: deactivated. All other values: activated."
+    }
+  ],
+  "return": "0: No error, function successful.",
+  "example": {
+    "description": [],
+    "code": "long result;\n//create the default filter as a Stop Filter.\nresult = sysCreateVariableFilter(0);\n//deactivate the default filter.\nresult = sysSetVariableFilterActive(0);"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}

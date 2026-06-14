@@ -1,0 +1,33 @@
+{
+  "page_type": "function",
+  "name": "AREthSDSetServiceStatus",
+  "category": "IP",
+  "title": "AREthSDSetServiceStatus",
+  "source": "chm_extract/CANoeCANalyzer/Topics/CAPLfunctions/IP/AUTOSARethIL/Functions/CAPLfunctionAREthSDSetServiceStatus.htm",
+  "syntax": [
+    "long AREthSDSetServiceStatus( dword psiHandle, long up );"
+  ],
+  "description": [
+    "The status of the Provided Service Instance is set at the node (producer)."
+  ],
+  "parameters": [
+    {
+      "name": "psiHandle",
+      "type": "",
+      "description": "Handle of the required Consumed Service Instance (see AREthCreateProvidedServiceInstance)."
+    }
+  ],
+  "return": "0: The function was successfully executed",
+  "example": {
+    "description": [],
+    "code": "dword appEndpointHandle;\ndword serviceHandle;\n\nappEndpointHandle = AREthOpenLocalApplicationEndpoint(kUDP, 30501);\nserviceHandle  = AREthCreateConsumedServiceInstance(appEndpointHandle, 1 /*serviceId*/, 1 /*instanceId*/);\nAREthSDSetServiceStatus(serviceHandle, 0); //do not offer this service"
+  },
+  "availability": [
+    [
+      "Since Version"
+    ]
+  ],
+  "selectors": [],
+  "note": [],
+  "complexity": ""
+}
