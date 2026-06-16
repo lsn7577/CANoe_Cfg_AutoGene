@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1.0",
+  "id": "canoe_config_pack_profile",
+  "description": "Pack-local retrieval profile for CANoe CFG generation and COM Automation only.",
+  "allowed_topics": ["canoe_config", "com_automation", "cfg"],
+  "exclude_topics": ["capl_function_authoring", "panel_layout", "dbc_editor"],
+  "primary_pages": ["knowledge/v12/canoe_config/structured/COMAutomation/CFG Generation via COM.json"],
+  "required_interfaces": [
+    "Application.Open",
+    "Application.New",
+    "Application.Configuration",
+    "Configuration.SaveAs",
+    "DatabaseSetup.Databases.Add",
+    "IDatabases3.AddToChannel",
+    "DiagnosticsSetup.DiagDescriptions.Add",
+    "DiagDescription.SeednKeyDll",
+    "XCPSetup.ECUs.Add"
+  ]
+}

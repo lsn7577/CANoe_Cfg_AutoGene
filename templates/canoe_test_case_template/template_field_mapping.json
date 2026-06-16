@@ -97,9 +97,9 @@
   "priority_values": ["P0", "P1", "P2", "P3"],
   "automation_flags": ["是", "否", "半自动"],
   "yes_no_values": ["是", "否"],
-  "strategy_values": ["是", "否", "按需"],
+  "strategy_values": ["是", "否", "按需", "deterministic", "llm", "llm_with_fallback"],
+  "capl_authoring_modes": ["deterministic", "llm", "llm_with_fallback"],
   "canoe_versions": ["v15", "v12", "v17", "v18"],
   "report_formats": ["HTML", "XML", "TXT", "HTML+XML"],
   "bus_types": ["CAN", "CANFD", "LIN", "FlexRay", "Ethernet"]
 }
-

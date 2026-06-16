@@ -143,10 +143,13 @@
     "packs/diagnostics/pack.json",
     "packs/panel/pack.json",
     "packs/dbc/pack.json",
+    "packs/canoe_config/pack.json",
     "packs/team_eq07/pack.json"
   ],
   "global_retrieval_profiles": [
     "retrieval_profiles/default.json",
+    "retrieval_profiles/canoe_config.json",
+    "retrieval_profiles/capl_authoring.json",
     "retrieval_profiles/team_overrides.json"
   ],
   "global_generation_patterns": [
@@ -154,7 +157,8 @@
     "generation_patterns/capl_simulation_node/pattern.json",
     "generation_patterns/dbc/pattern.json",
     "generation_patterns/panel_binding/pattern.json",
-    "generation_patterns/canoe_project_layout/pattern.json"
+    "generation_patterns/canoe_project_layout/pattern.json",
+    "generation_patterns/canoe_com_automation/pattern.json"
   ],
   "global_validation_rules": [
     "validation_rules/capl_api_evidence_gate.json",
@@ -181,4 +185,3 @@
     }
   ]
 }
-

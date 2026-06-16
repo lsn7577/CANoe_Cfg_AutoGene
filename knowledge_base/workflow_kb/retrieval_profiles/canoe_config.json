@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "id": "canoe_config",
+  "description": "Disclosure profile for CANoe CFG/configuration workflow steps. Use only CFG/COM Automation facts; do not retrieve CAPL authoring syntax unless explicitly requested.",
+  "default_version": "v12",
+  "lookup_order": ["workflow_pack_primary_pages", "exact_interface_name", "constrained_bm25_search"],
+  "required_agent_kb_files": [
+    "workflow_kb/packs/canoe_config/pack.json",
+    "workflow_kb/packs/canoe_config/retrieval_profile.json",
+    "workflow_kb/generation_patterns/canoe_com_automation/pattern.json"
+  ],
+  "topic_filters": ["canoe_config", "com_automation", "cfg"],
+  "blocked_topic_filters": ["capl"],
+  "primary_pages": ["knowledge/v12/canoe_config/structured/COMAutomation/CFG Generation via COM.json"],
+  "candidate_symbols": [
+    "Application.Open",
+    "Application.New",
+    "Configuration.SaveAs",
+    "DatabaseSetup.Databases.Add",
+    "DiagnosticsSetup.DiagDescriptions.Add",
+    "XCPSetup.ECUs.Add"
+  ]
+}

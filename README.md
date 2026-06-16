@@ -15,6 +15,27 @@ F:/Canoe_Gene/
   docs/
 ```
 
+## Environment Dependencies
+
+Required to run the default workflow and knowledge-base checks:
+
+- Windows with Python 3.9+.
+- `burr` for the workflow state machine.
+- `rank_bm25`, `jieba`, and `lxml` for the default model-free knowledge-base retriever.
+- Git LFS when cloning the repository, because `CANoeCANalyzer.chm` and `knowledge_base/artifacts/bm25.pkl` are LFS-managed files.
+
+Install the required Python packages with the same Python used to run the workflow:
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
+Optional dependencies:
+
+- Node.js is only needed when rebuilding `templates/canoe_test_case_template/CANoe自动化测试用例模板.xlsx`.
+- Vector CANoe plus a project-specific adapter is only needed for real CFG loading or CAPL compilation. With `--canoe-validation-mode disabled`, the workflow does not require CANoe and reports external validation as skipped.
+- `knowledge_base\requirements-optional.txt` is only for explicit vector/rerank/MCP experiments; the default path does not need embedding models.
+
 ## Long-Term Assets
 
 - `knowledge_base/`  

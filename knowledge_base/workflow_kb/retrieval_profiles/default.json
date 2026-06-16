@@ -27,7 +27,10 @@
     "diagnostics": {
       "topic_filters": ["capl", "diagnostics"],
       "candidate_symbols": ["diagSendRequest", "diagSetParameter", "diagSetTarget"]
+    },
+    "canoe_config": {
+      "topic_filters": ["canoe_config", "com_automation", "cfg"],
+      "candidate_symbols": ["Application.Open", "Configuration.SaveAs", "DatabaseSetup.Databases.Add", "DiagnosticsSetup.DiagDescriptions.Add"]
     }
   }
 }
-

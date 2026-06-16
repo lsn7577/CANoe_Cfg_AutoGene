@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "id": "canoe_config",
+  "name": "CANoe Configuration Automation",
+  "version": "0.1.0",
+  "status": "active",
+  "owner": "workflow",
+  "domains": ["canoe_config", "com_automation", "cfg"],
+  "compatible_canoe_versions": ["v12"],
+  "depends_on_packs": ["core", "dbc", "diagnostics"],
+  "files": {
+    "retrieval_profile": "packs/canoe_config/retrieval_profile.json",
+    "generation_pattern": "generation_patterns/canoe_com_automation/pattern.json"
+  },
+  "provided_capabilities": [
+    "Generate CANoe CFG via official COM Automation",
+    "Mount DBC through DatabaseSetup.Databases",
+    "Mount CDD through DiagnosticsSetup.DiagDescriptions",
+    "Mount A2L through XCPSetup.ECUs",
+    "Preserve base CFG as fallback for private CANoe object graphs"
+  ]
+}

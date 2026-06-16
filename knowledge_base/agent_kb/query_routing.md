@@ -16,6 +16,9 @@ Is the question about a CONCEPT/EXPLANATION (not a specific call)?
 
 Is the question about a VERSION DIFFERENCE (v12 vs v15)?
   └── YES → Read L3_diffs/DIFF_REPORT.md and diff_summary_v12_to_v15.json
+
+Is the question about CANoe .cfg generation/configuration?
+  └── YES → Use workflow_kb/retrieval_profiles/canoe_config.json and read knowledge/v12/canoe_config/structured/COMAutomation/CFG Generation via COM.json
 ```
 
 ## 1. By Domain
@@ -118,9 +121,16 @@ Is the question about a VERSION DIFFERENCE (v12 vs v15)?
 → Search retriever with symptom phrase
 
 ### "Generate a CAPL test for X"
+→ Use `workflow_kb/retrieval_profiles/capl_authoring.json`
 → `capl/structured/Test/` (Test* / ChkCreate_* / ChkStart_* functions)
 → `extras/team/CAPL_Internal_Coding_Standards.json` (naming + style rules)
 → `extras/team/CI_Pipeline_Reference.json` (CI integration)
+
+### "Generate or update a CANoe .cfg"
+→ Use `workflow_kb/retrieval_profiles/canoe_config.json`
+→ `knowledge/v12/canoe_config/structured/COMAutomation/CFG Generation via COM.json`
+→ `workflow_kb/generation_patterns/canoe_com_automation/pattern.json`
+→ Do not retrieve CAPL function syntax unless the task explicitly asks for CAPL code.
 
 ### "Generate a Panel .xvp file"
 → `panel/structured/Elements/<Control>.json` (control properties)

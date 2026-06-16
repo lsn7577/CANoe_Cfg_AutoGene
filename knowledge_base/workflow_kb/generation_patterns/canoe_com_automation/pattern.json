@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "id": "canoe_com_automation",
+  "artifact_kind": "canoe_cfg",
+  "output_extension": ".cfg",
+  "state_inputs": ["structured_test_case", "source_models", "project_config"],
+  "required_sections": ["COM application lifecycle", "database setup", "diagnostics setup", "XCP setup", "SaveAs"],
+  "evidence_requirements": [
+    "CANoe COM Application.Open/New",
+    "CANoe COM Configuration.SaveAs",
+    "DatabaseSetup.Databases.Add/AddToChannel",
+    "DiagnosticsSetup.DiagDescriptions.Add",
+    "XCPSetup.ECUs.Add"
+  ],
+  "implementation_notes": [
+    "Do not hand-write Vector's private .cfg serialization format.",
+    "Use a base cfg when available to preserve plugin-specific object graphs.",
+    "Let CANoe serialize the final cfg via Configuration.SaveAs."
+  ]
+}

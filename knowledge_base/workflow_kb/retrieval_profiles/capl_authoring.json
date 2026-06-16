@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1.0",
+  "id": "capl_authoring",
+  "description": "Disclosure profile for CAPL writing/evaluation workflow steps. Use CAPL API and team coding rules only; do not retrieve CANoe CFG COM Automation pages unless explicitly requested.",
+  "default_version": "v15",
+  "lookup_order": ["exact_symbol", "scenario_primary_pages", "team_overrides", "constrained_bm25_search"],
+  "required_agent_kb_files": [
+    "agent_kb/rules_doc.md",
+    "agent_kb/scenarios.json",
+    "agent_kb/symbol_aliases.json",
+    "agent_kb/unified_index.json"
+  ],
+  "topic_filters": ["capl", "xcp", "diagnostics"],
+  "blocked_topic_filters": ["canoe_config", "cfg", "com_automation"],
+  "candidate_symbols": ["testcase", "testStep", "diagSendRequest", "TestWaitForSignalMatch", "output", "setSignal"]
+}

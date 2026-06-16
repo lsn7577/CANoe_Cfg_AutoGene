@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import sys
 import zipfile
 from collections import defaultdict
@@ -21,6 +22,7 @@ DEFAULT_TEMPLATE = ROOT / "templates" / "canoe_test_case_template" / "CANoe自�
 DEFAULT_OUTPUT = ROOT / "generated_projects" / "canoe_auto_generation"
 FIELD_MAPPING_PATH = ROOT / "templates" / "canoe_test_case_template" / "template_field_mapping.json"
 WORKFLOW_FIELD_MAPPING_POINTER = WORKFLOW_DIR / "template_field_mapping.json"
+WORKFLOW_KB_DIR = ROOT / "knowledge_base" / "workflow_kb"
 DEFAULT_TRACKING_PROJECT = "canoe_auto_generation"
 
 PROJECT_SHEET = "工程参数配置"
@@ -36,6 +38,17 @@ OPERATION_TYPES = set(FIELD_MAPPING["operation_types"])
 CONDITION_TYPES = set(FIELD_MAPPING["condition_types"])
 RESULT_TYPES = set(FIELD_MAPPING["result_types"])
 COMPARE_OPERATOR_MAP = FIELD_MAPPING["compare_operator_mapping"]
+
+
+def _workflow_retrieval_profile(profile_id: str) -> Dict[str, Any]:
+    path = WORKFLOW_KB_DIR / "retrieval_profiles" / f"{profile_id}.json"
+    if path.exists():
+        data = json.loads(path.read_text(encoding="utf-8"))
+    else:
+        data = {"id": profile_id}
+    data.setdefault("id", profile_id)
+    data["profile_path"] = str(path)
+    return data
 
 
 def _json_default(value: Any) -> str:
@@ -125,6 +138,24 @@ def _canoe_validation_mode(state: State, project_config: Dict[str, Any]) -> str:
     if value == "按需":
         return "manual"
     return "disabled"
+
+
+def _capl_authoring_mode(state: State, project_config: Dict[str, Any]) -> str:
+    raw = _as_text(state.get("capl_authoring_mode")) or _strategy_value(project_config, "CAPL生成模式", "llm_with_fallback")
+    value = raw.strip().lower()
+    aliases = {
+        "deterministic": "deterministic",
+        "fixed": "deterministic",
+        "固定规则": "deterministic",
+        "确定性": "deterministic",
+        "llm": "llm",
+        "agent": "llm",
+        "llm_with_fallback": "llm_with_fallback",
+        "llm-fallback": "llm_with_fallback",
+        "agent_with_fallback": "llm_with_fallback",
+        "智能生成": "llm_with_fallback",
+    }
+    return aliases.get(value, "llm_with_fallback")
 
 
 def _safe_name(value: Any, default_value: str = "Item") -> str:
@@ -390,12 +421,62 @@ def _source_files_from_state(state: State, project_config: Dict[str, Any]) -> Di
             if value:
                 values.append(value)
         return sorted(set(values))
-    return {
+    sources = {
         "requirements": collect("测试需求文件路径", "requirements_path", "测试需求文件路径"),
         "dbc": collect("默认 DBC 文件路径", "dbc_paths", "DBC路径"),
         "a2l": collect("默认 A2L 文件路径", "a2l_paths", "A2L路径"),
         "cdd": collect("默认 CDD 文件路径", "cdd_paths", "CDD路径"),
+        "dll": collect("默认 DLL 文件路径", "dll_paths", "DLL路径"),
     }
+    if not sources["dll"]:
+        sources["dll"] = _discover_sibling_paths(sources, "*.dll")
+    cfg_values = collect("默认 CFG 文件路径", "cfg_paths", "CFG路径")
+    for key in ("基础 CANoe CFG 路径", "CANoe CFG 文件路径", "默认 CANoe CFG 文件路径"):
+        value = _as_text(basic.get(key))
+        if value:
+            cfg_values.append(value)
+    for ch in channels:
+        for key in ("CANoe CFG路径", "CANoe CFG 路径", "CFG文件路径"):
+            value = _as_text(ch.get(key))
+            if value:
+                cfg_values.append(value)
+    if not cfg_values:
+        cfg_values = _discover_cfg_paths(sources, _as_text(basic.get("项目代号")), _as_text(basic.get("工程名称")))
+    sources["cfg"] = sorted(set(cfg_values))
+    return sources
+
+
+def _discover_sibling_paths(source_files: Dict[str, List[str]], pattern: str) -> List[str]:
+    dirs = set()
+    for kind in ("dbc", "a2l", "cdd"):
+        for value in source_files.get(kind, []):
+            path = Path(_as_text(value)).expanduser()
+            if path.is_absolute() and path.exists():
+                dirs.add(path.parent)
+    return sorted({str(path) for directory in dirs for path in directory.glob(pattern)})
+
+
+def _discover_cfg_paths(source_files: Dict[str, List[str]], project_code: str = "", project_name: str = "") -> List[str]:
+    dirs = set()
+    for kind in ("dbc", "a2l", "cdd"):
+        for value in source_files.get(kind, []):
+            path = Path(_as_text(value)).expanduser()
+            if path.is_absolute() and path.exists():
+                dirs.add(path.parent)
+    candidates = sorted({cfg for directory in dirs for cfg in directory.glob("*.cfg")})
+    if not candidates:
+        return []
+    preferred_stems = {
+        _safe_name(value).lower()
+        for value in (project_code, project_name)
+        if _as_text(value)
+    }
+    preferred = [path for path in candidates if path.stem.lower() in preferred_stems]
+    if len(preferred) == 1:
+        return [str(preferred[0])]
+    if len(candidates) == 1:
+        return [str(candidates[0])]
+    return []
 
 
 def _resolve_declared_path(path_text: str, template_path: Path) -> Dict[str, Any]:
@@ -475,16 +556,190 @@ def _parse_a2l_file(path: Path) -> Dict[str, Any]:
     }
 
 
+def _parse_cfg_file(path: Path) -> Dict[str, Any]:
+    text = _read_text_best_effort(path)
+    header = next((line.strip() for line in text.splitlines() if line.startswith(";CANoe Version")), "")
+    version = ""
+    match = re.search(r"^Version:\s*(.+)$", text, flags=re.MULTILINE)
+    if match:
+        version = match.group(1).strip()
+    references = []
+    quoted_paths = re.findall(r"<VFileName\b[^>]*>\s*\d*(?:\s+base=cfg)?\s+\"([^\"]*)\"", text)
+    quoted_paths.extend(re.findall(r"<VFileName\b[^>]*\bname=\"([^\"]*)\"", text))
+    for item in quoted_paths:
+        value = item.strip()
+        if not value:
+            continue
+        suffix = Path(value).suffix.lower().lstrip(".") or "unknown"
+        references.append({
+            "path": value,
+            "kind": suffix,
+            "basename": Path(value).name,
+        })
+    mounted_files: Dict[str, List[str]] = {}
+    for ref in references:
+        mounted_files.setdefault(ref["kind"], []).append(ref["path"])
+    return {
+        "header": header,
+        "version": version,
+        "file_references": references,
+        "mounted_files": {key: sorted(set(values)) for key, values in mounted_files.items()},
+        "reference_count": len(references),
+        "line_count": text.count("\n") + 1,
+    }
+
+
+def _parse_xml_attrs(attr_text: str) -> Dict[str, str]:
+    return {
+        key: value
+        for key, _quote, value in re.findall(r"([A-Za-z_][A-Za-z0-9_.:-]*)\s*=\s*(['\"])(.*?)\2", attr_text)
+    }
+
+
+def _xml_blocks(text: str, tag: str) -> Iterable[Tuple[Dict[str, str], str]]:
+    pattern = rf"<{tag}\b([^>]*)>(.*?)</{tag}>"
+    for match in re.finditer(pattern, text, flags=re.IGNORECASE | re.DOTALL):
+        yield _parse_xml_attrs(match.group(1)), match.group(2)
+
+
+def _xml_element_attrs(text: str, tag: str) -> Iterable[Dict[str, str]]:
+    yielded = set()
+    for attrs, _body in _xml_blocks(text, tag):
+        marker = tuple(sorted(attrs.items()))
+        yielded.add(marker)
+        yield attrs
+    for attr_text in re.findall(rf"<{tag}\b([^>]*)/>", text, flags=re.IGNORECASE | re.DOTALL):
+        attrs = _parse_xml_attrs(attr_text)
+        marker = tuple(sorted(attrs.items()))
+        if marker not in yielded:
+            yield attrs
+
+
+def _xml_texts(block: str, tag: str) -> List[str]:
+    return [
+        re.sub(r"\s+", " ", value).strip()
+        for value in re.findall(rf"<{tag}\b[^>]*>(.*?)</{tag}>", block, flags=re.IGNORECASE | re.DOTALL)
+        if re.sub(r"\s+", " ", value).strip()
+    ]
+
+
+def _normalize_cdd_name(value: str) -> str:
+    text = re.sub(r"\s+", " ", value).strip()
+    text = re.sub(r"^\(\$[0-9A-Fa-f]+\)\s*", "", text)
+    text = re.split(r"\s+-\s+|\s+\(", text, maxsplit=1)[0].strip()
+    return text
+
+
+def _cdd_sid_aliases(value: str) -> List[str]:
+    if not value:
+        return []
+    try:
+        number = int(value, 10)
+    except ValueError:
+        return []
+    hex_text = f"{number:X}"
+    return [str(number), hex_text, f"0x{hex_text}", f"${hex_text}"]
+
+
+def _cdd_name_aliases(*values: str) -> List[str]:
+    aliases = set()
+    for value in values:
+        text = _as_text(value)
+        if not text:
+            continue
+        aliases.add(text)
+        normalized = _normalize_cdd_name(text)
+        if normalized:
+            aliases.add(normalized)
+    return sorted(aliases)
+
+
 def _parse_cdd_file(path: Path) -> Dict[str, Any]:
     text = _read_text_best_effort(path)
-    names = set(re.findall(r"<SHORT-NAME>\s*([^<]+?)\s*</SHORT-NAME>", text, flags=re.IGNORECASE))
-    names.update(re.findall(r'\b(?:SERVICE|Service|service)\s*=\s*"([^"]+)"', text))
-    names.update(re.findall(r'\b(?:qualifier|Qualifier|name|Name)\s*=\s*"([A-Za-z_][A-Za-z0-9_./:-]*)"', text))
-    services = sorted({name.strip() for name in names if name.strip()})
+    service_entries: List[Dict[str, Any]] = []
+    service_aliases = set()
+    for attrs, block in _xml_blocks(text, "PROTOCOLSERVICE"):
+        names = _xml_texts(block, "TUV")
+        quals = _xml_texts(block, "QUAL")
+        req_block = next((child for _child_attrs, child in _xml_blocks(block, "REQ")), "")
+        pos_block = next((child for _child_attrs, child in _xml_blocks(block, "POS")), "")
+        req_sid = next(
+            (
+                comp_attrs.get("v", "")
+                for comp_attrs in _xml_element_attrs(req_block, "CONSTCOMP")
+                if comp_attrs.get("spec", "").lower() == "sid"
+            ),
+            "",
+        )
+        pos_sid = next(
+            (
+                comp_attrs.get("v", "")
+                for comp_attrs in _xml_element_attrs(pos_block, "CONSTCOMP")
+                if comp_attrs.get("spec", "").lower() == "sid"
+            ),
+            "",
+        )
+        aliases = set(_cdd_name_aliases(*(names + quals)))
+        aliases.update(_cdd_sid_aliases(req_sid))
+        service_aliases.update(alias.lower() for alias in aliases)
+        service_entries.append({
+            "id": attrs.get("id", ""),
+            "oid": attrs.get("oid", ""),
+            "name": _normalize_cdd_name(names[0]) if names else "",
+            "display_name": names[0] if names else "",
+            "qualifier": quals[0] if quals else "",
+            "request_sid": req_sid,
+            "positive_response_sid": pos_sid,
+            "aliases": sorted(aliases),
+            "functional": attrs.get("func", ""),
+            "physical": attrs.get("phys", ""),
+            "response_on_physical": attrs.get("respOnPhys", ""),
+            "response_on_functional": attrs.get("respOnFunc", ""),
+        })
+
+    did_entries: List[Dict[str, Any]] = []
+    did_aliases = set()
+    for attrs, block in _xml_blocks(text, "DID"):
+        did_number = attrs.get("n", "")
+        names = _xml_texts(block, "TUV")
+        quals = _xml_texts(block, "QUAL")
+        aliases = set(_cdd_name_aliases(*(names + quals)))
+        aliases.update(_cdd_sid_aliases(did_number))
+        did_aliases.update(alias.lower() for alias in aliases)
+        data_objects = []
+        for data_attrs, data_block in _xml_blocks(block, "DATAOBJ"):
+            data_names = _xml_texts(data_block, "TUV")
+            data_quals = _xml_texts(data_block, "QUAL")
+            data_objects.append({
+                "name": _normalize_cdd_name(data_names[0]) if data_names else "",
+                "qualifier": data_quals[0] if data_quals else "",
+                "dtref": data_attrs.get("dtref", ""),
+            })
+        did_entries.append({
+            "id": attrs.get("id", ""),
+            "oid": attrs.get("oid", ""),
+            "number": did_number,
+            "hex": f"0x{int(did_number):X}" if did_number.isdigit() else "",
+            "name": _normalize_cdd_name(names[0]) if names else "",
+            "display_name": names[0] if names else "",
+            "qualifier": quals[0] if quals else "",
+            "aliases": sorted(aliases),
+            "data_objects": data_objects,
+        })
+
+    legacy_names = set(re.findall(r"<SHORT-NAME>\s*([^<]+?)\s*</SHORT-NAME>", text, flags=re.IGNORECASE))
+    legacy_names.update(re.findall(r'\b(?:SERVICE|Service|service)\s*=\s*"([^"]+)"', text))
+    legacy_names.update(re.findall(r'\b(?:qualifier|Qualifier|name|Name)\s*=\s*"([A-Za-z_][A-Za-z0-9_./:-]*)"', text))
+    service_aliases.update(name.strip().lower() for name in legacy_names if name.strip())
+    services = sorted({alias for alias in service_aliases if alias})
     return {
         "services": services,
-        "service_count": len(services),
-        "parser_note": "Lightweight CDD/XML text parser. Replace with a CDD-aware parser when Vector diagnostics metadata is available.",
+        "service_entries": service_entries,
+        "service_count": len(service_entries) or len(services),
+        "did_entries": did_entries,
+        "did_aliases": sorted(did_aliases),
+        "did_count": len(did_entries),
+        "parser_note": "Lightweight Candela CDD parser for protocol services, DID names, aliases, SID values, and data objects.",
     }
 
 
@@ -497,6 +752,7 @@ def _parse_declared_sources(
         "dbc": _parse_dbc_file,
         "a2l": _parse_a2l_file,
         "cdd": _parse_cdd_file,
+        "cfg": _parse_cfg_file,
     }
     source_models: Dict[str, Any] = {}
     issues: List[Dict[str, Any]] = []
@@ -537,6 +793,8 @@ def _parse_declared_sources(
             model["status"] = "not_declared"
         elif any(item["status"] == "parsed" for item in model["files"]):
             model["status"] = "parsed" if all(item["status"] == "parsed" for item in model["files"]) else "partial"
+        elif any(item["status"] == "declared" for item in model["files"]):
+            model["status"] = "declared" if all(item["status"] == "declared" for item in model["files"]) else "partial"
         elif any(item["status"] == "parse_error" for item in model["files"]):
             model["status"] = "parse_error"
         else:
@@ -594,11 +852,38 @@ def _a2l_contains(source_models: Dict[str, Any], object_name: str, object_kind: 
 def _cdd_contains(source_models: Dict[str, Any], object_name: str) -> Optional[bool]:
     if not _source_model_loaded(source_models, "cdd"):
         return None
-    name = (_object_parts(object_name) or [""])[-1].lower()
+    raw_name = _as_text(object_name)
+    name = (_object_parts(raw_name) or [raw_name])[-1].lower()
+    candidates = {name, _normalize_cdd_name(raw_name).lower()}
+    for number in re.findall(r"(?:0x|\$)?([0-9A-Fa-f]{2,4})", raw_name):
+        candidates.add(number.lower())
+        candidates.add(f"0x{number}".lower())
+        candidates.add(f"${number}".lower())
+        try:
+            candidates.add(str(int(number, 16)))
+        except ValueError:
+            pass
     values = set()
     for file_entry in source_models.get("cdd", {}).get("files", []):
-        values.update(item.lower() for item in file_entry.get("model", {}).get("services", []))
-    return name in values
+        model = file_entry.get("model", {})
+        values.update(item.lower() for item in model.get("services", []))
+        values.update(item.lower() for item in model.get("did_aliases", []))
+    return any(candidate in values for candidate in candidates if candidate)
+
+
+def _first_parsed_source_entry(source_models: Dict[str, Any], kind: str) -> Dict[str, Any]:
+    for item in source_models.get(kind, {}).get("files", []):
+        if item.get("status") == "parsed":
+            return item
+    return {}
+
+
+def _resolved_source_paths(source_models: Dict[str, Any], kind: str) -> List[str]:
+    paths = []
+    for item in source_models.get(kind, {}).get("files", []):
+        if item.get("exists") and item.get("resolved"):
+            paths.append(str(item["resolved"]))
+    return sorted(set(paths))
 
 
 def _add_issue(
@@ -655,6 +940,7 @@ def _group_steps(test_case_rows: List[Dict[str, Any]]) -> Dict[str, Dict[str, An
         case = grouped.setdefault(case_id, {
             "case_id": case_id,
             "requirement_id": _as_text(row.get("需求ID")),
+            "requirement_ids": set(),
             "feature": _as_text(row.get("功能点")),
             "name": _as_text(row.get("用例名称")),
             "priority": _as_text(row.get("优先级")),
@@ -663,6 +949,11 @@ def _group_steps(test_case_rows: List[Dict[str, Any]]) -> Dict[str, Dict[str, An
             "steps": [],
             "required_sources": set(),
         })
+        requirement_id = _as_text(row.get("需求ID"))
+        if requirement_id:
+            case["requirement_ids"].add(requirement_id)
+            if not case.get("requirement_id"):
+                case["requirement_id"] = requirement_id
         required_sources = case["required_sources"]
         if _step_requires_dbc(row):
             required_sources.add("dbc")
@@ -700,6 +991,7 @@ def _group_steps(test_case_rows: List[Dict[str, Any]]) -> Dict[str, Dict[str, An
     for case in grouped.values():
         case["steps"].sort(key=lambda step: step.get("step_no", 0))
         case["required_sources"] = sorted(case["required_sources"])
+        case["requirement_ids"] = sorted(case["requirement_ids"])
     return grouped
 
 
@@ -862,6 +1154,7 @@ def retrieve_evidence(state: State) -> Tuple[Dict[str, Any], State]:
     project_config = state.get("project_config", {})
     output_root = Path(state.get("output_root") or DEFAULT_OUTPUT)
     version = structured.get("project", {}).get("target_canoe_version") or "v15"
+    profile = _workflow_retrieval_profile("capl_authoring")
 
     required_by_case = {}
     all_symbols = set()
@@ -884,6 +1177,10 @@ def retrieve_evidence(state: State) -> Tuple[Dict[str, Any], State]:
         "schema_version": "0.1.0",
         "status": "complete" if not gaps else "partial",
         "target_canoe_version": version,
+        "retrieval_profile": profile["id"],
+        "retrieval_profile_file": profile["profile_path"],
+        "topic_filters": profile.get("topic_filters", []),
+        "blocked_topic_filters": profile.get("blocked_topic_filters", []),
         "required_symbols_by_case": required_by_case,
         "pages": pages,
         "gaps": gaps,
@@ -893,6 +1190,175 @@ def retrieve_evidence(state: State) -> Tuple[Dict[str, Any], State]:
         "evidence_bundle": bundle,
         "evidence_bundle_file": bundle_file,
         "evidence_status": bundle["status"],
+    }
+    return result, state.update(**result)
+
+
+def _coverage_step_domains(step: Dict[str, Any]) -> List[str]:
+    values = " ".join([
+        _as_text(step.get("operation", {}).get("type")),
+        _as_text(step.get("condition", {}).get("type")),
+        _as_text(step.get("expected_result", {}).get("type")),
+    ])
+    domains = []
+    if "CAN" in values:
+        domains.append("can")
+    if "XCP" in values or "观测量" in values:
+        domains.append("xcp")
+    if "诊断" in values:
+        domains.append("diagnostics")
+    if "手动" in values:
+        domains.append("manual")
+    if "固定时间" in values:
+        domains.append("timing")
+    return sorted(set(domains))
+
+
+def _coverage_report_from_state(
+    structured: Dict[str, Any],
+    source_models: Dict[str, Any],
+    evidence_bundle: Dict[str, Any],
+    profile: Dict[str, Any],
+) -> Dict[str, Any]:
+    cases = list(structured.get("cases", []))
+    risks: List[Dict[str, Any]] = []
+    requirement_to_cases: Dict[str, List[str]] = defaultdict(list)
+    cases_without_requirement = []
+    feature_to_cases: Dict[str, List[str]] = defaultdict(list)
+    domain_to_steps: Dict[str, int] = defaultdict(int)
+    required_sources = set()
+    adapter_heavy_steps = 0
+
+    for case in cases:
+        case_id = _as_text(case.get("case_id"))
+        requirement_ids = case.get("requirement_ids") or []
+        if not requirement_ids and _as_text(case.get("requirement_id")):
+            requirement_ids = [_as_text(case.get("requirement_id"))]
+        if not requirement_ids:
+            cases_without_requirement.append(case_id)
+        for requirement_id in requirement_ids:
+            requirement_to_cases[_as_text(requirement_id)].append(case_id)
+        feature = _as_text(case.get("feature")) or "未分类"
+        feature_to_cases[feature].append(case_id)
+        required_sources.update(case.get("required_sources", []))
+        for step in case.get("steps", []):
+            domains = _coverage_step_domains(step)
+            for domain in domains:
+                domain_to_steps[domain] += 1
+            if {"xcp", "diagnostics"} & set(domains):
+                adapter_heavy_steps += 1
+
+    source_status = {
+        kind: source_models.get(kind, {}).get("status", "not_declared")
+        for kind in ("dbc", "a2l", "cdd", "cfg", "dll")
+    }
+    for kind in sorted(required_sources):
+        if source_status.get(kind) not in {"parsed", "declared"}:
+            risks.append({
+                "severity": "warning",
+                "category": "source_coverage",
+                "message": f"{kind.upper()} is required by test steps but source model status is {source_status.get(kind, 'missing')}.",
+            })
+
+    if cases_without_requirement:
+        risks.append({
+            "severity": "warning",
+            "category": "requirement_coverage",
+            "message": "Some test cases have no requirement id.",
+            "cases": cases_without_requirement,
+        })
+
+    gaps = list(evidence_bundle.get("gaps", []))
+    if gaps:
+        risks.append({
+            "severity": "warning",
+            "category": "capl_evidence",
+            "message": "Some CAPL symbols do not have KB evidence.",
+            "gap_count": len(gaps),
+            "symbols": [gap.get("symbol") for gap in gaps if isinstance(gap, dict)],
+        })
+
+    if adapter_heavy_steps:
+        risks.append({
+            "severity": "info",
+            "category": "adapter_binding",
+            "message": "XCP or diagnostics steps require project adapter bindings before release use.",
+            "step_count": adapter_heavy_steps,
+        })
+
+    status = "fail" if not cases else ("warn" if any(risk["severity"] == "warning" for risk in risks) else "pass")
+    if not cases:
+        risks.append({
+            "severity": "error",
+            "category": "test_case_coverage",
+            "message": "No structured test cases are available for coverage analysis.",
+        })
+
+    required_symbols = evidence_bundle.get("required_symbols_by_case", {})
+    all_required_symbols = sorted({
+        symbol
+        for symbols in required_symbols.values()
+        for symbol in (symbols or [])
+    })
+    resolved_symbols = sorted({
+        _as_text(page.get("symbol"))
+        for page in evidence_bundle.get("pages", [])
+        if _as_text(page.get("symbol"))
+    })
+    return {
+        "schema_version": "0.1.0",
+        "agent": "KBIndexed_TestCoverageAnalyzer",
+        "retrieval_profile": profile["id"],
+        "retrieval_profile_file": profile["profile_path"],
+        "topic_filters": profile.get("topic_filters", []),
+        "blocked_topic_filters": profile.get("blocked_topic_filters", []),
+        "status": status,
+        "case_count": len(cases),
+        "step_count": sum(len(case.get("steps", [])) for case in cases),
+        "requirement_coverage": {
+            "covered_requirement_count": len(requirement_to_cases),
+            "covered_requirement_ids": sorted(requirement_to_cases),
+            "requirement_to_cases": {key: sorted(value) for key, value in sorted(requirement_to_cases.items())},
+            "cases_without_requirement": cases_without_requirement,
+        },
+        "feature_coverage": {
+            "feature_count": len(feature_to_cases),
+            "feature_to_cases": {key: sorted(value) for key, value in sorted(feature_to_cases.items())},
+        },
+        "domain_coverage": {
+            "step_count_by_domain": dict(sorted(domain_to_steps.items())),
+            "required_sources": sorted(required_sources),
+            "source_status": source_status,
+        },
+        "capl_evidence_coverage": {
+            "required_symbol_count": len(all_required_symbols),
+            "resolved_symbol_count": len(set(resolved_symbols)),
+            "gap_count": len(gaps),
+            "required_symbols": all_required_symbols,
+            "resolved_symbols": resolved_symbols,
+        },
+        "risks": risks,
+    }
+
+
+@action(
+    reads=["structured_test_case", "source_models", "evidence_bundle", "project_config", "output_root"],
+    writes=["coverage_report", "coverage_report_file", "coverage_status"],
+)
+def analyze_test_coverage(state: State) -> Tuple[Dict[str, Any], State]:
+    output_root = _state_output_root(state)
+    profile = _workflow_retrieval_profile("capl_authoring")
+    report = _coverage_report_from_state(
+        state.get("structured_test_case", {}),
+        state.get("source_models", {}),
+        state.get("evidence_bundle", {}),
+        profile,
+    )
+    report_file = _write_json(output_root / "coverage_report.json", report)
+    result = {
+        "coverage_report": report,
+        "coverage_report_file": report_file,
+        "coverage_status": report["status"],
     }
     return result, state.update(**result)
 
@@ -1240,28 +1706,50 @@ def emit_test_case_corrections(state: State) -> Tuple[Dict[str, Any], State]:
 
 @action(
     reads=["structured_test_case", "project_config", "source_models", "evidence_bundle", "config_retry_count", "output_root"],
-    writes=["canoe_config_plan", "cfg_artifact", "config_retry_count"],
+    writes=["canoe_config_plan", "cfg_artifact", "config_retry_count", "cfg_automation"],
 )
 def generate_canoe_config(state: State) -> Tuple[Dict[str, Any], State]:
     output_root = _state_output_root(state)
     structured = state.get("structured_test_case", {})
+    project_config = state.get("project_config", {})
     source_models = state.get("source_models", {})
     project = structured.get("project", {})
     retry_count = _as_int(state.get("config_retry_count"), 0) + 1
-    cfg_path = output_root / f"{project.get('name', 'CANoe_AutoTest_Project')}.cfg.todo.json"
+    project_name = project.get("name", "CANoe_AutoTest_Project")
+    cfg_source_entry = _first_parsed_source_entry(source_models, "cfg")
+    cfg_source_path = Path(cfg_source_entry.get("resolved", "")) if cfg_source_entry.get("resolved") else None
+    profile = _workflow_retrieval_profile("canoe_config")
+    target_cfg_path = output_root / f"{project_name}.cfg"
+    cfg_path = target_cfg_path if cfg_source_path else output_root / f"{project_name}.cfg.todo.json"
+    cfg_plan_path = output_root / f"{project_name}.cfg.plan.json"
+    cfg_automation_script_path = output_root / f"{project_name}.cfg.generate.ps1"
     layout_manifest_path = output_root / "canoe_project_layout_manifest.json"
     plan = {
         "schema_version": "0.1.0",
         "generator": "SubAgent2_Canoe工程配置专家",
         "target_canoe_version": project.get("target_canoe_version", "v15"),
-        "project_name": project.get("name", "CANoe_AutoTest_Project"),
-        "generation_mode": "adapter_plan",
-        "base_cfg_template": _as_text(state.get("base_canoe_cfg_template")),
+        "project_name": project_name,
+        "generation_mode": "canoe_com_automation_with_base_cfg_fallback" if cfg_source_path else "canoe_com_automation_plan",
+        "retrieval_profile": profile["id"],
+        "retrieval_profile_file": profile["profile_path"],
+        "topic_filters": profile.get("topic_filters", []),
+        "blocked_topic_filters": profile.get("blocked_topic_filters", []),
+        "base_cfg_template": str(cfg_source_path) if cfg_source_path else _as_text(state.get("base_canoe_cfg_template")),
+        "base_cfg_model": cfg_source_entry.get("model", {}),
+        "official_generation_path": {
+            "api_family": "CANoe COM Automation",
+            "script": str(cfg_automation_script_path),
+            "script_plan": str(cfg_plan_path),
+            "execute_when": "canoe_validation_mode=automated",
+            "fallback": "copy discovered/base cfg when present; otherwise emit a plan and script for CANoe to serialize",
+        },
         "channels": structured.get("channels", []),
         "mounted_files": {
-            "dbc": sorted({_as_text(ch.get("DBC路径")) for ch in structured.get("channels", []) if _as_text(ch.get("DBC路径"))}),
-            "a2l": sorted({_as_text(ch.get("A2L路径")) for ch in structured.get("channels", []) if _as_text(ch.get("A2L路径"))}),
-            "cdd": sorted({_as_text(ch.get("CDD路径")) for ch in structured.get("channels", []) if _as_text(ch.get("CDD路径"))}),
+            "dbc": sorted(set(_resolved_source_paths(source_models, "dbc")) | {_as_text(ch.get("DBC路径")) for ch in structured.get("channels", []) if _as_text(ch.get("DBC路径"))}),
+            "a2l": sorted(set(_resolved_source_paths(source_models, "a2l")) | {_as_text(ch.get("A2L路径")) for ch in structured.get("channels", []) if _as_text(ch.get("A2L路径"))}),
+            "cdd": sorted(set(_resolved_source_paths(source_models, "cdd")) | {_as_text(ch.get("CDD路径")) for ch in structured.get("channels", []) if _as_text(ch.get("CDD路径"))}),
+            "dll": _resolved_source_paths(source_models, "dll"),
+            "cfg": [str(cfg_source_path)] if cfg_source_path else [],
         },
         "source_model_status": {
             kind: model.get("status")
@@ -1276,12 +1764,28 @@ def generate_canoe_config(state: State) -> Tuple[Dict[str, Any], State]:
         ],
         "evidence_status": state.get("evidence_bundle", {}).get("status", "unknown"),
         "notes": [
-            "This is a deterministic CANoe configuration plan, not a binary .cfg renderer.",
-            "Use vector_canoe_adapter.py or a project-template renderer to turn this plan into a real CANoe .cfg.",
+            "Official CFG generation is delegated to CANoe COM Automation; the workflow does not hand-write Vector's private .cfg serialization format.",
+            "The generated PowerShell script opens a base cfg when available, mounts DBC/CDD/A2L/DLL inputs through COM APIs where supported, then asks CANoe to SaveAs the target cfg.",
+            "Base CFG copy remains a fallback because some CANoe plugin object graphs are only safely preserved by CANoe itself.",
             "External Vector/CANoe validation is tracked separately by evaluate_canoe_config."
         ],
         "retry_count": retry_count,
     }
+    from . import vector_canoe_adapter
+
+    automation_plan_file = _write_json(cfg_plan_path, plan)
+    cfg_automation = vector_canoe_adapter.prepare_cfg_generation(
+        plan,
+        Path(automation_plan_file),
+        target_cfg_path,
+        cfg_automation_script_path,
+        mode=_canoe_validation_mode(state, project_config),
+    )
+    plan["official_generation_path"]["automation_status"] = cfg_automation.get("status")
+    plan["official_generation_path"]["availability"] = cfg_automation.get("availability")
+    plan["official_generation_path"]["target_cfg"] = str(target_cfg_path)
+    if not cfg_source_path and cfg_automation.get("status") == "generated":
+        cfg_path = target_cfg_path
     layout_manifest = {
         "schema_version": "0.1.0",
         "project_name": plan["project_name"],
@@ -1294,22 +1798,44 @@ def generate_canoe_config(state: State) -> Tuple[Dict[str, Any], State]:
         },
         "expected_artifacts": [
             str(cfg_path),
+            str(cfg_plan_path),
+            str(cfg_automation_script_path),
             str(output_root / f"{project.get('name', 'CANoe_AutoTest_Project')}_TestModule.can"),
             str(output_root / "test_report_plan.json"),
         ],
     }
-    cfg_file = _write_json(cfg_path, plan)
+    if cfg_source_path:
+        _ensure_dir(cfg_path.parent)
+        if cfg_automation.get("status") != "generated":
+            shutil.copyfile(cfg_source_path, cfg_path)
+        cfg_file = str(cfg_path)
+        cfg_plan_file = _write_json(cfg_plan_path, plan)
+    else:
+        if cfg_automation.get("status") == "generated":
+            cfg_file = str(cfg_path)
+            cfg_plan_file = _write_json(cfg_plan_path, plan)
+        else:
+            cfg_file = _write_json(cfg_path, plan)
+            cfg_plan_file = cfg_file
     layout_manifest_file = _write_json(layout_manifest_path, layout_manifest)
     result = {
         "canoe_config_plan": plan,
         "cfg_artifact": {
             "path": cfg_file,
+            "plan": cfg_plan_file,
             "layout_manifest": layout_manifest_file,
-            "kind": "canoe_cfg_generation_plan",
+            "kind": "canoe_cfg_file" if cfg_source_path else "canoe_cfg_generation_plan",
             "status": "generated",
-            "generation_mode": "adapter_plan",
+            "generation_mode": (
+                "canoe_com_automation"
+                if cfg_automation.get("status") == "generated"
+                else ("base_cfg_copy" if cfg_source_path else "canoe_com_automation_plan")
+            ),
+            "source_template": str(cfg_source_path) if cfg_source_path else "",
+            "automation": cfg_automation,
         },
         "config_retry_count": retry_count,
+        "cfg_automation": cfg_automation,
     }
     return result, state.update(**result)
 
@@ -1519,19 +2045,85 @@ def _capl_static_lint(path: Path, expected_cases: int) -> Dict[str, Any]:
     }
 
 
-@action(
-    reads=["structured_test_case", "project_config", "canoe_config_plan", "evidence_bundle", "capl_retry_count", "output_root"],
-    writes=["capl_script_plan", "can_artifact", "test_report_plan", "capl_retry_count"],
-)
-def generate_capl_script(state: State) -> Tuple[Dict[str, Any], State]:
-    output_root = _state_output_root(state)
-    structured = state.get("structured_test_case", {})
-    evidence_bundle = state.get("evidence_bundle", {})
-    project = structured.get("project", {})
-    retry_count = _as_int(state.get("capl_retry_count"), 0) + 1
-    can_path = output_root / f"{project.get('name', 'CANoe_AutoTest_Project')}_TestModule.can"
-    report_path = output_root / "test_report_plan.json"
+def _capl_coverage_summary(coverage_report: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "case_count": coverage_report.get("case_count", 0),
+        "step_count": coverage_report.get("step_count", 0),
+        "requirement_coverage": coverage_report.get("requirement_coverage", {}),
+        "domain_coverage": coverage_report.get("domain_coverage", {}),
+        "risk_count": len(coverage_report.get("risks", [])),
+    }
 
+
+def _capl_evidence_refs(evidence_bundle: Dict[str, Any]) -> List[Dict[str, Any]]:
+    return [
+        {
+            "symbol": page.get("symbol"),
+            "page_id": page.get("page_id"),
+            "confidence": page.get("confidence"),
+        }
+        for page in evidence_bundle.get("pages", [])
+    ]
+
+
+def _capl_test_report_plan(structured: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "schema_version": "0.1.0",
+        "format": structured.get("strategy", {}).get("测试报告格式", "HTML"),
+        "cases": [
+            {
+                "case_id": case.get("case_id"),
+                "requirement_id": case.get("requirement_id"),
+                "requirement_ids": case.get("requirement_ids", []),
+            }
+            for case in structured.get("cases", [])
+        ],
+    }
+
+
+def _write_capl_generation_outputs(
+    output_root: Path,
+    can_path: Path,
+    report_path: Path,
+    capl_source: str,
+    plan: Dict[str, Any],
+    structured: Dict[str, Any],
+    renderer: str,
+) -> Dict[str, Any]:
+    _ensure_dir(can_path.parent)
+    can_path.write_text(capl_source, encoding="utf-8")
+    test_report_plan = _capl_test_report_plan(structured)
+    _write_json(output_root / "capl_script_plan.json", plan)
+    _write_json(report_path, test_report_plan)
+    return {
+        "capl_script_plan": plan,
+        "can_artifact": {
+            "path": str(can_path),
+            "kind": "capl_test_module_source",
+            "status": "generated",
+            "renderer": renderer,
+        },
+        "test_report_plan": {
+            "path": str(report_path),
+            "kind": "test_report_plan",
+            "status": "generated",
+        },
+    }
+
+
+def _deterministic_capl_render(
+    structured: Dict[str, Any],
+    evidence_bundle: Dict[str, Any],
+    coverage_report: Dict[str, Any],
+    profile: Dict[str, Any],
+    output_root: Path,
+    can_path: Path,
+    report_path: Path,
+    retry_count: int,
+    coverage_report_file: str = "",
+    fallback_reason: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    project = structured.get("project", {})
     capl_plan_cases = []
     adapter_notes: List[Dict[str, Any]] = []
     message_vars = _collect_tx_messages(structured)
@@ -1658,55 +2250,247 @@ def generate_capl_script(state: State) -> Tuple[Dict[str, Any], State]:
             "name": case.get("name"),
             "steps": step_plans,
         })
-    _ensure_dir(can_path.parent)
-    can_path.write_text("\n".join(lines), encoding="utf-8")
-
     plan = {
         "schema_version": "0.1.0",
-        "agent": "SubAgent3_CAPL测试脚本编写专家",
+        "agent": "KBIndexed_CAPLAuthoringAgent",
+        "authoring_mode": "fallback_renderer" if fallback_reason else "deterministic",
+        "authoring_result": fallback_reason or {
+            "status": "generated",
+            "message": "Deterministic CAPL renderer used.",
+        },
         "target_canoe_version": project.get("target_canoe_version", "v15"),
         "can_artifact": str(can_path),
         "evidence_status": evidence_bundle.get("status", "unknown"),
+        "coverage_status": coverage_report.get("status", "unknown"),
+        "coverage_report_file": coverage_report_file,
+        "retrieval_profile": profile["id"],
+        "retrieval_profile_file": profile["profile_path"],
+        "topic_filters": profile.get("topic_filters", []),
+        "blocked_topic_filters": profile.get("blocked_topic_filters", []),
         "renderer": "kb_grounded_conservative_renderer",
         "adapter_note_count": len(adapter_notes),
         "adapter_notes": adapter_notes,
         "message_variables": message_vars,
-        "evidence_pages": [
-            {
-                "symbol": page.get("symbol"),
-                "page_id": page.get("page_id"),
-                "confidence": page.get("confidence"),
-            }
-            for page in evidence_bundle.get("pages", [])
-        ],
+        "coverage_summary": _capl_coverage_summary(coverage_report),
+        "evidence_pages": _capl_evidence_refs(evidence_bundle),
         "cases": capl_plan_cases,
         "retry_count": retry_count,
     }
-    test_report_plan = {
+    return _write_capl_generation_outputs(
+        output_root,
+        can_path,
+        report_path,
+        "\n".join(lines),
+        plan,
+        structured,
+        "kb_grounded_conservative_renderer",
+    )
+
+
+def _llm_capl_render(
+    structured: Dict[str, Any],
+    project_config: Dict[str, Any],
+    canoe_config_plan: Dict[str, Any],
+    evidence_bundle: Dict[str, Any],
+    coverage_report: Dict[str, Any],
+    profile: Dict[str, Any],
+    output_root: Path,
+    can_path: Path,
+    report_path: Path,
+    retry_count: int,
+    coverage_report_file: str = "",
+) -> Dict[str, Any]:
+    from .agents import capl_authoring_agent
+
+    payload = capl_authoring_agent.build_payload(
+        structured,
+        project_config,
+        canoe_config_plan,
+        evidence_bundle,
+        coverage_report,
+        profile,
+    )
+    agent_result = capl_authoring_agent.call_agent(payload, output_root)
+    if agent_result.get("status") != "generated":
+        return {"status": "failed", "agent_result": agent_result}
+
+    response = agent_result.get("response", {})
+    capl_source = response.get("capl_source", "")
+    _ensure_dir(can_path.parent)
+    can_path.write_text(capl_source, encoding="utf-8")
+    static_lint = _capl_static_lint(can_path, len(structured.get("cases", [])))
+    if static_lint.get("status") != "pass":
+        return {
+            "status": "failed",
+            "agent_result": {
+                **agent_result,
+                "response": "<omitted>",
+                "static_lint": static_lint,
+                "message": "CAPL authoring agent output failed static lint.",
+            },
+        }
+
+    response_plan = response.get("capl_script_plan", {})
+    adapter_gaps = response_plan.get("adapter_gaps", [])
+    plan = {
         "schema_version": "0.1.0",
-        "format": structured.get("strategy", {}).get("测试报告格式", "HTML"),
-        "cases": [
-            {"case_id": case.get("case_id"), "requirement_id": case.get("requirement_id")}
-            for case in structured.get("cases", [])
-        ],
+        "agent": "KBIndexed_CAPLAuthoringAgent",
+        "authoring_mode": "llm",
+        "authoring_result": {key: value for key, value in agent_result.items() if key != "response"},
+        "target_canoe_version": structured.get("project", {}).get("target_canoe_version", "v15"),
+        "can_artifact": str(can_path),
+        "evidence_status": evidence_bundle.get("status", "unknown"),
+        "coverage_status": coverage_report.get("status", "unknown"),
+        "coverage_report_file": coverage_report_file,
+        "retrieval_profile": profile["id"],
+        "retrieval_profile_file": profile["profile_path"],
+        "topic_filters": profile.get("topic_filters", []),
+        "blocked_topic_filters": profile.get("blocked_topic_filters", []),
+        "renderer": "llm_kb_indexed_authoring_agent",
+        "adapter_note_count": len(adapter_gaps),
+        "adapter_notes": adapter_gaps,
+        "assumptions": response_plan.get("assumptions", []),
+        "used_evidence_refs": response_plan.get("used_evidence_refs", []),
+        "coverage_summary": _capl_coverage_summary(coverage_report),
+        "evidence_pages": _capl_evidence_refs(evidence_bundle),
+        "cases": response_plan.get("cases", []),
+        "retry_count": retry_count,
     }
-    _write_json(output_root / "capl_script_plan.json", plan)
-    _write_json(report_path, test_report_plan)
-    result = {
-        "capl_script_plan": plan,
-        "can_artifact": {
-            "path": str(can_path),
-            "kind": "capl_test_module_source",
-            "status": "generated",
-            "renderer": "kb_grounded_conservative_renderer",
-        },
-        "test_report_plan": {
-            "path": str(report_path),
-            "kind": "test_report_plan",
-            "status": "generated",
-        },
-        "capl_retry_count": retry_count,
+    return {
+        "status": "generated",
+        **_write_capl_generation_outputs(
+            output_root,
+            can_path,
+            report_path,
+            capl_source,
+            plan,
+            structured,
+            "llm_kb_indexed_authoring_agent",
+        ),
     }
+
+
+def _strict_llm_capl_failure(
+    structured: Dict[str, Any],
+    evidence_bundle: Dict[str, Any],
+    coverage_report: Dict[str, Any],
+    profile: Dict[str, Any],
+    output_root: Path,
+    can_path: Path,
+    report_path: Path,
+    retry_count: int,
+    authoring_result: Dict[str, Any],
+    coverage_report_file: str = "",
+) -> Dict[str, Any]:
+    project = structured.get("project", {})
+    capl_source = "\n".join([
+        "/*",
+        f" * Generated for CANoe {project.get('target_canoe_version', 'v15')}.",
+        " * CAPL LLM authoring failed in strict mode.",
+        "*/",
+        "",
+    ])
+    plan = {
+        "schema_version": "0.1.0",
+        "agent": "KBIndexed_CAPLAuthoringAgent",
+        "authoring_mode": "llm_failed",
+        "authoring_result": authoring_result,
+        "target_canoe_version": project.get("target_canoe_version", "v15"),
+        "can_artifact": str(can_path),
+        "evidence_status": evidence_bundle.get("status", "unknown"),
+        "coverage_status": coverage_report.get("status", "unknown"),
+        "coverage_report_file": coverage_report_file,
+        "retrieval_profile": profile["id"],
+        "retrieval_profile_file": profile["profile_path"],
+        "topic_filters": profile.get("topic_filters", []),
+        "blocked_topic_filters": profile.get("blocked_topic_filters", []),
+        "renderer": "llm_kb_indexed_authoring_agent",
+        "adapter_note_count": 0,
+        "adapter_notes": [],
+        "coverage_summary": _capl_coverage_summary(coverage_report),
+        "evidence_pages": _capl_evidence_refs(evidence_bundle),
+        "cases": [],
+        "retry_count": retry_count,
+    }
+    return _write_capl_generation_outputs(
+        output_root,
+        can_path,
+        report_path,
+        capl_source,
+        plan,
+        structured,
+        "llm_kb_indexed_authoring_agent",
+    )
+
+
+@action(
+    reads=["structured_test_case", "project_config", "canoe_config_plan", "evidence_bundle", "coverage_report", "capl_retry_count", "output_root", "capl_authoring_mode"],
+    writes=["capl_script_plan", "can_artifact", "test_report_plan", "capl_retry_count"],
+)
+def generate_capl_script(state: State) -> Tuple[Dict[str, Any], State]:
+    output_root = _state_output_root(state)
+    structured = state.get("structured_test_case", {})
+    project_config = state.get("project_config", {})
+    evidence_bundle = state.get("evidence_bundle", {})
+    coverage_report = state.get("coverage_report", {})
+    canoe_config_plan = state.get("canoe_config_plan", {})
+    project = structured.get("project", {})
+    retry_count = _as_int(state.get("capl_retry_count"), 0) + 1
+    profile = _workflow_retrieval_profile("capl_authoring")
+    can_path = output_root / f"{project.get('name', 'CANoe_AutoTest_Project')}_TestModule.can"
+    report_path = output_root / "test_report_plan.json"
+    mode = _capl_authoring_mode(state, project_config)
+
+    if mode in {"llm", "llm_with_fallback"}:
+        llm_result = _llm_capl_render(
+            structured,
+            project_config,
+            canoe_config_plan,
+            evidence_bundle,
+            coverage_report,
+            profile,
+            output_root,
+            can_path,
+            report_path,
+            retry_count,
+            state.get("coverage_report_file", ""),
+        )
+        if llm_result.get("status") == "generated":
+            result = {key: value for key, value in llm_result.items() if key != "status"}
+            result["capl_retry_count"] = retry_count
+            return result, state.update(**result)
+        if mode == "llm":
+            result = _strict_llm_capl_failure(
+                structured,
+                evidence_bundle,
+                coverage_report,
+                profile,
+                output_root,
+                can_path,
+                report_path,
+                retry_count,
+                llm_result.get("agent_result", llm_result),
+                state.get("coverage_report_file", ""),
+            )
+            result["capl_retry_count"] = retry_count
+            return result, state.update(**result)
+        fallback_reason = llm_result.get("agent_result", llm_result)
+    else:
+        fallback_reason = None
+
+    result = _deterministic_capl_render(
+        structured,
+        evidence_bundle,
+        coverage_report,
+        profile,
+        output_root,
+        can_path,
+        report_path,
+        retry_count,
+        state.get("coverage_report_file", ""),
+        fallback_reason=fallback_reason,
+    )
+    result["capl_retry_count"] = retry_count
     return result, state.update(**result)
 
 
@@ -1862,6 +2646,7 @@ def plan_repair(state: State) -> Tuple[Dict[str, Any], State]:
         "template_contract_report_file",
         "source_model_file",
         "evidence_bundle_file",
+        "coverage_report_file",
         "evidence_gate_report_file",
         "cfg_artifact",
         "can_artifact",
@@ -1887,6 +2672,7 @@ def package_outputs(state: State) -> Tuple[Dict[str, Any], State]:
         "template_contract_report_file": state.get("template_contract_report_file"),
         "source_model_file": state.get("source_model_file"),
         "evidence_bundle_file": state.get("evidence_bundle_file"),
+        "coverage_report_file": state.get("coverage_report_file"),
         "evidence_gate_report_file": state.get("evidence_gate_report_file"),
         "cfg_artifact": state.get("cfg_artifact"),
         "can_artifact": state.get("can_artifact"),
@@ -1913,6 +2699,7 @@ ACTION_REGISTRY = {
     "parse_source_files": parse_source_files,
     "validate_test_cases": validate_test_cases,
     "retrieve_evidence": retrieve_evidence,
+    "analyze_test_coverage": analyze_test_coverage,
     "validate_evidence_gate": validate_evidence_gate,
     "plan_repair": plan_repair,
     "emit_test_case_corrections": emit_test_case_corrections,
@@ -1930,7 +2717,8 @@ TRANSITION_SPECS = [
     ("parse_source_files", "validate_test_cases", None),
     ("validate_test_cases", "plan_repair", "test_case_check_status == 'fail'"),
     ("validate_test_cases", "retrieve_evidence", "test_case_check_status != 'fail'"),
-    ("retrieve_evidence", "validate_evidence_gate", None),
+    ("retrieve_evidence", "analyze_test_coverage", None),
+    ("analyze_test_coverage", "validate_evidence_gate", None),
     ("validate_evidence_gate", "plan_repair", "evidence_gate_status == 'fail'"),
     ("validate_evidence_gate", "generate_canoe_config", "evidence_gate_status != 'fail'"),
     ("generate_canoe_config", "evaluate_canoe_config", None),
@@ -1970,6 +2758,7 @@ def build_application(
         "cdd_paths": [],
         "strict_source_validation": False,
         "canoe_validation_mode": "disabled",
+        "capl_authoring_mode": "llm_with_fallback",
         "max_retries": 2,
         "config_retry_count": 0,
         "capl_retry_count": 0,
@@ -1997,6 +2786,7 @@ def run_workflow(
     run_id: Optional[str] = None,
     enable_tracking: bool = False,
     canoe_validation_mode: str = "disabled",
+    capl_authoring_mode: str = "llm_with_fallback",
     strict_source_validation: bool = False,
 ) -> Dict[str, Any]:
     run_id = run_id or _make_run_id(excel)
@@ -2011,6 +2801,7 @@ def run_workflow(
         "input_sha256": input_hash,
         "max_retries": max_retries,
         "canoe_validation_mode": canoe_validation_mode,
+        "capl_authoring_mode": capl_authoring_mode,
         "strict_source_validation": strict_source_validation,
     }, app_id=run_id, enable_tracking=enable_tracking)
     action, result, state = app.run(halt_after=["package_outputs", "emit_test_case_corrections"])
@@ -2035,6 +2826,12 @@ def main(argv: Optional[List[str]] = None) -> int:
         help="Controls Vector/CANoe external validation adapter behavior.",
     )
     parser.add_argument(
+        "--capl-authoring-mode",
+        choices=["deterministic", "llm", "llm_with_fallback"],
+        default="llm_with_fallback",
+        help="Controls CAPL generation: fixed renderer, strict external LLM agent, or LLM with deterministic fallback.",
+    )
+    parser.add_argument(
         "--strict-source-validation",
         action="store_true",
         help="Treat missing/unresolved DBC/A2L/CDD semantic checks as errors.",
@@ -2049,6 +2846,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         run_id=args.run_id or None,
         enable_tracking=args.tracking,
         canoe_validation_mode=args.canoe_validation_mode,
+        capl_authoring_mode=args.capl_authoring_mode,
         strict_source_validation=args.strict_source_validation,
     )
     final_outputs = result["state"].get("final_outputs", {})

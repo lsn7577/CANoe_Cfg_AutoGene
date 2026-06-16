@@ -18,6 +18,7 @@
     "cdd_paths",
     "strict_source_validation",
     "canoe_validation_mode",
+    "capl_authoring_mode",
     "raw_test_case",
     "project_config",
     "test_case_rows",
@@ -35,6 +36,9 @@
     "evidence_bundle",
     "evidence_bundle_file",
     "evidence_status",
+    "coverage_report",
+    "coverage_report_file",
+    "coverage_status",
     "evidence_gate_status",
     "evidence_gate_report",
     "canoe_config_plan",
@@ -83,6 +87,12 @@
       "writes": ["evidence_bundle", "evidence_bundle_file", "evidence_status"]
     },
     {
+      "id": "analyze_test_coverage",
+      "sub_agent": "KBIndexed_TestCoverageAnalyzer",
+      "reads": ["structured_test_case", "source_models", "evidence_bundle", "project_config", "output_root"],
+      "writes": ["coverage_report", "coverage_report_file", "coverage_status"]
+    },
+    {
       "id": "validate_evidence_gate",
       "sub_agent": "capl_api_evidence_gate",
       "reads": ["evidence_bundle", "project_config", "output_root"],
@@ -114,8 +124,8 @@
     },
     {
       "id": "generate_capl_script",
-      "sub_agent": "SubAgent3_CAPL测试脚本编写专家",
-      "reads": ["structured_test_case", "project_config", "canoe_config_plan", "evidence_bundle", "capl_retry_count", "output_root"],
+      "sub_agent": "KBIndexed_CAPLAuthoringAgent",
+      "reads": ["structured_test_case", "project_config", "canoe_config_plan", "evidence_bundle", "coverage_report", "capl_retry_count", "output_root", "capl_authoring_mode"],
       "writes": ["capl_script_plan", "can_artifact", "test_report_plan", "capl_retry_count"]
     },
     {
@@ -127,7 +137,7 @@
     {
       "id": "package_outputs",
       "sub_agent": "delivery",
-      "reads": ["cfg_artifact", "can_artifact", "structured_test_case_file", "source_model_file", "evidence_bundle_file", "config_eval_report", "capl_eval_report", "output_root"],
+      "reads": ["cfg_artifact", "can_artifact", "structured_test_case_file", "source_model_file", "evidence_bundle_file", "coverage_report_file", "config_eval_report", "capl_eval_report", "output_root"],
       "writes": ["final_outputs"]
     }
   ],
@@ -138,7 +148,8 @@
     ["parse_source_files", "validate_test_cases"],
     ["validate_test_cases", "plan_repair", "test_case_check_status == 'fail'"],
     ["validate_test_cases", "retrieve_evidence", "test_case_check_status != 'fail'"],
-    ["retrieve_evidence", "validate_evidence_gate"],
+    ["retrieve_evidence", "analyze_test_coverage"],
+    ["analyze_test_coverage", "validate_evidence_gate"],
     ["validate_evidence_gate", "plan_repair", "evidence_gate_status == 'fail'"],
     ["validate_evidence_gate", "generate_canoe_config", "evidence_gate_status != 'fail'"],
     ["generate_canoe_config", "evaluate_canoe_config"],

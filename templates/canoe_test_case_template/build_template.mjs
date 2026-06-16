@@ -136,14 +136,15 @@ const strategyRows = [
   ["生成 Panel 绑定计划", "按需", "否", "需要人工操作面板或 sysvar 绑定时启用"],
   ["启用团队代码规范", "是", "是", "读取 extras/team/CAPL_Internal_Coding_Standards"],
   ["启用证据链校验", "是", "是", "每个 CAPL API 调用必须能回溯到 KB 页面"],
+  ["CAPL生成模式", "llm_with_fallback", "是", "deterministic 固定渲染；llm 严格外部 agent；llm_with_fallback 优先外部 agent，失败回退"],
   ["CANoe 实机编译校验", "否", "否", "本机安装 CANoe 且可自动化时启用"],
 ];
-project.getRange("A46:D53").values = strategyRows;
+project.getRange("A46:D54").values = strategyRows;
 styleHeader(project.getRange("A46:D46"));
-styleBody(project.getRange("A47:D53"));
-project.tables.add("A46:D53", true, "GenerationStrategy");
-addListValidation(project.getRange("B47:B53"), mapping.strategy_values);
-addListValidation(project.getRange("C47:C53"), mapping.yes_no_values);
+styleBody(project.getRange("A47:D54"));
+project.tables.add("A46:D54", true, "GenerationStrategy");
+addListValidation(project.getRange("B47:B54"), mapping.strategy_values);
+addListValidation(project.getRange("C47:C54"), mapping.yes_no_values);
 
 project.freezePanes.freezeRows(5);
 setColumnWidths(project, {

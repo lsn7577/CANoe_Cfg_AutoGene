@@ -1,0 +1,34 @@
+{
+  "page_type": "concept",
+  "name": "CFG Generation via COM",
+  "topic": "canoe_config",
+  "version": "v12",
+  "description": [
+    "CANoe 12 exposes a COM Automation object model for configuration creation and saving. The supported automation path is to start CANoe.Application, create or open a configuration, modify supported setup objects, and call Configuration.SaveAs so CANoe writes the .cfg file.",
+    "The installed Help01 CHM index exposes COM Interface topics such as Open, Save, SaveAs, Add, and ReplaceDescriptionFile, but no stable public grammar for hand-writing .cfg serialization was found. Treat .cfg text as proprietary, versioned CANoe state."
+  ],
+  "interfaces": [
+    {"name": "Application.New", "purpose": "Create a new CANoe configuration."},
+    {"name": "Application.Open", "purpose": "Open an existing base .cfg before controlled updates."},
+    {"name": "Application.Configuration", "purpose": "Access the active Configuration object."},
+    {"name": "Configuration.SaveAs", "purpose": "Ask CANoe to serialize the final .cfg."},
+    {"name": "GeneralSetup.DatabaseSetup.Databases.Add", "purpose": "Attach a database such as a DBC file."},
+    {"name": "IDatabases3.AddToChannel", "purpose": "Attach a database to a named network, bus type, and channel where the richer interface is available."},
+    {"name": "GeneralSetup.DiagnosticsSetup.DiagDescriptions.Add", "purpose": "Attach a diagnostic description file such as CDD."},
+    {"name": "DiagDescription.SeednKeyDll", "purpose": "Configure diagnostic Seed and Key DLL on supported diagnostic description interfaces."},
+    {"name": "GeneralSetup.XCPSetup.ECUs.Add", "purpose": "Attach an XCP/CCP ECU description such as A2L through Measurement and Calibration setup."},
+    {"name": "Configuration.CLibraries.Add", "purpose": "Register C libraries/DLLs where CANoe exposes them as configuration libraries."}
+  ],
+  "rules": [
+    "Prefer COM Automation over direct .cfg text generation.",
+    "Use base cfg copy as fallback when automation is unavailable or plugin-specific objects are not covered by public interfaces.",
+    "Do not mix CAPL authoring facts into CFG generation retrieval unless the active task explicitly asks for CAPL code."
+  ],
+  "source_evidence": [
+    "D:/Program Files/Vector CANoe 12.0/Exec32/COMdev/CANoe.h: IApplication.Open/New/Configuration/CAPL",
+    "D:/Program Files/Vector CANoe 12.0/Exec32/COMdev/CANoe.h: IConfiguration.Save/SaveAs",
+    "D:/Program Files/Vector CANoe 12.0/Exec32/COMdev/CANoe.h: IDatabases.Add/AddToChannel",
+    "D:/Program Files/Vector CANoe 12.0/Exec32/COMdev/CANoe.h: IDiagDescriptions.Add, IDiagDescription SeednKeyDll/ReplaceDescriptionFile",
+    "D:/Program Files/Vector CANoe 12.0/Exec32/COMdev/CANoe.h: IXCPSetup.ECUs and IMcECUs.Add"
+  ]
+}

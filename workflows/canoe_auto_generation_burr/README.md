@@ -64,7 +64,46 @@ python -m workflows.canoe_auto_generation_burr.canoe_workflow `
   --excel F:\Canoe_Gene\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
   --out F:\Canoe_Gene\generated_projects\EQ07 `
   --canoe-validation-mode manual
+
+# Prefer an external KB-indexed CAPL LLM agent, but fall back to deterministic rendering
+python -m workflows.canoe_auto_generation_burr.canoe_workflow `
+  --excel F:\Canoe_Gene\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
+  --out F:\Canoe_Gene\generated_projects\EQ07 `
+  --capl-authoring-mode llm_with_fallback
 ```
+
+## External CAPL Authoring Agent
+
+`generate_capl_script` can delegate CAPL writing to an external LLM agent through
+`CANOE_GENE_CAPL_AGENT_COMMAND`. The workflow writes
+`capl_authoring_payload.json`, runs the command, then reads
+`capl_authoring_response.json`.
+
+Command placeholders:
+
+- `{payload}`: JSON request path.
+- `{response}`: JSON response path that the external agent must write.
+
+The response must contain:
+
+```json
+{
+  "capl_source": "complete .can source",
+  "capl_script_plan": {
+    "assumptions": [],
+    "adapter_gaps": [],
+    "used_evidence_refs": [],
+    "cases": []
+  }
+}
+```
+
+Modes:
+
+- `deterministic`: use the built-in conservative renderer only.
+- `llm`: require the external agent; failures flow into CAPL evaluation.
+- `llm_with_fallback`: try the external agent, then use the deterministic renderer
+  if the agent is unavailable or fails validation.
 
 The workflow can be imported by another application:
 
