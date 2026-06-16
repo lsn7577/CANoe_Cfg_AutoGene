@@ -3,6 +3,8 @@
 This workspace contains the knowledge base, Excel test-case template, and Burr
 workflow used to generate CANoe automated test project artifacts.
 
+See `CHANGELOG.md` for the latest workflow changes.
+
 ## Directory Map
 
 ```text
@@ -40,7 +42,9 @@ Optional dependencies:
 
 - `knowledge_base/`  
   Vector CANoe/CAPL knowledge base, agent-facing indexes, retrieval tools, and
-  workflow knowledge contracts.
+  workflow knowledge contracts. The workflow uses scoped profiles so CANoe CFG
+  generation retrieves `canoe_config` facts, while CAPL authoring retrieves
+  `capl_authoring` facts.
 
 - `templates/canoe_test_case_template/`  
   Maintained Excel test-case template, shared field mapping, and generator
@@ -48,9 +52,9 @@ Optional dependencies:
 
 - `workflows/canoe_auto_generation_burr/`  
   Apache Burr workflow implementation for parsing the Excel template and
-  producing structured test cases, source models, CANoe configuration plans,
-  CAPL test module source, evaluation reports, repair plans, and final
-  manifests.
+  producing structured test cases, source models, coverage reports, CANoe
+  configuration plans/scripts, CAPL test module source, evaluation reports,
+  repair plans, and final manifests.
 
 - `docs/`  
   Workspace-level architecture and evaluation reports.
@@ -67,12 +71,29 @@ Optional dependencies:
 cd F:\Canoe_Gene
 python -m workflows.canoe_auto_generation_burr.canoe_workflow `
   --excel F:\Canoe_Gene\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
-  --out F:\Canoe_Gene\generated_projects\EQ07_workflow_test
+  --out F:\Canoe_Gene\generated_projects\EQ07_workflow_test `
+  --capl-authoring-mode llm_with_fallback `
+  --canoe-validation-mode disabled
 ```
 
 Each run is isolated under `generated_projects/<project>/runs/<run_id>`. The
 base output directory keeps `latest_run_manifest.json` as a pointer to the most
 recent run.
+
+Main generated artifacts include:
+
+- `structured_test_cases.json`: parsed Excel test-case IR.
+- `source_models.json`: lightweight DBC/A2L/CDD/CFG/DLL source model summary.
+- `evidence_bundle.json`: CAPL API evidence retrieved through the active KB
+  profile.
+- `coverage_report.json`: requirement, feature, domain, source, and evidence
+  coverage summary.
+- `<project>.cfg`: copied base CFG or CANoe-generated CFG when automation runs.
+- `<project>.cfg.plan.json`: CANoe configuration generation plan.
+- `<project>.cfg.generate.ps1`: CANoe COM Automation script for CFG SaveAs.
+- `<project>_TestModule.can`: generated CAPL test module.
+- `capl_script_plan.json`: CAPL authoring plan, evidence refs, coverage summary,
+  adapter gaps, and LLM/fallback result.
 
 ## Key Maintenance Commands
 
@@ -98,7 +119,51 @@ Useful workflow flags:
 - `--canoe-validation-mode disabled|manual|automated`: controls the Vector
   CANoe external validation adapter. Disabled/manual never claim CANoe compile
   success.
+- `--capl-authoring-mode deterministic|llm|llm_with_fallback`: controls CAPL
+  generation. `llm_with_fallback` writes an external-agent payload and falls
+  back to the deterministic renderer when no agent is configured.
 - `--tracking`: enables Burr local tracking for action-level debugging.
+
+## CAPL Authoring Agent
+
+The CAPL generation step can call an external KB-indexed LLM agent without
+giving it access to the whole repository or full knowledge base. Set
+`CANOE_GENE_CAPL_AGENT_COMMAND` to a command that reads a JSON payload and writes
+a JSON response:
+
+```powershell
+$env:CANOE_GENE_CAPL_AGENT_COMMAND = 'python F:\tools\capl_agent.py "{payload}" "{response}"'
+```
+
+The workflow writes `capl_authoring_payload.json` and expects the command to
+write `capl_authoring_response.json`:
+
+```json
+{
+  "capl_source": "complete .can source",
+  "capl_script_plan": {
+    "assumptions": [],
+    "adapter_gaps": [],
+    "used_evidence_refs": [],
+    "cases": []
+  }
+}
+```
+
+If the command is not configured and `--capl-authoring-mode llm_with_fallback`
+is used, the workflow records the unavailable agent in `capl_script_plan.json`
+and uses the deterministic renderer.
+
+## CANoe CFG Generation
+
+The workflow does not hand-write Vector's private `.cfg` serialization format.
+It discovers a base CFG when available, prepares a `.cfg.plan.json`, and emits a
+PowerShell COM Automation script that opens CANoe, mounts supported DBC/CDD/A2L
+and DLL inputs, then calls CANoe `Configuration.SaveAs`.
+
+With `--canoe-validation-mode disabled`, the script is generated but not run.
+Use `--canoe-validation-mode automated` only on a machine where CANoe COM
+Automation is available and the project can be safely opened.
 
 ## Shared Template Mapping
 
