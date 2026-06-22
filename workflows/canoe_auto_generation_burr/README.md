@@ -1,141 +1,166 @@
 # CANoe Auto Generation Burr Workflow
 
-This workflow is derived from:
+This package contains the executable Burr workflow for CANoe test-project
+generation. The current architecture overview is maintained in
+`../../docs/ARCHITECTURE_CURRENT.md`.
 
-- `C:/Users/Administrator/Documents/Obsidian Vault/Canoe自动生成工作流.canvas`
-- `F:/Canoe_Gene/templates/canoe_test_case_template/CANoe自动化测试用例模板.xlsx`
+## Purpose
 
-It turns the Excel test-case template into a Burr state machine that follows
-the user's agent flow:
+The workflow turns the maintained Excel test-case template into traceable CANoe
+generation artifacts:
 
-1. Test case inspection
-2. Structured test case output or correction items
-3. Source model parsing for DBC/A2L/CDD inputs
-4. Knowledge evidence retrieval from `agent_kb`
-5. Evidence gate validation
-6. CANoe configuration generation plan
-7. CANoe configuration evaluation
-8. CAPL test module source generation
-9. CAPL static lint and external validation adapter evaluation
-10. Repair plan or final package output
+1. Parse Excel project, channel, strategy, and test-step sheets.
+2. Validate template fields against the canonical mapping.
+3. Parse declared DBC/A2L/CDD/CFG source files.
+4. Validate test-case rows and source-object references.
+5. Retrieve grounded CANoe/CAPL/team-rule evidence from `knowledge_base`.
+6. Analyze requirement, feature, domain, source, and evidence coverage.
+7. Gate CAPL API evidence.
+8. Generate a CANoe configuration plan and COM Automation script.
+9. Evaluate CANoe configuration through the Vector/CANoe adapter boundary.
+10. Generate CAPL through a KB-indexed LLM planner/fixer loop.
+11. Run CAPL static lint and optional CANoe/vTESTstudio compile feedback.
+12. Package outputs or emit correction workbooks, Markdown, repair plans, and
+    HTML reports.
 
-The current implementation is intentionally adapter-friendly. It performs
-template contract validation, lightweight source semantic checks, KB evidence
-gating, conservative CAPL rendering, static lint, and explicit Vector/CANoe
-external-validation status reporting. Real binary CFG rendering and automated
-CANoe/vTESTstudio compilation are still project-specific adapter hooks; the
-workflow reports them as `skipped`, `manual_required`, or `failed`, never as
-successful unless the adapter actually performs the work.
+The workflow does not hand-write Vector's private `.cfg` serialization format.
+It delegates real CFG SaveAs/load/compile work to CANoe COM Automation when
+`--canoe-validation-mode automated` is used on a machine where CANoe is
+available.
 
 ## Files
 
 ```text
 workflows/canoe_auto_generation_burr/
-  canoe_workflow.py            # Burr actions and graph builder
-  vector_canoe_adapter.py      # CANoe validation/compile adapter boundary
-  validate_workflow_profile.py # profile-vs-code consistency check
-  workflow_profile.json        # Graph/state/action contract summary
-  template_field_mapping.json  # Excel field names and enumerations
+  canoe_workflow.py              # Burr actions, transitions, CLI
+  workflow_profile.json          # Profile checked against executable graph
+  validate_workflow_profile.py   # profile-vs-code consistency check
+  action_contract_sync.py        # workflow_kb/profile/registry consistency helper
+  canonical_ir.py                # Chinese display fields -> stable field IDs
+  source_parser.py               # DBC/A2L/CDD/CFG parsers
+  vector_canoe_adapter.py        # CFG generation and CAPL compile adapter boundary
+  capl_lexer_lint.py             # local CAPL lexer/static lint
+  correction_workbook.py         # blocked-run correction XLSX/Markdown
+  html_report.py                 # run_report.html generation
+  run_retention.py               # generated run cleanup policies
+  agents/
+    capl_authoring_agent.py      # planner/fixer payloads and command adapter
+    claude_code_capl_agent.py    # Claude Code CLI adapter
+    llm_agent_config.json        # agent prompt/config defaults
 ```
+
+## Current Graph
+
+`workflow_profile.json` currently validates against 14 Burr actions and 19
+transitions:
+
+```text
+load_test_case_template -> validate_template_contract -> parse_source_files
+-> validate_test_cases -> retrieve_evidence -> analyze_test_coverage
+-> validate_evidence_gate -> generate_canoe_config -> evaluate_canoe_config
+-> generate_capl_script -> evaluate_capl_script -> package_outputs
+```
+
+Failure edges from template/test/evidence/config/CAPL gates enter
+`plan_repair`, which either retries config/CAPL generation or emits correction
+outputs via `emit_test_case_corrections`.
 
 ## Run
 
+From the repository root:
+
 ```powershell
-cd F:\Canoe_Gene
 python -m workflows.canoe_auto_generation_burr.canoe_workflow `
-  --excel F:\Canoe_Gene\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
-  --out F:\Canoe_Gene\generated_projects\EQ07
+  --excel .\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
+  --out .\generated_projects\EQ07_workflow_test `
+  --capl-authoring-mode llm `
+  --canoe-validation-mode disabled
 ```
 
-Outputs are written to `F:\Canoe_Gene\generated_projects\EQ07\runs\<run_id>`.
-The base output directory keeps `latest_run_manifest.json`.
+Outputs are written to `generated_projects/<project>/runs/<run_id>`. The base
+output directory keeps `latest_run_manifest.json`.
 
 Useful options:
 
 ```powershell
-# Fail if declared DBC/A2L/CDD files are missing or cannot resolve used objects
+# Fail on missing declared DBC/A2L/CDD files or unresolved used objects.
 python -m workflows.canoe_auto_generation_burr.canoe_workflow `
-  --excel F:\Canoe_Gene\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
-  --out F:\Canoe_Gene\generated_projects\EQ07 `
+  --excel .\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
+  --out .\generated_projects\EQ07 `
   --strict-source-validation
 
-# Require manual CANoe review instead of treating external validation as disabled
+# Require manual CANoe review instead of treating external validation as disabled.
 python -m workflows.canoe_auto_generation_burr.canoe_workflow `
-  --excel F:\Canoe_Gene\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
-  --out F:\Canoe_Gene\generated_projects\EQ07 `
+  --excel .\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
+  --out .\generated_projects\EQ07 `
   --canoe-validation-mode manual
 
-# Prefer an external KB-indexed CAPL LLM agent, but fall back to deterministic rendering
+# Run automated CANoe CFG/CAPL validation where Vector CANoe COM is available.
 python -m workflows.canoe_auto_generation_burr.canoe_workflow `
-  --excel F:\Canoe_Gene\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
-  --out F:\Canoe_Gene\generated_projects\EQ07 `
-  --capl-authoring-mode llm_with_fallback
+  --excel .\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
+  --out .\generated_projects\EQ07 `
+  --canoe-validation-mode automated `
+  --capl-compile-max-attempts 5
 ```
 
-## External CAPL Authoring Agent
+## CAPL Authoring Agent
 
-`generate_capl_script` can delegate CAPL writing to an external LLM agent through
-`CANOE_GENE_CAPL_AGENT_COMMAND`. The workflow writes
-`capl_authoring_payload.json`, runs the command, then reads
-`capl_authoring_response.json`.
+`generate_capl_script` uses a two-role external CAPL authoring protocol:
 
-Command placeholders:
+- Planner runs once and returns immutable `golden_ir`.
+- Fixer runs in the compile loop with exactly three changing inputs:
+  `golden_ir`, current complete CAPL source, and the latest compile error log.
 
-- `{payload}`: JSON request path.
-- `{response}`: JSON response path that the external agent must write.
+Default command:
 
-The response must contain:
-
-```json
-{
-  "capl_source": "complete .can source",
-  "capl_script_plan": {
-    "assumptions": [],
-    "adapter_gaps": [],
-    "used_evidence_refs": [],
-    "cases": []
-  }
-}
+```powershell
+$env:CANOE_GENE_CAPL_AGENT_COMMAND = 'python -m workflows.canoe_auto_generation_burr.agents.claude_code_capl_agent "{payload}" "{response}"'
+$env:CANOE_GENE_CLAUDE_CODE_COMMAND = 'claude.cmd'
 ```
 
-Modes:
+Per-role overrides:
 
-- `deterministic`: use the built-in conservative renderer only.
-- `llm`: require the external agent; failures flow into CAPL evaluation.
-- `llm_with_fallback`: try the external agent, then use the deterministic renderer
-  if the agent is unavailable or fails validation.
+- `CANOE_GENE_CAPL_PLANNER_COMMAND`
+- `CANOE_GENE_CAPL_FIXER_COMMAND`
 
-The workflow can be imported by another application:
+Compile override:
 
-```python
-from workflows.canoe_auto_generation_burr.canoe_workflow import build_application
+- `CANOE_GENE_CAPL_COMPILE_COMMAND`
 
-app = build_application({
-    "test_case_excel_path": r"F:\Canoe_Gene\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx",
-    "output_root": r"F:\Canoe_Gene\generated_projects\EQ07",
-})
-result = app.run(halt_after=["package_outputs", "emit_test_case_corrections"])
-```
+The compile override must write JSON to `{report}`. Passing reports use
+`{"status": "pass", "message": "..."}`. Failing reports use `{"status":
+"failed", "message": "compiler diagnostics..."}`.
 
 ## Validation
 
+Preferred check bundle from the repository root:
+
 ```powershell
-python -B F:\Canoe_Gene\knowledge_base\workflow_kb\validate_workflow_kb.py
-python -B F:\Canoe_Gene\workflows\canoe_auto_generation_burr\validate_workflow_profile.py
-python -B -m workflows.canoe_auto_generation_burr.canoe_workflow `
-  --excel F:\Canoe_Gene\templates\canoe_test_case_template\CANoe自动化测试用例模板.xlsx `
-  --out F:\Canoe_Gene\generated_projects\EQ07_workflow_test
+python .\ci\run_checks.py
+```
+
+Direct checks:
+
+```powershell
+python -B .\knowledge_base\workflow_kb\validate_workflow_kb.py
+python -B .\workflows\canoe_auto_generation_burr\validate_workflow_profile.py
+python -m unittest `
+  workflows.canoe_auto_generation_burr.test_cdd_parser `
+  workflows.canoe_auto_generation_burr.test_cfg_parser `
+  workflows.canoe_auto_generation_burr.test_vector_canoe_adapter `
+  workflows.canoe_auto_generation_burr.test_retrieval_profiles `
+  workflows.canoe_auto_generation_burr.test_capl_authoring_agent `
+  workflows.canoe_auto_generation_burr.test_claude_code_capl_agent
 ```
 
 ## Extension Points
 
-- Replace `generate_canoe_config` or `vector_canoe_adapter.py` with a real
-  CANoe CFG renderer/validator.
-- Replace lightweight source parsers with team-owned DBC/A2L/CDD parsers.
-- Extend `retrieve_evidence` when new Excel operation/condition/result types
-  require additional CAPL APIs or team rules.
-- Bind the `CanoeGene_*` CAPL adapter stubs to project-specific XCP and
+- Replace `source_parser.py` parsers with team-owned DBC/A2L/CDD parsers.
+- Extend `knowledge_base/workflow_kb/retrieval_profiles/` when adding new
+  knowledge scopes.
+- Bind generated `CanoeGene_*` CAPL stubs to project-specific XCP and
   diagnostics libraries.
-- Extend `evaluate_capl_script` with CANoe/vTESTstudio compilation and coverage
-  checks.
-- Extend `template_field_mapping.json` when the Excel template changes.
+- Extend `vector_canoe_adapter.py` for project-specific CANoe load/compile
+  reporting.
+- Keep `workflow_profile.json` synchronized with every action/transition
+  change.

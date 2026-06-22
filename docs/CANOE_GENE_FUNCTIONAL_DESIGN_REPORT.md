@@ -1,7 +1,18 @@
 # CANoe_Gene 功能描述与工程设计报告
 
+> 2026-06-18 更新：本文保留为功能设计历史报告。当前工程根目录、
+> 模块拆分、Burr action/transition 数量、CI 命令、生成产物清理策略和
+> LLM CAPL planner/fixer 架构，以
+> [`ARCHITECTURE_CURRENT.md`](./ARCHITECTURE_CURRENT.md) 为准。
+>
+> 当前关键变化：工程根目录为 `E:/Canoe_Gene/CANoe_Cfg_AutoGene`；Burr
+> graph 为 14 个 action、19 条 transition；新增 `ci/`、`canonical_ir.py`、
+> `source_parser.py`、`capl_lexer_lint.py`、`html_report.py`、
+> `correction_workbook.py`、`run_retention.py` 和 Claude Code CAPL agent；
+> `generated_projects/` 是可再生成运行产物，已加入 `.gitignore`。
+
 审阅基准：2026-06-13  
-工程根目录：`F:/Canoe_Gene`
+当前工程根目录：`E:/Canoe_Gene/CANoe_Cfg_AutoGene`
 
 ## 1. 工具定位
 

@@ -1,7 +1,19 @@
 # CANoe_Gene 工程结构与 Burr 工作流评估报告
 
+> 2026-06-18 更新：本文是 2026-06-13 的阶段性评估报告。当前准确结构、
+> workflow graph、模块边界、清理策略和验证命令，以
+> [`ARCHITECTURE_CURRENT.md`](./ARCHITECTURE_CURRENT.md) 为准。
+>
+> 当前关键变化：工程根目录为 `E:/Canoe_Gene/CANoe_Cfg_AutoGene`；Burr
+> profile 已验证为 14 个 action、19 条 transition；新增 CI 检查入口
+> `ci/run_checks.py`；运行产物 `generated_projects/` 已清理并加入
+> `.gitignore`；CAPL authoring 已拆成外部 LLM Planner/Fixer 与编译反馈
+> loop；source parser、CAPL lexer lint、HTML report、correction workbook 和
+> run retention 已拆出独立模块。
+
 评估时间：2026-06-13 20:54:20 +08:00  
-工作区：`F:/Canoe_Gene`  
+历史工作区：`F:/Canoe_Gene`  
+当前工作区：`E:/Canoe_Gene/CANoe_Cfg_AutoGene`
 评估对象：知识库、Excel 测试用例模板、Apache Burr 工作流、生成产物目录  
 本次验证运行：
 
@@ -77,7 +89,7 @@ F:/Canoe_Gene/
 |---|---|---|
 | Excel 模板 | 已生成并维护在 `templates/canoe_test_case_template/` | 结构适合自动解析，一行一步骤，同一用例多行 |
 | 字段映射 | `template_field_mapping.json` 作为单一来源 | 已解决模板枚举和 workflow 枚举漂移风险 |
-| Burr workflow | 13 个 action、18 条 transition | 可完整运行，有失败分支和整改出口 |
+| Burr workflow | 当前 14 个 action、19 条 transition | 可完整运行，有失败分支和整改出口 |
 | Workflow profile | `workflow_profile.json` 版本 0.2.0 | 可通过脚本与代码一致性校验 |
 | Workflow KB | packs、profiles、patterns、rules 已组织 | 可扩展，但 action 契约仍偏抽象 |
 | CAPL 生成 | 生成 `.can` 源文件并通过静态 lint | 仍需 CANoe 实机编译验证 |

@@ -140,24 +140,6 @@ def _canoe_validation_mode(state: State, project_config: Dict[str, Any]) -> str:
     return "disabled"
 
 
-def _capl_authoring_mode(state: State, project_config: Dict[str, Any]) -> str:
-    raw = _as_text(state.get("capl_authoring_mode")) or _strategy_value(project_config, "CAPL生成模式", "llm_with_fallback")
-    value = raw.strip().lower()
-    aliases = {
-        "deterministic": "deterministic",
-        "fixed": "deterministic",
-        "固定规则": "deterministic",
-        "确定性": "deterministic",
-        "llm": "llm",
-        "agent": "llm",
-        "llm_with_fallback": "llm_with_fallback",
-        "llm-fallback": "llm_with_fallback",
-        "agent_with_fallback": "llm_with_fallback",
-        "智能生成": "llm_with_fallback",
-    }
-    return aliases.get(value, "llm_with_fallback")
-
-
 def _safe_name(value: Any, default_value: str = "Item") -> str:
     text = _as_text(value) or default_value
     text = text.replace("::", "_").replace(".", "_")
@@ -168,38 +150,6 @@ def _safe_name(value: Any, default_value: str = "Item") -> str:
     if text[0].isdigit():
         text = f"_{text}"
     return text
-
-
-def _capl_string(value: Any) -> str:
-    text = _as_text(value)
-    text = text.replace("\\", "\\\\").replace('"', '\\"')
-    text = text.replace("\r", " ").replace("\n", " ")
-    return f'"{text}"'
-
-
-def _capl_numeric(value: Any) -> Optional[str]:
-    text = _as_text(value)
-    if not text:
-        return None
-    if re.fullmatch(r"[-+]?\d+(\.\d+)?", text):
-        return text
-    if re.fullmatch(r"0[xX][0-9A-Fa-f]+", text):
-        return text
-    return None
-
-
-def _duration_from_text(value: Any, default_value: int = 0) -> int:
-    text = _as_text(value).lower()
-    if not text:
-        return default_value
-    match = re.search(r"(\d+(?:\.\d+)?)\s*(ms|s)?", text)
-    if not match:
-        return default_value
-    number = float(match.group(1))
-    unit = match.group(2) or "ms"
-    if unit == "s":
-        number *= 1000
-    return int(number)
 
 
 def _column_index(cell_ref: str) -> int:
@@ -511,6 +461,13 @@ def _resolve_declared_path(path_text: str, template_path: Path) -> Dict[str, Any
 
 
 def _parse_dbc_file(path: Path) -> Dict[str, Any]:
+    try:
+        from . import source_parser
+        result = source_parser.parse_dbc(path)
+        if result.get("status") != "error":
+            return result
+    except Exception:
+        pass
     text = _read_text_best_effort(path)
     messages: Dict[str, Dict[str, Any]] = {}
     current: Optional[Dict[str, Any]] = None
@@ -545,6 +502,13 @@ def _parse_dbc_file(path: Path) -> Dict[str, Any]:
 
 
 def _parse_a2l_file(path: Path) -> Dict[str, Any]:
+    try:
+        from . import source_parser
+        result = source_parser.parse_a2l(path)
+        if result.get("status") != "error":
+            return result
+    except Exception:
+        pass
     text = _read_text_best_effort(path)
     characteristics = sorted(set(re.findall(r"/begin\s+CHARACTERISTIC\s+([^\s]+)", text, flags=re.IGNORECASE)))
     measurements = sorted(set(re.findall(r"/begin\s+MEASUREMENT\s+([^\s]+)", text, flags=re.IGNORECASE)))
@@ -557,6 +521,13 @@ def _parse_a2l_file(path: Path) -> Dict[str, Any]:
 
 
 def _parse_cfg_file(path: Path) -> Dict[str, Any]:
+    try:
+        from . import source_parser
+        result = source_parser.parse_cfg(path)
+        if result.get("status") != "error":
+            return result
+    except Exception:
+        pass
     text = _read_text_best_effort(path)
     header = next((line.strip() for line in text.splitlines() if line.startswith(";CANoe Version")), "")
     version = ""
@@ -655,6 +626,13 @@ def _cdd_name_aliases(*values: str) -> List[str]:
 
 
 def _parse_cdd_file(path: Path) -> Dict[str, Any]:
+    try:
+        from . import source_parser
+        result = source_parser.parse_cdd(path)
+        if result.get("status") != "error":
+            return result
+    except Exception:
+        pass
     text = _read_text_best_effort(path)
     service_entries: List[Dict[str, Any]] = []
     service_aliases = set()
@@ -1091,7 +1069,39 @@ def _safe_first_text(value: Any) -> str:
     return _as_text(value)
 
 
-def _load_symbol_evidence(symbol: str, version: str) -> Tuple[Optional[Dict[str, Any]], Optional[Dict[str, Any]]]:
+_KB_TOPICS = ("capl", "canoe_config", "com_automation", "cfg", "xcp", "diagnostics", "panel", "dbc")
+
+
+def _page_topic(page_id: str, page: Dict[str, Any]) -> str:
+    """Extract the knowledge-base topic category from a page_id or source path."""
+    combined = f"{page_id or ''} {page.get('source', '') or ''} {page.get('page_type', '') or ''}".lower()
+    for topic in _KB_TOPICS:
+        if topic in combined:
+            return topic
+    return ""
+
+
+def _page_matches_profile(page_id: str, page: Dict[str, Any], profile: Optional[Dict[str, Any]]) -> bool:
+    """Check if a page's topic is allowed by the retrieval profile's topic filters."""
+    if not profile:
+        return True
+    topic = _page_topic(page_id, page)
+    if not topic:
+        return True
+    blocked = set(profile.get("blocked_topic_filters", []))
+    allowed = set(profile.get("topic_filters", []))
+    if topic in blocked:
+        return False
+    if allowed and topic not in allowed:
+        return False
+    return True
+
+
+def _load_symbol_evidence(
+    symbol: str,
+    version: str,
+    profile: Optional[Dict[str, Any]] = None,
+) -> Tuple[Optional[Dict[str, Any]], Optional[Dict[str, Any]]]:
     load_page, resolve_symbol, load_page_by_id = _load_agent_kb_helpers()
     try:
         if "::" in symbol:
@@ -1104,6 +1114,13 @@ def _load_symbol_evidence(symbol: str, version: str) -> Tuple[Optional[Dict[str,
         return None, {"symbol": symbol, "reason": f"lookup_error: {exc}"}
     if not page_id or not page:
         return None, {"symbol": symbol, "reason": "not_found"}
+    if profile and not _page_matches_profile(page_id, page, profile):
+        topic = _page_topic(page_id, page)
+        return None, {
+            "symbol": symbol,
+            "reason": f"blocked_by_profile: topic '{topic}' is not allowed by profile '{profile.get('id', '')}'",
+            "page_id": page_id,
+        }
     evidence = {
         "symbol": symbol,
         "page_id": page_id,
@@ -1166,7 +1183,7 @@ def retrieve_evidence(state: State) -> Tuple[Dict[str, Any], State]:
     pages = []
     gaps = []
     for symbol in sorted(all_symbols):
-        evidence, gap = _load_symbol_evidence(symbol, version)
+        evidence, gap = _load_symbol_evidence(symbol, version, profile)
         if evidence:
             pages.append(evidence)
         if gap:
@@ -1504,6 +1521,94 @@ def parse_source_files(state: State) -> Tuple[Dict[str, Any], State]:
     return result, state.update(**result)
 
 
+_TEST_CASE_RULES_CACHE: Optional[Dict[str, Any]] = None
+
+
+def _load_test_case_rules() -> Dict[str, Any]:
+    global _TEST_CASE_RULES_CACHE
+    if _TEST_CASE_RULES_CACHE is not None:
+        return _TEST_CASE_RULES_CACHE
+    rules_path = WORKFLOW_KB_DIR / "validation_rules" / "test_case_field_rules.json"
+    if rules_path.exists():
+        _TEST_CASE_RULES_CACHE = json.loads(rules_path.read_text(encoding="utf-8"))
+    else:
+        _TEST_CASE_RULES_CACHE = {}
+    return _TEST_CASE_RULES_CACHE
+
+
+_SEMANTIC_CHECK_DISPATCH = {
+    ("dbc", "message"): lambda models, target: _dbc_contains(models, target, "message"),
+    ("dbc", "signal"): lambda models, target: _dbc_contains(models, target, "signal"),
+    ("a2l", "characteristic"): lambda models, target: _a2l_contains(models, target, "characteristic"),
+    ("a2l", "measurement"): lambda models, target: _a2l_contains(models, target, "measurement"),
+    ("cdd", "service"): lambda models, target: _cdd_contains(models, target),
+}
+
+_SEMANTIC_CATEGORY = {
+    ("dbc", "message"): "can_semantic",
+    ("dbc", "signal"): "can_semantic",
+    ("a2l", "characteristic"): "xcp_semantic",
+    ("a2l", "measurement"): "xcp_semantic",
+    ("cdd", "service"): "diagnostics_semantic",
+}
+
+_SEMANTIC_OBJECT_LABEL = {
+    ("dbc", "message"): "报文",
+    ("dbc", "signal"): "信号",
+    ("a2l", "characteristic"): "标定量",
+    ("a2l", "measurement"): "观测量",
+    ("cdd", "service"): "诊断服务",
+}
+
+_SEMANTIC_SOURCE_LABEL = {"dbc": "DBC", "a2l": "A2L", "cdd": "CDD"}
+
+_TYPE_KIND_LABEL = {"operation": "操作", "condition": "条件", "result": "结果"}
+
+
+def _apply_typed_rule(
+    issues: List[Dict[str, Any]],
+    row: Dict[str, Any],
+    type_value: str,
+    type_kind: str,
+    rules: Dict[str, Any],
+    source_files: Dict[str, List[str]],
+    source_models: Dict[str, Any],
+    semantic_severity: str,
+    target_field: str,
+    expected_value_field: str = "",
+) -> None:
+    """Apply a typed rule (operation/condition/result) from the rule table to a row."""
+    rule_set = rules.get(f"{type_kind}_rules", {})
+    rule = rule_set.get(type_value)
+    if not rule:
+        return
+    has_required = bool(rule.get("required_fields"))
+    for field_name in rule.get("required_fields", []):
+        if not _as_text(row.get(field_name)):
+            _add_issue(issues, "error", type_kind, f"该{type_kind}类型需要填写{field_name}", row, field_name)
+    if has_required and expected_value_field and not _as_text(row.get(expected_value_field)):
+        _add_issue(issues, "warning", type_kind, f"建议填写{expected_value_field}", row, expected_value_field)
+    source_kind = rule.get("source_kind")
+    semantic_check = rule.get("semantic_check")
+    if source_kind and semantic_check and has_required:
+        if not source_files.get(source_kind):
+            source_path_field = rule.get("source_path_field") or f"{source_kind.upper()}路径"
+            _add_issue(issues, "error", source_kind, f"{type_kind}步骤需要 {source_kind.upper()} 路径", row, source_path_field)
+        else:
+            target = _as_text(row.get(target_field))
+            if target:
+                check_fn = _SEMANTIC_CHECK_DISPATCH.get((source_kind, semantic_check))
+                if check_fn:
+                    found = check_fn(source_models, target)
+                    if found is False:
+                        category = _SEMANTIC_CATEGORY.get((source_kind, semantic_check), "semantic")
+                        source_label = _SEMANTIC_SOURCE_LABEL.get(source_kind, source_kind)
+                        object_label = _SEMANTIC_OBJECT_LABEL.get((source_kind, semantic_check), "对象")
+                        kind_label = _TYPE_KIND_LABEL.get(type_kind, type_kind)
+                        message = f"{source_label} 中未找到{kind_label}{object_label}"
+                        _add_issue(issues, semantic_severity, category, message, row, target_field)
+
+
 @action(
     reads=[
         "raw_test_case",
@@ -1574,80 +1679,10 @@ def validate_test_cases(state: State) -> Tuple[Dict[str, Any], State]:
         if result_type not in RESULT_TYPES:
             _add_issue(issues, "error", "result", f"未知结果类型: {result_type}", row, "结果类型")
 
-        if operation_type not in {"无操作", "等待手动操作后确认"} and not _as_text(row.get("操作对象")):
-            _add_issue(issues, "error", "operation", "该操作类型需要填写操作对象", row, "操作对象")
-        if operation_type in {"CAN报文发送", "CAN报文停发", "CAN报文周期调整", "CAN信号赋值"}:
-            if not _as_text(row.get("操作通道")):
-                _add_issue(issues, "error", "can", "CAN 操作需要填写操作通道", row, "操作通道")
-            if not source_files.get("dbc"):
-                _add_issue(issues, "error", "can", "CAN 报文/信号步骤需要 DBC 路径", row, "DBC路径")
-            elif operation_type == "CAN信号赋值":
-                found = _dbc_contains(source_models, _as_text(row.get("操作对象")), "signal")
-                if found is False:
-                    _add_issue(issues, semantic_severity, "can_semantic", "DBC 中未找到操作信号", row, "操作对象")
-            else:
-                found = _dbc_contains(source_models, _as_text(row.get("操作对象")), "message")
-                if found is False:
-                    _add_issue(issues, semantic_severity, "can_semantic", "DBC 中未找到操作报文", row, "操作对象")
-        if operation_type == "XCP标定量赋值":
-            if not _as_text(row.get("操作值/参数")):
-                _add_issue(issues, "error", "xcp", "XCP 标定量赋值需要填写操作值/参数", row, "操作值/参数")
-            if not source_files.get("a2l"):
-                _add_issue(issues, "error", "xcp", "XCP 标定步骤需要 A2L 路径", row, "A2L路径")
-            else:
-                found = _a2l_contains(source_models, _as_text(row.get("操作对象")), "characteristic")
-                if found is False:
-                    _add_issue(issues, semantic_severity, "xcp_semantic", "A2L 中未找到标定量", row, "操作对象")
-        if operation_type == "诊断服务请求":
-            if not source_files.get("cdd"):
-                _add_issue(issues, "error", "diagnostics", "诊断服务请求需要 CDD 路径", row, "CDD路径")
-            else:
-                found = _cdd_contains(source_models, _as_text(row.get("操作对象")))
-                if found is False:
-                    _add_issue(issues, semantic_severity, "diagnostics_semantic", "CDD 中未找到诊断服务", row, "操作对象")
-
-        if condition_type not in {"无条件", "等待固定时间", "等待手动操作后确认"}:
-            if not _as_text(row.get("条件对象")):
-                _add_issue(issues, "error", "condition", "该条件类型需要填写条件对象", row, "条件对象")
-            if not _as_text(row.get("条件期望值")):
-                _add_issue(issues, "warning", "condition", "建议填写条件期望值", row, "条件期望值")
-            if condition_type in {"接收CAN报文发送", "接收CAN报文超时"}:
-                found = _dbc_contains(source_models, _as_text(row.get("条件对象")), "message")
-                if found is False:
-                    _add_issue(issues, semantic_severity, "can_semantic", "DBC 中未找到条件报文", row, "条件对象")
-            if condition_type == "CAN信号变化":
-                found = _dbc_contains(source_models, _as_text(row.get("条件对象")), "signal")
-                if found is False:
-                    _add_issue(issues, semantic_severity, "can_semantic", "DBC 中未找到条件信号", row, "条件对象")
-            if condition_type == "观测量变化":
-                found = _a2l_contains(source_models, _as_text(row.get("条件对象")), "measurement")
-                if found is False:
-                    _add_issue(issues, semantic_severity, "xcp_semantic", "A2L 中未找到条件观测量", row, "条件对象")
-            if condition_type == "诊断服务响应":
-                found = _cdd_contains(source_models, _as_text(row.get("条件对象")))
-                if found is False:
-                    _add_issue(issues, semantic_severity, "diagnostics_semantic", "CDD 中未找到条件诊断服务", row, "条件对象")
-        if result_type != "无结果":
-            if not _as_text(row.get("结果对象")):
-                _add_issue(issues, "error", "result", "该结果类型需要填写结果对象", row, "结果对象")
-            if not _as_text(row.get("结果期望值")):
-                _add_issue(issues, "warning", "result", "建议填写结果期望值", row, "结果期望值")
-            if result_type in {"接收CAN报文发送", "接收CAN报文超时"}:
-                found = _dbc_contains(source_models, _as_text(row.get("结果对象")), "message")
-                if found is False:
-                    _add_issue(issues, semantic_severity, "can_semantic", "DBC 中未找到结果报文", row, "结果对象")
-            if result_type == "CAN信号变化":
-                found = _dbc_contains(source_models, _as_text(row.get("结果对象")), "signal")
-                if found is False:
-                    _add_issue(issues, semantic_severity, "can_semantic", "DBC 中未找到结果信号", row, "结果对象")
-            if result_type == "观测量变化":
-                found = _a2l_contains(source_models, _as_text(row.get("结果对象")), "measurement")
-                if found is False:
-                    _add_issue(issues, semantic_severity, "xcp_semantic", "A2L 中未找到结果观测量", row, "结果对象")
-            if result_type == "诊断服务响应":
-                found = _cdd_contains(source_models, _as_text(row.get("结果对象")))
-                if found is False:
-                    _add_issue(issues, semantic_severity, "diagnostics_semantic", "CDD 中未找到结果诊断服务", row, "结果对象")
+        rules = _load_test_case_rules()
+        _apply_typed_rule(issues, row, operation_type, "operation", rules, source_files, source_models, semantic_severity, "操作对象")
+        _apply_typed_rule(issues, row, condition_type, "condition", rules, source_files, source_models, semantic_severity, "条件对象", "条件期望值")
+        _apply_typed_rule(issues, row, result_type, "result", rules, source_files, source_models, semantic_severity, "结果对象", "结果期望值")
 
     if state.get("requirements_path") and not requirement_ids:
         _add_issue(issues, "warning", "coverage", "提供了需求文件但测试用例未填写需求ID")
@@ -1670,10 +1705,17 @@ def validate_test_cases(state: State) -> Tuple[Dict[str, Any], State]:
 @action(
     reads=[
         "correction_items",
+        "structured_test_case",
         "structured_test_case_file",
         "test_case_correction_file",
         "repair_plan",
         "repair_plan_file",
+        "evidence_bundle",
+        "coverage_report",
+        "cfg_artifact",
+        "can_artifact",
+        "config_eval_report",
+        "capl_eval_report",
         "run_id",
         "base_output_root",
         "output_root",
@@ -1683,15 +1725,54 @@ def validate_test_cases(state: State) -> Tuple[Dict[str, Any], State]:
 def emit_test_case_corrections(state: State) -> Tuple[Dict[str, Any], State]:
     output_root = _state_output_root(state)
     base_output_root = Path(state.get("base_output_root") or output_root)
+    correction_items = list(state.get("correction_items", []))
+    structured = state.get("structured_test_case", {})
+    repair_plan = state.get("repair_plan", {})
+    if not correction_items and repair_plan.get("repair_items"):
+        correction_items = repair_plan["repair_items"]
     final_outputs = {
         "status": "blocked_for_corrections",
         "run_id": state.get("run_id"),
         "output_root": str(output_root),
         "structured_test_case_file": state.get("structured_test_case_file"),
         "correction_file": state.get("test_case_correction_file"),
-        "correction_count": len(state.get("correction_items", [])),
+        "correction_count": len(correction_items),
         "repair_plan": state.get("repair_plan_file"),
+        "repair_origin": repair_plan.get("origin", ""),
+        "failure_category": repair_plan.get("failure_category", ""),
     }
+    try:
+        from . import correction_workbook
+        wb_path = output_root / "test_case_corrections.xlsx"
+        correction_workbook.generate_correction_workbook(correction_items, structured, wb_path)
+        final_outputs["correction_workbook"] = str(wb_path)
+        md_path = output_root / "test_case_corrections.md"
+        correction_workbook.generate_correction_markdown(correction_items, structured, md_path)
+        final_outputs["correction_markdown"] = str(md_path)
+    except Exception:
+        pass
+    try:
+        from . import html_report
+        html_path = output_root / "run_report.html"
+        state_for_report = {
+            "run_id": state.get("run_id"),
+            "status": "blocked_for_corrections",
+            "structured_test_case": structured,
+            "correction_items": correction_items,
+            "evidence_bundle": state.get("evidence_bundle", {}),
+            "coverage_report": state.get("coverage_report", {}),
+            "cfg_artifact": state.get("cfg_artifact", {}),
+            "can_artifact": state.get("can_artifact", {}),
+            "config_eval_report": state.get("config_eval_report", {}),
+            "capl_eval_report": state.get("capl_eval_report", {}),
+            "repair_plan": repair_plan,
+            "output_root": str(output_root),
+        }
+        html_report.generate_run_report(state_for_report, html_path)
+        final_outputs["html_report"] = str(html_path)
+        final_outputs["quick_summary"] = html_report.generate_quick_summary(state_for_report)
+    except Exception:
+        pass
     manifest_path = _write_json(output_root / "blocked_manifest.json", final_outputs)
     final_outputs["manifest"] = manifest_path
     if base_output_root != output_root:
@@ -1744,6 +1825,8 @@ def generate_canoe_config(state: State) -> Tuple[Dict[str, Any], State]:
             "fallback": "copy discovered/base cfg when present; otherwise emit a plan and script for CANoe to serialize",
         },
         "channels": structured.get("channels", []),
+        "network_name": "CAN",
+        "channel_display_name": _as_text(next(iter(structured.get("channels", [])), {}).get("CANoe通道名")) or "CAN",
         "mounted_files": {
             "dbc": sorted(set(_resolved_source_paths(source_models, "dbc")) | {_as_text(ch.get("DBC路径")) for ch in structured.get("channels", []) if _as_text(ch.get("DBC路径"))}),
             "a2l": sorted(set(_resolved_source_paths(source_models, "a2l")) | {_as_text(ch.get("A2L路径")) for ch in structured.get("channels", []) if _as_text(ch.get("A2L路径"))}),
@@ -1758,7 +1841,7 @@ def generate_canoe_config(state: State) -> Tuple[Dict[str, Any], State]:
         "test_modules": [
             {
                 "name": f"{project.get('name', 'CANoe_AutoTest_Project')}_TestModule",
-                "source": f"{project.get('name', 'CANoe_AutoTest_Project')}_TestModule.can",
+                "source": str(output_root / f"{project.get('name', 'CANoe_AutoTest_Project')}_TestModule.can"),
                 "mount_strategy": "add as CAPL test module in generated or template CANoe configuration",
             }
         ],
@@ -1774,12 +1857,21 @@ def generate_canoe_config(state: State) -> Tuple[Dict[str, Any], State]:
     from . import vector_canoe_adapter
 
     automation_plan_file = _write_json(cfg_plan_path, plan)
+
+    validation_mode = _canoe_validation_mode(state, project_config)
+    com_availability = vector_canoe_adapter.is_available()
+    com_available = com_availability.get("available", False) if isinstance(com_availability, dict) else False
+
+    cfg_generation_mode = validation_mode
+    if cfg_generation_mode == "disabled" and com_available and cfg_source_path:
+        cfg_generation_mode = "automated"
+
     cfg_automation = vector_canoe_adapter.prepare_cfg_generation(
         plan,
         Path(automation_plan_file),
         target_cfg_path,
         cfg_automation_script_path,
-        mode=_canoe_validation_mode(state, project_config),
+        mode=cfg_generation_mode,
     )
     plan["official_generation_path"]["automation_status"] = cfg_automation.get("status")
     plan["official_generation_path"]["availability"] = cfg_automation.get("availability")
@@ -1856,7 +1948,11 @@ def evaluate_canoe_config(state: State) -> Tuple[Dict[str, Any], State]:
             issues.append({"severity": "error", "message": "Channel misses CANoe channel name"})
     from . import vector_canoe_adapter
 
-    external_validation = vector_canoe_adapter.validate_config(state.get("cfg_artifact", {}), mode=validation_mode)
+    external_validation = vector_canoe_adapter.validate_config(
+        state.get("cfg_artifact", {}),
+        mode=validation_mode,
+        plan=state.get("canoe_config_plan", {}),
+    )
     if external_validation["status"] == "failed":
         issues.append({"severity": "error", "message": external_validation["message"]})
     elif external_validation["status"] in {"skipped", "manual_required"}:
@@ -1877,172 +1973,45 @@ def evaluate_canoe_config(state: State) -> Tuple[Dict[str, Any], State]:
     return result, state.update(**result)
 
 
-def _message_name_from_object(object_name: str) -> str:
-    parts = _object_parts(object_name)
-    return parts[-1] if parts else ""
-
-
-def _capl_ref(object_name: str) -> Optional[str]:
-    text = _as_text(object_name).replace("::", ".")
-    if re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)*", text):
-        return text
-    return None
-
-
-def _parse_signal_assignments(value: Any) -> List[Tuple[str, str]]:
-    assignments = []
-    for item in re.split(r"[;,]", _as_text(value)):
-        if "=" not in item:
-            continue
-        key, raw_value = item.split("=", 1)
-        signal = _safe_name(key.strip(), "Signal")
-        numeric = _capl_numeric(raw_value.strip())
-        if numeric is not None:
-            assignments.append((signal, numeric))
-    return assignments
-
-
-def _timeout_for_step(step: Dict[str, Any], section: str = "condition") -> int:
-    project_default = 5000
-    if section == "operation":
-        operation = step.get("operation", {})
-        return operation.get("duration_ms") or operation.get("period_ms") or project_default
-    if section == "expected_result":
-        return step.get("expected_result", {}).get("observe_ms") or project_default
-    condition = step.get("condition", {})
-    explicit = condition.get("timeout_ms") or _duration_from_text(condition.get("expected"))
-    return explicit or project_default
-
-
-def _render_capl_operation(step: Dict[str, Any], message_vars: Dict[str, str]) -> Tuple[List[str], List[Dict[str, Any]]]:
-    operation = step.get("operation", {})
-    operation_type = operation.get("type", "")
-    obj = operation.get("object", "")
-    value = operation.get("value", "")
-    lines: List[str] = []
-    notes: List[Dict[str, Any]] = []
-    if operation_type == "CAN报文发送":
-        message_name = _message_name_from_object(obj)
-        var_name = message_vars.get(message_name)
-        if message_name and var_name:
-            for signal, signal_value in _parse_signal_assignments(value):
-                lines.append(f"  {var_name}.{signal} = {signal_value};")
-            lines.append(f"  output({var_name});")
-            if operation.get("duration_ms"):
-                lines.append(f"  TestWaitForTimeout({operation.get('duration_ms')});")
-            if operation.get("period_ms"):
-                notes.append({
-                    "severity": "info",
-                    "message": f"Step {step.get('step_no')} declares period {operation.get('period_ms')} ms; one-shot output is generated. Use a timer renderer for sustained periodic sending.",
-                })
-        else:
-            lines.append(f"  CanoeGene_RecordAdapterGap({_capl_string('CAN message object binding required: ' + _as_text(obj))});")
-            notes.append({"severity": "warning", "message": f"Cannot render CAN message send for object: {obj}"})
-    elif operation_type == "CAN信号赋值":
-        numeric = _capl_numeric(value)
-        if numeric is not None:
-            lines.append(f"  setSignal({_capl_string(obj)}, {numeric});")
-        else:
-            lines.append(f"  CanoeGene_RecordAdapterGap({_capl_string('CAN signal assignment requires numeric value: ' + _as_text(obj))});")
-            notes.append({"severity": "warning", "message": f"CAN signal assignment is not numeric: {obj}={value}"})
-    elif operation_type == "CAN报文停发":
-        lines.append(f"  CanoeGene_RecordAdapterGap({_capl_string('Stop periodic CAN message schedule: ' + _as_text(obj))});")
-        notes.append({"severity": "info", "message": f"Stop-send requested for {obj}; timer schedule binding must be supplied by project renderer."})
-    elif operation_type == "CAN报文周期调整":
-        lines.append(f"  CanoeGene_RecordAdapterGap({_capl_string('Adjust periodic CAN message schedule: ' + _as_text(obj))});")
-        notes.append({"severity": "info", "message": f"Cycle adjustment requested for {obj}; timer schedule binding must be supplied by project renderer."})
-    elif operation_type == "XCP标定量赋值":
-        lines.append(f"  CanoeGene_SetXcpCalibration({_capl_string(obj)}, {_capl_string(value)});")
-        notes.append({"severity": "warning", "message": f"XCP calibration {obj} uses adapter stub until project XCP library binding is provided."})
-    elif operation_type == "诊断服务请求":
-        lines.append(f"  CanoeGene_SendDiagnosticRequest({_capl_string(obj)}, {_capl_string(value)});")
-        notes.append({"severity": "warning", "message": f"Diagnostic request {obj} uses adapter stub until CDD request objects are bound."})
-    elif operation_type == "等待手动操作后确认":
-        timeout = operation.get("duration_ms") or _timeout_for_step(step)
-        lines.append(f"  TestCaseComment({_capl_string('Manual confirmation required: ' + _as_text(obj))});")
-        lines.append(f"  TestWaitForTimeout({timeout});")
-    else:
-        lines.append(f"  TestCaseComment({_capl_string('No operation')});")
-    return lines, notes
-
-
-def _render_capl_check(step: Dict[str, Any], source: str) -> Tuple[List[str], List[Dict[str, Any]]]:
-    data = step.get(source, {})
-    check_type = data.get("type", "")
-    obj = data.get("object", "")
-    expected = data.get("expected", "")
-    timeout = _timeout_for_step(step, source)
-    lines: List[str] = []
-    notes: List[Dict[str, Any]] = []
-    if check_type in {"无条件", "无结果"}:
-        return lines, notes
-    if check_type == "等待固定时间":
-        lines.append(f"  TestWaitForTimeout({timeout});")
-    elif check_type == "等待手动操作后确认":
-        lines.append(f"  TestCaseComment({_capl_string('Manual checkpoint: ' + _as_text(obj))});")
-        lines.append(f"  TestWaitForTimeout({timeout});")
-    elif check_type == "接收CAN报文发送":
-        ref = _capl_ref(obj)
-        if ref:
-            lines.append(f"  TestWaitForMessage({ref}, {timeout});")
-        else:
-            lines.append(f"  CanoeGene_CheckMessageReceived({_capl_string(obj)}, {timeout});")
-            notes.append({"severity": "warning", "message": f"Message wait uses adapter because object is not a CAPL DB message reference: {obj}"})
-    elif check_type == "接收CAN报文超时":
-        lines.append(f"  CanoeGene_ExpectMessageTimeout({_capl_string(obj)}, {timeout});")
-        notes.append({"severity": "warning", "message": f"Message timeout check for {obj} uses adapter verdict wrapper."})
-    elif check_type == "CAN信号变化":
-        ref = _capl_ref(obj)
-        numeric = _capl_numeric(expected)
-        if ref and numeric is not None:
-            lines.append(f"  TestWaitForSignalMatch({ref}, {numeric}, {timeout});")
-        else:
-            lines.append(f"  CanoeGene_CheckSignal({_capl_string(obj)}, {_capl_string(expected)}, {timeout});")
-            notes.append({"severity": "warning", "message": f"Signal check uses adapter for {obj} expected {expected}."})
-    elif check_type == "观测量变化":
-        lines.append(f"  CanoeGene_CheckMeasurement({_capl_string(obj)}, {_capl_string(expected)}, {timeout});")
-        notes.append({"severity": "warning", "message": f"Measurement check {obj} uses XCP/measurement adapter."})
-    elif check_type == "诊断服务响应":
-        lines.append(f"  CanoeGene_CheckDiagnosticResponse({_capl_string(obj)}, {_capl_string(expected)}, {timeout});")
-        notes.append({"severity": "warning", "message": f"Diagnostic response check {obj} uses adapter wrapper."})
-    return lines, notes
-
-
-def _collect_tx_messages(structured: Dict[str, Any]) -> Dict[str, str]:
-    messages = {}
-    for case in structured.get("cases", []):
-        for step in case.get("steps", []):
-            operation = step.get("operation", {})
-            if operation.get("type") == "CAN报文发送":
-                message_name = _message_name_from_object(operation.get("object", ""))
-                if message_name and _capl_ref(message_name):
-                    messages[message_name] = f"msg_{_safe_name(message_name)}"
-    return messages
-
-
 def _capl_static_lint(path: Path, expected_cases: int) -> Dict[str, Any]:
-    text = path.read_text(encoding="utf-8", errors="replace")
-    issues = []
-    if "Generated for CANoe" not in text:
-        issues.append({"severity": "error", "message": "missing generated CANoe version header"})
-    if "variables" not in text:
-        issues.append({"severity": "error", "message": "missing variables block"})
-    if text.count("{") != text.count("}"):
-        issues.append({"severity": "error", "message": "unbalanced braces"})
-    testcase_count = len(re.findall(r"\btestcase\s+[A-Za-z_][A-Za-z0-9_]*\s*\(", text))
-    if testcase_count != expected_cases:
-        issues.append({
-            "severity": "error",
-            "message": f"testcase count mismatch: expected {expected_cases}, got {testcase_count}",
-        })
-    if "TODO_UNVERIFIED_API" in text:
-        issues.append({"severity": "error", "message": "unverified API placeholder found"})
-    if "output(" in text and re.search(r"\bmessage\s+[A-Za-z_][A-Za-z0-9_]*\s+[A-Za-z_][A-Za-z0-9_]*\s*;", text) is None:
-        issues.append({"severity": "error", "message": "output() is used but no CAPL message variable is declared"})
-    return {
-        "status": "fail" if any(item["severity"] == "error" for item in issues) else "pass",
-        "issues": issues,
-    }
+    try:
+        from . import capl_lexer_lint
+        result = capl_lexer_lint.lint_capl_source(path, expected_cases)
+        issues = []
+        for item in result.get("issues", []):
+            issues.append({
+                "severity": item.get("severity", "warning"),
+                "message": f"line {item.get('line', '?')}: {item.get('message', '')}",
+            })
+        return {
+            "status": "fail" if any(i["severity"] == "error" for i in issues) else "pass",
+            "issues": issues,
+            "error_count": result.get("error_count", 0),
+            "warning_count": result.get("warning_count", 0),
+        }
+    except Exception:
+        text = path.read_text(encoding="utf-8", errors="replace")
+        issues = []
+        if "Generated for CANoe" not in text:
+            issues.append({"severity": "error", "message": "missing generated CANoe version header"})
+        if "variables" not in text:
+            issues.append({"severity": "error", "message": "missing variables block"})
+        if text.count("{") != text.count("}"):
+            issues.append({"severity": "error", "message": "unbalanced braces"})
+        testcase_count = len(re.findall(r"\btestcase\s+[A-Za-z_][A-Za-z0-9_]*\s*\(", text))
+        if testcase_count != expected_cases:
+            issues.append({
+                "severity": "error",
+                "message": f"testcase count mismatch: expected {expected_cases}, got {testcase_count}",
+            })
+        if "TODO_UNVERIFIED_API" in text:
+            issues.append({"severity": "error", "message": "unverified API placeholder found"})
+        if "output(" in text and re.search(r"\bmessage\s+[A-Za-z_][A-Za-z0-9_]*\s+[A-Za-z_][A-Za-z0-9_]*\s*;", text) is None:
+            issues.append({"severity": "error", "message": "output() is used but no CAPL message variable is declared"})
+        return {
+            "status": "fail" if any(item["severity"] == "error" for item in issues) else "pass",
+            "issues": issues,
+        }
 
 
 def _capl_coverage_summary(coverage_report: Dict[str, Any]) -> Dict[str, Any]:
@@ -2081,6 +2050,27 @@ def _capl_test_report_plan(structured: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+def _capl_compile_max_attempts(state: State) -> int:
+    explicit = _as_int(state.get("capl_compile_max_attempts"), 0)
+    if explicit > 0:
+        return explicit
+    return max(1, _as_int(state.get("max_retries"), 4) + 1)
+
+
+def _compile_error_log(compile_result: Dict[str, Any]) -> str:
+    parts = [
+        f"status: {compile_result.get('status', 'unknown')}",
+        f"message: {compile_result.get('message', '')}",
+    ]
+    if compile_result.get("details"):
+        parts.append("details: " + json.dumps(compile_result.get("details"), ensure_ascii=False, default=_json_default))
+    if compile_result.get("stdout"):
+        parts.append("stdout: " + _as_text(compile_result.get("stdout")))
+    if compile_result.get("stderr"):
+        parts.append("stderr: " + _as_text(compile_result.get("stderr")))
+    return "\n".join(part for part in parts if part.strip())
+
+
 def _write_capl_generation_outputs(
     output_root: Path,
     can_path: Path,
@@ -2111,182 +2101,6 @@ def _write_capl_generation_outputs(
     }
 
 
-def _deterministic_capl_render(
-    structured: Dict[str, Any],
-    evidence_bundle: Dict[str, Any],
-    coverage_report: Dict[str, Any],
-    profile: Dict[str, Any],
-    output_root: Path,
-    can_path: Path,
-    report_path: Path,
-    retry_count: int,
-    coverage_report_file: str = "",
-    fallback_reason: Optional[Dict[str, Any]] = None,
-) -> Dict[str, Any]:
-    project = structured.get("project", {})
-    capl_plan_cases = []
-    adapter_notes: List[Dict[str, Any]] = []
-    message_vars = _collect_tx_messages(structured)
-    lines = [
-        "/*",
-        f" * Generated for CANoe {project.get('target_canoe_version', 'v15')}.",
-        f" * Project: {project.get('name', 'CANoe_AutoTest_Project')}",
-        " * Generator: CANoe_Gene Burr workflow.",
-        " * Compile in the target CANoe environment before using as a release artifact.",
-        "*/",
-        "",
-        "variables",
-        "{",
-        "  msTimer tStepTimer;",
-    ]
-    for message_name, var_name in sorted(message_vars.items()):
-        lines.append(f"  message {message_name} {var_name};")
-    lines.extend([
-        "}",
-        "",
-        "void CanoeGene_RecordAdapterGap(char text[])",
-        "{",
-        "  TestCaseComment(text);",
-        "}",
-        "",
-        "long CanoeGene_SetXcpCalibration(char name[], char value[])",
-        "{",
-        "  TestCaseComment(\"Adapter required: XCP calibration write\");",
-        "  TestCaseComment(name);",
-        "  TestCaseComment(value);",
-        "  return 0;",
-        "}",
-        "",
-        "long CanoeGene_SendDiagnosticRequest(char serviceName[], char parameters[])",
-        "{",
-        "  TestCaseComment(\"Adapter required: diagnostic request send\");",
-        "  TestCaseComment(serviceName);",
-        "  TestCaseComment(parameters);",
-        "  return 0;",
-        "}",
-        "",
-        "long CanoeGene_CheckMessageReceived(char messageName[], dword timeoutMs)",
-        "{",
-        "  TestCaseComment(\"Adapter required: CAN message receive check\");",
-        "  TestCaseComment(messageName);",
-        "  TestWaitForTimeout(timeoutMs);",
-        "  return 0;",
-        "}",
-        "",
-        "long CanoeGene_ExpectMessageTimeout(char messageName[], dword timeoutMs)",
-        "{",
-        "  TestCaseComment(\"Adapter required: CAN message timeout verdict\");",
-        "  TestCaseComment(messageName);",
-        "  TestWaitForTimeout(timeoutMs);",
-        "  return 0;",
-        "}",
-        "",
-        "long CanoeGene_CheckSignal(char signalName[], char expectedValue[], dword timeoutMs)",
-        "{",
-        "  TestCaseComment(\"Adapter required: signal check\");",
-        "  TestCaseComment(signalName);",
-        "  TestCaseComment(expectedValue);",
-        "  TestWaitForTimeout(timeoutMs);",
-        "  return 0;",
-        "}",
-        "",
-        "long CanoeGene_CheckMeasurement(char measurementName[], char expectedValue[], dword timeoutMs)",
-        "{",
-        "  TestCaseComment(\"Adapter required: XCP measurement check\");",
-        "  TestCaseComment(measurementName);",
-        "  TestCaseComment(expectedValue);",
-        "  TestWaitForTimeout(timeoutMs);",
-        "  return 0;",
-        "}",
-        "",
-        "long CanoeGene_CheckDiagnosticResponse(char serviceName[], char expectedValue[], dword timeoutMs)",
-        "{",
-        "  TestCaseComment(\"Adapter required: diagnostic response check\");",
-        "  TestCaseComment(serviceName);",
-        "  TestCaseComment(expectedValue);",
-        "  TestWaitForTimeout(timeoutMs);",
-        "  return 0;",
-        "}",
-        "",
-        "void MainTest()",
-        "{",
-    ])
-    case_function_names = []
-    for case in structured.get("cases", []):
-        function_name = _safe_name(case.get("case_id", "TC"), "TC")
-        case_function_names.append(function_name)
-        lines.append(f"  {function_name}();")
-    lines.extend(["}", ""])
-    for case in structured.get("cases", []):
-        function_name = _safe_name(case.get("case_id", "TC"), "TC")
-        lines.extend([
-            f"testcase {function_name}()",
-            "{",
-            f"  TestCaseTitle({_capl_string(case.get('case_id'))}, {_capl_string(case.get('name'))});",
-        ])
-        step_plans = []
-        for step in case.get("steps", []):
-            operation_type = step.get("operation", {}).get("type", "")
-            lines.append(f"  TestCaseComment({_capl_string('Step ' + _as_text(step.get('step_no')) + ': ' + operation_type)});")
-            operation_lines, operation_notes = _render_capl_operation(step, message_vars)
-            condition_lines, condition_notes = _render_capl_check(step, "condition")
-            result_lines, result_notes = _render_capl_check(step, "expected_result")
-            lines.extend(operation_lines)
-            lines.extend(condition_lines)
-            lines.extend(result_lines)
-            notes = operation_notes + condition_notes + result_notes
-            adapter_notes.extend(notes)
-            step_plans.append({
-                "step_no": step.get("step_no"),
-                "operation_type": operation_type,
-                "generated_statement_count": len(operation_lines) + len(condition_lines) + len(result_lines),
-                "adapter_notes": notes,
-                "condition": step.get("condition"),
-                "expected_result": step.get("expected_result"),
-            })
-        lines.extend(["}", ""])
-        capl_plan_cases.append({
-            "case_id": case.get("case_id"),
-            "name": case.get("name"),
-            "steps": step_plans,
-        })
-    plan = {
-        "schema_version": "0.1.0",
-        "agent": "KBIndexed_CAPLAuthoringAgent",
-        "authoring_mode": "fallback_renderer" if fallback_reason else "deterministic",
-        "authoring_result": fallback_reason or {
-            "status": "generated",
-            "message": "Deterministic CAPL renderer used.",
-        },
-        "target_canoe_version": project.get("target_canoe_version", "v15"),
-        "can_artifact": str(can_path),
-        "evidence_status": evidence_bundle.get("status", "unknown"),
-        "coverage_status": coverage_report.get("status", "unknown"),
-        "coverage_report_file": coverage_report_file,
-        "retrieval_profile": profile["id"],
-        "retrieval_profile_file": profile["profile_path"],
-        "topic_filters": profile.get("topic_filters", []),
-        "blocked_topic_filters": profile.get("blocked_topic_filters", []),
-        "renderer": "kb_grounded_conservative_renderer",
-        "adapter_note_count": len(adapter_notes),
-        "adapter_notes": adapter_notes,
-        "message_variables": message_vars,
-        "coverage_summary": _capl_coverage_summary(coverage_report),
-        "evidence_pages": _capl_evidence_refs(evidence_bundle),
-        "cases": capl_plan_cases,
-        "retry_count": retry_count,
-    }
-    return _write_capl_generation_outputs(
-        output_root,
-        can_path,
-        report_path,
-        "\n".join(lines),
-        plan,
-        structured,
-        "kb_grounded_conservative_renderer",
-    )
-
-
 def _llm_capl_render(
     structured: Dict[str, Any],
     project_config: Dict[str, Any],
@@ -2299,10 +2113,14 @@ def _llm_capl_render(
     report_path: Path,
     retry_count: int,
     coverage_report_file: str = "",
+    validation_mode: str = "disabled",
+    cfg_artifact: Optional[Dict[str, Any]] = None,
+    max_compile_attempts: int = 1,
 ) -> Dict[str, Any]:
     from .agents import capl_authoring_agent
+    from . import vector_canoe_adapter
 
-    payload = capl_authoring_agent.build_payload(
+    planner_payload = capl_authoring_agent.build_planner_payload(
         structured,
         project_config,
         canoe_config_plan,
@@ -2310,23 +2128,101 @@ def _llm_capl_render(
         coverage_report,
         profile,
     )
-    agent_result = capl_authoring_agent.call_agent(payload, output_root)
-    if agent_result.get("status") != "generated":
-        return {"status": "failed", "agent_result": agent_result}
+    planner_result = capl_authoring_agent.call_planner(planner_payload, output_root)
+    if planner_result.get("status") != "generated":
+        return {"status": "failed", "agent_result": planner_result}
 
-    response = agent_result.get("response", {})
-    capl_source = response.get("capl_source", "")
-    _ensure_dir(can_path.parent)
-    can_path.write_text(capl_source, encoding="utf-8")
-    static_lint = _capl_static_lint(can_path, len(structured.get("cases", [])))
-    if static_lint.get("status") != "pass":
+    golden_ir = planner_result.get("response", {}).get("golden_ir", {})
+    current_code = ""
+    compile_error_log = "Initial CAPL generation request. No previous compile error exists."
+    attempts = []
+    agent_result: Dict[str, Any] = {}
+    response: Dict[str, Any] = {}
+    capl_source = ""
+    compile_result: Dict[str, Any] = {}
+
+    error_hashes: List[str] = []
+    for attempt in range(1, max(1, max_compile_attempts) + 1):
+        error_hash = hashlib.md5(compile_error_log.encode("utf-8", errors="replace")).hexdigest()[:16]
+        repeated_error_count = sum(1 for h in error_hashes if h == error_hash)
+        error_hashes.append(error_hash)
+        fixer_payload = capl_authoring_agent.build_fixer_payload(
+            golden_ir,
+            current_code,
+            compile_error_log,
+            attempt,
+            repeated_error_count=repeated_error_count,
+        )
+        agent_result = capl_authoring_agent.call_fixer(fixer_payload, output_root)
+        if agent_result.get("status") != "generated":
+            return {
+                "status": "failed",
+                "agent_result": {
+                    **agent_result,
+                    "planner_result": {key: value for key, value in planner_result.items() if key != "response"},
+                    "golden_ir": golden_ir,
+                    "compile_loop_attempts": attempts,
+                },
+            }
+
+        response = agent_result.get("response", {})
+        capl_source = response.get("capl_source", "")
+        current_code = capl_source
+        _ensure_dir(can_path.parent)
+        can_path.write_text(capl_source, encoding="utf-8")
+        static_lint = _capl_static_lint(can_path, len(structured.get("cases", [])))
+        if static_lint.get("status") != "pass":
+            compile_result = {
+                "status": "failed",
+                "message": "CAPL authoring agent output failed static lint.",
+                "details": static_lint,
+            }
+            attempts.append({
+                "attempt": attempt,
+                "status": compile_result["status"],
+                "message": compile_result["message"],
+                "source": "static_lint",
+            })
+            compile_error_log = _compile_error_log(compile_result)
+            continue
+
+        can_artifact = {
+            "path": str(can_path),
+            "kind": "capl_test_module_source",
+            "status": "generated",
+            "renderer": "llm_kb_indexed_authoring_agent",
+        }
+        compile_result = vector_canoe_adapter.compile_capl(
+            can_artifact,
+            mode=validation_mode,
+            cfg_artifact=cfg_artifact,
+            output_root=output_root,
+            attempt=attempt,
+        )
+        attempts.append({
+            "attempt": attempt,
+            "status": compile_result.get("status"),
+            "message": compile_result.get("message"),
+            "source": "canoe_compile",
+            "report_file": compile_result.get("report_file", ""),
+        })
+        if compile_result.get("status") == "pass":
+            break
+        if compile_result.get("status") in {"skipped", "manual_required", "unavailable"}:
+            break
+        compile_error_log = _compile_error_log(compile_result)
+
+    if compile_result.get("status") not in {"pass", "skipped", "manual_required"}:
         return {
             "status": "failed",
             "agent_result": {
                 **agent_result,
                 "response": "<omitted>",
-                "static_lint": static_lint,
-                "message": "CAPL authoring agent output failed static lint.",
+                "planner_result": {key: value for key, value in planner_result.items() if key != "response"},
+                "golden_ir": golden_ir,
+                "compile_loop_attempts": attempts,
+                "compile_result": compile_result,
+                "message": "CAPL authoring loop did not produce a compile-passing CAPL script.",
             },
         }
 
@@ -2337,6 +2233,16 @@ def _llm_capl_render(
         "agent": "KBIndexed_CAPLAuthoringAgent",
         "authoring_mode": "llm",
         "authoring_result": {key: value for key, value in agent_result.items() if key != "response"},
+        "planner_result": {key: value for key, value in planner_result.items() if key != "response"},
+        "golden_ir": golden_ir,
+        "compile_loop": {
+            "status": compile_result.get("status", "unknown"),
+            "validation_mode": validation_mode,
+            "max_attempts": max_compile_attempts,
+            "attempt_count": len(attempts),
+            "attempts": attempts,
+            "latest_compile_result": compile_result,
+        },
         "target_canoe_version": structured.get("project", {}).get("target_canoe_version", "v15"),
         "can_artifact": str(can_path),
         "evidence_status": evidence_bundle.get("status", "unknown"),
@@ -2383,19 +2289,44 @@ def _strict_llm_capl_failure(
     coverage_report_file: str = "",
 ) -> Dict[str, Any]:
     project = structured.get("project", {})
-    capl_source = "\n".join([
+    version = project.get("target_canoe_version", "v15")
+    cases = structured.get("cases", [])
+    lines = [
         "/*",
-        f" * Generated for CANoe {project.get('target_canoe_version', 'v15')}.",
+        f" * Generated for CANoe {version}.",
         " * CAPL LLM authoring failed in strict mode.",
+        " * This is a placeholder skeleton — do not use in production.",
         "*/",
         "",
-    ])
+        "variables",
+        "{",
+        "}",
+        "",
+    ]
+    placeholder_cases = []
+    for case in cases:
+        case_id = _as_text(case.get("case_id")) or "TC_UNKNOWN"
+        func_name = re.sub(r"[^A-Za-z0-9_]", "_", case_id)
+        lines.extend([
+            f"testcase {func_name}()",
+            "{",
+            f"  /* Placeholder for {case_id} — LLM authoring unavailable */",
+            "  TestCaseFail(\"CAPL LLM authoring unavailable; this testcase is a placeholder.\");",
+            "}",
+            "",
+        ])
+        placeholder_cases.append({
+            "case_id": case_id,
+            "steps": [{"step_no": 1, "note": "placeholder — LLM authoring unavailable"}],
+            "authoring_status": "llm_failed",
+        })
+    capl_source = "\n".join(lines)
     plan = {
         "schema_version": "0.1.0",
         "agent": "KBIndexed_CAPLAuthoringAgent",
         "authoring_mode": "llm_failed",
         "authoring_result": authoring_result,
-        "target_canoe_version": project.get("target_canoe_version", "v15"),
+        "target_canoe_version": version,
         "can_artifact": str(can_path),
         "evidence_status": evidence_bundle.get("status", "unknown"),
         "coverage_status": coverage_report.get("status", "unknown"),
@@ -2409,7 +2340,7 @@ def _strict_llm_capl_failure(
         "adapter_notes": [],
         "coverage_summary": _capl_coverage_summary(coverage_report),
         "evidence_pages": _capl_evidence_refs(evidence_bundle),
-        "cases": [],
+        "cases": placeholder_cases,
         "retry_count": retry_count,
     }
     return _write_capl_generation_outputs(
@@ -2424,7 +2355,7 @@ def _strict_llm_capl_failure(
 
 
 @action(
-    reads=["structured_test_case", "project_config", "canoe_config_plan", "evidence_bundle", "coverage_report", "capl_retry_count", "output_root", "capl_authoring_mode"],
+    reads=["structured_test_case", "project_config", "canoe_config_plan", "cfg_artifact", "evidence_bundle", "coverage_report", "capl_retry_count", "capl_compile_max_attempts", "max_retries", "output_root", "canoe_validation_mode"],
     writes=["capl_script_plan", "can_artifact", "test_report_plan", "capl_retry_count"],
 )
 def generate_capl_script(state: State) -> Tuple[Dict[str, Any], State]:
@@ -2434,52 +2365,17 @@ def generate_capl_script(state: State) -> Tuple[Dict[str, Any], State]:
     evidence_bundle = state.get("evidence_bundle", {})
     coverage_report = state.get("coverage_report", {})
     canoe_config_plan = state.get("canoe_config_plan", {})
+    validation_mode = _canoe_validation_mode(state, project_config)
     project = structured.get("project", {})
     retry_count = _as_int(state.get("capl_retry_count"), 0) + 1
     profile = _workflow_retrieval_profile("capl_authoring")
     can_path = output_root / f"{project.get('name', 'CANoe_AutoTest_Project')}_TestModule.can"
     report_path = output_root / "test_report_plan.json"
-    mode = _capl_authoring_mode(state, project_config)
 
-    if mode in {"llm", "llm_with_fallback"}:
-        llm_result = _llm_capl_render(
-            structured,
-            project_config,
-            canoe_config_plan,
-            evidence_bundle,
-            coverage_report,
-            profile,
-            output_root,
-            can_path,
-            report_path,
-            retry_count,
-            state.get("coverage_report_file", ""),
-        )
-        if llm_result.get("status") == "generated":
-            result = {key: value for key, value in llm_result.items() if key != "status"}
-            result["capl_retry_count"] = retry_count
-            return result, state.update(**result)
-        if mode == "llm":
-            result = _strict_llm_capl_failure(
-                structured,
-                evidence_bundle,
-                coverage_report,
-                profile,
-                output_root,
-                can_path,
-                report_path,
-                retry_count,
-                llm_result.get("agent_result", llm_result),
-                state.get("coverage_report_file", ""),
-            )
-            result["capl_retry_count"] = retry_count
-            return result, state.update(**result)
-        fallback_reason = llm_result.get("agent_result", llm_result)
-    else:
-        fallback_reason = None
-
-    result = _deterministic_capl_render(
+    llm_result = _llm_capl_render(
         structured,
+        project_config,
+        canoe_config_plan,
         evidence_bundle,
         coverage_report,
         profile,
@@ -2488,14 +2384,33 @@ def generate_capl_script(state: State) -> Tuple[Dict[str, Any], State]:
         report_path,
         retry_count,
         state.get("coverage_report_file", ""),
-        fallback_reason=fallback_reason,
+        validation_mode=validation_mode,
+        cfg_artifact=state.get("cfg_artifact", {}),
+        max_compile_attempts=_capl_compile_max_attempts(state),
+    )
+    if llm_result.get("status") == "generated":
+        result = {key: value for key, value in llm_result.items() if key != "status"}
+        result["capl_retry_count"] = retry_count
+        return result, state.update(**result)
+
+    result = _strict_llm_capl_failure(
+        structured,
+        evidence_bundle,
+        coverage_report,
+        profile,
+        output_root,
+        can_path,
+        report_path,
+        retry_count,
+        llm_result.get("agent_result", llm_result),
+        state.get("coverage_report_file", ""),
     )
     result["capl_retry_count"] = retry_count
     return result, state.update(**result)
 
 
 @action(
-    reads=["capl_script_plan", "can_artifact", "structured_test_case", "project_config", "canoe_validation_mode"],
+    reads=["capl_script_plan", "can_artifact", "structured_test_case", "project_config", "canoe_validation_mode", "cfg_artifact", "output_root", "quality_gate"],
     writes=["capl_eval_status", "capl_eval_report"],
 )
 def evaluate_capl_script(state: State) -> Tuple[Dict[str, Any], State]:
@@ -2503,22 +2418,67 @@ def evaluate_capl_script(state: State) -> Tuple[Dict[str, Any], State]:
     structured = state.get("structured_test_case", {})
     project_config = state.get("project_config", {})
     validation_mode = _canoe_validation_mode(state, project_config)
+    quality_gate = _as_text(state.get("quality_gate")) or "exploration"
     issues: List[Dict[str, str]] = []
+    authoring_mode = _as_text(plan.get("authoring_mode"))
+    if authoring_mode == "llm_failed":
+        issues.append({
+            "severity": "error",
+            "message": "CAPL LLM authoring did not produce a compilable test module — check capl_planner_diagnostics.json and capl_script_plan.json for details",
+        })
+        issues.append({"severity": "info", "message": "Placeholder CAPL skeleton was generated but is not usable for testing"})
+        status = "fail"
+        report = {
+            "schema_version": "0.1.0",
+            "agent": "SubAgent5_Canoe_CAPL脚本专家",
+            "status": status,
+            "issues": issues,
+            "static_lint": {"status": "skipped", "issues": [], "reason": "llm_failed placeholder"},
+            "external_compile": {"status": "skipped", "message": "Compilation skipped for llm_failed placeholder"},
+            "can_artifact": state.get("can_artifact", {}),
+        }
+        result = {"capl_eval_status": status, "capl_eval_report": report}
+        return result, state.update(**result)
     if not plan.get("cases"):
         issues.append({"severity": "error", "message": "CAPL plan has no test cases"})
     for case in plan.get("cases", []):
         if not case.get("steps"):
             issues.append({"severity": "error", "message": f"Case {case.get('case_id')} has no steps"})
+    if quality_gate == "release":
+        adapter_gaps = plan.get("adapter_notes", [])
+        if adapter_gaps:
+            issues.append({
+                "severity": "error",
+                "message": f"Release quality gate forbids CanoeGene_* adapter stubs: {len(adapter_gaps)} unbound adapter gap(s) remain",
+            })
+        can_artifact_check = state.get("can_artifact", {})
+        can_path_check = Path(can_artifact_check.get("path", "")) if can_artifact_check.get("path") else None
+        if can_path_check and can_path_check.exists():
+            source_text = can_path_check.read_text(encoding="utf-8", errors="replace")
+            if "CanoeGene_" in source_text:
+                stub_funcs = sorted(set(re.findall(r"\bCanoeGene_[A-Za-z_][A-Za-z0-9_]*", source_text)))
+                issues.append({
+                    "severity": "error",
+                    "message": f"Release quality gate forbids CanoeGene_* adapter stubs in CAPL source: {', '.join(stub_funcs)}",
+                })
     can_artifact = state.get("can_artifact", {})
     can_path = Path(can_artifact.get("path", "")) if can_artifact.get("path") else None
     static_lint = {"status": "fail", "issues": [{"severity": "error", "message": "CAPL artifact path missing"}]}
     if can_path and can_path.exists():
         static_lint = _capl_static_lint(can_path, len(structured.get("cases", [])))
     issues.extend(static_lint["issues"])
-    from . import vector_canoe_adapter
+    compile_loop = plan.get("compile_loop", {}) if isinstance(plan.get("compile_loop"), dict) else {}
+    external_compile = compile_loop.get("latest_compile_result", {}) if isinstance(compile_loop.get("latest_compile_result"), dict) else {}
+    if not external_compile:
+        from . import vector_canoe_adapter
 
-    external_compile = vector_canoe_adapter.compile_capl(can_artifact, mode=validation_mode)
-    if external_compile["status"] == "failed":
+        external_compile = vector_canoe_adapter.compile_capl(
+            can_artifact,
+            mode=validation_mode,
+            cfg_artifact=state.get("cfg_artifact", {}),
+            output_root=_state_output_root(state),
+        )
+    if external_compile["status"] in {"failed", "unavailable"}:
         issues.append({"severity": "error", "message": external_compile["message"]})
     elif external_compile["status"] in {"skipped", "manual_required"}:
         issues.append({"severity": "info", "message": external_compile["message"]})
@@ -2543,12 +2503,49 @@ def _report_issues(report: Dict[str, Any]) -> List[Dict[str, Any]]:
     return list(report.get("issues", [])) if isinstance(report, dict) else []
 
 
-def _external_failure_is_actionable_by_retry(report: Dict[str, Any], key: str) -> bool:
+def _classify_external_failure(report: Dict[str, Any], key: str) -> Dict[str, Any]:
+    """Classify an external validation/compile failure into a structured category.
+
+    Replaces fragile string-matching with explicit failure categories:
+    - env_missing: CANoe COM or tool not installed/registered
+    - config_missing: command/env var not configured
+    - timeout: compilation or validation timed out
+    - code_error: syntax/compile/logic error in generated artifact
+    - schema_violation: response failed schema validation
+    - not_failed: status is not "failed" (actionable if retryable)
+    - unknown: unclassified failure
+    """
     external = report.get(key, {}) if isinstance(report, dict) else {}
+    status = _as_text(external.get("status"))
     message = _as_text(external.get("message")).lower()
-    if external.get("status") != "failed":
-        return True
-    return "unavailable" not in message and "not configured" not in message
+    issues = external.get("issues") or []
+    issue_messages = " ".join(
+        _as_text(i.get("message", "")).lower()
+        for i in (issues if isinstance(issues, list) else [])
+        if isinstance(i, dict)
+    )
+    all_report_issues = report.get("issues") or []
+    all_issue_text = " ".join(
+        _as_text(i.get("message", "")).lower()
+        for i in (all_report_issues if isinstance(all_report_issues, list) else [])
+        if isinstance(i, dict)
+    )
+    combined_text = f"{message} {issue_messages} {all_issue_text}"
+    if status != "failed":
+        if "unavailable" in combined_text or "not configured" in combined_text or "is not configured" in combined_text:
+            return {"actionable_by_retry": False, "category": "config_missing"}
+        return {"actionable_by_retry": True, "category": "not_failed"}
+    if "unavailable" in combined_text or "not registered" in combined_text or "progid" in combined_text:
+        return {"actionable_by_retry": False, "category": "env_missing"}
+    if "not configured" in combined_text or "no command" in combined_text or "is not configured" in combined_text:
+        return {"actionable_by_retry": False, "category": "config_missing"}
+    if "timeout" in combined_text or "timed out" in combined_text:
+        return {"actionable_by_retry": True, "category": "timeout"}
+    if "schema validation" in combined_text or (isinstance(issues, list) and issues):
+        return {"actionable_by_retry": True, "category": "schema_violation"}
+    if "syntax" in combined_text or "compile" in combined_text or "error" in combined_text or "failed" in combined_text:
+        return {"actionable_by_retry": True, "category": "code_error"}
+    return {"actionable_by_retry": True, "category": "unknown"}
 
 
 @action(
@@ -2578,6 +2575,7 @@ def plan_repair(state: State) -> Tuple[Dict[str, Any], State]:
     repair_items: List[Dict[str, Any]] = []
     origin = "manual_review"
     next_action = "emit_test_case_corrections"
+    failure_category = "none"
 
     if state.get("template_contract_status") == "fail":
         origin = "template_contract"
@@ -2595,7 +2593,9 @@ def plan_repair(state: State) -> Tuple[Dict[str, Any], State]:
         origin = "canoe_config_evaluation"
         report = state.get("config_eval_report", {})
         repair_items.extend(_report_issues(report))
-        if config_retry_count < max_retries and _external_failure_is_actionable_by_retry(report, "external_validation"):
+        failure_info = _classify_external_failure(report, "external_validation")
+        failure_category = failure_info["category"]
+        if config_retry_count < max_retries and failure_info["actionable_by_retry"]:
             next_action = "generate_canoe_config"
         else:
             next_action = "emit_test_case_corrections"
@@ -2603,7 +2603,14 @@ def plan_repair(state: State) -> Tuple[Dict[str, Any], State]:
         origin = "capl_evaluation"
         report = state.get("capl_eval_report", {})
         repair_items.extend(_report_issues(report))
-        if capl_retry_count < max_retries and _external_failure_is_actionable_by_retry(report, "external_compile"):
+        capl_plan = state.get("capl_script_plan", {}) if isinstance(state.get("capl_script_plan"), dict) else {}
+        authoring_mode = _as_text(capl_plan.get("authoring_mode"))
+        if authoring_mode == "llm_failed":
+            failure_info = {"actionable_by_retry": False, "category": "llm_authoring_failed"}
+        else:
+            failure_info = _classify_external_failure(report, "external_compile")
+        failure_category = failure_info["category"]
+        if capl_retry_count < max_retries and failure_info["actionable_by_retry"]:
             next_action = "generate_capl_script"
         else:
             next_action = "emit_test_case_corrections"
@@ -2615,6 +2622,7 @@ def plan_repair(state: State) -> Tuple[Dict[str, Any], State]:
         "schema_version": "0.1.0",
         "status": "needs_repair",
         "origin": origin,
+        "failure_category": failure_category,
         "next_action": next_action,
         "retry_budget": {
             "max_retries": max_retries,
@@ -2639,6 +2647,53 @@ def plan_repair(state: State) -> Tuple[Dict[str, Any], State]:
     return result, state.update(**result)
 
 
+def _mount_capl_into_cfg(state: State, output_root: Path) -> Optional[Dict[str, Any]]:
+    """Re-generate the CFG with the CAPL test module mounted, if possible.
+
+    Called from package_outputs after CAPL generation is complete. If CANoe COM
+    is available and the CAPL file exists, this opens the base cfg (or the
+    already-generated cfg), adds the CAPL file as a UserFile, and SaveAs the
+    target cfg. This ensures the final .cfg contains the CAPL test module.
+    """
+    can_artifact = state.get("can_artifact", {})
+    capl_path = can_artifact.get("path", "")
+    if not capl_path or not Path(capl_path).exists():
+        return None
+    canoe_config_plan = state.get("canoe_config_plan", {})
+    if not canoe_config_plan:
+        return None
+    cfg_artifact = state.get("cfg_artifact", {})
+    cfg_path = cfg_artifact.get("path", "")
+    if not cfg_path:
+        return None
+    try:
+        from . import vector_canoe_adapter
+        availability = vector_canoe_adapter.is_available()
+        if not availability.get("available"):
+            return {"status": "skipped", "reason": "CANoe COM not available"}
+        canoe_config_plan = dict(canoe_config_plan)
+        canoe_config_plan["test_modules"] = [
+            {
+                "name": Path(capl_path).stem,
+                "source": str(Path(capl_path).resolve()),
+                "mount_strategy": "add as CAPL test module",
+            }
+        ]
+        script_path = output_root / "mount_capl_into_cfg.ps1"
+        plan_file = output_root / "mount_capl_plan.json"
+        _write_json(plan_file, canoe_config_plan)
+        result = vector_canoe_adapter.prepare_cfg_generation(
+            canoe_config_plan,
+            plan_file,
+            Path(cfg_path),
+            script_path,
+            mode="automated",
+        )
+        return result
+    except Exception as exc:
+        return {"status": "failed", "reason": str(exc)}
+
+
 @action(
     reads=[
         "structured_test_case_file",
@@ -2657,6 +2712,8 @@ def plan_repair(state: State) -> Tuple[Dict[str, Any], State]:
         "run_id",
         "base_output_root",
         "output_root",
+        "canoe_config_plan",
+        "project_config",
     ],
     writes=["final_outputs"],
 )
@@ -2681,6 +2738,37 @@ def package_outputs(state: State) -> Tuple[Dict[str, Any], State]:
         "capl_eval_report": state.get("capl_eval_report"),
         "repair_plan": state.get("repair_plan_file"),
     }
+    capl_mount_info = _mount_capl_into_cfg(state, output_root)
+    if capl_mount_info:
+        final_outputs["capl_mount"] = capl_mount_info
+    try:
+        from . import html_report
+        html_path = output_root / "run_report.html"
+        state_for_report = {
+            "run_id": state.get("run_id"),
+            "status": "complete",
+            "structured_test_case": state.get("structured_test_case", {}),
+            "correction_items": state.get("correction_items", []),
+            "evidence_bundle": state.get("evidence_bundle", {}),
+            "coverage_report": state.get("coverage_report", {}),
+            "cfg_artifact": state.get("cfg_artifact", {}),
+            "can_artifact": state.get("can_artifact", {}),
+            "config_eval_report": state.get("config_eval_report", {}),
+            "capl_eval_report": state.get("capl_eval_report", {}),
+            "repair_plan": state.get("repair_plan", {}),
+            "output_root": str(output_root),
+        }
+        html_report.generate_run_report(state_for_report, html_path)
+        final_outputs["html_report"] = str(html_path)
+        final_outputs["quick_summary"] = html_report.generate_quick_summary(state_for_report)
+    except Exception:
+        pass
+    try:
+        from . import run_retention
+        retention_info = run_retention.apply_retention(base_output_root)
+        final_outputs["run_retention"] = retention_info
+    except Exception:
+        pass
     manifest_path = _write_json(output_root / "final_package_manifest.json", final_outputs)
     final_outputs["manifest"] = manifest_path
     if base_output_root != output_root:
@@ -2734,7 +2822,21 @@ TRANSITION_SPECS = [
 
 
 def _burr_transitions() -> List[Tuple[Any, ...]]:
-    transitions: List[Tuple[Any, ...]] = []
+    profile_path = WORKFLOW_DIR / "workflow_profile.json"
+    if profile_path.exists():
+        try:
+            profile = json.loads(profile_path.read_text(encoding="utf-8"))
+            transitions: List[Tuple[Any, ...]] = []
+            for entry in profile.get("transitions", []):
+                source = entry[0]
+                target = entry[1]
+                condition = entry[2] if len(entry) > 2 else None
+                transitions.append((source, target, default if condition is None else expr(condition)))
+            if transitions:
+                return transitions
+        except Exception:
+            pass
+    transitions = []
     for source, target, condition in TRANSITION_SPECS:
         transitions.append((source, target, default if condition is None else expr(condition)))
     return transitions
@@ -2758,10 +2860,12 @@ def build_application(
         "cdd_paths": [],
         "strict_source_validation": False,
         "canoe_validation_mode": "disabled",
-        "capl_authoring_mode": "llm_with_fallback",
+        "capl_authoring_mode": "llm",
+        "capl_compile_max_attempts": 5,
         "max_retries": 2,
         "config_retry_count": 0,
         "capl_retry_count": 0,
+        "quality_gate": "exploration",
     }
     if initial_state:
         initial.update(initial_state)
@@ -2786,8 +2890,10 @@ def run_workflow(
     run_id: Optional[str] = None,
     enable_tracking: bool = False,
     canoe_validation_mode: str = "disabled",
-    capl_authoring_mode: str = "llm_with_fallback",
+    capl_authoring_mode: str = "llm",
+    capl_compile_max_attempts: int = 5,
     strict_source_validation: bool = False,
+    quality_gate: str = "exploration",
 ) -> Dict[str, Any]:
     run_id = run_id or _make_run_id(excel)
     base_output_root = out
@@ -2802,7 +2908,9 @@ def run_workflow(
         "max_retries": max_retries,
         "canoe_validation_mode": canoe_validation_mode,
         "capl_authoring_mode": capl_authoring_mode,
+        "capl_compile_max_attempts": capl_compile_max_attempts,
         "strict_source_validation": strict_source_validation,
+        "quality_gate": quality_gate,
     }, app_id=run_id, enable_tracking=enable_tracking)
     action, result, state = app.run(halt_after=["package_outputs", "emit_test_case_corrections"])
     return {
@@ -2813,6 +2921,8 @@ def run_workflow(
 
 
 def main(argv: Optional[List[str]] = None) -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser(description="Run the CANoe Burr workflow scaffold.")
     parser.add_argument("--excel", default=str(DEFAULT_TEMPLATE), help="Path to the Excel test case template.")
     parser.add_argument("--out", default=str(DEFAULT_OUTPUT), help="Output directory.")
@@ -2827,14 +2937,26 @@ def main(argv: Optional[List[str]] = None) -> int:
     )
     parser.add_argument(
         "--capl-authoring-mode",
-        choices=["deterministic", "llm", "llm_with_fallback"],
-        default="llm_with_fallback",
-        help="Controls CAPL generation: fixed renderer, strict external LLM agent, or LLM with deterministic fallback.",
+        choices=["llm"],
+        default="llm",
+        help="Controls CAPL generation. CAPL is generated only by the external LLM agent.",
+    )
+    parser.add_argument(
+        "--capl-compile-max-attempts",
+        type=int,
+        default=5,
+        help="Maximum Planner/Fixer CAPL compile-repair attempts inside generate_capl_script.",
     )
     parser.add_argument(
         "--strict-source-validation",
         action="store_true",
         help="Treat missing/unresolved DBC/A2L/CDD semantic checks as errors.",
+    )
+    parser.add_argument(
+        "--quality-gate",
+        choices=["exploration", "ci", "release"],
+        default="exploration",
+        help="Quality gate strictness. release mode forbids CanoeGene_* adapter stubs.",
     )
     parser.add_argument("--json", action="store_true", help="Print full JSON result.")
     args = parser.parse_args(argv)
@@ -2847,7 +2969,9 @@ def main(argv: Optional[List[str]] = None) -> int:
         enable_tracking=args.tracking,
         canoe_validation_mode=args.canoe_validation_mode,
         capl_authoring_mode=args.capl_authoring_mode,
+        capl_compile_max_attempts=args.capl_compile_max_attempts,
         strict_source_validation=args.strict_source_validation,
+        quality_gate=args.quality_gate,
     )
     final_outputs = result["state"].get("final_outputs", {})
     if args.json:
